@@ -34,7 +34,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.BackupPlanAssociation)
     BackupPlanAssociationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackupPlanAssociation.newBuilder() to construct.
   private BackupPlanAssociation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,7 +143,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -155,7 +153,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
-
     /**
      *
      *
@@ -166,7 +163,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -177,7 +173,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
-
     /**
      *
      *
@@ -283,7 +278,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -344,7 +337,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceType_ = "";
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -403,7 +394,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -430,7 +420,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -462,7 +451,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupPlan_ = "";
-
   /**
    *
    *
@@ -490,7 +478,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -521,7 +508,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -538,7 +524,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -555,7 +540,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -573,7 +557,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -590,7 +573,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -607,7 +589,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -625,7 +606,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
-
   /**
    *
    *
@@ -643,7 +623,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -670,7 +649,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.RuleConfigInfo> rulesConfigInfo_;
-
   /**
    *
    *
@@ -686,7 +664,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.backupdr.v1.RuleConfigInfo> getRulesConfigInfoList() {
     return rulesConfigInfo_;
   }
-
   /**
    *
    *
@@ -703,7 +680,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       getRulesConfigInfoOrBuilderList() {
     return rulesConfigInfo_;
   }
-
   /**
    *
    *
@@ -719,7 +695,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public int getRulesConfigInfoCount() {
     return rulesConfigInfo_.size();
   }
-
   /**
    *
    *
@@ -735,7 +710,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   public com.google.cloud.backupdr.v1.RuleConfigInfo getRulesConfigInfo(int index) {
     return rulesConfigInfo_.get(index);
   }
-
   /**
    *
    *
@@ -757,7 +731,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSource_ = "";
-
   /**
    *
    *
@@ -783,7 +756,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -1055,7 +1027,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1424,7 +1395,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1451,7 +1421,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1478,7 +1447,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1504,7 +1472,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1493,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1521,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object resourceType_ = "";
-
     /**
      *
      *
@@ -1581,7 +1546,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1607,7 +1571,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1595,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1615,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1681,7 +1642,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1707,7 +1667,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1733,7 +1692,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1758,7 +1716,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1779,7 +1736,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1807,7 +1763,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object backupPlan_ = "";
-
     /**
      *
      *
@@ -1834,7 +1789,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1815,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1887,7 +1840,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1861,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1943,7 +1894,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1960,7 +1910,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1983,7 +1932,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2008,7 +1956,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2030,7 +1977,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2060,7 +2006,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2082,7 +2027,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2099,7 +2043,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2120,7 +2063,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2155,7 +2097,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2172,7 +2113,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2195,7 +2135,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2220,7 +2159,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2242,7 +2180,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2272,7 +2209,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2294,7 +2230,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2311,7 +2246,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2332,7 +2266,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2362,7 +2295,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2380,7 +2312,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2401,7 +2332,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2423,7 +2353,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.backupdr.v1.BackupPlanAssociation.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2447,7 +2376,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2503,7 +2431,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return rulesConfigInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2522,7 +2449,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return rulesConfigInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2541,7 +2467,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return rulesConfigInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2567,7 +2492,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2590,7 +2514,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2615,7 +2538,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2641,7 +2563,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2664,7 +2585,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2607,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2710,7 +2629,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2732,7 +2650,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2754,7 +2671,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2770,7 +2686,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         int index) {
       return getRulesConfigInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2790,7 +2705,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return rulesConfigInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2810,7 +2724,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(rulesConfigInfo_);
       }
     }
-
     /**
      *
      *
@@ -2826,7 +2739,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return getRulesConfigInfoFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.RuleConfigInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2843,7 +2755,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       return getRulesConfigInfoFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.RuleConfigInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2881,7 +2792,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object dataSource_ = "";
-
     /**
      *
      *
@@ -2906,7 +2816,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2931,7 +2840,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2955,7 +2863,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2975,7 +2882,6 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

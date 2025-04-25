@@ -33,7 +33,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlSchema)
     PostgresqlSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostgresqlSchema.newBuilder() to construct.
   private PostgresqlSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schema_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.PostgresqlTable> postgresqlTables_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.datastream.v1.PostgresqlTable> getPostgresqlTablesList() {
     return postgresqlTables_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       getPostgresqlTablesOrBuilderList() {
     return postgresqlTables_;
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
   public int getPostgresqlTablesCount() {
     return postgresqlTables_.size();
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datastream.v1.PostgresqlTable getPostgresqlTables(int index) {
     return postgresqlTables_.get(index);
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -611,7 +602,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object schema_ = "";
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return postgresqlTablesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return postgresqlTablesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return postgresqlTablesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +922,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +960,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +973,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         int index) {
       return getPostgresqlTablesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return postgresqlTablesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1007,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(postgresqlTables_);
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       return getPostgresqlTablesFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.PostgresqlTable.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1064,7 +1034,6 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
       return getPostgresqlTablesFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.PostgresqlTable.getDefaultInstance());
     }
-
     /**
      *
      *

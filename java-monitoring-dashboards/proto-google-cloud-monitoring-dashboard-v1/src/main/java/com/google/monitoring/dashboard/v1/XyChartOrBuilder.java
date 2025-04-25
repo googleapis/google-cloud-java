@@ -36,7 +36,6 @@ public interface XyChartOrBuilder
    * </code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.XyChart.DataSet> getDataSetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface XyChartOrBuilder
    * </code>
    */
   com.google.monitoring.dashboard.v1.XyChart.DataSet getDataSets(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface XyChartOrBuilder
    * </code>
    */
   int getDataSetsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface XyChartOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.XyChart.DataSetOrBuilder>
       getDataSetsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface XyChartOrBuilder
    * @return Whether the timeshiftDuration field is set.
    */
   boolean hasTimeshiftDuration();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface XyChartOrBuilder
    * @return The timeshiftDuration.
    */
   com.google.protobuf.Duration getTimeshiftDuration();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface XyChartOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.Threshold> getThresholdsList();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface XyChartOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
   com.google.monitoring.dashboard.v1.Threshold getThresholds(int index);
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface XyChartOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Threshold thresholds = 5;</code>
    */
   int getThresholdsCount();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface XyChartOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.ThresholdOrBuilder>
       getThresholdsOrBuilderList();
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface XyChartOrBuilder
    * @return Whether the xAxis field is set.
    */
   boolean hasXAxis();
-
   /**
    *
    *
@@ -220,7 +209,6 @@ public interface XyChartOrBuilder
    * @return The xAxis.
    */
   com.google.monitoring.dashboard.v1.XyChart.Axis getXAxis();
-
   /**
    *
    *
@@ -244,7 +232,6 @@ public interface XyChartOrBuilder
    * @return Whether the yAxis field is set.
    */
   boolean hasYAxis();
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public interface XyChartOrBuilder
    * @return The yAxis.
    */
   com.google.monitoring.dashboard.v1.XyChart.Axis getYAxis();
-
   /**
    *
    *
@@ -281,7 +267,6 @@ public interface XyChartOrBuilder
    * @return Whether the y2Axis field is set.
    */
   boolean hasY2Axis();
-
   /**
    *
    *
@@ -294,7 +279,6 @@ public interface XyChartOrBuilder
    * @return The y2Axis.
    */
   com.google.monitoring.dashboard.v1.XyChart.Axis getY2Axis();
-
   /**
    *
    *
@@ -318,7 +302,6 @@ public interface XyChartOrBuilder
    * @return Whether the chartOptions field is set.
    */
   boolean hasChartOptions();
-
   /**
    *
    *
@@ -331,7 +314,6 @@ public interface XyChartOrBuilder
    * @return The chartOptions.
    */
   com.google.monitoring.dashboard.v1.ChartOptions getChartOptions();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.SearchOrganizationsResponse)
     SearchOrganizationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchOrganizationsResponse.newBuilder() to construct.
   private SearchOrganizationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.Organization> organizations_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.resourcemanager.v3.Organization> getOrganizationsList() {
     return organizations_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       getOrganizationsOrBuilderList() {
     return organizations_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
   public int getOrganizationsCount() {
     return organizations_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
   public com.google.cloud.resourcemanager.v3.Organization getOrganizations(int index) {
     return organizations_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return organizationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -682,7 +672,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return organizationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return organizationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +864,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         int index) {
       return getOrganizationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -938,7 +916,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return organizationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(organizations_);
       }
     }
-
     /**
      *
      *
@@ -972,7 +948,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       return getOrganizationsFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.Organization.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       return getOrganizationsFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.Organization.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1025,7 +999,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1052,7 +1025,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1051,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class SearchOrganizationsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface MysqlSslConfigOrBuilder
    * @return The clientKey.
    */
   java.lang.String getClientKey();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface MysqlSslConfigOrBuilder
    * @return The clientCertificate.
    */
   java.lang.String getClientCertificate();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface MysqlSslConfigOrBuilder
    * @return The caCertificate.
    */
   java.lang.String getCaCertificate();
-
   /**
    *
    *

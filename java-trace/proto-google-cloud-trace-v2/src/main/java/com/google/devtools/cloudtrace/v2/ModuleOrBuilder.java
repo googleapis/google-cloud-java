@@ -37,7 +37,6 @@ public interface ModuleOrBuilder
    * @return Whether the module field is set.
    */
   boolean hasModule();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ModuleOrBuilder
    * @return The module.
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getModule();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ModuleOrBuilder
    * @return Whether the buildId field is set.
    */
   boolean hasBuildId();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ModuleOrBuilder
    * @return The buildId.
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getBuildId();
-
   /**
    *
    *

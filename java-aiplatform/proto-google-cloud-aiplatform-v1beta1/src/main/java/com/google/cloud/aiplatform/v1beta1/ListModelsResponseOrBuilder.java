@@ -34,7 +34,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Model models = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Model> getModelsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Model models = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Model getModels(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Model models = 1;</code>
    */
   int getModelsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ModelOrBuilder>
       getModelsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

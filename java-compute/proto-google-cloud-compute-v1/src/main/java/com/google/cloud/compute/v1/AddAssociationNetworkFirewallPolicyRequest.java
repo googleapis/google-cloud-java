@@ -34,7 +34,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest)
     AddAssociationNetworkFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddAssociationNetworkFirewallPolicyRequest.newBuilder() to construct.
   private AddAssociationNetworkFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
 
   public static final int FIREWALL_POLICY_ASSOCIATION_RESOURCE_FIELD_NUMBER = 259546170;
   private com.google.cloud.compute.v1.FirewallPolicyAssociation firewallPolicyAssociationResource_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
   public boolean hasFirewallPolicyAssociationResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         ? com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance()
         : firewallPolicyAssociationResource_;
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
 
   public static final int REPLACE_EXISTING_ASSOCIATION_FIELD_NUMBER = 209541240;
   private boolean replaceExistingAssociation_ = false;
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
   public boolean hasReplaceExistingAssociation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -295,7 +284,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -319,7 +307,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -563,7 +550,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -835,7 +821,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
-
     /**
      *
      *
@@ -858,7 +843,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -881,7 +865,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +903,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +933,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
             com.google.cloud.compute.v1.FirewallPolicyAssociation.Builder,
             com.google.cloud.compute.v1.FirewallPolicyAssociationOrBuilder>
         firewallPolicyAssociationResourceBuilder_;
-
     /**
      *
      *
@@ -969,7 +949,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     public boolean hasFirewallPolicyAssociationResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return firewallPolicyAssociationResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1019,7 +997,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1019,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1050,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1088,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return getFirewallPolicyAssociationResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1136,7 +1109,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
             : firewallPolicyAssociationResource_;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1138,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1191,7 +1162,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1186,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1209,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1228,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     }
 
     private boolean replaceExistingAssociation_;
-
     /**
      *
      *
@@ -1303,7 +1269,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     public boolean hasReplaceExistingAssociation() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1319,7 +1284,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     public boolean getReplaceExistingAssociation() {
       return replaceExistingAssociation_;
     }
-
     /**
      *
      *
@@ -1339,7 +1303,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1322,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1374,7 +1336,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1397,7 +1358,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1380,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1442,7 +1401,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1418,6 @@ public final class AddAssociationNetworkFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

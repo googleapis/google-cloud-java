@@ -40,7 +40,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * @return Whether the tollInfo field is set.
    */
   boolean hasTollInfo();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * @return The tollInfo.
    */
   com.google.maps.routing.v2.TollInfo getTollInfo();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 3;</code>
    */
   java.util.List<com.google.maps.routing.v2.SpeedReadingInterval> getSpeedReadingIntervalsList();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 3;</code>
    */
   com.google.maps.routing.v2.SpeedReadingInterval getSpeedReadingIntervals(int index);
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 3;</code>
    */
   int getSpeedReadingIntervalsCount();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface RouteTravelAdvisoryOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.SpeedReadingIntervalOrBuilder>
       getSpeedReadingIntervalsOrBuilderList();
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * @return Whether the transitFare field is set.
    */
   boolean hasTransitFare();
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public interface RouteTravelAdvisoryOrBuilder
    * @return The transitFare.
    */
   com.google.type.Money getTransitFare();
-
   /**
    *
    *

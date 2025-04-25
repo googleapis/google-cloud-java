@@ -40,7 +40,6 @@ public interface DeleteTableRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

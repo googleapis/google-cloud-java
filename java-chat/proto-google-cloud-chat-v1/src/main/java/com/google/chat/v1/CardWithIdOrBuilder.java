@@ -37,7 +37,6 @@ public interface CardWithIdOrBuilder
    * @return The cardId.
    */
   java.lang.String getCardId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CardWithIdOrBuilder
    * @return Whether the card field is set.
    */
   boolean hasCard();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CardWithIdOrBuilder
    * @return The card.
    */
   com.google.apps.card.v1.Card getCard();
-
   /**
    *
    *

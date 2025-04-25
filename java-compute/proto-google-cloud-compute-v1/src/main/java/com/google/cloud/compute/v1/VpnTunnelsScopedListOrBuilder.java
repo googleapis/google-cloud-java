@@ -34,7 +34,6 @@ public interface VpnTunnelsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.VpnTunnel vpn_tunnels = 163494080;</code>
    */
   java.util.List<com.google.cloud.compute.v1.VpnTunnel> getVpnTunnelsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface VpnTunnelsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.VpnTunnel vpn_tunnels = 163494080;</code>
    */
   com.google.cloud.compute.v1.VpnTunnel getVpnTunnels(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface VpnTunnelsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.VpnTunnel vpn_tunnels = 163494080;</code>
    */
   int getVpnTunnelsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface VpnTunnelsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.VpnTunnelOrBuilder>
       getVpnTunnelsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface VpnTunnelsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface VpnTunnelsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

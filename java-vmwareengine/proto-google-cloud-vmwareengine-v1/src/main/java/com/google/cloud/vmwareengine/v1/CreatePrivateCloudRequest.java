@@ -34,7 +34,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.CreatePrivateCloudRequest)
     CreatePrivateCloudRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePrivateCloudRequest.newBuilder() to construct.
   private CreatePrivateCloudRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateCloudId_ = "";
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -208,7 +203,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
 
   public static final int PRIVATE_CLOUD_FIELD_NUMBER = 3;
   private com.google.cloud.vmwareengine.v1.PrivateCloud privateCloud_;
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
   public boolean hasPrivateCloud() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         ? com.google.cloud.vmwareengine.v1.PrivateCloud.getDefaultInstance()
         : privateCloud_;
   }
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -322,7 +312,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -541,7 +530,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -800,7 +788,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -829,7 +816,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +844,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +871,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +894,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +924,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object privateCloudId_ = "";
-
     /**
      *
      *
@@ -974,7 +956,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +988,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1019,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1046,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1085,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
             com.google.cloud.vmwareengine.v1.PrivateCloud.Builder,
             com.google.cloud.vmwareengine.v1.PrivateCloudOrBuilder>
         privateCloudBuilder_;
-
     /**
      *
      *
@@ -1124,7 +1101,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     public boolean hasPrivateCloud() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1147,7 +1123,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return privateCloudBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1147,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1169,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1199,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1220,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1236,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return getPrivateCloudFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1286,7 +1256,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
             : privateCloud_;
       }
     }
-
     /**
      *
      *
@@ -1316,7 +1285,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1340,7 +1308,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1331,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1387,7 +1353,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1371,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1396,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1449,7 +1412,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1470,7 +1432,6 @@ public final class CreatePrivateCloudRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

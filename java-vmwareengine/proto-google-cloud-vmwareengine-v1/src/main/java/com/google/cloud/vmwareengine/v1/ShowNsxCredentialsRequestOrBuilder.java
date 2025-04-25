@@ -43,7 +43,6 @@ public interface ShowNsxCredentialsRequestOrBuilder
    * @return The privateCloud.
    */
   java.lang.String getPrivateCloud();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateReportRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateReportRequestOrBuilder
    * @return Whether the report field is set.
    */
   boolean hasReport();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateReportRequestOrBuilder
    * @return The report.
    */
   com.google.ads.admanager.v1.Report getReport();
-
   /**
    *
    *

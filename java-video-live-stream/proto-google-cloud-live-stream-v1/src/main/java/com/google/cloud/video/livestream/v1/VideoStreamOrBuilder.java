@@ -36,7 +36,6 @@ public interface VideoStreamOrBuilder
    * @return Whether the h264 field is set.
    */
   boolean hasH264();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VideoStreamOrBuilder
    * @return The h264.
    */
   com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings getH264();
-
   /**
    *
    *

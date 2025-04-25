@@ -38,7 +38,6 @@ public interface CertificateAuthorityOrBuilder
    * @return Whether the managedServerCa field is set.
    */
   boolean hasManagedServerCa();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface CertificateAuthorityOrBuilder
    */
   com.google.cloud.memorystore.v1.CertificateAuthority.ManagedCertificateAuthority
       getManagedServerCa();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CertificateAuthorityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

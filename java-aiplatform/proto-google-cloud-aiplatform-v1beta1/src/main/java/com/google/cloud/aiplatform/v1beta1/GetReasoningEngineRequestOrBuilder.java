@@ -40,7 +40,6 @@ public interface GetReasoningEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

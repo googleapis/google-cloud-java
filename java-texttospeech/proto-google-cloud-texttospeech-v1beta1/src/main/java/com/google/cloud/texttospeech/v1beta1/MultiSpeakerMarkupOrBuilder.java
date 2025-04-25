@@ -36,7 +36,6 @@ public interface MultiSpeakerMarkupOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn> getTurnsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MultiSpeakerMarkupOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn getTurns(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface MultiSpeakerMarkupOrBuilder
    * </code>
    */
   int getTurnsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface MultiSpeakerMarkupOrBuilder
    */
   java.util.List<? extends com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.TurnOrBuilder>
       getTurnsOrBuilderList();
-
   /**
    *
    *

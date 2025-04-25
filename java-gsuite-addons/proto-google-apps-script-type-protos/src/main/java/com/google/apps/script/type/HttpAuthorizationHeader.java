@@ -83,7 +83,6 @@ public enum HttpAuthorizationHeader implements com.google.protobuf.ProtocolMessa
    * <code>HTTP_AUTHORIZATION_HEADER_UNSPECIFIED = 0;</code>
    */
   public static final int HTTP_AUTHORIZATION_HEADER_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -95,7 +94,6 @@ public enum HttpAuthorizationHeader implements com.google.protobuf.ProtocolMessa
    * <code>SYSTEM_ID_TOKEN = 1;</code>
    */
   public static final int SYSTEM_ID_TOKEN_VALUE = 1;
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public enum HttpAuthorizationHeader implements com.google.protobuf.ProtocolMessa
    * <code>USER_ID_TOKEN = 2;</code>
    */
   public static final int USER_ID_TOKEN_VALUE = 2;
-
   /**
    *
    *

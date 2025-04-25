@@ -34,7 +34,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection)
     InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection.newBuilder() to construct.
   private InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList machineTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   public com.google.protobuf.ProtocolStringList getMachineTypesList() {
     return machineTypes_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   public int getMachineTypesCount() {
     return machineTypes_.size();
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   public java.lang.String getMachineTypes(int index) {
     return machineTypes_.get(index);
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
 
   public static final int RANK_FIELD_NUMBER = 3492908;
   private int rank_ = 0;
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   public boolean hasRank() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -378,7 +371,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -620,7 +612,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       machineTypes_.makeImmutable();
       return machineTypes_;
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public int getMachineTypesCount() {
       return machineTypes_.size();
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public java.lang.String getMachineTypes(int index) {
       return machineTypes_.get(index);
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public com.google.protobuf.ByteString getMachineTypesBytes(int index) {
       return machineTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +716,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     }
 
     private int rank_;
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public boolean hasRank() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +808,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public int getRank() {
       return rank_;
     }
-
     /**
      *
      *
@@ -847,7 +827,6 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       onChanged();
       return this;
     }
-
     /**
      *
      *

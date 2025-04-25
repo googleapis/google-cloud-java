@@ -35,7 +35,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.AuditData)
     AuditDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuditData.newBuilder() to construct.
   private AuditData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the addedPermissions.
      */
     java.util.List<java.lang.String> getAddedPermissionsList();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return The count of addedPermissions.
      */
     int getAddedPermissionsCount();
-
     /**
      *
      *
@@ -108,7 +105,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return The addedPermissions at the given index.
      */
     java.lang.String getAddedPermissions(int index);
-
     /**
      *
      *
@@ -135,7 +131,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the removedPermissions.
      */
     java.util.List<java.lang.String> getRemovedPermissionsList();
-
     /**
      *
      *
@@ -148,7 +143,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return The count of removedPermissions.
      */
     int getRemovedPermissionsCount();
-
     /**
      *
      *
@@ -162,7 +156,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return The removedPermissions at the given index.
      */
     java.lang.String getRemovedPermissions(int index);
-
     /**
      *
      *
@@ -177,7 +170,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRemovedPermissionsBytes(int index);
   }
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.iam.admin.v1.AuditData.PermissionDelta)
       PermissionDeltaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PermissionDelta.newBuilder() to construct.
     private PermissionDelta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -230,7 +221,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList addedPermissions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -245,7 +235,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAddedPermissionsList() {
       return addedPermissions_;
     }
-
     /**
      *
      *
@@ -260,7 +249,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public int getAddedPermissionsCount() {
       return addedPermissions_.size();
     }
-
     /**
      *
      *
@@ -276,7 +264,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAddedPermissions(int index) {
       return addedPermissions_.get(index);
     }
-
     /**
      *
      *
@@ -298,7 +285,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList removedPermissions_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -313,7 +299,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getRemovedPermissionsList() {
       return removedPermissions_;
     }
-
     /**
      *
      *
@@ -328,7 +313,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public int getRemovedPermissionsCount() {
       return removedPermissions_.size();
     }
-
     /**
      *
      *
@@ -344,7 +328,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRemovedPermissions(int index) {
       return removedPermissions_.get(index);
     }
-
     /**
      *
      *
@@ -545,7 +528,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -771,7 +753,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -787,7 +768,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         addedPermissions_.makeImmutable();
         return addedPermissions_;
       }
-
       /**
        *
        *
@@ -802,7 +782,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public int getAddedPermissionsCount() {
         return addedPermissions_.size();
       }
-
       /**
        *
        *
@@ -818,7 +797,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAddedPermissions(int index) {
         return addedPermissions_.get(index);
       }
-
       /**
        *
        *
@@ -834,7 +812,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAddedPermissionsBytes(int index) {
         return addedPermissions_.getByteString(index);
       }
-
       /**
        *
        *
@@ -858,7 +835,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -881,7 +857,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -901,7 +876,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -920,7 +894,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -954,7 +927,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -970,7 +942,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         removedPermissions_.makeImmutable();
         return removedPermissions_;
       }
-
       /**
        *
        *
@@ -985,7 +956,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public int getRemovedPermissionsCount() {
         return removedPermissions_.size();
       }
-
       /**
        *
        *
@@ -1001,7 +971,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getRemovedPermissions(int index) {
         return removedPermissions_.get(index);
       }
-
       /**
        *
        *
@@ -1017,7 +986,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getRemovedPermissionsBytes(int index) {
         return removedPermissions_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1041,7 +1009,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1064,7 +1031,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1084,7 +1050,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1103,7 +1068,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1195,7 +1159,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PERMISSION_DELTA_FIELD_NUMBER = 1;
   private com.google.iam.admin.v1.AuditData.PermissionDelta permissionDelta_;
-
   /**
    *
    *
@@ -1211,7 +1174,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPermissionDelta() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1229,7 +1191,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         ? com.google.iam.admin.v1.AuditData.PermissionDelta.getDefaultInstance()
         : permissionDelta_;
   }
-
   /**
    *
    *
@@ -1408,7 +1369,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1613,7 +1573,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
             com.google.iam.admin.v1.AuditData.PermissionDelta.Builder,
             com.google.iam.admin.v1.AuditData.PermissionDeltaOrBuilder>
         permissionDeltaBuilder_;
-
     /**
      *
      *
@@ -1628,7 +1587,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPermissionDelta() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1649,7 +1607,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         return permissionDeltaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1672,7 +1629,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1649,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1677,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1696,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1710,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPermissionDeltaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1777,7 +1729,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
             : permissionDelta_;
       }
     }
-
     /**
      *
      *

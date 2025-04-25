@@ -34,7 +34,6 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
   java.util.List<com.google.container.v1.NodePool> getNodePoolsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
   com.google.container.v1.NodePool getNodePools(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
   int getNodePoolsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListNodePoolsResponseOrBuilder
    * <code>repeated .google.container.v1.NodePool node_pools = 1;</code>
    */
   java.util.List<? extends com.google.container.v1.NodePoolOrBuilder> getNodePoolsOrBuilderList();
-
   /**
    *
    *

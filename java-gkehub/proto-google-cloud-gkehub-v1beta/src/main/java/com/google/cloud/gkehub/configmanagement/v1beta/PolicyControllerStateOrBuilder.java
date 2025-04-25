@@ -36,7 +36,6 @@ public interface PolicyControllerStateOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PolicyControllerStateOrBuilder
    * @return The version.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion getVersion();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface PolicyControllerStateOrBuilder
    * @return Whether the deploymentState field is set.
    */
   boolean hasDeploymentState();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface PolicyControllerStateOrBuilder
    * @return The deploymentState.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState getDeploymentState();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface PolicyControllerStateOrBuilder
    * @return Whether the migration field is set.
    */
   boolean hasMigration();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface PolicyControllerStateOrBuilder
    * @return The migration.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMigration getMigration();
-
   /**
    *
    *

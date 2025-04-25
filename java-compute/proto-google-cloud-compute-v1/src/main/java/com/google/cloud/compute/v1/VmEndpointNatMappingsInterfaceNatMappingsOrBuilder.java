@@ -36,7 +36,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return A list containing the drainNatIpPortRanges.
    */
   java.util.List<java.lang.String> getDrainNatIpPortRangesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return The count of drainNatIpPortRanges.
    */
   int getDrainNatIpPortRangesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return The drainNatIpPortRanges at the given index.
    */
   java.lang.String getDrainNatIpPortRanges(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return A list containing the natIpPortRanges.
    */
   java.util.List<java.lang.String> getNatIpPortRangesList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return The count of natIpPortRanges.
    */
   int getNatIpPortRangesCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return The natIpPortRanges at the given index.
    */
   java.lang.String getNatIpPortRanges(int index);
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return Whether the numTotalDrainNatPorts field is set.
    */
   boolean hasNumTotalDrainNatPorts();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return Whether the numTotalNatPorts field is set.
    */
   boolean hasNumTotalNatPorts();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings>
       getRuleMappingsList();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    */
   com.google.cloud.compute.v1.VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappings
       getRuleMappings(int index);
-
   /**
    *
    *
@@ -225,7 +215,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * </code>
    */
   int getRuleMappingsCount();
-
   /**
    *
    *
@@ -242,7 +231,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
               com.google.cloud.compute.v1
                   .VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuilder>
       getRuleMappingsOrBuilderList();
-
   /**
    *
    *
@@ -269,7 +257,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return Whether the sourceAliasIpRange field is set.
    */
   boolean hasSourceAliasIpRange();
-
   /**
    *
    *
@@ -282,7 +269,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return The sourceAliasIpRange.
    */
   java.lang.String getSourceAliasIpRange();
-
   /**
    *
    *
@@ -308,7 +294,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return Whether the sourceVirtualIp field is set.
    */
   boolean hasSourceVirtualIp();
-
   /**
    *
    *
@@ -321,7 +306,6 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * @return The sourceVirtualIp.
    */
   java.lang.String getSourceVirtualIp();
-
   /**
    *
    *

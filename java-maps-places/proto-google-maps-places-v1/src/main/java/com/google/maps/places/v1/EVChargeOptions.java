@@ -37,7 +37,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.EVChargeOptions)
     EVChargeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EVChargeOptions.newBuilder() to construct.
   private EVChargeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -137,7 +135,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
      * @return Whether the availableCount field is set.
      */
     boolean hasAvailableCount();
-
     /**
      *
      *
@@ -164,7 +161,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
      * @return Whether the outOfServiceCount field is set.
      */
     boolean hasOutOfServiceCount();
-
     /**
      *
      *
@@ -192,7 +188,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
      * @return Whether the availabilityLastUpdateTime field is set.
      */
     boolean hasAvailabilityLastUpdateTime();
-
     /**
      *
      *
@@ -206,7 +201,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
      * @return The availabilityLastUpdateTime.
      */
     com.google.protobuf.Timestamp getAvailabilityLastUpdateTime();
-
     /**
      *
      *
@@ -219,7 +213,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.TimestampOrBuilder getAvailabilityLastUpdateTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.EVChargeOptions.ConnectorAggregation)
       ConnectorAggregationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConnectorAggregation.newBuilder() to construct.
     private ConnectorAggregation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -270,7 +262,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
-
     /**
      *
      *
@@ -286,7 +277,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -307,7 +297,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
 
     public static final int MAX_CHARGE_RATE_KW_FIELD_NUMBER = 2;
     private double maxChargeRateKw_ = 0D;
-
     /**
      *
      *
@@ -326,7 +315,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
 
     public static final int COUNT_FIELD_NUMBER = 3;
     private int count_ = 0;
-
     /**
      *
      *
@@ -345,7 +333,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
 
     public static final int AVAILABLE_COUNT_FIELD_NUMBER = 4;
     private int availableCount_ = 0;
-
     /**
      *
      *
@@ -361,7 +348,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     public boolean hasAvailableCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -380,7 +366,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
 
     public static final int OUT_OF_SERVICE_COUNT_FIELD_NUMBER = 5;
     private int outOfServiceCount_ = 0;
-
     /**
      *
      *
@@ -397,7 +382,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     public boolean hasOutOfServiceCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -417,7 +401,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
 
     public static final int AVAILABILITY_LAST_UPDATE_TIME_FIELD_NUMBER = 6;
     private com.google.protobuf.Timestamp availabilityLastUpdateTime_;
-
     /**
      *
      *
@@ -434,7 +417,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     public boolean hasAvailabilityLastUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -453,7 +435,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : availabilityLastUpdateTime_;
     }
-
     /**
      *
      *
@@ -701,7 +682,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -996,7 +975,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -1015,7 +993,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1033,7 +1010,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
             com.google.maps.places.v1.EVConnectorType.forNumber(type_);
         return result == null ? com.google.maps.places.v1.EVConnectorType.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -1055,7 +1031,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1075,7 +1050,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
 
       private double maxChargeRateKw_;
-
       /**
        *
        *
@@ -1091,7 +1065,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public double getMaxChargeRateKw() {
         return maxChargeRateKw_;
       }
-
       /**
        *
        *
@@ -1111,7 +1084,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1131,7 +1103,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
 
       private int count_;
-
       /**
        *
        *
@@ -1147,7 +1118,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public int getCount() {
         return count_;
       }
-
       /**
        *
        *
@@ -1167,7 +1137,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1187,7 +1156,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
 
       private int availableCount_;
-
       /**
        *
        *
@@ -1203,7 +1171,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public boolean hasAvailableCount() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1219,7 +1186,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public int getAvailableCount() {
         return availableCount_;
       }
-
       /**
        *
        *
@@ -1239,7 +1205,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1259,7 +1224,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
 
       private int outOfServiceCount_;
-
       /**
        *
        *
@@ -1276,7 +1240,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public boolean hasOutOfServiceCount() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1293,7 +1256,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public int getOutOfServiceCount() {
         return outOfServiceCount_;
       }
-
       /**
        *
        *
@@ -1314,7 +1276,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1340,7 +1301,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           availabilityLastUpdateTimeBuilder_;
-
       /**
        *
        *
@@ -1356,7 +1316,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       public boolean hasAvailabilityLastUpdateTime() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -1378,7 +1337,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
           return availabilityLastUpdateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1402,7 +1360,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1424,7 +1381,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1454,7 +1410,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1475,7 +1430,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1491,7 +1445,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getAvailabilityLastUpdateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1511,7 +1464,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
               : availabilityLastUpdateTime_;
         }
       }
-
       /**
        *
        *
@@ -1608,7 +1560,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONNECTOR_COUNT_FIELD_NUMBER = 1;
   private int connectorCount_ = 0;
-
   /**
    *
    *
@@ -1633,7 +1584,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.places.v1.EVChargeOptions.ConnectorAggregation>
       connectorAggregation_;
-
   /**
    *
    *
@@ -1651,7 +1601,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       getConnectorAggregationList() {
     return connectorAggregation_;
   }
-
   /**
    *
    *
@@ -1670,7 +1619,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       getConnectorAggregationOrBuilderList() {
     return connectorAggregation_;
   }
-
   /**
    *
    *
@@ -1687,7 +1635,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
   public int getConnectorAggregationCount() {
     return connectorAggregation_.size();
   }
-
   /**
    *
    *
@@ -1705,7 +1652,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       int index) {
     return connectorAggregation_.get(index);
   }
-
   /**
    *
    *
@@ -1895,7 +1841,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2142,7 +2087,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int connectorCount_;
-
     /**
      *
      *
@@ -2161,7 +2105,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
     public int getConnectorCount() {
       return connectorCount_;
     }
-
     /**
      *
      *
@@ -2184,7 +2127,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2244,7 +2186,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         return connectorAggregationBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2264,7 +2205,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         return connectorAggregationBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2285,7 +2225,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         return connectorAggregationBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2312,7 +2251,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2337,7 +2275,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2364,7 +2301,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2391,7 +2327,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2415,7 +2350,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2374,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2465,7 +2398,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2488,7 +2420,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2511,7 +2442,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2528,7 +2458,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         getConnectorAggregationBuilder(int index) {
       return getConnectorAggregationFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2549,7 +2478,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         return connectorAggregationBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2571,7 +2499,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(connectorAggregation_);
       }
     }
-
     /**
      *
      *
@@ -2590,7 +2517,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.maps.places.v1.EVChargeOptions.ConnectorAggregation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2610,7 +2536,6 @@ public final class EVChargeOptions extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.maps.places.v1.EVChargeOptions.ConnectorAggregation.getDefaultInstance());
     }
-
     /**
      *
      *

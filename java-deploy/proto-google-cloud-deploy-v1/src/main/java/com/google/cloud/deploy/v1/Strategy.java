@@ -33,7 +33,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Strategy)
     StrategyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Strategy.newBuilder() to construct.
   private Strategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     private DeploymentStrategyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STANDARD_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStandard() {
     return deploymentStrategyCase_ == 1;
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.Standard.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CANARY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCanary() {
     return deploymentStrategyCase_ == 2;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -419,7 +411,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Standard.Builder,
             com.google.cloud.deploy.v1.StandardOrBuilder>
         standardBuilder_;
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStandard() {
       return deploymentStrategyCase_ == 1;
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.Standard.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.Standard.Builder getStandardBuilder() {
       return getStandardFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.Standard.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Canary.Builder,
             com.google.cloud.deploy.v1.CanaryOrBuilder>
         canaryBuilder_;
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCanary() {
       return deploymentStrategyCase_ == 2;
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -968,7 +947,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1029,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.Canary.Builder getCanaryBuilder() {
       return getCanaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1091,7 +1065,6 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
       }
     }
-
     /**
      *
      *

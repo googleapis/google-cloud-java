@@ -36,7 +36,6 @@ public interface SqlServerProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface SqlServerProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface SqlServerProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface SqlServerProfileOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface SqlServerProfileOrBuilder
    * @return The secretManagerStoredPassword.
    */
   java.lang.String getSecretManagerStoredPassword();
-
   /**
    *
    *

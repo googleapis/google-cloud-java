@@ -43,7 +43,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface InstanceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -117,11 +114,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface InstanceOrBuilder
    * @return The authorizedNetwork.
    */
   java.lang.String getAuthorizedNetwork();
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public interface InstanceOrBuilder
    * @return A list containing the zones.
    */
   java.util.List<java.lang.String> getZonesList();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface InstanceOrBuilder
    * @return The count of zones.
    */
   int getZonesCount();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface InstanceOrBuilder
    * @return The zones at the given index.
    */
   java.lang.String getZones(int index);
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface InstanceOrBuilder
    * @return Whether the nodeConfig field is set.
    */
   boolean hasNodeConfig();
-
   /**
    *
    *
@@ -305,7 +293,6 @@ public interface InstanceOrBuilder
    * @return The nodeConfig.
    */
   com.google.cloud.memcache.v1beta2.Instance.NodeConfig getNodeConfig();
-
   /**
    *
    *
@@ -335,7 +322,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for memcacheVersion.
    */
   int getMemcacheVersionValue();
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public interface InstanceOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -380,7 +365,6 @@ public interface InstanceOrBuilder
    * @return The parameters.
    */
   com.google.cloud.memcache.v1beta2.MemcacheParameters getParameters();
-
   /**
    *
    *
@@ -406,7 +390,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.memcache.v1beta2.Instance.Node> getMemcacheNodesList();
-
   /**
    *
    *
@@ -420,7 +403,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.memcache.v1beta2.Instance.Node getMemcacheNodes(int index);
-
   /**
    *
    *
@@ -434,7 +416,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getMemcacheNodesCount();
-
   /**
    *
    *
@@ -449,7 +430,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.memcache.v1beta2.Instance.NodeOrBuilder>
       getMemcacheNodesOrBuilderList();
-
   /**
    *
    *
@@ -477,7 +457,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -491,7 +470,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -517,7 +495,6 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -531,7 +508,6 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -558,7 +534,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -589,7 +564,6 @@ public interface InstanceOrBuilder
    * @return The memcacheFullVersion.
    */
   java.lang.String getMemcacheFullVersion();
-
   /**
    *
    *
@@ -618,7 +592,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<com.google.cloud.memcache.v1beta2.Instance.InstanceMessage>
       getInstanceMessagesList();
-
   /**
    *
    *
@@ -630,7 +603,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.memcache.v1beta2.Instance.InstanceMessage getInstanceMessages(int index);
-
   /**
    *
    *
@@ -642,7 +614,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getInstanceMessagesCount();
-
   /**
    *
    *
@@ -655,7 +626,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.memcache.v1beta2.Instance.InstanceMessageOrBuilder>
       getInstanceMessagesOrBuilderList();
-
   /**
    *
    *
@@ -681,7 +651,6 @@ public interface InstanceOrBuilder
    * @return The discoveryEndpoint.
    */
   java.lang.String getDiscoveryEndpoint();
-
   /**
    *
    *
@@ -722,7 +691,6 @@ public interface InstanceOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
-
   /**
    *
    *
@@ -737,7 +705,6 @@ public interface InstanceOrBuilder
    * @return The maintenancePolicy.
    */
   com.google.cloud.memcache.v1beta2.MaintenancePolicy getMaintenancePolicy();
-
   /**
    *
    *
@@ -765,7 +732,6 @@ public interface InstanceOrBuilder
    * @return Whether the maintenanceSchedule field is set.
    */
   boolean hasMaintenanceSchedule();
-
   /**
    *
    *
@@ -780,7 +746,6 @@ public interface InstanceOrBuilder
    * @return The maintenanceSchedule.
    */
   com.google.cloud.memcache.v1beta2.MaintenanceSchedule getMaintenanceSchedule();
-
   /**
    *
    *

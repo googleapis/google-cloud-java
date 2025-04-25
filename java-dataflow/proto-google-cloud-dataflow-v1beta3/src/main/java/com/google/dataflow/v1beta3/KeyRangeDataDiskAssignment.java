@@ -36,7 +36,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.KeyRangeDataDiskAssignment)
     KeyRangeDataDiskAssignmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KeyRangeDataDiskAssignment.newBuilder() to construct.
   private KeyRangeDataDiskAssignment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object start_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object end_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataDisk_ = "";
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -412,7 +405,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -630,7 +622,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object start_ = "";
-
     /**
      *
      *
@@ -653,7 +644,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     }
 
     private java.lang.Object end_ = "";
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +834,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
     }
 
     private java.lang.Object dataDisk_ = "";
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class KeyRangeDataDiskAssignment extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

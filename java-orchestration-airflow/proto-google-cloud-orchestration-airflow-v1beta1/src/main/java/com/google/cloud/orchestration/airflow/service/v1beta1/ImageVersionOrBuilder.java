@@ -37,7 +37,6 @@ public interface ImageVersionOrBuilder
    * @return The imageVersionId.
    */
   java.lang.String getImageVersionId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ImageVersionOrBuilder
    * @return A list containing the supportedPythonVersions.
    */
   java.util.List<java.lang.String> getSupportedPythonVersionsList();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ImageVersionOrBuilder
    * @return The count of supportedPythonVersions.
    */
   int getSupportedPythonVersionsCount();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ImageVersionOrBuilder
    * @return The supportedPythonVersions at the given index.
    */
   java.lang.String getSupportedPythonVersions(int index);
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface ImageVersionOrBuilder
    * @return Whether the releaseDate field is set.
    */
   boolean hasReleaseDate();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface ImageVersionOrBuilder
    * @return The releaseDate.
    */
   com.google.type.Date getReleaseDate();
-
   /**
    *
    *

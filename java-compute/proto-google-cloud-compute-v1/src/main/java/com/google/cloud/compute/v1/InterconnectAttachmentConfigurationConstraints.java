@@ -33,7 +33,6 @@ public final class InterconnectAttachmentConfigurationConstraints
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraints)
     InterconnectAttachmentConfigurationConstraintsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InterconnectAttachmentConfigurationConstraints.newBuilder() to construct.
   private InterconnectAttachmentConfigurationConstraints(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -131,7 +130,6 @@ public final class InterconnectAttachmentConfigurationConstraints
      * <code>UNDEFINED_BGP_MD5 = 0;</code>
      */
     public static final int UNDEFINED_BGP_MD5_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class InterconnectAttachmentConfigurationConstraints
      * <code>MD5_OPTIONAL = 532156673;</code>
      */
     public static final int MD5_OPTIONAL_VALUE = 532156673;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class InterconnectAttachmentConfigurationConstraints
      * <code>MD5_REQUIRED = 218034496;</code>
      */
     public static final int MD5_REQUIRED_VALUE = 218034496;
-
     /**
      *
      *
@@ -258,7 +254,6 @@ public final class InterconnectAttachmentConfigurationConstraints
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bgpMd5_ = "";
-
   /**
    *
    *
@@ -275,7 +270,6 @@ public final class InterconnectAttachmentConfigurationConstraints
   public boolean hasBgpMd5() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -300,7 +294,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       return s;
     }
   }
-
   /**
    *
    *
@@ -332,7 +325,6 @@ public final class InterconnectAttachmentConfigurationConstraints
   private java.util.List<
           com.google.cloud.compute.v1.InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange>
       bgpPeerAsnRanges_;
-
   /**
    *
    *
@@ -350,7 +342,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       getBgpPeerAsnRangesList() {
     return bgpPeerAsnRanges_;
   }
-
   /**
    *
    *
@@ -370,7 +361,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       getBgpPeerAsnRangesOrBuilderList() {
     return bgpPeerAsnRanges_;
   }
-
   /**
    *
    *
@@ -386,7 +376,6 @@ public final class InterconnectAttachmentConfigurationConstraints
   public int getBgpPeerAsnRangesCount() {
     return bgpPeerAsnRanges_.size();
   }
-
   /**
    *
    *
@@ -403,7 +392,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       getBgpPeerAsnRanges(int index) {
     return bgpPeerAsnRanges_.get(index);
   }
-
   /**
    *
    *
@@ -607,7 +595,6 @@ public final class InterconnectAttachmentConfigurationConstraints
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -871,7 +858,6 @@ public final class InterconnectAttachmentConfigurationConstraints
     private int bitField0_;
 
     private java.lang.Object bgpMd5_ = "";
-
     /**
      *
      *
@@ -887,7 +873,6 @@ public final class InterconnectAttachmentConfigurationConstraints
     public boolean hasBgpMd5() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -911,7 +896,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -935,7 +919,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +941,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +959,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1029,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return bgpPeerAsnRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1047,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return bgpPeerAsnRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1066,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return bgpPeerAsnRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1093,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1118,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1144,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1171,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1195,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1220,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1246,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1267,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1288,6 @@ public final class InterconnectAttachmentConfigurationConstraints
       }
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1304,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         getBgpPeerAsnRangesBuilder(int index) {
       return getBgpPeerAsnRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1356,7 +1324,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return bgpPeerAsnRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1379,7 +1346,6 @@ public final class InterconnectAttachmentConfigurationConstraints
         return java.util.Collections.unmodifiableList(bgpPeerAsnRanges_);
       }
     }
-
     /**
      *
      *
@@ -1400,7 +1366,6 @@ public final class InterconnectAttachmentConfigurationConstraints
                   .InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1422,7 +1387,6 @@ public final class InterconnectAttachmentConfigurationConstraints
                   .InterconnectAttachmentConfigurationConstraintsBgpPeerASNRange
                   .getDefaultInstance());
     }
-
     /**
      *
      *

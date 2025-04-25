@@ -33,7 +33,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig)
     RagRetrievalConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RagRetrievalConfig.newBuilder() to construct.
   private RagRetrievalConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the vectorDistanceThreshold field is set.
      */
     boolean hasVectorDistanceThreshold();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the vectorSimilarityThreshold field is set.
      */
     boolean hasVectorSimilarityThreshold();
-
     /**
      *
      *
@@ -137,7 +134,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return The metadataFilter.
      */
     java.lang.String getMetadataFilter();
-
     /**
      *
      *
@@ -154,7 +150,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     com.google.cloud.aiplatform.v1.RagRetrievalConfig.Filter.VectorDbThresholdCase
         getVectorDbThresholdCase();
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Filter)
       FilterOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Filter.newBuilder() to construct.
     private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -217,7 +211,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       private VectorDbThresholdCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -251,7 +244,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int VECTOR_DISTANCE_THRESHOLD_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -268,7 +260,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasVectorDistanceThreshold() {
       return vectorDbThresholdCase_ == 3;
     }
-
     /**
      *
      *
@@ -290,7 +281,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int VECTOR_SIMILARITY_THRESHOLD_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -308,7 +298,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasVectorSimilarityThreshold() {
       return vectorDbThresholdCase_ == 4;
     }
-
     /**
      *
      *
@@ -334,7 +323,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object metadataFilter_ = "";
-
     /**
      *
      *
@@ -358,7 +346,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -593,7 +580,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -847,7 +833,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasVectorDistanceThreshold() {
         return vectorDbThresholdCase_ == 3;
       }
-
       /**
        *
        *
@@ -867,7 +852,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         }
         return 0D;
       }
-
       /**
        *
        *
@@ -889,7 +873,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +911,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasVectorSimilarityThreshold() {
         return vectorDbThresholdCase_ == 4;
       }
-
       /**
        *
        *
@@ -948,7 +930,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         }
         return 0D;
       }
-
       /**
        *
        *
@@ -970,7 +951,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -994,7 +974,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object metadataFilter_ = "";
-
       /**
        *
        *
@@ -1017,7 +996,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1040,7 +1018,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1062,7 +1039,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1080,7 +1056,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1187,7 +1162,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the rankService field is set.
      */
     boolean hasRankService();
-
     /**
      *
      *
@@ -1202,7 +1176,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return The rankService.
      */
     com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService getRankService();
-
     /**
      *
      *
@@ -1231,7 +1204,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the llmRanker field is set.
      */
     boolean hasLlmRanker();
-
     /**
      *
      *
@@ -1246,7 +1218,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
      * @return The llmRanker.
      */
     com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker getLlmRanker();
-
     /**
      *
      *
@@ -1264,7 +1235,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankingConfigCase
         getRankingConfigCase();
   }
-
   /**
    *
    *
@@ -1279,7 +1249,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking)
       RankingOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Ranking.newBuilder() to construct.
     private Ranking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1326,7 +1295,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
        * @return Whether the modelName field is set.
        */
       boolean hasModelName();
-
       /**
        *
        *
@@ -1340,7 +1308,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
        * @return The modelName.
        */
       java.lang.String getModelName();
-
       /**
        *
        *
@@ -1355,7 +1322,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
        */
       com.google.protobuf.ByteString getModelNameBytes();
     }
-
     /**
      *
      *
@@ -1370,7 +1336,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService)
         RankServiceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use RankService.newBuilder() to construct.
       private RankService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1407,7 +1372,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -1424,7 +1388,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasModelName() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1449,7 +1412,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -1644,7 +1606,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1846,7 +1807,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object modelName_ = "";
-
         /**
          *
          *
@@ -1862,7 +1822,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         public boolean hasModelName() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -1886,7 +1845,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1910,7 +1868,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1933,7 +1890,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1952,7 +1908,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2063,7 +2018,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
        * @return Whether the modelName field is set.
        */
       boolean hasModelName();
-
       /**
        *
        *
@@ -2077,7 +2031,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
        * @return The modelName.
        */
       java.lang.String getModelName();
-
       /**
        *
        *
@@ -2092,7 +2045,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
        */
       com.google.protobuf.ByteString getModelNameBytes();
     }
-
     /**
      *
      *
@@ -2107,7 +2059,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker)
         LlmRankerOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use LlmRanker.newBuilder() to construct.
       private LlmRanker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2143,7 +2094,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -2160,7 +2110,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasModelName() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2185,7 +2134,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -2379,7 +2327,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2580,7 +2527,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object modelName_ = "";
-
         /**
          *
          *
@@ -2596,7 +2542,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         public boolean hasModelName() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -2620,7 +2565,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2644,7 +2588,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2667,7 +2610,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2686,7 +2628,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2796,7 +2737,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       private RankingConfigCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2830,7 +2770,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int RANK_SERVICE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -2848,7 +2787,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasRankService() {
       return rankingConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -2871,7 +2809,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -2895,7 +2832,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int LLM_RANKER_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -2913,7 +2849,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasLlmRanker() {
       return rankingConfigCase_ == 3;
     }
-
     /**
      *
      *
@@ -2935,7 +2870,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       return com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -3156,7 +3090,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3396,7 +3329,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankService.Builder,
               com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.RankServiceOrBuilder>
           rankServiceBuilder_;
-
       /**
        *
        *
@@ -3414,7 +3346,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasRankService() {
         return rankingConfigCase_ == 1;
       }
-
       /**
        *
        *
@@ -3446,7 +3377,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3472,7 +3402,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         rankingConfigCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -3496,7 +3425,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         rankingConfigCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -3535,7 +3463,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         rankingConfigCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -3563,7 +3490,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -3579,7 +3505,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           getRankServiceBuilder() {
         return getRankServiceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3605,7 +3530,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3649,7 +3573,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
               com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRanker.Builder,
               com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.LlmRankerOrBuilder>
           llmRankerBuilder_;
-
       /**
        *
        *
@@ -3667,7 +3590,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasLlmRanker() {
         return rankingConfigCase_ == 3;
       }
-
       /**
        *
        *
@@ -3698,7 +3620,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3724,7 +3645,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         rankingConfigCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -3748,7 +3668,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         rankingConfigCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -3787,7 +3706,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         rankingConfigCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -3815,7 +3733,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -3831,7 +3748,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
           getLlmRankerBuilder() {
         return getLlmRankerFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3857,7 +3773,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3963,7 +3878,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int TOP_K_FIELD_NUMBER = 1;
   private int topK_ = 0;
-
   /**
    *
    *
@@ -3982,7 +3896,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int FILTER_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.RagRetrievalConfig.Filter filter_;
-
   /**
    *
    *
@@ -4000,7 +3913,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4020,7 +3932,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.Filter.getDefaultInstance()
         : filter_;
   }
-
   /**
    *
    *
@@ -4041,7 +3952,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int RANKING_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking ranking_;
-
   /**
    *
    *
@@ -4059,7 +3969,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasRanking() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4079,7 +3988,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.getDefaultInstance()
         : ranking_;
   }
-
   /**
    *
    *
@@ -4285,7 +4193,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4516,7 +4423,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int topK_;
-
     /**
      *
      *
@@ -4532,7 +4438,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public int getTopK() {
       return topK_;
     }
-
     /**
      *
      *
@@ -4552,7 +4457,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4577,7 +4481,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.RagRetrievalConfig.Filter.Builder,
             com.google.cloud.aiplatform.v1.RagRetrievalConfig.FilterOrBuilder>
         filterBuilder_;
-
     /**
      *
      *
@@ -4594,7 +4497,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4617,7 +4519,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         return filterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4642,7 +4543,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4665,7 +4565,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4696,7 +4595,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4718,7 +4616,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4735,7 +4632,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4756,7 +4652,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             : filter_;
       }
     }
-
     /**
      *
      *
@@ -4791,7 +4686,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1.RagRetrievalConfig.Ranking.Builder,
             com.google.cloud.aiplatform.v1.RagRetrievalConfig.RankingOrBuilder>
         rankingBuilder_;
-
     /**
      *
      *
@@ -4808,7 +4702,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasRanking() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4831,7 +4724,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
         return rankingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4856,7 +4748,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4879,7 +4770,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4910,7 +4800,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4932,7 +4821,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4949,7 +4837,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRankingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4971,7 +4858,6 @@ public final class RagRetrievalConfig extends com.google.protobuf.GeneratedMessa
             : ranking_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.EncryptionConfig)
     EncryptionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EncryptionConfig.newBuilder() to construct.
   private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <code>ENCRYPTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ENCRYPTION_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <code>ENCRYPTING = 1;</code>
      */
     public static final int ENCRYPTING_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * <code>COMPLETED = 2;</code>
      */
     public static final int COMPLETED_VALUE = 2;
-
     /**
      *
      *
@@ -280,7 +276,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire for errorCode.
      */
     int getErrorCodeValue();
-
     /**
      *
      *
@@ -309,7 +304,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
-
     /**
      *
      *
@@ -324,7 +318,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getErrorMessageBytes();
   }
-
   /**
    *
    *
@@ -339,7 +332,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.EncryptionConfig.FailureDetails)
       FailureDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FailureDetails.newBuilder() to construct.
     private FailureDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -424,7 +416,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
        * <code>UNKNOWN = 0;</code>
        */
       public static final int UNKNOWN_VALUE = 0;
-
       /**
        *
        *
@@ -435,7 +426,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
        * <code>INTERNAL_ERROR = 1;</code>
        */
       public static final int INTERNAL_ERROR_VALUE = 1;
-
       /**
        *
        *
@@ -534,7 +524,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int ERROR_CODE_FIELD_NUMBER = 1;
     private int errorCode_ = 0;
-
     /**
      *
      *
@@ -552,7 +541,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     public int getErrorCodeValue() {
       return errorCode_;
     }
-
     /**
      *
      *
@@ -580,7 +568,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
-
     /**
      *
      *
@@ -605,7 +592,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1009,7 +994,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private int errorCode_ = 0;
-
       /**
        *
        *
@@ -1027,7 +1011,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       public int getErrorCodeValue() {
         return errorCode_;
       }
-
       /**
        *
        *
@@ -1048,7 +1031,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1071,7 +1053,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             ? com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetails.ErrorCode.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1096,7 +1077,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1118,7 +1098,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object errorMessage_ = "";
-
       /**
        *
        *
@@ -1142,7 +1121,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1166,7 +1144,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1189,7 +1166,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1208,7 +1184,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1305,7 +1280,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1334,7 +1308,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1368,7 +1341,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -1394,7 +1366,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1423,7 +1394,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1440,7 +1410,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1457,7 +1426,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1475,7 +1443,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1492,7 +1459,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1509,7 +1475,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1527,7 +1492,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int ENCRYPTION_STATE_FIELD_NUMBER = 5;
   private int encryptionState_ = 0;
-
   /**
    *
    *
@@ -1545,7 +1509,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   public int getEncryptionStateValue() {
     return encryptionState_;
   }
-
   /**
    *
    *
@@ -1572,7 +1535,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1596,7 +1558,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1623,7 +1584,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int FAILURE_DETAILS_FIELD_NUMBER = 7;
   private com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetails failureDetails_;
-
   /**
    *
    *
@@ -1641,7 +1601,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasFailureDetails() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1661,7 +1620,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetails.getDefaultInstance()
         : failureDetails_;
   }
-
   /**
    *
    *
@@ -1915,7 +1873,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2211,7 +2168,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2239,7 +2195,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2267,7 +2222,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2294,7 +2248,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2317,7 +2270,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2347,7 +2299,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -2372,7 +2323,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2397,7 +2347,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2421,7 +2370,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2441,7 +2389,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2420,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2490,7 +2436,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2513,7 +2458,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2538,7 +2482,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2560,7 +2503,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2590,7 +2532,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2612,7 +2553,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2629,7 +2569,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2650,7 +2589,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2685,7 +2623,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2702,7 +2639,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2725,7 +2661,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2750,7 +2685,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2772,7 +2706,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2802,7 +2735,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2824,7 +2756,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2841,7 +2772,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2862,7 +2792,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2892,7 +2821,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private int encryptionState_ = 0;
-
     /**
      *
      *
@@ -2910,7 +2838,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     public int getEncryptionStateValue() {
       return encryptionState_;
     }
-
     /**
      *
      *
@@ -2931,7 +2858,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2953,7 +2879,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dataplex.v1.EncryptionConfig.EncryptionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2978,7 +2903,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3000,7 +2924,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -3023,7 +2946,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3046,7 +2968,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3068,7 +2989,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3086,7 +3006,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3116,7 +3035,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetails.Builder,
             com.google.cloud.dataplex.v1.EncryptionConfig.FailureDetailsOrBuilder>
         failureDetailsBuilder_;
-
     /**
      *
      *
@@ -3133,7 +3051,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasFailureDetails() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3156,7 +3073,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         return failureDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3182,7 +3098,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3205,7 +3120,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3238,7 +3152,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3260,7 +3173,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3278,7 +3190,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getFailureDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3300,7 +3211,6 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             : failureDetails_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface UpdateEntityRequestOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateEntityRequestOrBuilder
    * @return The entity.
    */
   com.google.cloud.dataplex.v1.Entity getEntity();
-
   /**
    *
    *

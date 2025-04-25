@@ -33,7 +33,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.PersonDetectionAnnotation)
     PersonDetectionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PersonDetectionAnnotation.newBuilder() to construct.
   private PersonDetectionAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1.Track> tracks_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.videointelligence.v1.Track> getTracksList() {
     return tracks_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       getTracksOrBuilderList() {
     return tracks_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
   public int getTracksCount() {
     return tracks_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
   public com.google.cloud.videointelligence.v1.Track getTracks(int index) {
     return tracks_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
     public com.google.cloud.videointelligence.v1.Track.Builder getTracksBuilder(int index) {
       return getTracksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return tracksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(tracks_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       return getTracksFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       return getTracksFieldBuilder()
           .addBuilder(index, com.google.cloud.videointelligence.v1.Track.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1004,7 +977,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1037,6 @@ public final class PersonDetectionAnnotation extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

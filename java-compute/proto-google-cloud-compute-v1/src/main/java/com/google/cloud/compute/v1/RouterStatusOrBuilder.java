@@ -34,7 +34,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Route> getBestRoutesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   com.google.cloud.compute.v1.Route getBestRoutes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   int getBestRoutesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes = 395826693;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder> getBestRoutesOrBuilderList();
-
   /**
    *
    *
@@ -89,7 +85,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Route> getBestRoutesForRouterList();
-
   /**
    *
    *
@@ -100,7 +95,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
    */
   com.google.cloud.compute.v1.Route getBestRoutesForRouter(int index);
-
   /**
    *
    *
@@ -111,7 +105,6 @@ public interface RouterStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route best_routes_for_router = 119389689;</code>
    */
   int getBestRoutesForRouterCount();
-
   /**
    *
    *
@@ -123,7 +116,6 @@ public interface RouterStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder>
       getBestRoutesForRouterOrBuilderList();
-
   /**
    *
    *
@@ -140,26 +132,22 @@ public interface RouterStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterStatusBgpPeerStatus> getBgpPeerStatusList();
-
   /**
    * <code>repeated .google.cloud.compute.v1.RouterStatusBgpPeerStatus bgp_peer_status = 218459131;
    * </code>
    */
   com.google.cloud.compute.v1.RouterStatusBgpPeerStatus getBgpPeerStatus(int index);
-
   /**
    * <code>repeated .google.cloud.compute.v1.RouterStatusBgpPeerStatus bgp_peer_status = 218459131;
    * </code>
    */
   int getBgpPeerStatusCount();
-
   /**
    * <code>repeated .google.cloud.compute.v1.RouterStatusBgpPeerStatus bgp_peer_status = 218459131;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterStatusBgpPeerStatusOrBuilder>
       getBgpPeerStatusOrBuilderList();
-
   /**
    * <code>repeated .google.cloud.compute.v1.RouterStatusBgpPeerStatus bgp_peer_status = 218459131;
    * </code>
@@ -169,17 +157,13 @@ public interface RouterStatusOrBuilder
 
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatus> getNatStatusList();
-
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   com.google.cloud.compute.v1.RouterStatusNatStatus getNatStatus(int index);
-
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   int getNatStatusCount();
-
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.RouterStatusNatStatusOrBuilder>
       getNatStatusOrBuilderList();
-
   /** <code>repeated .google.cloud.compute.v1.RouterStatusNatStatus nat_status = 63098064;</code> */
   com.google.cloud.compute.v1.RouterStatusNatStatusOrBuilder getNatStatusOrBuilder(int index);
 
@@ -195,7 +179,6 @@ public interface RouterStatusOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -208,7 +191,6 @@ public interface RouterStatusOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *

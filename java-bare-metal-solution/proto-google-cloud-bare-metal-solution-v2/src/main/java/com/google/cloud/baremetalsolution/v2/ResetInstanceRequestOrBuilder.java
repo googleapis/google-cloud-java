@@ -38,7 +38,6 @@ public interface ResetInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

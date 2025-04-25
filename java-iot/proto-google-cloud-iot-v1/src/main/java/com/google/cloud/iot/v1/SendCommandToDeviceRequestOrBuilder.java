@@ -40,7 +40,6 @@ public interface SendCommandToDeviceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface SendCommandToDeviceRequestOrBuilder
    * @return The subfolder.
    */
   java.lang.String getSubfolder();
-
   /**
    *
    *

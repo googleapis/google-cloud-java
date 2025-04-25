@@ -34,7 +34,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.ListCertificateTemplatesResponse)
     ListCertificateTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCertificateTemplatesResponse.newBuilder() to construct.
   private ListCertificateTemplatesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.CertificateTemplate>
       certificateTemplates_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       getCertificateTemplatesList() {
     return certificateTemplates_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       getCertificateTemplatesOrBuilderList() {
     return certificateTemplates_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
   public int getCertificateTemplatesCount() {
     return certificateTemplates_.size();
   }
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       int index) {
     return certificateTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -256,7 +246,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -272,7 +261,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -478,7 +466,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -795,7 +782,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return certificateTemplatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return certificateTemplatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return certificateTemplatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -863,7 +847,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +946,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +970,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +994,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1038,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1054,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         getCertificateTemplatesBuilder(int index) {
       return getCertificateTemplatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1100,7 +1074,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return certificateTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1095,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(certificateTemplates_);
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1113,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
           .addBuilder(
               com.google.cloud.security.privateca.v1.CertificateTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
               index,
               com.google.cloud.security.privateca.v1.CertificateTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1200,7 +1170,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1225,7 +1194,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1218,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1241,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1260,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1294,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1345,7 +1309,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1360,7 +1323,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1376,7 +1338,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1392,7 +1353,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1416,7 +1376,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1398,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1417,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1435,6 @@ public final class ListCertificateTemplatesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

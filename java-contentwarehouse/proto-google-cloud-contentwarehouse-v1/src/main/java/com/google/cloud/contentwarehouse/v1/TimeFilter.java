@@ -33,7 +33,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.TimeFilter)
     TimeFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimeFilter.newBuilder() to construct.
   private TimeFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>TIME_FIELD_UNSPECIFIED = 0;</code>
      */
     public static final int TIME_FIELD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATE_TIME = 1;</code>
      */
     public static final int CREATE_TIME_VALUE = 1;
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_TIME = 2;</code>
      */
     public static final int UPDATE_TIME_VALUE = 2;
-
     /**
      *
      *
@@ -249,7 +245,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TIME_RANGE_FIELD_NUMBER = 1;
   private com.google.type.Interval timeRange_;
-
   /**
    * <code>.google.type.Interval time_range = 1;</code>
    *
@@ -259,7 +254,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>.google.type.Interval time_range = 1;</code>
    *
@@ -269,7 +263,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Interval getTimeRange() {
     return timeRange_ == null ? com.google.type.Interval.getDefaultInstance() : timeRange_;
   }
-
   /** <code>.google.type.Interval time_range = 1;</code> */
   @java.lang.Override
   public com.google.type.IntervalOrBuilder getTimeRangeOrBuilder() {
@@ -278,7 +271,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_FIELD_FIELD_NUMBER = 2;
   private int timeField_ = 0;
-
   /**
    *
    *
@@ -296,7 +288,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
   public int getTimeFieldValue() {
     return timeField_;
   }
-
   /**
    *
    *
@@ -496,7 +487,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -713,7 +703,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         timeRangeBuilder_;
-
     /**
      * <code>.google.type.Interval time_range = 1;</code>
      *
@@ -722,7 +711,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>.google.type.Interval time_range = 1;</code>
      *
@@ -735,7 +723,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
         return timeRangeBuilder_.getMessage();
       }
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     public Builder setTimeRange(com.google.type.Interval value) {
       if (timeRangeBuilder_ == null) {
@@ -750,7 +737,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     public Builder setTimeRange(com.google.type.Interval.Builder builderForValue) {
       if (timeRangeBuilder_ == null) {
@@ -762,7 +748,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     public Builder mergeTimeRange(com.google.type.Interval value) {
       if (timeRangeBuilder_ == null) {
@@ -782,7 +767,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     public Builder clearTimeRange() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -794,14 +778,12 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     public com.google.type.Interval.Builder getTimeRangeBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getTimeRangeFieldBuilder().getBuilder();
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     public com.google.type.IntervalOrBuilder getTimeRangeOrBuilder() {
       if (timeRangeBuilder_ != null) {
@@ -810,7 +792,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
         return timeRange_ == null ? com.google.type.Interval.getDefaultInstance() : timeRange_;
       }
     }
-
     /** <code>.google.type.Interval time_range = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Interval,
@@ -830,7 +811,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int timeField_ = 0;
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
     public int getTimeFieldValue() {
       return timeField_;
     }
-
     /**
      *
      *
@@ -869,7 +848,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +869,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contentwarehouse.v1.TimeFilter.TimeField.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

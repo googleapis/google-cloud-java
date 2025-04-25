@@ -34,7 +34,6 @@ public final class EnableInteractiveSerialConsoleResponse
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.EnableInteractiveSerialConsoleResponse)
     EnableInteractiveSerialConsoleResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnableInteractiveSerialConsoleResponse.newBuilder() to construct.
   private EnableInteractiveSerialConsoleResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,7 +222,6 @@ public final class EnableInteractiveSerialConsoleResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

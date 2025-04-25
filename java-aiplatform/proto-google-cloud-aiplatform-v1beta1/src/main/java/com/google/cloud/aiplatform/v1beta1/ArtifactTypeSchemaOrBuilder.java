@@ -42,7 +42,6 @@ public interface ArtifactTypeSchemaOrBuilder
    * @return Whether the schemaTitle field is set.
    */
   boolean hasSchemaTitle();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface ArtifactTypeSchemaOrBuilder
    * @return The schemaTitle.
    */
   java.lang.String getSchemaTitle();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface ArtifactTypeSchemaOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSchemaUri();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface ArtifactTypeSchemaOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getSchemaUri();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface ArtifactTypeSchemaOrBuilder
    * @return Whether the instanceSchema field is set.
    */
   boolean hasInstanceSchema();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface ArtifactTypeSchemaOrBuilder
    * @return The instanceSchema.
    */
   java.lang.String getInstanceSchema();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface ArtifactTypeSchemaOrBuilder
    * @return The schemaVersion.
    */
   java.lang.String getSchemaVersion();
-
   /**
    *
    *

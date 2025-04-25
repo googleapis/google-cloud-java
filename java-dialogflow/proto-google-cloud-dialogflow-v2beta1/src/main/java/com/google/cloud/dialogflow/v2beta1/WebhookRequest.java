@@ -33,7 +33,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.WebhookRequest)
     WebhookRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WebhookRequest.newBuilder() to construct.
   private WebhookRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object session_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseId_ = "";
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUERY_RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_;
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance()
         : queryResult_;
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_;
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       getAlternativeQueryResultsList() {
     return alternativeQueryResults_;
   }
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       getAlternativeQueryResultsOrBuilderList() {
     return alternativeQueryResults_;
   }
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   public int getAlternativeQueryResultsCount() {
     return alternativeQueryResults_.size();
   }
-
   /**
    *
    *
@@ -317,7 +305,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
     return alternativeQueryResults_.get(index);
   }
-
   /**
    *
    *
@@ -337,7 +324,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   public static final int ORIGINAL_DETECT_INTENT_REQUEST_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest
       originalDetectIntentRequest_;
-
   /**
    *
    *
@@ -356,7 +342,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOriginalDetectIntentRequest() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -378,7 +363,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest.getDefaultInstance()
         : originalDetectIntentRequest_;
   }
-
   /**
    *
    *
@@ -612,7 +596,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -929,7 +912,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object session_ = "";
-
     /**
      *
      *
@@ -962,7 +944,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -995,7 +976,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1007,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1034,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1068,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object responseId_ = "";
-
     /**
      *
      *
@@ -1114,7 +1091,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1114,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1136,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1154,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1184,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
             com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
         queryResultBuilder_;
-
     /**
      *
      *
@@ -1227,7 +1199,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryResult() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1220,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return queryResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1243,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1264,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1293,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1313,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1328,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQueryResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1382,7 +1347,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             : queryResult_;
       }
     }
-
     /**
      *
      *
@@ -1446,7 +1410,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return alternativeQueryResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1427,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return alternativeQueryResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1444,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return alternativeQueryResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1507,7 +1468,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1489,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1554,7 +1513,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1579,7 +1537,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1558,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1579,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1600,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1620,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1640,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1654,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         getAlternativeQueryResultsBuilder(int index) {
       return getAlternativeQueryResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1721,7 +1672,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return alternativeQueryResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1740,7 +1690,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(alternativeQueryResults_);
       }
     }
-
     /**
      *
      *
@@ -1756,7 +1705,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return getAlternativeQueryResultsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1772,7 +1720,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return getAlternativeQueryResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1815,7 +1762,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest.Builder,
             com.google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequestOrBuilder>
         originalDetectIntentRequestBuilder_;
-
     /**
      *
      *
@@ -1833,7 +1779,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOriginalDetectIntentRequest() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1858,7 +1803,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return originalDetectIntentRequestBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1885,7 +1829,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1852,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1943,7 +1885,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1966,7 +1907,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1985,7 +1925,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOriginalDetectIntentRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2008,7 +1947,6 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             : originalDetectIntentRequest_;
       }
     }
-
     /**
      *
      *

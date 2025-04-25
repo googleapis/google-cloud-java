@@ -33,7 +33,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.ShippingDimension)
     ShippingDimensionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShippingDimension.newBuilder() to construct.
   private ShippingDimension(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
 
   public static final int VALUE_FIELD_NUMBER = 1;
   private double value_ = 0D;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -309,7 +305,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +505,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private double value_;
-
     /**
      *
      *
@@ -527,7 +521,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
     public double getValue() {
       return value_;
     }
-
     /**
      *
      *
@@ -548,7 +541,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object unit_ = "";
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class ShippingDimension extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.OutputAudioConfig)
     OutputAudioConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OutputAudioConfig.newBuilder() to construct.
   private OutputAudioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_ = 0;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
   private int sampleRateHertz_ = 0;
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int SYNTHESIZE_SPEECH_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig synthesizeSpeechConfig_;
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasSynthesizeSpeechConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.getDefaultInstance()
         : synthesizeSpeechConfig_;
   }
-
   /**
    *
    *
@@ -374,7 +367,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -605,7 +597,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int audioEncoding_ = 0;
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dialogflow.v2.OutputAudioEncoding.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int sampleRateHertz_;
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig.Builder,
             com.google.cloud.dialogflow.v2.SynthesizeSpeechConfigOrBuilder>
         synthesizeSpeechConfigBuilder_;
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasSynthesizeSpeechConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
         return synthesizeSpeechConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +909,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSynthesizeSpeechConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -952,7 +928,6 @@ public final class OutputAudioConfig extends com.google.protobuf.GeneratedMessag
             : synthesizeSpeechConfig_;
       }
     }
-
     /**
      *
      *

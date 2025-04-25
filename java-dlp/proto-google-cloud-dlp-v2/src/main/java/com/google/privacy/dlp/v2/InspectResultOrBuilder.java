@@ -34,7 +34,6 @@ public interface InspectResultOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Finding> getFindingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface InspectResultOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
   com.google.privacy.dlp.v2.Finding getFindings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface InspectResultOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
   int getFindingsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface InspectResultOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Finding findings = 1;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FindingOrBuilder> getFindingsOrBuilderList();
-
   /**
    *
    *

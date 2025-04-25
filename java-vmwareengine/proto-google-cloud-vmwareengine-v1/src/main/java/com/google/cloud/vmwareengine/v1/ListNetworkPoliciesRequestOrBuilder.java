@@ -41,7 +41,6 @@ public interface ListNetworkPoliciesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface ListNetworkPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -148,7 +146,6 @@ public interface ListNetworkPoliciesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -202,7 +199,6 @@ public interface ListNetworkPoliciesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface StreamingRecognitionResultOrBuilder
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
       getAlternativesList();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface StreamingRecognitionResultOrBuilder
    * </code>
    */
   com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative getAlternatives(int index);
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface StreamingRecognitionResultOrBuilder
    * </code>
    */
   int getAlternativesCount();
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface StreamingRecognitionResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface StreamingRecognitionResultOrBuilder
    * @return Whether the resultEndTime field is set.
    */
   boolean hasResultEndTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The resultEndTime.
    */
   com.google.protobuf.Duration getResultEndTime();
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public interface StreamingRecognitionResultOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

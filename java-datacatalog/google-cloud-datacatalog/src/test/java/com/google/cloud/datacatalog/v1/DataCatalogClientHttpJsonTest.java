@@ -43,7 +43,6 @@ import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -3519,7 +3518,6 @@ public class DataCatalogClientHttpJsonTest {
         MigrationConfig.newBuilder()
             .setTagTemplateMigration(TagTemplateMigration.forNumber(0))
             .setCatalogUiExperience(CatalogUIExperience.forNumber(0))
-            .setTemplateMigrationEnabledTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3621,7 +3619,6 @@ public class DataCatalogClientHttpJsonTest {
         MigrationConfig.newBuilder()
             .setTagTemplateMigration(TagTemplateMigration.forNumber(0))
             .setCatalogUiExperience(CatalogUIExperience.forNumber(0))
-            .setTemplateMigrationEnabledTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

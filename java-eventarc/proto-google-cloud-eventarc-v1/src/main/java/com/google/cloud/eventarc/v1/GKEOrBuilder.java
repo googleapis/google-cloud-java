@@ -37,7 +37,6 @@ public interface GKEOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface GKEOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface GKEOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface GKEOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface GKEOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

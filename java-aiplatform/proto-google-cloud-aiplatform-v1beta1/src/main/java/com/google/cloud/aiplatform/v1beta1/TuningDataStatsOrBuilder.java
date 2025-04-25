@@ -38,7 +38,6 @@ public interface TuningDataStatsOrBuilder
    * @return Whether the supervisedTuningDataStats field is set.
    */
   boolean hasSupervisedTuningDataStats();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TuningDataStatsOrBuilder
    * @return The supervisedTuningDataStats.
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats getSupervisedTuningDataStats();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface TuningDataStatsOrBuilder
    * @return Whether the distillationDataStats field is set.
    */
   boolean hasDistillationDataStats();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface TuningDataStatsOrBuilder
    * @return The distillationDataStats.
    */
   com.google.cloud.aiplatform.v1beta1.DistillationDataStats getDistillationDataStats();
-
   /**
    *
    *

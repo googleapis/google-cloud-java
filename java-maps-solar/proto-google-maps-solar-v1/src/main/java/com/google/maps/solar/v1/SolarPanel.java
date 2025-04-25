@@ -42,7 +42,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.SolarPanel)
     SolarPanelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SolarPanel.newBuilder() to construct.
   private SolarPanel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CENTER_FIELD_NUMBER = 1;
   private com.google.type.LatLng center_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCenter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getCenter() {
     return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORIENTATION_FIELD_NUMBER = 2;
   private int orientation_ = 0;
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
   public int getOrientationValue() {
     return orientation_;
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int YEARLY_ENERGY_DC_KWH_FIELD_NUMBER = 3;
   private float yearlyEnergyDcKwh_ = 0F;
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEGMENT_INDEX_FIELD_NUMBER = 4;
   private int segmentIndex_ = 0;
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSegmentIndex() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -420,7 +411,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +659,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         centerBuilder_;
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCenter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
         return centerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCenterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
         return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
       }
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int orientation_ = 0;
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     public int getOrientationValue() {
       return orientation_;
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.solar.v1.SolarPanelOrientation.forNumber(orientation_);
       return result == null ? com.google.maps.solar.v1.SolarPanelOrientation.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float yearlyEnergyDcKwh_;
-
     /**
      *
      *
@@ -963,7 +938,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     public float getYearlyEnergyDcKwh() {
       return yearlyEnergyDcKwh_;
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int segmentIndex_;
-
     /**
      *
      *
@@ -1024,7 +996,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSegmentIndex() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1043,7 +1014,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
     public int getSegmentIndex() {
       return segmentIndex_;
     }
-
     /**
      *
      *
@@ -1066,7 +1036,6 @@ public final class SolarPanel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

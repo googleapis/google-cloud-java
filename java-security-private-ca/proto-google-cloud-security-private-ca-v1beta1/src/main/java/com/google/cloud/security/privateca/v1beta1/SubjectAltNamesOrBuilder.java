@@ -36,7 +36,6 @@ public interface SubjectAltNamesOrBuilder
    * @return A list containing the dnsNames.
    */
   java.util.List<java.lang.String> getDnsNamesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The count of dnsNames.
    */
   int getDnsNamesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The dnsNames at the given index.
    */
   java.lang.String getDnsNames(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface SubjectAltNamesOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface SubjectAltNamesOrBuilder
    * @return A list containing the emailAddresses.
    */
   java.util.List<java.lang.String> getEmailAddressesList();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The count of emailAddresses.
    */
   int getEmailAddressesCount();
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The emailAddresses at the given index.
    */
   java.lang.String getEmailAddresses(int index);
-
   /**
    *
    *
@@ -198,7 +189,6 @@ public interface SubjectAltNamesOrBuilder
    * @return A list containing the ipAddresses.
    */
   java.util.List<java.lang.String> getIpAddressesList();
-
   /**
    *
    *
@@ -211,7 +201,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The count of ipAddresses.
    */
   int getIpAddressesCount();
-
   /**
    *
    *
@@ -225,7 +214,6 @@ public interface SubjectAltNamesOrBuilder
    * @return The ipAddresses at the given index.
    */
   java.lang.String getIpAddresses(int index);
-
   /**
    *
    *
@@ -250,7 +238,6 @@ public interface SubjectAltNamesOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1beta1.X509Extension custom_sans = 5;</code>
    */
   java.util.List<com.google.cloud.security.privateca.v1beta1.X509Extension> getCustomSansList();
-
   /**
    *
    *
@@ -261,7 +248,6 @@ public interface SubjectAltNamesOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1beta1.X509Extension custom_sans = 5;</code>
    */
   com.google.cloud.security.privateca.v1beta1.X509Extension getCustomSans(int index);
-
   /**
    *
    *
@@ -272,7 +258,6 @@ public interface SubjectAltNamesOrBuilder
    * <code>repeated .google.cloud.security.privateca.v1beta1.X509Extension custom_sans = 5;</code>
    */
   int getCustomSansCount();
-
   /**
    *
    *
@@ -284,7 +269,6 @@ public interface SubjectAltNamesOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1beta1.X509ExtensionOrBuilder>
       getCustomSansOrBuilderList();
-
   /**
    *
    *

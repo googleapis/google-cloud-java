@@ -36,7 +36,6 @@ public interface UploadFileInfoOrBuilder
    * @return The signedUri.
    */
   java.lang.String getSignedUri();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UploadFileInfoOrBuilder
    * </code>
    */
   int getHeadersCount();
-
   /**
    *
    *
@@ -73,11 +71,9 @@ public interface UploadFileInfoOrBuilder
    * </code>
    */
   boolean containsHeaders(java.lang.String key);
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
-
   /**
    *
    *
@@ -89,7 +85,6 @@ public interface UploadFileInfoOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface UploadFileInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface UploadFileInfoOrBuilder
    * @return Whether the uriExpirationTime field is set.
    */
   boolean hasUriExpirationTime();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface UploadFileInfoOrBuilder
    * @return The uriExpirationTime.
    */
   com.google.protobuf.Timestamp getUriExpirationTime();
-
   /**
    *
    *

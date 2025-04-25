@@ -117,8 +117,7 @@ public class MockAssuredWorkloadsServiceImpl extends AssuredWorkloadsServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RestrictAllowedResources, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method RestrictAllowedResources, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RestrictAllowedResourcesResponse.class.getName(),
                   Exception.class.getName())));

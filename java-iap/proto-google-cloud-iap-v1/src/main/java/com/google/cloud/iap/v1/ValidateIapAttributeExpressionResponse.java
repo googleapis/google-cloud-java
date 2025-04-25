@@ -34,7 +34,6 @@ public final class ValidateIapAttributeExpressionResponse
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ValidateIapAttributeExpressionResponse)
     ValidateIapAttributeExpressionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ValidateIapAttributeExpressionResponse.newBuilder() to construct.
   private ValidateIapAttributeExpressionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,7 +214,6 @@ public final class ValidateIapAttributeExpressionResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

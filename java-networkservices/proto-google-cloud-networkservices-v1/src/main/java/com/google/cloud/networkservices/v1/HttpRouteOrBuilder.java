@@ -37,7 +37,6 @@ public interface HttpRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface HttpRouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface HttpRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface HttpRouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface HttpRouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface HttpRouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface HttpRouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface HttpRouteOrBuilder
    * @return A list containing the hostnames.
    */
   java.util.List<java.lang.String> getHostnamesList();
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public interface HttpRouteOrBuilder
    * @return The count of hostnames.
    */
   int getHostnamesCount();
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public interface HttpRouteOrBuilder
    * @return The hostnames at the given index.
    */
   java.lang.String getHostnames(int index);
-
   /**
    *
    *
@@ -352,7 +342,6 @@ public interface HttpRouteOrBuilder
    * @return A list containing the meshes.
    */
   java.util.List<java.lang.String> getMeshesList();
-
   /**
    *
    *
@@ -373,7 +362,6 @@ public interface HttpRouteOrBuilder
    * @return The count of meshes.
    */
   int getMeshesCount();
-
   /**
    *
    *
@@ -395,7 +383,6 @@ public interface HttpRouteOrBuilder
    * @return The meshes at the given index.
    */
   java.lang.String getMeshes(int index);
-
   /**
    *
    *
@@ -437,7 +424,6 @@ public interface HttpRouteOrBuilder
    * @return A list containing the gateways.
    */
   java.util.List<java.lang.String> getGatewaysList();
-
   /**
    *
    *
@@ -457,7 +443,6 @@ public interface HttpRouteOrBuilder
    * @return The count of gateways.
    */
   int getGatewaysCount();
-
   /**
    *
    *
@@ -478,7 +463,6 @@ public interface HttpRouteOrBuilder
    * @return The gateways at the given index.
    */
   java.lang.String getGateways(int index);
-
   /**
    *
    *
@@ -510,7 +494,6 @@ public interface HttpRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -521,11 +504,9 @@ public interface HttpRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -536,7 +517,6 @@ public interface HttpRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -551,7 +531,6 @@ public interface HttpRouteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -577,7 +556,6 @@ public interface HttpRouteOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkservices.v1.HttpRoute.RouteRule> getRulesList();
-
   /**
    *
    *
@@ -592,7 +570,6 @@ public interface HttpRouteOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.HttpRoute.RouteRule getRules(int index);
-
   /**
    *
    *
@@ -607,7 +584,6 @@ public interface HttpRouteOrBuilder
    * </code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -623,7 +599,6 @@ public interface HttpRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.HttpRoute.RouteRuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *

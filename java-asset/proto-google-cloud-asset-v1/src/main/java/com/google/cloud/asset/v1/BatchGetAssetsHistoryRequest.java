@@ -33,7 +33,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.BatchGetAssetsHistoryRequest)
     BatchGetAssetsHistoryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchGetAssetsHistoryRequest.newBuilder() to construct.
   private BatchGetAssetsHistoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList assetNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getAssetNamesList() {
     return assetNames_;
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public int getAssetNamesCount() {
     return assetNames_.size();
   }
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public java.lang.String getAssetNames(int index) {
     return assetNames_.get(index);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
   private int contentType_ = 0;
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public int getContentTypeValue() {
     return contentType_;
   }
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
 
   public static final int READ_TIME_WINDOW_FIELD_NUMBER = 4;
   private com.google.cloud.asset.v1.TimeWindow readTimeWindow_;
-
   /**
    *
    *
@@ -291,7 +281,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public boolean hasReadTimeWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         ? com.google.cloud.asset.v1.TimeWindow.getDefaultInstance()
         : readTimeWindow_;
   }
-
   /**
    *
    *
@@ -345,7 +333,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList relationshipTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -375,7 +362,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getRelationshipTypesList() {
     return relationshipTypes_;
   }
-
   /**
    *
    *
@@ -405,7 +391,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public int getRelationshipTypesCount() {
     return relationshipTypes_.size();
   }
-
   /**
    *
    *
@@ -436,7 +421,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   public java.lang.String getRelationshipTypes(int index) {
     return relationshipTypes_.get(index);
   }
-
   /**
    *
    *
@@ -685,7 +669,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -957,7 +940,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -984,7 +966,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +992,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1017,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1038,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1074,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1119,7 +1096,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       assetNames_.makeImmutable();
       return assetNames_;
     }
-
     /**
      *
      *
@@ -1141,7 +1117,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public int getAssetNamesCount() {
       return assetNames_.size();
     }
-
     /**
      *
      *
@@ -1164,7 +1139,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public java.lang.String getAssetNames(int index) {
       return assetNames_.get(index);
     }
-
     /**
      *
      *
@@ -1187,7 +1161,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
       return assetNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1218,7 +1191,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1220,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1246,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1271,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1303,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     }
 
     private int contentType_ = 0;
-
     /**
      *
      *
@@ -1352,7 +1320,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public int getContentTypeValue() {
       return contentType_;
     }
-
     /**
      *
      *
@@ -1373,7 +1340,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1359,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
           com.google.cloud.asset.v1.ContentType.forNumber(contentType_);
       return result == null ? com.google.cloud.asset.v1.ContentType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1417,7 +1382,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1408,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
             com.google.cloud.asset.v1.TimeWindow.Builder,
             com.google.cloud.asset.v1.TimeWindowOrBuilder>
         readTimeWindowBuilder_;
-
     /**
      *
      *
@@ -1466,7 +1429,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public boolean hasReadTimeWindow() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1494,7 +1456,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         return readTimeWindowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1524,7 +1485,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1511,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1586,7 +1545,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1571,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1592,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return getReadTimeWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1661,7 +1617,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
             : readTimeWindow_;
       }
     }
-
     /**
      *
      *
@@ -1704,7 +1659,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1736,7 +1690,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       relationshipTypes_.makeImmutable();
       return relationshipTypes_;
     }
-
     /**
      *
      *
@@ -1767,7 +1720,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public int getRelationshipTypesCount() {
       return relationshipTypes_.size();
     }
-
     /**
      *
      *
@@ -1799,7 +1751,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public java.lang.String getRelationshipTypes(int index) {
       return relationshipTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1831,7 +1782,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getRelationshipTypesBytes(int index) {
       return relationshipTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1871,7 +1821,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1910,7 +1859,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1946,7 +1894,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1981,7 +1928,6 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

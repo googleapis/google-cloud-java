@@ -37,7 +37,6 @@ public interface BatchCreateRowsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface BatchCreateRowsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.CreateRowRequest> getRequestsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface BatchCreateRowsRequestOrBuilder
    * </code>
    */
   com.google.area120.tables.v1alpha1.CreateRowRequest getRequests(int index);
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface BatchCreateRowsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface BatchCreateRowsRequestOrBuilder
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.CreateRowRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

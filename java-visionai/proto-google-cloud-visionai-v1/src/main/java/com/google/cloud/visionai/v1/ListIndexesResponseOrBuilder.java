@@ -34,7 +34,6 @@ public interface ListIndexesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Index indexes = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Index> getIndexesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListIndexesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Index indexes = 1;</code>
    */
   com.google.cloud.visionai.v1.Index getIndexes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListIndexesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Index indexes = 1;</code>
    */
   int getIndexesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListIndexesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Index indexes = 1;</code>
    */
   java.util.List<? extends com.google.cloud.visionai.v1.IndexOrBuilder> getIndexesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListIndexesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

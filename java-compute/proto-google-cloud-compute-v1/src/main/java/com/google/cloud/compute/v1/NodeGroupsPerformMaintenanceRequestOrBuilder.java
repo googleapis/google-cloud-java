@@ -36,7 +36,6 @@ public interface NodeGroupsPerformMaintenanceRequestOrBuilder
    * @return A list containing the nodes.
    */
   java.util.List<java.lang.String> getNodesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NodeGroupsPerformMaintenanceRequestOrBuilder
    * @return The count of nodes.
    */
   int getNodesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface NodeGroupsPerformMaintenanceRequestOrBuilder
    * @return The nodes at the given index.
    */
   java.lang.String getNodes(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface NodeGroupsPerformMaintenanceRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface NodeGroupsPerformMaintenanceRequestOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *

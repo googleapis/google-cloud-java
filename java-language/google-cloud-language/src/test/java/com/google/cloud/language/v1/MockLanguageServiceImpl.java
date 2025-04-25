@@ -115,8 +115,7 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AnalyzeEntitySentiment, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method AnalyzeEntitySentiment, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnalyzeEntitySentimentResponse.class.getName(),
                   Exception.class.getName())));

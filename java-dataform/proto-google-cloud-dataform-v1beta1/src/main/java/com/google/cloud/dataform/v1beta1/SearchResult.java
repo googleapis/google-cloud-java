@@ -33,7 +33,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.SearchResult)
     SearchResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchResult.newBuilder() to construct.
   private SearchResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     private EntryCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFile() {
     return entryCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataform.v1beta1.FileSearchResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECTORY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDirectory() {
     return entryCase_ == 2;
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataform.v1beta1.DirectorySearchResult.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.FileSearchResult.Builder,
             com.google.cloud.dataform.v1beta1.FileSearchResultOrBuilder>
         fileBuilder_;
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFile() {
       return entryCase_ == 1;
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataform.v1beta1.FileSearchResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataform.v1beta1.FileSearchResult.Builder getFileBuilder() {
       return getFileFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataform.v1beta1.FileSearchResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.DirectorySearchResult.Builder,
             com.google.cloud.dataform.v1beta1.DirectorySearchResultOrBuilder>
         directoryBuilder_;
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDirectory() {
       return entryCase_ == 2;
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataform.v1beta1.DirectorySearchResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       entryCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +984,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataform.v1beta1.DirectorySearchResult.Builder getDirectoryBuilder() {
       return getDirectoryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1043,7 +1017,6 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataform.v1beta1.DirectorySearchResult.getDefaultInstance();
       }
     }
-
     /**
      *
      *

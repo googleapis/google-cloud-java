@@ -37,7 +37,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the autoscalingPolicy field is set.
    */
   boolean hasAutoscalingPolicy();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AutoscalerOrBuilder
    * @return The autoscalingPolicy.
    */
   com.google.cloud.compute.v1.AutoscalingPolicy getAutoscalingPolicy();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface AutoscalerOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface AutoscalerOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface AutoscalerOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface AutoscalerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the recommendedSize field is set.
    */
   boolean hasRecommendedSize();
-
   /**
    *
    *
@@ -284,7 +272,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -297,7 +284,6 @@ public interface AutoscalerOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public interface AutoscalerOrBuilder
    * </code>
    */
   int getScalingScheduleStatusCount();
-
   /**
    *
    *
@@ -336,12 +321,10 @@ public interface AutoscalerOrBuilder
    * </code>
    */
   boolean containsScalingScheduleStatus(java.lang.String key);
-
   /** Use {@link #getScalingScheduleStatusMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
       getScalingScheduleStatus();
-
   /**
    *
    *
@@ -355,7 +338,6 @@ public interface AutoscalerOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.ScalingScheduleStatus>
       getScalingScheduleStatusMap();
-
   /**
    *
    *
@@ -372,7 +354,6 @@ public interface AutoscalerOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.ScalingScheduleStatus defaultValue);
-
   /**
    *
    *
@@ -399,7 +380,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -412,7 +392,6 @@ public interface AutoscalerOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -439,7 +418,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -453,7 +431,6 @@ public interface AutoscalerOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -479,7 +456,6 @@ public interface AutoscalerOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> getStatusDetailsList();
-
   /**
    *
    *
@@ -491,7 +467,6 @@ public interface AutoscalerOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalerStatusDetails getStatusDetails(int index);
-
   /**
    *
    *
@@ -503,7 +478,6 @@ public interface AutoscalerOrBuilder
    * </code>
    */
   int getStatusDetailsCount();
-
   /**
    *
    *
@@ -516,7 +490,6 @@ public interface AutoscalerOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>
       getStatusDetailsOrBuilderList();
-
   /**
    *
    *
@@ -541,7 +514,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
-
   /**
    *
    *
@@ -554,7 +526,6 @@ public interface AutoscalerOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -580,7 +551,6 @@ public interface AutoscalerOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -593,7 +563,6 @@ public interface AutoscalerOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

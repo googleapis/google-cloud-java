@@ -37,7 +37,6 @@ public interface CertificateProviderOrBuilder
    * @return Whether the grpcEndpoint field is set.
    */
   boolean hasGrpcEndpoint();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CertificateProviderOrBuilder
    * @return The grpcEndpoint.
    */
   com.google.cloud.networksecurity.v1beta1.GrpcEndpoint getGrpcEndpoint();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface CertificateProviderOrBuilder
    * @return Whether the certificateProviderInstance field is set.
    */
   boolean hasCertificateProviderInstance();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface CertificateProviderOrBuilder
    */
   com.google.cloud.networksecurity.v1beta1.CertificateProviderInstance
       getCertificateProviderInstance();
-
   /**
    *
    *

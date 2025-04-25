@@ -38,7 +38,6 @@ public interface DeleteMigratingVmRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

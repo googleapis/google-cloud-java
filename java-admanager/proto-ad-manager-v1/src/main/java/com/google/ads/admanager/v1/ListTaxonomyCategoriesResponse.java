@@ -34,7 +34,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListTaxonomyCategoriesResponse)
     ListTaxonomyCategoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTaxonomyCategoriesResponse.newBuilder() to construct.
   private ListTaxonomyCategoriesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.TaxonomyCategory> taxonomyCategories_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.ads.admanager.v1.TaxonomyCategory> getTaxonomyCategoriesList() {
     return taxonomyCategories_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       getTaxonomyCategoriesOrBuilderList() {
     return taxonomyCategories_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
   public int getTaxonomyCategoriesCount() {
     return taxonomyCategories_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
   public com.google.ads.admanager.v1.TaxonomyCategory getTaxonomyCategories(int index) {
     return taxonomyCategories_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -409,7 +400,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -703,7 +693,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return taxonomyCategoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return taxonomyCategoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -737,7 +725,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return taxonomyCategoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -761,7 +748,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +924,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         int index) {
       return getTaxonomyCategoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return taxonomyCategoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(taxonomyCategories_);
       }
     }
-
     /**
      *
      *
@@ -996,7 +971,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       return getTaxonomyCategoriesFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.TaxonomyCategory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1011,7 +985,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       return getTaxonomyCategoriesFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.TaxonomyCategory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1047,7 +1020,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1071,7 +1043,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1066,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1088,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1106,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1131,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1189,7 +1156,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1219,7 +1185,6 @@ public final class ListTaxonomyCategoriesResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

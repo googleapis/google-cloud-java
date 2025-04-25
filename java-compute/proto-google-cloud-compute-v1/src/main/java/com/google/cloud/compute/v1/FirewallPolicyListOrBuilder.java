@@ -36,7 +36,6 @@ public interface FirewallPolicyListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FirewallPolicyListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface FirewallPolicyListOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicy items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.FirewallPolicy> getItemsList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface FirewallPolicyListOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicy items = 100526016;</code>
    */
   com.google.cloud.compute.v1.FirewallPolicy getItems(int index);
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface FirewallPolicyListOrBuilder
    * <code>repeated .google.cloud.compute.v1.FirewallPolicy items = 100526016;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface FirewallPolicyListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.FirewallPolicyOrBuilder>
       getItemsOrBuilderList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface FirewallPolicyListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface FirewallPolicyListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -170,7 +162,6 @@ public interface FirewallPolicyListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface FirewallPolicyListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface FirewallPolicyListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -222,7 +211,6 @@ public interface FirewallPolicyListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

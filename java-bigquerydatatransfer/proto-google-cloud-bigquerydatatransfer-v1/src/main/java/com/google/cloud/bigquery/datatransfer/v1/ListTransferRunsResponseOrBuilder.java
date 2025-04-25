@@ -36,7 +36,6 @@ public interface ListTransferRunsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> getTransferRunsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListTransferRunsResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRuns(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListTransferRunsResponseOrBuilder
    * </code>
    */
   int getTransferRunsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListTransferRunsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getTransferRunsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ListTransferRunsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

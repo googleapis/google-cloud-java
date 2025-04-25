@@ -52,7 +52,6 @@ public interface ContextOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -123,7 +122,6 @@ public interface ContextOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -149,7 +147,6 @@ public interface ContextOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *

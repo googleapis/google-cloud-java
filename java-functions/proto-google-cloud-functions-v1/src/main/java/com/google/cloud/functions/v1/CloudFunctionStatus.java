@@ -103,7 +103,6 @@ public enum CloudFunctionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>CLOUD_FUNCTION_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int CLOUD_FUNCTION_STATUS_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -114,7 +113,6 @@ public enum CloudFunctionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>ACTIVE = 1;</code>
    */
   public static final int ACTIVE_VALUE = 1;
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public enum CloudFunctionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>OFFLINE = 2;</code>
    */
   public static final int OFFLINE_VALUE = 2;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public enum CloudFunctionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>DEPLOY_IN_PROGRESS = 3;</code>
    */
   public static final int DEPLOY_IN_PROGRESS_VALUE = 3;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public enum CloudFunctionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>DELETE_IN_PROGRESS = 4;</code>
    */
   public static final int DELETE_IN_PROGRESS_VALUE = 4;
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface QueryEligibleBillingAccountsRequestOrBuilder
    * @return The customer.
    */
   java.lang.String getCustomer();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface QueryEligibleBillingAccountsRequestOrBuilder
    * @return A list containing the skus.
    */
   java.util.List<java.lang.String> getSkusList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface QueryEligibleBillingAccountsRequestOrBuilder
    * @return The count of skus.
    */
   int getSkusCount();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface QueryEligibleBillingAccountsRequestOrBuilder
    * @return The skus at the given index.
    */
   java.lang.String getSkus(int index);
-
   /**
    *
    *

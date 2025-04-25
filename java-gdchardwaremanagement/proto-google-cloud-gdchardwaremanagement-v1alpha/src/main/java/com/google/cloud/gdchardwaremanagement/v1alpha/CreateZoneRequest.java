@@ -33,7 +33,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.CreateZoneRequest)
     CreateZoneRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateZoneRequest.newBuilder() to construct.
   private CreateZoneRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zoneId_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int ZONE_FIELD_NUMBER = 3;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Zone zone_;
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasZone() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Zone.getDefaultInstance()
         : zone_;
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -503,7 +493,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +740,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -777,7 +765,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +790,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +814,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +834,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object zoneId_ = "";
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +971,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1007,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.gdchardwaremanagement.v1alpha.Zone.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.ZoneOrBuilder>
         zoneBuilder_;
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasZone() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return zoneBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1091,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1120,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1141,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1157,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getZoneFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1206,7 +1177,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
             : zone_;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1206,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1262,7 +1231,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1288,7 +1256,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1280,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1300,6 @@ public final class CreateZoneRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

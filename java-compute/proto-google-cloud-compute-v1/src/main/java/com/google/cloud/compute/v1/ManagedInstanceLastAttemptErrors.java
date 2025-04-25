@@ -33,7 +33,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ManagedInstanceLastAttemptErrors)
     ManagedInstanceLastAttemptErrorsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManagedInstanceLastAttemptErrors.newBuilder() to construct.
   private ManagedInstanceLastAttemptErrors(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Errors> errors_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
   public java.util.List<com.google.cloud.compute.v1.Errors> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
   public com.google.cloud.compute.v1.Errors getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +757,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +776,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +788,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
     public com.google.cloud.compute.v1.Errors.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -824,7 +804,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -842,7 +821,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -856,7 +834,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Errors.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -870,7 +847,6 @@ public final class ManagedInstanceLastAttemptErrors extends com.google.protobuf.
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Errors.getDefaultInstance());
     }
-
     /**
      *
      *

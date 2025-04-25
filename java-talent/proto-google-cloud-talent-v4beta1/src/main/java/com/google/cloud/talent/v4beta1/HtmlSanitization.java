@@ -75,7 +75,6 @@ public enum HtmlSanitization implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HTML_SANITIZATION_UNSPECIFIED = 0;</code>
    */
   public static final int HTML_SANITIZATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum HtmlSanitization implements com.google.protobuf.ProtocolMessageEnum 
    * <code>HTML_SANITIZATION_DISABLED = 1;</code>
    */
   public static final int HTML_SANITIZATION_DISABLED_VALUE = 1;
-
   /**
    *
    *

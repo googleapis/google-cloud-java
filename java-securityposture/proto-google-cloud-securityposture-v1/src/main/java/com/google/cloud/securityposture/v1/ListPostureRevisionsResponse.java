@@ -33,7 +33,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.ListPostureRevisionsResponse)
     ListPostureRevisionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListPostureRevisionsResponse.newBuilder() to construct.
   private ListPostureRevisionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securityposture.v1.Posture> revisions_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.securityposture.v1.Posture> getRevisionsList() {
     return revisions_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       getRevisionsOrBuilderList() {
     return revisions_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
   public int getRevisionsCount() {
     return revisions_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
   public com.google.cloud.securityposture.v1.Posture getRevisions(int index) {
     return revisions_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +357,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return revisionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return revisionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return revisionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +734,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
     public com.google.cloud.securityposture.v1.Posture.Builder getRevisionsBuilder(int index) {
       return getRevisionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return revisionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +899,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(revisions_);
       }
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       return getRevisionsFieldBuilder()
           .addBuilder(com.google.cloud.securityposture.v1.Posture.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       return getRevisionsFieldBuilder()
           .addBuilder(index, com.google.cloud.securityposture.v1.Posture.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1006,7 +979,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1022,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ListPostureRevisionsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

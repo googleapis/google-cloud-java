@@ -36,7 +36,6 @@ public interface SavingsOverTimeOrBuilder
    * @return Whether the savingsYear1 field is set.
    */
   boolean hasSavingsYear1();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SavingsOverTimeOrBuilder
    * @return The savingsYear1.
    */
   com.google.type.Money getSavingsYear1();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SavingsOverTimeOrBuilder
    * @return Whether the savingsYear20 field is set.
    */
   boolean hasSavingsYear20();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SavingsOverTimeOrBuilder
    * @return The savingsYear20.
    */
   com.google.type.Money getSavingsYear20();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface SavingsOverTimeOrBuilder
    * @return Whether the presentValueOfSavingsYear20 field is set.
    */
   boolean hasPresentValueOfSavingsYear20();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface SavingsOverTimeOrBuilder
    * @return The presentValueOfSavingsYear20.
    */
   com.google.type.Money getPresentValueOfSavingsYear20();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface SavingsOverTimeOrBuilder
    * @return Whether the savingsLifetime field is set.
    */
   boolean hasSavingsLifetime();
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface SavingsOverTimeOrBuilder
    * @return The savingsLifetime.
    */
   com.google.type.Money getSavingsLifetime();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface SavingsOverTimeOrBuilder
    * @return Whether the presentValueOfSavingsLifetime field is set.
    */
   boolean hasPresentValueOfSavingsLifetime();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface SavingsOverTimeOrBuilder
    * @return The presentValueOfSavingsLifetime.
    */
   com.google.type.Money getPresentValueOfSavingsLifetime();
-
   /**
    *
    *

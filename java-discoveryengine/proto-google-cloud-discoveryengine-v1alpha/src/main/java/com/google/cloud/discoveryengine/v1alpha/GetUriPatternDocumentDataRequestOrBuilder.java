@@ -41,7 +41,6 @@ public interface GetUriPatternDocumentDataRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
-
   /**
    *
    *

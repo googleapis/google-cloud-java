@@ -40,7 +40,6 @@ public interface CreateDataSchemaRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateDataSchemaRequestOrBuilder
    * @return Whether the dataSchema field is set.
    */
   boolean hasDataSchema();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateDataSchemaRequestOrBuilder
    * @return The dataSchema.
    */
   com.google.cloud.visionai.v1.DataSchema getDataSchema();
-
   /**
    *
    *

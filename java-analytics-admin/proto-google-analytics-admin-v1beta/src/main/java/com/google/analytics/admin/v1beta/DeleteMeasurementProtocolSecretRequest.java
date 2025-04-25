@@ -34,7 +34,6 @@ public final class DeleteMeasurementProtocolSecretRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.DeleteMeasurementProtocolSecretRequest)
     DeleteMeasurementProtocolSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteMeasurementProtocolSecretRequest.newBuilder() to construct.
   private DeleteMeasurementProtocolSecretRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DeleteMeasurementProtocolSecretRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeleteMeasurementProtocolSecretRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +286,6 @@ public final class DeleteMeasurementProtocolSecretRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -484,7 +480,6 @@ public final class DeleteMeasurementProtocolSecretRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -511,7 +506,6 @@ public final class DeleteMeasurementProtocolSecretRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -538,7 +532,6 @@ public final class DeleteMeasurementProtocolSecretRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -564,7 +557,6 @@ public final class DeleteMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class DeleteMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

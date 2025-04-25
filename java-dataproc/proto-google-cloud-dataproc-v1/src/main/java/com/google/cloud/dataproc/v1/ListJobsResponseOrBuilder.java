@@ -36,7 +36,6 @@ public interface ListJobsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.Job> getJobsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListJobsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.Job getJobs(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListJobsResponseOrBuilder
    * </code>
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -75,7 +72,6 @@ public interface ListJobsResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.JobOrBuilder> getJobsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface ListJobsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface ListJobsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface ListJobsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

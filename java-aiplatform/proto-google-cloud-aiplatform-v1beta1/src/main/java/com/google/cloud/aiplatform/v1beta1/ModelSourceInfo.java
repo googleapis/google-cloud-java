@@ -33,7 +33,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelSourceInfo)
     ModelSourceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelSourceInfo.newBuilder() to construct.
   private ModelSourceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -171,7 +170,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>MODEL_SOURCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -182,7 +180,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>AUTOML = 1;</code>
      */
     public static final int AUTOML_VALUE = 1;
-
     /**
      *
      *
@@ -193,7 +190,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM = 2;</code>
      */
     public static final int CUSTOM_VALUE = 2;
-
     /**
      *
      *
@@ -204,7 +200,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>BQML = 3;</code>
      */
     public static final int BQML_VALUE = 3;
-
     /**
      *
      *
@@ -215,7 +210,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>MODEL_GARDEN = 4;</code>
      */
     public static final int MODEL_GARDEN_VALUE = 4;
-
     /**
      *
      *
@@ -226,7 +220,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>GENIE = 5;</code>
      */
     public static final int GENIE_VALUE = 5;
-
     /**
      *
      *
@@ -237,7 +230,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>CUSTOM_TEXT_EMBEDDING = 6;</code>
      */
     public static final int CUSTOM_TEXT_EMBEDDING_VALUE = 6;
-
     /**
      *
      *
@@ -348,7 +340,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
   private int sourceType_ = 0;
-
   /**
    *
    *
@@ -364,7 +355,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
   public int getSourceTypeValue() {
     return sourceType_;
   }
-
   /**
    *
    *
@@ -387,7 +377,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
 
   public static final int COPY_FIELD_NUMBER = 2;
   private boolean copy_ = false;
-
   /**
    *
    *
@@ -580,7 +569,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -776,7 +764,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int sourceType_ = 0;
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     public int getSourceTypeValue() {
       return sourceType_;
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +820,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.aiplatform.v1beta1.ModelSourceInfo.ModelSourceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +863,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean copy_;
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
     public boolean getCopy() {
       return copy_;
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

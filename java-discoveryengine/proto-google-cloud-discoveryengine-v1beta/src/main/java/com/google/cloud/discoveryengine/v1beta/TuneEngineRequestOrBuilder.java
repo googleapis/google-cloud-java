@@ -40,7 +40,6 @@ public interface TuneEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

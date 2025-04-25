@@ -35,7 +35,6 @@ public interface ListToolsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Tool tools = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Tool> getToolsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListToolsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Tool tools = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool getTools(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListToolsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Tool tools = 1;</code>
    */
   int getToolsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListToolsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ToolOrBuilder>
       getToolsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListToolsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return Whether the postbackWindowOne field is set.
    */
   boolean hasPostbackWindowOne();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return The postbackWindowOne.
    */
   com.google.analytics.admin.v1alpha.PostbackWindow getPostbackWindowOne();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return Whether the postbackWindowTwo field is set.
    */
   boolean hasPostbackWindowTwo();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return The postbackWindowTwo.
    */
   com.google.analytics.admin.v1alpha.PostbackWindow getPostbackWindowTwo();
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return Whether the postbackWindowThree field is set.
    */
   boolean hasPostbackWindowThree();
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public interface SKAdNetworkConversionValueSchemaOrBuilder
    * @return The postbackWindowThree.
    */
   com.google.analytics.admin.v1alpha.PostbackWindow getPostbackWindowThree();
-
   /**
    *
    *

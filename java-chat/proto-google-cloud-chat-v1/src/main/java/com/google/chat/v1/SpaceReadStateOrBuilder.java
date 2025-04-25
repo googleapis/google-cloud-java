@@ -38,7 +38,6 @@ public interface SpaceReadStateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SpaceReadStateOrBuilder
    * @return Whether the lastReadTime field is set.
    */
   boolean hasLastReadTime();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SpaceReadStateOrBuilder
    * @return The lastReadTime.
    */
   com.google.protobuf.Timestamp getLastReadTime();
-
   /**
    *
    *

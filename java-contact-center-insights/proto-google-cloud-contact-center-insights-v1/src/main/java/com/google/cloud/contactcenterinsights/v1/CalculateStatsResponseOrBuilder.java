@@ -37,7 +37,6 @@ public interface CalculateStatsResponseOrBuilder
    * @return Whether the averageDuration field is set.
    */
   boolean hasAverageDuration();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CalculateStatsResponseOrBuilder
    * @return The averageDuration.
    */
   com.google.protobuf.Duration getAverageDuration();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; smart_highlighter_matches = 4;</code>
    */
   int getSmartHighlighterMatchesCount();
-
   /**
    *
    *
@@ -113,11 +110,9 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; smart_highlighter_matches = 4;</code>
    */
   boolean containsSmartHighlighterMatches(java.lang.String key);
-
   /** Use {@link #getSmartHighlighterMatchesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getSmartHighlighterMatches();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; smart_highlighter_matches = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getSmartHighlighterMatchesMap();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; smart_highlighter_matches = 4;</code>
    */
   int getSmartHighlighterMatchesOrDefault(java.lang.String key, int defaultValue);
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; custom_highlighter_matches = 5;</code>
    */
   int getCustomHighlighterMatchesCount();
-
   /**
    *
    *
@@ -177,11 +169,9 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; custom_highlighter_matches = 5;</code>
    */
   boolean containsCustomHighlighterMatches(java.lang.String key);
-
   /** Use {@link #getCustomHighlighterMatchesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getCustomHighlighterMatches();
-
   /**
    *
    *
@@ -193,7 +183,6 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; custom_highlighter_matches = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getCustomHighlighterMatchesMap();
-
   /**
    *
    *
@@ -205,7 +194,6 @@ public interface CalculateStatsResponseOrBuilder
    * <code>map&lt;string, int32&gt; custom_highlighter_matches = 5;</code>
    */
   int getCustomHighlighterMatchesOrDefault(java.lang.String key, int defaultValue);
-
   /**
    *
    *
@@ -232,7 +220,6 @@ public interface CalculateStatsResponseOrBuilder
    */
   @java.lang.Deprecated
   int getIssueMatchesCount();
-
   /**
    *
    *
@@ -247,11 +234,9 @@ public interface CalculateStatsResponseOrBuilder
    */
   @java.lang.Deprecated
   boolean containsIssueMatches(java.lang.String key);
-
   /** Use {@link #getIssueMatchesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getIssueMatches();
-
   /**
    *
    *
@@ -266,7 +251,6 @@ public interface CalculateStatsResponseOrBuilder
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getIssueMatchesMap();
-
   /**
    *
    *
@@ -281,7 +265,6 @@ public interface CalculateStatsResponseOrBuilder
    */
   @java.lang.Deprecated
   int getIssueMatchesOrDefault(java.lang.String key, int defaultValue);
-
   /**
    *
    *
@@ -311,7 +294,6 @@ public interface CalculateStatsResponseOrBuilder
    * </code>
    */
   int getIssueMatchesStatsCount();
-
   /**
    *
    *
@@ -326,14 +308,12 @@ public interface CalculateStatsResponseOrBuilder
    * </code>
    */
   boolean containsIssueMatchesStats(java.lang.String key);
-
   /** Use {@link #getIssueMatchesStatsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
       getIssueMatchesStats();
-
   /**
    *
    *
@@ -351,7 +331,6 @@ public interface CalculateStatsResponseOrBuilder
           java.lang.String,
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats>
       getIssueMatchesStatsMap();
-
   /**
    *
    *
@@ -371,7 +350,6 @@ public interface CalculateStatsResponseOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.IssueStats defaultValue);
-
   /**
    *
    *
@@ -403,7 +381,6 @@ public interface CalculateStatsResponseOrBuilder
    * @return Whether the conversationCountTimeSeries field is set.
    */
   boolean hasConversationCountTimeSeries();
-
   /**
    *
    *
@@ -420,7 +397,6 @@ public interface CalculateStatsResponseOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries
       getConversationCountTimeSeries();
-
   /**
    *
    *

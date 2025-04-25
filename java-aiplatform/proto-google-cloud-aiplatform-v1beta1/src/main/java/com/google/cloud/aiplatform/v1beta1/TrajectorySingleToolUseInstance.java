@@ -33,7 +33,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInstance)
     TrajectorySingleToolUseInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrajectorySingleToolUseInstance.newBuilder() to construct.
   private TrajectorySingleToolUseInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
   private int bitField0_;
   public static final int PREDICTED_TRAJECTORY_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Trajectory predictedTrajectory_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
   public boolean hasPredictedTrajectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : predictedTrajectory_;
   }
-
   /**
    *
    *
@@ -289,7 +285,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         predictedTrajectoryBuilder_;
-
     /**
      *
      *
@@ -521,7 +515,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
     public boolean hasPredictedTrajectory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -544,7 +537,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
         return predictedTrajectoryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +650,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
       onChanged();
       return getPredictedTrajectoryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class TrajectorySingleToolUseInstance extends com.google.protobuf.G
             : predictedTrajectory_;
       }
     }
-
     /**
      *
      *

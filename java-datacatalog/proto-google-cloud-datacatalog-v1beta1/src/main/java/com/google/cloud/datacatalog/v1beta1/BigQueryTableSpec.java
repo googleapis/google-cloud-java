@@ -33,7 +33,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.BigQueryTableSpec)
     BigQueryTableSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BigQueryTableSpec.newBuilder() to construct.
   private BigQueryTableSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     private TypeSpecCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int TABLE_SOURCE_TYPE_FIELD_NUMBER = 1;
   private int tableSourceType_ = 0;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   public int getTableSourceTypeValue() {
     return tableSourceType_;
   }
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VIEW_SPEC_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasViewSpec() {
     return typeSpecCase_ == 2;
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datacatalog.v1beta1.ViewSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TABLE_SPEC_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasTableSpec() {
     return typeSpecCase_ == 3;
   }
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datacatalog.v1beta1.TableSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -474,7 +464,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -719,7 +708,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int tableSourceType_ = 0;
-
     /**
      *
      *
@@ -737,7 +725,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     public int getTableSourceTypeValue() {
       return tableSourceType_;
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.datacatalog.v1beta1.TableSourceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -804,7 +789,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datacatalog.v1beta1.ViewSpec.Builder,
             com.google.cloud.datacatalog.v1beta1.ViewSpecOrBuilder>
         viewSpecBuilder_;
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasViewSpec() {
       return typeSpecCase_ == 2;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datacatalog.v1beta1.ViewSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       typeSpecCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       typeSpecCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       typeSpecCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +959,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +972,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1beta1.ViewSpec.Builder getViewSpecBuilder() {
       return getViewSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datacatalog.v1beta1.ViewSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1032,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datacatalog.v1beta1.TableSpec.Builder,
             com.google.cloud.datacatalog.v1beta1.TableSpecOrBuilder>
         tableSpecBuilder_;
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasTableSpec() {
       return typeSpecCase_ == 3;
     }
-
     /**
      *
      *
@@ -1101,7 +1074,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datacatalog.v1beta1.TableSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1097,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       typeSpecCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1118,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       typeSpecCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       typeSpecCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1177,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1190,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datacatalog.v1beta1.TableSpec.Builder getTableSpecBuilder() {
       return getTableSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class BigQueryTableSpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datacatalog.v1beta1.TableSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *

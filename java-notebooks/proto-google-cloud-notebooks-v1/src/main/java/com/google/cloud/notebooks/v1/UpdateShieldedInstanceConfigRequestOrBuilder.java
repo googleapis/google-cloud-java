@@ -37,7 +37,6 @@ public interface UpdateShieldedInstanceConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface UpdateShieldedInstanceConfigRequestOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateShieldedInstanceConfigRequestOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.notebooks.v1.Instance.ShieldedInstanceConfig getShieldedInstanceConfig();
-
   /**
    *
    *

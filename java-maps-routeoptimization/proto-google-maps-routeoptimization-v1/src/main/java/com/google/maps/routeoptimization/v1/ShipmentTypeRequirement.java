@@ -34,7 +34,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.ShipmentTypeRequirement)
     ShipmentTypeRequirementOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShipmentTypeRequirement.newBuilder() to construct.
   private ShipmentTypeRequirement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -141,7 +140,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * <code>REQUIREMENT_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int REQUIREMENT_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +151,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * <code>PERFORMED_BY_SAME_VEHICLE = 1;</code>
      */
     public static final int PERFORMED_BY_SAME_VEHICLE_VALUE = 1;
-
     /**
      *
      *
@@ -173,7 +170,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
      * <code>IN_SAME_VEHICLE_AT_PICKUP_TIME = 2;</code>
      */
     public static final int IN_SAME_VEHICLE_AT_PICKUP_TIME_VALUE = 2;
-
     /**
      *
      *
@@ -280,7 +276,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requiredShipmentTypeAlternatives_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -296,7 +291,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getRequiredShipmentTypeAlternativesList() {
     return requiredShipmentTypeAlternatives_;
   }
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public int getRequiredShipmentTypeAlternativesCount() {
     return requiredShipmentTypeAlternatives_.size();
   }
-
   /**
    *
    *
@@ -329,7 +322,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public java.lang.String getRequiredShipmentTypeAlternatives(int index) {
     return requiredShipmentTypeAlternatives_.get(index);
   }
-
   /**
    *
    *
@@ -352,7 +344,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dependentShipmentTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -372,7 +363,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getDependentShipmentTypesList() {
     return dependentShipmentTypes_;
   }
-
   /**
    *
    *
@@ -392,7 +382,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public int getDependentShipmentTypesCount() {
     return dependentShipmentTypes_.size();
   }
-
   /**
    *
    *
@@ -413,7 +402,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public java.lang.String getDependentShipmentTypes(int index) {
     return dependentShipmentTypes_.get(index);
   }
-
   /**
    *
    *
@@ -437,7 +425,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
 
   public static final int REQUIREMENT_MODE_FIELD_NUMBER = 3;
   private int requirementMode_ = 0;
-
   /**
    *
    *
@@ -455,7 +442,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
   public int getRequirementModeValue() {
     return requirementMode_;
   }
-
   /**
    *
    *
@@ -682,7 +668,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -922,7 +907,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -939,7 +923,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       requiredShipmentTypeAlternatives_.makeImmutable();
       return requiredShipmentTypeAlternatives_;
     }
-
     /**
      *
      *
@@ -955,7 +938,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public int getRequiredShipmentTypeAlternativesCount() {
       return requiredShipmentTypeAlternatives_.size();
     }
-
     /**
      *
      *
@@ -972,7 +954,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public java.lang.String getRequiredShipmentTypeAlternatives(int index) {
       return requiredShipmentTypeAlternatives_.get(index);
     }
-
     /**
      *
      *
@@ -989,7 +970,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getRequiredShipmentTypeAlternativesBytes(int index) {
       return requiredShipmentTypeAlternatives_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1014,7 +994,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1017,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1039,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1058,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1138,7 +1113,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       dependentShipmentTypes_.makeImmutable();
       return dependentShipmentTypes_;
     }
-
     /**
      *
      *
@@ -1158,7 +1132,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public int getDependentShipmentTypesCount() {
       return dependentShipmentTypes_.size();
     }
-
     /**
      *
      *
@@ -1179,7 +1152,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public java.lang.String getDependentShipmentTypes(int index) {
       return dependentShipmentTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1200,7 +1172,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getDependentShipmentTypesBytes(int index) {
       return dependentShipmentTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1229,7 +1200,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1227,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1251,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1274,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1304,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     }
 
     private int requirementMode_ = 0;
-
     /**
      *
      *
@@ -1355,7 +1321,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
     public int getRequirementModeValue() {
       return requirementMode_;
     }
-
     /**
      *
      *
@@ -1376,7 +1341,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1365,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1426,7 +1389,6 @@ public final class ShipmentTypeRequirement extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImageObjectDetectionAnnotationOrBuilder
    * @return The boundingBox.
    */
   com.google.cloud.automl.v1beta1.BoundingPoly getBoundingBox();
-
   /**
    *
    *

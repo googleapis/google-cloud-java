@@ -38,7 +38,6 @@ public interface RecipeOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface RecipeOrBuilder
    * @return The entryPoint.
    */
   java.lang.String getEntryPoint();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
   java.util.List<com.google.protobuf.Any> getArgumentsList();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
   com.google.protobuf.Any getArguments(int index);
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
   int getArgumentsCount();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any arguments = 4;</code>
    */
   java.util.List<? extends com.google.protobuf.AnyOrBuilder> getArgumentsOrBuilderList();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
   java.util.List<com.google.protobuf.Any> getEnvironmentList();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
   com.google.protobuf.Any getEnvironment(int index);
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
   int getEnvironmentCount();
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public interface RecipeOrBuilder
    * <code>repeated .google.protobuf.Any environment = 5;</code>
    */
   java.util.List<? extends com.google.protobuf.AnyOrBuilder> getEnvironmentOrBuilderList();
-
   /**
    *
    *

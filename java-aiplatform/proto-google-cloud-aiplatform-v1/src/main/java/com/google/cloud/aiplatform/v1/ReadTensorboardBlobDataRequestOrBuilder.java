@@ -40,7 +40,6 @@ public interface ReadTensorboardBlobDataRequestOrBuilder
    * @return The timeSeries.
    */
   java.lang.String getTimeSeries();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ReadTensorboardBlobDataRequestOrBuilder
    * @return A list containing the blobIds.
    */
   java.util.List<java.lang.String> getBlobIdsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ReadTensorboardBlobDataRequestOrBuilder
    * @return The count of blobIds.
    */
   int getBlobIdsCount();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ReadTensorboardBlobDataRequestOrBuilder
    * @return The blobIds at the given index.
    */
   java.lang.String getBlobIds(int index);
-
   /**
    *
    *

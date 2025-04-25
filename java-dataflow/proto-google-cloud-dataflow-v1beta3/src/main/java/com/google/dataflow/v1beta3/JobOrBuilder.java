@@ -39,7 +39,6 @@ public interface JobOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface JobOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface JobOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface JobOrBuilder
    * @return The environment.
    */
   com.google.dataflow.v1beta3.Environment getEnvironment();
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.Step> getStepsList();
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   com.google.dataflow.v1beta3.Step getSteps(int index);
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   int getStepsCount();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.Step steps = 6;</code>
    */
   java.util.List<? extends com.google.dataflow.v1beta3.StepOrBuilder> getStepsOrBuilderList();
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public interface JobOrBuilder
    * @return The stepsLocation.
    */
   java.lang.String getStepsLocation();
-
   /**
    *
    *
@@ -305,7 +294,6 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for currentState.
    */
   int getCurrentStateValue();
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public interface JobOrBuilder
    * @return Whether the currentStateTime field is set.
    */
   boolean hasCurrentStateTime();
-
   /**
    *
    *
@@ -354,7 +341,6 @@ public interface JobOrBuilder
    * @return The currentStateTime.
    */
   com.google.protobuf.Timestamp getCurrentStateTime();
-
   /**
    *
    *
@@ -384,7 +370,6 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for requestedState.
    */
   int getRequestedStateValue();
-
   /**
    *
    *
@@ -416,7 +401,6 @@ public interface JobOrBuilder
    * @return Whether the executionInfo field is set.
    */
   boolean hasExecutionInfo();
-
   /**
    *
    *
@@ -429,7 +413,6 @@ public interface JobOrBuilder
    * @return The executionInfo.
    */
   com.google.dataflow.v1beta3.JobExecutionInfo getExecutionInfo();
-
   /**
    *
    *
@@ -454,7 +437,6 @@ public interface JobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -468,7 +450,6 @@ public interface JobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -498,7 +479,6 @@ public interface JobOrBuilder
    * @return The replaceJobId.
    */
   java.lang.String getReplaceJobId();
-
   /**
    *
    *
@@ -528,7 +508,6 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
    */
   int getTransformNameMappingCount();
-
   /**
    *
    *
@@ -540,11 +519,9 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
    */
   boolean containsTransformNameMapping(java.lang.String key);
-
   /** Use {@link #getTransformNameMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMapping();
-
   /**
    *
    *
@@ -556,7 +533,6 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mapping = 13;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingMap();
-
   /**
    *
    *
@@ -572,7 +548,6 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -603,7 +578,6 @@ public interface JobOrBuilder
    * @return The clientRequestId.
    */
   java.lang.String getClientRequestId();
-
   /**
    *
    *
@@ -636,7 +610,6 @@ public interface JobOrBuilder
    * @return The replacedByJobId.
    */
   java.lang.String getReplacedByJobId();
-
   /**
    *
    *
@@ -674,7 +647,6 @@ public interface JobOrBuilder
    * @return A list containing the tempFiles.
    */
   java.util.List<java.lang.String> getTempFilesList();
-
   /**
    *
    *
@@ -698,7 +670,6 @@ public interface JobOrBuilder
    * @return The count of tempFiles.
    */
   int getTempFilesCount();
-
   /**
    *
    *
@@ -723,7 +694,6 @@ public interface JobOrBuilder
    * @return The tempFiles at the given index.
    */
   java.lang.String getTempFiles(int index);
-
   /**
    *
    *
@@ -767,7 +737,6 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -786,11 +755,9 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -809,7 +776,6 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -832,7 +798,6 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -866,7 +831,6 @@ public interface JobOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -897,7 +861,6 @@ public interface JobOrBuilder
    * @return Whether the pipelineDescription field is set.
    */
   boolean hasPipelineDescription();
-
   /**
    *
    *
@@ -913,7 +876,6 @@ public interface JobOrBuilder
    * @return The pipelineDescription.
    */
   com.google.dataflow.v1beta3.PipelineDescription getPipelineDescription();
-
   /**
    *
    *
@@ -939,7 +901,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ExecutionStageState stage_states = 20;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageState> getStageStatesList();
-
   /**
    *
    *
@@ -951,7 +912,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ExecutionStageState stage_states = 20;</code>
    */
   com.google.dataflow.v1beta3.ExecutionStageState getStageStates(int index);
-
   /**
    *
    *
@@ -963,7 +923,6 @@ public interface JobOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ExecutionStageState stage_states = 20;</code>
    */
   int getStageStatesCount();
-
   /**
    *
    *
@@ -976,7 +935,6 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ExecutionStageStateOrBuilder>
       getStageStatesOrBuilderList();
-
   /**
    *
    *
@@ -1003,7 +961,6 @@ public interface JobOrBuilder
    * @return Whether the jobMetadata field is set.
    */
   boolean hasJobMetadata();
-
   /**
    *
    *
@@ -1018,7 +975,6 @@ public interface JobOrBuilder
    * @return The jobMetadata.
    */
   com.google.dataflow.v1beta3.JobMetadata getJobMetadata();
-
   /**
    *
    *
@@ -1049,7 +1005,6 @@ public interface JobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -1067,7 +1022,6 @@ public interface JobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -1097,7 +1051,6 @@ public interface JobOrBuilder
    * @return The createdFromSnapshotId.
    */
   java.lang.String getCreatedFromSnapshotId();
-
   /**
    *
    *

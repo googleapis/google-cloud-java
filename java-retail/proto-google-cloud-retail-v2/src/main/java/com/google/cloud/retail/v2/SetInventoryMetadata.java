@@ -36,7 +36,6 @@ public final class SetInventoryMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.SetInventoryMetadata)
     SetInventoryMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetInventoryMetadata.newBuilder() to construct.
   private SetInventoryMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class SetInventoryMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

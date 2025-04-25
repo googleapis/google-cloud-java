@@ -33,7 +33,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InvalidateCacheUrlMapRequest)
     InvalidateCacheUrlMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InvalidateCacheUrlMapRequest.newBuilder() to construct.
   private InvalidateCacheUrlMapRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int CACHE_INVALIDATION_RULE_RESOURCE_FIELD_NUMBER = 312795565;
   private com.google.cloud.compute.v1.CacheInvalidationRule cacheInvalidationRuleResource_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
   public boolean hasCacheInvalidationRuleResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.CacheInvalidationRule.getDefaultInstance()
         : cacheInvalidationRuleResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMap_ = "";
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -507,7 +496,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +749,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.CacheInvalidationRule.Builder,
             com.google.cloud.compute.v1.CacheInvalidationRuleOrBuilder>
         cacheInvalidationRuleResourceBuilder_;
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     public boolean hasCacheInvalidationRuleResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -801,7 +787,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return cacheInvalidationRuleResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -827,7 +812,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return getCacheInvalidationRuleResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
             : cacheInvalidationRuleResource_;
       }
     }
-
     /**
      *
      *
@@ -974,7 +953,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -999,7 +977,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1110,7 +1083,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1133,7 +1105,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1156,7 +1127,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1148,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1165,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1189,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object urlMap_ = "";
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1267,7 +1233,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1254,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1271,6 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

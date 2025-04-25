@@ -62,7 +62,6 @@ public interface PayloadOptionsOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface PayloadOptionsOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
-
   /**
    *
    *

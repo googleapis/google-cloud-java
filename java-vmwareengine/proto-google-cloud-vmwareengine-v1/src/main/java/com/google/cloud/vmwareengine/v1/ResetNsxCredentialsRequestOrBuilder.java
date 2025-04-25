@@ -43,7 +43,6 @@ public interface ResetNsxCredentialsRequestOrBuilder
    * @return The privateCloud.
    */
   java.lang.String getPrivateCloud();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface ResetNsxCredentialsRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

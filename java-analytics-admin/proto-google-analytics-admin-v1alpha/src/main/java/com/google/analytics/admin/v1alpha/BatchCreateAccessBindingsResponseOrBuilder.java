@@ -34,7 +34,6 @@ public interface BatchCreateAccessBindingsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccessBinding access_bindings = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.AccessBinding> getAccessBindingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchCreateAccessBindingsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccessBinding access_bindings = 1;</code>
    */
   com.google.analytics.admin.v1alpha.AccessBinding getAccessBindings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchCreateAccessBindingsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccessBinding access_bindings = 1;</code>
    */
   int getAccessBindingsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchCreateAccessBindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.AccessBindingOrBuilder>
       getAccessBindingsOrBuilderList();
-
   /**
    *
    *

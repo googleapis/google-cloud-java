@@ -36,7 +36,6 @@ public interface AppPlatformMetadataOrBuilder
    * @return The application.
    */
   java.lang.String getApplication();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AppPlatformMetadataOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AppPlatformMetadataOrBuilder
    * @return The node.
    */
   java.lang.String getNode();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface AppPlatformMetadataOrBuilder
    * @return The processor.
    */
   java.lang.String getProcessor();
-
   /**
    *
    *

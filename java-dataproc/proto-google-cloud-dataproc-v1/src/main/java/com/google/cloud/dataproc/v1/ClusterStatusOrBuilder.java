@@ -38,7 +38,6 @@ public interface ClusterStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ClusterStatusOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface ClusterStatusOrBuilder
    * @return Whether the stateStartTime field is set.
    */
   boolean hasStateStartTime();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface ClusterStatusOrBuilder
    * @return The stateStartTime.
    */
   com.google.protobuf.Timestamp getStateStartTime();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface ClusterStatusOrBuilder
    * @return The enum numeric value on the wire for substate.
    */
   int getSubstateValue();
-
   /**
    *
    *

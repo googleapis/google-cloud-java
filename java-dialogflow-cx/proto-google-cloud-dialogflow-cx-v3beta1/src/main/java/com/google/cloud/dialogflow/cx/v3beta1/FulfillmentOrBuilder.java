@@ -34,7 +34,6 @@ public interface FulfillmentOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.ResponseMessage messages = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage> getMessagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FulfillmentOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.ResponseMessage messages = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage getMessages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FulfillmentOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.ResponseMessage messages = 1;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FulfillmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface FulfillmentOrBuilder
    * @return The webhook.
    */
   java.lang.String getWebhook();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface FulfillmentOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface FulfillmentOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.SetParameterAction>
       getSetParameterActionsList();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface FulfillmentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.SetParameterAction getSetParameterActions(
       int index);
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface FulfillmentOrBuilder
    * </code>
    */
   int getSetParameterActionsCount();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface FulfillmentOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.SetParameterActionOrBuilder>
       getSetParameterActionsOrBuilderList();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface FulfillmentOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.ConditionalCases>
       getConditionalCasesList();
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface FulfillmentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.ConditionalCases getConditionalCases(
       int index);
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface FulfillmentOrBuilder
    * </code>
    */
   int getConditionalCasesCount();
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface FulfillmentOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.ConditionalCasesOrBuilder>
       getConditionalCasesOrBuilderList();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface FulfillmentOrBuilder
    * @return Whether the advancedSettings field is set.
    */
   boolean hasAdvancedSettings();
-
   /**
    *
    *
@@ -336,7 +321,6 @@ public interface FulfillmentOrBuilder
    * @return The advancedSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
-
   /**
    *
    *

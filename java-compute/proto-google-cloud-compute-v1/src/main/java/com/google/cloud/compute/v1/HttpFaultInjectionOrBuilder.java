@@ -36,7 +36,6 @@ public interface HttpFaultInjectionOrBuilder
    * @return Whether the abort field is set.
    */
   boolean hasAbort();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HttpFaultInjectionOrBuilder
    * @return The abort.
    */
   com.google.cloud.compute.v1.HttpFaultAbort getAbort();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface HttpFaultInjectionOrBuilder
    * @return Whether the delay field is set.
    */
   boolean hasDelay();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface HttpFaultInjectionOrBuilder
    * @return The delay.
    */
   com.google.cloud.compute.v1.HttpFaultDelay getDelay();
-
   /**
    *
    *

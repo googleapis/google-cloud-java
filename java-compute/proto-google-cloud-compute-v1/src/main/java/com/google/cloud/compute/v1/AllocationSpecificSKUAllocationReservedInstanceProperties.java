@@ -35,7 +35,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties)
     AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllocationSpecificSKUAllocationReservedInstanceProperties.newBuilder() to construct.
   private AllocationSpecificSKUAllocationReservedInstanceProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -78,7 +77,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       getGuestAcceleratorsOrBuilderList() {
     return guestAccelerators_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public int getGuestAcceleratorsCount() {
     return guestAccelerators_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
     return guestAccelerators_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
           com.google.cloud.compute.v1
               .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk>
       localSsds_;
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       getLocalSsdsList() {
     return localSsds_;
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       getLocalSsdsOrBuilderList() {
     return localSsds_;
   }
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public int getLocalSsdsCount() {
     return localSsds_.size();
   }
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       getLocalSsds(int index) {
     return localSsds_.get(index);
   }
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationHint_ = "";
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public boolean hasLocationHint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       return s;
     }
   }
-
   /**
    *
    *
@@ -328,7 +314,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
-
   /**
    *
    *
@@ -344,7 +329,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public boolean hasMachineType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       return s;
     }
   }
-
   /**
    *
    *
@@ -397,7 +380,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minCpuPlatform_ = "";
-
   /**
    *
    *
@@ -413,7 +395,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
   public boolean hasMinCpuPlatform() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -437,7 +418,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       return s;
     }
   }
-
   /**
    *
    *
@@ -701,7 +681,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1099,7 +1078,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return guestAcceleratorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1095,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return guestAcceleratorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1112,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return guestAcceleratorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1136,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1157,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1180,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1204,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1225,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1246,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1297,7 +1267,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1287,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1307,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1321,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         int index) {
       return getGuestAcceleratorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1373,7 +1339,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return guestAcceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1357,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return java.util.Collections.unmodifiableList(guestAccelerators_);
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1371,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1423,7 +1386,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1505,7 +1467,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return localSsdsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1524,7 +1485,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return localSsdsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1545,7 +1505,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return localSsdsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1574,7 +1533,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1558,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1585,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1657,7 +1613,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1637,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1708,7 +1662,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1688,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1709,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1779,7 +1730,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       }
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1746,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         getLocalSsdsBuilder(int index) {
       return getLocalSsdsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1817,7 +1766,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return localSsdsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1840,7 +1788,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return java.util.Collections.unmodifiableList(localSsds_);
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1808,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
                   .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1883,7 +1829,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
                   .AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1926,7 +1871,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     }
 
     private java.lang.Object locationHint_ = "";
-
     /**
      *
      *
@@ -1941,7 +1885,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     public boolean hasLocationHint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1964,7 +1907,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1987,7 +1929,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2009,7 +1950,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1967,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2052,7 +1991,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     }
 
     private java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -2067,7 +2005,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     public boolean hasMachineType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2090,7 +2027,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2113,7 +2049,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2135,7 +2070,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2153,7 +2087,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2111,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     }
 
     private java.lang.Object minCpuPlatform_ = "";
-
     /**
      *
      *
@@ -2193,7 +2125,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
     public boolean hasMinCpuPlatform() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2216,7 +2147,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2239,7 +2169,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2261,7 +2190,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2279,7 +2207,6 @@ public final class AllocationSpecificSKUAllocationReservedInstanceProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *

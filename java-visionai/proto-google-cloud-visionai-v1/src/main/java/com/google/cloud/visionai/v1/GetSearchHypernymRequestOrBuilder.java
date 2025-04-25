@@ -40,7 +40,6 @@ public interface GetSearchHypernymRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

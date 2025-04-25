@@ -33,7 +33,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.VirtualMachine)
     VirtualMachineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VirtualMachine.newBuilder() to construct.
   private VirtualMachine(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VIRTUAL_MACHINE_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.notebooks.v1.VirtualMachineConfig virtualMachineConfig_;
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVirtualMachineConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.notebooks.v1.VirtualMachineConfig.getDefaultInstance()
         : virtualMachineConfig_;
   }
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -641,7 +632,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object instanceName_ = "";
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.notebooks.v1.VirtualMachineConfig.Builder,
             com.google.cloud.notebooks.v1.VirtualMachineConfigOrBuilder>
         virtualMachineConfigBuilder_;
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVirtualMachineConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return virtualMachineConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -928,7 +906,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +926,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +955,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +989,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVirtualMachineConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             : virtualMachineConfig_;
       }
     }
-
     /**
      *
      *

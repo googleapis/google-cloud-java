@@ -207,19 +207,6 @@ public final class PrivateCatalogGrpc {
     return PrivateCatalogStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static PrivateCatalogBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<PrivateCatalogBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<PrivateCatalogBlockingV2Stub>() {
-          @java.lang.Override
-          public PrivateCatalogBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new PrivateCatalogBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return PrivateCatalogBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -448,85 +435,6 @@ public final class PrivateCatalogGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service PrivateCatalog.
-   *
-   * <pre>
-   * `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`
-   * and `Version` resources under a target resource context.
-   * `Catalog` is computed based on the [Association][]s linked to the target
-   * resource and its ancestors. Each association's
-   * [google.cloud.privatecatalogproducer.v1beta.Catalog][] is transformed into a
-   * `Catalog`. If multiple associations have the same parent
-   * [google.cloud.privatecatalogproducer.v1beta.Catalog][], they are
-   * de-duplicated into one `Catalog`. Users must have
-   * `cloudprivatecatalog.catalogTargets.get` IAM permission on the resource
-   * context in order to access catalogs. `Catalog` contains the resource name and
-   * a subset of data of the original
-   * [google.cloud.privatecatalogproducer.v1beta.Catalog][].
-   * `Product` is child resource of the catalog. A `Product` contains the resource
-   * name and a subset of the data of the original
-   * [google.cloud.privatecatalogproducer.v1beta.Product][].
-   * `Version` is child resource of the product. A `Version` contains the resource
-   * name and a subset of the data of the original
-   * [google.cloud.privatecatalogproducer.v1beta.Version][].
-   * </pre>
-   */
-  public static final class PrivateCatalogBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<PrivateCatalogBlockingV2Stub> {
-    private PrivateCatalogBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected PrivateCatalogBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new PrivateCatalogBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Search [Catalog][google.cloud.privatecatalog.v1beta1.Catalog] resources that consumers have access to, within the
-     * scope of the consumer cloud resource hierarchy context.
-     * </pre>
-     */
-    public com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse searchCatalogs(
-        com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSearchCatalogsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Search [Product][google.cloud.privatecatalog.v1beta1.Product] resources that consumers have access to, within the
-     * scope of the consumer cloud resource hierarchy context.
-     * </pre>
-     */
-    public com.google.cloud.privatecatalog.v1beta1.SearchProductsResponse searchProducts(
-        com.google.cloud.privatecatalog.v1beta1.SearchProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSearchProductsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Search [Version][google.cloud.privatecatalog.v1beta1.Version] resources that consumers have access to, within the
-     * scope of the consumer cloud resource hierarchy context.
-     * </pre>
-     */
-    public com.google.cloud.privatecatalog.v1beta1.SearchVersionsResponse searchVersions(
-        com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSearchVersionsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service PrivateCatalog.
    *
    * <pre>
    * `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`

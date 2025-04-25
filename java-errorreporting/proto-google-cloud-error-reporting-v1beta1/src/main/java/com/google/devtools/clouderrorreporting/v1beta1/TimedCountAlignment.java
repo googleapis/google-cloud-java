@@ -87,7 +87,6 @@ public enum TimedCountAlignment implements com.google.protobuf.ProtocolMessageEn
    * <code>ERROR_COUNT_ALIGNMENT_UNSPECIFIED = 0;</code>
    */
   public static final int ERROR_COUNT_ALIGNMENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -110,7 +109,6 @@ public enum TimedCountAlignment implements com.google.protobuf.ProtocolMessageEn
    * <code>ALIGNMENT_EQUAL_ROUNDED = 1;</code>
    */
   public static final int ALIGNMENT_EQUAL_ROUNDED_VALUE = 1;
-
   /**
    *
    *

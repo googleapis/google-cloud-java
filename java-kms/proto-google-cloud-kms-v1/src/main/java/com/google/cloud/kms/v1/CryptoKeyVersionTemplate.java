@@ -38,7 +38,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CryptoKeyVersionTemplate)
     CryptoKeyVersionTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CryptoKeyVersionTemplate.newBuilder() to construct.
   private CryptoKeyVersionTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 1;
   private int protectionLevel_ = 0;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
 
   public static final int ALGORITHM_FIELD_NUMBER = 3;
   private int algorithm_ = 0;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
   public int getAlgorithmValue() {
     return algorithm_;
   }
-
   /**
    *
    *
@@ -350,7 +345,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -551,7 +545,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int protectionLevel_ = 0;
-
     /**
      *
      *
@@ -570,7 +563,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -638,7 +628,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     }
 
     private int algorithm_ = 0;
-
     /**
      *
      *
@@ -688,7 +676,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     public int getAlgorithmValue() {
       return algorithm_;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

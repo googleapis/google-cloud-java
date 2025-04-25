@@ -52,7 +52,6 @@ public interface ImportRowErrorOrBuilder
    * @return The vmName.
    */
   java.lang.String getVmName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ImportRowErrorOrBuilder
    * @return The vmUuid.
    */
   java.lang.String getVmUuid();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface ImportRowErrorOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError errors = 4;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ImportError> getErrorsList();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ImportRowErrorOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError errors = 4;</code>
    */
   com.google.cloud.migrationcenter.v1.ImportError getErrors(int index);
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ImportRowErrorOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError errors = 4;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface ImportRowErrorOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ImportErrorOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *

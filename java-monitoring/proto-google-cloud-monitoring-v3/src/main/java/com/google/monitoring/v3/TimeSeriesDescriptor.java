@@ -33,7 +33,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.TimeSeriesDescriptor)
     TimeSeriesDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimeSeriesDescriptor.newBuilder() to construct.
   private TimeSeriesDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      * @return The key.
      */
     java.lang.String getKey();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for valueType.
      */
     int getValueTypeValue();
-
     /**
      *
      *
@@ -134,7 +131,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for metricKind.
      */
     int getMetricKindValue();
-
     /**
      *
      *
@@ -163,7 +159,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      * @return The unit.
      */
     java.lang.String getUnit();
-
     /**
      *
      *
@@ -180,7 +175,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getUnitBytes();
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor)
       ValueDescriptorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ValueDescriptor.newBuilder() to construct.
     private ValueDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -233,7 +226,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -257,7 +249,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -284,7 +275,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
 
     public static final int VALUE_TYPE_FIELD_NUMBER = 2;
     private int valueType_ = 0;
-
     /**
      *
      *
@@ -300,7 +290,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     public int getValueTypeValue() {
       return valueType_;
     }
-
     /**
      *
      *
@@ -321,7 +310,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
 
     public static final int METRIC_KIND_FIELD_NUMBER = 3;
     private int metricKind_ = 0;
-
     /**
      *
      *
@@ -337,7 +325,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     public int getMetricKindValue() {
       return metricKind_;
     }
-
     /**
      *
      *
@@ -360,7 +347,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object unit_ = "";
-
     /**
      *
      *
@@ -387,7 +373,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -607,7 +592,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -840,7 +824,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object key_ = "";
-
       /**
        *
        *
@@ -863,7 +846,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -886,7 +868,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -908,7 +889,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -926,7 +906,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -951,7 +930,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
 
       private int valueType_ = 0;
-
       /**
        *
        *
@@ -967,7 +945,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       public int getValueTypeValue() {
         return valueType_;
       }
-
       /**
        *
        *
@@ -986,7 +963,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1004,7 +980,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
             com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
         return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -1026,7 +1001,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1020,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
 
       private int metricKind_ = 0;
-
       /**
        *
        *
@@ -1062,7 +1035,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       public int getMetricKindValue() {
         return metricKind_;
       }
-
       /**
        *
        *
@@ -1081,7 +1053,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1099,7 +1070,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
             com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
         return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -1121,7 +1091,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1141,7 +1110,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object unit_ = "";
-
       /**
        *
        *
@@ -1167,7 +1135,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1193,7 +1160,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1218,7 +1184,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1239,7 +1204,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1337,7 +1301,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.LabelDescriptor> labelDescriptors_;
-
   /**
    *
    *
@@ -1351,7 +1314,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.api.LabelDescriptor> getLabelDescriptorsList() {
     return labelDescriptors_;
   }
-
   /**
    *
    *
@@ -1366,7 +1328,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       getLabelDescriptorsOrBuilderList() {
     return labelDescriptors_;
   }
-
   /**
    *
    *
@@ -1380,7 +1341,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   public int getLabelDescriptorsCount() {
     return labelDescriptors_.size();
   }
-
   /**
    *
    *
@@ -1394,7 +1354,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   public com.google.api.LabelDescriptor getLabelDescriptors(int index) {
     return labelDescriptors_.get(index);
   }
-
   /**
    *
    *
@@ -1414,7 +1373,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor>
       pointDescriptors_;
-
   /**
    *
    *
@@ -1431,7 +1389,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       getPointDescriptorsList() {
     return pointDescriptors_;
   }
-
   /**
    *
    *
@@ -1449,7 +1406,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       getPointDescriptorsOrBuilderList() {
     return pointDescriptors_;
   }
-
   /**
    *
    *
@@ -1465,7 +1421,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   public int getPointDescriptorsCount() {
     return pointDescriptors_.size();
   }
-
   /**
    *
    *
@@ -1482,7 +1437,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       int index) {
     return pointDescriptors_.get(index);
   }
-
   /**
    *
    *
@@ -1672,7 +1626,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1989,7 +1942,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return labelDescriptorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2006,7 +1958,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return labelDescriptorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2023,7 +1974,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return labelDescriptorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2046,7 +1996,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2067,7 +2016,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2090,7 +2038,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2113,7 +2060,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2079,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2154,7 +2099,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2175,7 +2119,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2195,7 +2138,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2157,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2169,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     public com.google.api.LabelDescriptor.Builder getLabelDescriptorsBuilder(int index) {
       return getLabelDescriptorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2245,7 +2185,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return labelDescriptorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2263,7 +2202,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(labelDescriptors_);
       }
     }
-
     /**
      *
      *
@@ -2277,7 +2215,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       return getLabelDescriptorsFieldBuilder()
           .addBuilder(com.google.api.LabelDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2291,7 +2228,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       return getLabelDescriptorsFieldBuilder()
           .addBuilder(index, com.google.api.LabelDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2362,7 +2298,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return pointDescriptorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2381,7 +2316,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return pointDescriptorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2401,7 +2335,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return pointDescriptorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2427,7 +2360,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2383,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2477,7 +2408,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2503,7 +2433,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2526,7 +2455,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2478,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2574,7 +2501,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2596,7 +2522,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2618,7 +2543,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2558,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         getPointDescriptorsBuilder(int index) {
       return getPointDescriptorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2654,7 +2577,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return pointDescriptorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2675,7 +2597,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(pointDescriptors_);
       }
     }
-
     /**
      *
      *
@@ -2693,7 +2614,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2712,7 +2632,6 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
               index,
               com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *

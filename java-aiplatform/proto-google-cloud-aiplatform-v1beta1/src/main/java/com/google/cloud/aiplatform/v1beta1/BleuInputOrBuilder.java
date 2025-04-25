@@ -38,7 +38,6 @@ public interface BleuInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface BleuInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.BleuSpec getMetricSpec();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface BleuInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.BleuInstance> getInstancesList();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface BleuInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.BleuInstance getInstances(int index);
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface BleuInputOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface BleuInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.BleuInstanceOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *

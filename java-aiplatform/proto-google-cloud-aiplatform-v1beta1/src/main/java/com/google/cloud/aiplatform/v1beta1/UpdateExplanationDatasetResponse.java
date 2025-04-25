@@ -35,7 +35,6 @@ public final class UpdateExplanationDatasetResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetResponse)
     UpdateExplanationDatasetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateExplanationDatasetResponse.newBuilder() to construct.
   private UpdateExplanationDatasetResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -217,7 +216,6 @@ public final class UpdateExplanationDatasetResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

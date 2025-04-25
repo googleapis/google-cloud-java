@@ -34,7 +34,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ListTransferableOffersResponse)
     ListTransferableOffersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTransferableOffersResponse.newBuilder() to construct.
   private ListTransferableOffersResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.TransferableOffer> transferableOffers_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.channel.v1.TransferableOffer> getTransferableOffersList() {
     return transferableOffers_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       getTransferableOffersOrBuilderList() {
     return transferableOffers_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
   public int getTransferableOffersCount() {
     return transferableOffers_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
   public com.google.cloud.channel.v1.TransferableOffer getTransferableOffers(int index) {
     return transferableOffers_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +372,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return transferableOffersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return transferableOffersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return transferableOffersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +732,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         int index) {
       return getTransferableOffersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return transferableOffersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(transferableOffers_);
       }
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       return getTransferableOffersFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.TransferableOffer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       return getTransferableOffersFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.TransferableOffer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1023,7 +997,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1049,7 +1022,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1047,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1071,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class ListTransferableOffersResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

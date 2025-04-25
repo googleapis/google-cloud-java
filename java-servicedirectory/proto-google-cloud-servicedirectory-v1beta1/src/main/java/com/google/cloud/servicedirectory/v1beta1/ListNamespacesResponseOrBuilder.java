@@ -34,7 +34,6 @@ public interface ListNamespacesResponseOrBuilder
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Namespace namespaces = 1;</code>
    */
   java.util.List<com.google.cloud.servicedirectory.v1beta1.Namespace> getNamespacesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNamespacesResponseOrBuilder
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Namespace namespaces = 1;</code>
    */
   com.google.cloud.servicedirectory.v1beta1.Namespace getNamespaces(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNamespacesResponseOrBuilder
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Namespace namespaces = 1;</code>
    */
   int getNamespacesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListNamespacesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicedirectory.v1beta1.NamespaceOrBuilder>
       getNamespacesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListNamespacesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

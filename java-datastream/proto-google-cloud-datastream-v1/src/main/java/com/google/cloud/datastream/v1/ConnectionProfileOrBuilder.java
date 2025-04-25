@@ -38,7 +38,6 @@ public interface ConnectionProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ConnectionProfileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ConnectionProfileOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface ConnectionProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -155,11 +149,9 @@ public interface ConnectionProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -170,7 +162,6 @@ public interface ConnectionProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -185,7 +176,6 @@ public interface ConnectionProfileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface ConnectionProfileOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -261,7 +249,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
-
   /**
    *
    *
@@ -287,7 +274,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the oracleProfile field is set.
    */
   boolean hasOracleProfile();
-
   /**
    *
    *
@@ -300,7 +286,6 @@ public interface ConnectionProfileOrBuilder
    * @return The oracleProfile.
    */
   com.google.cloud.datastream.v1.OracleProfile getOracleProfile();
-
   /**
    *
    *
@@ -324,7 +309,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the gcsProfile field is set.
    */
   boolean hasGcsProfile();
-
   /**
    *
    *
@@ -337,7 +321,6 @@ public interface ConnectionProfileOrBuilder
    * @return The gcsProfile.
    */
   com.google.cloud.datastream.v1.GcsProfile getGcsProfile();
-
   /**
    *
    *
@@ -361,7 +344,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the mysqlProfile field is set.
    */
   boolean hasMysqlProfile();
-
   /**
    *
    *
@@ -374,7 +356,6 @@ public interface ConnectionProfileOrBuilder
    * @return The mysqlProfile.
    */
   com.google.cloud.datastream.v1.MysqlProfile getMysqlProfile();
-
   /**
    *
    *
@@ -398,7 +379,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the bigqueryProfile field is set.
    */
   boolean hasBigqueryProfile();
-
   /**
    *
    *
@@ -411,7 +391,6 @@ public interface ConnectionProfileOrBuilder
    * @return The bigqueryProfile.
    */
   com.google.cloud.datastream.v1.BigQueryProfile getBigqueryProfile();
-
   /**
    *
    *
@@ -435,7 +414,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the postgresqlProfile field is set.
    */
   boolean hasPostgresqlProfile();
-
   /**
    *
    *
@@ -448,7 +426,6 @@ public interface ConnectionProfileOrBuilder
    * @return The postgresqlProfile.
    */
   com.google.cloud.datastream.v1.PostgresqlProfile getPostgresqlProfile();
-
   /**
    *
    *
@@ -472,7 +449,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the sqlServerProfile field is set.
    */
   boolean hasSqlServerProfile();
-
   /**
    *
    *
@@ -485,7 +461,6 @@ public interface ConnectionProfileOrBuilder
    * @return The sqlServerProfile.
    */
   com.google.cloud.datastream.v1.SqlServerProfile getSqlServerProfile();
-
   /**
    *
    *
@@ -509,7 +484,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the salesforceProfile field is set.
    */
   boolean hasSalesforceProfile();
-
   /**
    *
    *
@@ -522,7 +496,6 @@ public interface ConnectionProfileOrBuilder
    * @return The salesforceProfile.
    */
   com.google.cloud.datastream.v1.SalesforceProfile getSalesforceProfile();
-
   /**
    *
    *
@@ -548,7 +521,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the staticServiceIpConnectivity field is set.
    */
   boolean hasStaticServiceIpConnectivity();
-
   /**
    *
    *
@@ -563,7 +535,6 @@ public interface ConnectionProfileOrBuilder
    * @return The staticServiceIpConnectivity.
    */
   com.google.cloud.datastream.v1.StaticServiceIpConnectivity getStaticServiceIpConnectivity();
-
   /**
    *
    *
@@ -591,7 +562,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the forwardSshConnectivity field is set.
    */
   boolean hasForwardSshConnectivity();
-
   /**
    *
    *
@@ -605,7 +575,6 @@ public interface ConnectionProfileOrBuilder
    * @return The forwardSshConnectivity.
    */
   com.google.cloud.datastream.v1.ForwardSshTunnelConnectivity getForwardSshConnectivity();
-
   /**
    *
    *
@@ -631,7 +600,6 @@ public interface ConnectionProfileOrBuilder
    * @return Whether the privateConnectivity field is set.
    */
   boolean hasPrivateConnectivity();
-
   /**
    *
    *
@@ -644,7 +612,6 @@ public interface ConnectionProfileOrBuilder
    * @return The privateConnectivity.
    */
   com.google.cloud.datastream.v1.PrivateConnectivity getPrivateConnectivity();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return Whether the tunedModelRef field is set.
    */
   boolean hasTunedModelRef();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return The tunedModelRef.
    */
   com.google.cloud.aiplatform.v1.TunedModelRef getTunedModelRef();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return Whether the tuningJob field is set.
    */
   boolean hasTuningJob();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return The tuningJob.
    */
   com.google.cloud.aiplatform.v1.TuningJob getTuningJob();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return Whether the artifactDestination field is set.
    */
   boolean hasArtifactDestination();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface RebaseTunedModelRequestOrBuilder
    * @return The artifactDestination.
    */
   com.google.cloud.aiplatform.v1.GcsDestination getArtifactDestination();
-
   /**
    *
    *

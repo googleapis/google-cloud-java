@@ -33,7 +33,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AutomationRule)
     AutomationRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomationRule.newBuilder() to construct.
   private AutomationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     private RuleCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROMOTE_RELEASE_RULE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPromoteReleaseRule() {
     return ruleCase_ == 1;
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.PromoteReleaseRule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADVANCE_ROLLOUT_RULE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdvanceRolloutRule() {
     return ruleCase_ == 2;
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.AdvanceRolloutRule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REPAIR_ROLLOUT_RULE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -264,7 +255,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRepairRolloutRule() {
     return ruleCase_ == 3;
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.RepairRolloutRule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMED_PROMOTE_RELEASE_RULE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimedPromoteReleaseRule() {
     return ruleCase_ == 4;
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -593,7 +579,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -866,7 +851,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.PromoteReleaseRule.Builder,
             com.google.cloud.deploy.v1.PromoteReleaseRuleOrBuilder>
         promoteReleaseRuleBuilder_;
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPromoteReleaseRule() {
       return ruleCase_ == 1;
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.PromoteReleaseRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -940,7 +922,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +980,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.PromoteReleaseRule.Builder getPromoteReleaseRuleBuilder() {
       return getPromoteReleaseRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1069,7 +1046,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.PromoteReleaseRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1111,7 +1087,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.AdvanceRolloutRule.Builder,
             com.google.cloud.deploy.v1.AdvanceRolloutRuleOrBuilder>
         advanceRolloutRuleBuilder_;
-
     /**
      *
      *
@@ -1130,7 +1105,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdvanceRolloutRule() {
       return ruleCase_ == 2;
     }
-
     /**
      *
      *
@@ -1159,7 +1133,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.AdvanceRolloutRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1158,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1181,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1216,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1244,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1259,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.AdvanceRolloutRule.Builder getAdvanceRolloutRuleBuilder() {
       return getAdvanceRolloutRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1314,7 +1282,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.AdvanceRolloutRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1356,7 +1323,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.RepairRolloutRule.Builder,
             com.google.cloud.deploy.v1.RepairRolloutRuleOrBuilder>
         repairRolloutRuleBuilder_;
-
     /**
      *
      *
@@ -1375,7 +1341,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRepairRolloutRule() {
       return ruleCase_ == 3;
     }
-
     /**
      *
      *
@@ -1404,7 +1369,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RepairRolloutRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1430,7 +1394,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1417,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1452,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1480,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1495,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.RepairRolloutRule.Builder getRepairRolloutRuleBuilder() {
       return getRepairRolloutRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1559,7 +1518,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.RepairRolloutRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1559,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.TimedPromoteReleaseRule.Builder,
             com.google.cloud.deploy.v1.TimedPromoteReleaseRuleOrBuilder>
         timedPromoteReleaseRuleBuilder_;
-
     /**
      *
      *
@@ -1621,7 +1578,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimedPromoteReleaseRule() {
       return ruleCase_ == 4;
     }
-
     /**
      *
      *
@@ -1651,7 +1607,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1679,7 +1634,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1658,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1695,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       ruleCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1724,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1741,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         getTimedPromoteReleaseRuleBuilder() {
       return getTimedPromoteReleaseRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1816,7 +1766,6 @@ public final class AutomationRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.TimedPromoteReleaseRule.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -41,7 +41,6 @@ public interface CreateTenantRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateTenantRequestOrBuilder
    * @return Whether the tenant field is set.
    */
   boolean hasTenant();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateTenantRequestOrBuilder
    * @return The tenant.
    */
   com.google.cloud.talent.v4.Tenant getTenant();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListUptimeCheckConfigsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.UptimeCheckConfig> getUptimeCheckConfigsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListUptimeCheckConfigsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
   com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfigs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListUptimeCheckConfigsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
   int getUptimeCheckConfigsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListUptimeCheckConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfigOrBuilder>
       getUptimeCheckConfigsOrBuilderList();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface ListUptimeCheckConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

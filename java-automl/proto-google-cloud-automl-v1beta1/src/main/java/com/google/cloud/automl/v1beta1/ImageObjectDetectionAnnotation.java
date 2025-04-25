@@ -33,7 +33,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation)
     ImageObjectDetectionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageObjectDetectionAnnotation.newBuilder() to construct.
   private ImageObjectDetectionAnnotation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int BOUNDING_BOX_FIELD_NUMBER = 1;
   private com.google.cloud.automl.v1beta1.BoundingPoly boundingBox_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
         ? com.google.cloud.automl.v1beta1.BoundingPoly.getDefaultInstance()
         : boundingBox_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
 
   public static final int SCORE_FIELD_NUMBER = 2;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -312,7 +307,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -533,7 +527,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
             com.google.cloud.automl.v1beta1.BoundingPoly.Builder,
             com.google.cloud.automl.v1beta1.BoundingPolyOrBuilder>
         boundingBoxBuilder_;
-
     /**
      *
      *
@@ -548,7 +541,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -569,7 +561,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
         return boundingBoxBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +649,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +663,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -695,7 +681,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
             : boundingBox_;
       }
     }
-
     /**
      *
      *
@@ -723,7 +708,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     }
 
     private float score_;
-
     /**
      *
      *
@@ -740,7 +724,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -761,7 +744,6 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

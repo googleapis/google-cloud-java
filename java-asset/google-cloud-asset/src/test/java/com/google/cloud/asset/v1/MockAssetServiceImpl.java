@@ -117,8 +117,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchGetAssetsHistory, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchGetAssetsHistory, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchGetAssetsHistoryResponse.class.getName(),
                   Exception.class.getName())));
@@ -263,8 +262,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchAllIamPolicies, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SearchAllIamPolicies, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchAllIamPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -306,8 +304,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AnalyzeIamPolicyLongrunning, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method AnalyzeIamPolicyLongrunning, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -476,8 +473,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchGetEffectiveIamPolicies, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method BatchGetEffectiveIamPolicies, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchGetEffectiveIamPoliciesResponse.class.getName(),
                   Exception.class.getName())));
@@ -521,8 +517,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AnalyzeOrgPolicyGovernedContainers,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method AnalyzeOrgPolicyGovernedContainers, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnalyzeOrgPolicyGovernedContainersResponse.class.getName(),
                   Exception.class.getName())));
@@ -544,8 +539,7 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AnalyzeOrgPolicyGovernedAssets,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method AnalyzeOrgPolicyGovernedAssets, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AnalyzeOrgPolicyGovernedAssetsResponse.class.getName(),
                   Exception.class.getName())));

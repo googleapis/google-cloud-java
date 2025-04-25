@@ -39,7 +39,6 @@ public interface DeleteDomainRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

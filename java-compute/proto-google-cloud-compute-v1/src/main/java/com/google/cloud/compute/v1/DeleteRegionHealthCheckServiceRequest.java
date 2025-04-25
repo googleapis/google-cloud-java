@@ -34,7 +34,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest)
     DeleteRegionHealthCheckServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteRegionHealthCheckServiceRequest.newBuilder() to construct.
   private DeleteRegionHealthCheckServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class DeleteRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheckService_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DeleteRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class DeleteRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class DeleteRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class DeleteRegionHealthCheckServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -281,7 +272,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -500,7 +490,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -738,7 +727,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     private int bitField0_;
 
     private java.lang.Object healthCheckService_ = "";
-
     /**
      *
      *
@@ -762,7 +750,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +838,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -879,7 +862,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1000,7 +978,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1025,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1044,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1070,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1111,7 +1084,6 @@ public final class DeleteRegionHealthCheckServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1134,7 +1106,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class DeleteRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1166,6 @@ public final class DeleteRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

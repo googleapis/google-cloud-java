@@ -34,7 +34,6 @@ public interface ImportConsumerOverridesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaOverride overrides = 1;</code>
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaOverride> getOverridesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportConsumerOverridesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaOverride overrides = 1;</code>
    */
   com.google.api.serviceusage.v1beta1.QuotaOverride getOverrides(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportConsumerOverridesResponseOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaOverride overrides = 1;</code>
    */
   int getOverridesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ImportConsumerOverridesResponseOrBuilder
    */
   java.util.List<? extends com.google.api.serviceusage.v1beta1.QuotaOverrideOrBuilder>
       getOverridesOrBuilderList();
-
   /**
    *
    *

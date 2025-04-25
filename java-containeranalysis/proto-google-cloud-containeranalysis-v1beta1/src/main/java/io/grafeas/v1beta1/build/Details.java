@@ -33,7 +33,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.build.Details)
     DetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Details.newBuilder() to construct.
   private Details(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROVENANCE_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.provenance.BuildProvenance provenance_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProvenance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.provenance.BuildProvenance.getDefaultInstance()
         : provenance_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object provenanceBytes_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -361,7 +355,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -578,7 +571,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.provenance.BuildProvenance.Builder,
             io.grafeas.v1beta1.provenance.BuildProvenanceOrBuilder>
         provenanceBuilder_;
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProvenance() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
         return provenanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +647,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +693,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProvenanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
             : provenance_;
       }
     }
-
     /**
      *
      *
@@ -768,7 +752,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object provenanceBytes_ = "";
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class Details extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

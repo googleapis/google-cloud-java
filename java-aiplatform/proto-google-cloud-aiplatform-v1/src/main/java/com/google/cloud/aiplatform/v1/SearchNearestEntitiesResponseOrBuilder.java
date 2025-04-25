@@ -36,7 +36,6 @@ public interface SearchNearestEntitiesResponseOrBuilder
    * @return Whether the nearestNeighbors field is set.
    */
   boolean hasNearestNeighbors();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SearchNearestEntitiesResponseOrBuilder
    * @return The nearestNeighbors.
    */
   com.google.cloud.aiplatform.v1.NearestNeighbors getNearestNeighbors();
-
   /**
    *
    *

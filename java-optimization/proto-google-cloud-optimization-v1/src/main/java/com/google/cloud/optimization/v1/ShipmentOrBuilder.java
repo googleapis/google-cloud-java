@@ -35,7 +35,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.cloud.optimization.v1.Shipment.VisitRequest pickups = 1;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.Shipment.VisitRequest> getPickupsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.cloud.optimization.v1.Shipment.VisitRequest pickups = 1;</code>
    */
   com.google.cloud.optimization.v1.Shipment.VisitRequest getPickups(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.cloud.optimization.v1.Shipment.VisitRequest pickups = 1;</code>
    */
   int getPickupsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ShipmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.Shipment.VisitRequestOrBuilder>
       getPickupsOrBuilderList();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.cloud.optimization.v1.Shipment.VisitRequest deliveries = 2;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.Shipment.VisitRequest> getDeliveriesList();
-
   /**
    *
    *
@@ -108,7 +103,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.cloud.optimization.v1.Shipment.VisitRequest deliveries = 2;</code>
    */
   com.google.cloud.optimization.v1.Shipment.VisitRequest getDeliveries(int index);
-
   /**
    *
    *
@@ -120,7 +114,6 @@ public interface ShipmentOrBuilder
    * <code>repeated .google.cloud.optimization.v1.Shipment.VisitRequest deliveries = 2;</code>
    */
   int getDeliveriesCount();
-
   /**
    *
    *
@@ -133,7 +126,6 @@ public interface ShipmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.Shipment.VisitRequestOrBuilder>
       getDeliveriesOrBuilderList();
-
   /**
    *
    *
@@ -161,7 +153,6 @@ public interface ShipmentOrBuilder
    * <code>map&lt;string, .google.cloud.optimization.v1.Shipment.Load&gt; load_demands = 14;</code>
    */
   int getLoadDemandsCount();
-
   /**
    *
    *
@@ -177,11 +168,9 @@ public interface ShipmentOrBuilder
    * <code>map&lt;string, .google.cloud.optimization.v1.Shipment.Load&gt; load_demands = 14;</code>
    */
   boolean containsLoadDemands(java.lang.String key);
-
   /** Use {@link #getLoadDemandsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load> getLoadDemands();
-
   /**
    *
    *
@@ -198,7 +187,6 @@ public interface ShipmentOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.optimization.v1.Shipment.Load>
       getLoadDemandsMap();
-
   /**
    *
    *
@@ -218,7 +206,6 @@ public interface ShipmentOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.optimization.v1.Shipment.Load defaultValue);
-
   /**
    *
    *
@@ -254,7 +241,6 @@ public interface ShipmentOrBuilder
    * @return Whether the penaltyCost field is set.
    */
   boolean hasPenaltyCost();
-
   /**
    *
    *
@@ -289,7 +275,6 @@ public interface ShipmentOrBuilder
    * @return A list containing the allowedVehicleIndices.
    */
   java.util.List<java.lang.Integer> getAllowedVehicleIndicesList();
-
   /**
    *
    *
@@ -304,7 +289,6 @@ public interface ShipmentOrBuilder
    * @return The count of allowedVehicleIndices.
    */
   int getAllowedVehicleIndicesCount();
-
   /**
    *
    *
@@ -343,7 +327,6 @@ public interface ShipmentOrBuilder
    * @return A list containing the costsPerVehicle.
    */
   java.util.List<java.lang.Double> getCostsPerVehicleList();
-
   /**
    *
    *
@@ -366,7 +349,6 @@ public interface ShipmentOrBuilder
    * @return The count of costsPerVehicle.
    */
   int getCostsPerVehicleCount();
-
   /**
    *
    *
@@ -406,7 +388,6 @@ public interface ShipmentOrBuilder
    * @return A list containing the costsPerVehicleIndices.
    */
   java.util.List<java.lang.Integer> getCostsPerVehicleIndicesList();
-
   /**
    *
    *
@@ -422,7 +403,6 @@ public interface ShipmentOrBuilder
    * @return The count of costsPerVehicleIndices.
    */
   int getCostsPerVehicleIndicesCount();
-
   /**
    *
    *
@@ -468,7 +448,6 @@ public interface ShipmentOrBuilder
    * @return Whether the pickupToDeliveryRelativeDetourLimit field is set.
    */
   boolean hasPickupToDeliveryRelativeDetourLimit();
-
   /**
    *
    *
@@ -526,7 +505,6 @@ public interface ShipmentOrBuilder
    * @return Whether the pickupToDeliveryAbsoluteDetourLimit field is set.
    */
   boolean hasPickupToDeliveryAbsoluteDetourLimit();
-
   /**
    *
    *
@@ -555,7 +533,6 @@ public interface ShipmentOrBuilder
    * @return The pickupToDeliveryAbsoluteDetourLimit.
    */
   com.google.protobuf.Duration getPickupToDeliveryAbsoluteDetourLimit();
-
   /**
    *
    *
@@ -600,7 +577,6 @@ public interface ShipmentOrBuilder
    * @return Whether the pickupToDeliveryTimeLimit field is set.
    */
   boolean hasPickupToDeliveryTimeLimit();
-
   /**
    *
    *
@@ -618,7 +594,6 @@ public interface ShipmentOrBuilder
    * @return The pickupToDeliveryTimeLimit.
    */
   com.google.protobuf.Duration getPickupToDeliveryTimeLimit();
-
   /**
    *
    *
@@ -654,7 +629,6 @@ public interface ShipmentOrBuilder
    * @return The shipmentType.
    */
   java.lang.String getShipmentType();
-
   /**
    *
    *
@@ -689,7 +663,6 @@ public interface ShipmentOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *
@@ -740,7 +713,6 @@ public interface ShipmentOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.optimization.v1.CapacityQuantity> getDemandsList();
-
   /**
    *
    *
@@ -755,7 +727,6 @@ public interface ShipmentOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.CapacityQuantity getDemands(int index);
-
   /**
    *
    *
@@ -770,7 +741,6 @@ public interface ShipmentOrBuilder
    */
   @java.lang.Deprecated
   int getDemandsCount();
-
   /**
    *
    *
@@ -786,7 +756,6 @@ public interface ShipmentOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.optimization.v1.CapacityQuantityOrBuilder>
       getDemandsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ExcludeByHotword)
     ExcludeByHotwordOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExcludeByHotword.newBuilder() to construct.
   private ExcludeByHotword(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int HOTWORD_REGEX_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
   public boolean hasHotwordRegex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
         ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()
         : hotwordRegex_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
 
   public static final int PROXIMITY_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
   public boolean hasProximity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
         ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance()
         : proximity_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +578,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
         hotwordRegexBuilder_;
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     public boolean hasHotwordRegex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
         return hotwordRegexBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getHotwordRegexFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -749,7 +733,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
             : hotwordRegex_;
       }
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder,
             com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder>
         proximityBuilder_;
-
     /**
      *
      *
@@ -800,7 +782,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
     public boolean hasProximity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -824,7 +805,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
         return proximityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -851,7 +831,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +909,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getProximityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class ExcludeByHotword extends com.google.protobuf.GeneratedMessage
             : proximity_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface AudienceEventFilterOrBuilder
    * @return The eventName.
    */
   java.lang.String getEventName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface AudienceEventFilterOrBuilder
    * @return Whether the eventParameterFilterExpression field is set.
    */
   boolean hasEventParameterFilterExpression();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface AudienceEventFilterOrBuilder
    * @return The eventParameterFilterExpression.
    */
   com.google.analytics.admin.v1alpha.AudienceFilterExpression getEventParameterFilterExpression();
-
   /**
    *
    *

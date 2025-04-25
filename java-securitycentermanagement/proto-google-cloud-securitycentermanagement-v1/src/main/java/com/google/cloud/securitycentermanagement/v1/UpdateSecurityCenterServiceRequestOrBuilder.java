@@ -38,7 +38,6 @@ public interface UpdateSecurityCenterServiceRequestOrBuilder
    * @return Whether the securityCenterService field is set.
    */
   boolean hasSecurityCenterService();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateSecurityCenterServiceRequestOrBuilder
    * @return The securityCenterService.
    */
   com.google.cloud.securitycentermanagement.v1.SecurityCenterService getSecurityCenterService();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface UpdateSecurityCenterServiceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateSecurityCenterServiceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RepricingConfig)
     RepricingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RepricingConfig.newBuilder() to construct.
   private RepricingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * @return The entitlement.
      */
     java.lang.String getEntitlement();
-
     /**
      *
      *
@@ -100,7 +98,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getEntitlementBytes();
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RepricingConfig.EntitlementGranularity)
       EntitlementGranularityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EntitlementGranularity.newBuilder() to construct.
     private EntitlementGranularity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -150,7 +146,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entitlement_ = "";
-
     /**
      *
      *
@@ -176,7 +171,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -365,7 +359,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -560,7 +553,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object entitlement_ = "";
-
       /**
        *
        *
@@ -585,7 +577,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -610,7 +601,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -634,7 +624,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -654,7 +643,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -752,7 +740,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -773,7 +760,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
       ChannelPartnerGranularityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ChannelPartnerGranularity.newBuilder() to construct.
     private ChannelPartnerGranularity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -955,7 +941,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1218,7 +1203,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     private GranularityCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1252,7 +1236,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENTITLEMENT_GRANULARITY_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1283,7 +1266,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasEntitlementGranularity() {
     return granularityCase_ == 4;
   }
-
   /**
    *
    *
@@ -1318,7 +1300,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1353,7 +1334,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CHANNEL_PARTNER_GRANULARITY_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1379,7 +1359,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasChannelPartnerGranularity() {
     return granularityCase_ == 5;
   }
-
   /**
    *
    *
@@ -1410,7 +1389,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1440,7 +1418,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int EFFECTIVE_INVOICE_MONTH_FIELD_NUMBER = 1;
   private com.google.type.Date effectiveInvoiceMonth_;
-
   /**
    *
    *
@@ -1458,7 +1435,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasEffectiveInvoiceMonth() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1478,7 +1454,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.type.Date.getDefaultInstance()
         : effectiveInvoiceMonth_;
   }
-
   /**
    *
    *
@@ -1499,7 +1474,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int ADJUSTMENT_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.RepricingAdjustment adjustment_;
-
   /**
    *
    *
@@ -1517,7 +1491,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasAdjustment() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1537,7 +1510,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.channel.v1.RepricingAdjustment.getDefaultInstance()
         : adjustment_;
   }
-
   /**
    *
    *
@@ -1558,7 +1530,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int REBILLING_BASIS_FIELD_NUMBER = 3;
   private int rebillingBasis_ = 0;
-
   /**
    *
    *
@@ -1578,7 +1549,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public int getRebillingBasisValue() {
     return rebillingBasis_;
   }
-
   /**
    *
    *
@@ -1605,7 +1575,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.ConditionalOverride> conditionalOverrides_;
-
   /**
    *
    *
@@ -1622,7 +1591,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       getConditionalOverridesList() {
     return conditionalOverrides_;
   }
-
   /**
    *
    *
@@ -1639,7 +1607,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       getConditionalOverridesOrBuilderList() {
     return conditionalOverrides_;
   }
-
   /**
    *
    *
@@ -1655,7 +1622,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public int getConditionalOverridesCount() {
     return conditionalOverrides_.size();
   }
-
   /**
    *
    *
@@ -1671,7 +1637,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.channel.v1.ConditionalOverride getConditionalOverrides(int index) {
     return conditionalOverrides_.get(index);
   }
-
   /**
    *
    *
@@ -1934,7 +1899,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2298,7 +2262,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.Builder,
             com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularityOrBuilder>
         entitlementGranularityBuilder_;
-
     /**
      *
      *
@@ -2329,7 +2292,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasEntitlementGranularity() {
       return granularityCase_ == 4;
     }
-
     /**
      *
      *
@@ -2373,7 +2335,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2412,7 +2373,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       granularityCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2449,7 +2409,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       granularityCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2501,7 +2460,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       granularityCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2542,7 +2500,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2571,7 +2528,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         getEntitlementGranularityBuilder() {
       return getEntitlementGranularityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2609,7 +2565,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2665,7 +2620,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity.Builder,
             com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularityOrBuilder>
         channelPartnerGranularityBuilder_;
-
     /**
      *
      *
@@ -2691,7 +2645,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasChannelPartnerGranularity() {
       return granularityCase_ == 5;
     }
-
     /**
      *
      *
@@ -2731,7 +2684,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2763,7 +2715,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       granularityCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2793,7 +2744,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       granularityCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2838,7 +2788,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       granularityCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2872,7 +2821,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2894,7 +2842,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         getChannelPartnerGranularityBuilder() {
       return getChannelPartnerGranularityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2926,7 +2873,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2974,7 +2920,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         effectiveInvoiceMonthBuilder_;
-
     /**
      *
      *
@@ -2992,7 +2937,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasEffectiveInvoiceMonth() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3016,7 +2960,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return effectiveInvoiceMonthBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3042,7 +2985,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3065,7 +3007,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3096,7 +3037,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3119,7 +3059,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3137,7 +3076,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEffectiveInvoiceMonthFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3159,7 +3097,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             : effectiveInvoiceMonth_;
       }
     }
-
     /**
      *
      *
@@ -3191,7 +3128,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.channel.v1.RepricingAdjustment.Builder,
             com.google.cloud.channel.v1.RepricingAdjustmentOrBuilder>
         adjustmentBuilder_;
-
     /**
      *
      *
@@ -3208,7 +3144,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasAdjustment() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3231,7 +3166,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return adjustmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3256,7 +3190,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3279,7 +3212,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3310,7 +3242,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3332,7 +3263,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3349,7 +3279,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getAdjustmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3370,7 +3299,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
             : adjustment_;
       }
     }
-
     /**
      *
      *
@@ -3400,7 +3328,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int rebillingBasis_ = 0;
-
     /**
      *
      *
@@ -3420,7 +3347,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     public int getRebillingBasisValue() {
       return rebillingBasis_;
     }
-
     /**
      *
      *
@@ -3443,7 +3369,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3465,7 +3390,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.channel.v1.RebillingBasis.forNumber(rebillingBasis_);
       return result == null ? com.google.cloud.channel.v1.RebillingBasis.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -3491,7 +3415,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3551,7 +3474,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return conditionalOverridesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3570,7 +3492,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return conditionalOverridesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3589,7 +3510,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return conditionalOverridesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3615,7 +3535,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3638,7 +3557,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3663,7 +3581,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3689,7 +3606,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3712,7 +3628,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3735,7 +3650,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3758,7 +3672,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3780,7 +3693,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3802,7 +3714,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3818,7 +3729,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getConditionalOverridesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3838,7 +3748,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return conditionalOverridesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3858,7 +3767,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(conditionalOverrides_);
       }
     }
-
     /**
      *
      *
@@ -3875,7 +3783,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       return getConditionalOverridesFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.ConditionalOverride.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3892,7 +3799,6 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
       return getConditionalOverridesFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.ConditionalOverride.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ComplianceNoteOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ComplianceNoteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ComplianceNoteOrBuilder
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
   java.util.List<io.grafeas.v1.ComplianceVersion> getVersionList();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ComplianceNoteOrBuilder
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
   io.grafeas.v1.ComplianceVersion getVersion(int index);
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface ComplianceNoteOrBuilder
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
   int getVersionCount();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ComplianceNoteOrBuilder
    * <code>repeated .grafeas.v1.ComplianceVersion version = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1.ComplianceVersionOrBuilder> getVersionOrBuilderList();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface ComplianceNoteOrBuilder
    * @return The rationale.
    */
   java.lang.String getRationale();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface ComplianceNoteOrBuilder
    * @return The remediation.
    */
   java.lang.String getRemediation();
-
   /**
    *
    *
@@ -190,14 +182,12 @@ public interface ComplianceNoteOrBuilder
    * @return Whether the cisBenchmark field is set.
    */
   boolean hasCisBenchmark();
-
   /**
    * <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code>
    *
    * @return The cisBenchmark.
    */
   io.grafeas.v1.ComplianceNote.CisBenchmark getCisBenchmark();
-
   /** <code>.grafeas.v1.ComplianceNote.CisBenchmark cis_benchmark = 6;</code> */
   io.grafeas.v1.ComplianceNote.CisBenchmarkOrBuilder getCisBenchmarkOrBuilder();
 
@@ -220,14 +210,12 @@ public interface ComplianceNoteOrBuilder
    * @return Whether the impact field is set.
    */
   boolean hasImpact();
-
   /**
    * <code>string impact = 8;</code>
    *
    * @return The impact.
    */
   java.lang.String getImpact();
-
   /**
    * <code>string impact = 8;</code>
    *

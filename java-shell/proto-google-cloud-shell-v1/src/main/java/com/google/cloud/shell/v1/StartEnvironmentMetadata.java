@@ -34,7 +34,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.StartEnvironmentMetadata)
     StartEnvironmentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartEnvironmentMetadata.newBuilder() to construct.
   private StartEnvironmentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,7 +149,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -162,7 +160,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      * <code>STARTING = 1;</code>
      */
     public static final int STARTING_VALUE = 1;
-
     /**
      *
      *
@@ -175,7 +172,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      * <code>UNARCHIVING_DISK = 2;</code>
      */
     public static final int UNARCHIVING_DISK_VALUE = 2;
-
     /**
      *
      *
@@ -189,7 +185,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
      * <code>AWAITING_COMPUTE_RESOURCES = 4;</code>
      */
     public static final int AWAITING_COMPUTE_RESOURCES_VALUE = 4;
-
     /**
      *
      *
@@ -294,7 +289,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -310,7 +304,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -492,7 +485,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +668,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -692,7 +683,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -711,7 +701,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +720,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
           ? com.google.cloud.shell.v1.StartEnvironmentMetadata.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class StartEnvironmentMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

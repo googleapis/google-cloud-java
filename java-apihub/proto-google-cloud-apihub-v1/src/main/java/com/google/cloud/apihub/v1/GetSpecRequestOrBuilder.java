@@ -40,7 +40,6 @@ public interface GetSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface HistogramQueryResultOrBuilder
    * @return The histogramQuery.
    */
   java.lang.String getHistogramQuery();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface HistogramQueryResultOrBuilder
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
   int getHistogramCount();
-
   /**
    *
    *
@@ -81,11 +79,9 @@ public interface HistogramQueryResultOrBuilder
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
   boolean containsHistogram(java.lang.String key);
-
   /** Use {@link #getHistogramMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getHistogram();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface HistogramQueryResultOrBuilder
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getHistogramMap();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface HistogramQueryResultOrBuilder
    * <code>map&lt;string, int64&gt; histogram = 2;</code>
    */
   long getHistogramOrDefault(java.lang.String key, long defaultValue);
-
   /**
    *
    *

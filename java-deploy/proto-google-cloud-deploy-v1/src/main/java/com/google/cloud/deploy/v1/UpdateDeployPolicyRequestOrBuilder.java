@@ -41,7 +41,6 @@ public interface UpdateDeployPolicyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateDeployPolicyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateDeployPolicyRequestOrBuilder
    * @return Whether the deployPolicy field is set.
    */
   boolean hasDeployPolicy();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateDeployPolicyRequestOrBuilder
    * @return The deployPolicy.
    */
   com.google.cloud.deploy.v1.DeployPolicy getDeployPolicy();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateDeployPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

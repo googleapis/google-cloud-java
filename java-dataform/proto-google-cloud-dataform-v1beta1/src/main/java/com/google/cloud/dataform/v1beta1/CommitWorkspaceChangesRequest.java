@@ -33,7 +33,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest)
     CommitWorkspaceChangesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommitWorkspaceChangesRequest.newBuilder() to construct.
   private CommitWorkspaceChangesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
 
   public static final int AUTHOR_FIELD_NUMBER = 4;
   private com.google.cloud.dataform.v1beta1.CommitAuthor author_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   public boolean hasAuthor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         ? com.google.cloud.dataform.v1beta1.CommitAuthor.getDefaultInstance()
         : author_;
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commitMessage_ = "";
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList paths_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getPathsList() {
     return paths_;
   }
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   public int getPathsCount() {
     return paths_.size();
   }
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
   public java.lang.String getPaths(int index) {
     return paths_.get(index);
   }
-
   /**
    *
    *
@@ -507,7 +495,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -762,7 +749,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -836,7 +820,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
             com.google.cloud.dataform.v1beta1.CommitAuthor.Builder,
             com.google.cloud.dataform.v1beta1.CommitAuthorOrBuilder>
         authorBuilder_;
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public boolean hasAuthor() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         return authorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1020,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return getAuthorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1066,7 +1040,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
             : author_;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object commitMessage_ = "";
-
     /**
      *
      *
@@ -1119,7 +1091,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1113,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1134,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1151,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1183,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       paths_.makeImmutable();
       return paths_;
     }
-
     /**
      *
      *
@@ -1248,7 +1214,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public int getPathsCount() {
       return paths_.size();
     }
-
     /**
      *
      *
@@ -1265,7 +1230,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public java.lang.String getPaths(int index) {
       return paths_.get(index);
     }
-
     /**
      *
      *
@@ -1282,7 +1246,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getPathsBytes(int index) {
       return paths_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1307,7 +1270,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1293,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1313,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1332,6 @@ public final class CommitWorkspaceChangesRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

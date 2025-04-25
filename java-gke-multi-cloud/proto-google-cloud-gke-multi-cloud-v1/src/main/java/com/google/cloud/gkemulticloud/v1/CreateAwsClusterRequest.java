@@ -33,7 +33,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.CreateAwsClusterRequest)
     CreateAwsClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAwsClusterRequest.newBuilder() to construct.
   private CreateAwsClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
 
   public static final int AWS_CLUSTER_FIELD_NUMBER = 2;
   private com.google.cloud.gkemulticloud.v1.AwsCluster awsCluster_;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
   public boolean hasAwsCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         ? com.google.cloud.gkemulticloud.v1.AwsCluster.getDefaultInstance()
         : awsCluster_;
   }
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object awsClusterId_ = "";
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -479,7 +470,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -721,7 +711,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -753,7 +742,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +773,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -816,7 +803,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +829,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +867,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
             com.google.cloud.gkemulticloud.v1.AwsCluster.Builder,
             com.google.cloud.gkemulticloud.v1.AwsClusterOrBuilder>
         awsClusterBuilder_;
-
     /**
      *
      *
@@ -900,7 +884,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     public boolean hasAwsCluster() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -924,7 +907,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         return awsClusterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +955,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +985,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1007,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1024,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return getAwsClusterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
             : awsCluster_;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1075,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object awsClusterId_ = "";
-
     /**
      *
      *
@@ -1130,7 +1105,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1135,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1164,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1189,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1221,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1266,7 +1236,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1286,7 +1255,6 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

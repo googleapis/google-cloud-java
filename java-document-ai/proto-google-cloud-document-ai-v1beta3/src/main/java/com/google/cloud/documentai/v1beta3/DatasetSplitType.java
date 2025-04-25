@@ -83,7 +83,6 @@ public enum DatasetSplitType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATASET_SPLIT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DATASET_SPLIT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public enum DatasetSplitType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATASET_SPLIT_TRAIN = 1;</code>
    */
   public static final int DATASET_SPLIT_TRAIN_VALUE = 1;
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public enum DatasetSplitType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATASET_SPLIT_TEST = 2;</code>
    */
   public static final int DATASET_SPLIT_TEST_VALUE = 2;
-
   /**
    *
    *

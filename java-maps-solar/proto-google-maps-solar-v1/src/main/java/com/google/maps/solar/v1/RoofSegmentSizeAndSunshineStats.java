@@ -33,7 +33,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.RoofSegmentSizeAndSunshineStats)
     RoofSegmentSizeAndSunshineStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoofSegmentSizeAndSunshineStats.newBuilder() to construct.
   private RoofSegmentSizeAndSunshineStats(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   private int bitField0_;
   public static final int PITCH_DEGREES_FIELD_NUMBER = 1;
   private float pitchDegrees_ = 0F;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public boolean hasPitchDegrees() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
 
   public static final int AZIMUTH_DEGREES_FIELD_NUMBER = 2;
   private float azimuthDegrees_ = 0F;
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public boolean hasAzimuthDegrees() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
 
   public static final int STATS_FIELD_NUMBER = 3;
   private com.google.maps.solar.v1.SizeAndSunshineStats stats_;
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public boolean hasStats() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
         ? com.google.maps.solar.v1.SizeAndSunshineStats.getDefaultInstance()
         : stats_;
   }
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
 
   public static final int CENTER_FIELD_NUMBER = 4;
   private com.google.type.LatLng center_;
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public boolean hasCenter() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public com.google.type.LatLng getCenter() {
     return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 5;
   private com.google.maps.solar.v1.LatLngBox boundingBox_;
-
   /**
    *
    *
@@ -262,7 +250,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +267,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
         ? com.google.maps.solar.v1.LatLngBox.getDefaultInstance()
         : boundingBox_;
   }
-
   /**
    *
    *
@@ -299,7 +285,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
 
   public static final int PLANE_HEIGHT_AT_CENTER_METERS_FIELD_NUMBER = 6;
   private float planeHeightAtCenterMeters_ = 0F;
-
   /**
    *
    *
@@ -318,7 +303,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
   public boolean hasPlaneHeightAtCenterMeters() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -576,7 +560,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +839,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     private int bitField0_;
 
     private float pitchDegrees_;
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public boolean hasPitchDegrees() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public float getPitchDegrees() {
       return pitchDegrees_;
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     }
 
     private float azimuthDegrees_;
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public boolean hasAzimuthDegrees() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -970,7 +947,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public float getAzimuthDegrees() {
       return azimuthDegrees_;
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
             com.google.maps.solar.v1.SizeAndSunshineStats.Builder,
             com.google.maps.solar.v1.SizeAndSunshineStatsOrBuilder>
         statsBuilder_;
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public boolean hasStats() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1057,7 +1030,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
         return statsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1052,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1071,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1098,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1117,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1131,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1182,7 +1149,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
             : stats_;
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1179,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         centerBuilder_;
-
     /**
      *
      *
@@ -1228,7 +1193,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public boolean hasCenter() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1247,7 +1211,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
         return centerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1233,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1252,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1279,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1298,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1312,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return getCenterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1370,7 +1328,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
         return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
       }
     }
-
     /**
      *
      *
@@ -1400,7 +1357,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
             com.google.maps.solar.v1.LatLngBox.Builder,
             com.google.maps.solar.v1.LatLngBoxOrBuilder>
         boundingBoxBuilder_;
-
     /**
      *
      *
@@ -1415,7 +1371,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1436,7 +1391,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
         return boundingBoxBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1459,7 +1413,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1432,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1459,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1527,7 +1478,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1542,7 +1492,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1561,7 +1510,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
             : boundingBox_;
       }
     }
-
     /**
      *
      *
@@ -1589,7 +1537,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     }
 
     private float planeHeightAtCenterMeters_;
-
     /**
      *
      *
@@ -1608,7 +1555,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public boolean hasPlaneHeightAtCenterMeters() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1627,7 +1573,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
     public float getPlaneHeightAtCenterMeters() {
       return planeHeightAtCenterMeters_;
     }
-
     /**
      *
      *
@@ -1650,7 +1595,6 @@ public final class RoofSegmentSizeAndSunshineStats extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

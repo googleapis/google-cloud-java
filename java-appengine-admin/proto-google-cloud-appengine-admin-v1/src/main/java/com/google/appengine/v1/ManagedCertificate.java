@@ -33,7 +33,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ManagedCertificate)
     ManagedCertificateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManagedCertificate.newBuilder() to construct.
   private ManagedCertificate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int LAST_RENEWAL_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp lastRenewalTime_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
   public boolean hasLastRenewalTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastRenewalTime_;
   }
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private int status_ = 0;
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -348,7 +342,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastRenewalTimeBuilder_;
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     public boolean hasLastRenewalTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
         return lastRenewalTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getLastRenewalTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
             : lastRenewalTime_;
       }
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
           com.google.appengine.v1.ManagementStatus.forNumber(status_);
       return result == null ? com.google.appengine.v1.ManagementStatus.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

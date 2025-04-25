@@ -33,7 +33,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.GatekeeperDeploymentState)
     GatekeeperDeploymentStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GatekeeperDeploymentState.newBuilder() to construct.
   private GatekeeperDeploymentState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
 
   public static final int GATEKEEPER_CONTROLLER_MANAGER_STATE_FIELD_NUMBER = 1;
   private int gatekeeperControllerManagerState_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
   public int getGatekeeperControllerManagerStateValue() {
     return gatekeeperControllerManagerState_;
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
 
   public static final int GATEKEEPER_AUDIT_FIELD_NUMBER = 2;
   private int gatekeeperAudit_ = 0;
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
   public int getGatekeeperAuditValue() {
     return gatekeeperAudit_;
   }
-
   /**
    *
    *
@@ -329,7 +324,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -532,7 +526,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int gatekeeperControllerManagerState_ = 0;
-
     /**
      *
      *
@@ -550,7 +543,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     public int getGatekeeperControllerManagerStateValue() {
       return gatekeeperControllerManagerState_;
     }
-
     /**
      *
      *
@@ -571,7 +563,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1.DeploymentState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -620,7 +610,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     }
 
     private int gatekeeperAudit_ = 0;
-
     /**
      *
      *
@@ -658,7 +646,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     public int getGatekeeperAuditValue() {
       return gatekeeperAudit_;
     }
-
     /**
      *
      *
@@ -677,7 +664,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +683,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
           ? com.google.cloud.gkehub.configmanagement.v1.DeploymentState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -720,7 +705,6 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

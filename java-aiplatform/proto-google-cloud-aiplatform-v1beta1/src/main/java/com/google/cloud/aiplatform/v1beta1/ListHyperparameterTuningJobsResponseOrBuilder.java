@@ -39,7 +39,6 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
       getHyperparameterTuningJobsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob getHyperparameterTuningJobs(
       int index);
-
   /**
    *
    *
@@ -70,7 +68,6 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    * </code>
    */
   int getHyperparameterTuningJobsCount();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJobOrBuilder>
       getHyperparameterTuningJobsOrBuilderList();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface ListHyperparameterTuningJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

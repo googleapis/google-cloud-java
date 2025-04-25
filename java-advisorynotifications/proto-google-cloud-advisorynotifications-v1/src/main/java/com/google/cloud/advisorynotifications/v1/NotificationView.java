@@ -74,7 +74,6 @@ public enum NotificationView implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NOTIFICATION_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int NOTIFICATION_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum NotificationView implements com.google.protobuf.ProtocolMessageEnum 
    * <code>BASIC = 1;</code>
    */
   public static final int BASIC_VALUE = 1;
-
   /**
    *
    *

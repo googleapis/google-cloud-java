@@ -33,7 +33,6 @@ public final class PublishEventsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.publishing.v1.PublishEventsResponse)
     PublishEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublishEventsResponse.newBuilder() to construct.
   private PublishEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class PublishEventsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

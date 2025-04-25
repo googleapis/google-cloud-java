@@ -36,7 +36,6 @@ public interface ListAdaptiveMtDatasetsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.AdaptiveMtDataset> getAdaptiveMtDatasetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListAdaptiveMtDatasetsResponseOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.AdaptiveMtDataset getAdaptiveMtDatasets(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListAdaptiveMtDatasetsResponseOrBuilder
    * </code>
    */
   int getAdaptiveMtDatasetsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListAdaptiveMtDatasetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.AdaptiveMtDatasetOrBuilder>
       getAdaptiveMtDatasetsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListAdaptiveMtDatasetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

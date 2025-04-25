@@ -37,7 +37,6 @@ public interface ListSharedResourceSubscriptionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.analyticshub.v1.Subscription>
       getSharedResourceSubscriptionsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListSharedResourceSubscriptionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.analyticshub.v1.Subscription getSharedResourceSubscriptions(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListSharedResourceSubscriptionsResponseOrBuilder
    * </code>
    */
   int getSharedResourceSubscriptionsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListSharedResourceSubscriptionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder>
       getSharedResourceSubscriptionsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ListSharedResourceSubscriptionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

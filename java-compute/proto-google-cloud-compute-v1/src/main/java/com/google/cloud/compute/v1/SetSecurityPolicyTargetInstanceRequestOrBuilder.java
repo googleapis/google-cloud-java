@@ -38,7 +38,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return Whether the securityPolicyReferenceResource field is set.
    */
   boolean hasSecurityPolicyReferenceResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return The securityPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyReference getSecurityPolicyReferenceResource();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return The targetInstance.
    */
   java.lang.String getTargetInstance();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface SetSecurityPolicyTargetInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

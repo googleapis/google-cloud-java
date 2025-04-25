@@ -36,7 +36,6 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * @return Whether the interconnectName field is set.
    */
   boolean hasInterconnectName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * @return The interconnectName.
    */
   java.lang.String getInterconnectName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * @return Whether the partnerName field is set.
    */
   boolean hasPartnerName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * @return The partnerName.
    */
   java.lang.String getPartnerName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * @return Whether the portalUrl field is set.
    */
   boolean hasPortalUrl();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface InterconnectAttachmentPartnerMetadataOrBuilder
    * @return The portalUrl.
    */
   java.lang.String getPortalUrl();
-
   /**
    *
    *

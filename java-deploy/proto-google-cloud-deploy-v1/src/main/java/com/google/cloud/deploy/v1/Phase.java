@@ -34,7 +34,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Phase)
     PhaseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Phase.newBuilder() to construct.
   private Phase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,7 +158,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -170,7 +168,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -181,7 +178,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 2;</code>
      */
     public static final int IN_PROGRESS_VALUE = 2;
-
     /**
      *
      *
@@ -192,7 +188,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -203,7 +198,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -214,7 +208,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
      * <code>ABORTED = 5;</code>
      */
     public static final int ABORTED_VALUE = 5;
-
     /**
      *
      *
@@ -334,7 +327,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     private JobsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -371,7 +363,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -395,7 +386,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +412,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -440,7 +429,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -465,7 +453,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object skipMessage_ = "";
-
   /**
    *
    *
@@ -490,7 +477,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -517,7 +503,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOYMENT_JOBS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -535,7 +520,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeploymentJobs() {
     return jobsCase_ == 4;
   }
-
   /**
    *
    *
@@ -556,7 +540,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.DeploymentJobs.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -577,7 +560,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHILD_ROLLOUT_JOBS_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -595,7 +577,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChildRolloutJobs() {
     return jobsCase_ == 5;
   }
-
   /**
    *
    *
@@ -616,7 +597,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.deploy.v1.ChildRolloutJobs.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -850,7 +830,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1125,7 +1104,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1148,7 +1126,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1148,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1169,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1186,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1210,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1254,7 +1227,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1275,7 +1247,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1266,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.deploy.v1.Phase.State.forNumber(state_);
       return result == null ? com.google.cloud.deploy.v1.Phase.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1319,7 +1289,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1310,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object skipMessage_ = "";
-
     /**
      *
      *
@@ -1365,7 +1333,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1356,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1412,7 +1378,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1396,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1425,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.DeploymentJobs.Builder,
             com.google.cloud.deploy.v1.DeploymentJobsOrBuilder>
         deploymentJobsBuilder_;
-
     /**
      *
      *
@@ -1479,7 +1442,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeploymentJobs() {
       return jobsCase_ == 4;
     }
-
     /**
      *
      *
@@ -1507,7 +1469,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.DeploymentJobs.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1532,7 +1493,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       jobsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1515,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       jobsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1590,7 +1549,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       jobsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1618,7 +1576,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1633,7 +1590,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.DeploymentJobs.Builder getDeploymentJobsBuilder() {
       return getDeploymentJobsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1656,7 +1612,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.DeploymentJobs.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1697,7 +1652,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.ChildRolloutJobs.Builder,
             com.google.cloud.deploy.v1.ChildRolloutJobsOrBuilder>
         childRolloutJobsBuilder_;
-
     /**
      *
      *
@@ -1715,7 +1669,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChildRolloutJobs() {
       return jobsCase_ == 5;
     }
-
     /**
      *
      *
@@ -1743,7 +1696,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.ChildRolloutJobs.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1768,7 +1720,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       jobsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1742,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       jobsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1826,7 +1776,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       jobsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1854,7 +1803,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1869,7 +1817,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.deploy.v1.ChildRolloutJobs.Builder getChildRolloutJobsBuilder() {
       return getChildRolloutJobsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1892,7 +1839,6 @@ public final class Phase extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.deploy.v1.ChildRolloutJobs.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -74,8 +74,7 @@ public class MockReachabilityServiceImpl extends ReachabilityServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConnectivityTests, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListConnectivityTests, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConnectivityTestsResponse.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +116,7 @@ public class MockReachabilityServiceImpl extends ReachabilityServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConnectivityTest, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateConnectivityTest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -139,8 +137,7 @@ public class MockReachabilityServiceImpl extends ReachabilityServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConnectivityTest, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateConnectivityTest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -161,8 +158,7 @@ public class MockReachabilityServiceImpl extends ReachabilityServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RerunConnectivityTest, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method RerunConnectivityTest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -183,8 +179,7 @@ public class MockReachabilityServiceImpl extends ReachabilityServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConnectivityTest, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteConnectivityTest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

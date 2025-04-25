@@ -33,7 +33,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.Trip)
     TripOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Trip.newBuilder() to construct.
   private Trip(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vehicleId_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRIP_STATUS_FIELD_NUMBER = 3;
   private int tripStatus_ = 0;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getTripStatusValue() {
     return tripStatus_;
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRIP_TYPE_FIELD_NUMBER = 4;
   private int tripType_ = 0;
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getTripTypeValue() {
     return tripType_;
   }
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PICKUP_POINT_FIELD_NUMBER = 5;
   private com.google.maps.fleetengine.v1.TerminalLocation pickupPoint_;
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPickupPoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -291,7 +280,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance()
         : pickupPoint_;
   }
-
   /**
    *
    *
@@ -310,7 +298,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTUAL_PICKUP_POINT_FIELD_NUMBER = 22;
   private com.google.maps.fleetengine.v1.StopLocation actualPickupPoint_;
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActualPickupPoint() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -352,7 +338,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance()
         : actualPickupPoint_;
   }
-
   /**
    *
    *
@@ -375,7 +360,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTUAL_PICKUP_ARRIVAL_POINT_FIELD_NUMBER = 32;
   private com.google.maps.fleetengine.v1.StopLocation actualPickupArrivalPoint_;
-
   /**
    *
    *
@@ -396,7 +380,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActualPickupArrivalPoint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -419,7 +402,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance()
         : actualPickupArrivalPoint_;
   }
-
   /**
    *
    *
@@ -444,7 +426,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PICKUP_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp pickupTime_;
-
   /**
    *
    *
@@ -462,7 +443,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPickupTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -480,7 +460,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getPickupTime() {
     return pickupTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : pickupTime_;
   }
-
   /**
    *
    *
@@ -501,7 +480,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.TerminalLocation> intermediateDestinations_;
-
   /**
    *
    *
@@ -518,7 +496,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getIntermediateDestinationsList() {
     return intermediateDestinations_;
   }
-
   /**
    *
    *
@@ -535,7 +512,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getIntermediateDestinationsOrBuilderList() {
     return intermediateDestinations_;
   }
-
   /**
    *
    *
@@ -551,7 +527,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getIntermediateDestinationsCount() {
     return intermediateDestinations_.size();
   }
-
   /**
    *
    *
@@ -567,7 +542,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.fleetengine.v1.TerminalLocation getIntermediateDestinations(int index) {
     return intermediateDestinations_.get(index);
   }
-
   /**
    *
    *
@@ -587,7 +561,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERMEDIATE_DESTINATIONS_VERSION_FIELD_NUMBER = 25;
   private com.google.protobuf.Timestamp intermediateDestinationsVersion_;
-
   /**
    *
    *
@@ -606,7 +579,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntermediateDestinationsVersion() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -627,7 +599,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : intermediateDestinationsVersion_;
   }
-
   /**
    *
    *
@@ -649,7 +620,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERMEDIATE_DESTINATION_INDEX_FIELD_NUMBER = 15;
   private int intermediateDestinationIndex_ = 0;
-
   /**
    *
    *
@@ -676,7 +646,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.StopLocation>
       actualIntermediateDestinationArrivalPoints_;
-
   /**
    *
    *
@@ -696,7 +665,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getActualIntermediateDestinationArrivalPointsList() {
     return actualIntermediateDestinationArrivalPoints_;
   }
-
   /**
    *
    *
@@ -716,7 +684,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getActualIntermediateDestinationArrivalPointsOrBuilderList() {
     return actualIntermediateDestinationArrivalPoints_;
   }
-
   /**
    *
    *
@@ -735,7 +702,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getActualIntermediateDestinationArrivalPointsCount() {
     return actualIntermediateDestinationArrivalPoints_.size();
   }
-
   /**
    *
    *
@@ -755,7 +721,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return actualIntermediateDestinationArrivalPoints_.get(index);
   }
-
   /**
    *
    *
@@ -781,7 +746,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.StopLocation>
       actualIntermediateDestinations_;
-
   /**
    *
    *
@@ -800,7 +764,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getActualIntermediateDestinationsList() {
     return actualIntermediateDestinations_;
   }
-
   /**
    *
    *
@@ -819,7 +782,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getActualIntermediateDestinationsOrBuilderList() {
     return actualIntermediateDestinations_;
   }
-
   /**
    *
    *
@@ -837,7 +799,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getActualIntermediateDestinationsCount() {
     return actualIntermediateDestinations_.size();
   }
-
   /**
    *
    *
@@ -855,7 +816,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.fleetengine.v1.StopLocation getActualIntermediateDestinations(int index) {
     return actualIntermediateDestinations_.get(index);
   }
-
   /**
    *
    *
@@ -877,7 +837,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DROPOFF_POINT_FIELD_NUMBER = 7;
   private com.google.maps.fleetengine.v1.TerminalLocation dropoffPoint_;
-
   /**
    *
    *
@@ -893,7 +852,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDropoffPoint() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -911,7 +869,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance()
         : dropoffPoint_;
   }
-
   /**
    *
    *
@@ -930,7 +887,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTUAL_DROPOFF_POINT_FIELD_NUMBER = 23;
   private com.google.maps.fleetengine.v1.StopLocation actualDropoffPoint_;
-
   /**
    *
    *
@@ -950,7 +906,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasActualDropoffPoint() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -972,7 +927,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance()
         : actualDropoffPoint_;
   }
-
   /**
    *
    *
@@ -995,7 +949,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DROPOFF_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp dropoffTime_;
-
   /**
    *
    *
@@ -1014,7 +967,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDropoffTime() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1033,7 +985,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDropoffTime() {
     return dropoffTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : dropoffTime_;
   }
-
   /**
    *
    *
@@ -1055,7 +1006,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> remainingWaypoints_;
-
   /**
    *
    *
@@ -1072,7 +1022,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> getRemainingWaypointsList() {
     return remainingWaypoints_;
   }
-
   /**
    *
    *
@@ -1090,7 +1039,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getRemainingWaypointsOrBuilderList() {
     return remainingWaypoints_;
   }
-
   /**
    *
    *
@@ -1107,7 +1055,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getRemainingWaypointsCount() {
     return remainingWaypoints_.size();
   }
-
   /**
    *
    *
@@ -1124,7 +1071,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.fleetengine.v1.TripWaypoint getRemainingWaypoints(int index) {
     return remainingWaypoints_.get(index);
   }
-
   /**
    *
    *
@@ -1147,7 +1093,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> vehicleWaypoints_;
-
   /**
    *
    *
@@ -1166,7 +1111,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.fleetengine.v1.TripWaypoint> getVehicleWaypointsList() {
     return vehicleWaypoints_;
   }
-
   /**
    *
    *
@@ -1186,7 +1130,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       getVehicleWaypointsOrBuilderList() {
     return vehicleWaypoints_;
   }
-
   /**
    *
    *
@@ -1205,7 +1148,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getVehicleWaypointsCount() {
     return vehicleWaypoints_.size();
   }
-
   /**
    *
    *
@@ -1224,7 +1166,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.fleetengine.v1.TripWaypoint getVehicleWaypoints(int index) {
     return vehicleWaypoints_.get(index);
   }
-
   /**
    *
    *
@@ -1249,7 +1190,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.type.LatLng> route_;
-
   /**
    *
    *
@@ -1266,7 +1206,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.type.LatLng> getRouteList() {
     return route_;
   }
-
   /**
    *
    *
@@ -1283,7 +1222,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.type.LatLngOrBuilder> getRouteOrBuilderList() {
     return route_;
   }
-
   /**
    *
    *
@@ -1300,7 +1238,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getRouteCount() {
     return route_.size();
   }
-
   /**
    *
    *
@@ -1317,7 +1254,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getRoute(int index) {
     return route_.get(index);
   }
-
   /**
    *
    *
@@ -1339,7 +1275,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currentRouteSegment_ = "";
-
   /**
    *
    *
@@ -1366,7 +1301,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1396,7 +1330,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_ROUTE_SEGMENT_VERSION_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp currentRouteSegmentVersion_;
-
   /**
    *
    *
@@ -1417,7 +1350,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentRouteSegmentVersion() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1440,7 +1372,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : currentRouteSegmentVersion_;
   }
-
   /**
    *
    *
@@ -1464,7 +1395,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_ROUTE_SEGMENT_TRAFFIC_FIELD_NUMBER = 28;
   private com.google.maps.fleetengine.v1.ConsumableTrafficPolyline currentRouteSegmentTraffic_;
-
   /**
    *
    *
@@ -1486,7 +1416,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentRouteSegmentTraffic() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1510,7 +1439,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.ConsumableTrafficPolyline.getDefaultInstance()
         : currentRouteSegmentTraffic_;
   }
-
   /**
    *
    *
@@ -1536,7 +1464,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_ROUTE_SEGMENT_TRAFFIC_VERSION_FIELD_NUMBER = 30;
   private com.google.protobuf.Timestamp currentRouteSegmentTrafficVersion_;
-
   /**
    *
    *
@@ -1558,7 +1485,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentRouteSegmentTrafficVersion() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1582,7 +1508,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : currentRouteSegmentTrafficVersion_;
   }
-
   /**
    *
    *
@@ -1607,7 +1532,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_ROUTE_SEGMENT_END_POINT_FIELD_NUMBER = 24;
   private com.google.maps.fleetengine.v1.TripWaypoint currentRouteSegmentEndPoint_;
-
   /**
    *
    *
@@ -1625,7 +1549,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentRouteSegmentEndPoint() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1645,7 +1568,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance()
         : currentRouteSegmentEndPoint_;
   }
-
   /**
    *
    *
@@ -1667,7 +1589,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMAINING_DISTANCE_METERS_FIELD_NUMBER = 12;
   private com.google.protobuf.Int32Value remainingDistanceMeters_;
-
   /**
    *
    *
@@ -1687,7 +1608,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemainingDistanceMeters() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1709,7 +1629,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : remainingDistanceMeters_;
   }
-
   /**
    *
    *
@@ -1732,7 +1651,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ETA_TO_FIRST_WAYPOINT_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp etaToFirstWaypoint_;
-
   /**
    *
    *
@@ -1752,7 +1670,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEtaToFirstWaypoint() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1774,7 +1691,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : etaToFirstWaypoint_;
   }
-
   /**
    *
    *
@@ -1797,7 +1713,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMAINING_TIME_TO_FIRST_WAYPOINT_FIELD_NUMBER = 27;
   private com.google.protobuf.Duration remainingTimeToFirstWaypoint_;
-
   /**
    *
    *
@@ -1818,7 +1733,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemainingTimeToFirstWaypoint() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1841,7 +1755,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : remainingTimeToFirstWaypoint_;
   }
-
   /**
    *
    *
@@ -1865,7 +1778,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMAINING_WAYPOINTS_VERSION_FIELD_NUMBER = 19;
   private com.google.protobuf.Timestamp remainingWaypointsVersion_;
-
   /**
    *
    *
@@ -1884,7 +1796,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemainingWaypointsVersion() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1905,7 +1816,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : remainingWaypointsVersion_;
   }
-
   /**
    *
    *
@@ -1927,7 +1837,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMAINING_WAYPOINTS_ROUTE_VERSION_FIELD_NUMBER = 29;
   private com.google.protobuf.Timestamp remainingWaypointsRouteVersion_;
-
   /**
    *
    *
@@ -1949,7 +1858,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemainingWaypointsRouteVersion() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1973,7 +1881,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : remainingWaypointsRouteVersion_;
   }
-
   /**
    *
    *
@@ -1998,7 +1905,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NUMBER_OF_PASSENGERS_FIELD_NUMBER = 10;
   private int numberOfPassengers_ = 0;
-
   /**
    *
    *
@@ -2019,7 +1925,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_LOCATION_FIELD_NUMBER = 11;
   private com.google.maps.fleetengine.v1.VehicleLocation lastLocation_;
-
   /**
    *
    *
@@ -2038,7 +1943,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastLocation() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -2059,7 +1963,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.VehicleLocation.getDefaultInstance()
         : lastLocation_;
   }
-
   /**
    *
    *
@@ -2081,7 +1984,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_LOCATION_SNAPPABLE_FIELD_NUMBER = 26;
   private boolean lastLocationSnappable_ = false;
-
   /**
    *
    *
@@ -2103,7 +2005,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VIEW_FIELD_NUMBER = 31;
   private int view_ = 0;
-
   /**
    *
    *
@@ -2120,7 +2021,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -2730,7 +2630,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3797,7 +3696,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     private int bitField1_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3820,7 +3718,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3843,7 +3740,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3865,7 +3761,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3883,7 +3778,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3908,7 +3802,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vehicleId_ = "";
-
     /**
      *
      *
@@ -3931,7 +3824,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3954,7 +3846,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3976,7 +3867,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3994,7 +3884,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3908,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tripStatus_ = 0;
-
     /**
      *
      *
@@ -4035,7 +3923,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public int getTripStatusValue() {
       return tripStatus_;
     }
-
     /**
      *
      *
@@ -4054,7 +3941,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4072,7 +3958,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.fleetengine.v1.TripStatus.forNumber(tripStatus_);
       return result == null ? com.google.maps.fleetengine.v1.TripStatus.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4094,7 +3979,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4114,7 +3998,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tripType_ = 0;
-
     /**
      *
      *
@@ -4130,7 +4013,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public int getTripTypeValue() {
       return tripType_;
     }
-
     /**
      *
      *
@@ -4149,7 +4031,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4167,7 +4048,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.fleetengine.v1.TripType.forNumber(tripType_);
       return result == null ? com.google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4189,7 +4069,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4214,7 +4093,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.TerminalLocation.Builder,
             com.google.maps.fleetengine.v1.TerminalLocationOrBuilder>
         pickupPointBuilder_;
-
     /**
      *
      *
@@ -4229,7 +4107,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPickupPoint() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4250,7 +4127,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return pickupPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4273,7 +4149,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4294,7 +4169,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4323,7 +4197,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4343,7 +4216,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4358,7 +4230,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPickupPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4377,7 +4248,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : pickupPoint_;
       }
     }
-
     /**
      *
      *
@@ -4410,7 +4280,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.StopLocation.Builder,
             com.google.maps.fleetengine.v1.StopLocationOrBuilder>
         actualPickupPointBuilder_;
-
     /**
      *
      *
@@ -4429,7 +4298,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActualPickupPoint() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -4454,7 +4322,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualPickupPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4481,7 +4348,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4506,7 +4372,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4539,7 +4404,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4563,7 +4427,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4582,7 +4445,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActualPickupPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4605,7 +4467,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : actualPickupPoint_;
       }
     }
-
     /**
      *
      *
@@ -4642,7 +4503,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.StopLocation.Builder,
             com.google.maps.fleetengine.v1.StopLocationOrBuilder>
         actualPickupArrivalPointBuilder_;
-
     /**
      *
      *
@@ -4662,7 +4522,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActualPickupArrivalPoint() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4688,7 +4547,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualPickupArrivalPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4716,7 +4574,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4742,7 +4599,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4777,7 +4633,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4802,7 +4657,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4823,7 +4677,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActualPickupArrivalPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4848,7 +4701,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : actualPickupArrivalPoint_;
       }
     }
-
     /**
      *
      *
@@ -4886,7 +4738,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         pickupTimeBuilder_;
-
     /**
      *
      *
@@ -4904,7 +4755,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPickupTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4928,7 +4778,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return pickupTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4954,7 +4803,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4977,7 +4825,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5008,7 +4855,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5031,7 +4877,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5049,7 +4894,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPickupTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5071,7 +4915,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : pickupTime_;
       }
     }
-
     /**
      *
      *
@@ -5138,7 +4981,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return intermediateDestinationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5157,7 +4999,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return intermediateDestinationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5176,7 +5017,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return intermediateDestinationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5202,7 +5042,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5225,7 +5064,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5251,7 +5089,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5277,7 +5114,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5300,7 +5136,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5323,7 +5158,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5346,7 +5180,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5368,7 +5201,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5390,7 +5222,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5406,7 +5237,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         getIntermediateDestinationsBuilder(int index) {
       return getIntermediateDestinationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5426,7 +5256,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return intermediateDestinationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5446,7 +5275,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(intermediateDestinations_);
       }
     }
-
     /**
      *
      *
@@ -5463,7 +5291,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getIntermediateDestinationsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5480,7 +5307,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getIntermediateDestinationsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.TerminalLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5523,7 +5349,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         intermediateDestinationsVersionBuilder_;
-
     /**
      *
      *
@@ -5541,7 +5366,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntermediateDestinationsVersion() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -5565,7 +5389,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return intermediateDestinationsVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5591,7 +5414,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5615,7 +5437,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5647,7 +5468,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5670,7 +5490,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5688,7 +5507,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIntermediateDestinationsVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5710,7 +5528,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : intermediateDestinationsVersion_;
       }
     }
-
     /**
      *
      *
@@ -5741,7 +5558,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int intermediateDestinationIndex_;
-
     /**
      *
      *
@@ -5762,7 +5578,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public int getIntermediateDestinationIndex() {
       return intermediateDestinationIndex_;
     }
-
     /**
      *
      *
@@ -5787,7 +5602,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5851,7 +5665,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationArrivalPointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5873,7 +5686,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationArrivalPointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5896,7 +5708,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationArrivalPointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5925,7 +5736,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5952,7 +5762,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5981,7 +5790,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6010,7 +5818,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6036,7 +5843,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6063,7 +5869,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6090,7 +5895,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6115,7 +5919,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6140,7 +5943,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6159,7 +5961,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         getActualIntermediateDestinationArrivalPointsBuilder(int index) {
       return getActualIntermediateDestinationArrivalPointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6182,7 +5983,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationArrivalPointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6205,7 +6005,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(actualIntermediateDestinationArrivalPoints_);
       }
     }
-
     /**
      *
      *
@@ -6225,7 +6024,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getActualIntermediateDestinationArrivalPointsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6245,7 +6043,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getActualIntermediateDestinationArrivalPointsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6324,7 +6121,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6345,7 +6141,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6367,7 +6162,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6395,7 +6189,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6420,7 +6213,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6448,7 +6240,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6476,7 +6267,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6501,7 +6291,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6526,7 +6315,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6552,7 +6340,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6576,7 +6363,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6600,7 +6386,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6618,7 +6403,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         getActualIntermediateDestinationsBuilder(int index) {
       return getActualIntermediateDestinationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6640,7 +6424,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualIntermediateDestinationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6662,7 +6445,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(actualIntermediateDestinations_);
       }
     }
-
     /**
      *
      *
@@ -6681,7 +6463,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getActualIntermediateDestinationsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6700,7 +6481,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getActualIntermediateDestinationsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.StopLocation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6745,7 +6525,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.TerminalLocation.Builder,
             com.google.maps.fleetengine.v1.TerminalLocationOrBuilder>
         dropoffPointBuilder_;
-
     /**
      *
      *
@@ -6760,7 +6539,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDropoffPoint() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -6781,7 +6559,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return dropoffPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6804,7 +6581,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6825,7 +6601,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6854,7 +6629,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6874,7 +6648,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6889,7 +6662,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDropoffPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6908,7 +6680,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : dropoffPoint_;
       }
     }
-
     /**
      *
      *
@@ -6941,7 +6712,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.StopLocation.Builder,
             com.google.maps.fleetengine.v1.StopLocationOrBuilder>
         actualDropoffPointBuilder_;
-
     /**
      *
      *
@@ -6960,7 +6730,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasActualDropoffPoint() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -6985,7 +6754,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return actualDropoffPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7012,7 +6780,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7037,7 +6804,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7070,7 +6836,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7094,7 +6859,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7113,7 +6877,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActualDropoffPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7136,7 +6899,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : actualDropoffPoint_;
       }
     }
-
     /**
      *
      *
@@ -7173,7 +6935,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         dropoffTimeBuilder_;
-
     /**
      *
      *
@@ -7192,7 +6953,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDropoffTime() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -7217,7 +6977,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return dropoffTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7244,7 +7003,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7268,7 +7026,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7300,7 +7057,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7324,7 +7080,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7343,7 +7098,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDropoffTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7366,7 +7120,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : dropoffTime_;
       }
     }
-
     /**
      *
      *
@@ -7434,7 +7187,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingWaypointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7454,7 +7206,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingWaypointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7474,7 +7225,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingWaypointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7501,7 +7251,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7525,7 +7274,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7551,7 +7299,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7578,7 +7325,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7602,7 +7348,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7626,7 +7371,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7650,7 +7394,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7673,7 +7416,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7696,7 +7438,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7713,7 +7454,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRemainingWaypointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7734,7 +7474,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingWaypointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7755,7 +7494,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(remainingWaypoints_);
       }
     }
-
     /**
      *
      *
@@ -7772,7 +7510,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getRemainingWaypointsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7790,7 +7527,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getRemainingWaypointsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7866,7 +7602,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return vehicleWaypointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7888,7 +7623,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return vehicleWaypointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7910,7 +7644,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return vehicleWaypointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7939,7 +7672,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7965,7 +7697,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7993,7 +7724,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8022,7 +7752,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8048,7 +7777,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8074,7 +7802,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8100,7 +7827,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8125,7 +7851,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8150,7 +7875,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8169,7 +7893,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getVehicleWaypointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8192,7 +7915,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return vehicleWaypointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8215,7 +7937,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vehicleWaypoints_);
       }
     }
-
     /**
      *
      *
@@ -8234,7 +7955,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getVehicleWaypointsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8254,7 +7974,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       return getVehicleWaypointsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.TripWaypoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8326,7 +8045,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return routeBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8346,7 +8064,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return routeBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8366,7 +8083,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return routeBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8392,7 +8108,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8415,7 +8130,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8441,7 +8155,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8467,7 +8180,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8490,7 +8202,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8513,7 +8224,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8536,7 +8246,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8559,7 +8268,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8582,7 +8290,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8598,7 +8305,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.LatLng.Builder getRouteBuilder(int index) {
       return getRouteFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8618,7 +8324,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return routeBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8638,7 +8343,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(route_);
       }
     }
-
     /**
      *
      *
@@ -8654,7 +8358,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.LatLng.Builder addRouteBuilder() {
       return getRouteFieldBuilder().addBuilder(com.google.type.LatLng.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8670,7 +8373,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.LatLng.Builder addRouteBuilder(int index) {
       return getRouteFieldBuilder().addBuilder(index, com.google.type.LatLng.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8703,7 +8405,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object currentRouteSegment_ = "";
-
     /**
      *
      *
@@ -8729,7 +8430,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8755,7 +8455,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8780,7 +8479,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8801,7 +8499,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8834,7 +8531,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentRouteSegmentVersionBuilder_;
-
     /**
      *
      *
@@ -8854,7 +8550,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentRouteSegmentVersion() {
       return ((bitField0_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -8880,7 +8575,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return currentRouteSegmentVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8908,7 +8602,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8934,7 +8627,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8967,7 +8659,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8992,7 +8683,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9012,7 +8702,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentRouteSegmentVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9036,7 +8725,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : currentRouteSegmentVersion_;
       }
     }
-
     /**
      *
      *
@@ -9074,7 +8762,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.ConsumableTrafficPolyline.Builder,
             com.google.maps.fleetengine.v1.ConsumableTrafficPolylineOrBuilder>
         currentRouteSegmentTrafficBuilder_;
-
     /**
      *
      *
@@ -9095,7 +8782,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentRouteSegmentTraffic() {
       return ((bitField0_ & 0x00200000) != 0);
     }
-
     /**
      *
      *
@@ -9123,7 +8809,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return currentRouteSegmentTrafficBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9153,7 +8838,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9180,7 +8864,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9216,7 +8899,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9242,7 +8924,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9264,7 +8945,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentRouteSegmentTrafficFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9290,7 +8970,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : currentRouteSegmentTraffic_;
       }
     }
-
     /**
      *
      *
@@ -9329,7 +9008,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentRouteSegmentTrafficVersionBuilder_;
-
     /**
      *
      *
@@ -9350,7 +9028,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentRouteSegmentTrafficVersion() {
       return ((bitField0_ & 0x00400000) != 0);
     }
-
     /**
      *
      *
@@ -9377,7 +9054,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return currentRouteSegmentTrafficVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9406,7 +9082,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9433,7 +9108,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9468,7 +9142,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9494,7 +9167,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9515,7 +9187,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentRouteSegmentTrafficVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9540,7 +9211,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : currentRouteSegmentTrafficVersion_;
       }
     }
-
     /**
      *
      *
@@ -9579,7 +9249,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.TripWaypoint.Builder,
             com.google.maps.fleetengine.v1.TripWaypointOrBuilder>
         currentRouteSegmentEndPointBuilder_;
-
     /**
      *
      *
@@ -9596,7 +9265,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentRouteSegmentEndPoint() {
       return ((bitField0_ & 0x00800000) != 0);
     }
-
     /**
      *
      *
@@ -9619,7 +9287,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return currentRouteSegmentEndPointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9645,7 +9312,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9668,7 +9334,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9700,7 +9365,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9722,7 +9386,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9740,7 +9403,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentRouteSegmentEndPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9762,7 +9424,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : currentRouteSegmentEndPoint_;
       }
     }
-
     /**
      *
      *
@@ -9797,7 +9458,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         remainingDistanceMetersBuilder_;
-
     /**
      *
      *
@@ -9816,7 +9476,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemainingDistanceMeters() {
       return ((bitField0_ & 0x01000000) != 0);
     }
-
     /**
      *
      *
@@ -9841,7 +9500,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingDistanceMetersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9868,7 +9526,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9893,7 +9550,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9925,7 +9581,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9949,7 +9604,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9968,7 +9622,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRemainingDistanceMetersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9991,7 +9644,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : remainingDistanceMeters_;
       }
     }
-
     /**
      *
      *
@@ -10028,7 +9680,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         etaToFirstWaypointBuilder_;
-
     /**
      *
      *
@@ -10047,7 +9698,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEtaToFirstWaypoint() {
       return ((bitField0_ & 0x02000000) != 0);
     }
-
     /**
      *
      *
@@ -10072,7 +9722,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return etaToFirstWaypointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10099,7 +9748,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10123,7 +9771,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10155,7 +9802,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10179,7 +9825,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10198,7 +9843,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEtaToFirstWaypointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10221,7 +9865,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : etaToFirstWaypoint_;
       }
     }
-
     /**
      *
      *
@@ -10258,7 +9901,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         remainingTimeToFirstWaypointBuilder_;
-
     /**
      *
      *
@@ -10278,7 +9920,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemainingTimeToFirstWaypoint() {
       return ((bitField0_ & 0x04000000) != 0);
     }
-
     /**
      *
      *
@@ -10304,7 +9945,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingTimeToFirstWaypointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10332,7 +9972,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10358,7 +9997,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10391,7 +10029,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10416,7 +10053,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10436,7 +10072,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRemainingTimeToFirstWaypointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10460,7 +10095,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : remainingTimeToFirstWaypoint_;
       }
     }
-
     /**
      *
      *
@@ -10498,7 +10132,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         remainingWaypointsVersionBuilder_;
-
     /**
      *
      *
@@ -10516,7 +10149,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemainingWaypointsVersion() {
       return ((bitField0_ & 0x08000000) != 0);
     }
-
     /**
      *
      *
@@ -10540,7 +10172,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingWaypointsVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10566,7 +10197,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10590,7 +10220,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10621,7 +10250,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10644,7 +10272,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10662,7 +10289,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRemainingWaypointsVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10684,7 +10310,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : remainingWaypointsVersion_;
       }
     }
-
     /**
      *
      *
@@ -10720,7 +10345,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         remainingWaypointsRouteVersionBuilder_;
-
     /**
      *
      *
@@ -10741,7 +10365,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemainingWaypointsRouteVersion() {
       return ((bitField0_ & 0x10000000) != 0);
     }
-
     /**
      *
      *
@@ -10768,7 +10391,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return remainingWaypointsRouteVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10797,7 +10419,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10824,7 +10445,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10859,7 +10479,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10885,7 +10504,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10906,7 +10524,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRemainingWaypointsRouteVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10931,7 +10548,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : remainingWaypointsRouteVersion_;
       }
     }
-
     /**
      *
      *
@@ -10965,7 +10581,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int numberOfPassengers_;
-
     /**
      *
      *
@@ -10983,7 +10598,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public int getNumberOfPassengers() {
       return numberOfPassengers_;
     }
-
     /**
      *
      *
@@ -11005,7 +10619,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11032,7 +10645,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.VehicleLocation.Builder,
             com.google.maps.fleetengine.v1.VehicleLocationOrBuilder>
         lastLocationBuilder_;
-
     /**
      *
      *
@@ -11050,7 +10662,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastLocation() {
       return ((bitField0_ & 0x40000000) != 0);
     }
-
     /**
      *
      *
@@ -11074,7 +10685,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
         return lastLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11100,7 +10710,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11124,7 +10733,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11156,7 +10764,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11179,7 +10786,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11197,7 +10803,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11219,7 +10824,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
             : lastLocation_;
       }
     }
-
     /**
      *
      *
@@ -11250,7 +10854,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean lastLocationSnappable_;
-
     /**
      *
      *
@@ -11269,7 +10872,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public boolean getLastLocationSnappable() {
       return lastLocationSnappable_;
     }
-
     /**
      *
      *
@@ -11292,7 +10894,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11315,7 +10916,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -11332,7 +10932,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -11352,7 +10951,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11371,7 +10969,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.fleetengine.v1.TripView.forNumber(view_);
       return result == null ? com.google.maps.fleetengine.v1.TripView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -11394,7 +10991,6 @@ public final class Trip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

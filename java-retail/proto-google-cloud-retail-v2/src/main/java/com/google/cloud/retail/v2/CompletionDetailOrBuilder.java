@@ -37,7 +37,6 @@ public interface CompletionDetailOrBuilder
    * @return The completionAttributionToken.
    */
   java.lang.String getCompletionAttributionToken();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface CompletionDetailOrBuilder
    * @return The selectedSuggestion.
    */
   java.lang.String getSelectedSuggestion();
-
   /**
    *
    *

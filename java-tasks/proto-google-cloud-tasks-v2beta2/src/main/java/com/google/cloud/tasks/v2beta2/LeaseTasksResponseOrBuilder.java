@@ -34,7 +34,6 @@ public interface LeaseTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
   java.util.List<com.google.cloud.tasks.v2beta2.Task> getTasksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface LeaseTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
   com.google.cloud.tasks.v2beta2.Task getTasks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface LeaseTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
   int getTasksCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface LeaseTasksResponseOrBuilder
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
   java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder> getTasksOrBuilderList();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface BranchOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BranchOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface BranchOrBuilder
    * @return Whether the lastProductImportTime field is set.
    */
   boolean hasLastProductImportTime();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface BranchOrBuilder
    * @return The lastProductImportTime.
    */
   com.google.protobuf.Timestamp getLastProductImportTime();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface BranchOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.Branch.ProductCountStatistic>
       getProductCountStatsList();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface BranchOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2alpha.Branch.ProductCountStatistic getProductCountStats(int index);
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface BranchOrBuilder
    * </code>
    */
   int getProductCountStatsCount();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface BranchOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.Branch.ProductCountStatisticOrBuilder>
       getProductCountStatsOrBuilderList();
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public interface BranchOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.Branch.QualityMetric> getQualityMetricsList();
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public interface BranchOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2alpha.Branch.QualityMetric getQualityMetrics(int index);
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public interface BranchOrBuilder
    * </code>
    */
   int getQualityMetricsCount();
-
   /**
    *
    *
@@ -305,7 +294,6 @@ public interface BranchOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.Branch.QualityMetricOrBuilder>
       getQualityMetricsOrBuilderList();
-
   /**
    *
    *

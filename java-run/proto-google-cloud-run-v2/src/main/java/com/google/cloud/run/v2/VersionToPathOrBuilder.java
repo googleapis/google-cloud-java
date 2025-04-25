@@ -36,7 +36,6 @@ public interface VersionToPathOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface VersionToPathOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *

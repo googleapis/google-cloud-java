@@ -38,7 +38,6 @@ public interface PlaybookOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PlaybookOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface PlaybookOrBuilder
    * @return The goal.
    */
   java.lang.String getGoal();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface PlaybookOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition>
       getInputParameterDefinitionsList();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface PlaybookOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition getInputParameterDefinitions(
       int index);
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface PlaybookOrBuilder
    * </code>
    */
   int getInputParameterDefinitionsCount();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface PlaybookOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinitionOrBuilder>
       getInputParameterDefinitionsOrBuilderList();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface PlaybookOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition>
       getOutputParameterDefinitionsList();
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface PlaybookOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinition getOutputParameterDefinitions(
       int index);
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface PlaybookOrBuilder
    * </code>
    */
   int getOutputParameterDefinitionsCount();
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public interface PlaybookOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ParameterDefinitionOrBuilder>
       getOutputParameterDefinitionsOrBuilderList();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface PlaybookOrBuilder
    * @return Whether the instruction field is set.
    */
   boolean hasInstruction();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface PlaybookOrBuilder
    * @return The instruction.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Playbook.Instruction getInstruction();
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public interface PlaybookOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -326,7 +312,6 @@ public interface PlaybookOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface PlaybookOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -366,7 +350,6 @@ public interface PlaybookOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -394,7 +377,6 @@ public interface PlaybookOrBuilder
    * @return A list containing the referencedPlaybooks.
    */
   java.util.List<java.lang.String> getReferencedPlaybooksList();
-
   /**
    *
    *
@@ -410,7 +392,6 @@ public interface PlaybookOrBuilder
    * @return The count of referencedPlaybooks.
    */
   int getReferencedPlaybooksCount();
-
   /**
    *
    *
@@ -427,7 +408,6 @@ public interface PlaybookOrBuilder
    * @return The referencedPlaybooks at the given index.
    */
   java.lang.String getReferencedPlaybooks(int index);
-
   /**
    *
    *
@@ -460,7 +440,6 @@ public interface PlaybookOrBuilder
    * @return A list containing the referencedFlows.
    */
   java.util.List<java.lang.String> getReferencedFlowsList();
-
   /**
    *
    *
@@ -476,7 +455,6 @@ public interface PlaybookOrBuilder
    * @return The count of referencedFlows.
    */
   int getReferencedFlowsCount();
-
   /**
    *
    *
@@ -493,7 +471,6 @@ public interface PlaybookOrBuilder
    * @return The referencedFlows at the given index.
    */
   java.lang.String getReferencedFlows(int index);
-
   /**
    *
    *
@@ -527,7 +504,6 @@ public interface PlaybookOrBuilder
    * @return A list containing the referencedTools.
    */
   java.util.List<java.lang.String> getReferencedToolsList();
-
   /**
    *
    *
@@ -544,7 +520,6 @@ public interface PlaybookOrBuilder
    * @return The count of referencedTools.
    */
   int getReferencedToolsCount();
-
   /**
    *
    *
@@ -562,7 +537,6 @@ public interface PlaybookOrBuilder
    * @return The referencedTools at the given index.
    */
   java.lang.String getReferencedTools(int index);
-
   /**
    *
    *
@@ -595,7 +569,6 @@ public interface PlaybookOrBuilder
    * @return Whether the llmModelSettings field is set.
    */
   boolean hasLlmModelSettings();
-
   /**
    *
    *
@@ -610,7 +583,6 @@ public interface PlaybookOrBuilder
    * @return The llmModelSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.LlmModelSettings getLlmModelSettings();
-
   /**
    *
    *
@@ -638,7 +610,6 @@ public interface PlaybookOrBuilder
    * @return Whether the speechSettings field is set.
    */
   boolean hasSpeechSettings();
-
   /**
    *
    *
@@ -653,7 +624,6 @@ public interface PlaybookOrBuilder
    * @return The speechSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings getSpeechSettings();
-
   /**
    *
    *
@@ -681,7 +651,6 @@ public interface PlaybookOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Handler> getHandlersList();
-
   /**
    *
    *
@@ -695,7 +664,6 @@ public interface PlaybookOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Handler getHandlers(int index);
-
   /**
    *
    *
@@ -709,7 +677,6 @@ public interface PlaybookOrBuilder
    * </code>
    */
   int getHandlersCount();
-
   /**
    *
    *
@@ -724,7 +691,6 @@ public interface PlaybookOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder>
       getHandlersOrBuilderList();
-
   /**
    *
    *

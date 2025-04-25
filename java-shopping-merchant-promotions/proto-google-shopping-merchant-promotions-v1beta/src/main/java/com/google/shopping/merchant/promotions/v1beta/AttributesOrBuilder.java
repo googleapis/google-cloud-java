@@ -40,7 +40,6 @@ public interface AttributesOrBuilder
    * @return The enum numeric value on the wire for productApplicability.
    */
   int getProductApplicabilityValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface AttributesOrBuilder
    * @return The enum numeric value on the wire for offerType.
    */
   int getOfferTypeValue();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface AttributesOrBuilder
    * @return The genericRedemptionCode.
    */
   java.lang.String getGenericRedemptionCode();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface AttributesOrBuilder
    * @return The longTitle.
    */
   java.lang.String getLongTitle();
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public interface AttributesOrBuilder
    * @return The enum numeric value on the wire for couponValueType.
    */
   int getCouponValueTypeValue();
-
   /**
    *
    *
@@ -217,7 +212,6 @@ public interface AttributesOrBuilder
    */
   java.util.List<com.google.shopping.type.Destination.DestinationEnum>
       getPromotionDestinationsList();
-
   /**
    *
    *
@@ -242,7 +236,6 @@ public interface AttributesOrBuilder
    * @return The count of promotionDestinations.
    */
   int getPromotionDestinationsCount();
-
   /**
    *
    *
@@ -268,7 +261,6 @@ public interface AttributesOrBuilder
    * @return The promotionDestinations at the given index.
    */
   com.google.shopping.type.Destination.DestinationEnum getPromotionDestinations(int index);
-
   /**
    *
    *
@@ -293,7 +285,6 @@ public interface AttributesOrBuilder
    * @return A list containing the enum numeric values on the wire for promotionDestinations.
    */
   java.util.List<java.lang.Integer> getPromotionDestinationsValueList();
-
   /**
    *
    *
@@ -337,7 +328,6 @@ public interface AttributesOrBuilder
    * @return A list containing the itemIdInclusion.
    */
   java.util.List<java.lang.String> getItemIdInclusionList();
-
   /**
    *
    *
@@ -355,7 +345,6 @@ public interface AttributesOrBuilder
    * @return The count of itemIdInclusion.
    */
   int getItemIdInclusionCount();
-
   /**
    *
    *
@@ -374,7 +363,6 @@ public interface AttributesOrBuilder
    * @return The itemIdInclusion at the given index.
    */
   java.lang.String getItemIdInclusion(int index);
-
   /**
    *
    *
@@ -409,7 +397,6 @@ public interface AttributesOrBuilder
    * @return A list containing the brandInclusion.
    */
   java.util.List<java.lang.String> getBrandInclusionList();
-
   /**
    *
    *
@@ -425,7 +412,6 @@ public interface AttributesOrBuilder
    * @return The count of brandInclusion.
    */
   int getBrandInclusionCount();
-
   /**
    *
    *
@@ -442,7 +428,6 @@ public interface AttributesOrBuilder
    * @return The brandInclusion at the given index.
    */
   java.lang.String getBrandInclusion(int index);
-
   /**
    *
    *
@@ -476,7 +461,6 @@ public interface AttributesOrBuilder
    * @return A list containing the itemGroupIdInclusion.
    */
   java.util.List<java.lang.String> getItemGroupIdInclusionList();
-
   /**
    *
    *
@@ -493,7 +477,6 @@ public interface AttributesOrBuilder
    * @return The count of itemGroupIdInclusion.
    */
   int getItemGroupIdInclusionCount();
-
   /**
    *
    *
@@ -511,7 +494,6 @@ public interface AttributesOrBuilder
    * @return The itemGroupIdInclusion at the given index.
    */
   java.lang.String getItemGroupIdInclusion(int index);
-
   /**
    *
    *
@@ -546,7 +528,6 @@ public interface AttributesOrBuilder
    * @return A list containing the productTypeInclusion.
    */
   java.util.List<java.lang.String> getProductTypeInclusionList();
-
   /**
    *
    *
@@ -563,7 +544,6 @@ public interface AttributesOrBuilder
    * @return The count of productTypeInclusion.
    */
   int getProductTypeInclusionCount();
-
   /**
    *
    *
@@ -581,7 +561,6 @@ public interface AttributesOrBuilder
    * @return The productTypeInclusion at the given index.
    */
   java.lang.String getProductTypeInclusion(int index);
-
   /**
    *
    *
@@ -617,7 +596,6 @@ public interface AttributesOrBuilder
    * @return A list containing the itemIdExclusion.
    */
   java.util.List<java.lang.String> getItemIdExclusionList();
-
   /**
    *
    *
@@ -635,7 +613,6 @@ public interface AttributesOrBuilder
    * @return The count of itemIdExclusion.
    */
   int getItemIdExclusionCount();
-
   /**
    *
    *
@@ -654,7 +631,6 @@ public interface AttributesOrBuilder
    * @return The itemIdExclusion at the given index.
    */
   java.lang.String getItemIdExclusion(int index);
-
   /**
    *
    *
@@ -691,7 +667,6 @@ public interface AttributesOrBuilder
    * @return A list containing the brandExclusion.
    */
   java.util.List<java.lang.String> getBrandExclusionList();
-
   /**
    *
    *
@@ -709,7 +684,6 @@ public interface AttributesOrBuilder
    * @return The count of brandExclusion.
    */
   int getBrandExclusionCount();
-
   /**
    *
    *
@@ -728,7 +702,6 @@ public interface AttributesOrBuilder
    * @return The brandExclusion at the given index.
    */
   java.lang.String getBrandExclusion(int index);
-
   /**
    *
    *
@@ -766,7 +739,6 @@ public interface AttributesOrBuilder
    * @return A list containing the itemGroupIdExclusion.
    */
   java.util.List<java.lang.String> getItemGroupIdExclusionList();
-
   /**
    *
    *
@@ -785,7 +757,6 @@ public interface AttributesOrBuilder
    * @return The count of itemGroupIdExclusion.
    */
   int getItemGroupIdExclusionCount();
-
   /**
    *
    *
@@ -805,7 +776,6 @@ public interface AttributesOrBuilder
    * @return The itemGroupIdExclusion at the given index.
    */
   java.lang.String getItemGroupIdExclusion(int index);
-
   /**
    *
    *
@@ -844,7 +814,6 @@ public interface AttributesOrBuilder
    * @return A list containing the productTypeExclusion.
    */
   java.util.List<java.lang.String> getProductTypeExclusionList();
-
   /**
    *
    *
@@ -863,7 +832,6 @@ public interface AttributesOrBuilder
    * @return The count of productTypeExclusion.
    */
   int getProductTypeExclusionCount();
-
   /**
    *
    *
@@ -883,7 +851,6 @@ public interface AttributesOrBuilder
    * @return The productTypeExclusion at the given index.
    */
   java.lang.String getProductTypeExclusion(int index);
-
   /**
    *
    *
@@ -920,7 +887,6 @@ public interface AttributesOrBuilder
    * @return Whether the minimumPurchaseAmount field is set.
    */
   boolean hasMinimumPurchaseAmount();
-
   /**
    *
    *
@@ -937,7 +903,6 @@ public interface AttributesOrBuilder
    * @return The minimumPurchaseAmount.
    */
   com.google.shopping.type.Price getMinimumPurchaseAmount();
-
   /**
    *
    *
@@ -998,7 +963,6 @@ public interface AttributesOrBuilder
    * @return Whether the limitValue field is set.
    */
   boolean hasLimitValue();
-
   /**
    *
    *
@@ -1014,7 +978,6 @@ public interface AttributesOrBuilder
    * @return The limitValue.
    */
   com.google.shopping.type.Price getLimitValue();
-
   /**
    *
    *
@@ -1060,7 +1023,6 @@ public interface AttributesOrBuilder
    * @return Whether the moneyOffAmount field is set.
    */
   boolean hasMoneyOffAmount();
-
   /**
    *
    *
@@ -1077,7 +1039,6 @@ public interface AttributesOrBuilder
    * @return The moneyOffAmount.
    */
   com.google.shopping.type.Price getMoneyOffAmount();
-
   /**
    *
    *
@@ -1124,7 +1085,6 @@ public interface AttributesOrBuilder
    * @return Whether the freeGiftValue field is set.
    */
   boolean hasFreeGiftValue();
-
   /**
    *
    *
@@ -1141,7 +1101,6 @@ public interface AttributesOrBuilder
    * @return The freeGiftValue.
    */
   com.google.shopping.type.Price getFreeGiftValue();
-
   /**
    *
    *
@@ -1171,7 +1130,6 @@ public interface AttributesOrBuilder
    * @return The freeGiftDescription.
    */
   java.lang.String getFreeGiftDescription();
-
   /**
    *
    *
@@ -1201,7 +1159,6 @@ public interface AttributesOrBuilder
    * @return The freeGiftItemId.
    */
   java.lang.String getFreeGiftItemId();
-
   /**
    *
    *
@@ -1233,7 +1190,6 @@ public interface AttributesOrBuilder
    * @return Whether the promotionEffectiveTimePeriod field is set.
    */
   boolean hasPromotionEffectiveTimePeriod();
-
   /**
    *
    *
@@ -1250,7 +1206,6 @@ public interface AttributesOrBuilder
    * @return The promotionEffectiveTimePeriod.
    */
   com.google.type.Interval getPromotionEffectiveTimePeriod();
-
   /**
    *
    *
@@ -1286,7 +1241,6 @@ public interface AttributesOrBuilder
    * @return Whether the promotionDisplayTimePeriod field is set.
    */
   boolean hasPromotionDisplayTimePeriod();
-
   /**
    *
    *
@@ -1307,7 +1261,6 @@ public interface AttributesOrBuilder
    * @return The promotionDisplayTimePeriod.
    */
   com.google.type.Interval getPromotionDisplayTimePeriod();
-
   /**
    *
    *
@@ -1346,7 +1299,6 @@ public interface AttributesOrBuilder
    * @return The enum numeric value on the wire for storeApplicability.
    */
   int getStoreApplicabilityValue();
-
   /**
    *
    *
@@ -1390,7 +1342,6 @@ public interface AttributesOrBuilder
    * @return A list containing the storeCodesInclusion.
    */
   java.util.List<java.lang.String> getStoreCodesInclusionList();
-
   /**
    *
    *
@@ -1414,7 +1365,6 @@ public interface AttributesOrBuilder
    * @return The count of storeCodesInclusion.
    */
   int getStoreCodesInclusionCount();
-
   /**
    *
    *
@@ -1439,7 +1389,6 @@ public interface AttributesOrBuilder
    * @return The storeCodesInclusion at the given index.
    */
   java.lang.String getStoreCodesInclusion(int index);
-
   /**
    *
    *
@@ -1482,7 +1431,6 @@ public interface AttributesOrBuilder
    * @return A list containing the storeCodesExclusion.
    */
   java.util.List<java.lang.String> getStoreCodesExclusionList();
-
   /**
    *
    *
@@ -1500,7 +1448,6 @@ public interface AttributesOrBuilder
    * @return The count of storeCodesExclusion.
    */
   int getStoreCodesExclusionCount();
-
   /**
    *
    *
@@ -1519,7 +1466,6 @@ public interface AttributesOrBuilder
    * @return The storeCodesExclusion at the given index.
    */
   java.lang.String getStoreCodesExclusion(int index);
-
   /**
    *
    *
@@ -1554,7 +1500,6 @@ public interface AttributesOrBuilder
    * @return The promotionUrl.
    */
   java.lang.String getPromotionUrl();
-
   /**
    *
    *

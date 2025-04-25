@@ -34,7 +34,6 @@ public final class QueryRepositoryDirectoryContentsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.QueryRepositoryDirectoryContentsResponse)
     QueryRepositoryDirectoryContentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryRepositoryDirectoryContentsResponse.newBuilder() to construct.
   private QueryRepositoryDirectoryContentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class QueryRepositoryDirectoryContentsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.DirectoryEntry> directoryEntries_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       getDirectoryEntriesList() {
     return directoryEntries_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       getDirectoryEntriesOrBuilderList() {
     return directoryEntries_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class QueryRepositoryDirectoryContentsResponse
   public int getDirectoryEntriesCount() {
     return directoryEntries_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class QueryRepositoryDirectoryContentsResponse
   public com.google.cloud.dataform.v1beta1.DirectoryEntry getDirectoryEntries(int index) {
     return directoryEntries_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class QueryRepositoryDirectoryContentsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class QueryRepositoryDirectoryContentsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -671,7 +662,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return directoryEntriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -688,7 +678,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return directoryEntriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -705,7 +694,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return directoryEntriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         int index) {
       return getDirectoryEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -932,7 +910,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return directoryEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return java.util.Collections.unmodifiableList(directoryEntries_);
       }
     }
-
     /**
      *
      *
@@ -964,7 +940,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       return getDirectoryEntriesFieldBuilder()
           .addBuilder(com.google.cloud.dataform.v1beta1.DirectoryEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +954,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       return getDirectoryEntriesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataform.v1beta1.DirectoryEntry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1015,7 +989,6 @@ public final class QueryRepositoryDirectoryContentsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1039,7 +1012,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1035,6 @@ public final class QueryRepositoryDirectoryContentsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1057,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1075,6 @@ public final class QueryRepositoryDirectoryContentsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the connectionProfile field is set.
    */
   boolean hasConnectionProfile();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The connectionProfile.
    */
   com.google.cloud.datastream.v1.ConnectionProfile getConnectionProfile();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the connectionProfileName field is set.
    */
   boolean hasConnectionProfileName();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The connectionProfileName.
    */
   java.lang.String getConnectionProfileName();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the fullHierarchy field is set.
    */
   boolean hasFullHierarchy();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the hierarchyDepth field is set.
    */
   boolean hasHierarchyDepth();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the oracleRdbms field is set.
    */
   boolean hasOracleRdbms();
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The oracleRdbms.
    */
   com.google.cloud.datastream.v1.OracleRdbms getOracleRdbms();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the mysqlRdbms field is set.
    */
   boolean hasMysqlRdbms();
-
   /**
    *
    *
@@ -248,7 +238,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The mysqlRdbms.
    */
   com.google.cloud.datastream.v1.MysqlRdbms getMysqlRdbms();
-
   /**
    *
    *
@@ -272,7 +261,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the postgresqlRdbms field is set.
    */
   boolean hasPostgresqlRdbms();
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The postgresqlRdbms.
    */
   com.google.cloud.datastream.v1.PostgresqlRdbms getPostgresqlRdbms();
-
   /**
    *
    *
@@ -309,7 +296,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return Whether the sqlServerRdbms field is set.
    */
   boolean hasSqlServerRdbms();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    * @return The sqlServerRdbms.
    */
   com.google.cloud.datastream.v1.SqlServerRdbms getSqlServerRdbms();
-
   /**
    *
    *

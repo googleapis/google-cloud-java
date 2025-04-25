@@ -38,7 +38,6 @@ public interface UpdateQaQuestionRequestOrBuilder
    * @return Whether the qaQuestion field is set.
    */
   boolean hasQaQuestion();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateQaQuestionRequestOrBuilder
    * @return The qaQuestion.
    */
   com.google.cloud.contactcenterinsights.v1.QaQuestion getQaQuestion();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateQaQuestionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface UpdateQaQuestionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

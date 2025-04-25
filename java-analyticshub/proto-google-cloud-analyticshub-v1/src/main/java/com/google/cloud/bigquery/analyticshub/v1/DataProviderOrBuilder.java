@@ -36,7 +36,6 @@ public interface DataProviderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface DataProviderOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
-
   /**
    *
    *

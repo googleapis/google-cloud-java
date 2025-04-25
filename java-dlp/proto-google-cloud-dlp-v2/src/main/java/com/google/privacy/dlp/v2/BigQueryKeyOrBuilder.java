@@ -36,7 +36,6 @@ public interface BigQueryKeyOrBuilder
    * @return Whether the tableReference field is set.
    */
   boolean hasTableReference();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BigQueryKeyOrBuilder
    * @return The tableReference.
    */
   com.google.privacy.dlp.v2.BigQueryTable getTableReference();
-
   /**
    *
    *

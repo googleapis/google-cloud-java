@@ -33,7 +33,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListAutonomousDatabasesResponse)
     ListAutonomousDatabasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAutonomousDatabasesResponse.newBuilder() to construct.
   private ListAutonomousDatabasesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDatabase>
       autonomousDatabases_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       getAutonomousDatabasesList() {
     return autonomousDatabases_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       getAutonomousDatabasesOrBuilderList() {
     return autonomousDatabases_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
   public int getAutonomousDatabasesCount() {
     return autonomousDatabases_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
   public com.google.cloud.oracledatabase.v1.AutonomousDatabase getAutonomousDatabases(int index) {
     return autonomousDatabases_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return autonomousDatabasesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return autonomousDatabasesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return autonomousDatabasesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         getAutonomousDatabasesBuilder(int index) {
       return getAutonomousDatabasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return autonomousDatabasesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(autonomousDatabases_);
       }
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       return getAutonomousDatabasesFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.AutonomousDatabase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -993,7 +968,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.oracledatabase.v1.AutonomousDatabase.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1030,7 +1004,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1053,7 +1026,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1048,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1086,6 @@ public final class ListAutonomousDatabasesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

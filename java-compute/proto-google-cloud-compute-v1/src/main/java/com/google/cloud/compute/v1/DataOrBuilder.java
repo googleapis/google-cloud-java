@@ -36,7 +36,6 @@ public interface DataOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DataOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface DataOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

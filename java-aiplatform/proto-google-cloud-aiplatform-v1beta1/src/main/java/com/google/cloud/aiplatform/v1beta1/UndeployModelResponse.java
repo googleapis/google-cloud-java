@@ -34,7 +34,6 @@ public final class UndeployModelResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UndeployModelResponse)
     UndeployModelResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UndeployModelResponse.newBuilder() to construct.
   private UndeployModelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class UndeployModelResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

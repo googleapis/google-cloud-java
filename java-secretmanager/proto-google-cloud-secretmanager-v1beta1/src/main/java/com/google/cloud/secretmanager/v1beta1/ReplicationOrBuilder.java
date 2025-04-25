@@ -28,8 +28,7 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
-   * replicated without any restrictions.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -37,13 +36,11 @@ public interface ReplicationOrBuilder
    * @return Whether the automatic field is set.
    */
   boolean hasAutomatic();
-
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
-   * replicated without any restrictions.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -51,13 +48,11 @@ public interface ReplicationOrBuilder
    * @return The automatic.
    */
   com.google.cloud.secretmanager.v1beta1.Replication.Automatic getAutomatic();
-
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
-   * replicated without any restrictions.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -68,8 +63,7 @@ public interface ReplicationOrBuilder
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
-   * into the locations specified.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -77,13 +71,11 @@ public interface ReplicationOrBuilder
    * @return Whether the userManaged field is set.
    */
   boolean hasUserManaged();
-
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
-   * into the locations specified.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -91,13 +83,11 @@ public interface ReplicationOrBuilder
    * @return The userManaged.
    */
   com.google.cloud.secretmanager.v1beta1.Replication.UserManaged getUserManaged();
-
   /**
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
-   * into the locations specified.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>

@@ -38,7 +38,6 @@ public interface TimecodeConfigOrBuilder
    * @return The enum numeric value on the wire for source.
    */
   int getSourceValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TimecodeConfigOrBuilder
    * @return Whether the utcOffset field is set.
    */
   boolean hasUtcOffset();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface TimecodeConfigOrBuilder
    * @return The utcOffset.
    */
   com.google.protobuf.Duration getUtcOffset();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface TimecodeConfigOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface TimecodeConfigOrBuilder
    * @return The timeZone.
    */
   com.google.type.TimeZone getTimeZone();
-
   /**
    *
    *

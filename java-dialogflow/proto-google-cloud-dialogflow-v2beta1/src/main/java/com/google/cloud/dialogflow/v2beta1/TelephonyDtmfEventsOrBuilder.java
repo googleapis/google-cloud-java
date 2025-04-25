@@ -36,7 +36,6 @@ public interface TelephonyDtmfEventsOrBuilder
    * @return A list containing the dtmfEvents.
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.TelephonyDtmf> getDtmfEventsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TelephonyDtmfEventsOrBuilder
    * @return The count of dtmfEvents.
    */
   int getDtmfEventsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface TelephonyDtmfEventsOrBuilder
    * @return The dtmfEvents at the given index.
    */
   com.google.cloud.dialogflow.v2beta1.TelephonyDtmf getDtmfEvents(int index);
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface TelephonyDtmfEventsOrBuilder
    * @return A list containing the enum numeric values on the wire for dtmfEvents.
    */
   java.util.List<java.lang.Integer> getDtmfEventsValueList();
-
   /**
    *
    *

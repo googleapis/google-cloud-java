@@ -39,7 +39,6 @@ public interface UpdateNodeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateNodeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateNodeRequestOrBuilder
    * @return Whether the node field is set.
    */
   boolean hasNode();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface UpdateNodeRequestOrBuilder
    * @return The node.
    */
   com.google.cloud.tpu.v2.Node getNode();
-
   /**
    *
    *

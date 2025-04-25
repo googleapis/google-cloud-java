@@ -33,7 +33,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.RunWorkflowCustomOperationMetadata)
     RunWorkflowCustomOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunWorkflowCustomOperationMetadata.newBuilder() to construct.
   private RunWorkflowCustomOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object verb_ = "";
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
 
   public static final int REQUESTED_CANCELLATION_FIELD_NUMBER = 4;
   private boolean requestedCancellation_ = false;
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object apiVersion_ = "";
-
   /**
    *
    *
@@ -277,7 +266,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +294,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -359,7 +345,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineRunId_ = "";
-
   /**
    *
    *
@@ -383,7 +368,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -632,7 +616,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -928,7 +911,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -945,7 +927,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +994,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1023,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1044,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1105,7 +1080,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1176,7 +1148,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1171,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1191,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1219,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1239,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1305,7 +1271,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1299,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     }
 
     private java.lang.Object verb_ = "";
-
     /**
      *
      *
@@ -1357,7 +1321,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1343,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1402,7 +1364,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1420,7 +1381,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1405,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     }
 
     private boolean requestedCancellation_;
-
     /**
      *
      *
@@ -1465,7 +1424,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     public boolean getRequestedCancellation() {
       return requestedCancellation_;
     }
-
     /**
      *
      *
@@ -1489,7 +1447,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1470,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     }
 
     private java.lang.Object apiVersion_ = "";
-
     /**
      *
      *
@@ -1536,7 +1492,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1559,7 +1514,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1581,7 +1535,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1552,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1576,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     }
 
     private java.lang.Object target_ = "";
-
     /**
      *
      *
@@ -1647,7 +1598,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1670,7 +1620,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1641,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1710,7 +1658,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1682,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
     }
 
     private java.lang.Object pipelineRunId_ = "";
-
     /**
      *
      *
@@ -1758,7 +1704,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1781,7 +1726,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1803,7 +1747,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1821,7 +1764,6 @@ public final class RunWorkflowCustomOperationMetadata extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface ReplicationOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ReplicationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.filestore.v1.ReplicaConfig> getReplicasList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ReplicationOrBuilder
    * </code>
    */
   com.google.cloud.filestore.v1.ReplicaConfig getReplicas(int index);
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ReplicationOrBuilder
    * </code>
    */
   int getReplicasCount();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ReplicationOrBuilder
    */
   java.util.List<? extends com.google.cloud.filestore.v1.ReplicaConfigOrBuilder>
       getReplicasOrBuilderList();
-
   /**
    *
    *

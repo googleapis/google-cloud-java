@@ -39,7 +39,6 @@ public interface UpdateCssProductInputRequestOrBuilder
    * @return Whether the cssProductInput field is set.
    */
   boolean hasCssProductInput();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateCssProductInputRequestOrBuilder
    * @return The cssProductInput.
    */
   com.google.shopping.css.v1.CssProductInput getCssProductInput();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface UpdateCssProductInputRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface UpdateCssProductInputRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface EventDetailOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface EventDetailOrBuilder
    * @return The referrerUri.
    */
   java.lang.String getReferrerUri();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface EventDetailOrBuilder
    * @return The pageViewId.
    */
   java.lang.String getPageViewId();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface EventDetailOrBuilder
    * @return A list containing the experimentIds.
    */
   java.util.List<java.lang.String> getExperimentIdsList();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface EventDetailOrBuilder
    * @return The count of experimentIds.
    */
   int getExperimentIdsCount();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface EventDetailOrBuilder
    * @return The experimentIds at the given index.
    */
   java.lang.String getExperimentIds(int index);
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public interface EventDetailOrBuilder
    * @return The recommendationToken.
    */
   java.lang.String getRecommendationToken();
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public interface EventDetailOrBuilder
    * @return Whether the eventAttributes field is set.
    */
   boolean hasEventAttributes();
-
   /**
    *
    *
@@ -281,7 +273,6 @@ public interface EventDetailOrBuilder
    * @return The eventAttributes.
    */
   com.google.cloud.recommendationengine.v1beta1.FeatureMap getEventAttributes();
-
   /**
    *
    *

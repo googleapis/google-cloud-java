@@ -40,7 +40,6 @@ public interface GetTensorboardExperimentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

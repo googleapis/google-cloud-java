@@ -33,7 +33,6 @@ public final class UnconditionalTrigger extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.apps.script.type.gmail.UnconditionalTrigger)
     UnconditionalTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UnconditionalTrigger.newBuilder() to construct.
   private UnconditionalTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class UnconditionalTrigger extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

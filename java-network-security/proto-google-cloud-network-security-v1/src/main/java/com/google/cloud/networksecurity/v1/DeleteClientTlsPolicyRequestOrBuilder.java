@@ -39,7 +39,6 @@ public interface DeleteClientTlsPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

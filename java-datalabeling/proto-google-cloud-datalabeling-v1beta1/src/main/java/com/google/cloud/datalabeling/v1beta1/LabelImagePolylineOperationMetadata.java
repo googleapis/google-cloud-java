@@ -34,7 +34,6 @@ public final class LabelImagePolylineOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata)
     LabelImagePolylineOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelImagePolylineOperationMetadata.newBuilder() to construct.
   private LabelImagePolylineOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class LabelImagePolylineOperationMetadata
   private int bitField0_;
   public static final int BASIC_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class LabelImagePolylineOperationMetadata
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class LabelImagePolylineOperationMetadata
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class LabelImagePolylineOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -503,7 +498,6 @@ public final class LabelImagePolylineOperationMetadata
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
-
     /**
      *
      *
@@ -518,7 +512,6 @@ public final class LabelImagePolylineOperationMetadata
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -539,7 +532,6 @@ public final class LabelImagePolylineOperationMetadata
         return basicConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -563,7 +555,6 @@ public final class LabelImagePolylineOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class LabelImagePolylineOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class LabelImagePolylineOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class LabelImagePolylineOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class LabelImagePolylineOperationMetadata
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class LabelImagePolylineOperationMetadata
             : basicConfig_;
       }
     }
-
     /**
      *
      *

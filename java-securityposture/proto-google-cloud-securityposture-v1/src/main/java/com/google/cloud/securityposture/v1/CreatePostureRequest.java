@@ -33,7 +33,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.CreatePostureRequest)
     CreatePostureRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePostureRequest.newBuilder() to construct.
   private CreatePostureRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postureId_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
 
   public static final int POSTURE_FIELD_NUMBER = 3;
   private com.google.cloud.securityposture.v1.Posture posture_;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
   public boolean hasPosture() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.securityposture.v1.Posture.getDefaultInstance()
         : posture_;
   }
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -674,7 +664,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object postureId_ = "";
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.securityposture.v1.Posture.Builder,
             com.google.cloud.securityposture.v1.PostureOrBuilder>
         postureBuilder_;
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
     public boolean hasPosture() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
         return postureBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +984,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getPostureFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1068,7 +1041,6 @@ public final class CreatePostureRequest extends com.google.protobuf.GeneratedMes
             : posture_;
       }
     }
-
     /**
      *
      *

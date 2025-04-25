@@ -39,7 +39,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamingPredictRequest)
     StreamingPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingPredictRequest.newBuilder() to construct.
   private StreamingPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> inputs_;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> getInputsList() {
     return inputs_;
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       getInputsOrBuilderList() {
     return inputs_;
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
   public int getInputsCount() {
     return inputs_.size();
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
   public com.google.cloud.aiplatform.v1beta1.Tensor getInputs(int index) {
     return inputs_.get(index);
   }
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
 
   public static final int PARAMETERS_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.Tensor parameters_;
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1beta1.Tensor.getDefaultInstance()
         : parameters_;
   }
-
   /**
    *
    *
@@ -447,7 +436,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -729,7 +717,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return inputsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -908,7 +890,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return inputsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -925,7 +906,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return inputsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +992,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1011,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1031,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1051,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1101,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1beta1.Tensor.Builder getInputsBuilder(int index) {
       return getInputsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1147,7 +1117,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return inputsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1134,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(inputs_);
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1147,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       return getInputsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Tensor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1193,7 +1160,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       return getInputsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Tensor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1231,7 +1197,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.Tensor.Builder,
             com.google.cloud.aiplatform.v1beta1.TensorOrBuilder>
         parametersBuilder_;
-
     /**
      *
      *
@@ -1246,7 +1211,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1267,7 +1231,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
         return parametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1290,7 +1253,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1273,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1300,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1319,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1333,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1393,7 +1351,6 @@ public final class StreamingPredictRequest extends com.google.protobuf.Generated
             : parameters_;
       }
     }
-
     /**
      *
      *

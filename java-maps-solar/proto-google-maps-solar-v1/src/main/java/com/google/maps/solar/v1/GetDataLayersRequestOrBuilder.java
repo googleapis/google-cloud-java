@@ -37,7 +37,6 @@ public interface GetDataLayersRequestOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface GetDataLayersRequestOrBuilder
    * @return The location.
    */
   com.google.type.LatLng getLocation();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface GetDataLayersRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface GetDataLayersRequestOrBuilder
    * @return The enum numeric value on the wire for requiredQuality.
    */
   int getRequiredQualityValue();
-
   /**
    *
    *

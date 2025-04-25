@@ -82,7 +82,6 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROPERTY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int PROPERTY_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROPERTY_TYPE_ORDINARY = 1;</code>
    */
   public static final int PROPERTY_TYPE_ORDINARY_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROPERTY_TYPE_SUBPROPERTY = 2;</code>
    */
   public static final int PROPERTY_TYPE_SUBPROPERTY_VALUE = 2;
-
   /**
    *
    *

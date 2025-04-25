@@ -33,7 +33,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GeoCoordinate)
     GeoCoordinateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GeoCoordinate.newBuilder() to construct.
   private GeoCoordinate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LATITUDE_FIELD_NUMBER = 1;
   private double latitude_ = 0D;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LONGITUDE_FIELD_NUMBER = 2;
   private double longitude_ = 0D;
-
   /**
    *
    *
@@ -276,7 +273,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -471,7 +467,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double latitude_;
-
     /**
      *
      *
@@ -487,7 +482,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
     public double getLatitude() {
       return latitude_;
     }
-
     /**
      *
      *
@@ -507,7 +501,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -527,7 +520,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double longitude_;
-
     /**
      *
      *
@@ -543,7 +535,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
     public double getLongitude() {
       return longitude_;
     }
-
     /**
      *
      *
@@ -563,7 +554,6 @@ public final class GeoCoordinate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

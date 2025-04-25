@@ -34,7 +34,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentOutputConfig)
     DocumentOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentOutputConfig.newBuilder() to construct.
   private DocumentOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * @return The gcsUri.
      */
     java.lang.String getGcsUri();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the fieldMask field is set.
      */
     boolean hasFieldMask();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * @return The fieldMask.
      */
     com.google.protobuf.FieldMask getFieldMask();
-
     /**
      *
      *
@@ -151,7 +147,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the shardingConfig field is set.
      */
     boolean hasShardingConfig();
-
     /**
      *
      *
@@ -167,7 +162,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
         getShardingConfig();
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfigOrBuilder
         getShardingConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig)
       GcsOutputConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GcsOutputConfig.newBuilder() to construct.
     private GcsOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -259,7 +251,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
        */
       int getPagesOverlap();
     }
-
     /**
      *
      *
@@ -275,7 +266,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig)
         ShardingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ShardingConfig.newBuilder() to construct.
       private ShardingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -308,7 +298,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
 
       public static final int PAGES_PER_SHARD_FIELD_NUMBER = 1;
       private int pagesPerShard_ = 0;
-
       /**
        *
        *
@@ -327,7 +316,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
 
       public static final int PAGES_OVERLAP_FIELD_NUMBER = 2;
       private int pagesOverlap_ = 0;
-
       /**
        *
        *
@@ -538,7 +526,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -758,7 +745,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         private int bitField0_;
 
         private int pagesPerShard_;
-
         /**
          *
          *
@@ -774,7 +760,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         public int getPagesPerShard() {
           return pagesPerShard_;
         }
-
         /**
          *
          *
@@ -794,7 +779,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -814,7 +798,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         }
 
         private int pagesOverlap_;
-
         /**
          *
          *
@@ -830,7 +813,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         public int getPagesOverlap() {
           return pagesOverlap_;
         }
-
         /**
          *
          *
@@ -850,7 +832,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -945,7 +926,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcsUri_ = "";
-
     /**
      *
      *
@@ -969,7 +949,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -996,7 +975,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
 
     public static final int FIELD_MASK_FIELD_NUMBER = 2;
     private com.google.protobuf.FieldMask fieldMask_;
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public boolean hasFieldMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1032,7 +1009,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.FieldMask getFieldMask() {
       return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
     }
-
     /**
      *
      *
@@ -1052,7 +1028,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public static final int SHARDING_CONFIG_FIELD_NUMBER = 3;
     private com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.ShardingConfig
         shardingConfig_;
-
     /**
      *
      *
@@ -1070,7 +1045,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public boolean hasShardingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1092,7 +1066,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               .getDefaultInstance()
           : shardingConfig_;
     }
-
     /**
      *
      *
@@ -1304,7 +1277,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1549,7 +1521,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object gcsUri_ = "";
-
       /**
        *
        *
@@ -1572,7 +1543,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1595,7 +1565,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1617,7 +1586,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1635,7 +1603,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1665,7 +1632,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               com.google.protobuf.FieldMask.Builder,
               com.google.protobuf.FieldMaskOrBuilder>
           fieldMaskBuilder_;
-
       /**
        *
        *
@@ -1682,7 +1648,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       public boolean hasFieldMask() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1705,7 +1670,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           return fieldMaskBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1730,7 +1694,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1752,7 +1715,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1782,7 +1744,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -1804,7 +1765,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1821,7 +1781,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return getFieldMaskFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1842,7 +1801,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               : fieldMask_;
         }
       }
-
       /**
        *
        *
@@ -1880,7 +1838,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig
                   .ShardingConfigOrBuilder>
           shardingConfigBuilder_;
-
       /**
        *
        *
@@ -1897,7 +1854,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       public boolean hasShardingConfig() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1922,7 +1878,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
           return shardingConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1949,7 +1904,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1973,7 +1927,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2007,7 +1960,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -2029,7 +1981,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2048,7 +1999,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return getShardingConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2072,7 +2022,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
               : shardingConfig_;
         }
       }
-
       /**
        *
        *
@@ -2189,7 +2138,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2221,7 +2169,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GCS_OUTPUT_CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -2238,7 +2185,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
   public boolean hasGcsOutputConfig() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -2258,7 +2204,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2454,7 +2399,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2674,7 +2618,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfig.Builder,
             com.google.cloud.documentai.v1.DocumentOutputConfig.GcsOutputConfigOrBuilder>
         gcsOutputConfigBuilder_;
-
     /**
      *
      *
@@ -2691,7 +2634,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
     public boolean hasGcsOutputConfig() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -2721,7 +2663,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2746,7 +2687,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2769,7 +2709,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2807,7 +2746,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2834,7 +2772,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2849,7 +2786,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
         getGcsOutputConfigBuilder() {
       return getGcsOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2873,7 +2809,6 @@ public final class DocumentOutputConfig extends com.google.protobuf.GeneratedMes
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

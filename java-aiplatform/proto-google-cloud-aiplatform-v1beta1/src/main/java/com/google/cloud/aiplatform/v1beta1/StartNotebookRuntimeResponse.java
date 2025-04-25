@@ -34,7 +34,6 @@ public final class StartNotebookRuntimeResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StartNotebookRuntimeResponse)
     StartNotebookRuntimeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartNotebookRuntimeResponse.newBuilder() to construct.
   private StartNotebookRuntimeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class StartNotebookRuntimeResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ActionOrBuilder
    * @return Whether the userUtterance field is set.
    */
   boolean hasUserUtterance();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ActionOrBuilder
    * @return The userUtterance.
    */
   com.google.cloud.dialogflow.cx.v3beta1.UserUtterance getUserUtterance();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ActionOrBuilder
    * @return Whether the agentUtterance field is set.
    */
   boolean hasAgentUtterance();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ActionOrBuilder
    * @return The agentUtterance.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AgentUtterance getAgentUtterance();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ActionOrBuilder
    * @return Whether the toolUse field is set.
    */
   boolean hasToolUse();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ActionOrBuilder
    * @return The toolUse.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ToolUse getToolUse();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface ActionOrBuilder
    * @return Whether the playbookInvocation field is set.
    */
   boolean hasPlaybookInvocation();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface ActionOrBuilder
    * @return The playbookInvocation.
    */
   com.google.cloud.dialogflow.cx.v3beta1.PlaybookInvocation getPlaybookInvocation();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface ActionOrBuilder
    * @return Whether the flowInvocation field is set.
    */
   boolean hasFlowInvocation();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public interface ActionOrBuilder
    * @return The flowInvocation.
    */
   com.google.cloud.dialogflow.cx.v3beta1.FlowInvocation getFlowInvocation();
-
   /**
    *
    *

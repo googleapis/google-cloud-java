@@ -35,7 +35,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.Vehicle)
     VehicleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Vehicle.newBuilder() to construct.
   private Vehicle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -144,7 +143,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>TRAVEL_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int TRAVEL_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -155,7 +153,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>DRIVING = 1;</code>
      */
     public static final int DRIVING_VALUE = 1;
-
     /**
      *
      *
@@ -309,7 +306,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>UNLOADING_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int UNLOADING_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -320,7 +316,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>LAST_IN_FIRST_OUT = 1;</code>
      */
     public static final int LAST_IN_FIRST_OUT_VALUE = 1;
-
     /**
      *
      *
@@ -434,7 +429,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxLoad field is set.
      */
     boolean hasMaxLoad();
-
     /**
      *
      *
@@ -495,7 +489,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startLoadInterval field is set.
      */
     boolean hasStartLoadInterval();
-
     /**
      *
      *
@@ -509,7 +502,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return The startLoadInterval.
      */
     com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval getStartLoadInterval();
-
     /**
      *
      *
@@ -536,7 +528,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endLoadInterval field is set.
      */
     boolean hasEndLoadInterval();
-
     /**
      *
      *
@@ -550,7 +541,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return The endLoadInterval.
      */
     com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval getEndLoadInterval();
-
     /**
      *
      *
@@ -564,7 +554,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.IntervalOrBuilder
         getEndLoadIntervalOrBuilder();
   }
-
   /**
    *
    *
@@ -581,7 +570,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.Vehicle.LoadLimit)
       LoadLimitOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LoadLimit.newBuilder() to construct.
     private LoadLimit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -649,7 +637,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the max field is set.
        */
       boolean hasMax();
-
       /**
        *
        *
@@ -668,7 +655,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        */
       long getMax();
     }
-
     /**
      *
      *
@@ -683,7 +669,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval)
         IntervalOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Interval.newBuilder() to construct.
       private Interval(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -715,7 +700,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int MIN_FIELD_NUMBER = 1;
       private long min_ = 0L;
-
       /**
        *
        *
@@ -738,7 +722,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
       public static final int MAX_FIELD_NUMBER = 2;
       private long max_ = 0L;
-
       /**
        *
        *
@@ -759,7 +742,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMax() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -958,7 +940,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1167,7 +1148,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private long min_;
-
         /**
          *
          *
@@ -1187,7 +1167,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         public long getMin() {
           return min_;
         }
-
         /**
          *
          *
@@ -1211,7 +1190,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1235,7 +1213,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
 
         private long max_;
-
         /**
          *
          *
@@ -1256,7 +1233,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         public boolean hasMax() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -1277,7 +1253,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         public long getMax() {
           return max_;
         }
-
         /**
          *
          *
@@ -1302,7 +1277,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1396,7 +1370,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MAX_LOAD_FIELD_NUMBER = 1;
     private long maxLoad_ = 0L;
-
     /**
      *
      *
@@ -1412,7 +1385,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxLoad() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1431,7 +1403,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SOFT_MAX_LOAD_FIELD_NUMBER = 2;
     private long softMaxLoad_ = 0L;
-
     /**
      *
      *
@@ -1451,7 +1422,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COST_PER_UNIT_ABOVE_SOFT_MAX_FIELD_NUMBER = 3;
     private double costPerUnitAboveSoftMax_ = 0D;
-
     /**
      *
      *
@@ -1477,7 +1447,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int START_LOAD_INTERVAL_FIELD_NUMBER = 4;
     private com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval startLoadInterval_;
-
     /**
      *
      *
@@ -1494,7 +1463,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartLoadInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1513,7 +1481,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval.getDefaultInstance()
           : startLoadInterval_;
     }
-
     /**
      *
      *
@@ -1534,7 +1501,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_LOAD_INTERVAL_FIELD_NUMBER = 5;
     private com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval endLoadInterval_;
-
     /**
      *
      *
@@ -1551,7 +1517,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndLoadInterval() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1570,7 +1535,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval.getDefaultInstance()
           : endLoadInterval_;
     }
-
     /**
      *
      *
@@ -1806,7 +1770,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2075,7 +2038,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long maxLoad_;
-
       /**
        *
        *
@@ -2091,7 +2053,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMaxLoad() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2107,7 +2068,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public long getMaxLoad() {
         return maxLoad_;
       }
-
       /**
        *
        *
@@ -2127,7 +2087,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2147,7 +2106,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long softMaxLoad_;
-
       /**
        *
        *
@@ -2164,7 +2122,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public long getSoftMaxLoad() {
         return softMaxLoad_;
       }
-
       /**
        *
        *
@@ -2185,7 +2142,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2206,7 +2162,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double costPerUnitAboveSoftMax_;
-
       /**
        *
        *
@@ -2229,7 +2184,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public double getCostPerUnitAboveSoftMax() {
         return costPerUnitAboveSoftMax_;
       }
-
       /**
        *
        *
@@ -2256,7 +2210,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2288,7 +2241,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval.Builder,
               com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.IntervalOrBuilder>
           startLoadIntervalBuilder_;
-
       /**
        *
        *
@@ -2304,7 +2256,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartLoadInterval() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -2327,7 +2278,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           return startLoadIntervalBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2352,7 +2302,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2374,7 +2323,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2406,7 +2354,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2427,7 +2374,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2444,7 +2390,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartLoadIntervalFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2465,7 +2410,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               : startLoadInterval_;
         }
       }
-
       /**
        *
        *
@@ -2499,7 +2443,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.Interval.Builder,
               com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.IntervalOrBuilder>
           endLoadIntervalBuilder_;
-
       /**
        *
        *
@@ -2515,7 +2458,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndLoadInterval() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -2537,7 +2479,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           return endLoadIntervalBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2562,7 +2503,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2584,7 +2524,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2616,7 +2555,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2637,7 +2575,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2654,7 +2591,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEndLoadIntervalFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2675,7 +2611,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               : endLoadInterval_;
         }
       }
-
       /**
        *
        *
@@ -2784,7 +2719,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxDuration field is set.
      */
     boolean hasMaxDuration();
-
     /**
      *
      *
@@ -2797,7 +2731,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return The maxDuration.
      */
     com.google.protobuf.Duration getMaxDuration();
-
     /**
      *
      *
@@ -2826,7 +2759,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the softMaxDuration field is set.
      */
     boolean hasSoftMaxDuration();
-
     /**
      *
      *
@@ -2844,7 +2776,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return The softMaxDuration.
      */
     com.google.protobuf.Duration getSoftMaxDuration();
-
     /**
      *
      *
@@ -2879,7 +2810,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the costPerHourAfterSoftMax field is set.
      */
     boolean hasCostPerHourAfterSoftMax();
-
     /**
      *
      *
@@ -2920,7 +2850,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the quadraticSoftMaxDuration field is set.
      */
     boolean hasQuadraticSoftMaxDuration();
-
     /**
      *
      *
@@ -2942,7 +2871,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return The quadraticSoftMaxDuration.
      */
     com.google.protobuf.Duration getQuadraticSoftMaxDuration();
-
     /**
      *
      *
@@ -2986,7 +2914,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the costPerSquareHourAfterQuadraticSoftMax field is set.
      */
     boolean hasCostPerSquareHourAfterQuadraticSoftMax();
-
     /**
      *
      *
@@ -3011,7 +2938,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     double getCostPerSquareHourAfterQuadraticSoftMax();
   }
-
   /**
    *
    *
@@ -3030,7 +2956,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.Vehicle.DurationLimit)
       DurationLimitOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DurationLimit.newBuilder() to construct.
     private DurationLimit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3062,7 +2987,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MAX_DURATION_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration maxDuration_;
-
     /**
      *
      *
@@ -3078,7 +3002,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3096,7 +3019,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : maxDuration_;
     }
-
     /**
      *
      *
@@ -3115,7 +3037,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SOFT_MAX_DURATION_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration softMaxDuration_;
-
     /**
      *
      *
@@ -3136,7 +3057,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSoftMaxDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3159,7 +3079,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : softMaxDuration_;
     }
-
     /**
      *
      *
@@ -3183,7 +3102,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COST_PER_HOUR_AFTER_SOFT_MAX_FIELD_NUMBER = 3;
     private double costPerHourAfterSoftMax_ = 0D;
-
     /**
      *
      *
@@ -3205,7 +3123,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostPerHourAfterSoftMax() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3230,7 +3147,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int QUADRATIC_SOFT_MAX_DURATION_FIELD_NUMBER = 4;
     private com.google.protobuf.Duration quadraticSoftMaxDuration_;
-
     /**
      *
      *
@@ -3255,7 +3171,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuadraticSoftMaxDuration() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3282,7 +3197,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : quadraticSoftMaxDuration_;
     }
-
     /**
      *
      *
@@ -3310,7 +3224,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COST_PER_SQUARE_HOUR_AFTER_QUADRATIC_SOFT_MAX_FIELD_NUMBER = 5;
     private double costPerSquareHourAfterQuadraticSoftMax_ = 0D;
-
     /**
      *
      *
@@ -3337,7 +3250,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCostPerSquareHourAfterQuadraticSoftMax() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3603,7 +3515,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3891,7 +3802,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           maxDurationBuilder_;
-
       /**
        *
        *
@@ -3906,7 +3816,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMaxDuration() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3927,7 +3836,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           return maxDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3950,7 +3858,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3970,7 +3877,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3998,7 +3904,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4018,7 +3923,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4033,7 +3937,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMaxDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4052,7 +3955,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               : maxDuration_;
         }
       }
-
       /**
        *
        *
@@ -4085,7 +3987,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           softMaxDurationBuilder_;
-
       /**
        *
        *
@@ -4105,7 +4006,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSoftMaxDuration() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -4131,7 +4031,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           return softMaxDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4159,7 +4058,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4184,7 +4082,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4217,7 +4114,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4242,7 +4138,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4262,7 +4157,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSoftMaxDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4286,7 +4180,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               : softMaxDuration_;
         }
       }
-
       /**
        *
        *
@@ -4319,7 +4212,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double costPerHourAfterSoftMax_;
-
       /**
        *
        *
@@ -4341,7 +4233,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCostPerHourAfterSoftMax() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -4363,7 +4254,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public double getCostPerHourAfterSoftMax() {
         return costPerHourAfterSoftMax_;
       }
-
       /**
        *
        *
@@ -4389,7 +4279,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4420,7 +4309,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           quadraticSoftMaxDurationBuilder_;
-
       /**
        *
        *
@@ -4444,7 +4332,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasQuadraticSoftMaxDuration() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -4474,7 +4361,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           return quadraticSoftMaxDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4506,7 +4392,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4536,7 +4421,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4573,7 +4457,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4602,7 +4485,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4626,7 +4508,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getQuadraticSoftMaxDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4654,7 +4535,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
               : quadraticSoftMaxDuration_;
         }
       }
-
       /**
        *
        *
@@ -4691,7 +4571,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double costPerSquareHourAfterQuadraticSoftMax_;
-
       /**
        *
        *
@@ -4718,7 +4597,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCostPerSquareHourAfterQuadraticSoftMax() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -4745,7 +4623,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       public double getCostPerSquareHourAfterQuadraticSoftMax() {
         return costPerSquareHourAfterQuadraticSoftMax_;
       }
-
       /**
        *
        *
@@ -4776,7 +4653,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4876,7 +4752,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -4901,7 +4776,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4929,7 +4803,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAVEL_MODE_FIELD_NUMBER = 1;
   private int travelMode_ = 0;
-
   /**
    *
    *
@@ -4946,7 +4819,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getTravelModeValue() {
     return travelMode_;
   }
-
   /**
    *
    *
@@ -4970,7 +4842,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTE_MODIFIERS_FIELD_NUMBER = 2;
   private com.google.maps.routeoptimization.v1.RouteModifiers routeModifiers_;
-
   /**
    *
    *
@@ -4987,7 +4858,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRouteModifiers() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5006,7 +4876,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.RouteModifiers.getDefaultInstance()
         : routeModifiers_;
   }
-
   /**
    *
    *
@@ -5026,7 +4895,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_LOCATION_FIELD_NUMBER = 3;
   private com.google.type.LatLng startLocation_;
-
   /**
    *
    *
@@ -5045,7 +4913,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -5064,7 +4931,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getStartLocation() {
     return startLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : startLocation_;
   }
-
   /**
    *
    *
@@ -5084,7 +4950,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_WAYPOINT_FIELD_NUMBER = 4;
   private com.google.maps.routeoptimization.v1.Waypoint startWaypoint_;
-
   /**
    *
    *
@@ -5104,7 +4969,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartWaypoint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -5126,7 +4990,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.Waypoint.getDefaultInstance()
         : startWaypoint_;
   }
-
   /**
    *
    *
@@ -5149,7 +5012,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_LOCATION_FIELD_NUMBER = 5;
   private com.google.type.LatLng endLocation_;
-
   /**
    *
    *
@@ -5169,7 +5031,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndLocation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -5189,7 +5050,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getEndLocation() {
     return endLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : endLocation_;
   }
-
   /**
    *
    *
@@ -5210,7 +5070,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_WAYPOINT_FIELD_NUMBER = 6;
   private com.google.maps.routeoptimization.v1.Waypoint endWaypoint_;
-
   /**
    *
    *
@@ -5231,7 +5090,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndWaypoint() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -5254,7 +5112,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.Waypoint.getDefaultInstance()
         : endWaypoint_;
   }
-
   /**
    *
    *
@@ -5281,7 +5138,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList startTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -5298,7 +5154,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getStartTagsList() {
     return startTags_;
   }
-
   /**
    *
    *
@@ -5315,7 +5170,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getStartTagsCount() {
     return startTags_.size();
   }
-
   /**
    *
    *
@@ -5333,7 +5187,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getStartTags(int index) {
     return startTags_.get(index);
   }
-
   /**
    *
    *
@@ -5357,7 +5210,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList endTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -5374,7 +5226,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getEndTagsList() {
     return endTags_;
   }
-
   /**
    *
    *
@@ -5391,7 +5242,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getEndTagsCount() {
     return endTags_.size();
   }
-
   /**
    *
    *
@@ -5409,7 +5259,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEndTags(int index) {
     return endTags_.get(index);
   }
-
   /**
    *
    *
@@ -5432,7 +5281,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.TimeWindow> startTimeWindows_;
-
   /**
    *
    *
@@ -5457,7 +5305,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.routeoptimization.v1.TimeWindow> getStartTimeWindowsList() {
     return startTimeWindows_;
   }
-
   /**
    *
    *
@@ -5483,7 +5330,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       getStartTimeWindowsOrBuilderList() {
     return startTimeWindows_;
   }
-
   /**
    *
    *
@@ -5508,7 +5354,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getStartTimeWindowsCount() {
     return startTimeWindows_.size();
   }
-
   /**
    *
    *
@@ -5533,7 +5378,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routeoptimization.v1.TimeWindow getStartTimeWindows(int index) {
     return startTimeWindows_.get(index);
   }
-
   /**
    *
    *
@@ -5564,7 +5408,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.TimeWindow> endTimeWindows_;
-
   /**
    *
    *
@@ -5589,7 +5432,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.routeoptimization.v1.TimeWindow> getEndTimeWindowsList() {
     return endTimeWindows_;
   }
-
   /**
    *
    *
@@ -5615,7 +5457,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       getEndTimeWindowsOrBuilderList() {
     return endTimeWindows_;
   }
-
   /**
    *
    *
@@ -5640,7 +5481,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getEndTimeWindowsCount() {
     return endTimeWindows_.size();
   }
-
   /**
    *
    *
@@ -5665,7 +5505,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routeoptimization.v1.TimeWindow getEndTimeWindows(int index) {
     return endTimeWindows_.get(index);
   }
-
   /**
    *
    *
@@ -5694,7 +5533,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAVEL_DURATION_MULTIPLE_FIELD_NUMBER = 11;
   private double travelDurationMultiple_ = 0D;
-
   /**
    *
    *
@@ -5722,7 +5560,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTravelDurationMultiple() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -5753,7 +5590,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UNLOADING_POLICY_FIELD_NUMBER = 12;
   private int unloadingPolicy_ = 0;
-
   /**
    *
    *
@@ -5769,7 +5605,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getUnloadingPolicyValue() {
     return unloadingPolicy_;
   }
-
   /**
    *
    *
@@ -5825,7 +5660,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getLoadLimitsCount() {
     return internalGetLoadLimits().getMap().size();
   }
-
   /**
    *
    *
@@ -5848,7 +5682,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLoadLimits().getMap().containsKey(key);
   }
-
   /** Use {@link #getLoadLimitsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -5856,7 +5689,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       getLoadLimits() {
     return getLoadLimitsMap();
   }
-
   /**
    *
    *
@@ -5877,7 +5709,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       getLoadLimitsMap() {
     return internalGetLoadLimits().getMap();
   }
-
   /**
    *
    *
@@ -5906,7 +5737,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         internalGetLoadLimits().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -5938,7 +5768,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_HOUR_FIELD_NUMBER = 16;
   private double costPerHour_ = 0D;
-
   /**
    *
    *
@@ -5963,7 +5792,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_TRAVELED_HOUR_FIELD_NUMBER = 17;
   private double costPerTraveledHour_ = 0D;
-
   /**
    *
    *
@@ -5985,7 +5813,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COST_PER_KILOMETER_FIELD_NUMBER = 18;
   private double costPerKilometer_ = 0D;
-
   /**
    *
    *
@@ -6008,7 +5835,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIXED_COST_FIELD_NUMBER = 19;
   private double fixedCost_ = 0D;
-
   /**
    *
    *
@@ -6027,7 +5853,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USED_IF_ROUTE_IS_EMPTY_FIELD_NUMBER = 20;
   private boolean usedIfRouteIsEmpty_ = false;
-
   /**
    *
    *
@@ -6057,7 +5882,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTE_DURATION_LIMIT_FIELD_NUMBER = 21;
   private com.google.maps.routeoptimization.v1.Vehicle.DurationLimit routeDurationLimit_;
-
   /**
    *
    *
@@ -6075,7 +5899,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRouteDurationLimit() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -6095,7 +5918,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.Vehicle.DurationLimit.getDefaultInstance()
         : routeDurationLimit_;
   }
-
   /**
    *
    *
@@ -6117,7 +5939,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAVEL_DURATION_LIMIT_FIELD_NUMBER = 22;
   private com.google.maps.routeoptimization.v1.Vehicle.DurationLimit travelDurationLimit_;
-
   /**
    *
    *
@@ -6136,7 +5957,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTravelDurationLimit() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -6157,7 +5977,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.Vehicle.DurationLimit.getDefaultInstance()
         : travelDurationLimit_;
   }
-
   /**
    *
    *
@@ -6180,7 +5999,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTE_DISTANCE_LIMIT_FIELD_NUMBER = 23;
   private com.google.maps.routeoptimization.v1.DistanceLimit routeDistanceLimit_;
-
   /**
    *
    *
@@ -6198,7 +6016,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRouteDistanceLimit() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -6218,7 +6035,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.DistanceLimit.getDefaultInstance()
         : routeDistanceLimit_;
   }
-
   /**
    *
    *
@@ -6269,7 +6085,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public int getExtraVisitDurationForVisitTypeCount() {
     return internalGetExtraVisitDurationForVisitType().getMap().size();
   }
-
   /**
    *
    *
@@ -6295,7 +6110,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetExtraVisitDurationForVisitType().getMap().containsKey(key);
   }
-
   /** Use {@link #getExtraVisitDurationForVisitTypeMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -6303,7 +6117,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       getExtraVisitDurationForVisitType() {
     return getExtraVisitDurationForVisitTypeMap();
   }
-
   /**
    *
    *
@@ -6327,7 +6140,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       getExtraVisitDurationForVisitTypeMap() {
     return internalGetExtraVisitDurationForVisitType().getMap();
   }
-
   /**
    *
    *
@@ -6358,7 +6170,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         internalGetExtraVisitDurationForVisitType().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -6393,7 +6204,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BREAK_RULE_FIELD_NUMBER = 25;
   private com.google.maps.routeoptimization.v1.BreakRule breakRule_;
-
   /**
    *
    *
@@ -6410,7 +6220,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBreakRule() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -6429,7 +6238,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.routeoptimization.v1.BreakRule.getDefaultInstance()
         : breakRule_;
   }
-
   /**
    *
    *
@@ -6451,7 +6259,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object label_ = "";
-
   /**
    *
    *
@@ -6477,7 +6284,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6506,7 +6312,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IGNORE_FIELD_NUMBER = 28;
   private boolean ignore_ = false;
-
   /**
    *
    *
@@ -7042,7 +6847,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7795,7 +7599,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -7819,7 +7622,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7843,7 +7645,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7866,7 +7667,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7885,7 +7685,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7911,7 +7710,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int travelMode_ = 0;
-
     /**
      *
      *
@@ -7928,7 +7726,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public int getTravelModeValue() {
       return travelMode_;
     }
-
     /**
      *
      *
@@ -7948,7 +7745,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7969,7 +7765,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.routeoptimization.v1.Vehicle.TravelMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7992,7 +7787,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8018,7 +7812,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.RouteModifiers.Builder,
             com.google.maps.routeoptimization.v1.RouteModifiersOrBuilder>
         routeModifiersBuilder_;
-
     /**
      *
      *
@@ -8034,7 +7827,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRouteModifiers() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -8056,7 +7848,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return routeModifiersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8080,7 +7871,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8102,7 +7892,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8132,7 +7921,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8153,7 +7941,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8169,7 +7956,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRouteModifiersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8190,7 +7976,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : routeModifiers_;
       }
     }
-
     /**
      *
      *
@@ -8222,7 +8007,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         startLocationBuilder_;
-
     /**
      *
      *
@@ -8240,7 +8024,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartLocation() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -8264,7 +8047,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return startLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8290,7 +8072,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8313,7 +8094,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8344,7 +8124,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8367,7 +8146,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8385,7 +8163,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8407,7 +8184,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : startLocation_;
       }
     }
-
     /**
      *
      *
@@ -8441,7 +8217,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.Waypoint.Builder,
             com.google.maps.routeoptimization.v1.WaypointOrBuilder>
         startWaypointBuilder_;
-
     /**
      *
      *
@@ -8460,7 +8235,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartWaypoint() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -8485,7 +8259,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return startWaypointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8512,7 +8285,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8537,7 +8309,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8570,7 +8341,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8594,7 +8364,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8613,7 +8382,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartWaypointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8636,7 +8404,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : startWaypoint_;
       }
     }
-
     /**
      *
      *
@@ -8671,7 +8438,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         endLocationBuilder_;
-
     /**
      *
      *
@@ -8690,7 +8456,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndLocation() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -8713,7 +8478,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8740,7 +8504,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8764,7 +8527,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8796,7 +8558,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8820,7 +8581,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8839,7 +8599,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8860,7 +8619,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endLocation_ == null ? com.google.type.LatLng.getDefaultInstance() : endLocation_;
       }
     }
-
     /**
      *
      *
@@ -8895,7 +8653,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.Waypoint.Builder,
             com.google.maps.routeoptimization.v1.WaypointOrBuilder>
         endWaypointBuilder_;
-
     /**
      *
      *
@@ -8915,7 +8672,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndWaypoint() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -8941,7 +8697,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endWaypointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8969,7 +8724,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8995,7 +8749,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9028,7 +8781,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9053,7 +8805,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9073,7 +8824,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndWaypointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9097,7 +8847,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : endWaypoint_;
       }
     }
-
     /**
      *
      *
@@ -9138,7 +8887,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -9156,7 +8904,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       startTags_.makeImmutable();
       return startTags_;
     }
-
     /**
      *
      *
@@ -9173,7 +8920,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public int getStartTagsCount() {
       return startTags_.size();
     }
-
     /**
      *
      *
@@ -9191,7 +8937,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getStartTags(int index) {
       return startTags_.get(index);
     }
-
     /**
      *
      *
@@ -9209,7 +8954,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStartTagsBytes(int index) {
       return startTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -9235,7 +8979,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9260,7 +9003,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9282,7 +9024,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9303,7 +9044,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9339,7 +9079,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -9357,7 +9096,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       endTags_.makeImmutable();
       return endTags_;
     }
-
     /**
      *
      *
@@ -9374,7 +9112,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public int getEndTagsCount() {
       return endTags_.size();
     }
-
     /**
      *
      *
@@ -9392,7 +9129,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEndTags(int index) {
       return endTags_.get(index);
     }
-
     /**
      *
      *
@@ -9410,7 +9146,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getEndTagsBytes(int index) {
       return endTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -9436,7 +9171,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9461,7 +9195,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9483,7 +9216,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9504,7 +9236,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9577,7 +9308,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return startTimeWindowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -9605,7 +9335,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return startTimeWindowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -9633,7 +9362,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return startTimeWindowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -9668,7 +9396,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9700,7 +9427,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9734,7 +9460,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9769,7 +9494,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9801,7 +9525,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9833,7 +9556,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9865,7 +9587,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9896,7 +9617,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9927,7 +9647,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9952,7 +9671,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getStartTimeWindowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9981,7 +9699,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return startTimeWindowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -10010,7 +9727,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(startTimeWindows_);
       }
     }
-
     /**
      *
      *
@@ -10035,7 +9751,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return getStartTimeWindowsFieldBuilder()
           .addBuilder(com.google.maps.routeoptimization.v1.TimeWindow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10061,7 +9776,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return getStartTimeWindowsFieldBuilder()
           .addBuilder(index, com.google.maps.routeoptimization.v1.TimeWindow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10152,7 +9866,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endTimeWindowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -10180,7 +9893,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endTimeWindowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -10208,7 +9920,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endTimeWindowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -10243,7 +9954,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10275,7 +9985,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10309,7 +10018,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10344,7 +10052,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10376,7 +10083,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10408,7 +10114,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10440,7 +10145,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10471,7 +10175,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10502,7 +10205,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10527,7 +10229,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEndTimeWindowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -10556,7 +10257,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return endTimeWindowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -10585,7 +10285,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(endTimeWindows_);
       }
     }
-
     /**
      *
      *
@@ -10610,7 +10309,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return getEndTimeWindowsFieldBuilder()
           .addBuilder(com.google.maps.routeoptimization.v1.TimeWindow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10636,7 +10334,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       return getEndTimeWindowsFieldBuilder()
           .addBuilder(index, com.google.maps.routeoptimization.v1.TimeWindow.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10683,7 +10380,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double travelDurationMultiple_;
-
     /**
      *
      *
@@ -10711,7 +10407,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTravelDurationMultiple() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -10739,7 +10434,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public double getTravelDurationMultiple() {
       return travelDurationMultiple_;
     }
-
     /**
      *
      *
@@ -10771,7 +10465,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10803,7 +10496,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int unloadingPolicy_ = 0;
-
     /**
      *
      *
@@ -10819,7 +10511,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public int getUnloadingPolicyValue() {
       return unloadingPolicy_;
     }
-
     /**
      *
      *
@@ -10838,7 +10529,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10858,7 +10548,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.routeoptimization.v1.Vehicle.UnloadingPolicy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -10881,7 +10570,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10920,8 +10608,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LoadLimitsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LoadLimitsConverter loadLimitsConverter = new LoadLimitsConverter();
 
@@ -10961,7 +10648,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public int getLoadLimitsCount() {
       return internalGetLoadLimits().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -10985,7 +10671,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLoadLimits().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getLoadLimitsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -10993,7 +10678,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         getLoadLimits() {
       return getLoadLimitsMap();
     }
-
     /**
      *
      *
@@ -11015,7 +10699,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         getLoadLimitsMap() {
       return internalGetLoadLimits().getImmutableMap();
     }
-
     /**
      *
      *
@@ -11046,7 +10729,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableLoadLimits().ensureBuilderMap();
       return map.containsKey(key) ? loadLimitsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -11083,7 +10765,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLoadLimits().clear();
       return this;
     }
-
     /**
      *
      *
@@ -11107,7 +10788,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLoadLimits().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.maps.routeoptimization.v1.Vehicle.LoadLimit>
@@ -11115,7 +10795,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00002000;
       return internalGetMutableLoadLimits().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -11144,7 +10823,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00002000;
       return this;
     }
-
     /**
      *
      *
@@ -11175,7 +10853,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00002000;
       return this;
     }
-
     /**
      *
      *
@@ -11210,7 +10887,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerHour_;
-
     /**
      *
      *
@@ -11232,7 +10908,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerHour() {
       return costPerHour_;
     }
-
     /**
      *
      *
@@ -11258,7 +10933,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11284,7 +10958,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerTraveledHour_;
-
     /**
      *
      *
@@ -11303,7 +10976,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerTraveledHour() {
       return costPerTraveledHour_;
     }
-
     /**
      *
      *
@@ -11326,7 +10998,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11349,7 +11020,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double costPerKilometer_;
-
     /**
      *
      *
@@ -11369,7 +11039,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public double getCostPerKilometer() {
       return costPerKilometer_;
     }
-
     /**
      *
      *
@@ -11393,7 +11062,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11417,7 +11085,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double fixedCost_;
-
     /**
      *
      *
@@ -11433,7 +11100,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public double getFixedCost() {
       return fixedCost_;
     }
-
     /**
      *
      *
@@ -11453,7 +11119,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11473,7 +11138,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean usedIfRouteIsEmpty_;
-
     /**
      *
      *
@@ -11500,7 +11164,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean getUsedIfRouteIsEmpty() {
       return usedIfRouteIsEmpty_;
     }
-
     /**
      *
      *
@@ -11531,7 +11194,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11567,7 +11229,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.Vehicle.DurationLimit.Builder,
             com.google.maps.routeoptimization.v1.Vehicle.DurationLimitOrBuilder>
         routeDurationLimitBuilder_;
-
     /**
      *
      *
@@ -11585,7 +11246,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRouteDurationLimit() {
       return ((bitField0_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -11609,7 +11269,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return routeDurationLimitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11636,7 +11295,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11660,7 +11318,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11694,7 +11351,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11717,7 +11373,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11736,7 +11391,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRouteDurationLimitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11759,7 +11413,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : routeDurationLimit_;
       }
     }
-
     /**
      *
      *
@@ -11795,7 +11448,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.Vehicle.DurationLimit.Builder,
             com.google.maps.routeoptimization.v1.Vehicle.DurationLimitOrBuilder>
         travelDurationLimitBuilder_;
-
     /**
      *
      *
@@ -11813,7 +11465,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTravelDurationLimit() {
       return ((bitField0_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -11837,7 +11488,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return travelDurationLimitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11864,7 +11514,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11888,7 +11537,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11922,7 +11570,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11945,7 +11592,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11964,7 +11610,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTravelDurationLimitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11987,7 +11632,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : travelDurationLimit_;
       }
     }
-
     /**
      *
      *
@@ -12023,7 +11667,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.DistanceLimit.Builder,
             com.google.maps.routeoptimization.v1.DistanceLimitOrBuilder>
         routeDistanceLimitBuilder_;
-
     /**
      *
      *
@@ -12040,7 +11683,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRouteDistanceLimit() {
       return ((bitField0_ & 0x00200000) != 0);
     }
-
     /**
      *
      *
@@ -12063,7 +11705,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return routeDistanceLimitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12088,7 +11729,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12111,7 +11751,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12143,7 +11782,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12165,7 +11803,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12183,7 +11820,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRouteDistanceLimitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12205,7 +11841,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : routeDistanceLimit_;
       }
     }
-
     /**
      *
      *
@@ -12250,8 +11885,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ExtraVisitDurationForVisitTypeDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExtraVisitDurationForVisitTypeConverter
         extraVisitDurationForVisitTypeConverter = new ExtraVisitDurationForVisitTypeConverter();
@@ -12293,7 +11927,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public int getExtraVisitDurationForVisitTypeCount() {
       return internalGetExtraVisitDurationForVisitType().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -12319,7 +11952,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetExtraVisitDurationForVisitType().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getExtraVisitDurationForVisitTypeMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -12327,7 +11959,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         getExtraVisitDurationForVisitType() {
       return getExtraVisitDurationForVisitTypeMap();
     }
-
     /**
      *
      *
@@ -12351,7 +11982,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         getExtraVisitDurationForVisitTypeMap() {
       return internalGetExtraVisitDurationForVisitType().getImmutableMap();
     }
-
     /**
      *
      *
@@ -12384,7 +12014,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           ? extraVisitDurationForVisitTypeConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -12422,7 +12051,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExtraVisitDurationForVisitType().clear();
       return this;
     }
-
     /**
      *
      *
@@ -12448,7 +12076,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExtraVisitDurationForVisitType().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Duration>
@@ -12456,7 +12083,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00400000;
       return internalGetMutableExtraVisitDurationForVisitType().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -12487,7 +12113,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00400000;
       return this;
     }
-
     /**
      *
      *
@@ -12518,7 +12143,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00400000;
       return this;
     }
-
     /**
      *
      *
@@ -12559,7 +12183,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.routeoptimization.v1.BreakRule.Builder,
             com.google.maps.routeoptimization.v1.BreakRuleOrBuilder>
         breakRuleBuilder_;
-
     /**
      *
      *
@@ -12575,7 +12198,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBreakRule() {
       return ((bitField0_ & 0x00800000) != 0);
     }
-
     /**
      *
      *
@@ -12597,7 +12219,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return breakRuleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12621,7 +12242,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12643,7 +12263,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12672,7 +12291,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12693,7 +12311,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12709,7 +12326,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBreakRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12729,7 +12345,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
             : breakRule_;
       }
     }
-
     /**
      *
      *
@@ -12758,7 +12373,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object label_ = "";
-
     /**
      *
      *
@@ -12783,7 +12397,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -12808,7 +12421,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -12832,7 +12444,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12852,7 +12463,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12879,7 +12489,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean ignore_;
-
     /**
      *
      *
@@ -12907,7 +12516,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
     public boolean getIgnore() {
       return ignore_;
     }
-
     /**
      *
      *
@@ -12939,7 +12547,6 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

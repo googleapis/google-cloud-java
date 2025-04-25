@@ -37,7 +37,6 @@ public interface VmImageOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface VmImageOrBuilder
    * @return Whether the imageName field is set.
    */
   boolean hasImageName();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface VmImageOrBuilder
    * @return The imageName.
    */
   java.lang.String getImageName();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface VmImageOrBuilder
    * @return Whether the imageFamily field is set.
    */
   boolean hasImageFamily();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface VmImageOrBuilder
    * @return The imageFamily.
    */
   java.lang.String getImageFamily();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return The group.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface ErrorGroupStatsOrBuilder
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
   java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TimedCount> getTimedCountsList();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface ErrorGroupStatsOrBuilder
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.TimedCount getTimedCounts(int index);
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface ErrorGroupStatsOrBuilder
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TimedCount timed_counts = 4;</code>
    */
   int getTimedCountsCount();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface ErrorGroupStatsOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TimedCountOrBuilder>
       getTimedCountsOrBuilderList();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return Whether the firstSeenTime field is set.
    */
   boolean hasFirstSeenTime();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return The firstSeenTime.
    */
   com.google.protobuf.Timestamp getFirstSeenTime();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return Whether the lastSeenTime field is set.
    */
   boolean hasLastSeenTime();
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return The lastSeenTime.
    */
   com.google.protobuf.Timestamp getLastSeenTime();
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public interface ErrorGroupStatsOrBuilder
    */
   java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ServiceContext>
       getAffectedServicesList();
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public interface ErrorGroupStatsOrBuilder
    * </code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getAffectedServices(int index);
-
   /**
    *
    *
@@ -313,7 +301,6 @@ public interface ErrorGroupStatsOrBuilder
    * </code>
    */
   int getAffectedServicesCount();
-
   /**
    *
    *
@@ -329,7 +316,6 @@ public interface ErrorGroupStatsOrBuilder
    */
   java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder>
       getAffectedServicesOrBuilderList();
-
   /**
    *
    *
@@ -376,7 +362,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return Whether the representative field is set.
    */
   boolean hasRepresentative();
-
   /**
    *
    *
@@ -393,7 +378,6 @@ public interface ErrorGroupStatsOrBuilder
    * @return The representative.
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getRepresentative();
-
   /**
    *
    *

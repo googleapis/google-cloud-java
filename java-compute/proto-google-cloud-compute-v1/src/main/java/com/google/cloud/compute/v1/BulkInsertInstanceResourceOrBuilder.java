@@ -36,7 +36,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return Whether the instanceProperties field is set.
    */
   boolean hasInstanceProperties();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return The instanceProperties.
    */
   com.google.cloud.compute.v1.InstanceProperties getInstanceProperties();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return Whether the locationPolicy field is set.
    */
   boolean hasLocationPolicy();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return The locationPolicy.
    */
   com.google.cloud.compute.v1.LocationPolicy getLocationPolicy();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return Whether the minCount field is set.
    */
   boolean hasMinCount();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return Whether the namePattern field is set.
    */
   boolean hasNamePattern();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return The namePattern.
    */
   java.lang.String getNamePattern();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * </code>
    */
   int getPerInstancePropertiesCount();
-
   /**
    *
    *
@@ -217,14 +208,12 @@ public interface BulkInsertInstanceResourceOrBuilder
    * </code>
    */
   boolean containsPerInstanceProperties(java.lang.String key);
-
   /** Use {@link #getPerInstancePropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties>
       getPerInstanceProperties();
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface BulkInsertInstanceResourceOrBuilder
           java.lang.String,
           com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties>
       getPerInstancePropertiesMap();
-
   /**
    *
    *
@@ -258,7 +246,6 @@ public interface BulkInsertInstanceResourceOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.compute.v1.BulkInsertInstanceResourcePerInstanceProperties defaultValue);
-
   /**
    *
    *
@@ -285,7 +272,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return Whether the sourceInstanceTemplate field is set.
    */
   boolean hasSourceInstanceTemplate();
-
   /**
    *
    *
@@ -298,7 +284,6 @@ public interface BulkInsertInstanceResourceOrBuilder
    * @return The sourceInstanceTemplate.
    */
   java.lang.String getSourceInstanceTemplate();
-
   /**
    *
    *

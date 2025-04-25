@@ -38,7 +38,6 @@ public interface FetchInventoryRequestOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

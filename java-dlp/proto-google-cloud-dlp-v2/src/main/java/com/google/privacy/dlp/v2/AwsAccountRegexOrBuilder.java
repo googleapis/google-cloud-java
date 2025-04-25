@@ -37,7 +37,6 @@ public interface AwsAccountRegexOrBuilder
    * @return The accountIdRegex.
    */
   java.lang.String getAccountIdRegex();
-
   /**
    *
    *

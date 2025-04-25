@@ -54,7 +54,6 @@ public interface CloudRunConfigOrBuilder
    * @return A list containing the canaryRevisionTags.
    */
   java.util.List<java.lang.String> getCanaryRevisionTagsList();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CloudRunConfigOrBuilder
    * @return The count of canaryRevisionTags.
    */
   int getCanaryRevisionTagsCount();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CloudRunConfigOrBuilder
    * @return The canaryRevisionTags at the given index.
    */
   java.lang.String getCanaryRevisionTags(int index);
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CloudRunConfigOrBuilder
    * @return A list containing the priorRevisionTags.
    */
   java.util.List<java.lang.String> getPriorRevisionTagsList();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface CloudRunConfigOrBuilder
    * @return The count of priorRevisionTags.
    */
   int getPriorRevisionTagsCount();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface CloudRunConfigOrBuilder
    * @return The priorRevisionTags at the given index.
    */
   java.lang.String getPriorRevisionTags(int index);
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface CloudRunConfigOrBuilder
    * @return A list containing the stableRevisionTags.
    */
   java.util.List<java.lang.String> getStableRevisionTagsList();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface CloudRunConfigOrBuilder
    * @return The count of stableRevisionTags.
    */
   int getStableRevisionTagsCount();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface CloudRunConfigOrBuilder
    * @return The stableRevisionTags at the given index.
    */
   java.lang.String getStableRevisionTags(int index);
-
   /**
    *
    *

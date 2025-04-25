@@ -45,7 +45,6 @@ public interface UpdateWorkloadRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface UpdateWorkloadRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface UpdateWorkloadRequestOrBuilder
    * @return Whether the workload field is set.
    */
   boolean hasWorkload();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface UpdateWorkloadRequestOrBuilder
    * @return The workload.
    */
   com.google.cloud.apphub.v1.Workload getWorkload();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface UpdateWorkloadRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

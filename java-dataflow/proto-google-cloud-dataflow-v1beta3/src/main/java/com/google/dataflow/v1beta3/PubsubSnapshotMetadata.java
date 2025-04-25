@@ -33,7 +33,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.PubsubSnapshotMetadata)
     PubsubSnapshotMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PubsubSnapshotMetadata.newBuilder() to construct.
   private PubsubSnapshotMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topicName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object snapshotName_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp expireTime_;
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
-
   /**
    *
    *
@@ -403,7 +395,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -632,7 +623,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object topicName_ = "";
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object snapshotName_ = "";
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
         return expireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -918,7 +896,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +942,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +961,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +975,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1020,7 +993,6 @@ public final class PubsubSnapshotMetadata extends com.google.protobuf.GeneratedM
             : expireTime_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface OutputAudioConfigOrBuilder
    * @return The enum numeric value on the wire for audioEncoding.
    */
   int getAudioEncodingValue();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface OutputAudioConfigOrBuilder
    * @return Whether the synthesizeSpeechConfig field is set.
    */
   boolean hasSynthesizeSpeechConfig();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface OutputAudioConfigOrBuilder
    * @return The synthesizeSpeechConfig.
    */
   com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig getSynthesizeSpeechConfig();
-
   /**
    *
    *

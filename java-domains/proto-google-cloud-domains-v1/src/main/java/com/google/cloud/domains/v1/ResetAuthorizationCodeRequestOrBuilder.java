@@ -39,7 +39,6 @@ public interface ResetAuthorizationCodeRequestOrBuilder
    * @return The registration.
    */
   java.lang.String getRegistration();
-
   /**
    *
    *

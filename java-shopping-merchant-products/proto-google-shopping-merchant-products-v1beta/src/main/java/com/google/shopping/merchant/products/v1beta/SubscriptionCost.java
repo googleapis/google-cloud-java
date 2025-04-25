@@ -33,7 +33,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.SubscriptionCost)
     SubscriptionCostOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubscriptionCost.newBuilder() to construct.
   private SubscriptionCost(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int PERIOD_FIELD_NUMBER = 1;
   private int period_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
   public int getPeriodValue() {
     return period_;
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
 
   public static final int PERIOD_LENGTH_FIELD_NUMBER = 2;
   private long periodLength_ = 0L;
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
 
   public static final int AMOUNT_FIELD_NUMBER = 3;
   private com.google.shopping.type.Price amount_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
   public boolean hasAmount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
   public com.google.shopping.type.Price getAmount() {
     return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
   }
-
   /**
    *
    *
@@ -367,7 +360,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +587,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int period_ = 0;
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     public int getPeriodValue() {
       return period_;
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
           ? com.google.shopping.merchant.products.v1beta.SubscriptionPeriod.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     }
 
     private long periodLength_;
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     public long getPeriodLength() {
       return periodLength_;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         amountBuilder_;
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -803,7 +785,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
         return amountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -826,7 +807,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +853,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +872,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getAmountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -926,7 +902,6 @@ public final class SubscriptionCost extends com.google.protobuf.GeneratedMessage
         return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
       }
     }
-
     /**
      *
      *

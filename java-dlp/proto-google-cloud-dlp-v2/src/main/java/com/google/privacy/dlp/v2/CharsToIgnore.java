@@ -34,7 +34,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CharsToIgnore)
     CharsToIgnoreOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CharsToIgnore.newBuilder() to construct.
   private CharsToIgnore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,7 +145,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>COMMON_CHARS_TO_IGNORE_UNSPECIFIED = 0;</code>
      */
     public static final int COMMON_CHARS_TO_IGNORE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -157,7 +155,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>NUMERIC = 1;</code>
      */
     public static final int NUMERIC_VALUE = 1;
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>ALPHA_UPPER_CASE = 2;</code>
      */
     public static final int ALPHA_UPPER_CASE_VALUE = 2;
-
     /**
      *
      *
@@ -179,7 +175,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>ALPHA_LOWER_CASE = 3;</code>
      */
     public static final int ALPHA_LOWER_CASE_VALUE = 3;
-
     /**
      *
      *
@@ -190,7 +185,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
      * <code>PUNCTUATION = 4;</code>
      */
     public static final int PUNCTUATION_VALUE = 4;
-
     /**
      *
      *
@@ -311,7 +305,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     private CharactersCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -345,7 +338,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CHARACTERS_TO_SKIP_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -360,7 +352,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCharactersToSkip() {
     return charactersCase_ == 1;
   }
-
   /**
    *
    *
@@ -388,7 +379,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -418,7 +408,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMMON_CHARACTERS_TO_IGNORE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -435,7 +424,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCommonCharactersToIgnore() {
     return charactersCase_ == 2;
   }
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
-
   /**
    *
    *
@@ -669,7 +656,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -907,7 +893,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCharactersToSkip() {
       return charactersCase_ == 1;
     }
-
     /**
      *
      *
@@ -936,7 +921,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -965,7 +949,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +970,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +989,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1030,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCommonCharactersToIgnore() {
       return charactersCase_ == 2;
     }
-
     /**
      *
      *
@@ -1071,7 +1051,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -1093,7 +1072,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1100,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       return com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore
           .COMMON_CHARS_TO_IGNORE_UNSPECIFIED;
     }
-
     /**
      *
      *
@@ -1148,7 +1125,6 @@ public final class CharsToIgnore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

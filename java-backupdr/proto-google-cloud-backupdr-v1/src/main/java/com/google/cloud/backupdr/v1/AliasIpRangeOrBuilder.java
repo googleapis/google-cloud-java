@@ -36,7 +36,6 @@ public interface AliasIpRangeOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AliasIpRangeOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface AliasIpRangeOrBuilder
    * @return Whether the subnetworkRangeName field is set.
    */
   boolean hasSubnetworkRangeName();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface AliasIpRangeOrBuilder
    * @return The subnetworkRangeName.
    */
   java.lang.String getSubnetworkRangeName();
-
   /**
    *
    *

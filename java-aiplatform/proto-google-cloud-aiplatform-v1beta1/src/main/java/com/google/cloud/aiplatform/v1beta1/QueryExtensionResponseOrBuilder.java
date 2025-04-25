@@ -36,7 +36,6 @@ public interface QueryExtensionResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Content steps = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getStepsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface QueryExtensionResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Content steps = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getSteps(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface QueryExtensionResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Content steps = 1;</code>
    */
   int getStepsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface QueryExtensionResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getStepsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface QueryExtensionResponseOrBuilder
    * @return The failureMessage.
    */
   java.lang.String getFailureMessage();
-
   /**
    *
    *

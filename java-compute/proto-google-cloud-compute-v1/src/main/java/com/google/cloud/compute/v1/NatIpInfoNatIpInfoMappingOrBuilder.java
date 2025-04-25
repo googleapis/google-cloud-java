@@ -37,7 +37,6 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    * @return Whether the natIp field is set.
    */
   boolean hasNatIp();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    * @return The natIp.
    */
   java.lang.String getNatIp();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    * @return Whether the usage field is set.
    */
   boolean hasUsage();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface NatIpInfoNatIpInfoMappingOrBuilder
    * @return The usage.
    */
   java.lang.String getUsage();
-
   /**
    *
    *

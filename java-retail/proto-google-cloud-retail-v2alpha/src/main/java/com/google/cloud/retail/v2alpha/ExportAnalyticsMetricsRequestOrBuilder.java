@@ -37,7 +37,6 @@ public interface ExportAnalyticsMetricsRequestOrBuilder
    * @return The catalog.
    */
   java.lang.String getCatalog();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ExportAnalyticsMetricsRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ExportAnalyticsMetricsRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.retail.v2alpha.OutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ExportAnalyticsMetricsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

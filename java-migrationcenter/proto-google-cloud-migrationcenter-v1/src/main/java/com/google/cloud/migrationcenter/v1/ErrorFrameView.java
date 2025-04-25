@@ -73,7 +73,6 @@ public enum ErrorFrameView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ERROR_FRAME_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int ERROR_FRAME_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum ErrorFrameView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ERROR_FRAME_VIEW_BASIC = 1;</code>
    */
   public static final int ERROR_FRAME_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

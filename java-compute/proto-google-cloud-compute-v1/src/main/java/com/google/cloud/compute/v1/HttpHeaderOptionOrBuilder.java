@@ -36,7 +36,6 @@ public interface HttpHeaderOptionOrBuilder
    * @return Whether the headerName field is set.
    */
   boolean hasHeaderName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HttpHeaderOptionOrBuilder
    * @return The headerName.
    */
   java.lang.String getHeaderName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface HttpHeaderOptionOrBuilder
    * @return Whether the headerValue field is set.
    */
   boolean hasHeaderValue();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface HttpHeaderOptionOrBuilder
    * @return The headerValue.
    */
   java.lang.String getHeaderValue();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface HttpHeaderOptionOrBuilder
    * @return Whether the replace field is set.
    */
   boolean hasReplace();
-
   /**
    *
    *

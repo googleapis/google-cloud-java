@@ -33,7 +33,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TdxCcelAttestation)
     TdxCcelAttestationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TdxCcelAttestation.newBuilder() to construct.
   private TdxCcelAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
 
   public static final int CCEL_ACPI_TABLE_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString ccelAcpiTable_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
 
   public static final int CCEL_DATA_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString ccelData_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
 
   public static final int CANONICAL_EVENT_LOG_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString canonicalEventLog_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
 
   public static final int TD_QUOTE_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString tdQuote_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -333,7 +328,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +552,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private com.google.protobuf.ByteString ccelAcpiTable_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -575,7 +568,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getCcelAcpiTable() {
       return ccelAcpiTable_;
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     }
 
     private com.google.protobuf.ByteString ccelData_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getCcelData() {
       return ccelData_;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.ByteString canonicalEventLog_ =
         com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getCanonicalEventLog() {
       return canonicalEventLog_;
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     }
 
     private com.google.protobuf.ByteString tdQuote_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getTdQuote() {
       return tdQuote_;
     }
-
     /**
      *
      *
@@ -779,7 +762,6 @@ public final class TdxCcelAttestation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

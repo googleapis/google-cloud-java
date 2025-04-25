@@ -36,7 +36,6 @@ public interface ResourceAllowanceOrBuilder
    * @return Whether the usageResourceAllowance field is set.
    */
   boolean hasUsageResourceAllowance();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ResourceAllowanceOrBuilder
    * @return The usageResourceAllowance.
    */
   com.google.cloud.batch.v1alpha.UsageResourceAllowance getUsageResourceAllowance();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ResourceAllowanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface ResourceAllowanceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ResourceAllowanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface ResourceAllowanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface ResourceAllowanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -205,11 +198,9 @@ public interface ResourceAllowanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface ResourceAllowanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface ResourceAllowanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public interface ResourceAllowanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.batch.v1alpha.Notification> getNotificationsList();
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public interface ResourceAllowanceOrBuilder
    * </code>
    */
   com.google.cloud.batch.v1alpha.Notification getNotifications(int index);
-
   /**
    *
    *
@@ -315,7 +302,6 @@ public interface ResourceAllowanceOrBuilder
    * </code>
    */
   int getNotificationsCount();
-
   /**
    *
    *
@@ -329,7 +315,6 @@ public interface ResourceAllowanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1alpha.NotificationOrBuilder>
       getNotificationsOrBuilderList();
-
   /**
    *
    *

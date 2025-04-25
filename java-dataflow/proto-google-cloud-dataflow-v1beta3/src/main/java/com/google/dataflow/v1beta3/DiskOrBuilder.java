@@ -67,7 +67,6 @@ public interface DiskOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
-
   /**
    *
    *
@@ -110,7 +109,6 @@ public interface DiskOrBuilder
    * @return The mountPoint.
    */
   java.lang.String getMountPoint();
-
   /**
    *
    *

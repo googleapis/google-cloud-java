@@ -36,7 +36,6 @@ public interface RuntimeArtifactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RuntimeArtifactOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RuntimeArtifactOrBuilder
    * @return The type.
    */
   com.google.cloud.aiplatform.v1beta1.ArtifactTypeSchema getType();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface RuntimeArtifactOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface RuntimeArtifactOrBuilder
    */
   @java.lang.Deprecated
   int getPropertiesCount();
-
   /**
    *
    *
@@ -146,11 +141,9 @@ public interface RuntimeArtifactOrBuilder
    */
   @java.lang.Deprecated
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Value> getProperties();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface RuntimeArtifactOrBuilder
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Value> getPropertiesMap();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface RuntimeArtifactOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.Value defaultValue);
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface RuntimeArtifactOrBuilder
    */
   @java.lang.Deprecated
   int getCustomPropertiesCount();
-
   /**
    *
    *
@@ -238,11 +228,9 @@ public interface RuntimeArtifactOrBuilder
    */
   @java.lang.Deprecated
   boolean containsCustomProperties(java.lang.String key);
-
   /** Use {@link #getCustomPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Value> getCustomProperties();
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public interface RuntimeArtifactOrBuilder
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Value>
       getCustomPropertiesMap();
-
   /**
    *
    *
@@ -280,7 +267,6 @@ public interface RuntimeArtifactOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.Value defaultValue);
-
   /**
    *
    *
@@ -310,7 +296,6 @@ public interface RuntimeArtifactOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -323,7 +308,6 @@ public interface RuntimeArtifactOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Struct getMetadata();
-
   /**
    *
    *

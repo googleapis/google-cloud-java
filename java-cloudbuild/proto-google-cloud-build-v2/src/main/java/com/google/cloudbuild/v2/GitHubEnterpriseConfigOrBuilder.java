@@ -36,7 +36,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The hostUri.
    */
   java.lang.String getHostUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The apiKey.
    */
   java.lang.String getApiKey();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The appSlug.
    */
   java.lang.String getAppSlug();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The privateKeySecretVersion.
    */
   java.lang.String getPrivateKeySecretVersion();
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The webhookSecretSecretVersion.
    */
   java.lang.String getWebhookSecretSecretVersion();
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return Whether the serviceDirectoryConfig field is set.
    */
   boolean hasServiceDirectoryConfig();
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The serviceDirectoryConfig.
    */
   com.google.cloudbuild.v2.ServiceDirectoryConfig getServiceDirectoryConfig();
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The sslCa.
    */
   java.lang.String getSslCa();
-
   /**
    *
    *
@@ -276,7 +268,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The serverVersion.
    */
   java.lang.String getServerVersion();
-
   /**
    *
    *

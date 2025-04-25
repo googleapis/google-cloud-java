@@ -34,7 +34,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsOpenIdConfig)
     AwsOpenIdConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsOpenIdConfig.newBuilder() to construct.
   private AwsOpenIdConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issuer_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jwksUri_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList responseTypesSupported_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getResponseTypesSupportedList() {
     return responseTypesSupported_;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public int getResponseTypesSupportedCount() {
     return responseTypesSupported_.size();
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getResponseTypesSupported(int index) {
     return responseTypesSupported_.get(index);
   }
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subjectTypesSupported_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSubjectTypesSupportedList() {
     return subjectTypesSupported_;
   }
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public int getSubjectTypesSupportedCount() {
     return subjectTypesSupported_.size();
   }
-
   /**
    *
    *
@@ -296,7 +284,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSubjectTypesSupported(int index) {
     return subjectTypesSupported_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +305,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList idTokenSigningAlgValuesSupported_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -333,7 +319,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getIdTokenSigningAlgValuesSupportedList() {
     return idTokenSigningAlgValuesSupported_;
   }
-
   /**
    *
    *
@@ -348,7 +333,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public int getIdTokenSigningAlgValuesSupportedCount() {
     return idTokenSigningAlgValuesSupported_.size();
   }
-
   /**
    *
    *
@@ -364,7 +348,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getIdTokenSigningAlgValuesSupported(int index) {
     return idTokenSigningAlgValuesSupported_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +369,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList claimsSupported_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getClaimsSupportedList() {
     return claimsSupported_;
   }
-
   /**
    *
    *
@@ -416,7 +397,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public int getClaimsSupportedCount() {
     return claimsSupported_.size();
   }
-
   /**
    *
    *
@@ -432,7 +412,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getClaimsSupported(int index) {
     return claimsSupported_.get(index);
   }
-
   /**
    *
    *
@@ -454,7 +433,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList grantTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -469,7 +447,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getGrantTypesList() {
     return grantTypes_;
   }
-
   /**
    *
    *
@@ -484,7 +461,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public int getGrantTypesCount() {
     return grantTypes_.size();
   }
-
   /**
    *
    *
@@ -500,7 +476,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getGrantTypes(int index) {
     return grantTypes_.get(index);
   }
-
   /**
    *
    *
@@ -770,7 +745,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1081,7 +1055,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object issuer_ = "";
-
     /**
      *
      *
@@ -1104,7 +1077,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1127,7 +1099,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1149,7 +1120,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1137,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1161,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object jwksUri_ = "";
-
     /**
      *
      *
@@ -1215,7 +1183,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1205,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1226,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1243,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1276,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1328,7 +1291,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       responseTypesSupported_.makeImmutable();
       return responseTypesSupported_;
     }
-
     /**
      *
      *
@@ -1343,7 +1305,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public int getResponseTypesSupportedCount() {
       return responseTypesSupported_.size();
     }
-
     /**
      *
      *
@@ -1359,7 +1320,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getResponseTypesSupported(int index) {
       return responseTypesSupported_.get(index);
     }
-
     /**
      *
      *
@@ -1375,7 +1335,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getResponseTypesSupportedBytes(int index) {
       return responseTypesSupported_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1399,7 +1358,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1380,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1399,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1417,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1496,7 +1451,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1512,7 +1466,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       subjectTypesSupported_.makeImmutable();
       return subjectTypesSupported_;
     }
-
     /**
      *
      *
@@ -1527,7 +1480,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public int getSubjectTypesSupportedCount() {
       return subjectTypesSupported_.size();
     }
-
     /**
      *
      *
@@ -1543,7 +1495,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSubjectTypesSupported(int index) {
       return subjectTypesSupported_.get(index);
     }
-
     /**
      *
      *
@@ -1559,7 +1510,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSubjectTypesSupportedBytes(int index) {
       return subjectTypesSupported_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1583,7 +1533,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1555,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1626,7 +1574,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1592,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1626,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1696,7 +1641,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       idTokenSigningAlgValuesSupported_.makeImmutable();
       return idTokenSigningAlgValuesSupported_;
     }
-
     /**
      *
      *
@@ -1711,7 +1655,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public int getIdTokenSigningAlgValuesSupportedCount() {
       return idTokenSigningAlgValuesSupported_.size();
     }
-
     /**
      *
      *
@@ -1727,7 +1670,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getIdTokenSigningAlgValuesSupported(int index) {
       return idTokenSigningAlgValuesSupported_.get(index);
     }
-
     /**
      *
      *
@@ -1743,7 +1685,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getIdTokenSigningAlgValuesSupportedBytes(int index) {
       return idTokenSigningAlgValuesSupported_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1767,7 +1708,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1730,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1751,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1831,7 +1769,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1865,7 +1802,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -1881,7 +1817,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       claimsSupported_.makeImmutable();
       return claimsSupported_;
     }
-
     /**
      *
      *
@@ -1896,7 +1831,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public int getClaimsSupportedCount() {
       return claimsSupported_.size();
     }
-
     /**
      *
      *
@@ -1912,7 +1846,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getClaimsSupported(int index) {
       return claimsSupported_.get(index);
     }
-
     /**
      *
      *
@@ -1928,7 +1861,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getClaimsSupportedBytes(int index) {
       return claimsSupported_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1952,7 +1884,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1975,7 +1906,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1925,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1943,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2048,7 +1976,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -2064,7 +1991,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       grantTypes_.makeImmutable();
       return grantTypes_;
     }
-
     /**
      *
      *
@@ -2079,7 +2005,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public int getGrantTypesCount() {
       return grantTypes_.size();
     }
-
     /**
      *
      *
@@ -2095,7 +2020,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getGrantTypes(int index) {
       return grantTypes_.get(index);
     }
-
     /**
      *
      *
@@ -2111,7 +2035,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getGrantTypesBytes(int index) {
       return grantTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2135,7 +2058,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2158,7 +2080,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2099,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2197,7 +2117,6 @@ public final class AwsOpenIdConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

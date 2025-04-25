@@ -33,7 +33,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Connection)
     ConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Connection.newBuilder() to construct.
   private Connection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CONNECTED = 1;</code>
      */
     public static final int CONNECTED_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>DISCONNECTED = 2;</code>
      */
     public static final int DISCONNECTED_VALUE = 2;
-
     /**
      *
      *
@@ -171,7 +167,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTHENTICATION_FAILED = 3;</code>
      */
     public static final int AUTHENTICATION_FAILED_VALUE = 3;
-
     /**
      *
      *
@@ -383,7 +378,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int CERTIFICATE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -394,7 +388,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_VALID = 1;</code>
      */
     public static final int CERTIFICATE_VALID_VALUE = 1;
-
     /**
      *
      *
@@ -405,7 +398,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_INVALID = 2;</code>
      */
     public static final int CERTIFICATE_INVALID_VALUE = 2;
-
     /**
      *
      *
@@ -416,7 +408,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_EXPIRED = 3;</code>
      */
     public static final int CERTIFICATE_EXPIRED_VALUE = 3;
-
     /**
      *
      *
@@ -427,7 +418,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_HOSTNAME_NOT_FOUND = 4;</code>
      */
     public static final int CERTIFICATE_HOSTNAME_NOT_FOUND_VALUE = 4;
-
     /**
      *
      *
@@ -438,7 +428,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_UNAUTHENTICATED = 5;</code>
      */
     public static final int CERTIFICATE_UNAUTHENTICATED_VALUE = 5;
-
     /**
      *
      *
@@ -449,7 +438,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_TRUST_STORE_NOT_FOUND = 6;</code>
      */
     public static final int CERTIFICATE_TRUST_STORE_NOT_FOUND_VALUE = 6;
-
     /**
      *
      *
@@ -460,7 +448,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>CERTIFICATE_HOSTNAME_INVALID_FORMAT = 7;</code>
      */
     public static final int CERTIFICATE_HOSTNAME_INVALID_FORMAT_VALUE = 7;
-
     /**
      *
      *
@@ -588,7 +575,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the certificateState field is set.
      */
     boolean hasCertificateState();
-
     /**
      *
      *
@@ -603,7 +589,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for certificateState.
      */
     int getCertificateStateValue();
-
     /**
      *
      *
@@ -631,7 +616,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the errorMessage field is set.
      */
     boolean hasErrorMessage();
-
     /**
      *
      *
@@ -644,7 +628,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
-
     /**
      *
      *
@@ -658,7 +641,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getErrorMessageBytes();
   }
-
   /**
    *
    *
@@ -673,7 +655,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Connection.ErrorDetails)
       ErrorDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ErrorDetails.newBuilder() to construct.
     private ErrorDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -708,7 +689,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int CERTIFICATE_STATE_FIELD_NUMBER = 1;
     private int certificateState_ = 0;
-
     /**
      *
      *
@@ -726,7 +706,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCertificateState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -744,7 +723,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getCertificateStateValue() {
       return certificateState_;
     }
-
     /**
      *
      *
@@ -772,7 +750,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
-
     /**
      *
      *
@@ -788,7 +765,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorMessage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -812,7 +788,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1225,7 +1199,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int certificateState_ = 0;
-
       /**
        *
        *
@@ -1243,7 +1216,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCertificateState() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1261,7 +1233,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       public int getCertificateStateValue() {
         return certificateState_;
       }
-
       /**
        *
        *
@@ -1282,7 +1253,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1305,7 +1275,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dialogflow.v2beta1.Connection.CertificateState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1330,7 +1299,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1352,7 +1320,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object errorMessage_ = "";
-
       /**
        *
        *
@@ -1367,7 +1334,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       public boolean hasErrorMessage() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1390,7 +1356,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1413,7 +1378,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1435,7 +1399,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1453,7 +1416,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1547,7 +1509,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionId_ = "";
-
   /**
    *
    *
@@ -1571,7 +1532,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1598,7 +1558,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1616,7 +1575,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1641,7 +1599,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1659,7 +1616,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1677,7 +1633,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1696,7 +1651,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_DETAILS_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.Connection.ErrorDetails errorDetails_;
-
   /**
    *
    *
@@ -1715,7 +1669,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorDetails() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1736,7 +1689,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2beta1.Connection.ErrorDetails.getDefaultInstance()
         : errorDetails_;
   }
-
   /**
    *
    *
@@ -1955,7 +1907,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2201,7 +2152,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object connectionId_ = "";
-
     /**
      *
      *
@@ -2224,7 +2174,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2247,7 +2196,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2269,7 +2217,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2287,7 +2234,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2312,7 +2258,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2330,7 +2275,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2351,7 +2295,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2373,7 +2316,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.v2beta1.Connection.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2397,7 +2339,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2424,7 +2365,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2441,7 +2381,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2464,7 +2403,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2489,7 +2427,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2511,7 +2448,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2541,7 +2477,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2563,7 +2498,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2580,7 +2514,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2601,7 +2534,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2636,7 +2568,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.Connection.ErrorDetails.Builder,
             com.google.cloud.dialogflow.v2beta1.Connection.ErrorDetailsOrBuilder>
         errorDetailsBuilder_;
-
     /**
      *
      *
@@ -2654,7 +2585,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorDetails() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2678,7 +2608,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         return errorDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2705,7 +2634,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2729,7 +2657,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2690,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2786,7 +2712,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2730,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2828,7 +2752,6 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             : errorDetails_;
       }
     }
-
     /**
      *
      *

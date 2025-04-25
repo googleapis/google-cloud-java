@@ -36,7 +36,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.VmwareEngineNetwork>
       getVmwareEngineNetworksList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmwareengine.v1.VmwareEngineNetwork getVmwareEngineNetworks(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    * </code>
    */
   int getVmwareEngineNetworksCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.VmwareEngineNetworkOrBuilder>
       getVmwareEngineNetworksOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -140,7 +134,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -154,7 +147,6 @@ public interface ListVmwareEngineNetworksResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

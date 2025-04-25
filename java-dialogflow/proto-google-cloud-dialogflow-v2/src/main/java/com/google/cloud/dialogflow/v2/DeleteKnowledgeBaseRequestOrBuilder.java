@@ -40,7 +40,6 @@ public interface DeleteKnowledgeBaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

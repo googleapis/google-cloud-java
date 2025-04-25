@@ -38,7 +38,6 @@ public interface GetGuestAttributesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetGuestAttributesRequestOrBuilder
    * @return The queryPath.
    */
   java.lang.String getQueryPath();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface GetGuestAttributesRequestOrBuilder
    * @return A list containing the workerIds.
    */
   java.util.List<java.lang.String> getWorkerIdsList();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface GetGuestAttributesRequestOrBuilder
    * @return The count of workerIds.
    */
   int getWorkerIdsCount();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface GetGuestAttributesRequestOrBuilder
    * @return The workerIds at the given index.
    */
   java.lang.String getWorkerIds(int index);
-
   /**
    *
    *

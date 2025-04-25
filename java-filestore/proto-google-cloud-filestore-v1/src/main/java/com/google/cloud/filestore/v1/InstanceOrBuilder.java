@@ -37,7 +37,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface InstanceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface InstanceOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -221,11 +213,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.filestore.v1.FileShareConfig file_shares = 10;</code>
    */
   java.util.List<com.google.cloud.filestore.v1.FileShareConfig> getFileSharesList();
-
   /**
    *
    *
@@ -286,7 +273,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.filestore.v1.FileShareConfig file_shares = 10;</code>
    */
   com.google.cloud.filestore.v1.FileShareConfig getFileShares(int index);
-
   /**
    *
    *
@@ -298,7 +284,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.filestore.v1.FileShareConfig file_shares = 10;</code>
    */
   int getFileSharesCount();
-
   /**
    *
    *
@@ -311,7 +296,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.filestore.v1.FileShareConfigOrBuilder>
       getFileSharesOrBuilderList();
-
   /**
    *
    *
@@ -335,7 +319,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.filestore.v1.NetworkConfig networks = 11;</code>
    */
   java.util.List<com.google.cloud.filestore.v1.NetworkConfig> getNetworksList();
-
   /**
    *
    *
@@ -347,7 +330,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.filestore.v1.NetworkConfig networks = 11;</code>
    */
   com.google.cloud.filestore.v1.NetworkConfig getNetworks(int index);
-
   /**
    *
    *
@@ -359,7 +341,6 @@ public interface InstanceOrBuilder
    * <code>repeated .google.cloud.filestore.v1.NetworkConfig networks = 11;</code>
    */
   int getNetworksCount();
-
   /**
    *
    *
@@ -372,7 +353,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.filestore.v1.NetworkConfigOrBuilder>
       getNetworksOrBuilderList();
-
   /**
    *
    *
@@ -398,7 +378,6 @@ public interface InstanceOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -427,7 +406,6 @@ public interface InstanceOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -442,7 +420,6 @@ public interface InstanceOrBuilder
    * @return The satisfiesPzs.
    */
   com.google.protobuf.BoolValue getSatisfiesPzs();
-
   /**
    *
    *
@@ -481,7 +458,6 @@ public interface InstanceOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -511,7 +487,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<com.google.cloud.filestore.v1.Instance.SuspensionReason>
       getSuspensionReasonsList();
-
   /**
    *
    *
@@ -527,7 +502,6 @@ public interface InstanceOrBuilder
    * @return The count of suspensionReasons.
    */
   int getSuspensionReasonsCount();
-
   /**
    *
    *
@@ -544,7 +518,6 @@ public interface InstanceOrBuilder
    * @return The suspensionReasons at the given index.
    */
   com.google.cloud.filestore.v1.Instance.SuspensionReason getSuspensionReasons(int index);
-
   /**
    *
    *
@@ -560,7 +533,6 @@ public interface InstanceOrBuilder
    * @return A list containing the enum numeric values on the wire for suspensionReasons.
    */
   java.util.List<java.lang.Integer> getSuspensionReasonsValueList();
-
   /**
    *
    *
@@ -592,7 +564,6 @@ public interface InstanceOrBuilder
    * @return Whether the replication field is set.
    */
   boolean hasReplication();
-
   /**
    *
    *
@@ -607,7 +578,6 @@ public interface InstanceOrBuilder
    * @return The replication.
    */
   com.google.cloud.filestore.v1.Replication getReplication();
-
   /**
    *
    *
@@ -642,7 +612,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -664,11 +633,9 @@ public interface InstanceOrBuilder
    * </code>
    */
   boolean containsTags(java.lang.String key);
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
-
   /**
    *
    *
@@ -690,7 +657,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
-
   /**
    *
    *
@@ -716,7 +682,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -755,7 +720,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
-
   /**
    *
    *
@@ -803,7 +767,6 @@ public interface InstanceOrBuilder
    * @return Whether the performanceConfig field is set.
    */
   boolean hasPerformanceConfig();
-
   /**
    *
    *
@@ -818,7 +781,6 @@ public interface InstanceOrBuilder
    * @return The performanceConfig.
    */
   com.google.cloud.filestore.v1.Instance.PerformanceConfig getPerformanceConfig();
-
   /**
    *
    *
@@ -846,7 +808,6 @@ public interface InstanceOrBuilder
    * @return Whether the performanceLimits field is set.
    */
   boolean hasPerformanceLimits();
-
   /**
    *
    *
@@ -861,7 +822,6 @@ public interface InstanceOrBuilder
    * @return The performanceLimits.
    */
   com.google.cloud.filestore.v1.Instance.PerformanceLimits getPerformanceLimits();
-
   /**
    *
    *
@@ -900,7 +860,6 @@ public interface InstanceOrBuilder
    * @return The deletionProtectionReason.
    */
   java.lang.String getDeletionProtectionReason();
-
   /**
    *
    *

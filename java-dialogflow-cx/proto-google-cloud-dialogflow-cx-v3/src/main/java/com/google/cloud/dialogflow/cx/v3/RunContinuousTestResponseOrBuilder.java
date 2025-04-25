@@ -36,7 +36,6 @@ public interface RunContinuousTestResponseOrBuilder
    * @return Whether the continuousTestResult field is set.
    */
   boolean hasContinuousTestResult();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RunContinuousTestResponseOrBuilder
    * @return The continuousTestResult.
    */
   com.google.cloud.dialogflow.cx.v3.ContinuousTestResult getContinuousTestResult();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return Whether the instanceSettingsResource field is set.
    */
   boolean hasInstanceSettingsResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return The instanceSettingsResource.
    */
   com.google.cloud.compute.v1.InstanceSettings getInstanceSettingsResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface PatchInstanceSettingRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

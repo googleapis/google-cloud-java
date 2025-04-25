@@ -33,7 +33,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.RouterStatus)
     RouterStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterStatus.newBuilder() to construct.
   private RouterStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The ipAddress.
      */
     java.lang.String getIpAddress();
-
     /**
      *
      *
@@ -134,7 +131,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The peerIpAddress.
      */
     java.lang.String getPeerIpAddress();
-
     /**
      *
      *
@@ -160,7 +156,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for status.
      */
     int getStatusValue();
-
     /**
      *
      *
@@ -186,7 +181,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The state.
      */
     java.lang.String getState();
-
     /**
      *
      *
@@ -214,7 +208,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The uptime.
      */
     java.lang.String getUptime();
-
     /**
      *
      *
@@ -255,7 +248,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the prefixCounter field is set.
      */
     boolean hasPrefixCounter();
-
     /**
      *
      *
@@ -268,7 +260,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      * @return The prefixCounter.
      */
     com.google.cloud.edgenetwork.v1.RouterStatus.PrefixCounter getPrefixCounter();
-
     /**
      *
      *
@@ -280,7 +271,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.edgenetwork.v1.RouterStatus.PrefixCounterOrBuilder getPrefixCounterOrBuilder();
   }
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus)
       BgpPeerStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BgpPeerStatus.newBuilder() to construct.
     private BgpPeerStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -384,7 +373,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
        * <code>UNKNOWN = 0;</code>
        */
       public static final int UNKNOWN_VALUE = 0;
-
       /**
        *
        *
@@ -395,7 +383,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
        * <code>UP = 1;</code>
        */
       public static final int UP_VALUE = 1;
-
       /**
        *
        *
@@ -497,7 +484,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -521,7 +507,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -550,7 +535,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ipAddress_ = "";
-
     /**
      *
      *
@@ -574,7 +558,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -603,7 +586,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object peerIpAddress_ = "";
-
     /**
      *
      *
@@ -627,7 +609,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -654,7 +635,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATUS_FIELD_NUMBER = 4;
     private int status_ = 0;
-
     /**
      *
      *
@@ -670,7 +650,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -695,7 +674,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object state_ = "";
-
     /**
      *
      *
@@ -719,7 +697,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -748,7 +725,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uptime_ = "";
-
     /**
      *
      *
@@ -774,7 +750,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -803,7 +778,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPTIME_SECONDS_FIELD_NUMBER = 7;
     private long uptimeSeconds_ = 0L;
-
     /**
      *
      *
@@ -822,7 +796,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PREFIX_COUNTER_FIELD_NUMBER = 8;
     private com.google.cloud.edgenetwork.v1.RouterStatus.PrefixCounter prefixCounter_;
-
     /**
      *
      *
@@ -838,7 +811,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrefixCounter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -856,7 +828,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.edgenetwork.v1.RouterStatus.PrefixCounter.getDefaultInstance()
           : prefixCounter_;
     }
-
     /**
      *
      *
@@ -1107,7 +1078,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1414,7 +1384,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1437,7 +1406,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1460,7 +1428,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1482,7 +1449,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1500,7 +1466,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1525,7 +1490,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object ipAddress_ = "";
-
       /**
        *
        *
@@ -1548,7 +1512,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1571,7 +1534,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1593,7 +1555,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1611,7 +1572,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1636,7 +1596,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object peerIpAddress_ = "";
-
       /**
        *
        *
@@ -1659,7 +1618,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1682,7 +1640,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1704,7 +1661,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1722,7 +1678,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1747,7 +1702,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int status_ = 0;
-
       /**
        *
        *
@@ -1763,7 +1717,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public int getStatusValue() {
         return status_;
       }
-
       /**
        *
        *
@@ -1782,7 +1735,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1802,7 +1754,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus.BgpStatus.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1825,7 +1776,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1845,7 +1795,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object state_ = "";
-
       /**
        *
        *
@@ -1868,7 +1817,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1891,7 +1839,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1913,7 +1860,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1931,7 +1877,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1956,7 +1901,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object uptime_ = "";
-
       /**
        *
        *
@@ -1981,7 +1925,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2006,7 +1949,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2030,7 +1972,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2050,7 +1991,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2077,7 +2017,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long uptimeSeconds_;
-
       /**
        *
        *
@@ -2093,7 +2032,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getUptimeSeconds() {
         return uptimeSeconds_;
       }
-
       /**
        *
        *
@@ -2113,7 +2051,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2138,7 +2075,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.edgenetwork.v1.RouterStatus.PrefixCounter.Builder,
               com.google.cloud.edgenetwork.v1.RouterStatus.PrefixCounterOrBuilder>
           prefixCounterBuilder_;
-
       /**
        *
        *
@@ -2153,7 +2089,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPrefixCounter() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -2174,7 +2109,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           return prefixCounterBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2198,7 +2132,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2219,7 +2152,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2250,7 +2182,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2270,7 +2201,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2286,7 +2216,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getPrefixCounterFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2306,7 +2235,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
               : prefixCounter_;
         }
       }
-
       /**
        *
        *
@@ -2481,7 +2409,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
      */
     long getWithdrawn();
   }
-
   /**
    *
    *
@@ -2496,7 +2423,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.RouterStatus.PrefixCounter)
       PrefixCounterOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PrefixCounter.newBuilder() to construct.
     private PrefixCounter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2527,7 +2453,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ADVERTISED_FIELD_NUMBER = 1;
     private long advertised_ = 0L;
-
     /**
      *
      *
@@ -2546,7 +2471,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DENIED_FIELD_NUMBER = 2;
     private long denied_ = 0L;
-
     /**
      *
      *
@@ -2565,7 +2489,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RECEIVED_FIELD_NUMBER = 3;
     private long received_ = 0L;
-
     /**
      *
      *
@@ -2584,7 +2507,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SENT_FIELD_NUMBER = 4;
     private long sent_ = 0L;
-
     /**
      *
      *
@@ -2603,7 +2525,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SUPPRESSED_FIELD_NUMBER = 5;
     private long suppressed_ = 0L;
-
     /**
      *
      *
@@ -2622,7 +2543,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WITHDRAWN_FIELD_NUMBER = 6;
     private long withdrawn_ = 0L;
-
     /**
      *
      *
@@ -2845,7 +2765,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3099,7 +3018,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long advertised_;
-
       /**
        *
        *
@@ -3115,7 +3033,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getAdvertised() {
         return advertised_;
       }
-
       /**
        *
        *
@@ -3135,7 +3052,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3155,7 +3071,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long denied_;
-
       /**
        *
        *
@@ -3171,7 +3086,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getDenied() {
         return denied_;
       }
-
       /**
        *
        *
@@ -3191,7 +3105,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3211,7 +3124,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long received_;
-
       /**
        *
        *
@@ -3227,7 +3139,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getReceived() {
         return received_;
       }
-
       /**
        *
        *
@@ -3247,7 +3158,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3267,7 +3177,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long sent_;
-
       /**
        *
        *
@@ -3283,7 +3192,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getSent() {
         return sent_;
       }
-
       /**
        *
        *
@@ -3303,7 +3211,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3323,7 +3230,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long suppressed_;
-
       /**
        *
        *
@@ -3339,7 +3245,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getSuppressed() {
         return suppressed_;
       }
-
       /**
        *
        *
@@ -3359,7 +3264,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3379,7 +3283,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long withdrawn_;
-
       /**
        *
        *
@@ -3395,7 +3298,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       public long getWithdrawn() {
         return withdrawn_;
       }
-
       /**
        *
        *
@@ -3415,7 +3317,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3503,7 +3404,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -3527,7 +3427,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3556,7 +3455,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus> bgpPeerStatus_;
-
   /**
    *
    *
@@ -3573,7 +3471,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       getBgpPeerStatusList() {
     return bgpPeerStatus_;
   }
-
   /**
    *
    *
@@ -3591,7 +3488,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       getBgpPeerStatusOrBuilderList() {
     return bgpPeerStatus_;
   }
-
   /**
    *
    *
@@ -3607,7 +3503,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
   public int getBgpPeerStatusCount() {
     return bgpPeerStatus_.size();
   }
-
   /**
    *
    *
@@ -3623,7 +3518,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus getBgpPeerStatus(int index) {
     return bgpPeerStatus_.get(index);
   }
-
   /**
    *
    *
@@ -3811,7 +3705,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4056,7 +3949,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -4079,7 +3971,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4102,7 +3993,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4124,7 +4014,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4142,7 +4031,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4203,7 +4091,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return bgpPeerStatusBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4222,7 +4109,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return bgpPeerStatusBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4241,7 +4127,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return bgpPeerStatusBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4267,7 +4152,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4291,7 +4175,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4317,7 +4200,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4343,7 +4225,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4366,7 +4247,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4390,7 +4270,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4414,7 +4293,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4436,7 +4314,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4458,7 +4335,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4474,7 +4350,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         getBgpPeerStatusBuilder(int index) {
       return getBgpPeerStatusFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4494,7 +4369,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return bgpPeerStatusBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4515,7 +4389,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bgpPeerStatus_);
       }
     }
-
     /**
      *
      *
@@ -4533,7 +4406,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4552,7 +4424,6 @@ public final class RouterStatus extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus.getDefaultInstance());
     }
-
     /**
      *
      *

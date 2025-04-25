@@ -33,7 +33,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest)
     UpdateConversionWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateConversionWorkspaceRequest.newBuilder() to construct.
   private UpdateConversionWorkspaceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
 
   public static final int CONVERSION_WORKSPACE_FIELD_NUMBER = 2;
   private com.google.cloud.clouddms.v1.ConversionWorkspace conversionWorkspace_;
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
   public boolean hasConversionWorkspace() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
         ? com.google.cloud.clouddms.v1.ConversionWorkspace.getDefaultInstance()
         : conversionWorkspace_;
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +425,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -679,7 +669,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
             com.google.cloud.clouddms.v1.ConversionWorkspace.Builder,
             com.google.cloud.clouddms.v1.ConversionWorkspaceOrBuilder>
         conversionWorkspaceBuilder_;
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
     public boolean hasConversionWorkspace() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
         return conversionWorkspaceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1025,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return getConversionWorkspaceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1073,7 +1046,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
             : conversionWorkspace_;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1075,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1132,7 +1103,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1131,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1189,7 +1158,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1181,6 @@ public final class UpdateConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

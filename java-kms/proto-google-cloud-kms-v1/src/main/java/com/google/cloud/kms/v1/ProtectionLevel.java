@@ -94,7 +94,6 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROTECTION_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int PROTECTION_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SOFTWARE = 1;</code>
    */
   public static final int SOFTWARE_VALUE = 1;
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HSM = 2;</code>
    */
   public static final int HSM_VALUE = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXTERNAL = 3;</code>
    */
   public static final int EXTERNAL_VALUE = 3;
-
   /**
    *
    *

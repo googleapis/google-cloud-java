@@ -39,7 +39,6 @@ public interface EntryTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface EntryTypeOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface EntryTypeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface EntryTypeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface EntryTypeOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface EntryTypeOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface EntryTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface EntryTypeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface EntryTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -239,11 +230,9 @@ public interface EntryTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -254,7 +243,6 @@ public interface EntryTypeOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -269,7 +257,6 @@ public interface EntryTypeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -295,7 +282,6 @@ public interface EntryTypeOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -324,7 +310,6 @@ public interface EntryTypeOrBuilder
    * @return A list containing the typeAliases.
    */
   java.util.List<java.lang.String> getTypeAliasesList();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface EntryTypeOrBuilder
    * @return The count of typeAliases.
    */
   int getTypeAliasesCount();
-
   /**
    *
    *
@@ -353,7 +337,6 @@ public interface EntryTypeOrBuilder
    * @return The typeAliases at the given index.
    */
   java.lang.String getTypeAliases(int index);
-
   /**
    *
    *
@@ -381,7 +364,6 @@ public interface EntryTypeOrBuilder
    * @return The platform.
    */
   java.lang.String getPlatform();
-
   /**
    *
    *
@@ -408,7 +390,6 @@ public interface EntryTypeOrBuilder
    * @return The system.
    */
   java.lang.String getSystem();
-
   /**
    *
    *
@@ -433,7 +414,6 @@ public interface EntryTypeOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.EntryType.AspectInfo required_aspects = 50;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.EntryType.AspectInfo> getRequiredAspectsList();
-
   /**
    *
    *
@@ -444,7 +424,6 @@ public interface EntryTypeOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.EntryType.AspectInfo required_aspects = 50;</code>
    */
   com.google.cloud.dataplex.v1.EntryType.AspectInfo getRequiredAspects(int index);
-
   /**
    *
    *
@@ -455,7 +434,6 @@ public interface EntryTypeOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.EntryType.AspectInfo required_aspects = 50;</code>
    */
   int getRequiredAspectsCount();
-
   /**
    *
    *
@@ -467,7 +445,6 @@ public interface EntryTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EntryType.AspectInfoOrBuilder>
       getRequiredAspectsOrBuilderList();
-
   /**
    *
    *
@@ -493,7 +470,6 @@ public interface EntryTypeOrBuilder
    * @return Whether the authorization field is set.
    */
   boolean hasAuthorization();
-
   /**
    *
    *
@@ -508,7 +484,6 @@ public interface EntryTypeOrBuilder
    * @return The authorization.
    */
   com.google.cloud.dataplex.v1.EntryType.Authorization getAuthorization();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.Symbol)
     SymbolOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Symbol.newBuilder() to construct.
   private Symbol(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.TextAnnotation.TextProperty property_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.TextAnnotation.TextProperty.getDefaultInstance()
         : property_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1.BoundingPoly boundingBox_;
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
         : boundingBox_;
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -480,7 +470,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -730,7 +719,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.TextAnnotation.TextProperty.Builder,
             com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder>
         propertyBuilder_;
-
     /**
      *
      *
@@ -745,7 +733,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
         return propertyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
             : property_;
       }
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1.BoundingPoly.Builder,
             com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         boundingBoxBuilder_;
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
         return boundingBoxBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1004,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1078,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1111,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1139,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1199,7 +1171,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
             : boundingBox_;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1212,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -1264,7 +1234,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1287,7 +1256,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1277,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1294,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1318,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -1368,7 +1333,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -1388,7 +1352,6 @@ public final class Symbol extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

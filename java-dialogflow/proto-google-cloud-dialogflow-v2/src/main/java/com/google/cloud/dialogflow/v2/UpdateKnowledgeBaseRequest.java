@@ -34,7 +34,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest)
     UpdateKnowledgeBaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateKnowledgeBaseRequest.newBuilder() to construct.
   private UpdateKnowledgeBaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int KNOWLEDGE_BASE_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.KnowledgeBase knowledgeBase_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
   public boolean hasKnowledgeBase() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
         ? com.google.cloud.dialogflow.v2.KnowledgeBase.getDefaultInstance()
         : knowledgeBase_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -360,7 +353,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +577,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2.KnowledgeBase.Builder,
             com.google.cloud.dialogflow.v2.KnowledgeBaseOrBuilder>
         knowledgeBaseBuilder_;
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     public boolean hasKnowledgeBase() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
         return knowledgeBaseBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return getKnowledgeBaseFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
             : knowledgeBase_;
       }
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -984,7 +959,6 @@ public final class UpdateKnowledgeBaseRequest extends com.google.protobuf.Genera
             : updateMask_;
       }
     }
-
     /**
      *
      *

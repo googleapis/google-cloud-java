@@ -39,7 +39,6 @@ public interface DeleteReplicationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

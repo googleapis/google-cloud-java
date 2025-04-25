@@ -38,7 +38,6 @@ public interface RougeInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface RougeInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.RougeSpec getMetricSpec();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface RougeInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.RougeInstance> getInstancesList();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface RougeInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.RougeInstance getInstances(int index);
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface RougeInputOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface RougeInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.RougeInstanceOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface IssueOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface IssueOrBuilder
    * @return A list containing the path.
    */
   java.util.List<java.lang.String> getPathList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface IssueOrBuilder
    * @return The count of path.
    */
   int getPathCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface IssueOrBuilder
    * @return The path at the given index.
    */
   java.lang.String getPath(int index);
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface IssueOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface IssueOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface IssueOrBuilder
    * @return Whether the range field is set.
    */
   boolean hasRange();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface IssueOrBuilder
    * @return The range.
    */
   com.google.cloud.apihub.v1.Range getRange();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface RunningProcessListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.RunningProcess entries = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.RunningProcess> getEntriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RunningProcessListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.RunningProcess entries = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.RunningProcess getEntries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RunningProcessListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.RunningProcess entries = 1;</code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface RunningProcessListOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.RunningProcessOrBuilder>
       getEntriesOrBuilderList();
-
   /**
    *
    *

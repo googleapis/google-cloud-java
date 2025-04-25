@@ -34,7 +34,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelOperationMetadata)
     LabelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelOperationMetadata.newBuilder() to construct.
   private LabelOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     private DetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -147,7 +145,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMAGE_CLASSIFICATION_DETAILS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -165,7 +162,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasImageClassificationDetails() {
     return detailsCase_ == 3;
   }
-
   /**
    *
    *
@@ -189,7 +185,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelImageClassificationOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -213,7 +208,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMAGE_BOUNDING_BOX_DETAILS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasImageBoundingBoxDetails() {
     return detailsCase_ == 4;
   }
-
   /**
    *
    *
@@ -255,7 +248,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMAGE_BOUNDING_POLY_DETAILS_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -297,7 +288,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasImageBoundingPolyDetails() {
     return detailsCase_ == 11;
   }
-
   /**
    *
    *
@@ -321,7 +311,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -345,7 +334,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMAGE_ORIENTED_BOUNDING_BOX_DETAILS_FIELD_NUMBER = 14;
-
   /**
    *
    *
@@ -363,7 +351,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasImageOrientedBoundingBoxDetails() {
     return detailsCase_ == 14;
   }
-
   /**
    *
    *
@@ -387,7 +374,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelImageOrientedBoundingBoxOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -412,7 +398,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMAGE_POLYLINE_DETAILS_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -430,7 +415,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasImagePolylineDetails() {
     return detailsCase_ == 12;
   }
-
   /**
    *
    *
@@ -453,7 +437,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -476,7 +459,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMAGE_SEGMENTATION_DETAILS_FIELD_NUMBER = 15;
-
   /**
    *
    *
@@ -494,7 +476,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasImageSegmentationDetails() {
     return detailsCase_ == 15;
   }
-
   /**
    *
    *
@@ -518,7 +499,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -542,7 +522,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int VIDEO_CLASSIFICATION_DETAILS_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -560,7 +539,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasVideoClassificationDetails() {
     return detailsCase_ == 5;
   }
-
   /**
    *
    *
@@ -584,7 +562,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelVideoClassificationOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -608,7 +585,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int VIDEO_OBJECT_DETECTION_DETAILS_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -626,7 +602,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasVideoObjectDetectionDetails() {
     return detailsCase_ == 6;
   }
-
   /**
    *
    *
@@ -650,7 +625,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectDetectionOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -674,7 +648,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int VIDEO_OBJECT_TRACKING_DETAILS_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -692,7 +665,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasVideoObjectTrackingDetails() {
     return detailsCase_ == 7;
   }
-
   /**
    *
    *
@@ -716,7 +688,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelVideoObjectTrackingOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -740,7 +711,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int VIDEO_EVENT_DETAILS_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -758,7 +728,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasVideoEventDetails() {
     return detailsCase_ == 8;
   }
-
   /**
    *
    *
@@ -781,7 +750,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -804,7 +772,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int TEXT_CLASSIFICATION_DETAILS_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -822,7 +789,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasTextClassificationDetails() {
     return detailsCase_ == 9;
   }
-
   /**
    *
    *
@@ -846,7 +812,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -870,7 +835,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int TEXT_ENTITY_EXTRACTION_DETAILS_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -888,7 +852,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasTextEntityExtractionDetails() {
     return detailsCase_ == 13;
   }
-
   /**
    *
    *
@@ -912,7 +875,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     return com.google.cloud.datalabeling.v1beta1.LabelTextEntityExtractionOperationMetadata
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -937,7 +899,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
   private int progressPercent_ = 0;
-
   /**
    *
    *
@@ -958,7 +919,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialFailures_;
-
   /**
    *
    *
@@ -974,7 +934,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.rpc.Status> getPartialFailuresList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -991,7 +950,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
-
   /**
    *
    *
@@ -1007,7 +965,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public int getPartialFailuresCount() {
     return partialFailures_.size();
   }
-
   /**
    *
    *
@@ -1023,7 +980,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.rpc.Status getPartialFailures(int index) {
     return partialFailures_.get(index);
   }
-
   /**
    *
    *
@@ -1042,7 +998,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int CREATE_TIME_FIELD_NUMBER = 16;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1058,7 +1013,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1074,7 +1028,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1522,7 +1475,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2050,7 +2002,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1
                 .LabelImageClassificationOperationMetadataOrBuilder>
         imageClassificationDetailsBuilder_;
-
     /**
      *
      *
@@ -2068,7 +2019,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasImageClassificationDetails() {
       return detailsCase_ == 3;
     }
-
     /**
      *
      *
@@ -2100,7 +2050,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2126,7 +2075,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2098,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2191,7 +2138,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2219,7 +2165,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2235,7 +2180,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getImageClassificationDetailsBuilder() {
       return getImageClassificationDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2261,7 +2205,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2308,7 +2251,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelImageBoundingBoxOperationMetadataOrBuilder>
         imageBoundingBoxDetailsBuilder_;
-
     /**
      *
      *
@@ -2326,7 +2268,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasImageBoundingBoxDetails() {
       return detailsCase_ == 4;
     }
-
     /**
      *
      *
@@ -2358,7 +2299,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2384,7 +2324,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2408,7 +2347,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2448,7 +2386,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2476,7 +2413,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2492,7 +2428,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getImageBoundingBoxDetailsBuilder() {
       return getImageBoundingBoxDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2518,7 +2453,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2564,7 +2498,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelImageBoundingPolyOperationMetadataOrBuilder>
         imageBoundingPolyDetailsBuilder_;
-
     /**
      *
      *
@@ -2582,7 +2515,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasImageBoundingPolyDetails() {
       return detailsCase_ == 11;
     }
-
     /**
      *
      *
@@ -2614,7 +2546,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2640,7 +2571,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2664,7 +2594,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2705,7 +2634,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2733,7 +2661,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2749,7 +2676,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getImageBoundingPolyDetailsBuilder() {
       return getImageBoundingPolyDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2775,7 +2701,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2823,7 +2748,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1
                 .LabelImageOrientedBoundingBoxOperationMetadataOrBuilder>
         imageOrientedBoundingBoxDetailsBuilder_;
-
     /**
      *
      *
@@ -2841,7 +2765,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasImageOrientedBoundingBoxDetails() {
       return detailsCase_ == 14;
     }
-
     /**
      *
      *
@@ -2874,7 +2797,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2901,7 +2823,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -2925,7 +2846,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -2967,7 +2887,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -2995,7 +2914,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3012,7 +2930,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getImageOrientedBoundingBoxDetailsBuilder() {
       return getImageOrientedBoundingBoxDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3040,7 +2957,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3090,7 +3006,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelImagePolylineOperationMetadataOrBuilder>
         imagePolylineDetailsBuilder_;
-
     /**
      *
      *
@@ -3108,7 +3023,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasImagePolylineDetails() {
       return detailsCase_ == 12;
     }
-
     /**
      *
      *
@@ -3140,7 +3054,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3166,7 +3079,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3190,7 +3102,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3229,7 +3140,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3257,7 +3167,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3273,7 +3182,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getImagePolylineDetailsBuilder() {
       return getImagePolylineDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3299,7 +3207,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3343,7 +3250,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelImageSegmentationOperationMetadataOrBuilder>
         imageSegmentationDetailsBuilder_;
-
     /**
      *
      *
@@ -3361,7 +3267,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasImageSegmentationDetails() {
       return detailsCase_ == 15;
     }
-
     /**
      *
      *
@@ -3393,7 +3298,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3419,7 +3323,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -3443,7 +3346,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -3484,7 +3386,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -3512,7 +3413,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3528,7 +3428,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getImageSegmentationDetailsBuilder() {
       return getImageSegmentationDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3554,7 +3453,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3601,7 +3499,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1
                 .LabelVideoClassificationOperationMetadataOrBuilder>
         videoClassificationDetailsBuilder_;
-
     /**
      *
      *
@@ -3619,7 +3516,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasVideoClassificationDetails() {
       return detailsCase_ == 5;
     }
-
     /**
      *
      *
@@ -3651,7 +3547,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3677,7 +3572,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3701,7 +3595,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3742,7 +3635,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -3770,7 +3662,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -3786,7 +3677,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getVideoClassificationDetailsBuilder() {
       return getVideoClassificationDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3812,7 +3702,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3861,7 +3750,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1
                 .LabelVideoObjectDetectionOperationMetadataOrBuilder>
         videoObjectDetectionDetailsBuilder_;
-
     /**
      *
      *
@@ -3879,7 +3767,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasVideoObjectDetectionDetails() {
       return detailsCase_ == 6;
     }
-
     /**
      *
      *
@@ -3911,7 +3798,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3937,7 +3823,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -3961,7 +3846,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4002,7 +3886,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4030,7 +3913,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4046,7 +3928,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getVideoObjectDetectionDetailsBuilder() {
       return getVideoObjectDetectionDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4072,7 +3953,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4121,7 +4001,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1
                 .LabelVideoObjectTrackingOperationMetadataOrBuilder>
         videoObjectTrackingDetailsBuilder_;
-
     /**
      *
      *
@@ -4139,7 +4018,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasVideoObjectTrackingDetails() {
       return detailsCase_ == 7;
     }
-
     /**
      *
      *
@@ -4171,7 +4049,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4197,7 +4074,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -4221,7 +4097,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -4262,7 +4137,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -4290,7 +4164,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4306,7 +4179,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getVideoObjectTrackingDetailsBuilder() {
       return getVideoObjectTrackingDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4332,7 +4204,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4379,7 +4250,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelVideoEventOperationMetadataOrBuilder>
         videoEventDetailsBuilder_;
-
     /**
      *
      *
@@ -4397,7 +4267,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasVideoEventDetails() {
       return detailsCase_ == 8;
     }
-
     /**
      *
      *
@@ -4428,7 +4297,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4454,7 +4322,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4478,7 +4345,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4517,7 +4383,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -4545,7 +4410,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4561,7 +4425,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getVideoEventDetailsBuilder() {
       return getVideoEventDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4586,7 +4449,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4629,7 +4491,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.LabelTextClassificationOperationMetadataOrBuilder>
         textClassificationDetailsBuilder_;
-
     /**
      *
      *
@@ -4647,7 +4508,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasTextClassificationDetails() {
       return detailsCase_ == 9;
     }
-
     /**
      *
      *
@@ -4679,7 +4539,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4705,7 +4564,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -4729,7 +4587,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -4770,7 +4627,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -4798,7 +4654,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -4814,7 +4669,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getTextClassificationDetailsBuilder() {
       return getTextClassificationDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4840,7 +4694,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4888,7 +4741,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1
                 .LabelTextEntityExtractionOperationMetadataOrBuilder>
         textEntityExtractionDetailsBuilder_;
-
     /**
      *
      *
@@ -4906,7 +4758,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasTextEntityExtractionDetails() {
       return detailsCase_ == 13;
     }
-
     /**
      *
      *
@@ -4938,7 +4789,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4964,7 +4814,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -4988,7 +4837,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -5029,7 +4877,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       detailsCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -5057,7 +4904,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5073,7 +4919,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         getTextEntityExtractionDetailsBuilder() {
       return getTextEntityExtractionDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5099,7 +4944,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5143,7 +4987,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int progressPercent_;
-
     /**
      *
      *
@@ -5159,7 +5002,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public int getProgressPercent() {
       return progressPercent_;
     }
-
     /**
      *
      *
@@ -5179,7 +5021,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5230,7 +5071,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         return partialFailuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5249,7 +5089,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         return partialFailuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5268,7 +5107,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         return partialFailuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5293,7 +5131,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5315,7 +5152,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5340,7 +5176,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5365,7 +5200,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5387,7 +5221,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5409,7 +5242,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5432,7 +5264,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5454,7 +5285,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5476,7 +5306,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5491,7 +5320,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5510,7 +5338,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5530,7 +5357,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(partialFailures_);
       }
     }
-
     /**
      *
      *
@@ -5546,7 +5372,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       return getPartialFailuresFieldBuilder()
           .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5562,7 +5387,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       return getPartialFailuresFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5602,7 +5426,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5617,7 +5440,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -5638,7 +5460,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5661,7 +5482,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5681,7 +5501,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5709,7 +5528,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -5729,7 +5547,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5744,7 +5561,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5763,7 +5579,6 @@ public final class LabelOperationMetadata extends com.google.protobuf.GeneratedM
             : createTime_;
       }
     }
-
     /**
      *
      *

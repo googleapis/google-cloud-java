@@ -33,7 +33,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateIndexEndpointRequest)
     CreateIndexEndpointRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateIndexEndpointRequest.newBuilder() to construct.
   private CreateIndexEndpointRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object indexEndpointId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
 
   public static final int INDEX_ENDPOINT_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.IndexEndpoint indexEndpoint_;
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
   public boolean hasIndexEndpoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
         ? com.google.cloud.visionai.v1.IndexEndpoint.getDefaultInstance()
         : indexEndpoint_;
   }
-
   /**
    *
    *
@@ -430,7 +422,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +651,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +741,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object indexEndpointId_ = "";
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +908,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
             com.google.cloud.visionai.v1.IndexEndpoint.Builder,
             com.google.cloud.visionai.v1.IndexEndpointOrBuilder>
         indexEndpointBuilder_;
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
     public boolean hasIndexEndpoint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -967,7 +946,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
         return indexEndpointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +992,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1042,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1058,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
       onChanged();
       return getIndexEndpointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1105,7 +1078,6 @@ public final class CreateIndexEndpointRequest extends com.google.protobuf.Genera
             : indexEndpoint_;
       }
     }
-
     /**
      *
      *

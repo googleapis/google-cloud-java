@@ -37,7 +37,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return The verb.
    */
   java.lang.String getVerb();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return The apiVersion.
    */
   java.lang.String getApiVersion();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface RunWorkflowCustomOperationMetadataOrBuilder
    * @return The pipelineRunId.
    */
   java.lang.String getPipelineRunId();
-
   /**
    *
    *

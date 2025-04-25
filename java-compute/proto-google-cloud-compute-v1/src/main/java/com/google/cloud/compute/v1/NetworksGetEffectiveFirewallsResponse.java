@@ -33,7 +33,6 @@ public final class NetworksGetEffectiveFirewallsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponse)
     NetworksGetEffectiveFirewallsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworksGetEffectiveFirewallsResponse.newBuilder() to construct.
   private NetworksGetEffectiveFirewallsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class NetworksGetEffectiveFirewallsResponse
   private java.util.List<
           com.google.cloud.compute.v1.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy>
       firewallPolicys_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       getFirewallPolicysList() {
     return firewallPolicys_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       getFirewallPolicysOrBuilderList() {
     return firewallPolicys_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class NetworksGetEffectiveFirewallsResponse
   public int getFirewallPolicysCount() {
     return firewallPolicys_.size();
   }
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       getFirewallPolicys(int index) {
     return firewallPolicys_.get(index);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class NetworksGetEffectiveFirewallsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Firewall> firewalls_;
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class NetworksGetEffectiveFirewallsResponse
   public java.util.List<com.google.cloud.compute.v1.Firewall> getFirewallsList() {
     return firewalls_;
   }
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       getFirewallsOrBuilderList() {
     return firewalls_;
   }
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public final class NetworksGetEffectiveFirewallsResponse
   public int getFirewallsCount() {
     return firewalls_.size();
   }
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public final class NetworksGetEffectiveFirewallsResponse
   public com.google.cloud.compute.v1.Firewall getFirewalls(int index) {
     return firewalls_.get(index);
   }
-
   /**
    *
    *
@@ -415,7 +404,6 @@ public final class NetworksGetEffectiveFirewallsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +744,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -775,7 +762,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +833,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +961,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +982,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         getFirewallPolicysBuilder(int index) {
       return getFirewallPolicysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1064,7 +1039,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallPolicysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1061,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return java.util.Collections.unmodifiableList(firewallPolicys_);
       }
     }
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class NetworksGetEffectiveFirewallsResponse
                   .NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1130,7 +1102,6 @@ public final class NetworksGetEffectiveFirewallsResponse
                   .NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1207,7 +1178,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1194,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1232,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1252,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1296,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1315,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1335,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1355,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1374,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1433,7 +1393,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1405,6 @@ public final class NetworksGetEffectiveFirewallsResponse
     public com.google.cloud.compute.v1.Firewall.Builder getFirewallsBuilder(int index) {
       return getFirewallsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1463,7 +1421,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return firewallsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1438,6 @@ public final class NetworksGetEffectiveFirewallsResponse
         return java.util.Collections.unmodifiableList(firewalls_);
       }
     }
-
     /**
      *
      *
@@ -1495,7 +1451,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       return getFirewallsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Firewall.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1509,7 +1464,6 @@ public final class NetworksGetEffectiveFirewallsResponse
       return getFirewallsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Firewall.getDefaultInstance());
     }
-
     /**
      *
      *

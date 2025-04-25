@@ -66,7 +66,6 @@ public enum AuthorizedCertificateView implements com.google.protobuf.ProtocolMes
    * <code>BASIC_CERTIFICATE = 0;</code>
    */
   public static final int BASIC_CERTIFICATE_VALUE = 0;
-
   /**
    *
    *

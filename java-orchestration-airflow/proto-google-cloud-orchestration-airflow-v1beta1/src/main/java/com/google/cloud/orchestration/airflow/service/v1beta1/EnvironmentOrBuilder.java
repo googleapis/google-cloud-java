@@ -40,7 +40,6 @@ public interface EnvironmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface EnvironmentOrBuilder
    * @return The config.
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig getConfig();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface EnvironmentOrBuilder
    * @return The uuid.
    */
   java.lang.String getUuid();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface EnvironmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface EnvironmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface EnvironmentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -271,11 +261,9 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -293,7 +281,6 @@ public interface EnvironmentOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -315,7 +302,6 @@ public interface EnvironmentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -374,7 +360,6 @@ public interface EnvironmentOrBuilder
    * @return Whether the storageConfig field is set.
    */
   boolean hasStorageConfig();
-
   /**
    *
    *
@@ -389,7 +374,6 @@ public interface EnvironmentOrBuilder
    * @return The storageConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.StorageConfig getStorageConfig();
-
   /**
    *
    *

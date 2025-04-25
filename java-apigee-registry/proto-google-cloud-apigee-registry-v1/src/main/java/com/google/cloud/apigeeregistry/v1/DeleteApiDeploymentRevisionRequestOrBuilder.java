@@ -42,7 +42,6 @@ public interface DeleteApiDeploymentRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

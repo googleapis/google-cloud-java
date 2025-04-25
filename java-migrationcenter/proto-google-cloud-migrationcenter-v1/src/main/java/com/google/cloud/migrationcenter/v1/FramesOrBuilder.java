@@ -34,7 +34,6 @@ public interface FramesOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.AssetFrame frames_data = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.AssetFrame> getFramesDataList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FramesOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.AssetFrame frames_data = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.AssetFrame getFramesData(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FramesOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.AssetFrame frames_data = 1;</code>
    */
   int getFramesDataCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FramesOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.AssetFrameOrBuilder>
       getFramesDataOrBuilderList();
-
   /**
    *
    *

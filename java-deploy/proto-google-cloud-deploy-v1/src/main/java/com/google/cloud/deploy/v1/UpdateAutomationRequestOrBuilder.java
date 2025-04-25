@@ -41,7 +41,6 @@ public interface UpdateAutomationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateAutomationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateAutomationRequestOrBuilder
    * @return Whether the automation field is set.
    */
   boolean hasAutomation();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateAutomationRequestOrBuilder
    * @return The automation.
    */
   com.google.cloud.deploy.v1.Automation getAutomation();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateAutomationRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface FinancedPurchaseSavingsOrBuilder
    * @return Whether the annualLoanPayment field is set.
    */
   boolean hasAnnualLoanPayment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FinancedPurchaseSavingsOrBuilder
    * @return The annualLoanPayment.
    */
   com.google.type.Money getAnnualLoanPayment();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface FinancedPurchaseSavingsOrBuilder
    * @return Whether the rebateValue field is set.
    */
   boolean hasRebateValue();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface FinancedPurchaseSavingsOrBuilder
    * @return The rebateValue.
    */
   com.google.type.Money getRebateValue();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface FinancedPurchaseSavingsOrBuilder
    * @return Whether the savings field is set.
    */
   boolean hasSavings();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface FinancedPurchaseSavingsOrBuilder
    * @return The savings.
    */
   com.google.maps.solar.v1.SavingsOverTime getSavings();
-
   /**
    *
    *

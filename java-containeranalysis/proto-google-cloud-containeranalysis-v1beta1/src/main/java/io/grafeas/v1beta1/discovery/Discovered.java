@@ -33,7 +33,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.discovery.Discovered)
     DiscoveredOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Discovered.newBuilder() to construct.
   private Discovered(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTINUOUS_ANALYSIS_UNSPECIFIED = 0;</code>
      */
     public static final int CONTINUOUS_ANALYSIS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -312,7 +309,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>ANALYSIS_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int ANALYSIS_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -323,7 +319,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -334,7 +329,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>SCANNING = 2;</code>
      */
     public static final int SCANNING_VALUE = 2;
-
     /**
      *
      *
@@ -345,7 +339,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>FINISHED_SUCCESS = 3;</code>
      */
     public static final int FINISHED_SUCCESS_VALUE = 3;
-
     /**
      *
      *
@@ -357,7 +350,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
      * <code>FINISHED_FAILED = 4;</code>
      */
     public static final int FINISHED_FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -461,7 +453,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
   private int continuousAnalysis_ = 0;
-
   /**
    *
    *
@@ -477,7 +468,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
   public int getContinuousAnalysisValue() {
     return continuousAnalysis_;
   }
-
   /**
    *
    *
@@ -500,7 +490,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_ANALYSIS_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp lastAnalysisTime_;
-
   /**
    *
    *
@@ -516,7 +505,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastAnalysisTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -534,7 +522,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastAnalysisTime_;
   }
-
   /**
    *
    *
@@ -553,7 +540,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANALYSIS_STATUS_FIELD_NUMBER = 3;
   private int analysisStatus_ = 0;
-
   /**
    *
    *
@@ -569,7 +555,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
   public int getAnalysisStatusValue() {
     return analysisStatus_;
   }
-
   /**
    *
    *
@@ -592,7 +577,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANALYSIS_STATUS_ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status analysisStatusError_;
-
   /**
    *
    *
@@ -610,7 +594,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnalysisStatusError() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -630,7 +613,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
         ? com.google.rpc.Status.getDefaultInstance()
         : analysisStatusError_;
   }
-
   /**
    *
    *
@@ -854,7 +836,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1103,7 +1084,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int continuousAnalysis_ = 0;
-
     /**
      *
      *
@@ -1120,7 +1100,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     public int getContinuousAnalysisValue() {
       return continuousAnalysis_;
     }
-
     /**
      *
      *
@@ -1140,7 +1119,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1139,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
           ? io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1185,7 +1162,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1187,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastAnalysisTimeBuilder_;
-
     /**
      *
      *
@@ -1226,7 +1201,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastAnalysisTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1247,7 +1221,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
         return lastAnalysisTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1243,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1262,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1289,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1308,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1322,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastAnalysisTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1372,7 +1340,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
             : lastAnalysisTime_;
       }
     }
-
     /**
      *
      *
@@ -1400,7 +1367,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int analysisStatus_ = 0;
-
     /**
      *
      *
@@ -1416,7 +1382,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     public int getAnalysisStatusValue() {
       return analysisStatus_;
     }
-
     /**
      *
      *
@@ -1435,7 +1400,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1419,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
           ? io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1477,7 +1440,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1462,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         analysisStatusErrorBuilder_;
-
     /**
      *
      *
@@ -1517,7 +1478,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnalysisStatusError() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1540,7 +1500,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
         return analysisStatusErrorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1565,7 +1524,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1587,7 +1545,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1574,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1639,7 +1595,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1656,7 +1611,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnalysisStatusErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1677,7 +1631,6 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
             : analysisStatusError_;
       }
     }
-
     /**
      *
      *

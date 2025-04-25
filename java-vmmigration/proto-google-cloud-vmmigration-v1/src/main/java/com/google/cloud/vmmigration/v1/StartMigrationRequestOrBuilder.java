@@ -38,7 +38,6 @@ public interface StartMigrationRequestOrBuilder
    * @return The migratingVm.
    */
   java.lang.String getMigratingVm();
-
   /**
    *
    *

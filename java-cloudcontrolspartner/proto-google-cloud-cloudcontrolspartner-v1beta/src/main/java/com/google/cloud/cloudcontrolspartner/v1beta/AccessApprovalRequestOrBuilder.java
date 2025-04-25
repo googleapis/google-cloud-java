@@ -37,7 +37,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return Whether the requestedReason field is set.
    */
   boolean hasRequestedReason();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return The requestedReason.
    */
   com.google.cloud.cloudcontrolspartner.v1beta.AccessReason getRequestedReason();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return Whether the requestedExpirationTime field is set.
    */
   boolean hasRequestedExpirationTime();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface AccessApprovalRequestOrBuilder
    * @return The requestedExpirationTime.
    */
   com.google.protobuf.Timestamp getRequestedExpirationTime();
-
   /**
    *
    *

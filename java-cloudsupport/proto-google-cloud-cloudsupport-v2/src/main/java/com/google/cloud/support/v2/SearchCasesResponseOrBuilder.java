@@ -35,7 +35,6 @@ public interface SearchCasesResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Case cases = 1;</code>
    */
   java.util.List<com.google.cloud.support.v2.Case> getCasesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SearchCasesResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Case cases = 1;</code>
    */
   com.google.cloud.support.v2.Case getCases(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SearchCasesResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Case cases = 1;</code>
    */
   int getCasesCount();
-
   /**
    *
    *
@@ -71,7 +68,6 @@ public interface SearchCasesResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Case cases = 1;</code>
    */
   java.util.List<? extends com.google.cloud.support.v2.CaseOrBuilder> getCasesOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface SearchCasesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

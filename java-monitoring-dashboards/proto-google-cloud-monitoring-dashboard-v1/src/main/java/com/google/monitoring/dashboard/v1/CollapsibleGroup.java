@@ -34,7 +34,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.CollapsibleGroup)
     CollapsibleGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CollapsibleGroup.newBuilder() to construct.
   private CollapsibleGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
 
   public static final int COLLAPSED_FIELD_NUMBER = 1;
   private boolean collapsed_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -425,7 +422,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean collapsed_;
-
     /**
      *
      *
@@ -441,7 +437,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     public boolean getCollapsed() {
       return collapsed_;
     }
-
     /**
      *
      *
@@ -461,7 +456,6 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class ReceiveTriggerWebhookResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ReceiveTriggerWebhookResponse)
     ReceiveTriggerWebhookResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReceiveTriggerWebhookResponse.newBuilder() to construct.
   private ReceiveTriggerWebhookResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class ReceiveTriggerWebhookResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

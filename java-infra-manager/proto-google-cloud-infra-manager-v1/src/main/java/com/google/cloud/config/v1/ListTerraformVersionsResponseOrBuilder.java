@@ -34,7 +34,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.TerraformVersion terraform_versions = 1;</code>
    */
   java.util.List<com.google.cloud.config.v1.TerraformVersion> getTerraformVersionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.TerraformVersion terraform_versions = 1;</code>
    */
   com.google.cloud.config.v1.TerraformVersion getTerraformVersions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * <code>repeated .google.cloud.config.v1.TerraformVersion terraform_versions = 1;</code>
    */
   int getTerraformVersionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.config.v1.TerraformVersionOrBuilder>
       getTerraformVersionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListTerraformVersionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

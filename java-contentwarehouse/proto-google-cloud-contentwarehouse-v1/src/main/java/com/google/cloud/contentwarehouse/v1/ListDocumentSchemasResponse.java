@@ -33,7 +33,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ListDocumentSchemasResponse)
     ListDocumentSchemasResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDocumentSchemasResponse.newBuilder() to construct.
   private ListDocumentSchemasResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.DocumentSchema> documentSchemas_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       getDocumentSchemasList() {
     return documentSchemas_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       getDocumentSchemasOrBuilderList() {
     return documentSchemas_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
   public int getDocumentSchemasCount() {
     return documentSchemas_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
   public com.google.cloud.contentwarehouse.v1.DocumentSchema getDocumentSchemas(int index) {
     return documentSchemas_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -654,7 +645,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return documentSchemasBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return documentSchemasBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return documentSchemasBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         int index) {
       return getDocumentSchemasFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return documentSchemasBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -933,7 +910,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(documentSchemas_);
       }
     }
-
     /**
      *
      *
@@ -947,7 +923,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       return getDocumentSchemasFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.DocumentSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -963,7 +938,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.contentwarehouse.v1.DocumentSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -999,7 +973,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1023,7 +996,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1019,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1041,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1059,6 @@ public final class ListDocumentSchemasResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

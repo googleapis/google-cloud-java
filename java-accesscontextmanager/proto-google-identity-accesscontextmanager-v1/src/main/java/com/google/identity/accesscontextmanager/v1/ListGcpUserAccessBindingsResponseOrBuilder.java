@@ -38,7 +38,6 @@ public interface ListGcpUserAccessBindingsResponseOrBuilder
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding>
       getGcpUserAccessBindingsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ListGcpUserAccessBindingsResponseOrBuilder
    */
   com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding getGcpUserAccessBindings(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface ListGcpUserAccessBindingsResponseOrBuilder
    * </code>
    */
   int getGcpUserAccessBindingsCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface ListGcpUserAccessBindingsResponseOrBuilder
   java.util.List<
           ? extends com.google.identity.accesscontextmanager.v1.GcpUserAccessBindingOrBuilder>
       getGcpUserAccessBindingsOrBuilderList();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ListGcpUserAccessBindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

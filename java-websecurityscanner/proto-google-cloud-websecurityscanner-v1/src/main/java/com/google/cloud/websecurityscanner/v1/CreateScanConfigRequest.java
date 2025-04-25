@@ -33,7 +33,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.CreateScanConfigRequest)
     CreateScanConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateScanConfigRequest.newBuilder() to construct.
   private CreateScanConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
 
   public static final int SCAN_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.websecurityscanner.v1.ScanConfig scanConfig_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
   public boolean hasScanConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
         ? com.google.cloud.websecurityscanner.v1.ScanConfig.getDefaultInstance()
         : scanConfig_;
   }
-
   /**
    *
    *
@@ -347,7 +341,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
             com.google.cloud.websecurityscanner.v1.ScanConfig.Builder,
             com.google.cloud.websecurityscanner.v1.ScanConfigOrBuilder>
         scanConfigBuilder_;
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
     public boolean hasScanConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
         return scanConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +777,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
       onChanged();
       return getScanConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class CreateScanConfigRequest extends com.google.protobuf.Generated
             : scanConfig_;
       }
     }
-
     /**
      *
      *

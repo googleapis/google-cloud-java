@@ -34,7 +34,6 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
   int getHdfsMetricsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
   boolean containsHdfsMetrics(java.lang.String key);
-
   /** Use {@link #getHdfsMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getHdfsMetrics();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getHdfsMetricsMap();
-
   /**
    *
    *
@@ -71,7 +67,6 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; hdfs_metrics = 1;</code>
    */
   long getHdfsMetricsOrDefault(java.lang.String key, long defaultValue);
-
   /**
    *
    *
@@ -93,7 +88,6 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
   int getYarnMetricsCount();
-
   /**
    *
    *
@@ -104,11 +98,9 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
   boolean containsYarnMetrics(java.lang.String key);
-
   /** Use {@link #getYarnMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getYarnMetrics();
-
   /**
    *
    *
@@ -119,7 +111,6 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getYarnMetricsMap();
-
   /**
    *
    *
@@ -130,7 +121,6 @@ public interface ClusterMetricsOrBuilder
    * <code>map&lt;string, int64&gt; yarn_metrics = 2;</code>
    */
   long getYarnMetricsOrDefault(java.lang.String key, long defaultValue);
-
   /**
    *
    *

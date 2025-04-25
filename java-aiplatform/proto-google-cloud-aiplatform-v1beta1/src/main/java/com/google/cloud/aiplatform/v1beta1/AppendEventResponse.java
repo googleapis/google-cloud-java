@@ -34,7 +34,6 @@ public final class AppendEventResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AppendEventResponse)
     AppendEventResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AppendEventResponse.newBuilder() to construct.
   private AppendEventResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class AppendEventResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

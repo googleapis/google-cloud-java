@@ -36,7 +36,6 @@ public interface UpgradeClusterStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface UpgradeClusterStatusOrBuilder
    * @return The enum numeric value on the wire for sourceVersion.
    */
   int getSourceVersionValue();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface UpgradeClusterStatusOrBuilder
    * @return The enum numeric value on the wire for targetVersion.
    */
   int getTargetVersionValue();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface UpgradeClusterStatusOrBuilder
    * <code>repeated .google.cloud.alloydb.v1beta.UpgradeClusterStatus.StageStatus stages = 5;</code>
    */
   java.util.List<com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.StageStatus> getStagesList();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface UpgradeClusterStatusOrBuilder
    * <code>repeated .google.cloud.alloydb.v1beta.UpgradeClusterStatus.StageStatus stages = 5;</code>
    */
   com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.StageStatus getStages(int index);
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface UpgradeClusterStatusOrBuilder
    * <code>repeated .google.cloud.alloydb.v1beta.UpgradeClusterStatus.StageStatus stages = 5;</code>
    */
   int getStagesCount();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface UpgradeClusterStatusOrBuilder
   java.util.List<
           ? extends com.google.cloud.alloydb.v1beta.UpgradeClusterStatus.StageStatusOrBuilder>
       getStagesOrBuilderList();
-
   /**
    *
    *

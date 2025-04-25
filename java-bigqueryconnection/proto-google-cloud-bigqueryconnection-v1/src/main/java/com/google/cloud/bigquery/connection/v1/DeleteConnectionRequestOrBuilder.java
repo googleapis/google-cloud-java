@@ -39,7 +39,6 @@ public interface DeleteConnectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

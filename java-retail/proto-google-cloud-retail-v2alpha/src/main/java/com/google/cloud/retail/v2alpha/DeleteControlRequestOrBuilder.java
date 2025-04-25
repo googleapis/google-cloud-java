@@ -39,7 +39,6 @@ public interface DeleteControlRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

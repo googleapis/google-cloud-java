@@ -33,7 +33,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ListSnapshotsResponse)
     ListSnapshotsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSnapshotsResponse.newBuilder() to construct.
   private ListSnapshotsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.Snapshot> snapshots_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.dataflow.v1beta3.Snapshot> getSnapshotsList() {
     return snapshots_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       getSnapshotsOrBuilderList() {
     return snapshots_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   public int getSnapshotsCount() {
     return snapshots_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   public com.google.dataflow.v1beta3.Snapshot getSnapshots(int index) {
     return snapshots_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -620,7 +610,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +674,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +713,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +733,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +771,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +783,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     public com.google.dataflow.v1beta3.Snapshot.Builder getSnapshotsBuilder(int index) {
       return getSnapshotsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -819,7 +799,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -837,7 +816,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(snapshots_);
       }
     }
-
     /**
      *
      *
@@ -851,7 +829,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       return getSnapshotsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.Snapshot.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -865,7 +842,6 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       return getSnapshotsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.Snapshot.getDefaultInstance());
     }
-
     /**
      *
      *

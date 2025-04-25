@@ -36,7 +36,6 @@ public interface NormalizedBoundingPolyOrBuilder
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.NormalizedVertex>
       getNormalizedVerticesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface NormalizedBoundingPolyOrBuilder
    * </code>
    */
   com.google.cloud.datalabeling.v1beta1.NormalizedVertex getNormalizedVertices(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface NormalizedBoundingPolyOrBuilder
    * </code>
    */
   int getNormalizedVerticesCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface NormalizedBoundingPolyOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList();
-
   /**
    *
    *

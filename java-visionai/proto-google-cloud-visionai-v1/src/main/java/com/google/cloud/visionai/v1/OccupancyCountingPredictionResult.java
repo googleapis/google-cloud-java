@@ -33,7 +33,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult)
     OccupancyCountingPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OccupancyCountingPredictionResult.newBuilder() to construct.
   private OccupancyCountingPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -97,7 +96,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The labelString.
      */
     java.lang.String getLabelString();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     com.google.protobuf.ByteString getLabelStringBytes();
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity)
       EntityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Entity.newBuilder() to construct.
     private Entity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -159,7 +155,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int LABEL_ID_FIELD_NUMBER = 1;
     private long labelId_ = 0L;
-
     /**
      *
      *
@@ -180,7 +175,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object labelString_ = "";
-
     /**
      *
      *
@@ -204,7 +198,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return s;
       }
     }
-
     /**
      *
      *
@@ -400,7 +393,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -611,7 +603,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
 
       private long labelId_;
-
       /**
        *
        *
@@ -627,7 +618,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public long getLabelId() {
         return labelId_;
       }
-
       /**
        *
        *
@@ -647,7 +637,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -667,7 +656,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
 
       private java.lang.Object labelString_ = "";
-
       /**
        *
        *
@@ -690,7 +678,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -713,7 +700,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -735,7 +721,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -753,7 +738,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -877,7 +861,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return Whether the normalizedBoundingBox field is set.
      */
     boolean hasNormalizedBoundingBox();
-
     /**
      *
      *
@@ -894,7 +877,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox
             .NormalizedBoundingBox
         getNormalizedBoundingBox();
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return Whether the entity field is set.
      */
     boolean hasEntity();
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The entity.
      */
     com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity getEntity();
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     long getTrackId();
   }
-
   /**
    *
    *
@@ -990,7 +969,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox)
       IdentifiedBoxOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IdentifiedBox.newBuilder() to construct.
     private IdentifiedBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1077,7 +1055,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       float getHeight();
     }
-
     /**
      *
      *
@@ -1093,7 +1070,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox.NormalizedBoundingBox)
         NormalizedBoundingBoxOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use NormalizedBoundingBox.newBuilder() to construct.
       private NormalizedBoundingBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1126,7 +1102,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
       public static final int XMIN_FIELD_NUMBER = 1;
       private float xmin_ = 0F;
-
       /**
        *
        *
@@ -1145,7 +1120,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
       public static final int YMIN_FIELD_NUMBER = 2;
       private float ymin_ = 0F;
-
       /**
        *
        *
@@ -1164,7 +1138,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
       public static final int WIDTH_FIELD_NUMBER = 3;
       private float width_ = 0F;
-
       /**
        *
        *
@@ -1183,7 +1156,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
       public static final int HEIGHT_FIELD_NUMBER = 4;
       private float height_ = 0F;
-
       /**
        *
        *
@@ -1421,7 +1393,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1676,7 +1647,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         private int bitField0_;
 
         private float xmin_;
-
         /**
          *
          *
@@ -1692,7 +1662,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public float getXmin() {
           return xmin_;
         }
-
         /**
          *
          *
@@ -1712,7 +1681,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1732,7 +1700,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
 
         private float ymin_;
-
         /**
          *
          *
@@ -1748,7 +1715,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public float getYmin() {
           return ymin_;
         }
-
         /**
          *
          *
@@ -1768,7 +1734,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1788,7 +1753,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
 
         private float width_;
-
         /**
          *
          *
@@ -1804,7 +1768,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public float getWidth() {
           return width_;
         }
-
         /**
          *
          *
@@ -1824,7 +1787,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1844,7 +1806,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
 
         private float height_;
-
         /**
          *
          *
@@ -1860,7 +1821,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public float getHeight() {
           return height_;
         }
-
         /**
          *
          *
@@ -1880,7 +1840,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1974,7 +1933,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     private int bitField0_;
     public static final int BOX_ID_FIELD_NUMBER = 1;
     private long boxId_ = 0L;
-
     /**
      *
      *
@@ -1995,7 +1953,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     private com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox
             .NormalizedBoundingBox
         normalizedBoundingBox_;
-
     /**
      *
      *
@@ -2013,7 +1970,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasNormalizedBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2036,7 +1992,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               .NormalizedBoundingBox.getDefaultInstance()
           : normalizedBoundingBox_;
     }
-
     /**
      *
      *
@@ -2060,7 +2015,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int SCORE_FIELD_NUMBER = 3;
     private float score_ = 0F;
-
     /**
      *
      *
@@ -2079,7 +2033,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int ENTITY_FIELD_NUMBER = 4;
     private com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity entity_;
-
     /**
      *
      *
@@ -2095,7 +2048,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasEntity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2114,7 +2066,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               .getDefaultInstance()
           : entity_;
     }
-
     /**
      *
      *
@@ -2135,7 +2086,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int TRACK_ID_FIELD_NUMBER = 5;
     private long trackId_ = 0L;
-
     /**
      *
      *
@@ -2370,7 +2320,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2647,7 +2596,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
 
       private long boxId_;
-
       /**
        *
        *
@@ -2663,7 +2611,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public long getBoxId() {
         return boxId_;
       }
-
       /**
        *
        *
@@ -2683,7 +2630,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2713,7 +2659,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox
                   .NormalizedBoundingBoxOrBuilder>
           normalizedBoundingBoxBuilder_;
-
       /**
        *
        *
@@ -2730,7 +2675,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasNormalizedBoundingBox() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2756,7 +2700,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return normalizedBoundingBoxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2784,7 +2727,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2809,7 +2751,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2844,7 +2785,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -2866,7 +2806,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2885,7 +2824,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return getNormalizedBoundingBoxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2909,7 +2847,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               : normalizedBoundingBox_;
         }
       }
-
       /**
        *
        *
@@ -2945,7 +2882,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
 
       private float score_;
-
       /**
        *
        *
@@ -2961,7 +2897,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public float getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -2981,7 +2916,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3006,7 +2940,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity.Builder,
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.EntityOrBuilder>
           entityBuilder_;
-
       /**
        *
        *
@@ -3021,7 +2954,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasEntity() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -3043,7 +2975,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return entityBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3067,7 +2998,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3089,7 +3019,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3120,7 +3049,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -3140,7 +3068,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3156,7 +3083,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return getEntityFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3177,7 +3103,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               : entity_;
         }
       }
-
       /**
        *
        *
@@ -3205,7 +3130,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
 
       private long trackId_;
-
       /**
        *
        *
@@ -3222,7 +3146,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public long getTrackId() {
         return trackId_;
       }
-
       /**
        *
        *
@@ -3243,7 +3166,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3350,7 +3272,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     java.util.List<com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
         getFullFrameCountList();
-
     /**
      *
      *
@@ -3364,7 +3285,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
         getFullFrameCount(int index);
-
     /**
      *
      *
@@ -3377,7 +3297,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * </code>
      */
     int getFullFrameCountCount();
-
     /**
      *
      *
@@ -3394,7 +3313,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                     .ObjectCountOrBuilder>
         getFullFrameCountOrBuilderList();
-
     /**
      *
      *
@@ -3423,7 +3341,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     java.util.List<
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.CrossingLineCount>
         getCrossingLineCountsList();
-
     /**
      *
      *
@@ -3437,7 +3354,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.CrossingLineCount
         getCrossingLineCounts(int index);
-
     /**
      *
      *
@@ -3450,7 +3366,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * </code>
      */
     int getCrossingLineCountsCount();
-
     /**
      *
      *
@@ -3467,7 +3382,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                     .CrossingLineCountOrBuilder>
         getCrossingLineCountsOrBuilderList();
-
     /**
      *
      *
@@ -3496,7 +3410,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     java.util.List<
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCount>
         getActiveZoneCountsList();
-
     /**
      *
      *
@@ -3510,7 +3423,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCount
         getActiveZoneCounts(int index);
-
     /**
      *
      *
@@ -3523,7 +3435,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * </code>
      */
     int getActiveZoneCountsCount();
-
     /**
      *
      *
@@ -3540,7 +3451,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                     .ActiveZoneCountOrBuilder>
         getActiveZoneCountsOrBuilderList();
-
     /**
      *
      *
@@ -3555,7 +3465,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCountOrBuilder
         getActiveZoneCountsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -3570,7 +3479,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats)
       StatsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Stats.newBuilder() to construct.
     private Stats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3620,7 +3528,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return Whether the entity field is set.
        */
       boolean hasEntity();
-
       /**
        *
        *
@@ -3633,7 +3540,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return The entity.
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity getEntity();
-
       /**
        *
        *
@@ -3659,7 +3565,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       int getCount();
     }
-
     /**
      *
      *
@@ -3676,7 +3581,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount)
         ObjectCountOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ObjectCount.newBuilder() to construct.
       private ObjectCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3710,7 +3614,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
       public static final int ENTITY_FIELD_NUMBER = 1;
       private com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity entity_;
-
       /**
        *
        *
@@ -3726,7 +3629,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasEntity() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3745,7 +3647,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 .getDefaultInstance()
             : entity_;
       }
-
       /**
        *
        *
@@ -3766,7 +3667,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
       public static final int COUNT_FIELD_NUMBER = 2;
       private int count_ = 0;
-
       /**
        *
        *
@@ -3969,7 +3869,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4210,7 +4109,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Entity.Builder,
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.EntityOrBuilder>
             entityBuilder_;
-
         /**
          *
          *
@@ -4226,7 +4124,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public boolean hasEntity() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -4249,7 +4146,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return entityBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -4274,7 +4170,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4297,7 +4192,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4329,7 +4223,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -4350,7 +4243,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4367,7 +4259,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return getEntityFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -4389,7 +4280,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 : entity_;
           }
         }
-
         /**
          *
          *
@@ -4418,7 +4308,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
 
         private int count_;
-
         /**
          *
          *
@@ -4434,7 +4323,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public int getCount() {
           return count_;
         }
-
         /**
          *
          *
@@ -4454,7 +4342,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4559,7 +4446,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return Whether the startTime field is set.
        */
       boolean hasStartTime();
-
       /**
        *
        *
@@ -4572,7 +4458,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return The startTime.
        */
       com.google.protobuf.Timestamp getStartTime();
-
       /**
        *
        *
@@ -4598,7 +4483,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return Whether the objectCount field is set.
        */
       boolean hasObjectCount();
-
       /**
        *
        *
@@ -4614,7 +4498,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
           getObjectCount();
-
       /**
        *
        *
@@ -4629,7 +4512,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCountOrBuilder
           getObjectCountOrBuilder();
     }
-
     /**
      *
      *
@@ -4646,7 +4528,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.AccumulatedObjectCount)
         AccumulatedObjectCountOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use AccumulatedObjectCount.newBuilder() to construct.
       private AccumulatedObjectCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4680,7 +4561,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
       public static final int START_TIME_FIELD_NUMBER = 1;
       private com.google.protobuf.Timestamp startTime_;
-
       /**
        *
        *
@@ -4696,7 +4576,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -4712,7 +4591,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public com.google.protobuf.Timestamp getStartTime() {
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
-
       /**
        *
        *
@@ -4730,7 +4608,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public static final int OBJECT_COUNT_FIELD_NUMBER = 2;
       private com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
           objectCount_;
-
       /**
        *
        *
@@ -4748,7 +4625,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasObjectCount() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -4770,7 +4646,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 .getDefaultInstance()
             : objectCount_;
       }
-
       /**
        *
        *
@@ -5000,7 +4875,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -5258,7 +5132,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             startTimeBuilder_;
-
         /**
          *
          *
@@ -5273,7 +5146,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public boolean hasStartTime() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -5294,7 +5166,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return startTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -5317,7 +5188,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5337,7 +5207,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5365,7 +5234,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -5385,7 +5253,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5400,7 +5267,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return getStartTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -5419,7 +5285,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 : startTime_;
           }
         }
-
         /**
          *
          *
@@ -5455,7 +5320,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                     .ObjectCountOrBuilder>
             objectCountBuilder_;
-
         /**
          *
          *
@@ -5472,7 +5336,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public boolean hasObjectCount() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -5497,7 +5360,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return objectCountBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -5524,7 +5386,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5548,7 +5409,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5582,7 +5442,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -5604,7 +5463,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5623,7 +5481,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return getObjectCountFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -5647,7 +5504,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 : objectCount_;
           }
         }
-
         /**
          *
          *
@@ -5769,7 +5625,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return Whether the annotation field is set.
        */
       boolean hasAnnotation();
-
       /**
        *
        *
@@ -5782,7 +5637,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return The annotation.
        */
       com.google.cloud.visionai.v1.StreamAnnotation getAnnotation();
-
       /**
        *
        *
@@ -5808,7 +5662,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       java.util.List<
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
           getPositiveDirectionCountsList();
-
       /**
        *
        *
@@ -5822,7 +5675,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
           getPositiveDirectionCounts(int index);
-
       /**
        *
        *
@@ -5835,7 +5687,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * </code>
        */
       int getPositiveDirectionCountsCount();
-
       /**
        *
        *
@@ -5852,7 +5703,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .ObjectCountOrBuilder>
           getPositiveDirectionCountsOrBuilderList();
-
       /**
        *
        *
@@ -5881,7 +5731,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       java.util.List<
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
           getNegativeDirectionCountsList();
-
       /**
        *
        *
@@ -5895,7 +5744,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
           getNegativeDirectionCounts(int index);
-
       /**
        *
        *
@@ -5908,7 +5756,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * </code>
        */
       int getNegativeDirectionCountsCount();
-
       /**
        *
        *
@@ -5925,7 +5772,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .ObjectCountOrBuilder>
           getNegativeDirectionCountsOrBuilderList();
-
       /**
        *
        *
@@ -5955,7 +5801,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                   .AccumulatedObjectCount>
           getAccumulatedPositiveDirectionCountsList();
-
       /**
        *
        *
@@ -5969,7 +5814,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.AccumulatedObjectCount
           getAccumulatedPositiveDirectionCounts(int index);
-
       /**
        *
        *
@@ -5982,7 +5826,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * </code>
        */
       int getAccumulatedPositiveDirectionCountsCount();
-
       /**
        *
        *
@@ -5999,7 +5842,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .AccumulatedObjectCountOrBuilder>
           getAccumulatedPositiveDirectionCountsOrBuilderList();
-
       /**
        *
        *
@@ -6030,7 +5872,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                   .AccumulatedObjectCount>
           getAccumulatedNegativeDirectionCountsList();
-
       /**
        *
        *
@@ -6044,7 +5885,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.AccumulatedObjectCount
           getAccumulatedNegativeDirectionCounts(int index);
-
       /**
        *
        *
@@ -6057,7 +5897,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * </code>
        */
       int getAccumulatedNegativeDirectionCountsCount();
-
       /**
        *
        *
@@ -6074,7 +5913,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .AccumulatedObjectCountOrBuilder>
           getAccumulatedNegativeDirectionCountsOrBuilderList();
-
       /**
        *
        *
@@ -6090,7 +5928,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               .AccumulatedObjectCountOrBuilder
           getAccumulatedNegativeDirectionCountsOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -6106,7 +5943,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.CrossingLineCount)
         CrossingLineCountOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use CrossingLineCount.newBuilder() to construct.
       private CrossingLineCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -6145,7 +5981,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
       public static final int ANNOTATION_FIELD_NUMBER = 1;
       private com.google.cloud.visionai.v1.StreamAnnotation annotation_;
-
       /**
        *
        *
@@ -6161,7 +5996,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasAnnotation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -6179,7 +6013,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             ? com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance()
             : annotation_;
       }
-
       /**
        *
        *
@@ -6202,7 +6035,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private java.util.List<
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
           positiveDirectionCounts_;
-
       /**
        *
        *
@@ -6220,7 +6052,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getPositiveDirectionCountsList() {
         return positiveDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6240,7 +6071,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getPositiveDirectionCountsOrBuilderList() {
         return positiveDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6256,7 +6086,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public int getPositiveDirectionCountsCount() {
         return positiveDirectionCounts_.size();
       }
-
       /**
        *
        *
@@ -6273,7 +6102,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getPositiveDirectionCounts(int index) {
         return positiveDirectionCounts_.get(index);
       }
-
       /**
        *
        *
@@ -6298,7 +6126,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private java.util.List<
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
           negativeDirectionCounts_;
-
       /**
        *
        *
@@ -6316,7 +6143,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getNegativeDirectionCountsList() {
         return negativeDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6336,7 +6162,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getNegativeDirectionCountsOrBuilderList() {
         return negativeDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6352,7 +6177,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public int getNegativeDirectionCountsCount() {
         return negativeDirectionCounts_.size();
       }
-
       /**
        *
        *
@@ -6369,7 +6193,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getNegativeDirectionCounts(int index) {
         return negativeDirectionCounts_.get(index);
       }
-
       /**
        *
        *
@@ -6395,7 +6218,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                   .AccumulatedObjectCount>
           accumulatedPositiveDirectionCounts_;
-
       /**
        *
        *
@@ -6414,7 +6236,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getAccumulatedPositiveDirectionCountsList() {
         return accumulatedPositiveDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6434,7 +6255,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getAccumulatedPositiveDirectionCountsOrBuilderList() {
         return accumulatedPositiveDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6450,7 +6270,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public int getAccumulatedPositiveDirectionCountsCount() {
         return accumulatedPositiveDirectionCounts_.size();
       }
-
       /**
        *
        *
@@ -6468,7 +6287,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getAccumulatedPositiveDirectionCounts(int index) {
         return accumulatedPositiveDirectionCounts_.get(index);
       }
-
       /**
        *
        *
@@ -6494,7 +6312,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                   .AccumulatedObjectCount>
           accumulatedNegativeDirectionCounts_;
-
       /**
        *
        *
@@ -6513,7 +6330,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getAccumulatedNegativeDirectionCountsList() {
         return accumulatedNegativeDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6533,7 +6349,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getAccumulatedNegativeDirectionCountsOrBuilderList() {
         return accumulatedNegativeDirectionCounts_;
       }
-
       /**
        *
        *
@@ -6549,7 +6364,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public int getAccumulatedNegativeDirectionCountsCount() {
         return accumulatedNegativeDirectionCounts_.size();
       }
-
       /**
        *
        *
@@ -6567,7 +6381,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getAccumulatedNegativeDirectionCounts(int index) {
         return accumulatedNegativeDirectionCounts_.get(index);
       }
-
       /**
        *
        *
@@ -6835,7 +6648,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -7327,7 +7139,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.StreamAnnotation.Builder,
                 com.google.cloud.visionai.v1.StreamAnnotationOrBuilder>
             annotationBuilder_;
-
         /**
          *
          *
@@ -7342,7 +7153,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public boolean hasAnnotation() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -7363,7 +7173,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return annotationBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -7386,7 +7195,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7407,7 +7215,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7436,7 +7243,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7456,7 +7262,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7471,7 +7276,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return getAnnotationFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -7490,7 +7294,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 : annotation_;
           }
         }
-
         /**
          *
          *
@@ -7559,7 +7362,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return positiveDirectionCountsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -7578,7 +7380,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return positiveDirectionCountsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -7598,7 +7399,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return positiveDirectionCountsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -7626,7 +7426,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7651,7 +7450,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7678,7 +7476,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7706,7 +7503,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7730,7 +7526,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7755,7 +7550,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7783,7 +7577,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7805,7 +7598,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7827,7 +7619,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -7844,7 +7635,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             getPositiveDirectionCountsBuilder(int index) {
           return getPositiveDirectionCountsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -7865,7 +7655,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return positiveDirectionCountsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -7888,7 +7677,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return java.util.Collections.unmodifiableList(positiveDirectionCounts_);
           }
         }
-
         /**
          *
          *
@@ -7908,7 +7696,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -7929,7 +7716,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8015,7 +7801,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return negativeDirectionCountsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -8034,7 +7819,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return negativeDirectionCountsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -8054,7 +7838,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return negativeDirectionCountsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -8082,7 +7865,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8107,7 +7889,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8134,7 +7915,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8162,7 +7942,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8186,7 +7965,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8211,7 +7989,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8239,7 +8016,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8261,7 +8037,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8283,7 +8058,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8300,7 +8074,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             getNegativeDirectionCountsBuilder(int index) {
           return getNegativeDirectionCountsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -8321,7 +8094,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return negativeDirectionCountsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -8344,7 +8116,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return java.util.Collections.unmodifiableList(negativeDirectionCounts_);
           }
         }
-
         /**
          *
          *
@@ -8364,7 +8135,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8385,7 +8155,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8474,7 +8243,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedPositiveDirectionCountsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -8493,7 +8261,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedPositiveDirectionCountsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -8514,7 +8281,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedPositiveDirectionCountsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -8543,7 +8309,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8569,7 +8334,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8597,7 +8361,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8626,7 +8389,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8651,7 +8413,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8677,7 +8438,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8705,7 +8465,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8727,7 +8486,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8749,7 +8507,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -8766,7 +8523,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             getAccumulatedPositiveDirectionCountsBuilder(int index) {
           return getAccumulatedPositiveDirectionCountsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -8787,7 +8543,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedPositiveDirectionCountsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -8810,7 +8565,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return java.util.Collections.unmodifiableList(accumulatedPositiveDirectionCounts_);
           }
         }
-
         /**
          *
          *
@@ -8830,7 +8584,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .AccumulatedObjectCount.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8851,7 +8604,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .AccumulatedObjectCount.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -8941,7 +8693,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedNegativeDirectionCountsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -8960,7 +8711,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedNegativeDirectionCountsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -8981,7 +8731,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedNegativeDirectionCountsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -9010,7 +8759,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9036,7 +8784,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9064,7 +8811,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9093,7 +8839,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9118,7 +8863,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9144,7 +8888,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9172,7 +8915,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9194,7 +8936,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9216,7 +8957,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -9233,7 +8973,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             getAccumulatedNegativeDirectionCountsBuilder(int index) {
           return getAccumulatedNegativeDirectionCountsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -9254,7 +8993,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return accumulatedNegativeDirectionCountsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -9277,7 +9015,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return java.util.Collections.unmodifiableList(accumulatedNegativeDirectionCounts_);
           }
         }
-
         /**
          *
          *
@@ -9297,7 +9034,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .AccumulatedObjectCount.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -9318,7 +9054,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .AccumulatedObjectCount.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -9451,7 +9186,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return Whether the annotation field is set.
        */
       boolean hasAnnotation();
-
       /**
        *
        *
@@ -9464,7 +9198,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * @return The annotation.
        */
       com.google.cloud.visionai.v1.StreamAnnotation getAnnotation();
-
       /**
        *
        *
@@ -9490,7 +9223,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       java.util.List<
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
           getCountsList();
-
       /**
        *
        *
@@ -9504,7 +9236,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        */
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount getCounts(
           int index);
-
       /**
        *
        *
@@ -9517,7 +9248,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
        * </code>
        */
       int getCountsCount();
-
       /**
        *
        *
@@ -9534,7 +9264,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                       .ObjectCountOrBuilder>
           getCountsOrBuilderList();
-
       /**
        *
        *
@@ -9549,7 +9278,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCountOrBuilder
           getCountsOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -9565,7 +9293,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCount)
         ActiveZoneCountOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ActiveZoneCount.newBuilder() to construct.
       private ActiveZoneCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -9601,7 +9328,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
       public static final int ANNOTATION_FIELD_NUMBER = 1;
       private com.google.cloud.visionai.v1.StreamAnnotation annotation_;
-
       /**
        *
        *
@@ -9617,7 +9343,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasAnnotation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -9635,7 +9360,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             ? com.google.cloud.visionai.v1.StreamAnnotation.getDefaultInstance()
             : annotation_;
       }
-
       /**
        *
        *
@@ -9658,7 +9382,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private java.util.List<
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
           counts_;
-
       /**
        *
        *
@@ -9676,7 +9399,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getCountsList() {
         return counts_;
       }
-
       /**
        *
        *
@@ -9696,7 +9418,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getCountsOrBuilderList() {
         return counts_;
       }
-
       /**
        *
        *
@@ -9712,7 +9433,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public int getCountsCount() {
         return counts_.size();
       }
-
       /**
        *
        *
@@ -9729,7 +9449,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getCounts(int index) {
         return counts_.get(index);
       }
-
       /**
        *
        *
@@ -9949,7 +9668,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -10246,7 +9964,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.StreamAnnotation.Builder,
                 com.google.cloud.visionai.v1.StreamAnnotationOrBuilder>
             annotationBuilder_;
-
         /**
          *
          *
@@ -10261,7 +9978,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         public boolean hasAnnotation() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -10282,7 +9998,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return annotationBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -10305,7 +10020,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -10326,7 +10040,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -10355,7 +10068,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10375,7 +10087,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -10390,7 +10101,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           onChanged();
           return getAnnotationFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -10409,7 +10119,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 : annotation_;
           }
         }
-
         /**
          *
          *
@@ -10478,7 +10187,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return countsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -10497,7 +10205,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return countsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -10517,7 +10224,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return countsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -10545,7 +10251,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10570,7 +10275,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10597,7 +10301,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10625,7 +10328,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10649,7 +10351,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10674,7 +10375,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10701,7 +10401,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10723,7 +10422,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10745,7 +10443,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           }
           return this;
         }
-
         /**
          *
          *
@@ -10762,7 +10459,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             getCountsBuilder(int index) {
           return getCountsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -10783,7 +10479,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return countsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -10806,7 +10501,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             return java.util.Collections.unmodifiableList(counts_);
           }
         }
-
         /**
          *
          *
@@ -10826,7 +10520,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -10847,7 +10540,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                   com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                       .getDefaultInstance());
         }
-
         /**
          *
          *
@@ -10965,7 +10657,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     private java.util.List<
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount>
         fullFrameCount_;
-
     /**
      *
      *
@@ -10983,7 +10674,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getFullFrameCountList() {
       return fullFrameCount_;
     }
-
     /**
      *
      *
@@ -11003,7 +10693,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getFullFrameCountOrBuilderList() {
       return fullFrameCount_;
     }
-
     /**
      *
      *
@@ -11019,7 +10708,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public int getFullFrameCountCount() {
       return fullFrameCount_.size();
     }
-
     /**
      *
      *
@@ -11036,7 +10724,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getFullFrameCount(int index) {
       return fullFrameCount_.get(index);
     }
-
     /**
      *
      *
@@ -11060,7 +10747,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     private java.util.List<
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.CrossingLineCount>
         crossingLineCounts_;
-
     /**
      *
      *
@@ -11078,7 +10764,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getCrossingLineCountsList() {
       return crossingLineCounts_;
     }
-
     /**
      *
      *
@@ -11098,7 +10783,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getCrossingLineCountsOrBuilderList() {
       return crossingLineCounts_;
     }
-
     /**
      *
      *
@@ -11114,7 +10798,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public int getCrossingLineCountsCount() {
       return crossingLineCounts_.size();
     }
-
     /**
      *
      *
@@ -11131,7 +10814,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getCrossingLineCounts(int index) {
       return crossingLineCounts_.get(index);
     }
-
     /**
      *
      *
@@ -11156,7 +10838,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     private java.util.List<
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCount>
         activeZoneCounts_;
-
     /**
      *
      *
@@ -11174,7 +10855,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getActiveZoneCountsList() {
       return activeZoneCounts_;
     }
-
     /**
      *
      *
@@ -11194,7 +10874,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getActiveZoneCountsOrBuilderList() {
       return activeZoneCounts_;
     }
-
     /**
      *
      *
@@ -11210,7 +10889,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public int getActiveZoneCountsCount() {
       return activeZoneCounts_.size();
     }
-
     /**
      *
      *
@@ -11227,7 +10905,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getActiveZoneCounts(int index) {
       return activeZoneCounts_.get(index);
     }
-
     /**
      *
      *
@@ -11434,7 +11111,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -11840,7 +11516,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return fullFrameCountBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -11859,7 +11534,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return fullFrameCountBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -11879,7 +11553,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return fullFrameCountBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -11906,7 +11579,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -11931,7 +11603,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -11957,7 +11628,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -11984,7 +11654,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12008,7 +11677,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12033,7 +11701,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12060,7 +11727,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12082,7 +11748,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12104,7 +11769,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12121,7 +11785,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getFullFrameCountBuilder(int index) {
         return getFullFrameCountFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -12142,7 +11805,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return fullFrameCountBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -12165,7 +11827,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return java.util.Collections.unmodifiableList(fullFrameCount_);
         }
       }
-
       /**
        *
        *
@@ -12185,7 +11846,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -12206,7 +11866,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ObjectCount
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -12294,7 +11953,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return crossingLineCountsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -12313,7 +11971,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return crossingLineCountsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -12333,7 +11990,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return crossingLineCountsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -12361,7 +12017,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12387,7 +12042,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12414,7 +12068,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12442,7 +12095,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12467,7 +12119,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12493,7 +12144,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12520,7 +12170,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12542,7 +12191,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12564,7 +12212,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12581,7 +12228,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getCrossingLineCountsBuilder(int index) {
         return getCrossingLineCountsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -12602,7 +12248,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return crossingLineCountsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -12625,7 +12270,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return java.util.Collections.unmodifiableList(crossingLineCounts_);
         }
       }
-
       /**
        *
        *
@@ -12645,7 +12289,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                     .CrossingLineCount.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -12666,7 +12309,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats
                     .CrossingLineCount.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -12753,7 +12395,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return activeZoneCountsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -12772,7 +12413,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return activeZoneCountsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -12792,7 +12432,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return activeZoneCountsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -12820,7 +12459,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12846,7 +12484,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12873,7 +12510,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12901,7 +12537,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12926,7 +12561,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12952,7 +12586,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -12979,7 +12612,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -13001,7 +12633,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -13023,7 +12654,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -13040,7 +12670,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           getActiveZoneCountsBuilder(int index) {
         return getActiveZoneCountsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -13061,7 +12690,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return activeZoneCountsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -13084,7 +12712,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return java.util.Collections.unmodifiableList(activeZoneCounts_);
         }
       }
-
       /**
        *
        *
@@ -13104,7 +12731,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCount
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -13125,7 +12751,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
                 com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.ActiveZoneCount
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -13253,7 +12878,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The trackId.
      */
     java.lang.String getTrackId();
-
     /**
      *
      *
@@ -13279,7 +12903,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
-
     /**
      *
      *
@@ -13292,7 +12915,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
-
     /**
      *
      *
@@ -13304,7 +12926,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -13319,7 +12940,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfo)
       TrackInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TrackInfo.newBuilder() to construct.
     private TrackInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13356,7 +12976,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object trackId_ = "";
-
     /**
      *
      *
@@ -13380,7 +12999,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return s;
       }
     }
-
     /**
      *
      *
@@ -13407,7 +13025,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int START_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp startTime_;
-
     /**
      *
      *
@@ -13423,7 +13040,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -13439,7 +13055,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
-
     /**
      *
      *
@@ -13636,7 +13251,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -13864,7 +13478,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
 
       private java.lang.Object trackId_ = "";
-
       /**
        *
        *
@@ -13887,7 +13500,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -13910,7 +13522,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -13932,7 +13543,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13950,7 +13560,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -13980,7 +13589,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimeBuilder_;
-
       /**
        *
        *
@@ -13995,7 +13603,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -14016,7 +13623,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return startTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14039,7 +13645,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14059,7 +13664,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14087,7 +13691,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -14107,7 +13710,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14122,7 +13724,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14141,7 +13742,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               : startTime_;
         }
       }
-
       /**
        *
        *
@@ -14253,7 +13853,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The trackId.
      */
     java.lang.String getTrackId();
-
     /**
      *
      *
@@ -14279,7 +13878,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The zoneId.
      */
     java.lang.String getZoneId();
-
     /**
      *
      *
@@ -14305,7 +13903,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return Whether the dwellStartTime field is set.
      */
     boolean hasDwellStartTime();
-
     /**
      *
      *
@@ -14318,7 +13915,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The dwellStartTime.
      */
     com.google.protobuf.Timestamp getDwellStartTime();
-
     /**
      *
      *
@@ -14342,7 +13938,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return Whether the dwellEndTime field is set.
      */
     boolean hasDwellEndTime();
-
     /**
      *
      *
@@ -14355,7 +13950,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      * @return The dwellEndTime.
      */
     com.google.protobuf.Timestamp getDwellEndTime();
-
     /**
      *
      *
@@ -14367,7 +13961,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
      */
     com.google.protobuf.TimestampOrBuilder getDwellEndTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -14382,7 +13975,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfo)
       DwellTimeInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DwellTimeInfo.newBuilder() to construct.
     private DwellTimeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -14420,7 +14012,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object trackId_ = "";
-
     /**
      *
      *
@@ -14444,7 +14035,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return s;
       }
     }
-
     /**
      *
      *
@@ -14473,7 +14063,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object zoneId_ = "";
-
     /**
      *
      *
@@ -14497,7 +14086,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return s;
       }
     }
-
     /**
      *
      *
@@ -14524,7 +14112,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int DWELL_START_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp dwellStartTime_;
-
     /**
      *
      *
@@ -14540,7 +14127,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasDwellStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -14558,7 +14144,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : dwellStartTime_;
     }
-
     /**
      *
      *
@@ -14577,7 +14162,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
     public static final int DWELL_END_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp dwellEndTime_;
-
     /**
      *
      *
@@ -14593,7 +14177,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasDwellEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -14611,7 +14194,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : dwellEndTime_;
     }
-
     /**
      *
      *
@@ -14834,7 +14416,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -15101,7 +14682,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       private int bitField0_;
 
       private java.lang.Object trackId_ = "";
-
       /**
        *
        *
@@ -15124,7 +14704,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -15147,7 +14726,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -15169,7 +14747,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15187,7 +14764,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15212,7 +14788,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
 
       private java.lang.Object zoneId_ = "";
-
       /**
        *
        *
@@ -15235,7 +14810,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -15258,7 +14832,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -15280,7 +14853,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15298,7 +14870,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15328,7 +14899,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           dwellStartTimeBuilder_;
-
       /**
        *
        *
@@ -15343,7 +14913,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasDwellStartTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -15364,7 +14933,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return dwellStartTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15387,7 +14955,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15407,7 +14974,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15435,7 +15001,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -15455,7 +15020,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15470,7 +15034,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return getDwellStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15489,7 +15052,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               : dwellStartTime_;
         }
       }
-
       /**
        *
        *
@@ -15522,7 +15084,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           dwellEndTimeBuilder_;
-
       /**
        *
        *
@@ -15537,7 +15098,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       public boolean hasDwellEndTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -15558,7 +15118,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
           return dwellEndTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15581,7 +15140,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15601,7 +15159,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15629,7 +15186,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -15649,7 +15205,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15664,7 +15219,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         onChanged();
         return getDwellEndTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15683,7 +15237,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               : dwellEndTime_;
         }
       }
-
       /**
        *
        *
@@ -15782,7 +15335,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   private int bitField0_;
   public static final int CURRENT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp currentTime_;
-
   /**
    *
    *
@@ -15798,7 +15350,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public boolean hasCurrentTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -15814,7 +15365,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public com.google.protobuf.Timestamp getCurrentTime() {
     return currentTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentTime_;
   }
-
   /**
    *
    *
@@ -15835,7 +15385,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   private java.util.List<
           com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox>
       identifiedBoxes_;
-
   /**
    *
    *
@@ -15853,7 +15402,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getIdentifiedBoxesList() {
     return identifiedBoxes_;
   }
-
   /**
    *
    *
@@ -15872,7 +15420,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getIdentifiedBoxesOrBuilderList() {
     return identifiedBoxes_;
   }
-
   /**
    *
    *
@@ -15888,7 +15435,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public int getIdentifiedBoxesCount() {
     return identifiedBoxes_.size();
   }
-
   /**
    *
    *
@@ -15905,7 +15451,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getIdentifiedBoxes(int index) {
     return identifiedBoxes_.get(index);
   }
-
   /**
    *
    *
@@ -15925,7 +15470,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
   public static final int STATS_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats stats_;
-
   /**
    *
    *
@@ -15941,7 +15485,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public boolean hasStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -15959,7 +15502,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         ? com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.getDefaultInstance()
         : stats_;
   }
-
   /**
    *
    *
@@ -15982,7 +15524,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfo>
       trackInfo_;
-
   /**
    *
    *
@@ -16000,7 +15541,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getTrackInfoList() {
     return trackInfo_;
   }
-
   /**
    *
    *
@@ -16020,7 +15560,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getTrackInfoOrBuilderList() {
     return trackInfo_;
   }
-
   /**
    *
    *
@@ -16037,7 +15576,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public int getTrackInfoCount() {
     return trackInfo_.size();
   }
-
   /**
    *
    *
@@ -16055,7 +15593,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       int index) {
     return trackInfo_.get(index);
   }
-
   /**
    *
    *
@@ -16080,7 +15617,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   private java.util.List<
           com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfo>
       dwellTimeInfo_;
-
   /**
    *
    *
@@ -16099,7 +15635,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getDwellTimeInfoList() {
     return dwellTimeInfo_;
   }
-
   /**
    *
    *
@@ -16119,7 +15654,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getDwellTimeInfoOrBuilderList() {
     return dwellTimeInfo_;
   }
-
   /**
    *
    *
@@ -16136,7 +15670,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public int getDwellTimeInfoCount() {
     return dwellTimeInfo_.size();
   }
-
   /**
    *
    *
@@ -16154,7 +15687,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       getDwellTimeInfo(int index) {
     return dwellTimeInfo_.get(index);
   }
-
   /**
    *
    *
@@ -16175,7 +15707,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
 
   public static final int PTS_FIELD_NUMBER = 6;
   private long pts_ = 0L;
-
   /**
    *
    *
@@ -16191,7 +15722,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
   public boolean hasPts() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -16434,7 +15964,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -16857,7 +16386,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentTimeBuilder_;
-
     /**
      *
      *
@@ -16872,7 +16400,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasCurrentTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -16893,7 +16420,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return currentTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16916,7 +16442,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16936,7 +16461,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16964,7 +16488,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -16984,7 +16507,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16999,7 +16521,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return getCurrentTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17018,7 +16539,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             : currentTime_;
       }
     }
-
     /**
      *
      *
@@ -17085,7 +16605,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return identifiedBoxesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -17104,7 +16623,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return identifiedBoxesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -17124,7 +16642,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return identifiedBoxesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -17151,7 +16668,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17176,7 +16692,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17202,7 +16717,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17229,7 +16743,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17253,7 +16766,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17278,7 +16790,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17304,7 +16815,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17326,7 +16836,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17348,7 +16857,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17364,7 +16872,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getIdentifiedBoxesBuilder(int index) {
       return getIdentifiedBoxesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -17384,7 +16891,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return identifiedBoxesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -17407,7 +16913,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return java.util.Collections.unmodifiableList(identifiedBoxes_);
       }
     }
-
     /**
      *
      *
@@ -17426,7 +16931,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -17446,7 +16950,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.IdentifiedBox
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -17492,7 +16995,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.Stats.Builder,
             com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.StatsOrBuilder>
         statsBuilder_;
-
     /**
      *
      *
@@ -17507,7 +17009,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasStats() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -17529,7 +17030,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return statsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17553,7 +17053,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17575,7 +17074,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17606,7 +17104,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17626,7 +17123,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17642,7 +17138,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17663,7 +17158,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
             : stats_;
       }
     }
-
     /**
      *
      *
@@ -17729,7 +17223,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return trackInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -17749,7 +17242,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return trackInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -17770,7 +17262,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return trackInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -17797,7 +17288,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17823,7 +17313,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17850,7 +17339,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17877,7 +17365,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17902,7 +17389,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17928,7 +17414,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17954,7 +17439,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -17977,7 +17461,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18000,7 +17483,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18017,7 +17499,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getTrackInfoBuilder(int index) {
       return getTrackInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -18038,7 +17519,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return trackInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -18061,7 +17541,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return java.util.Collections.unmodifiableList(trackInfo_);
       }
     }
-
     /**
      *
      *
@@ -18081,7 +17560,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfo
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18102,7 +17580,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.TrackInfo
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18179,7 +17656,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return dwellTimeInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -18199,7 +17675,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return dwellTimeInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -18220,7 +17695,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return dwellTimeInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -18248,7 +17722,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18274,7 +17747,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18301,7 +17773,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18329,7 +17800,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18354,7 +17824,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18380,7 +17849,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18407,7 +17875,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18430,7 +17897,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18453,7 +17919,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -18470,7 +17935,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         getDwellTimeInfoBuilder(int index) {
       return getDwellTimeInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -18491,7 +17955,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return dwellTimeInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -18515,7 +17978,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
         return java.util.Collections.unmodifiableList(dwellTimeInfo_);
       }
     }
-
     /**
      *
      *
@@ -18535,7 +17997,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfo
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18556,7 +18017,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
               com.google.cloud.visionai.v1.OccupancyCountingPredictionResult.DwellTimeInfo
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18598,7 +18058,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     }
 
     private long pts_;
-
     /**
      *
      *
@@ -18614,7 +18073,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public boolean hasPts() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -18630,7 +18088,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
     public long getPts() {
       return pts_;
     }
-
     /**
      *
      *
@@ -18650,7 +18107,6 @@ public final class OccupancyCountingPredictionResult extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

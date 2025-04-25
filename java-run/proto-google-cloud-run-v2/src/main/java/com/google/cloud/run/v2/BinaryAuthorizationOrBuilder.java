@@ -37,7 +37,6 @@ public interface BinaryAuthorizationOrBuilder
    * @return Whether the useDefault field is set.
    */
   boolean hasUseDefault();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface BinaryAuthorizationOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BinaryAuthorizationOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface BinaryAuthorizationOrBuilder
    * @return The breakglassJustification.
    */
   java.lang.String getBreakglassJustification();
-
   /**
    *
    *

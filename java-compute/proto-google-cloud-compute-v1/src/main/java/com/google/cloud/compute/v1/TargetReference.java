@@ -32,7 +32,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetReference)
     TargetReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetReference.newBuilder() to construct.
   private TargetReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
-
   /**
    * <code>optional string target = 192835985;</code>
    *
@@ -78,7 +76,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
   public boolean hasTarget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional string target = 192835985;</code>
    *
@@ -96,7 +93,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    * <code>optional string target = 192835985;</code>
    *
@@ -279,7 +275,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -465,7 +460,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object target_ = "";
-
     /**
      * <code>optional string target = 192835985;</code>
      *
@@ -474,7 +468,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
     public boolean hasTarget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional string target = 192835985;</code>
      *
@@ -491,7 +484,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>optional string target = 192835985;</code>
      *
@@ -508,7 +500,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>optional string target = 192835985;</code>
      *
@@ -524,7 +515,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string target = 192835985;</code>
      *
@@ -536,7 +526,6 @@ public final class TargetReference extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      * <code>optional string target = 192835985;</code>
      *

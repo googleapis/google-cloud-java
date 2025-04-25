@@ -33,7 +33,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.ResetWorkspaceChangesRequest)
     ResetWorkspaceChangesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResetWorkspaceChangesRequest.newBuilder() to construct.
   private ResetWorkspaceChangesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList paths_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getPathsList() {
     return paths_;
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   public int getPathsCount() {
     return paths_.size();
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
   public java.lang.String getPaths(int index) {
     return paths_.get(index);
   }
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
 
   public static final int CLEAN_FIELD_NUMBER = 3;
   private boolean clean_ = false;
-
   /**
    *
    *
@@ -398,7 +390,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +612,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       paths_.makeImmutable();
       return paths_;
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public int getPathsCount() {
       return paths_.size();
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public java.lang.String getPaths(int index) {
       return paths_.get(index);
     }
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getPathsBytes(int index) {
       return paths_.getByteString(index);
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +911,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     }
 
     private boolean clean_;
-
     /**
      *
      *
@@ -950,7 +926,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
     public boolean getClean() {
       return clean_;
     }
-
     /**
      *
      *
@@ -970,7 +945,6 @@ public final class ResetWorkspaceChangesRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

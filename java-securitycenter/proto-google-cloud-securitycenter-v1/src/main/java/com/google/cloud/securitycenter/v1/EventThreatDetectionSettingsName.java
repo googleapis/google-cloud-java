@@ -257,8 +257,7 @@ public class EventThreatDetectionSettingsName implements ResourceName {
     private Builder(EventThreatDetectionSettingsName eventThreatDetectionSettingsName) {
       Preconditions.checkArgument(
           Objects.equals(eventThreatDetectionSettingsName.pathTemplate, ORGANIZATION),
-          "toBuilder is only supported when EventThreatDetectionSettingsName has the pattern of"
-              + " organizations/{organization}/eventThreatDetectionSettings");
+          "toBuilder is only supported when EventThreatDetectionSettingsName has the pattern of organizations/{organization}/eventThreatDetectionSettings");
       this.organization = eventThreatDetectionSettingsName.organization;
     }
 

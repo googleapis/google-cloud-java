@@ -36,7 +36,6 @@ public interface LookupApiHubInstanceResponseOrBuilder
    * @return Whether the apiHubInstance field is set.
    */
   boolean hasApiHubInstance();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LookupApiHubInstanceResponseOrBuilder
    * @return The apiHubInstance.
    */
   com.google.cloud.apihub.v1.ApiHubInstance getApiHubInstance();
-
   /**
    *
    *

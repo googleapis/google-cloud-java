@@ -33,7 +33,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ListIssueModelsResponse)
     ListIssueModelsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListIssueModelsResponse.newBuilder() to construct.
   private ListIssueModelsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.IssueModel> issueModels_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.contactcenterinsights.v1.IssueModel> getIssueModelsList() {
     return issueModels_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       getIssueModelsOrBuilderList() {
     return issueModels_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
   public int getIssueModelsCount() {
     return issueModels_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
   public com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModels(int index) {
     return issueModels_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
         return issueModelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
         return issueModelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
         return issueModelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +786,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
         int index) {
       return getIssueModelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
         return issueModelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -854,7 +833,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(issueModels_);
       }
     }
-
     /**
      *
      *
@@ -868,7 +846,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
       return getIssueModelsFieldBuilder()
           .addBuilder(com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -884,7 +861,6 @@ public final class ListIssueModelsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance());
     }
-
     /**
      *
      *

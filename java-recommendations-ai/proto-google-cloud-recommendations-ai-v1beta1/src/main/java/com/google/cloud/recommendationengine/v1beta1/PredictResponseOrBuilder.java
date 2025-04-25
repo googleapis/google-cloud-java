@@ -38,7 +38,6 @@ public interface PredictResponseOrBuilder
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult>
       getResultsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PredictResponseOrBuilder
    */
   com.google.cloud.recommendationengine.v1beta1.PredictResponse.PredictionResult getResults(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface PredictResponseOrBuilder
    * </code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface PredictResponseOrBuilder
               com.google.cloud.recommendationengine.v1beta1.PredictResponse
                   .PredictionResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface PredictResponseOrBuilder
    * @return The recommendationToken.
    */
   java.lang.String getRecommendationToken();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface PredictResponseOrBuilder
    * @return A list containing the itemsMissingInCatalog.
    */
   java.util.List<java.lang.String> getItemsMissingInCatalogList();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface PredictResponseOrBuilder
    * @return The count of itemsMissingInCatalog.
    */
   int getItemsMissingInCatalogCount();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface PredictResponseOrBuilder
    * @return The itemsMissingInCatalog at the given index.
    */
   java.lang.String getItemsMissingInCatalog(int index);
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface PredictResponseOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -219,11 +210,9 @@ public interface PredictResponseOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadata();
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public interface PredictResponseOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; metadata = 5;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getMetadataMap();
-
   /**
    *
    *
@@ -249,7 +237,6 @@ public interface PredictResponseOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *
@@ -274,7 +261,6 @@ public interface PredictResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

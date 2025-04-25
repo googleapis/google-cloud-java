@@ -38,7 +38,6 @@ public interface SubnetOrBuilder
    * @return The addressRange.
    */
   java.lang.String getAddressRange();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SubnetOrBuilder
    * @return The defaultGatewayIpAddress.
    */
   java.lang.String getDefaultGatewayIpAddress();
-
   /**
    *
    *

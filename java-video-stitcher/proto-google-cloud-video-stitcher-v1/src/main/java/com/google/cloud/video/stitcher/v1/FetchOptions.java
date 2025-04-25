@@ -33,7 +33,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.FetchOptions)
     FetchOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchOptions.newBuilder() to construct.
   private FetchOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,7 +99,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
   public int getHeadersCount() {
     return internalGetHeaders().getMap().size();
   }
-
   /**
    *
    *
@@ -120,14 +118,12 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetHeaders().getMap().containsKey(key);
   }
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
   }
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +588,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
-
     /**
      *
      *
@@ -615,14 +607,12 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
-
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
-
     /**
      *
      *
@@ -639,7 +629,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
-
     /**
      *
      *
@@ -663,7 +652,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -713,14 +700,12 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
       bitField0_ |= 0x00000001;
       return internalGetMutableHeaders().getMutableMap();
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class FetchOptions extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

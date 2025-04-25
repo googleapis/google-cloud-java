@@ -36,7 +36,6 @@ public interface InvocationConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.Target> getIncludedTargetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InvocationConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataform.v1beta1.Target getIncludedTargets(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface InvocationConfigOrBuilder
    * </code>
    */
   int getIncludedTargetsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface InvocationConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.TargetOrBuilder>
       getIncludedTargetsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface InvocationConfigOrBuilder
    * @return A list containing the includedTags.
    */
   java.util.List<java.lang.String> getIncludedTagsList();
-
   /**
    *
    *
@@ -115,7 +110,6 @@ public interface InvocationConfigOrBuilder
    * @return The count of includedTags.
    */
   int getIncludedTagsCount();
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface InvocationConfigOrBuilder
    * @return The includedTags at the given index.
    */
   java.lang.String getIncludedTags(int index);
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface InvocationConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *

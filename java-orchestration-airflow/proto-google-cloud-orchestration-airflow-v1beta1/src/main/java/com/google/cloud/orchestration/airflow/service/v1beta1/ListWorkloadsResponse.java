@@ -33,7 +33,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse)
     ListWorkloadsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListWorkloadsResponse.newBuilder() to construct.
   private ListWorkloadsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -180,7 +179,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>COMPOSER_WORKLOAD_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int COMPOSER_WORKLOAD_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -191,7 +189,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>CELERY_WORKER = 1;</code>
      */
     public static final int CELERY_WORKER_VALUE = 1;
-
     /**
      *
      *
@@ -202,7 +199,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>KUBERNETES_WORKER = 2;</code>
      */
     public static final int KUBERNETES_WORKER_VALUE = 2;
-
     /**
      *
      *
@@ -213,7 +209,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>KUBERNETES_OPERATOR_POD = 3;</code>
      */
     public static final int KUBERNETES_OPERATOR_POD_VALUE = 3;
-
     /**
      *
      *
@@ -224,7 +219,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>SCHEDULER = 4;</code>
      */
     public static final int SCHEDULER_VALUE = 4;
-
     /**
      *
      *
@@ -235,7 +229,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>DAG_PROCESSOR = 5;</code>
      */
     public static final int DAG_PROCESSOR_VALUE = 5;
-
     /**
      *
      *
@@ -246,7 +239,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>TRIGGERER = 6;</code>
      */
     public static final int TRIGGERER_VALUE = 6;
-
     /**
      *
      *
@@ -257,7 +249,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>WEB_SERVER = 7;</code>
      */
     public static final int WEB_SERVER_VALUE = 7;
-
     /**
      *
      *
@@ -464,7 +455,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>COMPOSER_WORKLOAD_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int COMPOSER_WORKLOAD_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -475,7 +465,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -486,7 +475,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>OK = 2;</code>
      */
     public static final int OK_VALUE = 2;
-
     /**
      *
      *
@@ -497,7 +485,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>WARNING = 3;</code>
      */
     public static final int WARNING_VALUE = 3;
-
     /**
      *
      *
@@ -508,7 +495,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>ERROR = 4;</code>
      */
     public static final int ERROR_VALUE = 4;
-
     /**
      *
      *
@@ -519,7 +505,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * <code>SUCCEEDED = 5;</code>
      */
     public static final int SUCCEEDED_VALUE = 5;
-
     /**
      *
      *
@@ -645,7 +630,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -673,7 +657,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -705,7 +688,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the status field is set.
      */
     boolean hasStatus();
-
     /**
      *
      *
@@ -722,7 +704,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
             .ComposerWorkloadStatus
         getStatus();
-
     /**
      *
      *
@@ -738,7 +719,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
             .ComposerWorkloadStatusOrBuilder
         getStatusOrBuilder();
   }
-
   /**
    *
    *
@@ -754,7 +734,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse.ComposerWorkload)
       ComposerWorkloadOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ComposerWorkload.newBuilder() to construct.
     private ComposerWorkload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -793,7 +772,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -817,7 +795,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -844,7 +821,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
     public static final int TYPE_FIELD_NUMBER = 2;
     private int type_ = 0;
-
     /**
      *
      *
@@ -862,7 +838,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -895,7 +870,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     private com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
             .ComposerWorkloadStatus
         status_;
-
     /**
      *
      *
@@ -913,7 +887,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -936,7 +909,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
               .ComposerWorkloadStatus.getDefaultInstance()
           : status_;
     }
-
     /**
      *
      *
@@ -1174,7 +1146,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1434,7 +1405,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1457,7 +1427,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1480,7 +1449,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1502,7 +1470,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1520,7 +1487,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1545,7 +1511,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -1563,7 +1528,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -1584,7 +1548,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1612,7 +1575,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
                 .ComposerWorkloadType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1639,7 +1601,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1671,7 +1632,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
                   .ComposerWorkloadStatusOrBuilder>
           statusBuilder_;
-
       /**
        *
        *
@@ -1688,7 +1648,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1714,7 +1673,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return statusBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1742,7 +1700,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1767,7 +1724,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1802,7 +1758,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1824,7 +1779,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1843,7 +1797,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1867,7 +1820,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
               : status_;
         }
       }
-
       /**
        *
        *
@@ -1993,7 +1945,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
-
     /**
      *
      *
@@ -2023,7 +1974,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * @return The statusMessage.
      */
     java.lang.String getStatusMessage();
-
     /**
      *
      *
@@ -2049,7 +1999,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      * @return The detailedStatusMessage.
      */
     java.lang.String getDetailedStatusMessage();
-
     /**
      *
      *
@@ -2063,7 +2012,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getDetailedStatusMessageBytes();
   }
-
   /**
    *
    *
@@ -2079,7 +2027,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse.ComposerWorkloadStatus)
       ComposerWorkloadStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ComposerWorkloadStatus.newBuilder() to construct.
     private ComposerWorkloadStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2116,7 +2063,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
-
     /**
      *
      *
@@ -2134,7 +2080,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2167,7 +2112,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object statusMessage_ = "";
-
     /**
      *
      *
@@ -2191,7 +2135,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -2220,7 +2163,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object detailedStatusMessage_ = "";
-
     /**
      *
      *
@@ -2244,7 +2186,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -2481,7 +2422,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2727,7 +2667,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private int state_ = 0;
-
       /**
        *
        *
@@ -2745,7 +2684,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       public int getStateValue() {
         return state_;
       }
-
       /**
        *
        *
@@ -2766,7 +2704,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2794,7 +2731,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
                 .ComposerWorkloadState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2821,7 +2757,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2843,7 +2778,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object statusMessage_ = "";
-
       /**
        *
        *
@@ -2866,7 +2800,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2889,7 +2822,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2911,7 +2843,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2929,7 +2860,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2954,7 +2884,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object detailedStatusMessage_ = "";
-
       /**
        *
        *
@@ -2978,7 +2907,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3002,7 +2930,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3025,7 +2952,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3044,7 +2970,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3148,7 +3073,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
           com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
               .ComposerWorkload>
       workloads_;
-
   /**
    *
    *
@@ -3167,7 +3091,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       getWorkloadsList() {
     return workloads_;
   }
-
   /**
    *
    *
@@ -3187,7 +3110,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       getWorkloadsOrBuilderList() {
     return workloads_;
   }
-
   /**
    *
    *
@@ -3203,7 +3125,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
   public int getWorkloadsCount() {
     return workloads_.size();
   }
-
   /**
    *
    *
@@ -3221,7 +3142,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       getWorkloads(int index) {
     return workloads_.get(index);
   }
-
   /**
    *
    *
@@ -3244,7 +3164,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -3268,7 +3187,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -3471,7 +3389,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3776,7 +3693,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3795,7 +3711,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3816,7 +3731,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3845,7 +3759,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3871,7 +3784,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3899,7 +3811,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3928,7 +3839,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3953,7 +3863,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -3979,7 +3888,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4006,7 +3914,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4028,7 +3935,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4050,7 +3956,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -4067,7 +3972,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         getWorkloadsBuilder(int index) {
       return getWorkloadsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4088,7 +3992,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return workloadsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4111,7 +4014,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(workloads_);
       }
     }
-
     /**
      *
      *
@@ -4131,7 +4033,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
                   .ComposerWorkload.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4152,7 +4053,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.orchestration.airflow.service.v1beta1.ListWorkloadsResponse
                   .ComposerWorkload.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4195,7 +4095,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -4218,7 +4117,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4241,7 +4139,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4263,7 +4160,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4281,7 +4177,6 @@ public final class ListWorkloadsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

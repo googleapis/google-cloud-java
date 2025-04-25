@@ -45,7 +45,6 @@ public interface DockerImageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface DockerImageOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface DockerImageOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface DockerImageOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface DockerImageOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public interface DockerImageOrBuilder
    * @return Whether the uploadTime field is set.
    */
   boolean hasUploadTime();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface DockerImageOrBuilder
    * @return The uploadTime.
    */
   com.google.protobuf.Timestamp getUploadTime();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface DockerImageOrBuilder
    * @return The mediaType.
    */
   java.lang.String getMediaType();
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public interface DockerImageOrBuilder
    * @return Whether the buildTime field is set.
    */
   boolean hasBuildTime();
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public interface DockerImageOrBuilder
    * @return The buildTime.
    */
   com.google.protobuf.Timestamp getBuildTime();
-
   /**
    *
    *
@@ -298,7 +288,6 @@ public interface DockerImageOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -312,7 +301,6 @@ public interface DockerImageOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

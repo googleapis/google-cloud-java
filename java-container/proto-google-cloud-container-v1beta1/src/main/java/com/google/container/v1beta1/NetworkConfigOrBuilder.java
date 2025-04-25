@@ -39,7 +39,6 @@ public interface NetworkConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface NetworkConfigOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the defaultSnatStatus field is set.
    */
   boolean hasDefaultSnatStatus();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface NetworkConfigOrBuilder
    * @return The defaultSnatStatus.
    */
   com.google.container.v1beta1.DefaultSnatStatus getDefaultSnatStatus();
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for datapathProvider.
    */
   int getDatapathProviderValue();
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
    */
   int getPrivateIpv6GoogleAccessValue();
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the dnsConfig field is set.
    */
   boolean hasDnsConfig();
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public interface NetworkConfigOrBuilder
    * @return The dnsConfig.
    */
   com.google.container.v1beta1.DNSConfig getDnsConfig();
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the serviceExternalIpsConfig field is set.
    */
   boolean hasServiceExternalIpsConfig();
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public interface NetworkConfigOrBuilder
    * @return The serviceExternalIpsConfig.
    */
   com.google.container.v1beta1.ServiceExternalIPsConfig getServiceExternalIpsConfig();
-
   /**
    *
    *
@@ -313,7 +303,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the gatewayApiConfig field is set.
    */
   boolean hasGatewayApiConfig();
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public interface NetworkConfigOrBuilder
    * @return The gatewayApiConfig.
    */
   com.google.container.v1beta1.GatewayAPIConfig getGatewayApiConfig();
-
   /**
    *
    *
@@ -367,7 +355,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the networkPerformanceConfig field is set.
    */
   boolean hasNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -383,7 +370,6 @@ public interface NetworkConfigOrBuilder
    */
   com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
       getNetworkPerformanceConfig();
-
   /**
    *
    *
@@ -410,7 +396,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the enableFqdnNetworkPolicy field is set.
    */
   boolean hasEnableFqdnNetworkPolicy();
-
   /**
    *
    *
@@ -438,7 +423,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the inTransitEncryptionConfig field is set.
    */
   boolean hasInTransitEncryptionConfig();
-
   /**
    *
    *
@@ -453,7 +437,6 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for inTransitEncryptionConfig.
    */
   int getInTransitEncryptionConfigValue();
-
   /**
    *
    *
@@ -481,7 +464,6 @@ public interface NetworkConfigOrBuilder
    * @return Whether the enableCiliumClusterwideNetworkPolicy field is set.
    */
   boolean hasEnableCiliumClusterwideNetworkPolicy();
-
   /**
    *
    *

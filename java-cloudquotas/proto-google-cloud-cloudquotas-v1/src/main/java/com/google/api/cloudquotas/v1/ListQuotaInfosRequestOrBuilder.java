@@ -45,7 +45,6 @@ public interface ListQuotaInfosRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface ListQuotaInfosRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

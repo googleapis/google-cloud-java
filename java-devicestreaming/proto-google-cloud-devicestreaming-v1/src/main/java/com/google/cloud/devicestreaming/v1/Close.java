@@ -33,7 +33,6 @@ public final class Close extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.Close)
     CloseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Close.newBuilder() to construct.
   private Close(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class Close extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

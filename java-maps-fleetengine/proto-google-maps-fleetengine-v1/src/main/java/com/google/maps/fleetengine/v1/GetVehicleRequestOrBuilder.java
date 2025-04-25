@@ -36,7 +36,6 @@ public interface GetVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GetVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GetVehicleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface GetVehicleRequestOrBuilder
    * @return Whether the currentRouteSegmentVersion field is set.
    */
   boolean hasCurrentRouteSegmentVersion();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface GetVehicleRequestOrBuilder
    * @return The currentRouteSegmentVersion.
    */
   com.google.protobuf.Timestamp getCurrentRouteSegmentVersion();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface GetVehicleRequestOrBuilder
    * @return Whether the waypointsVersion field is set.
    */
   boolean hasWaypointsVersion();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface GetVehicleRequestOrBuilder
    * @return The waypointsVersion.
    */
   com.google.protobuf.Timestamp getWaypointsVersion();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListFeatureOnlineStoresResponse)
     ListFeatureOnlineStoresResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFeatureOnlineStoresResponse.newBuilder() to construct.
   private ListFeatureOnlineStoresResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.FeatureOnlineStore> featureOnlineStores_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       getFeatureOnlineStoresList() {
     return featureOnlineStores_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       getFeatureOnlineStoresOrBuilderList() {
     return featureOnlineStores_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
   public int getFeatureOnlineStoresCount() {
     return featureOnlineStores_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1.FeatureOnlineStore getFeatureOnlineStores(int index) {
     return featureOnlineStores_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return featureOnlineStoresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return featureOnlineStoresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return featureOnlineStoresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +732,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +842,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +862,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         int index) {
       return getFeatureOnlineStoresFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return featureOnlineStoresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(featureOnlineStores_);
       }
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       return getFeatureOnlineStoresFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.FeatureOnlineStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.FeatureOnlineStore.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1025,7 +999,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1051,7 +1024,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1049,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1073,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1093,6 @@ public final class ListFeatureOnlineStoresResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

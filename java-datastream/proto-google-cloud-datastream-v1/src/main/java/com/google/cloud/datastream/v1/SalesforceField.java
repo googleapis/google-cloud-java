@@ -33,7 +33,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceField)
     SalesforceFieldOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SalesforceField.newBuilder() to construct.
   private SalesforceField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataType_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
 
   public static final int NILLABLE_FIELD_NUMBER = 3;
   private boolean nillable_ = false;
-
   /**
    *
    *
@@ -367,7 +361,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +572,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -647,7 +637,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object dataType_ = "";
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +760,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean nillable_;
-
     /**
      *
      *
@@ -817,7 +799,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
     public boolean getNillable() {
       return nillable_;
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

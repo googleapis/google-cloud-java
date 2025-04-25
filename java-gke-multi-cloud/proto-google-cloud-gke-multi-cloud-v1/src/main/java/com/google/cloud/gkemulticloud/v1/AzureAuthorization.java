@@ -33,7 +33,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureAuthorization)
     AzureAuthorizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureAuthorization.newBuilder() to construct.
   private AzureAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterUser> adminUsers_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterUser> getAdminUsersList() {
     return adminUsers_;
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       getAdminUsersOrBuilderList() {
     return adminUsers_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   public int getAdminUsersCount() {
     return adminUsers_.size();
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.gkemulticloud.v1.AzureClusterUser getAdminUsers(int index) {
     return adminUsers_.get(index);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterGroup> adminGroups_;
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterGroup> getAdminGroupsList() {
     return adminGroups_;
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       getAdminGroupsOrBuilderList() {
     return adminGroups_;
   }
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   public int getAdminGroupsCount() {
     return adminGroups_.size();
   }
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.gkemulticloud.v1.AzureClusterGroup getAdminGroups(int index) {
     return adminGroups_.get(index);
   }
-
   /**
    *
    *
@@ -461,7 +450,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -790,7 +778,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminUsersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -814,7 +801,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminUsersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -838,7 +824,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminUsersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -869,7 +854,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +881,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +910,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +940,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +967,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +994,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1021,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1047,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1073,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         int index) {
       return getAdminUsersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1142,7 +1117,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminUsersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1141,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(adminUsers_);
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1161,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       return getAdminUsersFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AzureClusterUser.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1211,7 +1183,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AzureClusterUser.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1292,7 +1263,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1316,7 +1286,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1340,7 +1309,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1371,7 +1339,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1366,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1395,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1425,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1452,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1479,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1506,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1571,7 +1532,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1558,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1578,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         int index) {
       return getAdminGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1644,7 +1602,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return adminGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1669,7 +1626,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(adminGroups_);
       }
     }
-
     /**
      *
      *
@@ -1690,7 +1646,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       return getAdminGroupsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AzureClusterGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1713,7 +1668,6 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AzureClusterGroup.getDefaultInstance());
     }
-
     /**
      *
      *

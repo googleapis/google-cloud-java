@@ -39,7 +39,6 @@ public interface PauseJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

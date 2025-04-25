@@ -33,7 +33,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RunStatus)
     RunStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunStatus.newBuilder() to construct.
   private RunStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,7 +149,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -162,7 +160,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>INITIALIZING = 1;</code>
      */
     public static final int INITIALIZING_VALUE = 1;
-
     /**
      *
      *
@@ -173,7 +170,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -185,7 +181,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLETED = 3;</code>
      */
     public static final int COMPLETED_VALUE = 3;
-
     /**
      *
      *
@@ -196,7 +191,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -299,7 +293,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -315,7 +308,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -338,7 +330,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -554,7 +544,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +740,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -767,7 +755,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.RunStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.visionai.v1.RunStatus.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -826,7 +811,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +830,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object reason_ = "";
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class RunStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

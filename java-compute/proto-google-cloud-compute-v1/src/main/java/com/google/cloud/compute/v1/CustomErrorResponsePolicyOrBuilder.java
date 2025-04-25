@@ -37,7 +37,6 @@ public interface CustomErrorResponsePolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.CustomErrorResponsePolicyCustomErrorResponseRule>
       getErrorResponseRulesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CustomErrorResponsePolicyOrBuilder
    */
   com.google.cloud.compute.v1.CustomErrorResponsePolicyCustomErrorResponseRule
       getErrorResponseRules(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface CustomErrorResponsePolicyOrBuilder
    * </code>
    */
   int getErrorResponseRulesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface CustomErrorResponsePolicyOrBuilder
           ? extends
               com.google.cloud.compute.v1.CustomErrorResponsePolicyCustomErrorResponseRuleOrBuilder>
       getErrorResponseRulesOrBuilderList();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface CustomErrorResponsePolicyOrBuilder
    * @return Whether the errorService field is set.
    */
   boolean hasErrorService();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface CustomErrorResponsePolicyOrBuilder
    * @return The errorService.
    */
   java.lang.String getErrorService();
-
   /**
    *
    *

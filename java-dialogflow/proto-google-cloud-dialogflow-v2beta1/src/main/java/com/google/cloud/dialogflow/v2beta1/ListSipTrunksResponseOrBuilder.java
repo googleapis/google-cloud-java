@@ -34,7 +34,6 @@ public interface ListSipTrunksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SipTrunk sip_trunks = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SipTrunk> getSipTrunksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSipTrunksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SipTrunk sip_trunks = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.SipTrunk getSipTrunks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSipTrunksResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.SipTrunk sip_trunks = 1;</code>
    */
   int getSipTrunksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSipTrunksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SipTrunkOrBuilder>
       getSipTrunksOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSipTrunksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

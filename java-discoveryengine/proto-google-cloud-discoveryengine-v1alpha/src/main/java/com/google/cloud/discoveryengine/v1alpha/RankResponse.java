@@ -35,7 +35,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.RankResponse)
     RankResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RankResponse.newBuilder() to construct.
   private RankResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1alpha.RankingRecord> records_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.discoveryengine.v1alpha.RankingRecord> getRecordsList() {
     return records_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       getRecordsOrBuilderList() {
     return records_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
   public int getRecordsCount() {
     return records_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.discoveryengine.v1alpha.RankingRecord getRecords(int index) {
     return records_.get(index);
   }
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -572,7 +565,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +662,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +705,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +746,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +784,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +797,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRecordsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -834,7 +814,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
         return recordsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -852,7 +831,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(records_);
       }
     }
-
     /**
      *
      *
@@ -866,7 +844,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
       return getRecordsFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1alpha.RankingRecord.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -882,7 +859,6 @@ public final class RankResponse extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1alpha.RankingRecord.getDefaultInstance());
     }
-
     /**
      *
      *

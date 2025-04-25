@@ -42,7 +42,6 @@ public interface CreateClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface CreateClusterRequestOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface CreateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface CreateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.cloud.vmwareengine.v1.Cluster getCluster();
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public interface CreateClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

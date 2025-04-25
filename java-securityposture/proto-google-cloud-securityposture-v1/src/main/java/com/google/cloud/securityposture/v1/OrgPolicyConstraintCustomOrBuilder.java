@@ -38,7 +38,6 @@ public interface OrgPolicyConstraintCustomOrBuilder
    * @return Whether the customConstraint field is set.
    */
   boolean hasCustomConstraint();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface OrgPolicyConstraintCustomOrBuilder
    * @return The customConstraint.
    */
   com.google.cloud.securityposture.v1.CustomConstraint getCustomConstraint();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface OrgPolicyConstraintCustomOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securityposture.v1.PolicyRule> getPolicyRulesList();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface OrgPolicyConstraintCustomOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.PolicyRule getPolicyRules(int index);
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface OrgPolicyConstraintCustomOrBuilder
    * </code>
    */
   int getPolicyRulesCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface OrgPolicyConstraintCustomOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PolicyRuleOrBuilder>
       getPolicyRulesOrBuilderList();
-
   /**
    *
    *

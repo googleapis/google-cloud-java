@@ -33,7 +33,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ImportDocumentTemplate)
     ImportDocumentTemplateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDocumentTemplate.newBuilder() to construct.
   private ImportDocumentTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
                   : result;
             }
           };
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
         java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>(
         knowledgeTypes_, knowledgeTypes_converter_);
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
   public int getKnowledgeTypesCount() {
     return knowledgeTypes_.size();
   }
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
   public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
     return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
   public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
     return knowledgeTypes_;
   }
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -293,14 +284,12 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -317,7 +306,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -569,7 +556,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -836,7 +822,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -859,7 +844,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +866,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +887,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +904,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
           java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>(
           knowledgeTypes_, knowledgeTypes_converter_);
     }
-
     /**
      *
      *
@@ -991,7 +970,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     public int getKnowledgeTypesCount() {
       return knowledgeTypes_.size();
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
       return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
     }
-
     /**
      *
      *
@@ -1035,7 +1012,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1060,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1095,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
       return java.util.Collections.unmodifiableList(knowledgeTypes_);
     }
-
     /**
      *
      *
@@ -1140,7 +1112,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     public int getKnowledgeTypesValue(int index) {
       return knowledgeTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1162,7 +1133,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1153,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -1253,14 +1221,12 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -1277,7 +1243,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1301,7 +1266,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1331,7 +1295,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1351,14 +1314,12 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1382,7 +1343,6 @@ public final class ImportDocumentTemplate extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

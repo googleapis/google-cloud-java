@@ -34,7 +34,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.Key keys = 1;</code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.Key> getKeysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.Key keys = 1;</code>
    */
   com.google.recaptchaenterprise.v1.Key getKeys(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.Key keys = 1;</code>
    */
   int getKeysCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListKeysResponseOrBuilder
    * <code>repeated .google.cloud.recaptchaenterprise.v1.Key keys = 1;</code>
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.KeyOrBuilder> getKeysOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

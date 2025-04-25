@@ -51,7 +51,6 @@ public interface RagRetrievalConfigOrBuilder
    * @return Whether the hybridSearch field is set.
    */
   boolean hasHybridSearch();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface RagRetrievalConfigOrBuilder
    * @return The hybridSearch.
    */
   com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.HybridSearch getHybridSearch();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface RagRetrievalConfigOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface RagRetrievalConfigOrBuilder
    * @return The filter.
    */
   com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Filter getFilter();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface RagRetrievalConfigOrBuilder
    * @return Whether the ranking field is set.
    */
   boolean hasRanking();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface RagRetrievalConfigOrBuilder
    * @return The ranking.
    */
   com.google.cloud.aiplatform.v1beta1.RagRetrievalConfig.Ranking getRanking();
-
   /**
    *
    *

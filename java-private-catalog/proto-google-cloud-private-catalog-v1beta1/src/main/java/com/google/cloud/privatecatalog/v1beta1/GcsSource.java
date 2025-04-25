@@ -33,7 +33,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.privatecatalog.v1beta1.GcsSource)
     GcsSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsSource.newBuilder() to construct.
   private GcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcsPath_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GENERATION_FIELD_NUMBER = 2;
   private long generation_ = 0L;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -372,7 +365,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -599,7 +591,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object gcsPath_ = "";
-
     /**
      *
      *
@@ -622,7 +613,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long generation_;
-
     /**
      *
      *
@@ -727,7 +713,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public long getGeneration() {
       return generation_;
     }
-
     /**
      *
      *
@@ -748,7 +733,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +891,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +907,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *

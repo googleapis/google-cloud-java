@@ -36,7 +36,6 @@ public interface GcsFolderDestinationOrBuilder
    * @return The outputFolderUri.
    */
   java.lang.String getOutputFolderUri();
-
   /**
    *
    *

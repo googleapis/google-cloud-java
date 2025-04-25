@@ -33,7 +33,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ClassificationMetadata)
     ClassificationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClassificationMetadata.newBuilder() to construct.
   private ClassificationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int IS_MULTI_LABEL_FIELD_NUMBER = 1;
   private boolean isMultiLabel_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -427,7 +424,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean isMultiLabel_;
-
     /**
      *
      *
@@ -443,7 +439,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
     public boolean getIsMultiLabel() {
       return isMultiLabel_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class ClassificationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

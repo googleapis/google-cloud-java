@@ -40,7 +40,6 @@ public interface LocationOrBuilder
    * @return Whether the byteRange field is set.
    */
   boolean hasByteRange();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface LocationOrBuilder
    * @return The byteRange.
    */
   com.google.privacy.dlp.v2.Range getByteRange();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface LocationOrBuilder
    * @return Whether the codepointRange field is set.
    */
   boolean hasCodepointRange();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface LocationOrBuilder
    * @return The codepointRange.
    */
   com.google.privacy.dlp.v2.Range getCodepointRange();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface LocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.ContentLocation> getContentLocationsList();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface LocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
   com.google.privacy.dlp.v2.ContentLocation getContentLocations(int index);
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface LocationOrBuilder
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
   int getContentLocationsCount();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface LocationOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ContentLocationOrBuilder>
       getContentLocationsOrBuilderList();
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public interface LocationOrBuilder
    * @return Whether the container field is set.
    */
   boolean hasContainer();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface LocationOrBuilder
    * @return The container.
    */
   com.google.privacy.dlp.v2.Container getContainer();
-
   /**
    *
    *

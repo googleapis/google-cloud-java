@@ -36,7 +36,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return The metric.
    */
   java.lang.String getMetric();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return Whether the singleInstanceAssignment field is set.
    */
   boolean hasSingleInstanceAssignment();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return Whether the utilizationTarget field is set.
    */
   boolean hasUtilizationTarget();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return Whether the utilizationTargetType field is set.
    */
   boolean hasUtilizationTargetType();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder
    * @return The utilizationTargetType.
    */
   java.lang.String getUtilizationTargetType();
-
   /**
    *
    *

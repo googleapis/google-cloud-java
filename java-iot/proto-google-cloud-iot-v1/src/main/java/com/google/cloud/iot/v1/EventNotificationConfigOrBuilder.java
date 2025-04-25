@@ -39,7 +39,6 @@ public interface EventNotificationConfigOrBuilder
    * @return The subfolderMatches.
    */
   java.lang.String getSubfolderMatches();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface EventNotificationConfigOrBuilder
    * @return The pubsubTopicName.
    */
   java.lang.String getPubsubTopicName();
-
   /**
    *
    *

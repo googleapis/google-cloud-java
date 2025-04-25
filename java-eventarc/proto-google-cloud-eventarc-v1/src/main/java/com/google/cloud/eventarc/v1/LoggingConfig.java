@@ -34,7 +34,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.LoggingConfig)
     LoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -197,7 +196,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOG_SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -209,7 +207,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>NONE = 1;</code>
      */
     public static final int NONE_VALUE = 1;
-
     /**
      *
      *
@@ -220,7 +217,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DEBUG = 2;</code>
      */
     public static final int DEBUG_VALUE = 2;
-
     /**
      *
      *
@@ -231,7 +227,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>INFO = 3;</code>
      */
     public static final int INFO_VALUE = 3;
-
     /**
      *
      *
@@ -243,7 +238,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>NOTICE = 4;</code>
      */
     public static final int NOTICE_VALUE = 4;
-
     /**
      *
      *
@@ -254,7 +248,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 5;</code>
      */
     public static final int WARNING_VALUE = 5;
-
     /**
      *
      *
@@ -265,7 +258,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 6;</code>
      */
     public static final int ERROR_VALUE = 6;
-
     /**
      *
      *
@@ -276,7 +268,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CRITICAL = 7;</code>
      */
     public static final int CRITICAL_VALUE = 7;
-
     /**
      *
      *
@@ -287,7 +278,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ALERT = 8;</code>
      */
     public static final int ALERT_VALUE = 8;
-
     /**
      *
      *
@@ -398,7 +388,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_SEVERITY_FIELD_NUMBER = 1;
   private int logSeverity_ = 0;
-
   /**
    *
    *
@@ -418,7 +407,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getLogSeverityValue() {
     return logSeverity_;
   }
-
   /**
    *
    *
@@ -606,7 +594,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -789,7 +776,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int logSeverity_ = 0;
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLogSeverityValue() {
       return logSeverity_;
     }
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.eventarc.v1.LoggingConfig.LogSeverity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

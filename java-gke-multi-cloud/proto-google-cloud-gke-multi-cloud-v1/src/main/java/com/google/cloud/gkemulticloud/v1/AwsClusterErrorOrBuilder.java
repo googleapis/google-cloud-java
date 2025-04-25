@@ -36,7 +36,6 @@ public interface AwsClusterErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

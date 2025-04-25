@@ -36,7 +36,6 @@ public interface ConfigSyncOrBuilder
    * @return Whether the git field is set.
    */
   boolean hasGit();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConfigSyncOrBuilder
    * @return The git.
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig getGit();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ConfigSyncOrBuilder
    * @return The sourceFormat.
    */
   java.lang.String getSourceFormat();
-
   /**
    *
    *

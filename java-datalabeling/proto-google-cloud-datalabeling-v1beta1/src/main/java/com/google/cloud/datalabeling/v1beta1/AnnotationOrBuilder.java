@@ -38,7 +38,6 @@ public interface AnnotationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface AnnotationOrBuilder
    * @return The enum numeric value on the wire for annotationSource.
    */
   int getAnnotationSourceValue();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface AnnotationOrBuilder
    * @return Whether the annotationValue field is set.
    */
   boolean hasAnnotationValue();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface AnnotationOrBuilder
    * @return The annotationValue.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationValue getAnnotationValue();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface AnnotationOrBuilder
    * @return Whether the annotationMetadata field is set.
    */
   boolean hasAnnotationMetadata();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface AnnotationOrBuilder
    * @return The annotationMetadata.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationMetadata getAnnotationMetadata();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface AnnotationOrBuilder
    * @return The enum numeric value on the wire for annotationSentiment.
    */
   int getAnnotationSentimentValue();
-
   /**
    *
    *

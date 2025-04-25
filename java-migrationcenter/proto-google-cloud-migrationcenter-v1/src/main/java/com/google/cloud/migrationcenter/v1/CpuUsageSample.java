@@ -33,7 +33,6 @@ public final class CpuUsageSample extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.CpuUsageSample)
     CpuUsageSampleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CpuUsageSample.newBuilder() to construct.
   private CpuUsageSample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class CpuUsageSample extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UTILIZED_PERCENTAGE_FIELD_NUMBER = 1;
   private float utilizedPercentage_ = 0F;
-
   /**
    *
    *
@@ -242,7 +240,6 @@ public final class CpuUsageSample extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -425,7 +422,6 @@ public final class CpuUsageSample extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float utilizedPercentage_;
-
     /**
      *
      *
@@ -442,7 +438,6 @@ public final class CpuUsageSample extends com.google.protobuf.GeneratedMessageV3
     public float getUtilizedPercentage() {
       return utilizedPercentage_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class CpuUsageSample extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

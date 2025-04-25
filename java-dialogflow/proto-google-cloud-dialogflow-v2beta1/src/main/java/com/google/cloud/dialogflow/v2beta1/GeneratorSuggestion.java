@@ -33,7 +33,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.GeneratorSuggestion)
     GeneratorSuggestionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GeneratorSuggestion.newBuilder() to construct.
   private GeneratorSuggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     private SuggestionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FREE_FORM_SUGGESTION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
   public boolean hasFreeFormSuggestion() {
     return suggestionCase_ == 1;
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.dialogflow.v2beta1.FreeFormSuggestion.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SUMMARY_SUGGESTION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
   public boolean hasSummarySuggestion() {
     return suggestionCase_ == 2;
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.dialogflow.v2beta1.SummarySuggestion.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -424,7 +416,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +654,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2beta1.FreeFormSuggestion.Builder,
             com.google.cloud.dialogflow.v2beta1.FreeFormSuggestionOrBuilder>
         freeFormSuggestionBuilder_;
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     public boolean hasFreeFormSuggestion() {
       return suggestionCase_ == 1;
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dialogflow.v2beta1.FreeFormSuggestion.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -735,7 +723,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       suggestionCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       suggestionCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       suggestionCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
         getFreeFormSuggestionBuilder() {
       return getFreeFormSuggestionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dialogflow.v2beta1.FreeFormSuggestion.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
             com.google.cloud.dialogflow.v2beta1.SummarySuggestion.Builder,
             com.google.cloud.dialogflow.v2beta1.SummarySuggestionOrBuilder>
         summarySuggestionBuilder_;
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
     public boolean hasSummarySuggestion() {
       return suggestionCase_ == 2;
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dialogflow.v2beta1.SummarySuggestion.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -976,7 +955,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       suggestionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +977,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       suggestionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       suggestionCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1040,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1055,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
         getSummarySuggestionBuilder() {
       return getSummarySuggestionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1104,7 +1078,6 @@ public final class GeneratorSuggestion extends com.google.protobuf.GeneratedMess
         return com.google.cloud.dialogflow.v2beta1.SummarySuggestion.getDefaultInstance();
       }
     }
-
     /**
      *
      *

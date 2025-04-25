@@ -40,7 +40,6 @@ public interface VolumeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface VolumeOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for storageType.
    */
   int getStorageTypeValue();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public interface VolumeOrBuilder
    * @return Whether the snapshotReservationDetail field is set.
    */
   boolean hasSnapshotReservationDetail();
-
   /**
    *
    *
@@ -262,7 +257,6 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail
       getSnapshotReservationDetail();
-
   /**
    *
    *
@@ -291,7 +285,6 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for snapshotAutoDeleteBehavior.
    */
   int getSnapshotAutoDeleteBehaviorValue();
-
   /**
    *
    *
@@ -318,7 +311,6 @@ public interface VolumeOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -329,11 +321,9 @@ public interface VolumeOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -344,7 +334,6 @@ public interface VolumeOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -359,7 +348,6 @@ public interface VolumeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -396,7 +384,6 @@ public interface VolumeOrBuilder
    * @return The pod.
    */
   java.lang.String getPod();
-
   /**
    *
    *
@@ -424,7 +411,6 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
-
   /**
    *
    *
@@ -469,7 +455,6 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for performanceTier.
    */
   int getPerformanceTierValue();
-
   /**
    *
    *
@@ -499,7 +484,6 @@ public interface VolumeOrBuilder
    * @return The notes.
    */
   java.lang.String getNotes();
-
   /**
    *
    *
@@ -526,7 +510,6 @@ public interface VolumeOrBuilder
    * @return The enum numeric value on the wire for workloadProfile.
    */
   int getWorkloadProfileValue();
-
   /**
    *
    *
@@ -554,7 +537,6 @@ public interface VolumeOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -569,7 +551,6 @@ public interface VolumeOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -598,7 +579,6 @@ public interface VolumeOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -614,7 +594,6 @@ public interface VolumeOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -631,7 +610,6 @@ public interface VolumeOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.TranscriptNormalization)
     TranscriptNormalizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TranscriptNormalization.newBuilder() to construct.
   private TranscriptNormalization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
      * @return The search.
      */
     java.lang.String getSearch();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
      * @return The replace.
      */
     java.lang.String getReplace();
-
     /**
      *
      *
@@ -137,7 +134,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
      */
     boolean getCaseSensitive();
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.TranscriptNormalization.Entry)
       EntryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Entry.newBuilder() to construct.
     private Entry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,7 +183,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object search_ = "";
-
     /**
      *
      *
@@ -212,7 +206,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -241,7 +234,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object replace_ = "";
-
     /**
      *
      *
@@ -265,7 +257,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -292,7 +283,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
 
     public static final int CASE_SENSITIVE_FIELD_NUMBER = 3;
     private boolean caseSensitive_ = false;
-
     /**
      *
      *
@@ -488,7 +478,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object search_ = "";
-
       /**
        *
        *
@@ -727,7 +715,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -750,7 +737,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -772,7 +758,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -790,7 +775,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -815,7 +799,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
 
       private java.lang.Object replace_ = "";
-
       /**
        *
        *
@@ -838,7 +821,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -861,7 +843,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -883,7 +864,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -901,7 +881,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -926,7 +905,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
 
       private boolean caseSensitive_;
-
       /**
        *
        *
@@ -942,7 +920,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       public boolean getCaseSensitive() {
         return caseSensitive_;
       }
-
       /**
        *
        *
@@ -962,7 +939,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1049,7 +1025,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.TranscriptNormalization.Entry> entries_;
-
   /**
    *
    *
@@ -1066,7 +1041,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.speech.v2.TranscriptNormalization.Entry> getEntriesList() {
     return entries_;
   }
-
   /**
    *
    *
@@ -1084,7 +1058,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       getEntriesOrBuilderList() {
     return entries_;
   }
-
   /**
    *
    *
@@ -1101,7 +1074,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
   public int getEntriesCount() {
     return entries_.size();
   }
-
   /**
    *
    *
@@ -1118,7 +1090,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
   public com.google.cloud.speech.v2.TranscriptNormalization.Entry getEntries(int index) {
     return entries_.get(index);
   }
-
   /**
    *
    *
@@ -1298,7 +1269,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1570,7 +1540,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return entriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1590,7 +1559,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return entriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1610,7 +1578,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return entriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1637,7 +1604,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1628,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1688,7 +1653,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1715,7 +1679,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1739,7 +1702,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1764,7 +1726,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1789,7 +1750,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1772,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1835,7 +1794,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1852,7 +1810,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1873,7 +1830,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1895,7 +1851,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
-
     /**
      *
      *
@@ -1913,7 +1868,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           .addBuilder(
               com.google.cloud.speech.v2.TranscriptNormalization.Entry.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1932,7 +1886,6 @@ public final class TranscriptNormalization extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.speech.v2.TranscriptNormalization.Entry.getDefaultInstance());
     }
-
     /**
      *
      *

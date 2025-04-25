@@ -47,7 +47,6 @@ public interface GetProcessedDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface GetProcessedDocumentRequestOrBuilder
    * @return The enum numeric value on the wire for processedDocumentType.
    */
   int getProcessedDocumentTypeValue();
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public interface GetProcessedDocumentRequestOrBuilder
    * @return The enum numeric value on the wire for processedDocumentFormat.
    */
   int getProcessedDocumentFormatValue();
-
   /**
    *
    *

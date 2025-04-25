@@ -33,7 +33,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.AlertConfig)
     AlertConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AlertConfig.newBuilder() to construct.
   private AlertConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The alertGroup.
      */
     java.lang.String getAlertGroup();
-
     /**
      *
      *
@@ -115,7 +113,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for enrollStatus.
      */
     int getEnrollStatusValue();
-
     /**
      *
      *
@@ -143,7 +140,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.Recipient>
         getRecipientsList();
-
     /**
      *
      *
@@ -156,7 +152,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.Recipient getRecipients(int index);
-
     /**
      *
      *
@@ -169,7 +164,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getRecipientsCount();
-
     /**
      *
      *
@@ -184,7 +178,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.RecipientOrBuilder>
         getRecipientsOrBuilderList();
-
     /**
      *
      *
@@ -199,7 +192,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.RecipientOrBuilder
         getRecipientsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.AlertConfig.AlertPolicy)
       AlertPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AlertPolicy.newBuilder() to construct.
     private AlertPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -302,7 +293,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>ENROLL_STATUS_UNSPECIFIED = 0;</code>
        */
       public static final int ENROLL_STATUS_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -313,7 +303,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>ENROLLED = 1;</code>
        */
       public static final int ENROLLED_VALUE = 1;
-
       /**
        *
        *
@@ -427,7 +416,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The emailAddress.
        */
       java.lang.String getEmailAddress();
-
       /**
        *
        *
@@ -441,7 +429,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getEmailAddressBytes();
     }
-
     /**
      *
      *
@@ -456,7 +443,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.AlertConfig.AlertPolicy.Recipient)
         RecipientOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Recipient.newBuilder() to construct.
       private Recipient(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -491,7 +477,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object emailAddress_ = "";
-
       /**
        *
        *
@@ -515,7 +500,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -703,7 +687,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -898,7 +881,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object emailAddress_ = "";
-
         /**
          *
          *
@@ -921,7 +903,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -944,7 +925,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -966,7 +946,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -984,7 +963,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1079,7 +1057,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object alertGroup_ = "";
-
     /**
      *
      *
@@ -1106,7 +1083,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1136,7 +1112,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENROLL_STATUS_FIELD_NUMBER = 2;
     private int enrollStatus_ = 0;
-
     /**
      *
      *
@@ -1153,7 +1128,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     public int getEnrollStatusValue() {
       return enrollStatus_;
     }
-
     /**
      *
      *
@@ -1181,7 +1155,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.Recipient>
         recipients_;
-
     /**
      *
      *
@@ -1198,7 +1171,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         getRecipientsList() {
       return recipients_;
     }
-
     /**
      *
      *
@@ -1216,7 +1188,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         getRecipientsOrBuilderList() {
       return recipients_;
     }
-
     /**
      *
      *
@@ -1232,7 +1203,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     public int getRecipientsCount() {
       return recipients_.size();
     }
-
     /**
      *
      *
@@ -1249,7 +1219,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return recipients_.get(index);
     }
-
     /**
      *
      *
@@ -1454,7 +1423,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1717,7 +1685,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object alertGroup_ = "";
-
       /**
        *
        *
@@ -1743,7 +1710,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1769,7 +1735,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1794,7 +1759,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1815,7 +1779,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1843,7 +1806,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int enrollStatus_ = 0;
-
       /**
        *
        *
@@ -1860,7 +1822,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       public int getEnrollStatusValue() {
         return enrollStatus_;
       }
-
       /**
        *
        *
@@ -1880,7 +1841,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1902,7 +1862,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.EnrollStatus.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1926,7 +1885,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1984,7 +1942,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return recipientsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2004,7 +1961,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return recipientsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2025,7 +1981,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return recipientsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2052,7 +2007,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2078,7 +2032,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2105,7 +2058,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2132,7 +2084,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2157,7 +2108,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2183,7 +2133,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2209,7 +2158,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2232,7 +2180,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2255,7 +2202,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2272,7 +2218,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           getRecipientsBuilder(int index) {
         return getRecipientsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2293,7 +2238,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return recipientsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2315,7 +2259,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(recipients_);
         }
       }
-
       /**
        *
        *
@@ -2335,7 +2278,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.Recipient
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2356,7 +2298,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.Recipient
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2460,7 +2401,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2487,7 +2427,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2519,7 +2458,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy> alertPolicies_;
-
   /**
    *
    *
@@ -2535,7 +2473,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       getAlertPoliciesList() {
     return alertPolicies_;
   }
-
   /**
    *
    *
@@ -2551,7 +2488,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       getAlertPoliciesOrBuilderList() {
     return alertPolicies_;
   }
-
   /**
    *
    *
@@ -2566,7 +2502,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAlertPoliciesCount() {
     return alertPolicies_.size();
   }
-
   /**
    *
    *
@@ -2581,7 +2516,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy getAlertPolicies(int index) {
     return alertPolicies_.get(index);
   }
-
   /**
    *
    *
@@ -2768,7 +2702,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3013,7 +2946,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3039,7 +2971,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3065,7 +2996,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3090,7 +3020,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3111,7 +3040,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3174,7 +3102,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return alertPoliciesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3192,7 +3119,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return alertPoliciesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3210,7 +3136,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return alertPoliciesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3235,7 +3160,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3257,7 +3181,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3281,7 +3204,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3306,7 +3228,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3328,7 +3249,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3350,7 +3270,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3373,7 +3292,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3394,7 +3312,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3415,7 +3332,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3430,7 +3346,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAlertPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3449,7 +3364,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return alertPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3468,7 +3382,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(alertPolicies_);
       }
     }
-
     /**
      *
      *
@@ -3484,7 +3397,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
       return getAlertPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3501,7 +3413,6 @@ public final class AlertConfig extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.retail.v2beta.AlertConfig.AlertPolicy.getDefaultInstance());
     }
-
     /**
      *
      *

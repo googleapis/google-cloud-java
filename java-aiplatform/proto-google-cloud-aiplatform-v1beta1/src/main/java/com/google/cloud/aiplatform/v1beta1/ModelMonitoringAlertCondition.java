@@ -33,7 +33,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringAlertCondition)
     ModelMonitoringAlertConditionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringAlertCondition.newBuilder() to construct.
   private ModelMonitoringAlertCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
     private ConditionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
   }
 
   public static final int THRESHOLD_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
   public boolean hasThreshold() {
     return conditionCase_ == 1;
   }
-
   /**
    *
    *
@@ -328,7 +324,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +552,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
     public boolean hasThreshold() {
       return conditionCase_ == 1;
     }
-
     /**
      *
      *
@@ -576,7 +570,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -597,7 +590,6 @@ public final class ModelMonitoringAlertCondition extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

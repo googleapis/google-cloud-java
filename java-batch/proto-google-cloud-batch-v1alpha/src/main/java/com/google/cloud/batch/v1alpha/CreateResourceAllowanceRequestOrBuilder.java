@@ -39,7 +39,6 @@ public interface CreateResourceAllowanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateResourceAllowanceRequestOrBuilder
    * @return The resourceAllowanceId.
    */
   java.lang.String getResourceAllowanceId();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface CreateResourceAllowanceRequestOrBuilder
    * @return Whether the resourceAllowance field is set.
    */
   boolean hasResourceAllowance();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface CreateResourceAllowanceRequestOrBuilder
    * @return The resourceAllowance.
    */
   com.google.cloud.batch.v1alpha.ResourceAllowance getResourceAllowance();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface CreateResourceAllowanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

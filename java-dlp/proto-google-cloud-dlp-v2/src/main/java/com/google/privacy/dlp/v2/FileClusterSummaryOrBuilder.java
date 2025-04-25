@@ -36,7 +36,6 @@ public interface FileClusterSummaryOrBuilder
    * @return Whether the fileClusterType field is set.
    */
   boolean hasFileClusterType();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FileClusterSummaryOrBuilder
    * @return The fileClusterType.
    */
   com.google.privacy.dlp.v2.FileClusterType getFileClusterType();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface FileClusterSummaryOrBuilder
    */
   java.util.List<com.google.privacy.dlp.v2.FileStoreInfoTypeSummary>
       getFileStoreInfoTypeSummariesList();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface FileClusterSummaryOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.FileStoreInfoTypeSummary getFileStoreInfoTypeSummaries(int index);
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface FileClusterSummaryOrBuilder
    * </code>
    */
   int getFileStoreInfoTypeSummariesCount();
-
   /**
    *
    *
@@ -114,7 +109,6 @@ public interface FileClusterSummaryOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileStoreInfoTypeSummaryOrBuilder>
       getFileStoreInfoTypeSummariesOrBuilderList();
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public interface FileClusterSummaryOrBuilder
    * @return Whether the sensitivityScore field is set.
    */
   boolean hasSensitivityScore();
-
   /**
    *
    *
@@ -156,7 +149,6 @@ public interface FileClusterSummaryOrBuilder
    * @return The sensitivityScore.
    */
   com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
-
   /**
    *
    *
@@ -182,7 +174,6 @@ public interface FileClusterSummaryOrBuilder
    * @return Whether the dataRiskLevel field is set.
    */
   boolean hasDataRiskLevel();
-
   /**
    *
    *
@@ -196,7 +187,6 @@ public interface FileClusterSummaryOrBuilder
    * @return The dataRiskLevel.
    */
   com.google.privacy.dlp.v2.DataRiskLevel getDataRiskLevel();
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
-
   /**
    *
    *
@@ -232,7 +221,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
-
   /**
    *
    *
@@ -244,7 +232,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -256,7 +243,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
-
   /**
    *
    *
@@ -281,7 +267,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FileExtensionInfo> getFileExtensionsScannedList();
-
   /**
    *
    *
@@ -294,7 +279,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
    */
   com.google.privacy.dlp.v2.FileExtensionInfo getFileExtensionsScanned(int index);
-
   /**
    *
    *
@@ -307,7 +291,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_scanned = 7;</code>
    */
   int getFileExtensionsScannedCount();
-
   /**
    *
    *
@@ -321,7 +304,6 @@ public interface FileClusterSummaryOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileExtensionInfoOrBuilder>
       getFileExtensionsScannedOrBuilderList();
-
   /**
    *
    *
@@ -346,7 +328,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.FileExtensionInfo> getFileExtensionsSeenList();
-
   /**
    *
    *
@@ -358,7 +339,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
    */
   com.google.privacy.dlp.v2.FileExtensionInfo getFileExtensionsSeen(int index);
-
   /**
    *
    *
@@ -370,7 +350,6 @@ public interface FileClusterSummaryOrBuilder
    * <code>repeated .google.privacy.dlp.v2.FileExtensionInfo file_extensions_seen = 8;</code>
    */
   int getFileExtensionsSeenCount();
-
   /**
    *
    *
@@ -383,7 +362,6 @@ public interface FileClusterSummaryOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.FileExtensionInfoOrBuilder>
       getFileExtensionsSeenOrBuilderList();
-
   /**
    *
    *

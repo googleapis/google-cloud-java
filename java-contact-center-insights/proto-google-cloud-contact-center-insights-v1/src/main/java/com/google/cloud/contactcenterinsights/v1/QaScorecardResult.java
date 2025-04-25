@@ -34,7 +34,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaScorecardResult)
     QaScorecardResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QaScorecardResult.newBuilder() to construct.
   private QaScorecardResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return The tag.
      */
     java.lang.String getTag();
-
     /**
      *
      *
@@ -114,7 +112,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the score field is set.
      */
     boolean hasScore();
-
     /**
      *
      *
@@ -140,7 +137,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the potentialScore field is set.
      */
     boolean hasPotentialScore();
-
     /**
      *
      *
@@ -166,7 +162,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the normalizedScore field is set.
      */
     boolean hasNormalizedScore();
-
     /**
      *
      *
@@ -180,7 +175,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      */
     double getNormalizedScore();
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult)
       QaTagResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use QaTagResult.newBuilder() to construct.
     private QaTagResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -232,7 +225,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tag_ = "";
-
     /**
      *
      *
@@ -256,7 +248,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -283,7 +274,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     public static final int SCORE_FIELD_NUMBER = 2;
     private double score_ = 0D;
-
     /**
      *
      *
@@ -299,7 +289,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -318,7 +307,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     public static final int POTENTIAL_SCORE_FIELD_NUMBER = 3;
     private double potentialScore_ = 0D;
-
     /**
      *
      *
@@ -334,7 +322,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasPotentialScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -353,7 +340,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     public static final int NORMALIZED_SCORE_FIELD_NUMBER = 4;
     private double normalizedScore_ = 0D;
-
     /**
      *
      *
@@ -369,7 +355,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasNormalizedScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -603,7 +588,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -846,7 +830,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object tag_ = "";
-
       /**
        *
        *
@@ -869,7 +852,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -892,7 +874,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -914,7 +895,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -932,7 +912,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -957,7 +936,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
 
       private double score_;
-
       /**
        *
        *
@@ -973,7 +951,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public boolean hasScore() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -989,7 +966,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public double getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -1009,7 +985,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1029,7 +1004,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
 
       private double potentialScore_;
-
       /**
        *
        *
@@ -1045,7 +1019,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public boolean hasPotentialScore() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1061,7 +1034,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public double getPotentialScore() {
         return potentialScore_;
       }
-
       /**
        *
        *
@@ -1081,7 +1053,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1101,7 +1072,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
 
       private double normalizedScore_;
-
       /**
        *
        *
@@ -1117,7 +1087,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public boolean hasNormalizedScore() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1133,7 +1102,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public double getNormalizedScore() {
         return normalizedScore_;
       }
-
       /**
        *
        *
@@ -1153,7 +1121,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1259,7 +1226,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for sourceType.
      */
     int getSourceTypeValue();
-
     /**
      *
      *
@@ -1288,7 +1254,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the score field is set.
      */
     boolean hasScore();
-
     /**
      *
      *
@@ -1315,7 +1280,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the potentialScore field is set.
      */
     boolean hasPotentialScore();
-
     /**
      *
      *
@@ -1342,7 +1306,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * @return Whether the normalizedScore field is set.
      */
     boolean hasNormalizedScore();
-
     /**
      *
      *
@@ -1369,7 +1332,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      */
     java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult>
         getQaTagResultsList();
-
     /**
      *
      *
@@ -1383,7 +1345,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult getQaTagResults(
         int index);
-
     /**
      *
      *
@@ -1396,7 +1357,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     int getQaTagResultsCount();
-
     /**
      *
      *
@@ -1412,7 +1372,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
             ? extends
                 com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResultOrBuilder>
         getQaTagResultsOrBuilderList();
-
     /**
      *
      *
@@ -1427,7 +1386,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResultOrBuilder
         getQaTagResultsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1444,7 +1402,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSource)
       ScoreSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ScoreSource.newBuilder() to construct.
     private ScoreSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1532,7 +1489,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
        * <code>SOURCE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1543,7 +1499,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
        * <code>SYSTEM_GENERATED_ONLY = 1;</code>
        */
       public static final int SYSTEM_GENERATED_ONLY_VALUE = 1;
-
       /**
        *
        *
@@ -1645,7 +1600,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
     private int sourceType_ = 0;
-
     /**
      *
      *
@@ -1663,7 +1617,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public int getSourceTypeValue() {
       return sourceType_;
     }
-
     /**
      *
      *
@@ -1691,7 +1644,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     public static final int SCORE_FIELD_NUMBER = 2;
     private double score_ = 0D;
-
     /**
      *
      *
@@ -1707,7 +1659,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1726,7 +1677,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     public static final int POTENTIAL_SCORE_FIELD_NUMBER = 3;
     private double potentialScore_ = 0D;
-
     /**
      *
      *
@@ -1743,7 +1693,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasPotentialScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1763,7 +1712,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
     public static final int NORMALIZED_SCORE_FIELD_NUMBER = 4;
     private double normalizedScore_ = 0D;
-
     /**
      *
      *
@@ -1779,7 +1727,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasNormalizedScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1801,7 +1748,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult>
         qaTagResults_;
-
     /**
      *
      *
@@ -1818,7 +1764,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         getQaTagResultsList() {
       return qaTagResults_;
     }
-
     /**
      *
      *
@@ -1837,7 +1782,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         getQaTagResultsOrBuilderList() {
       return qaTagResults_;
     }
-
     /**
      *
      *
@@ -1853,7 +1797,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public int getQaTagResultsCount() {
       return qaTagResults_.size();
     }
-
     /**
      *
      *
@@ -1870,7 +1813,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         int index) {
       return qaTagResults_.get(index);
     }
-
     /**
      *
      *
@@ -2122,7 +2064,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2428,7 +2369,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int sourceType_ = 0;
-
       /**
        *
        *
@@ -2446,7 +2386,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public int getSourceTypeValue() {
         return sourceType_;
       }
-
       /**
        *
        *
@@ -2467,7 +2406,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2492,7 +2430,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2518,7 +2455,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2540,7 +2476,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
 
       private double score_;
-
       /**
        *
        *
@@ -2556,7 +2491,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public boolean hasScore() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2572,7 +2506,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public double getScore() {
         return score_;
       }
-
       /**
        *
        *
@@ -2592,7 +2525,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2612,7 +2544,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
 
       private double potentialScore_;
-
       /**
        *
        *
@@ -2629,7 +2560,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public boolean hasPotentialScore() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -2646,7 +2576,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public double getPotentialScore() {
         return potentialScore_;
       }
-
       /**
        *
        *
@@ -2667,7 +2596,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2688,7 +2616,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
 
       private double normalizedScore_;
-
       /**
        *
        *
@@ -2704,7 +2631,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public boolean hasNormalizedScore() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -2720,7 +2646,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       public double getNormalizedScore() {
         return normalizedScore_;
       }
-
       /**
        *
        *
@@ -2740,7 +2665,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2798,7 +2722,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return qaTagResultsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2817,7 +2740,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return qaTagResultsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2837,7 +2759,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return qaTagResultsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2864,7 +2785,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2889,7 +2809,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2915,7 +2834,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2942,7 +2860,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2966,7 +2883,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2991,7 +2907,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -3016,7 +2931,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -3038,7 +2952,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -3060,7 +2973,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -3076,7 +2988,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           getQaTagResultsBuilder(int index) {
         return getQaTagResultsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3096,7 +3007,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return qaTagResultsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3118,7 +3028,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           return java.util.Collections.unmodifiableList(qaTagResults_);
         }
       }
-
       /**
        *
        *
@@ -3137,7 +3046,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3157,7 +3065,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3268,7 +3175,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3294,7 +3200,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3325,7 +3230,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object qaScorecardRevision_ = "";
-
   /**
    *
    *
@@ -3349,7 +3253,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3378,7 +3281,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversation_ = "";
-
   /**
    *
    *
@@ -3402,7 +3304,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3429,7 +3330,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -3446,7 +3346,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3463,7 +3362,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -3483,7 +3381,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object agentId_ = "";
-
   /**
    *
    *
@@ -3507,7 +3404,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3536,7 +3432,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.QaAnswer> qaAnswers_;
-
   /**
    *
    *
@@ -3550,7 +3445,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.contactcenterinsights.v1.QaAnswer> getQaAnswersList() {
     return qaAnswers_;
   }
-
   /**
    *
    *
@@ -3565,7 +3459,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       getQaAnswersOrBuilderList() {
     return qaAnswers_;
   }
-
   /**
    *
    *
@@ -3579,7 +3472,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public int getQaAnswersCount() {
     return qaAnswers_.size();
   }
-
   /**
    *
    *
@@ -3593,7 +3485,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.contactcenterinsights.v1.QaAnswer getQaAnswers(int index) {
     return qaAnswers_.get(index);
   }
-
   /**
    *
    *
@@ -3611,7 +3502,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   public static final int SCORE_FIELD_NUMBER = 7;
   private double score_ = 0D;
-
   /**
    *
    *
@@ -3628,7 +3518,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public boolean hasScore() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3648,7 +3537,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   public static final int POTENTIAL_SCORE_FIELD_NUMBER = 8;
   private double potentialScore_ = 0D;
-
   /**
    *
    *
@@ -3665,7 +3553,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public boolean hasPotentialScore() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3685,7 +3572,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
 
   public static final int NORMALIZED_SCORE_FIELD_NUMBER = 9;
   private double normalizedScore_ = 0D;
-
   /**
    *
    *
@@ -3702,7 +3588,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public boolean hasNormalizedScore() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3725,7 +3610,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult>
       qaTagResults_;
-
   /**
    *
    *
@@ -3742,7 +3626,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       getQaTagResultsList() {
     return qaTagResults_;
   }
-
   /**
    *
    *
@@ -3761,7 +3644,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       getQaTagResultsOrBuilderList() {
     return qaTagResults_;
   }
-
   /**
    *
    *
@@ -3777,7 +3659,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public int getQaTagResultsCount() {
     return qaTagResults_.size();
   }
-
   /**
    *
    *
@@ -3794,7 +3675,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       int index) {
     return qaTagResults_.get(index);
   }
-
   /**
    *
    *
@@ -3817,7 +3697,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSource>
       scoreSources_;
-
   /**
    *
    *
@@ -3834,7 +3713,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       getScoreSourcesList() {
     return scoreSources_;
   }
-
   /**
    *
    *
@@ -3853,7 +3731,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       getScoreSourcesOrBuilderList() {
     return scoreSources_;
   }
-
   /**
    *
    *
@@ -3869,7 +3746,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
   public int getScoreSourcesCount() {
     return scoreSources_.size();
   }
-
   /**
    *
    *
@@ -3886,7 +3762,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       int index) {
     return scoreSources_.get(index);
   }
-
   /**
    *
    *
@@ -4192,7 +4067,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4675,7 +4549,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4700,7 +4573,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4725,7 +4597,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4749,7 +4620,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4769,7 +4639,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4796,7 +4665,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object qaScorecardRevision_ = "";
-
     /**
      *
      *
@@ -4819,7 +4687,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4842,7 +4709,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4864,7 +4730,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4882,7 +4747,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4907,7 +4771,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object conversation_ = "";
-
     /**
      *
      *
@@ -4930,7 +4793,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4953,7 +4815,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4975,7 +4836,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4993,7 +4853,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5023,7 +4882,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5040,7 +4898,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -5063,7 +4920,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5088,7 +4944,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5110,7 +4965,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5140,7 +4994,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5162,7 +5015,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5179,7 +5031,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5200,7 +5051,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5230,7 +5080,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object agentId_ = "";
-
     /**
      *
      *
@@ -5253,7 +5102,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5276,7 +5124,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5298,7 +5145,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5316,7 +5162,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5373,7 +5218,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaAnswersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5390,7 +5234,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaAnswersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5407,7 +5250,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaAnswersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5431,7 +5273,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5452,7 +5293,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5475,7 +5315,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5499,7 +5338,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5520,7 +5358,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5541,7 +5378,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5562,7 +5398,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5582,7 +5417,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5602,7 +5436,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5616,7 +5449,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         int index) {
       return getQaAnswersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5634,7 +5466,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaAnswersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5652,7 +5483,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(qaAnswers_);
       }
     }
-
     /**
      *
      *
@@ -5666,7 +5496,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       return getQaAnswersFieldBuilder()
           .addBuilder(com.google.cloud.contactcenterinsights.v1.QaAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5682,7 +5511,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.contactcenterinsights.v1.QaAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5715,7 +5543,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     }
 
     private double score_;
-
     /**
      *
      *
@@ -5732,7 +5559,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasScore() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -5749,7 +5575,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public double getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -5770,7 +5595,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5791,7 +5615,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     }
 
     private double potentialScore_;
-
     /**
      *
      *
@@ -5808,7 +5631,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasPotentialScore() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5825,7 +5647,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public double getPotentialScore() {
       return potentialScore_;
     }
-
     /**
      *
      *
@@ -5846,7 +5667,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5867,7 +5687,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     }
 
     private double normalizedScore_;
-
     /**
      *
      *
@@ -5884,7 +5703,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public boolean hasNormalizedScore() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -5901,7 +5719,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
     public double getNormalizedScore() {
       return normalizedScore_;
     }
-
     /**
      *
      *
@@ -5922,7 +5739,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5980,7 +5796,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaTagResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5999,7 +5814,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaTagResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6019,7 +5833,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaTagResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6045,7 +5858,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6070,7 +5882,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6096,7 +5907,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6122,7 +5932,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6146,7 +5955,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6171,7 +5979,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6196,7 +6003,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6218,7 +6024,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6240,7 +6045,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6256,7 +6060,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         getQaTagResultsBuilder(int index) {
       return getQaTagResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6276,7 +6079,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return qaTagResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6298,7 +6100,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(qaTagResults_);
       }
     }
-
     /**
      *
      *
@@ -6317,7 +6118,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6337,7 +6137,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.contactcenterinsights.v1.QaScorecardResult.QaTagResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6410,7 +6209,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return scoreSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6429,7 +6227,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return scoreSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6449,7 +6246,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return scoreSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6475,7 +6271,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6500,7 +6295,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6526,7 +6320,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6552,7 +6345,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6576,7 +6368,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6601,7 +6392,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6626,7 +6416,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6648,7 +6437,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6670,7 +6458,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6686,7 +6473,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         getScoreSourcesBuilder(int index) {
       return getScoreSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6706,7 +6492,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return scoreSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6728,7 +6513,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(scoreSources_);
       }
     }
-
     /**
      *
      *
@@ -6747,7 +6531,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6767,7 +6550,6 @@ public final class QaScorecardResult extends com.google.protobuf.GeneratedMessag
               com.google.cloud.contactcenterinsights.v1.QaScorecardResult.ScoreSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *

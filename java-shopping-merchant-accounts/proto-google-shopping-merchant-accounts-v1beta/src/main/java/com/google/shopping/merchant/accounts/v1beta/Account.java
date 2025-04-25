@@ -33,7 +33,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Account)
     AccountOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Account.newBuilder() to construct.
   private Account(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_ID_FIELD_NUMBER = 2;
   private long accountId_ = 0L;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accountName_ = "";
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADULT_CONTENT_FIELD_NUMBER = 4;
   private boolean adultContent_ = false;
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TEST_ACCOUNT_FIELD_NUMBER = 5;
   private boolean testAccount_ = false;
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIME_ZONE_FIELD_NUMBER = 6;
   private com.google.type.TimeZone timeZone_;
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeZone() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeZone getTimeZone() {
     return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
   }
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -334,7 +322,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -578,7 +565,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -861,7 +847,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -885,7 +870,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +893,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -932,7 +915,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +933,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long accountId_;
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public long getAccountId() {
       return accountId_;
     }
-
     /**
      *
      *
@@ -1013,7 +992,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1011,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object accountName_ = "";
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1061,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1085,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean adultContent_;
-
     /**
      *
      *
@@ -1175,7 +1147,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public boolean getAdultContent() {
       return adultContent_;
     }
-
     /**
      *
      *
@@ -1195,7 +1166,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean testAccount_;
-
     /**
      *
      *
@@ -1231,7 +1200,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public boolean getTestAccount() {
       return testAccount_;
     }
-
     /**
      *
      *
@@ -1251,7 +1219,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1243,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeZone.Builder,
             com.google.type.TimeZoneOrBuilder>
         timeZoneBuilder_;
-
     /**
      *
      *
@@ -1297,7 +1263,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeZone() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1322,7 +1287,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return timeZoneBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1315,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1340,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1373,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1398,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1458,7 +1418,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeZoneFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1481,7 +1440,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return timeZone_ == null ? com.google.type.TimeZone.getDefaultInstance() : timeZone_;
       }
     }
-
     /**
      *
      *
@@ -1515,7 +1473,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1539,7 +1496,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1563,7 +1519,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1541,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1559,6 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

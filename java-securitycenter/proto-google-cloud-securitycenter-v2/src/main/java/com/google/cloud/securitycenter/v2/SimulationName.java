@@ -269,8 +269,7 @@ public class SimulationName implements ResourceName {
     private Builder(SimulationName simulationName) {
       Preconditions.checkArgument(
           Objects.equals(simulationName.pathTemplate, ORGANIZATION_SIMULATION),
-          "toBuilder is only supported when SimulationName has the pattern of"
-              + " organizations/{organization}/simulations/{simulation}");
+          "toBuilder is only supported when SimulationName has the pattern of organizations/{organization}/simulations/{simulation}");
       this.organization = simulationName.organization;
       this.simulation = simulationName.simulation;
     }

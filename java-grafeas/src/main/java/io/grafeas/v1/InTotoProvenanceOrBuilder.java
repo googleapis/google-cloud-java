@@ -37,7 +37,6 @@ public interface InTotoProvenanceOrBuilder
    * @return Whether the builderConfig field is set.
    */
   boolean hasBuilderConfig();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface InTotoProvenanceOrBuilder
    * @return The builderConfig.
    */
   io.grafeas.v1.BuilderConfig getBuilderConfig();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface InTotoProvenanceOrBuilder
    * @return Whether the recipe field is set.
    */
   boolean hasRecipe();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface InTotoProvenanceOrBuilder
    * @return The recipe.
    */
   io.grafeas.v1.Recipe getRecipe();
-
   /**
    *
    *
@@ -114,14 +110,12 @@ public interface InTotoProvenanceOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    * <code>.grafeas.v1.Metadata metadata = 3;</code>
    *
    * @return The metadata.
    */
   io.grafeas.v1.Metadata getMetadata();
-
   /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
   io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder();
 
@@ -140,7 +134,6 @@ public interface InTotoProvenanceOrBuilder
    * @return A list containing the materials.
    */
   java.util.List<java.lang.String> getMaterialsList();
-
   /**
    *
    *
@@ -156,7 +149,6 @@ public interface InTotoProvenanceOrBuilder
    * @return The count of materials.
    */
   int getMaterialsCount();
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface InTotoProvenanceOrBuilder
    * @return The materials at the given index.
    */
   java.lang.String getMaterials(int index);
-
   /**
    *
    *

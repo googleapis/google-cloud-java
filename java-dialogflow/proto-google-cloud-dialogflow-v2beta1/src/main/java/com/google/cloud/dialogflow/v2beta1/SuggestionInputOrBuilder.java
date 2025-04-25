@@ -41,7 +41,6 @@ public interface SuggestionInputOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface SuggestionInputOrBuilder
    * @return Whether the textOverride field is set.
    */
   boolean hasTextOverride();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface SuggestionInputOrBuilder
    * @return The textOverride.
    */
   com.google.cloud.dialogflow.v2beta1.TextInput getTextOverride();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface SuggestionInputOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface SuggestionInputOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *
@@ -215,7 +210,6 @@ public interface SuggestionInputOrBuilder
    * @return Whether the intentInput field is set.
    */
   boolean hasIntentInput();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public interface SuggestionInputOrBuilder
    * @return The intentInput.
    */
   com.google.cloud.dialogflow.v2beta1.IntentInput getIntentInput();
-
   /**
    *
    *

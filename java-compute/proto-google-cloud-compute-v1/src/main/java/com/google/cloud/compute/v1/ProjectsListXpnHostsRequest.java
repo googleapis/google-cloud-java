@@ -32,7 +32,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ProjectsListXpnHostsRequest)
     ProjectsListXpnHostsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProjectsListXpnHostsRequest.newBuilder() to construct.
   private ProjectsListXpnHostsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object organization_ = "";
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
   public boolean hasOrganization() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -298,7 +294,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object organization_ = "";
-
     /**
      *
      *
@@ -500,7 +494,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
     public boolean hasOrganization() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -568,7 +559,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +576,6 @@ public final class ProjectsListXpnHostsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

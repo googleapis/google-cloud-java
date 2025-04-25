@@ -33,7 +33,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.ProductInlineSource)
     ProductInlineSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProductInlineSource.newBuilder() to construct.
   private ProductInlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.Product> products_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.retail.v2.Product> getProductsList() {
     return products_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       getProductsOrBuilderList() {
     return products_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
   public int getProductsCount() {
     return products_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
   public com.google.cloud.retail.v2.Product getProducts(int index) {
     return products_.get(index);
   }
-
   /**
    *
    *
@@ -321,7 +315,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
         return productsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
         return productsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
         return productsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
     public com.google.cloud.retail.v2.Product.Builder getProductsBuilder(int index) {
       return getProductsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
         return productsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(products_);
       }
     }
-
     /**
      *
      *
@@ -933,7 +911,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       return getProductsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2.Product.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -951,7 +928,6 @@ public final class ProductInlineSource extends com.google.protobuf.GeneratedMess
       return getProductsFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2.Product.getDefaultInstance());
     }
-
     /**
      *
      *

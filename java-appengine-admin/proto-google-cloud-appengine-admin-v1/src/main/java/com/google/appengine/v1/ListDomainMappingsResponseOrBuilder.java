@@ -34,7 +34,6 @@ public interface ListDomainMappingsResponseOrBuilder
    * <code>repeated .google.appengine.v1.DomainMapping domain_mappings = 1;</code>
    */
   java.util.List<com.google.appengine.v1.DomainMapping> getDomainMappingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDomainMappingsResponseOrBuilder
    * <code>repeated .google.appengine.v1.DomainMapping domain_mappings = 1;</code>
    */
   com.google.appengine.v1.DomainMapping getDomainMappings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDomainMappingsResponseOrBuilder
    * <code>repeated .google.appengine.v1.DomainMapping domain_mappings = 1;</code>
    */
   int getDomainMappingsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDomainMappingsResponseOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.DomainMappingOrBuilder>
       getDomainMappingsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListDomainMappingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -61,7 +61,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.TypeFilter)
     TypeFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TypeFilter.newBuilder() to construct.
   private TypeFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,7 +99,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIncludedTypesList() {
     return includedTypes_;
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public int getIncludedTypesCount() {
     return includedTypes_.size();
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIncludedTypes(int index) {
     return includedTypes_.get(index);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludedTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExcludedTypesList() {
     return excludedTypes_;
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public int getExcludedTypesCount() {
     return excludedTypes_.size();
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExcludedTypes(int index) {
     return excludedTypes_.get(index);
   }
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedPrimaryTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIncludedPrimaryTypesList() {
     return includedPrimaryTypes_;
   }
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public int getIncludedPrimaryTypesCount() {
     return includedPrimaryTypes_.size();
   }
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIncludedPrimaryTypes(int index) {
     return includedPrimaryTypes_.get(index);
   }
-
   /**
    *
    *
@@ -308,7 +295,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludedPrimaryTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -324,7 +310,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExcludedPrimaryTypesList() {
     return excludedPrimaryTypes_;
   }
-
   /**
    *
    *
@@ -340,7 +325,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public int getExcludedPrimaryTypesCount() {
     return excludedPrimaryTypes_.size();
   }
-
   /**
    *
    *
@@ -357,7 +341,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExcludedPrimaryTypes(int index) {
     return excludedPrimaryTypes_.get(index);
   }
-
   /**
    *
    *
@@ -591,7 +574,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -884,7 +866,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       includedTypes_.makeImmutable();
       return includedTypes_;
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public int getIncludedTypesCount() {
       return includedTypes_.size();
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIncludedTypes(int index) {
       return includedTypes_.get(index);
     }
-
     /**
      *
      *
@@ -947,7 +925,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIncludedTypesBytes(int index) {
       return includedTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +970,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +989,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1007,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1040,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1083,7 +1055,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       excludedTypes_.makeImmutable();
       return excludedTypes_;
     }
-
     /**
      *
      *
@@ -1098,7 +1069,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public int getExcludedTypesCount() {
       return excludedTypes_.size();
     }
-
     /**
      *
      *
@@ -1114,7 +1084,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExcludedTypes(int index) {
       return excludedTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1130,7 +1099,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExcludedTypesBytes(int index) {
       return excludedTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1154,7 +1122,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1144,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1163,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1181,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1214,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1267,7 +1230,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       includedPrimaryTypes_.makeImmutable();
       return includedPrimaryTypes_;
     }
-
     /**
      *
      *
@@ -1283,7 +1245,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public int getIncludedPrimaryTypesCount() {
       return includedPrimaryTypes_.size();
     }
-
     /**
      *
      *
@@ -1300,7 +1261,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIncludedPrimaryTypes(int index) {
       return includedPrimaryTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1317,7 +1277,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIncludedPrimaryTypesBytes(int index) {
       return includedPrimaryTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1342,7 +1301,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1324,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1344,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1363,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1397,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1459,7 +1413,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       excludedPrimaryTypes_.makeImmutable();
       return excludedPrimaryTypes_;
     }
-
     /**
      *
      *
@@ -1475,7 +1428,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public int getExcludedPrimaryTypesCount() {
       return excludedPrimaryTypes_.size();
     }
-
     /**
      *
      *
@@ -1492,7 +1444,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExcludedPrimaryTypes(int index) {
       return excludedPrimaryTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1509,7 +1460,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExcludedPrimaryTypesBytes(int index) {
       return excludedPrimaryTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1534,7 +1484,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1507,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1579,7 +1527,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1546,6 @@ public final class TypeFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

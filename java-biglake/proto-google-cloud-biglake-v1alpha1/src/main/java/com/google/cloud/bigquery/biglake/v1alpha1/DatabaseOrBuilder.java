@@ -36,7 +36,6 @@ public interface DatabaseOrBuilder
    * @return Whether the hiveOptions field is set.
    */
   boolean hasHiveOptions();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DatabaseOrBuilder
    * @return The hiveOptions.
    */
   com.google.cloud.bigquery.biglake.v1alpha1.HiveDatabaseOptions getHiveOptions();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DatabaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface DatabaseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface DatabaseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface DatabaseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface DatabaseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface DatabaseOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface DatabaseOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public interface DatabaseOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface DatabaseOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public interface DatabaseOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.SearchEntriesResult)
     SearchEntriesResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchEntriesResult.newBuilder() to construct.
   private SearchEntriesResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     boolean hasDataplexEntry();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Deprecated
     com.google.cloud.dataplex.v1.Entry getDataplexEntry();
-
     /**
      *
      *
@@ -114,7 +111,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     @java.lang.Deprecated
     com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder();
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.SearchEntriesResult.Snippets)
       SnippetsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Snippets.newBuilder() to construct.
     private Snippets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -163,7 +158,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     private int bitField0_;
     public static final int DATAPLEX_ENTRY_FIELD_NUMBER = 1;
     private com.google.cloud.dataplex.v1.Entry dataplexEntry_;
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     public boolean hasDataplexEntry() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -203,7 +196,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance()
           : dataplexEntry_;
     }
-
     /**
      *
      *
@@ -387,7 +379,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -596,7 +587,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
               com.google.cloud.dataplex.v1.Entry.Builder,
               com.google.cloud.dataplex.v1.EntryOrBuilder>
           dataplexEntryBuilder_;
-
       /**
        *
        *
@@ -614,7 +604,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       public boolean hasDataplexEntry() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -638,7 +627,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
           return dataplexEntryBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -662,7 +650,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -683,7 +670,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -712,7 +698,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -733,7 +718,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -749,7 +733,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return getDataplexEntryFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -769,7 +752,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
               : dataplexEntry_;
         }
       }
-
       /**
        *
        *
@@ -865,7 +847,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkedResource_ = "";
-
   /**
    *
    *
@@ -892,7 +873,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -922,7 +902,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
 
   public static final int DATAPLEX_ENTRY_FIELD_NUMBER = 9;
   private com.google.cloud.dataplex.v1.Entry dataplexEntry_;
-
   /**
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
@@ -932,7 +911,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
   public boolean hasDataplexEntry() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
    *
@@ -944,7 +922,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataplex.v1.Entry.getDefaultInstance()
         : dataplexEntry_;
   }
-
   /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder() {
@@ -955,7 +932,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
 
   public static final int SNIPPETS_FIELD_NUMBER = 12;
   private com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets snippets_;
-
   /**
    *
    *
@@ -975,7 +951,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
   public boolean hasSnippets() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -997,7 +972,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.getDefaultInstance()
         : snippets_;
   }
-
   /**
    *
    *
@@ -1203,7 +1177,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1437,7 +1410,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object linkedResource_ = "";
-
     /**
      *
      *
@@ -1463,7 +1435,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1489,7 +1460,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1484,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1504,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1568,7 +1536,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.Entry.Builder,
             com.google.cloud.dataplex.v1.EntryOrBuilder>
         dataplexEntryBuilder_;
-
     /**
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
      *
@@ -1577,7 +1544,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     public boolean hasDataplexEntry() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      * <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code>
      *
@@ -1592,7 +1558,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         return dataplexEntryBuilder_.getMessage();
       }
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder setDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
       if (dataplexEntryBuilder_ == null) {
@@ -1607,7 +1572,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder setDataplexEntry(com.google.cloud.dataplex.v1.Entry.Builder builderForValue) {
       if (dataplexEntryBuilder_ == null) {
@@ -1619,7 +1583,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder mergeDataplexEntry(com.google.cloud.dataplex.v1.Entry value) {
       if (dataplexEntryBuilder_ == null) {
@@ -1639,7 +1602,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public Builder clearDataplexEntry() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1651,14 +1613,12 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public com.google.cloud.dataplex.v1.Entry.Builder getDataplexEntryBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
       return getDataplexEntryFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     public com.google.cloud.dataplex.v1.EntryOrBuilder getDataplexEntryOrBuilder() {
       if (dataplexEntryBuilder_ != null) {
@@ -1669,7 +1629,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             : dataplexEntry_;
       }
     }
-
     /** <code>.google.cloud.dataplex.v1.Entry dataplex_entry = 9;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.Entry,
@@ -1694,7 +1653,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.SearchEntriesResult.Snippets.Builder,
             com.google.cloud.dataplex.v1.SearchEntriesResult.SnippetsOrBuilder>
         snippetsBuilder_;
-
     /**
      *
      *
@@ -1714,7 +1672,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
     public boolean hasSnippets() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1740,7 +1697,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
         return snippetsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1766,7 +1722,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1745,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1776,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1845,7 +1798,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1815,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSnippetsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1886,7 +1837,6 @@ public final class SearchEntriesResult extends com.google.protobuf.GeneratedMess
             : snippets_;
       }
     }
-
     /**
      *
      *

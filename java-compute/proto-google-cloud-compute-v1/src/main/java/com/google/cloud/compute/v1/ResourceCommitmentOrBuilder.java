@@ -36,7 +36,6 @@ public interface ResourceCommitmentOrBuilder
    * @return Whether the acceleratorType field is set.
    */
   boolean hasAcceleratorType();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ResourceCommitmentOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ResourceCommitmentOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface ResourceCommitmentOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ResourceCommitmentOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

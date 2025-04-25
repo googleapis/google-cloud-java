@@ -33,7 +33,6 @@ public final class ImportIssueModelResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ImportIssueModelResponse)
     ImportIssueModelResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportIssueModelResponse.newBuilder() to construct.
   private ImportIssueModelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class ImportIssueModelResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

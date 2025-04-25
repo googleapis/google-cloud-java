@@ -36,7 +36,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the bucketName field is set.
    */
   boolean hasBucketName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BackendBucketOrBuilder
    * @return The bucketName.
    */
   java.lang.String getBucketName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the cdnPolicy field is set.
    */
   boolean hasCdnPolicy();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface BackendBucketOrBuilder
    * @return The cdnPolicy.
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicy getCdnPolicy();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the compressionMode field is set.
    */
   boolean hasCompressionMode();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface BackendBucketOrBuilder
    * @return The compressionMode.
    */
   java.lang.String getCompressionMode();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface BackendBucketOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface BackendBucketOrBuilder
    * @return A list containing the customResponseHeaders.
    */
   java.util.List<java.lang.String> getCustomResponseHeadersList();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface BackendBucketOrBuilder
    * @return The count of customResponseHeaders.
    */
   int getCustomResponseHeadersCount();
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public interface BackendBucketOrBuilder
    * @return The customResponseHeaders at the given index.
    */
   java.lang.String getCustomResponseHeaders(int index);
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public interface BackendBucketOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -286,7 +273,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the edgeSecurityPolicy field is set.
    */
   boolean hasEdgeSecurityPolicy();
-
   /**
    *
    *
@@ -299,7 +285,6 @@ public interface BackendBucketOrBuilder
    * @return The edgeSecurityPolicy.
    */
   java.lang.String getEdgeSecurityPolicy();
-
   /**
    *
    *
@@ -325,7 +310,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the enableCdn field is set.
    */
   boolean hasEnableCdn();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -377,7 +360,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -390,7 +372,6 @@ public interface BackendBucketOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -416,7 +397,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -429,7 +409,6 @@ public interface BackendBucketOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -455,7 +434,6 @@ public interface BackendBucketOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -468,7 +446,6 @@ public interface BackendBucketOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -492,7 +469,6 @@ public interface BackendBucketOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
    */
   java.util.List<com.google.cloud.compute.v1.BackendBucketUsedBy> getUsedByList();
-
   /**
    *
    *
@@ -503,7 +479,6 @@ public interface BackendBucketOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
    */
   com.google.cloud.compute.v1.BackendBucketUsedBy getUsedBy(int index);
-
   /**
    *
    *
@@ -514,7 +489,6 @@ public interface BackendBucketOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
    */
   int getUsedByCount();
-
   /**
    *
    *
@@ -526,7 +500,6 @@ public interface BackendBucketOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.BackendBucketUsedByOrBuilder>
       getUsedByOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.BestEffortProvisioning)
     BestEffortProvisioningOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BestEffortProvisioning.newBuilder() to construct.
   private BestEffortProvisioning(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
 
   public static final int MIN_PROVISION_NODES_FIELD_NUMBER = 2;
   private int minProvisionNodes_ = 0;
-
   /**
    *
    *
@@ -272,7 +269,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -468,7 +464,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -486,7 +481,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -508,7 +502,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -530,7 +523,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
     }
 
     private int minProvisionNodes_;
-
     /**
      *
      *
@@ -548,7 +540,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
     public int getMinProvisionNodes() {
       return minProvisionNodes_;
     }
-
     /**
      *
      *
@@ -570,7 +561,6 @@ public final class BestEffortProvisioning extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

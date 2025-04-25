@@ -36,7 +36,6 @@ public interface UserUtteranceOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *

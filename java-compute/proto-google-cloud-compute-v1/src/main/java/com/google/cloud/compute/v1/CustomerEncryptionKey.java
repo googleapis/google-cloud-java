@@ -32,7 +32,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.CustomerEncryptionKey)
     CustomerEncryptionKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomerEncryptionKey.newBuilder() to construct.
   private CustomerEncryptionKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   public boolean hasKmsKeyName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyServiceAccount_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   public boolean hasKmsKeyServiceAccount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rawKey_ = "";
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   public boolean hasRawKey() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rsaEncryptedKey_ = "";
-
   /**
    *
    *
@@ -295,7 +284,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   public boolean hasRsaEncryptedKey() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -319,7 +307,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -348,7 +335,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sha256_ = "";
-
   /**
    *
    *
@@ -364,7 +350,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
   public boolean hasSha256() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -388,7 +373,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -635,7 +619,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -886,7 +869,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object kmsKeyName_ = "";
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public boolean hasKmsKeyName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -924,7 +905,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +927,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +965,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +989,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object kmsKeyServiceAccount_ = "";
-
     /**
      *
      *
@@ -1027,7 +1003,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public boolean hasKmsKeyServiceAccount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1050,7 +1025,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1047,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1068,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1085,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1109,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object rawKey_ = "";
-
     /**
      *
      *
@@ -1153,7 +1123,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public boolean hasRawKey() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1176,7 +1145,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1167,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1188,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1205,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1229,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object rsaEncryptedKey_ = "";
-
     /**
      *
      *
@@ -1279,7 +1243,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public boolean hasRsaEncryptedKey() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1302,7 +1265,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1325,7 +1287,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1308,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1325,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1349,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object sha256_ = "";
-
     /**
      *
      *
@@ -1405,7 +1363,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     public boolean hasSha256() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1428,7 +1385,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1451,7 +1407,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1473,7 +1428,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1445,6 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

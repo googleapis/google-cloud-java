@@ -36,7 +36,6 @@ public interface ListClientGatewaysResponseOrBuilder
    */
   java.util.List<com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway>
       getClientGatewaysList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListClientGatewaysResponseOrBuilder
    * </code>
    */
   com.google.cloud.beyondcorp.clientgateways.v1.ClientGateway getClientGateways(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListClientGatewaysResponseOrBuilder
    * </code>
    */
   int getClientGatewaysCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListClientGatewaysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.beyondcorp.clientgateways.v1.ClientGatewayOrBuilder>
       getClientGatewaysOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListClientGatewaysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface ListClientGatewaysResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -138,7 +132,6 @@ public interface ListClientGatewaysResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -152,7 +145,6 @@ public interface ListClientGatewaysResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

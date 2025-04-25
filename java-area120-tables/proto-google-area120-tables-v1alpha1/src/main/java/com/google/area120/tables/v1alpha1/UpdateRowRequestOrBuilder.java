@@ -37,7 +37,6 @@ public interface UpdateRowRequestOrBuilder
    * @return Whether the row field is set.
    */
   boolean hasRow();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateRowRequestOrBuilder
    * @return The row.
    */
   com.google.area120.tables.v1alpha1.Row getRow();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateRowRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface UpdateRowRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface UpdateRowRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

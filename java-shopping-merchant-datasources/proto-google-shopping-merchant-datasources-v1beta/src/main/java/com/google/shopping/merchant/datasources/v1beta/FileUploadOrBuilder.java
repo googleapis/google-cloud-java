@@ -38,7 +38,6 @@ public interface FileUploadOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface FileUploadOrBuilder
    * @return The enum numeric value on the wire for processingState.
    */
   int getProcessingStateValue();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface FileUploadOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.datasources.v1beta.FileUpload.Issue> getIssuesList();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface FileUploadOrBuilder
    * </code>
    */
   com.google.shopping.merchant.datasources.v1beta.FileUpload.Issue getIssues(int index);
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface FileUploadOrBuilder
    * </code>
    */
   int getIssuesCount();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface FileUploadOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.datasources.v1beta.FileUpload.IssueOrBuilder>
       getIssuesOrBuilderList();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface FileUploadOrBuilder
    * @return Whether the uploadTime field is set.
    */
   boolean hasUploadTime();
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public interface FileUploadOrBuilder
    * @return The uploadTime.
    */
   com.google.protobuf.Timestamp getUploadTime();
-
   /**
    *
    *

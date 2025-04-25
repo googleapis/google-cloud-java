@@ -36,7 +36,6 @@ public interface StopNodeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

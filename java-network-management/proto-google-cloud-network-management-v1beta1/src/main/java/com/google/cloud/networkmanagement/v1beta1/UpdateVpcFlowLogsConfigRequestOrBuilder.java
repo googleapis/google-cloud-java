@@ -38,7 +38,6 @@ public interface UpdateVpcFlowLogsConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateVpcFlowLogsConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateVpcFlowLogsConfigRequestOrBuilder
    * @return Whether the vpcFlowLogsConfig field is set.
    */
   boolean hasVpcFlowLogsConfig();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateVpcFlowLogsConfigRequestOrBuilder
    * @return The vpcFlowLogsConfig.
    */
   com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig getVpcFlowLogsConfig();
-
   /**
    *
    *

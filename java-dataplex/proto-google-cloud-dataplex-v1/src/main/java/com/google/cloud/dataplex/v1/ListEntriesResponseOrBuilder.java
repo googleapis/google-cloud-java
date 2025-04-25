@@ -34,7 +34,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Entry> getEntriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
    */
   com.google.cloud.dataplex.v1.Entry getEntries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Entry entries = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.EntryOrBuilder> getEntriesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

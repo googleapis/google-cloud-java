@@ -34,7 +34,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsNetworkAttachmentRequest)
     TestIamPermissionsNetworkAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TestIamPermissionsNetworkAttachmentRequest.newBuilder() to construct.
   private TestIamPermissionsNetworkAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
-
   /**
    *
    *
@@ -485,7 +475,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -742,7 +731,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +796,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -987,7 +965,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1008,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1025,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1054,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1120,7 +1092,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1117,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1139,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1170,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1191,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1208,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1263,7 +1229,6 @@ public final class TestIamPermissionsNetworkAttachmentRequest
             : testPermissionsRequestResource_;
       }
     }
-
     /**
      *
      *

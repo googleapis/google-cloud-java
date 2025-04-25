@@ -36,7 +36,6 @@ public interface AttachmentOrBuilder
    * @return Whether the csv field is set.
    */
   boolean hasCsv();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AttachmentOrBuilder
    * @return The csv.
    */
   com.google.cloud.advisorynotifications.v1.Csv getCsv();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AttachmentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

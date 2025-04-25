@@ -33,7 +33,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig)
     RagEmbeddingModelConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RagEmbeddingModelConfig.newBuilder() to construct.
   private RagEmbeddingModelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * @return The endpoint.
      */
     java.lang.String getEndpoint();
-
     /**
      *
      *
@@ -122,7 +120,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * @return The model.
      */
     java.lang.String getModel();
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * @return The modelVersionId.
      */
     java.lang.String getModelVersionId();
-
     /**
      *
      *
@@ -169,7 +165,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getModelVersionIdBytes();
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint)
       VertexPredictionEndpointOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VertexPredictionEndpoint.newBuilder() to construct.
     private VertexPredictionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -224,7 +218,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -254,7 +247,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -289,7 +281,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -318,7 +309,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -352,7 +342,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelVersionId_ = "";
-
     /**
      *
      *
@@ -377,7 +366,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -604,7 +592,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -843,7 +830,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object endpoint_ = "";
-
       /**
        *
        *
@@ -872,7 +858,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -901,7 +886,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -929,7 +913,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -953,7 +936,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -984,7 +966,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object model_ = "";
-
       /**
        *
        *
@@ -1012,7 +993,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1040,7 +1020,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1067,7 +1046,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1090,7 +1068,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1120,7 +1097,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       }
 
       private java.lang.Object modelVersionId_ = "";
-
       /**
        *
        *
@@ -1144,7 +1120,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1168,7 +1143,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1191,7 +1165,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1210,7 +1183,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1325,7 +1297,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * @return Whether the bm25 field is set.
      */
     boolean hasBm25();
-
     /**
      *
      *
@@ -1341,7 +1312,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      */
     com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
         getBm25();
-
     /**
      *
      *
@@ -1359,7 +1329,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.ModelCase
         getModelCase();
   }
-
   /**
    *
    *
@@ -1375,7 +1344,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig)
       SparseEmbeddingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SparseEmbeddingConfig.newBuilder() to construct.
     private SparseEmbeddingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1438,7 +1406,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
        * @return Whether the k1 field is set.
        */
       boolean hasK1();
-
       /**
        *
        *
@@ -1468,7 +1435,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
        * @return Whether the b field is set.
        */
       boolean hasB();
-
       /**
        *
        *
@@ -1484,7 +1450,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
        */
       float getB();
     }
-
     /**
      *
      *
@@ -1500,7 +1465,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25)
         Bm25OrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Bm25.newBuilder() to construct.
       private Bm25(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1534,7 +1498,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       private int bitField0_;
       public static final int MULTILINGUAL_FIELD_NUMBER = 1;
       private boolean multilingual_ = false;
-
       /**
        *
        *
@@ -1553,7 +1516,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
 
       public static final int K1_FIELD_NUMBER = 2;
       private float k1_ = 0F;
-
       /**
        *
        *
@@ -1571,7 +1533,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       public boolean hasK1() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1592,7 +1553,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
 
       public static final int B_FIELD_NUMBER = 3;
       private float b_ = 0F;
-
       /**
        *
        *
@@ -1610,7 +1570,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       public boolean hasB() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1847,7 +1806,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2089,7 +2047,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         private int bitField0_;
 
         private boolean multilingual_;
-
         /**
          *
          *
@@ -2105,7 +2062,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         public boolean getMultilingual() {
           return multilingual_;
         }
-
         /**
          *
          *
@@ -2125,7 +2081,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2145,7 +2100,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         }
 
         private float k1_;
-
         /**
          *
          *
@@ -2163,7 +2117,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         public boolean hasK1() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -2181,7 +2134,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         public float getK1() {
           return k1_;
         }
-
         /**
          *
          *
@@ -2203,7 +2155,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2225,7 +2176,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         }
 
         private float b_;
-
         /**
          *
          *
@@ -2243,7 +2193,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         public boolean hasB() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -2261,7 +2210,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         public float getB() {
           return b_;
         }
-
         /**
          *
          *
@@ -2283,7 +2231,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2391,7 +2338,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       private ModelCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2423,7 +2369,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     }
 
     public static final int BM25_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -2441,7 +2386,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public boolean hasBm25() {
       return modelCase_ == 1;
     }
-
     /**
      *
      *
@@ -2466,7 +2410,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig.Bm25
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -2682,7 +2625,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2927,7 +2869,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
                   .Bm25OrBuilder>
           bm25Builder_;
-
       /**
        *
        *
@@ -2945,7 +2886,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       public boolean hasBm25() {
         return modelCase_ == 1;
       }
-
       /**
        *
        *
@@ -2978,7 +2918,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               .Bm25.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3005,7 +2944,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         modelCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -3030,7 +2968,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         modelCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -3072,7 +3009,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         modelCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -3100,7 +3036,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -3117,7 +3052,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           getBm25Builder() {
         return getBm25FieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3145,7 +3079,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               .Bm25.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3281,7 +3214,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * @return Whether the sparseEmbeddingConfig field is set.
      */
     boolean hasSparseEmbeddingConfig();
-
     /**
      *
      *
@@ -3299,7 +3231,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      */
     com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
         getSparseEmbeddingConfig();
-
     /**
      *
      *
@@ -3331,7 +3262,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      * @return Whether the denseEmbeddingModelPredictionEndpoint field is set.
      */
     boolean hasDenseEmbeddingModelPredictionEndpoint();
-
     /**
      *
      *
@@ -3348,7 +3278,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
      */
     com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
         getDenseEmbeddingModelPredictionEndpoint();
-
     /**
      *
      *
@@ -3364,7 +3293,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpointOrBuilder
         getDenseEmbeddingModelPredictionEndpointOrBuilder();
   }
-
   /**
    *
    *
@@ -3380,7 +3308,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig)
       HybridSearchConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use HybridSearchConfig.newBuilder() to construct.
     private HybridSearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3414,7 +3341,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public static final int SPARSE_EMBEDDING_CONFIG_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.SparseEmbeddingConfig
         sparseEmbeddingConfig_;
-
     /**
      *
      *
@@ -3434,7 +3360,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public boolean hasSparseEmbeddingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3458,7 +3383,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               .getDefaultInstance()
           : sparseEmbeddingConfig_;
     }
-
     /**
      *
      *
@@ -3485,7 +3409,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public static final int DENSE_EMBEDDING_MODEL_PREDICTION_ENDPOINT_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
         denseEmbeddingModelPredictionEndpoint_;
-
     /**
      *
      *
@@ -3504,7 +3427,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public boolean hasDenseEmbeddingModelPredictionEndpoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3527,7 +3449,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               .getDefaultInstance()
           : denseEmbeddingModelPredictionEndpoint_;
     }
-
     /**
      *
      *
@@ -3743,7 +3664,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3999,7 +3919,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
                   .SparseEmbeddingConfigOrBuilder>
           sparseEmbeddingConfigBuilder_;
-
       /**
        *
        *
@@ -4018,7 +3937,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       public boolean hasSparseEmbeddingConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -4045,7 +3963,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return sparseEmbeddingConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4073,7 +3990,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4099,7 +4015,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4134,7 +4049,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -4158,7 +4072,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4179,7 +4092,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return getSparseEmbeddingConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4205,7 +4117,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               : sparseEmbeddingConfig_;
         }
       }
-
       /**
        *
        *
@@ -4249,7 +4160,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
                   .VertexPredictionEndpointOrBuilder>
           denseEmbeddingModelPredictionEndpointBuilder_;
-
       /**
        *
        *
@@ -4267,7 +4177,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       public boolean hasDenseEmbeddingModelPredictionEndpoint() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -4293,7 +4202,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
           return denseEmbeddingModelPredictionEndpointBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4321,7 +4229,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4347,7 +4254,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4382,7 +4288,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -4405,7 +4310,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4425,7 +4329,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         onChanged();
         return getDenseEmbeddingModelPredictionEndpointFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4450,7 +4353,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
               : denseEmbeddingModelPredictionEndpoint_;
         }
       }
-
       /**
        *
        *
@@ -4571,7 +4473,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     private ModelConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4605,7 +4506,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
   }
 
   public static final int VERTEX_PREDICTION_ENDPOINT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -4627,7 +4527,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
   public boolean hasVertexPredictionEndpoint() {
     return modelConfigCase_ == 1;
   }
-
   /**
    *
    *
@@ -4655,7 +4554,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4684,7 +4582,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
   }
 
   public static final int HYBRID_SEARCH_CONFIG_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -4702,7 +4599,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
   public boolean hasHybridSearchConfig() {
     return modelConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -4726,7 +4622,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     return com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4950,7 +4845,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5191,7 +5085,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig
                 .VertexPredictionEndpointOrBuilder>
         vertexPredictionEndpointBuilder_;
-
     /**
      *
      *
@@ -5213,7 +5106,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public boolean hasVertexPredictionEndpoint() {
       return modelConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -5250,7 +5142,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5281,7 +5172,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -5309,7 +5199,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -5355,7 +5244,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -5387,7 +5275,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -5408,7 +5295,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         getVertexPredictionEndpointBuilder() {
       return getVertexPredictionEndpointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5440,7 +5326,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5494,7 +5379,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfigOrBuilder>
         hybridSearchConfigBuilder_;
-
     /**
      *
      *
@@ -5512,7 +5396,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
     public boolean hasHybridSearchConfig() {
       return modelConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -5544,7 +5427,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5570,7 +5452,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5594,7 +5475,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5635,7 +5515,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       modelConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -5663,7 +5542,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -5679,7 +5557,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
         getHybridSearchConfigBuilder() {
       return getHybridSearchConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5705,7 +5582,6 @@ public final class RagEmbeddingModelConfig extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

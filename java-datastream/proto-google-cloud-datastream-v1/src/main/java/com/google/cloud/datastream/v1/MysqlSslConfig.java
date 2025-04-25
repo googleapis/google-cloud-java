@@ -33,7 +33,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.MysqlSslConfig)
     MysqlSslConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MysqlSslConfig.newBuilder() to construct.
   private MysqlSslConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientKey_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_KEY_SET_FIELD_NUMBER = 2;
   private boolean clientKeySet_ = false;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientCertificate_ = "";
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_CERTIFICATE_SET_FIELD_NUMBER = 4;
   private boolean clientCertificateSet_ = false;
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object caCertificate_ = "";
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CA_CERTIFICATE_SET_FIELD_NUMBER = 6;
   private boolean caCertificateSet_ = false;
-
   /**
    *
    *
@@ -506,7 +496,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +748,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object clientKey_ = "";
-
     /**
      *
      *
@@ -786,7 +774,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +800,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -839,7 +825,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clientKeySet_;
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getClientKeySet() {
       return clientKeySet_;
     }
-
     /**
      *
      *
@@ -926,7 +908,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +927,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientCertificate_ = "";
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +981,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1007,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1029,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1058,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clientCertificateSet_;
-
     /**
      *
      *
@@ -1098,7 +1073,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getClientCertificateSet() {
       return clientCertificateSet_;
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1111,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object caCertificate_ = "";
-
     /**
      *
      *
@@ -1162,7 +1134,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1197,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1222,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean caCertificateSet_;
-
     /**
      *
      *
@@ -1270,7 +1237,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getCaCertificateSet() {
       return caCertificateSet_;
     }
-
     /**
      *
      *
@@ -1290,7 +1256,6 @@ public final class MysqlSslConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

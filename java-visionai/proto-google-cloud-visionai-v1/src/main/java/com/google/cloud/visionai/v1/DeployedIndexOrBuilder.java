@@ -40,7 +40,6 @@ public interface DeployedIndexOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListCustomersResponseOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.Customer customers = 1;</code>
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1.Customer> getCustomersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCustomersResponseOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.Customer customers = 1;</code>
    */
   com.google.cloud.cloudcontrolspartner.v1.Customer getCustomers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCustomersResponseOrBuilder
    * <code>repeated .google.cloud.cloudcontrolspartner.v1.Customer customers = 1;</code>
    */
   int getCustomersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCustomersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1.CustomerOrBuilder>
       getCustomersOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListCustomersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListCustomersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListCustomersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListCustomersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

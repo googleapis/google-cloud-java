@@ -35,7 +35,6 @@ public interface ListAccessBindingsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccessBinding access_bindings = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.AccessBinding> getAccessBindingsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListAccessBindingsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccessBinding access_bindings = 1;</code>
    */
   com.google.analytics.admin.v1alpha.AccessBinding getAccessBindings(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListAccessBindingsResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.AccessBinding access_bindings = 1;</code>
    */
   int getAccessBindingsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListAccessBindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.AccessBindingOrBuilder>
       getAccessBindingsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListAccessBindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * @return Whether the azureNodePool field is set.
    */
   boolean hasAzureNodePool();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * @return The azureNodePool.
    */
   com.google.cloud.gkemulticloud.v1.AzureNodePool getAzureNodePool();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface UpdateAzureNodePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

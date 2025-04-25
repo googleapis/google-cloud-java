@@ -36,7 +36,6 @@ public interface GetRegionCommitmentRequestOrBuilder
    * @return The commitment.
    */
   java.lang.String getCommitment();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetRegionCommitmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetRegionCommitmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

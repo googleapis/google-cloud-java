@@ -36,7 +36,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the proxyBind field is set.
    */
   boolean hasProxyBind();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The proxyHeader.
    */
   java.lang.String getProxyHeader();
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -364,7 +348,6 @@ public interface TargetTcpProxyOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -377,7 +360,6 @@ public interface TargetTcpProxyOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *

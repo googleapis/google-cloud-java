@@ -39,7 +39,6 @@ public interface DeleteZoneRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

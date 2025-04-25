@@ -34,7 +34,6 @@ public interface InstantSnapshotsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstantSnapshot instant_snapshots = 329637457;</code>
    */
   java.util.List<com.google.cloud.compute.v1.InstantSnapshot> getInstantSnapshotsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface InstantSnapshotsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstantSnapshot instant_snapshots = 329637457;</code>
    */
   com.google.cloud.compute.v1.InstantSnapshot getInstantSnapshots(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface InstantSnapshotsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstantSnapshot instant_snapshots = 329637457;</code>
    */
   int getInstantSnapshotsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface InstantSnapshotsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstantSnapshotOrBuilder>
       getInstantSnapshotsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface InstantSnapshotsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface InstantSnapshotsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

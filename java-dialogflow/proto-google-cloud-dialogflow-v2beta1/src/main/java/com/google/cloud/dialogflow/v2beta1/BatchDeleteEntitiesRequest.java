@@ -34,7 +34,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest)
     BatchDeleteEntitiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDeleteEntitiesRequest.newBuilder() to construct.
   private BatchDeleteEntitiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList entityValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getEntityValuesList() {
     return entityValues_;
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   public int getEntityValuesCount() {
     return entityValues_.size();
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
   public java.lang.String getEntityValues(int index) {
     return entityValues_.get(index);
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -240,7 +232,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -454,7 +445,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +670,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +776,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +814,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       entityValues_.makeImmutable();
       return entityValues_;
     }
-
     /**
      *
      *
@@ -864,7 +847,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     public int getEntityValuesCount() {
       return entityValues_.size();
     }
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     public java.lang.String getEntityValues(int index) {
       return entityValues_.get(index);
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getEntityValuesBytes(int index) {
       return entityValues_.getByteString(index);
     }
-
     /**
      *
      *
@@ -926,7 +906,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +930,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +951,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +971,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +998,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1049,7 +1024,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1075,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1096,6 @@ public final class BatchDeleteEntitiesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

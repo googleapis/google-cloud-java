@@ -47,7 +47,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -173,11 +167,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public interface InstanceOrBuilder
    * @return Whether the privateConfig field is set.
    */
   boolean hasPrivateConfig();
-
   /**
    *
    *
@@ -244,7 +233,6 @@ public interface InstanceOrBuilder
    * @return The privateConfig.
    */
   com.google.cloud.securesourcemanager.v1.Instance.PrivateConfig getPrivateConfig();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for stateNote.
    */
   int getStateNoteValue();
-
   /**
    *
    *
@@ -336,7 +322,6 @@ public interface InstanceOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *
@@ -367,7 +352,6 @@ public interface InstanceOrBuilder
    * @return Whether the hostConfig field is set.
    */
   boolean hasHostConfig();
-
   /**
    *
    *
@@ -382,7 +366,6 @@ public interface InstanceOrBuilder
    * @return The hostConfig.
    */
   com.google.cloud.securesourcemanager.v1.Instance.HostConfig getHostConfig();
-
   /**
    *
    *

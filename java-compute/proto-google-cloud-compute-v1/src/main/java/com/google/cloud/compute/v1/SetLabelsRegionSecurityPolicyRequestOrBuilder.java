@@ -38,7 +38,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return Whether the regionSetLabelsRequestResource field is set.
    */
   boolean hasRegionSetLabelsRequestResource();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return The regionSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.RegionSetLabelsRequest getRegionSetLabelsRequestResource();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface SetLabelsRegionSecurityPolicyRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *

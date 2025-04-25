@@ -33,7 +33,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ColorInfo)
     ColorInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ColorInfo.newBuilder() to construct.
   private ColorInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,16 +69,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList colorFamilies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
    * <pre>
    * The standard color families. Strongly recommended to use the following
    * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-   * Normally it is expected to have only 1 color family. May consider using
-   * single "Mixed" instead of multiple values.
+   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+   * "Mixed". Normally it is expected to have only 1 color family. May consider
+   * using single "Mixed" instead of multiple values.
    *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
@@ -88,10 +86,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
-   *
-   * The colorFamilies field as a system attribute is not a required field but
-   * strongly recommended to be specified. Google Search models treat this field
-   * as more important than a custom product attribute when specified.
    * </pre>
    *
    * <code>repeated string color_families = 1;</code>
@@ -101,16 +95,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getColorFamiliesList() {
     return colorFamilies_;
   }
-
   /**
    *
    *
    * <pre>
    * The standard color families. Strongly recommended to use the following
    * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-   * Normally it is expected to have only 1 color family. May consider using
-   * single "Mixed" instead of multiple values.
+   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+   * "Mixed". Normally it is expected to have only 1 color family. May consider
+   * using single "Mixed" instead of multiple values.
    *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
@@ -119,10 +112,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
-   *
-   * The colorFamilies field as a system attribute is not a required field but
-   * strongly recommended to be specified. Google Search models treat this field
-   * as more important than a custom product attribute when specified.
    * </pre>
    *
    * <code>repeated string color_families = 1;</code>
@@ -132,16 +121,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public int getColorFamiliesCount() {
     return colorFamilies_.size();
   }
-
   /**
    *
    *
    * <pre>
    * The standard color families. Strongly recommended to use the following
    * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-   * Normally it is expected to have only 1 color family. May consider using
-   * single "Mixed" instead of multiple values.
+   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+   * "Mixed". Normally it is expected to have only 1 color family. May consider
+   * using single "Mixed" instead of multiple values.
    *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
@@ -150,10 +138,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
-   *
-   * The colorFamilies field as a system attribute is not a required field but
-   * strongly recommended to be specified. Google Search models treat this field
-   * as more important than a custom product attribute when specified.
    * </pre>
    *
    * <code>repeated string color_families = 1;</code>
@@ -164,16 +148,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getColorFamilies(int index) {
     return colorFamilies_.get(index);
   }
-
   /**
    *
    *
    * <pre>
    * The standard color families. Strongly recommended to use the following
    * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-   * Normally it is expected to have only 1 color family. May consider using
-   * single "Mixed" instead of multiple values.
+   * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+   * "Mixed". Normally it is expected to have only 1 color family. May consider
+   * using single "Mixed" instead of multiple values.
    *
    * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
@@ -182,10 +165,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * Google Merchant Center property
    * [color](https://support.google.com/merchants/answer/6324487). Schema.org
    * property [Product.color](https://schema.org/color).
-   *
-   * The colorFamilies field as a system attribute is not a required field but
-   * strongly recommended to be specified. Google Search models treat this field
-   * as more important than a custom product attribute when specified.
    * </pre>
    *
    * <code>repeated string color_families = 1;</code>
@@ -202,7 +181,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList colors_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -228,7 +206,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getColorsList() {
     return colors_;
   }
-
   /**
    *
    *
@@ -254,7 +231,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public int getColorsCount() {
     return colors_.size();
   }
-
   /**
    *
    *
@@ -281,7 +257,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getColors(int index) {
     return colors_.get(index);
   }
-
   /**
    *
    *
@@ -491,7 +466,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -712,16 +686,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -730,10 +703,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -744,16 +713,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       colorFamilies_.makeImmutable();
       return colorFamilies_;
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -762,10 +730,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -775,16 +739,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public int getColorFamiliesCount() {
       return colorFamilies_.size();
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -793,10 +756,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -807,16 +766,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getColorFamilies(int index) {
       return colorFamilies_.get(index);
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -825,10 +783,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -839,16 +793,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getColorFamiliesBytes(int index) {
       return colorFamilies_.getByteString(index);
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -857,10 +810,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -879,16 +828,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -897,10 +845,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -918,16 +862,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -936,10 +879,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -954,16 +893,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -972,10 +910,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -989,16 +923,15 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * The standard color families. Strongly recommended to use the following
      * standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
-     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and "Mixed".
-     * Normally it is expected to have only 1 color family. May consider using
-     * single "Mixed" instead of multiple values.
+     * "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+     * "Mixed". Normally it is expected to have only 1 color family. May consider
+     * using single "Mixed" instead of multiple values.
      *
      * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
@@ -1007,10 +940,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * Google Merchant Center property
      * [color](https://support.google.com/merchants/answer/6324487). Schema.org
      * property [Product.color](https://schema.org/color).
-     *
-     * The colorFamilies field as a system attribute is not a required field but
-     * strongly recommended to be specified. Google Search models treat this field
-     * as more important than a custom product attribute when specified.
      * </pre>
      *
      * <code>repeated string color_families = 1;</code>
@@ -1039,7 +968,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1066,7 +994,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       colors_.makeImmutable();
       return colors_;
     }
-
     /**
      *
      *
@@ -1092,7 +1019,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public int getColorsCount() {
       return colors_.size();
     }
-
     /**
      *
      *
@@ -1119,7 +1045,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getColors(int index) {
       return colors_.get(index);
     }
-
     /**
      *
      *
@@ -1146,7 +1071,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getColorsBytes(int index) {
       return colors_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1181,7 +1105,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1138,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1246,7 +1168,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1197,6 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

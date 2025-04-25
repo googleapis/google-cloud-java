@@ -34,7 +34,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest)
     GrantDnsBindPermissionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GrantDnsBindPermissionRequest.newBuilder() to construct.
   private GrantDnsBindPermissionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
 
   public static final int PRINCIPAL_FIELD_NUMBER = 2;
   private com.google.cloud.vmwareengine.v1.Principal principal_;
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
   public boolean hasPrincipal() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
         ? com.google.cloud.vmwareengine.v1.Principal.getDefaultInstance()
         : principal_;
   }
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -461,7 +453,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -694,7 +685,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -724,7 +714,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -754,7 +743,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +771,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +795,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +831,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
             com.google.cloud.vmwareengine.v1.Principal.Builder,
             com.google.cloud.vmwareengine.v1.PrincipalOrBuilder>
         principalBuilder_;
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
     public boolean hasPrincipal() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -889,7 +873,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
         return principalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -916,7 +899,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +954,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +977,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +995,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return getPrincipalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1039,7 +1017,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
             : principal_;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1048,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1107,7 +1083,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1118,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1152,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1182,6 @@ public final class GrantDnsBindPermissionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.UpdateAccountLabelsRequest)
     UpdateAccountLabelsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAccountLabelsRequest.newBuilder() to construct.
   private UpdateAccountLabelsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList labelIds_ = emptyLongList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
   public java.util.List<java.lang.Long> getLabelIdsList() {
     return labelIds_;
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
   public int getLabelIdsCount() {
     return labelIds_.size();
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
   public boolean hasParent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -464,7 +455,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +691,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -727,7 +716,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +785,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       labelIds_.makeImmutable();
       return labelIds_;
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     public int getLabelIdsCount() {
       return labelIds_.size();
     }
-
     /**
      *
      *
@@ -884,7 +866,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     public long getLabelIds(int index) {
       return labelIds_.getLong(index);
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +929,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +949,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
     public boolean hasParent() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1044,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1065,6 @@ public final class UpdateAccountLabelsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

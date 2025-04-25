@@ -76,7 +76,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return Whether the privateClusterConfig field is set.
    */
   boolean hasPrivateClusterConfig();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The privateClusterConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.PrivateClusterConfig getPrivateClusterConfig();
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The webServerIpv4CidrBlock.
    */
   java.lang.String getWebServerIpv4CidrBlock();
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The cloudSqlIpv4CidrBlock.
    */
   java.lang.String getCloudSqlIpv4CidrBlock();
-
   /**
    *
    *
@@ -192,7 +188,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The webServerIpv4ReservedRange.
    */
   java.lang.String getWebServerIpv4ReservedRange();
-
   /**
    *
    *
@@ -230,7 +225,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The cloudComposerNetworkIpv4CidrBlock.
    */
   java.lang.String getCloudComposerNetworkIpv4CidrBlock();
-
   /**
    *
    *
@@ -270,7 +264,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The cloudComposerNetworkIpv4ReservedRange.
    */
   java.lang.String getCloudComposerNetworkIpv4ReservedRange();
-
   /**
    *
    *
@@ -323,7 +316,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The cloudComposerConnectionSubnetwork.
    */
   java.lang.String getCloudComposerConnectionSubnetwork();
-
   /**
    *
    *
@@ -357,7 +349,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return Whether the networkingConfig field is set.
    */
   boolean hasNetworkingConfig();
-
   /**
    *
    *
@@ -373,7 +364,6 @@ public interface PrivateEnvironmentConfigOrBuilder
    * @return The networkingConfig.
    */
   com.google.cloud.orchestration.airflow.service.v1.NetworkingConfig getNetworkingConfig();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface TopologyConfigOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ComputationTopology computations = 1;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.ComputationTopology> getComputationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TopologyConfigOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ComputationTopology computations = 1;</code>
    */
   com.google.dataflow.v1beta3.ComputationTopology getComputations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TopologyConfigOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ComputationTopology computations = 1;</code>
    */
   int getComputationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TopologyConfigOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ComputationTopologyOrBuilder>
       getComputationsOrBuilderList();
-
   /**
    *
    *
@@ -90,7 +86,6 @@ public interface TopologyConfigOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DataDiskAssignment data_disk_assignments = 2;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.DataDiskAssignment> getDataDiskAssignmentsList();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface TopologyConfigOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DataDiskAssignment data_disk_assignments = 2;</code>
    */
   com.google.dataflow.v1beta3.DataDiskAssignment getDataDiskAssignments(int index);
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface TopologyConfigOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DataDiskAssignment data_disk_assignments = 2;</code>
    */
   int getDataDiskAssignmentsCount();
-
   /**
    *
    *
@@ -124,7 +117,6 @@ public interface TopologyConfigOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.DataDiskAssignmentOrBuilder>
       getDataDiskAssignmentsOrBuilderList();
-
   /**
    *
    *
@@ -147,7 +139,6 @@ public interface TopologyConfigOrBuilder
    * <code>map&lt;string, string&gt; user_stage_to_computation_name_map = 3;</code>
    */
   int getUserStageToComputationNameMapCount();
-
   /**
    *
    *
@@ -158,11 +149,9 @@ public interface TopologyConfigOrBuilder
    * <code>map&lt;string, string&gt; user_stage_to_computation_name_map = 3;</code>
    */
   boolean containsUserStageToComputationNameMap(java.lang.String key);
-
   /** Use {@link #getUserStageToComputationNameMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserStageToComputationNameMap();
-
   /**
    *
    *
@@ -173,7 +162,6 @@ public interface TopologyConfigOrBuilder
    * <code>map&lt;string, string&gt; user_stage_to_computation_name_map = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserStageToComputationNameMapMap();
-
   /**
    *
    *
@@ -188,7 +176,6 @@ public interface TopologyConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

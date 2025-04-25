@@ -54,7 +54,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TermsOfServiceAgreementState)
     TermsOfServiceAgreementStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TermsOfServiceAgreementState.newBuilder() to construct.
   private TermsOfServiceAgreementState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -205,7 +200,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
 
   public static final int TERMS_OF_SERVICE_KIND_FIELD_NUMBER = 3;
   private int termsOfServiceKind_ = 0;
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
   public int getTermsOfServiceKindValue() {
     return termsOfServiceKind_;
   }
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
 
   public static final int ACCEPTED_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.accounts.v1beta.Accepted accepted_;
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
   public boolean hasAccepted() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         ? com.google.shopping.merchant.accounts.v1beta.Accepted.getDefaultInstance()
         : accepted_;
   }
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
 
   public static final int REQUIRED_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.accounts.v1beta.Required required_;
-
   /**
    *
    *
@@ -319,7 +308,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
   public boolean hasRequired() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -337,7 +325,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         ? com.google.shopping.merchant.accounts.v1beta.Required.getDefaultInstance()
         : required_;
   }
-
   /**
    *
    *
@@ -568,7 +555,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -861,7 +847,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -887,7 +872,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -913,7 +897,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -938,7 +921,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +968,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -1011,7 +991,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1014,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1036,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1054,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1079,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     }
 
     private int termsOfServiceKind_ = 0;
-
     /**
      *
      *
@@ -1120,7 +1095,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     public int getTermsOfServiceKindValue() {
       return termsOfServiceKind_;
     }
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1135,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
           ? com.google.shopping.merchant.accounts.v1beta.TermsOfServiceKind.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1186,7 +1158,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1183,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
             com.google.shopping.merchant.accounts.v1beta.Accepted.Builder,
             com.google.shopping.merchant.accounts.v1beta.AcceptedOrBuilder>
         acceptedBuilder_;
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     public boolean hasAccepted() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1250,7 +1219,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         return acceptedBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1242,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1263,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1292,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1312,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1363,7 +1327,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return getAcceptedFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1383,7 +1346,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
             : accepted_;
       }
     }
-
     /**
      *
      *
@@ -1417,7 +1379,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
             com.google.shopping.merchant.accounts.v1beta.Required.Builder,
             com.google.shopping.merchant.accounts.v1beta.RequiredOrBuilder>
         requiredBuilder_;
-
     /**
      *
      *
@@ -1432,7 +1393,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
     public boolean hasRequired() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1453,7 +1413,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
         return requiredBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1455,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1483,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1502,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1561,7 +1516,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
       onChanged();
       return getRequiredFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1580,7 +1534,6 @@ public final class TermsOfServiceAgreementState extends com.google.protobuf.Gene
             : required_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ExternalAccountKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ExternalAccountKeyOrBuilder
    * @return The keyId.
    */
   java.lang.String getKeyId();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface WebhookConfigOrBuilder
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface WebhookConfigOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface WebhookConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

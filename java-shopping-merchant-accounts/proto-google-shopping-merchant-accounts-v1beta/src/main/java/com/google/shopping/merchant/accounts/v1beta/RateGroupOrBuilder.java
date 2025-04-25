@@ -41,7 +41,6 @@ public interface RateGroupOrBuilder
    * @return A list containing the applicableShippingLabels.
    */
   java.util.List<java.lang.String> getApplicableShippingLabelsList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface RateGroupOrBuilder
    * @return The count of applicableShippingLabels.
    */
   int getApplicableShippingLabelsCount();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface RateGroupOrBuilder
    * @return The applicableShippingLabels at the given index.
    */
   java.lang.String getApplicableShippingLabels(int index);
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface RateGroupOrBuilder
    * @return Whether the singleValue field is set.
    */
   boolean hasSingleValue();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface RateGroupOrBuilder
    * @return The singleValue.
    */
   com.google.shopping.merchant.accounts.v1beta.Value getSingleValue();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface RateGroupOrBuilder
    * @return Whether the mainTable field is set.
    */
   boolean hasMainTable();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface RateGroupOrBuilder
    * @return The mainTable.
    */
   com.google.shopping.merchant.accounts.v1beta.Table getMainTable();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface RateGroupOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Table> getSubtablesList();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface RateGroupOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Table getSubtables(int index);
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public interface RateGroupOrBuilder
    * </code>
    */
   int getSubtablesCount();
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public interface RateGroupOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.TableOrBuilder>
       getSubtablesOrBuilderList();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface RateGroupOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.CarrierRate> getCarrierRatesList();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface RateGroupOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.CarrierRate getCarrierRates(int index);
-
   /**
    *
    *
@@ -293,7 +280,6 @@ public interface RateGroupOrBuilder
    * </code>
    */
   int getCarrierRatesCount();
-
   /**
    *
    *
@@ -308,7 +294,6 @@ public interface RateGroupOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.CarrierRateOrBuilder>
       getCarrierRatesOrBuilderList();
-
   /**
    *
    *
@@ -337,7 +322,6 @@ public interface RateGroupOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface RateGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

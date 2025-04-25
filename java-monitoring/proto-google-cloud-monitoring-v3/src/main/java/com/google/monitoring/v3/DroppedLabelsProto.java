@@ -45,18 +45,17 @@ public final class DroppedLabelsProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ")google/monitoring/v3/dropped_labels.proto\022\024google.monitoring.v3\"|\n\r"
-          + "DroppedLabels\022=\n"
-          + "\005label\030\001 \003(\0132..google.monitoring.v3.DroppedLabels.LabelEntry\032,\n\n"
-          + "LabelEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001B\315\001\n"
-          + "\030com.google.monitoring.v3B\022DroppedLabelsProto"
+      "\n)google/monitoring/v3/dropped_labels.pr"
+          + "oto\022\024google.monitoring.v3\"|\n\rDroppedLabe"
+          + "ls\022=\n\005label\030\001 \003(\0132..google.monitoring.v3"
+          + ".DroppedLabels.LabelEntry\032,\n\nLabelEntry\022"
+          + "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\315\001\n\030com."
+          + "google.monitoring.v3B\022DroppedLabelsProto"
           + "P\001ZAcloud.google.com/go/monitoring/apiv3"
           + "/v2/monitoringpb;monitoringpb\252\002\032Google.C"
           + "loud.Monitoring.V3\312\002\032Google\\Cloud\\Monito"
-          + "ring\\V3\352\002\035Google::Cloud::Monitoring::V3b\006proto3"
+          + "ring\\V3\352\002\035Google::Cloud::Monitoring::V3b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

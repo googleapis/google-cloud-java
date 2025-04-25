@@ -82,7 +82,6 @@ public enum VolumePerformanceTier implements com.google.protobuf.ProtocolMessage
    * <code>VOLUME_PERFORMANCE_TIER_UNSPECIFIED = 0;</code>
    */
   public static final int VOLUME_PERFORMANCE_TIER_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum VolumePerformanceTier implements com.google.protobuf.ProtocolMessage
    * <code>VOLUME_PERFORMANCE_TIER_SHARED = 1;</code>
    */
   public static final int VOLUME_PERFORMANCE_TIER_SHARED_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum VolumePerformanceTier implements com.google.protobuf.ProtocolMessage
    * <code>VOLUME_PERFORMANCE_TIER_ASSIGNED = 2;</code>
    */
   public static final int VOLUME_PERFORMANCE_TIER_ASSIGNED_VALUE = 2;
-
   /**
    *
    *

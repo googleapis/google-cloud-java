@@ -58,7 +58,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.Aggregation)
     AggregationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Aggregation.newBuilder() to construct.
   private Aggregation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -405,7 +404,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_NONE = 0;</code>
      */
     public static final int ALIGN_NONE_VALUE = 0;
-
     /**
      *
      *
@@ -425,7 +423,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_DELTA = 1;</code>
      */
     public static final int ALIGN_DELTA_VALUE = 1;
-
     /**
      *
      *
@@ -448,7 +445,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_RATE = 2;</code>
      */
     public static final int ALIGN_RATE_VALUE = 2;
-
     /**
      *
      *
@@ -462,7 +458,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_INTERPOLATE = 3;</code>
      */
     public static final int ALIGN_INTERPOLATE_VALUE = 3;
-
     /**
      *
      *
@@ -476,7 +471,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_NEXT_OLDER = 4;</code>
      */
     public static final int ALIGN_NEXT_OLDER_VALUE = 4;
-
     /**
      *
      *
@@ -490,7 +484,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_MIN = 10;</code>
      */
     public static final int ALIGN_MIN_VALUE = 10;
-
     /**
      *
      *
@@ -504,7 +497,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_MAX = 11;</code>
      */
     public static final int ALIGN_MAX_VALUE = 11;
-
     /**
      *
      *
@@ -517,7 +509,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_MEAN = 12;</code>
      */
     public static final int ALIGN_MEAN_VALUE = 12;
-
     /**
      *
      *
@@ -531,7 +522,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_COUNT = 13;</code>
      */
     public static final int ALIGN_COUNT_VALUE = 13;
-
     /**
      *
      *
@@ -545,7 +535,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_SUM = 14;</code>
      */
     public static final int ALIGN_SUM_VALUE = 14;
-
     /**
      *
      *
@@ -559,7 +548,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_STDDEV = 15;</code>
      */
     public static final int ALIGN_STDDEV_VALUE = 15;
-
     /**
      *
      *
@@ -572,7 +560,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_COUNT_TRUE = 16;</code>
      */
     public static final int ALIGN_COUNT_TRUE_VALUE = 16;
-
     /**
      *
      *
@@ -585,7 +572,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_COUNT_FALSE = 24;</code>
      */
     public static final int ALIGN_COUNT_FALSE_VALUE = 24;
-
     /**
      *
      *
@@ -599,7 +585,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_FRACTION_TRUE = 17;</code>
      */
     public static final int ALIGN_FRACTION_TRUE_VALUE = 17;
-
     /**
      *
      *
@@ -615,7 +600,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_PERCENTILE_99 = 18;</code>
      */
     public static final int ALIGN_PERCENTILE_99_VALUE = 18;
-
     /**
      *
      *
@@ -631,7 +615,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_PERCENTILE_95 = 19;</code>
      */
     public static final int ALIGN_PERCENTILE_95_VALUE = 19;
-
     /**
      *
      *
@@ -647,7 +630,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_PERCENTILE_50 = 20;</code>
      */
     public static final int ALIGN_PERCENTILE_50_VALUE = 20;
-
     /**
      *
      *
@@ -663,7 +645,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>ALIGN_PERCENTILE_05 = 21;</code>
      */
     public static final int ALIGN_PERCENTILE_05_VALUE = 21;
-
     /**
      *
      *
@@ -1019,7 +1000,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_NONE = 0;</code>
      */
     public static final int REDUCE_NONE_VALUE = 0;
-
     /**
      *
      *
@@ -1035,7 +1015,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_MEAN = 1;</code>
      */
     public static final int REDUCE_MEAN_VALUE = 1;
-
     /**
      *
      *
@@ -1049,7 +1028,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_MIN = 2;</code>
      */
     public static final int REDUCE_MIN_VALUE = 2;
-
     /**
      *
      *
@@ -1063,7 +1041,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_MAX = 3;</code>
      */
     public static final int REDUCE_MAX_VALUE = 3;
-
     /**
      *
      *
@@ -1077,7 +1054,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_SUM = 4;</code>
      */
     public static final int REDUCE_SUM_VALUE = 4;
-
     /**
      *
      *
@@ -1091,7 +1067,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_STDDEV = 5;</code>
      */
     public static final int REDUCE_STDDEV_VALUE = 5;
-
     /**
      *
      *
@@ -1105,7 +1080,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_COUNT = 6;</code>
      */
     public static final int REDUCE_COUNT_VALUE = 6;
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_COUNT_TRUE = 7;</code>
      */
     public static final int REDUCE_COUNT_TRUE_VALUE = 7;
-
     /**
      *
      *
@@ -1133,7 +1106,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_COUNT_FALSE = 15;</code>
      */
     public static final int REDUCE_COUNT_FALSE_VALUE = 15;
-
     /**
      *
      *
@@ -1148,7 +1120,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_FRACTION_TRUE = 8;</code>
      */
     public static final int REDUCE_FRACTION_TRUE_VALUE = 8;
-
     /**
      *
      *
@@ -1163,7 +1134,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_PERCENTILE_99 = 9;</code>
      */
     public static final int REDUCE_PERCENTILE_99_VALUE = 9;
-
     /**
      *
      *
@@ -1178,7 +1148,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_PERCENTILE_95 = 10;</code>
      */
     public static final int REDUCE_PERCENTILE_95_VALUE = 10;
-
     /**
      *
      *
@@ -1193,7 +1162,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>REDUCE_PERCENTILE_50 = 11;</code>
      */
     public static final int REDUCE_PERCENTILE_50_VALUE = 11;
-
     /**
      *
      *
@@ -1317,7 +1285,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ALIGNMENT_PERIOD_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration alignmentPeriod_;
-
   /**
    *
    *
@@ -1345,7 +1312,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAlignmentPeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1375,7 +1341,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : alignmentPeriod_;
   }
-
   /**
    *
    *
@@ -1406,7 +1371,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PER_SERIES_ALIGNER_FIELD_NUMBER = 2;
   private int perSeriesAligner_ = 0;
-
   /**
    *
    *
@@ -1437,7 +1401,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public int getPerSeriesAlignerValue() {
     return perSeriesAligner_;
   }
-
   /**
    *
    *
@@ -1473,7 +1436,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CROSS_SERIES_REDUCER_FIELD_NUMBER = 4;
   private int crossSeriesReducer_ = 0;
-
   /**
    *
    *
@@ -1502,7 +1464,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public int getCrossSeriesReducerValue() {
     return crossSeriesReducer_;
   }
-
   /**
    *
    *
@@ -1539,7 +1500,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList groupByFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1567,7 +1527,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getGroupByFieldsList() {
     return groupByFields_;
   }
-
   /**
    *
    *
@@ -1595,7 +1554,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public int getGroupByFieldsCount() {
     return groupByFields_.size();
   }
-
   /**
    *
    *
@@ -1624,7 +1582,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getGroupByFields(int index) {
     return groupByFields_.get(index);
   }
-
   /**
    *
    *
@@ -1852,7 +1809,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2128,7 +2084,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         alignmentPeriodBuilder_;
-
     /**
      *
      *
@@ -2155,7 +2110,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAlignmentPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2188,7 +2142,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         return alignmentPeriodBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2223,7 +2176,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2255,7 +2207,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2295,7 +2246,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2327,7 +2277,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2354,7 +2303,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAlignmentPeriodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2385,7 +2333,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
             : alignmentPeriod_;
       }
     }
-
     /**
      *
      *
@@ -2425,7 +2372,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int perSeriesAligner_ = 0;
-
     /**
      *
      *
@@ -2456,7 +2402,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public int getPerSeriesAlignerValue() {
       return perSeriesAligner_;
     }
-
     /**
      *
      *
@@ -2490,7 +2435,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2523,7 +2467,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.Aggregation.Aligner.forNumber(perSeriesAligner_);
       return result == null ? com.google.monitoring.v3.Aggregation.Aligner.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2560,7 +2503,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2595,7 +2537,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int crossSeriesReducer_ = 0;
-
     /**
      *
      *
@@ -2624,7 +2565,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public int getCrossSeriesReducerValue() {
       return crossSeriesReducer_;
     }
-
     /**
      *
      *
@@ -2656,7 +2596,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2687,7 +2626,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.Aggregation.Reducer.forNumber(crossSeriesReducer_);
       return result == null ? com.google.monitoring.v3.Aggregation.Reducer.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2722,7 +2660,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2700,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2792,7 +2728,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       groupByFields_.makeImmutable();
       return groupByFields_;
     }
-
     /**
      *
      *
@@ -2820,7 +2755,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public int getGroupByFieldsCount() {
       return groupByFields_.size();
     }
-
     /**
      *
      *
@@ -2849,7 +2783,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getGroupByFields(int index) {
       return groupByFields_.get(index);
     }
-
     /**
      *
      *
@@ -2878,7 +2811,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getGroupByFieldsBytes(int index) {
       return groupByFields_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2915,7 +2847,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2951,7 +2882,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2984,7 +2914,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3016,7 +2945,6 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

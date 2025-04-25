@@ -38,7 +38,6 @@ public interface GetInstanceHealthResponseOrBuilder
    * @return The enum numeric value on the wire for healthState.
    */
   int getHealthStateValue();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface GetInstanceHealthResponseOrBuilder
    * </code>
    */
   int getHealthInfoCount();
-
   /**
    *
    *
@@ -93,11 +91,9 @@ public interface GetInstanceHealthResponseOrBuilder
    * </code>
    */
   boolean containsHealthInfo(java.lang.String key);
-
   /** Use {@link #getHealthInfoMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHealthInfo();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface GetInstanceHealthResponseOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHealthInfoMap();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface GetInstanceHealthResponseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

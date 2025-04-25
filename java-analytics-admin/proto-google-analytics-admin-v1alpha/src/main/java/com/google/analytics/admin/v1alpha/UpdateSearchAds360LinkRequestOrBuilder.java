@@ -36,7 +36,6 @@ public interface UpdateSearchAds360LinkRequestOrBuilder
    * @return Whether the searchAds360Link field is set.
    */
   boolean hasSearchAds360Link();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateSearchAds360LinkRequestOrBuilder
    * @return The searchAds360Link.
    */
   com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateSearchAds360LinkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdateSearchAds360LinkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

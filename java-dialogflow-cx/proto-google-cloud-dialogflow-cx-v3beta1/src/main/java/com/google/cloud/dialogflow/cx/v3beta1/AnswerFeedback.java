@@ -33,7 +33,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.AnswerFeedback)
     AnswerFeedbackOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnswerFeedback.newBuilder() to construct.
   private AnswerFeedback(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>RATING_UNSPECIFIED = 0;</code>
      */
     public static final int RATING_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * <code>THUMBS_UP = 1;</code>
      */
     public static final int THUMBS_UP_VALUE = 1;
-
     /**
      *
      *
@@ -245,7 +242,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the reasonLabels.
      */
     java.util.List<java.lang.String> getReasonLabelsList();
-
     /**
      *
      *
@@ -260,7 +256,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return The count of reasonLabels.
      */
     int getReasonLabelsCount();
-
     /**
      *
      *
@@ -276,7 +271,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return The reasonLabels at the given index.
      */
     java.lang.String getReasonLabels(int index);
-
     /**
      *
      *
@@ -306,7 +300,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      * @return The feedback.
      */
     java.lang.String getFeedback();
-
     /**
      *
      *
@@ -321,7 +314,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getFeedbackBytes();
   }
-
   /**
    *
    *
@@ -336,7 +328,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.RatingReason)
       RatingReasonOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RatingReason.newBuilder() to construct.
     private RatingReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -373,7 +364,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList reasonLabels_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -390,7 +380,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getReasonLabelsList() {
       return reasonLabels_;
     }
-
     /**
      *
      *
@@ -407,7 +396,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public int getReasonLabelsCount() {
       return reasonLabels_.size();
     }
-
     /**
      *
      *
@@ -425,7 +413,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getReasonLabels(int index) {
       return reasonLabels_.get(index);
     }
-
     /**
      *
      *
@@ -448,7 +435,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object feedback_ = "";
-
     /**
      *
      *
@@ -473,7 +459,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -677,7 +662,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -902,7 +886,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -920,7 +903,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         reasonLabels_.makeImmutable();
         return reasonLabels_;
       }
-
       /**
        *
        *
@@ -937,7 +919,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       public int getReasonLabelsCount() {
         return reasonLabels_.size();
       }
-
       /**
        *
        *
@@ -955,7 +936,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getReasonLabels(int index) {
         return reasonLabels_.get(index);
       }
-
       /**
        *
        *
@@ -973,7 +953,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getReasonLabelsBytes(int index) {
         return reasonLabels_.getByteString(index);
       }
-
       /**
        *
        *
@@ -999,7 +978,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1024,7 +1002,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1023,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1067,7 +1043,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1095,7 +1070,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object feedback_ = "";
-
       /**
        *
        *
@@ -1119,7 +1093,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1143,7 +1116,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1166,7 +1138,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1185,7 +1156,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1280,7 +1250,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int RATING_FIELD_NUMBER = 1;
   private int rating_ = 0;
-
   /**
    *
    *
@@ -1298,7 +1267,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public int getRatingValue() {
     return rating_;
   }
-
   /**
    *
    *
@@ -1323,7 +1291,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATING_REASON_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.RatingReason ratingReason_;
-
   /**
    *
    *
@@ -1342,7 +1309,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRatingReason() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1363,7 +1329,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.RatingReason.getDefaultInstance()
         : ratingReason_;
   }
-
   /**
    *
    *
@@ -1388,7 +1353,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customRating_ = "";
-
   /**
    *
    *
@@ -1414,7 +1378,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1628,7 +1591,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1856,7 +1818,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int rating_ = 0;
-
     /**
      *
      *
@@ -1874,7 +1835,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public int getRatingValue() {
       return rating_;
     }
-
     /**
      *
      *
@@ -1895,7 +1855,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1917,7 +1876,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.Rating.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1941,7 +1899,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1925,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.RatingReason.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.RatingReasonOrBuilder>
         ratingReasonBuilder_;
-
     /**
      *
      *
@@ -1986,7 +1942,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRatingReason() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2011,7 +1966,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return ratingReasonBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2038,7 +1992,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2063,7 +2016,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2097,7 +2049,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2120,7 +2071,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2089,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRatingReasonFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2163,7 +2112,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
             : ratingReason_;
       }
     }
-
     /**
      *
      *
@@ -2194,7 +2142,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object customRating_ = "";
-
     /**
      *
      *
@@ -2219,7 +2166,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2244,7 +2190,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2268,7 +2213,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2288,7 +2232,6 @@ public final class AnswerFeedback extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

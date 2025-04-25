@@ -41,7 +41,6 @@ public interface DeleteTransferRunRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

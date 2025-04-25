@@ -39,7 +39,6 @@ public interface SanitizeUserPromptRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SanitizeUserPromptRequestOrBuilder
    * @return Whether the userPromptData field is set.
    */
   boolean hasUserPromptData();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface SanitizeUserPromptRequestOrBuilder
    * @return The userPromptData.
    */
   com.google.cloud.modelarmor.v1.DataItem getUserPromptData();
-
   /**
    *
    *

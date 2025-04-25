@@ -34,7 +34,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.PurgeExecutionsResponse)
     PurgeExecutionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeExecutionsResponse.newBuilder() to construct.
   private PurgeExecutionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
 
   public static final int PURGE_COUNT_FIELD_NUMBER = 1;
   private long purgeCount_ = 0L;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList purgeSample_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getPurgeSampleList() {
     return purgeSample_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
   public int getPurgeSampleCount() {
     return purgeSample_.size();
   }
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
   public java.lang.String getPurgeSample(int index) {
     return purgeSample_.get(index);
   }
-
   /**
    *
    *
@@ -338,7 +332,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -544,7 +537,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long purgeCount_;
-
     /**
      *
      *
@@ -562,7 +554,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     public long getPurgeCount() {
       return purgeCount_;
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       purgeSample_.makeImmutable();
       return purgeSample_;
     }
-
     /**
      *
      *
@@ -649,7 +637,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     public int getPurgeSampleCount() {
       return purgeSample_.size();
     }
-
     /**
      *
      *
@@ -667,7 +654,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     public java.lang.String getPurgeSample(int index) {
       return purgeSample_.get(index);
     }
-
     /**
      *
      *
@@ -685,7 +671,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getPurgeSampleBytes(int index) {
       return purgeSample_.getByteString(index);
     }
-
     /**
      *
      *
@@ -711,7 +696,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +720,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +741,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +761,6 @@ public final class PurgeExecutionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

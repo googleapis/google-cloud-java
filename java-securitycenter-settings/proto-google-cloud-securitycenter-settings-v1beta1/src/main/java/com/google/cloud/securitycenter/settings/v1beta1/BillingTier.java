@@ -72,7 +72,6 @@ public enum BillingTier implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BILLING_TIER_UNSPECIFIED = 0;</code>
    */
   public static final int BILLING_TIER_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum BillingTier implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STANDARD = 1;</code>
    */
   public static final int STANDARD_VALUE = 1;
-
   /**
    *
    *

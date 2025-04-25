@@ -33,7 +33,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateAudienceRequest)
     UpdateAudienceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAudienceRequest.newBuilder() to construct.
   private UpdateAudienceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int AUDIENCE_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.Audience audience_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasAudience() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
         ? com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()
         : audience_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -365,7 +358,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +580,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
             com.google.analytics.admin.v1alpha.Audience.Builder,
             com.google.analytics.admin.v1alpha.AudienceOrBuilder>
         audienceBuilder_;
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasAudience() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
         return audienceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +668,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +698,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getAudienceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
             : audience_;
       }
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -881,7 +861,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class UpdateAudienceRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
-
     /**
      *
      *

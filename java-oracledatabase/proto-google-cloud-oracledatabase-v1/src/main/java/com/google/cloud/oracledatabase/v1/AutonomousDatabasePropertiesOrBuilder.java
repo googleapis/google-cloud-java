@@ -37,7 +37,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The ocid.
    */
   java.lang.String getOcid();
-
   /**
    *
    *
@@ -118,7 +117,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for dbWorkload.
    */
   int getDbWorkloadValue();
-
   /**
    *
    *
@@ -148,7 +146,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for dbEdition.
    */
   int getDbEditionValue();
-
   /**
    *
    *
@@ -177,7 +174,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The characterSet.
    */
   java.lang.String getCharacterSet();
-
   /**
    *
    *
@@ -205,7 +201,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The nCharacterSet.
    */
   java.lang.String getNCharacterSet();
-
   /**
    *
    *
@@ -232,7 +227,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The privateEndpointIp.
    */
   java.lang.String getPrivateEndpointIp();
-
   /**
    *
    *
@@ -258,7 +252,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The privateEndpointLabel.
    */
   java.lang.String getPrivateEndpointLabel();
-
   /**
    *
    *
@@ -284,7 +277,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The dbVersion.
    */
   java.lang.String getDbVersion();
-
   /**
    *
    *
@@ -341,7 +333,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for licenseType.
    */
   int getLicenseTypeValue();
-
   /**
    *
    *
@@ -369,7 +360,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.oracledatabase.v1.CustomerContact> getCustomerContactsList();
-
   /**
    *
    *
@@ -382,7 +372,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * </code>
    */
   com.google.cloud.oracledatabase.v1.CustomerContact getCustomerContacts(int index);
-
   /**
    *
    *
@@ -395,7 +384,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * </code>
    */
   int getCustomerContactsCount();
-
   /**
    *
    *
@@ -409,7 +397,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.CustomerContactOrBuilder>
       getCustomerContactsOrBuilderList();
-
   /**
    *
    *
@@ -436,7 +423,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The secretId.
    */
   java.lang.String getSecretId();
-
   /**
    *
    *
@@ -462,7 +448,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The vaultId.
    */
   java.lang.String getVaultId();
-
   /**
    *
    *
@@ -490,7 +475,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for maintenanceScheduleType.
    */
   int getMaintenanceScheduleTypeValue();
-
   /**
    *
    *
@@ -581,7 +565,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the apexDetails field is set.
    */
   boolean hasApexDetails();
-
   /**
    *
    *
@@ -596,7 +579,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The apexDetails.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseApex getApexDetails();
-
   /**
    *
    *
@@ -631,7 +613,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the arePrimaryAllowlistedIpsUsed field is set.
    */
   boolean hasArePrimaryAllowlistedIpsUsed();
-
   /**
    *
    *
@@ -667,7 +648,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The lifecycleDetails.
    */
   java.lang.String getLifecycleDetails();
-
   /**
    *
    *
@@ -696,7 +676,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -726,7 +705,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The autonomousContainerDatabaseId.
    */
   java.lang.String getAutonomousContainerDatabaseId();
-
   /**
    *
    *
@@ -757,7 +735,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return A list containing the availableUpgradeVersions.
    */
   java.util.List<java.lang.String> getAvailableUpgradeVersionsList();
-
   /**
    *
    *
@@ -773,7 +750,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The count of availableUpgradeVersions.
    */
   int getAvailableUpgradeVersionsCount();
-
   /**
    *
    *
@@ -790,7 +766,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The availableUpgradeVersions at the given index.
    */
   java.lang.String getAvailableUpgradeVersions(int index);
-
   /**
    *
    *
@@ -823,7 +798,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the connectionStrings field is set.
    */
   boolean hasConnectionStrings();
-
   /**
    *
    *
@@ -839,7 +813,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The connectionStrings.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionStrings getConnectionStrings();
-
   /**
    *
    *
@@ -869,7 +842,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the connectionUrls field is set.
    */
   boolean hasConnectionUrls();
-
   /**
    *
    *
@@ -884,7 +856,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The connectionUrls.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseConnectionUrls getConnectionUrls();
-
   /**
    *
    *
@@ -914,7 +885,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the failedDataRecoveryDuration field is set.
    */
   boolean hasFailedDataRecoveryDuration();
-
   /**
    *
    *
@@ -930,7 +900,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The failedDataRecoveryDuration.
    */
   com.google.protobuf.Duration getFailedDataRecoveryDuration();
-
   /**
    *
    *
@@ -1004,7 +973,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the localStandbyDb field is set.
    */
   boolean hasLocalStandbyDb();
-
   /**
    *
    *
@@ -1019,7 +987,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The localStandbyDb.
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseStandbySummary getLocalStandbyDb();
-
   /**
    *
    *
@@ -1064,7 +1031,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for localDisasterRecoveryType.
    */
   int getLocalDisasterRecoveryTypeValue();
-
   /**
    *
    *
@@ -1097,7 +1063,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for dataSafeState.
    */
   int getDataSafeStateValue();
-
   /**
    *
    *
@@ -1129,7 +1094,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for databaseManagementState.
    */
   int getDatabaseManagementStateValue();
-
   /**
    *
    *
@@ -1162,7 +1126,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for openMode.
    */
   int getOpenModeValue();
-
   /**
    *
    *
@@ -1194,7 +1157,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for operationsInsightsState.
    */
   int getOperationsInsightsStateValue();
-
   /**
    *
    *
@@ -1224,7 +1186,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return A list containing the peerDbIds.
    */
   java.util.List<java.lang.String> getPeerDbIdsList();
-
   /**
    *
    *
@@ -1238,7 +1199,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The count of peerDbIds.
    */
   int getPeerDbIdsCount();
-
   /**
    *
    *
@@ -1253,7 +1213,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The peerDbIds at the given index.
    */
   java.lang.String getPeerDbIds(int index);
-
   /**
    *
    *
@@ -1283,7 +1242,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for permissionLevel.
    */
   int getPermissionLevelValue();
-
   /**
    *
    *
@@ -1312,7 +1270,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The privateEndpoint.
    */
   java.lang.String getPrivateEndpoint();
-
   /**
    *
    *
@@ -1340,7 +1297,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for refreshableMode.
    */
   int getRefreshableModeValue();
-
   /**
    *
    *
@@ -1371,7 +1327,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for refreshableState.
    */
   int getRefreshableStateValue();
-
   /**
    *
    *
@@ -1402,7 +1357,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The enum numeric value on the wire for role.
    */
   int getRoleValue();
-
   /**
    *
    *
@@ -1432,7 +1386,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    */
   java.util.List<com.google.cloud.oracledatabase.v1.ScheduledOperationDetails>
       getScheduledOperationDetailsList();
-
   /**
    *
    *
@@ -1447,7 +1400,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    */
   com.google.cloud.oracledatabase.v1.ScheduledOperationDetails getScheduledOperationDetails(
       int index);
-
   /**
    *
    *
@@ -1461,7 +1413,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * </code>
    */
   int getScheduledOperationDetailsCount();
-
   /**
    *
    *
@@ -1476,7 +1427,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.ScheduledOperationDetailsOrBuilder>
       getScheduledOperationDetailsOrBuilderList();
-
   /**
    *
    *
@@ -1504,7 +1454,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The sqlWebDeveloperUrl.
    */
   java.lang.String getSqlWebDeveloperUrl();
-
   /**
    *
    *
@@ -1533,7 +1482,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return A list containing the supportedCloneRegions.
    */
   java.util.List<java.lang.String> getSupportedCloneRegionsList();
-
   /**
    *
    *
@@ -1549,7 +1497,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The count of supportedCloneRegions.
    */
   int getSupportedCloneRegionsCount();
-
   /**
    *
    *
@@ -1566,7 +1513,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The supportedCloneRegions at the given index.
    */
   java.lang.String getSupportedCloneRegions(int index);
-
   /**
    *
    *
@@ -1611,7 +1557,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The ociUrl.
    */
   java.lang.String getOciUrl();
-
   /**
    *
    *
@@ -1656,7 +1601,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the nextLongTermBackupTime field is set.
    */
   boolean hasNextLongTermBackupTime();
-
   /**
    *
    *
@@ -1671,7 +1615,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The nextLongTermBackupTime.
    */
   com.google.protobuf.Timestamp getNextLongTermBackupTime();
-
   /**
    *
    *
@@ -1699,7 +1642,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the maintenanceBeginTime field is set.
    */
   boolean hasMaintenanceBeginTime();
-
   /**
    *
    *
@@ -1714,7 +1656,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The maintenanceBeginTime.
    */
   com.google.protobuf.Timestamp getMaintenanceBeginTime();
-
   /**
    *
    *
@@ -1742,7 +1683,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return Whether the maintenanceEndTime field is set.
    */
   boolean hasMaintenanceEndTime();
-
   /**
    *
    *
@@ -1757,7 +1697,6 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * @return The maintenanceEndTime.
    */
   com.google.protobuf.Timestamp getMaintenanceEndTime();
-
   /**
    *
    *

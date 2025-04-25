@@ -40,7 +40,6 @@ public interface CheckGroundingSpecOrBuilder
    * @return Whether the citationThreshold field is set.
    */
   boolean hasCitationThreshold();
-
   /**
    *
    *

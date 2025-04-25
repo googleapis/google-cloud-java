@@ -36,7 +36,6 @@ public interface WidgetMarkupOrBuilder
    * @return Whether the textParagraph field is set.
    */
   boolean hasTextParagraph();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WidgetMarkupOrBuilder
    * @return The textParagraph.
    */
   com.google.chat.v1.WidgetMarkup.TextParagraph getTextParagraph();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface WidgetMarkupOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface WidgetMarkupOrBuilder
    * @return The image.
    */
   com.google.chat.v1.WidgetMarkup.Image getImage();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface WidgetMarkupOrBuilder
    * @return Whether the keyValue field is set.
    */
   boolean hasKeyValue();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface WidgetMarkupOrBuilder
    * @return The keyValue.
    */
   com.google.chat.v1.WidgetMarkup.KeyValue getKeyValue();
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public interface WidgetMarkupOrBuilder
    * <code>repeated .google.chat.v1.WidgetMarkup.Button buttons = 6;</code>
    */
   java.util.List<com.google.chat.v1.WidgetMarkup.Button> getButtonsList();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface WidgetMarkupOrBuilder
    * <code>repeated .google.chat.v1.WidgetMarkup.Button buttons = 6;</code>
    */
   com.google.chat.v1.WidgetMarkup.Button getButtons(int index);
-
   /**
    *
    *
@@ -170,7 +162,6 @@ public interface WidgetMarkupOrBuilder
    * <code>repeated .google.chat.v1.WidgetMarkup.Button buttons = 6;</code>
    */
   int getButtonsCount();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface WidgetMarkupOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.WidgetMarkup.ButtonOrBuilder>
       getButtonsOrBuilderList();
-
   /**
    *
    *

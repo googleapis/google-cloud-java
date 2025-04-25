@@ -36,7 +36,6 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.metastore.v1beta.MetadataExport> getMetadataExportsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   com.google.cloud.metastore.v1beta.MetadataExport getMetadataExports(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   int getMetadataExportsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface MetadataManagementActivityOrBuilder
    */
   java.util.List<? extends com.google.cloud.metastore.v1beta.MetadataExportOrBuilder>
       getMetadataExportsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.metastore.v1beta.Restore> getRestoresList();
-
   /**
    *
    *
@@ -115,7 +110,6 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   com.google.cloud.metastore.v1beta.Restore getRestores(int index);
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface MetadataManagementActivityOrBuilder
    * </code>
    */
   int getRestoresCount();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface MetadataManagementActivityOrBuilder
    */
   java.util.List<? extends com.google.cloud.metastore.v1beta.RestoreOrBuilder>
       getRestoresOrBuilderList();
-
   /**
    *
    *

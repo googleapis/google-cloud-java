@@ -33,7 +33,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GuestAttributesValue)
     GuestAttributesValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GuestAttributesValue.newBuilder() to construct.
   private GuestAttributesValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,32 +67,27 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.GuestAttributesEntry> items_;
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.GuestAttributesEntry> getItemsList() {
     return items_;
   }
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.GuestAttributesEntryOrBuilder>
       getItemsOrBuilderList() {
     return items_;
   }
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   @java.lang.Override
   public int getItemsCount() {
     return items_.size();
   }
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.GuestAttributesEntry getItems(int index) {
     return items_.get(index);
   }
-
   /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.GuestAttributesEntryOrBuilder getItemsOrBuilder(int index) {
@@ -261,7 +255,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -516,7 +509,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getMessageList();
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public int getItemsCount() {
       if (itemsBuilder_ == null) {
@@ -525,7 +517,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getCount();
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public com.google.cloud.compute.v1.GuestAttributesEntry getItems(int index) {
       if (itemsBuilder_ == null) {
@@ -534,7 +525,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder setItems(int index, com.google.cloud.compute.v1.GuestAttributesEntry value) {
       if (itemsBuilder_ == null) {
@@ -549,7 +539,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder setItems(
         int index, com.google.cloud.compute.v1.GuestAttributesEntry.Builder builderForValue) {
@@ -562,7 +551,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder addItems(com.google.cloud.compute.v1.GuestAttributesEntry value) {
       if (itemsBuilder_ == null) {
@@ -577,7 +565,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder addItems(int index, com.google.cloud.compute.v1.GuestAttributesEntry value) {
       if (itemsBuilder_ == null) {
@@ -592,7 +579,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder addItems(
         com.google.cloud.compute.v1.GuestAttributesEntry.Builder builderForValue) {
@@ -605,7 +591,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder addItems(
         int index, com.google.cloud.compute.v1.GuestAttributesEntry.Builder builderForValue) {
@@ -618,7 +603,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder addAllItems(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.GuestAttributesEntry> values) {
@@ -631,7 +615,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder clearItems() {
       if (itemsBuilder_ == null) {
@@ -643,7 +626,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public Builder removeItems(int index) {
       if (itemsBuilder_ == null) {
@@ -655,12 +637,10 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public com.google.cloud.compute.v1.GuestAttributesEntry.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public com.google.cloud.compute.v1.GuestAttributesEntryOrBuilder getItemsOrBuilder(int index) {
       if (itemsBuilder_ == null) {
@@ -669,7 +649,6 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public java.util.List<? extends com.google.cloud.compute.v1.GuestAttributesEntryOrBuilder>
         getItemsOrBuilderList() {
@@ -679,19 +658,16 @@ public final class GuestAttributesValue extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public com.google.cloud.compute.v1.GuestAttributesEntry.Builder addItemsBuilder() {
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.GuestAttributesEntry.getDefaultInstance());
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public com.google.cloud.compute.v1.GuestAttributesEntry.Builder addItemsBuilder(int index) {
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.GuestAttributesEntry.getDefaultInstance());
     }
-
     /** <code>repeated .google.cloud.compute.v1.GuestAttributesEntry items = 100526016;</code> */
     public java.util.List<com.google.cloud.compute.v1.GuestAttributesEntry.Builder>
         getItemsBuilderList() {

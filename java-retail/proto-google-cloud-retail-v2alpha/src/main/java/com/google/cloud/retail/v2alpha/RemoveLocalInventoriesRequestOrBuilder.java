@@ -44,7 +44,6 @@ public interface RemoveLocalInventoriesRequestOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface RemoveLocalInventoriesRequestOrBuilder
    * @return A list containing the placeIds.
    */
   java.util.List<java.lang.String> getPlaceIdsList();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface RemoveLocalInventoriesRequestOrBuilder
    * @return The count of placeIds.
    */
   int getPlaceIdsCount();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface RemoveLocalInventoriesRequestOrBuilder
    * @return The placeIds at the given index.
    */
   java.lang.String getPlaceIds(int index);
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface RemoveLocalInventoriesRequestOrBuilder
    * @return Whether the removeTime field is set.
    */
   boolean hasRemoveTime();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface RemoveLocalInventoriesRequestOrBuilder
    * @return The removeTime.
    */
   com.google.protobuf.Timestamp getRemoveTime();
-
   /**
    *
    *

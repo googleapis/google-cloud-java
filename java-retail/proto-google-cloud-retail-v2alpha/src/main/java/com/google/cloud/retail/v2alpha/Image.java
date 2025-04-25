@@ -24,10 +24,9 @@ package com.google.cloud.retail.v2alpha;
  *
  * <pre>
  * [Product][google.cloud.retail.v2alpha.Product] image. Recommendations AI and
- * Retail Search use product images to improve prediction and search results.
- * Product images can be returned in results, and are shown in prediction or
- * search previews in the console. Please try to provide correct product images
- * and avoid using images with size too small.
+ * Retail Search do not use product images to improve prediction and search
+ * results. However, product images can be returned in results, and are shown in
+ * prediction or search previews in the console.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2alpha.Image}
@@ -37,7 +36,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Image)
     ImageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Image.newBuilder() to construct.
   private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +70,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEIGHT_FIELD_NUMBER = 2;
   private int height_ = 0;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WIDTH_FIELD_NUMBER = 3;
   private int width_ = 0;
-
   /**
    *
    *
@@ -354,16 +348,14 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
    * [Product][google.cloud.retail.v2alpha.Product] image. Recommendations AI and
-   * Retail Search use product images to improve prediction and search results.
-   * Product images can be returned in results, and are shown in prediction or
-   * search previews in the console. Please try to provide correct product images
-   * and avoid using images with size too small.
+   * Retail Search do not use product images to improve prediction and search
+   * results. However, product images can be returned in results, and are shown in
+   * prediction or search previews in the console.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.Image}
@@ -568,7 +560,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -598,7 +589,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int height_;
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public int getHeight() {
       return height_;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int width_;
-
     /**
      *
      *
@@ -798,7 +781,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public int getWidth() {
       return width_;
     }
-
     /**
      *
      *
@@ -821,7 +803,6 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface DeletePhraseSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

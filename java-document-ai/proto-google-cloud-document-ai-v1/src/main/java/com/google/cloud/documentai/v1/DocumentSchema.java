@@ -33,7 +33,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentSchema)
     DocumentSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentSchema.newBuilder() to construct.
   private DocumentSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enumValues field is set.
      */
     boolean hasEnumValues();
-
     /**
      *
      *
@@ -106,7 +104,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The enumValues.
      */
     com.google.cloud.documentai.v1.DocumentSchema.EntityType.EnumValues getEnumValues();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -174,7 +170,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -213,7 +208,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the baseTypes.
      */
     java.util.List<java.lang.String> getBaseTypesList();
-
     /**
      *
      *
@@ -227,7 +221,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The count of baseTypes.
      */
     int getBaseTypesCount();
-
     /**
      *
      *
@@ -242,7 +235,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The baseTypes at the given index.
      */
     java.lang.String getBaseTypes(int index);
-
     /**
      *
      *
@@ -270,7 +262,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property>
         getPropertiesList();
-
     /**
      *
      *
@@ -282,7 +273,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property getProperties(int index);
-
     /**
      *
      *
@@ -294,7 +284,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPropertiesCount();
-
     /**
      *
      *
@@ -308,7 +297,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.documentai.v1.DocumentSchema.EntityType.PropertyOrBuilder>
         getPropertiesOrBuilderList();
-
     /**
      *
      *
@@ -324,7 +312,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.documentai.v1.DocumentSchema.EntityType.ValueSourceCase getValueSourceCase();
   }
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentSchema.EntityType)
       EntityTypeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EntityType.newBuilder() to construct.
     private EntityType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -392,7 +378,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the values.
        */
       java.util.List<java.lang.String> getValuesList();
-
       /**
        *
        *
@@ -405,7 +390,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return The count of values.
        */
       int getValuesCount();
-
       /**
        *
        *
@@ -419,7 +403,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return The values at the given index.
        */
       java.lang.String getValues(int index);
-
       /**
        *
        *
@@ -434,7 +417,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getValuesBytes(int index);
     }
-
     /**
      *
      *
@@ -449,7 +431,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentSchema.EntityType.EnumValues)
         EnumValuesOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use EnumValues.newBuilder() to construct.
       private EnumValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -485,7 +466,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList values_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -500,7 +480,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ProtocolStringList getValuesList() {
         return values_;
       }
-
       /**
        *
        *
@@ -515,7 +494,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public int getValuesCount() {
         return values_.size();
       }
-
       /**
        *
        *
@@ -531,7 +509,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
-
       /**
        *
        *
@@ -718,7 +695,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -931,7 +907,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -947,7 +922,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           values_.makeImmutable();
           return values_;
         }
-
         /**
          *
          *
@@ -962,7 +936,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public int getValuesCount() {
           return values_.size();
         }
-
         /**
          *
          *
@@ -978,7 +951,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getValues(int index) {
           return values_.get(index);
         }
-
         /**
          *
          *
@@ -994,7 +966,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getValuesBytes(int index) {
           return values_.getByteString(index);
         }
-
         /**
          *
          *
@@ -1018,7 +989,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1041,7 +1011,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1061,7 +1030,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1080,7 +1048,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1191,7 +1158,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return The name.
        */
       java.lang.String getName();
-
       /**
        *
        *
@@ -1218,7 +1184,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return The displayName.
        */
       java.lang.String getDisplayName();
-
       /**
        *
        *
@@ -1245,7 +1210,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return The valueType.
        */
       java.lang.String getValueType();
-
       /**
        *
        *
@@ -1275,7 +1239,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for occurrenceType.
        */
       int getOccurrenceTypeValue();
-
       /**
        *
        *
@@ -1293,7 +1256,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property.OccurrenceType
           getOccurrenceType();
     }
-
     /**
      *
      *
@@ -1308,7 +1270,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentSchema.EntityType.Property)
         PropertyOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Property.newBuilder() to construct.
       private Property(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1426,7 +1387,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * <code>OCCURRENCE_TYPE_UNSPECIFIED = 0;</code>
          */
         public static final int OCCURRENCE_TYPE_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -1438,7 +1398,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * <code>OPTIONAL_ONCE = 1;</code>
          */
         public static final int OPTIONAL_ONCE_VALUE = 1;
-
         /**
          *
          *
@@ -1449,7 +1408,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * <code>OPTIONAL_MULTIPLE = 2;</code>
          */
         public static final int OPTIONAL_MULTIPLE_VALUE = 2;
-
         /**
          *
          *
@@ -1461,7 +1419,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
          * <code>REQUIRED_ONCE = 3;</code>
          */
         public static final int REQUIRED_ONCE_VALUE = 3;
-
         /**
          *
          *
@@ -1570,7 +1527,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1595,7 +1551,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1625,7 +1580,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -1649,7 +1603,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1678,7 +1631,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object valueType_ = "";
-
       /**
        *
        *
@@ -1703,7 +1655,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1731,7 +1682,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
       public static final int OCCURRENCE_TYPE_FIELD_NUMBER = 3;
       private int occurrenceType_ = 0;
-
       /**
        *
        *
@@ -1750,7 +1700,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public int getOccurrenceTypeValue() {
         return occurrenceType_;
       }
-
       /**
        *
        *
@@ -1973,7 +1922,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2211,7 +2159,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object name_ = "";
-
         /**
          *
          *
@@ -2235,7 +2182,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2259,7 +2205,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2282,7 +2227,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2301,7 +2245,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2327,7 +2270,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object displayName_ = "";
-
         /**
          *
          *
@@ -2350,7 +2292,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2373,7 +2314,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2395,7 +2335,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2413,7 +2352,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2438,7 +2376,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object valueType_ = "";
-
         /**
          *
          *
@@ -2462,7 +2399,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2486,7 +2422,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2509,7 +2444,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2528,7 +2462,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2554,7 +2487,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int occurrenceType_ = 0;
-
         /**
          *
          *
@@ -2573,7 +2505,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         public int getOccurrenceTypeValue() {
           return occurrenceType_;
         }
-
         /**
          *
          *
@@ -2595,7 +2526,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2621,7 +2551,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                   .UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -2648,7 +2577,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2753,7 +2681,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       private ValueSourceCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2785,7 +2712,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENUM_VALUES_FIELD_NUMBER = 14;
-
     /**
      *
      *
@@ -2806,7 +2732,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnumValues() {
       return valueSourceCase_ == 14;
     }
-
     /**
      *
      *
@@ -2831,7 +2756,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.documentai.v1.DocumentSchema.EntityType.EnumValues
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -2860,7 +2784,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2884,7 +2807,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2913,7 +2835,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2949,7 +2870,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2991,7 +2911,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList baseTypes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -3007,7 +2926,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getBaseTypesList() {
       return baseTypes_;
     }
-
     /**
      *
      *
@@ -3023,7 +2941,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public int getBaseTypesCount() {
       return baseTypes_.size();
     }
-
     /**
      *
      *
@@ -3040,7 +2957,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBaseTypes(int index) {
       return baseTypes_.get(index);
     }
-
     /**
      *
      *
@@ -3063,7 +2979,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property>
         properties_;
-
     /**
      *
      *
@@ -3079,7 +2994,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         getPropertiesList() {
       return properties_;
     }
-
     /**
      *
      *
@@ -3096,7 +3010,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         getPropertiesOrBuilderList() {
       return properties_;
     }
-
     /**
      *
      *
@@ -3111,7 +3024,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return properties_.size();
     }
-
     /**
      *
      *
@@ -3127,7 +3039,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return properties_.get(index);
     }
-
     /**
      *
      *
@@ -3367,7 +3278,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3707,7 +3617,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.documentai.v1.DocumentSchema.EntityType.EnumValues.Builder,
               com.google.cloud.documentai.v1.DocumentSchema.EntityType.EnumValuesOrBuilder>
           enumValuesBuilder_;
-
       /**
        *
        *
@@ -3728,7 +3637,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEnumValues() {
         return valueSourceCase_ == 14;
       }
-
       /**
        *
        *
@@ -3762,7 +3670,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3791,7 +3698,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         valueSourceCase_ = 14;
         return this;
       }
-
       /**
        *
        *
@@ -3818,7 +3724,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         valueSourceCase_ = 14;
         return this;
       }
-
       /**
        *
        *
@@ -3860,7 +3765,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         valueSourceCase_ = 14;
         return this;
       }
-
       /**
        *
        *
@@ -3891,7 +3795,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3910,7 +3813,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           getEnumValuesBuilder() {
         return getEnumValuesFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3939,7 +3841,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -3982,7 +3883,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -4005,7 +3905,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4028,7 +3927,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4050,7 +3948,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4068,7 +3965,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4093,7 +3989,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -4128,7 +4023,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4163,7 +4057,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4197,7 +4090,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4227,7 +4119,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4272,7 +4163,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -4289,7 +4179,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         baseTypes_.makeImmutable();
         return baseTypes_;
       }
-
       /**
        *
        *
@@ -4305,7 +4194,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public int getBaseTypesCount() {
         return baseTypes_.size();
       }
-
       /**
        *
        *
@@ -4322,7 +4210,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getBaseTypes(int index) {
         return baseTypes_.get(index);
       }
-
       /**
        *
        *
@@ -4339,7 +4226,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getBaseTypesBytes(int index) {
         return baseTypes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4364,7 +4250,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4388,7 +4273,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4409,7 +4293,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4429,7 +4312,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4492,7 +4374,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -4511,7 +4392,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -4531,7 +4411,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -4557,7 +4436,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4582,7 +4460,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4608,7 +4485,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4634,7 +4510,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4658,7 +4533,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4683,7 +4557,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4708,7 +4581,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4730,7 +4602,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4752,7 +4623,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4768,7 +4638,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           getPropertiesBuilder(int index) {
         return getPropertiesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -4788,7 +4657,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -4809,7 +4677,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(properties_);
         }
       }
-
       /**
        *
        *
@@ -4828,7 +4695,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4848,7 +4714,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.DocumentSchema.EntityType.Property
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5009,7 +4874,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getSkipNamingValidation();
   }
-
   /**
    *
    *
@@ -5024,7 +4888,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DocumentSchema.Metadata)
       MetadataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Metadata.newBuilder() to construct.
     private Metadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5055,7 +4918,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DOCUMENT_SPLITTER_FIELD_NUMBER = 1;
     private boolean documentSplitter_ = false;
-
     /**
      *
      *
@@ -5076,7 +4938,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DOCUMENT_ALLOW_MULTIPLE_LABELS_FIELD_NUMBER = 2;
     private boolean documentAllowMultipleLabels_ = false;
-
     /**
      *
      *
@@ -5096,7 +4957,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PREFIXED_NAMING_ON_PROPERTIES_FIELD_NUMBER = 6;
     private boolean prefixedNamingOnProperties_ = false;
-
     /**
      *
      *
@@ -5115,7 +4975,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SKIP_NAMING_VALIDATION_FIELD_NUMBER = 7;
     private boolean skipNamingValidation_ = false;
-
     /**
      *
      *
@@ -5326,7 +5185,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5551,7 +5409,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean documentSplitter_;
-
       /**
        *
        *
@@ -5569,7 +5426,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public boolean getDocumentSplitter() {
         return documentSplitter_;
       }
-
       /**
        *
        *
@@ -5591,7 +5447,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5613,7 +5468,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean documentAllowMultipleLabels_;
-
       /**
        *
        *
@@ -5630,7 +5484,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public boolean getDocumentAllowMultipleLabels() {
         return documentAllowMultipleLabels_;
       }
-
       /**
        *
        *
@@ -5651,7 +5504,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5672,7 +5524,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean prefixedNamingOnProperties_;
-
       /**
        *
        *
@@ -5688,7 +5539,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public boolean getPrefixedNamingOnProperties() {
         return prefixedNamingOnProperties_;
       }
-
       /**
        *
        *
@@ -5708,7 +5558,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5728,7 +5577,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean skipNamingValidation_;
-
       /**
        *
        *
@@ -5746,7 +5594,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       public boolean getSkipNamingValidation() {
         return skipNamingValidation_;
       }
-
       /**
        *
        *
@@ -5768,7 +5615,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5858,7 +5704,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -5882,7 +5727,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5911,7 +5755,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -5935,7 +5778,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5964,7 +5806,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.documentai.v1.DocumentSchema.EntityType> entityTypes_;
-
   /**
    *
    *
@@ -5979,7 +5820,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       getEntityTypesList() {
     return entityTypes_;
   }
-
   /**
    *
    *
@@ -5994,7 +5834,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       getEntityTypesOrBuilderList() {
     return entityTypes_;
   }
-
   /**
    *
    *
@@ -6008,7 +5847,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   public int getEntityTypesCount() {
     return entityTypes_.size();
   }
-
   /**
    *
    *
@@ -6022,7 +5860,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.documentai.v1.DocumentSchema.EntityType getEntityTypes(int index) {
     return entityTypes_.get(index);
   }
-
   /**
    *
    *
@@ -6040,7 +5877,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 4;
   private com.google.cloud.documentai.v1.DocumentSchema.Metadata metadata_;
-
   /**
    *
    *
@@ -6056,7 +5892,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -6074,7 +5909,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.documentai.v1.DocumentSchema.Metadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -6284,7 +6118,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6574,7 +6407,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -6597,7 +6429,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6620,7 +6451,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6642,7 +6472,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6660,7 +6489,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6685,7 +6513,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -6708,7 +6535,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6731,7 +6557,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6753,7 +6578,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6771,7 +6595,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6830,7 +6653,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return entityTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6847,7 +6669,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return entityTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6864,7 +6685,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return entityTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6888,7 +6708,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6910,7 +6729,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6933,7 +6751,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6957,7 +6774,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6978,7 +6794,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7000,7 +6815,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7022,7 +6836,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7042,7 +6855,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7062,7 +6874,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7076,7 +6887,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEntityTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7094,7 +6904,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return entityTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7113,7 +6922,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(entityTypes_);
       }
     }
-
     /**
      *
      *
@@ -7129,7 +6937,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.documentai.v1.DocumentSchema.EntityType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7145,7 +6952,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.documentai.v1.DocumentSchema.EntityType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7183,7 +6989,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1.DocumentSchema.Metadata.Builder,
             com.google.cloud.documentai.v1.DocumentSchema.MetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -7198,7 +7003,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -7219,7 +7023,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7242,7 +7045,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7263,7 +7065,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7292,7 +7093,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7312,7 +7112,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7327,7 +7126,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7346,7 +7144,6 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
-
     /**
      *
      *

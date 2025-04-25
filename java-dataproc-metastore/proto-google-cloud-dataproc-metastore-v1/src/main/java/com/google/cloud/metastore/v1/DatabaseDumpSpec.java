@@ -33,7 +33,6 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.DatabaseDumpSpec)
     DatabaseDumpSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatabaseDumpSpec.newBuilder() to construct.
   private DatabaseDumpSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,7 +114,6 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -126,7 +124,6 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
      * <code>MYSQL = 1;</code>
      */
     public static final int MYSQL_VALUE = 1;
-
     /**
      *
      *
@@ -371,7 +368,6 @@ public final class DatabaseDumpSpec extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

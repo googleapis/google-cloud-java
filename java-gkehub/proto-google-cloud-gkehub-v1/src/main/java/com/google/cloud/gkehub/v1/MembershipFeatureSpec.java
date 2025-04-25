@@ -34,7 +34,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1.MembershipFeatureSpec)
     MembershipFeatureSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MembershipFeatureSpec.newBuilder() to construct.
   private MembershipFeatureSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     private FeatureSpecCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONFIGMANAGEMENT_FIELD_NUMBER = 106;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
   public boolean hasConfigmanagement() {
     return featureSpecCase_ == 106;
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +555,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
             com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.Builder,
             com.google.cloud.gkehub.configmanagement.v1.MembershipSpecOrBuilder>
         configmanagementBuilder_;
-
     /**
      *
      *
@@ -577,7 +570,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     public boolean hasConfigmanagement() {
       return featureSpecCase_ == 106;
     }
-
     /**
      *
      *
@@ -603,7 +595,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
         return com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       featureSpecCase_ = 106;
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       featureSpecCase_ = 106;
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       featureSpecCase_ = 106;
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
         getConfigmanagementBuilder() {
       return getConfigmanagementFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
         return com.google.cloud.gkehub.configmanagement.v1.MembershipSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *

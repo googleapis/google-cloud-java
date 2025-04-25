@@ -46,7 +46,6 @@ public interface RotationOrBuilder
    * @return Whether the nextRotationTime field is set.
    */
   boolean hasNextRotationTime();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface RotationOrBuilder
    * @return The nextRotationTime.
    */
   com.google.protobuf.Timestamp getNextRotationTime();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface RotationOrBuilder
    * @return Whether the rotationPeriod field is set.
    */
   boolean hasRotationPeriod();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface RotationOrBuilder
    * @return The rotationPeriod.
    */
   com.google.protobuf.Duration getRotationPeriod();
-
   /**
    *
    *

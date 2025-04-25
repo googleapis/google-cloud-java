@@ -34,7 +34,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   com.google.rpc.Status getErrorSamples(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   int getErrorSamplesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ImportUserEventsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ImportUserEventsResponseOrBuilder
    * @return Whether the errorsConfig field is set.
    */
   boolean hasErrorsConfig();
-
   /**
    *
    *
@@ -106,7 +101,6 @@ public interface ImportUserEventsResponseOrBuilder
    * @return The errorsConfig.
    */
   com.google.cloud.retail.v2beta.ImportErrorsConfig getErrorsConfig();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ImportUserEventsResponseOrBuilder
    * @return Whether the importSummary field is set.
    */
   boolean hasImportSummary();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface ImportUserEventsResponseOrBuilder
    * @return The importSummary.
    */
   com.google.cloud.retail.v2beta.UserEventImportSummary getImportSummary();
-
   /**
    *
    *

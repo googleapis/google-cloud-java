@@ -34,7 +34,6 @@ public final class WorkforceIdentityBasedManagementURI
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.WorkforceIdentityBasedManagementURI)
     WorkforceIdentityBasedManagementURIOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkforceIdentityBasedManagementURI.newBuilder() to construct.
   private WorkforceIdentityBasedManagementURI(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class WorkforceIdentityBasedManagementURI
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firstPartyManagementUri_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class WorkforceIdentityBasedManagementURI
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class WorkforceIdentityBasedManagementURI
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object thirdPartyManagementUri_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class WorkforceIdentityBasedManagementURI
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +341,6 @@ public final class WorkforceIdentityBasedManagementURI
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -550,7 +544,6 @@ public final class WorkforceIdentityBasedManagementURI
     private int bitField0_;
 
     private java.lang.Object firstPartyManagementUri_ = "";
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class WorkforceIdentityBasedManagementURI
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class WorkforceIdentityBasedManagementURI
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class WorkforceIdentityBasedManagementURI
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class WorkforceIdentityBasedManagementURI
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class WorkforceIdentityBasedManagementURI
     }
 
     private java.lang.Object thirdPartyManagementUri_ = "";
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class WorkforceIdentityBasedManagementURI
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class WorkforceIdentityBasedManagementURI
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class WorkforceIdentityBasedManagementURI
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class WorkforceIdentityBasedManagementURI
       onChanged();
       return this;
     }
-
     /**
      *
      *

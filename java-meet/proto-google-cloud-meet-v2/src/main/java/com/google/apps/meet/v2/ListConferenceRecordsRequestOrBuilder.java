@@ -52,7 +52,6 @@ public interface ListConferenceRecordsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface ListConferenceRecordsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

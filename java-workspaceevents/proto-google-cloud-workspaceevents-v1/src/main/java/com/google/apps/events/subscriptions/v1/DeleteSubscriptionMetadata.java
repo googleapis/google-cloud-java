@@ -33,7 +33,6 @@ public final class DeleteSubscriptionMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.DeleteSubscriptionMetadata)
     DeleteSubscriptionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteSubscriptionMetadata.newBuilder() to construct.
   private DeleteSubscriptionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class DeleteSubscriptionMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

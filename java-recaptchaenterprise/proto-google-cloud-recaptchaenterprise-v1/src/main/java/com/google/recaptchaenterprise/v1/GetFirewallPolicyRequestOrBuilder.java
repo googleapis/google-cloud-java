@@ -39,7 +39,6 @@ public interface GetFirewallPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

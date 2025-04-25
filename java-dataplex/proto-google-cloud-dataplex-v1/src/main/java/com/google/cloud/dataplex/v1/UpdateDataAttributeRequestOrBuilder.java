@@ -37,7 +37,6 @@ public interface UpdateDataAttributeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateDataAttributeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface UpdateDataAttributeRequestOrBuilder
    * @return Whether the dataAttribute field is set.
    */
   boolean hasDataAttribute();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface UpdateDataAttributeRequestOrBuilder
    * @return The dataAttribute.
    */
   com.google.cloud.dataplex.v1.DataAttribute getDataAttribute();
-
   /**
    *
    *

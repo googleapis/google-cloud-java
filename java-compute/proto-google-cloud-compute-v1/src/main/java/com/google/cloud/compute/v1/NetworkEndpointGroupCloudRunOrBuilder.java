@@ -36,7 +36,6 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * @return Whether the tag field is set.
    */
   boolean hasTag();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * @return Whether the urlMask field is set.
    */
   boolean hasUrlMask();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface NetworkEndpointGroupCloudRunOrBuilder
    * @return The urlMask.
    */
   java.lang.String getUrlMask();
-
   /**
    *
    *

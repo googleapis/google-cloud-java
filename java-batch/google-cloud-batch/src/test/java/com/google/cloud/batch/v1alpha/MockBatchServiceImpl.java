@@ -234,8 +234,7 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateResourceAllowance, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateResourceAllowance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceAllowance.class.getName(),
                   Exception.class.getName())));
@@ -256,8 +255,7 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetResourceAllowance, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetResourceAllowance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceAllowance.class.getName(),
                   Exception.class.getName())));
@@ -278,8 +276,7 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteResourceAllowance, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteResourceAllowance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -301,8 +298,7 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListResourceAllowances, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListResourceAllowances, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListResourceAllowancesResponse.class.getName(),
                   Exception.class.getName())));
@@ -323,8 +319,7 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateResourceAllowance, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateResourceAllowance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceAllowance.class.getName(),
                   Exception.class.getName())));

@@ -33,7 +33,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.ListBranchRulesRequest)
     ListBranchRulesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBranchRulesRequest.newBuilder() to construct.
   private ListBranchRulesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -89,7 +87,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -112,7 +109,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
@@ -127,7 +123,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
@@ -145,7 +140,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
@@ -342,7 +336,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +551,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -577,7 +569,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -596,7 +587,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -614,7 +604,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -628,7 +617,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -649,7 +637,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     private int pageSize_;
-
     /**
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -659,7 +646,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -673,7 +659,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -687,7 +672,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -704,7 +688,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -721,7 +704,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -737,7 +719,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
@@ -749,7 +730,6 @@ public final class ListBranchRulesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *

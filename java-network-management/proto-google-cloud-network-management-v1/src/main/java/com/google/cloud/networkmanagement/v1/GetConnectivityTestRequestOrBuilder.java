@@ -39,7 +39,6 @@ public interface GetConnectivityTestRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

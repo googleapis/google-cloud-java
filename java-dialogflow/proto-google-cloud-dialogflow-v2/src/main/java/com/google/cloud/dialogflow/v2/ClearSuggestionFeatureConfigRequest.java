@@ -35,7 +35,6 @@ public final class ClearSuggestionFeatureConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ClearSuggestionFeatureConfigRequest)
     ClearSuggestionFeatureConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClearSuggestionFeatureConfigRequest.newBuilder() to construct.
   private ClearSuggestionFeatureConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ClearSuggestionFeatureConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationProfile_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ClearSuggestionFeatureConfigRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ClearSuggestionFeatureConfigRequest
 
   public static final int PARTICIPANT_ROLE_FIELD_NUMBER = 2;
   private int participantRole_ = 0;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ClearSuggestionFeatureConfigRequest
   public int getParticipantRoleValue() {
     return participantRole_;
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class ClearSuggestionFeatureConfigRequest
 
   public static final int SUGGESTION_FEATURE_TYPE_FIELD_NUMBER = 3;
   private int suggestionFeatureType_ = 0;
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class ClearSuggestionFeatureConfigRequest
   public int getSuggestionFeatureTypeValue() {
     return suggestionFeatureType_;
   }
-
   /**
    *
    *
@@ -395,7 +388,6 @@ public final class ClearSuggestionFeatureConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -614,7 +606,6 @@ public final class ClearSuggestionFeatureConfigRequest
     private int bitField0_;
 
     private java.lang.Object conversationProfile_ = "";
-
     /**
      *
      *
@@ -639,7 +630,6 @@ public final class ClearSuggestionFeatureConfigRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ClearSuggestionFeatureConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class ClearSuggestionFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ClearSuggestionFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class ClearSuggestionFeatureConfigRequest
     }
 
     private int participantRole_ = 0;
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ClearSuggestionFeatureConfigRequest
     public int getParticipantRoleValue() {
       return participantRole_;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ClearSuggestionFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class ClearSuggestionFeatureConfigRequest
           com.google.cloud.dialogflow.v2.Participant.Role.forNumber(participantRole_);
       return result == null ? com.google.cloud.dialogflow.v2.Participant.Role.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class ClearSuggestionFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class ClearSuggestionFeatureConfigRequest
     }
 
     private int suggestionFeatureType_ = 0;
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class ClearSuggestionFeatureConfigRequest
     public int getSuggestionFeatureTypeValue() {
       return suggestionFeatureType_;
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class ClearSuggestionFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class ClearSuggestionFeatureConfigRequest
           ? com.google.cloud.dialogflow.v2.SuggestionFeature.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -931,7 +909,6 @@ public final class ClearSuggestionFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

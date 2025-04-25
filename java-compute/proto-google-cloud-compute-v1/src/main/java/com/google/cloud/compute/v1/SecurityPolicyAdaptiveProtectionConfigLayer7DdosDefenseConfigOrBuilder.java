@@ -36,7 +36,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
    * @return Whether the ruleVisibility field is set.
    */
   boolean hasRuleVisibility();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
    * @return The ruleVisibility.
    */
   java.lang.String getRuleVisibility();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
           com.google.cloud.compute.v1
               .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig>
       getThresholdConfigsList();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
   com.google.cloud.compute.v1
           .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig
       getThresholdConfigs(int index);
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
    * </code>
    */
   int getThresholdConfigsCount();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
               com.google.cloud.compute.v1
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigOrBuilder>
       getThresholdConfigsOrBuilderList();
-
   /**
    *
    *

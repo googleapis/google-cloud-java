@@ -33,7 +33,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.Companion)
     CompanionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Companion.newBuilder() to construct.
   private Companion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     private AdResourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IFRAME_AD_RESOURCE_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIframeAdResource() {
     return adResourceCase_ == 10;
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.stitcher.v1.IframeAdResource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATIC_AD_RESOURCE_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStaticAdResource() {
     return adResourceCase_ == 11;
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.stitcher.v1.StaticAdResource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTML_AD_RESOURCE_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHtmlAdResource() {
     return adResourceCase_ == 12;
   }
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.stitcher.v1.HtmlAdResource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object apiFramework_ = "";
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEIGHT_PX_FIELD_NUMBER = 2;
   private int heightPx_ = 0;
-
   /**
    *
    *
@@ -357,7 +343,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WIDTH_PX_FIELD_NUMBER = 3;
   private int widthPx_ = 0;
-
   /**
    *
    *
@@ -376,7 +361,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSET_HEIGHT_PX_FIELD_NUMBER = 4;
   private int assetHeightPx_ = 0;
-
   /**
    *
    *
@@ -395,7 +379,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPANDED_HEIGHT_PX_FIELD_NUMBER = 5;
   private int expandedHeightPx_ = 0;
-
   /**
    *
    *
@@ -414,7 +397,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSET_WIDTH_PX_FIELD_NUMBER = 6;
   private int assetWidthPx_ = 0;
-
   /**
    *
    *
@@ -433,7 +415,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPANDED_WIDTH_PX_FIELD_NUMBER = 7;
   private int expandedWidthPx_ = 0;
-
   /**
    *
    *
@@ -454,7 +435,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adSlotId_ = "";
-
   /**
    *
    *
@@ -480,7 +460,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -511,7 +490,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.stitcher.v1.Event> events_;
-
   /**
    *
    *
@@ -525,7 +503,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.stitcher.v1.Event> getEventsList() {
     return events_;
   }
-
   /**
    *
    *
@@ -540,7 +517,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       getEventsOrBuilderList() {
     return events_;
   }
-
   /**
    *
    *
@@ -554,7 +530,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   public int getEventsCount() {
     return events_.size();
   }
-
   /**
    *
    *
@@ -568,7 +543,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.stitcher.v1.Event getEvents(int index) {
     return events_.get(index);
   }
-
   /**
    *
    *
@@ -870,7 +844,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1292,7 +1265,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.IframeAdResource.Builder,
             com.google.cloud.video.stitcher.v1.IframeAdResourceOrBuilder>
         iframeAdResourceBuilder_;
-
     /**
      *
      *
@@ -1308,7 +1280,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIframeAdResource() {
       return adResourceCase_ == 10;
     }
-
     /**
      *
      *
@@ -1334,7 +1305,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.IframeAdResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1327,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1347,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1381,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1406,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1453,7 +1419,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         getIframeAdResourceBuilder() {
       return getIframeAdResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1475,7 +1440,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.IframeAdResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1514,7 +1478,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.StaticAdResource.Builder,
             com.google.cloud.video.stitcher.v1.StaticAdResourceOrBuilder>
         staticAdResourceBuilder_;
-
     /**
      *
      *
@@ -1530,7 +1493,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStaticAdResource() {
       return adResourceCase_ == 11;
     }
-
     /**
      *
      *
@@ -1556,7 +1518,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.StaticAdResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1579,7 +1540,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1560,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1594,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1619,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1632,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         getStaticAdResourceBuilder() {
       return getStaticAdResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1697,7 +1653,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.StaticAdResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1736,7 +1691,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.HtmlAdResource.Builder,
             com.google.cloud.video.stitcher.v1.HtmlAdResourceOrBuilder>
         htmlAdResourceBuilder_;
-
     /**
      *
      *
@@ -1752,7 +1706,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHtmlAdResource() {
       return adResourceCase_ == 12;
     }
-
     /**
      *
      *
@@ -1778,7 +1731,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.HtmlAdResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1801,7 +1753,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1773,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -1856,7 +1806,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       adResourceCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -1882,7 +1831,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1895,7 +1843,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.HtmlAdResource.Builder getHtmlAdResourceBuilder() {
       return getHtmlAdResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1916,7 +1863,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.video.stitcher.v1.HtmlAdResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1951,7 +1897,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object apiFramework_ = "";
-
     /**
      *
      *
@@ -1974,7 +1919,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1997,7 +1941,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2019,7 +1962,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2037,7 +1979,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2062,7 +2003,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int heightPx_;
-
     /**
      *
      *
@@ -2078,7 +2018,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public int getHeightPx() {
       return heightPx_;
     }
-
     /**
      *
      *
@@ -2098,7 +2037,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2118,7 +2056,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int widthPx_;
-
     /**
      *
      *
@@ -2134,7 +2071,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public int getWidthPx() {
       return widthPx_;
     }
-
     /**
      *
      *
@@ -2154,7 +2090,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2174,7 +2109,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int assetHeightPx_;
-
     /**
      *
      *
@@ -2190,7 +2124,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public int getAssetHeightPx() {
       return assetHeightPx_;
     }
-
     /**
      *
      *
@@ -2210,7 +2143,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2230,7 +2162,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int expandedHeightPx_;
-
     /**
      *
      *
@@ -2246,7 +2177,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public int getExpandedHeightPx() {
       return expandedHeightPx_;
     }
-
     /**
      *
      *
@@ -2266,7 +2196,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2286,7 +2215,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int assetWidthPx_;
-
     /**
      *
      *
@@ -2302,7 +2230,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public int getAssetWidthPx() {
       return assetWidthPx_;
     }
-
     /**
      *
      *
@@ -2322,7 +2249,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2268,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int expandedWidthPx_;
-
     /**
      *
      *
@@ -2358,7 +2283,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public int getExpandedWidthPx() {
       return expandedWidthPx_;
     }
-
     /**
      *
      *
@@ -2378,7 +2302,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2398,7 +2321,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object adSlotId_ = "";
-
     /**
      *
      *
@@ -2423,7 +2345,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2448,7 +2369,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2472,7 +2392,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2492,7 +2411,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2550,7 +2468,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2567,7 +2484,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2584,7 +2500,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2607,7 +2522,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2628,7 +2542,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2651,7 +2564,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2674,7 +2586,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2694,7 +2605,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2715,7 +2625,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2736,7 +2645,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2756,7 +2664,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2776,7 +2683,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2789,7 +2695,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.stitcher.v1.Event.Builder getEventsBuilder(int index) {
       return getEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2806,7 +2711,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return eventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2824,7 +2728,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(events_);
       }
     }
-
     /**
      *
      *
@@ -2838,7 +2741,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       return getEventsFieldBuilder()
           .addBuilder(com.google.cloud.video.stitcher.v1.Event.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2852,7 +2754,6 @@ public final class Companion extends com.google.protobuf.GeneratedMessageV3
       return getEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.video.stitcher.v1.Event.getDefaultInstance());
     }
-
     /**
      *
      *

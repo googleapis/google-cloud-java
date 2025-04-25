@@ -33,7 +33,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.TextClassificationAnnotation)
     TextClassificationAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextClassificationAnnotation.newBuilder() to construct.
   private TextClassificationAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int ANNOTATION_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.AnnotationSpec annotationSpec_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
   public boolean hasAnnotationSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
         ? com.google.cloud.datalabeling.v1beta1.AnnotationSpec.getDefaultInstance()
         : annotationSpec_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -495,7 +490,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
             com.google.cloud.datalabeling.v1beta1.AnnotationSpec.Builder,
             com.google.cloud.datalabeling.v1beta1.AnnotationSpecOrBuilder>
         annotationSpecBuilder_;
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
     public boolean hasAnnotationSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -531,7 +524,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
         return annotationSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -575,7 +566,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -604,7 +594,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +613,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -639,7 +627,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
       onChanged();
       return getAnnotationSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -659,7 +646,6 @@ public final class TextClassificationAnnotation extends com.google.protobuf.Gene
             : annotationSpec_;
       }
     }
-
     /**
      *
      *

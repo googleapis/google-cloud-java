@@ -37,7 +37,6 @@ public interface ProductInfoOrBuilder
    * </code>
    */
   int getProductAttributesCount();
-
   /**
    *
    *
@@ -51,11 +50,9 @@ public interface ProductInfoOrBuilder
    * </code>
    */
   boolean containsProductAttributes(java.lang.String key);
-
   /** Use {@link #getProductAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProductAttributes();
-
   /**
    *
    *
@@ -69,7 +66,6 @@ public interface ProductInfoOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getProductAttributesMap();
-
   /**
    *
    *
@@ -87,7 +83,6 @@ public interface ProductInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface ProductInfoOrBuilder
    * @return Whether the productImage field is set.
    */
   boolean hasProductImage();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ProductInfoOrBuilder
    * @return The productImage.
    */
   com.google.shopping.merchant.productstudio.v1alpha.Image getProductImage();
-
   /**
    *
    *

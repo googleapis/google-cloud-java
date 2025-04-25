@@ -39,7 +39,6 @@ public interface DeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DeploymentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DeploymentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface DeploymentOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface DeploymentOrBuilder
    * @return The documentation.
    */
   com.google.cloud.apihub.v1.Documentation getDocumentation();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface DeploymentOrBuilder
    * @return Whether the deploymentType field is set.
    */
   boolean hasDeploymentType();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface DeploymentOrBuilder
    * @return The deploymentType.
    */
   com.google.cloud.apihub.v1.AttributeValues getDeploymentType();
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public interface DeploymentOrBuilder
    * @return The resourceUri.
    */
   java.lang.String getResourceUri();
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public interface DeploymentOrBuilder
    * @return A list containing the endpoints.
    */
   java.util.List<java.lang.String> getEndpointsList();
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public interface DeploymentOrBuilder
    * @return The count of endpoints.
    */
   int getEndpointsCount();
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public interface DeploymentOrBuilder
    * @return The endpoints at the given index.
    */
   java.lang.String getEndpoints(int index);
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public interface DeploymentOrBuilder
    * @return A list containing the apiVersions.
    */
   java.util.List<java.lang.String> getApiVersionsList();
-
   /**
    *
    *
@@ -336,7 +324,6 @@ public interface DeploymentOrBuilder
    * @return The count of apiVersions.
    */
   int getApiVersionsCount();
-
   /**
    *
    *
@@ -352,7 +339,6 @@ public interface DeploymentOrBuilder
    * @return The apiVersions at the given index.
    */
   java.lang.String getApiVersions(int index);
-
   /**
    *
    *
@@ -382,7 +368,6 @@ public interface DeploymentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -396,7 +381,6 @@ public interface DeploymentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -422,7 +406,6 @@ public interface DeploymentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -436,7 +419,6 @@ public interface DeploymentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -470,7 +452,6 @@ public interface DeploymentOrBuilder
    * @return Whether the slo field is set.
    */
   boolean hasSlo();
-
   /**
    *
    *
@@ -492,7 +473,6 @@ public interface DeploymentOrBuilder
    * @return The slo.
    */
   com.google.cloud.apihub.v1.AttributeValues getSlo();
-
   /**
    *
    *
@@ -534,7 +514,6 @@ public interface DeploymentOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
-
   /**
    *
    *
@@ -556,7 +535,6 @@ public interface DeploymentOrBuilder
    * @return The environment.
    */
   com.google.cloud.apihub.v1.AttributeValues getEnvironment();
-
   /**
    *
    *
@@ -592,7 +570,6 @@ public interface DeploymentOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -608,11 +585,9 @@ public interface DeploymentOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
-
   /**
    *
    *
@@ -628,7 +603,6 @@ public interface DeploymentOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
-
   /**
    *
    *
@@ -648,7 +622,6 @@ public interface DeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
-
   /**
    *
    *

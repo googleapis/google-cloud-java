@@ -36,7 +36,6 @@ public interface AdStitchDetailOrBuilder
    * @return The adBreakId.
    */
   java.lang.String getAdBreakId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AdStitchDetailOrBuilder
    * @return The adId.
    */
   java.lang.String getAdId();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface AdStitchDetailOrBuilder
    * @return Whether the adTimeOffset field is set.
    */
   boolean hasAdTimeOffset();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AdStitchDetailOrBuilder
    * @return The adTimeOffset.
    */
   com.google.protobuf.Duration getAdTimeOffset();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface AdStitchDetailOrBuilder
    * @return The skipReason.
    */
   java.lang.String getSkipReason();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface AdStitchDetailOrBuilder
    * </code>
    */
   int getMediaCount();
-
   /**
    *
    *
@@ -167,11 +161,9 @@ public interface AdStitchDetailOrBuilder
    * </code>
    */
   boolean containsMedia(java.lang.String key);
-
   /** Use {@link #getMediaMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getMedia();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface AdStitchDetailOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getMediaMap();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface AdStitchDetailOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *

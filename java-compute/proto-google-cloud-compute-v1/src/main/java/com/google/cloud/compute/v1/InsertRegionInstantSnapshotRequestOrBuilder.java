@@ -38,7 +38,6 @@ public interface InsertRegionInstantSnapshotRequestOrBuilder
    * @return Whether the instantSnapshotResource field is set.
    */
   boolean hasInstantSnapshotResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertRegionInstantSnapshotRequestOrBuilder
    * @return The instantSnapshotResource.
    */
   com.google.cloud.compute.v1.InstantSnapshot getInstantSnapshotResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertRegionInstantSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InsertRegionInstantSnapshotRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InsertRegionInstantSnapshotRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface InsertRegionInstantSnapshotRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

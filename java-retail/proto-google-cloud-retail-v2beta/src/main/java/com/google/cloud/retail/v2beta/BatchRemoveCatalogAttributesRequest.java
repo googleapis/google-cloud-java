@@ -36,7 +36,6 @@ public final class BatchRemoveCatalogAttributesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest)
     BatchRemoveCatalogAttributesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRemoveCatalogAttributesRequest.newBuilder() to construct.
   private BatchRemoveCatalogAttributesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class BatchRemoveCatalogAttributesRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attributesConfig_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BatchRemoveCatalogAttributesRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class BatchRemoveCatalogAttributesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList attributeKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class BatchRemoveCatalogAttributesRequest
   public com.google.protobuf.ProtocolStringList getAttributeKeysList() {
     return attributeKeys_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class BatchRemoveCatalogAttributesRequest
   public int getAttributeKeysCount() {
     return attributeKeys_.size();
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class BatchRemoveCatalogAttributesRequest
   public java.lang.String getAttributeKeys(int index) {
     return attributeKeys_.get(index);
   }
-
   /**
    *
    *
@@ -383,7 +376,6 @@ public final class BatchRemoveCatalogAttributesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -599,7 +591,6 @@ public final class BatchRemoveCatalogAttributesRequest
     private int bitField0_;
 
     private java.lang.Object attributesConfig_ = "";
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class BatchRemoveCatalogAttributesRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -653,7 +643,6 @@ public final class BatchRemoveCatalogAttributesRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class BatchRemoveCatalogAttributesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class BatchRemoveCatalogAttributesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class BatchRemoveCatalogAttributesRequest
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class BatchRemoveCatalogAttributesRequest
       attributeKeys_.makeImmutable();
       return attributeKeys_;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class BatchRemoveCatalogAttributesRequest
     public int getAttributeKeysCount() {
       return attributeKeys_.size();
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class BatchRemoveCatalogAttributesRequest
     public java.lang.String getAttributeKeys(int index) {
       return attributeKeys_.get(index);
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class BatchRemoveCatalogAttributesRequest
     public com.google.protobuf.ByteString getAttributeKeysBytes(int index) {
       return attributeKeys_.getByteString(index);
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class BatchRemoveCatalogAttributesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class BatchRemoveCatalogAttributesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class BatchRemoveCatalogAttributesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class BatchRemoveCatalogAttributesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

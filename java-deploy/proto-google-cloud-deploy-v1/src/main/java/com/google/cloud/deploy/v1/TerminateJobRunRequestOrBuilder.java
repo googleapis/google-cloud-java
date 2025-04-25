@@ -39,7 +39,6 @@ public interface TerminateJobRunRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface TerminateJobRunRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface TerminateJobRunRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface TerminateJobRunRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
-
   /**
    *
    *

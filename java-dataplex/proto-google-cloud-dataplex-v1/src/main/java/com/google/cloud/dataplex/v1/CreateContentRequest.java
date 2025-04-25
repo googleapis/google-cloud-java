@@ -33,7 +33,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreateContentRequest)
     CreateContentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateContentRequest.newBuilder() to construct.
   private CreateContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
 
   public static final int CONTENT_FIELD_NUMBER = 2;
   private com.google.cloud.dataplex.v1.Content content_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
   public boolean hasContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.dataplex.v1.Content getContent() {
     return content_ == null ? com.google.cloud.dataplex.v1.Content.getDefaultInstance() : content_;
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -378,7 +371,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -605,7 +597,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.dataplex.v1.Content.Builder,
             com.google.cloud.dataplex.v1.ContentOrBuilder>
         contentBuilder_;
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
     public boolean hasContent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
         return contentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -913,7 +892,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
             : content_;
       }
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -981,7 +957,6 @@ public final class CreateContentRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

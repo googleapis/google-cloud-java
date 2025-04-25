@@ -40,7 +40,6 @@ public interface GetModelMonitoringJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

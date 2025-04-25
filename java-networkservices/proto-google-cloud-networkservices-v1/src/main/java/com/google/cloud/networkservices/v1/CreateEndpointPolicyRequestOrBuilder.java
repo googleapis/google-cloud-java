@@ -39,7 +39,6 @@ public interface CreateEndpointPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateEndpointPolicyRequestOrBuilder
    * @return The endpointPolicyId.
    */
   java.lang.String getEndpointPolicyId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateEndpointPolicyRequestOrBuilder
    * @return Whether the endpointPolicy field is set.
    */
   boolean hasEndpointPolicy();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateEndpointPolicyRequestOrBuilder
    * @return The endpointPolicy.
    */
   com.google.cloud.networkservices.v1.EndpointPolicy getEndpointPolicy();
-
   /**
    *
    *

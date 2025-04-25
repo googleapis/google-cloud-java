@@ -34,7 +34,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.CreateCertificateAuthorityRequest)
     CreateCertificateAuthorityRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCertificateAuthorityRequest.newBuilder() to construct.
   private CreateCertificateAuthorityRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificateAuthorityId_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
 
   public static final int CERTIFICATE_AUTHORITY_FIELD_NUMBER = 3;
   private com.google.cloud.security.privateca.v1.CertificateAuthority certificateAuthority_;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
   public boolean hasCertificateAuthority() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         ? com.google.cloud.security.privateca.v1.CertificateAuthority.getDefaultInstance()
         : certificateAuthority_;
   }
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -293,7 +284,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -525,7 +515,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -784,7 +773,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -812,7 +800,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -840,7 +827,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -867,7 +853,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +875,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +904,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
     }
 
     private java.lang.Object certificateAuthorityId_ = "";
-
     /**
      *
      *
@@ -944,7 +927,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -968,7 +950,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -991,7 +972,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +990,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1020,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
             com.google.cloud.security.privateca.v1.CertificateAuthority.Builder,
             com.google.cloud.security.privateca.v1.CertificateAuthorityOrBuilder>
         certificateAuthorityBuilder_;
-
     /**
      *
      *
@@ -1060,7 +1038,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
     public boolean hasCertificateAuthority() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1085,7 +1062,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return certificateAuthorityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1089,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1113,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1147,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1170,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1189,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return getCertificateAuthorityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1241,7 +1212,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
             : certificateAuthority_;
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1243,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1308,7 +1277,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1311,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1377,7 +1344,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1373,6 @@ public final class CreateCertificateAuthorityRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

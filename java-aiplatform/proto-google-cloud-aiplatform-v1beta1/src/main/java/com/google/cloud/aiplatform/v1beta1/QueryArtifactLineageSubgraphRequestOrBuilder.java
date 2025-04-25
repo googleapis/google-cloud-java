@@ -44,7 +44,6 @@ public interface QueryArtifactLineageSubgraphRequestOrBuilder
    * @return The artifact.
    */
   java.lang.String getArtifact();
-
   /**
    *
    *
@@ -119,7 +118,6 @@ public interface QueryArtifactLineageSubgraphRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

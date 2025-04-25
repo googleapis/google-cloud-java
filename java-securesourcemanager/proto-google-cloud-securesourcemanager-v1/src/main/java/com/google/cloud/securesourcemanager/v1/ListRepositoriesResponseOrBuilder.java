@@ -34,7 +34,6 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.cloud.securesourcemanager.v1.Repository repositories = 1;</code>
    */
   java.util.List<com.google.cloud.securesourcemanager.v1.Repository> getRepositoriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.cloud.securesourcemanager.v1.Repository repositories = 1;</code>
    */
   com.google.cloud.securesourcemanager.v1.Repository getRepositories(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRepositoriesResponseOrBuilder
    * <code>repeated .google.cloud.securesourcemanager.v1.Repository repositories = 1;</code>
    */
   int getRepositoriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRepositoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securesourcemanager.v1.RepositoryOrBuilder>
       getRepositoriesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListRepositoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

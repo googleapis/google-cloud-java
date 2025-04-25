@@ -39,7 +39,6 @@ public interface AssignNotebookRuntimeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface AssignNotebookRuntimeRequestOrBuilder
    * @return The notebookRuntimeTemplate.
    */
   java.lang.String getNotebookRuntimeTemplate();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface AssignNotebookRuntimeRequestOrBuilder
    * @return Whether the notebookRuntime field is set.
    */
   boolean hasNotebookRuntime();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface AssignNotebookRuntimeRequestOrBuilder
    * @return The notebookRuntime.
    */
   com.google.cloud.aiplatform.v1beta1.NotebookRuntime getNotebookRuntime();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface AssignNotebookRuntimeRequestOrBuilder
    * @return The notebookRuntimeId.
    */
   java.lang.String getNotebookRuntimeId();
-
   /**
    *
    *

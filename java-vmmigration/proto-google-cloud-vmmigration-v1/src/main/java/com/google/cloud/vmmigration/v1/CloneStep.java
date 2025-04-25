@@ -33,7 +33,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.CloneStep)
     CloneStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloneStep.newBuilder() to construct.
   private CloneStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     private StepCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,7 +115,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADAPTING_OS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdaptingOs() {
     return stepCase_ == 3;
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.vmmigration.v1.AdaptingOSStep.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PREPARING_VM_DISKS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPreparingVmDisks() {
     return stepCase_ == 4;
   }
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.vmmigration.v1.PreparingVMDisksStep.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANTIATING_MIGRATED_VM_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInstantiatingMigratedVm() {
     return stepCase_ == 5;
   }
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.vmmigration.v1.InstantiatingMigratedVMStep.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -317,7 +304,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -334,7 +320,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -350,7 +335,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -366,7 +350,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -613,7 +596,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -915,7 +897,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmmigration.v1.AdaptingOSStep.Builder,
             com.google.cloud.vmmigration.v1.AdaptingOSStepOrBuilder>
         adaptingOsBuilder_;
-
     /**
      *
      *
@@ -931,7 +912,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdaptingOs() {
       return stepCase_ == 3;
     }
-
     /**
      *
      *
@@ -957,7 +937,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.AdaptingOSStep.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -980,7 +959,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1011,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1048,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.AdaptingOSStep.Builder getAdaptingOsBuilder() {
       return getAdaptingOsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1094,7 +1068,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.AdaptingOSStep.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1106,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmmigration.v1.PreparingVMDisksStep.Builder,
             com.google.cloud.vmmigration.v1.PreparingVMDisksStepOrBuilder>
         preparingVmDisksBuilder_;
-
     /**
      *
      *
@@ -1149,7 +1121,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPreparingVmDisks() {
       return stepCase_ == 4;
     }
-
     /**
      *
      *
@@ -1175,7 +1146,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.PreparingVMDisksStep.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1168,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1188,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1221,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1246,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1259,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         getPreparingVmDisksBuilder() {
       return getPreparingVmDisksFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1315,7 +1280,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.PreparingVMDisksStep.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1354,7 +1318,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmmigration.v1.InstantiatingMigratedVMStep.Builder,
             com.google.cloud.vmmigration.v1.InstantiatingMigratedVMStepOrBuilder>
         instantiatingMigratedVmBuilder_;
-
     /**
      *
      *
@@ -1371,7 +1334,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstantiatingMigratedVm() {
       return stepCase_ == 5;
     }
-
     /**
      *
      *
@@ -1399,7 +1361,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.InstantiatingMigratedVMStep.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1424,7 +1385,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1406,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1483,7 +1442,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       stepCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1510,7 +1468,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1525,7 +1482,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         getInstantiatingMigratedVmBuilder() {
       return getInstantiatingMigratedVmFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1548,7 +1504,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.InstantiatingMigratedVMStep.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1589,7 +1544,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1604,7 +1558,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1623,7 +1576,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1646,7 +1598,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1617,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1694,7 +1644,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1714,7 +1663,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1677,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1746,7 +1693,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1779,7 +1725,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1794,7 +1739,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1813,7 +1757,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1836,7 +1779,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1856,7 +1798,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1825,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1904,7 +1844,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1919,7 +1858,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1936,7 +1874,6 @@ public final class CloneStep extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

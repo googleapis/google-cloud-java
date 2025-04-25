@@ -38,7 +38,6 @@ public interface GetInterconnectRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

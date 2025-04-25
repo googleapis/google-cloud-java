@@ -33,7 +33,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AsyncBatchAnnotateImagesResponse)
     AsyncBatchAnnotateImagesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AsyncBatchAnnotateImagesResponse.newBuilder() to construct.
   private AsyncBatchAnnotateImagesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
   private int bitField0_;
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.OutputConfig outputConfig_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
         ? com.google.cloud.vision.v1.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +482,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
             com.google.cloud.vision.v1.OutputConfig.Builder,
             com.google.cloud.vision.v1.OutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +558,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +585,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +604,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +618,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -649,7 +636,6 @@ public final class AsyncBatchAnnotateImagesResponse extends com.google.protobuf.
             : outputConfig_;
       }
     }
-
     /**
      *
      *

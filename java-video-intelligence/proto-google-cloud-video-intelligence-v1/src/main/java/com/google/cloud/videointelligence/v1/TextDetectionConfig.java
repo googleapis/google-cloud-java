@@ -33,7 +33,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.TextDetectionConfig)
     TextDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextDetectionConfig.newBuilder() to construct.
   private TextDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languageHints_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getLanguageHintsList() {
     return languageHints_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   public int getLanguageHintsCount() {
     return languageHints_.size();
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
   public java.lang.String getLanguageHints(int index) {
     return languageHints_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object model_ = "";
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -382,7 +375,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -597,7 +589,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       languageHints_.makeImmutable();
       return languageHints_;
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public int getLanguageHintsCount() {
       return languageHints_.size();
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public java.lang.String getLanguageHints(int index) {
       return languageHints_.get(index);
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
       return languageHints_.getByteString(index);
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

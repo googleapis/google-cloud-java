@@ -37,7 +37,6 @@ public interface NoteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface NoteOrBuilder
    * @return The shortDescription.
    */
   java.lang.String getShortDescription();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface NoteOrBuilder
    * @return The longDescription.
    */
   java.lang.String getLongDescription();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface NoteOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface NoteOrBuilder
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
   java.util.List<io.grafeas.v1beta1.common.RelatedUrl> getRelatedUrlList();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface NoteOrBuilder
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
   io.grafeas.v1beta1.common.RelatedUrl getRelatedUrl(int index);
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface NoteOrBuilder
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
   int getRelatedUrlCount();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface NoteOrBuilder
    */
   java.util.List<? extends io.grafeas.v1beta1.common.RelatedUrlOrBuilder>
       getRelatedUrlOrBuilderList();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface NoteOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface NoteOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public interface NoteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public interface NoteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -278,7 +266,6 @@ public interface NoteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -292,7 +279,6 @@ public interface NoteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -317,7 +303,6 @@ public interface NoteOrBuilder
    * @return A list containing the relatedNoteNames.
    */
   java.util.List<java.lang.String> getRelatedNoteNamesList();
-
   /**
    *
    *
@@ -330,7 +315,6 @@ public interface NoteOrBuilder
    * @return The count of relatedNoteNames.
    */
   int getRelatedNoteNamesCount();
-
   /**
    *
    *
@@ -344,7 +328,6 @@ public interface NoteOrBuilder
    * @return The relatedNoteNames at the given index.
    */
   java.lang.String getRelatedNoteNames(int index);
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public interface NoteOrBuilder
    * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
-
   /**
    *
    *
@@ -384,7 +366,6 @@ public interface NoteOrBuilder
    * @return The vulnerability.
    */
   io.grafeas.v1beta1.vulnerability.Vulnerability getVulnerability();
-
   /**
    *
    *
@@ -408,7 +389,6 @@ public interface NoteOrBuilder
    * @return Whether the build field is set.
    */
   boolean hasBuild();
-
   /**
    *
    *
@@ -421,7 +401,6 @@ public interface NoteOrBuilder
    * @return The build.
    */
   io.grafeas.v1beta1.build.Build getBuild();
-
   /**
    *
    *
@@ -445,7 +424,6 @@ public interface NoteOrBuilder
    * @return Whether the baseImage field is set.
    */
   boolean hasBaseImage();
-
   /**
    *
    *
@@ -458,7 +436,6 @@ public interface NoteOrBuilder
    * @return The baseImage.
    */
   io.grafeas.v1beta1.image.Basis getBaseImage();
-
   /**
    *
    *
@@ -482,7 +459,6 @@ public interface NoteOrBuilder
    * @return Whether the package field is set.
    */
   boolean hasPackage();
-
   /**
    *
    *
@@ -495,7 +471,6 @@ public interface NoteOrBuilder
    * @return The package.
    */
   io.grafeas.v1beta1.pkg.Package getPackage();
-
   /**
    *
    *
@@ -519,7 +494,6 @@ public interface NoteOrBuilder
    * @return Whether the deployable field is set.
    */
   boolean hasDeployable();
-
   /**
    *
    *
@@ -532,7 +506,6 @@ public interface NoteOrBuilder
    * @return The deployable.
    */
   io.grafeas.v1beta1.deployment.Deployable getDeployable();
-
   /**
    *
    *
@@ -556,7 +529,6 @@ public interface NoteOrBuilder
    * @return Whether the discovery field is set.
    */
   boolean hasDiscovery();
-
   /**
    *
    *
@@ -569,7 +541,6 @@ public interface NoteOrBuilder
    * @return The discovery.
    */
   io.grafeas.v1beta1.discovery.Discovery getDiscovery();
-
   /**
    *
    *
@@ -593,7 +564,6 @@ public interface NoteOrBuilder
    * @return Whether the attestationAuthority field is set.
    */
   boolean hasAttestationAuthority();
-
   /**
    *
    *
@@ -606,7 +576,6 @@ public interface NoteOrBuilder
    * @return The attestationAuthority.
    */
   io.grafeas.v1beta1.attestation.Authority getAttestationAuthority();
-
   /**
    *
    *

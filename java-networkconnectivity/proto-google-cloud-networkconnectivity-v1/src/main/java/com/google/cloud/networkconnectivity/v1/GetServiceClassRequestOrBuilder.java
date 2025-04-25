@@ -38,7 +38,6 @@ public interface GetServiceClassRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

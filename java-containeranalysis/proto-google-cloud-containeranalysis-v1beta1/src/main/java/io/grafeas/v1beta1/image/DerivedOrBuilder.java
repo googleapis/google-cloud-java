@@ -36,7 +36,6 @@ public interface DerivedOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DerivedOrBuilder
    * @return The fingerprint.
    */
   io.grafeas.v1beta1.image.Fingerprint getFingerprint();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface DerivedOrBuilder
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
   java.util.List<io.grafeas.v1beta1.image.Layer> getLayerInfoList();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface DerivedOrBuilder
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
   io.grafeas.v1beta1.image.Layer getLayerInfo(int index);
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface DerivedOrBuilder
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
   int getLayerInfoCount();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface DerivedOrBuilder
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
   java.util.List<? extends io.grafeas.v1beta1.image.LayerOrBuilder> getLayerInfoOrBuilderList();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface DerivedOrBuilder
    * @return The baseResourceUrl.
    */
   java.lang.String getBaseResourceUrl();
-
   /**
    *
    *

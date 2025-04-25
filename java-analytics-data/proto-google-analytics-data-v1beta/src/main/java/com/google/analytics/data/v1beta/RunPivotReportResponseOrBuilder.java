@@ -69,7 +69,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.PivotHeader pivot_headers = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.PivotHeader> getPivotHeadersList();
-
   /**
    *
    *
@@ -115,7 +114,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.PivotHeader pivot_headers = 1;</code>
    */
   com.google.analytics.data.v1beta.PivotHeader getPivotHeaders(int index);
-
   /**
    *
    *
@@ -161,7 +159,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.PivotHeader pivot_headers = 1;</code>
    */
   int getPivotHeadersCount();
-
   /**
    *
    *
@@ -208,7 +205,6 @@ public interface RunPivotReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.PivotHeaderOrBuilder>
       getPivotHeadersOrBuilderList();
-
   /**
    *
    *
@@ -266,7 +262,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionHeader dimension_headers = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.DimensionHeader> getDimensionHeadersList();
-
   /**
    *
    *
@@ -278,7 +273,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionHeader dimension_headers = 2;</code>
    */
   com.google.analytics.data.v1beta.DimensionHeader getDimensionHeaders(int index);
-
   /**
    *
    *
@@ -290,7 +284,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DimensionHeader dimension_headers = 2;</code>
    */
   int getDimensionHeadersCount();
-
   /**
    *
    *
@@ -303,7 +296,6 @@ public interface RunPivotReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionHeaderOrBuilder>
       getDimensionHeadersOrBuilderList();
-
   /**
    *
    *
@@ -327,7 +319,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricHeader metric_headers = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.MetricHeader> getMetricHeadersList();
-
   /**
    *
    *
@@ -339,7 +330,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricHeader metric_headers = 3;</code>
    */
   com.google.analytics.data.v1beta.MetricHeader getMetricHeaders(int index);
-
   /**
    *
    *
@@ -351,7 +341,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MetricHeader metric_headers = 3;</code>
    */
   int getMetricHeadersCount();
-
   /**
    *
    *
@@ -364,7 +353,6 @@ public interface RunPivotReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricHeaderOrBuilder>
       getMetricHeadersOrBuilderList();
-
   /**
    *
    *
@@ -387,7 +375,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 4;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Row> getRowsList();
-
   /**
    *
    *
@@ -398,7 +385,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 4;</code>
    */
   com.google.analytics.data.v1beta.Row getRows(int index);
-
   /**
    *
    *
@@ -409,7 +395,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 4;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -420,7 +405,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row rows = 4;</code>
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RowOrBuilder> getRowsOrBuilderList();
-
   /**
    *
    *
@@ -445,7 +429,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row aggregates = 5;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Row> getAggregatesList();
-
   /**
    *
    *
@@ -459,7 +442,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row aggregates = 5;</code>
    */
   com.google.analytics.data.v1beta.Row getAggregates(int index);
-
   /**
    *
    *
@@ -473,7 +455,6 @@ public interface RunPivotReportResponseOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Row aggregates = 5;</code>
    */
   int getAggregatesCount();
-
   /**
    *
    *
@@ -488,7 +469,6 @@ public interface RunPivotReportResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.RowOrBuilder>
       getAggregatesOrBuilderList();
-
   /**
    *
    *
@@ -515,7 +495,6 @@ public interface RunPivotReportResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -528,7 +507,6 @@ public interface RunPivotReportResponseOrBuilder
    * @return The metadata.
    */
   com.google.analytics.data.v1beta.ResponseMetaData getMetadata();
-
   /**
    *
    *
@@ -552,7 +530,6 @@ public interface RunPivotReportResponseOrBuilder
    * @return Whether the propertyQuota field is set.
    */
   boolean hasPropertyQuota();
-
   /**
    *
    *
@@ -565,7 +542,6 @@ public interface RunPivotReportResponseOrBuilder
    * @return The propertyQuota.
    */
   com.google.analytics.data.v1beta.PropertyQuota getPropertyQuota();
-
   /**
    *
    *
@@ -591,7 +567,6 @@ public interface RunPivotReportResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

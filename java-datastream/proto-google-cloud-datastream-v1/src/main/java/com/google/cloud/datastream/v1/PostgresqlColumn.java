@@ -33,7 +33,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlColumn)
     PostgresqlColumnOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostgresqlColumn.newBuilder() to construct.
   private PostgresqlColumn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object column_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataType_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   public static final int LENGTH_FIELD_NUMBER = 3;
   private int length_ = 0;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   public static final int PRECISION_FIELD_NUMBER = 4;
   private int precision_ = 0;
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   public static final int SCALE_FIELD_NUMBER = 5;
   private int scale_ = 0;
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   public static final int PRIMARY_KEY_FIELD_NUMBER = 7;
   private boolean primaryKey_ = false;
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   public static final int NULLABLE_FIELD_NUMBER = 8;
   private boolean nullable_ = false;
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
 
   public static final int ORDINAL_POSITION_FIELD_NUMBER = 9;
   private int ordinalPosition_ = 0;
-
   /**
    *
    *
@@ -507,7 +496,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -785,7 +773,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object column_ = "";
-
     /**
      *
      *
@@ -808,7 +795,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +817,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -853,7 +838,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +879,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object dataType_ = "";
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +961,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +985,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private int length_;
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public int getLength() {
       return length_;
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1038,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private int precision_;
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public int getPrecision() {
       return precision_;
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1091,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private int scale_;
-
     /**
      *
      *
@@ -1135,7 +1106,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public int getScale() {
       return scale_;
     }
-
     /**
      *
      *
@@ -1155,7 +1125,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1144,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean primaryKey_;
-
     /**
      *
      *
@@ -1191,7 +1159,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public boolean getPrimaryKey() {
       return primaryKey_;
     }
-
     /**
      *
      *
@@ -1211,7 +1178,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1197,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean nullable_;
-
     /**
      *
      *
@@ -1247,7 +1212,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public boolean getNullable() {
       return nullable_;
     }
-
     /**
      *
      *
@@ -1267,7 +1231,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1250,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     }
 
     private int ordinalPosition_;
-
     /**
      *
      *
@@ -1303,7 +1265,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
     public int getOrdinalPosition() {
       return ordinalPosition_;
     }
-
     /**
      *
      *
@@ -1323,7 +1284,6 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface AutomationRuleConditionOrBuilder
    * @return Whether the targetsPresentCondition field is set.
    */
   boolean hasTargetsPresentCondition();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AutomationRuleConditionOrBuilder
    * @return The targetsPresentCondition.
    */
   com.google.cloud.deploy.v1.TargetsPresentCondition getTargetsPresentCondition();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface AutomationRuleConditionOrBuilder
    * @return Whether the timedPromoteReleaseCondition field is set.
    */
   boolean hasTimedPromoteReleaseCondition();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface AutomationRuleConditionOrBuilder
    * @return The timedPromoteReleaseCondition.
    */
   com.google.cloud.deploy.v1.TimedPromoteReleaseCondition getTimedPromoteReleaseCondition();
-
   /**
    *
    *

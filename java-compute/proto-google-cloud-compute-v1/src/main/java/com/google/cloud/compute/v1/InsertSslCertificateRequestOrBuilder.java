@@ -38,7 +38,6 @@ public interface InsertSslCertificateRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertSslCertificateRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InsertSslCertificateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface InsertSslCertificateRequestOrBuilder
    * @return Whether the sslCertificateResource field is set.
    */
   boolean hasSslCertificateResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertSslCertificateRequestOrBuilder
    * @return The sslCertificateResource.
    */
   com.google.cloud.compute.v1.SslCertificate getSslCertificateResource();
-
   /**
    *
    *

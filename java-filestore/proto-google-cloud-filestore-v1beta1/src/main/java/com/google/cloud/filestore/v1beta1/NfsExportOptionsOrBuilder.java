@@ -43,7 +43,6 @@ public interface NfsExportOptionsOrBuilder
    * @return A list containing the ipRanges.
    */
   java.util.List<java.lang.String> getIpRangesList();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface NfsExportOptionsOrBuilder
    * @return The count of ipRanges.
    */
   int getIpRangesCount();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface NfsExportOptionsOrBuilder
    * @return The ipRanges at the given index.
    */
   java.lang.String getIpRanges(int index);
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface NfsExportOptionsOrBuilder
    * @return The enum numeric value on the wire for accessMode.
    */
   int getAccessModeValue();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface NfsExportOptionsOrBuilder
    * @return The enum numeric value on the wire for squashMode.
    */
   int getSquashModeValue();
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public interface NfsExportOptionsOrBuilder
    */
   java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>
       getSecurityFlavorsList();
-
   /**
    *
    *
@@ -230,7 +224,6 @@ public interface NfsExportOptionsOrBuilder
    * @return The count of securityFlavors.
    */
   int getSecurityFlavorsCount();
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public interface NfsExportOptionsOrBuilder
    * @return The securityFlavors at the given index.
    */
   com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor getSecurityFlavors(int index);
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public interface NfsExportOptionsOrBuilder
    * @return A list containing the enum numeric values on the wire for securityFlavors.
    */
   java.util.List<java.lang.Integer> getSecurityFlavorsValueList();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface BatchMigrateResourcesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse>
       getMigrateResourceResponsesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface BatchMigrateResourcesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.MigrateResourceResponse getMigrateResourceResponses(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface BatchMigrateResourcesResponseOrBuilder
    * </code>
    */
   int getMigrateResourceResponsesCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface BatchMigrateResourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MigrateResourceResponseOrBuilder>
       getMigrateResourceResponsesOrBuilderList();
-
   /**
    *
    *

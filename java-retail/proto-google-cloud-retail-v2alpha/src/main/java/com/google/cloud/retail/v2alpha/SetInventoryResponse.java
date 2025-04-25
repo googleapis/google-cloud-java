@@ -36,7 +36,6 @@ public final class SetInventoryResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.SetInventoryResponse)
     SetInventoryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetInventoryResponse.newBuilder() to construct.
   private SetInventoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class SetInventoryResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

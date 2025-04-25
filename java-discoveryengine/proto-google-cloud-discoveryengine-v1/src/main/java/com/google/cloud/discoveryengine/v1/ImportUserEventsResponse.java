@@ -35,7 +35,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.ImportUserEventsResponse)
     ImportUserEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportUserEventsResponse.newBuilder() to construct.
   private ImportUserEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.ImportErrorConfig errorConfig_;
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         ? com.google.cloud.discoveryengine.v1.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   public static final int JOINED_EVENTS_COUNT_FIELD_NUMBER = 3;
   private long joinedEventsCount_ = 0L;
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   public static final int UNJOINED_EVENTS_COUNT_FIELD_NUMBER = 4;
   private long unjoinedEventsCount_ = 0L;
-
   /**
    *
    *
@@ -431,7 +420,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -751,7 +739,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -768,7 +755,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -808,7 +793,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +951,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +963,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1004,7 +979,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1021,7 +995,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1083,7 +1054,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             com.google.cloud.discoveryengine.v1.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
-
     /**
      *
      *
@@ -1099,7 +1069,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1121,7 +1090,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1113,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1134,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1163,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1183,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1198,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1255,7 +1218,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             : errorConfig_;
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1246,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     }
 
     private long joinedEventsCount_;
-
     /**
      *
      *
@@ -1300,7 +1261,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public long getJoinedEventsCount() {
       return joinedEventsCount_;
     }
-
     /**
      *
      *
@@ -1320,7 +1280,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1299,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     }
 
     private long unjoinedEventsCount_;
-
     /**
      *
      *
@@ -1357,7 +1315,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public long getUnjoinedEventsCount() {
       return unjoinedEventsCount_;
     }
-
     /**
      *
      *
@@ -1378,7 +1335,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

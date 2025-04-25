@@ -38,7 +38,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ProcessorIOSpec.GraphInputChannelSpec>
       getGraphInputChannelSpecsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   com.google.cloud.visionai.v1.ProcessorIOSpec.GraphInputChannelSpec getGraphInputChannelSpecs(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface ProcessorIOSpecOrBuilder
    * </code>
    */
   int getGraphInputChannelSpecsCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface ProcessorIOSpecOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.ProcessorIOSpec.GraphInputChannelSpecOrBuilder>
       getGraphInputChannelSpecsOrBuilderList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ProcessorIOSpec.GraphOutputChannelSpec>
       getGraphOutputChannelSpecsList();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   com.google.cloud.visionai.v1.ProcessorIOSpec.GraphOutputChannelSpec getGraphOutputChannelSpecs(
       int index);
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface ProcessorIOSpecOrBuilder
    * </code>
    */
   int getGraphOutputChannelSpecsCount();
-
   /**
    *
    *
@@ -154,7 +147,6 @@ public interface ProcessorIOSpecOrBuilder
   java.util.List<
           ? extends com.google.cloud.visionai.v1.ProcessorIOSpec.GraphOutputChannelSpecOrBuilder>
       getGraphOutputChannelSpecsOrBuilderList();
-
   /**
    *
    *
@@ -182,7 +174,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ProcessorIOSpec.InstanceResourceInputBindingSpec>
       getInstanceResourceInputBindingSpecsList();
-
   /**
    *
    *
@@ -196,7 +187,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   com.google.cloud.visionai.v1.ProcessorIOSpec.InstanceResourceInputBindingSpec
       getInstanceResourceInputBindingSpecs(int index);
-
   /**
    *
    *
@@ -209,7 +199,6 @@ public interface ProcessorIOSpecOrBuilder
    * </code>
    */
   int getInstanceResourceInputBindingSpecsCount();
-
   /**
    *
    *
@@ -226,7 +215,6 @@ public interface ProcessorIOSpecOrBuilder
               com.google.cloud.visionai.v1.ProcessorIOSpec
                   .InstanceResourceInputBindingSpecOrBuilder>
       getInstanceResourceInputBindingSpecsOrBuilderList();
-
   /**
    *
    *
@@ -257,7 +245,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.ProcessorIOSpec.InstanceResourceOutputBindingSpec>
       getInstanceResourceOutputBindingSpecsList();
-
   /**
    *
    *
@@ -274,7 +261,6 @@ public interface ProcessorIOSpecOrBuilder
    */
   com.google.cloud.visionai.v1.ProcessorIOSpec.InstanceResourceOutputBindingSpec
       getInstanceResourceOutputBindingSpecs(int index);
-
   /**
    *
    *
@@ -290,7 +276,6 @@ public interface ProcessorIOSpecOrBuilder
    * </code>
    */
   int getInstanceResourceOutputBindingSpecsCount();
-
   /**
    *
    *
@@ -310,7 +295,6 @@ public interface ProcessorIOSpecOrBuilder
               com.google.cloud.visionai.v1.ProcessorIOSpec
                   .InstanceResourceOutputBindingSpecOrBuilder>
       getInstanceResourceOutputBindingSpecsOrBuilderList();
-
   /**
    *
    *

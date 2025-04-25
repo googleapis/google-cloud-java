@@ -39,7 +39,6 @@ public interface PhraseSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PhraseSetOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v2.PhraseSet.Phrase phrases = 3;</code>
    */
   java.util.List<com.google.cloud.speech.v2.PhraseSet.Phrase> getPhrasesList();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v2.PhraseSet.Phrase phrases = 3;</code>
    */
   com.google.cloud.speech.v2.PhraseSet.Phrase getPhrases(int index);
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v2.PhraseSet.Phrase phrases = 3;</code>
    */
   int getPhrasesCount();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface PhraseSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.PhraseSet.PhraseOrBuilder>
       getPhrasesOrBuilderList();
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public interface PhraseSetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface PhraseSetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface PhraseSetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public interface PhraseSetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public interface PhraseSetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -281,7 +270,6 @@ public interface PhraseSetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -307,7 +295,6 @@ public interface PhraseSetOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -321,7 +308,6 @@ public interface PhraseSetOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public interface PhraseSetOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -361,7 +346,6 @@ public interface PhraseSetOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -386,7 +370,6 @@ public interface PhraseSetOrBuilder
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -399,11 +382,9 @@ public interface PhraseSetOrBuilder
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -416,7 +397,6 @@ public interface PhraseSetOrBuilder
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -433,7 +413,6 @@ public interface PhraseSetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -461,7 +440,6 @@ public interface PhraseSetOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -508,7 +486,6 @@ public interface PhraseSetOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -544,7 +521,6 @@ public interface PhraseSetOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
-
   /**
    *
    *

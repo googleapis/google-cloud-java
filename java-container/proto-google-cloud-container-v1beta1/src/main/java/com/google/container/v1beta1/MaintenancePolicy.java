@@ -33,7 +33,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.MaintenancePolicy)
     MaintenancePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaintenancePolicy.newBuilder() to construct.
   private MaintenancePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.MaintenanceWindow window_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         ? com.google.container.v1beta1.MaintenanceWindow.getDefaultInstance()
         : window_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceVersion_ = "";
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +346,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -570,7 +563,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             com.google.container.v1beta1.MaintenanceWindow.Builder,
             com.google.container.v1beta1.MaintenanceWindowOrBuilder>
         windowBuilder_;
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return windowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             : window_;
       }
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object resourceVersion_ = "";
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

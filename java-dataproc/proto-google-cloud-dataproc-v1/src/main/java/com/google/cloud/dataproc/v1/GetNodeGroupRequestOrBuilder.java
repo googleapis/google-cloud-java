@@ -40,7 +40,6 @@ public interface GetNodeGroupRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

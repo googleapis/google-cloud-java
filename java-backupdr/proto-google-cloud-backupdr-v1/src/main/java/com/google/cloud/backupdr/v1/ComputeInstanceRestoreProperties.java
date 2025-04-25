@@ -34,7 +34,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.ComputeInstanceRestoreProperties)
     ComputeInstanceRestorePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComputeInstanceRestoreProperties.newBuilder() to construct.
   private ComputeInstanceRestoreProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -160,7 +159,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
      * <code>INSTANCE_PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED = 0;</code>
      */
     public static final int INSTANCE_PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -172,7 +170,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
      * <code>INHERIT_FROM_SUBNETWORK = 1;</code>
      */
     public static final int INHERIT_FROM_SUBNETWORK_VALUE = 1;
-
     /**
      *
      *
@@ -186,7 +183,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
      * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 2;</code>
      */
     public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 2;
-
     /**
      *
      *
@@ -296,7 +292,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -312,7 +307,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -336,7 +330,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -363,7 +356,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int ADVANCED_MACHINE_FEATURES_FIELD_NUMBER = 2;
   private com.google.cloud.backupdr.v1.AdvancedMachineFeatures advancedMachineFeatures_;
-
   /**
    *
    *
@@ -381,7 +373,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasAdvancedMachineFeatures() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -401,7 +392,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.AdvancedMachineFeatures.getDefaultInstance()
         : advancedMachineFeatures_;
   }
-
   /**
    *
    *
@@ -423,7 +413,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int CAN_IP_FORWARD_FIELD_NUMBER = 3;
   private boolean canIpForward_ = false;
-
   /**
    *
    *
@@ -440,7 +429,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasCanIpForward() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -460,7 +448,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.backupdr.v1.ConfidentialInstanceConfig confidentialInstanceConfig_;
-
   /**
    *
    *
@@ -478,7 +465,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasConfidentialInstanceConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -498,7 +484,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.ConfidentialInstanceConfig.getDefaultInstance()
         : confidentialInstanceConfig_;
   }
-
   /**
    *
    *
@@ -520,7 +505,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int DELETION_PROTECTION_FIELD_NUMBER = 5;
   private boolean deletionProtection_ = false;
-
   /**
    *
    *
@@ -536,7 +520,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasDeletionProtection() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -557,7 +540,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -574,7 +556,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -599,7 +580,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -629,7 +609,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.AttachedDisk> disks_;
-
   /**
    *
    *
@@ -646,7 +625,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public java.util.List<com.google.cloud.backupdr.v1.AttachedDisk> getDisksList() {
     return disks_;
   }
-
   /**
    *
    *
@@ -664,7 +642,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       getDisksOrBuilderList() {
     return disks_;
   }
-
   /**
    *
    *
@@ -681,7 +658,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getDisksCount() {
     return disks_.size();
   }
-
   /**
    *
    *
@@ -698,7 +674,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public com.google.cloud.backupdr.v1.AttachedDisk getDisks(int index) {
     return disks_.get(index);
   }
-
   /**
    *
    *
@@ -718,7 +693,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int DISPLAY_DEVICE_FIELD_NUMBER = 8;
   private com.google.cloud.backupdr.v1.DisplayDevice displayDevice_;
-
   /**
    *
    *
@@ -736,7 +710,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasDisplayDevice() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -756,7 +729,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.DisplayDevice.getDefaultInstance()
         : displayDevice_;
   }
-
   /**
    *
    *
@@ -779,7 +751,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.AcceleratorConfig> guestAccelerators_;
-
   /**
    *
    *
@@ -796,7 +767,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public java.util.List<com.google.cloud.backupdr.v1.AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators_;
   }
-
   /**
    *
    *
@@ -814,7 +784,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       getGuestAcceleratorsOrBuilderList() {
     return guestAccelerators_;
   }
-
   /**
    *
    *
@@ -831,7 +800,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getGuestAcceleratorsCount() {
     return guestAccelerators_.size();
   }
-
   /**
    *
    *
@@ -848,7 +816,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public com.google.cloud.backupdr.v1.AcceleratorConfig getGuestAccelerators(int index) {
     return guestAccelerators_.get(index);
   }
-
   /**
    *
    *
@@ -871,7 +838,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
-
   /**
    *
    *
@@ -891,7 +857,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasHostname() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -919,7 +884,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -950,7 +914,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int INSTANCE_ENCRYPTION_KEY_FIELD_NUMBER = 11;
   private com.google.cloud.backupdr.v1.CustomerEncryptionKey instanceEncryptionKey_;
-
   /**
    *
    *
@@ -969,7 +932,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasInstanceEncryptionKey() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -990,7 +952,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.CustomerEncryptionKey.getDefaultInstance()
         : instanceEncryptionKey_;
   }
-
   /**
    *
    *
@@ -1013,7 +974,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int KEY_REVOCATION_ACTION_TYPE_FIELD_NUMBER = 12;
   private int keyRevocationActionType_ = 0;
-
   /**
    *
    *
@@ -1031,7 +991,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasKeyRevocationActionType() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1049,7 +1008,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getKeyRevocationActionTypeValue() {
     return keyRevocationActionType_;
   }
-
   /**
    *
    *
@@ -1098,7 +1056,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1115,14 +1072,12 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1136,7 +1091,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1157,7 +1111,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1183,7 +1136,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
-
   /**
    *
    *
@@ -1200,7 +1152,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasMachineType() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1225,7 +1176,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -1253,7 +1203,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int METADATA_FIELD_NUMBER = 15;
   private com.google.cloud.backupdr.v1.Metadata metadata_;
-
   /**
    *
    *
@@ -1271,7 +1220,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1291,7 +1239,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.Metadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -1314,7 +1261,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minCpuPlatform_ = "";
-
   /**
    *
    *
@@ -1330,7 +1276,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasMinCpuPlatform() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1354,7 +1299,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -1383,7 +1327,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.NetworkInterface> networkInterfaces_;
-
   /**
    *
    *
@@ -1402,7 +1345,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public java.util.List<com.google.cloud.backupdr.v1.NetworkInterface> getNetworkInterfacesList() {
     return networkInterfaces_;
   }
-
   /**
    *
    *
@@ -1422,7 +1364,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       getNetworkInterfacesOrBuilderList() {
     return networkInterfaces_;
   }
-
   /**
    *
    *
@@ -1441,7 +1382,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getNetworkInterfacesCount() {
     return networkInterfaces_.size();
   }
-
   /**
    *
    *
@@ -1460,7 +1400,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public com.google.cloud.backupdr.v1.NetworkInterface getNetworkInterfaces(int index) {
     return networkInterfaces_.get(index);
   }
-
   /**
    *
    *
@@ -1483,7 +1422,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER = 18;
   private com.google.cloud.backupdr.v1.NetworkPerformanceConfig networkPerformanceConfig_;
-
   /**
    *
    *
@@ -1501,7 +1439,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasNetworkPerformanceConfig() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1521,7 +1458,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.NetworkPerformanceConfig.getDefaultInstance()
         : networkPerformanceConfig_;
   }
-
   /**
    *
    *
@@ -1543,7 +1479,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int PARAMS_FIELD_NUMBER = 19;
   private com.google.cloud.backupdr.v1.InstanceParams params_;
-
   /**
    *
    *
@@ -1562,7 +1497,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasParams() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1583,7 +1517,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.InstanceParams.getDefaultInstance()
         : params_;
   }
-
   /**
    *
    *
@@ -1605,7 +1538,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 20;
   private int privateIpv6GoogleAccess_ = 0;
-
   /**
    *
    *
@@ -1624,7 +1556,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasPrivateIpv6GoogleAccess() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1643,7 +1574,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getPrivateIpv6GoogleAccessValue() {
     return privateIpv6GoogleAccess_;
   }
-
   /**
    *
    *
@@ -1674,7 +1604,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int ALLOCATION_AFFINITY_FIELD_NUMBER = 21;
   private com.google.cloud.backupdr.v1.AllocationAffinity allocationAffinity_;
-
   /**
    *
    *
@@ -1692,7 +1621,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasAllocationAffinity() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1712,7 +1640,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.AllocationAffinity.getDefaultInstance()
         : allocationAffinity_;
   }
-
   /**
    *
    *
@@ -1736,7 +1663,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourcePolicies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1751,7 +1677,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getResourcePoliciesList() {
     return resourcePolicies_;
   }
-
   /**
    *
    *
@@ -1766,7 +1691,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getResourcePoliciesCount() {
     return resourcePolicies_.size();
   }
-
   /**
    *
    *
@@ -1782,7 +1706,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public java.lang.String getResourcePolicies(int index) {
     return resourcePolicies_.get(index);
   }
-
   /**
    *
    *
@@ -1801,7 +1724,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int SCHEDULING_FIELD_NUMBER = 23;
   private com.google.cloud.backupdr.v1.Scheduling scheduling_;
-
   /**
    *
    *
@@ -1819,7 +1741,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasScheduling() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1839,7 +1760,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         ? com.google.cloud.backupdr.v1.Scheduling.getDefaultInstance()
         : scheduling_;
   }
-
   /**
    *
    *
@@ -1862,7 +1782,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.ServiceAccount> serviceAccounts_;
-
   /**
    *
    *
@@ -1880,7 +1799,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public java.util.List<com.google.cloud.backupdr.v1.ServiceAccount> getServiceAccountsList() {
     return serviceAccounts_;
   }
-
   /**
    *
    *
@@ -1899,7 +1817,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       getServiceAccountsOrBuilderList() {
     return serviceAccounts_;
   }
-
   /**
    *
    *
@@ -1917,7 +1834,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public int getServiceAccountsCount() {
     return serviceAccounts_.size();
   }
-
   /**
    *
    *
@@ -1935,7 +1851,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public com.google.cloud.backupdr.v1.ServiceAccount getServiceAccounts(int index) {
     return serviceAccounts_.get(index);
   }
-
   /**
    *
    *
@@ -1957,7 +1872,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
 
   public static final int TAGS_FIELD_NUMBER = 26;
   private com.google.cloud.backupdr.v1.Tags tags_;
-
   /**
    *
    *
@@ -1977,7 +1891,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public boolean hasTags() {
     return ((bitField0_ & 0x00040000) != 0);
   }
-
   /**
    *
    *
@@ -1997,7 +1910,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
   public com.google.cloud.backupdr.v1.Tags getTags() {
     return tags_ == null ? com.google.cloud.backupdr.v1.Tags.getDefaultInstance() : tags_;
   }
-
   /**
    *
    *
@@ -2519,7 +2431,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3346,7 +3257,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3361,7 +3271,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3384,7 +3293,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3407,7 +3315,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3429,7 +3336,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3447,7 +3353,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3477,7 +3382,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.AdvancedMachineFeatures.Builder,
             com.google.cloud.backupdr.v1.AdvancedMachineFeaturesOrBuilder>
         advancedMachineFeaturesBuilder_;
-
     /**
      *
      *
@@ -3494,7 +3398,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasAdvancedMachineFeatures() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3517,7 +3420,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return advancedMachineFeaturesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3543,7 +3445,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3566,7 +3467,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3598,7 +3498,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3620,7 +3519,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3638,7 +3536,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getAdvancedMachineFeaturesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3660,7 +3557,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : advancedMachineFeatures_;
       }
     }
-
     /**
      *
      *
@@ -3690,7 +3586,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private boolean canIpForward_;
-
     /**
      *
      *
@@ -3707,7 +3602,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasCanIpForward() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3724,7 +3618,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean getCanIpForward() {
       return canIpForward_;
     }
-
     /**
      *
      *
@@ -3745,7 +3638,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3771,7 +3663,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.ConfidentialInstanceConfig.Builder,
             com.google.cloud.backupdr.v1.ConfidentialInstanceConfigOrBuilder>
         confidentialInstanceConfigBuilder_;
-
     /**
      *
      *
@@ -3788,7 +3679,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasConfidentialInstanceConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3811,7 +3701,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return confidentialInstanceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3837,7 +3726,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3860,7 +3748,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3892,7 +3779,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -3914,7 +3800,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3932,7 +3817,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getConfidentialInstanceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3954,7 +3838,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : confidentialInstanceConfig_;
       }
     }
-
     /**
      *
      *
@@ -3984,7 +3867,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private boolean deletionProtection_;
-
     /**
      *
      *
@@ -4000,7 +3882,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasDeletionProtection() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4016,7 +3897,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean getDeletionProtection() {
       return deletionProtection_;
     }
-
     /**
      *
      *
@@ -4036,7 +3916,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4056,7 +3935,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -4072,7 +3950,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -4096,7 +3973,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4120,7 +3996,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4143,7 +4018,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4162,7 +4036,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4222,7 +4095,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return disksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4242,7 +4114,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return disksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4262,7 +4133,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return disksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4288,7 +4158,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4312,7 +4181,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4338,7 +4206,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4364,7 +4231,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4387,7 +4253,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4411,7 +4276,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4435,7 +4299,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4458,7 +4321,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4481,7 +4343,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4497,7 +4358,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public com.google.cloud.backupdr.v1.AttachedDisk.Builder getDisksBuilder(int index) {
       return getDisksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4517,7 +4377,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return disksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4538,7 +4397,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(disks_);
       }
     }
-
     /**
      *
      *
@@ -4555,7 +4413,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getDisksFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.AttachedDisk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4572,7 +4429,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getDisksFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.AttachedDisk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4612,7 +4468,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.DisplayDevice.Builder,
             com.google.cloud.backupdr.v1.DisplayDeviceOrBuilder>
         displayDeviceBuilder_;
-
     /**
      *
      *
@@ -4629,7 +4484,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasDisplayDevice() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4652,7 +4506,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return displayDeviceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4677,7 +4530,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4700,7 +4552,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4730,7 +4581,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4752,7 +4602,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4769,7 +4618,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getDisplayDeviceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4790,7 +4638,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : displayDevice_;
       }
     }
-
     /**
      *
      *
@@ -4857,7 +4704,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return guestAcceleratorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4877,7 +4723,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return guestAcceleratorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4897,7 +4742,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return guestAcceleratorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4924,7 +4768,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4948,7 +4791,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -4974,7 +4816,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5001,7 +4842,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5025,7 +4865,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5049,7 +4888,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5073,7 +4911,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5096,7 +4933,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5119,7 +4955,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5136,7 +4971,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         int index) {
       return getGuestAcceleratorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5157,7 +4991,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return guestAcceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5178,7 +5011,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(guestAccelerators_);
       }
     }
-
     /**
      *
      *
@@ -5195,7 +5027,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5213,7 +5044,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getGuestAcceleratorsFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5252,7 +5082,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private java.lang.Object hostname_ = "";
-
     /**
      *
      *
@@ -5271,7 +5100,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasHostname() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -5298,7 +5126,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5325,7 +5152,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5351,7 +5177,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5373,7 +5198,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5407,7 +5231,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.CustomerEncryptionKey.Builder,
             com.google.cloud.backupdr.v1.CustomerEncryptionKeyOrBuilder>
         instanceEncryptionKeyBuilder_;
-
     /**
      *
      *
@@ -5425,7 +5248,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasInstanceEncryptionKey() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -5449,7 +5271,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return instanceEncryptionKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5476,7 +5297,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5500,7 +5320,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5533,7 +5352,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -5556,7 +5374,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5575,7 +5392,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getInstanceEncryptionKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5598,7 +5414,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : instanceEncryptionKey_;
       }
     }
-
     /**
      *
      *
@@ -5629,7 +5444,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private int keyRevocationActionType_ = 0;
-
     /**
      *
      *
@@ -5647,7 +5461,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasKeyRevocationActionType() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -5665,7 +5478,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public int getKeyRevocationActionTypeValue() {
       return keyRevocationActionType_;
     }
-
     /**
      *
      *
@@ -5686,7 +5498,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5708,7 +5519,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
           ? com.google.cloud.backupdr.v1.KeyRevocationActionType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5733,7 +5543,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5779,7 +5588,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -5796,14 +5604,12 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -5817,7 +5623,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -5838,7 +5643,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -5865,7 +5669,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5882,14 +5685,12 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00001000;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -5910,7 +5711,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       bitField0_ |= 0x00001000;
       return this;
     }
-
     /**
      *
      *
@@ -5927,7 +5727,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -5943,7 +5742,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasMachineType() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5967,7 +5765,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5991,7 +5788,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6014,7 +5810,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6033,7 +5828,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6064,7 +5858,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.Metadata.Builder,
             com.google.cloud.backupdr.v1.MetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -6081,7 +5874,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -6104,7 +5896,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6129,7 +5920,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6151,7 +5941,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6181,7 +5970,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6203,7 +5991,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6220,7 +6007,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6241,7 +6027,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -6271,7 +6056,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private java.lang.Object minCpuPlatform_ = "";
-
     /**
      *
      *
@@ -6286,7 +6070,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasMinCpuPlatform() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -6309,7 +6092,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6332,7 +6114,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6354,7 +6135,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6372,7 +6152,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6436,7 +6215,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return networkInterfacesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6458,7 +6236,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return networkInterfacesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6480,7 +6257,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return networkInterfacesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6509,7 +6285,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6535,7 +6310,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6563,7 +6337,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6592,7 +6365,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6618,7 +6390,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6644,7 +6415,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6670,7 +6440,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6695,7 +6464,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6720,7 +6488,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -6739,7 +6506,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         int index) {
       return getNetworkInterfacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6762,7 +6528,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return networkInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6785,7 +6550,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(networkInterfaces_);
       }
     }
-
     /**
      *
      *
@@ -6804,7 +6568,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.NetworkInterface.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6824,7 +6587,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.NetworkInterface.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6870,7 +6632,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.NetworkPerformanceConfig.Builder,
             com.google.cloud.backupdr.v1.NetworkPerformanceConfigOrBuilder>
         networkPerformanceConfigBuilder_;
-
     /**
      *
      *
@@ -6887,7 +6648,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasNetworkPerformanceConfig() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -6910,7 +6670,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return networkPerformanceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6936,7 +6695,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6959,7 +6717,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6991,7 +6748,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -7013,7 +6769,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7031,7 +6786,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getNetworkPerformanceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7053,7 +6807,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : networkPerformanceConfig_;
       }
     }
-
     /**
      *
      *
@@ -7088,7 +6841,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.InstanceParams.Builder,
             com.google.cloud.backupdr.v1.InstanceParamsOrBuilder>
         paramsBuilder_;
-
     /**
      *
      *
@@ -7106,7 +6858,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasParams() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -7130,7 +6881,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return paramsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7156,7 +6906,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7179,7 +6928,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7210,7 +6958,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -7233,7 +6980,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7251,7 +6997,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7273,7 +7018,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : params_;
       }
     }
-
     /**
      *
      *
@@ -7304,7 +7048,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     }
 
     private int privateIpv6GoogleAccess_ = 0;
-
     /**
      *
      *
@@ -7323,7 +7066,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasPrivateIpv6GoogleAccess() {
       return ((bitField0_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -7342,7 +7084,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public int getPrivateIpv6GoogleAccessValue() {
       return privateIpv6GoogleAccess_;
     }
-
     /**
      *
      *
@@ -7364,7 +7105,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7392,7 +7132,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
               .InstancePrivateIpv6GoogleAccess.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7420,7 +7159,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7448,7 +7186,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.AllocationAffinity.Builder,
             com.google.cloud.backupdr.v1.AllocationAffinityOrBuilder>
         allocationAffinityBuilder_;
-
     /**
      *
      *
@@ -7465,7 +7202,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasAllocationAffinity() {
       return ((bitField0_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -7488,7 +7224,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return allocationAffinityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7513,7 +7248,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7536,7 +7270,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7567,7 +7300,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -7589,7 +7321,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7606,7 +7337,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getAllocationAffinityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7628,7 +7358,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : allocationAffinity_;
       }
     }
-
     /**
      *
      *
@@ -7666,7 +7395,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       bitField0_ |= 0x00200000;
     }
-
     /**
      *
      *
@@ -7683,7 +7411,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       resourcePolicies_.makeImmutable();
       return resourcePolicies_;
     }
-
     /**
      *
      *
@@ -7699,7 +7426,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public int getResourcePoliciesCount() {
       return resourcePolicies_.size();
     }
-
     /**
      *
      *
@@ -7716,7 +7442,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public java.lang.String getResourcePolicies(int index) {
       return resourcePolicies_.get(index);
     }
-
     /**
      *
      *
@@ -7733,7 +7458,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public com.google.protobuf.ByteString getResourcePoliciesBytes(int index) {
       return resourcePolicies_.getByteString(index);
     }
-
     /**
      *
      *
@@ -7758,7 +7482,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7782,7 +7505,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7803,7 +7525,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7823,7 +7544,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7855,7 +7575,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.Scheduling.Builder,
             com.google.cloud.backupdr.v1.SchedulingOrBuilder>
         schedulingBuilder_;
-
     /**
      *
      *
@@ -7872,7 +7591,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasScheduling() {
       return ((bitField0_ & 0x00400000) != 0);
     }
-
     /**
      *
      *
@@ -7895,7 +7613,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return schedulingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7920,7 +7637,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7942,7 +7658,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7972,7 +7687,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -7994,7 +7708,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8011,7 +7724,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8032,7 +7744,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             : scheduling_;
       }
     }
-
     /**
      *
      *
@@ -8098,7 +7809,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return serviceAccountsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8119,7 +7829,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return serviceAccountsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8140,7 +7849,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return serviceAccountsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8168,7 +7876,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8193,7 +7900,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8220,7 +7926,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8248,7 +7953,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8273,7 +7977,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8298,7 +8001,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8323,7 +8025,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8347,7 +8048,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8371,7 +8071,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8389,7 +8088,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         int index) {
       return getServiceAccountsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -8411,7 +8109,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return serviceAccountsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -8433,7 +8130,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(serviceAccounts_);
       }
     }
-
     /**
      *
      *
@@ -8451,7 +8147,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getServiceAccountsFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.ServiceAccount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8470,7 +8165,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       return getServiceAccountsFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.ServiceAccount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -8515,7 +8209,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
             com.google.cloud.backupdr.v1.Tags.Builder,
             com.google.cloud.backupdr.v1.TagsOrBuilder>
         tagsBuilder_;
-
     /**
      *
      *
@@ -8534,7 +8227,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
     public boolean hasTags() {
       return ((bitField0_ & 0x01000000) != 0);
     }
-
     /**
      *
      *
@@ -8557,7 +8249,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return tagsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8584,7 +8275,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8608,7 +8298,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8640,7 +8329,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -8664,7 +8352,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8683,7 +8370,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
       onChanged();
       return getTagsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8704,7 +8390,6 @@ public final class ComputeInstanceRestoreProperties extends com.google.protobuf.
         return tags_ == null ? com.google.cloud.backupdr.v1.Tags.getDefaultInstance() : tags_;
       }
     }
-
     /**
      *
      *

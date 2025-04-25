@@ -33,7 +33,6 @@ public final class HybridInspectResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.HybridInspectResponse)
     HybridInspectResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HybridInspectResponse.newBuilder() to construct.
   private HybridInspectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class HybridInspectResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

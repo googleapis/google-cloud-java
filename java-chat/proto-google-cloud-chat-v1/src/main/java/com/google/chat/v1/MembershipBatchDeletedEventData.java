@@ -35,7 +35,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.chat.v1.MembershipBatchDeletedEventData)
     MembershipBatchDeletedEventDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MembershipBatchDeletedEventData.newBuilder() to construct.
   private MembershipBatchDeletedEventData(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.MembershipDeletedEventData> memberships_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
   public java.util.List<com.google.chat.v1.MembershipDeletedEventData> getMembershipsList() {
     return memberships_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       getMembershipsOrBuilderList() {
     return memberships_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
   public int getMembershipsCount() {
     return memberships_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
   public com.google.chat.v1.MembershipDeletedEventData getMemberships(int index) {
     return memberships_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
         return membershipsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
         return membershipsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
         return membershipsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +790,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
     public com.google.chat.v1.MembershipDeletedEventData.Builder getMembershipsBuilder(int index) {
       return getMembershipsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -827,7 +807,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
         return membershipsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -845,7 +824,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(memberships_);
       }
     }
-
     /**
      *
      *
@@ -859,7 +837,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       return getMembershipsFieldBuilder()
           .addBuilder(com.google.chat.v1.MembershipDeletedEventData.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -873,7 +850,6 @@ public final class MembershipBatchDeletedEventData extends com.google.protobuf.G
       return getMembershipsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.MembershipDeletedEventData.getDefaultInstance());
     }
-
     /**
      *
      *

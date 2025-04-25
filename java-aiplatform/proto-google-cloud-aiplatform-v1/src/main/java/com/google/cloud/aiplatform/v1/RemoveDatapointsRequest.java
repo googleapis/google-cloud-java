@@ -34,7 +34,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RemoveDatapointsRequest)
     RemoveDatapointsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveDatapointsRequest.newBuilder() to construct.
   private RemoveDatapointsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object index_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList datapointIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getDatapointIdsList() {
     return datapointIds_;
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
   public int getDatapointIdsCount() {
     return datapointIds_.size();
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
   public java.lang.String getDatapointIds(int index) {
     return datapointIds_.get(index);
   }
-
   /**
    *
    *
@@ -371,7 +364,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +571,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object index_ = "";
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       datapointIds_.makeImmutable();
       return datapointIds_;
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     public int getDatapointIdsCount() {
       return datapointIds_.size();
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     public java.lang.String getDatapointIds(int index) {
       return datapointIds_.get(index);
     }
-
     /**
      *
      *
@@ -781,7 +764,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getDatapointIdsBytes(int index) {
       return datapointIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +846,6 @@ public final class RemoveDatapointsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

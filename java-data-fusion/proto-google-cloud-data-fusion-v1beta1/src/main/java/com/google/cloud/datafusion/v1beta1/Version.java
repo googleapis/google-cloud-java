@@ -33,7 +33,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1beta1.Version)
     VersionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Version.newBuilder() to construct.
   private Version(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_PREVIEW = 1;</code>
      */
     public static final int TYPE_PREVIEW_VALUE = 1;
-
     /**
      *
      *
@@ -229,7 +226,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object versionNumber_ = "";
-
   /**
    *
    *
@@ -253,7 +249,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -280,7 +275,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_VERSION_FIELD_NUMBER = 2;
   private boolean defaultVersion_ = false;
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList availableFeatures_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -317,7 +310,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAvailableFeaturesList() {
     return availableFeatures_;
   }
-
   /**
    *
    *
@@ -332,7 +324,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public int getAvailableFeaturesCount() {
     return availableFeatures_.size();
   }
-
   /**
    *
    *
@@ -348,7 +339,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAvailableFeatures(int index) {
     return availableFeatures_.get(index);
   }
-
   /**
    *
    *
@@ -367,7 +357,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 4;
   private int type_ = 0;
-
   /**
    *
    *
@@ -383,7 +372,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -595,7 +583,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -827,7 +814,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object versionNumber_ = "";
-
     /**
      *
      *
@@ -850,7 +836,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +858,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -895,7 +879,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +896,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +920,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean defaultVersion_;
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public boolean getDefaultVersion() {
       return defaultVersion_;
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +981,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1018,7 +996,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       availableFeatures_.makeImmutable();
       return availableFeatures_;
     }
-
     /**
      *
      *
@@ -1033,7 +1010,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public int getAvailableFeaturesCount() {
       return availableFeatures_.size();
     }
-
     /**
      *
      *
@@ -1049,7 +1025,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAvailableFeatures(int index) {
       return availableFeatures_.get(index);
     }
-
     /**
      *
      *
@@ -1065,7 +1040,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAvailableFeaturesBytes(int index) {
       return availableFeatures_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1089,7 +1063,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1085,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1122,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1147,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1193,7 +1162,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1212,7 +1180,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datafusion.v1beta1.Version.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1254,7 +1220,6 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

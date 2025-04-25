@@ -40,7 +40,6 @@ public interface TerraformBlueprintOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface TerraformBlueprintOrBuilder
    * @return The gcsSource.
    */
   java.lang.String getGcsSource();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface TerraformBlueprintOrBuilder
    * @return Whether the gitSource field is set.
    */
   boolean hasGitSource();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface TerraformBlueprintOrBuilder
    * @return The gitSource.
    */
   com.google.cloud.config.v1.GitSource getGitSource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface TerraformBlueprintOrBuilder
    * <code>map&lt;string, .google.cloud.config.v1.TerraformVariable&gt; input_values = 4;</code>
    */
   int getInputValuesCount();
-
   /**
    *
    *
@@ -133,11 +128,9 @@ public interface TerraformBlueprintOrBuilder
    * <code>map&lt;string, .google.cloud.config.v1.TerraformVariable&gt; input_values = 4;</code>
    */
   boolean containsInputValues(java.lang.String key);
-
   /** Use {@link #getInputValuesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformVariable> getInputValues();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface TerraformBlueprintOrBuilder
    * <code>map&lt;string, .google.cloud.config.v1.TerraformVariable&gt; input_values = 4;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.config.v1.TerraformVariable> getInputValuesMap();
-
   /**
    *
    *
@@ -163,7 +155,6 @@ public interface TerraformBlueprintOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.config.v1.TerraformVariable defaultValue);
-
   /**
    *
    *

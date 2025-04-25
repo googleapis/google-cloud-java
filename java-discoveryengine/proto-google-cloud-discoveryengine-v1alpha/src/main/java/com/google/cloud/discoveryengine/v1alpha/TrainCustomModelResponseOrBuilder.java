@@ -34,7 +34,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   com.google.rpc.Status getErrorSamples(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   int getErrorSamplesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface TrainCustomModelResponseOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface TrainCustomModelResponseOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig getErrorConfig();
-
   /**
    *
    *
@@ -136,7 +130,6 @@ public interface TrainCustomModelResponseOrBuilder
    * @return The modelStatus.
    */
   java.lang.String getModelStatus();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>map&lt;string, double&gt; metrics = 4;</code>
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -179,11 +171,9 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>map&lt;string, double&gt; metrics = 4;</code>
    */
   boolean containsMetrics(java.lang.String key);
-
   /** Use {@link #getMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Double> getMetrics();
-
   /**
    *
    *
@@ -194,7 +184,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>map&lt;string, double&gt; metrics = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.Double> getMetricsMap();
-
   /**
    *
    *
@@ -205,7 +194,6 @@ public interface TrainCustomModelResponseOrBuilder
    * <code>map&lt;string, double&gt; metrics = 4;</code>
    */
   double getMetricsOrDefault(java.lang.String key, double defaultValue);
-
   /**
    *
    *
@@ -229,7 +217,6 @@ public interface TrainCustomModelResponseOrBuilder
    * @return The modelName.
    */
   java.lang.String getModelName();
-
   /**
    *
    *

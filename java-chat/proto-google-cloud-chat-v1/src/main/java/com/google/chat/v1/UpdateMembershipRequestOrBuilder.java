@@ -38,7 +38,6 @@ public interface UpdateMembershipRequestOrBuilder
    * @return Whether the membership field is set.
    */
   boolean hasMembership();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateMembershipRequestOrBuilder
    * @return The membership.
    */
   com.google.chat.v1.Membership getMembership();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateMembershipRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateMembershipRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

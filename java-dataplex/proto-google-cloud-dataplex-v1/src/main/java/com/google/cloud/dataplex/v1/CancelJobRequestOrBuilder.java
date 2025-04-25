@@ -39,7 +39,6 @@ public interface CancelJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

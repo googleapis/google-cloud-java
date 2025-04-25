@@ -33,7 +33,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.ListVehiclesRequest)
     ListVehiclesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVehiclesRequest.newBuilder() to construct.
   private ListVehiclesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 12;
   private com.google.maps.fleetengine.v1.RequestHeader header_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         ? com.google.maps.fleetengine.v1.RequestHeader.getDefaultInstance()
         : header_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int MINIMUM_CAPACITY_FIELD_NUMBER = 6;
   private com.google.protobuf.Int32Value minimumCapacity_;
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public boolean hasMinimumCapacity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -304,7 +293,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : minimumCapacity_;
   }
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
               return result == null ? com.google.maps.fleetengine.v1.TripType.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -358,7 +345,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.maps.fleetengine.v1.TripType>(
         tripTypes_, tripTypes_converter_);
   }
-
   /**
    *
    *
@@ -375,7 +361,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public int getTripTypesCount() {
     return tripTypes_.size();
   }
-
   /**
    *
    *
@@ -393,7 +378,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public com.google.maps.fleetengine.v1.TripType getTripTypes(int index) {
     return tripTypes_converter_.convert(tripTypes_.get(index));
   }
-
   /**
    *
    *
@@ -410,7 +394,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getTripTypesValueList() {
     return tripTypes_;
   }
-
   /**
    *
    *
@@ -433,7 +416,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int MAXIMUM_STALENESS_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration maximumStaleness_;
-
   /**
    *
    *
@@ -452,7 +434,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public boolean hasMaximumStaleness() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -473,7 +454,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Duration.getDefaultInstance()
         : maximumStaleness_;
   }
-
   /**
    *
    *
@@ -512,7 +492,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
                   : result;
             }
           };
-
   /**
    *
    *
@@ -534,7 +513,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         java.lang.Integer, com.google.maps.fleetengine.v1.Vehicle.VehicleType.Category>(
         vehicleTypeCategories_, vehicleTypeCategories_converter_);
   }
-
   /**
    *
    *
@@ -553,7 +531,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public int getVehicleTypeCategoriesCount() {
     return vehicleTypeCategories_.size();
   }
-
   /**
    *
    *
@@ -574,7 +551,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       int index) {
     return vehicleTypeCategories_converter_.convert(vehicleTypeCategories_.get(index));
   }
-
   /**
    *
    *
@@ -593,7 +569,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public java.util.List<java.lang.Integer> getVehicleTypeCategoriesValueList() {
     return vehicleTypeCategories_;
   }
-
   /**
    *
    *
@@ -621,7 +596,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requiredAttributes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -657,7 +631,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getRequiredAttributesList() {
     return requiredAttributes_;
   }
-
   /**
    *
    *
@@ -693,7 +666,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public int getRequiredAttributesCount() {
     return requiredAttributes_.size();
   }
-
   /**
    *
    *
@@ -730,7 +702,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getRequiredAttributes(int index) {
     return requiredAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -773,7 +744,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requiredOneOfAttributes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -794,7 +764,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getRequiredOneOfAttributesList() {
     return requiredOneOfAttributes_;
   }
-
   /**
    *
    *
@@ -815,7 +784,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public int getRequiredOneOfAttributesCount() {
     return requiredOneOfAttributes_.size();
   }
-
   /**
    *
    *
@@ -837,7 +805,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getRequiredOneOfAttributes(int index) {
     return requiredOneOfAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -865,7 +832,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList requiredOneOfAttributeSets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -905,7 +871,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getRequiredOneOfAttributeSetsList() {
     return requiredOneOfAttributeSets_;
   }
-
   /**
    *
    *
@@ -945,7 +910,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public int getRequiredOneOfAttributeSetsCount() {
     return requiredOneOfAttributeSets_.size();
   }
-
   /**
    *
    *
@@ -986,7 +950,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getRequiredOneOfAttributeSets(int index) {
     return requiredOneOfAttributeSets_.get(index);
   }
-
   /**
    *
    *
@@ -1030,7 +993,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VEHICLE_STATE_FIELD_NUMBER = 11;
   private int vehicleState_ = 0;
-
   /**
    *
    *
@@ -1046,7 +1008,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public int getVehicleStateValue() {
     return vehicleState_;
   }
-
   /**
    *
    *
@@ -1067,7 +1028,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ON_TRIP_ONLY_FIELD_NUMBER = 14;
   private boolean onTripOnly_ = false;
-
   /**
    *
    *
@@ -1088,7 +1048,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -1133,7 +1092,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1181,7 +1139,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VIEWPORT_FIELD_NUMBER = 17;
   private com.google.geo.type.Viewport viewport_;
-
   /**
    *
    *
@@ -1198,7 +1155,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public boolean hasViewport() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1215,7 +1171,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
   public com.google.geo.type.Viewport getViewport() {
     return viewport_ == null ? com.google.geo.type.Viewport.getDefaultInstance() : viewport_;
   }
-
   /**
    *
    *
@@ -1596,7 +1551,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2087,7 +2041,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             com.google.maps.fleetengine.v1.RequestHeader.Builder,
             com.google.maps.fleetengine.v1.RequestHeaderOrBuilder>
         headerBuilder_;
-
     /**
      *
      *
@@ -2102,7 +2055,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2123,7 +2075,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return headerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2146,7 +2097,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2116,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2194,7 +2143,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2214,7 +2162,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2229,7 +2176,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2248,7 +2194,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             : header_;
       }
     }
-
     /**
      *
      *
@@ -2276,7 +2221,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2302,7 +2246,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2328,7 +2271,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2353,7 +2295,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2374,7 +2315,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2402,7 +2342,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -2419,7 +2358,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -2440,7 +2378,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2461,7 +2398,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -2487,7 +2423,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2513,7 +2448,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2538,7 +2472,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2492,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2592,7 +2524,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         minimumCapacityBuilder_;
-
     /**
      *
      *
@@ -2609,7 +2540,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public boolean hasMinimumCapacity() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2632,7 +2562,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return minimumCapacityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2657,7 +2586,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2679,7 +2607,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2709,7 +2636,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2731,7 +2657,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2748,7 +2673,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMinimumCapacityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2769,7 +2693,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             : minimumCapacity_;
       }
     }
-
     /**
      *
      *
@@ -2806,7 +2729,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000020;
       }
     }
-
     /**
      *
      *
@@ -2824,7 +2746,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.maps.fleetengine.v1.TripType>(
           tripTypes_, tripTypes_converter_);
     }
-
     /**
      *
      *
@@ -2840,7 +2761,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getTripTypesCount() {
       return tripTypes_.size();
     }
-
     /**
      *
      *
@@ -2857,7 +2777,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public com.google.maps.fleetengine.v1.TripType getTripTypes(int index) {
       return tripTypes_converter_.convert(tripTypes_.get(index));
     }
-
     /**
      *
      *
@@ -2881,7 +2800,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2904,7 +2822,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2927,7 +2844,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2946,7 +2862,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2962,7 +2877,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getTripTypesValueList() {
       return java.util.Collections.unmodifiableList(tripTypes_);
     }
-
     /**
      *
      *
@@ -2979,7 +2893,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getTripTypesValue(int index) {
       return tripTypes_.get(index);
     }
-
     /**
      *
      *
@@ -3000,7 +2913,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3020,7 +2932,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3049,7 +2960,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maximumStalenessBuilder_;
-
     /**
      *
      *
@@ -3067,7 +2977,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public boolean hasMaximumStaleness() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3091,7 +3000,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return maximumStalenessBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3117,7 +3025,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3140,7 +3047,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3171,7 +3077,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3194,7 +3099,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3212,7 +3116,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getMaximumStalenessFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3234,7 +3137,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             : maximumStaleness_;
       }
     }
-
     /**
      *
      *
@@ -3273,7 +3175,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000080;
       }
     }
-
     /**
      *
      *
@@ -3294,7 +3195,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
           java.lang.Integer, com.google.maps.fleetengine.v1.Vehicle.VehicleType.Category>(
           vehicleTypeCategories_, vehicleTypeCategories_converter_);
     }
-
     /**
      *
      *
@@ -3312,7 +3212,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getVehicleTypeCategoriesCount() {
       return vehicleTypeCategories_.size();
     }
-
     /**
      *
      *
@@ -3332,7 +3231,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         int index) {
       return vehicleTypeCategories_converter_.convert(vehicleTypeCategories_.get(index));
     }
-
     /**
      *
      *
@@ -3359,7 +3257,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3385,7 +3282,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3411,7 +3307,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3432,7 +3327,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3450,7 +3344,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public java.util.List<java.lang.Integer> getVehicleTypeCategoriesValueList() {
       return java.util.Collections.unmodifiableList(vehicleTypeCategories_);
     }
-
     /**
      *
      *
@@ -3469,7 +3362,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getVehicleTypeCategoriesValue(int index) {
       return vehicleTypeCategories_.get(index);
     }
-
     /**
      *
      *
@@ -3492,7 +3384,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3514,7 +3405,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3548,7 +3438,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -3585,7 +3474,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       requiredAttributes_.makeImmutable();
       return requiredAttributes_;
     }
-
     /**
      *
      *
@@ -3621,7 +3509,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getRequiredAttributesCount() {
       return requiredAttributes_.size();
     }
-
     /**
      *
      *
@@ -3658,7 +3545,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getRequiredAttributes(int index) {
       return requiredAttributes_.get(index);
     }
-
     /**
      *
      *
@@ -3695,7 +3581,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getRequiredAttributesBytes(int index) {
       return requiredAttributes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3740,7 +3625,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3784,7 +3668,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3825,7 +3708,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3865,7 +3747,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3921,7 +3802,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000200;
     }
-
     /**
      *
      *
@@ -3943,7 +3823,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       requiredOneOfAttributes_.makeImmutable();
       return requiredOneOfAttributes_;
     }
-
     /**
      *
      *
@@ -3964,7 +3843,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getRequiredOneOfAttributesCount() {
       return requiredOneOfAttributes_.size();
     }
-
     /**
      *
      *
@@ -3986,7 +3864,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getRequiredOneOfAttributes(int index) {
       return requiredOneOfAttributes_.get(index);
     }
-
     /**
      *
      *
@@ -4008,7 +3885,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getRequiredOneOfAttributesBytes(int index) {
       return requiredOneOfAttributes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4038,7 +3914,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4067,7 +3942,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4093,7 +3967,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4118,7 +3991,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4159,7 +4031,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000400;
     }
-
     /**
      *
      *
@@ -4200,7 +4071,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       requiredOneOfAttributeSets_.makeImmutable();
       return requiredOneOfAttributeSets_;
     }
-
     /**
      *
      *
@@ -4240,7 +4110,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getRequiredOneOfAttributeSetsCount() {
       return requiredOneOfAttributeSets_.size();
     }
-
     /**
      *
      *
@@ -4281,7 +4150,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getRequiredOneOfAttributeSets(int index) {
       return requiredOneOfAttributeSets_.get(index);
     }
-
     /**
      *
      *
@@ -4322,7 +4190,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getRequiredOneOfAttributeSetsBytes(int index) {
       return requiredOneOfAttributeSets_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4371,7 +4238,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4419,7 +4285,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4464,7 +4329,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4508,7 +4372,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4559,7 +4422,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int vehicleState_ = 0;
-
     /**
      *
      *
@@ -4575,7 +4437,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public int getVehicleStateValue() {
       return vehicleState_;
     }
-
     /**
      *
      *
@@ -4594,7 +4455,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4612,7 +4472,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
           com.google.maps.fleetengine.v1.VehicleState.forNumber(vehicleState_);
       return result == null ? com.google.maps.fleetengine.v1.VehicleState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4634,7 +4493,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4654,7 +4512,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean onTripOnly_;
-
     /**
      *
      *
@@ -4670,7 +4527,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public boolean getOnTripOnly() {
       return onTripOnly_;
     }
-
     /**
      *
      *
@@ -4690,7 +4546,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4710,7 +4565,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -4754,7 +4608,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4798,7 +4651,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4841,7 +4693,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4880,7 +4731,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4931,7 +4781,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
             com.google.geo.type.Viewport.Builder,
             com.google.geo.type.ViewportOrBuilder>
         viewportBuilder_;
-
     /**
      *
      *
@@ -4948,7 +4797,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
     public boolean hasViewport() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -4969,7 +4817,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return viewportBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4994,7 +4841,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5016,7 +4862,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5046,7 +4891,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -5068,7 +4912,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5085,7 +4928,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getViewportFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5104,7 +4946,6 @@ public final class ListVehiclesRequest extends com.google.protobuf.GeneratedMess
         return viewport_ == null ? com.google.geo.type.Viewport.getDefaultInstance() : viewport_;
       }
     }
-
     /**
      *
      *

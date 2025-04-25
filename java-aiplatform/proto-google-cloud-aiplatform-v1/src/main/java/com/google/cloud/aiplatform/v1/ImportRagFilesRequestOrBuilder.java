@@ -40,7 +40,6 @@ public interface ImportRagFilesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface ImportRagFilesRequestOrBuilder
    * @return Whether the importRagFilesConfig field is set.
    */
   boolean hasImportRagFilesConfig();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ImportRagFilesRequestOrBuilder
    * @return The importRagFilesConfig.
    */
   com.google.cloud.aiplatform.v1.ImportRagFilesConfig getImportRagFilesConfig();
-
   /**
    *
    *

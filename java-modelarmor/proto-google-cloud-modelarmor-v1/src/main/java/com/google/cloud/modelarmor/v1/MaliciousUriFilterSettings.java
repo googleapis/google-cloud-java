@@ -33,7 +33,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.MaliciousUriFilterSettings)
     MaliciousUriFilterSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaliciousUriFilterSettings.newBuilder() to construct.
   private MaliciousUriFilterSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
      * <code>MALICIOUS_URI_FILTER_ENFORCEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int MALICIOUS_URI_FILTER_ENFORCEMENT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -231,7 +228,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
 
   public static final int FILTER_ENFORCEMENT_FIELD_NUMBER = 1;
   private int filterEnforcement_ = 0;
-
   /**
    *
    *
@@ -249,7 +245,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
   public int getFilterEnforcementValue() {
     return filterEnforcement_;
   }
-
   /**
    *
    *
@@ -441,7 +436,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -624,7 +618,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int filterEnforcement_ = 0;
-
     /**
      *
      *
@@ -642,7 +635,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
     public int getFilterEnforcementValue() {
       return filterEnforcement_;
     }
-
     /**
      *
      *
@@ -663,7 +655,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +680,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -715,7 +705,6 @@ public final class MaliciousUriFilterSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

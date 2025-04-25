@@ -33,7 +33,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsResponse)
     BulkAnalyzeConversationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BulkAnalyzeConversationsResponse.newBuilder() to construct.
   private BulkAnalyzeConversationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
 
   public static final int SUCCESSFUL_ANALYSIS_COUNT_FIELD_NUMBER = 1;
   private int successfulAnalysisCount_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
 
   public static final int FAILED_ANALYSIS_COUNT_FIELD_NUMBER = 2;
   private int failedAnalysisCount_ = 0;
-
   /**
    *
    *
@@ -278,7 +275,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +481,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     private int bitField0_;
 
     private int successfulAnalysisCount_;
-
     /**
      *
      *
@@ -501,7 +496,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     public int getSuccessfulAnalysisCount() {
       return successfulAnalysisCount_;
     }
-
     /**
      *
      *
@@ -521,7 +515,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -541,7 +534,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     }
 
     private int failedAnalysisCount_;
-
     /**
      *
      *
@@ -557,7 +549,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
     public int getFailedAnalysisCount() {
       return failedAnalysisCount_;
     }
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class BulkAnalyzeConversationsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

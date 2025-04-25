@@ -34,7 +34,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest)
     ModifyOrderRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModifyOrderRequest.newBuilder() to construct.
   private ModifyOrderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
      * @return The lineItemId.
      */
     java.lang.String getLineItemId();
-
     /**
      *
      *
@@ -119,7 +117,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for changeType.
      */
     int getChangeTypeValue();
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the newLineItemInfo field is set.
      */
     boolean hasNewLineItemInfo();
-
     /**
      *
      *
@@ -170,7 +166,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
      * @return The newLineItemInfo.
      */
     com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo getNewLineItemInfo();
-
     /**
      *
      *
@@ -205,7 +200,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
      * @return The enum numeric value on the wire for autoRenewalBehavior.
      */
     int getAutoRenewalBehaviorValue();
-
     /**
      *
      *
@@ -224,7 +218,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.commerce.consumer.procurement.v1.AutoRenewalBehavior getAutoRenewalBehavior();
   }
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.Modification)
       ModificationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Modification.newBuilder() to construct.
     private Modification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -280,7 +272,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object lineItemId_ = "";
-
     /**
      *
      *
@@ -307,7 +298,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -337,7 +327,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int CHANGE_TYPE_FIELD_NUMBER = 2;
     private int changeType_ = 0;
-
     /**
      *
      *
@@ -355,7 +344,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     public int getChangeTypeValue() {
       return changeType_;
     }
-
     /**
      *
      *
@@ -381,7 +369,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int NEW_LINE_ITEM_INFO_FIELD_NUMBER = 3;
     private com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo newLineItemInfo_;
-
     /**
      *
      *
@@ -402,7 +389,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasNewLineItemInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -425,7 +411,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo.getDefaultInstance()
           : newLineItemInfo_;
     }
-
     /**
      *
      *
@@ -450,7 +435,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
     public static final int AUTO_RENEWAL_BEHAVIOR_FIELD_NUMBER = 4;
     private int autoRenewalBehavior_ = 0;
-
     /**
      *
      *
@@ -471,7 +455,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     public int getAutoRenewalBehaviorValue() {
       return autoRenewalBehavior_;
     }
-
     /**
      *
      *
@@ -713,7 +696,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -976,7 +958,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object lineItemId_ = "";
-
       /**
        *
        *
@@ -1002,7 +983,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1028,7 +1008,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1053,7 +1032,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1074,7 +1052,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1102,7 +1079,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private int changeType_ = 0;
-
       /**
        *
        *
@@ -1120,7 +1096,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       public int getChangeTypeValue() {
         return changeType_;
       }
-
       /**
        *
        *
@@ -1141,7 +1116,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1164,7 +1138,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
             ? com.google.cloud.commerce.consumer.procurement.v1.LineItemChangeType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1189,7 +1162,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1216,7 +1188,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.commerce.consumer.procurement.v1.LineItemInfo.Builder,
               com.google.cloud.commerce.consumer.procurement.v1.LineItemInfoOrBuilder>
           newLineItemInfoBuilder_;
-
       /**
        *
        *
@@ -1236,7 +1207,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       public boolean hasNewLineItemInfo() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1262,7 +1232,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
           return newLineItemInfoBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1291,7 +1260,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1317,7 +1285,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1353,7 +1320,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1378,7 +1344,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1399,7 +1364,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getNewLineItemInfoFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1424,7 +1388,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
               : newLineItemInfo_;
         }
       }
-
       /**
        *
        *
@@ -1457,7 +1420,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
 
       private int autoRenewalBehavior_ = 0;
-
       /**
        *
        *
@@ -1478,7 +1440,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       public int getAutoRenewalBehaviorValue() {
         return autoRenewalBehavior_;
       }
-
       /**
        *
        *
@@ -1502,7 +1463,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1529,7 +1489,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
             ? com.google.cloud.commerce.consumer.procurement.v1.AutoRenewalBehavior.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1557,7 +1516,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1654,7 +1612,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1678,7 +1635,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1709,7 +1665,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
   private java.util.List<
           com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.Modification>
       modifications_;
-
   /**
    *
    *
@@ -1729,7 +1684,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       getModificationsList() {
     return modifications_;
   }
-
   /**
    *
    *
@@ -1751,7 +1705,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       getModificationsOrBuilderList() {
     return modifications_;
   }
-
   /**
    *
    *
@@ -1769,7 +1722,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
   public int getModificationsCount() {
     return modifications_.size();
   }
-
   /**
    *
    *
@@ -1788,7 +1740,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       getModifications(int index) {
     return modifications_.get(index);
   }
-
   /**
    *
    *
@@ -1812,7 +1763,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1837,7 +1787,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1867,7 +1816,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1893,7 +1841,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2110,7 +2057,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2397,7 +2343,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2420,7 +2365,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2443,7 +2387,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2465,7 +2408,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2483,7 +2425,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2551,7 +2492,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return modificationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2572,7 +2512,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return modificationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2594,7 +2533,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return modificationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2623,7 +2561,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2650,7 +2587,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2678,7 +2614,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2707,7 +2642,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2733,7 +2667,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2760,7 +2693,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2789,7 +2721,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2813,7 +2744,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2837,7 +2767,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2855,7 +2784,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         getModificationsBuilder(int index) {
       return getModificationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2878,7 +2806,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return modificationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2903,7 +2830,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(modifications_);
       }
     }
-
     /**
      *
      *
@@ -2924,7 +2850,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.Modification
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2946,7 +2871,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
               com.google.cloud.commerce.consumer.procurement.v1.ModifyOrderRequest.Modification
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2992,7 +2916,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3016,7 +2939,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3040,7 +2962,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3063,7 +2984,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3082,7 +3002,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3108,7 +3027,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -3133,7 +3051,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3158,7 +3075,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3182,7 +3098,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3202,7 +3117,6 @@ public final class ModifyOrderRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.CropHint)
     CropHintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CropHint.newBuilder() to construct.
   private CropHint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p4beta1.BoundingPoly boundingPoly_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoundingPoly() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
         : boundingPoly_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORTANCE_FRACTION_FIELD_NUMBER = 3;
   private float importanceFraction_ = 0F;
-
   /**
    *
    *
@@ -342,7 +336,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -572,7 +565,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder,
             com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder>
         boundingPolyBuilder_;
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoundingPoly() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
         return boundingPolyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
             : boundingPoly_;
       }
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -808,7 +790,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float importanceFraction_;
-
     /**
      *
      *
@@ -845,7 +825,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
     public float getImportanceFraction() {
       return importanceFraction_;
     }
-
     /**
      *
      *
@@ -866,7 +845,6 @@ public final class CropHint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

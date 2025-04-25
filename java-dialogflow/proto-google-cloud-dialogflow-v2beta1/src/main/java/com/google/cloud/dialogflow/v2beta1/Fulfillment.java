@@ -42,7 +42,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Fulfillment)
     FulfillmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Fulfillment.newBuilder() to construct.
   private Fulfillment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -120,7 +118,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return The username.
      */
     java.lang.String getUsername();
-
     /**
      *
      *
@@ -146,7 +143,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return The password.
      */
     java.lang.String getPassword();
-
     /**
      *
      *
@@ -170,7 +166,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
     int getRequestHeadersCount();
-
     /**
      *
      *
@@ -181,11 +176,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
     boolean containsRequestHeaders(java.lang.String key);
-
     /** Use {@link #getRequestHeadersMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getRequestHeaders();
-
     /**
      *
      *
@@ -196,7 +189,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; request_headers = 4;</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getRequestHeadersMap();
-
     /**
      *
      *
@@ -211,7 +203,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -245,7 +236,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     boolean getIsCloudFunction();
   }
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService)
       GenericWebServiceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GenericWebService.newBuilder() to construct.
     private GenericWebService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -316,7 +305,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -341,7 +329,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -371,7 +358,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -395,7 +381,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -424,7 +409,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -448,7 +432,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -501,7 +484,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public int getRequestHeadersCount() {
       return internalGetRequestHeaders().getMap().size();
     }
-
     /**
      *
      *
@@ -518,14 +500,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetRequestHeaders().getMap().containsKey(key);
     }
-
     /** Use {@link #getRequestHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getRequestHeaders() {
       return getRequestHeadersMap();
     }
-
     /**
      *
      *
@@ -539,7 +519,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getRequestHeadersMap() {
       return internalGetRequestHeaders().getMap();
     }
-
     /**
      *
      *
@@ -560,7 +539,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetRequestHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -584,7 +562,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     public static final int IS_CLOUD_FUNCTION_FIELD_NUMBER = 5;
     private boolean isCloudFunction_ = false;
-
     /**
      *
      *
@@ -816,7 +793,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1103,7 +1079,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -1127,7 +1102,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1151,7 +1125,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1174,7 +1147,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1193,7 +1165,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1219,7 +1190,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -1242,7 +1212,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1265,7 +1234,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1287,7 +1255,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1305,7 +1272,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1330,7 +1296,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object password_ = "";
-
       /**
        *
        *
@@ -1353,7 +1318,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1376,7 +1340,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1398,7 +1361,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1416,7 +1378,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1469,7 +1430,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public int getRequestHeadersCount() {
         return internalGetRequestHeaders().getMap().size();
       }
-
       /**
        *
        *
@@ -1486,14 +1446,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetRequestHeaders().getMap().containsKey(key);
       }
-
       /** Use {@link #getRequestHeadersMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getRequestHeaders() {
         return getRequestHeadersMap();
       }
-
       /**
        *
        *
@@ -1507,7 +1465,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public java.util.Map<java.lang.String, java.lang.String> getRequestHeadersMap() {
         return internalGetRequestHeaders().getMap();
       }
-
       /**
        *
        *
@@ -1529,7 +1486,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             internalGetRequestHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -1557,7 +1513,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableRequestHeaders().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -1574,14 +1529,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableRequestHeaders().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableRequestHeaders() {
         bitField0_ |= 0x00000008;
         return internalGetMutableRequestHeaders().getMutableMap();
       }
-
       /**
        *
        *
@@ -1602,7 +1555,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         return this;
       }
-
       /**
        *
        *
@@ -1620,7 +1572,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean isCloudFunction_;
-
       /**
        *
        *
@@ -1645,7 +1596,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public boolean getIsCloudFunction() {
         return isCloudFunction_;
       }
-
       /**
        *
        *
@@ -1674,7 +1624,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1786,7 +1735,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -1800,7 +1748,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type getType();
   }
-
   /**
    *
    *
@@ -1815,7 +1762,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Fulfillment.Feature)
       FeatureOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Feature.newBuilder() to construct.
     private Feature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1889,7 +1835,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1986,7 +1931,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
-
     /**
      *
      *
@@ -2002,7 +1946,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2188,7 +2131,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2374,7 +2316,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -2390,7 +2331,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -2409,7 +2349,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2429,7 +2368,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.Type.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2451,7 +2389,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2550,7 +2487,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     private FulfillmentCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2585,7 +2521,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2615,7 +2550,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2650,7 +2584,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -2676,7 +2609,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2704,7 +2636,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GENERIC_WEB_SERVICE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -2721,7 +2652,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGenericWebService() {
     return fulfillmentCase_ == 3;
   }
-
   /**
    *
    *
@@ -2741,7 +2671,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2763,7 +2692,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLED_FIELD_NUMBER = 4;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -2784,7 +2712,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature> features_;
-
   /**
    *
    *
@@ -2798,7 +2725,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature> getFeaturesList() {
     return features_;
   }
-
   /**
    *
    *
@@ -2813,7 +2739,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       getFeaturesOrBuilderList() {
     return features_;
   }
-
   /**
    *
    *
@@ -2827,7 +2752,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   public int getFeaturesCount() {
     return features_.size();
   }
-
   /**
    *
    *
@@ -2841,7 +2765,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature getFeatures(int index) {
     return features_.get(index);
   }
-
   /**
    *
    *
@@ -3070,7 +2993,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3400,7 +3322,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3429,7 +3350,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3458,7 +3378,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3486,7 +3405,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3510,7 +3428,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3541,7 +3458,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3566,7 +3482,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3591,7 +3506,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3615,7 +3529,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3635,7 +3548,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3578,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebService.Builder,
             com.google.cloud.dialogflow.v2beta1.Fulfillment.GenericWebServiceOrBuilder>
         genericWebServiceBuilder_;
-
     /**
      *
      *
@@ -3683,7 +3594,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGenericWebService() {
       return fulfillmentCase_ == 3;
     }
-
     /**
      *
      *
@@ -3713,7 +3623,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3738,7 +3647,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       fulfillmentCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3760,7 +3668,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       fulfillmentCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3798,7 +3705,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       fulfillmentCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3825,7 +3731,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3840,7 +3745,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         getGenericWebServiceBuilder() {
       return getGenericWebServiceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3864,7 +3768,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3902,7 +3805,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -3918,7 +3820,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -3938,7 +3839,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3992,7 +3892,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return featuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4009,7 +3908,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return featuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4026,7 +3924,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return featuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4050,7 +3947,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4072,7 +3968,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4095,7 +3990,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4119,7 +4013,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4140,7 +4033,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4162,7 +4054,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4184,7 +4075,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4204,7 +4094,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4224,7 +4113,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4238,7 +4126,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getFeaturesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4256,7 +4143,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return featuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4275,7 +4161,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(features_);
       }
     }
-
     /**
      *
      *
@@ -4289,7 +4174,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
       return getFeaturesFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4305,7 +4189,6 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.dialogflow.v2beta1.Fulfillment.Feature.getDefaultInstance());
     }
-
     /**
      *
      *

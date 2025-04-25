@@ -36,7 +36,6 @@ public interface ModelFeatureOrBuilder
    * @return The feature.
    */
   java.lang.String getFeature();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ModelFeatureOrBuilder
    * @return The releaseState.
    */
   java.lang.String getReleaseState();
-
   /**
    *
    *

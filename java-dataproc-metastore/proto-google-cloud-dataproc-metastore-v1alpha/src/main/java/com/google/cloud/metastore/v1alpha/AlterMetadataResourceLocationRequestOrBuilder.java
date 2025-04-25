@@ -41,7 +41,6 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface AlterMetadataResourceLocationRequestOrBuilder
    * @return The locationUri.
    */
   java.lang.String getLocationUri();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface GetEncryptionSpecRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

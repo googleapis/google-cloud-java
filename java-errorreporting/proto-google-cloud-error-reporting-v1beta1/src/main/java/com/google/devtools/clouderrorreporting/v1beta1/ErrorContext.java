@@ -36,7 +36,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ErrorContext)
     ErrorContextOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ErrorContext.newBuilder() to construct.
   private ErrorContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HTTP_REQUEST_FIELD_NUMBER = 1;
   private com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext httpRequest_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpRequest() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext.getDefaultInstance()
         : httpRequest_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object user_ = "";
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPORT_LOCATION_FIELD_NUMBER = 3;
   private com.google.devtools.clouderrorreporting.v1beta1.SourceLocation reportLocation_;
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReportLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.getDefaultInstance()
         : reportLocation_;
   }
-
   /**
    *
    *
@@ -446,7 +437,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContextOrBuilder>
         httpRequestBuilder_;
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpRequest() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         return httpRequestBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHttpRequestFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
             : httpRequest_;
       }
     }
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object user_ = "";
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouderrorreporting.v1beta1.SourceLocation.Builder,
             com.google.devtools.clouderrorreporting.v1beta1.SourceLocationOrBuilder>
         reportLocationBuilder_;
-
     /**
      *
      *
@@ -1079,7 +1054,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportLocation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1104,7 +1078,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
         return reportLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1105,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1163,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1186,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1205,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReportLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1260,7 +1228,6 @@ public final class ErrorContext extends com.google.protobuf.GeneratedMessageV3
             : reportLocation_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface AdditionalNodeNetworkConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AdditionalNodeNetworkConfigOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *

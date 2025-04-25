@@ -38,7 +38,6 @@ public interface DeleteStoragePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

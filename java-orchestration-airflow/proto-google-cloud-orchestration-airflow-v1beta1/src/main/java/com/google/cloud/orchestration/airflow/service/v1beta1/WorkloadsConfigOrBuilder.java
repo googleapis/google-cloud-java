@@ -38,7 +38,6 @@ public interface WorkloadsConfigOrBuilder
    * @return Whether the scheduler field is set.
    */
   boolean hasScheduler();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface WorkloadsConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.SchedulerResource
       getScheduler();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface WorkloadsConfigOrBuilder
    * @return Whether the webServer field is set.
    */
   boolean hasWebServer();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WorkloadsConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.WebServerResource
       getWebServer();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface WorkloadsConfigOrBuilder
    * @return Whether the worker field is set.
    */
   boolean hasWorker();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface WorkloadsConfigOrBuilder
    * @return The worker.
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.WorkerResource getWorker();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface WorkloadsConfigOrBuilder
    * @return Whether the triggerer field is set.
    */
   boolean hasTriggerer();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface WorkloadsConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.TriggererResource
       getTriggerer();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface WorkloadsConfigOrBuilder
    * @return Whether the dagProcessor field is set.
    */
   boolean hasDagProcessor();
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public interface WorkloadsConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.DagProcessorResource
       getDagProcessor();
-
   /**
    *
    *

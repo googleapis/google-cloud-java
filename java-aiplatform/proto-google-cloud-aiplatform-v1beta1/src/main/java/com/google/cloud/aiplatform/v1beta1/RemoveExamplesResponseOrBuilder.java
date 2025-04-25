@@ -36,7 +36,6 @@ public interface RemoveExamplesResponseOrBuilder
    * @return A list containing the exampleIds.
    */
   java.util.List<java.lang.String> getExampleIdsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RemoveExamplesResponseOrBuilder
    * @return The count of exampleIds.
    */
   int getExampleIdsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface RemoveExamplesResponseOrBuilder
    * @return The exampleIds at the given index.
    */
   java.lang.String getExampleIds(int index);
-
   /**
    *
    *

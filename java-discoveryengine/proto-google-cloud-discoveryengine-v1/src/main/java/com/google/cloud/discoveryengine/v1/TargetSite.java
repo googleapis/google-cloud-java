@@ -33,7 +33,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.TargetSite)
     TargetSiteOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetSite.newBuilder() to construct.
   private TargetSite(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,7 +123,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>INCLUDE = 1;</code>
      */
     public static final int INCLUDE_VALUE = 1;
-
     /**
      *
      *
@@ -307,7 +304,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>INDEXING_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int INDEXING_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -319,7 +315,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -330,7 +325,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 2;</code>
      */
     public static final int FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -341,7 +335,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -462,7 +455,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the quotaFailure field is set.
      */
     boolean hasQuotaFailure();
-
     /**
      *
      *
@@ -477,7 +469,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
      * @return The quotaFailure.
      */
     com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.QuotaFailure getQuotaFailure();
-
     /**
      *
      *
@@ -494,7 +485,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.FailureCase getFailureCase();
   }
-
   /**
    *
    *
@@ -509,7 +499,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.TargetSite.FailureReason)
       FailureReasonOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FailureReason.newBuilder() to construct.
     private FailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -557,7 +546,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
        */
       long getTotalRequiredQuota();
     }
-
     /**
      *
      *
@@ -572,7 +560,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.TargetSite.FailureReason.QuotaFailure)
         QuotaFailureOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use QuotaFailure.newBuilder() to construct.
       private QuotaFailure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -604,7 +591,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
       public static final int TOTAL_REQUIRED_QUOTA_FIELD_NUMBER = 1;
       private long totalRequiredQuota_ = 0L;
-
       /**
        *
        *
@@ -792,7 +778,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -990,7 +975,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private long totalRequiredQuota_;
-
         /**
          *
          *
@@ -1007,7 +991,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         public long getTotalRequiredQuota() {
           return totalRequiredQuota_;
         }
-
         /**
          *
          *
@@ -1028,7 +1011,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1132,7 +1114,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       private FailureCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1164,7 +1145,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int QUOTA_FAILURE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1182,7 +1162,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuotaFailure() {
       return failureCase_ == 1;
     }
-
     /**
      *
      *
@@ -1205,7 +1184,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.QuotaFailure
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1407,7 +1385,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1633,7 +1610,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.QuotaFailure.Builder,
               com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.QuotaFailureOrBuilder>
           quotaFailureBuilder_;
-
       /**
        *
        *
@@ -1651,7 +1627,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       public boolean hasQuotaFailure() {
         return failureCase_ == 1;
       }
-
       /**
        *
        *
@@ -1683,7 +1658,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1709,7 +1683,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         failureCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1733,7 +1706,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         failureCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1773,7 +1745,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         failureCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1801,7 +1772,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1817,7 +1787,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           getQuotaFailureBuilder() {
         return getQuotaFailureFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1843,7 +1812,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1955,7 +1923,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1981,7 +1948,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2012,7 +1978,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object providedUriPattern_ = "";
-
   /**
    *
    *
@@ -2039,7 +2004,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2069,7 +2033,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
-
   /**
    *
    *
@@ -2086,7 +2049,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -2110,7 +2072,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXACT_MATCH_FIELD_NUMBER = 6;
   private boolean exactMatch_ = false;
-
   /**
    *
    *
@@ -2136,7 +2097,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object generatedUriPattern_ = "";
-
   /**
    *
    *
@@ -2160,7 +2120,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2189,7 +2148,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rootDomainUri_ = "";
-
   /**
    *
    *
@@ -2213,7 +2171,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2240,7 +2197,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SITE_VERIFICATION_INFO_FIELD_NUMBER = 7;
   private com.google.cloud.discoveryengine.v1.SiteVerificationInfo siteVerificationInfo_;
-
   /**
    *
    *
@@ -2258,7 +2214,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSiteVerificationInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2278,7 +2233,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.SiteVerificationInfo.getDefaultInstance()
         : siteVerificationInfo_;
   }
-
   /**
    *
    *
@@ -2300,7 +2254,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEXING_STATUS_FIELD_NUMBER = 8;
   private int indexingStatus_ = 0;
-
   /**
    *
    *
@@ -2318,7 +2271,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
   public int getIndexingStatusValue() {
     return indexingStatus_;
   }
-
   /**
    *
    *
@@ -2343,7 +2295,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -2360,7 +2311,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2377,7 +2327,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -2395,7 +2344,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAILURE_REASON_FIELD_NUMBER = 9;
   private com.google.cloud.discoveryengine.v1.TargetSite.FailureReason failureReason_;
-
   /**
    *
    *
@@ -2413,7 +2361,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFailureReason() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2433,7 +2380,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.getDefaultInstance()
         : failureReason_;
   }
-
   /**
    *
    *
@@ -2713,7 +2659,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3053,7 +2998,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3078,7 +3022,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3103,7 +3046,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3127,7 +3069,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3147,7 +3088,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3174,7 +3114,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object providedUriPattern_ = "";
-
     /**
      *
      *
@@ -3200,7 +3139,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3226,7 +3164,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3251,7 +3188,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3272,7 +3208,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3300,7 +3235,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -3317,7 +3251,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -3337,7 +3270,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3358,7 +3290,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.TargetSite.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3381,7 +3312,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3402,7 +3332,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean exactMatch_;
-
     /**
      *
      *
@@ -3423,7 +3352,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public boolean getExactMatch() {
       return exactMatch_;
     }
-
     /**
      *
      *
@@ -3448,7 +3376,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3473,7 +3400,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object generatedUriPattern_ = "";
-
     /**
      *
      *
@@ -3496,7 +3422,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3519,7 +3444,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3541,7 +3465,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3559,7 +3482,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3584,7 +3506,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object rootDomainUri_ = "";
-
     /**
      *
      *
@@ -3607,7 +3528,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3630,7 +3550,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3652,7 +3571,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3670,7 +3588,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3700,7 +3617,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.SiteVerificationInfo.Builder,
             com.google.cloud.discoveryengine.v1.SiteVerificationInfoOrBuilder>
         siteVerificationInfoBuilder_;
-
     /**
      *
      *
@@ -3717,7 +3633,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSiteVerificationInfo() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3740,7 +3655,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return siteVerificationInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3766,7 +3680,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3789,7 +3702,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3821,7 +3733,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3843,7 +3754,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3861,7 +3771,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSiteVerificationInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3883,7 +3792,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             : siteVerificationInfo_;
       }
     }
-
     /**
      *
      *
@@ -3913,7 +3821,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int indexingStatus_ = 0;
-
     /**
      *
      *
@@ -3931,7 +3838,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public int getIndexingStatusValue() {
       return indexingStatus_;
     }
-
     /**
      *
      *
@@ -3952,7 +3858,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3974,7 +3879,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.discoveryengine.v1.TargetSite.IndexingStatus.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3999,7 +3903,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4026,7 +3929,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4043,7 +3945,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4066,7 +3967,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4091,7 +3991,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4113,7 +4012,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4143,7 +4041,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4165,7 +4062,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4182,7 +4078,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4203,7 +4098,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4238,7 +4132,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.TargetSite.FailureReason.Builder,
             com.google.cloud.discoveryengine.v1.TargetSite.FailureReasonOrBuilder>
         failureReasonBuilder_;
-
     /**
      *
      *
@@ -4255,7 +4148,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFailureReason() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4278,7 +4170,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
         return failureReasonBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4304,7 +4195,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4327,7 +4217,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4360,7 +4249,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4382,7 +4270,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4400,7 +4287,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFailureReasonFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4422,7 +4308,6 @@ public final class TargetSite extends com.google.protobuf.GeneratedMessageV3
             : failureReason_;
       }
     }
-
     /**
      *
      *

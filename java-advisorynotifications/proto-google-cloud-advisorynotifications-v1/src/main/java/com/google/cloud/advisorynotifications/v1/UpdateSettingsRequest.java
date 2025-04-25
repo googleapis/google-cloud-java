@@ -33,7 +33,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.advisorynotifications.v1.UpdateSettingsRequest)
     UpdateSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSettingsRequest.newBuilder() to construct.
   private UpdateSettingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.advisorynotifications.v1.Settings settings_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.advisorynotifications.v1.Settings.getDefaultInstance()
         : settings_;
   }
-
   /**
    *
    *
@@ -287,7 +283,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -495,7 +490,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.advisorynotifications.v1.Settings.Builder,
             com.google.cloud.advisorynotifications.v1.SettingsOrBuilder>
         settingsBuilder_;
-
     /**
      *
      *
@@ -512,7 +506,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
         return settingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -560,7 +552,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -583,7 +574,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +641,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -674,7 +661,6 @@ public final class UpdateSettingsRequest extends com.google.protobuf.GeneratedMe
             : settings_;
       }
     }
-
     /**
      *
      *

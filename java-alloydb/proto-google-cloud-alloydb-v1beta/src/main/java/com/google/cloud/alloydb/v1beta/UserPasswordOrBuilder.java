@@ -36,7 +36,6 @@ public interface UserPasswordOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface UserPasswordOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *

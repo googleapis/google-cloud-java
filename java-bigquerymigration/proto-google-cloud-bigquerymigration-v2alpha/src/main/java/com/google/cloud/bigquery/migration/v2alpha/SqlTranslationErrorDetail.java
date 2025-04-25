@@ -34,7 +34,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.SqlTranslationErrorDetail)
     SqlTranslationErrorDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SqlTranslationErrorDetail.newBuilder() to construct.
   private SqlTranslationErrorDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
 
   public static final int ROW_FIELD_NUMBER = 1;
   private long row_ = 0L;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
 
   public static final int COLUMN_FIELD_NUMBER = 2;
   private long column_ = 0L;
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -335,7 +330,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long row_;
-
     /**
      *
      *
@@ -570,7 +563,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     public long getRow() {
       return row_;
     }
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     }
 
     private long column_;
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     public long getColumn() {
       return column_;
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +736,6 @@ public final class SqlTranslationErrorDetail extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

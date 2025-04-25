@@ -48,7 +48,6 @@ public interface JobNotificationOrBuilder
    * @return The pubsubTopic.
    */
   java.lang.String getPubsubTopic();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface JobNotificationOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface JobNotificationOrBuilder
    * @return The message.
    */
   com.google.cloud.batch.v1alpha.JobNotification.Message getMessage();
-
   /**
    *
    *

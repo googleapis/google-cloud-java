@@ -36,7 +36,6 @@ public interface PlaybookOutputOrBuilder
    * @return The executionSummary.
    */
   java.lang.String getExecutionSummary();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface PlaybookOutputOrBuilder
    * @return Whether the actionParameters field is set.
    */
   boolean hasActionParameters();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PlaybookOutputOrBuilder
    * @return The actionParameters.
    */
   com.google.protobuf.Struct getActionParameters();
-
   /**
    *
    *

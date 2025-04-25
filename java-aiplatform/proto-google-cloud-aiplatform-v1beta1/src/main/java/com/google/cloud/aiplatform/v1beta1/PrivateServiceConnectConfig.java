@@ -33,7 +33,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig)
     PrivateServiceConnectConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrivateServiceConnectConfig.newBuilder() to construct.
   private PrivateServiceConnectConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
 
   public static final int ENABLE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 1;
   private boolean enablePrivateServiceConnect_ = false;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList projectAllowlist_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getProjectAllowlistList() {
     return projectAllowlist_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
   public int getProjectAllowlistCount() {
     return projectAllowlist_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
   public java.lang.String getProjectAllowlist(int index) {
     return projectAllowlist_.get(index);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
 
   public static final int ENABLE_SECURE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 4;
   private boolean enableSecurePrivateServiceConnect_ = false;
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAttachment_ = "";
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -436,7 +427,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +663,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     private int bitField0_;
 
     private boolean enablePrivateServiceConnect_;
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public boolean getEnablePrivateServiceConnect() {
       return enablePrivateServiceConnect_;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       projectAllowlist_.makeImmutable();
       return projectAllowlist_;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public int getProjectAllowlistCount() {
       return projectAllowlist_.size();
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public java.lang.String getProjectAllowlist(int index) {
       return projectAllowlist_.get(index);
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getProjectAllowlistBytes(int index) {
       return projectAllowlist_.getByteString(index);
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     }
 
     private boolean enableSecurePrivateServiceConnect_;
-
     /**
      *
      *
@@ -945,7 +922,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     public boolean getEnableSecurePrivateServiceConnect() {
       return enableSecurePrivateServiceConnect_;
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +970,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
     }
 
     private java.lang.Object serviceAttachment_ = "";
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1018,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1041,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1060,6 @@ public final class PrivateServiceConnectConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.YumArtifact yum_artifacts = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1beta2.YumArtifact> getYumArtifactsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.YumArtifact yum_artifacts = 1;</code>
    */
   com.google.devtools.artifactregistry.v1beta2.YumArtifact getYumArtifacts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.YumArtifact yum_artifacts = 1;</code>
    */
   int getYumArtifactsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1beta2.YumArtifactOrBuilder>
       getYumArtifactsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    */
   java.util.List<com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo>
       getErrorsList();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    * </code>
    */
   com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfo getErrors(int index);
-
   /**
    *
    *
@@ -120,7 +114,6 @@ public interface ImportYumArtifactsResponseOrBuilder
    * </code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -136,7 +129,6 @@ public interface ImportYumArtifactsResponseOrBuilder
           ? extends
               com.google.devtools.artifactregistry.v1beta2.ImportYumArtifactsErrorInfoOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *

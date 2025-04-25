@@ -82,7 +82,6 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TABLE_SOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int TABLE_SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BIGQUERY_VIEW = 2;</code>
    */
   public static final int BIGQUERY_VIEW_VALUE = 2;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum TableSourceType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BIGQUERY_TABLE = 5;</code>
    */
   public static final int BIGQUERY_TABLE_VALUE = 5;
-
   /**
    *
    *

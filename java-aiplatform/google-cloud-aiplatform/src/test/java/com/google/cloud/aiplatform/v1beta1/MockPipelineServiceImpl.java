@@ -74,8 +74,7 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTrainingPipeline, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateTrainingPipeline, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TrainingPipeline.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +117,7 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTrainingPipelines, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListTrainingPipelines, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTrainingPipelinesResponse.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +138,7 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteTrainingPipeline, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteTrainingPipeline, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +159,7 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelTrainingPipeline, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CancelTrainingPipeline, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -268,8 +264,7 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchDeletePipelineJobs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchDeletePipelineJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -311,8 +306,7 @@ public class MockPipelineServiceImpl extends PipelineServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCancelPipelineJobs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchCancelPipelineJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

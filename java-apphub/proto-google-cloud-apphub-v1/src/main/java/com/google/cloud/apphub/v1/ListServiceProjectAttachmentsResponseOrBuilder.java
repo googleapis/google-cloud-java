@@ -37,7 +37,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.apphub.v1.ServiceProjectAttachment>
       getServiceProjectAttachmentsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.apphub.v1.ServiceProjectAttachment getServiceProjectAttachments(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    * </code>
    */
   int getServiceProjectAttachmentsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apphub.v1.ServiceProjectAttachmentOrBuilder>
       getServiceProjectAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface ListServiceProjectAttachmentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

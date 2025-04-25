@@ -40,7 +40,6 @@ public interface GetRagFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

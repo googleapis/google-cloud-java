@@ -33,7 +33,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.chat.v1.UpdateMessageRequest)
     UpdateMessageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateMessageRequest.newBuilder() to construct.
   private UpdateMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int MESSAGE_FIELD_NUMBER = 1;
   private com.google.chat.v1.Message message_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
   public com.google.chat.v1.Message getMessage() {
     return message_ == null ? com.google.chat.v1.Message.getDefaultInstance() : message_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +646,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
             com.google.chat.v1.Message.Builder,
             com.google.chat.v1.MessageOrBuilder>
         messageBuilder_;
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
         return messageBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
         return message_ == null ? com.google.chat.v1.Message.getDefaultInstance() : message_;
       }
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1050,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1142,7 +1116,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1160,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -1206,7 +1178,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -1229,7 +1200,6 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

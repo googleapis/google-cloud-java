@@ -36,7 +36,6 @@ public interface HandlerOrBuilder
    * @return Whether the eventHandler field is set.
    */
   boolean hasEventHandler();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HandlerOrBuilder
    * @return The eventHandler.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Handler.EventHandler getEventHandler();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface HandlerOrBuilder
    * @return Whether the lifecycleHandler field is set.
    */
   boolean hasLifecycleHandler();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface HandlerOrBuilder
    * @return The lifecycleHandler.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Handler.LifecycleHandler getLifecycleHandler();
-
   /**
    *
    *

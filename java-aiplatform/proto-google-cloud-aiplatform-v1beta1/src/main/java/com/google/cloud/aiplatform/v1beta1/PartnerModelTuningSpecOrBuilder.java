@@ -37,7 +37,6 @@ public interface PartnerModelTuningSpecOrBuilder
    * @return The trainingDatasetUri.
    */
   java.lang.String getTrainingDatasetUri();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface PartnerModelTuningSpecOrBuilder
    * @return The validationDatasetUri.
    */
   java.lang.String getValidationDatasetUri();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface PartnerModelTuningSpecOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; hyper_parameters = 3;</code>
    */
   int getHyperParametersCount();
-
   /**
    *
    *
@@ -103,11 +100,9 @@ public interface PartnerModelTuningSpecOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; hyper_parameters = 3;</code>
    */
   boolean containsHyperParameters(java.lang.String key);
-
   /** Use {@link #getHyperParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getHyperParameters();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface PartnerModelTuningSpecOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; hyper_parameters = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getHyperParametersMap();
-
   /**
    *
    *
@@ -135,7 +129,6 @@ public interface PartnerModelTuningSpecOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *

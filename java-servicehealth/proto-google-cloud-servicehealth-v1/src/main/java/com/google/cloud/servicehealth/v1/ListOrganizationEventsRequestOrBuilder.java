@@ -47,7 +47,6 @@ public interface ListOrganizationEventsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -107,7 +106,6 @@ public interface ListOrganizationEventsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -154,7 +152,6 @@ public interface ListOrganizationEventsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -197,7 +194,6 @@ public interface ListOrganizationEventsRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

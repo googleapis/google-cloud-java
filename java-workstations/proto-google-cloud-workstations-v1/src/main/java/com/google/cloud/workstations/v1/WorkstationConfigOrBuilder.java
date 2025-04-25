@@ -36,7 +36,6 @@ public interface WorkstationConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface WorkstationConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface WorkstationConfigOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -141,11 +137,9 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface WorkstationConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface WorkstationConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -213,11 +204,9 @@ public interface WorkstationConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -231,7 +220,6 @@ public interface WorkstationConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -249,7 +237,6 @@ public interface WorkstationConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -277,7 +264,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -291,7 +277,6 @@ public interface WorkstationConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -318,7 +303,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -333,7 +317,6 @@ public interface WorkstationConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -360,7 +343,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -374,7 +356,6 @@ public interface WorkstationConfigOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -401,7 +382,6 @@ public interface WorkstationConfigOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -438,7 +418,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the idleTimeout field is set.
    */
   boolean hasIdleTimeout();
-
   /**
    *
    *
@@ -460,7 +439,6 @@ public interface WorkstationConfigOrBuilder
    * @return The idleTimeout.
    */
   com.google.protobuf.Duration getIdleTimeout();
-
   /**
    *
    *
@@ -515,7 +493,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the runningTimeout field is set.
    */
   boolean hasRunningTimeout();
-
   /**
    *
    *
@@ -550,7 +527,6 @@ public interface WorkstationConfigOrBuilder
    * @return The runningTimeout.
    */
   com.google.protobuf.Duration getRunningTimeout();
-
   /**
    *
    *
@@ -598,7 +574,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
-
   /**
    *
    *
@@ -613,7 +588,6 @@ public interface WorkstationConfigOrBuilder
    * @return The host.
    */
   com.google.cloud.workstations.v1.WorkstationConfig.Host getHost();
-
   /**
    *
    *
@@ -640,7 +614,6 @@ public interface WorkstationConfigOrBuilder
    */
   java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory>
       getPersistentDirectoriesList();
-
   /**
    *
    *
@@ -654,7 +627,6 @@ public interface WorkstationConfigOrBuilder
    */
   com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory getPersistentDirectories(
       int index);
-
   /**
    *
    *
@@ -667,7 +639,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   int getPersistentDirectoriesCount();
-
   /**
    *
    *
@@ -682,7 +653,6 @@ public interface WorkstationConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectoryOrBuilder>
       getPersistentDirectoriesOrBuilderList();
-
   /**
    *
    *
@@ -712,7 +682,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the container field is set.
    */
   boolean hasContainer();
-
   /**
    *
    *
@@ -728,7 +697,6 @@ public interface WorkstationConfigOrBuilder
    * @return The container.
    */
   com.google.cloud.workstations.v1.WorkstationConfig.Container getContainer();
-
   /**
    *
    *
@@ -774,7 +742,6 @@ public interface WorkstationConfigOrBuilder
    * @return Whether the encryptionKey field is set.
    */
   boolean hasEncryptionKey();
-
   /**
    *
    *
@@ -806,7 +773,6 @@ public interface WorkstationConfigOrBuilder
    * @return The encryptionKey.
    */
   com.google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey getEncryptionKey();
-
   /**
    *
    *
@@ -853,7 +819,6 @@ public interface WorkstationConfigOrBuilder
    */
   java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
       getReadinessChecksList();
-
   /**
    *
    *
@@ -868,7 +833,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck getReadinessChecks(int index);
-
   /**
    *
    *
@@ -883,7 +847,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   int getReadinessChecksCount();
-
   /**
    *
    *
@@ -900,7 +863,6 @@ public interface WorkstationConfigOrBuilder
   java.util.List<
           ? extends com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder>
       getReadinessChecksOrBuilderList();
-
   /**
    *
    *
@@ -937,7 +899,6 @@ public interface WorkstationConfigOrBuilder
    * @return A list containing the replicaZones.
    */
   java.util.List<java.lang.String> getReplicaZonesList();
-
   /**
    *
    *
@@ -958,7 +919,6 @@ public interface WorkstationConfigOrBuilder
    * @return The count of replicaZones.
    */
   int getReplicaZonesCount();
-
   /**
    *
    *
@@ -980,7 +940,6 @@ public interface WorkstationConfigOrBuilder
    * @return The replicaZones at the given index.
    */
   java.lang.String getReplicaZones(int index);
-
   /**
    *
    *
@@ -1030,7 +989,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getConditionsList();
-
   /**
    *
    *
@@ -1042,7 +1000,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   com.google.rpc.Status getConditions(int index);
-
   /**
    *
    *
@@ -1054,7 +1011,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   int getConditionsCount();
-
   /**
    *
    *
@@ -1066,7 +1022,6 @@ public interface WorkstationConfigOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getConditionsOrBuilderList();
-
   /**
    *
    *

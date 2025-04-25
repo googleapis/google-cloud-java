@@ -38,7 +38,6 @@ public interface ChangeOfferRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ChangeOfferRequestOrBuilder
    * @return The offer.
    */
   java.lang.String getOffer();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ChangeOfferRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.channel.v1.Parameter> getParametersList();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface ChangeOfferRequestOrBuilder
    * </code>
    */
   com.google.cloud.channel.v1.Parameter getParameters(int index);
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ChangeOfferRequestOrBuilder
    * </code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface ChangeOfferRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface ChangeOfferRequestOrBuilder
    * @return The purchaseOrderId.
    */
   java.lang.String getPurchaseOrderId();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface ChangeOfferRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public interface ChangeOfferRequestOrBuilder
    * @return The billingAccount.
    */
   java.lang.String getBillingAccount();
-
   /**
    *
    *

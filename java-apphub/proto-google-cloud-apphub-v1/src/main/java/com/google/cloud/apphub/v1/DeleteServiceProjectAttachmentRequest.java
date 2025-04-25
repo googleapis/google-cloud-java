@@ -34,7 +34,6 @@ public final class DeleteServiceProjectAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.DeleteServiceProjectAttachmentRequest)
     DeleteServiceProjectAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteServiceProjectAttachmentRequest.newBuilder() to construct.
   private DeleteServiceProjectAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DeleteServiceProjectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DeleteServiceProjectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class DeleteServiceProjectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class DeleteServiceProjectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -374,7 +369,6 @@ public final class DeleteServiceProjectAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -578,7 +572,6 @@ public final class DeleteServiceProjectAttachmentRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -605,7 +598,6 @@ public final class DeleteServiceProjectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +624,6 @@ public final class DeleteServiceProjectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -658,7 +649,6 @@ public final class DeleteServiceProjectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class DeleteServiceProjectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class DeleteServiceProjectAttachmentRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class DeleteServiceProjectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -779,7 +766,6 @@ public final class DeleteServiceProjectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class DeleteServiceProjectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +828,6 @@ public final class DeleteServiceProjectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

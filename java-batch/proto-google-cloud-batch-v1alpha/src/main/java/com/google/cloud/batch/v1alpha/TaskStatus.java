@@ -33,7 +33,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.TaskStatus)
     TaskStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaskStatus.newBuilder() to construct.
   private TaskStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -158,7 +157,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -169,7 +167,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -180,7 +177,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>ASSIGNED = 2;</code>
      */
     public static final int ASSIGNED_VALUE = 2;
-
     /**
      *
      *
@@ -191,7 +187,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 3;</code>
      */
     public static final int RUNNING_VALUE = 3;
-
     /**
      *
      *
@@ -202,7 +197,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -213,7 +207,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 5;</code>
      */
     public static final int SUCCEEDED_VALUE = 5;
-
     /**
      *
      *
@@ -319,7 +312,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -335,7 +327,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -358,7 +349,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1alpha.StatusEvent> statusEvents_;
-
   /**
    *
    *
@@ -372,7 +362,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.batch.v1alpha.StatusEvent> getStatusEventsList() {
     return statusEvents_;
   }
-
   /**
    *
    *
@@ -387,7 +376,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       getStatusEventsOrBuilderList() {
     return statusEvents_;
   }
-
   /**
    *
    *
@@ -401,7 +389,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   public int getStatusEventsCount() {
     return statusEvents_.size();
   }
-
   /**
    *
    *
@@ -415,7 +402,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1alpha.StatusEvent getStatusEvents(int index) {
     return statusEvents_.get(index);
   }
-
   /**
    *
    *
@@ -432,7 +418,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_USAGE_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1alpha.TaskResourceUsage resourceUsage_;
-
   /**
    *
    *
@@ -448,7 +433,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceUsage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -466,7 +450,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1alpha.TaskResourceUsage.getDefaultInstance()
         : resourceUsage_;
   }
-
   /**
    *
    *
@@ -667,7 +650,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -940,7 +922,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.batch.v1alpha.TaskStatus.State.forNumber(state_);
       return result == null ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1044,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1076,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1098,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1140,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1162,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1202,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1222,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1241,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1260,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1272,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1alpha.StatusEvent.Builder getStatusEventsBuilder(int index) {
       return getStatusEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1324,7 +1288,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         return statusEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1305,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(statusEvents_);
       }
     }
-
     /**
      *
      *
@@ -1356,7 +1318,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       return getStatusEventsFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1alpha.StatusEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1370,7 +1331,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       return getStatusEventsFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1alpha.StatusEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1408,7 +1368,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.TaskResourceUsage.Builder,
             com.google.cloud.batch.v1alpha.TaskResourceUsageOrBuilder>
         resourceUsageBuilder_;
-
     /**
      *
      *
@@ -1423,7 +1382,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceUsage() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1444,7 +1402,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
         return resourceUsageBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1467,7 +1424,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1444,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1517,7 +1472,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1537,7 +1491,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1505,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceUsageFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1571,7 +1523,6 @@ public final class TaskStatus extends com.google.protobuf.GeneratedMessageV3
             : resourceUsage_;
       }
     }
-
     /**
      *
      *

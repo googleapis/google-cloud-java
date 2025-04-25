@@ -34,7 +34,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RemoveContextChildrenRequest)
     RemoveContextChildrenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveContextChildrenRequest.newBuilder() to construct.
   private RemoveContextChildrenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList childContexts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
   public com.google.protobuf.ProtocolStringList getChildContextsList() {
     return childContexts_;
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
   public int getChildContextsCount() {
     return childContexts_.size();
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
   public java.lang.String getChildContexts(int index) {
     return childContexts_.get(index);
   }
-
   /**
    *
    *
@@ -373,7 +366,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +573,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +627,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       childContexts_.makeImmutable();
       return childContexts_;
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     public int getChildContextsCount() {
       return childContexts_.size();
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     public java.lang.String getChildContexts(int index) {
       return childContexts_.get(index);
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getChildContextsBytes(int index) {
       return childContexts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +835,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +853,6 @@ public final class RemoveContextChildrenRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

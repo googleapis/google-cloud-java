@@ -36,7 +36,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
    * @return Whether the clientOperationId field is set.
    */
   boolean hasClientOperationId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
    * @return The clientOperationId.
    */
   java.lang.String getClientOperationId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
    * </code>
    */
   int getPerLocationOperationsCount();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
    * </code>
    */
   boolean containsPerLocationOperations(java.lang.String key);
-
   /** Use {@link #getPerLocationOperationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -96,7 +92,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
           com.google.cloud.compute.v1
               .SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo>
       getPerLocationOperations();
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
           com.google.cloud.compute.v1
               .SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo>
       getPerLocationOperationsMap();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface SetCommonInstanceMetadataOperationMetadataOrBuilder
           com.google.cloud.compute.v1
                   .SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo
               defaultValue);
-
   /**
    *
    *

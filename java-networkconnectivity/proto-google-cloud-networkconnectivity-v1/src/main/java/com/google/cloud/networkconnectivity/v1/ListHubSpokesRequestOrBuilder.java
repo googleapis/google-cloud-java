@@ -38,7 +38,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return A list containing the spokeLocations.
    */
   java.util.List<java.lang.String> getSpokeLocationsList();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The count of spokeLocations.
    */
   int getSpokeLocationsCount();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The spokeLocations at the given index.
    */
   java.lang.String getSpokeLocations(int index);
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public interface ListHubSpokesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

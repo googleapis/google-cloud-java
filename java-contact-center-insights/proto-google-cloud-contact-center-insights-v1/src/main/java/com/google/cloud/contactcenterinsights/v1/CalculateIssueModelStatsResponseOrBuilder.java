@@ -37,7 +37,6 @@ public interface CalculateIssueModelStatsResponseOrBuilder
    * @return Whether the currentStats field is set.
    */
   boolean hasCurrentStats();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CalculateIssueModelStatsResponseOrBuilder
    * @return The currentStats.
    */
   com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats getCurrentStats();
-
   /**
    *
    *

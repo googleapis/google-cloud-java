@@ -41,7 +41,6 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface InitializeEncryptionSpecRequestOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.contactcenterinsights.v1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse)
     ProcessOpenLineageRunEventResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProcessOpenLineageRunEventResponse.newBuilder() to construct.
   private ProcessOpenLineageRunEventResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object process_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object run_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList lineageEvents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
   public com.google.protobuf.ProtocolStringList getLineageEventsList() {
     return lineageEvents_;
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
   public int getLineageEventsCount() {
     return lineageEvents_.size();
   }
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
   public java.lang.String getLineageEvents(int index) {
     return lineageEvents_.get(index);
   }
-
   /**
    *
    *
@@ -449,7 +440,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -683,7 +673,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object process_ = "";
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -754,7 +741,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     }
 
     private java.lang.Object run_ = "";
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       lineageEvents_.makeImmutable();
       return lineageEvents_;
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     public int getLineageEventsCount() {
       return lineageEvents_.size();
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     public java.lang.String getLineageEvents(int index) {
       return lineageEvents_.get(index);
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
     public com.google.protobuf.ByteString getLineageEventsBytes(int index) {
       return lineageEvents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1024,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1065,6 @@ public final class ProcessOpenLineageRunEventResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

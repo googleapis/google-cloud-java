@@ -33,7 +33,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.QuotaStatus)
     QuotaStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuotaStatus.newBuilder() to construct.
   private QuotaStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSUMED_FIELD_NUMBER = 1;
   private int consumed_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMAINING_FIELD_NUMBER = 2;
   private int remaining_ = 0;
-
   /**
    *
    *
@@ -268,7 +265,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -463,7 +459,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int consumed_;
-
     /**
      *
      *
@@ -479,7 +474,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     public int getConsumed() {
       return consumed_;
     }
-
     /**
      *
      *
@@ -499,7 +493,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -519,7 +512,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int remaining_;
-
     /**
      *
      *
@@ -535,7 +527,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     public int getRemaining() {
       return remaining_;
     }
-
     /**
      *
      *
@@ -555,7 +546,6 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

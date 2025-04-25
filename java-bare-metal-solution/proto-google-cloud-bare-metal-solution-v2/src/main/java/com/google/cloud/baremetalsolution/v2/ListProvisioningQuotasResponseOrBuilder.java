@@ -36,7 +36,6 @@ public interface ListProvisioningQuotasResponseOrBuilder
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.ProvisioningQuota>
       getProvisioningQuotasList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListProvisioningQuotasResponseOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.ProvisioningQuota getProvisioningQuotas(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListProvisioningQuotasResponseOrBuilder
    * </code>
    */
   int getProvisioningQuotasCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListProvisioningQuotasResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.ProvisioningQuotaOrBuilder>
       getProvisioningQuotasOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListProvisioningQuotasResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

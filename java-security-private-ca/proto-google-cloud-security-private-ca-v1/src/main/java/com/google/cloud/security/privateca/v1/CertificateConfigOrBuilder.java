@@ -39,7 +39,6 @@ public interface CertificateConfigOrBuilder
    * @return Whether the subjectConfig field is set.
    */
   boolean hasSubjectConfig();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface CertificateConfigOrBuilder
    * @return The subjectConfig.
    */
   com.google.cloud.security.privateca.v1.CertificateConfig.SubjectConfig getSubjectConfig();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface CertificateConfigOrBuilder
    * @return Whether the x509Config field is set.
    */
   boolean hasX509Config();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface CertificateConfigOrBuilder
    * @return The x509Config.
    */
   com.google.cloud.security.privateca.v1.X509Parameters getX509Config();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface CertificateConfigOrBuilder
    * @return Whether the publicKey field is set.
    */
   boolean hasPublicKey();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface CertificateConfigOrBuilder
    * @return The publicKey.
    */
   com.google.cloud.security.privateca.v1.PublicKey getPublicKey();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface CertificateConfigOrBuilder
    * @return Whether the subjectKeyId field is set.
    */
   boolean hasSubjectKeyId();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface CertificateConfigOrBuilder
    * @return The subjectKeyId.
    */
   com.google.cloud.security.privateca.v1.CertificateConfig.KeyId getSubjectKeyId();
-
   /**
    *
    *

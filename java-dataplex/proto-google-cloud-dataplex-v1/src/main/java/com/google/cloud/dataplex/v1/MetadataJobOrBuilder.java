@@ -40,7 +40,6 @@ public interface MetadataJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface MetadataJobOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface MetadataJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface MetadataJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface MetadataJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -193,11 +186,9 @@ public interface MetadataJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -208,7 +199,6 @@ public interface MetadataJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface MetadataJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface MetadataJobOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -277,7 +265,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the importSpec field is set.
    */
   boolean hasImportSpec();
-
   /**
    *
    *
@@ -290,7 +277,6 @@ public interface MetadataJobOrBuilder
    * @return The importSpec.
    */
   com.google.cloud.dataplex.v1.MetadataJob.ImportJobSpec getImportSpec();
-
   /**
    *
    *
@@ -314,7 +300,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the exportSpec field is set.
    */
   boolean hasExportSpec();
-
   /**
    *
    *
@@ -327,7 +312,6 @@ public interface MetadataJobOrBuilder
    * @return The exportSpec.
    */
   com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getExportSpec();
-
   /**
    *
    *
@@ -353,7 +337,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the importResult field is set.
    */
   boolean hasImportResult();
-
   /**
    *
    *
@@ -368,7 +351,6 @@ public interface MetadataJobOrBuilder
    * @return The importResult.
    */
   com.google.cloud.dataplex.v1.MetadataJob.ImportJobResult getImportResult();
-
   /**
    *
    *
@@ -396,7 +378,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the exportResult field is set.
    */
   boolean hasExportResult();
-
   /**
    *
    *
@@ -411,7 +392,6 @@ public interface MetadataJobOrBuilder
    * @return The exportResult.
    */
   com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getExportResult();
-
   /**
    *
    *
@@ -439,7 +419,6 @@ public interface MetadataJobOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -454,7 +433,6 @@ public interface MetadataJobOrBuilder
    * @return The status.
    */
   com.google.cloud.dataplex.v1.MetadataJob.Status getStatus();
-
   /**
    *
    *

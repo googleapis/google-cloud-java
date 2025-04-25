@@ -42,7 +42,6 @@ public interface CloudBuildOptionsOrBuilder
    * @return The appYamlPath.
    */
   java.lang.String getAppYamlPath();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CloudBuildOptionsOrBuilder
    * @return Whether the cloudBuildTimeout field is set.
    */
   boolean hasCloudBuildTimeout();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CloudBuildOptionsOrBuilder
    * @return The cloudBuildTimeout.
    */
   com.google.protobuf.Duration getCloudBuildTimeout();
-
   /**
    *
    *

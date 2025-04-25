@@ -34,7 +34,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetSslPolicyTargetHttpsProxyRequest)
     SetSslPolicyTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetSslPolicyTargetHttpsProxyRequest.newBuilder() to construct.
   private SetSslPolicyTargetHttpsProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
 
   public static final int SSL_POLICY_REFERENCE_RESOURCE_FIELD_NUMBER = 235403836;
   private com.google.cloud.compute.v1.SslPolicyReference sslPolicyReferenceResource_;
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
   public boolean hasSslPolicyReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         ? com.google.cloud.compute.v1.SslPolicyReference.getDefaultInstance()
         : sslPolicyReferenceResource_;
   }
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -508,7 +497,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +749,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -835,7 +820,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -897,7 +879,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +990,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
             com.google.cloud.compute.v1.SslPolicyReference.Builder,
             com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder>
         sslPolicyReferenceResourceBuilder_;
-
     /**
      *
      *
@@ -1030,7 +1006,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     public boolean hasSslPolicyReferenceResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1053,7 +1028,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return sslPolicyReferenceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1075,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1106,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1127,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1144,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return getSslPolicyReferenceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1196,7 +1165,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
             : sslPolicyReferenceResource_;
       }
     }
-
     /**
      *
      *
@@ -1226,7 +1194,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1272,7 +1238,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1259,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1276,6 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface BillableSkuOrBuilder
    * @return The sku.
    */
   java.lang.String getSku();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface BillableSkuOrBuilder
    * @return The skuDisplayName.
    */
   java.lang.String getSkuDisplayName();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface BillableSkuOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface BillableSkuOrBuilder
    * @return The serviceDisplayName.
    */
   java.lang.String getServiceDisplayName();
-
   /**
    *
    *

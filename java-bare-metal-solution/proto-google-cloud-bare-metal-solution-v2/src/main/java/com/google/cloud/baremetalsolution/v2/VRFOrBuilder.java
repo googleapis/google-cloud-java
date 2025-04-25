@@ -36,7 +36,6 @@ public interface VRFOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VRFOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface VRFOrBuilder
    * @return Whether the qosPolicy field is set.
    */
   boolean hasQosPolicy();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface VRFOrBuilder
    * @return The qosPolicy.
    */
   com.google.cloud.baremetalsolution.v2.VRF.QosPolicy getQosPolicy();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface VRFOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment> getVlanAttachmentsList();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface VRFOrBuilder
    * </code>
    */
   com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment getVlanAttachments(int index);
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface VRFOrBuilder
    * </code>
    */
   int getVlanAttachmentsCount();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface VRFOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.VRF.VlanAttachmentOrBuilder>
       getVlanAttachmentsOrBuilderList();
-
   /**
    *
    *

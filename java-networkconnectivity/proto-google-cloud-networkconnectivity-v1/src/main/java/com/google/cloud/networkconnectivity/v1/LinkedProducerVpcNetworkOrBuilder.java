@@ -39,7 +39,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The serviceConsumerVpcSpoke.
    */
   java.lang.String getServiceConsumerVpcSpoke();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The peering.
    */
   java.lang.String getPeering();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The producerNetwork.
    */
   java.lang.String getProducerNetwork();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return A list containing the excludeExportRanges.
    */
   java.util.List<java.lang.String> getExcludeExportRangesList();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The count of excludeExportRanges.
    */
   int getExcludeExportRangesCount();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The excludeExportRanges at the given index.
    */
   java.lang.String getExcludeExportRanges(int index);
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return A list containing the includeExportRanges.
    */
   java.util.List<java.lang.String> getIncludeExportRangesList();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The count of includeExportRanges.
    */
   int getIncludeExportRangesCount();
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The includeExportRanges at the given index.
    */
   java.lang.String getIncludeExportRanges(int index);
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return A list containing the proposedIncludeExportRanges.
    */
   java.util.List<java.lang.String> getProposedIncludeExportRangesList();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The count of proposedIncludeExportRanges.
    */
   int getProposedIncludeExportRangesCount();
-
   /**
    *
    *
@@ -310,7 +298,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The proposedIncludeExportRanges at the given index.
    */
   java.lang.String getProposedIncludeExportRanges(int index);
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return A list containing the proposedExcludeExportRanges.
    */
   java.util.List<java.lang.String> getProposedExcludeExportRangesList();
-
   /**
    *
    *
@@ -359,7 +345,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The count of proposedExcludeExportRanges.
    */
   int getProposedExcludeExportRangesCount();
-
   /**
    *
    *
@@ -376,7 +361,6 @@ public interface LinkedProducerVpcNetworkOrBuilder
    * @return The proposedExcludeExportRanges at the given index.
    */
   java.lang.String getProposedExcludeExportRanges(int index);
-
   /**
    *
    *

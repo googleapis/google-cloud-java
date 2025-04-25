@@ -38,7 +38,6 @@ public interface DeleteTaskRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DeleteTaskRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface DeleteTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

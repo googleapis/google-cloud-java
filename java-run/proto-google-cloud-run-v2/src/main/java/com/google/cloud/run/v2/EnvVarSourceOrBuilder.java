@@ -36,7 +36,6 @@ public interface EnvVarSourceOrBuilder
    * @return Whether the secretKeyRef field is set.
    */
   boolean hasSecretKeyRef();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EnvVarSourceOrBuilder
    * @return The secretKeyRef.
    */
   com.google.cloud.run.v2.SecretKeySelector getSecretKeyRef();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CanaryDeployment)
     CanaryDeploymentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CanaryDeployment.newBuilder() to construct.
   private CanaryDeployment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList percentages_ = emptyIntList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getPercentagesList() {
     return percentages_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
   public int getPercentagesCount() {
     return percentages_.size();
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
 
   public static final int VERIFY_FIELD_NUMBER = 2;
   private boolean verify_ = false;
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
 
   public static final int PREDEPLOY_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.Predeploy predeploy_;
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
   public boolean hasPredeploy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
         : predeploy_;
   }
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
 
   public static final int POSTDEPLOY_FIELD_NUMBER = 4;
   private com.google.cloud.deploy.v1.Postdeploy postdeploy_;
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
   public boolean hasPostdeploy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
         : postdeploy_;
   }
-
   /**
    *
    *
@@ -487,7 +476,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -758,7 +746,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       percentages_.makeImmutable();
       return percentages_;
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     public int getPercentagesCount() {
       return percentages_.size();
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     public int getPercentages(int index) {
       return percentages_.getInt(index);
     }
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +851,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean verify_;
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     public boolean getVerify() {
       return verify_;
     }
-
     /**
      *
      *
@@ -952,7 +931,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
             com.google.cloud.deploy.v1.Predeploy.Builder,
             com.google.cloud.deploy.v1.PredeployOrBuilder>
         predeployBuilder_;
-
     /**
      *
      *
@@ -995,7 +972,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     public boolean hasPredeploy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1019,7 +995,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
         return predeployBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1020,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1042,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1111,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPredeployFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1162,7 +1132,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
             : predeploy_;
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1167,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
             com.google.cloud.deploy.v1.Postdeploy.Builder,
             com.google.cloud.deploy.v1.PostdeployOrBuilder>
         postdeployBuilder_;
-
     /**
      *
      *
@@ -1216,7 +1184,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
     public boolean hasPostdeploy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1240,7 +1207,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
         return postdeployBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1266,7 +1232,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1254,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1284,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1306,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1323,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPostdeployFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1383,7 +1344,6 @@ public final class CanaryDeployment extends com.google.protobuf.GeneratedMessage
             : postdeploy_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface RestorePlanOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface RestorePlanOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface RestorePlanOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface RestorePlanOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface RestorePlanOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface RestorePlanOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface RestorePlanOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface RestorePlanOrBuilder
    * @return The backupPlan.
    */
   java.lang.String getBackupPlan();
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public interface RestorePlanOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public interface RestorePlanOrBuilder
    * @return Whether the restoreConfig field is set.
    */
   boolean hasRestoreConfig();
-
   /**
    *
    *
@@ -297,7 +287,6 @@ public interface RestorePlanOrBuilder
    * @return The restoreConfig.
    */
   com.google.cloud.gkebackup.v1.RestoreConfig getRestoreConfig();
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public interface RestorePlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -332,11 +320,9 @@ public interface RestorePlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public interface RestorePlanOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -362,7 +347,6 @@ public interface RestorePlanOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -393,7 +377,6 @@ public interface RestorePlanOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -430,7 +413,6 @@ public interface RestorePlanOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -453,9 +435,7 @@ public interface RestorePlanOrBuilder
    *
    * <pre>
    * Output only. Human-readable description of why RestorePlan is in the
-   * current `state`. This field is only meant for human readability and should
-   * not be used programmatically as this field is not guaranteed to be
-   * consistent.
+   * current `state`
    * </pre>
    *
    * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -463,15 +443,12 @@ public interface RestorePlanOrBuilder
    * @return The stateReason.
    */
   java.lang.String getStateReason();
-
   /**
    *
    *
    * <pre>
    * Output only. Human-readable description of why RestorePlan is in the
-   * current `state`. This field is only meant for human readability and should
-   * not be used programmatically as this field is not guaranteed to be
-   * consistent.
+   * current `state`
    * </pre>
    *
    * <code>string state_reason = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

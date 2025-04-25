@@ -41,7 +41,6 @@ public interface CreateServicePerimeterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CreateServicePerimeterRequestOrBuilder
    * @return Whether the servicePerimeter field is set.
    */
   boolean hasServicePerimeter();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CreateServicePerimeterRequestOrBuilder
    * @return The servicePerimeter.
    */
   com.google.identity.accesscontextmanager.v1.ServicePerimeter getServicePerimeter();
-
   /**
    *
    *

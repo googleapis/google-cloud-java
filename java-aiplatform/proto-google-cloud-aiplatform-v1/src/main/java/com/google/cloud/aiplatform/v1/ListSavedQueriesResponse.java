@@ -34,7 +34,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListSavedQueriesResponse)
     ListSavedQueriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSavedQueriesResponse.newBuilder() to construct.
   private ListSavedQueriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> savedQueries_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.aiplatform.v1.SavedQuery> getSavedQueriesList() {
     return savedQueries_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       getSavedQueriesOrBuilderList() {
     return savedQueries_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
   public int getSavedQueriesCount() {
     return savedQueries_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
   public com.google.cloud.aiplatform.v1.SavedQuery getSavedQueries(int index) {
     return savedQueries_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return savedQueriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return savedQueriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return savedQueriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
     public com.google.cloud.aiplatform.v1.SavedQuery.Builder getSavedQueriesBuilder(int index) {
       return getSavedQueriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return savedQueriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(savedQueries_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       return getSavedQueriesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.SavedQuery.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       return getSavedQueriesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.SavedQuery.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1004,7 +977,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1020,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1037,6 @@ public final class ListSavedQueriesResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

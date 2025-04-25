@@ -32,7 +32,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestPermissionsRequest)
     TestPermissionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TestPermissionsRequest.newBuilder() to construct.
   private TestPermissionsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList permissions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getPermissionsList() {
     return permissions_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
   public int getPermissionsCount() {
     return permissions_.size();
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
   public java.lang.String getPermissions(int index) {
     return permissions_.get(index);
   }
-
   /**
    *
    *
@@ -297,7 +292,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -496,7 +490,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -512,7 +505,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       permissions_.makeImmutable();
       return permissions_;
     }
-
     /**
      *
      *
@@ -527,7 +519,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     public int getPermissionsCount() {
       return permissions_.size();
     }
-
     /**
      *
      *
@@ -543,7 +534,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     public java.lang.String getPermissions(int index) {
       return permissions_.get(index);
     }
-
     /**
      *
      *
@@ -559,7 +549,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getPermissionsBytes(int index) {
       return permissions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -583,7 +572,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -606,7 +594,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +613,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +631,6 @@ public final class TestPermissionsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

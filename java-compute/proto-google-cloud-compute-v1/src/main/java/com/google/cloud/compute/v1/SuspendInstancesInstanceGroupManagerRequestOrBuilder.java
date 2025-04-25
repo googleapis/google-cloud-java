@@ -37,7 +37,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagersSuspendInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersSuspendInstancesRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagersSuspendInstancesRequest
       getInstanceGroupManagersSuspendInstancesRequestResource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface SuspendInstancesInstanceGroupManagerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

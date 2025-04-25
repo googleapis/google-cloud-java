@@ -36,7 +36,6 @@ public interface RollbackTargetResponseOrBuilder
    * @return Whether the rollbackConfig field is set.
    */
   boolean hasRollbackConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RollbackTargetResponseOrBuilder
    * @return The rollbackConfig.
    */
   com.google.cloud.deploy.v1.RollbackTargetConfig getRollbackConfig();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationLocation)
     TransformationLocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransformationLocation.newBuilder() to construct.
   private TransformationLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     private LocationTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int FINDING_ID_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   public boolean hasFindingId() {
     return locationTypeCase_ == 1;
   }
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   }
 
   public static final int RECORD_TRANSFORMATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   public boolean hasRecordTransformation() {
     return locationTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     }
     return com.google.privacy.dlp.v2.RecordTransformation.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
 
   public static final int CONTAINER_TYPE_FIELD_NUMBER = 3;
   private int containerType_ = 0;
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
   public int getContainerTypeValue() {
     return containerType_;
   }
-
   /**
    *
    *
@@ -495,7 +485,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +745,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     public boolean hasFindingId() {
       return locationTypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -789,7 +777,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -822,7 +809,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -848,7 +834,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +857,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +889,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
             com.google.privacy.dlp.v2.RecordTransformation.Builder,
             com.google.privacy.dlp.v2.RecordTransformationOrBuilder>
         recordTransformationBuilder_;
-
     /**
      *
      *
@@ -921,7 +904,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     public boolean hasRecordTransformation() {
       return locationTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -947,7 +929,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
         return com.google.privacy.dlp.v2.RecordTransformation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       locationTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +971,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       locationTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1004,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       locationTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1029,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1041,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     public com.google.privacy.dlp.v2.RecordTransformation.Builder getRecordTransformationBuilder() {
       return getRecordTransformationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
         return com.google.privacy.dlp.v2.RecordTransformation.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1096,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     }
 
     private int containerType_ = 0;
-
     /**
      *
      *
@@ -1138,7 +1112,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
     public int getContainerTypeValue() {
       return containerType_;
     }
-
     /**
      *
      *
@@ -1158,7 +1131,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
           ? com.google.privacy.dlp.v2.TransformationContainerType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1202,7 +1173,6 @@ public final class TransformationLocation extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

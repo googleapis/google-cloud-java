@@ -38,7 +38,6 @@ public interface UpdateReplicationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateReplicationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateReplicationRequestOrBuilder
    * @return Whether the replication field is set.
    */
   boolean hasReplication();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateReplicationRequestOrBuilder
    * @return The replication.
    */
   com.google.cloud.netapp.v1.Replication getReplication();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DateShiftConfig)
     DateShiftConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DateShiftConfig.newBuilder() to construct.
   private DateShiftConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     private MethodCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPPER_BOUND_DAYS_FIELD_NUMBER = 1;
   private int upperBoundDays_ = 0;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int LOWER_BOUND_DAYS_FIELD_NUMBER = 2;
   private int lowerBoundDays_ = 0;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONTEXT_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.FieldId context_;
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CRYPTO_KEY_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasCryptoKey() {
     return methodCase_ == 4;
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -477,7 +467,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +738,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int upperBoundDays_;
-
     /**
      *
      *
@@ -769,7 +757,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     public int getUpperBoundDays() {
       return upperBoundDays_;
     }
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int lowerBoundDays_;
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     public int getLowerBoundDays() {
       return lowerBoundDays_;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -919,7 +900,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +995,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1011,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
         return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1062,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.CryptoKey.Builder,
             com.google.privacy.dlp.v2.CryptoKeyOrBuilder>
         cryptoKeyBuilder_;
-
     /**
      *
      *
@@ -1106,7 +1079,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasCryptoKey() {
       return methodCase_ == 4;
     }
-
     /**
      *
      *
@@ -1134,7 +1106,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1130,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1185,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       methodCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1212,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1226,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.privacy.dlp.v2.CryptoKey.Builder getCryptoKeyBuilder() {
       return getCryptoKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1282,7 +1248,6 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessageV
         return com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *

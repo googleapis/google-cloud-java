@@ -33,7 +33,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.SpeechRecognitionResult)
     SpeechRecognitionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpeechRecognitionResult.newBuilder() to construct.
   private SpeechRecognitionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> alternatives_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       getAlternativesList() {
     return alternatives_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       getAlternativesOrBuilderList() {
     return alternatives_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
   public int getAlternativesCount() {
     return alternatives_.size();
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
   public com.google.cloud.speech.v1.SpeechRecognitionAlternative getAlternatives(int index) {
     return alternatives_.get(index);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
 
   public static final int CHANNEL_TAG_FIELD_NUMBER = 2;
   private int channelTag_ = 0;
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
 
   public static final int RESULT_END_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration resultEndTime_;
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
   public boolean hasResultEndTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         ? com.google.protobuf.Duration.getDefaultInstance()
         : resultEndTime_;
   }
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -486,7 +474,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -814,7 +801,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return alternativesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -834,7 +820,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return alternativesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return alternativesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -881,7 +865,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +940,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +987,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1011,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1033,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         int index) {
       return getAlternativesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1117,7 +1091,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return alternativesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1112,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(alternatives_);
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       return getAlternativesFieldBuilder()
           .addBuilder(com.google.cloud.speech.v1.SpeechRecognitionAlternative.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1176,7 +1147,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.speech.v1.SpeechRecognitionAlternative.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     }
 
     private int channelTag_;
-
     /**
      *
      *
@@ -1230,7 +1199,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     public int getChannelTag() {
       return channelTag_;
     }
-
     /**
      *
      *
@@ -1252,7 +1220,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1246,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         resultEndTimeBuilder_;
-
     /**
      *
      *
@@ -1295,7 +1261,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     public boolean hasResultEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1317,7 +1282,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return resultEndTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1341,7 +1305,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1325,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1353,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1412,7 +1373,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1388,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return getResultEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1448,7 +1407,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
             : resultEndTime_;
       }
     }
-
     /**
      *
      *
@@ -1477,7 +1435,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1502,7 +1459,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1483,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1551,7 +1506,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1571,7 +1525,6 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

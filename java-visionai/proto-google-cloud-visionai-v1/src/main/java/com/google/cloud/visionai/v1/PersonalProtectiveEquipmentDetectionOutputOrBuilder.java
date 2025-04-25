@@ -36,7 +36,6 @@ public interface PersonalProtectiveEquipmentDetectionOutputOrBuilder
    * @return Whether the currentTime field is set.
    */
   boolean hasCurrentTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PersonalProtectiveEquipmentDetectionOutputOrBuilder
    * @return The currentTime.
    */
   com.google.protobuf.Timestamp getCurrentTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PersonalProtectiveEquipmentDetectionOutputOrBuilder
   java.util.List<
           com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.DetectedPerson>
       getDetectedPersonsList();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface PersonalProtectiveEquipmentDetectionOutputOrBuilder
    */
   com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.DetectedPerson
       getDetectedPersons(int index);
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface PersonalProtectiveEquipmentDetectionOutputOrBuilder
    * </code>
    */
   int getDetectedPersonsCount();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface PersonalProtectiveEquipmentDetectionOutputOrBuilder
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                   .DetectedPersonOrBuilder>
       getDetectedPersonsOrBuilderList();
-
   /**
    *
    *

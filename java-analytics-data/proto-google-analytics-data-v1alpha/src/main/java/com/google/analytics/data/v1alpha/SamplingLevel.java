@@ -87,7 +87,6 @@ public enum SamplingLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SAMPLING_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int SAMPLING_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -99,7 +98,6 @@ public enum SamplingLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOW = 1;</code>
    */
   public static final int LOW_VALUE = 1;
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public enum SamplingLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MEDIUM = 2;</code>
    */
   public static final int MEDIUM_VALUE = 2;
-
   /**
    *
    *

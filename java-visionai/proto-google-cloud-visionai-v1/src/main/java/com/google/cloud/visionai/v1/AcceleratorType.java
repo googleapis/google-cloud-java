@@ -132,7 +132,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCELERATOR_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ACCELERATOR_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -143,7 +142,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_TESLA_K80 = 1;</code>
    */
   public static final int NVIDIA_TESLA_K80_VALUE = 1;
-
   /**
    *
    *
@@ -154,7 +152,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_TESLA_P100 = 2;</code>
    */
   public static final int NVIDIA_TESLA_P100_VALUE = 2;
-
   /**
    *
    *
@@ -165,7 +162,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_TESLA_V100 = 3;</code>
    */
   public static final int NVIDIA_TESLA_V100_VALUE = 3;
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_TESLA_P4 = 4;</code>
    */
   public static final int NVIDIA_TESLA_P4_VALUE = 4;
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_TESLA_T4 = 5;</code>
    */
   public static final int NVIDIA_TESLA_T4_VALUE = 5;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_TESLA_A100 = 8;</code>
    */
   public static final int NVIDIA_TESLA_A100_VALUE = 8;
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TPU_V2 = 6;</code>
    */
   public static final int TPU_V2_VALUE = 6;
-
   /**
    *
    *

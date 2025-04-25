@@ -39,7 +39,6 @@ public interface DeleteUserWorkloadsConfigMapRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -57,7 +57,6 @@ public interface TextDetectionParamsOrBuilder
    * @return A list containing the advancedOcrOptions.
    */
   java.util.List<java.lang.String> getAdvancedOcrOptionsList();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface TextDetectionParamsOrBuilder
    * @return The count of advancedOcrOptions.
    */
   int getAdvancedOcrOptionsCount();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface TextDetectionParamsOrBuilder
    * @return The advancedOcrOptions at the given index.
    */
   java.lang.String getAdvancedOcrOptions(int index);
-
   /**
    *
    *

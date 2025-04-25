@@ -38,7 +38,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return Whether the urlMapResource field is set.
    */
   boolean hasUrlMapResource();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface PatchRegionUrlMapRequestOrBuilder
    * @return The urlMapResource.
    */
   com.google.cloud.compute.v1.UrlMap getUrlMapResource();
-
   /**
    *
    *

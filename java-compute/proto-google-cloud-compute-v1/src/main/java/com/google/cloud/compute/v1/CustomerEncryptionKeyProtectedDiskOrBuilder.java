@@ -37,7 +37,6 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * @return Whether the diskEncryptionKey field is set.
    */
   boolean hasDiskEncryptionKey();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * @return The diskEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getDiskEncryptionKey();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface CustomerEncryptionKeyProtectedDiskOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *

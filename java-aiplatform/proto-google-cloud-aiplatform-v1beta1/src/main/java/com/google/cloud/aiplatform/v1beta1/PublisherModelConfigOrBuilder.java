@@ -37,7 +37,6 @@ public interface PublisherModelConfigOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PublisherModelConfigOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.aiplatform.v1beta1.PredictRequestResponseLoggingConfig getLoggingConfig();
-
   /**
    *
    *

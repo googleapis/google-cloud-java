@@ -39,7 +39,6 @@ public interface UpdateEnhancedMeasurementSettingsRequestOrBuilder
    * @return Whether the enhancedMeasurementSettings field is set.
    */
   boolean hasEnhancedMeasurementSettings();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateEnhancedMeasurementSettingsRequestOrBuilder
    * @return The enhancedMeasurementSettings.
    */
   com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings getEnhancedMeasurementSettings();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateEnhancedMeasurementSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateEnhancedMeasurementSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DeleteNetworkAttachmentRequestOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DeleteNetworkAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DeleteNetworkAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface DeleteNetworkAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface DeleteNetworkAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

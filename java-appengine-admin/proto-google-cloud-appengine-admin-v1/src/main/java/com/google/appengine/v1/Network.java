@@ -34,7 +34,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.Network)
     NetworkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Network.newBuilder() to construct.
   private Network(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList forwardedPorts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getForwardedPortsList() {
     return forwardedPorts_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public int getForwardedPortsCount() {
     return forwardedPorts_.size();
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getForwardedPorts(int index) {
     return forwardedPorts_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceTag_ = "";
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnetworkName_ = "";
-
   /**
    *
    *
@@ -302,7 +292,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +335,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 5;
   private boolean sessionAffinity_ = false;
-
   /**
    *
    *
@@ -564,7 +552,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -820,7 +807,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -838,7 +824,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       forwardedPorts_.makeImmutable();
       return forwardedPorts_;
     }
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public int getForwardedPortsCount() {
       return forwardedPorts_.size();
     }
-
     /**
      *
      *
@@ -873,7 +857,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getForwardedPorts(int index) {
       return forwardedPorts_.get(index);
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getForwardedPortsBytes(int index) {
       return forwardedPorts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -917,7 +899,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +991,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceTag_ = "";
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1102,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1155,7 +1127,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1181,7 +1152,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1206,7 +1176,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1196,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1223,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subnetworkName_ = "";
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1335,7 +1301,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1374,7 +1339,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1373,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1451,7 +1414,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean sessionAffinity_;
-
     /**
      *
      *
@@ -1468,7 +1430,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public boolean getSessionAffinity() {
       return sessionAffinity_;
     }
-
     /**
      *
      *
@@ -1489,7 +1450,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

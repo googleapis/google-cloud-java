@@ -37,7 +37,6 @@ public interface ScheduleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ScheduleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ScheduleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ScheduleOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    * <code>.google.cloud.notebooks.v1.Schedule.State state = 4;</code>
    *
@@ -137,7 +133,6 @@ public interface ScheduleOrBuilder
    * @return The cronSchedule.
    */
   java.lang.String getCronSchedule();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface ScheduleOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public interface ScheduleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface ScheduleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public interface ScheduleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface ScheduleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public interface ScheduleOrBuilder
    * @return Whether the executionTemplate field is set.
    */
   boolean hasExecutionTemplate();
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public interface ScheduleOrBuilder
    * @return The executionTemplate.
    */
   com.google.cloud.notebooks.v1.ExecutionTemplate getExecutionTemplate();
-
   /**
    *
    *
@@ -324,7 +312,6 @@ public interface ScheduleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v1.Execution> getRecentExecutionsList();
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public interface ScheduleOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v1.Execution getRecentExecutions(int index);
-
   /**
    *
    *
@@ -352,7 +338,6 @@ public interface ScheduleOrBuilder
    * </code>
    */
   int getRecentExecutionsCount();
-
   /**
    *
    *
@@ -367,7 +352,6 @@ public interface ScheduleOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1.ExecutionOrBuilder>
       getRecentExecutionsOrBuilderList();
-
   /**
    *
    *

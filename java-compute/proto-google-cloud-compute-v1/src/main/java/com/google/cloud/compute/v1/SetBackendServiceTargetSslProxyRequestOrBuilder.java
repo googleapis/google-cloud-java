@@ -38,7 +38,6 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * @return Whether the targetSslProxiesSetBackendServiceRequestResource field is set.
    */
   boolean hasTargetSslProxiesSetBackendServiceRequestResource();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    */
   com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest
       getTargetSslProxiesSetBackendServiceRequestResource();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * @return The targetSslProxy.
    */
   java.lang.String getTargetSslProxy();
-
   /**
    *
    *

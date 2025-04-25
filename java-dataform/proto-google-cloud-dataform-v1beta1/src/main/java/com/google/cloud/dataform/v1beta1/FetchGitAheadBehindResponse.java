@@ -33,7 +33,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.FetchGitAheadBehindResponse)
     FetchGitAheadBehindResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchGitAheadBehindResponse.newBuilder() to construct.
   private FetchGitAheadBehindResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
 
   public static final int COMMITS_AHEAD_FIELD_NUMBER = 1;
   private int commitsAhead_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
 
   public static final int COMMITS_BEHIND_FIELD_NUMBER = 2;
   private int commitsBehind_ = 0;
-
   /**
    *
    *
@@ -269,7 +266,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -468,7 +464,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int commitsAhead_;
-
     /**
      *
      *
@@ -484,7 +479,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     public int getCommitsAhead() {
       return commitsAhead_;
     }
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     }
 
     private int commitsBehind_;
-
     /**
      *
      *
@@ -540,7 +532,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
     public int getCommitsBehind() {
       return commitsBehind_;
     }
-
     /**
      *
      *
@@ -560,7 +551,6 @@ public final class FetchGitAheadBehindResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

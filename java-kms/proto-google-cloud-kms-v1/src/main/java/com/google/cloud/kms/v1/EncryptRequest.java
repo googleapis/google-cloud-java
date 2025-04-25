@@ -34,7 +34,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.EncryptRequest)
     EncryptRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EncryptRequest.newBuilder() to construct.
   private EncryptRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PLAINTEXT_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString plaintext_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
   public static final int ADDITIONAL_AUTHENTICATED_DATA_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString additionalAuthenticatedData_ =
       com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PLAINTEXT_CRC32C_FIELD_NUMBER = 7;
   private com.google.protobuf.Int64Value plaintextCrc32C_;
-
   /**
    *
    *
@@ -236,7 +230,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPlaintextCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : plaintextCrc32C_;
   }
-
   /**
    *
    *
@@ -313,7 +305,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADDITIONAL_AUTHENTICATED_DATA_CRC32C_FIELD_NUMBER = 8;
   private com.google.protobuf.Int64Value additionalAuthenticatedDataCrc32C_;
-
   /**
    *
    *
@@ -349,7 +340,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdditionalAuthenticatedDataCrc32C() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -387,7 +377,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int64Value.getDefaultInstance()
         : additionalAuthenticatedDataCrc32C_;
   }
-
   /**
    *
    *
@@ -634,7 +623,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -899,7 +887,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -930,7 +917,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -961,7 +947,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -991,7 +976,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +1001,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1033,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString plaintext_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1076,7 +1058,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPlaintext() {
       return plaintext_;
     }
-
     /**
      *
      *
@@ -1108,7 +1089,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1119,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.ByteString additionalAuthenticatedData_ =
         com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1168,7 +1147,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAdditionalAuthenticatedData() {
       return additionalAuthenticatedData_;
     }
-
     /**
      *
      *
@@ -1203,7 +1181,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1218,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         plaintextCrc32CBuilder_;
-
     /**
      *
      *
@@ -1276,7 +1252,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlaintextCrc32C() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1317,7 +1292,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
         return plaintextCrc32CBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1360,7 +1334,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1373,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1420,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1459,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1493,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPlaintextCrc32CFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1562,7 +1531,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
             : plaintextCrc32C_;
       }
     }
-
     /**
      *
      *
@@ -1615,7 +1583,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         additionalAuthenticatedDataCrc32CBuilder_;
-
     /**
      *
      *
@@ -1650,7 +1617,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdditionalAuthenticatedDataCrc32C() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1691,7 +1657,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
         return additionalAuthenticatedDataCrc32CBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1734,7 +1699,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1775,7 +1739,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1824,7 +1787,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1826,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1860,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdditionalAuthenticatedDataCrc32CFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1938,7 +1898,6 @@ public final class EncryptRequest extends com.google.protobuf.GeneratedMessageV3
             : additionalAuthenticatedDataCrc32C_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface DeleteServiceConnectionPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface DeleteServiceConnectionPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface DeleteServiceConnectionPolicyRequestOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface DeleteServiceConnectionPolicyRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

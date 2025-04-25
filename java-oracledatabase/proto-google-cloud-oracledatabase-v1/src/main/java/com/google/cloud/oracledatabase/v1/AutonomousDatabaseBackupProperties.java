@@ -33,7 +33,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties)
     AutonomousDatabaseBackupPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutonomousDatabaseBackupProperties.newBuilder() to construct.
   private AutonomousDatabaseBackupProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -168,7 +167,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -179,7 +177,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
-
     /**
      *
      *
@@ -190,7 +187,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -201,7 +197,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
-
     /**
      *
      *
@@ -212,7 +207,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>DELETED = 4;</code>
      */
     public static final int DELETED_VALUE = 4;
-
     /**
      *
      *
@@ -223,7 +217,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>FAILED = 6;</code>
      */
     public static final int FAILED_VALUE = 6;
-
     /**
      *
      *
@@ -391,7 +384,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -402,7 +394,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>INCREMENTAL = 1;</code>
      */
     public static final int INCREMENTAL_VALUE = 1;
-
     /**
      *
      *
@@ -413,7 +404,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
      * <code>FULL = 2;</code>
      */
     public static final int FULL_VALUE = 2;
-
     /**
      *
      *
@@ -517,7 +507,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ocid_ = "";
-
   /**
    *
    *
@@ -542,7 +531,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -570,7 +558,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int RETENTION_PERIOD_DAYS_FIELD_NUMBER = 2;
   private int retentionPeriodDays_ = 0;
-
   /**
    *
    *
@@ -591,7 +578,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object compartmentId_ = "";
-
   /**
    *
    *
@@ -615,7 +601,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -642,7 +627,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int DATABASE_SIZE_TB_FIELD_NUMBER = 4;
   private float databaseSizeTb_ = 0F;
-
   /**
    *
    *
@@ -663,7 +647,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dbVersion_ = "";
-
   /**
    *
    *
@@ -687,7 +670,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -714,7 +696,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int IS_LONG_TERM_BACKUP_FIELD_NUMBER = 6;
   private boolean isLongTermBackup_ = false;
-
   /**
    *
    *
@@ -733,7 +714,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int IS_AUTOMATIC_BACKUP_FIELD_NUMBER = 7;
   private boolean isAutomaticBackup_ = false;
-
   /**
    *
    *
@@ -752,7 +732,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int IS_RESTORABLE_FIELD_NUMBER = 8;
   private boolean isRestorable_ = false;
-
   /**
    *
    *
@@ -774,7 +753,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyStoreId_ = "";
-
   /**
    *
    *
@@ -798,7 +776,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -827,7 +804,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyStoreWallet_ = "";
-
   /**
    *
    *
@@ -851,7 +827,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -880,7 +855,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyId_ = "";
-
   /**
    *
    *
@@ -905,7 +879,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -935,7 +908,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyVersionId_ = "";
-
   /**
    *
    *
@@ -964,7 +936,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -998,7 +969,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lifecycleDetails_ = "";
-
   /**
    *
    *
@@ -1022,7 +992,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -1049,7 +1018,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int LIFECYCLE_STATE_FIELD_NUMBER = 14;
   private int lifecycleState_ = 0;
-
   /**
    *
    *
@@ -1067,7 +1035,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public int getLifecycleStateValue() {
     return lifecycleState_;
   }
-
   /**
    *
    *
@@ -1094,7 +1061,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int SIZE_TB_FIELD_NUMBER = 15;
   private float sizeTb_ = 0F;
-
   /**
    *
    *
@@ -1113,7 +1079,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int AVAILABLE_TILL_TIME_FIELD_NUMBER = 16;
   private com.google.protobuf.Timestamp availableTillTime_;
-
   /**
    *
    *
@@ -1131,7 +1096,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public boolean hasAvailableTillTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1151,7 +1115,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : availableTillTime_;
   }
-
   /**
    *
    *
@@ -1172,7 +1135,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int END_TIME_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -1189,7 +1151,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1206,7 +1167,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -1224,7 +1184,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int START_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -1241,7 +1200,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1258,7 +1216,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -1276,7 +1233,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   public static final int TYPE_FIELD_NUMBER = 19;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1294,7 +1250,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1321,7 +1276,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vaultId_ = "";
-
   /**
    *
    *
@@ -1345,7 +1299,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -1731,7 +1684,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2218,7 +2170,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object ocid_ = "";
-
     /**
      *
      *
@@ -2242,7 +2193,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2266,7 +2216,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2289,7 +2238,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2308,7 +2256,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2334,7 +2281,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private int retentionPeriodDays_;
-
     /**
      *
      *
@@ -2350,7 +2296,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public int getRetentionPeriodDays() {
       return retentionPeriodDays_;
     }
-
     /**
      *
      *
@@ -2370,7 +2315,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2390,7 +2334,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object compartmentId_ = "";
-
     /**
      *
      *
@@ -2413,7 +2356,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2436,7 +2378,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2458,7 +2399,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2476,7 +2416,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2501,7 +2440,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private float databaseSizeTb_;
-
     /**
      *
      *
@@ -2517,7 +2455,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public float getDatabaseSizeTb() {
       return databaseSizeTb_;
     }
-
     /**
      *
      *
@@ -2537,7 +2474,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2557,7 +2493,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object dbVersion_ = "";
-
     /**
      *
      *
@@ -2580,7 +2515,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2603,7 +2537,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2625,7 +2558,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2575,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2668,7 +2599,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private boolean isLongTermBackup_;
-
     /**
      *
      *
@@ -2684,7 +2614,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public boolean getIsLongTermBackup() {
       return isLongTermBackup_;
     }
-
     /**
      *
      *
@@ -2704,7 +2633,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2724,7 +2652,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private boolean isAutomaticBackup_;
-
     /**
      *
      *
@@ -2740,7 +2667,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public boolean getIsAutomaticBackup() {
       return isAutomaticBackup_;
     }
-
     /**
      *
      *
@@ -2760,7 +2686,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2780,7 +2705,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private boolean isRestorable_;
-
     /**
      *
      *
@@ -2797,7 +2721,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public boolean getIsRestorable() {
       return isRestorable_;
     }
-
     /**
      *
      *
@@ -2818,7 +2741,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2839,7 +2761,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object keyStoreId_ = "";
-
     /**
      *
      *
@@ -2862,7 +2783,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2885,7 +2805,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2907,7 +2826,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2925,7 +2843,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2950,7 +2867,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object keyStoreWallet_ = "";
-
     /**
      *
      *
@@ -2973,7 +2889,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2996,7 +2911,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3018,7 +2932,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3036,7 +2949,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3061,7 +2973,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object kmsKeyId_ = "";
-
     /**
      *
      *
@@ -3085,7 +2996,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3109,7 +3019,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3132,7 +3041,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3151,7 +3059,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3177,7 +3084,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object kmsKeyVersionId_ = "";
-
     /**
      *
      *
@@ -3205,7 +3111,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3233,7 +3138,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3260,7 +3164,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3283,7 +3186,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3215,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object lifecycleDetails_ = "";
-
     /**
      *
      *
@@ -3336,7 +3237,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3359,7 +3259,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3381,7 +3280,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3399,7 +3297,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3424,7 +3321,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private int lifecycleState_ = 0;
-
     /**
      *
      *
@@ -3442,7 +3338,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public int getLifecycleStateValue() {
       return lifecycleState_;
     }
-
     /**
      *
      *
@@ -3463,7 +3358,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3487,7 +3381,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
           ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3512,7 +3405,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3534,7 +3426,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private float sizeTb_;
-
     /**
      *
      *
@@ -3550,7 +3441,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public float getSizeTb() {
       return sizeTb_;
     }
-
     /**
      *
      *
@@ -3570,7 +3460,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3595,7 +3484,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         availableTillTimeBuilder_;
-
     /**
      *
      *
@@ -3612,7 +3500,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public boolean hasAvailableTillTime() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -3635,7 +3522,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return availableTillTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3660,7 +3546,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3682,7 +3567,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3712,7 +3596,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -3734,7 +3617,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3751,7 +3633,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return getAvailableTillTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3772,7 +3653,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
             : availableTillTime_;
       }
     }
-
     /**
      *
      *
@@ -3807,7 +3687,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -3823,7 +3702,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -3843,7 +3721,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3867,7 +3744,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3888,7 +3764,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3917,7 +3792,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -3938,7 +3812,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3954,7 +3827,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3972,7 +3844,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -4006,7 +3877,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -4023,7 +3893,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -4044,7 +3913,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4069,7 +3937,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4091,7 +3958,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4121,7 +3987,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -4143,7 +4008,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4160,7 +4024,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4179,7 +4042,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -4209,7 +4071,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -4227,7 +4088,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -4248,7 +4108,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4271,7 +4130,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
           ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4296,7 +4154,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4318,7 +4175,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
     }
 
     private java.lang.Object vaultId_ = "";
-
     /**
      *
      *
@@ -4341,7 +4197,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4364,7 +4219,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4386,7 +4240,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4404,7 +4257,6 @@ public final class AutonomousDatabaseBackupProperties extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface GetFloorSettingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

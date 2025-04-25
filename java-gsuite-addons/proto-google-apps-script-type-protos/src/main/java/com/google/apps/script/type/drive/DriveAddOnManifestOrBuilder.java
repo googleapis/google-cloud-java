@@ -37,7 +37,6 @@ public interface DriveAddOnManifestOrBuilder
    * @return Whether the homepageTrigger field is set.
    */
   boolean hasHomepageTrigger();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DriveAddOnManifestOrBuilder
    * @return The homepageTrigger.
    */
   com.google.apps.script.type.HomepageExtensionPoint getHomepageTrigger();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DriveAddOnManifestOrBuilder
    * @return Whether the onItemsSelectedTrigger field is set.
    */
   boolean hasOnItemsSelectedTrigger();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface DriveAddOnManifestOrBuilder
    * @return The onItemsSelectedTrigger.
    */
   com.google.apps.script.type.drive.DriveExtensionPoint getOnItemsSelectedTrigger();
-
   /**
    *
    *

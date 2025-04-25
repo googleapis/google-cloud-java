@@ -40,7 +40,6 @@ public interface CloudRunMetadataOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CloudRunMetadataOrBuilder
    * @return A list containing the serviceUrls.
    */
   java.util.List<java.lang.String> getServiceUrlsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CloudRunMetadataOrBuilder
    * @return The count of serviceUrls.
    */
   int getServiceUrlsCount();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface CloudRunMetadataOrBuilder
    * @return The serviceUrls at the given index.
    */
   java.lang.String getServiceUrls(int index);
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface CloudRunMetadataOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface CloudRunMetadataOrBuilder
    * @return The job.
    */
   java.lang.String getJob();
-
   /**
    *
    *

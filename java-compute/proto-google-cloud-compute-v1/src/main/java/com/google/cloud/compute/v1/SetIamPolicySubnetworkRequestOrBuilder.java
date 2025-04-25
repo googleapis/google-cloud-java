@@ -36,7 +36,6 @@ public interface SetIamPolicySubnetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SetIamPolicySubnetworkRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface SetIamPolicySubnetworkRequestOrBuilder
    * @return Whether the regionSetPolicyRequestResource field is set.
    */
   boolean hasRegionSetPolicyRequestResource();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SetIamPolicySubnetworkRequestOrBuilder
    * @return The regionSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.RegionSetPolicyRequest getRegionSetPolicyRequestResource();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface SetIamPolicySubnetworkRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *

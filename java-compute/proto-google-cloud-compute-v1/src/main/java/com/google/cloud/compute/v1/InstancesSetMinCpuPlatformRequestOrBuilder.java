@@ -36,7 +36,6 @@ public interface InstancesSetMinCpuPlatformRequestOrBuilder
    * @return Whether the minCpuPlatform field is set.
    */
   boolean hasMinCpuPlatform();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstancesSetMinCpuPlatformRequestOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
-
   /**
    *
    *

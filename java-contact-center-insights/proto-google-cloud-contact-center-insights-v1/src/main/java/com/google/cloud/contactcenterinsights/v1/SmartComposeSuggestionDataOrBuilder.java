@@ -36,7 +36,6 @@ public interface SmartComposeSuggestionDataOrBuilder
    * @return The suggestion.
    */
   java.lang.String getSuggestion();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface SmartComposeSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -88,11 +86,9 @@ public interface SmartComposeSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface SmartComposeSuggestionDataOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface SmartComposeSuggestionDataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface SmartComposeSuggestionDataOrBuilder
    * @return The queryRecord.
    */
   java.lang.String getQueryRecord();
-
   /**
    *
    *

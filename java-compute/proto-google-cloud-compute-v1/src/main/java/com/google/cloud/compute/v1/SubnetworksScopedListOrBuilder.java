@@ -34,7 +34,6 @@ public interface SubnetworksScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Subnetwork> getSubnetworksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SubnetworksScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   com.google.cloud.compute.v1.Subnetwork getSubnetworks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SubnetworksScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
    */
   int getSubnetworksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SubnetworksScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SubnetworkOrBuilder>
       getSubnetworksOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface SubnetworksScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface SubnetworksScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

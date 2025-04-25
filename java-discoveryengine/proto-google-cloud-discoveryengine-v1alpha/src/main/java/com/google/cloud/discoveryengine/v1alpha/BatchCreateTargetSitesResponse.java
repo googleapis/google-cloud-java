@@ -35,7 +35,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.BatchCreateTargetSitesResponse)
     BatchCreateTargetSitesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCreateTargetSitesResponse.newBuilder() to construct.
   private BatchCreateTargetSitesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.discoveryengine.v1alpha.TargetSite> targetSites_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.cloud.discoveryengine.v1alpha.TargetSite> getTargetSitesList() {
     return targetSites_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       getTargetSitesOrBuilderList() {
     return targetSites_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
   public int getTargetSitesCount() {
     return targetSites_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
   public com.google.cloud.discoveryengine.v1alpha.TargetSite getTargetSites(int index) {
     return targetSites_.get(index);
   }
-
   /**
    *
    *
@@ -307,7 +301,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
         return targetSitesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
         return targetSitesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
         return targetSitesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +698,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +777,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +796,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +809,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
         int index) {
       return getTargetSitesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
         return targetSitesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -864,7 +843,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(targetSites_);
       }
     }
-
     /**
      *
      *
@@ -878,7 +856,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
       return getTargetSitesFieldBuilder()
           .addBuilder(com.google.cloud.discoveryengine.v1alpha.TargetSite.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -894,7 +871,6 @@ public final class BatchCreateTargetSitesResponse extends com.google.protobuf.Ge
           .addBuilder(
               index, com.google.cloud.discoveryengine.v1alpha.TargetSite.getDefaultInstance());
     }
-
     /**
      *
      *

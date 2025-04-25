@@ -33,7 +33,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.MaliciousUriFilterResult)
     MaliciousUriFilterResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaliciousUriFilterResult.newBuilder() to construct.
   private MaliciousUriFilterResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.modelarmor.v1.RangeInfo locations = 2;</code>
      */
     java.util.List<com.google.cloud.modelarmor.v1.RangeInfo> getLocationsList();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.modelarmor.v1.RangeInfo locations = 2;</code>
      */
     com.google.cloud.modelarmor.v1.RangeInfo getLocations(int index);
-
     /**
      *
      *
@@ -136,7 +132,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
      * <code>repeated .google.cloud.modelarmor.v1.RangeInfo locations = 2;</code>
      */
     int getLocationsCount();
-
     /**
      *
      *
@@ -150,7 +145,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.cloud.modelarmor.v1.RangeInfoOrBuilder>
         getLocationsOrBuilderList();
-
     /**
      *
      *
@@ -164,7 +158,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
      */
     com.google.cloud.modelarmor.v1.RangeInfoOrBuilder getLocationsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.MaliciousUriFilterResult.MaliciousUriMatchedItem)
       MaliciousUriMatchedItemOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MaliciousUriMatchedItem.newBuilder() to construct.
     private MaliciousUriMatchedItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -218,7 +210,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -242,7 +233,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return s;
       }
     }
-
     /**
      *
      *
@@ -271,7 +261,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.modelarmor.v1.RangeInfo> locations_;
-
     /**
      *
      *
@@ -287,7 +276,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     public java.util.List<com.google.cloud.modelarmor.v1.RangeInfo> getLocationsList() {
       return locations_;
     }
-
     /**
      *
      *
@@ -304,7 +292,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         getLocationsOrBuilderList() {
       return locations_;
     }
-
     /**
      *
      *
@@ -320,7 +307,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     public int getLocationsCount() {
       return locations_.size();
     }
-
     /**
      *
      *
@@ -336,7 +322,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     public com.google.cloud.modelarmor.v1.RangeInfo getLocations(int index) {
       return locations_.get(index);
     }
-
     /**
      *
      *
@@ -533,7 +518,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       private int bitField0_;
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -823,7 +806,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -846,7 +828,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -868,7 +849,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -886,7 +866,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -945,7 +924,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return locationsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -964,7 +942,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return locationsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -983,7 +960,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return locationsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1008,7 +984,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1031,7 +1006,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1056,7 +1030,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1081,7 +1054,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1104,7 +1076,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1127,7 +1098,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1150,7 +1120,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1172,7 +1141,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1194,7 +1162,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         }
         return this;
       }
-
       /**
        *
        *
@@ -1209,7 +1176,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       public com.google.cloud.modelarmor.v1.RangeInfo.Builder getLocationsBuilder(int index) {
         return getLocationsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1228,7 +1194,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return locationsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1248,7 +1213,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(locations_);
         }
       }
-
       /**
        *
        *
@@ -1264,7 +1228,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return getLocationsFieldBuilder()
             .addBuilder(com.google.cloud.modelarmor.v1.RangeInfo.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1280,7 +1243,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return getLocationsFieldBuilder()
             .addBuilder(index, com.google.cloud.modelarmor.v1.RangeInfo.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1385,7 +1347,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 1;
   private int executionState_ = 0;
-
   /**
    *
    *
@@ -1404,7 +1365,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   public int getExecutionStateValue() {
     return executionState_;
   }
-
   /**
    *
    *
@@ -1432,7 +1392,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.MessageItem> messageItems_;
-
   /**
    *
    *
@@ -1449,7 +1408,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -1467,7 +1425,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       getMessageItemsOrBuilderList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -1484,7 +1441,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   public int getMessageItemsCount() {
     return messageItems_.size();
   }
-
   /**
    *
    *
@@ -1501,7 +1457,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   public com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index) {
     return messageItems_.get(index);
   }
-
   /**
    *
    *
@@ -1521,7 +1476,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
 
   public static final int MATCH_STATE_FIELD_NUMBER = 3;
   private int matchState_ = 0;
-
   /**
    *
    *
@@ -1540,7 +1494,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   public int getMatchStateValue() {
     return matchState_;
   }
-
   /**
    *
    *
@@ -1568,7 +1521,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   private java.util.List<
           com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.MaliciousUriMatchedItem>
       maliciousUriMatchedItems_;
-
   /**
    *
    *
@@ -1586,7 +1538,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       getMaliciousUriMatchedItemsList() {
     return maliciousUriMatchedItems_;
   }
-
   /**
    *
    *
@@ -1606,7 +1557,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       getMaliciousUriMatchedItemsOrBuilderList() {
     return maliciousUriMatchedItems_;
   }
-
   /**
    *
    *
@@ -1622,7 +1572,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
   public int getMaliciousUriMatchedItemsCount() {
     return maliciousUriMatchedItems_.size();
   }
-
   /**
    *
    *
@@ -1639,7 +1588,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       getMaliciousUriMatchedItems(int index) {
     return maliciousUriMatchedItems_.get(index);
   }
-
   /**
    *
    *
@@ -1859,7 +1807,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2175,7 +2122,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int executionState_ = 0;
-
     /**
      *
      *
@@ -2194,7 +2140,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     public int getExecutionStateValue() {
       return executionState_;
     }
-
     /**
      *
      *
@@ -2216,7 +2161,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2183,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           ? com.google.cloud.modelarmor.v1.FilterExecutionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2264,7 +2207,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2322,7 +2264,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return messageItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2342,7 +2283,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return messageItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2362,7 +2302,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return messageItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2388,7 +2327,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2412,7 +2350,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2438,7 +2375,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2464,7 +2400,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2488,7 +2423,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2512,7 +2446,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2536,7 +2469,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2491,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2513,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2598,7 +2528,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     public com.google.cloud.modelarmor.v1.MessageItem.Builder getMessageItemsBuilder(int index) {
       return getMessageItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2618,7 +2547,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return messageItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2639,7 +2567,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(messageItems_);
       }
     }
-
     /**
      *
      *
@@ -2656,7 +2583,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       return getMessageItemsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2673,7 +2599,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       return getMessageItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2709,7 +2634,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     }
 
     private int matchState_ = 0;
-
     /**
      *
      *
@@ -2728,7 +2652,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
     public int getMatchStateValue() {
       return matchState_;
     }
-
     /**
      *
      *
@@ -2750,7 +2673,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2771,7 +2693,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(matchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2796,7 +2717,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2859,7 +2779,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return maliciousUriMatchedItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2878,7 +2797,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return maliciousUriMatchedItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2898,7 +2816,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return maliciousUriMatchedItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2925,7 +2842,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2950,7 +2866,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2976,7 +2891,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3003,7 +2917,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3027,7 +2940,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3052,7 +2964,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3078,7 +2989,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3100,7 +3010,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3122,7 +3031,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -3138,7 +3046,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         getMaliciousUriMatchedItemsBuilder(int index) {
       return getMaliciousUriMatchedItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3158,7 +3065,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return maliciousUriMatchedItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3181,7 +3087,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(maliciousUriMatchedItems_);
       }
     }
-
     /**
      *
      *
@@ -3200,7 +3105,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
               com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.MaliciousUriMatchedItem
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3220,7 +3124,6 @@ public final class MaliciousUriFilterResult extends com.google.protobuf.Generate
               com.google.cloud.modelarmor.v1.MaliciousUriFilterResult.MaliciousUriMatchedItem
                   .getDefaultInstance());
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface NodeTaintOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NodeTaintOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface NodeTaintOrBuilder
    * @return The enum numeric value on the wire for effect.
    */
   int getEffectValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.ListVpnConnectionsResponse)
     ListVpnConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVpnConnectionsResponse.newBuilder() to construct.
   private ListVpnConnectionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgecontainer.v1.VpnConnection> vpnConnections_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.edgecontainer.v1.VpnConnection> getVpnConnectionsList() {
     return vpnConnections_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       getVpnConnectionsOrBuilderList() {
     return vpnConnections_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   public int getVpnConnectionsCount() {
     return vpnConnections_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   public com.google.cloud.edgecontainer.v1.VpnConnection getVpnConnections(int index) {
     return vpnConnections_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -451,7 +439,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +743,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return vpnConnectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return vpnConnectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return vpnConnectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +840,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         int index) {
       return getVpnConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return vpnConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(vpnConnections_);
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       return getVpnConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.edgecontainer.v1.VpnConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1064,7 +1035,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       return getVpnConnectionsFieldBuilder()
           .addBuilder(index, com.google.cloud.edgecontainer.v1.VpnConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1100,7 +1070,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1114,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1135,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1186,7 +1152,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1184,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1235,7 +1199,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1250,7 +1213,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1266,7 +1228,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1282,7 +1243,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1306,7 +1266,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1288,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1307,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1325,6 @@ public final class ListVpnConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

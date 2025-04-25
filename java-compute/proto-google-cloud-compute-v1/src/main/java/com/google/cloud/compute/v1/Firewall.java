@@ -33,7 +33,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Firewall)
     FirewallOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Firewall.newBuilder() to construct.
   private Firewall(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
      * <code>EGRESS = 432880501;</code>
      */
     public static final int EGRESS_VALUE = 432880501;
-
     /**
      *
      *
@@ -242,7 +239,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Allowed> allowed_;
-
   /**
    *
    *
@@ -256,7 +252,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.Allowed> getAllowedList() {
     return allowed_;
   }
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       getAllowedOrBuilderList() {
     return allowed_;
   }
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getAllowedCount() {
     return allowed_.size();
   }
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Allowed getAllowed(int index) {
     return allowed_.get(index);
   }
-
   /**
    *
    *
@@ -318,7 +310,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -334,7 +325,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -358,7 +348,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +376,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Denied> denied_;
-
   /**
    *
    *
@@ -401,7 +389,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.Denied> getDeniedList() {
     return denied_;
   }
-
   /**
    *
    *
@@ -416,7 +403,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       getDeniedOrBuilderList() {
     return denied_;
   }
-
   /**
    *
    *
@@ -430,7 +416,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getDeniedCount() {
     return denied_.size();
   }
-
   /**
    *
    *
@@ -444,7 +429,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Denied getDenied(int index) {
     return denied_.get(index);
   }
-
   /**
    *
    *
@@ -463,7 +447,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -479,7 +462,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -503,7 +485,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -533,7 +514,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destinationRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -548,7 +528,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDestinationRangesList() {
     return destinationRanges_;
   }
-
   /**
    *
    *
@@ -563,7 +542,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getDestinationRangesCount() {
     return destinationRanges_.size();
   }
-
   /**
    *
    *
@@ -579,7 +557,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDestinationRanges(int index) {
     return destinationRanges_.get(index);
   }
-
   /**
    *
    *
@@ -600,7 +577,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object direction_ = "";
-
   /**
    *
    *
@@ -617,7 +593,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDirection() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -642,7 +617,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -670,7 +644,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
   private boolean disabled_ = false;
-
   /**
    *
    *
@@ -686,7 +659,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDisabled() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -705,7 +677,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -721,7 +692,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -742,7 +712,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -758,7 +727,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKind() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -782,7 +750,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -809,7 +776,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
   private com.google.cloud.compute.v1.FirewallLogConfig logConfig_;
-
   /**
    *
    *
@@ -825,7 +791,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLogConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -843,7 +808,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.FirewallLogConfig.getDefaultInstance()
         : logConfig_;
   }
-
   /**
    *
    *
@@ -864,7 +828,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -880,7 +843,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -904,7 +866,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -933,7 +894,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -949,7 +909,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -973,7 +932,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1000,7 +958,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -1016,7 +973,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1037,7 +993,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -1053,7 +1008,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1077,7 +1031,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1107,7 +1060,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1122,7 +1074,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSourceRangesList() {
     return sourceRanges_;
   }
-
   /**
    *
    *
@@ -1137,7 +1088,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getSourceRangesCount() {
     return sourceRanges_.size();
   }
-
   /**
    *
    *
@@ -1153,7 +1103,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSourceRanges(int index) {
     return sourceRanges_.get(index);
   }
-
   /**
    *
    *
@@ -1175,7 +1124,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceServiceAccounts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1190,7 +1138,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSourceServiceAccountsList() {
     return sourceServiceAccounts_;
   }
-
   /**
    *
    *
@@ -1205,7 +1152,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getSourceServiceAccountsCount() {
     return sourceServiceAccounts_.size();
   }
-
   /**
    *
    *
@@ -1221,7 +1167,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSourceServiceAccounts(int index) {
     return sourceServiceAccounts_.get(index);
   }
-
   /**
    *
    *
@@ -1243,7 +1188,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1258,7 +1202,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSourceTagsList() {
     return sourceTags_;
   }
-
   /**
    *
    *
@@ -1273,7 +1216,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getSourceTagsCount() {
     return sourceTags_.size();
   }
-
   /**
    *
    *
@@ -1289,7 +1231,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSourceTags(int index) {
     return sourceTags_.get(index);
   }
-
   /**
    *
    *
@@ -1311,7 +1252,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetServiceAccounts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1326,7 +1266,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTargetServiceAccountsList() {
     return targetServiceAccounts_;
   }
-
   /**
    *
    *
@@ -1341,7 +1280,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getTargetServiceAccountsCount() {
     return targetServiceAccounts_.size();
   }
-
   /**
    *
    *
@@ -1357,7 +1295,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTargetServiceAccounts(int index) {
     return targetServiceAccounts_.get(index);
   }
-
   /**
    *
    *
@@ -1379,7 +1316,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1394,7 +1330,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTargetTagsList() {
     return targetTags_;
   }
-
   /**
    *
    *
@@ -1409,7 +1344,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public int getTargetTagsCount() {
     return targetTags_.size();
   }
-
   /**
    *
    *
@@ -1425,7 +1359,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTargetTags(int index) {
     return targetTags_.get(index);
   }
-
   /**
    *
    *
@@ -1867,7 +1800,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2499,7 +2431,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return allowedBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2516,7 +2447,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return allowedBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2533,7 +2463,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return allowedBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2556,7 +2485,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2577,7 +2505,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2527,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2623,7 +2549,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2568,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2664,7 +2588,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2685,7 +2608,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2705,7 +2627,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2725,7 +2646,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2738,7 +2658,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Allowed.Builder getAllowedBuilder(int index) {
       return getAllowedFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2755,7 +2674,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return allowedBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2773,7 +2691,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(allowed_);
       }
     }
-
     /**
      *
      *
@@ -2787,7 +2704,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return getAllowedFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Allowed.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2801,7 +2717,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return getAllowedFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Allowed.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2833,7 +2748,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -2848,7 +2762,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2871,7 +2784,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2894,7 +2806,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2916,7 +2827,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2934,7 +2844,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2990,7 +2899,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return deniedBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3007,7 +2915,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return deniedBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3024,7 +2931,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return deniedBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3047,7 +2953,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3068,7 +2973,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3091,7 +2995,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3114,7 +3017,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3134,7 +3036,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3155,7 +3056,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3176,7 +3076,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3196,7 +3095,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3216,7 +3114,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3229,7 +3126,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Denied.Builder getDeniedBuilder(int index) {
       return getDeniedFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3246,7 +3142,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return deniedBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3264,7 +3159,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(denied_);
       }
     }
-
     /**
      *
      *
@@ -3278,7 +3172,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return getDeniedFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Denied.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3292,7 +3185,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       return getDeniedFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Denied.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3324,7 +3216,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3339,7 +3230,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3362,7 +3252,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3385,7 +3274,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3407,7 +3295,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3425,7 +3312,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3458,7 +3344,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -3474,7 +3359,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       destinationRanges_.makeImmutable();
       return destinationRanges_;
     }
-
     /**
      *
      *
@@ -3489,7 +3373,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getDestinationRangesCount() {
       return destinationRanges_.size();
     }
-
     /**
      *
      *
@@ -3505,7 +3388,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDestinationRanges(int index) {
       return destinationRanges_.get(index);
     }
-
     /**
      *
      *
@@ -3521,7 +3403,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDestinationRangesBytes(int index) {
       return destinationRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3545,7 +3426,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3568,7 +3448,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3588,7 +3467,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3607,7 +3485,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3633,7 +3510,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object direction_ = "";
-
     /**
      *
      *
@@ -3649,7 +3525,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDirection() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3673,7 +3548,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3697,7 +3571,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3720,7 +3593,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3739,7 +3611,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3765,7 +3636,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disabled_;
-
     /**
      *
      *
@@ -3781,7 +3651,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDisabled() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3797,7 +3666,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
-
     /**
      *
      *
@@ -3817,7 +3685,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3837,7 +3704,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long id_;
-
     /**
      *
      *
@@ -3853,7 +3719,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasId() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3869,7 +3734,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -3889,7 +3753,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3909,7 +3772,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -3924,7 +3786,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKind() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3947,7 +3808,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3970,7 +3830,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3992,7 +3851,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4010,7 +3868,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4040,7 +3897,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.FirewallLogConfig.Builder,
             com.google.cloud.compute.v1.FirewallLogConfigOrBuilder>
         logConfigBuilder_;
-
     /**
      *
      *
@@ -4055,7 +3911,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLogConfig() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4076,7 +3931,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return logConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4099,7 +3953,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4120,7 +3973,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4148,7 +4000,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4168,7 +4019,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4183,7 +4033,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4202,7 +4051,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
             : logConfig_;
       }
     }
-
     /**
      *
      *
@@ -4230,7 +4078,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4245,7 +4092,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4268,7 +4114,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4291,7 +4136,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4313,7 +4157,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4331,7 +4174,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4356,7 +4198,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -4371,7 +4212,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4394,7 +4234,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4417,7 +4256,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4439,7 +4277,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4457,7 +4294,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4482,7 +4318,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int priority_;
-
     /**
      *
      *
@@ -4498,7 +4333,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPriority() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4514,7 +4348,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -4534,7 +4367,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4554,7 +4386,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -4569,7 +4400,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4592,7 +4422,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4615,7 +4444,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4637,7 +4465,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4655,7 +4482,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4688,7 +4514,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00004000;
     }
-
     /**
      *
      *
@@ -4704,7 +4529,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       sourceRanges_.makeImmutable();
       return sourceRanges_;
     }
-
     /**
      *
      *
@@ -4719,7 +4543,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getSourceRangesCount() {
       return sourceRanges_.size();
     }
-
     /**
      *
      *
@@ -4735,7 +4558,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSourceRanges(int index) {
       return sourceRanges_.get(index);
     }
-
     /**
      *
      *
@@ -4751,7 +4573,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSourceRangesBytes(int index) {
       return sourceRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4775,7 +4596,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4798,7 +4618,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4818,7 +4637,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4837,7 +4655,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4872,7 +4689,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00008000;
     }
-
     /**
      *
      *
@@ -4888,7 +4704,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       sourceServiceAccounts_.makeImmutable();
       return sourceServiceAccounts_;
     }
-
     /**
      *
      *
@@ -4903,7 +4718,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getSourceServiceAccountsCount() {
       return sourceServiceAccounts_.size();
     }
-
     /**
      *
      *
@@ -4919,7 +4733,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSourceServiceAccounts(int index) {
       return sourceServiceAccounts_.get(index);
     }
-
     /**
      *
      *
@@ -4935,7 +4748,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSourceServiceAccountsBytes(int index) {
       return sourceServiceAccounts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4959,7 +4771,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4982,7 +4793,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5002,7 +4812,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5021,7 +4830,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5055,7 +4863,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00010000;
     }
-
     /**
      *
      *
@@ -5071,7 +4878,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       sourceTags_.makeImmutable();
       return sourceTags_;
     }
-
     /**
      *
      *
@@ -5086,7 +4892,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getSourceTagsCount() {
       return sourceTags_.size();
     }
-
     /**
      *
      *
@@ -5102,7 +4907,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSourceTags(int index) {
       return sourceTags_.get(index);
     }
-
     /**
      *
      *
@@ -5118,7 +4922,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSourceTagsBytes(int index) {
       return sourceTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5142,7 +4945,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5165,7 +4967,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5185,7 +4986,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5204,7 +5004,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5239,7 +5038,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00020000;
     }
-
     /**
      *
      *
@@ -5255,7 +5053,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       targetServiceAccounts_.makeImmutable();
       return targetServiceAccounts_;
     }
-
     /**
      *
      *
@@ -5270,7 +5067,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getTargetServiceAccountsCount() {
       return targetServiceAccounts_.size();
     }
-
     /**
      *
      *
@@ -5286,7 +5082,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTargetServiceAccounts(int index) {
       return targetServiceAccounts_.get(index);
     }
-
     /**
      *
      *
@@ -5302,7 +5097,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTargetServiceAccountsBytes(int index) {
       return targetServiceAccounts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5326,7 +5120,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5349,7 +5142,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5369,7 +5161,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5388,7 +5179,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5422,7 +5212,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00040000;
     }
-
     /**
      *
      *
@@ -5438,7 +5227,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       targetTags_.makeImmutable();
       return targetTags_;
     }
-
     /**
      *
      *
@@ -5453,7 +5241,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public int getTargetTagsCount() {
       return targetTags_.size();
     }
-
     /**
      *
      *
@@ -5469,7 +5256,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTargetTags(int index) {
       return targetTags_.get(index);
     }
-
     /**
      *
      *
@@ -5485,7 +5271,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTargetTagsBytes(int index) {
       return targetTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5509,7 +5294,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5532,7 +5316,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5552,7 +5335,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5571,7 +5353,6 @@ public final class Firewall extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

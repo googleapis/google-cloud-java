@@ -41,23 +41,23 @@ public final class CommonProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ",google/cloud/networksecurity/v1/common"
+      "\n,google/cloud/networksecurity/v1/common"
           + ".proto\022\037google.cloud.networksecurity.v1\032"
-          + "\037google/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\200\002\n"
-          + "\021OperationMetadata\0224\n"
-          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
-          + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
-          + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
-          + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
-          + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\003B\354\001\n"
-          + "#com.google.cloud.networksecurity.v1B\013CommonProtoP\001ZMcloud.google.com/go"
+          + "\037google/api/field_behavior.proto\032\037google"
+          + "/protobuf/timestamp.proto\"\200\002\n\021OperationM"
+          + "etadata\0224\n\013create_time\030\001 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132"
+          + "\032.google.protobuf.TimestampB\003\340A\003\022\023\n\006targ"
+          + "et\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016stat"
+          + "us_message\030\005 \001(\tB\003\340A\003\022#\n\026requested_cance"
+          + "llation\030\006 \001(\010B\003\340A\003\022\030\n\013api_version\030\007 \001(\tB"
+          + "\003\340A\003B\354\001\n#com.google.cloud.networksecurit"
+          + "y.v1B\013CommonProtoP\001ZMcloud.google.com/go"
           + "/networksecurity/apiv1/networksecuritypb"
           + ";networksecuritypb\252\002\037Google.Cloud.Networ"
           + "kSecurity.V1\312\002\037Google\\Cloud\\NetworkSecur"
-          + "ity\\V1\352\002\"Google::Cloud::NetworkSecurity::V1b\006proto3"
+          + "ity\\V1\352\002\"Google::Cloud::NetworkSecurity:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

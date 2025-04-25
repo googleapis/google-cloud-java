@@ -39,7 +39,6 @@ public interface ListAutonomousDatabaseCharacterSetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ListAutonomousDatabaseCharacterSetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface ListAutonomousDatabaseCharacterSetsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

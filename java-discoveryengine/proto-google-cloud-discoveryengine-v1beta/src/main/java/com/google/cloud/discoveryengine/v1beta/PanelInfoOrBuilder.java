@@ -36,7 +36,6 @@ public interface PanelInfoOrBuilder
    * @return The panelId.
    */
   java.lang.String getPanelId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PanelInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface PanelInfoOrBuilder
    * @return Whether the panelPosition field is set.
    */
   boolean hasPanelPosition();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface PanelInfoOrBuilder
    * @return Whether the totalPanels field is set.
    */
   boolean hasTotalPanels();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface PanelInfoOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.DocumentInfo> getDocumentsList();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface PanelInfoOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.DocumentInfo getDocuments(int index);
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface PanelInfoOrBuilder
    * </code>
    */
   int getDocumentsCount();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface PanelInfoOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.DocumentInfoOrBuilder>
       getDocumentsOrBuilderList();
-
   /**
    *
    *

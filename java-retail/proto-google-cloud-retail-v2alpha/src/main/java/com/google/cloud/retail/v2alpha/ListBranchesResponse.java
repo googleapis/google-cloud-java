@@ -35,7 +35,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ListBranchesResponse)
     ListBranchesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBranchesResponse.newBuilder() to construct.
   private ListBranchesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.Branch> branches_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.retail.v2alpha.Branch> getBranchesList() {
     return branches_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       getBranchesOrBuilderList() {
     return branches_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
   public int getBranchesCount() {
     return branches_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.retail.v2alpha.Branch getBranches(int index) {
     return branches_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
         return branchesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
         return branchesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
         return branchesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +737,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +756,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +775,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +787,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.retail.v2alpha.Branch.Builder getBranchesBuilder(int index) {
       return getBranchesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -823,7 +803,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
         return branchesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -841,7 +820,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(branches_);
       }
     }
-
     /**
      *
      *
@@ -855,7 +833,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       return getBranchesFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2alpha.Branch.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -869,7 +846,6 @@ public final class ListBranchesResponse extends com.google.protobuf.GeneratedMes
       return getBranchesFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2alpha.Branch.getDefaultInstance());
     }
-
     /**
      *
      *

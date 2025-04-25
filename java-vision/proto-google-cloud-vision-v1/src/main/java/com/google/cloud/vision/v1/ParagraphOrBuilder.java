@@ -36,7 +36,6 @@ public interface ParagraphOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ParagraphOrBuilder
    * @return The property.
    */
   com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ParagraphOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ParagraphOrBuilder
    * @return The boundingBox.
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingBox();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface ParagraphOrBuilder
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
   java.util.List<com.google.cloud.vision.v1.Word> getWordsList();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ParagraphOrBuilder
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
   com.google.cloud.vision.v1.Word getWords(int index);
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface ParagraphOrBuilder
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
   int getWordsCount();
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public interface ParagraphOrBuilder
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
   java.util.List<? extends com.google.cloud.vision.v1.WordOrBuilder> getWordsOrBuilderList();
-
   /**
    *
    *

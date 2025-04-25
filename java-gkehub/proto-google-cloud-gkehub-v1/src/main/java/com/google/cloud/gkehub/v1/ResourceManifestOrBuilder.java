@@ -36,7 +36,6 @@ public interface ResourceManifestOrBuilder
    * @return The manifest.
    */
   java.lang.String getManifest();
-
   /**
    *
    *

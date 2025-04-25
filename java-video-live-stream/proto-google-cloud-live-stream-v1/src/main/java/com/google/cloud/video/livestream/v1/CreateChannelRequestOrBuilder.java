@@ -39,7 +39,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateChannelRequestOrBuilder
    * @return Whether the channel field is set.
    */
   boolean hasChannel();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The channel.
    */
   com.google.cloud.video.livestream.v1.Channel getChannel();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The channelId.
    */
   java.lang.String getChannelId();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateChannelRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

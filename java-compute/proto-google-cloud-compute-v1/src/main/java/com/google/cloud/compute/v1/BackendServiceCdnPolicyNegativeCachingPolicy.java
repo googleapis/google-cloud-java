@@ -34,7 +34,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceCdnPolicyNegativeCachingPolicy)
     BackendServiceCdnPolicyNegativeCachingPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackendServiceCdnPolicyNegativeCachingPolicy.newBuilder() to construct.
   private BackendServiceCdnPolicyNegativeCachingPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
   private int code_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
   public boolean hasCode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
 
   public static final int TTL_FIELD_NUMBER = 115180;
   private int ttl_ = 0;
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
   public boolean hasTtl() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +311,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -526,7 +520,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     private int bitField0_;
 
     private int code_;
-
     /**
      *
      *
@@ -542,7 +535,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     public boolean hasCode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -558,7 +550,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     public int getCode() {
       return code_;
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     }
 
     private int ttl_;
-
     /**
      *
      *
@@ -614,7 +603,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     public boolean hasTtl() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -630,7 +618,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
     public int getTtl() {
       return ttl_;
     }
-
     /**
      *
      *
@@ -650,7 +637,6 @@ public final class BackendServiceCdnPolicyNegativeCachingPolicy
       onChanged();
       return this;
     }
-
     /**
      *
      *

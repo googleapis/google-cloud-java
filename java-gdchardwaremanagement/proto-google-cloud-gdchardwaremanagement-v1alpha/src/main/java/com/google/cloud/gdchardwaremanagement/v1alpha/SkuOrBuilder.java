@@ -37,7 +37,6 @@ public interface SkuOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SkuOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface SkuOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SkuOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface SkuOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface SkuOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface SkuOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface SkuOrBuilder
    * @return The config.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SkuConfig getConfig();
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public interface SkuOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance> getInstancesList();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface SkuOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstance getInstances(int index);
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface SkuOrBuilder
    * </code>
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface SkuOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.SkuInstanceOrBuilder>
       getInstancesOrBuilderList();
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public interface SkuOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -313,7 +300,6 @@ public interface SkuOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
-
   /**
    *
    *
@@ -357,7 +343,6 @@ public interface SkuOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -385,77 +370,4 @@ public interface SkuOrBuilder
    * @return The vcpuCount.
    */
   int getVcpuCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The inclusive ranges of hardware counts that are allowed in a
-   * zone using this SKU.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
-      getHardwareCountRangesList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The inclusive ranges of hardware counts that are allowed in a
-   * zone using this SKU.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getHardwareCountRanges(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The inclusive ranges of hardware counts that are allowed in a
-   * zone using this SKU.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  int getHardwareCountRangesCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The inclusive ranges of hardware counts that are allowed in a
-   * zone using this SKU.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>
-      getHardwareCountRangesOrBuilderList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. The inclusive ranges of hardware counts that are allowed in a
-   * zone using this SKU.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder getHardwareCountRangesOrBuilder(
-      int index);
 }

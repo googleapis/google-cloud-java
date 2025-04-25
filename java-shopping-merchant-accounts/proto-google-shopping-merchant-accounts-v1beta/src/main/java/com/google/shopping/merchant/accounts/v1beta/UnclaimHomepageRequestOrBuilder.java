@@ -39,7 +39,6 @@ public interface UnclaimHomepageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

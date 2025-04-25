@@ -34,7 +34,6 @@ public interface InstanceSettingsMetadataOrBuilder
    * <code>map&lt;string, string&gt; items = 100526016;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface InstanceSettingsMetadataOrBuilder
    * <code>map&lt;string, string&gt; items = 100526016;</code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getItems();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface InstanceSettingsMetadataOrBuilder
    * <code>map&lt;string, string&gt; items = 100526016;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getItemsMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface InstanceSettingsMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -99,7 +94,6 @@ public interface InstanceSettingsMetadataOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface InstanceSettingsMetadataOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface HttpRetryPolicyOrBuilder
    * @return Whether the numRetries field is set.
    */
   boolean hasNumRetries();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HttpRetryPolicyOrBuilder
    * @return Whether the perTryTimeout field is set.
    */
   boolean hasPerTryTimeout();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface HttpRetryPolicyOrBuilder
    * @return The perTryTimeout.
    */
   com.google.cloud.compute.v1.Duration getPerTryTimeout();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface HttpRetryPolicyOrBuilder
    * @return A list containing the retryConditions.
    */
   java.util.List<java.lang.String> getRetryConditionsList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface HttpRetryPolicyOrBuilder
    * @return The count of retryConditions.
    */
   int getRetryConditionsCount();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface HttpRetryPolicyOrBuilder
    * @return The retryConditions at the given index.
    */
   java.lang.String getRetryConditions(int index);
-
   /**
    *
    *

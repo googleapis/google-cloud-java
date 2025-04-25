@@ -34,7 +34,6 @@ public final class CustomTargetingKeyTypeEnum extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingKeyTypeEnum)
     CustomTargetingKeyTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomTargetingKeyTypeEnum.newBuilder() to construct.
   private CustomTargetingKeyTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,7 +115,6 @@ public final class CustomTargetingKeyTypeEnum extends com.google.protobuf.Genera
      * <code>CUSTOM_TARGETING_KEY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CUSTOM_TARGETING_KEY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -127,7 +125,6 @@ public final class CustomTargetingKeyTypeEnum extends com.google.protobuf.Genera
      * <code>PREDEFINED = 1;</code>
      */
     public static final int PREDEFINED_VALUE = 1;
-
     /**
      *
      *
@@ -378,7 +375,6 @@ public final class CustomTargetingKeyTypeEnum extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

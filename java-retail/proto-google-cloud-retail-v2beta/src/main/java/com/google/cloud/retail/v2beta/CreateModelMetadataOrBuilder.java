@@ -38,7 +38,6 @@ public interface CreateModelMetadataOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

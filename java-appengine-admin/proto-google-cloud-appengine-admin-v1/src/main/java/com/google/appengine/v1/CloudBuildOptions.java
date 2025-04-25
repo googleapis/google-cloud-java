@@ -35,7 +35,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.appengine.v1.CloudBuildOptions)
     CloudBuildOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudBuildOptions.newBuilder() to construct.
   private CloudBuildOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appYamlPath_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
 
   public static final int CLOUD_BUILD_TIMEOUT_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration cloudBuildTimeout_;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
   public boolean hasCloudBuildTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : cloudBuildTimeout_;
   }
-
   /**
    *
    *
@@ -361,7 +355,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object appYamlPath_ = "";
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         cloudBuildTimeoutBuilder_;
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
     public boolean hasCloudBuildTimeout() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
         return cloudBuildTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCloudBuildTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class CloudBuildOptions extends com.google.protobuf.GeneratedMessag
             : cloudBuildTimeout_;
       }
     }
-
     /**
      *
      *

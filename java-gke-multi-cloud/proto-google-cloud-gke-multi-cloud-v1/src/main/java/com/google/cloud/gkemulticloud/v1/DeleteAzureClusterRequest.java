@@ -33,7 +33,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest)
     DeleteAzureClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteAzureClusterRequest.newBuilder() to construct.
   private DeleteAzureClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 2;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
 
   public static final int IGNORE_ERRORS_FIELD_NUMBER = 5;
   private boolean ignoreErrors_ = false;
-
   /**
    *
    *
@@ -462,7 +454,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +692,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -733,7 +723,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -765,7 +754,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +784,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +810,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +843,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -903,7 +887,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +911,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -944,7 +926,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +964,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1013,7 +992,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1020,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1047,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1070,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1100,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     }
 
     private boolean ignoreErrors_;
-
     /**
      *
      *
@@ -1144,7 +1118,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
     public boolean getIgnoreErrors() {
       return ignoreErrors_;
     }
-
     /**
      *
      *
@@ -1167,7 +1140,6 @@ public final class DeleteAzureClusterRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

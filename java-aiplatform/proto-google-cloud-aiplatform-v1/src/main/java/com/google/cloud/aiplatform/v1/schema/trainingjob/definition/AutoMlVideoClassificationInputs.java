@@ -29,7 +29,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs)
     AutoMlVideoClassificationInputsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlVideoClassificationInputs.newBuilder() to construct.
   private AutoMlVideoClassificationInputs(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -128,7 +127,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
      * <code>CLOUD = 1;</code>
      */
     public static final int CLOUD_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
      * <code>MOBILE_VERSATILE_1 = 2;</code>
      */
     public static final int MOBILE_VERSATILE_1_VALUE = 2;
-
     /**
      *
      *
@@ -257,7 +253,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;
@@ -269,7 +264,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
   public int getModelTypeValue() {
     return modelType_;
   }
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;
@@ -483,7 +477,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs}
@@ -689,7 +682,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
     private int bitField0_;
 
     private int modelType_ = 0;
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;
@@ -701,7 +693,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
     public int getModelTypeValue() {
       return modelType_;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;
@@ -716,7 +707,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;
@@ -738,7 +728,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
               .AutoMlVideoClassificationInputs.ModelType.UNRECOGNIZED
           : result;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;
@@ -759,7 +748,6 @@ public final class AutoMlVideoClassificationInputs extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;

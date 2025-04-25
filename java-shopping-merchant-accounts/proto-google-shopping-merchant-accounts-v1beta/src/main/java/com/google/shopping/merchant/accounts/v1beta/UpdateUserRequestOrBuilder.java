@@ -41,7 +41,6 @@ public interface UpdateUserRequestOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateUserRequestOrBuilder
    * @return The user.
    */
   com.google.shopping.merchant.accounts.v1beta.User getUser();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateUserRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateUserRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

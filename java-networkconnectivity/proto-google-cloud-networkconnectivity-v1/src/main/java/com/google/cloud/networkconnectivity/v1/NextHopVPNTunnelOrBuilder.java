@@ -36,7 +36,6 @@ public interface NextHopVPNTunnelOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NextHopVPNTunnelOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.NetworkInterface)
     NetworkInterfaceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkInterface.newBuilder() to construct.
   private NetworkInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>NIC_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NIC_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>VIRTIO_NET = 1;</code>
      */
     public static final int VIRTIO_NET_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -256,7 +252,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +282,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subnet_ = "";
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -342,7 +335,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
   public static final int NIC_TYPE_FIELD_NUMBER = 3;
   private int nicType_ = 0;
-
   /**
    *
    *
@@ -361,7 +353,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   public int getNicTypeValue() {
     return nicType_;
   }
-
   /**
    *
    *
@@ -566,7 +557,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -778,7 +768,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -803,7 +792,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +816,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +839,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +858,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +884,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object subnet_ = "";
-
     /**
      *
      *
@@ -924,7 +908,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +932,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -973,7 +955,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +974,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +1000,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
 
     private int nicType_ = 0;
-
     /**
      *
      *
@@ -1039,7 +1018,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public int getNicTypeValue() {
       return nicType_;
     }
-
     /**
      *
      *
@@ -1061,7 +1039,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1061,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.notebooks.v2.NetworkInterface.NicType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1109,7 +1085,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

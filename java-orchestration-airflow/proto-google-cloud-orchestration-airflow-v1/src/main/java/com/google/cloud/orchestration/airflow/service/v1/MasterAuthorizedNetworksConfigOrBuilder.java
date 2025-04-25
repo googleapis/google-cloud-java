@@ -28,10 +28,10 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether or not master authorized networks feature is enabled.
+   * Whether or not master authorized networks feature is enabled.
    * </pre>
    *
-   * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool enabled = 1;</code>
    *
    * @return The enabled.
    */
@@ -53,7 +53,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
           com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
               .CidrBlock>
       getCidrBlocksList();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig.CidrBlock
       getCidrBlocks(int index);
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * </code>
    */
   int getCidrBlocksCount();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
               com.google.cloud.orchestration.airflow.service.v1.MasterAuthorizedNetworksConfig
                   .CidrBlockOrBuilder>
       getCidrBlocksOrBuilderList();
-
   /**
    *
    *

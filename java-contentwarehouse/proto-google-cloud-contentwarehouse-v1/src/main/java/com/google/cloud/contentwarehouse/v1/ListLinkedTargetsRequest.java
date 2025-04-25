@@ -33,7 +33,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest)
     ListLinkedTargetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLinkedTargetsRequest.newBuilder() to construct.
   private ListLinkedTargetsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
         return requestMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class ListLinkedTargetsRequest extends com.google.protobuf.Generate
             : requestMetadata_;
       }
     }
-
     /**
      *
      *

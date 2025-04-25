@@ -39,7 +39,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The advertiserId.
    */
   java.lang.String getAdvertiserId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface SearchAds360LinkOrBuilder
    * @return Whether the campaignDataSharingEnabled field is set.
    */
   boolean hasCampaignDataSharingEnabled();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The campaignDataSharingEnabled.
    */
   com.google.protobuf.BoolValue getCampaignDataSharingEnabled();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface SearchAds360LinkOrBuilder
    * @return Whether the costDataSharingEnabled field is set.
    */
   boolean hasCostDataSharingEnabled();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The costDataSharingEnabled.
    */
   com.google.protobuf.BoolValue getCostDataSharingEnabled();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The advertiserDisplayName.
    */
   java.lang.String getAdvertiserDisplayName();
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public interface SearchAds360LinkOrBuilder
    * @return Whether the adsPersonalizationEnabled field is set.
    */
   boolean hasAdsPersonalizationEnabled();
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The adsPersonalizationEnabled.
    */
   com.google.protobuf.BoolValue getAdsPersonalizationEnabled();
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public interface SearchAds360LinkOrBuilder
    * @return Whether the siteStatsSharingEnabled field is set.
    */
   boolean hasSiteStatsSharingEnabled();
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public interface SearchAds360LinkOrBuilder
    * @return The siteStatsSharingEnabled.
    */
   com.google.protobuf.BoolValue getSiteStatsSharingEnabled();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata)
     TrainProcessorVersionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrainProcessorVersionMetadata.newBuilder() to construct.
   private TrainProcessorVersionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -105,7 +104,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status document_errors = 1;</code>
      */
     java.util.List<com.google.rpc.Status> getDocumentErrorsList();
-
     /**
      *
      *
@@ -118,7 +116,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status document_errors = 1;</code>
      */
     com.google.rpc.Status getDocumentErrors(int index);
-
     /**
      *
      *
@@ -131,7 +128,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status document_errors = 1;</code>
      */
     int getDocumentErrorsCount();
-
     /**
      *
      *
@@ -144,7 +140,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status document_errors = 1;</code>
      */
     java.util.List<? extends com.google.rpc.StatusOrBuilder> getDocumentErrorsOrBuilderList();
-
     /**
      *
      *
@@ -170,7 +165,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status dataset_errors = 2;</code>
      */
     java.util.List<com.google.rpc.Status> getDatasetErrorsList();
-
     /**
      *
      *
@@ -183,7 +177,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status dataset_errors = 2;</code>
      */
     com.google.rpc.Status getDatasetErrors(int index);
-
     /**
      *
      *
@@ -196,7 +189,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status dataset_errors = 2;</code>
      */
     int getDatasetErrorsCount();
-
     /**
      *
      *
@@ -209,7 +201,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      * <code>repeated .google.rpc.Status dataset_errors = 2;</code>
      */
     java.util.List<? extends com.google.rpc.StatusOrBuilder> getDatasetErrorsOrBuilderList();
-
     /**
      *
      *
@@ -223,7 +214,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
      */
     com.google.rpc.StatusOrBuilder getDatasetErrorsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation)
       DatasetValidationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DatasetValidation.newBuilder() to construct.
     private DatasetValidation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -276,7 +265,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
 
     public static final int DOCUMENT_ERROR_COUNT_FIELD_NUMBER = 3;
     private int documentErrorCount_ = 0;
-
     /**
      *
      *
@@ -295,7 +283,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
 
     public static final int DATASET_ERROR_COUNT_FIELD_NUMBER = 4;
     private int datasetErrorCount_ = 0;
-
     /**
      *
      *
@@ -316,7 +303,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.rpc.Status> documentErrors_;
-
     /**
      *
      *
@@ -332,7 +318,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public java.util.List<com.google.rpc.Status> getDocumentErrorsList() {
       return documentErrors_;
     }
-
     /**
      *
      *
@@ -349,7 +334,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         getDocumentErrorsOrBuilderList() {
       return documentErrors_;
     }
-
     /**
      *
      *
@@ -365,7 +349,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public int getDocumentErrorsCount() {
       return documentErrors_.size();
     }
-
     /**
      *
      *
@@ -381,7 +364,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public com.google.rpc.Status getDocumentErrors(int index) {
       return documentErrors_.get(index);
     }
-
     /**
      *
      *
@@ -402,7 +384,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.rpc.Status> datasetErrors_;
-
     /**
      *
      *
@@ -418,7 +399,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public java.util.List<com.google.rpc.Status> getDatasetErrorsList() {
       return datasetErrors_;
     }
-
     /**
      *
      *
@@ -435,7 +415,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         getDatasetErrorsOrBuilderList() {
       return datasetErrors_;
     }
-
     /**
      *
      *
@@ -451,7 +430,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public int getDatasetErrorsCount() {
       return datasetErrors_.size();
     }
-
     /**
      *
      *
@@ -467,7 +445,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public com.google.rpc.Status getDatasetErrors(int index) {
       return datasetErrors_.get(index);
     }
-
     /**
      *
      *
@@ -697,7 +674,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1033,7 +1009,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       private int bitField0_;
 
       private int documentErrorCount_;
-
       /**
        *
        *
@@ -1049,7 +1024,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public int getDocumentErrorCount() {
         return documentErrorCount_;
       }
-
       /**
        *
        *
@@ -1069,7 +1043,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1089,7 +1062,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       }
 
       private int datasetErrorCount_;
-
       /**
        *
        *
@@ -1105,7 +1077,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public int getDatasetErrorCount() {
         return datasetErrorCount_;
       }
-
       /**
        *
        *
@@ -1125,7 +1096,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1176,7 +1146,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return documentErrorsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1195,7 +1164,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return documentErrorsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1214,7 +1182,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return documentErrorsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1239,7 +1206,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1261,7 +1227,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1286,7 +1251,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1311,7 +1275,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1333,7 +1296,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1355,7 +1317,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1378,7 +1339,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1400,7 +1360,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1422,7 +1381,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1437,7 +1395,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public com.google.rpc.Status.Builder getDocumentErrorsBuilder(int index) {
         return getDocumentErrorsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1456,7 +1413,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return documentErrorsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1476,7 +1432,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return java.util.Collections.unmodifiableList(documentErrors_);
         }
       }
-
       /**
        *
        *
@@ -1492,7 +1447,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return getDocumentErrorsFieldBuilder()
             .addBuilder(com.google.rpc.Status.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1508,7 +1462,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return getDocumentErrorsFieldBuilder()
             .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1574,7 +1527,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return datasetErrorsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1593,7 +1545,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return datasetErrorsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1612,7 +1563,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return datasetErrorsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1637,7 +1587,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1659,7 +1608,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1684,7 +1632,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1709,7 +1656,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1731,7 +1677,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1753,7 +1698,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1776,7 +1720,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1798,7 +1741,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1820,7 +1762,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -1835,7 +1776,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       public com.google.rpc.Status.Builder getDatasetErrorsBuilder(int index) {
         return getDatasetErrorsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1854,7 +1794,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return datasetErrorsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1874,7 +1813,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
           return java.util.Collections.unmodifiableList(datasetErrors_);
         }
       }
-
       /**
        *
        *
@@ -1890,7 +1828,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return getDatasetErrorsFieldBuilder()
             .addBuilder(com.google.rpc.Status.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1906,7 +1843,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return getDatasetErrorsFieldBuilder()
             .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2013,7 +1949,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int COMMON_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
-
   /**
    *
    *
@@ -2029,7 +1964,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public boolean hasCommonMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2047,7 +1981,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
         : commonMetadata_;
   }
-
   /**
    *
    *
@@ -2068,7 +2001,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public static final int TRAINING_DATASET_VALIDATION_FIELD_NUMBER = 2;
   private com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
       trainingDatasetValidation_;
-
   /**
    *
    *
@@ -2086,7 +2018,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public boolean hasTrainingDatasetValidation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2108,7 +2039,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             .getDefaultInstance()
         : trainingDatasetValidation_;
   }
-
   /**
    *
    *
@@ -2133,7 +2063,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public static final int TEST_DATASET_VALIDATION_FIELD_NUMBER = 3;
   private com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata.DatasetValidation
       testDatasetValidation_;
-
   /**
    *
    *
@@ -2151,7 +2080,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
   public boolean hasTestDatasetValidation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2173,7 +2101,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             .getDefaultInstance()
         : testDatasetValidation_;
   }
-
   /**
    *
    *
@@ -2393,7 +2320,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2649,7 +2575,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
             com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>
         commonMetadataBuilder_;
-
     /**
      *
      *
@@ -2664,7 +2589,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public boolean hasCommonMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2685,7 +2609,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return commonMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2709,7 +2632,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2652,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2761,7 +2682,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2781,7 +2701,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2797,7 +2716,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return getCommonMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2817,7 +2735,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             : commonMetadata_;
       }
     }
-
     /**
      *
      *
@@ -2853,7 +2770,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
                 .DatasetValidationOrBuilder>
         trainingDatasetValidationBuilder_;
-
     /**
      *
      *
@@ -2870,7 +2786,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public boolean hasTrainingDatasetValidation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2895,7 +2810,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return trainingDatasetValidationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2921,7 +2835,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2945,7 +2858,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2978,7 +2890,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3000,7 +2911,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3019,7 +2929,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return getTrainingDatasetValidationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3043,7 +2952,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             : trainingDatasetValidation_;
       }
     }
-
     /**
      *
      *
@@ -3085,7 +2993,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             com.google.cloud.documentai.v1beta3.TrainProcessorVersionMetadata
                 .DatasetValidationOrBuilder>
         testDatasetValidationBuilder_;
-
     /**
      *
      *
@@ -3102,7 +3009,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
     public boolean hasTestDatasetValidation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3127,7 +3033,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
         return testDatasetValidationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3153,7 +3058,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3177,7 +3081,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3210,7 +3113,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3232,7 +3134,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3152,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
       onChanged();
       return getTestDatasetValidationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3275,7 +3175,6 @@ public final class TrainProcessorVersionMetadata extends com.google.protobuf.Gen
             : testDatasetValidation_;
       }
     }
-
     /**
      *
      *

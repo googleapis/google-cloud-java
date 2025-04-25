@@ -36,7 +36,6 @@ public interface WafExpressionSetExpressionOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WafExpressionSetExpressionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface WafExpressionSetExpressionOrBuilder
    * @return Whether the sensitivity field is set.
    */
   boolean hasSensitivity();
-
   /**
    *
    *

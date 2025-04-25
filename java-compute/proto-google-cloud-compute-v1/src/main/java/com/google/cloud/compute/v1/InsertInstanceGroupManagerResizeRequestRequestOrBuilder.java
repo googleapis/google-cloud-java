@@ -37,7 +37,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return Whether the instanceGroupManagerResizeRequestResource field is set.
    */
   boolean hasInstanceGroupManagerResizeRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagerResizeRequest
       getInstanceGroupManagerResizeRequestResource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface InsertInstanceGroupManagerResizeRequestRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

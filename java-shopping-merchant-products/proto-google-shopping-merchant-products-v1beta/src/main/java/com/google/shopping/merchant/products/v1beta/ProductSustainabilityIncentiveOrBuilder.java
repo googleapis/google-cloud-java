@@ -36,7 +36,6 @@ public interface ProductSustainabilityIncentiveOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ProductSustainabilityIncentiveOrBuilder
    * @return The amount.
    */
   com.google.shopping.type.Price getAmount();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ProductSustainabilityIncentiveOrBuilder
    * @return Whether the percentage field is set.
    */
   boolean hasPercentage();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ProductSustainabilityIncentiveOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ProductSustainabilityIncentiveOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

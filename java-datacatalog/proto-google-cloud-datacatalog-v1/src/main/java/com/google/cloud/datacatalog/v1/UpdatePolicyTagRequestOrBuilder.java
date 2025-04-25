@@ -37,7 +37,6 @@ public interface UpdatePolicyTagRequestOrBuilder
    * @return Whether the policyTag field is set.
    */
   boolean hasPolicyTag();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdatePolicyTagRequestOrBuilder
    * @return The policyTag.
    */
   com.google.cloud.datacatalog.v1.PolicyTag getPolicyTag();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdatePolicyTagRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface UpdatePolicyTagRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

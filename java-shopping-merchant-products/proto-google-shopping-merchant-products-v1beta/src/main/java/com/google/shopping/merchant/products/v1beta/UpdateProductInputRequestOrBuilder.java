@@ -39,7 +39,6 @@ public interface UpdateProductInputRequestOrBuilder
    * @return Whether the productInput field is set.
    */
   boolean hasProductInput();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateProductInputRequestOrBuilder
    * @return The productInput.
    */
   com.google.shopping.merchant.products.v1beta.ProductInput getProductInput();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface UpdateProductInputRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface UpdateProductInputRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface UpdateProductInputRequestOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
-
   /**
    *
    *

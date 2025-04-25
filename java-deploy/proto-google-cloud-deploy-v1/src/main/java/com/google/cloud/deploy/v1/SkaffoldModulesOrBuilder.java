@@ -36,7 +36,6 @@ public interface SkaffoldModulesOrBuilder
    * @return A list containing the configs.
    */
   java.util.List<java.lang.String> getConfigsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SkaffoldModulesOrBuilder
    * @return The count of configs.
    */
   int getConfigsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface SkaffoldModulesOrBuilder
    * @return The configs at the given index.
    */
   java.lang.String getConfigs(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface SkaffoldModulesOrBuilder
    * @return Whether the git field is set.
    */
   boolean hasGit();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface SkaffoldModulesOrBuilder
    * @return The git.
    */
   com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGitSource getGit();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface SkaffoldModulesOrBuilder
    * @return Whether the googleCloudStorage field is set.
    */
   boolean hasGoogleCloudStorage();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface SkaffoldModulesOrBuilder
    * @return The googleCloudStorage.
    */
   com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCSSource getGoogleCloudStorage();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface SkaffoldModulesOrBuilder
    * @return Whether the googleCloudBuildRepo field is set.
    */
   boolean hasGoogleCloudBuildRepo();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface SkaffoldModulesOrBuilder
    * @return The googleCloudBuildRepo.
    */
   com.google.cloud.deploy.v1.SkaffoldModules.SkaffoldGCBRepoSource getGoogleCloudBuildRepo();
-
   /**
    *
    *

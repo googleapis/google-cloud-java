@@ -33,7 +33,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.CreateTcpRouteRequest)
     CreateTcpRouteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTcpRouteRequest.newBuilder() to construct.
   private CreateTcpRouteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tcpRouteId_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
 
   public static final int TCP_ROUTE_FIELD_NUMBER = 3;
   private com.google.cloud.networkservices.v1.TcpRoute tcpRoute_;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
   public boolean hasTcpRoute() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.networkservices.v1.TcpRoute.getDefaultInstance()
         : tcpRoute_;
   }
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object tcpRouteId_ = "";
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.networkservices.v1.TcpRoute.Builder,
             com.google.cloud.networkservices.v1.TcpRouteOrBuilder>
         tcpRouteBuilder_;
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
     public boolean hasTcpRoute() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
         return tcpRouteBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1006,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1022,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTcpRouteFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1069,7 +1042,6 @@ public final class CreateTcpRouteRequest extends com.google.protobuf.GeneratedMe
             : tcpRoute_;
       }
     }
-
     /**
      *
      *

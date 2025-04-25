@@ -33,7 +33,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsK8sVersionInfo)
     AwsK8sVersionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsK8sVersionInfo.newBuilder() to construct.
   private AwsK8sVersionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int ENABLED_FIELD_NUMBER = 3;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int END_OF_LIFE_FIELD_NUMBER = 4;
   private boolean endOfLife_ = false;
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int END_OF_LIFE_DATE_FIELD_NUMBER = 5;
   private com.google.type.Date endOfLifeDate_;
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasEndOfLifeDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
   public com.google.type.Date getEndOfLifeDate() {
     return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
   }
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int RELEASE_DATE_FIELD_NUMBER = 6;
   private com.google.type.Date releaseDate_;
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
   public boolean hasReleaseDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
   public com.google.type.Date getReleaseDate() {
     return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
   }
-
   /**
    *
    *
@@ -473,7 +462,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -734,7 +722,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean endOfLife_;
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     public boolean getEndOfLife() {
       return endOfLife_;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         endOfLifeDateBuilder_;
-
     /**
      *
      *
@@ -994,7 +970,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasEndOfLifeDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         return endOfLifeDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1041,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1095,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1113,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEndOfLifeDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1164,7 +1133,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         return endOfLifeDate_ == null ? com.google.type.Date.getDefaultInstance() : endOfLifeDate_;
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1163,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         releaseDateBuilder_;
-
     /**
      *
      *
@@ -1210,7 +1177,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
     public boolean hasReleaseDate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1229,7 +1195,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         return releaseDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1217,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1236,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1263,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1282,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1296,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getReleaseDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1352,7 +1312,6 @@ public final class AwsK8sVersionInfo extends com.google.protobuf.GeneratedMessag
         return releaseDate_ == null ? com.google.type.Date.getDefaultInstance() : releaseDate_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1.Vertex> getVerticesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
   com.google.cloud.vision.v1.Vertex getVertices(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
   int getVerticesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
   java.util.List<? extends com.google.cloud.vision.v1.VertexOrBuilder> getVerticesOrBuilderList();
-
   /**
    *
    *
@@ -89,7 +85,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1.NormalizedVertex> getNormalizedVerticesList();
-
   /**
    *
    *
@@ -100,7 +95,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
   com.google.cloud.vision.v1.NormalizedVertex getNormalizedVertices(int index);
-
   /**
    *
    *
@@ -111,7 +105,6 @@ public interface BoundingPolyOrBuilder
    * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
   int getNormalizedVerticesCount();
-
   /**
    *
    *
@@ -123,7 +116,6 @@ public interface BoundingPolyOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList();
-
   /**
    *
    *

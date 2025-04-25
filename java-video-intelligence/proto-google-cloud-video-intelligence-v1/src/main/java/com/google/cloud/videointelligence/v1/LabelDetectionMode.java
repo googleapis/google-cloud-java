@@ -82,7 +82,6 @@ public enum LabelDetectionMode implements com.google.protobuf.ProtocolMessageEnu
    * <code>LABEL_DETECTION_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int LABEL_DETECTION_MODE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum LabelDetectionMode implements com.google.protobuf.ProtocolMessageEnu
    * <code>SHOT_MODE = 1;</code>
    */
   public static final int SHOT_MODE_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum LabelDetectionMode implements com.google.protobuf.ProtocolMessageEnu
    * <code>FRAME_MODE = 2;</code>
    */
   public static final int FRAME_MODE_VALUE = 2;
-
   /**
    *
    *

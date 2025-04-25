@@ -32,7 +32,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SourceDiskEncryptionKey)
     SourceDiskEncryptionKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceDiskEncryptionKey.newBuilder() to construct.
   private SourceDiskEncryptionKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 271660677;
   private com.google.cloud.compute.v1.CustomerEncryptionKey diskEncryptionKey_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
   public boolean hasDiskEncryptionKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
         : diskEncryptionKey_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceDisk_ = "";
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
   public boolean hasSourceDisk() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +363,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -593,7 +585,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.CustomerEncryptionKey.Builder,
             com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder>
         diskEncryptionKeyBuilder_;
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     public boolean hasDiskEncryptionKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         return diskEncryptionKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -658,7 +647,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +736,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       onChanged();
       return getDiskEncryptionKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
             : diskEncryptionKey_;
       }
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     }
 
     private java.lang.Object sourceDisk_ = "";
-
     /**
      *
      *
@@ -818,7 +800,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
     public boolean hasSourceDisk() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +844,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class SourceDiskEncryptionKey extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

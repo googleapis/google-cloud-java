@@ -36,7 +36,6 @@ public interface SendPacketsRequestOrBuilder
    * @return Whether the packet field is set.
    */
   boolean hasPacket();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SendPacketsRequestOrBuilder
    * @return The packet.
    */
   com.google.cloud.visionai.v1.Packet getPacket();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SendPacketsRequestOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SendPacketsRequestOrBuilder
    * @return The metadata.
    */
   com.google.cloud.visionai.v1.RequestMetadata getMetadata();
-
   /**
    *
    *

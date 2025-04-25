@@ -37,7 +37,6 @@ public interface NetworkConfigOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface NetworkConfigOrBuilder
    * @return The enum numeric value on the wire for peeringMode.
    */
   int getPeeringModeValue();
-
   /**
    *
    *

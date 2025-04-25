@@ -38,7 +38,6 @@ public interface GetConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

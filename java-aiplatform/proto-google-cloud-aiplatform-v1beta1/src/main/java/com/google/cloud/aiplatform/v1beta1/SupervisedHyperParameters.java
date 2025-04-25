@@ -33,7 +33,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SupervisedHyperParameters)
     SupervisedHyperParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SupervisedHyperParameters.newBuilder() to construct.
   private SupervisedHyperParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,7 +136,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      * <code>ADAPTER_SIZE_UNSPECIFIED = 0;</code>
      */
     public static final int ADAPTER_SIZE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      * <code>ADAPTER_SIZE_ONE = 1;</code>
      */
     public static final int ADAPTER_SIZE_ONE_VALUE = 1;
-
     /**
      *
      *
@@ -159,7 +156,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      * <code>ADAPTER_SIZE_FOUR = 2;</code>
      */
     public static final int ADAPTER_SIZE_FOUR_VALUE = 2;
-
     /**
      *
      *
@@ -170,7 +166,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
      * <code>ADAPTER_SIZE_EIGHT = 3;</code>
      */
     public static final int ADAPTER_SIZE_EIGHT_VALUE = 3;
-
     /**
      *
      *
@@ -273,7 +268,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
 
   public static final int EPOCH_COUNT_FIELD_NUMBER = 1;
   private long epochCount_ = 0L;
-
   /**
    *
    *
@@ -293,7 +287,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
 
   public static final int LEARNING_RATE_MULTIPLIER_FIELD_NUMBER = 2;
   private double learningRateMultiplier_ = 0D;
-
   /**
    *
    *
@@ -312,7 +305,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
 
   public static final int ADAPTER_SIZE_FIELD_NUMBER = 3;
   private int adapterSize_ = 0;
-
   /**
    *
    *
@@ -330,7 +322,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
   public int getAdapterSizeValue() {
     return adapterSize_;
   }
-
   /**
    *
    *
@@ -543,7 +534,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +745,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long epochCount_;
-
     /**
      *
      *
@@ -772,7 +761,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     public long getEpochCount() {
       return epochCount_;
     }
-
     /**
      *
      *
@@ -793,7 +781,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +801,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     }
 
     private double learningRateMultiplier_;
-
     /**
      *
      *
@@ -830,7 +816,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     public double getLearningRateMultiplier() {
       return learningRateMultiplier_;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +854,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     }
 
     private int adapterSize_ = 0;
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
     public int getAdapterSizeValue() {
       return adapterSize_;
     }
-
     /**
      *
      *
@@ -909,7 +891,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
           ? com.google.cloud.aiplatform.v1beta1.SupervisedHyperParameters.AdapterSize.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class SupervisedHyperParameters extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

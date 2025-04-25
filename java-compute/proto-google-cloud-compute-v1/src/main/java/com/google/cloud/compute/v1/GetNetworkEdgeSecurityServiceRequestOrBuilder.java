@@ -38,7 +38,6 @@ public interface GetNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The networkEdgeSecurityService.
    */
   java.lang.String getNetworkEdgeSecurityService();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GetNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface GetNetworkEdgeSecurityServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

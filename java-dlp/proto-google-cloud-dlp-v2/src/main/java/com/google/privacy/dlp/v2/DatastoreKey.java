@@ -33,7 +33,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DatastoreKey)
     DatastoreKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatastoreKey.newBuilder() to construct.
   private DatastoreKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENTITY_KEY_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.Key entityKey_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEntityKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.Key getEntityKey() {
     return entityKey_ == null ? com.google.privacy.dlp.v2.Key.getDefaultInstance() : entityKey_;
   }
-
   /**
    *
    *
@@ -275,7 +271,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -478,7 +473,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.Key.Builder,
             com.google.privacy.dlp.v2.KeyOrBuilder>
         entityKeyBuilder_;
-
     /**
      *
      *
@@ -493,7 +487,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEntityKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -512,7 +505,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
         return entityKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -535,7 +527,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -555,7 +546,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -583,7 +573,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -603,7 +592,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +606,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEntityKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -635,7 +622,6 @@ public final class DatastoreKey extends com.google.protobuf.GeneratedMessageV3
         return entityKey_ == null ? com.google.privacy.dlp.v2.Key.getDefaultInstance() : entityKey_;
       }
     }
-
     /**
      *
      *

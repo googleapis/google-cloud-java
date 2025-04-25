@@ -39,7 +39,6 @@ public interface SynonymSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SynonymSetOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface SynonymSetOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.SynonymSet.Synonym synonyms = 3;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym> getSynonymsList();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SynonymSetOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.SynonymSet.Synonym synonyms = 3;</code>
    */
   com.google.cloud.contentwarehouse.v1.SynonymSet.Synonym getSynonyms(int index);
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface SynonymSetOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.SynonymSet.Synonym synonyms = 3;</code>
    */
   int getSynonymsCount();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface SynonymSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.SynonymSet.SynonymOrBuilder>
       getSynonymsOrBuilderList();
-
   /**
    *
    *

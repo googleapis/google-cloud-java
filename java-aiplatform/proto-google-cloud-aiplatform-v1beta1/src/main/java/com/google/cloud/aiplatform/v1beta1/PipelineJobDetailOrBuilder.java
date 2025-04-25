@@ -38,7 +38,6 @@ public interface PipelineJobDetailOrBuilder
    * @return Whether the pipelineContext field is set.
    */
   boolean hasPipelineContext();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PipelineJobDetailOrBuilder
    * @return The pipelineContext.
    */
   com.google.cloud.aiplatform.v1beta1.Context getPipelineContext();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PipelineJobDetailOrBuilder
    * @return Whether the pipelineRunContext field is set.
    */
   boolean hasPipelineRunContext();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface PipelineJobDetailOrBuilder
    * @return The pipelineRunContext.
    */
   com.google.cloud.aiplatform.v1beta1.Context getPipelineRunContext();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface PipelineJobDetailOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail> getTaskDetailsList();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface PipelineJobDetailOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail getTaskDetails(int index);
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface PipelineJobDetailOrBuilder
    * </code>
    */
   int getTaskDetailsCount();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface PipelineJobDetailOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PipelineTaskDetailOrBuilder>
       getTaskDetailsOrBuilderList();
-
   /**
    *
    *

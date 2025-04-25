@@ -72,7 +72,6 @@ public enum AutoRenewalBehavior implements com.google.protobuf.ProtocolMessageEn
    * <code>AUTO_RENEWAL_BEHAVIOR_UNSPECIFIED = 0;</code>
    */
   public static final int AUTO_RENEWAL_BEHAVIOR_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum AutoRenewalBehavior implements com.google.protobuf.ProtocolMessageEn
    * <code>AUTO_RENEWAL_BEHAVIOR_ENABLE = 1;</code>
    */
   public static final int AUTO_RENEWAL_BEHAVIOR_ENABLE_VALUE = 1;
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class AzureNodeManagement extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureNodeManagement)
     AzureNodeManagementOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureNodeManagement.newBuilder() to construct.
   private AzureNodeManagement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AzureNodeManagement extends com.google.protobuf.GeneratedMess
 
   public static final int AUTO_REPAIR_FIELD_NUMBER = 1;
   private boolean autoRepair_ = false;
-
   /**
    *
    *
@@ -245,7 +243,6 @@ public final class AzureNodeManagement extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -429,7 +426,6 @@ public final class AzureNodeManagement extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean autoRepair_;
-
     /**
      *
      *
@@ -448,7 +444,6 @@ public final class AzureNodeManagement extends com.google.protobuf.GeneratedMess
     public boolean getAutoRepair() {
       return autoRepair_;
     }
-
     /**
      *
      *
@@ -471,7 +466,6 @@ public final class AzureNodeManagement extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

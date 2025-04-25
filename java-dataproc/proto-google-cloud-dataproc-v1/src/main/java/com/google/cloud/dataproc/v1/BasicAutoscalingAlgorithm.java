@@ -33,7 +33,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.BasicAutoscalingAlgorithm)
     BasicAutoscalingAlgorithmOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BasicAutoscalingAlgorithm.newBuilder() to construct.
   private BasicAutoscalingAlgorithm(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     private ConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
   }
 
   public static final int YARN_CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
   public boolean hasYarnConfig() {
     return configCase_ == 1;
   }
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     }
     return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
 
   public static final int COOLDOWN_PERIOD_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration cooldownPeriod_;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
   public boolean hasCooldownPeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
         ? com.google.protobuf.Duration.getDefaultInstance()
         : cooldownPeriod_;
   }
-
   /**
    *
    *
@@ -424,7 +416,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +664,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder,
             com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfigOrBuilder>
         yarnConfigBuilder_;
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public boolean hasYarnConfig() {
       return configCase_ == 1;
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
         return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       configCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       configCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       configCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +816,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +830,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.Builder getYarnConfigBuilder() {
       return getYarnConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -870,7 +853,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
         return com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         cooldownPeriodBuilder_;
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public boolean hasCooldownPeriod() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
         return cooldownPeriodBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1045,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1064,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       onChanged();
       return getCooldownPeriodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1113,7 +1087,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
             : cooldownPeriod_;
       }
     }
-
     /**
      *
      *

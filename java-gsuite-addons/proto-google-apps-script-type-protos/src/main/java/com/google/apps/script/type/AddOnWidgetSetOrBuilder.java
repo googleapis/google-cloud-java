@@ -36,7 +36,6 @@ public interface AddOnWidgetSetOrBuilder
    * @return A list containing the usedWidgets.
    */
   java.util.List<com.google.apps.script.type.AddOnWidgetSet.WidgetType> getUsedWidgetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AddOnWidgetSetOrBuilder
    * @return The count of usedWidgets.
    */
   int getUsedWidgetsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface AddOnWidgetSetOrBuilder
    * @return The usedWidgets at the given index.
    */
   com.google.apps.script.type.AddOnWidgetSet.WidgetType getUsedWidgets(int index);
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AddOnWidgetSetOrBuilder
    * @return A list containing the enum numeric values on the wire for usedWidgets.
    */
   java.util.List<java.lang.Integer> getUsedWidgetsValueList();
-
   /**
    *
    *

@@ -49,22 +49,19 @@ public final class GeometryProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ")google/cloud/documentai/v1/geometry.proto\022\032google.cloud.documentai.v1\"\036\n"
-          + "\006Vertex\022\t\n"
-          + "\001x\030\001 \001(\005\022\t\n"
-          + "\001y\030\002 \001(\005\"(\n"
-          + "\020NormalizedVertex\022\t\n"
-          + "\001x\030\001 \001(\002\022\t\n"
-          + "\001y\030\002 \001(\002\"\217\001\n"
-          + "\014BoundingPoly\0224\n"
-          + "\010vertices\030\001 \003(\0132\".google.cloud.documentai.v1.Vertex\022I\n"
-          + "\023normalized_vertices\030\002"
-          + " \003(\0132,.google.cloud.documentai.v1.NormalizedVertexB\313\001\n"
-          + "\036com.google.cloud.documentai.v1B\r"
-          + "GeometryProtoP\001Z>cloud.google.com/go/documentai/apiv1/documentaipb;docum"
+      "\n)google/cloud/documentai/v1/geometry.pr"
+          + "oto\022\032google.cloud.documentai.v1\"\036\n\006Verte"
+          + "x\022\t\n\001x\030\001 \001(\005\022\t\n\001y\030\002 \001(\005\"(\n\020NormalizedVer"
+          + "tex\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\217\001\n\014BoundingPo"
+          + "ly\0224\n\010vertices\030\001 \003(\0132\".google.cloud.docu"
+          + "mentai.v1.Vertex\022I\n\023normalized_vertices\030"
+          + "\002 \003(\0132,.google.cloud.documentai.v1.Norma"
+          + "lizedVertexB\313\001\n\036com.google.cloud.documen"
+          + "tai.v1B\rGeometryProtoP\001Z>cloud.google.co"
+          + "m/go/documentai/apiv1/documentaipb;docum"
           + "entaipb\252\002\032Google.Cloud.DocumentAI.V1\312\002\032G"
-          + "oogle\\Cloud\\DocumentAI\\V1\352\002\035Google::Cloud::DocumentAI::V1b\006proto3"
+          + "oogle\\Cloud\\DocumentAI\\V1\352\002\035Google::Clou"
+          + "d::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

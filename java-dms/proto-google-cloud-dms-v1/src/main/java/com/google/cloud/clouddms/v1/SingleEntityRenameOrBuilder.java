@@ -36,7 +36,6 @@ public interface SingleEntityRenameOrBuilder
    * @return The newName.
    */
   java.lang.String getNewName();
-
   /**
    *
    *

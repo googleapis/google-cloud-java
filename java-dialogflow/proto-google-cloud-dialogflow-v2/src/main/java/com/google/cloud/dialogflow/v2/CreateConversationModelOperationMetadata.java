@@ -36,7 +36,6 @@ public final class CreateConversationModelOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CreateConversationModelOperationMetadata)
     CreateConversationModelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateConversationModelOperationMetadata.newBuilder() to construct.
   private CreateConversationModelOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -164,7 +163,6 @@ public final class CreateConversationModelOperationMetadata
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -177,7 +175,6 @@ public final class CreateConversationModelOperationMetadata
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -188,7 +185,6 @@ public final class CreateConversationModelOperationMetadata
      * <code>SUCCEEDED = 2;</code>
      */
     public static final int SUCCEEDED_VALUE = 2;
-
     /**
      *
      *
@@ -199,7 +195,6 @@ public final class CreateConversationModelOperationMetadata
      * <code>FAILED = 3;</code>
      */
     public static final int FAILED_VALUE = 3;
-
     /**
      *
      *
@@ -210,7 +205,6 @@ public final class CreateConversationModelOperationMetadata
      * <code>CANCELLED = 4;</code>
      */
     public static final int CANCELLED_VALUE = 4;
-
     /**
      *
      *
@@ -221,7 +215,6 @@ public final class CreateConversationModelOperationMetadata
      * <code>CANCELLING = 5;</code>
      */
     public static final int CANCELLING_VALUE = 5;
-
     /**
      *
      *
@@ -331,7 +324,6 @@ public final class CreateConversationModelOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationModel_ = "";
-
   /**
    *
    *
@@ -356,7 +348,6 @@ public final class CreateConversationModelOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -384,7 +375,6 @@ public final class CreateConversationModelOperationMetadata
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -401,7 +391,6 @@ public final class CreateConversationModelOperationMetadata
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -426,7 +415,6 @@ public final class CreateConversationModelOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -443,7 +431,6 @@ public final class CreateConversationModelOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -460,7 +447,6 @@ public final class CreateConversationModelOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -666,7 +652,6 @@ public final class CreateConversationModelOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -905,7 +890,6 @@ public final class CreateConversationModelOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationModel_ = "";
-
     /**
      *
      *
@@ -929,7 +913,6 @@ public final class CreateConversationModelOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -953,7 +936,6 @@ public final class CreateConversationModelOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +958,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +976,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +1001,6 @@ public final class CreateConversationModelOperationMetadata
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1038,7 +1017,6 @@ public final class CreateConversationModelOperationMetadata
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1058,7 +1036,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1059,6 @@ public final class CreateConversationModelOperationMetadata
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1106,7 +1082,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1107,6 @@ public final class CreateConversationModelOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1148,7 +1122,6 @@ public final class CreateConversationModelOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1170,7 +1143,6 @@ public final class CreateConversationModelOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1166,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1186,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1214,6 @@ public final class CreateConversationModelOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1234,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1249,6 @@ public final class CreateConversationModelOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1301,7 +1268,6 @@ public final class CreateConversationModelOperationMetadata
             : createTime_;
       }
     }
-
     /**
      *
      *

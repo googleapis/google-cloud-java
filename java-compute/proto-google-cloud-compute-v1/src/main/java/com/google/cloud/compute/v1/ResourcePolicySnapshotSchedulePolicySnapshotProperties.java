@@ -35,7 +35,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties)
     ResourcePolicySnapshotSchedulePolicySnapshotPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicySnapshotSchedulePolicySnapshotProperties.newBuilder() to construct.
   private ResourcePolicySnapshotSchedulePolicySnapshotProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -87,7 +86,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object chainName_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public boolean hasChainName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       return s;
     }
   }
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
 
   public static final int GUEST_FLUSH_FIELD_NUMBER = 385550813;
   private boolean guestFlush_ = false;
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public boolean hasGuestFlush() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -230,14 +223,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList storageLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public com.google.protobuf.ProtocolStringList getStorageLocationsList() {
     return storageLocations_;
   }
-
   /**
    *
    *
@@ -329,7 +316,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public int getStorageLocationsCount() {
     return storageLocations_.size();
   }
-
   /**
    *
    *
@@ -345,7 +331,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
   public java.lang.String getStorageLocations(int index) {
     return storageLocations_.get(index);
   }
-
   /**
    *
    *
@@ -584,7 +569,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -866,7 +850,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     private int bitField0_;
 
     private java.lang.Object chainName_ = "";
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public boolean hasChainName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +908,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +929,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +946,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     }
 
     private boolean guestFlush_;
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public boolean hasGuestFlush() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public boolean getGuestFlush() {
       return guestFlush_;
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1062,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1105,14 +1078,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1126,7 +1097,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1147,7 +1117,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1174,7 +1143,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1191,14 +1159,12 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1219,7 +1185,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1209,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1260,7 +1224,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       storageLocations_.makeImmutable();
       return storageLocations_;
     }
-
     /**
      *
      *
@@ -1275,7 +1238,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public int getStorageLocationsCount() {
       return storageLocations_.size();
     }
-
     /**
      *
      *
@@ -1291,7 +1253,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public java.lang.String getStorageLocations(int index) {
       return storageLocations_.get(index);
     }
-
     /**
      *
      *
@@ -1307,7 +1268,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
     public com.google.protobuf.ByteString getStorageLocationsBytes(int index) {
       return storageLocations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1331,7 +1291,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1313,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1332,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1350,6 @@ public final class ResourcePolicySnapshotSchedulePolicySnapshotProperties
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface CreateIssueModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateIssueModelRequestOrBuilder
    * @return Whether the issueModel field is set.
    */
   boolean hasIssueModel();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateIssueModelRequestOrBuilder
    * @return The issueModel.
    */
   com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModel();
-
   /**
    *
    *

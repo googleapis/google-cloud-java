@@ -34,7 +34,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelVersionCheckpoint)
     ModelVersionCheckpointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelVersionCheckpoint.newBuilder() to construct.
   private ModelVersionCheckpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object checkpointId_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
 
   public static final int EPOCH_FIELD_NUMBER = 2;
   private long epoch_ = 0L;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
 
   public static final int STEP_FIELD_NUMBER = 3;
   private long step_ = 0L;
-
   /**
    *
    *
@@ -334,7 +329,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -546,7 +540,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object checkpointId_ = "";
-
     /**
      *
      *
@@ -569,7 +562,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     }
 
     private long epoch_;
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     public long getEpoch() {
       return epoch_;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     }
 
     private long step_;
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
     public long getStep() {
       return step_;
     }
-
     /**
      *
      *
@@ -749,7 +733,6 @@ public final class ModelVersionCheckpoint extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

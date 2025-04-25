@@ -37,7 +37,6 @@ public interface SaveSnapshotRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface SaveSnapshotRequestOrBuilder
    * @return The snapshotLocation.
    */
   java.lang.String getSnapshotLocation();
-
   /**
    *
    *

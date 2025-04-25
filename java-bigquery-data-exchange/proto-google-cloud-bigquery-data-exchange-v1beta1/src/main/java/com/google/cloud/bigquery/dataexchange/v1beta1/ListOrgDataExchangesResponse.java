@@ -34,7 +34,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse)
     ListOrgDataExchangesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListOrgDataExchangesResponse.newBuilder() to construct.
   private ListOrgDataExchangesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>
       dataExchanges_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       getDataExchangesList() {
     return dataExchanges_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       getDataExchangesOrBuilderList() {
     return dataExchanges_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
   public int getDataExchangesCount() {
     return dataExchanges_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
   public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange getDataExchanges(int index) {
     return dataExchanges_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +375,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -677,7 +668,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return dataExchangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -695,7 +685,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return dataExchangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -713,7 +702,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return dataExchangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +748,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +772,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +861,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +901,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         getDataExchangesBuilder(int index) {
       return getDataExchangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return dataExchangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(dataExchanges_);
       }
     }
-
     /**
      *
      *
@@ -992,7 +968,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
           .addBuilder(
               com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1010,7 +985,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
               index,
               com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1070,7 +1043,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1065,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1086,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1103,6 @@ public final class ListOrgDataExchangesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudStorageResourceReference)
     CloudStorageResourceReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudStorageResourceReference.newBuilder() to construct.
   private CloudStorageResourceReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucketName_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -342,7 +337,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -542,7 +536,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object bucketName_ = "";
-
     /**
      *
      *
@@ -565,7 +558,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +728,6 @@ public final class CloudStorageResourceReference extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

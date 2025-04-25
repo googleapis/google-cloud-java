@@ -284,19 +284,6 @@ public final class KnowledgeBasesGrpc {
     return KnowledgeBasesStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static KnowledgeBasesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<KnowledgeBasesBlockingV2Stub>() {
-          @java.lang.Override
-          public KnowledgeBasesBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new KnowledgeBasesBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return KnowledgeBasesBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -533,92 +520,6 @@ public final class KnowledgeBasesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service KnowledgeBases.
-   *
-   * <pre>
-   * Service for managing
-   * [KnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBase].
-   * </pre>
-   */
-  public static final class KnowledgeBasesBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<KnowledgeBasesBlockingV2Stub> {
-    private KnowledgeBasesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected KnowledgeBasesBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new KnowledgeBasesBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all knowledge bases of the specified agent.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2.ListKnowledgeBasesResponse listKnowledgeBases(
-        com.google.cloud.dialogflow.v2.ListKnowledgeBasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListKnowledgeBasesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified knowledge base.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2.KnowledgeBase getKnowledgeBase(
-        com.google.cloud.dialogflow.v2.GetKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetKnowledgeBaseMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a knowledge base.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2.KnowledgeBase createKnowledgeBase(
-        com.google.cloud.dialogflow.v2.CreateKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateKnowledgeBaseMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified knowledge base.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteKnowledgeBase(
-        com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteKnowledgeBaseMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified knowledge base.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.v2.KnowledgeBase updateKnowledgeBase(
-        com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateKnowledgeBaseMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service KnowledgeBases.
    *
    * <pre>
    * Service for managing

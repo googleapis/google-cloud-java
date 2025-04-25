@@ -36,7 +36,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigOperationMetadata)
     ClearSuggestionFeatureConfigOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClearSuggestionFeatureConfigOperationMetadata.newBuilder() to construct.
   private ClearSuggestionFeatureConfigOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,7 +75,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationProfile_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
 
   public static final int PARTICIPANT_ROLE_FIELD_NUMBER = 2;
   private int participantRole_ = 0;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
   public int getParticipantRoleValue() {
     return participantRole_;
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
 
   public static final int SUGGESTION_FEATURE_TYPE_FIELD_NUMBER = 3;
   private int suggestionFeatureType_ = 0;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
   public int getSuggestionFeatureTypeValue() {
     return suggestionFeatureType_;
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -473,7 +463,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +720,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationProfile_ = "";
-
     /**
      *
      *
@@ -756,7 +744,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +768,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +810,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     }
 
     private int participantRole_ = 0;
-
     /**
      *
      *
@@ -871,7 +854,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     public int getParticipantRoleValue() {
       return participantRole_;
     }
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
           ? com.google.cloud.dialogflow.v2beta1.Participant.Role.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -941,7 +921,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     }
 
     private int suggestionFeatureType_ = 0;
-
     /**
      *
      *
@@ -982,7 +960,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     public int getSuggestionFeatureTypeValue() {
       return suggestionFeatureType_;
     }
-
     /**
      *
      *
@@ -1003,7 +980,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
           ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1093,7 +1066,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1114,7 +1086,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1108,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1154,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1173,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1187,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1239,7 +1205,6 @@ public final class ClearSuggestionFeatureConfigOperationMetadata
             : createTime_;
       }
     }
-
     /**
      *
      *

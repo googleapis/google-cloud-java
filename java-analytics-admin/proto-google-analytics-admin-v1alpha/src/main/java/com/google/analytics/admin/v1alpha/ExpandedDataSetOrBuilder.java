@@ -37,7 +37,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ExpandedDataSetOrBuilder
    * @return A list containing the dimensionNames.
    */
   java.util.List<java.lang.String> getDimensionNamesList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The count of dimensionNames.
    */
   int getDimensionNamesCount();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The dimensionNames at the given index.
    */
   java.lang.String getDimensionNames(int index);
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface ExpandedDataSetOrBuilder
    * @return A list containing the metricNames.
    */
   java.util.List<java.lang.String> getMetricNamesList();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The count of metricNames.
    */
   int getMetricNamesCount();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The metricNames at the given index.
    */
   java.lang.String getMetricNames(int index);
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public interface ExpandedDataSetOrBuilder
    * @return Whether the dimensionFilterExpression field is set.
    */
   boolean hasDimensionFilterExpression();
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The dimensionFilterExpression.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSetFilterExpression getDimensionFilterExpression();
-
   /**
    *
    *
@@ -305,7 +294,6 @@ public interface ExpandedDataSetOrBuilder
    * @return Whether the dataCollectionStartTime field is set.
    */
   boolean hasDataCollectionStartTime();
-
   /**
    *
    *
@@ -321,7 +309,6 @@ public interface ExpandedDataSetOrBuilder
    * @return The dataCollectionStartTime.
    */
   com.google.protobuf.Timestamp getDataCollectionStartTime();
-
   /**
    *
    *

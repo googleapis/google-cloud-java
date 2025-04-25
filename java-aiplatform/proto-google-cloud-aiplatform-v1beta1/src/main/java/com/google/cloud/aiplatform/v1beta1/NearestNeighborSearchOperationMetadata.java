@@ -34,7 +34,6 @@ public final class NearestNeighborSearchOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata)
     NearestNeighborSearchOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NearestNeighborSearchOperationMetadata.newBuilder() to construct.
   private NearestNeighborSearchOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,7 +85,6 @@ public final class NearestNeighborSearchOperationMetadata
      * @return The enum numeric value on the wire for errorType.
      */
     int getErrorTypeValue();
-
     /**
      *
      *
@@ -118,7 +116,6 @@ public final class NearestNeighborSearchOperationMetadata
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
-
     /**
      *
      *
@@ -146,7 +143,6 @@ public final class NearestNeighborSearchOperationMetadata
      * @return The sourceGcsUri.
      */
     java.lang.String getSourceGcsUri();
-
     /**
      *
      *
@@ -172,7 +168,6 @@ public final class NearestNeighborSearchOperationMetadata
      * @return The embeddingId.
      */
     java.lang.String getEmbeddingId();
-
     /**
      *
      *
@@ -198,7 +193,6 @@ public final class NearestNeighborSearchOperationMetadata
      * @return The rawRecord.
      */
     java.lang.String getRawRecord();
-
     /**
      *
      *
@@ -212,7 +206,6 @@ public final class NearestNeighborSearchOperationMetadata
      */
     com.google.protobuf.ByteString getRawRecordBytes();
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError}
@@ -222,7 +215,6 @@ public final class NearestNeighborSearchOperationMetadata
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError)
       RecordErrorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RecordError.newBuilder() to construct.
     private RecordError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -459,7 +451,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>ERROR_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int ERROR_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -470,7 +461,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>EMPTY_LINE = 1;</code>
        */
       public static final int EMPTY_LINE_VALUE = 1;
-
       /**
        *
        *
@@ -481,7 +471,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_JSON_SYNTAX = 2;</code>
        */
       public static final int INVALID_JSON_SYNTAX_VALUE = 2;
-
       /**
        *
        *
@@ -492,7 +481,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_CSV_SYNTAX = 3;</code>
        */
       public static final int INVALID_CSV_SYNTAX_VALUE = 3;
-
       /**
        *
        *
@@ -503,7 +491,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_AVRO_SYNTAX = 4;</code>
        */
       public static final int INVALID_AVRO_SYNTAX_VALUE = 4;
-
       /**
        *
        *
@@ -514,7 +501,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_EMBEDDING_ID = 5;</code>
        */
       public static final int INVALID_EMBEDDING_ID_VALUE = 5;
-
       /**
        *
        *
@@ -526,7 +512,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>EMBEDDING_SIZE_MISMATCH = 6;</code>
        */
       public static final int EMBEDDING_SIZE_MISMATCH_VALUE = 6;
-
       /**
        *
        *
@@ -537,7 +522,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>NAMESPACE_MISSING = 7;</code>
        */
       public static final int NAMESPACE_MISSING_VALUE = 7;
-
       /**
        *
        *
@@ -549,7 +533,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>PARSING_ERROR = 8;</code>
        */
       public static final int PARSING_ERROR_VALUE = 8;
-
       /**
        *
        *
@@ -560,7 +543,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>DUPLICATE_NAMESPACE = 9;</code>
        */
       public static final int DUPLICATE_NAMESPACE_VALUE = 9;
-
       /**
        *
        *
@@ -571,7 +553,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>OP_IN_DATAPOINT = 10;</code>
        */
       public static final int OP_IN_DATAPOINT_VALUE = 10;
-
       /**
        *
        *
@@ -582,7 +563,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>MULTIPLE_VALUES = 11;</code>
        */
       public static final int MULTIPLE_VALUES_VALUE = 11;
-
       /**
        *
        *
@@ -593,7 +573,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_NUMERIC_VALUE = 12;</code>
        */
       public static final int INVALID_NUMERIC_VALUE_VALUE = 12;
-
       /**
        *
        *
@@ -604,7 +583,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_ENCODING = 13;</code>
        */
       public static final int INVALID_ENCODING_VALUE = 13;
-
       /**
        *
        *
@@ -615,7 +593,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_SPARSE_DIMENSIONS = 14;</code>
        */
       public static final int INVALID_SPARSE_DIMENSIONS_VALUE = 14;
-
       /**
        *
        *
@@ -626,7 +603,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_TOKEN_VALUE = 15;</code>
        */
       public static final int INVALID_TOKEN_VALUE_VALUE = 15;
-
       /**
        *
        *
@@ -637,7 +613,6 @@ public final class NearestNeighborSearchOperationMetadata
        * <code>INVALID_SPARSE_EMBEDDING = 16;</code>
        */
       public static final int INVALID_SPARSE_EMBEDDING_VALUE = 16;
-
       /**
        *
        *
@@ -770,7 +745,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     public static final int ERROR_TYPE_FIELD_NUMBER = 1;
     private int errorType_ = 0;
-
     /**
      *
      *
@@ -788,7 +762,6 @@ public final class NearestNeighborSearchOperationMetadata
     public int getErrorTypeValue() {
       return errorType_;
     }
-
     /**
      *
      *
@@ -821,7 +794,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
-
     /**
      *
      *
@@ -847,7 +819,6 @@ public final class NearestNeighborSearchOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -878,7 +849,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceGcsUri_ = "";
-
     /**
      *
      *
@@ -902,7 +872,6 @@ public final class NearestNeighborSearchOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -931,7 +900,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object embeddingId_ = "";
-
     /**
      *
      *
@@ -955,7 +923,6 @@ public final class NearestNeighborSearchOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -984,7 +951,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rawRecord_ = "";
-
     /**
      *
      *
@@ -1008,7 +974,6 @@ public final class NearestNeighborSearchOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -1258,7 +1223,6 @@ public final class NearestNeighborSearchOperationMetadata
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError}
@@ -1521,7 +1485,6 @@ public final class NearestNeighborSearchOperationMetadata
       private int bitField0_;
 
       private int errorType_ = 0;
-
       /**
        *
        *
@@ -1539,7 +1502,6 @@ public final class NearestNeighborSearchOperationMetadata
       public int getErrorTypeValue() {
         return errorType_;
       }
-
       /**
        *
        *
@@ -1560,7 +1522,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1588,7 +1549,6 @@ public final class NearestNeighborSearchOperationMetadata
                 .RecordErrorType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1615,7 +1575,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1637,7 +1596,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private java.lang.Object errorMessage_ = "";
-
       /**
        *
        *
@@ -1662,7 +1620,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1687,7 +1644,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1711,7 +1667,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1731,7 +1686,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1758,7 +1712,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private java.lang.Object sourceGcsUri_ = "";
-
       /**
        *
        *
@@ -1781,7 +1734,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1804,7 +1756,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1826,7 +1777,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1844,7 +1794,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1869,7 +1818,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private java.lang.Object embeddingId_ = "";
-
       /**
        *
        *
@@ -1892,7 +1840,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1915,7 +1862,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1937,7 +1883,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1955,7 +1900,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1980,7 +1924,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private java.lang.Object rawRecord_ = "";
-
       /**
        *
        *
@@ -2003,7 +1946,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2026,7 +1968,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2048,7 +1989,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2066,7 +2006,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2178,7 +2117,6 @@ public final class NearestNeighborSearchOperationMetadata
      * @return The sourceGcsUri.
      */
     java.lang.String getSourceGcsUri();
-
     /**
      *
      *
@@ -2234,7 +2172,6 @@ public final class NearestNeighborSearchOperationMetadata
     java.util.List<
             com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError>
         getPartialErrorsList();
-
     /**
      *
      *
@@ -2250,7 +2187,6 @@ public final class NearestNeighborSearchOperationMetadata
      */
     com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError
         getPartialErrors(int index);
-
     /**
      *
      *
@@ -2265,7 +2201,6 @@ public final class NearestNeighborSearchOperationMetadata
      * </code>
      */
     int getPartialErrorsCount();
-
     /**
      *
      *
@@ -2284,7 +2219,6 @@ public final class NearestNeighborSearchOperationMetadata
                 com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                     .RecordErrorOrBuilder>
         getPartialErrorsOrBuilderList();
-
     /**
      *
      *
@@ -2327,7 +2261,6 @@ public final class NearestNeighborSearchOperationMetadata
      */
     long getInvalidSparseRecordCount();
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats}
@@ -2337,7 +2270,6 @@ public final class NearestNeighborSearchOperationMetadata
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats)
       ContentValidationStatsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ContentValidationStats.newBuilder() to construct.
     private ContentValidationStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2375,7 +2307,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceGcsUri_ = "";
-
     /**
      *
      *
@@ -2399,7 +2330,6 @@ public final class NearestNeighborSearchOperationMetadata
         return s;
       }
     }
-
     /**
      *
      *
@@ -2426,7 +2356,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     public static final int VALID_RECORD_COUNT_FIELD_NUMBER = 2;
     private long validRecordCount_ = 0L;
-
     /**
      *
      *
@@ -2445,7 +2374,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     public static final int INVALID_RECORD_COUNT_FIELD_NUMBER = 3;
     private long invalidRecordCount_ = 0L;
-
     /**
      *
      *
@@ -2468,7 +2396,6 @@ public final class NearestNeighborSearchOperationMetadata
     private java.util.List<
             com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.RecordError>
         partialErrors_;
-
     /**
      *
      *
@@ -2488,7 +2415,6 @@ public final class NearestNeighborSearchOperationMetadata
         getPartialErrorsList() {
       return partialErrors_;
     }
-
     /**
      *
      *
@@ -2510,7 +2436,6 @@ public final class NearestNeighborSearchOperationMetadata
         getPartialErrorsOrBuilderList() {
       return partialErrors_;
     }
-
     /**
      *
      *
@@ -2528,7 +2453,6 @@ public final class NearestNeighborSearchOperationMetadata
     public int getPartialErrorsCount() {
       return partialErrors_.size();
     }
-
     /**
      *
      *
@@ -2547,7 +2471,6 @@ public final class NearestNeighborSearchOperationMetadata
         getPartialErrors(int index) {
       return partialErrors_.get(index);
     }
-
     /**
      *
      *
@@ -2570,7 +2493,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     public static final int VALID_SPARSE_RECORD_COUNT_FIELD_NUMBER = 5;
     private long validSparseRecordCount_ = 0L;
-
     /**
      *
      *
@@ -2589,7 +2511,6 @@ public final class NearestNeighborSearchOperationMetadata
 
     public static final int INVALID_SPARSE_RECORD_COUNT_FIELD_NUMBER = 6;
     private long invalidSparseRecordCount_ = 0L;
-
     /**
      *
      *
@@ -2842,7 +2763,6 @@ public final class NearestNeighborSearchOperationMetadata
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata.ContentValidationStats}
@@ -3173,7 +3093,6 @@ public final class NearestNeighborSearchOperationMetadata
       private int bitField0_;
 
       private java.lang.Object sourceGcsUri_ = "";
-
       /**
        *
        *
@@ -3196,7 +3115,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3219,7 +3137,6 @@ public final class NearestNeighborSearchOperationMetadata
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3241,7 +3158,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3259,7 +3175,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3284,7 +3199,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private long validRecordCount_;
-
       /**
        *
        *
@@ -3300,7 +3214,6 @@ public final class NearestNeighborSearchOperationMetadata
       public long getValidRecordCount() {
         return validRecordCount_;
       }
-
       /**
        *
        *
@@ -3320,7 +3233,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3340,7 +3252,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private long invalidRecordCount_;
-
       /**
        *
        *
@@ -3356,7 +3267,6 @@ public final class NearestNeighborSearchOperationMetadata
       public long getInvalidRecordCount() {
         return invalidRecordCount_;
       }
-
       /**
        *
        *
@@ -3376,7 +3286,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3442,7 +3351,6 @@ public final class NearestNeighborSearchOperationMetadata
           return partialErrorsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3463,7 +3371,6 @@ public final class NearestNeighborSearchOperationMetadata
           return partialErrorsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3485,7 +3392,6 @@ public final class NearestNeighborSearchOperationMetadata
           return partialErrorsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3515,7 +3421,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3543,7 +3448,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3572,7 +3476,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3602,7 +3505,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3629,7 +3531,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3657,7 +3558,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3686,7 +3586,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3710,7 +3609,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3734,7 +3632,6 @@ public final class NearestNeighborSearchOperationMetadata
         }
         return this;
       }
-
       /**
        *
        *
@@ -3753,7 +3650,6 @@ public final class NearestNeighborSearchOperationMetadata
           getPartialErrorsBuilder(int index) {
         return getPartialErrorsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3776,7 +3672,6 @@ public final class NearestNeighborSearchOperationMetadata
           return partialErrorsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3801,7 +3696,6 @@ public final class NearestNeighborSearchOperationMetadata
           return java.util.Collections.unmodifiableList(partialErrors_);
         }
       }
-
       /**
        *
        *
@@ -3823,7 +3717,6 @@ public final class NearestNeighborSearchOperationMetadata
                 com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                     .RecordError.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3846,7 +3739,6 @@ public final class NearestNeighborSearchOperationMetadata
                 com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                     .RecordError.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3894,7 +3786,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private long validSparseRecordCount_;
-
       /**
        *
        *
@@ -3910,7 +3801,6 @@ public final class NearestNeighborSearchOperationMetadata
       public long getValidSparseRecordCount() {
         return validSparseRecordCount_;
       }
-
       /**
        *
        *
@@ -3930,7 +3820,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3950,7 +3839,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
 
       private long invalidSparseRecordCount_;
-
       /**
        *
        *
@@ -3966,7 +3854,6 @@ public final class NearestNeighborSearchOperationMetadata
       public long getInvalidSparseRecordCount() {
         return invalidSparseRecordCount_;
       }
-
       /**
        *
        *
@@ -3986,7 +3873,6 @@ public final class NearestNeighborSearchOperationMetadata
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4084,7 +3970,6 @@ public final class NearestNeighborSearchOperationMetadata
           com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
               .ContentValidationStats>
       contentValidationStats_;
-
   /**
    *
    *
@@ -4108,7 +3993,6 @@ public final class NearestNeighborSearchOperationMetadata
       getContentValidationStatsList() {
     return contentValidationStats_;
   }
-
   /**
    *
    *
@@ -4133,7 +4017,6 @@ public final class NearestNeighborSearchOperationMetadata
       getContentValidationStatsOrBuilderList() {
     return contentValidationStats_;
   }
-
   /**
    *
    *
@@ -4154,7 +4037,6 @@ public final class NearestNeighborSearchOperationMetadata
   public int getContentValidationStatsCount() {
     return contentValidationStats_.size();
   }
-
   /**
    *
    *
@@ -4177,7 +4059,6 @@ public final class NearestNeighborSearchOperationMetadata
       getContentValidationStats(int index) {
     return contentValidationStats_.get(index);
   }
-
   /**
    *
    *
@@ -4203,7 +4084,6 @@ public final class NearestNeighborSearchOperationMetadata
 
   public static final int DATA_BYTES_COUNT_FIELD_NUMBER = 2;
   private long dataBytesCount_ = 0L;
-
   /**
    *
    *
@@ -4401,7 +4281,6 @@ public final class NearestNeighborSearchOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4710,7 +4589,6 @@ public final class NearestNeighborSearchOperationMetadata
         return contentValidationStatsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4734,7 +4612,6 @@ public final class NearestNeighborSearchOperationMetadata
         return contentValidationStatsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4760,7 +4637,6 @@ public final class NearestNeighborSearchOperationMetadata
         return contentValidationStatsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4794,7 +4670,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -4825,7 +4700,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -4858,7 +4732,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -4892,7 +4765,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -4922,7 +4794,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -4953,7 +4824,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -4985,7 +4855,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -5012,7 +4881,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -5039,7 +4907,6 @@ public final class NearestNeighborSearchOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -5061,7 +4928,6 @@ public final class NearestNeighborSearchOperationMetadata
         getContentValidationStatsBuilder(int index) {
       return getContentValidationStatsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5087,7 +4953,6 @@ public final class NearestNeighborSearchOperationMetadata
         return contentValidationStatsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5115,7 +4980,6 @@ public final class NearestNeighborSearchOperationMetadata
         return java.util.Collections.unmodifiableList(contentValidationStats_);
       }
     }
-
     /**
      *
      *
@@ -5140,7 +5004,6 @@ public final class NearestNeighborSearchOperationMetadata
               com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                   .ContentValidationStats.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5166,7 +5029,6 @@ public final class NearestNeighborSearchOperationMetadata
               com.google.cloud.aiplatform.v1beta1.NearestNeighborSearchOperationMetadata
                   .ContentValidationStats.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5217,7 +5079,6 @@ public final class NearestNeighborSearchOperationMetadata
     }
 
     private long dataBytesCount_;
-
     /**
      *
      *
@@ -5233,7 +5094,6 @@ public final class NearestNeighborSearchOperationMetadata
     public long getDataBytesCount() {
       return dataBytesCount_;
     }
-
     /**
      *
      *
@@ -5253,7 +5113,6 @@ public final class NearestNeighborSearchOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *

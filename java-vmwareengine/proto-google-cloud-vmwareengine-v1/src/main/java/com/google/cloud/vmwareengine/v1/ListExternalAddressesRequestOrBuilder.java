@@ -43,7 +43,6 @@ public interface ListExternalAddressesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface ListExternalAddressesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -150,7 +148,6 @@ public interface ListExternalAddressesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -204,7 +201,6 @@ public interface ListExternalAddressesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

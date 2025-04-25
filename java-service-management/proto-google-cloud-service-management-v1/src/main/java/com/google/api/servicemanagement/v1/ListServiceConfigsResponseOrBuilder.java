@@ -34,7 +34,6 @@ public interface ListServiceConfigsResponseOrBuilder
    * <code>repeated .google.api.Service service_configs = 1;</code>
    */
   java.util.List<com.google.api.Service> getServiceConfigsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListServiceConfigsResponseOrBuilder
    * <code>repeated .google.api.Service service_configs = 1;</code>
    */
   com.google.api.Service getServiceConfigs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListServiceConfigsResponseOrBuilder
    * <code>repeated .google.api.Service service_configs = 1;</code>
    */
   int getServiceConfigsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListServiceConfigsResponseOrBuilder
    * <code>repeated .google.api.Service service_configs = 1;</code>
    */
   java.util.List<? extends com.google.api.ServiceOrBuilder> getServiceConfigsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListServiceConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

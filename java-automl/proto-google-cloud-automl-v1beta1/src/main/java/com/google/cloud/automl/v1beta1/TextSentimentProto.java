@@ -57,7 +57,6 @@ public final class TextSentimentProto {
      */
     int getSentiment();
   }
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public final class TextSentimentProto {
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TextSentimentAnnotation)
       TextSentimentAnnotationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TextSentimentAnnotation.newBuilder() to construct.
     private TextSentimentAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -104,7 +102,6 @@ public final class TextSentimentProto {
 
     public static final int SENTIMENT_FIELD_NUMBER = 1;
     private int sentiment_ = 0;
-
     /**
      *
      *
@@ -300,7 +297,6 @@ public final class TextSentimentProto {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -497,7 +493,6 @@ public final class TextSentimentProto {
       private int bitField0_;
 
       private int sentiment_;
-
       /**
        *
        *
@@ -524,7 +519,6 @@ public final class TextSentimentProto {
       public int getSentiment() {
         return sentiment_;
       }
-
       /**
        *
        *
@@ -555,7 +549,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -769,7 +762,6 @@ public final class TextSentimentProto {
      * @return Whether the confusionMatrix field is set.
      */
     boolean hasConfusionMatrix();
-
     /**
      *
      *
@@ -788,7 +780,6 @@ public final class TextSentimentProto {
     com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
         getConfusionMatrix();
-
     /**
      *
      *
@@ -822,7 +813,6 @@ public final class TextSentimentProto {
      */
     @java.lang.Deprecated
     java.util.List<java.lang.String> getAnnotationSpecIdList();
-
     /**
      *
      *
@@ -839,7 +829,6 @@ public final class TextSentimentProto {
      */
     @java.lang.Deprecated
     int getAnnotationSpecIdCount();
-
     /**
      *
      *
@@ -857,7 +846,6 @@ public final class TextSentimentProto {
      */
     @java.lang.Deprecated
     java.lang.String getAnnotationSpecId(int index);
-
     /**
      *
      *
@@ -876,7 +864,6 @@ public final class TextSentimentProto {
     @java.lang.Deprecated
     com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
   }
-
   /**
    *
    *
@@ -892,7 +879,6 @@ public final class TextSentimentProto {
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TextSentimentEvaluationMetrics)
       TextSentimentEvaluationMetricsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TextSentimentEvaluationMetrics.newBuilder() to construct.
     private TextSentimentEvaluationMetrics(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -929,7 +915,6 @@ public final class TextSentimentProto {
     private int bitField0_;
     public static final int PRECISION_FIELD_NUMBER = 1;
     private float precision_ = 0F;
-
     /**
      *
      *
@@ -948,7 +933,6 @@ public final class TextSentimentProto {
 
     public static final int RECALL_FIELD_NUMBER = 2;
     private float recall_ = 0F;
-
     /**
      *
      *
@@ -967,7 +951,6 @@ public final class TextSentimentProto {
 
     public static final int F1_SCORE_FIELD_NUMBER = 3;
     private float f1Score_ = 0F;
-
     /**
      *
      *
@@ -986,7 +969,6 @@ public final class TextSentimentProto {
 
     public static final int MEAN_ABSOLUTE_ERROR_FIELD_NUMBER = 4;
     private float meanAbsoluteError_ = 0F;
-
     /**
      *
      *
@@ -1006,7 +988,6 @@ public final class TextSentimentProto {
 
     public static final int MEAN_SQUARED_ERROR_FIELD_NUMBER = 5;
     private float meanSquaredError_ = 0F;
-
     /**
      *
      *
@@ -1026,7 +1007,6 @@ public final class TextSentimentProto {
 
     public static final int LINEAR_KAPPA_FIELD_NUMBER = 6;
     private float linearKappa_ = 0F;
-
     /**
      *
      *
@@ -1046,7 +1026,6 @@ public final class TextSentimentProto {
 
     public static final int QUADRATIC_KAPPA_FIELD_NUMBER = 7;
     private float quadraticKappa_ = 0F;
-
     /**
      *
      *
@@ -1068,7 +1047,6 @@ public final class TextSentimentProto {
     private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrix
         confusionMatrix_;
-
     /**
      *
      *
@@ -1088,7 +1066,6 @@ public final class TextSentimentProto {
     public boolean hasConfusionMatrix() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1113,7 +1090,6 @@ public final class TextSentimentProto {
               .ConfusionMatrix.getDefaultInstance()
           : confusionMatrix_;
     }
-
     /**
      *
      *
@@ -1142,7 +1118,6 @@ public final class TextSentimentProto {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList annotationSpecId_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1161,7 +1136,6 @@ public final class TextSentimentProto {
     public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
       return annotationSpecId_;
     }
-
     /**
      *
      *
@@ -1180,7 +1154,6 @@ public final class TextSentimentProto {
     public int getAnnotationSpecIdCount() {
       return annotationSpecId_.size();
     }
-
     /**
      *
      *
@@ -1200,7 +1173,6 @@ public final class TextSentimentProto {
     public java.lang.String getAnnotationSpecId(int index) {
       return annotationSpecId_.get(index);
     }
-
     /**
      *
      *
@@ -1482,7 +1454,6 @@ public final class TextSentimentProto {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1816,7 +1787,6 @@ public final class TextSentimentProto {
       private int bitField0_;
 
       private float precision_;
-
       /**
        *
        *
@@ -1832,7 +1802,6 @@ public final class TextSentimentProto {
       public float getPrecision() {
         return precision_;
       }
-
       /**
        *
        *
@@ -1852,7 +1821,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1872,7 +1840,6 @@ public final class TextSentimentProto {
       }
 
       private float recall_;
-
       /**
        *
        *
@@ -1888,7 +1855,6 @@ public final class TextSentimentProto {
       public float getRecall() {
         return recall_;
       }
-
       /**
        *
        *
@@ -1908,7 +1874,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1928,7 +1893,6 @@ public final class TextSentimentProto {
       }
 
       private float f1Score_;
-
       /**
        *
        *
@@ -1944,7 +1908,6 @@ public final class TextSentimentProto {
       public float getF1Score() {
         return f1Score_;
       }
-
       /**
        *
        *
@@ -1964,7 +1927,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1984,7 +1946,6 @@ public final class TextSentimentProto {
       }
 
       private float meanAbsoluteError_;
-
       /**
        *
        *
@@ -2001,7 +1962,6 @@ public final class TextSentimentProto {
       public float getMeanAbsoluteError() {
         return meanAbsoluteError_;
       }
-
       /**
        *
        *
@@ -2022,7 +1982,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2043,7 +2002,6 @@ public final class TextSentimentProto {
       }
 
       private float meanSquaredError_;
-
       /**
        *
        *
@@ -2060,7 +2018,6 @@ public final class TextSentimentProto {
       public float getMeanSquaredError() {
         return meanSquaredError_;
       }
-
       /**
        *
        *
@@ -2081,7 +2038,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2102,7 +2058,6 @@ public final class TextSentimentProto {
       }
 
       private float linearKappa_;
-
       /**
        *
        *
@@ -2119,7 +2074,6 @@ public final class TextSentimentProto {
       public float getLinearKappa() {
         return linearKappa_;
       }
-
       /**
        *
        *
@@ -2140,7 +2094,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2161,7 +2114,6 @@ public final class TextSentimentProto {
       }
 
       private float quadraticKappa_;
-
       /**
        *
        *
@@ -2178,7 +2130,6 @@ public final class TextSentimentProto {
       public float getQuadraticKappa() {
         return quadraticKappa_;
       }
-
       /**
        *
        *
@@ -2199,7 +2150,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2230,7 +2180,6 @@ public final class TextSentimentProto {
               com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
                   .ConfusionMatrixOrBuilder>
           confusionMatrixBuilder_;
-
       /**
        *
        *
@@ -2249,7 +2198,6 @@ public final class TextSentimentProto {
       public boolean hasConfusionMatrix() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -2277,7 +2225,6 @@ public final class TextSentimentProto {
           return confusionMatrixBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2307,7 +2254,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2334,7 +2280,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2371,7 +2316,6 @@ public final class TextSentimentProto {
         }
         return this;
       }
-
       /**
        *
        *
@@ -2395,7 +2339,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2416,7 +2359,6 @@ public final class TextSentimentProto {
         onChanged();
         return getConfusionMatrixFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2442,7 +2384,6 @@ public final class TextSentimentProto {
               : confusionMatrix_;
         }
       }
-
       /**
        *
        *
@@ -2488,7 +2429,6 @@ public final class TextSentimentProto {
         }
         bitField0_ |= 0x00000100;
       }
-
       /**
        *
        *
@@ -2508,7 +2448,6 @@ public final class TextSentimentProto {
         annotationSpecId_.makeImmutable();
         return annotationSpecId_;
       }
-
       /**
        *
        *
@@ -2527,7 +2466,6 @@ public final class TextSentimentProto {
       public int getAnnotationSpecIdCount() {
         return annotationSpecId_.size();
       }
-
       /**
        *
        *
@@ -2547,7 +2485,6 @@ public final class TextSentimentProto {
       public java.lang.String getAnnotationSpecId(int index) {
         return annotationSpecId_.get(index);
       }
-
       /**
        *
        *
@@ -2567,7 +2504,6 @@ public final class TextSentimentProto {
       public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
       }
-
       /**
        *
        *
@@ -2595,7 +2531,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2622,7 +2557,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2646,7 +2580,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2669,7 +2602,6 @@ public final class TextSentimentProto {
         onChanged();
         return this;
       }
-
       /**
        *
        *

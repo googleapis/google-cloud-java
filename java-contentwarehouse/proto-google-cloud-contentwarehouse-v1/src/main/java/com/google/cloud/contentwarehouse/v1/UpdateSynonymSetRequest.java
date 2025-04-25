@@ -35,7 +35,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest)
     UpdateSynonymSetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSynonymSetRequest.newBuilder() to construct.
   private UpdateSynonymSetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
 
   public static final int SYNONYM_SET_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.SynonymSet synonymSet_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
   public boolean hasSynonymSet() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         ? com.google.cloud.contentwarehouse.v1.SynonymSet.getDefaultInstance()
         : synonymSet_;
   }
-
   /**
    *
    *
@@ -361,7 +355,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
             com.google.cloud.contentwarehouse.v1.SynonymSet.Builder,
             com.google.cloud.contentwarehouse.v1.SynonymSetOrBuilder>
         synonymSetBuilder_;
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
     public boolean hasSynonymSet() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -756,7 +742,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
         return synonymSetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
       onChanged();
       return getSynonymSetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class UpdateSynonymSetRequest extends com.google.protobuf.Generated
             : synonymSet_;
       }
     }
-
     /**
      *
      *

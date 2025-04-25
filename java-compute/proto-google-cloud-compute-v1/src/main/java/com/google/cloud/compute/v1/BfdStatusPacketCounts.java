@@ -32,7 +32,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BfdStatusPacketCounts)
     BfdStatusPacketCountsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BfdStatusPacketCounts.newBuilder() to construct.
   private BfdStatusPacketCounts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int NUM_RX_FIELD_NUMBER = 39375263;
   private int numRx_ = 0;
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   public boolean hasNumRx() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
 
   public static final int NUM_RX_REJECTED_FIELD_NUMBER = 281007902;
   private int numRxRejected_ = 0;
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   public boolean hasNumRxRejected() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
 
   public static final int NUM_RX_SUCCESSFUL_FIELD_NUMBER = 455361850;
   private int numRxSuccessful_ = 0;
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   public boolean hasNumRxSuccessful() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
 
   public static final int NUM_TX_FIELD_NUMBER = 39375325;
   private int numTx_ = 0;
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
   public boolean hasNumTx() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -408,7 +399,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -635,7 +625,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int numRx_;
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public boolean hasNumRx() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public int getNumRx() {
       return numRx_;
     }
-
     /**
      *
      *
@@ -687,7 +674,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     }
 
     private int numRxRejected_;
-
     /**
      *
      *
@@ -723,7 +708,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public boolean hasNumRxRejected() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -739,7 +723,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public int getNumRxRejected() {
       return numRxRejected_;
     }
-
     /**
      *
      *
@@ -759,7 +742,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +761,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     }
 
     private int numRxSuccessful_;
-
     /**
      *
      *
@@ -795,7 +776,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public boolean hasNumRxSuccessful() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -811,7 +791,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public int getNumRxSuccessful() {
       return numRxSuccessful_;
     }
-
     /**
      *
      *
@@ -831,7 +810,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +829,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     }
 
     private int numTx_;
-
     /**
      *
      *
@@ -867,7 +844,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public boolean hasNumTx() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -883,7 +859,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
     public int getNumTx() {
       return numTx_;
     }
-
     /**
      *
      *
@@ -903,7 +878,6 @@ public final class BfdStatusPacketCounts extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

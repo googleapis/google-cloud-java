@@ -39,7 +39,6 @@ public interface FileStoreCollectionOrBuilder
    * @return Whether the includeRegexes field is set.
    */
   boolean hasIncludeRegexes();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface FileStoreCollectionOrBuilder
    * @return The includeRegexes.
    */
   com.google.privacy.dlp.v2.FileStoreRegexes getIncludeRegexes();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface IdentityAwareProxyClientOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface IdentityAwareProxyClientOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface IdentityAwareProxyClientOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

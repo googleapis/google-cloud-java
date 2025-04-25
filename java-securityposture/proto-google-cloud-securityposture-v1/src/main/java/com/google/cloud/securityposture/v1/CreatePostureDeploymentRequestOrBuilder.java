@@ -39,7 +39,6 @@ public interface CreatePostureDeploymentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreatePostureDeploymentRequestOrBuilder
    * @return The postureDeploymentId.
    */
   java.lang.String getPostureDeploymentId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreatePostureDeploymentRequestOrBuilder
    * @return Whether the postureDeployment field is set.
    */
   boolean hasPostureDeployment();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreatePostureDeploymentRequestOrBuilder
    * @return The postureDeployment.
    */
   com.google.cloud.securityposture.v1.PostureDeployment getPostureDeployment();
-
   /**
    *
    *

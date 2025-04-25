@@ -36,7 +36,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.PolicyBasedRoute>
       getPolicyBasedRoutesList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute getPolicyBasedRoutes(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * </code>
    */
   int getPolicyBasedRoutesCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.PolicyBasedRouteOrBuilder>
       getPolicyBasedRoutesOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -140,7 +134,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -154,7 +147,6 @@ public interface ListPolicyBasedRoutesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

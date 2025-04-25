@@ -35,7 +35,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CustomModuleValidationErrors)
     CustomModuleValidationErrorsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomModuleValidationErrors.newBuilder() to construct.
   private CustomModuleValidationErrors(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.CustomModuleValidationError> errors_;
-
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
@@ -79,7 +77,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       getErrorsList() {
     return errors_;
   }
-
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
@@ -89,7 +86,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
@@ -97,7 +93,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
@@ -105,7 +100,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
   public com.google.cloud.securitycenter.v1.CustomModuleValidationError getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
    */
@@ -277,7 +271,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -545,7 +538,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -556,7 +548,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -567,7 +558,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -585,7 +575,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -601,7 +590,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -618,7 +606,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -636,7 +623,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -651,7 +637,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -667,7 +652,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -683,7 +667,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -697,7 +680,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -711,7 +693,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -719,7 +700,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
         int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -731,7 +711,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -744,7 +723,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -754,7 +732,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
           .addBuilder(
               com.google.cloud.securitycenter.v1.CustomModuleValidationError.getDefaultInstance());
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */
@@ -765,7 +742,6 @@ public final class CustomModuleValidationErrors extends com.google.protobuf.Gene
               index,
               com.google.cloud.securitycenter.v1.CustomModuleValidationError.getDefaultInstance());
     }
-
     /**
      * <code>repeated .google.cloud.securitycenter.v1.CustomModuleValidationError errors = 1;</code>
      */

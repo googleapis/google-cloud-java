@@ -40,7 +40,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Authority)
     AuthorityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Authority.newBuilder() to construct.
   private Authority(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * @return The humanReadableName.
      */
     java.lang.String getHumanReadableName();
-
     /**
      *
      *
@@ -102,7 +100,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getHumanReadableNameBytes();
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Authority.Hint)
       HintOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Hint.newBuilder() to construct.
     private Hint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -158,7 +154,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object humanReadableName_ = "";
-
     /**
      *
      *
@@ -183,7 +178,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -369,7 +363,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object humanReadableName_ = "";
-
       /**
        *
        *
@@ -587,7 +579,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -611,7 +602,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -634,7 +624,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -653,7 +642,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -745,7 +733,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HINT_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.attestation.Authority.Hint hint_;
-
   /**
    *
    *
@@ -761,7 +748,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -779,7 +765,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.attestation.Authority.Hint.getDefaultInstance()
         : hint_;
   }
-
   /**
    *
    *
@@ -959,7 +944,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1169,7 +1153,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.attestation.Authority.Hint.Builder,
             io.grafeas.v1beta1.attestation.Authority.HintOrBuilder>
         hintBuilder_;
-
     /**
      *
      *
@@ -1184,7 +1167,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1205,7 +1187,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         return hintBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1209,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1228,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1255,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1274,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1288,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHintFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1330,7 +1306,6 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
             : hint_;
       }
     }
-
     /**
      *
      *

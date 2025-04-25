@@ -37,7 +37,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the httpLoadBalancing field is set.
    */
   boolean hasHttpLoadBalancing();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AddonsConfigOrBuilder
    * @return The httpLoadBalancing.
    */
   com.google.container.v1beta1.HttpLoadBalancing getHttpLoadBalancing();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the horizontalPodAutoscaling field is set.
    */
   boolean hasHorizontalPodAutoscaling();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface AddonsConfigOrBuilder
    * @return The horizontalPodAutoscaling.
    */
   com.google.container.v1beta1.HorizontalPodAutoscaling getHorizontalPodAutoscaling();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasKubernetesDashboard();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.KubernetesDashboard getKubernetesDashboard();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the networkPolicyConfig field is set.
    */
   boolean hasNetworkPolicyConfig();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface AddonsConfigOrBuilder
    * @return The networkPolicyConfig.
    */
   com.google.container.v1beta1.NetworkPolicyConfig getNetworkPolicyConfig();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasIstioConfig();
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.IstioConfig getIstioConfig();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the cloudRunConfig field is set.
    */
   boolean hasCloudRunConfig();
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public interface AddonsConfigOrBuilder
    * @return The cloudRunConfig.
    */
   com.google.container.v1beta1.CloudRunConfig getCloudRunConfig();
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the dnsCacheConfig field is set.
    */
   boolean hasDnsCacheConfig();
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public interface AddonsConfigOrBuilder
    * @return The dnsCacheConfig.
    */
   com.google.container.v1beta1.DnsCacheConfig getDnsCacheConfig();
-
   /**
    *
    *
@@ -353,7 +339,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the configConnectorConfig field is set.
    */
   boolean hasConfigConnectorConfig();
-
   /**
    *
    *
@@ -367,7 +352,6 @@ public interface AddonsConfigOrBuilder
    * @return The configConnectorConfig.
    */
   com.google.container.v1beta1.ConfigConnectorConfig getConfigConnectorConfig();
-
   /**
    *
    *
@@ -394,7 +378,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the gcePersistentDiskCsiDriverConfig field is set.
    */
   boolean hasGcePersistentDiskCsiDriverConfig();
-
   /**
    *
    *
@@ -410,7 +393,6 @@ public interface AddonsConfigOrBuilder
    */
   com.google.container.v1beta1.GcePersistentDiskCsiDriverConfig
       getGcePersistentDiskCsiDriverConfig();
-
   /**
    *
    *
@@ -441,7 +423,6 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   boolean hasKalmConfig();
-
   /**
    *
    *
@@ -458,7 +439,6 @@ public interface AddonsConfigOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1beta1.KalmConfig getKalmConfig();
-
   /**
    *
    *
@@ -486,7 +466,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the gcpFilestoreCsiDriverConfig field is set.
    */
   boolean hasGcpFilestoreCsiDriverConfig();
-
   /**
    *
    *
@@ -501,7 +480,6 @@ public interface AddonsConfigOrBuilder
    * @return The gcpFilestoreCsiDriverConfig.
    */
   com.google.container.v1beta1.GcpFilestoreCsiDriverConfig getGcpFilestoreCsiDriverConfig();
-
   /**
    *
    *
@@ -528,7 +506,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the gkeBackupAgentConfig field is set.
    */
   boolean hasGkeBackupAgentConfig();
-
   /**
    *
    *
@@ -541,7 +518,6 @@ public interface AddonsConfigOrBuilder
    * @return The gkeBackupAgentConfig.
    */
   com.google.container.v1beta1.GkeBackupAgentConfig getGkeBackupAgentConfig();
-
   /**
    *
    *
@@ -565,7 +541,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the gcsFuseCsiDriverConfig field is set.
    */
   boolean hasGcsFuseCsiDriverConfig();
-
   /**
    *
    *
@@ -578,7 +553,6 @@ public interface AddonsConfigOrBuilder
    * @return The gcsFuseCsiDriverConfig.
    */
   com.google.container.v1beta1.GcsFuseCsiDriverConfig getGcsFuseCsiDriverConfig();
-
   /**
    *
    *
@@ -604,7 +578,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the statefulHaConfig field is set.
    */
   boolean hasStatefulHaConfig();
-
   /**
    *
    *
@@ -619,7 +592,6 @@ public interface AddonsConfigOrBuilder
    * @return The statefulHaConfig.
    */
   com.google.container.v1beta1.StatefulHAConfig getStatefulHaConfig();
-
   /**
    *
    *
@@ -647,7 +619,6 @@ public interface AddonsConfigOrBuilder
    * @return Whether the rayOperatorConfig field is set.
    */
   boolean hasRayOperatorConfig();
-
   /**
    *
    *
@@ -662,7 +633,6 @@ public interface AddonsConfigOrBuilder
    * @return The rayOperatorConfig.
    */
   com.google.container.v1beta1.RayOperatorConfig getRayOperatorConfig();
-
   /**
    *
    *

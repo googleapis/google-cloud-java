@@ -33,7 +33,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse)
     AnalyzeWorkloadMoveResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeWorkloadMoveResponse.newBuilder() to construct.
   private AnalyzeWorkloadMoveResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList blockers_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getBlockersList() {
     return blockers_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   public int getBlockersCount() {
     return blockers_.size();
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   public java.lang.String getBlockers(int index) {
     return blockers_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +299,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +505,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       blockers_.makeImmutable();
       return blockers_;
     }
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public int getBlockersCount() {
       return blockers_.size();
     }
-
     /**
      *
      *
@@ -561,7 +552,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public java.lang.String getBlockers(int index) {
       return blockers_.get(index);
     }
-
     /**
      *
      *
@@ -578,7 +568,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getBlockersBytes(int index) {
       return blockers_.getByteString(index);
     }
-
     /**
      *
      *
@@ -603,7 +592,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +615,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +635,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +654,6 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

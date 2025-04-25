@@ -33,7 +33,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ProcessorInfo)
     ProcessorInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProcessorInfo.newBuilder() to construct.
   private ProcessorInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object processorName_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentType_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schemaName_ = "";
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -414,7 +407,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +621,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object processorName_ = "";
-
     /**
      *
      *
@@ -655,7 +646,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object documentType_ = "";
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object schemaName_ = "";
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -918,7 +898,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class ProcessorInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

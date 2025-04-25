@@ -72,7 +72,6 @@ public enum CatalogUIExperience implements com.google.protobuf.ProtocolMessageEn
    * <code>CATALOG_UI_EXPERIENCE_UNSPECIFIED = 0;</code>
    */
   public static final int CATALOG_UI_EXPERIENCE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum CatalogUIExperience implements com.google.protobuf.ProtocolMessageEn
    * <code>CATALOG_UI_EXPERIENCE_ENABLED = 1;</code>
    */
   public static final int CATALOG_UI_EXPERIENCE_ENABLED_VALUE = 1;
-
   /**
    *
    *

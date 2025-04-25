@@ -40,7 +40,6 @@ public interface GetLbRouteExtensionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

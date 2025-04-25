@@ -36,7 +36,6 @@ public interface RemoveIndexAssetMetadataOrBuilder
    * @return Whether the indexingStatus field is set.
    */
   boolean hasIndexingStatus();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RemoveIndexAssetMetadataOrBuilder
    * @return The indexingStatus.
    */
   com.google.cloud.visionai.v1.IndexingStatus getIndexingStatus();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RemoveIndexAssetMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RemoveIndexAssetMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface RemoveIndexAssetMetadataOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface RemoveIndexAssetMetadataOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

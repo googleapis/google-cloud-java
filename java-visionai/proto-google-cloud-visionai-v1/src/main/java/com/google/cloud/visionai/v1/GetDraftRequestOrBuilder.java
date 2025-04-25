@@ -38,7 +38,6 @@ public interface GetDraftRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

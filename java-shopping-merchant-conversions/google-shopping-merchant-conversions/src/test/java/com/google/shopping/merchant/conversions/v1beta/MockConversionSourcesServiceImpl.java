@@ -73,8 +73,7 @@ public class MockConversionSourcesServiceImpl extends ConversionSourcesServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversionSource, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateConversionSource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionSource.class.getName(),
                   Exception.class.getName())));
@@ -95,8 +94,7 @@ public class MockConversionSourcesServiceImpl extends ConversionSourcesServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConversionSource, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateConversionSource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionSource.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +115,7 @@ public class MockConversionSourcesServiceImpl extends ConversionSourcesServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConversionSource, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteConversionSource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -139,8 +136,7 @@ public class MockConversionSourcesServiceImpl extends ConversionSourcesServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UndeleteConversionSource, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UndeleteConversionSource, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionSource.class.getName(),
                   Exception.class.getName())));
@@ -183,8 +179,7 @@ public class MockConversionSourcesServiceImpl extends ConversionSourcesServiceIm
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversionSources, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListConversionSources, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversionSourcesResponse.class.getName(),
                   Exception.class.getName())));

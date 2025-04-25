@@ -310,8 +310,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListServicePerimeters, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListServicePerimeters, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListServicePerimetersResponse.class.getName(),
                   Exception.class.getName())));
@@ -353,8 +352,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateServicePerimeter, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateServicePerimeter, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -375,8 +373,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateServicePerimeter, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateServicePerimeter, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -397,8 +394,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteServicePerimeter, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteServicePerimeter, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -419,8 +415,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ReplaceServicePerimeters, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ReplaceServicePerimeters, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -441,8 +436,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CommitServicePerimeters, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CommitServicePerimeters, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -464,8 +458,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGcpUserAccessBindings, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListGcpUserAccessBindings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGcpUserAccessBindingsResponse.class.getName(),
                   Exception.class.getName())));
@@ -487,8 +480,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGcpUserAccessBinding, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetGcpUserAccessBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GcpUserAccessBinding.class.getName(),
                   Exception.class.getName())));
@@ -509,8 +501,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateGcpUserAccessBinding, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateGcpUserAccessBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -531,8 +522,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGcpUserAccessBinding, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateGcpUserAccessBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -553,8 +543,7 @@ public class MockAccessContextManagerImpl extends AccessContextManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteGcpUserAccessBinding, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteGcpUserAccessBinding, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

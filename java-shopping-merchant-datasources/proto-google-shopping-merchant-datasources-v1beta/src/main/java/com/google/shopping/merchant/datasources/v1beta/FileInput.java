@@ -34,7 +34,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.FileInput)
     FileInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileInput.newBuilder() to construct.
   private FileInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,7 +131,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * <code>FILE_INPUT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int FILE_INPUT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * <code>UPLOAD = 1;</code>
      */
     public static final int UPLOAD_VALUE = 1;
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * <code>FETCH = 2;</code>
      */
     public static final int FETCH_VALUE = 2;
-
     /**
      *
      *
@@ -302,7 +298,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeOfDay field is set.
      */
     boolean hasTimeOfDay();
-
     /**
      *
      *
@@ -317,7 +312,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The timeOfDay.
      */
     com.google.type.TimeOfDay getTimeOfDay();
-
     /**
      *
      *
@@ -345,7 +339,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for dayOfWeek.
      */
     int getDayOfWeekValue();
-
     /**
      *
      *
@@ -374,7 +367,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The timeZone.
      */
     java.lang.String getTimeZone();
-
     /**
      *
      *
@@ -403,7 +395,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for frequency.
      */
     int getFrequencyValue();
-
     /**
      *
      *
@@ -435,7 +426,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The fetchUri.
      */
     java.lang.String getFetchUri();
-
     /**
      *
      *
@@ -467,7 +457,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The username.
      */
     java.lang.String getUsername();
-
     /**
      *
      *
@@ -499,7 +488,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      * @return The password.
      */
     java.lang.String getPassword();
-
     /**
      *
      *
@@ -516,7 +504,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPasswordBytes();
   }
-
   /**
    *
    *
@@ -531,7 +518,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings)
       FetchSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FetchSettings.newBuilder() to construct.
     private FetchSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -647,7 +633,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        * <code>FREQUENCY_UNSPECIFIED = 0;</code>
        */
       public static final int FREQUENCY_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -658,7 +643,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        * <code>FREQUENCY_DAILY = 1;</code>
        */
       public static final int FREQUENCY_DAILY_VALUE = 1;
-
       /**
        *
        *
@@ -669,7 +653,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
        * <code>FREQUENCY_WEEKLY = 2;</code>
        */
       public static final int FREQUENCY_WEEKLY_VALUE = 2;
-
       /**
        *
        *
@@ -772,7 +755,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ENABLED_FIELD_NUMBER = 1;
     private boolean enabled_ = false;
-
     /**
      *
      *
@@ -791,7 +773,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DAY_OF_MONTH_FIELD_NUMBER = 2;
     private int dayOfMonth_ = 0;
-
     /**
      *
      *
@@ -811,7 +792,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TIME_OF_DAY_FIELD_NUMBER = 3;
     private com.google.type.TimeOfDay timeOfDay_;
-
     /**
      *
      *
@@ -829,7 +809,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeOfDay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -847,7 +826,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.TimeOfDay getTimeOfDay() {
       return timeOfDay_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : timeOfDay_;
     }
-
     /**
      *
      *
@@ -866,7 +844,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DAY_OF_WEEK_FIELD_NUMBER = 4;
     private int dayOfWeek_ = 0;
-
     /**
      *
      *
@@ -884,7 +861,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
-
     /**
      *
      *
@@ -908,7 +884,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object timeZone_ = "";
-
     /**
      *
      *
@@ -933,7 +908,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -961,7 +935,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FREQUENCY_FIELD_NUMBER = 6;
     private int frequency_ = 0;
-
     /**
      *
      *
@@ -979,7 +952,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     public int getFrequencyValue() {
       return frequency_;
     }
-
     /**
      *
      *
@@ -1009,7 +981,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fetchUri_ = "";
-
     /**
      *
      *
@@ -1036,7 +1007,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1038,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -1095,7 +1064,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1127,7 +1095,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -1154,7 +1121,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1394,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1753,7 +1718,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean enabled_;
-
       /**
        *
        *
@@ -1769,7 +1733,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnabled() {
         return enabled_;
       }
-
       /**
        *
        *
@@ -1789,7 +1752,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1809,7 +1771,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int dayOfMonth_;
-
       /**
        *
        *
@@ -1826,7 +1787,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       public int getDayOfMonth() {
         return dayOfMonth_;
       }
-
       /**
        *
        *
@@ -1847,7 +1807,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1873,7 +1832,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
               com.google.type.TimeOfDay.Builder,
               com.google.type.TimeOfDayOrBuilder>
           timeOfDayBuilder_;
-
       /**
        *
        *
@@ -1890,7 +1848,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimeOfDay() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1911,7 +1868,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return timeOfDayBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1936,7 +1892,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1958,7 +1913,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1988,7 +1942,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2010,7 +1963,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2027,7 +1979,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimeOfDayFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2046,7 +1997,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return timeOfDay_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : timeOfDay_;
         }
       }
-
       /**
        *
        *
@@ -2076,7 +2026,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int dayOfWeek_ = 0;
-
       /**
        *
        *
@@ -2094,7 +2043,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       public int getDayOfWeekValue() {
         return dayOfWeek_;
       }
-
       /**
        *
        *
@@ -2115,7 +2063,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2134,7 +2081,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
         return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -2158,7 +2104,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2180,7 +2125,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object timeZone_ = "";
-
       /**
        *
        *
@@ -2204,7 +2148,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2228,7 +2171,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2251,7 +2193,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2270,7 +2211,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2296,7 +2236,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int frequency_ = 0;
-
       /**
        *
        *
@@ -2314,7 +2253,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       public int getFrequencyValue() {
         return frequency_;
       }
-
       /**
        *
        *
@@ -2335,7 +2273,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2360,7 +2297,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2385,7 +2321,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2407,7 +2342,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object fetchUri_ = "";
-
       /**
        *
        *
@@ -2433,7 +2367,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2459,7 +2392,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2484,7 +2416,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2505,7 +2436,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2533,7 +2463,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -2559,7 +2488,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2585,7 +2513,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2610,7 +2537,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2631,7 +2557,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2659,7 +2584,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object password_ = "";
-
       /**
        *
        *
@@ -2685,7 +2609,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2711,7 +2634,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2736,7 +2658,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2757,7 +2678,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2855,7 +2775,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int FETCH_SETTINGS_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings fetchSettings_;
-
   /**
    *
    *
@@ -2875,7 +2794,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFetchSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2899,7 +2817,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : fetchSettings_;
   }
-
   /**
    *
    *
@@ -2926,7 +2843,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileName_ = "";
-
   /**
    *
    *
@@ -2951,7 +2867,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2979,7 +2894,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILE_INPUT_TYPE_FIELD_NUMBER = 3;
   private int fileInputType_ = 0;
-
   /**
    *
    *
@@ -2997,7 +2911,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
   public int getFileInputTypeValue() {
     return fileInputType_;
   }
-
   /**
    *
    *
@@ -3211,7 +3124,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3445,7 +3357,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.datasources.v1beta.FileInput.FetchSettings.Builder,
             com.google.shopping.merchant.datasources.v1beta.FileInput.FetchSettingsOrBuilder>
         fetchSettingsBuilder_;
-
     /**
      *
      *
@@ -3464,7 +3375,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFetchSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3491,7 +3401,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return fetchSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3519,7 +3428,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3545,7 +3453,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3580,7 +3487,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3604,7 +3510,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3529,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFetchSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3649,7 +3553,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
             : fetchSettings_;
       }
     }
-
     /**
      *
      *
@@ -3681,7 +3584,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fileName_ = "";
-
     /**
      *
      *
@@ -3705,7 +3607,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3729,7 +3630,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3752,7 +3652,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3771,7 +3670,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3797,7 +3695,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int fileInputType_ = 0;
-
     /**
      *
      *
@@ -3815,7 +3712,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
     public int getFileInputTypeValue() {
       return fileInputType_;
     }
-
     /**
      *
      *
@@ -3836,7 +3732,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3860,7 +3755,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.datasources.v1beta.FileInput.FileInputType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3885,7 +3779,6 @@ public final class FileInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

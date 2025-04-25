@@ -34,7 +34,6 @@ public final class AwsNodeManagement extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AwsNodeManagement)
     AwsNodeManagementOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AwsNodeManagement.newBuilder() to construct.
   private AwsNodeManagement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AwsNodeManagement extends com.google.protobuf.GeneratedMessag
 
   public static final int AUTO_REPAIR_FIELD_NUMBER = 1;
   private boolean autoRepair_ = false;
-
   /**
    *
    *
@@ -244,7 +242,6 @@ public final class AwsNodeManagement extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -428,7 +425,6 @@ public final class AwsNodeManagement extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean autoRepair_;
-
     /**
      *
      *
@@ -447,7 +443,6 @@ public final class AwsNodeManagement extends com.google.protobuf.GeneratedMessag
     public boolean getAutoRepair() {
       return autoRepair_;
     }
-
     /**
      *
      *
@@ -470,7 +465,6 @@ public final class AwsNodeManagement extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

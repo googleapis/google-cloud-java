@@ -40,7 +40,6 @@ public interface GetDatabaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

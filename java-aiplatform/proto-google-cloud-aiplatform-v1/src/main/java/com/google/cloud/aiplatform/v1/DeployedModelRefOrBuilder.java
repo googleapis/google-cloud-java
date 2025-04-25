@@ -38,7 +38,6 @@ public interface DeployedModelRefOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeployedModelRefOrBuilder
    * @return The deployedModelId.
    */
   java.lang.String getDeployedModelId();
-
   /**
    *
    *

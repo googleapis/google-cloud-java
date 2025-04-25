@@ -73,7 +73,6 @@ public enum RestrictedMetricType implements com.google.protobuf.ProtocolMessageE
    * <code>RESTRICTED_METRIC_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RESTRICTED_METRIC_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum RestrictedMetricType implements com.google.protobuf.ProtocolMessageE
    * <code>COST_DATA = 1;</code>
    */
   public static final int COST_DATA_VALUE = 1;
-
   /**
    *
    *

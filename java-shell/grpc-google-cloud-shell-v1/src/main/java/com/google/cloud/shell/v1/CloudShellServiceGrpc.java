@@ -270,19 +270,6 @@ public final class CloudShellServiceGrpc {
     return CloudShellServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static CloudShellServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<CloudShellServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<CloudShellServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public CloudShellServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new CloudShellServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return CloudShellServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -553,111 +540,6 @@ public final class CloudShellServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudShellService.
-   *
-   * <pre>
-   * API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
-   * least one environment, which has the ID "default". Environment consists of a
-   * Docker image defining what is installed on the environment and a home
-   * directory containing the user's data that will remain across sessions.
-   * Clients use this API to start and fetch information about their environment,
-   * which can then be used to connect to that environment via a separate SSH
-   * client.
-   * </pre>
-   */
-  public static final class CloudShellServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<CloudShellServiceBlockingV2Stub> {
-    private CloudShellServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected CloudShellServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new CloudShellServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets an environment. Returns NOT_FOUND if the environment does not exist.
-     * </pre>
-     */
-    public com.google.cloud.shell.v1.Environment getEnvironment(
-        com.google.cloud.shell.v1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Starts an existing environment, allowing clients to connect to it. The
-     * returned operation will contain an instance of StartEnvironmentMetadata in
-     * its metadata field. Users can wait for the environment to start by polling
-     * this operation via GetOperation. Once the environment has finished starting
-     * and is ready to accept connections, the operation will contain a
-     * StartEnvironmentResponse in its response field.
-     * </pre>
-     */
-    public com.google.longrunning.Operation startEnvironment(
-        com.google.cloud.shell.v1.StartEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getStartEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Sends OAuth credentials to a running environment on behalf of a user. When
-     * this completes, the environment will be authorized to run various Google
-     * Cloud command line tools without requiring the user to manually
-     * authenticate.
-     * </pre>
-     */
-    public com.google.longrunning.Operation authorizeEnvironment(
-        com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAuthorizeEnvironmentMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Adds a public SSH key to an environment, allowing clients with the
-     * corresponding private key to connect to that environment via SSH. If a key
-     * with the same content already exists, this will error with ALREADY_EXISTS.
-     * </pre>
-     */
-    public com.google.longrunning.Operation addPublicKey(
-        com.google.cloud.shell.v1.AddPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getAddPublicKeyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Removes a public SSH key from an environment. Clients will no longer be
-     * able to connect to the environment using the corresponding private key.
-     * If a key with the same content is not present, this will error with
-     * NOT_FOUND.
-     * </pre>
-     */
-    public com.google.longrunning.Operation removePublicKey(
-        com.google.cloud.shell.v1.RemovePublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRemovePublicKeyMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service CloudShellService.
    *
    * <pre>
    * API for interacting with Google Cloud Shell. Each user of Cloud Shell has at

@@ -33,7 +33,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ObjectTrackingFrame)
     ObjectTrackingFrameOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ObjectTrackingFrame.newBuilder() to construct.
   private ObjectTrackingFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     private BoundedAreaCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   }
 
   public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
-
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
    *
@@ -124,7 +121,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public boolean hasBoundingPoly() {
     return boundedAreaCase_ == 1;
   }
-
   /**
    * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
    *
@@ -137,7 +133,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
   }
-
   /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
   @java.lang.Override
   public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
@@ -148,7 +143,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NORMALIZED_BOUNDING_POLY_FIELD_NUMBER = 2;
-
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
    * </code>
@@ -159,7 +153,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public boolean hasNormalizedBoundingPoly() {
     return boundedAreaCase_ == 2;
   }
-
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
    * </code>
@@ -173,7 +166,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.getDefaultInstance();
   }
-
   /**
    * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
    * </code>
@@ -189,7 +181,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration timeOffset_;
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
-
   /**
    *
    *
@@ -441,7 +430,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -708,7 +696,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder,
             com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder>
         boundingPolyBuilder_;
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
      *
@@ -718,7 +705,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public boolean hasBoundingPoly() {
       return boundedAreaCase_ == 1;
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code>
      *
@@ -738,7 +724,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     public Builder setBoundingPoly(com.google.cloud.datalabeling.v1beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
@@ -753,7 +738,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       boundedAreaCase_ = 1;
       return this;
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     public Builder setBoundingPoly(
         com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder builderForValue) {
@@ -766,7 +750,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       boundedAreaCase_ = 1;
       return this;
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     public Builder mergeBoundingPoly(com.google.cloud.datalabeling.v1beta1.BoundingPoly value) {
       if (boundingPolyBuilder_ == null) {
@@ -792,7 +775,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       boundedAreaCase_ = 1;
       return this;
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     public Builder clearBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
@@ -810,12 +792,10 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     public com.google.cloud.datalabeling.v1beta1.BoundingPoly.Builder getBoundingPolyBuilder() {
       return getBoundingPolyFieldBuilder().getBuilder();
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     @java.lang.Override
     public com.google.cloud.datalabeling.v1beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder() {
@@ -828,7 +808,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return com.google.cloud.datalabeling.v1beta1.BoundingPoly.getDefaultInstance();
       }
     }
-
     /** <code>.google.cloud.datalabeling.v1beta1.BoundingPoly bounding_poly = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datalabeling.v1beta1.BoundingPoly,
@@ -859,7 +838,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.Builder,
             com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPolyOrBuilder>
         normalizedBoundingPolyBuilder_;
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -870,7 +848,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public boolean hasNormalizedBoundingPoly() {
       return boundedAreaCase_ == 2;
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -892,7 +869,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.getDefaultInstance();
       }
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -911,7 +887,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       boundedAreaCase_ = 2;
       return this;
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -927,7 +902,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       boundedAreaCase_ = 2;
       return this;
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -958,7 +932,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       boundedAreaCase_ = 2;
       return this;
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -979,7 +952,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -988,7 +960,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         getNormalizedBoundingPolyBuilder() {
       return getNormalizedBoundingPolyFieldBuilder().getBuilder();
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -1005,7 +976,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return com.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly.getDefaultInstance();
       }
     }
-
     /**
      * <code>.google.cloud.datalabeling.v1beta1.NormalizedBoundingPoly normalized_bounding_poly = 2;
      * </code>
@@ -1041,7 +1011,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
-
     /**
      *
      *
@@ -1056,7 +1025,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1077,7 +1045,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
         return timeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1100,7 +1067,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1086,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1113,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1132,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1146,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1202,7 +1164,6 @@ public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMess
             : timeOffset_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface QueryErrorOrBuilder
    * @return Whether the locator field is set.
    */
   boolean hasLocator();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface QueryErrorOrBuilder
    * @return The locator.
    */
   com.google.monitoring.v3.TextLocator getLocator();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface QueryErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

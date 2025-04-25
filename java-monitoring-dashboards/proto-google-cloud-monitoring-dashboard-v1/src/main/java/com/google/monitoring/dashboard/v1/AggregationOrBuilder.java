@@ -47,7 +47,6 @@ public interface AggregationOrBuilder
    * @return Whether the alignmentPeriod field is set.
    */
   boolean hasAlignmentPeriod();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface AggregationOrBuilder
    * @return The alignmentPeriod.
    */
   com.google.protobuf.Duration getAlignmentPeriod();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface AggregationOrBuilder
    * @return The enum numeric value on the wire for perSeriesAligner.
    */
   int getPerSeriesAlignerValue();
-
   /**
    *
    *
@@ -175,7 +172,6 @@ public interface AggregationOrBuilder
    * @return The enum numeric value on the wire for crossSeriesReducer.
    */
   int getCrossSeriesReducerValue();
-
   /**
    *
    *
@@ -227,7 +223,6 @@ public interface AggregationOrBuilder
    * @return A list containing the groupByFields.
    */
   java.util.List<java.lang.String> getGroupByFieldsList();
-
   /**
    *
    *
@@ -253,7 +248,6 @@ public interface AggregationOrBuilder
    * @return The count of groupByFields.
    */
   int getGroupByFieldsCount();
-
   /**
    *
    *
@@ -280,7 +274,6 @@ public interface AggregationOrBuilder
    * @return The groupByFields at the given index.
    */
   java.lang.String getGroupByFields(int index);
-
   /**
    *
    *

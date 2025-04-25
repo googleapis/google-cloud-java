@@ -49,7 +49,6 @@ public interface StopAirflowCommandResponseOrBuilder
    * @return A list containing the output.
    */
   java.util.List<java.lang.String> getOutputList();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StopAirflowCommandResponseOrBuilder
    * @return The count of output.
    */
   int getOutputCount();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface StopAirflowCommandResponseOrBuilder
    * @return The output at the given index.
    */
   java.lang.String getOutput(int index);
-
   /**
    *
    *

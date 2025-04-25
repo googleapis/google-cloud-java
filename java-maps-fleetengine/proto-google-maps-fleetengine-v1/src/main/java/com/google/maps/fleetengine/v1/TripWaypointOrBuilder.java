@@ -36,7 +36,6 @@ public interface TripWaypointOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TripWaypointOrBuilder
    * @return The location.
    */
   com.google.maps.fleetengine.v1.TerminalLocation getLocation();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface TripWaypointOrBuilder
    * @return The tripId.
    */
   java.lang.String getTripId();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface TripWaypointOrBuilder
    * @return The enum numeric value on the wire for waypointType.
    */
   int getWaypointTypeValue();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface TripWaypointOrBuilder
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
   java.util.List<com.google.type.LatLng> getPathToWaypointList();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface TripWaypointOrBuilder
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
   com.google.type.LatLng getPathToWaypoint(int index);
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface TripWaypointOrBuilder
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
   int getPathToWaypointCount();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface TripWaypointOrBuilder
    * <code>repeated .google.type.LatLng path_to_waypoint = 4;</code>
    */
   java.util.List<? extends com.google.type.LatLngOrBuilder> getPathToWaypointOrBuilderList();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface TripWaypointOrBuilder
    * @return The encodedPathToWaypoint.
    */
   java.lang.String getEncodedPathToWaypoint();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface TripWaypointOrBuilder
    * @return Whether the trafficToWaypoint field is set.
    */
   boolean hasTrafficToWaypoint();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface TripWaypointOrBuilder
    * @return The trafficToWaypoint.
    */
   com.google.maps.fleetengine.v1.ConsumableTrafficPolyline getTrafficToWaypoint();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface TripWaypointOrBuilder
    * @return Whether the distanceMeters field is set.
    */
   boolean hasDistanceMeters();
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public interface TripWaypointOrBuilder
    * @return The distanceMeters.
    */
   com.google.protobuf.Int32Value getDistanceMeters();
-
   /**
    *
    *
@@ -301,7 +288,6 @@ public interface TripWaypointOrBuilder
    * @return Whether the eta field is set.
    */
   boolean hasEta();
-
   /**
    *
    *
@@ -315,7 +301,6 @@ public interface TripWaypointOrBuilder
    * @return The eta.
    */
   com.google.protobuf.Timestamp getEta();
-
   /**
    *
    *
@@ -341,7 +326,6 @@ public interface TripWaypointOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -355,7 +339,6 @@ public interface TripWaypointOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
-
   /**
    *
    *

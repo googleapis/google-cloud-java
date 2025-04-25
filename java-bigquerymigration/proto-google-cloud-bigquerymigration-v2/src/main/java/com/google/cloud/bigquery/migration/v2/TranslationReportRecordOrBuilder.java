@@ -36,7 +36,6 @@ public interface TranslationReportRecordOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface TranslationReportRecordOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface TranslationReportRecordOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *

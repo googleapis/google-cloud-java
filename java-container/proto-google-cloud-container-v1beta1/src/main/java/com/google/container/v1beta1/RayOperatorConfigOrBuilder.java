@@ -51,7 +51,6 @@ public interface RayOperatorConfigOrBuilder
    * @return Whether the rayClusterLoggingConfig field is set.
    */
   boolean hasRayClusterLoggingConfig();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface RayOperatorConfigOrBuilder
    * @return The rayClusterLoggingConfig.
    */
   com.google.container.v1beta1.RayClusterLoggingConfig getRayClusterLoggingConfig();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface RayOperatorConfigOrBuilder
    * @return Whether the rayClusterMonitoringConfig field is set.
    */
   boolean hasRayClusterMonitoringConfig();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface RayOperatorConfigOrBuilder
    * @return The rayClusterMonitoringConfig.
    */
   com.google.container.v1beta1.RayClusterMonitoringConfig getRayClusterMonitoringConfig();
-
   /**
    *
    *

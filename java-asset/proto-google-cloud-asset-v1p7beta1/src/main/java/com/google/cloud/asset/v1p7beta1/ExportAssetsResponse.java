@@ -37,7 +37,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1p7beta1.ExportAssetsResponse)
     ExportAssetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportAssetsResponse.newBuilder() to construct.
   private ExportAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int READ_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp readTime_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.asset.v1p7beta1.OutputConfig outputConfig_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.asset.v1p7beta1.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
 
   public static final int OUTPUT_RESULT_FIELD_NUMBER = 3;
   private com.google.cloud.asset.v1p7beta1.OutputResult outputResult_;
-
   /**
    *
    *
@@ -191,7 +183,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
   public boolean hasOutputResult() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.asset.v1p7beta1.OutputResult.getDefaultInstance()
         : outputResult_;
   }
-
   /**
    *
    *
@@ -427,7 +417,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -675,7 +664,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         return readTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +797,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -832,7 +813,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
-
     /**
      *
      *
@@ -865,7 +845,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.asset.v1p7beta1.OutputConfig.Builder,
             com.google.cloud.asset.v1p7beta1.OutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -924,7 +901,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +921,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +949,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +968,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +982,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1028,7 +1000,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
             : outputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1032,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.asset.v1p7beta1.OutputResult.Builder,
             com.google.cloud.asset.v1p7beta1.OutputResultOrBuilder>
         outputResultBuilder_;
-
     /**
      *
      *
@@ -1080,7 +1050,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
     public boolean hasOutputResult() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1105,7 +1074,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
         return outputResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1100,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1124,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1156,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1179,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1197,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getOutputResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1256,7 +1219,6 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
             : outputResult_;
       }
     }
-
     /**
      *
      *

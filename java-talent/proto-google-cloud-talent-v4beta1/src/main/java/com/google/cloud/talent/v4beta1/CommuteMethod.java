@@ -93,7 +93,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMMUTE_METHOD_UNSPECIFIED = 0;</code>
    */
   public static final int COMMUTE_METHOD_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -104,7 +103,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DRIVING = 1;</code>
    */
   public static final int DRIVING_VALUE = 1;
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRANSIT = 2;</code>
    */
   public static final int TRANSIT_VALUE = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public enum CommuteMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>WALKING = 3;</code>
    */
   public static final int WALKING_VALUE = 3;
-
   /**
    *
    *

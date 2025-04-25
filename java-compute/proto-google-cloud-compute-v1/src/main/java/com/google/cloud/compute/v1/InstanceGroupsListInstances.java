@@ -32,7 +32,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupsListInstances)
     InstanceGroupsListInstancesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupsListInstances.newBuilder() to construct.
   private InstanceGroupsListInstances(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceWithNamedPorts> items_;
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.compute.v1.InstanceWithNamedPorts> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.InstanceWithNamedPorts getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -326,7 +312,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -355,7 +340,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -371,7 +355,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -395,7 +378,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +404,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -438,7 +419,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -701,7 +680,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1026,7 +1004,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1064,7 +1040,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1083,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1100,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1156,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1201,7 +1172,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1218,7 +1188,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1230,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1252,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1294,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1314,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1334,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1353,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1372,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1384,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     public com.google.cloud.compute.v1.InstanceWithNamedPorts.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1442,7 +1401,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1418,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -1474,7 +1431,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceWithNamedPorts.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1489,7 +1445,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.compute.v1.InstanceWithNamedPorts.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1522,7 +1477,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1537,7 +1491,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1560,7 +1513,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1583,7 +1535,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1605,7 +1556,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1573,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1597,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1663,7 +1611,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1686,7 +1633,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1709,7 +1655,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1731,7 +1676,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1693,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1774,7 +1717,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -1789,7 +1731,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1812,7 +1753,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1835,7 +1775,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1857,7 +1796,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1875,7 +1813,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1905,7 +1842,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1920,7 +1856,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1941,7 +1876,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1964,7 +1898,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1917,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2012,7 +1944,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2032,7 +1963,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1977,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2066,7 +1995,6 @@ public final class InstanceGroupsListInstances extends com.google.protobuf.Gener
             : warning_;
       }
     }
-
     /**
      *
      *

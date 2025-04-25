@@ -115,7 +115,6 @@ public interface DistributionOrBuilder
    * @return A list containing the bucketCounts.
    */
   java.util.List<java.lang.Long> getBucketCountsList();
-
   /**
    *
    *
@@ -138,7 +137,6 @@ public interface DistributionOrBuilder
    * @return The count of bucketCounts.
    */
   int getBucketCountsCount();
-
   /**
    *
    *
@@ -175,7 +173,6 @@ public interface DistributionOrBuilder
    * @return Whether the linearBuckets field is set.
    */
   boolean hasLinearBuckets();
-
   /**
    *
    *
@@ -188,7 +185,6 @@ public interface DistributionOrBuilder
    * @return The linearBuckets.
    */
   com.google.api.servicecontrol.v1.Distribution.LinearBuckets getLinearBuckets();
-
   /**
    *
    *
@@ -213,7 +209,6 @@ public interface DistributionOrBuilder
    * @return Whether the exponentialBuckets field is set.
    */
   boolean hasExponentialBuckets();
-
   /**
    *
    *
@@ -227,7 +222,6 @@ public interface DistributionOrBuilder
    * @return The exponentialBuckets.
    */
   com.google.api.servicecontrol.v1.Distribution.ExponentialBuckets getExponentialBuckets();
-
   /**
    *
    *
@@ -253,7 +247,6 @@ public interface DistributionOrBuilder
    * @return Whether the explicitBuckets field is set.
    */
   boolean hasExplicitBuckets();
-
   /**
    *
    *
@@ -266,7 +259,6 @@ public interface DistributionOrBuilder
    * @return The explicitBuckets.
    */
   com.google.api.servicecontrol.v1.Distribution.ExplicitBuckets getExplicitBuckets();
-
   /**
    *
    *
@@ -289,7 +281,6 @@ public interface DistributionOrBuilder
    * <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
    */
   java.util.List<com.google.api.Distribution.Exemplar> getExemplarsList();
-
   /**
    *
    *
@@ -300,7 +291,6 @@ public interface DistributionOrBuilder
    * <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
    */
   com.google.api.Distribution.Exemplar getExemplars(int index);
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public interface DistributionOrBuilder
    * <code>repeated .google.api.Distribution.Exemplar exemplars = 10;</code>
    */
   int getExemplarsCount();
-
   /**
    *
    *
@@ -323,7 +312,6 @@ public interface DistributionOrBuilder
    */
   java.util.List<? extends com.google.api.Distribution.ExemplarOrBuilder>
       getExemplarsOrBuilderList();
-
   /**
    *
    *

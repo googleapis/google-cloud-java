@@ -34,7 +34,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudSqlConditions)
     DiscoveryCloudSqlConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryCloudSqlConditions.newBuilder() to construct.
   private DiscoveryCloudSqlConditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      * <code>DATABASE_ENGINE_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_ENGINE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      * <code>ALL_SUPPORTED_DATABASE_ENGINES = 1;</code>
      */
     public static final int ALL_SUPPORTED_DATABASE_ENGINES_VALUE = 1;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      * <code>MYSQL = 2;</code>
      */
     public static final int MYSQL_VALUE = 2;
-
     /**
      *
      *
@@ -303,7 +299,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      * <code>DATABASE_RESOURCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -314,7 +309,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
      * <code>DATABASE_RESOURCE_TYPE_ALL_SUPPORTED_TYPES = 1;</code>
      */
     public static final int DATABASE_RESOURCE_TYPE_ALL_SUPPORTED_TYPES_VALUE = 1;
-
     /**
      *
      *
@@ -436,7 +430,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
                   : result;
             }
           };
-
   /**
    *
    *
@@ -458,7 +451,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
         java.lang.Integer, com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseEngine>(
         databaseEngines_, databaseEngines_converter_);
   }
-
   /**
    *
    *
@@ -477,7 +469,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
   public int getDatabaseEnginesCount() {
     return databaseEngines_.size();
   }
-
   /**
    *
    *
@@ -498,7 +489,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       int index) {
     return databaseEngines_converter_.convert(databaseEngines_.get(index));
   }
-
   /**
    *
    *
@@ -517,7 +507,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
   public java.util.List<java.lang.Integer> getDatabaseEnginesValueList() {
     return databaseEngines_;
   }
-
   /**
    *
    *
@@ -563,7 +552,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
                   : result;
             }
           };
-
   /**
    *
    *
@@ -587,7 +575,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
         com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseResourceType>(
         types_, types_converter_);
   }
-
   /**
    *
    *
@@ -607,7 +594,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
   public int getTypesCount() {
     return types_.size();
   }
-
   /**
    *
    *
@@ -629,7 +615,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       int index) {
     return types_converter_.convert(types_.get(index));
   }
-
   /**
    *
    *
@@ -649,7 +634,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
   public java.util.List<java.lang.Integer> getTypesValueList() {
     return types_;
   }
-
   /**
    *
    *
@@ -874,7 +858,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1129,7 +1112,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1132,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
           java.lang.Integer, com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseEngine>(
           databaseEngines_, databaseEngines_converter_);
     }
-
     /**
      *
      *
@@ -1168,7 +1149,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     public int getDatabaseEnginesCount() {
       return databaseEngines_.size();
     }
-
     /**
      *
      *
@@ -1188,7 +1168,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
         int index) {
       return databaseEngines_converter_.convert(databaseEngines_.get(index));
     }
-
     /**
      *
      *
@@ -1215,7 +1194,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1219,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1245,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1265,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1282,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     public java.util.List<java.lang.Integer> getDatabaseEnginesValueList() {
       return java.util.Collections.unmodifiableList(databaseEngines_);
     }
-
     /**
      *
      *
@@ -1326,7 +1300,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     public int getDatabaseEnginesValue(int index) {
       return databaseEngines_.get(index);
     }
-
     /**
      *
      *
@@ -1349,7 +1322,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1343,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1375,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1398,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
           com.google.privacy.dlp.v2.DiscoveryCloudSqlConditions.DatabaseResourceType>(
           types_, types_converter_);
     }
-
     /**
      *
      *
@@ -1447,7 +1416,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     public int getTypesCount() {
       return types_.size();
     }
-
     /**
      *
      *
@@ -1468,7 +1436,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
         int index) {
       return types_converter_.convert(types_.get(index));
     }
-
     /**
      *
      *
@@ -1497,7 +1464,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1524,7 +1490,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1554,7 +1519,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1540,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1558,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     public java.util.List<java.lang.Integer> getTypesValueList() {
       return java.util.Collections.unmodifiableList(types_);
     }
-
     /**
      *
      *
@@ -1615,7 +1577,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
     public int getTypesValue(int index) {
       return types_.get(index);
     }
-
     /**
      *
      *
@@ -1639,7 +1600,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1622,6 @@ public final class DiscoveryCloudSqlConditions extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

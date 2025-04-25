@@ -37,7 +37,6 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    * @return Whether the portPairRemoteLocation field is set.
    */
   boolean hasPortPairRemoteLocation();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    * @return The portPairRemoteLocation.
    */
   java.lang.String getPortPairRemoteLocation();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    * @return Whether the portPairVlan field is set.
    */
   boolean hasPortPairVlan();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    * @return The portPairVlan.
    */
   java.lang.String getPortPairVlan();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    * @return Whether the subnetLengthRange field is set.
    */
   boolean hasSubnetLengthRange();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface InterconnectRemoteLocationConstraintsOrBuilder
    */
   com.google.cloud.compute.v1.InterconnectRemoteLocationConstraintsSubnetLengthRange
       getSubnetLengthRange();
-
   /**
    *
    *

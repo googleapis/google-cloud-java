@@ -89,7 +89,6 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_VIEW_UNKNOWN = 0;</code>
    */
   public static final int JOB_VIEW_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -102,7 +101,6 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_VIEW_SUMMARY = 1;</code>
    */
   public static final int JOB_VIEW_SUMMARY_VALUE = 1;
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public enum JobView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_VIEW_ALL = 2;</code>
    */
   public static final int JOB_VIEW_ALL_VALUE = 2;
-
   /**
    *
    *

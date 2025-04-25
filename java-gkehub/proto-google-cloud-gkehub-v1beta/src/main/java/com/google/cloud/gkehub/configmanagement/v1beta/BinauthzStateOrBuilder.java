@@ -36,7 +36,6 @@ public interface BinauthzStateOrBuilder
    * @return The enum numeric value on the wire for webhook.
    */
   int getWebhookValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BinauthzStateOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BinauthzStateOrBuilder
    * @return The version.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion getVersion();
-
   /**
    *
    *

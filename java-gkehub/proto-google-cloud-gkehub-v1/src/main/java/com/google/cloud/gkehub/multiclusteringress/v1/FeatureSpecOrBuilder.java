@@ -37,7 +37,6 @@ public interface FeatureSpecOrBuilder
    * @return The configMembership.
    */
   java.lang.String getConfigMembership();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface CreateCaPoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateCaPoolRequestOrBuilder
    * @return The caPoolId.
    */
   java.lang.String getCaPoolId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CreateCaPoolRequestOrBuilder
    * @return Whether the caPool field is set.
    */
   boolean hasCaPool();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateCaPoolRequestOrBuilder
    * @return The caPool.
    */
   com.google.cloud.security.privateca.v1.CaPool getCaPool();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface CreateCaPoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

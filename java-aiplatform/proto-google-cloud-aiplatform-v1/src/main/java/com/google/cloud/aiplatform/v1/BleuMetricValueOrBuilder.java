@@ -36,7 +36,6 @@ public interface BleuMetricValueOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *

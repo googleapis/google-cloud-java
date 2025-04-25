@@ -54,7 +54,6 @@ public interface FirewallRuleOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface FirewallRuleOrBuilder
    * @return The sourceRange.
    */
   java.lang.String getSourceRange();
-
   /**
    *
    *
@@ -127,7 +125,6 @@ public interface FirewallRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

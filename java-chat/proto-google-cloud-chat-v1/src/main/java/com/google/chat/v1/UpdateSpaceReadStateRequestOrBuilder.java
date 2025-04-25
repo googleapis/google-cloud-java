@@ -52,7 +52,6 @@ public interface UpdateSpaceReadStateRequestOrBuilder
    * @return Whether the spaceReadState field is set.
    */
   boolean hasSpaceReadState();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface UpdateSpaceReadStateRequestOrBuilder
    * @return The spaceReadState.
    */
   com.google.chat.v1.SpaceReadState getSpaceReadState();
-
   /**
    *
    *
@@ -134,7 +132,6 @@ public interface UpdateSpaceReadStateRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -160,7 +157,6 @@ public interface UpdateSpaceReadStateRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

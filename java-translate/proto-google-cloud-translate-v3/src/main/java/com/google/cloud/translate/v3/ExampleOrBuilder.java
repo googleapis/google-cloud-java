@@ -37,7 +37,6 @@ public interface ExampleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ExampleOrBuilder
    * @return The sourceText.
    */
   java.lang.String getSourceText();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ExampleOrBuilder
    * @return The targetText.
    */
   java.lang.String getTargetText();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface ExampleOrBuilder
    * @return The usage.
    */
   java.lang.String getUsage();
-
   /**
    *
    *

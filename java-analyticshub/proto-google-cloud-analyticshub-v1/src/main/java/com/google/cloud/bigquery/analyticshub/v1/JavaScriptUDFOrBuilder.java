@@ -37,7 +37,6 @@ public interface JavaScriptUDFOrBuilder
    * @return The functionName.
    */
   java.lang.String getFunctionName();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface JavaScriptUDFOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *

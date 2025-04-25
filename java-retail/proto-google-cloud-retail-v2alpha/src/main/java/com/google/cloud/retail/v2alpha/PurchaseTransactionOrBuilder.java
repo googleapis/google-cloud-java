@@ -36,7 +36,6 @@ public interface PurchaseTransactionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -111,7 +110,6 @@ public interface PurchaseTransactionOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *

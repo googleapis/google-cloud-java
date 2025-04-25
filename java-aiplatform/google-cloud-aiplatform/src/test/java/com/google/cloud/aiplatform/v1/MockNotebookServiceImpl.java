@@ -73,8 +73,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNotebookRuntimeTemplate, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CreateNotebookRuntimeTemplate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotebookRuntimeTemplate, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetNotebookRuntimeTemplate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotebookRuntimeTemplate.class.getName(),
                   Exception.class.getName())));
@@ -119,8 +117,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotebookRuntimeTemplates, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListNotebookRuntimeTemplates, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotebookRuntimeTemplatesResponse.class.getName(),
                   Exception.class.getName())));
@@ -141,8 +138,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotebookRuntimeTemplate, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method DeleteNotebookRuntimeTemplate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -164,8 +160,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateNotebookRuntimeTemplate, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method UpdateNotebookRuntimeTemplate, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotebookRuntimeTemplate.class.getName(),
                   Exception.class.getName())));
@@ -186,8 +181,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AssignNotebookRuntime, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method AssignNotebookRuntime, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -230,8 +224,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotebookRuntimes, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListNotebookRuntimes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotebookRuntimesResponse.class.getName(),
                   Exception.class.getName())));
@@ -252,8 +245,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotebookRuntime, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteNotebookRuntime, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -274,8 +266,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpgradeNotebookRuntime, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpgradeNotebookRuntime, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -296,8 +287,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method StartNotebookRuntime, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method StartNotebookRuntime, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -339,8 +329,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNotebookExecutionJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateNotebookExecutionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -362,8 +351,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotebookExecutionJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetNotebookExecutionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotebookExecutionJob.class.getName(),
                   Exception.class.getName())));
@@ -385,8 +373,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotebookExecutionJobs, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListNotebookExecutionJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotebookExecutionJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -407,8 +394,7 @@ public class MockNotebookServiceImpl extends NotebookServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotebookExecutionJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteNotebookExecutionJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

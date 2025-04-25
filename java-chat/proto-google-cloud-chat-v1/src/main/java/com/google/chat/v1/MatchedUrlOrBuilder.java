@@ -36,7 +36,6 @@ public interface MatchedUrlOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

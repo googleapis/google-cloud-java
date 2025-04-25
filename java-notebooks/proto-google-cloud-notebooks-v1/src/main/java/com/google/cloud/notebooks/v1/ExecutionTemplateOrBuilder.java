@@ -42,7 +42,6 @@ public interface ExecutionTemplateOrBuilder
    */
   @java.lang.Deprecated
   int getScaleTierValue();
-
   /**
    *
    *
@@ -121,7 +120,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The masterType.
    */
   java.lang.String getMasterType();
-
   /**
    *
    *
@@ -197,7 +195,6 @@ public interface ExecutionTemplateOrBuilder
    * @return Whether the acceleratorConfig field is set.
    */
   boolean hasAcceleratorConfig();
-
   /**
    *
    *
@@ -213,7 +210,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The acceleratorConfig.
    */
   com.google.cloud.notebooks.v1.ExecutionTemplate.SchedulerAcceleratorConfig getAcceleratorConfig();
-
   /**
    *
    *
@@ -243,7 +239,6 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -258,11 +253,9 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -277,7 +270,6 @@ public interface ExecutionTemplateOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -296,7 +288,6 @@ public interface ExecutionTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -327,7 +318,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The inputNotebookFile.
    */
   java.lang.String getInputNotebookFile();
-
   /**
    *
    *
@@ -359,7 +349,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The containerImageUri.
    */
   java.lang.String getContainerImageUri();
-
   /**
    *
    *
@@ -391,7 +380,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The outputNotebookFolder.
    */
   java.lang.String getOutputNotebookFolder();
-
   /**
    *
    *
@@ -424,7 +412,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The paramsYamlFile.
    */
   java.lang.String getParamsYamlFile();
-
   /**
    *
    *
@@ -454,7 +441,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The parameters.
    */
   java.lang.String getParameters();
-
   /**
    *
    *
@@ -482,7 +468,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -510,7 +495,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The enum numeric value on the wire for jobType.
    */
   int getJobTypeValue();
-
   /**
    *
    *
@@ -537,7 +521,6 @@ public interface ExecutionTemplateOrBuilder
    * @return Whether the dataprocParameters field is set.
    */
   boolean hasDataprocParameters();
-
   /**
    *
    *
@@ -551,7 +534,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The dataprocParameters.
    */
   com.google.cloud.notebooks.v1.ExecutionTemplate.DataprocParameters getDataprocParameters();
-
   /**
    *
    *
@@ -579,7 +561,6 @@ public interface ExecutionTemplateOrBuilder
    * @return Whether the vertexAiParameters field is set.
    */
   boolean hasVertexAiParameters();
-
   /**
    *
    *
@@ -594,7 +575,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The vertexAiParameters.
    */
   com.google.cloud.notebooks.v1.ExecutionTemplate.VertexAIParameters getVertexAiParameters();
-
   /**
    *
    *
@@ -623,7 +603,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The kernelSpec.
    */
   java.lang.String getKernelSpec();
-
   /**
    *
    *
@@ -654,7 +633,6 @@ public interface ExecutionTemplateOrBuilder
    * @return The tensorboard.
    */
   java.lang.String getTensorboard();
-
   /**
    *
    *

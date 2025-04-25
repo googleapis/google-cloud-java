@@ -36,7 +36,6 @@ public interface SetConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SetConfigRequestOrBuilder
    * @return Whether the tagTemplateMigration field is set.
    */
   boolean hasTagTemplateMigration();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SetConfigRequestOrBuilder
    * @return The enum numeric value on the wire for tagTemplateMigration.
    */
   int getTagTemplateMigrationValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface SetConfigRequestOrBuilder
    * @return Whether the catalogUiExperience field is set.
    */
   boolean hasCatalogUiExperience();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SetConfigRequestOrBuilder
    * @return The enum numeric value on the wire for catalogUiExperience.
    */
   int getCatalogUiExperienceValue();
-
   /**
    *
    *

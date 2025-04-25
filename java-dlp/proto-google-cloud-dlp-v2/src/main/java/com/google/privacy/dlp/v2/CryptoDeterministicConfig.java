@@ -35,7 +35,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CryptoDeterministicConfig)
     CryptoDeterministicConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CryptoDeterministicConfig.newBuilder() to construct.
   private CryptoDeterministicConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int CRYPTO_KEY_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
   public boolean hasCryptoKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()
         : cryptoKey_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
 
   public static final int SURROGATE_INFO_TYPE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InfoType surrogateInfoType_;
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
   public boolean hasSurrogateInfoType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
         : surrogateInfoType_;
   }
-
   /**
    *
    *
@@ -272,7 +265,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
 
   public static final int CONTEXT_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.FieldId context_;
-
   /**
    *
    *
@@ -305,7 +297,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
   public boolean hasContext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -338,7 +329,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
   public com.google.privacy.dlp.v2.FieldId getContext() {
     return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
   }
-
   /**
    *
    *
@@ -562,7 +552,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -810,7 +799,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.CryptoKey.Builder,
             com.google.privacy.dlp.v2.CryptoKeyOrBuilder>
         cryptoKeyBuilder_;
-
     /**
      *
      *
@@ -827,7 +815,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     public boolean hasCryptoKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -850,7 +837,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         return cryptoKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -875,7 +861,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +882,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +911,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +932,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +948,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -987,7 +968,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
             : cryptoKey_;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +1002,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         surrogateInfoTypeBuilder_;
-
     /**
      *
      *
@@ -1068,7 +1047,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     public boolean hasSurrogateInfoType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1120,7 +1098,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         return surrogateInfoTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1151,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1202,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1260,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1310,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1355,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return getSurrogateInfoTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1432,7 +1404,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
             : surrogateInfoType_;
       }
     }
-
     /**
      *
      *
@@ -1496,7 +1467,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -1528,7 +1498,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1564,7 +1533,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1604,7 +1572,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1608,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1686,7 +1652,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1723,7 +1688,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1755,7 +1719,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1789,7 +1752,6 @@ public final class CryptoDeterministicConfig extends com.google.protobuf.Generat
         return context_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : context_;
       }
     }
-
     /**
      *
      *

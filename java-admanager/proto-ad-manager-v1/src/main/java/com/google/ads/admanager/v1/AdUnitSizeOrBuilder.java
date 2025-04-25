@@ -36,7 +36,6 @@ public interface AdUnitSizeOrBuilder
    * @return Whether the size field is set.
    */
   boolean hasSize();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AdUnitSizeOrBuilder
    * @return The size.
    */
   com.google.ads.admanager.v1.Size getSize();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AdUnitSizeOrBuilder
    * @return The enum numeric value on the wire for environmentType.
    */
   int getEnvironmentTypeValue();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AdUnitSizeOrBuilder
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
    */
   java.util.List<com.google.ads.admanager.v1.Size> getCompanionsList();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface AdUnitSizeOrBuilder
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
    */
   com.google.ads.admanager.v1.Size getCompanions(int index);
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface AdUnitSizeOrBuilder
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
    */
   int getCompanionsCount();
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public interface AdUnitSizeOrBuilder
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
    */
   java.util.List<? extends com.google.ads.admanager.v1.SizeOrBuilder> getCompanionsOrBuilderList();
-
   /**
    *
    *

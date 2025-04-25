@@ -66,9 +66,6 @@ public class AsyncSearchPaged {
               .setConversationalSearchSpec(
                   SearchRequest.ConversationalSearchSpec.newBuilder().build())
               .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
-              .setLanguageCode("languageCode-2092349083")
-              .setRegionCode("regionCode-1991004415")
-              .setPlaceId("placeId-494224254")
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

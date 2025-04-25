@@ -35,7 +35,6 @@ public interface AndroidKeyRestrictionsOrBuilder
    * <code>repeated .google.api.apikeys.v2.AndroidApplication allowed_applications = 1;</code>
    */
   java.util.List<com.google.api.apikeys.v2.AndroidApplication> getAllowedApplicationsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface AndroidKeyRestrictionsOrBuilder
    * <code>repeated .google.api.apikeys.v2.AndroidApplication allowed_applications = 1;</code>
    */
   com.google.api.apikeys.v2.AndroidApplication getAllowedApplications(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface AndroidKeyRestrictionsOrBuilder
    * <code>repeated .google.api.apikeys.v2.AndroidApplication allowed_applications = 1;</code>
    */
   int getAllowedApplicationsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface AndroidKeyRestrictionsOrBuilder
    */
   java.util.List<? extends com.google.api.apikeys.v2.AndroidApplicationOrBuilder>
       getAllowedApplicationsOrBuilderList();
-
   /**
    *
    *

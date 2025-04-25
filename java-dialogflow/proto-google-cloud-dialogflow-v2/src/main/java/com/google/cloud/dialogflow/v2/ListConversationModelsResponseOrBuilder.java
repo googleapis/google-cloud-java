@@ -34,7 +34,6 @@ public interface ListConversationModelsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ConversationModel conversation_models = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.ConversationModel> getConversationModelsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConversationModelsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ConversationModel conversation_models = 1;</code>
    */
   com.google.cloud.dialogflow.v2.ConversationModel getConversationModels(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConversationModelsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.ConversationModel conversation_models = 1;</code>
    */
   int getConversationModelsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConversationModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.ConversationModelOrBuilder>
       getConversationModelsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListConversationModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

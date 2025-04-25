@@ -36,7 +36,6 @@ public interface LabelValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LabelValueOrBuilder
    * @return Whether the int64Value field is set.
    */
   boolean hasInt64Value();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface LabelValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface LabelValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *

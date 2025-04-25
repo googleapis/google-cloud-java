@@ -40,7 +40,6 @@ public interface InspectTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface InspectTemplateOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface InspectTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface InspectTemplateOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface InspectTemplateOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface InspectTemplateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface InspectTemplateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface InspectTemplateOrBuilder
    * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface InspectTemplateOrBuilder
    * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
-
   /**
    *
    *

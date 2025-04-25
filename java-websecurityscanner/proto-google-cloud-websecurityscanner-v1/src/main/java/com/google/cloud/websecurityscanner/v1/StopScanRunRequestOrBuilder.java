@@ -38,7 +38,6 @@ public interface StopScanRunRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

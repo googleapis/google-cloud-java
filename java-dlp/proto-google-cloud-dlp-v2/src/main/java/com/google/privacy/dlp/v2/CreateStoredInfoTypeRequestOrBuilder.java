@@ -57,7 +57,6 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -106,7 +105,6 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * @return The config.
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * @return The storedInfoTypeId.
    */
   java.lang.String getStoredInfoTypeId();
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public interface CreateStoredInfoTypeRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

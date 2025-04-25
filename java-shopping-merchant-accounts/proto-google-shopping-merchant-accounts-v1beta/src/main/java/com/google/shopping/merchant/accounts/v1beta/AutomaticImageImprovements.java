@@ -39,7 +39,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements)
     AutomaticImageImprovementsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomaticImageImprovements.newBuilder() to construct.
   private AutomaticImageImprovements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
      * @return Whether the allowAutomaticImageImprovements field is set.
      */
     boolean hasAllowAutomaticImageImprovements();
-
     /**
      *
      *
@@ -99,7 +97,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
      */
     boolean getAllowAutomaticImageImprovements();
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements.ImageImprovementsAccountLevelSettings)
       ImageImprovementsAccountLevelSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ImageImprovementsAccountLevelSettings.newBuilder() to construct.
     private ImageImprovementsAccountLevelSettings(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -151,7 +147,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     private int bitField0_;
     public static final int ALLOW_AUTOMATIC_IMAGE_IMPROVEMENTS_FIELD_NUMBER = 1;
     private boolean allowAutomaticImageImprovements_ = false;
-
     /**
      *
      *
@@ -167,7 +162,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     public boolean hasAllowAutomaticImageImprovements() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -383,7 +377,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -602,7 +595,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       private int bitField0_;
 
       private boolean allowAutomaticImageImprovements_;
-
       /**
        *
        *
@@ -618,7 +610,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       public boolean hasAllowAutomaticImageImprovements() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -634,7 +625,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       public boolean getAllowAutomaticImageImprovements() {
         return allowAutomaticImageImprovements_;
       }
-
       /**
        *
        *
@@ -654,7 +644,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -750,7 +739,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
   private com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements
           .ImageImprovementsAccountLevelSettings
       accountImageImprovementsSettings_;
-
   /**
    *
    *
@@ -771,7 +759,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
   public boolean hasAccountImageImprovementsSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -797,7 +784,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
             .ImageImprovementsAccountLevelSettings.getDefaultInstance()
         : accountImageImprovementsSettings_;
   }
-
   /**
    *
    *
@@ -824,7 +810,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
 
   public static final int EFFECTIVE_ALLOW_AUTOMATIC_IMAGE_IMPROVEMENTS_FIELD_NUMBER = 2;
   private boolean effectiveAllowAutomaticImageImprovements_ = false;
-
   /**
    *
    *
@@ -1031,7 +1016,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1276,7 +1260,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
             com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements
                 .ImageImprovementsAccountLevelSettingsOrBuilder>
         accountImageImprovementsSettingsBuilder_;
-
     /**
      *
      *
@@ -1296,7 +1279,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     public boolean hasAccountImageImprovementsSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1325,7 +1307,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
         return accountImageImprovementsSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1356,7 +1337,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1364,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1401,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1425,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1446,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       onChanged();
       return getAccountImageImprovementsSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1496,7 +1472,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
             : accountImageImprovementsSettings_;
       }
     }
-
     /**
      *
      *
@@ -1535,7 +1510,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     }
 
     private boolean effectiveAllowAutomaticImageImprovements_;
-
     /**
      *
      *
@@ -1556,7 +1530,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
     public boolean getEffectiveAllowAutomaticImageImprovements() {
       return effectiveAllowAutomaticImageImprovements_;
     }
-
     /**
      *
      *
@@ -1581,7 +1554,6 @@ public final class AutomaticImageImprovements extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

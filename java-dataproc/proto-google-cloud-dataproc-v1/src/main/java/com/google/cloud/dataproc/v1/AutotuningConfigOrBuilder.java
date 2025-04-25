@@ -38,7 +38,6 @@ public interface AutotuningConfigOrBuilder
    * @return A list containing the scenarios.
    */
   java.util.List<com.google.cloud.dataproc.v1.AutotuningConfig.Scenario> getScenariosList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AutotuningConfigOrBuilder
    * @return The count of scenarios.
    */
   int getScenariosCount();
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface AutotuningConfigOrBuilder
    * @return The scenarios at the given index.
    */
   com.google.cloud.dataproc.v1.AutotuningConfig.Scenario getScenarios(int index);
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface AutotuningConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for scenarios.
    */
   java.util.List<java.lang.Integer> getScenariosValueList();
-
   /**
    *
    *

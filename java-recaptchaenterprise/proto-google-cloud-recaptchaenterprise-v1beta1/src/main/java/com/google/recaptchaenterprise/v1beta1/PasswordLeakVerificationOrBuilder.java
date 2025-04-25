@@ -66,7 +66,6 @@ public interface PasswordLeakVerificationOrBuilder
    * @return The canonicalizedUsername.
    */
   java.lang.String getCanonicalizedUsername();
-
   /**
    *
    *

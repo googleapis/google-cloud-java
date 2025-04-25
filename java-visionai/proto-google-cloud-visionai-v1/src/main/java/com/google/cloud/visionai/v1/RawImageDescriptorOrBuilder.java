@@ -36,7 +36,6 @@ public interface RawImageDescriptorOrBuilder
    * @return The format.
    */
   java.lang.String getFormat();
-
   /**
    *
    *

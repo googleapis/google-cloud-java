@@ -35,7 +35,6 @@ public interface ListEventCreateRulesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventCreateRule event_create_rules = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.EventCreateRule> getEventCreateRulesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListEventCreateRulesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventCreateRule event_create_rules = 1;</code>
    */
   com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRules(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListEventCreateRulesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.EventCreateRule event_create_rules = 1;</code>
    */
   int getEventCreateRulesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListEventCreateRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder>
       getEventCreateRulesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListEventCreateRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

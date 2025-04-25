@@ -34,7 +34,6 @@ public interface ListDeviceRegistriesResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
   java.util.List<com.google.cloud.iot.v1.DeviceRegistry> getDeviceRegistriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDeviceRegistriesResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDeviceRegistriesResponseOrBuilder
    * <code>repeated .google.cloud.iot.v1.DeviceRegistry device_registries = 1;</code>
    */
   int getDeviceRegistriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDeviceRegistriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.iot.v1.DeviceRegistryOrBuilder>
       getDeviceRegistriesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListDeviceRegistriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

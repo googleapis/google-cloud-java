@@ -39,7 +39,6 @@ public interface FixedSizeBucketingConfigOrBuilder
    * @return Whether the lowerBound field is set.
    */
   boolean hasLowerBound();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface FixedSizeBucketingConfigOrBuilder
    * @return The lowerBound.
    */
   com.google.privacy.dlp.v2.Value getLowerBound();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface FixedSizeBucketingConfigOrBuilder
    * @return Whether the upperBound field is set.
    */
   boolean hasUpperBound();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface FixedSizeBucketingConfigOrBuilder
    * @return The upperBound.
    */
   com.google.privacy.dlp.v2.Value getUpperBound();
-
   /**
    *
    *

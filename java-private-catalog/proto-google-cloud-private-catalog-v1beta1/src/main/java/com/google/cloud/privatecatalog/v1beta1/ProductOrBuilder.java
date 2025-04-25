@@ -39,7 +39,6 @@ public interface ProductOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ProductOrBuilder
    * @return The assetType.
    */
   java.lang.String getAssetType();
-
   /**
    *
    *
@@ -260,7 +258,6 @@ public interface ProductOrBuilder
    * @return Whether the displayMetadata field is set.
    */
   boolean hasDisplayMetadata();
-
   /**
    *
    *
@@ -431,7 +428,6 @@ public interface ProductOrBuilder
    * @return The displayMetadata.
    */
   com.google.protobuf.Struct getDisplayMetadata();
-
   /**
    *
    *
@@ -613,7 +609,6 @@ public interface ProductOrBuilder
    * @return The iconUri.
    */
   java.lang.String getIconUri();
-
   /**
    *
    *
@@ -640,7 +635,6 @@ public interface ProductOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.privatecatalog.v1beta1.AssetReference> getAssetReferencesList();
-
   /**
    *
    *
@@ -654,7 +648,6 @@ public interface ProductOrBuilder
    * </code>
    */
   com.google.cloud.privatecatalog.v1beta1.AssetReference getAssetReferences(int index);
-
   /**
    *
    *
@@ -668,7 +661,6 @@ public interface ProductOrBuilder
    * </code>
    */
   int getAssetReferencesCount();
-
   /**
    *
    *
@@ -683,7 +675,6 @@ public interface ProductOrBuilder
    */
   java.util.List<? extends com.google.cloud.privatecatalog.v1beta1.AssetReferenceOrBuilder>
       getAssetReferencesOrBuilderList();
-
   /**
    *
    *
@@ -712,7 +703,6 @@ public interface ProductOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -726,7 +716,6 @@ public interface ProductOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -752,7 +741,6 @@ public interface ProductOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -766,7 +754,6 @@ public interface ProductOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

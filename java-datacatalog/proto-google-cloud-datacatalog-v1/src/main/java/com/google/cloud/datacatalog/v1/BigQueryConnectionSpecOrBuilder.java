@@ -37,7 +37,6 @@ public interface BigQueryConnectionSpecOrBuilder
    * @return The enum numeric value on the wire for connectionType.
    */
   int getConnectionTypeValue();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BigQueryConnectionSpecOrBuilder
    * @return Whether the cloudSql field is set.
    */
   boolean hasCloudSql();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface BigQueryConnectionSpecOrBuilder
    * @return The cloudSql.
    */
   com.google.cloud.datacatalog.v1.CloudSqlBigQueryConnectionSpec getCloudSql();
-
   /**
    *
    *

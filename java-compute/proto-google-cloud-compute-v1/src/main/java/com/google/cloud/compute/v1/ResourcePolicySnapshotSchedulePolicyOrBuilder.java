@@ -38,7 +38,6 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * @return Whether the retentionPolicy field is set.
    */
   boolean hasRetentionPolicy();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    */
   com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       getRetentionPolicy();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * @return Whether the schedule field is set.
    */
   boolean hasSchedule();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * @return The schedule.
    */
   com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule getSchedule();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * @return Whether the snapshotProperties field is set.
    */
   boolean hasSnapshotProperties();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    */
   com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
       getSnapshotProperties();
-
   /**
    *
    *

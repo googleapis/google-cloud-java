@@ -37,7 +37,6 @@ public interface DbSystemShapeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DbSystemShapeOrBuilder
    * @return The shape.
    */
   java.lang.String getShape();
-
   /**
    *
    *

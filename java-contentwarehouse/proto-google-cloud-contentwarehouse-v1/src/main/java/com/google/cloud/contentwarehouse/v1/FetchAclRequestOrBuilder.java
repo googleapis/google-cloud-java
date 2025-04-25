@@ -41,7 +41,6 @@ public interface FetchAclRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface FetchAclRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface FetchAclRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
-
   /**
    *
    *

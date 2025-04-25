@@ -93,8 +93,7 @@ public class MockBusinessIdentityServiceImpl extends BusinessIdentityServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateBusinessIdentity, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateBusinessIdentity, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BusinessIdentity.class.getName(),
                   Exception.class.getName())));

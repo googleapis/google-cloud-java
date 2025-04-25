@@ -33,7 +33,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SuggestionInput)
     SuggestionInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestionInput.newBuilder() to construct.
   private SuggestionInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +283,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -470,7 +466,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object answerRecord_ = "";
-
     /**
      *
      *
@@ -498,7 +493,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -526,7 +520,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -553,7 +546,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

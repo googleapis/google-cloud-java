@@ -38,7 +38,6 @@ public interface UpdateSessionTemplateRequestOrBuilder
    * @return Whether the sessionTemplate field is set.
    */
   boolean hasSessionTemplate();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateSessionTemplateRequestOrBuilder
    * @return The sessionTemplate.
    */
   com.google.cloud.dataproc.v1.SessionTemplate getSessionTemplate();
-
   /**
    *
    *

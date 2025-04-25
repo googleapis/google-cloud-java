@@ -33,7 +33,6 @@ public final class CommitWorkspaceChangesResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse)
     CommitWorkspaceChangesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommitWorkspaceChangesResponse.newBuilder() to construct.
   private CommitWorkspaceChangesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -214,7 +213,6 @@ public final class CommitWorkspaceChangesResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

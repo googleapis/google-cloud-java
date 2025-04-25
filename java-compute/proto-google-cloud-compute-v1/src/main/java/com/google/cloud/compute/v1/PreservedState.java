@@ -33,7 +33,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PreservedState)
     PreservedStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PreservedState.newBuilder() to construct.
   private PreservedState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,7 +114,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public int getDisksCount() {
     return internalGetDisks().getMap().size();
   }
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDisks().getMap().containsKey(key);
   }
-
   /** Use {@link #getDisksMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -141,7 +138,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       getDisks() {
     return getDisksMap();
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       getDisksMap() {
     return internalGetDisks().getMap();
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         internalGetDisks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -240,7 +234,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public int getExternalIPsCount() {
     return internalGetExternalIPs().getMap().size();
   }
-
   /**
    *
    *
@@ -259,7 +252,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetExternalIPs().getMap().containsKey(key);
   }
-
   /** Use {@link #getExternalIPsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -268,7 +260,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       getExternalIPs() {
     return getExternalIPsMap();
   }
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       getExternalIPsMap() {
     return internalGetExternalIPs().getMap();
   }
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         map = internalGetExternalIPs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -372,7 +361,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public int getInternalIPsCount() {
     return internalGetInternalIPs().getMap().size();
   }
-
   /**
    *
    *
@@ -391,7 +379,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetInternalIPs().getMap().containsKey(key);
   }
-
   /** Use {@link #getInternalIPsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -400,7 +387,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       getInternalIPs() {
     return getInternalIPsMap();
   }
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       getInternalIPsMap() {
     return internalGetInternalIPs().getMap();
   }
-
   /**
    *
    *
@@ -443,7 +428,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         map = internalGetInternalIPs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -495,7 +479,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -512,14 +495,12 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -533,7 +514,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -554,7 +534,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -803,7 +782,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1108,8 +1086,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return DisksDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final DisksConverter disksConverter = new DisksConverter();
 
@@ -1149,7 +1126,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public int getDisksCount() {
       return internalGetDisks().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1168,7 +1144,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDisks().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getDisksMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1176,7 +1151,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         getDisks() {
       return getDisksMap();
     }
-
     /**
      *
      *
@@ -1193,7 +1167,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         getDisksMap() {
       return internalGetDisks().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1218,7 +1191,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableDisks().ensureBuilderMap();
       return map.containsKey(key) ? disksConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1250,7 +1222,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDisks().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1240,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDisks().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.compute.v1.PreservedStatePreservedDisk>
@@ -1277,7 +1247,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableDisks().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1301,7 +1270,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1295,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1376,8 +1343,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ExternalIPsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ExternalIPsConverter externalIPsConverter = new ExternalIPsConverter();
 
@@ -1417,7 +1383,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public int getExternalIPsCount() {
       return internalGetExternalIPs().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1436,7 +1401,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetExternalIPs().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getExternalIPsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1445,7 +1409,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         getExternalIPs() {
       return getExternalIPsMap();
     }
-
     /**
      *
      *
@@ -1463,7 +1426,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         getExternalIPsMap() {
       return internalGetExternalIPs().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1490,7 +1452,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableExternalIPs().ensureBuilderMap();
       return map.containsKey(key) ? externalIPsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1523,7 +1484,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExternalIPs().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1542,7 +1502,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExternalIPs().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1551,7 +1510,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetMutableExternalIPs().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1575,7 +1533,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1559,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1653,8 +1609,7 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return InternalIPsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final InternalIPsConverter internalIPsConverter = new InternalIPsConverter();
 
@@ -1694,7 +1649,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public int getInternalIPsCount() {
       return internalGetInternalIPs().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1713,7 +1667,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetInternalIPs().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getInternalIPsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1722,7 +1675,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         getInternalIPs() {
       return getInternalIPsMap();
     }
-
     /**
      *
      *
@@ -1740,7 +1692,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
         getInternalIPsMap() {
       return internalGetInternalIPs().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1767,7 +1718,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableInternalIPs().ensureBuilderMap();
       return map.containsKey(key) ? internalIPsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1800,7 +1750,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableInternalIPs().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1819,7 +1768,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableInternalIPs().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1828,7 +1776,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableInternalIPs().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1852,7 +1799,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1879,7 +1825,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1936,7 +1881,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -1953,14 +1897,12 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -1974,7 +1916,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1995,7 +1936,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2022,7 +1962,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2039,14 +1978,12 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000008;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -2067,7 +2004,6 @@ public final class PreservedState extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

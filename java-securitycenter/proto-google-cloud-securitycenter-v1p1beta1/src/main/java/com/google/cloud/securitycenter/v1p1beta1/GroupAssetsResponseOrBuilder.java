@@ -36,7 +36,6 @@ public interface GroupAssetsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1p1beta1.GroupResult group_by_results = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v1p1beta1.GroupResult> getGroupByResultsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GroupAssetsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1p1beta1.GroupResult group_by_results = 1;</code>
    */
   com.google.cloud.securitycenter.v1p1beta1.GroupResult getGroupByResults(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface GroupAssetsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1p1beta1.GroupResult group_by_results = 1;</code>
    */
   int getGroupByResultsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface GroupAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v1p1beta1.GroupResultOrBuilder>
       getGroupByResultsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface GroupAssetsResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface GroupAssetsResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface GroupAssetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

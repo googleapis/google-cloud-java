@@ -34,7 +34,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RemoveExamplesResponse)
     RemoveExamplesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveExamplesResponse.newBuilder() to construct.
   private RemoveExamplesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exampleIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getExampleIdsList() {
     return exampleIds_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
   public int getExampleIdsCount() {
     return exampleIds_.size();
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getExampleIds(int index) {
     return exampleIds_.get(index);
   }
-
   /**
    *
    *
@@ -300,7 +295,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -501,7 +495,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -517,7 +510,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
       exampleIds_.makeImmutable();
       return exampleIds_;
     }
-
     /**
      *
      *
@@ -532,7 +524,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
     public int getExampleIdsCount() {
       return exampleIds_.size();
     }
-
     /**
      *
      *
@@ -548,7 +539,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getExampleIds(int index) {
       return exampleIds_.get(index);
     }
-
     /**
      *
      *
@@ -564,7 +554,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getExampleIdsBytes(int index) {
       return exampleIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -588,7 +577,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -611,7 +599,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +618,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +636,6 @@ public final class RemoveExamplesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

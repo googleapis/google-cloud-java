@@ -34,7 +34,6 @@ public final class DeployApplicationResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeployApplicationResponse)
     DeployApplicationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployApplicationResponse.newBuilder() to construct.
   private DeployApplicationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class DeployApplicationResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

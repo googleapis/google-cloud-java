@@ -37,7 +37,6 @@ public interface SqlResultValueOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SqlResultValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SqlResultValueOrBuilder
    * @return Whether the nullValue field is set.
    */
   boolean hasNullValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateFeatureViewRequest)
     CreateFeatureViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateFeatureViewRequest.newBuilder() to construct.
   private CreateFeatureViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
 
   public static final int FEATURE_VIEW_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.FeatureView featureView_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
   public boolean hasFeatureView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
         ? com.google.cloud.aiplatform.v1.FeatureView.getDefaultInstance()
         : featureView_;
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureViewId_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
 
   public static final int RUN_SYNC_IMMEDIATELY_FIELD_NUMBER = 4;
   private boolean runSyncImmediately_ = false;
-
   /**
    *
    *
@@ -466,7 +457,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -710,7 +700,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -737,7 +726,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -764,7 +752,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +798,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
             com.google.cloud.aiplatform.v1.FeatureView.Builder,
             com.google.cloud.aiplatform.v1.FeatureViewOrBuilder>
         featureViewBuilder_;
-
     /**
      *
      *
@@ -863,7 +847,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     public boolean hasFeatureView() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
         return featureViewBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -911,7 +893,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +915,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return getFeatureViewFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1024,7 +1001,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
             : featureView_;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1030,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object featureViewId_ = "";
-
     /**
      *
      *
@@ -1083,7 +1058,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1086,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1113,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1166,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     }
 
     private boolean runSyncImmediately_;
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
     public boolean getRunSyncImmediately() {
       return runSyncImmediately_;
     }
-
     /**
      *
      *
@@ -1237,7 +1206,6 @@ public final class CreateFeatureViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

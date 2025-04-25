@@ -34,7 +34,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1beta1.GenerateConnectManifestRequest)
     GenerateConnectManifestRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateConnectManifestRequest.newBuilder() to construct.
   private GenerateConnectManifestRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
   public static final int CONNECT_AGENT_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.v1beta1.ConnectAgent connectAgent_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   public boolean hasConnectAgent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         ? com.google.cloud.gkehub.v1beta1.ConnectAgent.getDefaultInstance()
         : connectAgent_;
   }
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
   public static final int IS_UPGRADE_FIELD_NUMBER = 4;
   private boolean isUpgrade_ = false;
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object registry_ = "";
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -321,7 +310,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   public static final int IMAGE_PULL_SECRET_CONTENT_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString imagePullSecretContent_ =
       com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -548,7 +536,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -823,7 +810,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -849,7 +835,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -900,7 +884,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +904,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +936,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
             com.google.cloud.gkehub.v1beta1.ConnectAgent.Builder,
             com.google.cloud.gkehub.v1beta1.ConnectAgentOrBuilder>
         connectAgentBuilder_;
-
     /**
      *
      *
@@ -971,7 +952,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     public boolean hasConnectAgent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -994,7 +974,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return connectAgentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1020,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1049,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1070,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1086,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return getConnectAgentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1132,7 +1106,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
             : connectAgent_;
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1135,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1186,7 +1158,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1181,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1203,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1252,7 +1221,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1246,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     }
 
     private boolean isUpgrade_;
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     public boolean getIsUpgrade() {
       return isUpgrade_;
     }
-
     /**
      *
      *
@@ -1316,7 +1282,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object registry_ = "";
-
     /**
      *
      *
@@ -1361,7 +1325,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1385,7 +1348,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1370,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1388,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1414,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
 
     private com.google.protobuf.ByteString imagePullSecretContent_ =
         com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1470,7 +1429,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getImagePullSecretContent() {
       return imagePullSecretContent_;
     }
-
     /**
      *
      *
@@ -1492,7 +1450,6 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

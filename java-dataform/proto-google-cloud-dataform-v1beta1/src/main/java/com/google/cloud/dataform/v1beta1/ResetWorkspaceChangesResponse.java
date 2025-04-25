@@ -33,7 +33,6 @@ public final class ResetWorkspaceChangesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse)
     ResetWorkspaceChangesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResetWorkspaceChangesResponse.newBuilder() to construct.
   private ResetWorkspaceChangesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ResetWorkspaceChangesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

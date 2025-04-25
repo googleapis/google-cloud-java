@@ -32,7 +32,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupsListInstances)
     RegionInstanceGroupsListInstancesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegionInstanceGroupsListInstances.newBuilder() to construct.
   private RegionInstanceGroupsListInstances(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstanceWithNamedPorts> items_;
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public java.util.List<com.google.cloud.compute.v1.InstanceWithNamedPorts> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public com.google.cloud.compute.v1.InstanceWithNamedPorts getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +275,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -303,7 +290,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -327,7 +313,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -356,7 +341,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -372,7 +356,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -396,7 +379,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -423,7 +405,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -439,7 +420,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -455,7 +435,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -702,7 +681,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1030,7 +1008,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1045,7 +1022,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1068,7 +1044,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1066,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1087,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1104,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1160,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1176,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1192,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1214,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1234,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1256,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1278,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1298,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1318,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1338,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1357,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1376,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1388,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     public com.google.cloud.compute.v1.InstanceWithNamedPorts.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1446,7 +1405,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1422,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -1478,7 +1435,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.InstanceWithNamedPorts.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1493,7 +1449,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
           .addBuilder(
               index, com.google.cloud.compute.v1.InstanceWithNamedPorts.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1526,7 +1481,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1541,7 +1495,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1564,7 +1517,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1587,7 +1539,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1609,7 +1560,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1627,7 +1577,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1601,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1667,7 +1615,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1690,7 +1637,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1713,7 +1659,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1735,7 +1680,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1753,7 +1697,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1721,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -1793,7 +1735,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1816,7 +1757,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1839,7 +1779,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1800,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1879,7 +1817,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1909,7 +1846,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1924,7 +1860,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1945,7 +1880,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1968,7 +1902,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1988,7 +1921,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2016,7 +1948,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -2036,7 +1967,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2051,7 +1981,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2070,7 +1999,6 @@ public final class RegionInstanceGroupsListInstances extends com.google.protobuf
             : warning_;
       }
     }
-
     /**
      *
      *

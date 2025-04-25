@@ -45,7 +45,6 @@ public interface MuteConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface MuteConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface MuteConfigOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -173,7 +170,6 @@ public interface MuteConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -189,7 +185,6 @@ public interface MuteConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -219,7 +214,6 @@ public interface MuteConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -235,7 +229,6 @@ public interface MuteConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -264,7 +257,6 @@ public interface MuteConfigOrBuilder
    * @return The mostRecentEditor.
    */
   java.lang.String getMostRecentEditor();
-
   /**
    *
    *
@@ -295,7 +287,6 @@ public interface MuteConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -327,7 +318,6 @@ public interface MuteConfigOrBuilder
    * @return Whether the expiryTime field is set.
    */
   boolean hasExpiryTime();
-
   /**
    *
    *
@@ -343,7 +333,6 @@ public interface MuteConfigOrBuilder
    * @return The expiryTime.
    */
   com.google.protobuf.Timestamp getExpiryTime();
-
   /**
    *
    *

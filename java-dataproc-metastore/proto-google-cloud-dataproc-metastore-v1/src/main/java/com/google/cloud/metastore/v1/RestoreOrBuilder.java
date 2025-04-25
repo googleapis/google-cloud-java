@@ -37,7 +37,6 @@ public interface RestoreOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RestoreOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RestoreOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface RestoreOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface RestoreOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface RestoreOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface RestoreOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface RestoreOrBuilder
    * @return The details.
    */
   java.lang.String getDetails();
-
   /**
    *
    *

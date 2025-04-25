@@ -34,7 +34,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.ListAssignmentsResponse)
     ListAssignmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAssignmentsResponse.newBuilder() to construct.
   private ListAssignmentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.reservation.v1.Assignment> assignments_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.bigquery.reservation.v1.Assignment> getAssignmentsList() {
     return assignments_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       getAssignmentsOrBuilderList() {
     return assignments_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
   public int getAssignmentsCount() {
     return assignments_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
   public com.google.cloud.bigquery.reservation.v1.Assignment getAssignments(int index) {
     return assignments_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +646,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return assignmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return assignmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return assignmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -713,7 +701,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +806,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +877,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         int index) {
       return getAssignmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return assignmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -934,7 +911,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(assignments_);
       }
     }
-
     /**
      *
      *
@@ -948,7 +924,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       return getAssignmentsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.reservation.v1.Assignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -964,7 +939,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.bigquery.reservation.v1.Assignment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1021,7 +994,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1017,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1039,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1057,6 @@ public final class ListAssignmentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

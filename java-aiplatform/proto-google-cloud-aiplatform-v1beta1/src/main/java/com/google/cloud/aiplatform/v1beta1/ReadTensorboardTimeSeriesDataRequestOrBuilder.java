@@ -40,7 +40,6 @@ public interface ReadTensorboardTimeSeriesDataRequestOrBuilder
    * @return The tensorboardTimeSeries.
    */
   java.lang.String getTensorboardTimeSeries();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface ReadTensorboardTimeSeriesDataRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

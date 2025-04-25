@@ -33,7 +33,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.UpdateUserRequest)
     UpdateUserRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateUserRequest.newBuilder() to construct.
   private UpdateUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int USER_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.accounts.v1beta.User user_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUser() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.shopping.merchant.accounts.v1beta.User.getDefaultInstance()
         : user_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -362,7 +355,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +580,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
             com.google.shopping.merchant.accounts.v1beta.User.Builder,
             com.google.shopping.merchant.accounts.v1beta.UserOrBuilder>
         userBuilder_;
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
         return userBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +676,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
             : user_;
       }
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +890,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class UpdateUserRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *

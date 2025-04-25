@@ -33,7 +33,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UpdateIssueRequest)
     UpdateIssueRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateIssueRequest.newBuilder() to construct.
   private UpdateIssueRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ISSUE_FIELD_NUMBER = 1;
   private com.google.cloud.contactcenterinsights.v1.Issue issue_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasIssue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.contactcenterinsights.v1.Issue.getDefaultInstance()
         : issue_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -350,7 +343,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +568,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.contactcenterinsights.v1.Issue.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueOrBuilder>
         issueBuilder_;
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasIssue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
         return issueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +702,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +718,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getIssueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
             : issue_;
       }
     }
-
     /**
      *
      *
@@ -789,7 +772,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -804,7 +786,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -825,7 +806,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -848,7 +828,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +847,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +874,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class UpdateIssueRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
-
     /**
      *
      *

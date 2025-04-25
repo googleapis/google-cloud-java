@@ -37,7 +37,6 @@ public interface ListIngressRulesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ListIngressRulesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface ListIngressRulesRequestOrBuilder
    * @return The matchingAddress.
    */
   java.lang.String getMatchingAddress();
-
   /**
    *
    *

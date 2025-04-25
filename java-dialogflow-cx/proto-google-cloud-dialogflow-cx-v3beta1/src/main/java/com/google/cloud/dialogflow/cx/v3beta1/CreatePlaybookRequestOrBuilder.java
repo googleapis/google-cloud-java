@@ -39,7 +39,6 @@ public interface CreatePlaybookRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreatePlaybookRequestOrBuilder
    * @return Whether the playbook field is set.
    */
   boolean hasPlaybook();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreatePlaybookRequestOrBuilder
    * @return The playbook.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybook();
-
   /**
    *
    *

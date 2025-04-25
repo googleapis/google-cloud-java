@@ -34,7 +34,6 @@ public interface ListRunsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Run runs = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.Run> getRunsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRunsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Run runs = 1;</code>
    */
   com.google.cloud.datacatalog.lineage.v1.Run getRuns(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRunsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.Run runs = 1;</code>
    */
   int getRunsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRunsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.RunOrBuilder>
       getRunsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRunsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

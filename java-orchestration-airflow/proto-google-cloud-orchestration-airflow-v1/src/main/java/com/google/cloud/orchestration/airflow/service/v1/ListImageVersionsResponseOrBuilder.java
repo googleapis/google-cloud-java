@@ -36,7 +36,6 @@ public interface ListImageVersionsResponseOrBuilder
    */
   java.util.List<com.google.cloud.orchestration.airflow.service.v1.ImageVersion>
       getImageVersionsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListImageVersionsResponseOrBuilder
    * </code>
    */
   com.google.cloud.orchestration.airflow.service.v1.ImageVersion getImageVersions(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListImageVersionsResponseOrBuilder
    * </code>
    */
   int getImageVersionsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListImageVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.orchestration.airflow.service.v1.ImageVersionOrBuilder>
       getImageVersionsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListImageVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

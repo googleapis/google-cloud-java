@@ -52,7 +52,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the staticDuration field is set.
    */
   boolean hasStaticDuration();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface RouteLegStepOrBuilder
    * @return The staticDuration.
    */
   com.google.protobuf.Duration getStaticDuration();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the polyline field is set.
    */
   boolean hasPolyline();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface RouteLegStepOrBuilder
    * @return The polyline.
    */
   com.google.maps.routing.v2.Polyline getPolyline();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the startLocation field is set.
    */
   boolean hasStartLocation();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface RouteLegStepOrBuilder
    * @return The startLocation.
    */
   com.google.maps.routing.v2.Location getStartLocation();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the endLocation field is set.
    */
   boolean hasEndLocation();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface RouteLegStepOrBuilder
    * @return The endLocation.
    */
   com.google.maps.routing.v2.Location getEndLocation();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the navigationInstruction field is set.
    */
   boolean hasNavigationInstruction();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public interface RouteLegStepOrBuilder
    * @return The navigationInstruction.
    */
   com.google.maps.routing.v2.NavigationInstruction getNavigationInstruction();
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the travelAdvisory field is set.
    */
   boolean hasTravelAdvisory();
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public interface RouteLegStepOrBuilder
    * @return The travelAdvisory.
    */
   com.google.maps.routing.v2.RouteLegStepTravelAdvisory getTravelAdvisory();
-
   /**
    *
    *
@@ -282,7 +270,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the localizedValues field is set.
    */
   boolean hasLocalizedValues();
-
   /**
    *
    *
@@ -296,7 +283,6 @@ public interface RouteLegStepOrBuilder
    * @return The localizedValues.
    */
   com.google.maps.routing.v2.RouteLegStep.RouteLegStepLocalizedValues getLocalizedValues();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface RouteLegStepOrBuilder
    * @return Whether the transitDetails field is set.
    */
   boolean hasTransitDetails();
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public interface RouteLegStepOrBuilder
    * @return The transitDetails.
    */
   com.google.maps.routing.v2.RouteLegStepTransitDetails getTransitDetails();
-
   /**
    *
    *
@@ -359,7 +343,6 @@ public interface RouteLegStepOrBuilder
    * @return The enum numeric value on the wire for travelMode.
    */
   int getTravelModeValue();
-
   /**
    *
    *

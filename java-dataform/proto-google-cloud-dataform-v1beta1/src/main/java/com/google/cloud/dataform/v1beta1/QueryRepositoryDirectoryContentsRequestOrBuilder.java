@@ -38,7 +38,6 @@ public interface QueryRepositoryDirectoryContentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface QueryRepositoryDirectoryContentsRequestOrBuilder
    * @return The commitSha.
    */
   java.lang.String getCommitSha();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface QueryRepositoryDirectoryContentsRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface QueryRepositoryDirectoryContentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

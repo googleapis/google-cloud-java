@@ -36,7 +36,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return Whether the emailAddress field is set.
    */
   boolean hasEmailAddress();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return The emailAddress.
    */
   java.lang.String getEmailAddress();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return Whether the phoneNumber field is set.
    */
   boolean hasPhoneNumber();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return The requestToken.
    */
   java.lang.String getRequestToken();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return Whether the lastVerificationTime field is set.
    */
   boolean hasLastVerificationTime();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface EndpointVerificationInfoOrBuilder
    * @return The lastVerificationTime.
    */
   com.google.protobuf.Timestamp getLastVerificationTime();
-
   /**
    *
    *

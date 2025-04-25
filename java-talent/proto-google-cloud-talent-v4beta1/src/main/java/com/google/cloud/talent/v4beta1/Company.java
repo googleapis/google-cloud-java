@@ -35,7 +35,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.Company)
     CompanyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Company.newBuilder() to construct.
   private Company(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,7 +93,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the headquartersLocation field is set.
      */
     boolean hasHeadquartersLocation();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      * @return The headquartersLocation.
      */
     com.google.cloud.talent.v4beta1.Location getHeadquartersLocation();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.talent.v4beta1.LocationOrBuilder getHeadquartersLocationOrBuilder();
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.Company.DerivedInfo)
       DerivedInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DerivedInfo.newBuilder() to construct.
     private DerivedInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -170,7 +165,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int HEADQUARTERS_LOCATION_FIELD_NUMBER = 1;
     private com.google.cloud.talent.v4beta1.Location headquartersLocation_;
-
     /**
      *
      *
@@ -188,7 +182,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHeadquartersLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -208,7 +201,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance()
           : headquartersLocation_;
     }
-
     /**
      *
      *
@@ -394,7 +386,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.talent.v4beta1.Location.Builder,
               com.google.cloud.talent.v4beta1.LocationOrBuilder>
           headquartersLocationBuilder_;
-
       /**
        *
        *
@@ -622,7 +612,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       public boolean hasHeadquartersLocation() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -645,7 +634,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           return headquartersLocationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -670,7 +658,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -693,7 +680,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -724,7 +710,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -746,7 +731,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -763,7 +747,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getHeadquartersLocationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -784,7 +767,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
               : headquartersLocation_;
         }
       }
-
       /**
        *
        *
@@ -882,7 +864,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -916,7 +897,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -955,7 +935,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -979,7 +958,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1008,7 +986,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalId_ = "";
-
   /**
    *
    *
@@ -1035,7 +1012,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1065,7 +1041,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_FIELD_NUMBER = 4;
   private int size_ = 0;
-
   /**
    *
    *
@@ -1081,7 +1056,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   public int getSizeValue() {
     return size_;
   }
-
   /**
    *
    *
@@ -1104,7 +1078,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headquartersAddress_ = "";
-
   /**
    *
    *
@@ -1132,7 +1105,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1163,7 +1135,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HIRING_AGENCY_FIELD_NUMBER = 6;
   private boolean hiringAgency_ = false;
-
   /**
    *
    *
@@ -1187,7 +1158,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eeoText_ = "";
-
   /**
    *
    *
@@ -1215,7 +1185,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1248,7 +1217,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object websiteUri_ = "";
-
   /**
    *
    *
@@ -1275,7 +1243,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1307,7 +1274,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object careerSiteUri_ = "";
-
   /**
    *
    *
@@ -1332,7 +1298,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1362,7 +1327,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageUri_ = "";
-
   /**
    *
    *
@@ -1386,7 +1350,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1416,7 +1379,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList keywordSearchableJobCustomAttributes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1445,7 +1407,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getKeywordSearchableJobCustomAttributesList() {
     return keywordSearchableJobCustomAttributes_;
   }
-
   /**
    *
    *
@@ -1474,7 +1435,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   public int getKeywordSearchableJobCustomAttributesCount() {
     return keywordSearchableJobCustomAttributes_.size();
   }
-
   /**
    *
    *
@@ -1504,7 +1464,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getKeywordSearchableJobCustomAttributes(int index) {
     return keywordSearchableJobCustomAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -1537,7 +1496,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DERIVED_INFO_FIELD_NUMBER = 12;
   private com.google.cloud.talent.v4beta1.Company.DerivedInfo derivedInfo_;
-
   /**
    *
    *
@@ -1555,7 +1513,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDerivedInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1575,7 +1532,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.talent.v4beta1.Company.DerivedInfo.getDefaultInstance()
         : derivedInfo_;
   }
-
   /**
    *
    *
@@ -1596,7 +1552,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUSPENDED_FIELD_NUMBER = 13;
   private boolean suspended_ = false;
-
   /**
    *
    *
@@ -1895,7 +1850,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2277,7 +2231,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2310,7 +2263,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2343,7 +2295,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2375,7 +2326,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2403,7 +2353,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2438,7 +2387,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2461,7 +2409,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2484,7 +2431,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2506,7 +2452,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2524,7 +2469,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2549,7 +2493,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object externalId_ = "";
-
     /**
      *
      *
@@ -2575,7 +2518,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2601,7 +2543,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2626,7 +2567,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2647,7 +2587,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2675,7 +2614,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int size_ = 0;
-
     /**
      *
      *
@@ -2691,7 +2629,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public int getSizeValue() {
       return size_;
     }
-
     /**
      *
      *
@@ -2710,7 +2647,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2728,7 +2664,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.talent.v4beta1.CompanySize.forNumber(size_);
       return result == null ? com.google.cloud.talent.v4beta1.CompanySize.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2750,7 +2685,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2770,7 +2704,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object headquartersAddress_ = "";
-
     /**
      *
      *
@@ -2797,7 +2730,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2824,7 +2756,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2850,7 +2781,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2872,7 +2802,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2901,7 +2830,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hiringAgency_;
-
     /**
      *
      *
@@ -2920,7 +2848,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public boolean getHiringAgency() {
       return hiringAgency_;
     }
-
     /**
      *
      *
@@ -2943,7 +2870,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2966,7 +2892,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object eeoText_ = "";
-
     /**
      *
      *
@@ -2993,7 +2918,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3020,7 +2944,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3046,7 +2969,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3068,7 +2990,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3097,7 +3018,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object websiteUri_ = "";
-
     /**
      *
      *
@@ -3123,7 +3043,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3149,7 +3068,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3174,7 +3092,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3195,7 +3112,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3223,7 +3139,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object careerSiteUri_ = "";
-
     /**
      *
      *
@@ -3247,7 +3162,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3271,7 +3185,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3294,7 +3207,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3225,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3339,7 +3250,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object imageUri_ = "";
-
     /**
      *
      *
@@ -3362,7 +3272,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3385,7 +3294,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3407,7 +3315,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3425,7 +3332,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3459,7 +3365,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000400;
     }
-
     /**
      *
      *
@@ -3490,7 +3395,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       keywordSearchableJobCustomAttributes_.makeImmutable();
       return keywordSearchableJobCustomAttributes_;
     }
-
     /**
      *
      *
@@ -3520,7 +3424,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public int getKeywordSearchableJobCustomAttributesCount() {
       return keywordSearchableJobCustomAttributes_.size();
     }
-
     /**
      *
      *
@@ -3551,7 +3454,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getKeywordSearchableJobCustomAttributes(int index) {
       return keywordSearchableJobCustomAttributes_.get(index);
     }
-
     /**
      *
      *
@@ -3582,7 +3484,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getKeywordSearchableJobCustomAttributesBytes(int index) {
       return keywordSearchableJobCustomAttributes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3621,7 +3522,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3659,7 +3559,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3696,7 +3595,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3730,7 +3628,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3777,7 +3674,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.talent.v4beta1.Company.DerivedInfo.Builder,
             com.google.cloud.talent.v4beta1.Company.DerivedInfoOrBuilder>
         derivedInfoBuilder_;
-
     /**
      *
      *
@@ -3794,7 +3690,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDerivedInfo() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3817,7 +3712,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
         return derivedInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3842,7 +3736,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3865,7 +3758,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3896,7 +3788,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3918,7 +3809,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3935,7 +3825,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDerivedInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3956,7 +3845,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
             : derivedInfo_;
       }
     }
-
     /**
      *
      *
@@ -3986,7 +3874,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean suspended_;
-
     /**
      *
      *
@@ -4004,7 +3891,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
     public boolean getSuspended() {
       return suspended_;
     }
-
     /**
      *
      *
@@ -4026,7 +3912,6 @@ public final class Company extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

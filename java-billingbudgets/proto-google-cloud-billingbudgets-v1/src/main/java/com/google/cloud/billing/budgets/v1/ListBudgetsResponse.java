@@ -33,7 +33,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1.ListBudgetsResponse)
     ListBudgetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBudgetsResponse.newBuilder() to construct.
   private ListBudgetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.budgets.v1.Budget> budgets_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.billing.budgets.v1.Budget> getBudgetsList() {
     return budgets_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       getBudgetsOrBuilderList() {
     return budgets_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
   public int getBudgetsCount() {
     return budgets_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.billing.budgets.v1.Budget getBudgets(int index) {
     return budgets_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return budgetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return budgetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return budgetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.billing.budgets.v1.Budget.Builder getBudgetsBuilder(int index) {
       return getBudgetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return budgetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(budgets_);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       return getBudgetsFieldBuilder()
           .addBuilder(com.google.cloud.billing.budgets.v1.Budget.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       return getBudgetsFieldBuilder()
           .addBuilder(index, com.google.cloud.billing.budgets.v1.Budget.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ListBudgetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

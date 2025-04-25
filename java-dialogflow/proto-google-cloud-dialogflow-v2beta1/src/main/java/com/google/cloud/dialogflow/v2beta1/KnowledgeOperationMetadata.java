@@ -33,7 +33,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata)
     KnowledgeOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KnowledgeOperationMetadata.newBuilder() to construct.
   private KnowledgeOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
-
     /**
      *
      *
@@ -265,7 +261,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     private OperationMetadataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -298,7 +293,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -316,7 +310,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -343,7 +336,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object knowledgeBase_ = "";
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +384,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
   }
 
   public static final int EXPORT_OPERATION_METADATA_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
   public boolean hasExportOperationMetadata() {
     return operationMetadataCase_ == 4;
   }
-
   /**
    *
    *
@@ -430,7 +419,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     }
     return com.google.cloud.dialogflow.v2beta1.ExportOperationMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -648,7 +636,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -896,7 +883,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -914,7 +900,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -935,7 +920,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +941,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
           ? com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -982,7 +965,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +986,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     }
 
     private java.lang.Object knowledgeBase_ = "";
-
     /**
      *
      *
@@ -1027,7 +1008,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1030,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1051,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1068,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1096,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.v2beta1.ExportOperationMetadata.Builder,
             com.google.cloud.dialogflow.v2beta1.ExportOperationMetadataOrBuilder>
         exportOperationMetadataBuilder_;
-
     /**
      *
      *
@@ -1136,7 +1112,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
     public boolean hasExportOperationMetadata() {
       return operationMetadataCase_ == 4;
     }
-
     /**
      *
      *
@@ -1164,7 +1139,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         return com.google.cloud.dialogflow.v2beta1.ExportOperationMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1189,7 +1163,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       operationMetadataCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1184,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       operationMetadataCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1221,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       operationMetadataCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1247,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1261,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         getExportOperationMetadataBuilder() {
       return getExportOperationMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1314,7 +1283,6 @@ public final class KnowledgeOperationMetadata extends com.google.protobuf.Genera
         return com.google.cloud.dialogflow.v2beta1.ExportOperationMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.CreatePhraseSetRequest)
     CreatePhraseSetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreatePhraseSetRequest.newBuilder() to construct.
   private CreatePhraseSetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phraseSetId_ = "";
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
 
   public static final int PHRASE_SET_FIELD_NUMBER = 3;
   private com.google.cloud.speech.v1p1beta1.PhraseSet phraseSet_;
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
   public boolean hasPhraseSet() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.speech.v1p1beta1.PhraseSet.getDefaultInstance()
         : phraseSet_;
   }
-
   /**
    *
    *
@@ -444,7 +436,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +664,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -707,7 +697,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -741,7 +730,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +762,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +790,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +825,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object phraseSetId_ = "";
-
     /**
      *
      *
@@ -866,7 +851,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -919,7 +902,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +956,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.speech.v1p1beta1.PhraseSet.Builder,
             com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder>
         phraseSetBuilder_;
-
     /**
      *
      *
@@ -992,7 +972,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
     public boolean hasPhraseSet() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1015,7 +994,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
         return phraseSetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1040,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1106,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getPhraseSetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1153,7 +1126,6 @@ public final class CreatePhraseSetRequest extends com.google.protobuf.GeneratedM
             : phraseSet_;
       }
     }
-
     /**
      *
      *

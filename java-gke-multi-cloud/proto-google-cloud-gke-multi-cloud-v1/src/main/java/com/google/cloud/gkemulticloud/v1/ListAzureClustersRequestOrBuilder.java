@@ -44,7 +44,6 @@ public interface ListAzureClustersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -99,7 +98,6 @@ public interface ListAzureClustersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface GcsOutputConfigOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
-
   /**
    *
    *

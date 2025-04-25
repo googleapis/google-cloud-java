@@ -39,7 +39,6 @@ public interface OAuthTokenOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface OAuthTokenOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *

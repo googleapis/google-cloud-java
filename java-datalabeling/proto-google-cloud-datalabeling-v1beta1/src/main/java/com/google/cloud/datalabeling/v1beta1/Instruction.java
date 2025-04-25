@@ -34,7 +34,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.Instruction)
     InstructionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Instruction.newBuilder() to construct.
   private Instruction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -333,7 +320,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_TYPE_FIELD_NUMBER = 6;
   private int dataType_ = 0;
-
   /**
    *
    *
@@ -349,7 +335,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public int getDataTypeValue() {
     return dataType_;
   }
-
   /**
    *
    *
@@ -370,7 +355,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CSV_INSTRUCTION_FIELD_NUMBER = 7;
   private com.google.cloud.datalabeling.v1beta1.CsvInstruction csvInstruction_;
-
   /**
    *
    *
@@ -396,7 +380,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCsvInstruction() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -424,7 +407,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datalabeling.v1beta1.CsvInstruction.getDefaultInstance()
         : csvInstruction_;
   }
-
   /**
    *
    *
@@ -452,7 +434,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PDF_INSTRUCTION_FIELD_NUMBER = 9;
   private com.google.cloud.datalabeling.v1beta1.PdfInstruction pdfInstruction_;
-
   /**
    *
    *
@@ -469,7 +450,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPdfInstruction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -488,7 +468,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datalabeling.v1beta1.PdfInstruction.getDefaultInstance()
         : pdfInstruction_;
   }
-
   /**
    *
    *
@@ -512,7 +491,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList blockingResources_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -528,7 +506,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getBlockingResourcesList() {
     return blockingResources_;
   }
-
   /**
    *
    *
@@ -544,7 +521,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public int getBlockingResourcesCount() {
     return blockingResources_.size();
   }
-
   /**
    *
    *
@@ -561,7 +537,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBlockingResources(int index) {
     return blockingResources_.get(index);
   }
-
   /**
    *
    *
@@ -839,7 +814,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1178,7 +1152,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1202,7 +1175,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1226,7 +1198,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1220,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1238,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1263,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1317,7 +1285,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1340,7 +1307,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1362,7 +1328,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1345,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1369,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1429,7 +1392,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1453,7 +1415,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1476,7 +1437,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1495,7 +1455,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1485,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1541,7 +1499,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1562,7 +1519,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1585,7 +1541,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1605,7 +1560,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1633,7 +1587,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1606,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1668,7 +1620,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1687,7 +1638,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1720,7 +1670,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1735,7 +1684,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1756,7 +1704,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1779,7 +1726,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1799,7 +1745,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1772,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1847,7 +1791,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1862,7 +1805,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1881,7 +1823,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1909,7 +1850,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataType_ = 0;
-
     /**
      *
      *
@@ -1925,7 +1865,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public int getDataTypeValue() {
       return dataType_;
     }
-
     /**
      *
      *
@@ -1944,7 +1883,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1962,7 +1900,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.datalabeling.v1beta1.DataType.forNumber(dataType_);
       return result == null ? com.google.cloud.datalabeling.v1beta1.DataType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1984,7 +1921,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2009,7 +1945,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.CsvInstruction.Builder,
             com.google.cloud.datalabeling.v1beta1.CsvInstructionOrBuilder>
         csvInstructionBuilder_;
-
     /**
      *
      *
@@ -2034,7 +1969,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCsvInstruction() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2065,7 +1999,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return csvInstructionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2096,7 +2029,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2125,7 +2057,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2162,7 +2093,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2190,7 +2120,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2213,7 +2142,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCsvInstructionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2241,7 +2169,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             : csvInstruction_;
       }
     }
-
     /**
      *
      *
@@ -2281,7 +2208,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.PdfInstruction.Builder,
             com.google.cloud.datalabeling.v1beta1.PdfInstructionOrBuilder>
         pdfInstructionBuilder_;
-
     /**
      *
      *
@@ -2297,7 +2223,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPdfInstruction() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2319,7 +2244,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
         return pdfInstructionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2343,7 +2267,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2365,7 +2288,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2395,7 +2317,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2416,7 +2337,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2432,7 +2352,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPdfInstructionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2453,7 +2372,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
             : pdfInstruction_;
       }
     }
-
     /**
      *
      *
@@ -2490,7 +2408,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -2507,7 +2424,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       blockingResources_.makeImmutable();
       return blockingResources_;
     }
-
     /**
      *
      *
@@ -2523,7 +2439,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public int getBlockingResourcesCount() {
       return blockingResources_.size();
     }
-
     /**
      *
      *
@@ -2540,7 +2455,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBlockingResources(int index) {
       return blockingResources_.get(index);
     }
-
     /**
      *
      *
@@ -2557,7 +2471,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBlockingResourcesBytes(int index) {
       return blockingResources_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2582,7 +2495,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2606,7 +2518,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2627,7 +2538,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2647,7 +2557,6 @@ public final class Instruction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

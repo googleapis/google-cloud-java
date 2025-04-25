@@ -33,7 +33,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1beta1.SetInstanceAcceleratorRequest)
     SetInstanceAcceleratorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetInstanceAcceleratorRequest.newBuilder() to construct.
   private SetInstanceAcceleratorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
 
   public static final int CORE_COUNT_FIELD_NUMBER = 3;
   private long coreCount_ = 0L;
-
   /**
    *
    *
@@ -367,7 +361,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +575,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -653,7 +643,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
           ? com.google.cloud.notebooks.v1beta1.Instance.AcceleratorType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     }
 
     private long coreCount_;
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
     public long getCoreCount() {
       return coreCount_;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class SetInstanceAcceleratorRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

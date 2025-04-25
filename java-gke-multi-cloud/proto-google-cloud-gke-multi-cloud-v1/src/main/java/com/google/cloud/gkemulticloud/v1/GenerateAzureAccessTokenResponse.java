@@ -33,7 +33,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse)
     GenerateAzureAccessTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateAzureAccessTokenResponse.newBuilder() to construct.
   private GenerateAzureAccessTokenResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
 
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expirationTime_;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
   public boolean hasExpirationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expirationTime_;
   }
-
   /**
    *
    *
@@ -353,7 +347,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expirationTimeBuilder_;
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
     public boolean hasExpirationTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
         return expirationTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -868,7 +848,6 @@ public final class GenerateAzureAccessTokenResponse extends com.google.protobuf.
             : expirationTime_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CreateKeyHandleRequest)
     CreateKeyHandleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateKeyHandleRequest.newBuilder() to construct.
   private CreateKeyHandleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyHandleId_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
 
   public static final int KEY_HANDLE_FIELD_NUMBER = 3;
   private com.google.cloud.kms.v1.KeyHandle keyHandle_;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
   public boolean hasKeyHandle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
   public com.google.cloud.kms.v1.KeyHandle getKeyHandle() {
     return keyHandle_ == null ? com.google.cloud.kms.v1.KeyHandle.getDefaultInstance() : keyHandle_;
   }
-
   /**
    *
    *
@@ -419,7 +411,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object keyHandleId_ = "";
-
     /**
      *
      *
@@ -804,7 +789,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.kms.v1.KeyHandle.Builder,
             com.google.cloud.kms.v1.KeyHandleOrBuilder>
         keyHandleBuilder_;
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
     public boolean hasKeyHandle() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
         return keyHandleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +969,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +998,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1019,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1035,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getKeyHandleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1082,7 +1055,6 @@ public final class CreateKeyHandleRequest extends com.google.protobuf.GeneratedM
             : keyHandle_;
       }
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface CancelBatchPredictionJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface RangeInfoOrBuilder
    * @return The rangeName.
    */
   java.lang.String getRangeName();
-
   /**
    *
    *

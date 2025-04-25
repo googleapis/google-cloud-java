@@ -36,7 +36,6 @@ public interface ShieldedInstanceConfigOrBuilder
    * @return Whether the enableIntegrityMonitoring field is set.
    */
   boolean hasEnableIntegrityMonitoring();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ShieldedInstanceConfigOrBuilder
    * @return Whether the enableSecureBoot field is set.
    */
   boolean hasEnableSecureBoot();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ShieldedInstanceConfigOrBuilder
    * @return Whether the enableVtpm field is set.
    */
   boolean hasEnableVtpm();
-
   /**
    *
    *

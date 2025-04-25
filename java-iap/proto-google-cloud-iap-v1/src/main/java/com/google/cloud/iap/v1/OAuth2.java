@@ -33,7 +33,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.OAuth2)
     OAuth2OrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OAuth2.newBuilder() to construct.
   private OAuth2(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientId_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientSecret_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientSecretSha256_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -404,7 +397,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -614,7 +606,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object clientId_ = "";
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientSecret_ = "";
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientSecretSha256_ = "";
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +914,6 @@ public final class OAuth2 extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

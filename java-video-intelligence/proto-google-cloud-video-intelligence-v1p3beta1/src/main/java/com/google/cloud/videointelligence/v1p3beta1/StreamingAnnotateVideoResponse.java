@@ -35,7 +35,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse)
     StreamingAnnotateVideoResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingAnnotateVideoResponse.newBuilder() to construct.
   private StreamingAnnotateVideoResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 1;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
   public static final int ANNOTATION_RESULTS_FIELD_NUMBER = 2;
   private com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults
       annotationResults_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
   public boolean hasAnnotationResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
             .getDefaultInstance()
         : annotationResults_;
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationResultsUri_ = "";
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -439,7 +430,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults.Builder,
             com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResultsOrBuilder>
         annotationResultsBuilder_;
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     public boolean hasAnnotationResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
         return annotationResultsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1011,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1028,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return getAnnotationResultsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1077,7 +1050,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
             : annotationResults_;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1081,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object annotationResultsUri_ = "";
-
     /**
      *
      *
@@ -1135,7 +1106,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1131,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1175,6 @@ public final class StreamingAnnotateVideoResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

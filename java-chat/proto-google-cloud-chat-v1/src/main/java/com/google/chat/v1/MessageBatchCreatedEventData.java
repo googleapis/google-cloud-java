@@ -35,7 +35,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.chat.v1.MessageBatchCreatedEventData)
     MessageBatchCreatedEventDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MessageBatchCreatedEventData.newBuilder() to construct.
   private MessageBatchCreatedEventData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.MessageCreatedEventData> messages_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
   public java.util.List<com.google.chat.v1.MessageCreatedEventData> getMessagesList() {
     return messages_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       getMessagesOrBuilderList() {
     return messages_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
   public int getMessagesCount() {
     return messages_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
   public com.google.chat.v1.MessageCreatedEventData getMessages(int index) {
     return messages_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
         return messagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
         return messagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
         return messagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +737,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +756,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +775,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +787,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
     public com.google.chat.v1.MessageCreatedEventData.Builder getMessagesBuilder(int index) {
       return getMessagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -823,7 +803,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
         return messagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -841,7 +820,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(messages_);
       }
     }
-
     /**
      *
      *
@@ -855,7 +833,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       return getMessagesFieldBuilder()
           .addBuilder(com.google.chat.v1.MessageCreatedEventData.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -869,7 +846,6 @@ public final class MessageBatchCreatedEventData extends com.google.protobuf.Gene
       return getMessagesFieldBuilder()
           .addBuilder(index, com.google.chat.v1.MessageCreatedEventData.getDefaultInstance());
     }
-
     /**
      *
      *

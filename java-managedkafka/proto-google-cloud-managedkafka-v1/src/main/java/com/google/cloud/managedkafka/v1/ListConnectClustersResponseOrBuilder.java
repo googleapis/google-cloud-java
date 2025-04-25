@@ -34,7 +34,6 @@ public interface ListConnectClustersResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.ConnectCluster connect_clusters = 1;</code>
    */
   java.util.List<com.google.cloud.managedkafka.v1.ConnectCluster> getConnectClustersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConnectClustersResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.ConnectCluster connect_clusters = 1;</code>
    */
   com.google.cloud.managedkafka.v1.ConnectCluster getConnectClusters(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConnectClustersResponseOrBuilder
    * <code>repeated .google.cloud.managedkafka.v1.ConnectCluster connect_clusters = 1;</code>
    */
   int getConnectClustersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConnectClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.managedkafka.v1.ConnectClusterOrBuilder>
       getConnectClustersOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListConnectClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListConnectClustersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListConnectClustersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListConnectClustersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

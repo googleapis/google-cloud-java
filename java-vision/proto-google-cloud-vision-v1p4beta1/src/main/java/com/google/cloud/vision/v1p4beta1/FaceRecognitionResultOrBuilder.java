@@ -37,7 +37,6 @@ public interface FaceRecognitionResultOrBuilder
    * @return Whether the celebrity field is set.
    */
   boolean hasCelebrity();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface FaceRecognitionResultOrBuilder
    * @return The celebrity.
    */
   com.google.cloud.vision.v1p4beta1.Celebrity getCelebrity();
-
   /**
    *
    *

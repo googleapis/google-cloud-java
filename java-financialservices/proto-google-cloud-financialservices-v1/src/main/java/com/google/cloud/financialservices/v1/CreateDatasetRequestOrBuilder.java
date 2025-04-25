@@ -38,7 +38,6 @@ public interface CreateDatasetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateDatasetRequestOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateDatasetRequestOrBuilder
    * @return Whether the dataset field is set.
    */
   boolean hasDataset();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateDatasetRequestOrBuilder
    * @return The dataset.
    */
   com.google.cloud.financialservices.v1.Dataset getDataset();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateDatasetRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

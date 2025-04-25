@@ -37,7 +37,6 @@ public interface ToolNameMatchResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.ToolNameMatchMetricValue>
       getToolNameMatchMetricValuesList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ToolNameMatchResultsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ToolNameMatchMetricValue getToolNameMatchMetricValues(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ToolNameMatchResultsOrBuilder
    * </code>
    */
   int getToolNameMatchMetricValuesCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ToolNameMatchResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolNameMatchMetricValueOrBuilder>
       getToolNameMatchMetricValuesOrBuilderList();
-
   /**
    *
    *

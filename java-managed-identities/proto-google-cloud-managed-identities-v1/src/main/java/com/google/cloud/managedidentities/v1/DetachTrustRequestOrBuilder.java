@@ -39,7 +39,6 @@ public interface DetachTrustRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface DetachTrustRequestOrBuilder
    * @return Whether the trust field is set.
    */
   boolean hasTrust();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface DetachTrustRequestOrBuilder
    * @return The trust.
    */
   com.google.cloud.managedidentities.v1.Trust getTrust();
-
   /**
    *
    *

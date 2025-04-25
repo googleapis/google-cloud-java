@@ -33,7 +33,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.BasicYarnAutoscalingConfig)
     BasicYarnAutoscalingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BasicYarnAutoscalingConfig.newBuilder() to construct.
   private BasicYarnAutoscalingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int GRACEFUL_DECOMMISSION_TIMEOUT_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration gracefulDecommissionTimeout_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
   public boolean hasGracefulDecommissionTimeout() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
         ? com.google.protobuf.Duration.getDefaultInstance()
         : gracefulDecommissionTimeout_;
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
 
   public static final int SCALE_UP_FACTOR_FIELD_NUMBER = 1;
   private double scaleUpFactor_ = 0D;
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
 
   public static final int SCALE_DOWN_FACTOR_FIELD_NUMBER = 2;
   private double scaleDownFactor_ = 0D;
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
 
   public static final int SCALE_UP_MIN_WORKER_FRACTION_FIELD_NUMBER = 3;
   private double scaleUpMinWorkerFraction_ = 0D;
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
 
   public static final int SCALE_DOWN_MIN_WORKER_FRACTION_FIELD_NUMBER = 4;
   private double scaleDownMinWorkerFraction_ = 0D;
-
   /**
    *
    *
@@ -465,7 +457,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -725,7 +716,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         gracefulDecommissionTimeoutBuilder_;
-
     /**
      *
      *
@@ -747,7 +737,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public boolean hasGracefulDecommissionTimeout() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -775,7 +764,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
         return gracefulDecommissionTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -805,7 +793,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +820,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +854,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +880,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +901,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return getGracefulDecommissionTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -943,7 +926,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
             : gracefulDecommissionTimeout_;
       }
     }
-
     /**
      *
      *
@@ -978,7 +960,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     }
 
     private double scaleUpFactor_;
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public double getScaleUpFactor() {
       return scaleUpFactor_;
     }
-
     /**
      *
      *
@@ -1032,7 +1012,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1040,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     }
 
     private double scaleDownFactor_;
-
     /**
      *
      *
@@ -1086,7 +1064,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public double getScaleDownFactor() {
       return scaleDownFactor_;
     }
-
     /**
      *
      *
@@ -1115,7 +1092,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     }
 
     private double scaleUpMinWorkerFraction_;
-
     /**
      *
      *
@@ -1167,7 +1142,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public double getScaleUpMinWorkerFraction() {
       return scaleUpMinWorkerFraction_;
     }
-
     /**
      *
      *
@@ -1194,7 +1168,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1194,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     }
 
     private double scaleDownMinWorkerFraction_;
-
     /**
      *
      *
@@ -1244,7 +1216,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
     public double getScaleDownMinWorkerFraction() {
       return scaleDownMinWorkerFraction_;
     }
-
     /**
      *
      *
@@ -1271,7 +1242,6 @@ public final class BasicYarnAutoscalingConfig extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

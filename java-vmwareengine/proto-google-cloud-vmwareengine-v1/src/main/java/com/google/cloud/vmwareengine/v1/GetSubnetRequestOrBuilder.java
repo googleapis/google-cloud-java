@@ -42,7 +42,6 @@ public interface GetSubnetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

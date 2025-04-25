@@ -34,7 +34,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ImportFlowRequest)
     ImportFlowRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportFlowRequest.newBuilder() to construct.
   private ImportFlowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,7 +122,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * <code>IMPORT_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int IMPORT_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -136,7 +134,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
      * <code>KEEP = 1;</code>
      */
     public static final int KEEP_VALUE = 1;
-
     /**
      *
      *
@@ -253,7 +250,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     private FlowCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -290,7 +286,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -317,7 +312,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +340,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FLOW_URI_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -369,7 +362,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasFlowUri() {
     return flowCase_ == 2;
   }
-
   /**
    *
    *
@@ -405,7 +397,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -443,7 +434,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FLOW_CONTENT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -459,7 +449,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasFlowContent() {
     return flowCase_ == 3;
   }
-
   /**
    *
    *
@@ -481,7 +470,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int IMPORT_OPTION_FIELD_NUMBER = 4;
   private int importOption_ = 0;
-
   /**
    *
    *
@@ -497,7 +485,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   public int getImportOptionValue() {
     return importOption_;
   }
-
   /**
    *
    *
@@ -520,7 +507,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int FLOW_IMPORT_STRATEGY_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.cx.v3.FlowImportStrategy flowImportStrategy_;
-
   /**
    *
    *
@@ -539,7 +525,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasFlowImportStrategy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -560,7 +545,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.getDefaultInstance()
         : flowImportStrategy_;
   }
-
   /**
    *
    *
@@ -806,7 +790,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1091,7 +1074,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1117,7 +1099,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1124,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1148,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1168,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1217,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasFlowUri() {
       return flowCase_ == 2;
     }
-
     /**
      *
      *
@@ -1276,7 +1253,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1289,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1318,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1345,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1390,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasFlowContent() {
       return flowCase_ == 3;
     }
-
     /**
      *
      *
@@ -1435,7 +1407,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
-
     /**
      *
      *
@@ -1457,7 +1428,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1449,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int importOption_ = 0;
-
     /**
      *
      *
@@ -1495,7 +1464,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     public int getImportOptionValue() {
       return importOption_;
     }
-
     /**
      *
      *
@@ -1514,7 +1482,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1501,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dialogflow.cx.v3.ImportFlowRequest.ImportOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1557,7 +1523,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1547,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dialogflow.cx.v3.FlowImportStrategy.Builder,
             com.google.cloud.dialogflow.cx.v3.FlowImportStrategyOrBuilder>
         flowImportStrategyBuilder_;
-
     /**
      *
      *
@@ -1600,7 +1564,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasFlowImportStrategy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1624,7 +1587,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
         return flowImportStrategyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1613,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1636,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1708,7 +1668,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1731,7 +1690,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1708,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFlowImportStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1773,7 +1730,6 @@ public final class ImportFlowRequest extends com.google.protobuf.GeneratedMessag
             : flowImportStrategy_;
       }
     }
-
     /**
      *
      *

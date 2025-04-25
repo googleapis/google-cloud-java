@@ -34,7 +34,6 @@ public interface RowLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.RowLayout.Row> getRowsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RowLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
   com.google.monitoring.dashboard.v1.RowLayout.Row getRows(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RowLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.RowLayout.Row rows = 1;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface RowLayoutOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.RowLayout.RowOrBuilder>
       getRowsOrBuilderList();
-
   /**
    *
    *

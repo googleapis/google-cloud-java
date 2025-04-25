@@ -34,7 +34,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExportDataConfig)
     ExportDataConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportDataConfig.newBuilder() to construct.
   private ExportDataConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -128,7 +126,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     private SplitCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -160,7 +157,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -184,7 +180,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasGcsDestination() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -211,7 +206,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -238,7 +232,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FRACTION_SPLIT_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasFractionSplit() {
     return splitCase_ == 5;
   }
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -296,7 +287,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationsFilter_ = "";
-
   /**
    *
    *
@@ -323,7 +313,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -558,7 +547,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -834,7 +822,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
         gcsDestinationBuilder_;
-
     /**
      *
      *
@@ -858,7 +845,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasGcsDestination() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -892,7 +878,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -923,7 +908,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +936,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +977,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       destinationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1010,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1030,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder getGcsDestinationBuilder() {
       return getGcsDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1079,7 +1059,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1105,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.Builder,
             com.google.cloud.aiplatform.v1beta1.ExportFractionSplitOrBuilder>
         fractionSplitBuilder_;
-
     /**
      *
      *
@@ -1142,7 +1120,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasFractionSplit() {
       return splitCase_ == 5;
     }
-
     /**
      *
      *
@@ -1168,7 +1145,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1167,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       splitCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1187,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       splitCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1221,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       splitCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1246,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1259,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         getFractionSplitBuilder() {
       return getFractionSplitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1309,7 +1280,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.ExportFractionSplit.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1344,7 +1314,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object annotationsFilter_ = "";
-
     /**
      *
      *
@@ -1370,7 +1339,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1396,7 +1364,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1421,7 +1388,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1408,6 @@ public final class ExportDataConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface PostgresqlSchemaOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface PostgresqlSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlTable postgresql_tables = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.PostgresqlTable> getPostgresqlTablesList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface PostgresqlSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlTable postgresql_tables = 2;</code>
    */
   com.google.cloud.datastream.v1.PostgresqlTable getPostgresqlTables(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface PostgresqlSchemaOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlTable postgresql_tables = 2;</code>
    */
   int getPostgresqlTablesCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface PostgresqlSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.PostgresqlTableOrBuilder>
       getPostgresqlTablesOrBuilderList();
-
   /**
    *
    *

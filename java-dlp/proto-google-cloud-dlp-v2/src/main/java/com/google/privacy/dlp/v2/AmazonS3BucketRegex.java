@@ -33,7 +33,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.AmazonS3BucketRegex)
     AmazonS3BucketRegexOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AmazonS3BucketRegex.newBuilder() to construct.
   private AmazonS3BucketRegex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int AWS_ACCOUNT_REGEX_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.AwsAccountRegex awsAccountRegex_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
   public boolean hasAwsAccountRegex() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
         ? com.google.privacy.dlp.v2.AwsAccountRegex.getDefaultInstance()
         : awsAccountRegex_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucketNameRegex_ = "";
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -346,7 +340,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.AwsAccountRegex.Builder,
             com.google.privacy.dlp.v2.AwsAccountRegexOrBuilder>
         awsAccountRegexBuilder_;
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
     public boolean hasAwsAccountRegex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
         return awsAccountRegexBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAwsAccountRegexFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -727,7 +712,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
             : awsAccountRegex_;
       }
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object bucketNameRegex_ = "";
-
     /**
      *
      *
@@ -779,7 +762,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +785,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +807,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +825,6 @@ public final class AmazonS3BucketRegex extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

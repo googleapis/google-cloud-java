@@ -36,7 +36,6 @@ public interface ApplicationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ApplicationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ApplicationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ApplicationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ApplicationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ApplicationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -151,11 +145,9 @@ public interface ApplicationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -166,7 +158,6 @@ public interface ApplicationOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -181,7 +172,6 @@ public interface ApplicationOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -205,7 +195,6 @@ public interface ApplicationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -231,7 +220,6 @@ public interface ApplicationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -257,7 +245,6 @@ public interface ApplicationOrBuilder
    * @return Whether the applicationConfigs field is set.
    */
   boolean hasApplicationConfigs();
-
   /**
    *
    *
@@ -270,7 +257,6 @@ public interface ApplicationOrBuilder
    * @return The applicationConfigs.
    */
   com.google.cloud.visionai.v1.ApplicationConfigs getApplicationConfigs();
-
   /**
    *
    *
@@ -297,7 +283,6 @@ public interface ApplicationOrBuilder
    * @return Whether the runtimeInfo field is set.
    */
   boolean hasRuntimeInfo();
-
   /**
    *
    *
@@ -313,7 +298,6 @@ public interface ApplicationOrBuilder
    * @return The runtimeInfo.
    */
   com.google.cloud.visionai.v1.Application.ApplicationRuntimeInfo getRuntimeInfo();
-
   /**
    *
    *
@@ -343,7 +327,6 @@ public interface ApplicationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -371,7 +354,6 @@ public interface ApplicationOrBuilder
    * @return The enum numeric value on the wire for billingMode.
    */
   int getBillingModeValue();
-
   /**
    *
    *

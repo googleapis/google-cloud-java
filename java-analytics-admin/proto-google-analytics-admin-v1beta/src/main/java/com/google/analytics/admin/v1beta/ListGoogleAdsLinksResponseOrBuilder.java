@@ -34,7 +34,6 @@ public interface ListGoogleAdsLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.GoogleAdsLink google_ads_links = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1beta.GoogleAdsLink> getGoogleAdsLinksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListGoogleAdsLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.GoogleAdsLink google_ads_links = 1;</code>
    */
   com.google.analytics.admin.v1beta.GoogleAdsLink getGoogleAdsLinks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListGoogleAdsLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1beta.GoogleAdsLink google_ads_links = 1;</code>
    */
   int getGoogleAdsLinksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListGoogleAdsLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1beta.GoogleAdsLinkOrBuilder>
       getGoogleAdsLinksOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListGoogleAdsLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

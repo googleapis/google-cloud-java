@@ -34,7 +34,6 @@ public interface ListDatabasesResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
    */
   java.util.List<com.google.cloud.alloydb.v1beta.Database> getDatabasesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDatabasesResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
    */
   com.google.cloud.alloydb.v1beta.Database getDatabases(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDatabasesResponseOrBuilder
    * <code>repeated .google.cloud.alloydb.v1beta.Database databases = 1;</code>
    */
   int getDatabasesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDatabasesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1beta.DatabaseOrBuilder>
       getDatabasesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListDatabasesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

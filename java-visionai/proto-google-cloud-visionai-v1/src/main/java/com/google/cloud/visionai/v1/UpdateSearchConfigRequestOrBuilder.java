@@ -42,7 +42,6 @@ public interface UpdateSearchConfigRequestOrBuilder
    * @return Whether the searchConfig field is set.
    */
   boolean hasSearchConfig();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateSearchConfigRequestOrBuilder
    * @return The searchConfig.
    */
   com.google.cloud.visionai.v1.SearchConfig getSearchConfig();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface UpdateSearchConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateSearchConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

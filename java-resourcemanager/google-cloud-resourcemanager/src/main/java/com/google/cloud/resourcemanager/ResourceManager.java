@@ -406,7 +406,6 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
       return new ListOption(ResourceManagerRpc.Option.PAGE_SIZE, pageSize);
     }
   }
-
   /**
    * Returns the permissions and their results representing whether the caller has the permissions
    * on the specified Organization.

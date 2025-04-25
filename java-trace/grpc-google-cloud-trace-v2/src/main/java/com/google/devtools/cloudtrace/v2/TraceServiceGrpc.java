@@ -136,19 +136,6 @@ public final class TraceServiceGrpc {
     return TraceServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TraceServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TraceServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<TraceServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public TraceServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new TraceServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return TraceServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -295,57 +282,6 @@ public final class TraceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TraceService.
-   *
-   * <pre>
-   * Service for collecting and viewing traces and spans within a trace.
-   * A trace is a collection of spans corresponding to a single
-   * operation or a set of operations in an application.
-   * A span is an individual timed event which forms a node of the trace tree.
-   * A single trace can contain spans from multiple services.
-   * </pre>
-   */
-  public static final class TraceServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TraceServiceBlockingV2Stub> {
-    private TraceServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TraceServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TraceServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Batch writes new spans to new or existing traces. You cannot update
-     * existing spans.
-     * </pre>
-     */
-    public com.google.protobuf.Empty batchWriteSpans(
-        com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getBatchWriteSpansMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new span.
-     * </pre>
-     */
-    public com.google.devtools.cloudtrace.v2.Span createSpan(
-        com.google.devtools.cloudtrace.v2.Span request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateSpanMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service TraceService.
    *
    * <pre>
    * Service for collecting and viewing traces and spans within a trace.

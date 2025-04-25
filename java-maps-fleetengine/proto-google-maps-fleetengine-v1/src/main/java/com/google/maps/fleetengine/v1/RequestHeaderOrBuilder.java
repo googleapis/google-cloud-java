@@ -39,7 +39,6 @@ public interface RequestHeaderOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface RequestHeaderOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface RequestHeaderOrBuilder
    * @return The sdkVersion.
    */
   java.lang.String getSdkVersion();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface RequestHeaderOrBuilder
    * @return The osVersion.
    */
   java.lang.String getOsVersion();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface RequestHeaderOrBuilder
    * @return The deviceModel.
    */
   java.lang.String getDeviceModel();
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public interface RequestHeaderOrBuilder
    * @return The enum numeric value on the wire for sdkType.
    */
   int getSdkTypeValue();
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public interface RequestHeaderOrBuilder
    * @return The mapsSdkVersion.
    */
   java.lang.String getMapsSdkVersion();
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public interface RequestHeaderOrBuilder
    * @return The navSdkVersion.
    */
   java.lang.String getNavSdkVersion();
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public interface RequestHeaderOrBuilder
    * @return The enum numeric value on the wire for platform.
    */
   int getPlatformValue();
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public interface RequestHeaderOrBuilder
    * @return The manufacturer.
    */
   java.lang.String getManufacturer();
-
   /**
    *
    *
@@ -333,7 +323,6 @@ public interface RequestHeaderOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
-
   /**
    *
    *

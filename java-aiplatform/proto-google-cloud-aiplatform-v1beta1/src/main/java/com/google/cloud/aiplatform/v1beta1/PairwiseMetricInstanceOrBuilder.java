@@ -38,7 +38,6 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return Whether the jsonInstance field is set.
    */
   boolean hasJsonInstance();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return The jsonInstance.
    */
   java.lang.String getJsonInstance();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return Whether the contentMapInstance field is set.
    */
   boolean hasContentMapInstance();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface PairwiseMetricInstanceOrBuilder
    * @return The contentMapInstance.
    */
   com.google.cloud.aiplatform.v1beta1.ContentMap getContentMapInstance();
-
   /**
    *
    *

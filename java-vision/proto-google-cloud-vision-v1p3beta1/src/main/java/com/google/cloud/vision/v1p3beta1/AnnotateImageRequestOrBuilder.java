@@ -36,7 +36,6 @@ public interface AnnotateImageRequestOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnnotateImageRequestOrBuilder
    * @return The image.
    */
   com.google.cloud.vision.v1p3beta1.Image getImage();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface AnnotateImageRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.Feature> getFeaturesList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface AnnotateImageRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
   com.google.cloud.vision.v1p3beta1.Feature getFeatures(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface AnnotateImageRequestOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
   int getFeaturesCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface AnnotateImageRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.FeatureOrBuilder>
       getFeaturesOrBuilderList();
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface AnnotateImageRequestOrBuilder
    * @return Whether the imageContext field is set.
    */
   boolean hasImageContext();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface AnnotateImageRequestOrBuilder
    * @return The imageContext.
    */
   com.google.cloud.vision.v1p3beta1.ImageContext getImageContext();
-
   /**
    *
    *

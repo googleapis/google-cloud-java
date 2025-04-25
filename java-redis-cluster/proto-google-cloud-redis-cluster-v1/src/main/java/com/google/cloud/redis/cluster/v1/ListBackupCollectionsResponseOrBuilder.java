@@ -43,7 +43,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * <code>repeated .google.cloud.redis.cluster.v1.BackupCollection backup_collections = 1;</code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.BackupCollection> getBackupCollectionsList();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * <code>repeated .google.cloud.redis.cluster.v1.BackupCollection backup_collections = 1;</code>
    */
   com.google.cloud.redis.cluster.v1.BackupCollection getBackupCollections(int index);
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * <code>repeated .google.cloud.redis.cluster.v1.BackupCollection backup_collections = 1;</code>
    */
   int getBackupCollectionsCount();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.BackupCollectionOrBuilder>
       getBackupCollectionsOrBuilderList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public interface ListBackupCollectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

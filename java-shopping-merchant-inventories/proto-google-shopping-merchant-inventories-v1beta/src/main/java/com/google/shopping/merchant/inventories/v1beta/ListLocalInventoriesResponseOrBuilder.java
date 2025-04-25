@@ -38,7 +38,6 @@ public interface ListLocalInventoriesResponseOrBuilder
    */
   java.util.List<com.google.shopping.merchant.inventories.v1beta.LocalInventory>
       getLocalInventoriesList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface ListLocalInventoriesResponseOrBuilder
    * </code>
    */
   com.google.shopping.merchant.inventories.v1beta.LocalInventory getLocalInventories(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ListLocalInventoriesResponseOrBuilder
    * </code>
    */
   int getLocalInventoriesCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface ListLocalInventoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.inventories.v1beta.LocalInventoryOrBuilder>
       getLocalInventoriesOrBuilderList();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ListLocalInventoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

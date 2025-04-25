@@ -1428,8 +1428,7 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   @Override
   public UnaryCallable<UploadQueueYamlRequest, Empty> uploadQueueYamlCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: uploadQueueYamlCallable(). REST transport is not implemented for this"
-            + " method yet.");
+        "Not implemented: uploadQueueYamlCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

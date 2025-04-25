@@ -36,7 +36,6 @@ public interface GetTargetInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetTargetInstanceRequestOrBuilder
    * @return The targetInstance.
    */
   java.lang.String getTargetInstance();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetTargetInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

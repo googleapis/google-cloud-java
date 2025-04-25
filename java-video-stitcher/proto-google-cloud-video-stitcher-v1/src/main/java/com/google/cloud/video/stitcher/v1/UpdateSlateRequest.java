@@ -33,7 +33,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.UpdateSlateRequest)
     UpdateSlateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSlateRequest.newBuilder() to construct.
   private UpdateSlateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SLATE_FIELD_NUMBER = 1;
   private com.google.cloud.video.stitcher.v1.Slate slate_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSlate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.video.stitcher.v1.Slate getSlate() {
     return slate_ == null ? com.google.cloud.video.stitcher.v1.Slate.getDefaultInstance() : slate_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -349,7 +342,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -572,7 +564,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.video.stitcher.v1.Slate.Builder,
             com.google.cloud.video.stitcher.v1.SlateOrBuilder>
         slateBuilder_;
-
     /**
      *
      *
@@ -589,7 +580,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSlate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -612,7 +602,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
         return slateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +647,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +713,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSlateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -749,7 +733,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
             : slate_;
       }
     }
-
     /**
      *
      *
@@ -784,7 +767,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -800,7 +782,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -822,7 +803,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +846,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +874,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -953,7 +928,6 @@ public final class UpdateSlateRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
-
     /**
      *
      *

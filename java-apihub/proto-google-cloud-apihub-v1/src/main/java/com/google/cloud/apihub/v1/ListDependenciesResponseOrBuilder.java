@@ -35,7 +35,6 @@ public interface ListDependenciesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.Dependency> getDependenciesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListDependenciesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
    */
   com.google.cloud.apihub.v1.Dependency getDependencies(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListDependenciesResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.Dependency dependencies = 1;</code>
    */
   int getDependenciesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListDependenciesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.DependencyOrBuilder>
       getDependenciesOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListDependenciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

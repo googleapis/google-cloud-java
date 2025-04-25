@@ -36,7 +36,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return Whether the consistencyGroupPolicy field is set.
    */
   boolean hasConsistencyGroupPolicy();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return The consistencyGroupPolicy.
    */
   java.lang.String getConsistencyGroupPolicy();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return Whether the consistencyGroupPolicyId field is set.
    */
   boolean hasConsistencyGroupPolicyId();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return The consistencyGroupPolicyId.
    */
   java.lang.String getConsistencyGroupPolicyId();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return Whether the disk field is set.
    */
   boolean hasDisk();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return Whether the diskId field is set.
    */
   boolean hasDiskId();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface DiskAsyncReplicationOrBuilder
    * @return The diskId.
    */
   java.lang.String getDiskId();
-
   /**
    *
    *

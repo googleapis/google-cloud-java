@@ -33,7 +33,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployJobRun)
     DeployJobRunOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployJobRun.newBuilder() to construct.
   private DeployJobRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -164,7 +163,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILURE_CAUSE_UNSPECIFIED = 0;</code>
      */
     public static final int FAILURE_CAUSE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -177,7 +175,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
      */
     public static final int CLOUD_BUILD_UNAVAILABLE_VALUE = 1;
-
     /**
      *
      *
@@ -189,7 +186,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>EXECUTION_FAILED = 2;</code>
      */
     public static final int EXECUTION_FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -200,7 +196,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>DEADLINE_EXCEEDED = 3;</code>
      */
     public static final int DEADLINE_EXCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -212,7 +207,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>MISSING_RESOURCES_FOR_CANARY = 4;</code>
      */
     public static final int MISSING_RESOURCES_FOR_CANARY_VALUE = 4;
-
     /**
      *
      *
@@ -224,7 +218,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
      */
     public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 5;
-
     /**
      *
      *
@@ -332,7 +325,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object build_ = "";
-
   /**
    *
    *
@@ -360,7 +352,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -391,7 +382,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAILURE_CAUSE_FIELD_NUMBER = 2;
   private int failureCause_ = 0;
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
   public int getFailureCauseValue() {
     return failureCause_;
   }
-
   /**
    *
    *
@@ -438,7 +427,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureMessage_ = "";
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -489,7 +476,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METADATA_FIELD_NUMBER = 4;
   private com.google.cloud.deploy.v1.DeployJobRunMetadata metadata_;
-
   /**
    *
    *
@@ -507,7 +493,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -527,7 +512,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.DeployJobRunMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -548,7 +532,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ARTIFACT_FIELD_NUMBER = 5;
   private com.google.cloud.deploy.v1.DeployArtifact artifact_;
-
   /**
    *
    *
@@ -566,7 +549,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArtifact() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -586,7 +568,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.DeployArtifact.getDefaultInstance()
         : artifact_;
   }
-
   /**
    *
    *
@@ -813,7 +794,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1073,7 +1053,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object build_ = "";
-
     /**
      *
      *
@@ -1100,7 +1079,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1127,7 +1105,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1130,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1151,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1179,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int failureCause_ = 0;
-
     /**
      *
      *
@@ -1223,7 +1197,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     public int getFailureCauseValue() {
       return failureCause_;
     }
-
     /**
      *
      *
@@ -1245,7 +1218,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1240,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.deploy.v1.DeployJobRun.FailureCause.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1293,7 +1264,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1286,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object failureMessage_ = "";
-
     /**
      *
      *
@@ -1339,7 +1308,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1362,7 +1330,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1384,7 +1351,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1368,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1397,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.DeployJobRunMetadata.Builder,
             com.google.cloud.deploy.v1.DeployJobRunMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1449,7 +1413,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1472,7 +1435,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1497,7 +1459,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1481,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1510,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1572,7 +1531,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1547,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1610,7 +1567,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -1645,7 +1601,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.DeployArtifact.Builder,
             com.google.cloud.deploy.v1.DeployArtifactOrBuilder>
         artifactBuilder_;
-
     /**
      *
      *
@@ -1662,7 +1617,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArtifact() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1685,7 +1639,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         return artifactBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1710,7 +1663,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1732,7 +1684,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1713,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1734,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1750,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getArtifactFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1822,7 +1770,6 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
             : artifact_;
       }
     }
-
     /**
      *
      *

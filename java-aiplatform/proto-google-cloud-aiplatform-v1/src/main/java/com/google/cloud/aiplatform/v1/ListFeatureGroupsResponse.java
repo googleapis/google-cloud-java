@@ -34,7 +34,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListFeatureGroupsResponse)
     ListFeatureGroupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFeatureGroupsResponse.newBuilder() to construct.
   private ListFeatureGroupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.FeatureGroup> featureGroups_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.aiplatform.v1.FeatureGroup> getFeatureGroupsList() {
     return featureGroups_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       getFeatureGroupsOrBuilderList() {
     return featureGroups_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
   public int getFeatureGroupsCount() {
     return featureGroups_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
   public com.google.cloud.aiplatform.v1.FeatureGroup getFeatureGroups(int index) {
     return featureGroups_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return featureGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return featureGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return featureGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
     public com.google.cloud.aiplatform.v1.FeatureGroup.Builder getFeatureGroupsBuilder(int index) {
       return getFeatureGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return featureGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(featureGroups_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       return getFeatureGroupsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.FeatureGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       return getFeatureGroupsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.FeatureGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1039,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1059,6 @@ public final class ListFeatureGroupsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

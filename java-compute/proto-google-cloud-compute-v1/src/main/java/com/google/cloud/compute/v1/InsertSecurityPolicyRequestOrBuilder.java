@@ -38,7 +38,6 @@ public interface InsertSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface InsertSecurityPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface InsertSecurityPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface InsertSecurityPolicyRequestOrBuilder
    * @return Whether the securityPolicyResource field is set.
    */
   boolean hasSecurityPolicyResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertSecurityPolicyRequestOrBuilder
    * @return The securityPolicyResource.
    */
   com.google.cloud.compute.v1.SecurityPolicy getSecurityPolicyResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface InsertSecurityPolicyRequestOrBuilder
    * @return Whether the validateOnly field is set.
    */
   boolean hasValidateOnly();
-
   /**
    *
    *

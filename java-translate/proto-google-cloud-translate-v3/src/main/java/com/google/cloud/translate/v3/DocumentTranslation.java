@@ -33,7 +33,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DocumentTranslation)
     DocumentTranslationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentTranslation.newBuilder() to construct.
   private DocumentTranslation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString>
       byteStreamOutputs_ = emptyList(com.google.protobuf.ByteString.class);
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.protobuf.ByteString> getByteStreamOutputsList() {
     return byteStreamOutputs_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
   public int getByteStreamOutputsCount() {
     return byteStreamOutputs_.size();
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detectedLanguageCode_ = "";
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -424,7 +416,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +646,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -673,7 +663,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       byteStreamOutputs_.makeImmutable();
       return byteStreamOutputs_;
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     public int getByteStreamOutputsCount() {
       return byteStreamOutputs_.size();
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getByteStreamOutputs(int index) {
       return byteStreamOutputs_.get(index);
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object detectedLanguageCode_ = "";
-
     /**
      *
      *
@@ -942,7 +920,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -995,7 +971,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1017,7 +992,6 @@ public final class DocumentTranslation extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

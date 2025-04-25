@@ -38,7 +38,6 @@ public interface CreateSeriesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateSeriesRequestOrBuilder
    * @return The seriesId.
    */
   java.lang.String getSeriesId();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateSeriesRequestOrBuilder
    * @return Whether the series field is set.
    */
   boolean hasSeries();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface CreateSeriesRequestOrBuilder
    * @return The series.
    */
   com.google.cloud.visionai.v1.Series getSeries();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface CreateSeriesRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

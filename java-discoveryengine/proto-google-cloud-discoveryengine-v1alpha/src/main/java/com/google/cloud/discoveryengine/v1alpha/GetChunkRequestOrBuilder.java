@@ -47,7 +47,6 @@ public interface GetChunkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

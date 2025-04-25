@@ -33,7 +33,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.ListChannelConnectionsResponse)
     ListChannelConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListChannelConnectionsResponse.newBuilder() to construct.
   private ListChannelConnectionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.eventarc.v1.ChannelConnection> channelConnections_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       getChannelConnectionsList() {
     return channelConnections_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       getChannelConnectionsOrBuilderList() {
     return channelConnections_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
   public int getChannelConnectionsCount() {
     return channelConnections_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
   public com.google.cloud.eventarc.v1.ChannelConnection getChannelConnections(int index) {
     return channelConnections_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -463,7 +451,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -766,7 +753,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return channelConnectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return channelConnectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return channelConnectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +921,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +962,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         int index) {
       return getChannelConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1040,7 +1014,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return channelConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1032,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(channelConnections_);
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1046,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       return getChannelConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.eventarc.v1.ChannelConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1090,7 +1061,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       return getChannelConnectionsFieldBuilder()
           .addBuilder(index, com.google.cloud.eventarc.v1.ChannelConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1152,7 +1121,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1145,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1201,7 +1168,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1187,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1221,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1272,7 +1236,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1287,7 +1250,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1303,7 +1265,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1319,7 +1280,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1343,7 +1303,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1325,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1344,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1362,6 @@ public final class ListChannelConnectionsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListExtensionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Extension extensions = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Extension> getExtensionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListExtensionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Extension extensions = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Extension getExtensions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListExtensionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Extension extensions = 1;</code>
    */
   int getExtensionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListExtensionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExtensionOrBuilder>
       getExtensionsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListExtensionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

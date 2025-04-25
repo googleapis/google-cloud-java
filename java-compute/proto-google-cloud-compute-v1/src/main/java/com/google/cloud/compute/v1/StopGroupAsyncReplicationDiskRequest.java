@@ -34,7 +34,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest)
     StopGroupAsyncReplicationDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StopGroupAsyncReplicationDiskRequest.newBuilder() to construct.
   private StopGroupAsyncReplicationDiskRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       346815509;
   private com.google.cloud.compute.v1.DisksStopGroupAsyncReplicationResource
       disksStopGroupAsyncReplicationResourceResource_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class StopGroupAsyncReplicationDiskRequest
   public boolean hasDisksStopGroupAsyncReplicationResourceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         ? com.google.cloud.compute.v1.DisksStopGroupAsyncReplicationResource.getDefaultInstance()
         : disksStopGroupAsyncReplicationResourceResource_;
   }
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class StopGroupAsyncReplicationDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class StopGroupAsyncReplicationDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class StopGroupAsyncReplicationDiskRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class StopGroupAsyncReplicationDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -516,7 +505,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -777,7 +765,6 @@ public final class StopGroupAsyncReplicationDiskRequest
             com.google.cloud.compute.v1.DisksStopGroupAsyncReplicationResource.Builder,
             com.google.cloud.compute.v1.DisksStopGroupAsyncReplicationResourceOrBuilder>
         disksStopGroupAsyncReplicationResourceResourceBuilder_;
-
     /**
      *
      *
@@ -794,7 +781,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     public boolean hasDisksStopGroupAsyncReplicationResourceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -819,7 +805,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return disksStopGroupAsyncReplicationResourceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -845,7 +830,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +853,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +885,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +906,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return getDisksStopGroupAsyncReplicationResourceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -965,7 +945,6 @@ public final class StopGroupAsyncReplicationDiskRequest
             : disksStopGroupAsyncReplicationResourceResource_;
       }
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1022,7 +1000,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1024,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1066,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1133,7 +1106,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1156,7 +1128,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1150,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1201,7 +1171,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1188,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1212,6 @@ public final class StopGroupAsyncReplicationDiskRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1269,7 +1236,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1260,6 @@ public final class StopGroupAsyncReplicationDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1318,7 +1283,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1302,6 @@ public final class StopGroupAsyncReplicationDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

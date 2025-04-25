@@ -36,7 +36,6 @@ public interface ResourceStatusSchedulingOrBuilder
    * @return Whether the availabilityDomain field is set.
    */
   boolean hasAvailabilityDomain();
-
   /**
    *
    *

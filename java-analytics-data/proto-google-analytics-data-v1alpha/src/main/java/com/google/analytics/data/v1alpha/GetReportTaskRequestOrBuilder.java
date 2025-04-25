@@ -39,7 +39,6 @@ public interface GetReportTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

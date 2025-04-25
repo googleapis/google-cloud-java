@@ -33,7 +33,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreateAssetRequest)
     CreateAssetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAssetRequest.newBuilder() to construct.
   private CreateAssetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object assetId_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ASSET_FIELD_NUMBER = 3;
   private com.google.cloud.dataplex.v1.Asset asset_;
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasAsset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.dataplex.v1.Asset getAsset() {
     return asset_ == null ? com.google.cloud.dataplex.v1.Asset.getDefaultInstance() : asset_;
   }
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -455,7 +446,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -697,7 +687,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -723,7 +712,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object assetId_ = "";
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +918,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dataplex.v1.Asset.Builder,
             com.google.cloud.dataplex.v1.AssetOrBuilder>
         assetBuilder_;
-
     /**
      *
      *
@@ -990,7 +969,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasAsset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return assetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1011,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1094,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1139,7 +1111,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
         return asset_ == null ? com.google.cloud.dataplex.v1.Asset.getDefaultInstance() : asset_;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1139,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1185,7 +1155,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1206,7 +1175,6 @@ public final class CreateAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

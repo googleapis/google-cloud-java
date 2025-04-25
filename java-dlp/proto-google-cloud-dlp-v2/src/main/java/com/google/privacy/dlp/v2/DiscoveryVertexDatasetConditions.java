@@ -34,7 +34,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryVertexDatasetConditions)
     DiscoveryVertexDatasetConditionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryVertexDatasetConditions.newBuilder() to construct.
   private DiscoveryVertexDatasetConditions(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
   private int bitField0_;
   public static final int CREATED_AFTER_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createdAfter_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
   public boolean hasCreatedAfter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : createdAfter_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
 
   public static final int MIN_AGE_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration minAge_;
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
   public boolean hasMinAge() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
   public com.google.protobuf.Duration getMinAge() {
     return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +569,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createdAfterBuilder_;
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
     public boolean hasCreatedAfter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
         return createdAfterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +711,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return getCreatedAfterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
             : createdAfter_;
       }
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minAgeBuilder_;
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
     public boolean hasMinAge() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -816,7 +797,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
         return minAgeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -840,7 +820,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +840,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +868,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +903,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
       onChanged();
       return getMinAgeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -945,7 +920,6 @@ public final class DiscoveryVertexDatasetConditions extends com.google.protobuf.
         return minAge_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minAge_;
       }
     }
-
     /**
      *
      *

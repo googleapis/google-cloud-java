@@ -36,7 +36,6 @@ public interface AzureVmPlatformDetailsOrBuilder
    * @return The machineTypeLabel.
    */
   java.lang.String getMachineTypeLabel();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AzureVmPlatformDetailsOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface AzureVmPlatformDetailsOrBuilder
    * @return The provisioningState.
    */
   java.lang.String getProvisioningState();
-
   /**
    *
    *

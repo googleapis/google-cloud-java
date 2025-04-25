@@ -33,7 +33,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ApplyHash)
     ApplyHashOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApplyHash.newBuilder() to construct.
   private ApplyHash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
     private HashFunctionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UUID_FROM_BYTES_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUuidFromBytes() {
     return hashFunctionCase_ == 100;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -339,7 +334,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +551,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         uuidFromBytesBuilder_;
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUuidFromBytes() {
       return hashFunctionCase_ == 100;
     }
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
       hashFunctionCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
       hashFunctionCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
       hashFunctionCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Empty.Builder getUuidFromBytesBuilder() {
       return getUuidFromBytesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class ApplyHash extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *

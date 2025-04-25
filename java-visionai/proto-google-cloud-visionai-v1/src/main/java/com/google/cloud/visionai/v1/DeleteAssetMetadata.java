@@ -34,7 +34,6 @@ public final class DeleteAssetMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeleteAssetMetadata)
     DeleteAssetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteAssetMetadata.newBuilder() to construct.
   private DeleteAssetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DeleteAssetMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

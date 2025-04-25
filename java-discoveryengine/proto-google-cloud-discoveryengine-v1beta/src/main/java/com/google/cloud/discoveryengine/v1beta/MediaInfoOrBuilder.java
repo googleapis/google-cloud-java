@@ -40,7 +40,6 @@ public interface MediaInfoOrBuilder
    * @return Whether the mediaProgressDuration field is set.
    */
   boolean hasMediaProgressDuration();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface MediaInfoOrBuilder
    * @return The mediaProgressDuration.
    */
   com.google.protobuf.Duration getMediaProgressDuration();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface MediaInfoOrBuilder
    * @return Whether the mediaProgressPercentage field is set.
    */
   boolean hasMediaProgressPercentage();
-
   /**
    *
    *

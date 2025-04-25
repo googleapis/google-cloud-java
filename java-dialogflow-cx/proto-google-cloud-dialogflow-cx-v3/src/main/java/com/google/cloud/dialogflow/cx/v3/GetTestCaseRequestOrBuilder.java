@@ -40,7 +40,6 @@ public interface GetTestCaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

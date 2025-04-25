@@ -33,7 +33,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.OtherInfoTypeSummary)
     OtherInfoTypeSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OtherInfoTypeSummary.newBuilder() to construct.
   private OtherInfoTypeSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int INFO_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InfoType infoType_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
   public boolean hasInfoType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
 
   public static final int ESTIMATED_PREVALENCE_FIELD_NUMBER = 2;
   private int estimatedPrevalence_ = 0;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
 
   public static final int EXCLUDED_FROM_ANALYSIS_FIELD_NUMBER = 3;
   private boolean excludedFromAnalysis_ = false;
-
   /**
    *
    *
@@ -334,7 +328,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     public boolean hasInfoType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
         return infoTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +677,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +691,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
             : infoType_;
       }
     }
-
     /**
      *
      *
@@ -752,7 +736,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     }
 
     private int estimatedPrevalence_;
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     public int getEstimatedPrevalence() {
       return estimatedPrevalence_;
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +792,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     }
 
     private boolean excludedFromAnalysis_;
-
     /**
      *
      *
@@ -828,7 +808,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
     public boolean getExcludedFromAnalysis() {
       return excludedFromAnalysis_;
     }
-
     /**
      *
      *
@@ -849,7 +828,6 @@ public final class OtherInfoTypeSummary extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

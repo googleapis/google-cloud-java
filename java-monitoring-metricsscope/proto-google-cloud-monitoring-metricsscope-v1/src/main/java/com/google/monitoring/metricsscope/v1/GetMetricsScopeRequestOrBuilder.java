@@ -40,7 +40,6 @@ public interface GetMetricsScopeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

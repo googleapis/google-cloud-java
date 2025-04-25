@@ -36,7 +36,6 @@ public interface RuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface RuleOrBuilder
    * @return The ruleId.
    */
   java.lang.String getRuleId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface RuleOrBuilder
    * @return The enum numeric value on the wire for triggerType.
    */
   int getTriggerTypeValue();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface RuleOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface RuleOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Action actions = 5;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.Action> getActionsList();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface RuleOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Action actions = 5;</code>
    */
   com.google.cloud.contentwarehouse.v1.Action getActions(int index);
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface RuleOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.Action actions = 5;</code>
    */
   int getActionsCount();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface RuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.ActionOrBuilder>
       getActionsOrBuilderList();
-
   /**
    *
    *

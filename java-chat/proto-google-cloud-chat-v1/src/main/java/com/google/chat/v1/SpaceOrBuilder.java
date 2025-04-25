@@ -45,7 +45,6 @@ public interface SpaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface SpaceOrBuilder
    */
   @java.lang.Deprecated
   int getTypeValue();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface SpaceOrBuilder
    * @return The enum numeric value on the wire for spaceType.
    */
   int getSpaceTypeValue();
-
   /**
    *
    *
@@ -187,7 +184,6 @@ public interface SpaceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -247,7 +243,6 @@ public interface SpaceOrBuilder
    * @return The enum numeric value on the wire for spaceThreadingState.
    */
   int getSpaceThreadingStateValue();
-
   /**
    *
    *
@@ -277,7 +272,6 @@ public interface SpaceOrBuilder
    * @return Whether the spaceDetails field is set.
    */
   boolean hasSpaceDetails();
-
   /**
    *
    *
@@ -292,7 +286,6 @@ public interface SpaceOrBuilder
    * @return The spaceDetails.
    */
   com.google.chat.v1.Space.SpaceDetails getSpaceDetails();
-
   /**
    *
    *
@@ -320,7 +313,6 @@ public interface SpaceOrBuilder
    * @return The enum numeric value on the wire for spaceHistoryState.
    */
   int getSpaceHistoryStateValue();
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public interface SpaceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -397,7 +388,6 @@ public interface SpaceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -432,7 +422,6 @@ public interface SpaceOrBuilder
    * @return Whether the lastActiveTime field is set.
    */
   boolean hasLastActiveTime();
-
   /**
    *
    *
@@ -447,7 +436,6 @@ public interface SpaceOrBuilder
    * @return The lastActiveTime.
    */
   com.google.protobuf.Timestamp getLastActiveTime();
-
   /**
    *
    *
@@ -495,7 +483,6 @@ public interface SpaceOrBuilder
    * @return Whether the membershipCount field is set.
    */
   boolean hasMembershipCount();
-
   /**
    *
    *
@@ -512,7 +499,6 @@ public interface SpaceOrBuilder
    * @return The membershipCount.
    */
   com.google.chat.v1.Space.MembershipCount getMembershipCount();
-
   /**
    *
    *
@@ -544,7 +530,6 @@ public interface SpaceOrBuilder
    * @return Whether the accessSettings field is set.
    */
   boolean hasAccessSettings();
-
   /**
    *
    *
@@ -561,7 +546,6 @@ public interface SpaceOrBuilder
    * @return The accessSettings.
    */
   com.google.chat.v1.Space.AccessSettings getAccessSettings();
-
   /**
    *
    *
@@ -589,7 +573,6 @@ public interface SpaceOrBuilder
    * @return The spaceUri.
    */
   java.lang.String getSpaceUri();
-
   /**
    *
    *
@@ -620,7 +603,6 @@ public interface SpaceOrBuilder
    * @return Whether the predefinedPermissionSettings field is set.
    */
   boolean hasPredefinedPermissionSettings();
-
   /**
    *
    *
@@ -638,7 +620,6 @@ public interface SpaceOrBuilder
    * @return The enum numeric value on the wire for predefinedPermissionSettings.
    */
   int getPredefinedPermissionSettingsValue();
-
   /**
    *
    *
@@ -673,7 +654,6 @@ public interface SpaceOrBuilder
    * @return Whether the permissionSettings field is set.
    */
   boolean hasPermissionSettings();
-
   /**
    *
    *
@@ -690,7 +670,6 @@ public interface SpaceOrBuilder
    * @return The permissionSettings.
    */
   com.google.chat.v1.Space.PermissionSettings getPermissionSettings();
-
   /**
    *
    *
@@ -726,7 +705,6 @@ public interface SpaceOrBuilder
    * @return Whether the importModeExpireTime field is set.
    */
   boolean hasImportModeExpireTime();
-
   /**
    *
    *
@@ -747,7 +725,6 @@ public interface SpaceOrBuilder
    * @return The importModeExpireTime.
    */
   com.google.protobuf.Timestamp getImportModeExpireTime();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class DeployConversationModelOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.DeployConversationModelOperationMetadata)
     DeployConversationModelOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployConversationModelOperationMetadata.newBuilder() to construct.
   private DeployConversationModelOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class DeployConversationModelOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationModel_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DeployConversationModelOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DeployConversationModelOperationMetadata
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class DeployConversationModelOperationMetadata
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class DeployConversationModelOperationMetadata
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -351,7 +345,6 @@ public final class DeployConversationModelOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +570,6 @@ public final class DeployConversationModelOperationMetadata
     private int bitField0_;
 
     private java.lang.Object conversationModel_ = "";
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class DeployConversationModelOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class DeployConversationModelOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class DeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class DeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class DeployConversationModelOperationMetadata
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class DeployConversationModelOperationMetadata
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -736,7 +722,6 @@ public final class DeployConversationModelOperationMetadata
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -760,7 +745,6 @@ public final class DeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class DeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class DeployConversationModelOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class DeployConversationModelOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class DeployConversationModelOperationMetadata
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class DeployConversationModelOperationMetadata
             : createTime_;
       }
     }
-
     /**
      *
      *

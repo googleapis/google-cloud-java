@@ -38,7 +38,6 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.channel.v1.Entitlement> getEntitlementsList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    * </code>
    */
   com.google.cloud.channel.v1.Entitlement getEntitlements(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    * </code>
    */
   int getEntitlementsCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.EntitlementOrBuilder>
       getEntitlementsOrBuilderList();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface TransferEntitlementsToGoogleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ReconcileTagsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ReconcileTagsRequestOrBuilder
    * @return The tagTemplate.
    */
   java.lang.String getTagTemplate();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface ReconcileTagsRequestOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Tag tags = 4;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.Tag> getTagsList();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface ReconcileTagsRequestOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Tag tags = 4;</code>
    */
   com.google.cloud.datacatalog.v1.Tag getTags(int index);
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface ReconcileTagsRequestOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Tag tags = 4;</code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface ReconcileTagsRequestOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.Tag tags = 4;</code>
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.TagOrBuilder> getTagsOrBuilderList();
-
   /**
    *
    *

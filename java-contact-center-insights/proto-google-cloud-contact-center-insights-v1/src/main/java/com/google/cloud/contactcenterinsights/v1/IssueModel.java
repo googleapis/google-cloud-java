@@ -33,7 +33,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IssueModel)
     IssueModelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IssueModel.newBuilder() to construct.
   private IssueModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -152,7 +151,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -163,7 +161,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEPLOYED = 1;</code>
      */
     public static final int UNDEPLOYED_VALUE = 1;
-
     /**
      *
      *
@@ -174,7 +171,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPLOYING = 2;</code>
      */
     public static final int DEPLOYING_VALUE = 2;
-
     /**
      *
      *
@@ -186,7 +182,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPLOYED = 3;</code>
      */
     public static final int DEPLOYED_VALUE = 3;
-
     /**
      *
      *
@@ -197,7 +192,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEPLOYING = 4;</code>
      */
     public static final int UNDEPLOYING_VALUE = 4;
-
     /**
      *
      *
@@ -353,7 +347,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>MODEL_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int MODEL_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -364,7 +357,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_V1 = 1;</code>
      */
     public static final int TYPE_V1_VALUE = 1;
-
     /**
      *
      *
@@ -485,7 +477,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     int getMediumValue();
-
     /**
      *
      *
@@ -533,7 +524,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * @return The filter.
      */
     java.lang.String getFilter();
-
     /**
      *
      *
@@ -548,7 +538,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
-
   /**
    *
    *
@@ -563,7 +552,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig)
       InputDataConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InputDataConfig.newBuilder() to construct.
     private InputDataConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -597,7 +585,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MEDIUM_FIELD_NUMBER = 1;
     private int medium_ = 0;
-
     /**
      *
      *
@@ -620,7 +607,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public int getMediumValue() {
       return medium_;
     }
-
     /**
      *
      *
@@ -650,7 +636,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TRAINING_CONVERSATIONS_COUNT_FIELD_NUMBER = 2;
     private long trainingConversationsCount_ = 0L;
-
     /**
      *
      *
@@ -672,7 +657,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -697,7 +681,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -908,7 +891,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1130,7 +1112,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int medium_ = 0;
-
       /**
        *
        *
@@ -1153,7 +1134,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       public int getMediumValue() {
         return medium_;
       }
-
       /**
        *
        *
@@ -1179,7 +1159,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1206,7 +1185,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.contactcenterinsights.v1.Conversation.Medium.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1236,7 +1214,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1263,7 +1240,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long trainingConversationsCount_;
-
       /**
        *
        *
@@ -1280,7 +1256,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       public long getTrainingConversationsCount() {
         return trainingConversationsCount_;
       }
-
       /**
        *
        *
@@ -1301,7 +1276,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1322,7 +1296,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -1346,7 +1319,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1370,7 +1342,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1393,7 +1364,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1412,7 +1382,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1509,7 +1478,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1535,7 +1503,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1566,7 +1533,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1590,7 +1556,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1617,7 +1582,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1634,7 +1598,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1651,7 +1614,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1669,7 +1631,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1686,7 +1647,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1703,7 +1663,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1721,7 +1680,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ISSUE_COUNT_FIELD_NUMBER = 8;
   private long issueCount_ = 0L;
-
   /**
    *
    *
@@ -1740,7 +1698,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1758,7 +1715,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1783,7 +1739,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_DATA_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig inputDataConfig_;
-
   /**
    *
    *
@@ -1800,7 +1755,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInputDataConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1819,7 +1773,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.getDefaultInstance()
         : inputDataConfig_;
   }
-
   /**
    *
    *
@@ -1840,7 +1793,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAINING_STATS_FIELD_NUMBER = 7;
   private com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats trainingStats_;
-
   /**
    *
    *
@@ -1859,7 +1811,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTrainingStats() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1880,7 +1831,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.getDefaultInstance()
         : trainingStats_;
   }
-
   /**
    *
    *
@@ -1903,7 +1853,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODEL_TYPE_FIELD_NUMBER = 9;
   private int modelType_ = 0;
-
   /**
    *
    *
@@ -1919,7 +1868,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
   public int getModelTypeValue() {
     return modelType_;
   }
-
   /**
    *
    *
@@ -1944,7 +1892,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -1968,7 +1915,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2261,7 +2207,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2603,7 +2548,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2628,7 +2572,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2653,7 +2596,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2677,7 +2619,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2697,7 +2638,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2724,7 +2664,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2747,7 +2686,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2770,7 +2708,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2792,7 +2729,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2810,7 +2746,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2840,7 +2775,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2857,7 +2791,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2880,7 +2813,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2905,7 +2837,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2927,7 +2858,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2957,7 +2887,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2979,7 +2908,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2996,7 +2924,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3017,7 +2944,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3052,7 +2978,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3069,7 +2994,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3092,7 +3016,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3117,7 +3040,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3139,7 +3061,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3169,7 +3090,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3191,7 +3111,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3208,7 +3127,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3229,7 +3147,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3259,7 +3176,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long issueCount_;
-
     /**
      *
      *
@@ -3275,7 +3191,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public long getIssueCount() {
       return issueCount_;
     }
-
     /**
      *
      *
@@ -3295,7 +3210,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3315,7 +3229,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3333,7 +3246,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3354,7 +3266,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3376,7 +3287,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.IssueModel.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3400,7 +3310,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3427,7 +3336,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfigOrBuilder>
         inputDataConfigBuilder_;
-
     /**
      *
      *
@@ -3444,7 +3352,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputDataConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3469,7 +3376,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return inputDataConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3495,7 +3401,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3519,7 +3424,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3552,7 +3456,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3574,7 +3477,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3592,7 +3494,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInputDataConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3615,7 +3516,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             : inputDataConfig_;
       }
     }
-
     /**
      *
      *
@@ -3650,7 +3550,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueModelLabelStatsOrBuilder>
         trainingStatsBuilder_;
-
     /**
      *
      *
@@ -3668,7 +3567,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTrainingStats() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3692,7 +3590,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return trainingStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3719,7 +3616,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3743,7 +3639,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3777,7 +3672,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3800,7 +3694,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3819,7 +3712,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTrainingStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3842,7 +3734,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
             : trainingStats_;
       }
     }
-
     /**
      *
      *
@@ -3873,7 +3764,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int modelType_ = 0;
-
     /**
      *
      *
@@ -3889,7 +3779,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     public int getModelTypeValue() {
       return modelType_;
     }
-
     /**
      *
      *
@@ -3908,7 +3797,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3928,7 +3816,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.IssueModel.ModelType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3951,7 +3838,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3971,7 +3857,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -3994,7 +3879,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4017,7 +3901,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4039,7 +3922,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4057,7 +3939,6 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

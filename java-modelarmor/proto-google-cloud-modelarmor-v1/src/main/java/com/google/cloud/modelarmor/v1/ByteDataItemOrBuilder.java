@@ -38,7 +38,6 @@ public interface ByteDataItemOrBuilder
    * @return The enum numeric value on the wire for byteDataType.
    */
   int getByteDataTypeValue();
-
   /**
    *
    *

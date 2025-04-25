@@ -37,7 +37,6 @@ public interface TextSnippetOrBuilder
    * @return The content.
    */
   java.lang.String getContent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TextSnippetOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface TextSnippetOrBuilder
    * @return The contentUri.
    */
   java.lang.String getContentUri();
-
   /**
    *
    *

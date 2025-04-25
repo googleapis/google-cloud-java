@@ -39,7 +39,6 @@ public interface CreateTcpRouteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateTcpRouteRequestOrBuilder
    * @return The tcpRouteId.
    */
   java.lang.String getTcpRouteId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateTcpRouteRequestOrBuilder
    * @return Whether the tcpRoute field is set.
    */
   boolean hasTcpRoute();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateTcpRouteRequestOrBuilder
    * @return The tcpRoute.
    */
   com.google.cloud.networkservices.v1.TcpRoute getTcpRoute();
-
   /**
    *
    *

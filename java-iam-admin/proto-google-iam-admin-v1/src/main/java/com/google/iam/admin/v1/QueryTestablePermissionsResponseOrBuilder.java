@@ -34,7 +34,6 @@ public interface QueryTestablePermissionsResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.Permission permissions = 1;</code>
    */
   java.util.List<com.google.iam.admin.v1.Permission> getPermissionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface QueryTestablePermissionsResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.Permission permissions = 1;</code>
    */
   com.google.iam.admin.v1.Permission getPermissions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface QueryTestablePermissionsResponseOrBuilder
    * <code>repeated .google.iam.admin.v1.Permission permissions = 1;</code>
    */
   int getPermissionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface QueryTestablePermissionsResponseOrBuilder
    */
   java.util.List<? extends com.google.iam.admin.v1.PermissionOrBuilder>
       getPermissionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface QueryTestablePermissionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

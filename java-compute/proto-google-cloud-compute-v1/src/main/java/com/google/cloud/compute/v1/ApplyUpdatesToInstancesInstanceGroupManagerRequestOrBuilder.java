@@ -37,7 +37,6 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagersApplyUpdatesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersApplyUpdatesRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
       getInstanceGroupManagersApplyUpdatesRequestResource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

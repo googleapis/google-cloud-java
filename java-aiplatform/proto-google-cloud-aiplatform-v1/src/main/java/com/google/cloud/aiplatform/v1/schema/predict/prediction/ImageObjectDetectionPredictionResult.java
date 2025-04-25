@@ -35,7 +35,6 @@ public final class ImageObjectDetectionPredictionResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.prediction.ImageObjectDetectionPredictionResult)
     ImageObjectDetectionPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageObjectDetectionPredictionResult.newBuilder() to construct.
   private ImageObjectDetectionPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -78,7 +77,6 @@ public final class ImageObjectDetectionPredictionResult
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList ids_ = emptyLongList();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ImageObjectDetectionPredictionResult
   public java.util.List<java.lang.Long> getIdsList() {
     return ids_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class ImageObjectDetectionPredictionResult
   public int getIdsCount() {
     return ids_.size();
   }
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class ImageObjectDetectionPredictionResult
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList displayNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class ImageObjectDetectionPredictionResult
   public com.google.protobuf.ProtocolStringList getDisplayNamesList() {
     return displayNames_;
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class ImageObjectDetectionPredictionResult
   public int getDisplayNamesCount() {
     return displayNames_.size();
   }
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class ImageObjectDetectionPredictionResult
   public java.lang.String getDisplayNames(int index) {
     return displayNames_.get(index);
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class ImageObjectDetectionPredictionResult
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList confidences_ = emptyFloatList();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public final class ImageObjectDetectionPredictionResult
   public java.util.List<java.lang.Float> getConfidencesList() {
     return confidences_;
   }
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public final class ImageObjectDetectionPredictionResult
   public int getConfidencesCount() {
     return confidences_.size();
   }
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public final class ImageObjectDetectionPredictionResult
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.ListValue> bboxes_;
-
   /**
    *
    *
@@ -283,7 +271,6 @@ public final class ImageObjectDetectionPredictionResult
   public java.util.List<com.google.protobuf.ListValue> getBboxesList() {
     return bboxes_;
   }
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public final class ImageObjectDetectionPredictionResult
   public java.util.List<? extends com.google.protobuf.ListValueOrBuilder> getBboxesOrBuilderList() {
     return bboxes_;
   }
-
   /**
    *
    *
@@ -321,7 +307,6 @@ public final class ImageObjectDetectionPredictionResult
   public int getBboxesCount() {
     return bboxes_.size();
   }
-
   /**
    *
    *
@@ -340,7 +325,6 @@ public final class ImageObjectDetectionPredictionResult
   public com.google.protobuf.ListValue getBboxes(int index) {
     return bboxes_.get(index);
   }
-
   /**
    *
    *
@@ -610,7 +594,6 @@ public final class ImageObjectDetectionPredictionResult
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -971,7 +954,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -988,7 +970,6 @@ public final class ImageObjectDetectionPredictionResult
       ids_.makeImmutable();
       return ids_;
     }
-
     /**
      *
      *
@@ -1004,7 +985,6 @@ public final class ImageObjectDetectionPredictionResult
     public int getIdsCount() {
       return ids_.size();
     }
-
     /**
      *
      *
@@ -1021,7 +1001,6 @@ public final class ImageObjectDetectionPredictionResult
     public long getIds(int index) {
       return ids_.getLong(index);
     }
-
     /**
      *
      *
@@ -1044,7 +1023,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1044,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1064,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1092,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1133,7 +1108,6 @@ public final class ImageObjectDetectionPredictionResult
       displayNames_.makeImmutable();
       return displayNames_;
     }
-
     /**
      *
      *
@@ -1149,7 +1123,6 @@ public final class ImageObjectDetectionPredictionResult
     public int getDisplayNamesCount() {
       return displayNames_.size();
     }
-
     /**
      *
      *
@@ -1166,7 +1139,6 @@ public final class ImageObjectDetectionPredictionResult
     public java.lang.String getDisplayNames(int index) {
       return displayNames_.get(index);
     }
-
     /**
      *
      *
@@ -1183,7 +1155,6 @@ public final class ImageObjectDetectionPredictionResult
     public com.google.protobuf.ByteString getDisplayNamesBytes(int index) {
       return displayNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1208,7 +1179,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1202,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1222,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1241,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1281,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1331,7 +1297,6 @@ public final class ImageObjectDetectionPredictionResult
       confidences_.makeImmutable();
       return confidences_;
     }
-
     /**
      *
      *
@@ -1347,7 +1312,6 @@ public final class ImageObjectDetectionPredictionResult
     public int getConfidencesCount() {
       return confidences_.size();
     }
-
     /**
      *
      *
@@ -1364,7 +1328,6 @@ public final class ImageObjectDetectionPredictionResult
     public float getConfidences(int index) {
       return confidences_.getFloat(index);
     }
-
     /**
      *
      *
@@ -1387,7 +1350,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1371,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1391,6 @@ public final class ImageObjectDetectionPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1447,6 @@ public final class ImageObjectDetectionPredictionResult
         return bboxesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1509,7 +1468,6 @@ public final class ImageObjectDetectionPredictionResult
         return bboxesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1531,7 +1489,6 @@ public final class ImageObjectDetectionPredictionResult
         return bboxesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1559,7 +1516,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1540,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1612,7 +1567,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1640,7 +1594,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1618,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1690,7 +1642,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1716,7 +1667,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1691,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1715,6 @@ public final class ImageObjectDetectionPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1732,6 @@ public final class ImageObjectDetectionPredictionResult
     public com.google.protobuf.ListValue.Builder getBboxesBuilder(int index) {
       return getBboxesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1806,7 +1753,6 @@ public final class ImageObjectDetectionPredictionResult
         return bboxesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1829,7 +1775,6 @@ public final class ImageObjectDetectionPredictionResult
         return java.util.Collections.unmodifiableList(bboxes_);
       }
     }
-
     /**
      *
      *
@@ -1847,7 +1792,6 @@ public final class ImageObjectDetectionPredictionResult
     public com.google.protobuf.ListValue.Builder addBboxesBuilder() {
       return getBboxesFieldBuilder().addBuilder(com.google.protobuf.ListValue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1866,7 +1810,6 @@ public final class ImageObjectDetectionPredictionResult
       return getBboxesFieldBuilder()
           .addBuilder(index, com.google.protobuf.ListValue.getDefaultInstance());
     }
-
     /**
      *
      *

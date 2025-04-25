@@ -36,7 +36,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The pluginName.
    */
   java.lang.String getPluginName();
-
   /**
    *
    *
@@ -300,7 +290,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public interface TensorboardTimeSeriesOrBuilder
    * @return The metadata.
    */
   com.google.cloud.aiplatform.v1.TensorboardTimeSeries.Metadata getMetadata();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ResourceLimit)
     ResourceLimitOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceLimit.newBuilder() to construct.
   private ResourceLimit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceType_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINIMUM_FIELD_NUMBER = 2;
   private long minimum_ = 0L;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAXIMUM_FIELD_NUMBER = 3;
   private long maximum_ = 0L;
-
   /**
    *
    *
@@ -333,7 +328,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -544,7 +538,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object resourceType_ = "";
-
     /**
      *
      *
@@ -567,7 +560,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long minimum_;
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     public long getMinimum() {
       return minimum_;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long maximum_;
-
     /**
      *
      *
@@ -727,7 +712,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
     public long getMaximum() {
       return maximum_;
     }
-
     /**
      *
      *
@@ -747,7 +731,6 @@ public final class ResourceLimit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.CreateTagKeyRequest)
     CreateTagKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTagKeyRequest.newBuilder() to construct.
   private CreateTagKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int TAG_KEY_FIELD_NUMBER = 1;
   private com.google.cloud.resourcemanager.v3.TagKey tagKey_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
   public boolean hasTagKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.resourcemanager.v3.TagKey.getDefaultInstance()
         : tagKey_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -319,7 +314,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -536,7 +530,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.resourcemanager.v3.TagKey.Builder,
             com.google.cloud.resourcemanager.v3.TagKeyOrBuilder>
         tagKeyBuilder_;
-
     /**
      *
      *
@@ -554,7 +547,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
     public boolean hasTagKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
         return tagKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +647,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTagKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
             : tagKey_;
       }
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -790,7 +773,6 @@ public final class CreateTagKeyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

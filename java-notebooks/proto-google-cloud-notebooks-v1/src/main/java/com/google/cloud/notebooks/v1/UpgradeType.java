@@ -93,7 +93,6 @@ public enum UpgradeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int UPGRADE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -104,7 +103,6 @@ public enum UpgradeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE_FRAMEWORK = 1;</code>
    */
   public static final int UPGRADE_FRAMEWORK_VALUE = 1;
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public enum UpgradeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE_OS = 2;</code>
    */
   public static final int UPGRADE_OS_VALUE = 2;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public enum UpgradeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADE_CUDA = 3;</code>
    */
   public static final int UPGRADE_CUDA_VALUE = 3;
-
   /**
    *
    *

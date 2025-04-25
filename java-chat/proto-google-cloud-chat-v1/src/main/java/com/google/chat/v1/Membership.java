@@ -34,7 +34,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Membership)
     MembershipOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Membership.newBuilder() to construct.
   private Membership(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <code>MEMBERSHIP_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int MEMBERSHIP_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <code>JOINED = 1;</code>
      */
     public static final int JOINED_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <code>INVITED = 2;</code>
      */
     public static final int INVITED_VALUE = 2;
-
     /**
      *
      *
@@ -317,7 +313,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <code>MEMBERSHIP_ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int MEMBERSHIP_ROLE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -330,7 +325,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <code>ROLE_MEMBER = 1;</code>
      */
     public static final int ROLE_MEMBER_VALUE = 1;
-
     /**
      *
      *
@@ -446,7 +440,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     private MemberTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -483,7 +476,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -509,7 +501,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -538,7 +529,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -556,7 +546,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -579,7 +568,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLE_FIELD_NUMBER = 7;
   private int role_ = 0;
-
   /**
    *
    *
@@ -600,7 +588,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public int getRoleValue() {
     return role_;
   }
-
   /**
    *
    *
@@ -625,7 +612,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBER_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -646,7 +632,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMember() {
     return memberTypeCase_ == 3;
   }
-
   /**
    *
    *
@@ -670,7 +655,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.User.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -694,7 +678,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GROUP_MEMBER_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -713,7 +696,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGroupMember() {
     return memberTypeCase_ == 5;
   }
-
   /**
    *
    *
@@ -735,7 +717,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.Group.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -758,7 +739,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -778,7 +758,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -798,7 +777,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -819,7 +797,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp deleteTime_;
-
   /**
    *
    *
@@ -839,7 +816,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -859,7 +835,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
-
   /**
    *
    *
@@ -1124,7 +1099,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1443,7 +1417,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1468,7 +1441,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1493,7 +1465,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1488,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1537,7 +1507,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1533,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1582,7 +1550,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1603,7 +1570,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1589,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.Membership.MembershipState.forNumber(state_);
       return result == null ? com.google.chat.v1.Membership.MembershipState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1647,7 +1612,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1669,7 +1633,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int role_ = 0;
-
     /**
      *
      *
@@ -1690,7 +1653,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public int getRoleValue() {
       return role_;
     }
-
     /**
      *
      *
@@ -1714,7 +1676,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1698,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           com.google.chat.v1.Membership.MembershipRole.forNumber(role_);
       return result == null ? com.google.chat.v1.Membership.MembershipRole.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1764,7 +1724,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1793,7 +1752,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.User.Builder,
             com.google.chat.v1.UserOrBuilder>
         memberBuilder_;
-
     /**
      *
      *
@@ -1814,7 +1772,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMember() {
       return memberTypeCase_ == 3;
     }
-
     /**
      *
      *
@@ -1845,7 +1802,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.User.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1873,7 +1829,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       memberTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1898,7 +1853,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       memberTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1934,7 +1888,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       memberTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1965,7 +1918,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1983,7 +1935,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.User.Builder getMemberBuilder() {
       return getMemberFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2009,7 +1960,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.User.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2051,7 +2001,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.Group.Builder,
             com.google.chat.v1.GroupOrBuilder>
         groupMemberBuilder_;
-
     /**
      *
      *
@@ -2071,7 +2020,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGroupMember() {
       return memberTypeCase_ == 5;
     }
-
     /**
      *
      *
@@ -2101,7 +2049,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.Group.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2128,7 +2075,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       memberTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2152,7 +2098,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       memberTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2187,7 +2132,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       memberTypeCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2217,7 +2161,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2177,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.Group.Builder getGroupMemberBuilder() {
       return getGroupMemberFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2259,7 +2201,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.Group.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2301,7 +2242,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2320,7 +2260,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2345,7 +2284,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2372,7 +2310,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2396,7 +2333,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2428,7 +2364,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2452,7 +2387,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2471,7 +2405,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2494,7 +2427,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2531,7 +2463,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
-
     /**
      *
      *
@@ -2550,7 +2481,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2575,7 +2505,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2602,7 +2531,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2626,7 +2554,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2658,7 +2585,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2682,7 +2608,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2701,7 +2626,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2724,7 +2648,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
-
     /**
      *
      *

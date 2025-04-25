@@ -36,7 +36,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return The forwardingRule.
    */
   java.lang.String getForwardingRule();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return Whether the targetReferenceResource field is set.
    */
   boolean hasTargetReferenceResource();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * @return The targetReferenceResource.
    */
   com.google.cloud.compute.v1.TargetReference getTargetReferenceResource();
-
   /**
    *
    *

@@ -56,7 +56,6 @@ public interface TaskOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public interface TaskOrBuilder
    * @return Whether the appEngineHttpRequest field is set.
    */
   boolean hasAppEngineHttpRequest();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface TaskOrBuilder
    * @return The appEngineHttpRequest.
    */
   com.google.cloud.tasks.v2.AppEngineHttpRequest getAppEngineHttpRequest();
-
   /**
    *
    *
@@ -151,7 +148,6 @@ public interface TaskOrBuilder
    * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface TaskOrBuilder
    * @return The httpRequest.
    */
   com.google.cloud.tasks.v2.HttpRequest getHttpRequest();
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public interface TaskOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public interface TaskOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public interface TaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public interface TaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -312,7 +303,6 @@ public interface TaskOrBuilder
    * @return Whether the dispatchDeadline field is set.
    */
   boolean hasDispatchDeadline();
-
   /**
    *
    *
@@ -357,7 +347,6 @@ public interface TaskOrBuilder
    * @return The dispatchDeadline.
    */
   com.google.protobuf.Duration getDispatchDeadline();
-
   /**
    *
    *
@@ -446,7 +435,6 @@ public interface TaskOrBuilder
    * @return Whether the firstAttempt field is set.
    */
   boolean hasFirstAttempt();
-
   /**
    *
    *
@@ -463,7 +451,6 @@ public interface TaskOrBuilder
    * @return The firstAttempt.
    */
   com.google.cloud.tasks.v2.Attempt getFirstAttempt();
-
   /**
    *
    *
@@ -491,7 +478,6 @@ public interface TaskOrBuilder
    * @return Whether the lastAttempt field is set.
    */
   boolean hasLastAttempt();
-
   /**
    *
    *
@@ -504,7 +490,6 @@ public interface TaskOrBuilder
    * @return The lastAttempt.
    */
   com.google.cloud.tasks.v2.Attempt getLastAttempt();
-
   /**
    *
    *
@@ -529,7 +514,6 @@ public interface TaskOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface UpdateCapacityCommitmentRequestOrBuilder
    * @return Whether the capacityCommitment field is set.
    */
   boolean hasCapacityCommitment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateCapacityCommitmentRequestOrBuilder
    * @return The capacityCommitment.
    */
   com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface UpdateCapacityCommitmentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface UpdateCapacityCommitmentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

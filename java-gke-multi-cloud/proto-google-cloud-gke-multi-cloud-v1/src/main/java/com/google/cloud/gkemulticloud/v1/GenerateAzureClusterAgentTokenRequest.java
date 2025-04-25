@@ -26,7 +26,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest)
     GenerateAzureClusterAgentTokenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateAzureClusterAgentTokenRequest.newBuilder() to construct.
   private GenerateAzureClusterAgentTokenRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object azureCluster_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subjectToken_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subjectTokenType_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodePoolId_ = "";
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object grantType_ = "";
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +380,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object audience_ = "";
-
   /**
    *
    *
@@ -417,7 +403,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -446,7 +431,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
-
   /**
    *
    *
@@ -470,7 +454,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -499,7 +482,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestedTokenType_ = "";
-
   /**
    *
    *
@@ -523,7 +505,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -552,7 +533,6 @@ public final class GenerateAzureClusterAgentTokenRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object options_ = "";
-
   /**
    *
    *
@@ -576,7 +556,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -843,7 +822,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAzureClusterAgentTokenRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -1165,7 +1143,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     private int bitField0_;
 
     private java.lang.Object azureCluster_ = "";
-
     /**
      *
      *
@@ -1190,7 +1167,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1191,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1214,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1233,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1259,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object subjectToken_ = "";
-
     /**
      *
      *
@@ -1309,7 +1281,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1332,7 +1303,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1354,7 +1324,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1341,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1365,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object subjectTokenType_ = "";
-
     /**
      *
      *
@@ -1420,7 +1387,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1443,7 +1409,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1430,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1483,7 +1447,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1471,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1531,7 +1493,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1554,7 +1515,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1576,7 +1536,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1594,7 +1553,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1577,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object nodePoolId_ = "";
-
     /**
      *
      *
@@ -1642,7 +1599,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1665,7 +1621,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1687,7 +1642,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1705,7 +1659,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1683,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object grantType_ = "";
-
     /**
      *
      *
@@ -1753,7 +1705,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1776,7 +1727,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1798,7 +1748,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1816,7 +1765,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1789,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object audience_ = "";
-
     /**
      *
      *
@@ -1864,7 +1811,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1887,7 +1833,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1909,7 +1854,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1927,7 +1871,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1895,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object scope_ = "";
-
     /**
      *
      *
@@ -1975,7 +1917,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1998,7 +1939,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2020,7 +1960,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2038,7 +1977,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2063,7 +2001,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object requestedTokenType_ = "";
-
     /**
      *
      *
@@ -2086,7 +2023,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2109,7 +2045,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2131,7 +2066,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2149,7 +2083,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2174,7 +2107,6 @@ public final class GenerateAzureClusterAgentTokenRequest
     }
 
     private java.lang.Object options_ = "";
-
     /**
      *
      *
@@ -2197,7 +2129,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2220,7 +2151,6 @@ public final class GenerateAzureClusterAgentTokenRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2242,7 +2172,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2260,7 +2189,6 @@ public final class GenerateAzureClusterAgentTokenRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return The agent.
    */
   java.lang.String getAgent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return Whether the intentCoverage field is set.
    */
   boolean hasIntentCoverage();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return The intentCoverage.
    */
   com.google.cloud.dialogflow.cx.v3beta1.IntentCoverage getIntentCoverage();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return Whether the transitionCoverage field is set.
    */
   boolean hasTransitionCoverage();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return The transitionCoverage.
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage getTransitionCoverage();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return Whether the routeGroupCoverage field is set.
    */
   boolean hasRouteGroupCoverage();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface CalculateCoverageResponseOrBuilder
    * @return The routeGroupCoverage.
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverage getRouteGroupCoverage();
-
   /**
    *
    *

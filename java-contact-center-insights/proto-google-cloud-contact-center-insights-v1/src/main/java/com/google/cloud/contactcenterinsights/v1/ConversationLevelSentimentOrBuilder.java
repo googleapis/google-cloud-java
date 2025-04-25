@@ -49,7 +49,6 @@ public interface ConversationLevelSentimentOrBuilder
    * @return Whether the sentimentData field is set.
    */
   boolean hasSentimentData();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ConversationLevelSentimentOrBuilder
    * @return The sentimentData.
    */
   com.google.cloud.contactcenterinsights.v1.SentimentData getSentimentData();
-
   /**
    *
    *

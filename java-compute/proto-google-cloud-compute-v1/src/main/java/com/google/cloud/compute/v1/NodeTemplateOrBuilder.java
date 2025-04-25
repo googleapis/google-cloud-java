@@ -26,17 +26,13 @@ public interface NodeTemplateOrBuilder
 
   /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList();
-
   /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index);
-
   /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   int getAcceleratorsCount();
-
   /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
-
   /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 269577064;</code> */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
 
@@ -53,7 +49,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the cpuOvercommitType field is set.
    */
   boolean hasCpuOvercommitType();
-
   /**
    *
    *
@@ -67,7 +62,6 @@ public interface NodeTemplateOrBuilder
    * @return The cpuOvercommitType.
    */
   java.lang.String getCpuOvercommitType();
-
   /**
    *
    *
@@ -94,7 +88,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -107,7 +100,6 @@ public interface NodeTemplateOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -133,7 +125,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -146,7 +137,6 @@ public interface NodeTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -162,16 +152,12 @@ public interface NodeTemplateOrBuilder
 
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   java.util.List<com.google.cloud.compute.v1.LocalDisk> getDisksList();
-
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   com.google.cloud.compute.v1.LocalDisk getDisks(int index);
-
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   int getDisksCount();
-
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.LocalDiskOrBuilder> getDisksOrBuilderList();
-
   /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
   com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index);
 
@@ -187,7 +173,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -213,7 +198,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -226,7 +210,6 @@ public interface NodeTemplateOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -252,7 +235,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -265,7 +247,6 @@ public interface NodeTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -289,7 +270,6 @@ public interface NodeTemplateOrBuilder
    * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   int getNodeAffinityLabelsCount();
-
   /**
    *
    *
@@ -300,11 +280,9 @@ public interface NodeTemplateOrBuilder
    * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   boolean containsNodeAffinityLabels(java.lang.String key);
-
   /** Use {@link #getNodeAffinityLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getNodeAffinityLabels();
-
   /**
    *
    *
@@ -315,7 +293,6 @@ public interface NodeTemplateOrBuilder
    * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getNodeAffinityLabelsMap();
-
   /**
    *
    *
@@ -330,7 +307,6 @@ public interface NodeTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -354,7 +330,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the nodeType field is set.
    */
   boolean hasNodeType();
-
   /**
    *
    *
@@ -367,7 +342,6 @@ public interface NodeTemplateOrBuilder
    * @return The nodeType.
    */
   java.lang.String getNodeType();
-
   /**
    *
    *
@@ -395,7 +369,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the nodeTypeFlexibility field is set.
    */
   boolean hasNodeTypeFlexibility();
-
   /**
    *
    *
@@ -410,7 +383,6 @@ public interface NodeTemplateOrBuilder
    * @return The nodeTypeFlexibility.
    */
   com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility getNodeTypeFlexibility();
-
   /**
    *
    *
@@ -437,7 +409,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -450,7 +421,6 @@ public interface NodeTemplateOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -476,7 +446,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -489,7 +458,6 @@ public interface NodeTemplateOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -515,7 +483,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the serverBinding field is set.
    */
   boolean hasServerBinding();
-
   /**
    *
    *
@@ -528,7 +495,6 @@ public interface NodeTemplateOrBuilder
    * @return The serverBinding.
    */
   com.google.cloud.compute.v1.ServerBinding getServerBinding();
-
   /**
    *
    *
@@ -553,7 +519,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -567,7 +532,6 @@ public interface NodeTemplateOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -594,7 +558,6 @@ public interface NodeTemplateOrBuilder
    * @return Whether the statusMessage field is set.
    */
   boolean hasStatusMessage();
-
   /**
    *
    *
@@ -607,7 +570,6 @@ public interface NodeTemplateOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *

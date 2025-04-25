@@ -34,7 +34,6 @@ public interface TargetInstancesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetInstance> getTargetInstancesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TargetInstancesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
    */
   com.google.cloud.compute.v1.TargetInstance getTargetInstances(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TargetInstancesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
    */
   int getTargetInstancesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TargetInstancesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetInstanceOrBuilder>
       getTargetInstancesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface TargetInstancesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface TargetInstancesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.RouteModifiers)
     RouteModifiersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouteModifiers.newBuilder() to construct.
   private RouteModifiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_TOLLS_FIELD_NUMBER = 1;
   private boolean avoidTolls_ = false;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_HIGHWAYS_FIELD_NUMBER = 2;
   private boolean avoidHighways_ = false;
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_FERRIES_FIELD_NUMBER = 3;
   private boolean avoidFerries_ = false;
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVOID_INDOOR_FIELD_NUMBER = 4;
   private boolean avoidIndoor_ = false;
-
   /**
    *
    *
@@ -332,7 +327,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean avoidTolls_;
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidTolls() {
       return avoidTolls_;
     }
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean avoidHighways_;
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidHighways() {
       return avoidHighways_;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean avoidFerries_;
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidFerries() {
       return avoidFerries_;
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean avoidIndoor_;
-
     /**
      *
      *
@@ -758,7 +742,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
     public boolean getAvoidIndoor() {
       return avoidIndoor_;
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

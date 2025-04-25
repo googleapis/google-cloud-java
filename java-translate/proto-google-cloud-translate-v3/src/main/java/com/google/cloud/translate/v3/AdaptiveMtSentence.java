@@ -33,7 +33,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.AdaptiveMtSentence)
     AdaptiveMtSentenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdaptiveMtSentence.newBuilder() to construct.
   private AdaptiveMtSentence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceSentence_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetSentence_ = "";
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -268,7 +259,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -320,7 +308,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -541,7 +528,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -804,7 +790,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object sourceSentence_ = "";
-
     /**
      *
      *
@@ -953,7 +933,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +955,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +993,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1017,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object targetSentence_ = "";
-
     /**
      *
      *
@@ -1064,7 +1039,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1061,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1082,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1099,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1174,7 +1144,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1197,7 +1166,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1190,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1240,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1261,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1277,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1334,7 +1297,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1369,7 +1331,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1386,7 +1347,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1409,7 +1369,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1393,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1414,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1443,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1464,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1525,7 +1480,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1546,7 +1500,6 @@ public final class AdaptiveMtSentence extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *

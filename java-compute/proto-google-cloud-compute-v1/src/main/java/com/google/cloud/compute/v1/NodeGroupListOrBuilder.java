@@ -36,7 +36,6 @@ public interface NodeGroupListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NodeGroupListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface NodeGroupListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NodeGroup> getItemsList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface NodeGroupListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup items = 100526016;</code>
    */
   com.google.cloud.compute.v1.NodeGroup getItems(int index);
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface NodeGroupListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup items = 100526016;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -106,7 +101,6 @@ public interface NodeGroupListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeGroup items = 100526016;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NodeGroupOrBuilder> getItemsOrBuilderList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface NodeGroupListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -143,7 +136,6 @@ public interface NodeGroupListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -169,7 +161,6 @@ public interface NodeGroupListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -182,7 +173,6 @@ public interface NodeGroupListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -208,7 +198,6 @@ public interface NodeGroupListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -221,7 +210,6 @@ public interface NodeGroupListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -247,7 +235,6 @@ public interface NodeGroupListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -260,7 +247,6 @@ public interface NodeGroupListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

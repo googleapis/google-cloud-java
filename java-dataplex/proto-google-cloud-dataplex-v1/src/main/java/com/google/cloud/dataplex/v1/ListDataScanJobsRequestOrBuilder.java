@@ -41,7 +41,6 @@ public interface ListDataScanJobsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ListDataScanJobsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -136,7 +134,6 @@ public interface ListDataScanJobsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

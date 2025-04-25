@@ -35,7 +35,6 @@ public final class UpdateSpecialistPoolOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdateSpecialistPoolOperationMetadata)
     UpdateSpecialistPoolOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSpecialistPoolOperationMetadata.newBuilder() to construct.
   private UpdateSpecialistPoolOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class UpdateSpecialistPoolOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object specialistPool_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class UpdateSpecialistPoolOperationMetadata
 
   public static final int GENERIC_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class UpdateSpecialistPoolOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class UpdateSpecialistPoolOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -358,7 +352,6 @@ public final class UpdateSpecialistPoolOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +574,6 @@ public final class UpdateSpecialistPoolOperationMetadata
     private int bitField0_;
 
     private java.lang.Object specialistPool_ = "";
-
     /**
      *
      *
@@ -608,7 +600,6 @@ public final class UpdateSpecialistPoolOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class UpdateSpecialistPoolOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class UpdateSpecialistPoolOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class UpdateSpecialistPoolOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class UpdateSpecialistPoolOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class UpdateSpecialistPoolOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class UpdateSpecialistPoolOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

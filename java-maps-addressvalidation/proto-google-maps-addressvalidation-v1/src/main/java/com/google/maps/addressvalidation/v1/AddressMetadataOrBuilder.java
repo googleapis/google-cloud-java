@@ -37,7 +37,6 @@ public interface AddressMetadataOrBuilder
    * @return Whether the business field is set.
    */
   boolean hasBusiness();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AddressMetadataOrBuilder
    * @return Whether the poBox field is set.
    */
   boolean hasPoBox();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface AddressMetadataOrBuilder
    * @return Whether the residential field is set.
    */
   boolean hasResidential();
-
   /**
    *
    *

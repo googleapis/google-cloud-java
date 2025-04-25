@@ -39,7 +39,6 @@ public interface UpdateProductRequestOrBuilder
    * @return Whether the product field is set.
    */
   boolean hasProduct();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateProductRequestOrBuilder
    * @return The product.
    */
   com.google.cloud.vision.v1p4beta1.Product getProduct();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface UpdateProductRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateProductRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

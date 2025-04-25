@@ -45,7 +45,6 @@ public interface PageInfoOrBuilder
    * @return The pageviewId.
    */
   java.lang.String getPageviewId();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface PageInfoOrBuilder
    * @return The pageCategory.
    */
   java.lang.String getPageCategory();
-
   /**
    *
    *
@@ -132,7 +130,6 @@ public interface PageInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public interface PageInfoOrBuilder
    * @return The referrerUri.
    */
   java.lang.String getReferrerUri();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.Insight)
     InsightOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Insight.newBuilder() to construct.
   private Insight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,7 +144,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>CATEGORY_UNSPECIFIED = 0;</code>
      */
     public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -156,7 +154,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>COST = 1;</code>
      */
     public static final int COST_VALUE = 1;
-
     /**
      *
      *
@@ -167,7 +164,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURITY = 2;</code>
      */
     public static final int SECURITY_VALUE = 2;
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>PERFORMANCE = 3;</code>
      */
     public static final int PERFORMANCE_VALUE = 3;
-
     /**
      *
      *
@@ -350,7 +345,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -361,7 +355,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW = 1;</code>
      */
     public static final int LOW_VALUE = 1;
-
     /**
      *
      *
@@ -372,7 +365,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIUM = 2;</code>
      */
     public static final int MEDIUM_VALUE = 2;
-
     /**
      *
      *
@@ -383,7 +375,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH = 3;</code>
      */
     public static final int HIGH_VALUE = 3;
-
     /**
      *
      *
@@ -500,7 +491,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * @return The recommendation.
      */
     java.lang.String getRecommendation();
-
     /**
      *
      *
@@ -515,7 +505,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRecommendationBytes();
   }
-
   /**
    *
    *
@@ -530,7 +519,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1beta1.Insight.RecommendationReference)
       RecommendationReferenceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RecommendationReference.newBuilder() to construct.
     private RecommendationReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -565,7 +553,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object recommendation_ = "";
-
     /**
      *
      *
@@ -590,7 +577,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -974,7 +959,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object recommendation_ = "";
-
       /**
        *
        *
@@ -998,7 +982,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1022,7 +1005,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1045,7 +1027,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1064,7 +1045,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1161,7 +1141,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1185,7 +1164,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1214,7 +1192,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1239,7 +1216,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1270,7 +1246,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList targetResources_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1285,7 +1260,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTargetResourcesList() {
     return targetResources_;
   }
-
   /**
    *
    *
@@ -1300,7 +1274,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public int getTargetResourcesCount() {
     return targetResources_.size();
   }
-
   /**
    *
    *
@@ -1316,7 +1289,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTargetResources(int index) {
     return targetResources_.get(index);
   }
-
   /**
    *
    *
@@ -1337,7 +1309,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object insightSubtype_ = "";
-
   /**
    *
    *
@@ -1361,7 +1332,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1388,7 +1358,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_FIELD_NUMBER = 3;
   private com.google.protobuf.Struct content_;
-
   /**
    *
    *
@@ -1405,7 +1374,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1422,7 +1390,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getContent() {
     return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
   }
-
   /**
    *
    *
@@ -1440,7 +1407,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_REFRESH_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp lastRefreshTime_;
-
   /**
    *
    *
@@ -1456,7 +1422,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastRefreshTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1474,7 +1439,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastRefreshTime_;
   }
-
   /**
    *
    *
@@ -1493,7 +1457,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OBSERVATION_PERIOD_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration observationPeriod_;
-
   /**
    *
    *
@@ -1511,7 +1474,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public boolean hasObservationPeriod() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1531,7 +1493,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : observationPeriod_;
   }
-
   /**
    *
    *
@@ -1552,7 +1513,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_INFO_FIELD_NUMBER = 6;
   private com.google.cloud.recommender.v1beta1.InsightStateInfo stateInfo_;
-
   /**
    *
    *
@@ -1568,7 +1528,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStateInfo() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1586,7 +1545,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.recommender.v1beta1.InsightStateInfo.getDefaultInstance()
         : stateInfo_;
   }
-
   /**
    *
    *
@@ -1605,7 +1563,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORY_FIELD_NUMBER = 7;
   private int category_ = 0;
-
   /**
    *
    *
@@ -1621,7 +1578,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public int getCategoryValue() {
     return category_;
   }
-
   /**
    *
    *
@@ -1644,7 +1600,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 15;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -1660,7 +1615,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -1685,7 +1639,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1710,7 +1663,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1741,7 +1693,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1beta1.Insight.RecommendationReference>
       associatedRecommendations_;
-
   /**
    *
    *
@@ -1758,7 +1709,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       getAssociatedRecommendationsList() {
     return associatedRecommendations_;
   }
-
   /**
    *
    *
@@ -1776,7 +1726,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       getAssociatedRecommendationsOrBuilderList() {
     return associatedRecommendations_;
   }
-
   /**
    *
    *
@@ -1792,7 +1741,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
   public int getAssociatedRecommendationsCount() {
     return associatedRecommendations_.size();
   }
-
   /**
    *
    *
@@ -1809,7 +1757,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       getAssociatedRecommendations(int index) {
     return associatedRecommendations_.get(index);
   }
-
   /**
    *
    *
@@ -2121,7 +2068,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2554,7 +2500,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2577,7 +2522,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2600,7 +2544,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2622,7 +2565,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2640,7 +2582,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2665,7 +2606,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2689,7 +2629,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2713,7 +2652,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2736,7 +2674,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2755,7 +2692,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2789,7 +2725,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2805,7 +2740,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       targetResources_.makeImmutable();
       return targetResources_;
     }
-
     /**
      *
      *
@@ -2820,7 +2754,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public int getTargetResourcesCount() {
       return targetResources_.size();
     }
-
     /**
      *
      *
@@ -2836,7 +2769,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTargetResources(int index) {
       return targetResources_.get(index);
     }
-
     /**
      *
      *
@@ -2852,7 +2784,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTargetResourcesBytes(int index) {
       return targetResources_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2876,7 +2807,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2899,7 +2829,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2919,7 +2848,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2938,7 +2866,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2964,7 +2891,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object insightSubtype_ = "";
-
     /**
      *
      *
@@ -2987,7 +2913,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3010,7 +2935,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3032,7 +2956,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3050,7 +2973,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3080,7 +3002,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         contentBuilder_;
-
     /**
      *
      *
@@ -3096,7 +3017,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContent() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3116,7 +3036,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return contentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3140,7 +3059,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3161,7 +3079,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3190,7 +3107,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3211,7 +3127,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3227,7 +3142,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3245,7 +3159,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return content_ == null ? com.google.protobuf.Struct.getDefaultInstance() : content_;
       }
     }
-
     /**
      *
      *
@@ -3279,7 +3192,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastRefreshTimeBuilder_;
-
     /**
      *
      *
@@ -3294,7 +3206,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastRefreshTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3315,7 +3226,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return lastRefreshTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3338,7 +3248,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3358,7 +3267,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3386,7 +3294,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3406,7 +3313,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3421,7 +3327,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastRefreshTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3440,7 +3345,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             : lastRefreshTime_;
       }
     }
-
     /**
      *
      *
@@ -3473,7 +3377,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         observationPeriodBuilder_;
-
     /**
      *
      *
@@ -3490,7 +3393,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public boolean hasObservationPeriod() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3513,7 +3415,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return observationPeriodBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3538,7 +3439,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3560,7 +3460,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3590,7 +3489,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3612,7 +3510,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3629,7 +3526,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getObservationPeriodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3650,7 +3546,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             : observationPeriod_;
       }
     }
-
     /**
      *
      *
@@ -3685,7 +3580,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.recommender.v1beta1.InsightStateInfo.Builder,
             com.google.cloud.recommender.v1beta1.InsightStateInfoOrBuilder>
         stateInfoBuilder_;
-
     /**
      *
      *
@@ -3700,7 +3594,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStateInfo() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3721,7 +3614,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return stateInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3744,7 +3636,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3765,7 +3656,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3794,7 +3684,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3814,7 +3703,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3829,7 +3717,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3848,7 +3735,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             : stateInfo_;
       }
     }
-
     /**
      *
      *
@@ -3876,7 +3762,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int category_ = 0;
-
     /**
      *
      *
@@ -3892,7 +3777,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public int getCategoryValue() {
       return category_;
     }
-
     /**
      *
      *
@@ -3911,7 +3795,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3931,7 +3814,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.recommender.v1beta1.Insight.Category.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3953,7 +3835,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3973,7 +3854,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -3989,7 +3869,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -4008,7 +3887,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4028,7 +3906,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.recommender.v1beta1.Insight.Severity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4050,7 +3927,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4070,7 +3946,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -4094,7 +3969,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4118,7 +3992,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4141,7 +4014,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4160,7 +4032,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4223,7 +4094,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return associatedRecommendationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4242,7 +4112,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return associatedRecommendationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4262,7 +4131,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return associatedRecommendationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4288,7 +4156,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4313,7 +4180,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4339,7 +4205,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4365,7 +4230,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4389,7 +4253,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4414,7 +4277,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4439,7 +4301,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4461,7 +4322,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4483,7 +4343,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4499,7 +4358,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         getAssociatedRecommendationsBuilder(int index) {
       return getAssociatedRecommendationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4519,7 +4377,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return associatedRecommendationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4540,7 +4397,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(associatedRecommendations_);
       }
     }
-
     /**
      *
      *
@@ -4559,7 +4415,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.recommender.v1beta1.Insight.RecommendationReference
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4579,7 +4434,6 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.recommender.v1beta1.Insight.RecommendationReference
                   .getDefaultInstance());
     }
-
     /**
      *
      *

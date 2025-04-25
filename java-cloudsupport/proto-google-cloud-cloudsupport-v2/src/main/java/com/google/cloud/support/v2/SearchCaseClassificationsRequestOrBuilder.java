@@ -38,7 +38,6 @@ public interface SearchCaseClassificationsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface SearchCaseClassificationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

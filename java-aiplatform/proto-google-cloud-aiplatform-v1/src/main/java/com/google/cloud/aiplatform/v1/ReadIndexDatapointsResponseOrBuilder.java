@@ -34,7 +34,6 @@ public interface ReadIndexDatapointsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.IndexDatapoint datapoints = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.IndexDatapoint> getDatapointsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ReadIndexDatapointsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.IndexDatapoint datapoints = 1;</code>
    */
   com.google.cloud.aiplatform.v1.IndexDatapoint getDatapoints(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ReadIndexDatapointsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.IndexDatapoint datapoints = 1;</code>
    */
   int getDatapointsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ReadIndexDatapointsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.IndexDatapointOrBuilder>
       getDatapointsOrBuilderList();
-
   /**
    *
    *

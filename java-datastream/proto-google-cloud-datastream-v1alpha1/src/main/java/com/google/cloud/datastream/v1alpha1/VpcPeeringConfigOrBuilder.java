@@ -36,7 +36,6 @@ public interface VpcPeeringConfigOrBuilder
    * @return The vpcName.
    */
   java.lang.String getVpcName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VpcPeeringConfigOrBuilder
    * @return The subnet.
    */
   java.lang.String getSubnet();
-
   /**
    *
    *

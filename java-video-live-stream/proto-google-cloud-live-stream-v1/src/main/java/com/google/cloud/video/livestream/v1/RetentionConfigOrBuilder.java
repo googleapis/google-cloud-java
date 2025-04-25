@@ -52,7 +52,6 @@ public interface RetentionConfigOrBuilder
    * @return Whether the retentionWindowDuration field is set.
    */
   boolean hasRetentionWindowDuration();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface RetentionConfigOrBuilder
    * @return The retentionWindowDuration.
    */
   com.google.protobuf.Duration getRetentionWindowDuration();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.appengine.v1.CreateApplicationRequest)
     CreateApplicationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateApplicationRequest.newBuilder() to construct.
   private CreateApplicationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int APPLICATION_FIELD_NUMBER = 2;
   private com.google.appengine.v1.Application application_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
   public boolean hasApplication() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
         ? com.google.appengine.v1.Application.getDefaultInstance()
         : application_;
   }
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -485,7 +480,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
             com.google.appengine.v1.Application.Builder,
             com.google.appengine.v1.ApplicationOrBuilder>
         applicationBuilder_;
-
     /**
      *
      *
@@ -500,7 +494,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
     public boolean hasApplication() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -521,7 +514,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
         return applicationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -544,7 +536,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -564,7 +555,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +582,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -612,7 +601,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +615,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
       onChanged();
       return getApplicationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -646,7 +633,6 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
             : application_;
       }
     }
-
     /**
      *
      *

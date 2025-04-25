@@ -220,8 +220,7 @@ public class MockDocumentServiceImpl extends DocumentServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetProcessedDocument, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetProcessedDocument, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ProcessedDocument.class.getName(),
                   Exception.class.getName())));
@@ -243,8 +242,7 @@ public class MockDocumentServiceImpl extends DocumentServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchGetDocumentsMetadata, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method BatchGetDocumentsMetadata, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchGetDocumentsMetadataResponse.class.getName(),
                   Exception.class.getName())));

@@ -37,7 +37,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.OrchestrationCluster>
       getOrchestrationClustersList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    */
   com.google.cloud.telcoautomation.v1alpha1.OrchestrationCluster getOrchestrationClusters(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    * </code>
    */
   int getOrchestrationClustersCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.OrchestrationClusterOrBuilder>
       getOrchestrationClustersOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface ListOrchestrationClustersResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

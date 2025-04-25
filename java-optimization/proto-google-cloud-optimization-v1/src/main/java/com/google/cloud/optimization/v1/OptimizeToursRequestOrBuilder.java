@@ -40,7 +40,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return Whether the model field is set.
    */
   boolean hasModel();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The model.
    */
   com.google.cloud.optimization.v1.ShipmentModel getModel();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The enum numeric value on the wire for solvingMode.
    */
   int getSolvingModeValue();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The enum numeric value on the wire for searchMode.
    */
   int getSearchModeValue();
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public interface OptimizeToursRequestOrBuilder
    */
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute>
       getInjectedFirstSolutionRoutesList();
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public interface OptimizeToursRequestOrBuilder
    * </code>
    */
   com.google.cloud.optimization.v1.ShipmentRoute getInjectedFirstSolutionRoutes(int index);
-
   /**
    *
    *
@@ -319,7 +310,6 @@ public interface OptimizeToursRequestOrBuilder
    * </code>
    */
   int getInjectedFirstSolutionRoutesCount();
-
   /**
    *
    *
@@ -360,7 +350,6 @@ public interface OptimizeToursRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRouteOrBuilder>
       getInjectedFirstSolutionRoutesOrBuilderList();
-
   /**
    *
    *
@@ -423,7 +412,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return Whether the injectedSolutionConstraint field is set.
    */
   boolean hasInjectedSolutionConstraint();
-
   /**
    *
    *
@@ -445,7 +433,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The injectedSolutionConstraint.
    */
   com.google.cloud.optimization.v1.InjectedSolutionConstraint getInjectedSolutionConstraint();
-
   /**
    *
    *
@@ -492,7 +479,6 @@ public interface OptimizeToursRequestOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute refresh_details_routes = 9;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> getRefreshDetailsRoutesList();
-
   /**
    *
    *
@@ -518,7 +504,6 @@ public interface OptimizeToursRequestOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute refresh_details_routes = 9;</code>
    */
   com.google.cloud.optimization.v1.ShipmentRoute getRefreshDetailsRoutes(int index);
-
   /**
    *
    *
@@ -544,7 +529,6 @@ public interface OptimizeToursRequestOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute refresh_details_routes = 9;</code>
    */
   int getRefreshDetailsRoutesCount();
-
   /**
    *
    *
@@ -571,7 +555,6 @@ public interface OptimizeToursRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRouteOrBuilder>
       getRefreshDetailsRoutesOrBuilderList();
-
   /**
    *
    *
@@ -771,7 +754,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return Whether the geodesicMetersPerSecond field is set.
    */
   boolean hasGeodesicMetersPerSecond();
-
   /**
    *
    *
@@ -805,7 +787,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return Whether the maxValidationErrors field is set.
    */
   boolean hasMaxValidationErrors();
-
   /**
    *
    *
@@ -838,7 +819,6 @@ public interface OptimizeToursRequestOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *

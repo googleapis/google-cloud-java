@@ -37,7 +37,6 @@ public interface ExportSBOMRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

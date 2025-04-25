@@ -98,7 +98,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTRY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ENTRY_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -110,7 +109,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TABLE = 2;</code>
    */
   public static final int TABLE_VALUE = 2;
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MODEL = 5;</code>
    */
   public static final int MODEL_VALUE = 5;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_STREAM = 3;</code>
    */
   public static final int DATA_STREAM_VALUE = 3;
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateDataPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateDataPolicyRequestOrBuilder
    * @return Whether the dataPolicy field is set.
    */
   boolean hasDataPolicy();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateDataPolicyRequestOrBuilder
    * @return The dataPolicy.
    */
   com.google.cloud.bigquery.datapolicies.v1.DataPolicy getDataPolicy();
-
   /**
    *
    *

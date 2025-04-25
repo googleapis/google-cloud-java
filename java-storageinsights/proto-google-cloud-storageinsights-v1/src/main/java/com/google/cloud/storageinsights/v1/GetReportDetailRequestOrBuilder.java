@@ -38,7 +38,6 @@ public interface GetReportDetailRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

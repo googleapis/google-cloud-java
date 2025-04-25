@@ -33,7 +33,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2.StateMessage)
     StateMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StateMessage.newBuilder() to construct.
   private StateMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,7 +128,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -140,7 +138,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 1;</code>
      */
     public static final int ERROR_VALUE = 1;
-
     /**
      *
      *
@@ -151,7 +148,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>WARNING = 2;</code>
      */
     public static final int WARNING_VALUE = 2;
-
     /**
      *
      *
@@ -250,7 +246,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 1;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -266,7 +261,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -291,7 +285,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -315,7 +308,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -344,7 +336,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -572,7 +562,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -784,7 +773,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -800,7 +788,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -819,7 +806,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +825,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.functions.v2.StateMessage.Severity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +865,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -904,7 +887,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +909,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +930,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +947,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +971,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1015,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1053,6 @@ public final class StateMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

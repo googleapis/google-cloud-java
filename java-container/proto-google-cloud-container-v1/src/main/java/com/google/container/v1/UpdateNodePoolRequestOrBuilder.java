@@ -41,7 +41,6 @@ public interface UpdateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface UpdateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface UpdateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface UpdateNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNodePoolId();
-
   /**
    *
    *
@@ -188,7 +184,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The nodeVersion.
    */
   java.lang.String getNodeVersion();
-
   /**
    *
    *
@@ -226,7 +221,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The imageType.
    */
   java.lang.String getImageType();
-
   /**
    *
    *
@@ -256,7 +250,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -288,7 +281,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String> getLocationsList();
-
   /**
    *
    *
@@ -305,7 +297,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The count of locations.
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -323,7 +314,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The locations at the given index.
    */
   java.lang.String getLocations(int index);
-
   /**
    *
    *
@@ -354,7 +344,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the workloadMetadataConfig field is set.
    */
   boolean hasWorkloadMetadataConfig();
-
   /**
    *
    *
@@ -367,7 +356,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The workloadMetadataConfig.
    */
   com.google.container.v1.WorkloadMetadataConfig getWorkloadMetadataConfig();
-
   /**
    *
    *
@@ -391,7 +379,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the upgradeSettings field is set.
    */
   boolean hasUpgradeSettings();
-
   /**
    *
    *
@@ -404,7 +391,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The upgradeSettings.
    */
   com.google.container.v1.NodePool.UpgradeSettings getUpgradeSettings();
-
   /**
    *
    *
@@ -430,7 +416,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the tags field is set.
    */
   boolean hasTags();
-
   /**
    *
    *
@@ -445,7 +430,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The tags.
    */
   com.google.container.v1.NetworkTags getTags();
-
   /**
    *
    *
@@ -473,7 +457,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the taints field is set.
    */
   boolean hasTaints();
-
   /**
    *
    *
@@ -488,7 +471,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The taints.
    */
   com.google.container.v1.NodeTaints getTaints();
-
   /**
    *
    *
@@ -516,7 +498,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the labels field is set.
    */
   boolean hasLabels();
-
   /**
    *
    *
@@ -531,7 +512,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The labels.
    */
   com.google.container.v1.NodeLabels getLabels();
-
   /**
    *
    *
@@ -557,7 +537,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the linuxNodeConfig field is set.
    */
   boolean hasLinuxNodeConfig();
-
   /**
    *
    *
@@ -570,7 +549,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The linuxNodeConfig.
    */
   com.google.container.v1.LinuxNodeConfig getLinuxNodeConfig();
-
   /**
    *
    *
@@ -594,7 +572,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the kubeletConfig field is set.
    */
   boolean hasKubeletConfig();
-
   /**
    *
    *
@@ -607,7 +584,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The kubeletConfig.
    */
   com.google.container.v1.NodeKubeletConfig getKubeletConfig();
-
   /**
    *
    *
@@ -631,7 +607,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the nodeNetworkConfig field is set.
    */
   boolean hasNodeNetworkConfig();
-
   /**
    *
    *
@@ -644,7 +619,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The nodeNetworkConfig.
    */
   com.google.container.v1.NodeNetworkConfig getNodeNetworkConfig();
-
   /**
    *
    *
@@ -668,7 +642,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the gcfsConfig field is set.
    */
   boolean hasGcfsConfig();
-
   /**
    *
    *
@@ -681,7 +654,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The gcfsConfig.
    */
   com.google.container.v1.GcfsConfig getGcfsConfig();
-
   /**
    *
    *
@@ -706,7 +678,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the confidentialNodes field is set.
    */
   boolean hasConfidentialNodes();
-
   /**
    *
    *
@@ -720,7 +691,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The confidentialNodes.
    */
   com.google.container.v1.ConfidentialNodes getConfidentialNodes();
-
   /**
    *
    *
@@ -745,7 +715,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the gvnic field is set.
    */
   boolean hasGvnic();
-
   /**
    *
    *
@@ -758,7 +727,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The gvnic.
    */
   com.google.container.v1.VirtualNIC getGvnic();
-
   /**
    *
    *
@@ -784,7 +752,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -812,7 +779,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the fastSocket field is set.
    */
   boolean hasFastSocket();
-
   /**
    *
    *
@@ -825,7 +791,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The fastSocket.
    */
   com.google.container.v1.FastSocket getFastSocket();
-
   /**
    *
    *
@@ -849,7 +814,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -862,7 +826,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The loggingConfig.
    */
   com.google.container.v1.NodePoolLoggingConfig getLoggingConfig();
-
   /**
    *
    *
@@ -887,7 +850,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the resourceLabels field is set.
    */
   boolean hasResourceLabels();
-
   /**
    *
    *
@@ -901,7 +863,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The resourceLabels.
    */
   com.google.container.v1.ResourceLabels getResourceLabels();
-
   /**
    *
    *
@@ -926,7 +887,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the windowsNodeConfig field is set.
    */
   boolean hasWindowsNodeConfig();
-
   /**
    *
    *
@@ -939,7 +899,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The windowsNodeConfig.
    */
   com.google.container.v1.WindowsNodeConfig getWindowsNodeConfig();
-
   /**
    *
    *
@@ -963,7 +922,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
    */
   java.util.List<com.google.container.v1.AcceleratorConfig> getAcceleratorsList();
-
   /**
    *
    *
@@ -976,7 +934,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
    */
   com.google.container.v1.AcceleratorConfig getAccelerators(int index);
-
   /**
    *
    *
@@ -989,7 +946,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>repeated .google.container.v1.AcceleratorConfig accelerators = 35;</code>
    */
   int getAcceleratorsCount();
-
   /**
    *
    *
@@ -1003,7 +959,6 @@ public interface UpdateNodePoolRequestOrBuilder
    */
   java.util.List<? extends com.google.container.v1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -1032,7 +987,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -1064,7 +1018,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
-
   /**
    *
    *
@@ -1111,7 +1064,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the resourceManagerTags field is set.
    */
   boolean hasResourceManagerTags();
-
   /**
    *
    *
@@ -1126,7 +1078,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The resourceManagerTags.
    */
   com.google.container.v1.ResourceManagerTags getResourceManagerTags();
-
   /**
    *
    *
@@ -1154,7 +1105,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the containerdConfig field is set.
    */
   boolean hasContainerdConfig();
-
   /**
    *
    *
@@ -1169,7 +1119,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The containerdConfig.
    */
   com.google.container.v1.ContainerdConfig getContainerdConfig();
-
   /**
    *
    *
@@ -1195,7 +1144,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the queuedProvisioning field is set.
    */
   boolean hasQueuedProvisioning();
-
   /**
    *
    *
@@ -1208,7 +1156,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The queuedProvisioning.
    */
   com.google.container.v1.NodePool.QueuedProvisioning getQueuedProvisioning();
-
   /**
    *
    *
@@ -1233,7 +1180,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return A list containing the storagePools.
    */
   java.util.List<java.lang.String> getStoragePoolsList();
-
   /**
    *
    *
@@ -1247,7 +1193,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The count of storagePools.
    */
   int getStoragePoolsCount();
-
   /**
    *
    *
@@ -1262,7 +1207,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The storagePools at the given index.
    */
   java.lang.String getStoragePools(int index);
-
   /**
    *
    *

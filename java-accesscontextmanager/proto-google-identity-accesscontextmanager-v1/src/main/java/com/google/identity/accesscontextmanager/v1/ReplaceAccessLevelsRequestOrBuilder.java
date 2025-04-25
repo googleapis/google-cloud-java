@@ -42,7 +42,6 @@ public interface ReplaceAccessLevelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ReplaceAccessLevelsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.identity.accesscontextmanager.v1.AccessLevel> getAccessLevelsList();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ReplaceAccessLevelsRequestOrBuilder
    * </code>
    */
   com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevels(int index);
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface ReplaceAccessLevelsRequestOrBuilder
    * </code>
    */
   int getAccessLevelsCount();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface ReplaceAccessLevelsRequestOrBuilder
    */
   java.util.List<? extends com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>
       getAccessLevelsOrBuilderList();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface ReplaceAccessLevelsRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

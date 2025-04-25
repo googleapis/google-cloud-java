@@ -82,7 +82,6 @@ public enum BillingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BILLING_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int BILLING_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum BillingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SUBSCRIPTION = 1;</code>
    */
   public static final int SUBSCRIPTION_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum BillingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRIAL_SUBSCRIPTION = 2;</code>
    */
   public static final int TRIAL_SUBSCRIPTION_VALUE = 2;
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface RemoveCatalogAttributeRequestOrBuilder
    * @return The attributesConfig.
    */
   java.lang.String getAttributesConfig();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface RemoveCatalogAttributeRequestOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface DeleteQueueRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

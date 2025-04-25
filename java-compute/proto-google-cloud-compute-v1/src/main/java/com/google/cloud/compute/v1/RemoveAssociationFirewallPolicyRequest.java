@@ -34,7 +34,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RemoveAssociationFirewallPolicyRequest)
     RemoveAssociationFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveAssociationFirewallPolicyRequest.newBuilder() to construct.
   private RemoveAssociationFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class RemoveAssociationFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object firewallPolicy_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class RemoveAssociationFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class RemoveAssociationFirewallPolicyRequest
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class RemoveAssociationFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class RemoveAssociationFirewallPolicyRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -449,7 +440,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -675,7 +665,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object firewallPolicy_ = "";
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class RemoveAssociationFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class RemoveAssociationFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class RemoveAssociationFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class RemoveAssociationFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class RemoveAssociationFirewallPolicyRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class RemoveAssociationFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -973,7 +949,6 @@ public final class RemoveAssociationFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -995,7 +970,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +987,6 @@ public final class RemoveAssociationFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

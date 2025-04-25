@@ -36,7 +36,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.GetSecurityHealthAnalyticsCustomModuleRequest)
     GetSecurityHealthAnalyticsCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetSecurityHealthAnalyticsCustomModuleRequest.newBuilder() to construct.
   private GetSecurityHealthAnalyticsCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +311,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -526,7 +522,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -552,7 +547,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -578,7 +572,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -603,7 +596,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +616,6 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

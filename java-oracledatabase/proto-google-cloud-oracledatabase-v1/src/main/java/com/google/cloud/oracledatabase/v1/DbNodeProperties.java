@@ -33,7 +33,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.DbNodeProperties)
     DbNodePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DbNodeProperties.newBuilder() to construct.
   private DbNodeProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -190,7 +189,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -201,7 +199,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>PROVISIONING = 1;</code>
      */
     public static final int PROVISIONING_VALUE = 1;
-
     /**
      *
      *
@@ -212,7 +209,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>AVAILABLE = 2;</code>
      */
     public static final int AVAILABLE_VALUE = 2;
-
     /**
      *
      *
@@ -223,7 +219,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
-
     /**
      *
      *
@@ -234,7 +229,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>STOPPING = 4;</code>
      */
     public static final int STOPPING_VALUE = 4;
-
     /**
      *
      *
@@ -245,7 +239,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>STOPPED = 5;</code>
      */
     public static final int STOPPED_VALUE = 5;
-
     /**
      *
      *
@@ -256,7 +249,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>STARTING = 6;</code>
      */
     public static final int STARTING_VALUE = 6;
-
     /**
      *
      *
@@ -267,7 +259,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>TERMINATING = 7;</code>
      */
     public static final int TERMINATING_VALUE = 7;
-
     /**
      *
      *
@@ -278,7 +269,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
      * <code>TERMINATED = 8;</code>
      */
     public static final int TERMINATED_VALUE = 8;
-
     /**
      *
      *
@@ -393,7 +383,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ocid_ = "";
-
   /**
    *
    *
@@ -417,7 +406,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -444,7 +432,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   public static final int OCPU_COUNT_FIELD_NUMBER = 2;
   private int ocpuCount_ = 0;
-
   /**
    *
    *
@@ -463,7 +450,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   public static final int MEMORY_SIZE_GB_FIELD_NUMBER = 3;
   private int memorySizeGb_ = 0;
-
   /**
    *
    *
@@ -482,7 +468,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   public static final int DB_NODE_STORAGE_SIZE_GB_FIELD_NUMBER = 4;
   private int dbNodeStorageSizeGb_ = 0;
-
   /**
    *
    *
@@ -503,7 +488,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dbServerOcid_ = "";
-
   /**
    *
    *
@@ -527,7 +511,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -556,7 +539,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
-
   /**
    *
    *
@@ -580,7 +562,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -607,7 +588,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
-
   /**
    *
    *
@@ -625,7 +605,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -650,7 +629,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
 
   public static final int TOTAL_CPU_CORE_COUNT_FIELD_NUMBER = 10;
   private int totalCpuCoreCount_ = 0;
-
   /**
    *
    *
@@ -893,7 +871,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1173,7 +1150,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object ocid_ = "";
-
     /**
      *
      *
@@ -1196,7 +1172,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1219,7 +1194,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1215,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1232,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1256,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private int ocpuCount_;
-
     /**
      *
      *
@@ -1300,7 +1271,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     public int getOcpuCount() {
       return ocpuCount_;
     }
-
     /**
      *
      *
@@ -1320,7 +1290,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1309,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private int memorySizeGb_;
-
     /**
      *
      *
@@ -1356,7 +1324,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     public int getMemorySizeGb() {
       return memorySizeGb_;
     }
-
     /**
      *
      *
@@ -1376,7 +1343,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1362,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private int dbNodeStorageSizeGb_;
-
     /**
      *
      *
@@ -1412,7 +1377,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     public int getDbNodeStorageSizeGb() {
       return dbNodeStorageSizeGb_;
     }
-
     /**
      *
      *
@@ -1432,7 +1396,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1415,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object dbServerOcid_ = "";
-
     /**
      *
      *
@@ -1475,7 +1437,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1498,7 +1459,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1520,7 +1480,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1497,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1563,7 +1521,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object hostname_ = "";
-
     /**
      *
      *
@@ -1586,7 +1543,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1609,7 +1565,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1631,7 +1586,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1603,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1674,7 +1627,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1692,7 +1644,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1713,7 +1664,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1685,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.oracledatabase.v1.DbNodeProperties.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1759,7 +1708,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1781,7 +1729,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     private int totalCpuCoreCount_;
-
     /**
      *
      *
@@ -1797,7 +1744,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     public int getTotalCpuCoreCount() {
       return totalCpuCoreCount_;
     }
-
     /**
      *
      *
@@ -1817,7 +1763,6 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

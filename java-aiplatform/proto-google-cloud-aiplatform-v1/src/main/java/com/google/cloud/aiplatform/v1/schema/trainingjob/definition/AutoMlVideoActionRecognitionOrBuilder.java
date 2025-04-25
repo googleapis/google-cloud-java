@@ -39,7 +39,6 @@ public interface AutoMlVideoActionRecognitionOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutoMlVideoActionRecognitionOrBuilder
    */
   com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs
       getInputs();
-
   /**
    *
    *

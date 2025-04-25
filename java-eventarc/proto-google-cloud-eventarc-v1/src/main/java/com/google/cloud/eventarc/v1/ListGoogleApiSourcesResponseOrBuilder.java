@@ -34,7 +34,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.GoogleApiSource google_api_sources = 1;</code>
    */
   java.util.List<com.google.cloud.eventarc.v1.GoogleApiSource> getGoogleApiSourcesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.GoogleApiSource google_api_sources = 1;</code>
    */
   com.google.cloud.eventarc.v1.GoogleApiSource getGoogleApiSources(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * <code>repeated .google.cloud.eventarc.v1.GoogleApiSource google_api_sources = 1;</code>
    */
   int getGoogleApiSourcesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.GoogleApiSourceOrBuilder>
       getGoogleApiSourcesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListGoogleApiSourcesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

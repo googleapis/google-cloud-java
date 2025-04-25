@@ -37,7 +37,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -134,7 +132,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return The enum numeric value on the wire for taxonomyType.
    */
   int getTaxonomyTypeValue();
-
   /**
    *
    *
@@ -162,7 +159,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return A list containing the ancestorNames.
    */
   java.util.List<java.lang.String> getAncestorNamesList();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return The count of ancestorNames.
    */
   int getAncestorNamesCount();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return The ancestorNames at the given index.
    */
   java.lang.String getAncestorNames(int index);
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return A list containing the ancestorTaxonomyCategoryIds.
    */
   java.util.List<java.lang.Long> getAncestorTaxonomyCategoryIdsList();
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public interface TaxonomyCategoryOrBuilder
    * @return The count of ancestorTaxonomyCategoryIds.
    */
   int getAncestorTaxonomyCategoryIdsCount();
-
   /**
    *
    *

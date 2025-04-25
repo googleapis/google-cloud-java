@@ -36,7 +36,6 @@ public interface DashboardFilterOrBuilder
    * @return The labelKey.
    */
   java.lang.String getLabelKey();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DashboardFilterOrBuilder
    * @return The templateVariable.
    */
   java.lang.String getTemplateVariable();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DashboardFilterOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DashboardFilterOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface DashboardFilterOrBuilder
    * @return The enum numeric value on the wire for filterType.
    */
   int getFilterTypeValue();
-
   /**
    *
    *

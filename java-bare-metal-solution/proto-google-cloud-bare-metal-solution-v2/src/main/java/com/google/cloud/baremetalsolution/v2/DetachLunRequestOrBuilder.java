@@ -38,7 +38,6 @@ public interface DetachLunRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DetachLunRequestOrBuilder
    * @return The lun.
    */
   java.lang.String getLun();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ParameterVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ParameterVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ParameterVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ParameterVersionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ParameterVersionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface ParameterVersionOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface ParameterVersionOrBuilder
    * @return The payload.
    */
   com.google.cloud.parametermanager.v1.ParameterVersionPayload getPayload();
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public interface ParameterVersionOrBuilder
    * @return Whether the kmsKeyVersion field is set.
    */
   boolean hasKmsKeyVersion();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface ParameterVersionOrBuilder
    * @return The kmsKeyVersion.
    */
   java.lang.String getKmsKeyVersion();
-
   /**
    *
    *

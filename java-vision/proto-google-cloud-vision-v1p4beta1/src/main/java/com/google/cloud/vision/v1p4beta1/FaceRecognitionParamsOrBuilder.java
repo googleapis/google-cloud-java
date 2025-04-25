@@ -40,7 +40,6 @@ public interface FaceRecognitionParamsOrBuilder
    * @return A list containing the celebritySet.
    */
   java.util.List<java.lang.String> getCelebritySetList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface FaceRecognitionParamsOrBuilder
    * @return The count of celebritySet.
    */
   int getCelebritySetCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FaceRecognitionParamsOrBuilder
    * @return The celebritySet at the given index.
    */
   java.lang.String getCelebritySet(int index);
-
   /**
    *
    *

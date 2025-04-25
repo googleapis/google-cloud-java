@@ -34,7 +34,6 @@ public interface ListCustomersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Customer> getCustomersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCustomersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
    */
   com.google.cloud.channel.v1.Customer getCustomers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCustomersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Customer customers = 1;</code>
    */
   int getCustomersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCustomersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.CustomerOrBuilder>
       getCustomersOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListCustomersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DashboardOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DashboardOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DashboardOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface DashboardOrBuilder
    * @return Whether the gridLayout field is set.
    */
   boolean hasGridLayout();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface DashboardOrBuilder
    * @return The gridLayout.
    */
   com.google.monitoring.dashboard.v1.GridLayout getGridLayout();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface DashboardOrBuilder
    * @return Whether the mosaicLayout field is set.
    */
   boolean hasMosaicLayout();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface DashboardOrBuilder
    * @return The mosaicLayout.
    */
   com.google.monitoring.dashboard.v1.MosaicLayout getMosaicLayout();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface DashboardOrBuilder
    * @return Whether the rowLayout field is set.
    */
   boolean hasRowLayout();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface DashboardOrBuilder
    * @return The rowLayout.
    */
   com.google.monitoring.dashboard.v1.RowLayout getRowLayout();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface DashboardOrBuilder
    * @return Whether the columnLayout field is set.
    */
   boolean hasColumnLayout();
-
   /**
    *
    *
@@ -261,7 +251,6 @@ public interface DashboardOrBuilder
    * @return The columnLayout.
    */
   com.google.monitoring.dashboard.v1.ColumnLayout getColumnLayout();
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public interface DashboardOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter> getDashboardFiltersList();
-
   /**
    *
    *
@@ -295,7 +283,6 @@ public interface DashboardOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
    */
   com.google.monitoring.dashboard.v1.DashboardFilter getDashboardFilters(int index);
-
   /**
    *
    *
@@ -306,7 +293,6 @@ public interface DashboardOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.DashboardFilter dashboard_filters = 11;</code>
    */
   int getDashboardFiltersCount();
-
   /**
    *
    *
@@ -318,7 +304,6 @@ public interface DashboardOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>
       getDashboardFiltersOrBuilderList();
-
   /**
    *
    *
@@ -341,7 +326,6 @@ public interface DashboardOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -352,11 +336,9 @@ public interface DashboardOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -367,7 +349,6 @@ public interface DashboardOrBuilder
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -382,7 +363,6 @@ public interface DashboardOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

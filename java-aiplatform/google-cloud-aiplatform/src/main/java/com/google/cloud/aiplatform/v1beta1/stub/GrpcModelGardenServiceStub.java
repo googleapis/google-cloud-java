@@ -28,8 +28,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest;
-import com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
@@ -43,7 +41,6 @@ import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
-import com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -123,35 +120,6 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<
-          CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
-      checkPublisherModelEulaAcceptanceMethodDescriptor =
-          MethodDescriptor
-              .<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.ModelGardenService/CheckPublisherModelEulaAcceptance")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      CheckPublisherModelEulaAcceptanceRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(PublisherModelEulaAcceptance.getDefaultInstance()))
-              .build();
-
-  private static final MethodDescriptor<
-          AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
-      acceptPublisherModelEulaMethodDescriptor =
-          MethodDescriptor
-              .<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.ModelGardenService/AcceptPublisherModelEula")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(AcceptPublisherModelEulaRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(PublisherModelEulaAcceptance.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -218,11 +186,6 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           ExportPublisherModelResponse,
           ExportPublisherModelOperationMetadata>
       exportPublisherModelOperationCallable;
-  private final UnaryCallable<
-          CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
-      checkPublisherModelEulaAcceptanceCallable;
-  private final UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
-      acceptPublisherModelEulaCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -328,31 +291,6 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
-        checkPublisherModelEulaAcceptanceTransportSettings =
-            GrpcCallSettings
-                .<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
-                    newBuilder()
-                .setMethodDescriptor(checkPublisherModelEulaAcceptanceMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    GrpcCallSettings<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
-        acceptPublisherModelEulaTransportSettings =
-            GrpcCallSettings
-                .<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>newBuilder()
-                .setMethodDescriptor(acceptPublisherModelEulaMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -451,16 +389,6 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
             settings.exportPublisherModelOperationSettings(),
             clientContext,
             operationsStub);
-    this.checkPublisherModelEulaAcceptanceCallable =
-        callableFactory.createUnaryCallable(
-            checkPublisherModelEulaAcceptanceTransportSettings,
-            settings.checkPublisherModelEulaAcceptanceSettings(),
-            clientContext);
-    this.acceptPublisherModelEulaCallable =
-        callableFactory.createUnaryCallable(
-            acceptPublisherModelEulaTransportSettings,
-            settings.acceptPublisherModelEulaSettings(),
-            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -544,18 +472,6 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           ExportPublisherModelOperationMetadata>
       exportPublisherModelOperationCallable() {
     return exportPublisherModelOperationCallable;
-  }
-
-  @Override
-  public UnaryCallable<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
-      checkPublisherModelEulaAcceptanceCallable() {
-    return checkPublisherModelEulaAcceptanceCallable;
-  }
-
-  @Override
-  public UnaryCallable<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
-      acceptPublisherModelEulaCallable() {
-    return acceptPublisherModelEulaCallable;
   }
 
   @Override

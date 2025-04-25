@@ -33,7 +33,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateStoredInfoTypeRequest)
     CreateStoredInfoTypeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateStoredInfoTypeRequest.newBuilder() to construct.
   private CreateStoredInfoTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
 
   public static final int CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_;
-
   /**
    *
    *
@@ -182,7 +178,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -225,7 +219,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storedInfoTypeId_ = "";
-
   /**
    *
    *
@@ -252,7 +245,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -284,7 +276,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
-
   /**
    *
    *
@@ -308,7 +299,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -525,7 +515,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -769,7 +758,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -813,7 +801,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +844,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -900,7 +886,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +924,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +974,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder,
             com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -1007,7 +990,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1030,7 +1012,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1036,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1058,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1087,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1108,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1124,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1168,7 +1144,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
             : config_;
       }
     }
-
     /**
      *
      *
@@ -1198,7 +1173,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object storedInfoTypeId_ = "";
-
     /**
      *
      *
@@ -1224,7 +1198,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1250,7 +1223,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1247,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1267,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1294,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -1347,7 +1316,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1370,7 +1338,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1359,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1376,6 @@ public final class CreateStoredInfoTypeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

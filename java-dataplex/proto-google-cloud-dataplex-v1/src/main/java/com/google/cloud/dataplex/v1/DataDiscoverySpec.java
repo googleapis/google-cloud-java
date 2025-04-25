@@ -33,7 +33,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoverySpec)
     DataDiscoverySpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataDiscoverySpec.newBuilder() to construct.
   private DataDiscoverySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for tableType.
      */
     int getTableTypeValue();
-
     /**
      *
      *
@@ -116,7 +114,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The connection.
      */
     java.lang.String getConnection();
-
     /**
      *
      *
@@ -166,7 +163,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The location.
      */
     java.lang.String getLocation();
-
     /**
      *
      *
@@ -200,7 +196,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getLocationBytes();
   }
-
   /**
    *
    *
@@ -215,7 +210,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig)
       BigQueryPublishingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BigQueryPublishingConfig.newBuilder() to construct.
     private BigQueryPublishingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -307,7 +301,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        * <code>TABLE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TABLE_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -320,7 +313,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        * <code>EXTERNAL = 1;</code>
        */
       public static final int EXTERNAL_VALUE = 1;
-
       /**
        *
        *
@@ -422,7 +414,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
     public static final int TABLE_TYPE_FIELD_NUMBER = 2;
     private int tableType_ = 0;
-
     /**
      *
      *
@@ -441,7 +432,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public int getTableTypeValue() {
       return tableType_;
     }
-
     /**
      *
      *
@@ -472,7 +462,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object connection_ = "";
-
     /**
      *
      *
@@ -500,7 +489,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -533,7 +521,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -577,7 +564,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1036,7 +1021,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int tableType_ = 0;
-
       /**
        *
        *
@@ -1055,7 +1039,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public int getTableTypeValue() {
         return tableType_;
       }
-
       /**
        *
        *
@@ -1077,7 +1060,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1103,7 +1085,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1129,7 +1110,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1152,7 +1132,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object connection_ = "";
-
       /**
        *
        *
@@ -1179,7 +1158,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1206,7 +1184,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1232,7 +1209,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1254,7 +1230,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1283,7 +1258,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object location_ = "";
-
       /**
        *
        *
@@ -1326,7 +1300,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1369,7 +1342,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1411,7 +1383,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1449,7 +1420,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1583,7 +1553,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return A list containing the includePatterns.
      */
     java.util.List<java.lang.String> getIncludePatternsList();
-
     /**
      *
      *
@@ -1601,7 +1570,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The count of includePatterns.
      */
     int getIncludePatternsCount();
-
     /**
      *
      *
@@ -1620,7 +1588,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The includePatterns at the given index.
      */
     java.lang.String getIncludePatterns(int index);
-
     /**
      *
      *
@@ -1656,7 +1623,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return A list containing the excludePatterns.
      */
     java.util.List<java.lang.String> getExcludePatternsList();
-
     /**
      *
      *
@@ -1673,7 +1639,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The count of excludePatterns.
      */
     int getExcludePatternsCount();
-
     /**
      *
      *
@@ -1691,7 +1656,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The excludePatterns at the given index.
      */
     java.lang.String getExcludePatterns(int index);
-
     /**
      *
      *
@@ -1724,7 +1688,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return Whether the csvOptions field is set.
      */
     boolean hasCsvOptions();
-
     /**
      *
      *
@@ -1739,7 +1702,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The csvOptions.
      */
     com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.CsvOptions getCsvOptions();
-
     /**
      *
      *
@@ -1768,7 +1730,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return Whether the jsonOptions field is set.
      */
     boolean hasJsonOptions();
-
     /**
      *
      *
@@ -1783,7 +1744,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The jsonOptions.
      */
     com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptions getJsonOptions();
-
     /**
      *
      *
@@ -1798,7 +1758,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptionsOrBuilder
         getJsonOptionsOrBuilder();
   }
-
   /**
    *
    *
@@ -1813,7 +1772,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig)
       StorageConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use StorageConfig.newBuilder() to construct.
     private StorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1877,7 +1835,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        * @return The delimiter.
        */
       java.lang.String getDelimiter();
-
       /**
        *
        *
@@ -1904,7 +1861,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        * @return The encoding.
        */
       java.lang.String getEncoding();
-
       /**
        *
        *
@@ -1946,7 +1902,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        * @return The quote.
        */
       java.lang.String getQuote();
-
       /**
        *
        *
@@ -1962,7 +1917,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        */
       com.google.protobuf.ByteString getQuoteBytes();
     }
-
     /**
      *
      *
@@ -1977,7 +1931,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.CsvOptions)
         CsvOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use CsvOptions.newBuilder() to construct.
       private CsvOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2013,7 +1966,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       public static final int HEADER_ROWS_FIELD_NUMBER = 1;
       private int headerRows_ = 0;
-
       /**
        *
        *
@@ -2035,7 +1987,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object delimiter_ = "";
-
       /**
        *
        *
@@ -2060,7 +2011,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -2090,7 +2040,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object encoding_ = "";
-
       /**
        *
        *
@@ -2114,7 +2063,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -2141,7 +2089,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       public static final int TYPE_INFERENCE_DISABLED_FIELD_NUMBER = 4;
       private boolean typeInferenceDisabled_ = false;
-
       /**
        *
        *
@@ -2163,7 +2110,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object quote_ = "";
-
       /**
        *
        *
@@ -2189,7 +2135,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -2422,7 +2367,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2677,7 +2621,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private int headerRows_;
-
         /**
          *
          *
@@ -2694,7 +2637,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         public int getHeaderRows() {
           return headerRows_;
         }
-
         /**
          *
          *
@@ -2715,7 +2657,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2736,7 +2677,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object delimiter_ = "";
-
         /**
          *
          *
@@ -2760,7 +2700,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2784,7 +2723,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2807,7 +2745,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2826,7 +2763,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2852,7 +2788,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object encoding_ = "";
-
         /**
          *
          *
@@ -2875,7 +2810,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2898,7 +2832,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2920,7 +2853,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2938,7 +2870,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2963,7 +2894,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
 
         private boolean typeInferenceDisabled_;
-
         /**
          *
          *
@@ -2980,7 +2910,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         public boolean getTypeInferenceDisabled() {
           return typeInferenceDisabled_;
         }
-
         /**
          *
          *
@@ -3001,7 +2930,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3022,7 +2950,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object quote_ = "";
-
         /**
          *
          *
@@ -3047,7 +2974,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3072,7 +2998,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3096,7 +3021,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3116,7 +3040,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3227,7 +3150,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        * @return The encoding.
        */
       java.lang.String getEncoding();
-
       /**
        *
        *
@@ -3256,7 +3178,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
        */
       boolean getTypeInferenceDisabled();
     }
-
     /**
      *
      *
@@ -3271,7 +3192,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptions)
         JsonOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use JsonOptions.newBuilder() to construct.
       private JsonOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3307,7 +3227,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object encoding_ = "";
-
       /**
        *
        *
@@ -3331,7 +3250,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -3358,7 +3276,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
       public static final int TYPE_INFERENCE_DISABLED_FIELD_NUMBER = 2;
       private boolean typeInferenceDisabled_ = false;
-
       /**
        *
        *
@@ -3556,7 +3473,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3768,7 +3684,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private java.lang.Object encoding_ = "";
-
         /**
          *
          *
@@ -3791,7 +3706,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3814,7 +3728,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3836,7 +3749,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3854,7 +3766,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3879,7 +3790,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
 
         private boolean typeInferenceDisabled_;
-
         /**
          *
          *
@@ -3897,7 +3807,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         public boolean getTypeInferenceDisabled() {
           return typeInferenceDisabled_;
         }
-
         /**
          *
          *
@@ -3919,7 +3828,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4014,7 +3922,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList includePatterns_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -4034,7 +3941,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ProtocolStringList getIncludePatternsList() {
       return includePatterns_;
     }
-
     /**
      *
      *
@@ -4054,7 +3960,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public int getIncludePatternsCount() {
       return includePatterns_.size();
     }
-
     /**
      *
      *
@@ -4075,7 +3980,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public java.lang.String getIncludePatterns(int index) {
       return includePatterns_.get(index);
     }
-
     /**
      *
      *
@@ -4102,7 +4006,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludePatterns_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -4121,7 +4024,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ProtocolStringList getExcludePatternsList() {
       return excludePatterns_;
     }
-
     /**
      *
      *
@@ -4140,7 +4042,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public int getExcludePatternsCount() {
       return excludePatterns_.size();
     }
-
     /**
      *
      *
@@ -4160,7 +4061,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public java.lang.String getExcludePatterns(int index) {
       return excludePatterns_.get(index);
     }
-
     /**
      *
      *
@@ -4183,7 +4083,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
     public static final int CSV_OPTIONS_FIELD_NUMBER = 3;
     private com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.CsvOptions csvOptions_;
-
     /**
      *
      *
@@ -4201,7 +4100,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public boolean hasCsvOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4222,7 +4120,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance()
           : csvOptions_;
     }
-
     /**
      *
      *
@@ -4245,7 +4142,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
 
     public static final int JSON_OPTIONS_FIELD_NUMBER = 4;
     private com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptions jsonOptions_;
-
     /**
      *
      *
@@ -4263,7 +4159,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public boolean hasJsonOptions() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4285,7 +4180,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance()
           : jsonOptions_;
     }
-
     /**
      *
      *
@@ -4518,7 +4412,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4796,7 +4689,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -4818,7 +4710,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         includePatterns_.makeImmutable();
         return includePatterns_;
       }
-
       /**
        *
        *
@@ -4839,7 +4730,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public int getIncludePatternsCount() {
         return includePatterns_.size();
       }
-
       /**
        *
        *
@@ -4861,7 +4751,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public java.lang.String getIncludePatterns(int index) {
         return includePatterns_.get(index);
       }
-
       /**
        *
        *
@@ -4883,7 +4772,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ByteString getIncludePatternsBytes(int index) {
         return includePatterns_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4913,7 +4801,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4942,7 +4829,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4968,7 +4854,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4993,7 +4878,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5033,7 +4917,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -5054,7 +4937,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         excludePatterns_.makeImmutable();
         return excludePatterns_;
       }
-
       /**
        *
        *
@@ -5074,7 +4956,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public int getExcludePatternsCount() {
         return excludePatterns_.size();
       }
-
       /**
        *
        *
@@ -5095,7 +4976,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public java.lang.String getExcludePatterns(int index) {
         return excludePatterns_.get(index);
       }
-
       /**
        *
        *
@@ -5116,7 +4996,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ByteString getExcludePatternsBytes(int index) {
         return excludePatterns_.getByteString(index);
       }
-
       /**
        *
        *
@@ -5145,7 +5024,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5173,7 +5051,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5198,7 +5075,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5222,7 +5098,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5258,7 +5133,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.CsvOptions.Builder,
               com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.CsvOptionsOrBuilder>
           csvOptionsBuilder_;
-
       /**
        *
        *
@@ -5275,7 +5149,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public boolean hasCsvOptions() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -5300,7 +5173,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return csvOptionsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5326,7 +5198,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5350,7 +5221,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5383,7 +5253,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -5405,7 +5274,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5423,7 +5291,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getCsvOptionsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5446,7 +5313,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               : csvOptions_;
         }
       }
-
       /**
        *
        *
@@ -5481,7 +5347,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptions.Builder,
               com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.JsonOptionsOrBuilder>
           jsonOptionsBuilder_;
-
       /**
        *
        *
@@ -5498,7 +5363,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       public boolean hasJsonOptions() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -5523,7 +5387,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           return jsonOptionsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5549,7 +5412,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5573,7 +5435,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5606,7 +5467,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -5628,7 +5488,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5646,7 +5505,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getJsonOptionsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5669,7 +5527,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
               : jsonOptions_;
         }
       }
-
       /**
        *
        *
@@ -5782,7 +5639,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     private ResourceConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5816,7 +5672,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
   public static final int BIGQUERY_PUBLISHING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig
       bigqueryPublishingConfig_;
-
   /**
    *
    *
@@ -5834,7 +5689,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
   public boolean hasBigqueryPublishingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5856,7 +5710,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : bigqueryPublishingConfig_;
   }
-
   /**
    *
    *
@@ -5878,7 +5731,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -5894,7 +5746,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
   public boolean hasStorageConfig() {
     return resourceConfigCase_ == 100;
   }
-
   /**
    *
    *
@@ -5913,7 +5764,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -6123,7 +5973,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6376,7 +6225,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfig.Builder,
             com.google.cloud.dataplex.v1.DataDiscoverySpec.BigQueryPublishingConfigOrBuilder>
         bigqueryPublishingConfigBuilder_;
-
     /**
      *
      *
@@ -6393,7 +6241,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public boolean hasBigqueryPublishingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6418,7 +6265,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         return bigqueryPublishingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6444,7 +6290,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6468,7 +6313,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6501,7 +6345,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6523,7 +6366,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6541,7 +6383,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getBigqueryPublishingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6564,7 +6405,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             : bigqueryPublishingConfig_;
       }
     }
-
     /**
      *
      *
@@ -6598,7 +6438,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.Builder,
             com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfigOrBuilder>
         storageConfigBuilder_;
-
     /**
      *
      *
@@ -6614,7 +6453,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
     public boolean hasStorageConfig() {
       return resourceConfigCase_ == 100;
     }
-
     /**
      *
      *
@@ -6640,7 +6478,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6664,7 +6501,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       resourceConfigCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -6685,7 +6521,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       resourceConfigCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -6722,7 +6557,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       resourceConfigCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -6748,7 +6582,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6762,7 +6595,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         getStorageConfigBuilder() {
       return getStorageConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6784,7 +6616,6 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.dataplex.v1.DataDiscoverySpec.StorageConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *

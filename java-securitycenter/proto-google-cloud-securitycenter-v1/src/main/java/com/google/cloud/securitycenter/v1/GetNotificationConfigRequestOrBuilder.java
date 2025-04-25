@@ -41,7 +41,6 @@ public interface GetNotificationConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

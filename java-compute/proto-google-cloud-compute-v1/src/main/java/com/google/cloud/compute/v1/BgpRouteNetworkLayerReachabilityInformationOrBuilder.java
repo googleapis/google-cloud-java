@@ -36,7 +36,6 @@ public interface BgpRouteNetworkLayerReachabilityInformationOrBuilder
    * @return Whether the pathId field is set.
    */
   boolean hasPathId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BgpRouteNetworkLayerReachabilityInformationOrBuilder
    * @return Whether the prefix field is set.
    */
   boolean hasPrefix();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BgpRouteNetworkLayerReachabilityInformationOrBuilder
    * @return The prefix.
    */
   java.lang.String getPrefix();
-
   /**
    *
    *

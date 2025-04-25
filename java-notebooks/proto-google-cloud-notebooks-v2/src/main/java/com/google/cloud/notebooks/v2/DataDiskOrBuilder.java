@@ -52,7 +52,6 @@ public interface DataDiskOrBuilder
    * @return The enum numeric value on the wire for diskType.
    */
   int getDiskTypeValue();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface DataDiskOrBuilder
    * @return The enum numeric value on the wire for diskEncryption.
    */
   int getDiskEncryptionValue();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface DataDiskOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *

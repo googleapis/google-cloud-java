@@ -37,7 +37,6 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface InstanceOrBuilder
    * @return Whether the gceSetup field is set.
    */
   boolean hasGceSetup();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface InstanceOrBuilder
    * @return The gceSetup.
    */
   com.google.cloud.notebooks.v2.GceSetup getGceSetup();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InstanceOrBuilder
    * @return The proxyUri.
    */
   java.lang.String getProxyUri();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface InstanceOrBuilder
    * @return A list containing the instanceOwners.
    */
   java.util.List<java.lang.String> getInstanceOwnersList();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface InstanceOrBuilder
    * @return The count of instanceOwners.
    */
   int getInstanceOwnersCount();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface InstanceOrBuilder
    * @return The instanceOwners at the given index.
    */
   java.lang.String getInstanceOwners(int index);
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface InstanceOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.notebooks.v2.UpgradeHistoryEntry> getUpgradeHistoryList();
-
   /**
    *
    *
@@ -289,7 +279,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.notebooks.v2.UpgradeHistoryEntry getUpgradeHistory(int index);
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getUpgradeHistoryCount();
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public interface InstanceOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v2.UpgradeHistoryEntryOrBuilder>
       getUpgradeHistoryOrBuilderList();
-
   /**
    *
    *
@@ -342,7 +329,6 @@ public interface InstanceOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -370,7 +356,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for healthState.
    */
   int getHealthStateValue();
-
   /**
    *
    *
@@ -406,7 +391,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   int getHealthInfoCount();
-
   /**
    *
    *
@@ -427,11 +411,9 @@ public interface InstanceOrBuilder
    * </code>
    */
   boolean containsHealthInfo(java.lang.String key);
-
   /** Use {@link #getHealthInfoMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHealthInfo();
-
   /**
    *
    *
@@ -452,7 +434,6 @@ public interface InstanceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHealthInfoMap();
-
   /**
    *
    *
@@ -477,7 +458,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -512,7 +492,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -526,7 +505,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -552,7 +530,6 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -566,7 +543,6 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -603,7 +579,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -615,11 +590,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -631,7 +604,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -647,7 +619,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

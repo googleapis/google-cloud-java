@@ -35,7 +35,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1.EnableServiceResponse)
     EnableServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnableServiceResponse.newBuilder() to construct.
   private EnableServiceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 1;
   private com.google.api.serviceusage.v1.Service service_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
   public boolean hasService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
         ? com.google.api.serviceusage.v1.Service.getDefaultInstance()
         : service_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -488,7 +483,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
             com.google.api.serviceusage.v1.Service.Builder,
             com.google.api.serviceusage.v1.ServiceOrBuilder>
         serviceBuilder_;
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
     public boolean hasService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
         return serviceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +558,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +585,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +604,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +618,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -649,7 +636,6 @@ public final class EnableServiceResponse extends com.google.protobuf.GeneratedMe
             : service_;
       }
     }
-
     /**
      *
      *

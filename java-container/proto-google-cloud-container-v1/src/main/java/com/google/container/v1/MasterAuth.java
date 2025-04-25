@@ -35,7 +35,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1.MasterAuth)
     MasterAuthOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MasterAuth.newBuilder() to construct.
   private MasterAuth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
-
   /**
    *
    *
@@ -183,7 +179,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -221,7 +216,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_CERTIFICATE_CONFIG_FIELD_NUMBER = 3;
   private com.google.container.v1.ClientCertificateConfig clientCertificateConfig_;
-
   /**
    *
    *
@@ -239,7 +233,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClientCertificateConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -259,7 +252,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1.ClientCertificateConfig.getDefaultInstance()
         : clientCertificateConfig_;
   }
-
   /**
    *
    *
@@ -283,7 +275,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterCaCertificate_ = "";
-
   /**
    *
    *
@@ -308,7 +299,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -338,7 +328,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientCertificate_ = "";
-
   /**
    *
    *
@@ -364,7 +353,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -395,7 +383,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientKey_ = "";
-
   /**
    *
    *
@@ -420,7 +407,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -654,7 +640,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -932,7 +917,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -965,7 +949,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -998,7 +981,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1012,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1039,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1073,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -1127,7 +1106,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1139,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1171,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1199,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1239,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1.ClientCertificateConfig.Builder,
             com.google.container.v1.ClientCertificateConfigOrBuilder>
         clientCertificateConfigBuilder_;
-
     /**
      *
      *
@@ -1281,7 +1255,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClientCertificateConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1304,7 +1277,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return clientCertificateConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1330,7 +1302,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1324,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1355,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1376,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1393,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getClientCertificateConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1447,7 +1414,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
             : clientCertificateConfig_;
       }
     }
-
     /**
      *
      *
@@ -1477,7 +1443,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clusterCaCertificate_ = "";
-
     /**
      *
      *
@@ -1502,7 +1467,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1491,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1551,7 +1514,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1571,7 +1533,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1559,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientCertificate_ = "";
-
     /**
      *
      *
@@ -1623,7 +1583,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1648,7 +1607,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1672,7 +1630,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1649,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1719,7 +1675,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object clientKey_ = "";
-
     /**
      *
      *
@@ -1743,7 +1698,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1767,7 +1721,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1790,7 +1743,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1809,7 +1761,6 @@ public final class MasterAuth extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

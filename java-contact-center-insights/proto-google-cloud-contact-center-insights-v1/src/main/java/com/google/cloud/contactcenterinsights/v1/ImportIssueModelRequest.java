@@ -33,7 +33,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ImportIssueModelRequest)
     ImportIssueModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportIssueModelRequest.newBuilder() to construct.
   private ImportIssueModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
      * @return The objectUri.
      */
     java.lang.String getObjectUri();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
      */
     com.google.protobuf.ByteString getObjectUriBytes();
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ImportIssueModelRequest.GcsSource)
       GcsSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GcsSource.newBuilder() to construct.
     private GcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -146,7 +142,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object objectUri_ = "";
-
     /**
      *
      *
@@ -170,7 +165,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -363,7 +357,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       private int bitField0_;
 
       private java.lang.Object objectUri_ = "";
-
       /**
        *
        *
@@ -586,7 +578,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -609,7 +600,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -631,7 +621,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -649,7 +638,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -757,7 +745,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -789,7 +776,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -806,7 +792,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -828,7 +813,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     return com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest.GcsSource
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -853,7 +837,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -879,7 +862,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -908,7 +890,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
 
   public static final int CREATE_NEW_MODEL_FIELD_NUMBER = 3;
   private boolean createNewModel_ = false;
-
   /**
    *
    *
@@ -1124,7 +1105,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1377,7 +1357,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
             com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest.GcsSource.Builder,
             com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -1395,7 +1374,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1427,7 +1405,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1453,7 +1430,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1453,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1517,7 +1492,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1519,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1561,7 +1534,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
         getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1587,7 +1559,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1628,7 +1599,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1653,7 +1623,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1678,7 +1647,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1702,7 +1670,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1689,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1715,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     }
 
     private boolean createNewModel_;
-
     /**
      *
      *
@@ -1767,7 +1732,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
     public boolean getCreateNewModel() {
       return createNewModel_;
     }
-
     /**
      *
      *
@@ -1789,7 +1753,6 @@ public final class ImportIssueModelRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

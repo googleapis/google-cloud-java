@@ -34,7 +34,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.TextDetectionParams)
     TextDetectionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextDetectionParams.newBuilder() to construct.
   private TextDetectionParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
 
   public static final int ENABLE_TEXT_DETECTION_CONFIDENCE_SCORE_FIELD_NUMBER = 9;
   private boolean enableTextDetectionConfidenceScore_ = false;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList advancedOcrOptions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getAdvancedOcrOptionsList() {
     return advancedOcrOptions_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
   public int getAdvancedOcrOptionsCount() {
     return advancedOcrOptions_.size();
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
   public java.lang.String getAdvancedOcrOptions(int index) {
     return advancedOcrOptions_.get(index);
   }
-
   /**
    *
    *
@@ -335,7 +329,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -541,7 +534,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean enableTextDetectionConfidenceScore_;
-
     /**
      *
      *
@@ -559,7 +551,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     public boolean getEnableTextDetectionConfidenceScore() {
       return enableTextDetectionConfidenceScore_;
     }
-
     /**
      *
      *
@@ -581,7 +572,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -611,7 +601,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -627,7 +616,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       advancedOcrOptions_.makeImmutable();
       return advancedOcrOptions_;
     }
-
     /**
      *
      *
@@ -642,7 +630,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     public int getAdvancedOcrOptionsCount() {
       return advancedOcrOptions_.size();
     }
-
     /**
      *
      *
@@ -658,7 +645,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     public java.lang.String getAdvancedOcrOptions(int index) {
       return advancedOcrOptions_.get(index);
     }
-
     /**
      *
      *
@@ -674,7 +660,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getAdvancedOcrOptionsBytes(int index) {
       return advancedOcrOptions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -698,7 +683,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +705,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +724,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +742,6 @@ public final class TextDetectionParams extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

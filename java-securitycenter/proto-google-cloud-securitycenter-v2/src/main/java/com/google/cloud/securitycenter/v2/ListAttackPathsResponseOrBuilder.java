@@ -34,7 +34,6 @@ public interface ListAttackPathsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath attack_paths = 1;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.AttackPath> getAttackPathsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAttackPathsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath attack_paths = 1;</code>
    */
   com.google.cloud.securitycenter.v2.AttackPath getAttackPaths(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAttackPathsResponseOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.AttackPath attack_paths = 1;</code>
    */
   int getAttackPathsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAttackPathsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.AttackPathOrBuilder>
       getAttackPathsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAttackPathsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

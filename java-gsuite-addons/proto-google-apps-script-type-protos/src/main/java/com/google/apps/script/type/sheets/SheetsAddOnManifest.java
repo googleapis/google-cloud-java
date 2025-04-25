@@ -33,7 +33,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.apps.script.type.sheets.SheetsAddOnManifest)
     SheetsAddOnManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SheetsAddOnManifest.newBuilder() to construct.
   private SheetsAddOnManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int HOMEPAGE_TRIGGER_FIELD_NUMBER = 3;
   private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
   public boolean hasHomepageTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
         ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
         : homepageTrigger_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
 
   public static final int ON_FILE_SCOPE_GRANTED_TRIGGER_FIELD_NUMBER = 5;
   private com.google.apps.script.type.sheets.SheetsExtensionPoint onFileScopeGrantedTrigger_;
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
   public boolean hasOnFileScopeGrantedTrigger() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
         ? com.google.apps.script.type.sheets.SheetsExtensionPoint.getDefaultInstance()
         : onFileScopeGrantedTrigger_;
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -589,7 +581,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
             com.google.apps.script.type.HomepageExtensionPoint.Builder,
             com.google.apps.script.type.HomepageExtensionPointOrBuilder>
         homepageTriggerBuilder_;
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean hasHomepageTrigger() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
         return homepageTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +725,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
             : homepageTrigger_;
       }
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
             com.google.apps.script.type.sheets.SheetsExtensionPoint.Builder,
             com.google.apps.script.type.sheets.SheetsExtensionPointOrBuilder>
         onFileScopeGrantedTriggerBuilder_;
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean hasOnFileScopeGrantedTrigger() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
         return onFileScopeGrantedTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +932,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOnFileScopeGrantedTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class SheetsAddOnManifest extends com.google.protobuf.GeneratedMess
             : onFileScopeGrantedTrigger_;
       }
     }
-
     /**
      *
      *

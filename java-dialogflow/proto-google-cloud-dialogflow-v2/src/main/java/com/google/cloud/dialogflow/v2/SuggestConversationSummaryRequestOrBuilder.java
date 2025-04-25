@@ -40,7 +40,6 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
-
   /**
    *
    *
@@ -128,7 +126,6 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * @return Whether the assistQueryParams field is set.
    */
   boolean hasAssistQueryParams();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface SuggestConversationSummaryRequestOrBuilder
    * @return The assistQueryParams.
    */
   com.google.cloud.dialogflow.v2.AssistQueryParameters getAssistQueryParams();
-
   /**
    *
    *

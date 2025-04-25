@@ -34,7 +34,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListFileStoreDataProfilesResponse)
     ListFileStoreDataProfilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFileStoreDataProfilesResponse.newBuilder() to construct.
   private ListFileStoreDataProfilesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.FileStoreDataProfile> fileStoreDataProfiles_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       getFileStoreDataProfilesList() {
     return fileStoreDataProfiles_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       getFileStoreDataProfilesOrBuilderList() {
     return fileStoreDataProfiles_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
   public int getFileStoreDataProfilesCount() {
     return fileStoreDataProfiles_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
   public com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreDataProfiles(int index) {
     return fileStoreDataProfiles_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return fileStoreDataProfilesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return fileStoreDataProfilesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return fileStoreDataProfilesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +887,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         int index) {
       return getFileStoreDataProfilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return fileStoreDataProfilesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(fileStoreDataProfiles_);
       }
     }
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       return getFileStoreDataProfilesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       return getFileStoreDataProfilesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.FileStoreDataProfile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1015,7 +989,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1054,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class ListFileStoreDataProfilesResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

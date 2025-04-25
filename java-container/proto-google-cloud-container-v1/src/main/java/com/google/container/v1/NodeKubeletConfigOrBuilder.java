@@ -44,7 +44,6 @@ public interface NodeKubeletConfigOrBuilder
    * @return The cpuManagerPolicy.
    */
   java.lang.String getCpuManagerPolicy();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface NodeKubeletConfigOrBuilder
    * @return Whether the cpuCfsQuota field is set.
    */
   boolean hasCpuCfsQuota();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface NodeKubeletConfigOrBuilder
    * @return The cpuCfsQuota.
    */
   com.google.protobuf.BoolValue getCpuCfsQuota();
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public interface NodeKubeletConfigOrBuilder
    * @return The cpuCfsQuotaPeriod.
    */
   java.lang.String getCpuCfsQuotaPeriod();
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public interface NodeKubeletConfigOrBuilder
    * @return Whether the insecureKubeletReadonlyPortEnabled field is set.
    */
   boolean hasInsecureKubeletReadonlyPortEnabled();
-
   /**
    *
    *

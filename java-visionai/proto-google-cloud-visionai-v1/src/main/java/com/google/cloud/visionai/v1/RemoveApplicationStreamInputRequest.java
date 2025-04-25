@@ -34,7 +34,6 @@ public final class RemoveApplicationStreamInputRequest
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RemoveApplicationStreamInputRequest)
     RemoveApplicationStreamInputRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveApplicationStreamInputRequest.newBuilder() to construct.
   private RemoveApplicationStreamInputRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -79,7 +78,6 @@ public final class RemoveApplicationStreamInputRequest
      * @return The stream.
      */
     java.lang.String getStream();
-
     /**
      * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
      *
@@ -87,7 +85,6 @@ public final class RemoveApplicationStreamInputRequest
      */
     com.google.protobuf.ByteString getStreamBytes();
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class RemoveApplicationStreamInputRequest
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.RemoveApplicationStreamInputRequest.TargetStreamInput)
       TargetStreamInputOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TargetStreamInput.newBuilder() to construct.
     private TargetStreamInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -140,7 +136,6 @@ public final class RemoveApplicationStreamInputRequest
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object stream_ = "";
-
     /**
      * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
      *
@@ -158,7 +153,6 @@ public final class RemoveApplicationStreamInputRequest
         return s;
       }
     }
-
     /**
      * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
      *
@@ -347,7 +341,6 @@ public final class RemoveApplicationStreamInputRequest
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -555,7 +548,6 @@ public final class RemoveApplicationStreamInputRequest
       private int bitField0_;
 
       private java.lang.Object stream_ = "";
-
       /**
        * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
        *
@@ -572,7 +564,6 @@ public final class RemoveApplicationStreamInputRequest
           return (java.lang.String) ref;
         }
       }
-
       /**
        * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
        *
@@ -589,7 +580,6 @@ public final class RemoveApplicationStreamInputRequest
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
        *
@@ -605,7 +595,6 @@ public final class RemoveApplicationStreamInputRequest
         onChanged();
         return this;
       }
-
       /**
        * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
        *
@@ -617,7 +606,6 @@ public final class RemoveApplicationStreamInputRequest
         onChanged();
         return this;
       }
-
       /**
        * <code>string stream = 1 [(.google.api.resource_reference) = { ... }</code>
        *
@@ -708,7 +696,6 @@ public final class RemoveApplicationStreamInputRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -736,7 +723,6 @@ public final class RemoveApplicationStreamInputRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -771,7 +757,6 @@ public final class RemoveApplicationStreamInputRequest
   private java.util.List<
           com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest.TargetStreamInput>
       targetStreamInputs_;
-
   /**
    *
    *
@@ -789,7 +774,6 @@ public final class RemoveApplicationStreamInputRequest
       getTargetStreamInputsList() {
     return targetStreamInputs_;
   }
-
   /**
    *
    *
@@ -809,7 +793,6 @@ public final class RemoveApplicationStreamInputRequest
       getTargetStreamInputsOrBuilderList() {
     return targetStreamInputs_;
   }
-
   /**
    *
    *
@@ -825,7 +808,6 @@ public final class RemoveApplicationStreamInputRequest
   public int getTargetStreamInputsCount() {
     return targetStreamInputs_.size();
   }
-
   /**
    *
    *
@@ -842,7 +824,6 @@ public final class RemoveApplicationStreamInputRequest
       getTargetStreamInputs(int index) {
     return targetStreamInputs_.get(index);
   }
-
   /**
    *
    *
@@ -864,7 +845,6 @@ public final class RemoveApplicationStreamInputRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -900,7 +880,6 @@ public final class RemoveApplicationStreamInputRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -1118,7 +1097,6 @@ public final class RemoveApplicationStreamInputRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1386,7 +1364,6 @@ public final class RemoveApplicationStreamInputRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1413,7 +1390,6 @@ public final class RemoveApplicationStreamInputRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1416,6 @@ public final class RemoveApplicationStreamInputRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1466,7 +1441,6 @@ public final class RemoveApplicationStreamInputRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1462,6 @@ public final class RemoveApplicationStreamInputRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1558,7 +1531,6 @@ public final class RemoveApplicationStreamInputRequest
         return targetStreamInputsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1577,7 +1549,6 @@ public final class RemoveApplicationStreamInputRequest
         return targetStreamInputsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1597,7 +1568,6 @@ public final class RemoveApplicationStreamInputRequest
         return targetStreamInputsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1624,7 +1594,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1618,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1643,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1669,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1726,7 +1692,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1751,7 +1716,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1742,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1763,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1784,6 @@ public final class RemoveApplicationStreamInputRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1839,7 +1800,6 @@ public final class RemoveApplicationStreamInputRequest
         getTargetStreamInputsBuilder(int index) {
       return getTargetStreamInputsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1860,7 +1820,6 @@ public final class RemoveApplicationStreamInputRequest
         return targetStreamInputsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1883,7 +1842,6 @@ public final class RemoveApplicationStreamInputRequest
         return java.util.Collections.unmodifiableList(targetStreamInputs_);
       }
     }
-
     /**
      *
      *
@@ -1903,7 +1861,6 @@ public final class RemoveApplicationStreamInputRequest
               com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest.TargetStreamInput
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1924,7 +1881,6 @@ public final class RemoveApplicationStreamInputRequest
               com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest.TargetStreamInput
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1968,7 +1924,6 @@ public final class RemoveApplicationStreamInputRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -2003,7 +1958,6 @@ public final class RemoveApplicationStreamInputRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2038,7 +1992,6 @@ public final class RemoveApplicationStreamInputRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2072,7 +2025,6 @@ public final class RemoveApplicationStreamInputRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2054,6 @@ public final class RemoveApplicationStreamInputRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

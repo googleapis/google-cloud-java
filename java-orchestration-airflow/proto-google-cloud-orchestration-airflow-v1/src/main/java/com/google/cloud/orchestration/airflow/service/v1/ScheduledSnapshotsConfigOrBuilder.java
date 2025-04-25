@@ -50,7 +50,6 @@ public interface ScheduledSnapshotsConfigOrBuilder
    * @return The snapshotLocation.
    */
   java.lang.String getSnapshotLocation();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ScheduledSnapshotsConfigOrBuilder
    * @return The snapshotCreationSchedule.
    */
   java.lang.String getSnapshotCreationSchedule();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface ScheduledSnapshotsConfigOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListNetworkUsageResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.NetworkUsage networks = 1;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.NetworkUsage> getNetworksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNetworkUsageResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.NetworkUsage networks = 1;</code>
    */
   com.google.cloud.baremetalsolution.v2.NetworkUsage getNetworks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNetworkUsageResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.NetworkUsage networks = 1;</code>
    */
   int getNetworksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListNetworkUsageResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.NetworkUsageOrBuilder>
       getNetworksOrBuilderList();
-
   /**
    *
    *

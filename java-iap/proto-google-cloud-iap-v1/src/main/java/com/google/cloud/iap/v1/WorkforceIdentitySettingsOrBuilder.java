@@ -36,7 +36,6 @@ public interface WorkforceIdentitySettingsOrBuilder
    * @return A list containing the workforcePools.
    */
   java.util.List<java.lang.String> getWorkforcePoolsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WorkforceIdentitySettingsOrBuilder
    * @return The count of workforcePools.
    */
   int getWorkforcePoolsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface WorkforceIdentitySettingsOrBuilder
    * @return The workforcePools at the given index.
    */
   java.lang.String getWorkforcePools(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface WorkforceIdentitySettingsOrBuilder
    * @return Whether the oauth2 field is set.
    */
   boolean hasOauth2();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface WorkforceIdentitySettingsOrBuilder
    * @return The oauth2.
    */
   com.google.cloud.iap.v1.OAuth2 getOauth2();
-
   /**
    *
    *

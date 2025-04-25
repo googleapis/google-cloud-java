@@ -33,7 +33,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig)
     HumanAgentAssistantConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HumanAgentAssistantConfig.newBuilder() to construct.
   private HumanAgentAssistantConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,7 +93,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     boolean getOnlyEndUser();
   }
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings)
       SuggestionTriggerSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SuggestionTriggerSettings.newBuilder() to construct.
     private SuggestionTriggerSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -143,7 +140,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int NO_SMALL_TALK_FIELD_NUMBER = 1;
     private boolean noSmallTalk_ = false;
-
     /**
      *
      *
@@ -162,7 +158,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ONLY_END_USER_FIELD_NUMBER = 2;
     private boolean onlyEndUser_ = false;
-
     /**
      *
      *
@@ -375,7 +370,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -597,7 +591,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private boolean noSmallTalk_;
-
       /**
        *
        *
@@ -613,7 +606,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getNoSmallTalk() {
         return noSmallTalk_;
       }
-
       /**
        *
        *
@@ -633,7 +625,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -653,7 +644,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean onlyEndUser_;
-
       /**
        *
        *
@@ -670,7 +660,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getOnlyEndUser() {
         return onlyEndUser_;
       }
-
       /**
        *
        *
@@ -691,7 +680,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -799,7 +787,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the suggestionFeature field is set.
      */
     boolean hasSuggestionFeature();
-
     /**
      *
      *
@@ -812,7 +799,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The suggestionFeature.
      */
     com.google.cloud.dialogflow.v2beta1.SuggestionFeature getSuggestionFeature();
-
     /**
      *
      *
@@ -922,7 +908,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the suggestionTriggerSettings field is set.
      */
     boolean hasSuggestionTriggerSettings();
-
     /**
      *
      *
@@ -941,7 +926,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
         getSuggestionTriggerSettings();
-
     /**
      *
      *
@@ -973,7 +957,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the queryConfig field is set.
      */
     boolean hasQueryConfig();
-
     /**
      *
      *
@@ -989,7 +972,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
         getQueryConfig();
-
     /**
      *
      *
@@ -1018,7 +1000,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the conversationModelConfig field is set.
      */
     boolean hasConversationModelConfig();
-
     /**
      *
      *
@@ -1034,7 +1015,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
         getConversationModelConfig();
-
     /**
      *
      *
@@ -1063,7 +1043,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the conversationProcessConfig field is set.
      */
     boolean hasConversationProcessConfig();
-
     /**
      *
      *
@@ -1079,7 +1058,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
         getConversationProcessConfig();
-
     /**
      *
      *
@@ -1094,7 +1072,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfigOrBuilder
         getConversationProcessConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -1110,7 +1087,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig)
       SuggestionFeatureConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SuggestionFeatureConfig.newBuilder() to construct.
     private SuggestionFeatureConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1144,7 +1120,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     private int bitField0_;
     public static final int SUGGESTION_FEATURE_FIELD_NUMBER = 5;
     private com.google.cloud.dialogflow.v2beta1.SuggestionFeature suggestionFeature_;
-
     /**
      *
      *
@@ -1160,7 +1135,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasSuggestionFeature() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1178,7 +1152,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           ? com.google.cloud.dialogflow.v2beta1.SuggestionFeature.getDefaultInstance()
           : suggestionFeature_;
     }
-
     /**
      *
      *
@@ -1198,7 +1171,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ENABLE_EVENT_BASED_SUGGESTION_FIELD_NUMBER = 3;
     private boolean enableEventBasedSuggestion_ = false;
-
     /**
      *
      *
@@ -1221,7 +1193,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int DISABLE_AGENT_QUERY_LOGGING_FIELD_NUMBER = 14;
     private boolean disableAgentQueryLogging_ = false;
-
     /**
      *
      *
@@ -1243,7 +1214,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ENABLE_QUERY_SUGGESTION_WHEN_NO_ANSWER_FIELD_NUMBER = 15;
     private boolean enableQuerySuggestionWhenNoAnswer_ = false;
-
     /**
      *
      *
@@ -1266,7 +1236,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ENABLE_CONVERSATION_AUGMENTED_QUERY_FIELD_NUMBER = 16;
     private boolean enableConversationAugmentedQuery_ = false;
-
     /**
      *
      *
@@ -1288,7 +1257,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ENABLE_QUERY_SUGGESTION_ONLY_FIELD_NUMBER = 17;
     private boolean enableQuerySuggestionOnly_ = false;
-
     /**
      *
      *
@@ -1310,7 +1278,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public static final int SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER = 10;
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
         suggestionTriggerSettings_;
-
     /**
      *
      *
@@ -1331,7 +1298,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasSuggestionTriggerSettings() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1356,7 +1322,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .getDefaultInstance()
           : suggestionTriggerSettings_;
     }
-
     /**
      *
      *
@@ -1384,7 +1349,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public static final int QUERY_CONFIG_FIELD_NUMBER = 6;
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
         queryConfig_;
-
     /**
      *
      *
@@ -1402,7 +1366,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasQueryConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1424,7 +1387,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .getDefaultInstance()
           : queryConfig_;
     }
-
     /**
      *
      *
@@ -1449,7 +1411,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public static final int CONVERSATION_MODEL_CONFIG_FIELD_NUMBER = 7;
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
         conversationModelConfig_;
-
     /**
      *
      *
@@ -1467,7 +1428,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasConversationModelConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1489,7 +1449,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .getDefaultInstance()
           : conversationModelConfig_;
     }
-
     /**
      *
      *
@@ -1514,7 +1473,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public static final int CONVERSATION_PROCESS_CONFIG_FIELD_NUMBER = 8;
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
         conversationProcessConfig_;
-
     /**
      *
      *
@@ -1532,7 +1490,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasConversationProcessConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1554,7 +1511,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .getDefaultInstance()
           : conversationProcessConfig_;
     }
-
     /**
      *
      *
@@ -1887,7 +1843,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2274,7 +2229,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.SuggestionFeature.Builder,
               com.google.cloud.dialogflow.v2beta1.SuggestionFeatureOrBuilder>
           suggestionFeatureBuilder_;
-
       /**
        *
        *
@@ -2289,7 +2243,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasSuggestionFeature() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2310,7 +2263,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return suggestionFeatureBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2334,7 +2286,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2355,7 +2306,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2385,7 +2335,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -2405,7 +2354,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2421,7 +2369,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getSuggestionFeatureFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2441,7 +2388,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : suggestionFeature_;
         }
       }
-
       /**
        *
        *
@@ -2469,7 +2415,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean enableEventBasedSuggestion_;
-
       /**
        *
        *
@@ -2489,7 +2434,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getEnableEventBasedSuggestion() {
         return enableEventBasedSuggestion_;
       }
-
       /**
        *
        *
@@ -2513,7 +2457,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2537,7 +2480,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean disableAgentQueryLogging_;
-
       /**
        *
        *
@@ -2557,7 +2499,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getDisableAgentQueryLogging() {
         return disableAgentQueryLogging_;
       }
-
       /**
        *
        *
@@ -2581,7 +2522,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2605,7 +2545,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean enableQuerySuggestionWhenNoAnswer_;
-
       /**
        *
        *
@@ -2625,7 +2564,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getEnableQuerySuggestionWhenNoAnswer() {
         return enableQuerySuggestionWhenNoAnswer_;
       }
-
       /**
        *
        *
@@ -2649,7 +2587,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2673,7 +2610,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean enableConversationAugmentedQuery_;
-
       /**
        *
        *
@@ -2692,7 +2628,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getEnableConversationAugmentedQuery() {
         return enableConversationAugmentedQuery_;
       }
-
       /**
        *
        *
@@ -2715,7 +2650,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2738,7 +2672,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean enableQuerySuggestionOnly_;
-
       /**
        *
        *
@@ -2756,7 +2689,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getEnableQuerySuggestionOnly() {
         return enableQuerySuggestionOnly_;
       }
-
       /**
        *
        *
@@ -2778,7 +2710,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2810,7 +2741,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                   .SuggestionTriggerSettingsOrBuilder>
           suggestionTriggerSettingsBuilder_;
-
       /**
        *
        *
@@ -2830,7 +2760,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasSuggestionTriggerSettings() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -2858,7 +2787,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return suggestionTriggerSettingsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2888,7 +2816,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2916,7 +2843,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2953,7 +2879,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -2978,7 +2903,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3000,7 +2924,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getSuggestionTriggerSettingsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3027,7 +2950,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : suggestionTriggerSettings_;
         }
       }
-
       /**
        *
        *
@@ -3074,7 +2996,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                   .SuggestionQueryConfigOrBuilder>
           queryConfigBuilder_;
-
       /**
        *
        *
@@ -3091,7 +3012,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasQueryConfig() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -3116,7 +3036,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return queryConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3143,7 +3062,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3168,7 +3086,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3202,7 +3119,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -3224,7 +3140,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3243,7 +3158,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getQueryConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3267,7 +3181,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : queryConfig_;
         }
       }
-
       /**
        *
        *
@@ -3310,7 +3223,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                   .ConversationModelConfigOrBuilder>
           conversationModelConfigBuilder_;
-
       /**
        *
        *
@@ -3327,7 +3239,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasConversationModelConfig() {
         return ((bitField0_ & 0x00000100) != 0);
       }
-
       /**
        *
        *
@@ -3352,7 +3263,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return conversationModelConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3379,7 +3289,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3404,7 +3313,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3438,7 +3346,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -3460,7 +3367,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3479,7 +3385,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getConversationModelConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3503,7 +3408,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : conversationModelConfig_;
         }
       }
-
       /**
        *
        *
@@ -3548,7 +3452,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                   .ConversationProcessConfigOrBuilder>
           conversationProcessConfigBuilder_;
-
       /**
        *
        *
@@ -3565,7 +3468,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasConversationProcessConfig() {
         return ((bitField0_ & 0x00000200) != 0);
       }
-
       /**
        *
        *
@@ -3590,7 +3492,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return conversationProcessConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3617,7 +3518,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3642,7 +3542,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3676,7 +3575,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -3698,7 +3596,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3717,7 +3614,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getConversationProcessConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3741,7 +3637,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : conversationProcessConfig_;
         }
       }
-
       /**
        *
        *
@@ -3867,7 +3762,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     java.util.List<
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig>
         getFeatureConfigsList();
-
     /**
      *
      *
@@ -3882,7 +3776,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig
         getFeatureConfigs(int index);
-
     /**
      *
      *
@@ -3896,7 +3789,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * </code>
      */
     int getFeatureConfigsCount();
-
     /**
      *
      *
@@ -3914,7 +3806,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                     .SuggestionFeatureConfigOrBuilder>
         getFeatureConfigsOrBuilderList();
-
     /**
      *
      *
@@ -3967,7 +3858,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return A list containing the generators.
      */
     java.util.List<java.lang.String> getGeneratorsList();
-
     /**
      *
      *
@@ -3983,7 +3873,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The count of generators.
      */
     int getGeneratorsCount();
-
     /**
      *
      *
@@ -4000,7 +3889,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The generators at the given index.
      */
     java.lang.String getGenerators(int index);
-
     /**
      *
      *
@@ -4039,7 +3927,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     boolean getDisableHighLatencyFeaturesSyncDelivery();
   }
-
   /**
    *
    *
@@ -4055,7 +3942,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig)
       SuggestionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SuggestionConfig.newBuilder() to construct.
     private SuggestionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4094,7 +3980,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     private java.util.List<
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionFeatureConfig>
         featureConfigs_;
-
     /**
      *
      *
@@ -4113,7 +3998,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         getFeatureConfigsList() {
       return featureConfigs_;
     }
-
     /**
      *
      *
@@ -4134,7 +4018,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         getFeatureConfigsOrBuilderList() {
       return featureConfigs_;
     }
-
     /**
      *
      *
@@ -4151,7 +4034,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public int getFeatureConfigsCount() {
       return featureConfigs_.size();
     }
-
     /**
      *
      *
@@ -4169,7 +4051,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         getFeatureConfigs(int index) {
       return featureConfigs_.get(index);
     }
-
     /**
      *
      *
@@ -4191,7 +4072,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int GROUP_SUGGESTION_RESPONSES_FIELD_NUMBER = 3;
     private boolean groupSuggestionResponses_ = false;
-
     /**
      *
      *
@@ -4222,7 +4102,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList generators_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -4240,7 +4119,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public com.google.protobuf.ProtocolStringList getGeneratorsList() {
       return generators_;
     }
-
     /**
      *
      *
@@ -4258,7 +4136,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public int getGeneratorsCount() {
       return generators_.size();
     }
-
     /**
      *
      *
@@ -4277,7 +4154,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public java.lang.String getGenerators(int index) {
       return generators_.get(index);
     }
-
     /**
      *
      *
@@ -4299,7 +4175,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int DISABLE_HIGH_LATENCY_FEATURES_SYNC_DELIVERY_FIELD_NUMBER = 5;
     private boolean disableHighLatencyFeaturesSyncDelivery_ = false;
-
     /**
      *
      *
@@ -4535,7 +4410,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4881,7 +4755,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return featureConfigsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -4901,7 +4774,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return featureConfigsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -4922,7 +4794,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return featureConfigsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -4951,7 +4822,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -4978,7 +4848,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5006,7 +4875,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5035,7 +4903,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5061,7 +4928,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5088,7 +4954,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5116,7 +4981,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5139,7 +5003,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5162,7 +5025,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -5180,7 +5042,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           getFeatureConfigsBuilder(int index) {
         return getFeatureConfigsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -5202,7 +5063,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return featureConfigsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -5226,7 +5086,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return java.util.Collections.unmodifiableList(featureConfigs_);
         }
       }
-
       /**
        *
        *
@@ -5247,7 +5106,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                     .SuggestionFeatureConfig.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5269,7 +5127,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                     .SuggestionFeatureConfig.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5315,7 +5172,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean groupSuggestionResponses_;
-
       /**
        *
        *
@@ -5340,7 +5196,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getGroupSuggestionResponses() {
         return groupSuggestionResponses_;
       }
-
       /**
        *
        *
@@ -5369,7 +5224,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5406,7 +5260,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -5425,7 +5278,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         generators_.makeImmutable();
         return generators_;
       }
-
       /**
        *
        *
@@ -5443,7 +5295,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getGeneratorsCount() {
         return generators_.size();
       }
-
       /**
        *
        *
@@ -5462,7 +5313,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public java.lang.String getGenerators(int index) {
         return generators_.get(index);
       }
-
       /**
        *
        *
@@ -5481,7 +5331,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.protobuf.ByteString getGeneratorsBytes(int index) {
         return generators_.getByteString(index);
       }
-
       /**
        *
        *
@@ -5508,7 +5357,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5534,7 +5382,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5557,7 +5404,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5579,7 +5425,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5608,7 +5453,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean disableHighLatencyFeaturesSyncDelivery_;
-
       /**
        *
        *
@@ -5632,7 +5476,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getDisableHighLatencyFeaturesSyncDelivery() {
         return disableHighLatencyFeaturesSyncDelivery_;
       }
-
       /**
        *
        *
@@ -5660,7 +5503,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5776,7 +5618,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the knowledgeBaseQuerySource field is set.
      */
     boolean hasKnowledgeBaseQuerySource();
-
     /**
      *
      *
@@ -5794,7 +5635,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .KnowledgeBaseQuerySource
         getKnowledgeBaseQuerySource();
-
     /**
      *
      *
@@ -5826,7 +5666,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the documentQuerySource field is set.
      */
     boolean hasDocumentQuerySource();
-
     /**
      *
      *
@@ -5844,7 +5683,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .DocumentQuerySource
         getDocumentQuerySource();
-
     /**
      *
      *
@@ -5876,7 +5714,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the dialogflowQuerySource field is set.
      */
     boolean hasDialogflowQuerySource();
-
     /**
      *
      *
@@ -5894,7 +5731,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .DialogflowQuerySource
         getDialogflowQuerySource();
-
     /**
      *
      *
@@ -5972,7 +5808,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the contextFilterSettings field is set.
      */
     boolean hasContextFilterSettings();
-
     /**
      *
      *
@@ -5990,7 +5825,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .ContextFilterSettings
         getContextFilterSettings();
-
     /**
      *
      *
@@ -6022,7 +5856,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return Whether the sections field is set.
      */
     boolean hasSections();
-
     /**
      *
      *
@@ -6039,7 +5872,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections
         getSections();
-
     /**
      *
      *
@@ -6074,7 +5906,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             .QuerySourceCase
         getQuerySourceCase();
   }
-
   /**
    *
    *
@@ -6090,7 +5921,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig)
       SuggestionQueryConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SuggestionQueryConfig.newBuilder() to construct.
     private SuggestionQueryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6143,7 +5973,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return A list containing the knowledgeBases.
        */
       java.util.List<java.lang.String> getKnowledgeBasesList();
-
       /**
        *
        *
@@ -6161,7 +5990,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return The count of knowledgeBases.
        */
       int getKnowledgeBasesCount();
-
       /**
        *
        *
@@ -6180,7 +6008,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return The knowledgeBases at the given index.
        */
       java.lang.String getKnowledgeBases(int index);
-
       /**
        *
        *
@@ -6200,7 +6027,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        */
       com.google.protobuf.ByteString getKnowledgeBasesBytes(int index);
     }
-
     /**
      *
      *
@@ -6219,7 +6045,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.KnowledgeBaseQuerySource)
         KnowledgeBaseQuerySourceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use KnowledgeBaseQuerySource.newBuilder() to construct.
       private KnowledgeBaseQuerySource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -6257,7 +6082,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList knowledgeBases_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -6277,7 +6101,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.protobuf.ProtocolStringList getKnowledgeBasesList() {
         return knowledgeBases_;
       }
-
       /**
        *
        *
@@ -6297,7 +6120,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getKnowledgeBasesCount() {
         return knowledgeBases_.size();
       }
-
       /**
        *
        *
@@ -6318,7 +6140,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public java.lang.String getKnowledgeBases(int index) {
         return knowledgeBases_.get(index);
       }
-
       /**
        *
        *
@@ -6537,7 +6358,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -6772,7 +6592,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -6793,7 +6612,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           knowledgeBases_.makeImmutable();
           return knowledgeBases_;
         }
-
         /**
          *
          *
@@ -6813,7 +6631,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public int getKnowledgeBasesCount() {
           return knowledgeBases_.size();
         }
-
         /**
          *
          *
@@ -6834,7 +6651,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public java.lang.String getKnowledgeBases(int index) {
           return knowledgeBases_.get(index);
         }
-
         /**
          *
          *
@@ -6855,7 +6671,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public com.google.protobuf.ByteString getKnowledgeBasesBytes(int index) {
           return knowledgeBases_.getByteString(index);
         }
-
         /**
          *
          *
@@ -6884,7 +6699,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6912,7 +6726,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6937,7 +6750,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6961,7 +6773,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7085,7 +6896,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return A list containing the documents.
        */
       java.util.List<java.lang.String> getDocumentsList();
-
       /**
        *
        *
@@ -7103,7 +6913,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return The count of documents.
        */
       int getDocumentsCount();
-
       /**
        *
        *
@@ -7122,7 +6931,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return The documents at the given index.
        */
       java.lang.String getDocuments(int index);
-
       /**
        *
        *
@@ -7142,7 +6950,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        */
       com.google.protobuf.ByteString getDocumentsBytes(int index);
     }
-
     /**
      *
      *
@@ -7160,7 +6967,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.DocumentQuerySource)
         DocumentQuerySourceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use DocumentQuerySource.newBuilder() to construct.
       private DocumentQuerySource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -7198,7 +7004,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList documents_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -7218,7 +7023,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.protobuf.ProtocolStringList getDocumentsList() {
         return documents_;
       }
-
       /**
        *
        *
@@ -7238,7 +7042,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getDocumentsCount() {
         return documents_.size();
       }
-
       /**
        *
        *
@@ -7259,7 +7062,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public java.lang.String getDocuments(int index) {
         return documents_.get(index);
       }
-
       /**
        *
        *
@@ -7478,7 +7280,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -7713,7 +7514,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -7734,7 +7534,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           documents_.makeImmutable();
           return documents_;
         }
-
         /**
          *
          *
@@ -7754,7 +7553,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public int getDocumentsCount() {
           return documents_.size();
         }
-
         /**
          *
          *
@@ -7775,7 +7573,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public java.lang.String getDocuments(int index) {
           return documents_.get(index);
         }
-
         /**
          *
          *
@@ -7796,7 +7593,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public com.google.protobuf.ByteString getDocumentsBytes(int index) {
           return documents_.getByteString(index);
         }
-
         /**
          *
          *
@@ -7825,7 +7621,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7853,7 +7648,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7878,7 +7672,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7902,7 +7695,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -8026,7 +7818,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return The agent.
        */
       java.lang.String getAgent();
-
       /**
        *
        *
@@ -8059,7 +7850,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the humanAgentSideConfig field is set.
        */
       boolean hasHumanAgentSideConfig();
-
       /**
        *
        *
@@ -8076,7 +7866,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
               .DialogflowQuerySource.HumanAgentSideConfig
           getHumanAgentSideConfig();
-
       /**
        *
        *
@@ -8092,7 +7881,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .DialogflowQuerySource.HumanAgentSideConfigOrBuilder
           getHumanAgentSideConfigOrBuilder();
     }
-
     /**
      *
      *
@@ -8110,7 +7898,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.DialogflowQuerySource)
         DialogflowQuerySourceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use DialogflowQuerySource.newBuilder() to construct.
       private DialogflowQuerySource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -8164,7 +7951,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * @return The agent.
          */
         java.lang.String getAgent();
-
         /**
          *
          *
@@ -8182,7 +7968,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          */
         com.google.protobuf.ByteString getAgentBytes();
       }
-
       /**
        *
        *
@@ -8199,7 +7984,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.DialogflowQuerySource.HumanAgentSideConfig)
           HumanAgentSideConfigOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use HumanAgentSideConfig.newBuilder() to construct.
         private HumanAgentSideConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -8237,7 +8021,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object agent_ = "";
-
         /**
          *
          *
@@ -8265,7 +8048,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             return s;
           }
         }
-
         /**
          *
          *
@@ -8487,7 +8269,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -8709,7 +8490,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           private int bitField0_;
 
           private java.lang.Object agent_ = "";
-
           /**
            *
            *
@@ -8736,7 +8516,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -8763,7 +8542,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -8789,7 +8567,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -8811,7 +8588,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -8916,7 +8692,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object agent_ = "";
-
       /**
        *
        *
@@ -8945,7 +8720,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return s;
         }
       }
-
       /**
        *
        *
@@ -8979,7 +8753,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
               .DialogflowQuerySource.HumanAgentSideConfig
           humanAgentSideConfig_;
-
       /**
        *
        *
@@ -8997,7 +8770,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasHumanAgentSideConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -9020,7 +8792,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 .DialogflowQuerySource.HumanAgentSideConfig.getDefaultInstance()
             : humanAgentSideConfig_;
       }
-
       /**
        *
        *
@@ -9248,7 +9019,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -9501,7 +9271,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         private int bitField0_;
 
         private java.lang.Object agent_ = "";
-
         /**
          *
          *
@@ -9529,7 +9298,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -9557,7 +9325,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -9584,7 +9351,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9607,7 +9373,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9647,7 +9412,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                     .DialogflowQuerySource.HumanAgentSideConfigOrBuilder>
             humanAgentSideConfigBuilder_;
-
         /**
          *
          *
@@ -9664,7 +9428,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public boolean hasHumanAgentSideConfig() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -9691,7 +9454,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             return humanAgentSideConfigBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -9719,7 +9481,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9744,7 +9505,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9780,7 +9540,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           }
           return this;
         }
-
         /**
          *
          *
@@ -9802,7 +9561,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -9821,7 +9579,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return getHumanAgentSideConfigFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -9846,7 +9603,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                 : humanAgentSideConfig_;
           }
         }
-
         /**
          *
          *
@@ -9998,7 +9754,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        */
       boolean getDropIvrMessages();
     }
-
     /**
      *
      *
@@ -10015,7 +9770,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.ContextFilterSettings)
         ContextFilterSettingsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ContextFilterSettings.newBuilder() to construct.
       private ContextFilterSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -10048,7 +9802,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       public static final int DROP_HANDOFF_MESSAGES_FIELD_NUMBER = 1;
       private boolean dropHandoffMessages_ = false;
-
       /**
        *
        *
@@ -10068,7 +9821,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       public static final int DROP_VIRTUAL_AGENT_MESSAGES_FIELD_NUMBER = 2;
       private boolean dropVirtualAgentMessages_ = false;
-
       /**
        *
        *
@@ -10087,7 +9839,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
       public static final int DROP_IVR_MESSAGES_FIELD_NUMBER = 3;
       private boolean dropIvrMessages_ = false;
-
       /**
        *
        *
@@ -10314,7 +10065,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -10557,7 +10307,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         private int bitField0_;
 
         private boolean dropHandoffMessages_;
-
         /**
          *
          *
@@ -10574,7 +10323,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public boolean getDropHandoffMessages() {
           return dropHandoffMessages_;
         }
-
         /**
          *
          *
@@ -10595,7 +10343,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -10616,7 +10363,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
 
         private boolean dropVirtualAgentMessages_;
-
         /**
          *
          *
@@ -10632,7 +10378,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public boolean getDropVirtualAgentMessages() {
           return dropVirtualAgentMessages_;
         }
-
         /**
          *
          *
@@ -10652,7 +10397,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -10672,7 +10416,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
 
         private boolean dropIvrMessages_;
-
         /**
          *
          *
@@ -10688,7 +10431,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public boolean getDropIvrMessages() {
           return dropIvrMessages_;
         }
-
         /**
          *
          *
@@ -10708,7 +10450,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -10824,7 +10565,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .Sections.SectionType>
           getSectionTypesList();
-
       /**
        *
        *
@@ -10842,7 +10582,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return The count of sectionTypes.
        */
       int getSectionTypesCount();
-
       /**
        *
        *
@@ -10863,7 +10602,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections
               .SectionType
           getSectionTypes(int index);
-
       /**
        *
        *
@@ -10881,7 +10619,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return A list containing the enum numeric values on the wire for sectionTypes.
        */
       java.util.List<java.lang.Integer> getSectionTypesValueList();
-
       /**
        *
        *
@@ -10901,7 +10638,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        */
       int getSectionTypesValue(int index);
     }
-
     /**
      *
      *
@@ -10921,7 +10657,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig.Sections)
         SectionsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Sections.newBuilder() to construct.
       private Sections(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -11059,7 +10794,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * <code>SECTION_TYPE_UNSPECIFIED = 0;</code>
          */
         public static final int SECTION_TYPE_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -11071,7 +10805,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * <code>SITUATION = 1;</code>
          */
         public static final int SITUATION_VALUE = 1;
-
         /**
          *
          *
@@ -11083,7 +10816,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * <code>ACTION = 2;</code>
          */
         public static final int ACTION_VALUE = 2;
-
         /**
          *
          *
@@ -11096,7 +10828,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * <code>RESOLUTION = 3;</code>
          */
         public static final int RESOLUTION_VALUE = 3;
-
         /**
          *
          *
@@ -11109,7 +10840,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * <code>REASON_FOR_CANCELLATION = 4;</code>
          */
         public static final int REASON_FOR_CANCELLATION_VALUE = 4;
-
         /**
          *
          *
@@ -11122,7 +10852,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
          * <code>CUSTOMER_SATISFACTION = 5;</code>
          */
         public static final int CUSTOMER_SATISFACTION_VALUE = 5;
-
         /**
          *
          *
@@ -11261,7 +10990,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                       : result;
                 }
               };
-
       /**
        *
        *
@@ -11288,7 +11016,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                 .Sections.SectionType>(sectionTypes_, sectionTypes_converter_);
       }
-
       /**
        *
        *
@@ -11309,7 +11036,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getSectionTypesCount() {
         return sectionTypes_.size();
       }
-
       /**
        *
        *
@@ -11333,7 +11059,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           getSectionTypes(int index) {
         return sectionTypes_converter_.convert(sectionTypes_.get(index));
       }
-
       /**
        *
        *
@@ -11354,7 +11079,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public java.util.List<java.lang.Integer> getSectionTypesValueList() {
         return sectionTypes_;
       }
-
       /**
        *
        *
@@ -11585,7 +11309,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -11842,7 +11565,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             bitField0_ |= 0x00000001;
           }
         }
-
         /**
          *
          *
@@ -11868,7 +11590,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .Sections.SectionType>(sectionTypes_, sectionTypes_converter_);
         }
-
         /**
          *
          *
@@ -11888,7 +11609,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public int getSectionTypesCount() {
           return sectionTypes_.size();
         }
-
         /**
          *
          *
@@ -11911,7 +11631,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             getSectionTypes(int index) {
           return sectionTypes_converter_.convert(sectionTypes_.get(index));
         }
-
         /**
          *
          *
@@ -11943,7 +11662,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -11973,7 +11691,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12006,7 +11723,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12029,7 +11745,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12049,7 +11764,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public java.util.List<java.lang.Integer> getSectionTypesValueList() {
           return java.util.Collections.unmodifiableList(sectionTypes_);
         }
-
         /**
          *
          *
@@ -12070,7 +11784,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         public int getSectionTypesValue(int index) {
           return sectionTypes_.get(index);
         }
-
         /**
          *
          *
@@ -12095,7 +11808,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12119,7 +11831,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12237,7 +11948,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private QuerySourceCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -12273,7 +11983,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     }
 
     public static final int KNOWLEDGE_BASE_QUERY_SOURCE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -12292,7 +12001,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasKnowledgeBaseQuerySource() {
       return querySourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -12319,7 +12027,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
           .KnowledgeBaseQuerySource.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -12346,7 +12053,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     }
 
     public static final int DOCUMENT_QUERY_SOURCE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -12365,7 +12071,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasDocumentQuerySource() {
       return querySourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -12392,7 +12097,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
           .DocumentQuerySource.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -12419,7 +12123,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     }
 
     public static final int DIALOGFLOW_QUERY_SOURCE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -12438,7 +12141,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasDialogflowQuerySource() {
       return querySourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -12465,7 +12167,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       return com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
           .DialogflowQuerySource.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -12493,7 +12194,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int MAX_RESULTS_FIELD_NUMBER = 4;
     private int maxResults_ = 0;
-
     /**
      *
      *
@@ -12513,7 +12213,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 5;
     private float confidenceThreshold_ = 0F;
-
     /**
      *
      *
@@ -12553,7 +12252,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .ContextFilterSettings
         contextFilterSettings_;
-
     /**
      *
      *
@@ -12572,7 +12270,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasContextFilterSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -12596,7 +12293,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .ContextFilterSettings.getDefaultInstance()
           : contextFilterSettings_;
     }
-
     /**
      *
      *
@@ -12623,7 +12319,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
             .Sections
         sections_;
-
     /**
      *
      *
@@ -12642,7 +12337,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasSections() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -12666,7 +12360,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .Sections.getDefaultInstance()
           : sections_;
     }
-
     /**
      *
      *
@@ -12691,7 +12384,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int CONTEXT_SIZE_FIELD_NUMBER = 9;
     private int contextSize_ = 0;
-
     /**
      *
      *
@@ -13015,7 +12707,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -13390,7 +13081,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .KnowledgeBaseQuerySourceOrBuilder>
           knowledgeBaseQuerySourceBuilder_;
-
       /**
        *
        *
@@ -13409,7 +13099,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasKnowledgeBaseQuerySource() {
         return querySourceCase_ == 1;
       }
-
       /**
        *
        *
@@ -13444,7 +13133,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .KnowledgeBaseQuerySource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -13473,7 +13161,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -13499,7 +13186,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -13543,7 +13229,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -13572,7 +13257,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -13590,7 +13274,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           getKnowledgeBaseQuerySourceBuilder() {
         return getKnowledgeBaseQuerySourceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -13619,7 +13302,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .KnowledgeBaseQuerySource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -13674,7 +13356,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .DocumentQuerySourceOrBuilder>
           documentQuerySourceBuilder_;
-
       /**
        *
        *
@@ -13693,7 +13374,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasDocumentQuerySource() {
         return querySourceCase_ == 2;
       }
-
       /**
        *
        *
@@ -13728,7 +13408,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .DocumentQuerySource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -13757,7 +13436,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -13783,7 +13461,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -13827,7 +13504,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -13856,7 +13532,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -13874,7 +13549,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           getDocumentQuerySourceBuilder() {
         return getDocumentQuerySourceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -13903,7 +13577,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .DocumentQuerySource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -13958,7 +13631,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .DialogflowQuerySourceOrBuilder>
           dialogflowQuerySourceBuilder_;
-
       /**
        *
        *
@@ -13977,7 +13649,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasDialogflowQuerySource() {
         return querySourceCase_ == 3;
       }
-
       /**
        *
        *
@@ -14012,7 +13683,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .DialogflowQuerySource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -14041,7 +13711,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -14067,7 +13736,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -14111,7 +13779,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         querySourceCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -14140,7 +13807,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -14158,7 +13824,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           getDialogflowQuerySourceBuilder() {
         return getDialogflowQuerySourceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14187,7 +13852,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               .DialogflowQuerySource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -14235,7 +13899,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private int maxResults_;
-
       /**
        *
        *
@@ -14252,7 +13915,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getMaxResults() {
         return maxResults_;
       }
-
       /**
        *
        *
@@ -14273,7 +13935,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14294,7 +13955,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private float confidenceThreshold_;
-
       /**
        *
        *
@@ -14329,7 +13989,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
-
       /**
        *
        *
@@ -14368,7 +14027,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14417,7 +14075,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .ContextFilterSettingsOrBuilder>
           contextFilterSettingsBuilder_;
-
       /**
        *
        *
@@ -14435,7 +14092,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasContextFilterSettings() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -14462,7 +14118,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return contextFilterSettingsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14491,7 +14146,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14517,7 +14171,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14553,7 +14206,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -14576,7 +14228,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14596,7 +14247,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getContextFilterSettingsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14621,7 +14271,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : contextFilterSettings_;
         }
       }
-
       /**
        *
        *
@@ -14668,7 +14317,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
                   .SectionsOrBuilder>
           sectionsBuilder_;
-
       /**
        *
        *
@@ -14686,7 +14334,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean hasSections() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -14713,7 +14360,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return sectionsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14742,7 +14388,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14768,7 +14413,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14804,7 +14448,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -14827,7 +14470,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14847,7 +14489,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return getSectionsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14872,7 +14513,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               : sections_;
         }
       }
-
       /**
        *
        *
@@ -14909,7 +14549,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private int contextSize_;
-
       /**
        *
        *
@@ -14926,7 +14565,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getContextSize() {
         return contextSize_;
       }
-
       /**
        *
        *
@@ -14947,7 +14585,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15055,7 +14692,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The model.
      */
     java.lang.String getModel();
-
     /**
      *
      *
@@ -15089,7 +14725,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The baselineModelVersion.
      */
     java.lang.String getBaselineModelVersion();
-
     /**
      *
      *
@@ -15110,7 +14745,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     com.google.protobuf.ByteString getBaselineModelVersionBytes();
   }
-
   /**
    *
    *
@@ -15129,7 +14763,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig)
       ConversationModelConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConversationModelConfig.newBuilder() to construct.
     private ConversationModelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -15167,7 +14800,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -15192,7 +14824,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -15222,7 +14853,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object baselineModelVersion_ = "";
-
     /**
      *
      *
@@ -15253,7 +14883,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -15477,7 +15106,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -15705,7 +15333,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object model_ = "";
-
       /**
        *
        *
@@ -15729,7 +15356,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -15753,7 +15379,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -15776,7 +15401,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15795,7 +15419,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15821,7 +15444,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private java.lang.Object baselineModelVersion_ = "";
-
       /**
        *
        *
@@ -15851,7 +15473,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -15881,7 +15502,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -15910,7 +15530,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15935,7 +15554,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16056,7 +15674,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     int getRecentSentencesCount();
   }
-
   /**
    *
    *
@@ -16072,7 +15689,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig)
       ConversationProcessConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConversationProcessConfig.newBuilder() to construct.
     private ConversationProcessConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -16105,7 +15721,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int RECENT_SENTENCES_COUNT_FIELD_NUMBER = 2;
     private int recentSentencesCount_ = 0;
-
     /**
      *
      *
@@ -16309,7 +15924,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -16518,7 +16132,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private int recentSentencesCount_;
-
       /**
        *
        *
@@ -16535,7 +16148,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public int getRecentSentencesCount() {
         return recentSentencesCount_;
       }
-
       /**
        *
        *
@@ -16556,7 +16168,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16702,7 +16313,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      */
     boolean getEnableSentimentAnalysis();
   }
-
   /**
    *
    *
@@ -16718,7 +16328,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.MessageAnalysisConfig)
       MessageAnalysisConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MessageAnalysisConfig.newBuilder() to construct.
     private MessageAnalysisConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -16751,7 +16360,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ENABLE_ENTITY_EXTRACTION_FIELD_NUMBER = 2;
     private boolean enableEntityExtraction_ = false;
-
     /**
      *
      *
@@ -16775,7 +16383,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     public static final int ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER = 3;
     private boolean enableSentimentAnalysis_ = false;
-
     /**
      *
      *
@@ -17002,7 +16609,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -17221,7 +16827,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private boolean enableEntityExtraction_;
-
       /**
        *
        *
@@ -17242,7 +16847,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getEnableEntityExtraction() {
         return enableEntityExtraction_;
       }
-
       /**
        *
        *
@@ -17267,7 +16871,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -17292,7 +16895,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
 
       private boolean enableSentimentAnalysis_;
-
       /**
        *
        *
@@ -17327,7 +16929,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public boolean getEnableSentimentAnalysis() {
         return enableSentimentAnalysis_;
       }
-
       /**
        *
        *
@@ -17366,7 +16967,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -17477,7 +17077,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int NOTIFICATION_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.NotificationConfig notificationConfig_;
-
   /**
    *
    *
@@ -17493,7 +17092,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public boolean hasNotificationConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -17511,7 +17109,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         ? com.google.cloud.dialogflow.v2beta1.NotificationConfig.getDefaultInstance()
         : notificationConfig_;
   }
-
   /**
    *
    *
@@ -17532,7 +17129,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public static final int HUMAN_AGENT_SUGGESTION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig
       humanAgentSuggestionConfig_;
-
   /**
    *
    *
@@ -17550,7 +17146,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public boolean hasHumanAgentSuggestionConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -17572,7 +17167,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             .getDefaultInstance()
         : humanAgentSuggestionConfig_;
   }
-
   /**
    *
    *
@@ -17596,7 +17190,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public static final int END_USER_SUGGESTION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig
       endUserSuggestionConfig_;
-
   /**
    *
    *
@@ -17617,7 +17210,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public boolean hasEndUserSuggestionConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -17642,7 +17234,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             .getDefaultInstance()
         : endUserSuggestionConfig_;
   }
-
   /**
    *
    *
@@ -17669,7 +17260,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public static final int MESSAGE_ANALYSIS_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.MessageAnalysisConfig
       messageAnalysisConfig_;
-
   /**
    *
    *
@@ -17687,7 +17277,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
   public boolean hasMessageAnalysisConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -17709,7 +17298,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             .getDefaultInstance()
         : messageAnalysisConfig_;
   }
-
   /**
    *
    *
@@ -17943,7 +17531,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -18223,7 +17810,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2beta1.NotificationConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.NotificationConfigOrBuilder>
         notificationConfigBuilder_;
-
     /**
      *
      *
@@ -18238,7 +17824,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasNotificationConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -18259,7 +17844,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return notificationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18283,7 +17867,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18304,7 +17887,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18334,7 +17916,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -18354,7 +17935,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18370,7 +17950,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return getNotificationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18390,7 +17969,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             : notificationConfig_;
       }
     }
-
     /**
      *
      *
@@ -18424,7 +18002,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfigOrBuilder>
         humanAgentSuggestionConfigBuilder_;
-
     /**
      *
      *
@@ -18441,7 +18018,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasHumanAgentSuggestionConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -18466,7 +18042,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return humanAgentSuggestionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18492,7 +18067,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18516,7 +18090,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18549,7 +18122,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -18571,7 +18143,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18589,7 +18160,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return getHumanAgentSuggestionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18612,7 +18182,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             : humanAgentSuggestionConfig_;
       }
     }
-
     /**
      *
      *
@@ -18650,7 +18219,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfigOrBuilder>
         endUserSuggestionConfigBuilder_;
-
     /**
      *
      *
@@ -18670,7 +18238,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasEndUserSuggestionConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -18698,7 +18265,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return endUserSuggestionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18727,7 +18293,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18754,7 +18319,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18790,7 +18354,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -18815,7 +18378,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18836,7 +18398,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return getEndUserSuggestionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18862,7 +18423,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             : endUserSuggestionConfig_;
       }
     }
-
     /**
      *
      *
@@ -18905,7 +18465,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
                 .MessageAnalysisConfigOrBuilder>
         messageAnalysisConfigBuilder_;
-
     /**
      *
      *
@@ -18922,7 +18481,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     public boolean hasMessageAnalysisConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -18947,7 +18505,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         return messageAnalysisConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18973,7 +18530,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18997,7 +18553,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19030,7 +18585,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -19052,7 +18606,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19071,7 +18624,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       onChanged();
       return getMessageAnalysisConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -19095,7 +18647,6 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             : messageAnalysisConfig_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchRegionTargetHttpsProxyRequest)
     PatchRegionTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchRegionTargetHttpsProxyRequest.newBuilder() to construct.
   private PatchRegionTargetHttpsProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
 
   public static final int TARGET_HTTPS_PROXY_RESOURCE_FIELD_NUMBER = 433657473;
   private com.google.cloud.compute.v1.TargetHttpsProxy targetHttpsProxyResource_;
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
   public boolean hasTargetHttpsProxyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -345,7 +333,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         ? com.google.cloud.compute.v1.TargetHttpsProxy.getDefaultInstance()
         : targetHttpsProxyResource_;
   }
-
   /**
    *
    *
@@ -573,7 +560,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -840,7 +826,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -865,7 +850,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +916,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +942,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -986,7 +966,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1011,7 +990,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1013,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1058,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1097,7 +1072,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1120,7 +1094,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1137,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1154,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1178,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
-
     /**
      *
      *
@@ -1231,7 +1200,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1254,7 +1222,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1243,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1260,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1289,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
             com.google.cloud.compute.v1.TargetHttpsProxy.Builder,
             com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder>
         targetHttpsProxyResourceBuilder_;
-
     /**
      *
      *
@@ -1341,7 +1305,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
     public boolean hasTargetHttpsProxyResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1364,7 +1327,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
         return targetHttpsProxyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1351,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1412,7 +1373,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1404,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1466,7 +1425,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1484,7 +1442,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
       onChanged();
       return getTargetHttpsProxyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1506,7 +1463,6 @@ public final class PatchRegionTargetHttpsProxyRequest extends com.google.protobu
             : targetHttpsProxyResource_;
       }
     }
-
     /**
      *
      *

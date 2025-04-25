@@ -36,7 +36,6 @@ public interface GetEffectiveFirewallsRegionNetworkFirewallPolicyRequestOrBuilde
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetEffectiveFirewallsRegionNetworkFirewallPolicyRequestOrBuilde
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetEffectiveFirewallsRegionNetworkFirewallPolicyRequestOrBuilde
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

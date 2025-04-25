@@ -37,7 +37,6 @@ public interface DataQualitySpecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataQualityRule> getRulesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DataQualitySpecOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataQualityRule getRules(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface DataQualitySpecOrBuilder
    * </code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface DataQualitySpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityRuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface DataQualitySpecOrBuilder
    * @return The rowFilter.
    */
   java.lang.String getRowFilter();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface DataQualitySpecOrBuilder
    * @return Whether the postScanActions field is set.
    */
   boolean hasPostScanActions();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface DataQualitySpecOrBuilder
    * @return The postScanActions.
    */
   com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions getPostScanActions();
-
   /**
    *
    *

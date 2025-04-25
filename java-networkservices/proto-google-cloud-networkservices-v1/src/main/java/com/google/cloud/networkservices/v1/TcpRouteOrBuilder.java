@@ -37,7 +37,6 @@ public interface TcpRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface TcpRouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface TcpRouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface TcpRouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface TcpRouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface TcpRouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface TcpRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface TcpRouteOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.networkservices.v1.TcpRoute.RouteRule> getRulesList();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface TcpRouteOrBuilder
    * </code>
    */
   com.google.cloud.networkservices.v1.TcpRoute.RouteRule getRules(int index);
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface TcpRouteOrBuilder
    * </code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public interface TcpRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.TcpRoute.RouteRuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *
@@ -282,7 +271,6 @@ public interface TcpRouteOrBuilder
    * @return A list containing the meshes.
    */
   java.util.List<java.lang.String> getMeshesList();
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public interface TcpRouteOrBuilder
    * @return The count of meshes.
    */
   int getMeshesCount();
-
   /**
    *
    *
@@ -325,7 +312,6 @@ public interface TcpRouteOrBuilder
    * @return The meshes at the given index.
    */
   java.lang.String getMeshes(int index);
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public interface TcpRouteOrBuilder
    * @return A list containing the gateways.
    */
   java.util.List<java.lang.String> getGatewaysList();
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public interface TcpRouteOrBuilder
    * @return The count of gateways.
    */
   int getGatewaysCount();
-
   /**
    *
    *
@@ -405,7 +389,6 @@ public interface TcpRouteOrBuilder
    * @return The gateways at the given index.
    */
   java.lang.String getGateways(int index);
-
   /**
    *
    *
@@ -436,7 +419,6 @@ public interface TcpRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -447,11 +429,9 @@ public interface TcpRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -462,7 +442,6 @@ public interface TcpRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -477,7 +456,6 @@ public interface TcpRouteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

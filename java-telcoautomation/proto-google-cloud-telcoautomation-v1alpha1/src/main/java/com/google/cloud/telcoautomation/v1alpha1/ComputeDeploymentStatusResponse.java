@@ -33,7 +33,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.ComputeDeploymentStatusResponse)
     ComputeDeploymentStatusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComputeDeploymentStatusResponse.newBuilder() to construct.
   private ComputeDeploymentStatusResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
 
   public static final int AGGREGATED_STATUS_FIELD_NUMBER = 2;
   private int aggregatedStatus_ = 0;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
   public int getAggregatedStatusValue() {
     return aggregatedStatus_;
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.telcoautomation.v1alpha1.ResourceStatus>
       resourceStatuses_;
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       getResourceStatusesList() {
     return resourceStatuses_;
   }
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       getResourceStatusesOrBuilderList() {
     return resourceStatuses_;
   }
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
   public int getResourceStatusesCount() {
     return resourceStatuses_.size();
   }
-
   /**
    *
    *
@@ -233,7 +224,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
   public com.google.cloud.telcoautomation.v1alpha1.ResourceStatus getResourceStatuses(int index) {
     return resourceStatuses_.get(index);
   }
-
   /**
    *
    *
@@ -435,7 +425,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -706,7 +695,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
     }
 
     private int aggregatedStatus_ = 0;
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
     public int getAggregatedStatusValue() {
       return aggregatedStatus_;
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
           ? com.google.cloud.telcoautomation.v1alpha1.Status.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +939,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return resourceStatusesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return resourceStatusesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return resourceStatusesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1023,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1073,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1095,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1118,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1162,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1183,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1198,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         getResourceStatusesBuilder(int index) {
       return getResourceStatusesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1251,7 +1217,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return resourceStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1272,7 +1237,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(resourceStatuses_);
       }
     }
-
     /**
      *
      *
@@ -1290,7 +1254,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
           .addBuilder(
               com.google.cloud.telcoautomation.v1alpha1.ResourceStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1308,7 +1271,6 @@ public final class ComputeDeploymentStatusResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.telcoautomation.v1alpha1.ResourceStatus.getDefaultInstance());
     }
-
     /**
      *
      *

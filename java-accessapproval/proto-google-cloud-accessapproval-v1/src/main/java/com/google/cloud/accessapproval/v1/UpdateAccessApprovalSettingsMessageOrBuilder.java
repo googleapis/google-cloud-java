@@ -36,7 +36,6 @@ public interface UpdateAccessApprovalSettingsMessageOrBuilder
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateAccessApprovalSettingsMessageOrBuilder
    * @return The settings.
    */
   com.google.cloud.accessapproval.v1.AccessApprovalSettings getSettings();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateAccessApprovalSettingsMessageOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateAccessApprovalSettingsMessageOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

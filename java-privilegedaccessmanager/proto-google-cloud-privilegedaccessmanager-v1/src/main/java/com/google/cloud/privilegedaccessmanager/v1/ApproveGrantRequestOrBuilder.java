@@ -38,7 +38,6 @@ public interface ApproveGrantRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ApproveGrantRequestOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
-
   /**
    *
    *

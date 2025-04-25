@@ -37,7 +37,6 @@ public interface MaintenanceUpdatePolicyOrBuilder
    */
   java.util.List<com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindow>
       getMaintenanceWindowsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface MaintenanceUpdatePolicyOrBuilder
    */
   com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindow getMaintenanceWindows(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface MaintenanceUpdatePolicyOrBuilder
    * </code>
    */
   int getMaintenanceWindowsCount();
-
   /**
    *
    *
@@ -79,7 +76,6 @@ public interface MaintenanceUpdatePolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindowOrBuilder>
       getMaintenanceWindowsOrBuilderList();
-
   /**
    *
    *

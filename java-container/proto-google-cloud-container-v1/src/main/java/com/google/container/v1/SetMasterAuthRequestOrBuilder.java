@@ -41,7 +41,6 @@ public interface SetMasterAuthRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface SetMasterAuthRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface SetMasterAuthRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public interface SetMasterAuthRequestOrBuilder
    * @return The enum numeric value on the wire for action.
    */
   int getActionValue();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface SetMasterAuthRequestOrBuilder
    * @return Whether the update field is set.
    */
   boolean hasUpdate();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface SetMasterAuthRequestOrBuilder
    * @return The update.
    */
   com.google.container.v1.MasterAuth getUpdate();
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public interface SetMasterAuthRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

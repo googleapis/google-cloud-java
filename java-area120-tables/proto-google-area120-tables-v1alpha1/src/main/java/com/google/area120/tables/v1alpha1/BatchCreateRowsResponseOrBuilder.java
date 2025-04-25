@@ -34,7 +34,6 @@ public interface BatchCreateRowsResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Row rows = 1;</code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.Row> getRowsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchCreateRowsResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Row rows = 1;</code>
    */
   com.google.area120.tables.v1alpha1.Row getRows(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchCreateRowsResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Row rows = 1;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface BatchCreateRowsResponseOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Row rows = 1;</code>
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.RowOrBuilder> getRowsOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListWorkloadsResponseOrBuilder
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload workloads = 1;</code>
    */
   java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload> getWorkloadsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListWorkloadsResponseOrBuilder
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload workloads = 1;</code>
    */
   com.google.cloud.assuredworkloads.v1beta1.Workload getWorkloads(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListWorkloadsResponseOrBuilder
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload workloads = 1;</code>
    */
   int getWorkloadsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListWorkloadsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.assuredworkloads.v1beta1.WorkloadOrBuilder>
       getWorkloadsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListWorkloadsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

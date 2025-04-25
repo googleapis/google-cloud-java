@@ -38,7 +38,6 @@ public interface CreateMessageBusRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateMessageBusRequestOrBuilder
    * @return Whether the messageBus field is set.
    */
   boolean hasMessageBus();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateMessageBusRequestOrBuilder
    * @return The messageBus.
    */
   com.google.cloud.eventarc.v1.MessageBus getMessageBus();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface CreateMessageBusRequestOrBuilder
    * @return The messageBusId.
    */
   java.lang.String getMessageBusId();
-
   /**
    *
    *

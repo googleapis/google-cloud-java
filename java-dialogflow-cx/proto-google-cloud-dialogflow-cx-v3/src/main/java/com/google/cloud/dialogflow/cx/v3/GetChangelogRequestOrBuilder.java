@@ -40,7 +40,6 @@ public interface GetChangelogRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SamplingStrategy)
     SamplingStrategyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SamplingStrategy.newBuilder() to construct.
   private SamplingStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
      */
     double getSampleRate();
   }
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SamplingStrategy.RandomSampleConfig)
       RandomSampleConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RandomSampleConfig.newBuilder() to construct.
     private RandomSampleConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -128,7 +125,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
 
     public static final int SAMPLE_RATE_FIELD_NUMBER = 1;
     private double sampleRate_ = 0D;
-
     /**
      *
      *
@@ -312,7 +308,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -509,7 +504,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private double sampleRate_;
-
       /**
        *
        *
@@ -525,7 +519,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       public double getSampleRate() {
         return sampleRate_;
       }
-
       /**
        *
        *
@@ -545,7 +538,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -636,7 +628,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
   public static final int RANDOM_SAMPLE_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.SamplingStrategy.RandomSampleConfig
       randomSampleConfig_;
-
   /**
    *
    *
@@ -654,7 +645,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
   public boolean hasRandomSampleConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -676,7 +666,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : randomSampleConfig_;
   }
-
   /**
    *
    *
@@ -861,7 +850,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1071,7 +1059,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.SamplingStrategy.RandomSampleConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.SamplingStrategy.RandomSampleConfigOrBuilder>
         randomSampleConfigBuilder_;
-
     /**
      *
      *
@@ -1088,7 +1075,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
     public boolean hasRandomSampleConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1113,7 +1099,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
         return randomSampleConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1124,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1147,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1179,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1200,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1217,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getRandomSampleConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1259,7 +1239,6 @@ public final class SamplingStrategy extends com.google.protobuf.GeneratedMessage
             : randomSampleConfig_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.UploadConversationRequest getRequest();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return The analysisOperation.
    */
   java.lang.String getAnalysisOperation();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return Whether the appliedRedactionConfig field is set.
    */
   boolean hasAppliedRedactionConfig();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface UploadConversationMetadataOrBuilder
    * @return The appliedRedactionConfig.
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfig getAppliedRedactionConfig();
-
   /**
    *
    *

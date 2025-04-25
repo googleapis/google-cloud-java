@@ -34,7 +34,6 @@ public interface MessageBatchUpdatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MessageUpdatedEventData messages = 1;</code>
    */
   java.util.List<com.google.chat.v1.MessageUpdatedEventData> getMessagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface MessageBatchUpdatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MessageUpdatedEventData messages = 1;</code>
    */
   com.google.chat.v1.MessageUpdatedEventData getMessages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface MessageBatchUpdatedEventDataOrBuilder
    * <code>repeated .google.chat.v1.MessageUpdatedEventData messages = 1;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface MessageBatchUpdatedEventDataOrBuilder
    */
   java.util.List<? extends com.google.chat.v1.MessageUpdatedEventDataOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *

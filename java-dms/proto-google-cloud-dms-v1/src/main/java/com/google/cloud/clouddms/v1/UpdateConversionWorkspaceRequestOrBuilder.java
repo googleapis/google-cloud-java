@@ -38,7 +38,6 @@ public interface UpdateConversionWorkspaceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateConversionWorkspaceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateConversionWorkspaceRequestOrBuilder
    * @return Whether the conversionWorkspace field is set.
    */
   boolean hasConversionWorkspace();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateConversionWorkspaceRequestOrBuilder
    * @return The conversionWorkspace.
    */
   com.google.cloud.clouddms.v1.ConversionWorkspace getConversionWorkspace();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface UpdateConversionWorkspaceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

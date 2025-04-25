@@ -43,7 +43,6 @@ public interface DisableServiceAccountKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

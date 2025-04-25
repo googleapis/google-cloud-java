@@ -33,7 +33,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BleuInput)
     BleuInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BleuInput.newBuilder() to construct.
   private BleuInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.BleuSpec metricSpec_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.BleuSpec.getDefaultInstance()
         : metricSpec_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.BleuInstance> instances_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.aiplatform.v1beta1.BleuInstance> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1beta1.BleuInstance getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +641,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.BleuSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.BleuSpecOrBuilder>
         metricSpecBuilder_;
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         return metricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
             : metricSpec_;
       }
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +980,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1004,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1026,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1048,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1070,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1091,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1112,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1126,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.BleuInstance.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1177,7 +1145,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1164,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1179,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.BleuInstance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1229,7 +1194,6 @@ public final class BleuInput extends com.google.protobuf.GeneratedMessageV3
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.BleuInstance.getDefaultInstance());
     }
-
     /**
      *
      *

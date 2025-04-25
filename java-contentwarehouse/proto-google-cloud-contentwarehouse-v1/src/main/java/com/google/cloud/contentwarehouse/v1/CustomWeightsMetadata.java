@@ -33,7 +33,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.CustomWeightsMetadata)
     CustomWeightsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomWeightsMetadata.newBuilder() to construct.
   private CustomWeightsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty>
       weightedSchemaProperties_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       getWeightedSchemaPropertiesList() {
     return weightedSchemaProperties_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       getWeightedSchemaPropertiesOrBuilderList() {
     return weightedSchemaProperties_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
   public int getWeightedSchemaPropertiesCount() {
     return weightedSchemaProperties_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       int index) {
     return weightedSchemaProperties_.get(index);
   }
-
   /**
    *
    *
@@ -325,7 +319,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +588,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
         return weightedSchemaPropertiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -615,7 +607,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
         return weightedSchemaPropertiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
         return weightedSchemaPropertiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
         getWeightedSchemaPropertiesBuilder(int index) {
       return getWeightedSchemaPropertiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
         return weightedSchemaPropertiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +901,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(weightedSchemaProperties_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
           .addBuilder(
               com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class CustomWeightsMetadata extends com.google.protobuf.GeneratedMe
               index,
               com.google.cloud.contentwarehouse.v1.WeightedSchemaProperty.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.BusinessDayConfig)
     BusinessDayConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BusinessDayConfig.newBuilder() to construct.
   private BusinessDayConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,25 +86,18 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
 
     /** <code>WEEKDAY_UNSPECIFIED = 0;</code> */
     public static final int WEEKDAY_UNSPECIFIED_VALUE = 0;
-
     /** <code>MONDAY = 1;</code> */
     public static final int MONDAY_VALUE = 1;
-
     /** <code>TUESDAY = 2;</code> */
     public static final int TUESDAY_VALUE = 2;
-
     /** <code>WEDNESDAY = 3;</code> */
     public static final int WEDNESDAY_VALUE = 3;
-
     /** <code>THURSDAY = 4;</code> */
     public static final int THURSDAY_VALUE = 4;
-
     /** <code>FRIDAY = 5;</code> */
     public static final int FRIDAY_VALUE = 5;
-
     /** <code>SATURDAY = 6;</code> */
     public static final int SATURDAY_VALUE = 6;
-
     /** <code>SUNDAY = 7;</code> */
     public static final int SUNDAY_VALUE = 7;
 
@@ -226,7 +218,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
                   : result;
             }
           };
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
         java.lang.Integer, com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Weekday>(
         businessDays_, businessDays_converter_);
   }
-
   /**
    *
    *
@@ -267,7 +257,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
   public int getBusinessDaysCount() {
     return businessDays_.size();
   }
-
   /**
    *
    *
@@ -288,7 +277,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       int index) {
     return businessDays_converter_.convert(businessDays_.get(index));
   }
-
   /**
    *
    *
@@ -307,7 +295,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getBusinessDaysValueList() {
     return businessDays_;
   }
-
   /**
    *
    *
@@ -507,7 +494,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -728,7 +714,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
           com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Weekday>(
           businessDays_, businessDays_converter_);
     }
-
     /**
      *
      *
@@ -768,7 +752,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
     public int getBusinessDaysCount() {
       return businessDays_.size();
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
         int index) {
       return businessDays_converter_.convert(businessDays_.get(index));
     }
-
     /**
      *
      *
@@ -815,7 +797,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +848,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +868,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getBusinessDaysValueList() {
       return java.util.Collections.unmodifiableList(businessDays_);
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
     public int getBusinessDaysValue(int index) {
       return businessDays_.get(index);
     }
-
     /**
      *
      *
@@ -949,7 +925,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class BusinessDayConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

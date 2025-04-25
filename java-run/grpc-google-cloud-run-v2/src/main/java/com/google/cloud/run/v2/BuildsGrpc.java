@@ -88,19 +88,6 @@ public final class BuildsGrpc {
     return BuildsStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static BuildsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<BuildsBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<BuildsBlockingV2Stub>() {
-          @java.lang.Override
-          public BuildsBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new BuildsBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return BuildsBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -204,38 +191,6 @@ public final class BuildsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Builds.
-   *
-   * <pre>
-   * Cloud Run Build Control Plane API
-   * </pre>
-   */
-  public static final class BuildsBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<BuildsBlockingV2Stub> {
-    private BuildsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected BuildsBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new BuildsBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Submits a build in a given project.
-     * </pre>
-     */
-    public com.google.cloud.run.v2.SubmitBuildResponse submitBuild(
-        com.google.cloud.run.v2.SubmitBuildRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSubmitBuildMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Builds.
    *
    * <pre>
    * Cloud Run Build Control Plane API

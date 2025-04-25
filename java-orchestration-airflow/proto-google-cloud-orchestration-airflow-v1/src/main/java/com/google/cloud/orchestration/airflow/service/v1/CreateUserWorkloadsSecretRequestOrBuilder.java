@@ -39,7 +39,6 @@ public interface CreateUserWorkloadsSecretRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateUserWorkloadsSecretRequestOrBuilder
    * @return Whether the userWorkloadsSecret field is set.
    */
   boolean hasUserWorkloadsSecret();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateUserWorkloadsSecretRequestOrBuilder
    * @return The userWorkloadsSecret.
    */
   com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsSecret getUserWorkloadsSecret();
-
   /**
    *
    *

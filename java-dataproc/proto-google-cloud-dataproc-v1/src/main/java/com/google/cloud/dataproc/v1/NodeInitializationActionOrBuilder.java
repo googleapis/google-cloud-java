@@ -36,7 +36,6 @@ public interface NodeInitializationActionOrBuilder
    * @return The executableFile.
    */
   java.lang.String getExecutableFile();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface NodeInitializationActionOrBuilder
    * @return Whether the executionTimeout field is set.
    */
   boolean hasExecutionTimeout();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface NodeInitializationActionOrBuilder
    * @return The executionTimeout.
    */
   com.google.protobuf.Duration getExecutionTimeout();
-
   /**
    *
    *

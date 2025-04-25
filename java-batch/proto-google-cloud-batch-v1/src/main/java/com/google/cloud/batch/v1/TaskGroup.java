@@ -33,7 +33,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.TaskGroup)
     TaskGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaskGroup.newBuilder() to construct.
   private TaskGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEDULING_POLICY_UNSPECIFIED = 0;</code>
      */
     public static final int SCHEDULING_POLICY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -136,7 +134,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>AS_SOON_AS_POSSIBLE = 1;</code>
      */
     public static final int AS_SOON_AS_POSSIBLE_VALUE = 1;
-
     /**
      *
      *
@@ -238,7 +235,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -265,7 +261,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -295,7 +290,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1.TaskSpec taskSpec_;
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -329,7 +322,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1.TaskSpec getTaskSpec() {
     return taskSpec_ == null ? com.google.cloud.batch.v1.TaskSpec.getDefaultInstance() : taskSpec_;
   }
-
   /**
    *
    *
@@ -347,7 +339,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_COUNT_FIELD_NUMBER = 4;
   private long taskCount_ = 0L;
-
   /**
    *
    *
@@ -367,7 +358,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PARALLELISM_FIELD_NUMBER = 5;
   private long parallelism_ = 0L;
-
   /**
    *
    *
@@ -389,7 +379,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULING_POLICY_FIELD_NUMBER = 6;
   private int schedulingPolicy_ = 0;
-
   /**
    *
    *
@@ -406,7 +395,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   public int getSchedulingPolicyValue() {
     return schedulingPolicy_;
   }
-
   /**
    *
    *
@@ -432,7 +420,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.batch.v1.Environment> taskEnvironments_;
-
   /**
    *
    *
@@ -454,7 +441,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.batch.v1.Environment> getTaskEnvironmentsList() {
     return taskEnvironments_;
   }
-
   /**
    *
    *
@@ -477,7 +463,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       getTaskEnvironmentsOrBuilderList() {
     return taskEnvironments_;
   }
-
   /**
    *
    *
@@ -499,7 +484,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   public int getTaskEnvironmentsCount() {
     return taskEnvironments_.size();
   }
-
   /**
    *
    *
@@ -521,7 +505,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.batch.v1.Environment getTaskEnvironments(int index) {
     return taskEnvironments_.get(index);
   }
-
   /**
    *
    *
@@ -546,7 +529,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_COUNT_PER_NODE_FIELD_NUMBER = 10;
   private long taskCountPerNode_ = 0L;
-
   /**
    *
    *
@@ -567,7 +549,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_HOSTS_FILE_FIELD_NUMBER = 11;
   private boolean requireHostsFile_ = false;
-
   /**
    *
    *
@@ -588,7 +569,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERMISSIVE_SSH_FIELD_NUMBER = 12;
   private boolean permissiveSsh_ = false;
-
   /**
    *
    *
@@ -608,7 +588,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RUN_AS_NON_ROOT_FIELD_NUMBER = 14;
   private boolean runAsNonRoot_ = false;
-
   /**
    *
    *
@@ -878,7 +857,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1242,7 +1220,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1268,7 +1245,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1270,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1294,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1314,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1346,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.TaskSpec.Builder,
             com.google.cloud.batch.v1.TaskSpecOrBuilder>
         taskSpecBuilder_;
-
     /**
      *
      *
@@ -1390,7 +1362,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1413,7 +1384,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return taskSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1408,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1429,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1458,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1479,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1495,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaskSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1550,7 +1515,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
             : taskSpec_;
       }
     }
-
     /**
      *
      *
@@ -1580,7 +1544,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long taskCount_;
-
     /**
      *
      *
@@ -1597,7 +1560,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public long getTaskCount() {
       return taskCount_;
     }
-
     /**
      *
      *
@@ -1618,7 +1580,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1639,7 +1600,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long parallelism_;
-
     /**
      *
      *
@@ -1658,7 +1618,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public long getParallelism() {
       return parallelism_;
     }
-
     /**
      *
      *
@@ -1681,7 +1640,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1662,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int schedulingPolicy_ = 0;
-
     /**
      *
      *
@@ -1721,7 +1678,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public int getSchedulingPolicyValue() {
       return schedulingPolicy_;
     }
-
     /**
      *
      *
@@ -1741,7 +1697,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1717,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.batch.v1.TaskGroup.SchedulingPolicy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1785,7 +1739,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1799,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return taskEnvironmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1871,7 +1823,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return taskEnvironmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1896,7 +1847,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return taskEnvironmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1927,7 +1877,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1905,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1987,7 +1935,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2018,7 +1965,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1993,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2076,7 +2021,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2105,7 +2049,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2076,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2161,7 +2103,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2123,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Environment.Builder getTaskEnvironmentsBuilder(int index) {
       return getTaskEnvironmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2207,7 +2147,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return taskEnvironmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2233,7 +2172,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(taskEnvironments_);
       }
     }
-
     /**
      *
      *
@@ -2255,7 +2193,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       return getTaskEnvironmentsFieldBuilder()
           .addBuilder(com.google.cloud.batch.v1.Environment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2277,7 +2214,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       return getTaskEnvironmentsFieldBuilder()
           .addBuilder(index, com.google.cloud.batch.v1.Environment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2321,7 +2257,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long taskCountPerNode_;
-
     /**
      *
      *
@@ -2339,7 +2274,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public long getTaskCountPerNode() {
       return taskCountPerNode_;
     }
-
     /**
      *
      *
@@ -2361,7 +2295,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2383,7 +2316,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requireHostsFile_;
-
     /**
      *
      *
@@ -2401,7 +2333,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireHostsFile() {
       return requireHostsFile_;
     }
-
     /**
      *
      *
@@ -2423,7 +2354,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2445,7 +2375,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean permissiveSsh_;
-
     /**
      *
      *
@@ -2462,7 +2391,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean getPermissiveSsh() {
       return permissiveSsh_;
     }
-
     /**
      *
      *
@@ -2483,7 +2411,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2504,7 +2431,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean runAsNonRoot_;
-
     /**
      *
      *
@@ -2524,7 +2450,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean getRunAsNonRoot() {
       return runAsNonRoot_;
     }
-
     /**
      *
      *
@@ -2548,7 +2473,6 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface InventoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface InventoryOrBuilder
    * @return Whether the osInfo field is set.
    */
   boolean hasOsInfo();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface InventoryOrBuilder
    * @return The osInfo.
    */
   com.google.cloud.osconfig.v1alpha.Inventory.OsInfo getOsInfo();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface InventoryOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -130,11 +126,9 @@ public interface InventoryOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> getItems();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface InventoryOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.osconfig.v1alpha.Inventory.Item> getItemsMap();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface InventoryOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.osconfig.v1alpha.Inventory.Item defaultValue);
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface InventoryOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public interface InventoryOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

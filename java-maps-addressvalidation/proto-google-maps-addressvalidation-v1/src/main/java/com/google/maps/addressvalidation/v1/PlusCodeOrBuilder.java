@@ -37,7 +37,6 @@ public interface PlusCodeOrBuilder
    * @return The globalCode.
    */
   java.lang.String getGlobalCode();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PlusCodeOrBuilder
    * @return The compoundCode.
    */
   java.lang.String getCompoundCode();
-
   /**
    *
    *

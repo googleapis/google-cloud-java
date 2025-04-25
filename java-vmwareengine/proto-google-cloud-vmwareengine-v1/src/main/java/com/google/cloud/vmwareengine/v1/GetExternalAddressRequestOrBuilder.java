@@ -42,7 +42,6 @@ public interface GetExternalAddressRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface SourceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface SourceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface SourceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

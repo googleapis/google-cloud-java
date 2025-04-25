@@ -75,7 +75,6 @@ public enum ValidationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VALIDATION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int VALIDATION_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum ValidationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VALID = 1;</code>
    */
   public static final int VALID_VALUE = 1;
-
   /**
    *
    *

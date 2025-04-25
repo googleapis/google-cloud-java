@@ -33,7 +33,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.UpdateProjectSettingsRequest)
     UpdateProjectSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateProjectSettingsRequest.newBuilder() to construct.
   private UpdateProjectSettingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int PROJECT_SETTINGS_FIELD_NUMBER = 2;
   private com.google.devtools.artifactregistry.v1.ProjectSettings projectSettings_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
   public boolean hasProjectSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
         ? com.google.devtools.artifactregistry.v1.ProjectSettings.getDefaultInstance()
         : projectSettings_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -346,7 +339,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +569,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
             com.google.devtools.artifactregistry.v1.ProjectSettings.Builder,
             com.google.devtools.artifactregistry.v1.ProjectSettingsOrBuilder>
         projectSettingsBuilder_;
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
     public boolean hasProjectSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
         return projectSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +646,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return getProjectSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -744,7 +728,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
             : projectSettings_;
       }
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -792,7 +774,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -813,7 +794,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +862,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +881,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +895,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -938,7 +913,6 @@ public final class UpdateProjectSettingsRequest extends com.google.protobuf.Gene
             : updateMask_;
       }
     }
-
     /**
      *
      *

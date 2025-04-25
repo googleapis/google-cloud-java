@@ -34,7 +34,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -45,11 +44,9 @@ public interface BackendServiceGroupHealthOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -60,7 +57,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * <code>map&lt;string, string&gt; annotations = 112032548;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -75,7 +71,6 @@ public interface BackendServiceGroupHealthOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -97,7 +92,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthStatus> getHealthStatusList();
-
   /**
    *
    *
@@ -108,7 +102,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   com.google.cloud.compute.v1.HealthStatus getHealthStatus(int index);
-
   /**
    *
    *
@@ -119,7 +112,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
    */
   int getHealthStatusCount();
-
   /**
    *
    *
@@ -131,7 +123,6 @@ public interface BackendServiceGroupHealthOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthStatusOrBuilder>
       getHealthStatusOrBuilderList();
-
   /**
    *
    *
@@ -155,7 +146,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -168,7 +158,6 @@ public interface BackendServiceGroupHealthOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

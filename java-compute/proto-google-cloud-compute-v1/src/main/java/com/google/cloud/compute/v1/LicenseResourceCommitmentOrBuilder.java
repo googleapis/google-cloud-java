@@ -36,7 +36,6 @@ public interface LicenseResourceCommitmentOrBuilder
    * @return Whether the amount field is set.
    */
   boolean hasAmount();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LicenseResourceCommitmentOrBuilder
    * @return Whether the coresPerLicense field is set.
    */
   boolean hasCoresPerLicense();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface LicenseResourceCommitmentOrBuilder
    * @return The coresPerLicense.
    */
   java.lang.String getCoresPerLicense();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface LicenseResourceCommitmentOrBuilder
    * @return Whether the license field is set.
    */
   boolean hasLicense();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface LicenseResourceCommitmentOrBuilder
    * @return The license.
    */
   java.lang.String getLicense();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface SpaceNotificationSettingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SpaceNotificationSettingOrBuilder
    * @return Whether the notificationSetting field is set.
    */
   boolean hasNotificationSetting();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface SpaceNotificationSettingOrBuilder
    * @return The enum numeric value on the wire for notificationSetting.
    */
   int getNotificationSettingValue();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface SpaceNotificationSettingOrBuilder
    * @return Whether the muteSetting field is set.
    */
   boolean hasMuteSetting();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SpaceNotificationSettingOrBuilder
    * @return The enum numeric value on the wire for muteSetting.
    */
   int getMuteSettingValue();
-
   /**
    *
    *

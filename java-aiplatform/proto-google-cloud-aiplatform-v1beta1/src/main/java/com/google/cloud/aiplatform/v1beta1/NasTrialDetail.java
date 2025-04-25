@@ -34,7 +34,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NasTrialDetail)
     NasTrialDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NasTrialDetail.newBuilder() to construct.
   private NasTrialDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parameters_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEARCH_TRIAL_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.NasTrial searchTrial_;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSearchTrial() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.NasTrial.getDefaultInstance()
         : searchTrial_;
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAIN_TRIAL_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1beta1.NasTrial trainTrial_;
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTrainTrial() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.NasTrial.getDefaultInstance()
         : trainTrial_;
   }
-
   /**
    *
    *
@@ -487,7 +476,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -737,7 +725,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +831,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object parameters_ = "";
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +896,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +913,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.NasTrial.Builder,
             com.google.cloud.aiplatform.v1beta1.NasTrialOrBuilder>
         searchTrialBuilder_;
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSearchTrial() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         return searchTrialBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1023,7 +998,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1064,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1078,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSearchTrialFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1126,7 +1096,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
             : searchTrial_;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1128,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.NasTrial.Builder,
             com.google.cloud.aiplatform.v1beta1.NasTrialOrBuilder>
         trainTrialBuilder_;
-
     /**
      *
      *
@@ -1178,7 +1146,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTrainTrial() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1203,7 +1170,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
         return trainTrialBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1196,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1220,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1251,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1274,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1292,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTrainTrialFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1353,7 +1314,6 @@ public final class NasTrialDetail extends com.google.protobuf.GeneratedMessageV3
             : trainTrial_;
       }
     }
-
     /**
      *
      *

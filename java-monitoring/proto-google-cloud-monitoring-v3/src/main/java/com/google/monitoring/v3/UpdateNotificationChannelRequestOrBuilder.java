@@ -37,7 +37,6 @@ public interface UpdateNotificationChannelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateNotificationChannelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateNotificationChannelRequestOrBuilder
    * @return Whether the notificationChannel field is set.
    */
   boolean hasNotificationChannel();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface UpdateNotificationChannelRequestOrBuilder
    * @return The notificationChannel.
    */
   com.google.monitoring.v3.NotificationChannel getNotificationChannel();
-
   /**
    *
    *

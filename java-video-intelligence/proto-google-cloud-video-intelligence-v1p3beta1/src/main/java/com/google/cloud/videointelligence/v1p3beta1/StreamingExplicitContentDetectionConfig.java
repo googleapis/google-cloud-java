@@ -35,7 +35,6 @@ public final class StreamingExplicitContentDetectionConfig
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingExplicitContentDetectionConfig)
     StreamingExplicitContentDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingExplicitContentDetectionConfig.newBuilder() to construct.
   private StreamingExplicitContentDetectionConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -227,7 +226,6 @@ public final class StreamingExplicitContentDetectionConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

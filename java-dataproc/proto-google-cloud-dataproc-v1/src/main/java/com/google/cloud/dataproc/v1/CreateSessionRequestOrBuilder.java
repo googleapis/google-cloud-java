@@ -38,7 +38,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CreateSessionRequestOrBuilder
    * @return Whether the session field is set.
    */
   boolean hasSession();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The session.
    */
   com.google.cloud.dataproc.v1.Session getSession();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The sessionId.
    */
   java.lang.String getSessionId();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface CreateSessionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

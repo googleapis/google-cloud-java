@@ -38,7 +38,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.LargeCustomDictionaryConfig)
     LargeCustomDictionaryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LargeCustomDictionaryConfig.newBuilder() to construct.
   private LargeCustomDictionaryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,7 +118,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
 
   public static final int OUTPUT_PATH_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CloudStoragePath outputPath_;
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
   public boolean hasOutputPath() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         ? com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()
         : outputPath_;
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
   }
 
   public static final int CLOUD_STORAGE_FILE_SET_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
   public boolean hasCloudStorageFileSet() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
   }
 
   public static final int BIG_QUERY_FIELD_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
   public boolean hasBigQueryField() {
     return sourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     }
     return com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -492,7 +481,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -764,7 +752,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.CloudStoragePath.Builder,
             com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
         outputPathBuilder_;
-
     /**
      *
      *
@@ -782,7 +769,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     public boolean hasOutputPath() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -806,7 +792,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         return outputPathBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       onChanged();
       return getOutputPathFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
             : outputPath_;
       }
     }
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.CloudStorageFileSet.Builder,
             com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder>
         cloudStorageFileSetBuilder_;
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     public boolean hasCloudStorageFileSet() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1027,7 +1004,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1026,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1046,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1078,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1115,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.CloudStorageFileSet.Builder getCloudStorageFileSetBuilder() {
       return getCloudStorageFileSetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1165,7 +1136,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.CloudStorageFileSet.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
             com.google.privacy.dlp.v2.BigQueryField.Builder,
             com.google.privacy.dlp.v2.BigQueryFieldOrBuilder>
         bigQueryFieldBuilder_;
-
     /**
      *
      *
@@ -1220,7 +1189,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     public boolean hasBigQueryField() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1246,7 +1214,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1269,7 +1236,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1256,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1288,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1313,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1325,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
     public com.google.privacy.dlp.v2.BigQueryField.Builder getBigQueryFieldBuilder() {
       return getBigQueryFieldFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1383,7 +1345,6 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
         return com.google.privacy.dlp.v2.BigQueryField.getDefaultInstance();
       }
     }
-
     /**
      *
      *

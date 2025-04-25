@@ -33,7 +33,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ProgressTimeseries)
     ProgressTimeseriesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProgressTimeseries.newBuilder() to construct.
   private ProgressTimeseries(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      * @return Whether the time field is set.
      */
     boolean hasTime();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      * @return The time.
      */
     com.google.protobuf.Timestamp getTime();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
      */
     double getValue();
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ProgressTimeseries.Point)
       PointOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Point.newBuilder() to construct.
     private Point(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,7 +161,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp time_;
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     public boolean hasTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -198,7 +191,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Timestamp getTime() {
       return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
     }
-
     /**
      *
      *
@@ -215,7 +207,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
 
     public static final int VALUE_FIELD_NUMBER = 2;
     private double value_ = 0D;
-
     /**
      *
      *
@@ -411,7 +402,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           timeBuilder_;
-
       /**
        *
        *
@@ -646,7 +635,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       public boolean hasTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -665,7 +653,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
           return timeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -688,7 +675,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -708,7 +694,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -736,7 +721,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -756,7 +740,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -771,7 +754,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -788,7 +770,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
           return time_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : time_;
         }
       }
-
       /**
        *
        *
@@ -816,7 +797,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
 
       private double value_;
-
       /**
        *
        *
@@ -832,7 +812,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       public double getValue() {
         return value_;
       }
-
       /**
        *
        *
@@ -852,7 +831,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -937,7 +915,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
 
   public static final int CURRENT_PROGRESS_FIELD_NUMBER = 1;
   private double currentProgress_ = 0D;
-
   /**
    *
    *
@@ -958,7 +935,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.ProgressTimeseries.Point> dataPoints_;
-
   /**
    *
    *
@@ -974,7 +950,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.dataflow.v1beta3.ProgressTimeseries.Point> getDataPointsList() {
     return dataPoints_;
   }
-
   /**
    *
    *
@@ -991,7 +966,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       getDataPointsOrBuilderList() {
     return dataPoints_;
   }
-
   /**
    *
    *
@@ -1007,7 +981,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
   public int getDataPointsCount() {
     return dataPoints_.size();
   }
-
   /**
    *
    *
@@ -1023,7 +996,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
   public com.google.dataflow.v1beta3.ProgressTimeseries.Point getDataPoints(int index) {
     return dataPoints_.get(index);
   }
-
   /**
    *
    *
@@ -1215,7 +1187,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1458,7 +1429,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private double currentProgress_;
-
     /**
      *
      *
@@ -1474,7 +1444,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
     public double getCurrentProgress() {
       return currentProgress_;
     }
-
     /**
      *
      *
@@ -1494,7 +1463,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1518,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         return dataPointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1536,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         return dataPointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1588,7 +1554,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         return dataPointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1614,7 +1579,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1637,7 +1601,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1625,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1688,7 +1650,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1672,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1734,7 +1694,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1716,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1779,7 +1737,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1758,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1817,7 +1773,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         int index) {
       return getDataPointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1837,7 +1792,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         return dataPointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1857,7 +1811,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(dataPoints_);
       }
     }
-
     /**
      *
      *
@@ -1873,7 +1826,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
       return getDataPointsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.ProgressTimeseries.Point.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1891,7 +1843,6 @@ public final class ProgressTimeseries extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.dataflow.v1beta3.ProgressTimeseries.Point.getDefaultInstance());
     }
-
     /**
      *
      *

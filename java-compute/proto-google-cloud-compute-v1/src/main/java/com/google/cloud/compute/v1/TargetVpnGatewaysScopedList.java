@@ -32,7 +32,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetVpnGatewaysScopedList)
     TargetVpnGatewaysScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetVpnGatewaysScopedList.newBuilder() to construct.
   private TargetVpnGatewaysScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.TargetVpnGateway> targetVpnGateways_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.compute.v1.TargetVpnGateway> getTargetVpnGatewaysList() {
     return targetVpnGateways_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       getTargetVpnGatewaysOrBuilderList() {
     return targetVpnGateways_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
   public int getTargetVpnGatewaysCount() {
     return targetVpnGateways_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.TargetVpnGateway getTargetVpnGateways(int index) {
     return targetVpnGateways_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -373,7 +364,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +657,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         return targetVpnGatewaysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         return targetVpnGatewaysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         return targetVpnGatewaysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +846,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         int index) {
       return getTargetVpnGatewaysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         return targetVpnGatewaysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -960,7 +936,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(targetVpnGateways_);
       }
     }
-
     /**
      *
      *
@@ -975,7 +950,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       return getTargetVpnGatewaysFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.TargetVpnGateway.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       return getTargetVpnGatewaysFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.TargetVpnGateway.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1033,7 +1006,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1069,7 +1040,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1081,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1108,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1127,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1141,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1194,7 +1159,6 @@ public final class TargetVpnGatewaysScopedList extends com.google.protobuf.Gener
             : warning_;
       }
     }
-
     /**
      *
      *

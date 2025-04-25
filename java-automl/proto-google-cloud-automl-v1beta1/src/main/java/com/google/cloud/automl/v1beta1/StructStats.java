@@ -33,7 +33,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.StructStats)
     StructStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StructStats.newBuilder() to construct.
   private StructStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -105,7 +104,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
   public int getFieldStatsCount() {
     return internalGetFieldStats().getMap().size();
   }
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetFieldStats().getMap().containsKey(key);
   }
-
   /** Use {@link #getFieldStatsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -131,7 +128,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       getFieldStats() {
     return getFieldStatsMap();
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       getFieldStatsMap() {
     return internalGetFieldStats().getMap();
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
         internalGetFieldStats().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -362,7 +356,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -593,8 +586,7 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FieldStatsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FieldStatsConverter fieldStatsConverter = new FieldStatsConverter();
 
@@ -634,7 +626,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
     public int getFieldStatsCount() {
       return internalGetFieldStats().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetFieldStats().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getFieldStatsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -660,7 +650,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
         getFieldStats() {
       return getFieldStatsMap();
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
         getFieldStatsMap() {
       return internalGetFieldStats().getImmutableMap();
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableFieldStats().ensureBuilderMap();
       return map.containsKey(key) ? fieldStatsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFieldStats().clear();
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFieldStats().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.DataStats>
@@ -754,7 +739,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableFieldStats().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class StructStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

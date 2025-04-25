@@ -47,7 +47,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return Whether the resourceSelector field is set.
    */
   boolean hasResourceSelector();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return The resourceSelector.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector getResourceSelector();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return Whether the identitySelector field is set.
    */
   boolean hasIdentitySelector();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return The identitySelector.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector getIdentitySelector();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return Whether the accessSelector field is set.
    */
   boolean hasAccessSelector();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return The accessSelector.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector getAccessSelector();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return Whether the options field is set.
    */
   boolean hasOptions();
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return The options.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options getOptions();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return Whether the conditionContext field is set.
    */
   boolean hasConditionContext();
-
   /**
    *
    *
@@ -276,7 +266,6 @@ public interface IamPolicyAnalysisQueryOrBuilder
    * @return The conditionContext.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext getConditionContext();
-
   /**
    *
    *

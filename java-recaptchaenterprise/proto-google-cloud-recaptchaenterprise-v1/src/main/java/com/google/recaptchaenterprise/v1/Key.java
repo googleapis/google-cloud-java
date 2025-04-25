@@ -34,7 +34,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.Key)
     KeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Key.newBuilder() to construct.
   private Key(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     private PlatformSettingsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -139,7 +137,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +190,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -218,7 +213,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -244,7 +238,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEB_SETTINGS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWebSettings() {
     return platformSettingsCase_ == 3;
   }
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.WebKeySettings.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -298,7 +289,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANDROID_SETTINGS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -314,7 +304,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAndroidSettings() {
     return platformSettingsCase_ == 4;
   }
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.AndroidKeySettings.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -353,7 +341,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IOS_SETTINGS_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -369,7 +356,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIosSettings() {
     return platformSettingsCase_ == 5;
   }
-
   /**
    *
    *
@@ -388,7 +374,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.IOSKeySettings.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -407,7 +392,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPRESS_SETTINGS_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -423,7 +407,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpressSettings() {
     return platformSettingsCase_ == 11;
   }
-
   /**
    *
    *
@@ -442,7 +425,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -487,7 +469,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -505,14 +486,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -527,7 +506,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -549,7 +527,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -574,7 +551,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -591,7 +567,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -608,7 +583,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -626,7 +600,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TESTING_OPTIONS_FIELD_NUMBER = 9;
   private com.google.recaptchaenterprise.v1.TestingOptions testingOptions_;
-
   /**
    *
    *
@@ -644,7 +617,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTestingOptions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -664,7 +636,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.TestingOptions.getDefaultInstance()
         : testingOptions_;
   }
-
   /**
    *
    *
@@ -685,7 +656,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WAF_SETTINGS_FIELD_NUMBER = 10;
   private com.google.recaptchaenterprise.v1.WafSettings wafSettings_;
-
   /**
    *
    *
@@ -703,7 +673,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWafSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -723,7 +692,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.WafSettings.getDefaultInstance()
         : wafSettings_;
   }
-
   /**
    *
    *
@@ -1038,7 +1006,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1444,7 +1411,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1468,7 +1434,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1457,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1515,7 +1479,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1497,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1522,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1583,7 +1544,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1606,7 +1566,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1628,7 +1587,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1604,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1632,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.WebKeySettings.Builder,
             com.google.recaptchaenterprise.v1.WebKeySettingsOrBuilder>
         webSettingsBuilder_;
-
     /**
      *
      *
@@ -1691,7 +1647,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWebSettings() {
       return platformSettingsCase_ == 3;
     }
-
     /**
      *
      *
@@ -1717,7 +1672,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.WebKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1740,7 +1694,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1714,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1795,7 +1747,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1821,7 +1772,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1834,7 +1784,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.WebKeySettings.Builder getWebSettingsBuilder() {
       return getWebSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1855,7 +1804,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.WebKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1894,7 +1842,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.AndroidKeySettings.Builder,
             com.google.recaptchaenterprise.v1.AndroidKeySettingsOrBuilder>
         androidSettingsBuilder_;
-
     /**
      *
      *
@@ -1910,7 +1857,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAndroidSettings() {
       return platformSettingsCase_ == 4;
     }
-
     /**
      *
      *
@@ -1936,7 +1882,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.AndroidKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1959,7 +1904,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1980,7 +1924,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2015,7 +1958,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2041,7 +1983,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2055,7 +1996,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         getAndroidSettingsBuilder() {
       return getAndroidSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2077,7 +2017,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.AndroidKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2117,7 +2056,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.IOSKeySettings.Builder,
             com.google.recaptchaenterprise.v1.IOSKeySettingsOrBuilder>
         iosSettingsBuilder_;
-
     /**
      *
      *
@@ -2133,7 +2071,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIosSettings() {
       return platformSettingsCase_ == 5;
     }
-
     /**
      *
      *
@@ -2159,7 +2096,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.IOSKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2182,7 +2118,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2138,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2237,7 +2171,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2263,7 +2196,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2276,7 +2208,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public com.google.recaptchaenterprise.v1.IOSKeySettings.Builder getIosSettingsBuilder() {
       return getIosSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2297,7 +2228,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.IOSKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2336,7 +2266,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.ExpressKeySettings.Builder,
             com.google.recaptchaenterprise.v1.ExpressKeySettingsOrBuilder>
         expressSettingsBuilder_;
-
     /**
      *
      *
@@ -2352,7 +2281,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpressSettings() {
       return platformSettingsCase_ == 11;
     }
-
     /**
      *
      *
@@ -2378,7 +2306,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2401,7 +2328,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2422,7 +2348,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2457,7 +2382,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       platformSettingsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -2483,7 +2407,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2497,7 +2420,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         getExpressSettingsBuilder() {
       return getExpressSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2519,7 +2441,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2579,7 +2500,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2597,14 +2517,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2619,7 +2537,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2641,7 +2558,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2669,7 +2585,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2687,14 +2602,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2716,7 +2629,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -2739,7 +2651,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2756,7 +2667,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2779,7 +2689,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2804,7 +2713,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2826,7 +2734,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2856,7 +2763,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2878,7 +2784,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2895,7 +2800,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2916,7 +2820,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2951,7 +2854,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.TestingOptions.Builder,
             com.google.recaptchaenterprise.v1.TestingOptionsOrBuilder>
         testingOptionsBuilder_;
-
     /**
      *
      *
@@ -2968,7 +2870,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTestingOptions() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2991,7 +2892,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return testingOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3016,7 +2916,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3039,7 +2938,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3070,7 +2968,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3092,7 +2989,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3109,7 +3005,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTestingOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3130,7 +3025,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             : testingOptions_;
       }
     }
-
     /**
      *
      *
@@ -3165,7 +3059,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.WafSettings.Builder,
             com.google.recaptchaenterprise.v1.WafSettingsOrBuilder>
         wafSettingsBuilder_;
-
     /**
      *
      *
@@ -3182,7 +3075,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWafSettings() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3205,7 +3097,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
         return wafSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3230,7 +3121,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3253,7 +3143,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3283,7 +3172,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3305,7 +3193,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3322,7 +3209,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWafSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3343,7 +3229,6 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
             : wafSettings_;
       }
     }
-
     /**
      *
      *

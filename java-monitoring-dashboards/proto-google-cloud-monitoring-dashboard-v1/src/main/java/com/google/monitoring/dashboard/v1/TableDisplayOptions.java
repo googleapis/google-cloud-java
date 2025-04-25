@@ -33,7 +33,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.TableDisplayOptions)
     TableDisplayOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TableDisplayOptions.newBuilder() to construct.
   private TableDisplayOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList shownColumns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getShownColumnsList() {
     return shownColumns_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   public int getShownColumnsCount() {
     return shownColumns_.size();
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   public java.lang.String getShownColumns(int index) {
     return shownColumns_.get(index);
   }
-
   /**
    *
    *
@@ -323,7 +318,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -523,7 +517,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       shownColumns_.makeImmutable();
       return shownColumns_;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public int getShownColumnsCount() {
       return shownColumns_.size();
     }
-
     /**
      *
      *
@@ -588,7 +579,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public java.lang.String getShownColumns(int index) {
       return shownColumns_.get(index);
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getShownColumnsBytes(int index) {
       return shownColumns_.getByteString(index);
     }
-
     /**
      *
      *
@@ -640,7 +629,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +706,6 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

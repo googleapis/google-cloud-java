@@ -36,7 +36,6 @@ public interface DetailsOrBuilder
    * @return Whether the installation field is set.
    */
   boolean hasInstallation();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DetailsOrBuilder
    * @return The installation.
    */
   io.grafeas.v1beta1.pkg.Installation getInstallation();
-
   /**
    *
    *

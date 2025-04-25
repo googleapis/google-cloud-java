@@ -33,7 +33,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.VertexDatasetDiscoveryTarget)
     VertexDatasetDiscoveryTargetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VertexDatasetDiscoveryTarget.newBuilder() to construct.
   private VertexDatasetDiscoveryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     private CadenceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
 
   public static final int FILTER_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DiscoveryVertexDatasetFilter filter_;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         ? com.google.privacy.dlp.v2.DiscoveryVertexDatasetFilter.getDefaultInstance()
         : filter_;
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
 
   public static final int CONDITIONS_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryVertexDatasetConditions conditions_;
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
   public boolean hasConditions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         ? com.google.privacy.dlp.v2.DiscoveryVertexDatasetConditions.getDefaultInstance()
         : conditions_;
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
   }
 
   public static final int GENERATION_CADENCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
   public boolean hasGenerationCadence() {
     return cadenceCase_ == 3;
   }
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.DiscoveryVertexDatasetGenerationCadence.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
   }
 
   public static final int DISABLED_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -313,7 +301,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
   public boolean hasDisabled() {
     return cadenceCase_ == 4;
   }
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -569,7 +555,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -855,7 +840,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.DiscoveryVertexDatasetFilter.Builder,
             com.google.privacy.dlp.v2.DiscoveryVertexDatasetFilterOrBuilder>
         filterBuilder_;
-
     /**
      *
      *
@@ -873,7 +857,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -897,7 +880,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         return filterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -923,7 +905,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +928,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +959,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +981,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +998,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1042,7 +1019,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             : filter_;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1054,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.DiscoveryVertexDatasetConditions.Builder,
             com.google.privacy.dlp.v2.DiscoveryVertexDatasetConditionsOrBuilder>
         conditionsBuilder_;
-
     /**
      *
      *
@@ -1094,7 +1069,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     public boolean hasConditions() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1116,7 +1090,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         return conditionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1113,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1134,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1165,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1201,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       onChanged();
       return getConditionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1253,7 +1221,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             : conditions_;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1253,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.DiscoveryVertexDatasetGenerationCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryVertexDatasetGenerationCadenceOrBuilder>
         generationCadenceBuilder_;
-
     /**
      *
      *
@@ -1305,7 +1271,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     public boolean hasGenerationCadence() {
       return cadenceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1328,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       cadenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1351,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       cadenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1389,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       cadenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1417,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1473,7 +1433,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         getGenerationCadenceBuilder() {
       return getGenerationCadenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1499,7 +1458,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1543,7 +1501,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.Disabled.Builder,
             com.google.privacy.dlp.v2.DisabledOrBuilder>
         disabledBuilder_;
-
     /**
      *
      *
@@ -1559,7 +1516,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     public boolean hasDisabled() {
       return cadenceCase_ == 4;
     }
-
     /**
      *
      *
@@ -1585,7 +1541,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1608,7 +1563,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       cadenceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1628,7 +1582,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       cadenceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1614,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       cadenceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1639,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1651,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.Disabled.Builder getDisabledBuilder() {
       return getDisabledFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1721,7 +1671,6 @@ public final class VertexDatasetDiscoveryTarget extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.Disabled.getDefaultInstance();
       }
     }
-
     /**
      *
      *

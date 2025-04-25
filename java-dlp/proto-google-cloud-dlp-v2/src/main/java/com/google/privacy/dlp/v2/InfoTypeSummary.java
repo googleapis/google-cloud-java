@@ -33,7 +33,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InfoTypeSummary)
     InfoTypeSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InfoTypeSummary.newBuilder() to construct.
   private InfoTypeSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int INFO_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InfoType infoType_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
   public boolean hasInfoType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
 
   public static final int ESTIMATED_PREVALENCE_FIELD_NUMBER = 2;
   private int estimatedPrevalence_ = 0;
-
   /**
    *
    *
@@ -307,7 +302,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -523,7 +517,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
-
     /**
      *
      *
@@ -538,7 +531,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     public boolean hasInfoType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -559,7 +551,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
         return infoTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +619,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +638,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +652,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -684,7 +670,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
             : infoType_;
       }
     }
-
     /**
      *
      *
@@ -712,7 +697,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     }
 
     private int estimatedPrevalence_;
-
     /**
      *
      *
@@ -731,7 +715,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
     public int getEstimatedPrevalence() {
       return estimatedPrevalence_;
     }
-
     /**
      *
      *
@@ -754,7 +737,6 @@ public final class InfoTypeSummary extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

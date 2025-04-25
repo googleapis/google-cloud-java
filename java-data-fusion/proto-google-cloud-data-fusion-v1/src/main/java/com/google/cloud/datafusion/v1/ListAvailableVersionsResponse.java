@@ -33,7 +33,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1.ListAvailableVersionsResponse)
     ListAvailableVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAvailableVersionsResponse.newBuilder() to construct.
   private ListAvailableVersionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datafusion.v1.Version> availableVersions_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.datafusion.v1.Version> getAvailableVersionsList() {
     return availableVersions_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       getAvailableVersionsOrBuilderList() {
     return availableVersions_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
   public int getAvailableVersionsCount() {
     return availableVersions_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
   public com.google.cloud.datafusion.v1.Version getAvailableVersions(int index) {
     return availableVersions_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return availableVersionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return availableVersionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return availableVersionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +868,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
     public com.google.cloud.datafusion.v1.Version.Builder getAvailableVersionsBuilder(int index) {
       return getAvailableVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return availableVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -925,7 +902,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(availableVersions_);
       }
     }
-
     /**
      *
      *
@@ -939,7 +915,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       return getAvailableVersionsFieldBuilder()
           .addBuilder(com.google.cloud.datafusion.v1.Version.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -953,7 +928,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       return getAvailableVersionsFieldBuilder()
           .addBuilder(index, com.google.cloud.datafusion.v1.Version.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -989,7 +963,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1013,7 +986,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1031,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1049,6 @@ public final class ListAvailableVersionsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

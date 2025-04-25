@@ -34,7 +34,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPoliciesListPreconfiguredExpressionSetsResponse)
     SecurityPoliciesListPreconfiguredExpressionSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPoliciesListPreconfiguredExpressionSetsResponse.newBuilder() to construct.
   private SecurityPoliciesListPreconfiguredExpressionSetsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
   private int bitField0_;
   public static final int PRECONFIGURED_EXPRESSION_SETS_FIELD_NUMBER = 536200826;
   private com.google.cloud.compute.v1.SecurityPoliciesWafConfig preconfiguredExpressionSets_;
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -81,7 +79,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
   public boolean hasPreconfiguredExpressionSets() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -95,7 +92,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
         ? com.google.cloud.compute.v1.SecurityPoliciesWafConfig.getDefaultInstance()
         : preconfiguredExpressionSets_;
   }
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -286,7 +282,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +506,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
             com.google.cloud.compute.v1.SecurityPoliciesWafConfig.Builder,
             com.google.cloud.compute.v1.SecurityPoliciesWafConfigOrBuilder>
         preconfiguredExpressionSetsBuilder_;
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -522,7 +516,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
     public boolean hasPreconfiguredExpressionSets() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -539,7 +532,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
         return preconfiguredExpressionSetsBuilder_.getMessage();
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -559,7 +551,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -576,7 +567,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -602,7 +592,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       }
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -618,7 +607,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -630,7 +618,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
       onChanged();
       return getPreconfiguredExpressionSetsFieldBuilder().getBuilder();
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;
@@ -646,7 +633,6 @@ public final class SecurityPoliciesListPreconfiguredExpressionSetsResponse
             : preconfiguredExpressionSets_;
       }
     }
-
     /**
      * <code>
      * optional .google.cloud.compute.v1.SecurityPoliciesWafConfig preconfigured_expression_sets = 536200826;

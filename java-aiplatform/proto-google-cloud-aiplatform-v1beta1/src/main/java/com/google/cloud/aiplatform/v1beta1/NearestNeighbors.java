@@ -33,7 +33,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NearestNeighbors)
     NearestNeighborsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NearestNeighbors.newBuilder() to construct.
   private NearestNeighbors(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
      * @return The entityId.
      */
     java.lang.String getEntityId();
-
     /**
      *
      *
@@ -124,7 +122,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
      * @return Whether the entityKeyValues field is set.
      */
     boolean hasEntityKeyValues();
-
     /**
      *
      *
@@ -141,7 +138,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
      * @return The entityKeyValues.
      */
     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse getEntityKeyValues();
-
     /**
      *
      *
@@ -158,7 +154,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponseOrBuilder
         getEntityKeyValuesOrBuilder();
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor)
       NeighborOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Neighbor.newBuilder() to construct.
     private Neighbor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -209,7 +203,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entityId_ = "";
-
     /**
      *
      *
@@ -233,7 +226,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
-
     /**
      *
      *
@@ -260,7 +252,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
 
     public static final int DISTANCE_FIELD_NUMBER = 2;
     private double distance_ = 0D;
-
     /**
      *
      *
@@ -279,7 +270,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
 
     public static final int ENTITY_KEY_VALUES_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse entityKeyValues_;
-
     /**
      *
      *
@@ -299,7 +289,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
     public boolean hasEntityKeyValues() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -321,7 +310,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.getDefaultInstance()
           : entityKeyValues_;
     }
-
     /**
      *
      *
@@ -531,7 +519,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object entityId_ = "";
-
       /**
        *
        *
@@ -790,7 +776,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -813,7 +798,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -835,7 +819,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -853,7 +836,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -878,7 +860,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
 
       private double distance_;
-
       /**
        *
        *
@@ -894,7 +875,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       public double getDistance() {
         return distance_;
       }
-
       /**
        *
        *
@@ -914,7 +894,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -939,7 +918,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
               com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.Builder,
               com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponseOrBuilder>
           entityKeyValuesBuilder_;
-
       /**
        *
        *
@@ -958,7 +936,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       public boolean hasEntityKeyValues() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -983,7 +960,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
           return entityKeyValuesBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1011,7 +987,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1036,7 +1011,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1071,7 +1045,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -1095,7 +1068,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1115,7 +1087,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getEntityKeyValuesFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1139,7 +1110,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
               : entityKeyValues_;
         }
       }
-
       /**
        *
        *
@@ -1241,7 +1211,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor> neighbors_;
-
   /**
    *
    *
@@ -1256,7 +1225,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       getNeighborsList() {
     return neighbors_;
   }
-
   /**
    *
    *
@@ -1272,7 +1240,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       getNeighborsOrBuilderList() {
     return neighbors_;
   }
-
   /**
    *
    *
@@ -1286,7 +1253,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
   public int getNeighborsCount() {
     return neighbors_.size();
   }
-
   /**
    *
    *
@@ -1300,7 +1266,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor getNeighbors(int index) {
     return neighbors_.get(index);
   }
-
   /**
    *
    *
@@ -1477,7 +1442,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1744,7 +1708,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         return neighborsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1762,7 +1725,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         return neighborsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1780,7 +1742,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         return neighborsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1805,7 +1766,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1828,7 +1788,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1853,7 +1812,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1836,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1900,7 +1857,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1923,7 +1879,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1946,7 +1901,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1967,7 +1921,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1988,7 +1941,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1955,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         getNeighborsBuilder(int index) {
       return getNeighborsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2022,7 +1973,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         return neighborsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2042,7 +1992,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(neighbors_);
       }
     }
-
     /**
      *
      *
@@ -2059,7 +2008,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2077,7 +2025,6 @@ public final class NearestNeighbors extends com.google.protobuf.GeneratedMessage
               index,
               com.google.cloud.aiplatform.v1beta1.NearestNeighbors.Neighbor.getDefaultInstance());
     }
-
     /**
      *
      *

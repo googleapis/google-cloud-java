@@ -36,7 +36,6 @@ public interface GetIamPolicyInstantSnapshotRequestOrBuilder
    * @return Whether the optionsRequestedPolicyVersion field is set.
    */
   boolean hasOptionsRequestedPolicyVersion();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GetIamPolicyInstantSnapshotRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

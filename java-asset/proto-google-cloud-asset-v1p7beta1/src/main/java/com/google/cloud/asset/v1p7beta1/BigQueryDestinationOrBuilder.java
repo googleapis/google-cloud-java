@@ -39,7 +39,6 @@ public interface BigQueryDestinationOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface BigQueryDestinationOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
-
   /**
    *
    *
@@ -130,7 +128,6 @@ public interface BigQueryDestinationOrBuilder
    * @return Whether the partitionSpec field is set.
    */
   boolean hasPartitionSpec();
-
   /**
    *
    *
@@ -159,7 +156,6 @@ public interface BigQueryDestinationOrBuilder
    * @return The partitionSpec.
    */
   com.google.cloud.asset.v1p7beta1.PartitionSpec getPartitionSpec();
-
   /**
    *
    *

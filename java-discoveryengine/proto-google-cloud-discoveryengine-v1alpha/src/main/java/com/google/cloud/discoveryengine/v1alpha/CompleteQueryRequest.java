@@ -35,7 +35,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.CompleteQueryRequest)
     CompleteQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompleteQueryRequest.newBuilder() to construct.
   private CompleteQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataStore_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryModel_ = "";
-
   /**
    *
    *
@@ -229,7 +223,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -274,7 +267,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userPseudoId_ = "";
-
   /**
    *
    *
@@ -311,7 +303,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +342,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
 
   public static final int INCLUDE_TAIL_SUGGESTIONS_FIELD_NUMBER = 5;
   private boolean includeTailSuggestions_ = false;
-
   /**
    *
    *
@@ -567,7 +557,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -815,7 +804,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object dataStore_ = "";
-
     /**
      *
      *
@@ -842,7 +830,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -869,7 +856,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -895,7 +881,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +902,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +930,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -970,7 +953,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -994,7 +976,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1017,7 +998,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1016,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1041,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object queryModel_ = "";
-
     /**
      *
      *
@@ -1101,7 +1079,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1117,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1154,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1187,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1227,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object userPseudoId_ = "";
-
     /**
      *
      *
@@ -1289,7 +1262,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1325,7 +1297,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1360,7 +1331,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1391,7 +1361,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1398,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
 
     private boolean includeTailSuggestions_;
-
     /**
      *
      *
@@ -1448,7 +1416,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public boolean getIncludeTailSuggestions() {
       return includeTailSuggestions_;
     }
-
     /**
      *
      *
@@ -1471,7 +1438,6 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

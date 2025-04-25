@@ -139,19 +139,6 @@ public final class ServiceControllerGrpc {
     return ServiceControllerStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ServiceControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ServiceControllerBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ServiceControllerBlockingV2Stub>() {
-          @java.lang.Override
-          public ServiceControllerBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ServiceControllerBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ServiceControllerBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -340,79 +327,6 @@ public final class ServiceControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ServiceController.
-   *
-   * <pre>
-   * [Google Service Control API](/service-control/overview)
-   * Lets clients check and report operations against a [managed
-   * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
-   * </pre>
-   */
-  public static final class ServiceControllerBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ServiceControllerBlockingV2Stub> {
-    private ServiceControllerBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ServiceControllerBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ServiceControllerBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Checks whether an operation on a service should be allowed to proceed
-     * based on the configuration of the service and related policies. It must be
-     * called before the operation is executed.
-     * If feasible, the client should cache the check results and reuse them for
-     * 60 seconds. In case of any server errors, the client should rely on the
-     * cached results for much longer time to avoid outage.
-     * WARNING: There is general 60s delay for the configuration and policy
-     * propagation, therefore callers MUST NOT depend on the `Check` method having
-     * the latest policy information.
-     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has
-     * the size limit (wire-format byte size) of 1MB.
-     * This method requires the `servicemanagement.services.check` permission
-     * on the specified service. For more information, see
-     * [Cloud IAM](https://cloud.google.com/iam).
-     * </pre>
-     */
-    public com.google.api.servicecontrol.v1.CheckResponse check(
-        com.google.api.servicecontrol.v1.CheckRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCheckMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Reports operation results to Google Service Control, such as logs and
-     * metrics. It should be called after an operation is completed.
-     * If feasible, the client should aggregate reporting data for up to 5
-     * seconds to reduce API traffic. Limiting aggregation to 5 seconds is to
-     * reduce data loss during client crashes. Clients should carefully choose
-     * the aggregation time window to avoid data loss risk more than 0.01%
-     * for business and compliance reasons.
-     * NOTE: the [ReportRequest][google.api.servicecontrol.v1.ReportRequest] has
-     * the size limit (wire-format byte size) of 1MB.
-     * This method requires the `servicemanagement.services.report` permission
-     * on the specified service. For more information, see
-     * [Google Cloud IAM](https://cloud.google.com/iam).
-     * </pre>
-     */
-    public com.google.api.servicecontrol.v1.ReportResponse report(
-        com.google.api.servicecontrol.v1.ReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getReportMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service ServiceController.
    *
    * <pre>
    * [Google Service Control API](/service-control/overview)

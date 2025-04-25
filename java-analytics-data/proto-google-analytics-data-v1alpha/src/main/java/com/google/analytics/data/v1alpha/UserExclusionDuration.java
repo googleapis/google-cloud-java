@@ -75,7 +75,6 @@ public enum UserExclusionDuration implements com.google.protobuf.ProtocolMessage
    * <code>USER_EXCLUSION_DURATION_UNSPECIFIED = 0;</code>
    */
   public static final int USER_EXCLUSION_DURATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum UserExclusionDuration implements com.google.protobuf.ProtocolMessage
    * <code>USER_EXCLUSION_TEMPORARY = 1;</code>
    */
   public static final int USER_EXCLUSION_TEMPORARY_VALUE = 1;
-
   /**
    *
    *

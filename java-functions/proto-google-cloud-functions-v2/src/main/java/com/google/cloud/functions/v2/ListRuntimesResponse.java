@@ -33,7 +33,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2.ListRuntimesResponse)
     ListRuntimesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRuntimesResponse.newBuilder() to construct.
   private ListRuntimesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,7 +156,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * <code>RUNTIME_STAGE_UNSPECIFIED = 0;</code>
      */
     public static final int RUNTIME_STAGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -168,7 +166,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * <code>DEVELOPMENT = 1;</code>
      */
     public static final int DEVELOPMENT_VALUE = 1;
-
     /**
      *
      *
@@ -179,7 +176,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * <code>ALPHA = 2;</code>
      */
     public static final int ALPHA_VALUE = 2;
-
     /**
      *
      *
@@ -190,7 +186,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * <code>BETA = 3;</code>
      */
     public static final int BETA_VALUE = 3;
-
     /**
      *
      *
@@ -201,7 +196,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * <code>GA = 4;</code>
      */
     public static final int GA_VALUE = 4;
-
     /**
      *
      *
@@ -212,7 +206,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * <code>DEPRECATED = 5;</code>
      */
     public static final int DEPRECATED_VALUE = 5;
-
     /**
      *
      *
@@ -334,7 +327,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -360,7 +352,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -386,7 +377,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for stage.
      */
     int getStageValue();
-
     /**
      *
      *
@@ -412,7 +402,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return A list containing the warnings.
      */
     java.util.List<java.lang.String> getWarningsList();
-
     /**
      *
      *
@@ -425,7 +414,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The count of warnings.
      */
     int getWarningsCount();
-
     /**
      *
      *
@@ -439,7 +427,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The warnings at the given index.
      */
     java.lang.String getWarnings(int index);
-
     /**
      *
      *
@@ -466,7 +453,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for environment.
      */
     int getEnvironmentValue();
-
     /**
      *
      *
@@ -492,7 +478,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the deprecationDate field is set.
      */
     boolean hasDeprecationDate();
-
     /**
      *
      *
@@ -505,7 +490,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The deprecationDate.
      */
     com.google.type.Date getDeprecationDate();
-
     /**
      *
      *
@@ -529,7 +513,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the decommissionDate field is set.
      */
     boolean hasDecommissionDate();
-
     /**
      *
      *
@@ -542,7 +525,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      * @return The decommissionDate.
      */
     com.google.type.Date getDecommissionDate();
-
     /**
      *
      *
@@ -554,7 +536,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
      */
     com.google.type.DateOrBuilder getDecommissionDateOrBuilder();
   }
-
   /**
    *
    *
@@ -570,7 +551,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.functions.v2.ListRuntimesResponse.Runtime)
       RuntimeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Runtime.newBuilder() to construct.
     private Runtime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -610,7 +590,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -634,7 +613,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -663,7 +641,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -687,7 +664,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
-
     /**
      *
      *
@@ -714,7 +690,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
     public static final int STAGE_FIELD_NUMBER = 2;
     private int stage_ = 0;
-
     /**
      *
      *
@@ -730,7 +705,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public int getStageValue() {
       return stage_;
     }
-
     /**
      *
      *
@@ -756,7 +730,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList warnings_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -771,7 +744,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getWarningsList() {
       return warnings_;
     }
-
     /**
      *
      *
@@ -786,7 +758,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public int getWarningsCount() {
       return warnings_.size();
     }
-
     /**
      *
      *
@@ -802,7 +773,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
     }
-
     /**
      *
      *
@@ -821,7 +791,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
     public static final int ENVIRONMENT_FIELD_NUMBER = 4;
     private int environment_ = 0;
-
     /**
      *
      *
@@ -837,7 +806,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public int getEnvironmentValue() {
       return environment_;
     }
-
     /**
      *
      *
@@ -858,7 +826,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
     public static final int DEPRECATION_DATE_FIELD_NUMBER = 6;
     private com.google.type.Date deprecationDate_;
-
     /**
      *
      *
@@ -874,7 +841,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public boolean hasDeprecationDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -892,7 +858,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           ? com.google.type.Date.getDefaultInstance()
           : deprecationDate_;
     }
-
     /**
      *
      *
@@ -911,7 +876,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
     public static final int DECOMMISSION_DATE_FIELD_NUMBER = 7;
     private com.google.type.Date decommissionDate_;
-
     /**
      *
      *
@@ -927,7 +891,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     public boolean hasDecommissionDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -945,7 +908,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           ? com.google.type.Date.getDefaultInstance()
           : decommissionDate_;
     }
-
     /**
      *
      *
@@ -1202,7 +1164,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1511,7 +1472,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1534,7 +1494,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1557,7 +1516,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1579,7 +1537,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1597,7 +1554,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1622,7 +1578,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -1645,7 +1600,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1668,7 +1622,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1690,7 +1643,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1708,7 +1660,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1733,7 +1684,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
 
       private int stage_ = 0;
-
       /**
        *
        *
@@ -1749,7 +1699,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public int getStageValue() {
         return stage_;
       }
-
       /**
        *
        *
@@ -1768,7 +1717,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1788,7 +1736,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.functions.v2.ListRuntimesResponse.RuntimeStage.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1811,7 +1758,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1839,7 +1785,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -1855,7 +1800,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         warnings_.makeImmutable();
         return warnings_;
       }
-
       /**
        *
        *
@@ -1870,7 +1814,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public int getWarningsCount() {
         return warnings_.size();
       }
-
       /**
        *
        *
@@ -1886,7 +1829,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public java.lang.String getWarnings(int index) {
         return warnings_.get(index);
       }
-
       /**
        *
        *
@@ -1902,7 +1844,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getWarningsBytes(int index) {
         return warnings_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1926,7 +1867,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1949,7 +1889,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1969,7 +1908,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1988,7 +1926,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2014,7 +1951,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
 
       private int environment_ = 0;
-
       /**
        *
        *
@@ -2030,7 +1966,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public int getEnvironmentValue() {
         return environment_;
       }
-
       /**
        *
        *
@@ -2049,7 +1984,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2067,7 +2001,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.functions.v2.Environment.forNumber(environment_);
         return result == null ? com.google.cloud.functions.v2.Environment.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -2089,7 +2022,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2112,7 +2044,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           deprecationDateBuilder_;
-
       /**
        *
        *
@@ -2127,7 +2058,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public boolean hasDeprecationDate() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -2148,7 +2078,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return deprecationDateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2171,7 +2100,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2191,7 +2119,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2219,7 +2146,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -2239,7 +2165,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2254,7 +2179,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getDeprecationDateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2273,7 +2197,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
               : deprecationDate_;
         }
       }
-
       /**
        *
        *
@@ -2302,7 +2225,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           decommissionDateBuilder_;
-
       /**
        *
        *
@@ -2317,7 +2239,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       public boolean hasDecommissionDate() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -2338,7 +2259,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           return decommissionDateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2361,7 +2281,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2381,7 +2300,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2409,7 +2327,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -2429,7 +2346,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2444,7 +2360,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getDecommissionDateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2463,7 +2378,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
               : decommissionDate_;
         }
       }
-
       /**
        *
        *
@@ -2557,7 +2471,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.functions.v2.ListRuntimesResponse.Runtime> runtimes_;
-
   /**
    *
    *
@@ -2572,7 +2485,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       getRuntimesList() {
     return runtimes_;
   }
-
   /**
    *
    *
@@ -2588,7 +2500,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       getRuntimesOrBuilderList() {
     return runtimes_;
   }
-
   /**
    *
    *
@@ -2602,7 +2513,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public int getRuntimesCount() {
     return runtimes_.size();
   }
-
   /**
    *
    *
@@ -2616,7 +2526,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.functions.v2.ListRuntimesResponse.Runtime getRuntimes(int index) {
     return runtimes_.get(index);
   }
-
   /**
    *
    *
@@ -2793,7 +2702,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3059,7 +2967,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3076,7 +2983,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3093,7 +2999,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3117,7 +3022,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3139,7 +3043,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3162,7 +3065,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3186,7 +3088,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3207,7 +3108,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3229,7 +3129,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3150,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3271,7 +3169,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3291,7 +3188,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -3305,7 +3201,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getRuntimesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3323,7 +3218,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return runtimesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3342,7 +3236,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(runtimes_);
       }
     }
-
     /**
      *
      *
@@ -3357,7 +3250,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.functions.v2.ListRuntimesResponse.Runtime.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3374,7 +3266,6 @@ public final class ListRuntimesResponse extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.functions.v2.ListRuntimesResponse.Runtime.getDefaultInstance());
     }
-
     /**
      *
      *

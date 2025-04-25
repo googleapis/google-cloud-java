@@ -37,7 +37,6 @@ public interface RollbackTargetConfigOrBuilder
    * @return Whether the rollout field is set.
    */
   boolean hasRollout();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RollbackTargetConfigOrBuilder
    * @return The rollout.
    */
   com.google.cloud.deploy.v1.Rollout getRollout();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RollbackTargetConfigOrBuilder
    * @return The startingPhaseId.
    */
   java.lang.String getStartingPhaseId();
-
   /**
    *
    *

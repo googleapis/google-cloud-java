@@ -33,7 +33,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PacketType)
     PacketTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PacketType.newBuilder() to construct.
   private PacketType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gstreamerBufferDescriptor field is set.
      */
     boolean hasGstreamerBufferDescriptor();
-
     /**
      *
      *
@@ -96,7 +94,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
      * @return The gstreamerBufferDescriptor.
      */
     com.google.cloud.visionai.v1.GstreamerBufferDescriptor getGstreamerBufferDescriptor();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rawImageDescriptor field is set.
      */
     boolean hasRawImageDescriptor();
-
     /**
      *
      *
@@ -135,7 +131,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
      * @return The rawImageDescriptor.
      */
     com.google.cloud.visionai.v1.RawImageDescriptor getRawImageDescriptor();
-
     /**
      *
      *
@@ -168,7 +163,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -193,7 +187,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.visionai.v1.PacketType.TypeDescriptor.TypeDetailsCase getTypeDetailsCase();
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PacketType.TypeDescriptor)
       TypeDescriptorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TypeDescriptor.newBuilder() to construct.
     private TypeDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -256,7 +248,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       private TypeDetailsCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -290,7 +281,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GSTREAMER_BUFFER_DESCRIPTOR_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -307,7 +297,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGstreamerBufferDescriptor() {
       return typeDetailsCase_ == 2;
     }
-
     /**
      *
      *
@@ -327,7 +316,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.visionai.v1.GstreamerBufferDescriptor.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -348,7 +336,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RAW_IMAGE_DESCRIPTOR_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -364,7 +351,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRawImageDescriptor() {
       return typeDetailsCase_ == 3;
     }
-
     /**
      *
      *
@@ -383,7 +369,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.visionai.v1.RawImageDescriptor.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -406,7 +391,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -439,7 +423,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -675,7 +658,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.visionai.v1.GstreamerBufferDescriptor.Builder,
               com.google.cloud.visionai.v1.GstreamerBufferDescriptorOrBuilder>
           gstreamerBufferDescriptorBuilder_;
-
       /**
        *
        *
@@ -949,7 +930,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGstreamerBufferDescriptor() {
         return typeDetailsCase_ == 2;
       }
-
       /**
        *
        *
@@ -976,7 +956,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.visionai.v1.GstreamerBufferDescriptor.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1001,7 +980,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         typeDetailsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1023,7 +1001,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         typeDetailsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1059,7 +1036,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         typeDetailsCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1086,7 +1062,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1101,7 +1076,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           getGstreamerBufferDescriptorBuilder() {
         return getGstreamerBufferDescriptorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1124,7 +1098,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.visionai.v1.GstreamerBufferDescriptor.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1165,7 +1138,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.visionai.v1.RawImageDescriptor.Builder,
               com.google.cloud.visionai.v1.RawImageDescriptorOrBuilder>
           rawImageDescriptorBuilder_;
-
       /**
        *
        *
@@ -1181,7 +1153,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRawImageDescriptor() {
         return typeDetailsCase_ == 3;
       }
-
       /**
        *
        *
@@ -1207,7 +1178,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.visionai.v1.RawImageDescriptor.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1230,7 +1200,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         typeDetailsCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1251,7 +1220,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         typeDetailsCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1286,7 +1254,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         typeDetailsCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1312,7 +1279,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1326,7 +1292,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           getRawImageDescriptorBuilder() {
         return getRawImageDescriptorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1348,7 +1313,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.visionai.v1.RawImageDescriptor.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1383,7 +1347,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -1415,7 +1378,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1447,7 +1409,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1478,7 +1439,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1505,7 +1465,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1607,7 +1566,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object typeClass_ = "";
-
   /**
    *
    *
@@ -1632,7 +1590,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1660,7 +1617,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_DESCRIPTOR_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.PacketType.TypeDescriptor typeDescriptor_;
-
   /**
    *
    *
@@ -1676,7 +1632,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTypeDescriptor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1694,7 +1649,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.PacketType.TypeDescriptor.getDefaultInstance()
         : typeDescriptor_;
   }
-
   /**
    *
    *
@@ -1884,7 +1838,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2098,7 +2051,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object typeClass_ = "";
-
     /**
      *
      *
@@ -2122,7 +2074,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2146,7 +2097,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2169,7 +2119,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2188,7 +2137,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2219,7 +2167,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.PacketType.TypeDescriptor.Builder,
             com.google.cloud.visionai.v1.PacketType.TypeDescriptorOrBuilder>
         typeDescriptorBuilder_;
-
     /**
      *
      *
@@ -2234,7 +2181,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTypeDescriptor() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2255,7 +2201,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
         return typeDescriptorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2278,7 +2223,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2299,7 +2243,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2329,7 +2272,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2291,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2365,7 +2306,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTypeDescriptorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2385,7 +2325,6 @@ public final class PacketType extends com.google.protobuf.GeneratedMessageV3
             : typeDescriptor_;
       }
     }
-
     /**
      *
      *

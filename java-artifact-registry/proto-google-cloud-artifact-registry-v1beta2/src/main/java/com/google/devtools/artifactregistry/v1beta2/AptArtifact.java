@@ -35,7 +35,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1beta2.AptArtifact)
     AptArtifactOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AptArtifact.newBuilder() to construct.
   private AptArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -124,7 +123,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * <code>PACKAGE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PACKAGE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -135,7 +133,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * <code>BINARY = 1;</code>
      */
     public static final int BINARY_VALUE = 1;
-
     /**
      *
      *
@@ -236,7 +233,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -260,7 +256,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +284,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object packageName_ = "";
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PACKAGE_TYPE_FIELD_NUMBER = 3;
   private int packageType_ = 0;
-
   /**
    *
    *
@@ -358,7 +350,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
   public int getPackageTypeValue() {
     return packageType_;
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object architecture_ = "";
-
   /**
    *
    *
@@ -410,7 +400,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -439,7 +428,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object component_ = "";
-
   /**
    *
    *
@@ -463,7 +451,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -490,7 +477,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTROL_FILE_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString controlFile_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -718,7 +704,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -976,7 +961,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -999,7 +983,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +1005,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1026,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1043,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1067,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object packageName_ = "";
-
     /**
      *
      *
@@ -1110,7 +1089,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1111,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1132,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1149,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1198,7 +1173,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int packageType_ = 0;
-
     /**
      *
      *
@@ -1216,7 +1190,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     public int getPackageTypeValue() {
       return packageType_;
     }
-
     /**
      *
      *
@@ -1237,7 +1210,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1232,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.artifactregistry.v1beta2.AptArtifact.PackageType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1285,7 +1256,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1277,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object architecture_ = "";
-
     /**
      *
      *
@@ -1330,7 +1299,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1321,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1342,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1393,7 +1359,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1383,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object component_ = "";
-
     /**
      *
      *
@@ -1441,7 +1405,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1427,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1448,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1465,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1489,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString controlFile_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1545,7 +1504,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getControlFile() {
       return controlFile_;
     }
-
     /**
      *
      *
@@ -1567,7 +1525,6 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

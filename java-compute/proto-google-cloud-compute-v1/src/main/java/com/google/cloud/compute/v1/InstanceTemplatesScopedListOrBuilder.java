@@ -34,7 +34,6 @@ public interface InstanceTemplatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceTemplate instance_templates = 459889679;</code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceTemplate> getInstanceTemplatesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface InstanceTemplatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceTemplate instance_templates = 459889679;</code>
    */
   com.google.cloud.compute.v1.InstanceTemplate getInstanceTemplates(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface InstanceTemplatesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceTemplate instance_templates = 459889679;</code>
    */
   int getInstanceTemplatesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface InstanceTemplatesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceTemplateOrBuilder>
       getInstanceTemplatesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface InstanceTemplatesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface InstanceTemplatesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

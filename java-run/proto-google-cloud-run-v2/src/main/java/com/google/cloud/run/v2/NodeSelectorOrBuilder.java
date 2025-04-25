@@ -36,7 +36,6 @@ public interface NodeSelectorOrBuilder
    * @return The accelerator.
    */
   java.lang.String getAccelerator();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UpdateFeedRequestOrBuilder
    * @return Whether the feed field is set.
    */
   boolean hasFeed();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateFeedRequestOrBuilder
    * @return The feed.
    */
   com.google.cloud.asset.v1.Feed getFeed();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UpdateFeedRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateFeedRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

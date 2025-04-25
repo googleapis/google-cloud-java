@@ -35,7 +35,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.UpdateCatalogRequest)
     UpdateCatalogRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateCatalogRequest.newBuilder() to construct.
   private UpdateCatalogRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int CATALOG_FIELD_NUMBER = 1;
   private com.google.cloud.retail.v2.Catalog catalog_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
   public boolean hasCatalog() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.retail.v2.Catalog getCatalog() {
     return catalog_ == null ? com.google.cloud.retail.v2.Catalog.getDefaultInstance() : catalog_;
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -377,7 +370,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -602,7 +594,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.retail.v2.Catalog.Builder,
             com.google.cloud.retail.v2.CatalogOrBuilder>
         catalogBuilder_;
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     public boolean hasCatalog() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
         return catalogBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +701,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCatalogFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
             : catalog_;
       }
     }
-
     /**
      *
      *
@@ -868,7 +851,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -887,7 +869,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +942,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +973,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1014,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class UpdateCatalogRequest extends com.google.protobuf.GeneratedMes
             : updateMask_;
       }
     }
-
     /**
      *
      *

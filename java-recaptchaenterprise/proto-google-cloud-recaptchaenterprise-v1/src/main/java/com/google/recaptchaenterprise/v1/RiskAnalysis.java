@@ -33,7 +33,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.RiskAnalysis)
     RiskAnalysisOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RiskAnalysis.newBuilder() to construct.
   private RiskAnalysis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -171,7 +170,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>CLASSIFICATION_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int CLASSIFICATION_REASON_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -182,7 +180,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTOMATION = 1;</code>
      */
     public static final int AUTOMATION_VALUE = 1;
-
     /**
      *
      *
@@ -193,7 +190,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>UNEXPECTED_ENVIRONMENT = 2;</code>
      */
     public static final int UNEXPECTED_ENVIRONMENT_VALUE = 2;
-
     /**
      *
      *
@@ -204,7 +200,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>TOO_MUCH_TRAFFIC = 3;</code>
      */
     public static final int TOO_MUCH_TRAFFIC_VALUE = 3;
-
     /**
      *
      *
@@ -216,7 +211,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>UNEXPECTED_USAGE_PATTERNS = 4;</code>
      */
     public static final int UNEXPECTED_USAGE_PATTERNS_VALUE = 4;
-
     /**
      *
      *
@@ -228,7 +222,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_CONFIDENCE_SCORE = 5;</code>
      */
     public static final int LOW_CONFIDENCE_SCORE_VALUE = 5;
-
     /**
      *
      *
@@ -239,7 +232,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSPECTED_CARDING = 6;</code>
      */
     public static final int SUSPECTED_CARDING_VALUE = 6;
-
     /**
      *
      *
@@ -411,7 +403,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>CHALLENGE_UNSPECIFIED = 0;</code>
      */
     public static final int CHALLENGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -422,7 +413,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>NOCAPTCHA = 1;</code>
      */
     public static final int NOCAPTCHA_VALUE = 1;
-
     /**
      *
      *
@@ -433,7 +423,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>PASSED = 2;</code>
      */
     public static final int PASSED_VALUE = 2;
-
     /**
      *
      *
@@ -533,7 +522,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -573,7 +561,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -594,7 +581,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason>(
         reasons_, reasons_converter_);
   }
-
   /**
    *
    *
@@ -612,7 +598,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public int getReasonsCount() {
     return reasons_.size();
   }
-
   /**
    *
    *
@@ -631,7 +616,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason getReasons(int index) {
     return reasons_converter_.convert(reasons_.get(index));
   }
-
   /**
    *
    *
@@ -649,7 +633,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getReasonsValueList() {
     return reasons_;
   }
-
   /**
    *
    *
@@ -676,7 +659,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList extendedVerdictReasons_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -694,7 +676,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getExtendedVerdictReasonsList() {
     return extendedVerdictReasons_;
   }
-
   /**
    *
    *
@@ -712,7 +693,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public int getExtendedVerdictReasonsCount() {
     return extendedVerdictReasons_.size();
   }
-
   /**
    *
    *
@@ -731,7 +711,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getExtendedVerdictReasons(int index) {
     return extendedVerdictReasons_.get(index);
   }
-
   /**
    *
    *
@@ -753,7 +732,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHALLENGE_FIELD_NUMBER = 4;
   private int challenge_ = 0;
-
   /**
    *
    *
@@ -772,7 +750,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
   public int getChallengeValue() {
     return challenge_;
   }
-
   /**
    *
    *
@@ -1012,7 +989,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1269,7 +1245,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -1287,7 +1262,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -1309,7 +1283,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1311,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -1358,7 +1330,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason>(
           reasons_, reasons_converter_);
     }
-
     /**
      *
      *
@@ -1375,7 +1346,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public int getReasonsCount() {
       return reasons_.size();
     }
-
     /**
      *
      *
@@ -1394,7 +1364,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return reasons_converter_.convert(reasons_.get(index));
     }
-
     /**
      *
      *
@@ -1420,7 +1389,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1413,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1438,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1457,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1473,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getReasonsValueList() {
       return java.util.Collections.unmodifiableList(reasons_);
     }
-
     /**
      *
      *
@@ -1526,7 +1490,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public int getReasonsValue(int index) {
       return reasons_.get(index);
     }
-
     /**
      *
      *
@@ -1548,7 +1511,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1531,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1564,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1622,7 +1582,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       extendedVerdictReasons_.makeImmutable();
       return extendedVerdictReasons_;
     }
-
     /**
      *
      *
@@ -1640,7 +1599,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public int getExtendedVerdictReasonsCount() {
       return extendedVerdictReasons_.size();
     }
-
     /**
      *
      *
@@ -1659,7 +1617,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getExtendedVerdictReasons(int index) {
       return extendedVerdictReasons_.get(index);
     }
-
     /**
      *
      *
@@ -1678,7 +1635,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getExtendedVerdictReasonsBytes(int index) {
       return extendedVerdictReasons_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1705,7 +1661,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1731,7 +1686,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1708,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1776,7 +1729,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1757,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int challenge_ = 0;
-
     /**
      *
      *
@@ -1824,7 +1775,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
     public int getChallengeValue() {
       return challenge_;
     }
-
     /**
      *
      *
@@ -1846,7 +1796,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1869,7 +1818,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
           ? com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1894,7 +1842,6 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

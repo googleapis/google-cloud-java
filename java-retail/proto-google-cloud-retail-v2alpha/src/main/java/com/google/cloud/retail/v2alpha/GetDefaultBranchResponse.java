@@ -34,7 +34,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.GetDefaultBranchResponse)
     GetDefaultBranchResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetDefaultBranchResponse.newBuilder() to construct.
   private GetDefaultBranchResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object branch_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
 
   public static final int SET_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp setTime_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
   public boolean hasSetTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getSetTime() {
     return setTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : setTime_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object note_ = "";
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -639,7 +630,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object branch_ = "";
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         setTimeBuilder_;
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
     public boolean hasSetTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
         return setTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +841,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return getSetTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
         return setTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : setTime_;
       }
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
     }
 
     private java.lang.Object note_ = "";
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +988,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class GetDefaultBranchResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

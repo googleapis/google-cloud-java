@@ -37,7 +37,6 @@ public interface ContactOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ContactOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ContactOrBuilder
    */
   java.util.List<com.google.cloud.essentialcontacts.v1.NotificationCategory>
       getNotificationCategorySubscriptionsList();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface ContactOrBuilder
    * @return The count of notificationCategorySubscriptions.
    */
   int getNotificationCategorySubscriptionsCount();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface ContactOrBuilder
    */
   com.google.cloud.essentialcontacts.v1.NotificationCategory getNotificationCategorySubscriptions(
       int index);
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ContactOrBuilder
    *     notificationCategorySubscriptions.
    */
   java.util.List<java.lang.Integer> getNotificationCategorySubscriptionsValueList();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface ContactOrBuilder
    * @return The languageTag.
    */
   java.lang.String getLanguageTag();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface ContactOrBuilder
    * @return The enum numeric value on the wire for validationState.
    */
   int getValidationStateValue();
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public interface ContactOrBuilder
    * @return Whether the validateTime field is set.
    */
   boolean hasValidateTime();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public interface ContactOrBuilder
    * @return The validateTime.
    */
   com.google.protobuf.Timestamp getValidateTime();
-
   /**
    *
    *

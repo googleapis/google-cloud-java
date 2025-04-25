@@ -36,7 +36,6 @@ public interface GenerateCredentialsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface GenerateCredentialsRequestOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface GenerateCredentialsRequestOrBuilder
    * @return The kubernetesNamespace.
    */
   java.lang.String getKubernetesNamespace();
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public interface GenerateCredentialsRequestOrBuilder
    * @return The enum numeric value on the wire for operatingSystem.
    */
   int getOperatingSystemValue();
-
   /**
    *
    *

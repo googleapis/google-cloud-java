@@ -28,57 +28,53 @@ public interface ListCustomConstraintsResponseOrBuilder
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   java.util.List<com.google.cloud.orgpolicy.v2.CustomConstraint> getCustomConstraintsList();
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraints(int index);
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   int getCustomConstraintsCount();
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
    */
   java.util.List<? extends com.google.cloud.orgpolicy.v2.CustomConstraintOrBuilder>
       getCustomConstraintsOrBuilderList();
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -98,7 +94,6 @@ public interface ListCustomConstraintsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

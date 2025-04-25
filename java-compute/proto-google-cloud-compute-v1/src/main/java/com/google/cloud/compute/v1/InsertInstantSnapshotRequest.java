@@ -33,7 +33,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertInstantSnapshotRequest)
     InsertInstantSnapshotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertInstantSnapshotRequest.newBuilder() to construct.
   private InsertInstantSnapshotRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int INSTANT_SNAPSHOT_RESOURCE_FIELD_NUMBER = 383915339;
   private com.google.cloud.compute.v1.InstantSnapshot instantSnapshotResource_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
   public boolean hasInstantSnapshotResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.InstantSnapshot.getDefaultInstance()
         : instantSnapshotResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -509,7 +498,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +751,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.InstantSnapshot.Builder,
             com.google.cloud.compute.v1.InstantSnapshotOrBuilder>
         instantSnapshotResourceBuilder_;
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     public boolean hasInstantSnapshotResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return instantSnapshotResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +902,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return getInstantSnapshotResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
             : instantSnapshotResource_;
       }
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1023,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1042,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1068,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1109,7 +1082,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1126,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1147,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1164,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1188,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1245,7 +1212,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1236,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1294,7 +1259,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1278,6 @@ public final class InsertInstantSnapshotRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

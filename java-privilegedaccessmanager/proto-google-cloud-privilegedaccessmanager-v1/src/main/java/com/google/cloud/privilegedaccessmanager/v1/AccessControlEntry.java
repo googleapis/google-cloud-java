@@ -33,7 +33,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.privilegedaccessmanager.v1.AccessControlEntry)
     AccessControlEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessControlEntry.newBuilder() to construct.
   private AccessControlEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList principals_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getPrincipalsList() {
     return principals_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
   public int getPrincipalsCount() {
     return principals_.size();
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
   public java.lang.String getPrincipals(int index) {
     return principals_.get(index);
   }
-
   /**
    *
    *
@@ -307,7 +302,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +504,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
       principals_.makeImmutable();
       return principals_;
     }
-
     /**
      *
      *
@@ -545,7 +537,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
     public int getPrincipalsCount() {
       return principals_.size();
     }
-
     /**
      *
      *
@@ -563,7 +554,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
     public java.lang.String getPrincipals(int index) {
       return principals_.get(index);
     }
-
     /**
      *
      *
@@ -581,7 +571,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getPrincipalsBytes(int index) {
       return principals_.getByteString(index);
     }
-
     /**
      *
      *
@@ -607,7 +596,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +620,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +641,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +661,6 @@ public final class AccessControlEntry extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

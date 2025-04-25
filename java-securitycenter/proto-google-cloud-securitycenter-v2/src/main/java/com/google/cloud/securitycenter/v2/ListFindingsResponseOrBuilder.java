@@ -37,7 +37,6 @@ public interface ListFindingsResponseOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult>
       getListFindingsResultsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListFindingsResponseOrBuilder
    */
   com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResult getListFindingsResults(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListFindingsResponseOrBuilder
    * </code>
    */
   int getListFindingsResultsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListFindingsResponseOrBuilder
           ? extends
               com.google.cloud.securitycenter.v2.ListFindingsResponse.ListFindingsResultOrBuilder>
       getListFindingsResultsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListFindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

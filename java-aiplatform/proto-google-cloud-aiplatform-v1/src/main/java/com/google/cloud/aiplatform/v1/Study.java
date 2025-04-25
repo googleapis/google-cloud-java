@@ -33,7 +33,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Study)
     StudyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Study.newBuilder() to construct.
   private Study(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
      * <code>INACTIVE = 2;</code>
      */
     public static final int INACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -256,7 +252,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -281,7 +276,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -335,7 +328,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -362,7 +354,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STUDY_SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.StudySpec studySpec_;
-
   /**
    *
    *
@@ -380,7 +371,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStudySpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -400,7 +390,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.StudySpec.getDefaultInstance()
         : studySpec_;
   }
-
   /**
    *
    *
@@ -421,7 +410,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
-
   /**
    *
    *
@@ -439,7 +427,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -462,7 +449,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -479,7 +465,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -496,7 +481,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -516,7 +500,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inactiveReason_ = "";
-
   /**
    *
    *
@@ -541,7 +524,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -779,7 +761,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1053,7 +1034,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1077,7 +1057,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1080,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1102,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1120,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1145,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1192,7 +1167,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1189,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1210,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1227,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1256,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.StudySpec.Builder,
             com.google.cloud.aiplatform.v1.StudySpecOrBuilder>
         studySpecBuilder_;
-
     /**
      *
      *
@@ -1302,7 +1272,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStudySpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1325,7 +1294,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return studySpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1350,7 +1318,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1339,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1368,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1389,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1405,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStudySpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1462,7 +1425,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
             : studySpec_;
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1454,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1510,7 +1471,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1531,7 +1491,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1510,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.aiplatform.v1.Study.State.forNumber(state_);
       return result == null ? com.google.cloud.aiplatform.v1.Study.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1575,7 +1533,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1559,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1619,7 +1575,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1642,7 +1597,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1667,7 +1621,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1642,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1719,7 +1671,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1692,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1708,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1779,7 +1728,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1809,7 +1757,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object inactiveReason_ = "";
-
     /**
      *
      *
@@ -1833,7 +1780,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1857,7 +1803,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1880,7 +1825,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1843,6 @@ public final class Study extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

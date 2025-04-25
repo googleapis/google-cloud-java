@@ -38,7 +38,6 @@ public interface UpdateConnectionProfileRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateConnectionProfileRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateConnectionProfileRequestOrBuilder
    * @return Whether the connectionProfile field is set.
    */
   boolean hasConnectionProfile();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateConnectionProfileRequestOrBuilder
    * @return The connectionProfile.
    */
   com.google.cloud.clouddms.v1.ConnectionProfile getConnectionProfile();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface UpdateConnectionProfileRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

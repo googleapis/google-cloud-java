@@ -36,7 +36,6 @@ public interface ClusterUserOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *

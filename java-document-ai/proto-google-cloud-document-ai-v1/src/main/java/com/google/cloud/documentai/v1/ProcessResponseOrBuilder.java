@@ -37,7 +37,6 @@ public interface ProcessResponseOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ProcessResponseOrBuilder
    * @return The document.
    */
   com.google.cloud.documentai.v1.Document getDocument();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ProcessResponseOrBuilder
    * @return Whether the humanReviewStatus field is set.
    */
   boolean hasHumanReviewStatus();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ProcessResponseOrBuilder
    * @return The humanReviewStatus.
    */
   com.google.cloud.documentai.v1.HumanReviewStatus getHumanReviewStatus();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchSslPolicyRequest)
     PatchSslPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchSslPolicyRequest.newBuilder() to construct.
   private PatchSslPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sslPolicy_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
   public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 274891848;
   private com.google.cloud.compute.v1.SslPolicy sslPolicyResource_;
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSslPolicyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.SslPolicy.getDefaultInstance()
         : sslPolicyResource_;
   }
-
   /**
    *
    *
@@ -503,7 +492,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -752,7 +740,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -802,7 +788,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -826,7 +811,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +830,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +856,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -934,7 +914,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +976,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object sslPolicy_ = "";
-
     /**
      *
      *
@@ -1022,7 +998,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1020,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1041,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1087,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.SslPolicy.Builder,
             com.google.cloud.compute.v1.SslPolicyOrBuilder>
         sslPolicyResourceBuilder_;
-
     /**
      *
      *
@@ -1132,7 +1103,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSslPolicyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1155,7 +1125,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return sslPolicyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1149,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1171,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1200,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1221,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1237,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSslPolicyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1293,7 +1257,6 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
             : sslPolicyResource_;
       }
     }
-
     /**
      *
      *

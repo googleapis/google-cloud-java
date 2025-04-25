@@ -33,7 +33,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.StorageFormat)
     StorageFormatOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StorageFormat.newBuilder() to construct.
   private StorageFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -219,7 +218,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -230,7 +228,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>PARQUET = 1;</code>
      */
     public static final int PARQUET_VALUE = 1;
-
     /**
      *
      *
@@ -241,7 +238,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>AVRO = 2;</code>
      */
     public static final int AVRO_VALUE = 2;
-
     /**
      *
      *
@@ -252,7 +248,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>ORC = 3;</code>
      */
     public static final int ORC_VALUE = 3;
-
     /**
      *
      *
@@ -263,7 +258,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>CSV = 100;</code>
      */
     public static final int CSV_VALUE = 100;
-
     /**
      *
      *
@@ -274,7 +268,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>JSON = 101;</code>
      */
     public static final int JSON_VALUE = 101;
-
     /**
      *
      *
@@ -285,7 +278,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>IMAGE = 200;</code>
      */
     public static final int IMAGE_VALUE = 200;
-
     /**
      *
      *
@@ -296,7 +288,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>AUDIO = 201;</code>
      */
     public static final int AUDIO_VALUE = 201;
-
     /**
      *
      *
@@ -307,7 +298,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>VIDEO = 202;</code>
      */
     public static final int VIDEO_VALUE = 202;
-
     /**
      *
      *
@@ -318,7 +308,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>TEXT = 203;</code>
      */
     public static final int TEXT_VALUE = 203;
-
     /**
      *
      *
@@ -329,7 +318,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>TFRECORD = 204;</code>
      */
     public static final int TFRECORD_VALUE = 204;
-
     /**
      *
      *
@@ -340,7 +328,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 1000;</code>
      */
     public static final int OTHER_VALUE = 1000;
-
     /**
      *
      *
@@ -508,7 +495,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPRESSION_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int COMPRESSION_FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -519,7 +505,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>GZIP = 2;</code>
      */
     public static final int GZIP_VALUE = 2;
-
     /**
      *
      *
@@ -635,7 +620,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     java.lang.String getEncoding();
-
     /**
      *
      *
@@ -676,7 +660,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * @return The delimiter.
      */
     java.lang.String getDelimiter();
-
     /**
      *
      *
@@ -704,7 +687,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * @return The quote.
      */
     java.lang.String getQuote();
-
     /**
      *
      *
@@ -720,7 +702,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getQuoteBytes();
   }
-
   /**
    *
    *
@@ -735,7 +716,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.StorageFormat.CsvOptions)
       CsvOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CsvOptions.newBuilder() to construct.
     private CsvOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -772,7 +752,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object encoding_ = "";
-
     /**
      *
      *
@@ -797,7 +776,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -825,7 +803,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HEADER_ROWS_FIELD_NUMBER = 2;
     private int headerRows_ = 0;
-
     /**
      *
      *
@@ -847,7 +824,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object delimiter_ = "";
-
     /**
      *
      *
@@ -871,7 +847,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -900,7 +875,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object quote_ = "";
-
     /**
      *
      *
@@ -926,7 +900,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1114,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1372,7 +1344,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object encoding_ = "";
-
       /**
        *
        *
@@ -1396,7 +1367,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1420,7 +1390,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1443,7 +1412,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1462,7 +1430,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1488,7 +1455,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int headerRows_;
-
       /**
        *
        *
@@ -1505,7 +1471,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       public int getHeaderRows() {
         return headerRows_;
       }
-
       /**
        *
        *
@@ -1526,7 +1491,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1547,7 +1511,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object delimiter_ = "";
-
       /**
        *
        *
@@ -1570,7 +1533,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1593,7 +1555,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1615,7 +1576,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1633,7 +1593,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1658,7 +1617,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object quote_ = "";
-
       /**
        *
        *
@@ -1683,7 +1641,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1708,7 +1665,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1732,7 +1688,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1752,7 +1707,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1860,7 +1814,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     java.lang.String getEncoding();
-
     /**
      *
      *
@@ -1875,7 +1828,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEncodingBytes();
   }
-
   /**
    *
    *
@@ -1890,7 +1842,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.StorageFormat.JsonOptions)
       JsonOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use JsonOptions.newBuilder() to construct.
     private JsonOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1925,7 +1876,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object encoding_ = "";
-
     /**
      *
      *
@@ -1950,7 +1900,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2137,7 +2086,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2325,7 +2273,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object encoding_ = "";
-
       /**
        *
        *
@@ -2349,7 +2296,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2373,7 +2319,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2396,7 +2341,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2415,7 +2359,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2522,7 +2465,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      * @return The metadataLocation.
      */
     java.lang.String getMetadataLocation();
-
     /**
      *
      *
@@ -2537,7 +2479,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getMetadataLocationBytes();
   }
-
   /**
    *
    *
@@ -2552,7 +2493,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.StorageFormat.IcebergOptions)
       IcebergOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IcebergOptions.newBuilder() to construct.
     private IcebergOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2587,7 +2527,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object metadataLocation_ = "";
-
     /**
      *
      *
@@ -2612,7 +2551,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2799,7 +2737,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2987,7 +2924,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object metadataLocation_ = "";
-
       /**
        *
        *
@@ -3011,7 +2947,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3035,7 +2970,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3058,7 +2992,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3077,7 +3010,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3184,7 +3116,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     private OptionsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3221,7 +3152,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORMAT_FIELD_NUMBER = 1;
   private int format_ = 0;
-
   /**
    *
    *
@@ -3240,7 +3170,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -3264,7 +3193,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPRESSION_FORMAT_FIELD_NUMBER = 2;
   private int compressionFormat_ = 0;
-
   /**
    *
    *
@@ -3283,7 +3211,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   public int getCompressionFormatValue() {
     return compressionFormat_;
   }
-
   /**
    *
    *
@@ -3311,7 +3238,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mimeType_ = "";
-
   /**
    *
    *
@@ -3351,7 +3277,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3393,7 +3318,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CSV_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -3411,7 +3335,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCsv() {
     return optionsCase_ == 10;
   }
-
   /**
    *
    *
@@ -3432,7 +3355,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.StorageFormat.CsvOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3453,7 +3375,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JSON_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -3471,7 +3392,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJson() {
     return optionsCase_ == 11;
   }
-
   /**
    *
    *
@@ -3492,7 +3412,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.StorageFormat.JsonOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3513,7 +3432,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ICEBERG_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -3531,7 +3449,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIceberg() {
     return optionsCase_ == 12;
   }
-
   /**
    *
    *
@@ -3552,7 +3469,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3811,7 +3727,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4100,7 +4015,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -4119,7 +4033,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -4141,7 +4054,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4164,7 +4076,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.StorageFormat.Format.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4189,7 +4100,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4212,7 +4122,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int compressionFormat_ = 0;
-
     /**
      *
      *
@@ -4231,7 +4140,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public int getCompressionFormatValue() {
       return compressionFormat_;
     }
-
     /**
      *
      *
@@ -4253,7 +4161,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4277,7 +4184,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dataplex.v1.StorageFormat.CompressionFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4303,7 +4209,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4326,7 +4231,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mimeType_ = "";
-
     /**
      *
      *
@@ -4365,7 +4269,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4404,7 +4307,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4442,7 +4344,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4476,7 +4377,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4521,7 +4421,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.StorageFormat.CsvOptions.Builder,
             com.google.cloud.dataplex.v1.StorageFormat.CsvOptionsOrBuilder>
         csvBuilder_;
-
     /**
      *
      *
@@ -4539,7 +4438,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCsv() {
       return optionsCase_ == 10;
     }
-
     /**
      *
      *
@@ -4567,7 +4465,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.StorageFormat.CsvOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4592,7 +4489,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -4615,7 +4511,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -4651,7 +4546,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -4679,7 +4573,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4694,7 +4587,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.StorageFormat.CsvOptions.Builder getCsvBuilder() {
       return getCsvFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4717,7 +4609,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.StorageFormat.CsvOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4758,7 +4649,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.StorageFormat.JsonOptions.Builder,
             com.google.cloud.dataplex.v1.StorageFormat.JsonOptionsOrBuilder>
         jsonBuilder_;
-
     /**
      *
      *
@@ -4776,7 +4666,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJson() {
       return optionsCase_ == 11;
     }
-
     /**
      *
      *
@@ -4804,7 +4693,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.StorageFormat.JsonOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4829,7 +4717,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -4852,7 +4739,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -4888,7 +4774,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -4916,7 +4801,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4931,7 +4815,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.StorageFormat.JsonOptions.Builder getJsonBuilder() {
       return getJsonFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4954,7 +4837,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.StorageFormat.JsonOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4995,7 +4877,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder,
             com.google.cloud.dataplex.v1.StorageFormat.IcebergOptionsOrBuilder>
         icebergBuilder_;
-
     /**
      *
      *
@@ -5013,7 +4894,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIceberg() {
       return optionsCase_ == 12;
     }
-
     /**
      *
      *
@@ -5041,7 +4921,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5066,7 +4945,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -5089,7 +4967,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -5125,7 +5002,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -5153,7 +5029,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5168,7 +5043,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.Builder getIcebergBuilder() {
       return getIcebergFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5192,7 +5066,6 @@ public final class StorageFormat extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.StorageFormat.IcebergOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *

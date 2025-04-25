@@ -74,7 +74,6 @@ public enum PolylineEncoding implements com.google.protobuf.ProtocolMessageEnum 
    * <code>POLYLINE_ENCODING_UNSPECIFIED = 0;</code>
    */
   public static final int POLYLINE_ENCODING_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum PolylineEncoding implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ENCODED_POLYLINE = 1;</code>
    */
   public static final int ENCODED_POLYLINE_VALUE = 1;
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AWSV4Signature)
     AWSV4SignatureOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AWSV4Signature.newBuilder() to construct.
   private AWSV4Signature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessKey_ = "";
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessKeyId_ = "";
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessKeyId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessKeyVersion_ = "";
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccessKeyVersion() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object originRegion_ = "";
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOriginRegion() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -322,7 +310,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -553,7 +540,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -791,7 +777,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object accessKey_ = "";
-
     /**
      *
      *
@@ -806,7 +791,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -829,7 +813,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -852,7 +835,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +897,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object accessKeyId_ = "";
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessKeyId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -955,7 +933,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1017,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object accessKeyVersion_ = "";
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccessKeyVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1075,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1096,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1113,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1137,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object originRegion_ = "";
-
     /**
      *
      *
@@ -1184,7 +1151,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOriginRegion() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1207,7 +1173,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1195,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1216,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1270,7 +1233,6 @@ public final class AWSV4Signature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

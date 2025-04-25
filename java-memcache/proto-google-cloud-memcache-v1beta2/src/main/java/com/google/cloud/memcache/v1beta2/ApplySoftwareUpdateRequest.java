@@ -33,7 +33,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)
     ApplySoftwareUpdateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApplySoftwareUpdateRequest.newBuilder() to construct.
   private ApplySoftwareUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nodeIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getNodeIdsList() {
     return nodeIds_;
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   public int getNodeIdsCount() {
     return nodeIds_.size();
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   public java.lang.String getNodeIds(int index) {
     return nodeIds_.get(index);
   }
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
 
   public static final int APPLY_ALL_FIELD_NUMBER = 3;
   private boolean applyAll_ = false;
-
   /**
    *
    *
@@ -402,7 +394,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -625,7 +616,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       nodeIds_.makeImmutable();
       return nodeIds_;
     }
-
     /**
      *
      *
@@ -792,7 +776,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public int getNodeIdsCount() {
       return nodeIds_.size();
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public java.lang.String getNodeIds(int index) {
       return nodeIds_.get(index);
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getNodeIdsBytes(int index) {
       return nodeIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +920,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     }
 
     private boolean applyAll_;
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public boolean getApplyAll() {
       return applyAll_;
     }
-
     /**
      *
      *
@@ -983,7 +958,6 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

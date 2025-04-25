@@ -38,7 +38,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return Whether the zoneSetLabelsRequestResource field is set.
    */
   boolean hasZoneSetLabelsRequestResource();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface SetLabelsDiskRequestOrBuilder
    * @return The zoneSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.ZoneSetLabelsRequest getZoneSetLabelsRequestResource();
-
   /**
    *
    *

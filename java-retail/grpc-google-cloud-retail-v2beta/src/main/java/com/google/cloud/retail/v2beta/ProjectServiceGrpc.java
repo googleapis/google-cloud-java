@@ -140,19 +140,6 @@ public final class ProjectServiceGrpc {
     return ProjectServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ProjectServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ProjectServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ProjectServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public ProjectServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ProjectServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ProjectServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -290,53 +277,6 @@ public final class ProjectServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ProjectService.
-   *
-   * <pre>
-   * Service for settings at Project level.
-   * </pre>
-   */
-  public static final class ProjectServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ProjectServiceBlockingV2Stub> {
-    private ProjectServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ProjectServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ProjectServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Get the [AlertConfig][google.cloud.retail.v2beta.AlertConfig] of the
-     * requested project.
-     * </pre>
-     */
-    public com.google.cloud.retail.v2beta.AlertConfig getAlertConfig(
-        com.google.cloud.retail.v2beta.GetAlertConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAlertConfigMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Update the alert config of the requested project.
-     * </pre>
-     */
-    public com.google.cloud.retail.v2beta.AlertConfig updateAlertConfig(
-        com.google.cloud.retail.v2beta.UpdateAlertConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateAlertConfigMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service ProjectService.
    *
    * <pre>
    * Service for settings at Project level.

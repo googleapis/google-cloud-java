@@ -72,7 +72,6 @@ public enum TransferLockState implements com.google.protobuf.ProtocolMessageEnum
    * <code>TRANSFER_LOCK_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int TRANSFER_LOCK_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum TransferLockState implements com.google.protobuf.ProtocolMessageEnum
    * <code>UNLOCKED = 1;</code>
    */
   public static final int UNLOCKED_VALUE = 1;
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface GetTaskTrackingInfoRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GetTaskTrackingInfoRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface GetTaskTrackingInfoRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

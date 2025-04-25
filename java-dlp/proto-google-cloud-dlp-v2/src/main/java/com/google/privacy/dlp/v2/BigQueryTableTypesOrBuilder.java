@@ -36,7 +36,6 @@ public interface BigQueryTableTypesOrBuilder
    * @return A list containing the types.
    */
   java.util.List<com.google.privacy.dlp.v2.BigQueryTableType> getTypesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BigQueryTableTypesOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface BigQueryTableTypesOrBuilder
    * @return The types at the given index.
    */
   com.google.privacy.dlp.v2.BigQueryTableType getTypes(int index);
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface BigQueryTableTypesOrBuilder
    * @return A list containing the enum numeric values on the wire for types.
    */
   java.util.List<java.lang.Integer> getTypesValueList();
-
   /**
    *
    *

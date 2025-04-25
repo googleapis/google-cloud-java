@@ -33,7 +33,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1.Accelerator)
     AcceleratorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Accelerator.newBuilder() to construct.
   private Accelerator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -132,7 +131,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCELERATOR_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCELERATOR_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * <code>CDC = 1;</code>
      */
     public static final int CDC_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTHCARE = 2;</code>
      */
     public static final int HEALTHCARE_VALUE = 2;
-
     /**
      *
      *
@@ -320,7 +316,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -331,7 +326,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -342,7 +336,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 2;</code>
      */
     public static final int DISABLED_VALUE = 2;
-
     /**
      *
      *
@@ -442,7 +435,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCELERATOR_TYPE_FIELD_NUMBER = 1;
   private int acceleratorType_ = 0;
-
   /**
    *
    *
@@ -458,7 +450,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
   public int getAcceleratorTypeValue() {
     return acceleratorType_;
   }
-
   /**
    *
    *
@@ -481,7 +472,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -497,7 +487,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -688,7 +677,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -883,7 +871,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int acceleratorType_ = 0;
-
     /**
      *
      *
@@ -899,7 +886,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     public int getAcceleratorTypeValue() {
       return acceleratorType_;
     }
-
     /**
      *
      *
@@ -918,7 +904,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +923,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datafusion.v1.Accelerator.AcceleratorType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -961,7 +945,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +964,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -997,7 +979,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1016,7 +997,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1016,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datafusion.v1.Accelerator.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1058,7 +1037,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

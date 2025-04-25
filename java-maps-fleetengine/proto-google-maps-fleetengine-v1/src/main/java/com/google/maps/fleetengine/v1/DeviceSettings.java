@@ -33,7 +33,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.DeviceSettings)
     DeviceSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeviceSettings.newBuilder() to construct.
   private DeviceSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LOCATION_POWER_SAVE_MODE_FIELD_NUMBER = 1;
   private int locationPowerSaveMode_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
   public int getLocationPowerSaveModeValue() {
     return locationPowerSaveMode_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_POWER_SAVE_MODE_FIELD_NUMBER = 2;
   private boolean isPowerSaveMode_ = false;
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_INTERACTIVE_FIELD_NUMBER = 3;
   private boolean isInteractive_ = false;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BATTERY_INFO_FIELD_NUMBER = 4;
   private com.google.maps.fleetengine.v1.BatteryInfo batteryInfo_;
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBatteryInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.v1.BatteryInfo.getDefaultInstance()
         : batteryInfo_;
   }
-
   /**
    *
    *
@@ -392,7 +384,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -630,7 +621,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int locationPowerSaveMode_ = 0;
-
     /**
      *
      *
@@ -647,7 +637,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     public int getLocationPowerSaveModeValue() {
       return locationPowerSaveMode_;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +676,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.v1.LocationPowerSaveMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isPowerSaveMode_;
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsPowerSaveMode() {
       return isPowerSaveMode_;
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +772,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isInteractive_;
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsInteractive() {
       return isInteractive_;
     }
-
     /**
      *
      *
@@ -825,7 +806,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +830,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.v1.BatteryInfo.Builder,
             com.google.maps.fleetengine.v1.BatteryInfoOrBuilder>
         batteryInfoBuilder_;
-
     /**
      *
      *
@@ -865,7 +844,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBatteryInfo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -886,7 +864,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
         return batteryInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +906,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +933,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +952,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +966,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBatteryInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1012,7 +984,6 @@ public final class DeviceSettings extends com.google.protobuf.GeneratedMessageV3
             : batteryInfo_;
       }
     }
-
     /**
      *
      *

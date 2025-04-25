@@ -33,7 +33,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.UpdateMigratingVmRequest)
     UpdateMigratingVmRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateMigratingVmRequest.newBuilder() to construct.
   private UpdateMigratingVmRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
 
   public static final int MIGRATING_VM_FIELD_NUMBER = 2;
   private com.google.cloud.vmmigration.v1.MigratingVm migratingVm_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
   public boolean hasMigratingVm() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         ? com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance()
         : migratingVm_;
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -450,7 +441,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -689,7 +679,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +824,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -919,7 +900,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
             com.google.cloud.vmmigration.v1.MigratingVm.Builder,
             com.google.cloud.vmmigration.v1.MigratingVmOrBuilder>
         migratingVmBuilder_;
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     public boolean hasMigratingVm() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -959,7 +938,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         return migratingVmBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -984,7 +962,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +984,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1034,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return getMigratingVmFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
             : migratingVm_;
       }
     }
-
     /**
      *
      *
@@ -1127,7 +1099,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1162,7 +1133,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1167,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1200,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1229,6 @@ public final class UpdateMigratingVmRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LicenseCodeOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface LicenseCodeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface LicenseCodeOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface LicenseCodeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.LicenseCodeLicenseAlias> getLicenseAliasList();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface LicenseCodeOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.LicenseCodeLicenseAlias getLicenseAlias(int index);
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface LicenseCodeOrBuilder
    * </code>
    */
   int getLicenseAliasCount();
-
   /**
    *
    *
@@ -215,7 +205,6 @@ public interface LicenseCodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.LicenseCodeLicenseAliasOrBuilder>
       getLicenseAliasOrBuilderList();
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -253,7 +241,6 @@ public interface LicenseCodeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -279,7 +266,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -292,7 +278,6 @@ public interface LicenseCodeOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -319,7 +304,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -333,7 +317,6 @@ public interface LicenseCodeOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *
@@ -360,7 +343,6 @@ public interface LicenseCodeOrBuilder
    * @return Whether the transferable field is set.
    */
   boolean hasTransferable();
-
   /**
    *
    *

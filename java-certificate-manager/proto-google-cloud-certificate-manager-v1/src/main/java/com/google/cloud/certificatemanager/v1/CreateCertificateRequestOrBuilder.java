@@ -39,7 +39,6 @@ public interface CreateCertificateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateCertificateRequestOrBuilder
    * @return The certificateId.
    */
   java.lang.String getCertificateId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateCertificateRequestOrBuilder
    * @return Whether the certificate field is set.
    */
   boolean hasCertificate();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateCertificateRequestOrBuilder
    * @return The certificate.
    */
   com.google.cloud.certificatemanager.v1.Certificate getCertificate();
-
   /**
    *
    *

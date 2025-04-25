@@ -33,7 +33,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest)
     ComputeThreatListDiffRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComputeThreatListDiffRequest.newBuilder() to construct.
   private ComputeThreatListDiffRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -113,7 +112,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @return A list containing the supportedCompressions.
      */
     java.util.List<com.google.webrisk.v1beta1.CompressionType> getSupportedCompressionsList();
-
     /**
      *
      *
@@ -127,7 +125,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @return The count of supportedCompressions.
      */
     int getSupportedCompressionsCount();
-
     /**
      *
      *
@@ -142,7 +139,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @return The supportedCompressions at the given index.
      */
     com.google.webrisk.v1beta1.CompressionType getSupportedCompressions(int index);
-
     /**
      *
      *
@@ -156,7 +152,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      * @return A list containing the enum numeric values on the wire for supportedCompressions.
      */
     java.util.List<java.lang.Integer> getSupportedCompressionsValueList();
-
     /**
      *
      *
@@ -172,7 +167,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
      */
     int getSupportedCompressionsValue(int index);
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints)
       ConstraintsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Constraints.newBuilder() to construct.
     private Constraints(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -220,7 +213,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
 
     public static final int MAX_DIFF_ENTRIES_FIELD_NUMBER = 1;
     private int maxDiffEntries_ = 0;
-
     /**
      *
      *
@@ -241,7 +233,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
 
     public static final int MAX_DATABASE_ENTRIES_FIELD_NUMBER = 2;
     private int maxDatabaseEntries_ = 0;
-
     /**
      *
      *
@@ -278,7 +269,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
                     : result;
               }
             };
-
     /**
      *
      *
@@ -298,7 +288,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
           java.lang.Integer, com.google.webrisk.v1beta1.CompressionType>(
           supportedCompressions_, supportedCompressions_converter_);
     }
-
     /**
      *
      *
@@ -315,7 +304,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     public int getSupportedCompressionsCount() {
       return supportedCompressions_.size();
     }
-
     /**
      *
      *
@@ -333,7 +321,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     public com.google.webrisk.v1beta1.CompressionType getSupportedCompressions(int index) {
       return supportedCompressions_converter_.convert(supportedCompressions_.get(index));
     }
-
     /**
      *
      *
@@ -350,7 +337,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     public java.util.List<java.lang.Integer> getSupportedCompressionsValueList() {
       return supportedCompressions_;
     }
-
     /**
      *
      *
@@ -569,7 +555,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -816,7 +801,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       private int bitField0_;
 
       private int maxDiffEntries_;
-
       /**
        *
        *
@@ -834,7 +818,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       public int getMaxDiffEntries() {
         return maxDiffEntries_;
       }
-
       /**
        *
        *
@@ -856,7 +839,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -878,7 +860,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       }
 
       private int maxDatabaseEntries_;
-
       /**
        *
        *
@@ -896,7 +877,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       public int getMaxDatabaseEntries() {
         return maxDatabaseEntries_;
       }
-
       /**
        *
        *
@@ -918,7 +898,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -949,7 +928,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
           bitField0_ |= 0x00000004;
         }
       }
-
       /**
        *
        *
@@ -968,7 +946,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
             java.lang.Integer, com.google.webrisk.v1beta1.CompressionType>(
             supportedCompressions_, supportedCompressions_converter_);
       }
-
       /**
        *
        *
@@ -984,7 +961,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       public int getSupportedCompressionsCount() {
         return supportedCompressions_.size();
       }
-
       /**
        *
        *
@@ -1001,7 +977,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       public com.google.webrisk.v1beta1.CompressionType getSupportedCompressions(int index) {
         return supportedCompressions_converter_.convert(supportedCompressions_.get(index));
       }
-
       /**
        *
        *
@@ -1026,7 +1001,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1049,7 +1023,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1072,7 +1045,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1091,7 +1063,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1107,7 +1078,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       public java.util.List<java.lang.Integer> getSupportedCompressionsValueList() {
         return java.util.Collections.unmodifiableList(supportedCompressions_);
       }
-
       /**
        *
        *
@@ -1124,7 +1094,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       public int getSupportedCompressionsValue(int index) {
         return supportedCompressions_.get(index);
       }
-
       /**
        *
        *
@@ -1145,7 +1114,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1165,7 +1133,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1259,7 +1226,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int THREAT_TYPE_FIELD_NUMBER = 1;
   private int threatType_ = 0;
-
   /**
    *
    *
@@ -1277,7 +1243,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
   public int getThreatTypeValue() {
     return threatType_;
   }
-
   /**
    *
    *
@@ -1300,7 +1265,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
 
   public static final int VERSION_TOKEN_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString versionToken_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -1320,7 +1284,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
 
   public static final int CONSTRAINTS_FIELD_NUMBER = 3;
   private com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints constraints_;
-
   /**
    *
    *
@@ -1338,7 +1301,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
   public boolean hasConstraints() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1358,7 +1320,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         ? com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints.getDefaultInstance()
         : constraints_;
   }
-
   /**
    *
    *
@@ -1561,7 +1522,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1787,7 +1747,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private int threatType_ = 0;
-
     /**
      *
      *
@@ -1805,7 +1764,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     public int getThreatTypeValue() {
       return threatType_;
     }
-
     /**
      *
      *
@@ -1826,7 +1784,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1803,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
           com.google.webrisk.v1beta1.ThreatType.forNumber(threatType_);
       return result == null ? com.google.webrisk.v1beta1.ThreatType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1870,7 +1826,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1847,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     }
 
     private com.google.protobuf.ByteString versionToken_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1909,7 +1863,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     public com.google.protobuf.ByteString getVersionToken() {
       return versionToken_;
     }
-
     /**
      *
      *
@@ -1932,7 +1885,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1910,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
             com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.Constraints.Builder,
             com.google.webrisk.v1beta1.ComputeThreatListDiffRequest.ConstraintsOrBuilder>
         constraintsBuilder_;
-
     /**
      *
      *
@@ -1975,7 +1926,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
     public boolean hasConstraints() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1999,7 +1949,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
         return constraintsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2025,7 +1974,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +1997,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2082,7 +2029,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -2104,7 +2050,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2122,7 +2067,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
       onChanged();
       return getConstraintsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2145,7 +2089,6 @@ public final class ComputeThreatListDiffRequest extends com.google.protobuf.Gene
             : constraints_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceGroupOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InstanceGroupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface InstanceGroupOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface InstanceGroupOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface InstanceGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -255,7 +244,6 @@ public interface InstanceGroupOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
-
   /**
    *
    *
@@ -266,7 +254,6 @@ public interface InstanceGroupOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
-
   /**
    *
    *
@@ -277,7 +264,6 @@ public interface InstanceGroupOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
-
   /**
    *
    *
@@ -289,7 +275,6 @@ public interface InstanceGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
-
   /**
    *
    *
@@ -313,7 +298,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -326,7 +310,6 @@ public interface InstanceGroupOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -352,7 +335,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -365,7 +347,6 @@ public interface InstanceGroupOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -391,7 +372,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -404,7 +384,6 @@ public interface InstanceGroupOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -430,7 +409,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the size field is set.
    */
   boolean hasSize();
-
   /**
    *
    *
@@ -456,7 +434,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
-
   /**
    *
    *
@@ -469,7 +446,6 @@ public interface InstanceGroupOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -495,7 +471,6 @@ public interface InstanceGroupOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -508,7 +483,6 @@ public interface InstanceGroupOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

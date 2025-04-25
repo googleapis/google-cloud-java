@@ -37,7 +37,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Indicator)
     IndicatorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Indicator.newBuilder() to construct.
   private Indicator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the memoryHashSignature field is set.
      */
     boolean hasMemoryHashSignature();
-
     /**
      *
      *
@@ -106,7 +104,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
         getMemoryHashSignature();
-
     /**
      *
      *
@@ -135,7 +132,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the yaraRuleSignature field is set.
      */
     boolean hasYaraRuleSignature();
-
     /**
      *
      *
@@ -151,7 +147,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature
         getYaraRuleSignature();
-
     /**
      *
      *
@@ -180,7 +175,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for signatureType.
      */
     int getSignatureTypeValue();
-
     /**
      *
      *
@@ -198,7 +192,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureCase getSignatureCase();
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Indicator.ProcessSignature)
       ProcessSignatureOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ProcessSignature.newBuilder() to construct.
     private ProcessSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -297,7 +289,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        * <code>SIGNATURE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int SIGNATURE_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -308,7 +299,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        * <code>SIGNATURE_TYPE_PROCESS = 1;</code>
        */
       public static final int SIGNATURE_TYPE_PROCESS_VALUE = 1;
-
       /**
        *
        *
@@ -424,7 +414,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        * @return The binaryFamily.
        */
       java.lang.String getBinaryFamily();
-
       /**
        *
        *
@@ -454,7 +443,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
                   .Detection>
           getDetectionsList();
-
       /**
        *
        *
@@ -469,7 +457,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature.Detection
           getDetections(int index);
-
       /**
        *
        *
@@ -483,7 +470,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       int getDetectionsCount();
-
       /**
        *
        *
@@ -501,7 +487,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
                       .DetectionOrBuilder>
           getDetectionsOrBuilderList();
-
       /**
        *
        *
@@ -518,7 +503,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               .DetectionOrBuilder
           getDetectionsOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -534,7 +518,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature)
         MemoryHashSignatureOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use MemoryHashSignature.newBuilder() to construct.
       private MemoryHashSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -586,7 +569,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
          * @return The binary.
          */
         java.lang.String getBinary();
-
         /**
          *
          *
@@ -615,7 +597,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
          */
         double getPercentPagesMatched();
       }
-
       /**
        *
        *
@@ -631,7 +612,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature.Detection)
           DetectionOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use Detection.newBuilder() to construct.
         private Detection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -668,7 +648,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object binary_ = "";
-
         /**
          *
          *
@@ -693,7 +672,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
-
         /**
          *
          *
@@ -721,7 +699,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
         public static final int PERCENT_PAGES_MATCHED_FIELD_NUMBER = 3;
         private double percentPagesMatched_ = 0D;
-
         /**
          *
          *
@@ -946,7 +923,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -1177,7 +1153,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object binary_ = "";
-
           /**
            *
            *
@@ -1201,7 +1176,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -1225,7 +1199,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -1248,7 +1221,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1267,7 +1239,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1293,7 +1264,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
 
           private double percentPagesMatched_;
-
           /**
            *
            *
@@ -1310,7 +1280,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           public double getPercentPagesMatched() {
             return percentPagesMatched_;
           }
-
           /**
            *
            *
@@ -1331,7 +1300,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1427,7 +1395,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object binaryFamily_ = "";
-
       /**
        *
        *
@@ -1451,7 +1418,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1483,7 +1449,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
                   .Detection>
           detections_;
-
       /**
        *
        *
@@ -1503,7 +1468,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           getDetectionsList() {
         return detections_;
       }
-
       /**
        *
        *
@@ -1524,7 +1488,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           getDetectionsOrBuilderList() {
         return detections_;
       }
-
       /**
        *
        *
@@ -1541,7 +1504,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       public int getDetectionsCount() {
         return detections_.size();
       }
-
       /**
        *
        *
@@ -1560,7 +1522,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           getDetections(int index) {
         return detections_.get(index);
       }
-
       /**
        *
        *
@@ -1775,7 +1736,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2049,7 +2009,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object binaryFamily_ = "";
-
         /**
          *
          *
@@ -2072,7 +2031,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2095,7 +2053,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2117,7 +2074,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2135,7 +2091,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2205,7 +2160,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return detectionsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -2225,7 +2179,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return detectionsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -2247,7 +2200,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return detectionsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -2277,7 +2229,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2304,7 +2255,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2333,7 +2283,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2363,7 +2312,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2389,7 +2337,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2416,7 +2363,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2444,7 +2390,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2467,7 +2412,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2490,7 +2434,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -2508,7 +2451,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             getDetectionsBuilder(int index) {
           return getDetectionsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -2530,7 +2472,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return detectionsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -2554,7 +2495,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(detections_);
           }
         }
-
         /**
          *
          *
@@ -2575,7 +2515,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
                       .Detection.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -2597,7 +2536,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
                       .Detection.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -2730,7 +2668,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        * @return The yaraRule.
        */
       java.lang.String getYaraRule();
-
       /**
        *
        *
@@ -2744,7 +2681,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getYaraRuleBytes();
     }
-
     /**
      *
      *
@@ -2760,7 +2696,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature)
         YaraRuleSignatureOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use YaraRuleSignature.newBuilder() to construct.
       private YaraRuleSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2797,7 +2732,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object yaraRule_ = "";
-
       /**
        *
        *
@@ -2821,7 +2755,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -3018,7 +2951,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3224,7 +3156,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object yaraRule_ = "";
-
         /**
          *
          *
@@ -3247,7 +3178,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3270,7 +3200,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3292,7 +3221,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3310,7 +3238,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3420,7 +3347,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       private SignatureCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3454,7 +3380,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MEMORY_HASH_SIGNATURE_FIELD_NUMBER = 6;
-
     /**
      *
      *
@@ -3472,7 +3397,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMemoryHashSignature() {
       return signatureCase_ == 6;
     }
-
     /**
      *
      *
@@ -3496,7 +3420,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.MemoryHashSignature
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -3521,7 +3444,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int YARA_RULE_SIGNATURE_FIELD_NUMBER = 7;
-
     /**
      *
      *
@@ -3539,7 +3461,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public boolean hasYaraRuleSignature() {
       return signatureCase_ == 7;
     }
-
     /**
      *
      *
@@ -3563,7 +3484,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -3588,7 +3508,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SIGNATURE_TYPE_FIELD_NUMBER = 8;
     private int signatureType_ = 0;
-
     /**
      *
      *
@@ -3606,7 +3525,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public int getSignatureTypeValue() {
       return signatureType_;
     }
-
     /**
      *
      *
@@ -3847,7 +3765,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4108,7 +4025,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature
                   .MemoryHashSignatureOrBuilder>
           memoryHashSignatureBuilder_;
-
       /**
        *
        *
@@ -4126,7 +4042,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMemoryHashSignature() {
         return signatureCase_ == 6;
       }
-
       /**
        *
        *
@@ -4159,7 +4074,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4185,7 +4099,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -4209,7 +4122,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -4250,7 +4162,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 6;
         return this;
       }
-
       /**
        *
        *
@@ -4278,7 +4189,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4295,7 +4205,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           getMemoryHashSignatureBuilder() {
         return getMemoryHashSignatureFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4323,7 +4232,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4374,7 +4282,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature
                   .YaraRuleSignatureOrBuilder>
           yaraRuleSignatureBuilder_;
-
       /**
        *
        *
@@ -4392,7 +4299,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       public boolean hasYaraRuleSignature() {
         return signatureCase_ == 7;
       }
-
       /**
        *
        *
@@ -4424,7 +4330,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4450,7 +4355,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -4474,7 +4378,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -4515,7 +4418,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 7;
         return this;
       }
-
       /**
        *
        *
@@ -4543,7 +4445,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4559,7 +4460,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           getYaraRuleSignatureBuilder() {
         return getYaraRuleSignatureFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4586,7 +4486,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -4630,7 +4529,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int signatureType_ = 0;
-
       /**
        *
        *
@@ -4648,7 +4546,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       public int getSignatureTypeValue() {
         return signatureType_;
       }
-
       /**
        *
        *
@@ -4669,7 +4566,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4694,7 +4590,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4719,7 +4614,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4812,7 +4706,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList ipAddresses_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -4827,7 +4720,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIpAddressesList() {
     return ipAddresses_;
   }
-
   /**
    *
    *
@@ -4842,7 +4734,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public int getIpAddressesCount() {
     return ipAddresses_.size();
   }
-
   /**
    *
    *
@@ -4858,7 +4749,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIpAddresses(int index) {
     return ipAddresses_.get(index);
   }
-
   /**
    *
    *
@@ -4880,7 +4770,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList domains_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -4895,7 +4784,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDomainsList() {
     return domains_;
   }
-
   /**
    *
    *
@@ -4910,7 +4798,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public int getDomainsCount() {
     return domains_.size();
   }
-
   /**
    *
    *
@@ -4926,7 +4813,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDomains(int index) {
     return domains_.get(index);
   }
-
   /**
    *
    *
@@ -4947,7 +4833,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v1.Indicator.ProcessSignature> signatures_;
-
   /**
    *
    *
@@ -4964,7 +4849,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       getSignaturesList() {
     return signatures_;
   }
-
   /**
    *
    *
@@ -4982,7 +4866,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       getSignaturesOrBuilderList() {
     return signatures_;
   }
-
   /**
    *
    *
@@ -4998,7 +4881,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public int getSignaturesCount() {
     return signatures_.size();
   }
-
   /**
    *
    *
@@ -5014,7 +4896,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v1.Indicator.ProcessSignature getSignatures(int index) {
     return signatures_.get(index);
   }
-
   /**
    *
    *
@@ -5037,7 +4918,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList uris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -5052,7 +4932,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUrisList() {
     return uris_;
   }
-
   /**
    *
    *
@@ -5067,7 +4946,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public int getUrisCount() {
     return uris_.size();
   }
-
   /**
    *
    *
@@ -5083,7 +4961,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUris(int index) {
     return uris_.get(index);
   }
-
   /**
    *
    *
@@ -5309,7 +5186,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5617,7 +5493,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -5633,7 +5508,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       ipAddresses_.makeImmutable();
       return ipAddresses_;
     }
-
     /**
      *
      *
@@ -5648,7 +5522,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public int getIpAddressesCount() {
       return ipAddresses_.size();
     }
-
     /**
      *
      *
@@ -5664,7 +5537,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIpAddresses(int index) {
       return ipAddresses_.get(index);
     }
-
     /**
      *
      *
@@ -5680,7 +5552,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIpAddressesBytes(int index) {
       return ipAddresses_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5704,7 +5575,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5727,7 +5597,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5747,7 +5616,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5766,7 +5634,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5800,7 +5667,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -5816,7 +5682,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       domains_.makeImmutable();
       return domains_;
     }
-
     /**
      *
      *
@@ -5831,7 +5696,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public int getDomainsCount() {
       return domains_.size();
     }
-
     /**
      *
      *
@@ -5847,7 +5711,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDomains(int index) {
       return domains_.get(index);
     }
-
     /**
      *
      *
@@ -5863,7 +5726,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDomainsBytes(int index) {
       return domains_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5887,7 +5749,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5910,7 +5771,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5930,7 +5790,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5949,7 +5808,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6011,7 +5869,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6030,7 +5887,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6049,7 +5905,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6075,7 +5930,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6099,7 +5953,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6125,7 +5978,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6151,7 +6003,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6174,7 +6025,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6198,7 +6048,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6222,7 +6071,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6244,7 +6092,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6266,7 +6113,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6282,7 +6128,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         getSignaturesBuilder(int index) {
       return getSignaturesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6302,7 +6147,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6323,7 +6167,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(signatures_);
       }
     }
-
     /**
      *
      *
@@ -6341,7 +6184,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6360,7 +6202,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6403,7 +6244,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -6419,7 +6259,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       uris_.makeImmutable();
       return uris_;
     }
-
     /**
      *
      *
@@ -6434,7 +6273,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public int getUrisCount() {
       return uris_.size();
     }
-
     /**
      *
      *
@@ -6450,7 +6288,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
-
     /**
      *
      *
@@ -6466,7 +6303,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUrisBytes(int index) {
       return uris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -6490,7 +6326,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6513,7 +6348,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6533,7 +6367,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6552,7 +6385,6 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

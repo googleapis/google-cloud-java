@@ -55,7 +55,6 @@ public interface QueueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface QueueOrBuilder
    * @return Whether the appEngineHttpTarget field is set.
    */
   boolean hasAppEngineHttpTarget();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface QueueOrBuilder
    * @return The appEngineHttpTarget.
    */
   com.google.cloud.tasks.v2beta2.AppEngineHttpTarget getAppEngineHttpTarget();
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public interface QueueOrBuilder
    * @return Whether the pullTarget field is set.
    */
   boolean hasPullTarget();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface QueueOrBuilder
    * @return The pullTarget.
    */
   com.google.cloud.tasks.v2beta2.PullTarget getPullTarget();
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public interface QueueOrBuilder
    * @return Whether the httpTarget field is set.
    */
   boolean hasHttpTarget();
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public interface QueueOrBuilder
    * @return The httpTarget.
    */
   com.google.cloud.tasks.v2beta2.HttpTarget getHttpTarget();
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public interface QueueOrBuilder
    * @return Whether the rateLimits field is set.
    */
   boolean hasRateLimits();
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public interface QueueOrBuilder
    * @return The rateLimits.
    */
   com.google.cloud.tasks.v2beta2.RateLimits getRateLimits();
-
   /**
    *
    *
@@ -323,7 +314,6 @@ public interface QueueOrBuilder
    * @return Whether the retryConfig field is set.
    */
   boolean hasRetryConfig();
-
   /**
    *
    *
@@ -345,7 +335,6 @@ public interface QueueOrBuilder
    * @return The retryConfig.
    */
   com.google.cloud.tasks.v2beta2.RetryConfig getRetryConfig();
-
   /**
    *
    *
@@ -386,7 +375,6 @@ public interface QueueOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -431,7 +419,6 @@ public interface QueueOrBuilder
    * @return Whether the purgeTime field is set.
    */
   boolean hasPurgeTime();
-
   /**
    *
    *
@@ -455,7 +442,6 @@ public interface QueueOrBuilder
    * @return The purgeTime.
    */
   com.google.protobuf.Timestamp getPurgeTime();
-
   /**
    *
    *
@@ -501,7 +487,6 @@ public interface QueueOrBuilder
    * @return Whether the taskTtl field is set.
    */
   boolean hasTaskTtl();
-
   /**
    *
    *
@@ -525,7 +510,6 @@ public interface QueueOrBuilder
    * @return The taskTtl.
    */
   com.google.protobuf.Duration getTaskTtl();
-
   /**
    *
    *
@@ -569,7 +553,6 @@ public interface QueueOrBuilder
    * @return Whether the tombstoneTtl field is set.
    */
   boolean hasTombstoneTtl();
-
   /**
    *
    *
@@ -591,7 +574,6 @@ public interface QueueOrBuilder
    * @return The tombstoneTtl.
    */
   com.google.protobuf.Duration getTombstoneTtl();
-
   /**
    *
    *
@@ -628,7 +610,6 @@ public interface QueueOrBuilder
    * @return Whether the stats field is set.
    */
   boolean hasStats();
-
   /**
    *
    *
@@ -645,7 +626,6 @@ public interface QueueOrBuilder
    * @return The stats.
    */
   com.google.cloud.tasks.v2beta2.QueueStats getStats();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SeedConversionWorkspaceRequest)
     SeedConversionWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SeedConversionWorkspaceRequest.newBuilder() to construct.
   private SeedConversionWorkspaceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,7 +81,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     private SeedFromCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
 
   public static final int AUTO_COMMIT_FIELD_NUMBER = 2;
   private boolean autoCommit_ = false;
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
   }
 
   public static final int SOURCE_CONNECTION_PROFILE_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
   public boolean hasSourceConnectionProfile() {
     return seedFromCase_ == 100;
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
   }
 
   public static final int DESTINATION_CONNECTION_PROFILE_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
   public boolean hasDestinationConnectionProfile() {
     return seedFromCase_ == 101;
   }
-
   /**
    *
    *
@@ -313,7 +303,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -549,7 +538,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -804,7 +792,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -829,7 +816,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +840,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +882,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +908,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     }
 
     private boolean autoCommit_;
-
     /**
      *
      *
@@ -942,7 +924,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     public boolean getAutoCommit() {
       return autoCommit_;
     }
-
     /**
      *
      *
@@ -963,7 +944,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     public boolean hasSourceConnectionProfile() {
       return seedFromCase_ == 100;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1037,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1059,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1079,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1120,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
     public boolean hasDestinationConnectionProfile() {
       return seedFromCase_ == 101;
     }
-
     /**
      *
      *
@@ -1176,7 +1150,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1180,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1203,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1224,6 @@ public final class SeedConversionWorkspaceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *

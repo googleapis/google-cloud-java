@@ -34,7 +34,6 @@ public final class AuthorizeEnvironmentMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.AuthorizeEnvironmentMetadata)
     AuthorizeEnvironmentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuthorizeEnvironmentMetadata.newBuilder() to construct.
   private AuthorizeEnvironmentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class AuthorizeEnvironmentMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    * @return The version.
    */
   com.google.cloud.compute.v1.ManagedInstanceVersion getVersion();
-
   /**
    *
    *

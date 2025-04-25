@@ -38,7 +38,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    * @return Whether the regionTargetHttpsProxiesSetSslCertificatesRequestResource field is set.
    */
   boolean hasRegionTargetHttpsProxiesSetSslCertificatesRequestResource();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    */
   com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest
       getRegionTargetHttpsProxiesSetSslCertificatesRequestResource();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxy.
    */
   java.lang.String getTargetHttpsProxy();
-
   /**
    *
    *

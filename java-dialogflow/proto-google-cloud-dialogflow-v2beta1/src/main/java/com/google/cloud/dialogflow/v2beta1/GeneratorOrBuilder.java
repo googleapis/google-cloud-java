@@ -39,7 +39,6 @@ public interface GeneratorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface GeneratorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface GeneratorOrBuilder
    * @return Whether the freeFormContext field is set.
    */
   boolean hasFreeFormContext();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface GeneratorOrBuilder
    * @return The freeFormContext.
    */
   com.google.cloud.dialogflow.v2beta1.FreeFormContext getFreeFormContext();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface GeneratorOrBuilder
    * @return Whether the summarizationContext field is set.
    */
   boolean hasSummarizationContext();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface GeneratorOrBuilder
    * @return The summarizationContext.
    */
   com.google.cloud.dialogflow.v2beta1.SummarizationContext getSummarizationContext();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface GeneratorOrBuilder
    * @return Whether the inferenceParameter field is set.
    */
   boolean hasInferenceParameter();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface GeneratorOrBuilder
    * @return The inferenceParameter.
    */
   com.google.cloud.dialogflow.v2beta1.InferenceParameter getInferenceParameter();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface GeneratorOrBuilder
    * @return The enum numeric value on the wire for triggerEvent.
    */
   int getTriggerEventValue();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface GeneratorOrBuilder
    * @return Whether the publishedModel field is set.
    */
   boolean hasPublishedModel();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface GeneratorOrBuilder
    * @return The publishedModel.
    */
   java.lang.String getPublishedModel();
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public interface GeneratorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -310,7 +298,6 @@ public interface GeneratorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -336,7 +323,6 @@ public interface GeneratorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -350,7 +336,6 @@ public interface GeneratorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

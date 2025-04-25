@@ -33,7 +33,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ListConnectClustersResponse)
     ListConnectClustersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConnectClustersResponse.newBuilder() to construct.
   private ListConnectClustersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.managedkafka.v1.ConnectCluster> connectClusters_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.managedkafka.v1.ConnectCluster> getConnectClustersList() {
     return connectClusters_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       getConnectClustersOrBuilderList() {
     return connectClusters_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   public int getConnectClustersCount() {
     return connectClusters_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   public com.google.cloud.managedkafka.v1.ConnectCluster getConnectClusters(int index) {
     return connectClusters_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -453,7 +441,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +746,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return connectClustersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return connectClustersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return connectClustersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +945,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +964,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         int index) {
       return getConnectClustersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return connectClustersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(connectClusters_);
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1024,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       return getConnectClustersFieldBuilder()
           .addBuilder(com.google.cloud.managedkafka.v1.ConnectCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1067,7 +1038,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       return getConnectClustersFieldBuilder()
           .addBuilder(index, com.google.cloud.managedkafka.v1.ConnectCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1127,7 +1096,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1119,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1141,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1159,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1192,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1243,7 +1207,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1258,7 +1221,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1274,7 +1236,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1290,7 +1251,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1314,7 +1274,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1296,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1315,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1333,6 @@ public final class ListConnectClustersResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

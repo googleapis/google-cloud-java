@@ -38,7 +38,6 @@ public interface UpdateBigQueryExportRequestOrBuilder
    * @return Whether the bigQueryExport field is set.
    */
   boolean hasBigQueryExport();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateBigQueryExportRequestOrBuilder
    * @return The bigQueryExport.
    */
   com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExport();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateBigQueryExportRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateBigQueryExportRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

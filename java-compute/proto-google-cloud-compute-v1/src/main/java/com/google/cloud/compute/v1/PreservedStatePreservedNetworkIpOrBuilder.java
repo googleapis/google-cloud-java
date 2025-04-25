@@ -37,7 +37,6 @@ public interface PreservedStatePreservedNetworkIpOrBuilder
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PreservedStatePreservedNetworkIpOrBuilder
    * @return The autoDelete.
    */
   java.lang.String getAutoDelete();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface PreservedStatePreservedNetworkIpOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface PreservedStatePreservedNetworkIpOrBuilder
    * @return The ipAddress.
    */
   com.google.cloud.compute.v1.PreservedStatePreservedNetworkIpIpAddress getIpAddress();
-
   /**
    *
    *

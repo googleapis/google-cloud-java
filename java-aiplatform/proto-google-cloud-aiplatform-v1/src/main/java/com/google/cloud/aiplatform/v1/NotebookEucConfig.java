@@ -33,7 +33,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.NotebookEucConfig)
     NotebookEucConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotebookEucConfig.newBuilder() to construct.
   private NotebookEucConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int EUC_DISABLED_FIELD_NUMBER = 1;
   private boolean eucDisabled_ = false;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int BYPASS_ACTAS_CHECK_FIELD_NUMBER = 2;
   private boolean bypassActasCheck_ = false;
-
   /**
    *
    *
@@ -276,7 +273,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -472,7 +468,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private boolean eucDisabled_;
-
     /**
      *
      *
@@ -490,7 +485,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
     public boolean getEucDisabled() {
       return eucDisabled_;
     }
-
     /**
      *
      *
@@ -512,7 +506,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -534,7 +527,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean bypassActasCheck_;
-
     /**
      *
      *
@@ -556,7 +548,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
     public boolean getBypassActasCheck() {
       return bypassActasCheck_;
     }
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class NotebookEucConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

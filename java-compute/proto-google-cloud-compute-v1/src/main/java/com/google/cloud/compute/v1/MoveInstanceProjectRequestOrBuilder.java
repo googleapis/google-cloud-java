@@ -38,7 +38,6 @@ public interface MoveInstanceProjectRequestOrBuilder
    * @return Whether the instanceMoveRequestResource field is set.
    */
   boolean hasInstanceMoveRequestResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MoveInstanceProjectRequestOrBuilder
    * @return The instanceMoveRequestResource.
    */
   com.google.cloud.compute.v1.InstanceMoveRequest getInstanceMoveRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface MoveInstanceProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface MoveInstanceProjectRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface MoveInstanceProjectRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

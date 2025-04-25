@@ -47,7 +47,6 @@ public interface CreateAutoscalingPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface CreateAutoscalingPolicyRequestOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CreateAutoscalingPolicyRequestOrBuilder
    * @return The policy.
    */
   com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicy();
-
   /**
    *
    *

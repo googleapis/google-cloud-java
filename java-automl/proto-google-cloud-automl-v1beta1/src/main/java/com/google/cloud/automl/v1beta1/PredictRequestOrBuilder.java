@@ -38,7 +38,6 @@ public interface PredictRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface PredictRequestOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface PredictRequestOrBuilder
    * @return The payload.
    */
   com.google.cloud.automl.v1beta1.ExamplePayload getPayload();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface PredictRequestOrBuilder
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   int getParamsCount();
-
   /**
    *
    *
@@ -159,11 +155,9 @@ public interface PredictRequestOrBuilder
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   boolean containsParams(java.lang.String key);
-
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParams();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface PredictRequestOrBuilder
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParamsMap();
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public interface PredictRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

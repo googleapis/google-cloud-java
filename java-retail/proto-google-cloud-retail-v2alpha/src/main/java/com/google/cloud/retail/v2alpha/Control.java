@@ -35,7 +35,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.Control)
     ControlOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Control.newBuilder() to construct.
   private Control(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     private ControlCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -122,7 +120,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FACET_SPEC_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFacetSpec() {
     return controlCase_ == 3;
   }
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RULE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRule() {
     return controlCase_ == 4;
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2alpha.Rule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -313,7 +303,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +361,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList associatedServingConfigIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -397,7 +384,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAssociatedServingConfigIdsList() {
     return associatedServingConfigIds_;
   }
-
   /**
    *
    *
@@ -421,7 +407,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getAssociatedServingConfigIdsCount() {
     return associatedServingConfigIds_.size();
   }
-
   /**
    *
    *
@@ -446,7 +431,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAssociatedServingConfigIds(int index) {
     return associatedServingConfigIds_.get(index);
   }
-
   /**
    *
    *
@@ -490,7 +474,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -515,7 +498,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
         solutionTypes_, solutionTypes_converter_);
   }
-
   /**
    *
    *
@@ -538,7 +520,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getSolutionTypesCount() {
     return solutionTypes_.size();
   }
-
   /**
    *
    *
@@ -562,7 +543,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2alpha.SolutionType getSolutionTypes(int index) {
     return solutionTypes_converter_.convert(solutionTypes_.get(index));
   }
-
   /**
    *
    *
@@ -585,7 +565,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSolutionTypesValueList() {
     return solutionTypes_;
   }
-
   /**
    *
    *
@@ -631,7 +610,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -657,7 +635,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.retail.v2alpha.SearchSolutionUseCase>(
         searchSolutionUseCase_, searchSolutionUseCase_converter_);
   }
-
   /**
    *
    *
@@ -680,7 +657,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public int getSearchSolutionUseCaseCount() {
     return searchSolutionUseCase_.size();
   }
-
   /**
    *
    *
@@ -704,7 +680,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.retail.v2alpha.SearchSolutionUseCase getSearchSolutionUseCase(int index) {
     return searchSolutionUseCase_converter_.convert(searchSolutionUseCase_.get(index));
   }
-
   /**
    *
    *
@@ -727,7 +702,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSearchSolutionUseCaseValueList() {
     return searchSolutionUseCase_;
   }
-
   /**
    *
    *
@@ -1030,7 +1004,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1395,7 +1368,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec.Builder,
             com.google.cloud.retail.v2alpha.SearchRequest.FacetSpecOrBuilder>
         facetSpecBuilder_;
-
     /**
      *
      *
@@ -1419,7 +1391,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFacetSpec() {
       return controlCase_ == 3;
     }
-
     /**
      *
      *
@@ -1453,7 +1424,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1452,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       controlCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1509,7 +1478,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       controlCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1517,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       controlCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1548,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1566,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec.Builder getFacetSpecBuilder() {
       return getFacetSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1628,7 +1593,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1672,7 +1636,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.Rule.Builder,
             com.google.cloud.retail.v2alpha.RuleOrBuilder>
         ruleBuilder_;
-
     /**
      *
      *
@@ -1690,7 +1653,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRule() {
       return controlCase_ == 4;
     }
-
     /**
      *
      *
@@ -1718,7 +1680,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1704,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       controlCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1765,7 +1725,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       controlCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1759,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       controlCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1828,7 +1786,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1843,7 +1800,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.Rule.Builder getRuleBuilder() {
       return getRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1866,7 +1822,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2alpha.Rule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1901,7 +1856,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1925,7 +1879,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1949,7 +1902,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1924,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1942,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2017,7 +1967,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2043,7 +1992,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2069,7 +2017,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2094,7 +2041,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2115,7 +2061,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2152,7 +2097,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2177,7 +2121,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       associatedServingConfigIds_.makeImmutable();
       return associatedServingConfigIds_;
     }
-
     /**
      *
      *
@@ -2201,7 +2144,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getAssociatedServingConfigIdsCount() {
       return associatedServingConfigIds_.size();
     }
-
     /**
      *
      *
@@ -2226,7 +2168,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAssociatedServingConfigIds(int index) {
       return associatedServingConfigIds_.get(index);
     }
-
     /**
      *
      *
@@ -2251,7 +2192,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAssociatedServingConfigIdsBytes(int index) {
       return associatedServingConfigIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2284,7 +2224,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2316,7 +2255,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2345,7 +2283,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2373,7 +2310,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2415,7 +2351,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
       }
     }
-
     /**
      *
      *
@@ -2439,7 +2374,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.retail.v2alpha.SolutionType>(
           solutionTypes_, solutionTypes_converter_);
     }
-
     /**
      *
      *
@@ -2461,7 +2395,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypesCount() {
       return solutionTypes_.size();
     }
-
     /**
      *
      *
@@ -2484,7 +2417,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.retail.v2alpha.SolutionType getSolutionTypes(int index) {
       return solutionTypes_converter_.convert(solutionTypes_.get(index));
     }
-
     /**
      *
      *
@@ -2514,7 +2446,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2543,7 +2474,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2502,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2597,7 +2526,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2619,7 +2547,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSolutionTypesValueList() {
       return java.util.Collections.unmodifiableList(solutionTypes_);
     }
-
     /**
      *
      *
@@ -2642,7 +2569,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getSolutionTypesValue(int index) {
       return solutionTypes_.get(index);
     }
-
     /**
      *
      *
@@ -2669,7 +2595,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2620,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2733,7 +2657,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
       }
     }
-
     /**
      *
      *
@@ -2759,7 +2682,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.retail.v2alpha.SearchSolutionUseCase>(
           searchSolutionUseCase_, searchSolutionUseCase_converter_);
     }
-
     /**
      *
      *
@@ -2782,7 +2704,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getSearchSolutionUseCaseCount() {
       return searchSolutionUseCase_.size();
     }
-
     /**
      *
      *
@@ -2807,7 +2728,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return searchSolutionUseCase_converter_.convert(searchSolutionUseCase_.get(index));
     }
-
     /**
      *
      *
@@ -2839,7 +2759,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2870,7 +2789,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2901,7 +2819,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2927,7 +2844,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2950,7 +2866,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSearchSolutionUseCaseValueList() {
       return java.util.Collections.unmodifiableList(searchSolutionUseCase_);
     }
-
     /**
      *
      *
@@ -2974,7 +2889,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
     public int getSearchSolutionUseCaseValue(int index) {
       return searchSolutionUseCase_.get(index);
     }
-
     /**
      *
      *
@@ -3002,7 +2916,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3029,7 +2942,6 @@ public final class Control extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDataKey)
     FeatureViewDataKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureViewDataKey.newBuilder() to construct.
   private FeatureViewDataKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
      * @return A list containing the parts.
      */
     java.util.List<java.lang.String> getPartsList();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
      * @return The count of parts.
      */
     int getPartsCount();
-
     /**
      *
      *
@@ -109,7 +106,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
      * @return The parts at the given index.
      */
     java.lang.String getParts(int index);
-
     /**
      *
      *
@@ -125,7 +121,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getPartsBytes(int index);
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey)
       CompositeKeyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CompositeKey.newBuilder() to construct.
     private CompositeKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -176,7 +170,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList parts_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -192,7 +185,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getPartsList() {
       return parts_;
     }
-
     /**
      *
      *
@@ -208,7 +200,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     public int getPartsCount() {
       return parts_.size();
     }
-
     /**
      *
      *
@@ -225,7 +216,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     public java.lang.String getParts(int index) {
       return parts_.get(index);
     }
-
     /**
      *
      *
@@ -412,7 +402,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -622,7 +611,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -639,7 +627,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         parts_.makeImmutable();
         return parts_;
       }
-
       /**
        *
        *
@@ -655,7 +642,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       public int getPartsCount() {
         return parts_.size();
       }
-
       /**
        *
        *
@@ -672,7 +658,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       public java.lang.String getParts(int index) {
         return parts_.get(index);
       }
-
       /**
        *
        *
@@ -689,7 +674,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getPartsBytes(int index) {
         return parts_.getByteString(index);
       }
-
       /**
        *
        *
@@ -714,7 +698,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -738,7 +721,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -759,7 +741,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -779,7 +760,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -889,7 +869,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     private KeyOneofCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -923,7 +902,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -938,7 +916,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
   public boolean hasKey() {
     return keyOneofCase_ == 1;
   }
-
   /**
    *
    *
@@ -966,7 +943,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -996,7 +972,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int COMPOSITE_KEY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1014,7 +989,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
   public boolean hasCompositeKey() {
     return keyOneofCase_ == 2;
   }
-
   /**
    *
    *
@@ -1035,7 +1009,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1245,7 +1218,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1488,7 +1460,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     public boolean hasKey() {
       return keyOneofCase_ == 1;
     }
-
     /**
      *
      *
@@ -1517,7 +1488,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1546,7 +1516,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1568,7 +1537,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1556,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1584,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKeyOrBuilder>
         compositeKeyBuilder_;
-
     /**
      *
      *
@@ -1635,7 +1601,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
     public boolean hasCompositeKey() {
       return keyOneofCase_ == 2;
     }
-
     /**
      *
      *
@@ -1665,7 +1630,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1691,7 +1655,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       keyOneofCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1715,7 +1678,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       keyOneofCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1716,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       keyOneofCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1782,7 +1743,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1758,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
         getCompositeKeyBuilder() {
       return getCompositeKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1823,7 +1782,6 @@ public final class FeatureViewDataKey extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface UpdateKeyRequestOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateKeyRequestOrBuilder
    * @return The key.
    */
   com.google.recaptchaenterprise.v1.Key getKey();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateKeyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateKeyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

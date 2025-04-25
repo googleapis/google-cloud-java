@@ -36,7 +36,6 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The issuerUri.
    */
   java.lang.String getIssuerUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The workloadPool.
    */
   java.lang.String getWorkloadPool();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The identityProvider.
    */
   java.lang.String getIdentityProvider();
-
   /**
    *
    *

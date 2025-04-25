@@ -137,8 +137,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetSupportedLanguages, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SupportedLanguages.class.getName(),
                   Exception.class.getName())));
@@ -202,8 +201,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method BatchTranslateDocument, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -517,8 +515,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAdaptiveMtDataset, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateAdaptiveMtDataset, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AdaptiveMtDataset.class.getName(),
                   Exception.class.getName())));
@@ -539,8 +536,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAdaptiveMtDataset, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteAdaptiveMtDataset, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -561,8 +557,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAdaptiveMtDataset, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetAdaptiveMtDataset, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AdaptiveMtDataset.class.getName(),
                   Exception.class.getName())));
@@ -584,8 +579,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAdaptiveMtDatasets, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListAdaptiveMtDatasets, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAdaptiveMtDatasetsResponse.class.getName(),
                   Exception.class.getName())));
@@ -649,8 +643,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAdaptiveMtFile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteAdaptiveMtFile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -672,8 +665,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportAdaptiveMtFile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ImportAdaptiveMtFile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ImportAdaptiveMtFileResponse.class.getName(),
                   Exception.class.getName())));
@@ -717,8 +709,7 @@ public class MockTranslationServiceImpl extends TranslationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAdaptiveMtSentences, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListAdaptiveMtSentences, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAdaptiveMtSentencesResponse.class.getName(),
                   Exception.class.getName())));

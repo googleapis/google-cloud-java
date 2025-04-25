@@ -38,7 +38,6 @@ public interface ExplicitContentDetectionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

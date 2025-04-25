@@ -39,7 +39,6 @@ public interface GetAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface GetAccountRequestOrBuilder
    * @return Whether the parent field is set.
    */
   boolean hasParent();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface GetAccountRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

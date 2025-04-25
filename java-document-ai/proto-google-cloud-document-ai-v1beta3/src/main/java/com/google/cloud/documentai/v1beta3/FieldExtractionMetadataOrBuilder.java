@@ -36,7 +36,6 @@ public interface FieldExtractionMetadataOrBuilder
    * @return Whether the summaryOptions field is set.
    */
   boolean hasSummaryOptions();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface FieldExtractionMetadataOrBuilder
    * @return The summaryOptions.
    */
   com.google.cloud.documentai.v1beta3.SummaryOptions getSummaryOptions();
-
   /**
    *
    *

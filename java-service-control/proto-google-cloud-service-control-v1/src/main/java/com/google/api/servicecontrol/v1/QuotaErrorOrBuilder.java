@@ -36,7 +36,6 @@ public interface QuotaErrorOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface QuotaErrorOrBuilder
    * @return The subject.
    */
   java.lang.String getSubject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface QuotaErrorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface QuotaErrorOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface QuotaErrorOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *

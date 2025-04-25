@@ -46,7 +46,6 @@ public interface GcrDestinationOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.container.v1.ResourceManagerTags)
     ResourceManagerTagsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceManagerTags.newBuilder() to construct.
   private ResourceManagerTags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -105,7 +104,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
   public int getTagsCount() {
     return internalGetTags().getMap().size();
   }
-
   /**
    *
    *
@@ -125,14 +123,12 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
     }
     return internalGetTags().getMap().containsKey(key);
   }
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTags() {
     return getTagsMap();
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -365,7 +359,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -601,7 +594,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
     public int getTagsCount() {
       return internalGetTags().getMap().size();
     }
-
     /**
      *
      *
@@ -621,14 +613,12 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
       }
       return internalGetTags().getMap().containsKey(key);
     }
-
     /** Use {@link #getTagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTags() {
       return getTagsMap();
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -719,14 +706,12 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
       internalGetMutableTags().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
       bitField0_ |= 0x00000001;
       return internalGetMutableTags().getMutableMap();
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class ResourceManagerTags extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

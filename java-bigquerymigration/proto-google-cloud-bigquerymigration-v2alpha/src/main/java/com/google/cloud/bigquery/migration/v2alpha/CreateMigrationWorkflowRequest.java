@@ -33,7 +33,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.CreateMigrationWorkflowRequest)
     CreateMigrationWorkflowRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateMigrationWorkflowRequest.newBuilder() to construct.
   private CreateMigrationWorkflowRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
 
   public static final int MIGRATION_WORKFLOW_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow migrationWorkflow_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
   public boolean hasMigrationWorkflow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
         ? com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow.getDefaultInstance()
         : migrationWorkflow_;
   }
-
   /**
    *
    *
@@ -367,7 +361,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -596,7 +589,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -622,7 +614,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -648,7 +639,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -673,7 +663,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
             com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflow.Builder,
             com.google.cloud.bigquery.migration.v2alpha.MigrationWorkflowOrBuilder>
         migrationWorkflowBuilder_;
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
     public boolean hasMigrationWorkflow() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
         return migrationWorkflowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +800,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
       onChanged();
       return getMigrationWorkflowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -911,7 +891,6 @@ public final class CreateMigrationWorkflowRequest extends com.google.protobuf.Ge
             : migrationWorkflow_;
       }
     }
-
     /**
      *
      *

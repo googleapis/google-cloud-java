@@ -36,7 +36,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest)
     DeleteSecurityHealthAnalyticsCustomModuleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteSecurityHealthAnalyticsCustomModuleRequest.newBuilder() to construct.
   private DeleteSecurityHealthAnalyticsCustomModuleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -362,7 +358,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -589,7 +584,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -619,7 +613,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -649,7 +642,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -678,7 +670,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +694,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +725,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -763,7 +752,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -795,7 +783,6 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

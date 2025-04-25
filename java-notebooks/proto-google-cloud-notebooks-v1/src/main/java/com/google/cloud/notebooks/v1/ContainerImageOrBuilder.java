@@ -37,7 +37,6 @@ public interface ContainerImageOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ContainerImageOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *

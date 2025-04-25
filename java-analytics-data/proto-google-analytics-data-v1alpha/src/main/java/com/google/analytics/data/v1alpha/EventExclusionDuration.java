@@ -64,7 +64,6 @@ public enum EventExclusionDuration implements com.google.protobuf.ProtocolMessag
    * <code>EVENT_EXCLUSION_DURATION_UNSPECIFIED = 0;</code>
    */
   public static final int EVENT_EXCLUSION_DURATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

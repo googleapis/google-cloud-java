@@ -33,7 +33,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.FaceAnnotation)
     FaceAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FaceAnnotation.newBuilder() to construct.
   private FaceAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -115,7 +113,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the position field is set.
      */
     boolean hasPosition();
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      * @return The position.
      */
     com.google.cloud.vision.v1p4beta1.Position getPosition();
-
     /**
      *
      *
@@ -140,7 +136,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.vision.v1p4beta1.PositionOrBuilder getPositionOrBuilder();
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p4beta1.FaceAnnotation.Landmark)
       LandmarkOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Landmark.newBuilder() to construct.
     private Landmark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -562,7 +556,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>UNKNOWN_LANDMARK = 0;</code>
        */
       public static final int UNKNOWN_LANDMARK_VALUE = 0;
-
       /**
        *
        *
@@ -573,7 +566,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYE = 1;</code>
        */
       public static final int LEFT_EYE_VALUE = 1;
-
       /**
        *
        *
@@ -584,7 +576,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYE = 2;</code>
        */
       public static final int RIGHT_EYE_VALUE = 2;
-
       /**
        *
        *
@@ -595,7 +586,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_OF_LEFT_EYEBROW = 3;</code>
        */
       public static final int LEFT_OF_LEFT_EYEBROW_VALUE = 3;
-
       /**
        *
        *
@@ -606,7 +596,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_OF_LEFT_EYEBROW = 4;</code>
        */
       public static final int RIGHT_OF_LEFT_EYEBROW_VALUE = 4;
-
       /**
        *
        *
@@ -617,7 +606,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_OF_RIGHT_EYEBROW = 5;</code>
        */
       public static final int LEFT_OF_RIGHT_EYEBROW_VALUE = 5;
-
       /**
        *
        *
@@ -628,7 +616,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_OF_RIGHT_EYEBROW = 6;</code>
        */
       public static final int RIGHT_OF_RIGHT_EYEBROW_VALUE = 6;
-
       /**
        *
        *
@@ -639,7 +626,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>MIDPOINT_BETWEEN_EYES = 7;</code>
        */
       public static final int MIDPOINT_BETWEEN_EYES_VALUE = 7;
-
       /**
        *
        *
@@ -650,7 +636,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>NOSE_TIP = 8;</code>
        */
       public static final int NOSE_TIP_VALUE = 8;
-
       /**
        *
        *
@@ -661,7 +646,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>UPPER_LIP = 9;</code>
        */
       public static final int UPPER_LIP_VALUE = 9;
-
       /**
        *
        *
@@ -672,7 +656,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LOWER_LIP = 10;</code>
        */
       public static final int LOWER_LIP_VALUE = 10;
-
       /**
        *
        *
@@ -683,7 +666,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>MOUTH_LEFT = 11;</code>
        */
       public static final int MOUTH_LEFT_VALUE = 11;
-
       /**
        *
        *
@@ -694,7 +676,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>MOUTH_RIGHT = 12;</code>
        */
       public static final int MOUTH_RIGHT_VALUE = 12;
-
       /**
        *
        *
@@ -705,7 +686,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>MOUTH_CENTER = 13;</code>
        */
       public static final int MOUTH_CENTER_VALUE = 13;
-
       /**
        *
        *
@@ -716,7 +696,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>NOSE_BOTTOM_RIGHT = 14;</code>
        */
       public static final int NOSE_BOTTOM_RIGHT_VALUE = 14;
-
       /**
        *
        *
@@ -727,7 +706,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>NOSE_BOTTOM_LEFT = 15;</code>
        */
       public static final int NOSE_BOTTOM_LEFT_VALUE = 15;
-
       /**
        *
        *
@@ -738,7 +716,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>NOSE_BOTTOM_CENTER = 16;</code>
        */
       public static final int NOSE_BOTTOM_CENTER_VALUE = 16;
-
       /**
        *
        *
@@ -749,7 +726,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYE_TOP_BOUNDARY = 17;</code>
        */
       public static final int LEFT_EYE_TOP_BOUNDARY_VALUE = 17;
-
       /**
        *
        *
@@ -760,7 +736,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYE_RIGHT_CORNER = 18;</code>
        */
       public static final int LEFT_EYE_RIGHT_CORNER_VALUE = 18;
-
       /**
        *
        *
@@ -771,7 +746,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYE_BOTTOM_BOUNDARY = 19;</code>
        */
       public static final int LEFT_EYE_BOTTOM_BOUNDARY_VALUE = 19;
-
       /**
        *
        *
@@ -782,7 +756,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYE_LEFT_CORNER = 20;</code>
        */
       public static final int LEFT_EYE_LEFT_CORNER_VALUE = 20;
-
       /**
        *
        *
@@ -793,7 +766,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYE_TOP_BOUNDARY = 21;</code>
        */
       public static final int RIGHT_EYE_TOP_BOUNDARY_VALUE = 21;
-
       /**
        *
        *
@@ -804,7 +776,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYE_RIGHT_CORNER = 22;</code>
        */
       public static final int RIGHT_EYE_RIGHT_CORNER_VALUE = 22;
-
       /**
        *
        *
@@ -815,7 +786,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYE_BOTTOM_BOUNDARY = 23;</code>
        */
       public static final int RIGHT_EYE_BOTTOM_BOUNDARY_VALUE = 23;
-
       /**
        *
        *
@@ -826,7 +796,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYE_LEFT_CORNER = 24;</code>
        */
       public static final int RIGHT_EYE_LEFT_CORNER_VALUE = 24;
-
       /**
        *
        *
@@ -837,7 +806,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYEBROW_UPPER_MIDPOINT = 25;</code>
        */
       public static final int LEFT_EYEBROW_UPPER_MIDPOINT_VALUE = 25;
-
       /**
        *
        *
@@ -848,7 +816,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYEBROW_UPPER_MIDPOINT = 26;</code>
        */
       public static final int RIGHT_EYEBROW_UPPER_MIDPOINT_VALUE = 26;
-
       /**
        *
        *
@@ -859,7 +826,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EAR_TRAGION = 27;</code>
        */
       public static final int LEFT_EAR_TRAGION_VALUE = 27;
-
       /**
        *
        *
@@ -870,7 +836,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EAR_TRAGION = 28;</code>
        */
       public static final int RIGHT_EAR_TRAGION_VALUE = 28;
-
       /**
        *
        *
@@ -881,7 +846,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>LEFT_EYE_PUPIL = 29;</code>
        */
       public static final int LEFT_EYE_PUPIL_VALUE = 29;
-
       /**
        *
        *
@@ -892,7 +856,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>RIGHT_EYE_PUPIL = 30;</code>
        */
       public static final int RIGHT_EYE_PUPIL_VALUE = 30;
-
       /**
        *
        *
@@ -903,7 +866,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>FOREHEAD_GLABELLA = 31;</code>
        */
       public static final int FOREHEAD_GLABELLA_VALUE = 31;
-
       /**
        *
        *
@@ -914,7 +876,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>CHIN_GNATHION = 32;</code>
        */
       public static final int CHIN_GNATHION_VALUE = 32;
-
       /**
        *
        *
@@ -925,7 +886,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>CHIN_LEFT_GONION = 33;</code>
        */
       public static final int CHIN_LEFT_GONION_VALUE = 33;
-
       /**
        *
        *
@@ -1089,7 +1049,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 3;
     private int type_ = 0;
-
     /**
      *
      *
@@ -1105,7 +1064,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1128,7 +1086,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int POSITION_FIELD_NUMBER = 4;
     private com.google.cloud.vision.v1p4beta1.Position position_;
-
     /**
      *
      *
@@ -1144,7 +1101,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPosition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1162,7 +1118,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vision.v1p4beta1.Position.getDefaultInstance()
           : position_;
     }
-
     /**
      *
      *
@@ -1358,7 +1313,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1573,7 +1527,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -1589,7 +1542,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -1608,7 +1560,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1628,7 +1579,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.vision.v1p4beta1.FaceAnnotation.Landmark.Type.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1650,7 +1600,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1675,7 +1624,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.vision.v1p4beta1.Position.Builder,
               com.google.cloud.vision.v1p4beta1.PositionOrBuilder>
           positionBuilder_;
-
       /**
        *
        *
@@ -1690,7 +1638,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPosition() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1711,7 +1658,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           return positionBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1734,7 +1680,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1755,7 +1700,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1783,7 +1727,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1803,7 +1746,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1818,7 +1760,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1837,7 +1778,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
               : position_;
         }
       }
-
       /**
        *
        *
@@ -1931,7 +1871,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p4beta1.BoundingPoly boundingPoly_;
-
   /**
    *
    *
@@ -1953,7 +1892,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoundingPoly() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1977,7 +1915,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
         : boundingPoly_;
   }
-
   /**
    *
    *
@@ -2002,7 +1939,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FD_BOUNDING_POLY_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1p4beta1.BoundingPoly fdBoundingPoly_;
-
   /**
    *
    *
@@ -2023,7 +1959,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFdBoundingPoly() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2046,7 +1981,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vision.v1p4beta1.BoundingPoly.getDefaultInstance()
         : fdBoundingPoly_;
   }
-
   /**
    *
    *
@@ -2072,7 +2006,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.FaceAnnotation.Landmark> landmarks_;
-
   /**
    *
    *
@@ -2087,7 +2020,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       getLandmarksList() {
     return landmarks_;
   }
-
   /**
    *
    *
@@ -2103,7 +2035,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       getLandmarksOrBuilderList() {
     return landmarks_;
   }
-
   /**
    *
    *
@@ -2117,7 +2048,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getLandmarksCount() {
     return landmarks_.size();
   }
-
   /**
    *
    *
@@ -2131,7 +2061,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1p4beta1.FaceAnnotation.Landmark getLandmarks(int index) {
     return landmarks_.get(index);
   }
-
   /**
    *
    *
@@ -2149,7 +2078,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROLL_ANGLE_FIELD_NUMBER = 4;
   private float rollAngle_ = 0F;
-
   /**
    *
    *
@@ -2170,7 +2098,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAN_ANGLE_FIELD_NUMBER = 5;
   private float panAngle_ = 0F;
-
   /**
    *
    *
@@ -2191,7 +2118,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TILT_ANGLE_FIELD_NUMBER = 6;
   private float tiltAngle_ = 0F;
-
   /**
    *
    *
@@ -2211,7 +2137,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DETECTION_CONFIDENCE_FIELD_NUMBER = 7;
   private float detectionConfidence_ = 0F;
-
   /**
    *
    *
@@ -2230,7 +2155,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LANDMARKING_CONFIDENCE_FIELD_NUMBER = 8;
   private float landmarkingConfidence_ = 0F;
-
   /**
    *
    *
@@ -2249,7 +2173,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int JOY_LIKELIHOOD_FIELD_NUMBER = 9;
   private int joyLikelihood_ = 0;
-
   /**
    *
    *
@@ -2265,7 +2188,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getJoyLikelihoodValue() {
     return joyLikelihood_;
   }
-
   /**
    *
    *
@@ -2286,7 +2208,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SORROW_LIKELIHOOD_FIELD_NUMBER = 10;
   private int sorrowLikelihood_ = 0;
-
   /**
    *
    *
@@ -2302,7 +2223,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getSorrowLikelihoodValue() {
     return sorrowLikelihood_;
   }
-
   /**
    *
    *
@@ -2323,7 +2243,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANGER_LIKELIHOOD_FIELD_NUMBER = 11;
   private int angerLikelihood_ = 0;
-
   /**
    *
    *
@@ -2339,7 +2258,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getAngerLikelihoodValue() {
     return angerLikelihood_;
   }
-
   /**
    *
    *
@@ -2360,7 +2278,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SURPRISE_LIKELIHOOD_FIELD_NUMBER = 12;
   private int surpriseLikelihood_ = 0;
-
   /**
    *
    *
@@ -2376,7 +2293,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getSurpriseLikelihoodValue() {
     return surpriseLikelihood_;
   }
-
   /**
    *
    *
@@ -2397,7 +2313,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UNDER_EXPOSED_LIKELIHOOD_FIELD_NUMBER = 13;
   private int underExposedLikelihood_ = 0;
-
   /**
    *
    *
@@ -2413,7 +2328,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getUnderExposedLikelihoodValue() {
     return underExposedLikelihood_;
   }
-
   /**
    *
    *
@@ -2434,7 +2348,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BLURRED_LIKELIHOOD_FIELD_NUMBER = 14;
   private int blurredLikelihood_ = 0;
-
   /**
    *
    *
@@ -2450,7 +2363,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getBlurredLikelihoodValue() {
     return blurredLikelihood_;
   }
-
   /**
    *
    *
@@ -2471,7 +2383,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEADWEAR_LIKELIHOOD_FIELD_NUMBER = 15;
   private int headwearLikelihood_ = 0;
-
   /**
    *
    *
@@ -2487,7 +2398,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getHeadwearLikelihoodValue() {
     return headwearLikelihood_;
   }
-
   /**
    *
    *
@@ -2511,7 +2421,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p4beta1.FaceRecognitionResult>
       recognitionResult_;
-
   /**
    *
    *
@@ -2531,7 +2440,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       getRecognitionResultList() {
     return recognitionResult_;
   }
-
   /**
    *
    *
@@ -2551,7 +2459,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       getRecognitionResultOrBuilderList() {
     return recognitionResult_;
   }
-
   /**
    *
    *
@@ -2570,7 +2477,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public int getRecognitionResultCount() {
     return recognitionResult_.size();
   }
-
   /**
    *
    *
@@ -2589,7 +2495,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vision.v1p4beta1.FaceRecognitionResult getRecognitionResult(int index) {
     return recognitionResult_.get(index);
   }
-
   /**
    *
    *
@@ -2926,7 +2831,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3428,7 +3332,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder,
             com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder>
         boundingPolyBuilder_;
-
     /**
      *
      *
@@ -3449,7 +3352,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoundingPoly() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3476,7 +3378,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return boundingPolyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3505,7 +3406,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3532,7 +3432,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3567,7 +3466,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3593,7 +3491,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3614,7 +3511,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3639,7 +3535,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             : boundingPoly_;
       }
     }
-
     /**
      *
      *
@@ -3678,7 +3573,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vision.v1p4beta1.BoundingPoly.Builder,
             com.google.cloud.vision.v1p4beta1.BoundingPolyOrBuilder>
         fdBoundingPolyBuilder_;
-
     /**
      *
      *
@@ -3698,7 +3592,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFdBoundingPoly() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3724,7 +3617,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return fdBoundingPolyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3752,7 +3644,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3778,7 +3669,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3812,7 +3702,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3837,7 +3726,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3857,7 +3745,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFdBoundingPolyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3881,7 +3768,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             : fdBoundingPoly_;
       }
     }
-
     /**
      *
      *
@@ -3948,7 +3834,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return landmarksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3965,7 +3850,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return landmarksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3982,7 +3866,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return landmarksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4006,7 +3889,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4028,7 +3910,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4051,7 +3932,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4075,7 +3955,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4096,7 +3975,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4118,7 +3996,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4140,7 +4017,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4160,7 +4036,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4180,7 +4055,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4194,7 +4068,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getLandmarksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4212,7 +4085,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return landmarksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4231,7 +4103,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(landmarks_);
       }
     }
-
     /**
      *
      *
@@ -4246,7 +4117,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.vision.v1p4beta1.FaceAnnotation.Landmark.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4263,7 +4133,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.vision.v1p4beta1.FaceAnnotation.Landmark.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4296,7 +4165,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float rollAngle_;
-
     /**
      *
      *
@@ -4314,7 +4182,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public float getRollAngle() {
       return rollAngle_;
     }
-
     /**
      *
      *
@@ -4336,7 +4203,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4358,7 +4224,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float panAngle_;
-
     /**
      *
      *
@@ -4376,7 +4241,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public float getPanAngle() {
       return panAngle_;
     }
-
     /**
      *
      *
@@ -4398,7 +4262,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4420,7 +4283,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float tiltAngle_;
-
     /**
      *
      *
@@ -4437,7 +4299,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public float getTiltAngle() {
       return tiltAngle_;
     }
-
     /**
      *
      *
@@ -4458,7 +4319,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4479,7 +4339,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float detectionConfidence_;
-
     /**
      *
      *
@@ -4495,7 +4354,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public float getDetectionConfidence() {
       return detectionConfidence_;
     }
-
     /**
      *
      *
@@ -4515,7 +4373,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4535,7 +4392,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float landmarkingConfidence_;
-
     /**
      *
      *
@@ -4551,7 +4407,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public float getLandmarkingConfidence() {
       return landmarkingConfidence_;
     }
-
     /**
      *
      *
@@ -4571,7 +4426,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4591,7 +4445,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int joyLikelihood_ = 0;
-
     /**
      *
      *
@@ -4607,7 +4460,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getJoyLikelihoodValue() {
       return joyLikelihood_;
     }
-
     /**
      *
      *
@@ -4626,7 +4478,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4644,7 +4495,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(joyLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4666,7 +4516,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4686,7 +4535,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sorrowLikelihood_ = 0;
-
     /**
      *
      *
@@ -4702,7 +4550,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getSorrowLikelihoodValue() {
       return sorrowLikelihood_;
     }
-
     /**
      *
      *
@@ -4721,7 +4568,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4739,7 +4585,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(sorrowLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4761,7 +4606,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4781,7 +4625,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int angerLikelihood_ = 0;
-
     /**
      *
      *
@@ -4797,7 +4640,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getAngerLikelihoodValue() {
       return angerLikelihood_;
     }
-
     /**
      *
      *
@@ -4816,7 +4658,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4834,7 +4675,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(angerLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4856,7 +4696,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4876,7 +4715,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int surpriseLikelihood_ = 0;
-
     /**
      *
      *
@@ -4892,7 +4730,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getSurpriseLikelihoodValue() {
       return surpriseLikelihood_;
     }
-
     /**
      *
      *
@@ -4911,7 +4748,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4929,7 +4765,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(surpriseLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4951,7 +4786,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4971,7 +4805,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int underExposedLikelihood_ = 0;
-
     /**
      *
      *
@@ -4987,7 +4820,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getUnderExposedLikelihoodValue() {
       return underExposedLikelihood_;
     }
-
     /**
      *
      *
@@ -5006,7 +4838,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5024,7 +4855,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(underExposedLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -5046,7 +4876,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5066,7 +4895,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int blurredLikelihood_ = 0;
-
     /**
      *
      *
@@ -5082,7 +4910,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getBlurredLikelihoodValue() {
       return blurredLikelihood_;
     }
-
     /**
      *
      *
@@ -5101,7 +4928,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5119,7 +4945,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(blurredLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -5141,7 +4966,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5161,7 +4985,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int headwearLikelihood_ = 0;
-
     /**
      *
      *
@@ -5177,7 +5000,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
     public int getHeadwearLikelihoodValue() {
       return headwearLikelihood_;
     }
-
     /**
      *
      *
@@ -5196,7 +5018,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5214,7 +5035,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vision.v1p4beta1.Likelihood.forNumber(headwearLikelihood_);
       return result == null ? com.google.cloud.vision.v1p4beta1.Likelihood.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -5236,7 +5056,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5295,7 +5114,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return recognitionResultBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5317,7 +5135,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return recognitionResultBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5339,7 +5156,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return recognitionResultBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5368,7 +5184,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5395,7 +5210,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5424,7 +5238,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5453,7 +5266,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5479,7 +5291,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5506,7 +5317,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5533,7 +5343,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5558,7 +5367,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5583,7 +5391,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5602,7 +5409,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         getRecognitionResultBuilder(int index) {
       return getRecognitionResultFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5625,7 +5431,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return recognitionResultBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5649,7 +5454,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(recognitionResult_);
       }
     }
-
     /**
      *
      *
@@ -5669,7 +5473,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
       return getRecognitionResultFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5690,7 +5493,6 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.vision.v1p4beta1.FaceRecognitionResult.getDefaultInstance());
     }
-
     /**
      *
      *

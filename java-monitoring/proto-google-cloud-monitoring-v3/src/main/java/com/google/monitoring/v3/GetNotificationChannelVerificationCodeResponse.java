@@ -34,7 +34,6 @@ public final class GetNotificationChannelVerificationCodeResponse
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
     GetNotificationChannelVerificationCodeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetNotificationChannelVerificationCodeResponse.newBuilder() to construct.
   private GetNotificationChannelVerificationCodeResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GetNotificationChannelVerificationCodeResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GetNotificationChannelVerificationCodeResponse
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expireTime_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class GetNotificationChannelVerificationCodeResponse
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class GetNotificationChannelVerificationCodeResponse
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
-
   /**
    *
    *
@@ -356,7 +350,6 @@ public final class GetNotificationChannelVerificationCodeResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class GetNotificationChannelVerificationCodeResponse
     private int bitField0_;
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class GetNotificationChannelVerificationCodeResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class GetNotificationChannelVerificationCodeResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +647,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class GetNotificationChannelVerificationCodeResponse
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class GetNotificationChannelVerificationCodeResponse
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class GetNotificationChannelVerificationCodeResponse
         return expireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class GetNotificationChannelVerificationCodeResponse
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -888,7 +868,6 @@ public final class GetNotificationChannelVerificationCodeResponse
             : expireTime_;
       }
     }
-
     /**
      *
      *

@@ -71,7 +71,6 @@ public interface TranslateSpeechConfigOrBuilder
    * @return The audioEncoding.
    */
   java.lang.String getAudioEncoding();
-
   /**
    *
    *
@@ -132,7 +131,6 @@ public interface TranslateSpeechConfigOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
-
   /**
    *
    *
@@ -158,7 +156,6 @@ public interface TranslateSpeechConfigOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
-
   /**
    *
    *
@@ -202,7 +199,6 @@ public interface TranslateSpeechConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

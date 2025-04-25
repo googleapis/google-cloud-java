@@ -39,7 +39,6 @@ public interface SyncFeatureViewRequestOrBuilder
    * @return The featureView.
    */
   java.lang.String getFeatureView();
-
   /**
    *
    *

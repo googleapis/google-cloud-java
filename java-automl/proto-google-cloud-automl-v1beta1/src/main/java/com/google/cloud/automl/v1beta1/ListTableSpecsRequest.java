@@ -33,7 +33,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ListTableSpecsRequest)
     ListTableSpecsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTableSpecsRequest.newBuilder() to construct.
   private ListTableSpecsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int FIELD_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask fieldMask_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasFieldMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -506,7 +495,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -763,7 +751,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +841,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +872,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         fieldMaskBuilder_;
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasFieldMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return fieldMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -946,7 +926,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +945,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +991,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1005,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1046,7 +1021,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1120,7 +1092,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1113,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1130,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1154,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1202,7 +1170,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1223,7 +1190,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1210,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1270,7 +1235,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1260,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1321,7 +1284,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1342,7 +1304,6 @@ public final class ListTableSpecsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

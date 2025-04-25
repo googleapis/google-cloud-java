@@ -39,7 +39,6 @@ public interface ListRuntimeProjectAttachmentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ListRuntimeProjectAttachmentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -137,7 +135,6 @@ public interface ListRuntimeProjectAttachmentsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -178,7 +175,6 @@ public interface ListRuntimeProjectAttachmentsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *

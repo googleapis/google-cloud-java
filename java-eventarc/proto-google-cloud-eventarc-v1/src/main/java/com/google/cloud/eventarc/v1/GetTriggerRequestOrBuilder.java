@@ -38,7 +38,6 @@ public interface GetTriggerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

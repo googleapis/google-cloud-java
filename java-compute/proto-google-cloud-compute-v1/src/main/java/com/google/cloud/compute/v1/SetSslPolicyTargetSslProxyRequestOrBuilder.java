@@ -38,7 +38,6 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * @return Whether the sslPolicyReferenceResource field is set.
    */
   boolean hasSslPolicyReferenceResource();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * @return The sslPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SslPolicyReference getSslPolicyReferenceResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * @return The targetSslProxy.
    */
   java.lang.String getTargetSslProxy();
-
   /**
    *
    *

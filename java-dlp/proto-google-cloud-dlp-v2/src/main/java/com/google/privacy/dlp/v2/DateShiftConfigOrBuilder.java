@@ -69,7 +69,6 @@ public interface DateShiftConfigOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface DateShiftConfigOrBuilder
    * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface DateShiftConfigOrBuilder
    * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface DateShiftConfigOrBuilder
    * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
-
   /**
    *
    *

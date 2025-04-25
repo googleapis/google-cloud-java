@@ -33,7 +33,6 @@ public final class TerminateJobRunResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.TerminateJobRunResponse)
     TerminateJobRunResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TerminateJobRunResponse.newBuilder() to construct.
   private TerminateJobRunResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class TerminateJobRunResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

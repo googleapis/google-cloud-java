@@ -39,7 +39,6 @@ public interface AutoMlImageObjectDetectionOrBuilder
    * @return Whether the inputs field is set.
    */
   boolean hasInputs();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutoMlImageObjectDetectionOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs
       getInputs();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface AutoMlImageObjectDetectionOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface AutoMlImageObjectDetectionOrBuilder
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionMetadata
       getMetadata();
-
   /**
    *
    *

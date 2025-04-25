@@ -43,7 +43,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.RetryPolicy)
     RetryPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetryPolicy.newBuilder() to construct.
   private RetryPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MINIMUM_BACKOFF_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration minimumBackoff_;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinimumBackoff() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : minimumBackoff_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAXIMUM_BACKOFF_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration maximumBackoff_;
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaximumBackoff() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : maximumBackoff_;
   }
-
   /**
    *
    *
@@ -373,7 +366,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -608,7 +600,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minimumBackoffBuilder_;
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinimumBackoff() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
         return minimumBackoffBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -676,7 +665,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMinimumBackoffFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
             : minimumBackoff_;
       }
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maximumBackoffBuilder_;
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaximumBackoff() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
         return maximumBackoffBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMaximumBackoffFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1022,7 +997,6 @@ public final class RetryPolicy extends com.google.protobuf.GeneratedMessageV3
             : maximumBackoff_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ListModelsResponse)
     ListModelsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListModelsResponse.newBuilder() to construct.
   private ListModelsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2beta.Model> models_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.retail.v2beta.Model> getModelsList() {
     return models_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       getModelsOrBuilderList() {
     return models_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   public int getModelsCount() {
     return models_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.retail.v2beta.Model getModels(int index) {
     return models_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -641,7 +632,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.retail.v2beta.Model.Builder getModelsBuilder(int index) {
       return getModelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return modelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(models_);
       }
     }
-
     /**
      *
      *
@@ -929,7 +905,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       return getModelsFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2beta.Model.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -943,7 +918,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       return getModelsFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2beta.Model.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -975,7 +949,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -998,7 +971,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +993,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1014,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1031,6 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface FetchSitemapsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface FetchSitemapsRequestOrBuilder
    * @return Whether the matcher field is set.
    */
   boolean hasMatcher();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface FetchSitemapsRequestOrBuilder
    * @return The matcher.
    */
   com.google.cloud.discoveryengine.v1.FetchSitemapsRequest.Matcher getMatcher();
-
   /**
    *
    *

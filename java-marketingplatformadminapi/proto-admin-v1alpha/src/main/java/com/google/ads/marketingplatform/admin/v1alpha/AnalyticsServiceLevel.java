@@ -72,7 +72,6 @@ public enum AnalyticsServiceLevel implements com.google.protobuf.ProtocolMessage
    * <code>ANALYTICS_SERVICE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int ANALYTICS_SERVICE_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum AnalyticsServiceLevel implements com.google.protobuf.ProtocolMessage
    * <code>ANALYTICS_SERVICE_LEVEL_STANDARD = 1;</code>
    */
   public static final int ANALYTICS_SERVICE_LEVEL_STANDARD_VALUE = 1;
-
   /**
    *
    *

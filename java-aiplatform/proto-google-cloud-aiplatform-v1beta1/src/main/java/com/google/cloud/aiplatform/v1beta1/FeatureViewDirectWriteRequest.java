@@ -34,7 +34,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest)
     FeatureViewDirectWriteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureViewDirectWriteRequest.newBuilder() to construct.
   private FeatureViewDirectWriteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
      * @return Whether the dataKey field is set.
      */
     boolean hasDataKey();
-
     /**
      *
      *
@@ -96,7 +94,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
      * @return The dataKey.
      */
     com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                 .DataKeyAndFeatureValues.Feature>
         getFeaturesList();
-
     /**
      *
      *
@@ -138,7 +134,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues
             .Feature
         getFeatures(int index);
-
     /**
      *
      *
@@ -151,7 +146,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
      * </code>
      */
     int getFeaturesCount();
-
     /**
      *
      *
@@ -168,7 +162,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                     .DataKeyAndFeatureValues.FeatureOrBuilder>
         getFeaturesOrBuilderList();
-
     /**
      *
      *
@@ -184,7 +177,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             .FeatureOrBuilder
         getFeaturesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues)
       DataKeyAndFeatureValuesOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DataKeyAndFeatureValues.newBuilder() to construct.
     private DataKeyAndFeatureValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -252,7 +243,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
        * @return Whether the valueAndTimestamp field is set.
        */
       boolean hasValueAndTimestamp();
-
       /**
        *
        *
@@ -269,7 +259,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues
               .Feature.FeatureValueAndTimestamp
           getValueAndTimestamp();
-
       /**
        *
        *
@@ -297,7 +286,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
        * @return The name.
        */
       java.lang.String getName();
-
       /**
        *
        *
@@ -315,7 +303,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               .Feature.DataOneofCase
           getDataOneofCase();
     }
-
     /**
      *
      *
@@ -331,7 +318,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues.Feature)
         FeatureOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Feature.newBuilder() to construct.
       private Feature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -381,7 +367,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
          * @return Whether the value field is set.
          */
         boolean hasValue();
-
         /**
          *
          *
@@ -394,7 +379,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
          * @return The value.
          */
         com.google.cloud.aiplatform.v1beta1.FeatureValue getValue();
-
         /**
          *
          *
@@ -420,7 +404,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
          * @return Whether the timestamp field is set.
          */
         boolean hasTimestamp();
-
         /**
          *
          *
@@ -435,7 +418,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
          * @return The timestamp.
          */
         com.google.protobuf.Timestamp getTimestamp();
-
         /**
          *
          *
@@ -449,7 +431,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
          */
         com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
       }
-
       /**
        *
        *
@@ -466,7 +447,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues.Feature.FeatureValueAndTimestamp)
           FeatureValueAndTimestampOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use FeatureValueAndTimestamp.newBuilder() to construct.
         private FeatureValueAndTimestamp(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -501,7 +481,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         private int bitField0_;
         public static final int VALUE_FIELD_NUMBER = 1;
         private com.google.cloud.aiplatform.v1beta1.FeatureValue value_;
-
         /**
          *
          *
@@ -517,7 +496,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         public boolean hasValue() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -535,7 +513,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               ? com.google.cloud.aiplatform.v1beta1.FeatureValue.getDefaultInstance()
               : value_;
         }
-
         /**
          *
          *
@@ -554,7 +531,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
 
         public static final int TIMESTAMP_FIELD_NUMBER = 2;
         private com.google.protobuf.Timestamp timestamp_;
-
         /**
          *
          *
@@ -572,7 +548,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         public boolean hasTimestamp() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -592,7 +567,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               ? com.google.protobuf.Timestamp.getDefaultInstance()
               : timestamp_;
         }
-
         /**
          *
          *
@@ -823,7 +797,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -1081,7 +1054,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                   com.google.cloud.aiplatform.v1beta1.FeatureValue.Builder,
                   com.google.cloud.aiplatform.v1beta1.FeatureValueOrBuilder>
               valueBuilder_;
-
           /**
            *
            *
@@ -1096,7 +1068,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           public boolean hasValue() {
             return ((bitField0_ & 0x00000001) != 0);
           }
-
           /**
            *
            *
@@ -1117,7 +1088,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               return valueBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -1140,7 +1110,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1161,7 +1130,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1190,7 +1158,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             }
             return this;
           }
-
           /**
            *
            *
@@ -1210,7 +1177,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1225,7 +1191,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return getValueFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -1244,7 +1209,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                   : value_;
             }
           }
-
           /**
            *
            *
@@ -1277,7 +1241,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                   com.google.protobuf.Timestamp.Builder,
                   com.google.protobuf.TimestampOrBuilder>
               timestampBuilder_;
-
           /**
            *
            *
@@ -1294,7 +1257,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           public boolean hasTimestamp() {
             return ((bitField0_ & 0x00000002) != 0);
           }
-
           /**
            *
            *
@@ -1317,7 +1279,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               return timestampBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -1342,7 +1303,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1364,7 +1324,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1394,7 +1353,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             }
             return this;
           }
-
           /**
            *
            *
@@ -1416,7 +1374,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1433,7 +1390,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             onChanged();
             return getTimestampFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -1454,7 +1410,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                   : timestamp_;
             }
           }
-
           /**
            *
            *
@@ -1571,7 +1526,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         private DataOneofCase(int value) {
           this.value = value;
         }
-
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -1603,7 +1557,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
 
       public static final int VALUE_AND_TIMESTAMP_FIELD_NUMBER = 2;
-
       /**
        *
        *
@@ -1621,7 +1574,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       public boolean hasValueAndTimestamp() {
         return dataOneofCase_ == 2;
       }
-
       /**
        *
        *
@@ -1647,7 +1599,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
             .DataKeyAndFeatureValues.Feature.FeatureValueAndTimestamp.getDefaultInstance();
       }
-
       /**
        *
        *
@@ -1676,7 +1627,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -1700,7 +1650,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return s;
         }
       }
-
       /**
        *
        *
@@ -1946,7 +1895,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2220,7 +2168,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                     .DataKeyAndFeatureValues.Feature.FeatureValueAndTimestampOrBuilder>
             valueAndTimestampBuilder_;
-
         /**
          *
          *
@@ -2238,7 +2185,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         public boolean hasValueAndTimestamp() {
           return dataOneofCase_ == 2;
         }
-
         /**
          *
          *
@@ -2272,7 +2218,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 .DataKeyAndFeatureValues.Feature.FeatureValueAndTimestamp.getDefaultInstance();
           }
         }
-
         /**
          *
          *
@@ -2300,7 +2245,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           dataOneofCase_ = 2;
           return this;
         }
-
         /**
          *
          *
@@ -2325,7 +2269,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           dataOneofCase_ = 2;
           return this;
         }
-
         /**
          *
          *
@@ -2369,7 +2312,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           dataOneofCase_ = 2;
           return this;
         }
-
         /**
          *
          *
@@ -2397,7 +2339,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           }
           return this;
         }
-
         /**
          *
          *
@@ -2414,7 +2355,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             getValueAndTimestampBuilder() {
           return getValueAndTimestampFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -2442,7 +2382,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 .DataKeyAndFeatureValues.Feature.FeatureValueAndTimestamp.getDefaultInstance();
           }
         }
-
         /**
          *
          *
@@ -2490,7 +2429,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
 
         private java.lang.Object name_ = "";
-
         /**
          *
          *
@@ -2513,7 +2451,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2536,7 +2473,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2558,7 +2494,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2576,7 +2511,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2675,7 +2609,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     private int bitField0_;
     public static final int DATA_KEY_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
-
     /**
      *
      *
@@ -2691,7 +2624,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     public boolean hasDataKey() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2709,7 +2641,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
           : dataKey_;
     }
-
     /**
      *
      *
@@ -2733,7 +2664,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
             com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                 .DataKeyAndFeatureValues.Feature>
         features_;
-
     /**
      *
      *
@@ -2752,7 +2682,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         getFeaturesList() {
       return features_;
     }
-
     /**
      *
      *
@@ -2772,7 +2701,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         getFeaturesOrBuilderList() {
       return features_;
     }
-
     /**
      *
      *
@@ -2788,7 +2716,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     public int getFeaturesCount() {
       return features_.size();
     }
-
     /**
      *
      *
@@ -2806,7 +2733,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         getFeatures(int index) {
       return features_.get(index);
     }
-
     /**
      *
      *
@@ -3027,7 +2953,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3327,7 +3252,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
               com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
           dataKeyBuilder_;
-
       /**
        *
        *
@@ -3342,7 +3266,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       public boolean hasDataKey() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3363,7 +3286,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return dataKeyBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3386,7 +3308,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3407,7 +3328,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3436,7 +3356,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3456,7 +3375,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3471,7 +3389,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         onChanged();
         return getDataKeyFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3490,7 +3407,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               : dataKey_;
         }
       }
-
       /**
        *
        *
@@ -3562,7 +3478,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return featuresBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3581,7 +3496,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return featuresBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3602,7 +3516,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return featuresBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3631,7 +3544,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3657,7 +3569,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3685,7 +3596,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3714,7 +3624,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3739,7 +3648,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3765,7 +3673,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3792,7 +3699,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3814,7 +3720,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3836,7 +3741,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -3853,7 +3757,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           getFeaturesBuilder(int index) {
         return getFeaturesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3874,7 +3777,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return featuresBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3897,7 +3799,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
           return java.util.Collections.unmodifiableList(features_);
         }
       }
-
       /**
        *
        *
@@ -3917,7 +3818,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                     .DataKeyAndFeatureValues.Feature.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3938,7 +3838,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
                 com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                     .DataKeyAndFeatureValues.Feature.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4055,7 +3954,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureView_ = "";
-
   /**
    *
    *
@@ -4080,7 +3978,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -4112,7 +4009,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
   private java.util.List<
           com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest.DataKeyAndFeatureValues>
       dataKeyAndFeatureValues_;
-
   /**
    *
    *
@@ -4130,7 +4026,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       getDataKeyAndFeatureValuesList() {
     return dataKeyAndFeatureValues_;
   }
-
   /**
    *
    *
@@ -4150,7 +4045,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       getDataKeyAndFeatureValuesOrBuilderList() {
     return dataKeyAndFeatureValues_;
   }
-
   /**
    *
    *
@@ -4166,7 +4060,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
   public int getDataKeyAndFeatureValuesCount() {
     return dataKeyAndFeatureValues_.size();
   }
-
   /**
    *
    *
@@ -4183,7 +4076,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       getDataKeyAndFeatureValues(int index) {
     return dataKeyAndFeatureValues_.get(index);
   }
-
   /**
    *
    *
@@ -4377,7 +4269,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4634,7 +4525,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object featureView_ = "";
-
     /**
      *
      *
@@ -4658,7 +4548,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4682,7 +4571,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4705,7 +4593,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4724,7 +4611,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4794,7 +4680,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return dataKeyAndFeatureValuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4813,7 +4698,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return dataKeyAndFeatureValuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4833,7 +4717,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return dataKeyAndFeatureValuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4861,7 +4744,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4887,7 +4769,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4914,7 +4795,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4942,7 +4822,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4967,7 +4846,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4993,7 +4871,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -5020,7 +4897,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -5042,7 +4918,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -5064,7 +4939,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -5081,7 +4955,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         getDataKeyAndFeatureValuesBuilder(int index) {
       return getDataKeyAndFeatureValuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5102,7 +4975,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return dataKeyAndFeatureValuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5125,7 +4997,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(dataKeyAndFeatureValues_);
       }
     }
-
     /**
      *
      *
@@ -5145,7 +5016,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                   .DataKeyAndFeatureValues.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5166,7 +5036,6 @@ public final class FeatureViewDirectWriteRequest extends com.google.protobuf.Gen
               com.google.cloud.aiplatform.v1beta1.FeatureViewDirectWriteRequest
                   .DataKeyAndFeatureValues.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface VodConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface VodConfigOrBuilder
    * @return The sourceUri.
    */
   java.lang.String getSourceUri();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface VodConfigOrBuilder
    * @return The adTagUri.
    */
   java.lang.String getAdTagUri();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface VodConfigOrBuilder
    * @return Whether the gamVodConfig field is set.
    */
   boolean hasGamVodConfig();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface VodConfigOrBuilder
    * @return The gamVodConfig.
    */
   com.google.cloud.video.stitcher.v1.GamVodConfig getGamVodConfig();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface VodConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface VodConfigOrBuilder
    * @return Whether the sourceFetchOptions field is set.
    */
   boolean hasSourceFetchOptions();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface VodConfigOrBuilder
    * @return The sourceFetchOptions.
    */
   com.google.cloud.video.stitcher.v1.FetchOptions getSourceFetchOptions();
-
   /**
    *
    *

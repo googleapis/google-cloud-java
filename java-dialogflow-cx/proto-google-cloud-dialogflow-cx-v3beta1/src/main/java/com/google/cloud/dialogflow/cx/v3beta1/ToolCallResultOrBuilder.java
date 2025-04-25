@@ -40,7 +40,6 @@ public interface ToolCallResultOrBuilder
    * @return The tool.
    */
   java.lang.String getTool();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ToolCallResultOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ToolCallResultOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ToolCallResultOrBuilder
    * @return The error.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ToolCallResult.Error getError();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ToolCallResultOrBuilder
    * @return Whether the outputParameters field is set.
    */
   boolean hasOutputParameters();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface ToolCallResultOrBuilder
    * @return The outputParameters.
    */
   com.google.protobuf.Struct getOutputParameters();
-
   /**
    *
    *

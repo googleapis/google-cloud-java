@@ -34,7 +34,6 @@ public interface ListGrpcRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.GrpcRoute grpc_routes = 1;</code>
    */
   java.util.List<com.google.cloud.networkservices.v1.GrpcRoute> getGrpcRoutesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListGrpcRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.GrpcRoute grpc_routes = 1;</code>
    */
   com.google.cloud.networkservices.v1.GrpcRoute getGrpcRoutes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListGrpcRoutesResponseOrBuilder
    * <code>repeated .google.cloud.networkservices.v1.GrpcRoute grpc_routes = 1;</code>
    */
   int getGrpcRoutesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListGrpcRoutesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkservices.v1.GrpcRouteOrBuilder>
       getGrpcRoutesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListGrpcRoutesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

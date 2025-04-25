@@ -42,7 +42,6 @@ public interface UpdateTensorboardExperimentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateTensorboardExperimentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface UpdateTensorboardExperimentRequestOrBuilder
    * @return Whether the tensorboardExperiment field is set.
    */
   boolean hasTensorboardExperiment();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface UpdateTensorboardExperimentRequestOrBuilder
    * @return The tensorboardExperiment.
    */
   com.google.cloud.aiplatform.v1.TensorboardExperiment getTensorboardExperiment();
-
   /**
    *
    *

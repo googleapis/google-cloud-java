@@ -36,7 +36,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the servicemesh field is set.
    */
   boolean hasServicemesh();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return The servicemesh.
    */
   com.google.cloud.gkehub.servicemesh.v1beta.MembershipState getServicemesh();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the metering field is set.
    */
   boolean hasMetering();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return The metering.
    */
   com.google.cloud.gkehub.metering.v1beta.MembershipState getMetering();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the configmanagement field is set.
    */
   boolean hasConfigmanagement();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return The configmanagement.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.MembershipState getConfigmanagement();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the policycontroller field is set.
    */
   boolean hasPolicycontroller();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return The policycontroller.
    */
   com.google.cloud.gkehub.policycontroller.v1beta.MembershipState getPolicycontroller();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface MembershipFeatureStateOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.v1beta.FeatureState getState();
-
   /**
    *
    *

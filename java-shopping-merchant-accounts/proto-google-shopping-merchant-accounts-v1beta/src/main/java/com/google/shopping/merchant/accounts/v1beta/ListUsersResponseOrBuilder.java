@@ -34,7 +34,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.User users = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.User> getUsersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.User users = 1;</code>
    */
   com.google.shopping.merchant.accounts.v1beta.User getUsers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListUsersResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.User users = 1;</code>
    */
   int getUsersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListUsersResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.UserOrBuilder>
       getUsersOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListUsersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.BackupApplianceLockInfo)
     BackupApplianceLockInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BackupApplianceLockInfo.newBuilder() to construct.
   private BackupApplianceLockInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     private LockSourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,7 +119,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
 
   public static final int BACKUP_APPLIANCE_ID_FIELD_NUMBER = 1;
   private long backupApplianceId_ = 0L;
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupApplianceName_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lockReason_ = "";
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
   }
 
   public static final int JOB_NAME_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
   public boolean hasJobName() {
     return lockSourceCase_ == 6;
   }
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -322,7 +312,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
   }
 
   public static final int BACKUP_IMAGE_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -337,7 +326,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
   public boolean hasBackupImage() {
     return lockSourceCase_ == 7;
   }
-
   /**
    *
    *
@@ -365,7 +353,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -395,7 +382,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
   }
 
   public static final int SLA_ID_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -411,7 +397,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
   public boolean hasSlaId() {
     return lockSourceCase_ == 8;
   }
-
   /**
    *
    *
@@ -658,7 +643,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -939,7 +923,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     private int bitField0_;
 
     private long backupApplianceId_;
-
     /**
      *
      *
@@ -955,7 +938,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     public long getBackupApplianceId() {
       return backupApplianceId_;
     }
-
     /**
      *
      *
@@ -975,7 +957,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +976,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     }
 
     private java.lang.Object backupApplianceName_ = "";
-
     /**
      *
      *
@@ -1018,7 +998,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1020,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1041,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1058,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1082,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     }
 
     private java.lang.Object lockReason_ = "";
-
     /**
      *
      *
@@ -1131,7 +1106,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1156,7 +1130,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1153,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1172,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1212,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     public boolean hasJobName() {
       return lockSourceCase_ == 6;
     }
-
     /**
      *
      *
@@ -1270,7 +1240,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1299,7 +1268,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1321,7 +1289,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1308,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1346,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     public boolean hasBackupImage() {
       return lockSourceCase_ == 7;
     }
-
     /**
      *
      *
@@ -1409,7 +1374,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1402,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1423,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1442,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1518,7 +1479,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
     public boolean hasSlaId() {
       return lockSourceCase_ == 8;
     }
-
     /**
      *
      *
@@ -1536,7 +1496,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -1556,7 +1515,6 @@ public final class BackupApplianceLockInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

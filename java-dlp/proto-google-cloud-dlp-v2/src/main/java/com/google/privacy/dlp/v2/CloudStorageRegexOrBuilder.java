@@ -36,7 +36,6 @@ public interface CloudStorageRegexOrBuilder
    * @return The projectIdRegex.
    */
   java.lang.String getProjectIdRegex();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CloudStorageRegexOrBuilder
    * @return The bucketNameRegex.
    */
   java.lang.String getBucketNameRegex();
-
   /**
    *
    *

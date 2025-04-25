@@ -55,7 +55,6 @@ public interface PersistentDiskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface PersistentDiskOrBuilder
    * @return The sourceImage.
    */
   java.lang.String getSourceImage();
-
   /**
    *
    *

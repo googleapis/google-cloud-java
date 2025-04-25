@@ -34,7 +34,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.KmsConfig kms_configs = 1;</code>
    */
   java.util.List<com.google.cloud.netapp.v1.KmsConfig> getKmsConfigsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.KmsConfig kms_configs = 1;</code>
    */
   com.google.cloud.netapp.v1.KmsConfig getKmsConfigs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * <code>repeated .google.cloud.netapp.v1.KmsConfig kms_configs = 1;</code>
    */
   int getKmsConfigsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListKmsConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.netapp.v1.KmsConfigOrBuilder>
       getKmsConfigsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListKmsConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

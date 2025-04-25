@@ -40,7 +40,6 @@ public interface TextDetectionConfigOrBuilder
    * @return A list containing the languageHints.
    */
   java.util.List<java.lang.String> getLanguageHintsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface TextDetectionConfigOrBuilder
    * @return The count of languageHints.
    */
   int getLanguageHintsCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TextDetectionConfigOrBuilder
    * @return The languageHints at the given index.
    */
   java.lang.String getLanguageHints(int index);
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface TextDetectionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

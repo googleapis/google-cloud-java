@@ -33,7 +33,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CompletionSuggestion)
     CompletionSuggestionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompletionSuggestion.newBuilder() to construct.
   private CompletionSuggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     private RankingInfoCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GLOBAL_SCORE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   public boolean hasGlobalScore() {
     return rankingInfoCase_ == 2;
   }
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FREQUENCY_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   public boolean hasFrequency() {
     return rankingInfoCase_ == 3;
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object suggestion_ = "";
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupId_ = "";
-
   /**
    *
    *
@@ -331,7 +320,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -360,7 +348,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
 
   public static final int GROUP_SCORE_FIELD_NUMBER = 6;
   private double groupScore_ = 0D;
-
   /**
    *
    *
@@ -382,7 +369,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList alternativePhrases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -397,7 +383,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getAlternativePhrasesList() {
     return alternativePhrases_;
   }
-
   /**
    *
    *
@@ -412,7 +397,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   public int getAlternativePhrasesCount() {
     return alternativePhrases_.size();
   }
-
   /**
    *
    *
@@ -428,7 +412,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
   public java.lang.String getAlternativePhrases(int index) {
     return alternativePhrases_.get(index);
   }
-
   /**
    *
    *
@@ -695,7 +678,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1013,7 +995,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     public boolean hasGlobalScore() {
       return rankingInfoCase_ == 2;
     }
-
     /**
      *
      *
@@ -1032,7 +1013,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -1053,7 +1033,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1069,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     public boolean hasFrequency() {
       return rankingInfoCase_ == 3;
     }
-
     /**
      *
      *
@@ -1109,7 +1087,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -1130,7 +1107,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1129,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object suggestion_ = "";
-
     /**
      *
      *
@@ -1176,7 +1151,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1173,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1194,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1211,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1235,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1287,7 +1257,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1310,7 +1279,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1332,7 +1300,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1317,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1341,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object groupId_ = "";
-
     /**
      *
      *
@@ -1400,7 +1365,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1425,7 +1389,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1449,7 +1412,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1431,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1496,7 +1457,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     }
 
     private double groupScore_;
-
     /**
      *
      *
@@ -1512,7 +1472,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     public double getGroupScore() {
       return groupScore_;
     }
-
     /**
      *
      *
@@ -1532,7 +1491,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1560,7 +1518,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -1576,7 +1533,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       alternativePhrases_.makeImmutable();
       return alternativePhrases_;
     }
-
     /**
      *
      *
@@ -1591,7 +1547,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     public int getAlternativePhrasesCount() {
       return alternativePhrases_.size();
     }
-
     /**
      *
      *
@@ -1607,7 +1562,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     public java.lang.String getAlternativePhrases(int index) {
       return alternativePhrases_.get(index);
     }
-
     /**
      *
      *
@@ -1623,7 +1577,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getAlternativePhrasesBytes(int index) {
       return alternativePhrases_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1647,7 +1600,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1622,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1690,7 +1641,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1709,7 +1659,6 @@ public final class CompletionSuggestion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -46,7 +46,6 @@ public interface GetReplayRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

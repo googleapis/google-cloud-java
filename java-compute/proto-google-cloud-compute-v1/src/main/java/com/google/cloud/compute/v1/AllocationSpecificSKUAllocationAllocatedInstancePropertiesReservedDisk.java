@@ -34,7 +34,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk)
     AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDiskOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.newBuilder() to
   // construct.
   private AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk(
@@ -108,10 +107,8 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
      * <code>UNDEFINED_INTERFACE = 0;</code>
      */
     public static final int UNDEFINED_INTERFACE_VALUE = 0;
-
     /** <code>NVME = 2408800;</code> */
     public static final int NVME_VALUE = 2408800;
-
     /** <code>SCSI = 2539686;</code> */
     public static final int SCSI_VALUE = 2539686;
 
@@ -204,7 +201,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
   private int bitField0_;
   public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
   private long diskSizeGb_ = 0L;
-
   /**
    *
    *
@@ -220,7 +216,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
   public boolean hasDiskSizeGb() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -241,7 +236,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interface_ = "";
-
   /**
    *
    *
@@ -258,7 +252,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
   public boolean hasInterface() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +276,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       return s;
     }
   }
-
   /**
    *
    *
@@ -515,7 +507,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +740,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     private int bitField0_;
 
     private long diskSizeGb_;
-
     /**
      *
      *
@@ -765,7 +755,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     public boolean hasDiskSizeGb() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -781,7 +770,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     public long getDiskSizeGb() {
       return diskSizeGb_;
     }
-
     /**
      *
      *
@@ -801,7 +789,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +808,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     }
 
     private java.lang.Object interface_ = "";
-
     /**
      *
      *
@@ -837,7 +823,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
     public boolean hasInterface() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -861,7 +846,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -908,7 +891,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +909,6 @@ public final class AllocationSpecificSKUAllocationAllocatedInstancePropertiesRes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.DeploymentOperationMetadata)
     DeploymentOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeploymentOperationMetadata.newBuilder() to construct.
   private DeploymentOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,7 +219,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>DEPLOYMENT_STEP_UNSPECIFIED = 0;</code>
      */
     public static final int DEPLOYMENT_STEP_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -232,7 +230,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>PREPARING_STORAGE_BUCKET = 1;</code>
      */
     public static final int PREPARING_STORAGE_BUCKET_VALUE = 1;
-
     /**
      *
      *
@@ -243,7 +240,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>DOWNLOADING_BLUEPRINT = 2;</code>
      */
     public static final int DOWNLOADING_BLUEPRINT_VALUE = 2;
-
     /**
      *
      *
@@ -254,7 +250,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>RUNNING_TF_INIT = 3;</code>
      */
     public static final int RUNNING_TF_INIT_VALUE = 3;
-
     /**
      *
      *
@@ -265,7 +260,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>RUNNING_TF_PLAN = 4;</code>
      */
     public static final int RUNNING_TF_PLAN_VALUE = 4;
-
     /**
      *
      *
@@ -276,7 +270,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>RUNNING_TF_APPLY = 5;</code>
      */
     public static final int RUNNING_TF_APPLY_VALUE = 5;
-
     /**
      *
      *
@@ -287,7 +280,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>RUNNING_TF_DESTROY = 6;</code>
      */
     public static final int RUNNING_TF_DESTROY_VALUE = 6;
-
     /**
      *
      *
@@ -298,7 +290,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>RUNNING_TF_VALIDATE = 7;</code>
      */
     public static final int RUNNING_TF_VALIDATE_VALUE = 7;
-
     /**
      *
      *
@@ -309,7 +300,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>UNLOCKING_DEPLOYMENT = 8;</code>
      */
     public static final int UNLOCKING_DEPLOYMENT_VALUE = 8;
-
     /**
      *
      *
@@ -320,7 +310,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>SUCCEEDED = 9;</code>
      */
     public static final int SUCCEEDED_VALUE = 9;
-
     /**
      *
      *
@@ -331,7 +320,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>FAILED = 10;</code>
      */
     public static final int FAILED_VALUE = 10;
-
     /**
      *
      *
@@ -342,7 +330,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
      * <code>VALIDATING_REPOSITORY = 11;</code>
      */
     public static final int VALIDATING_REPOSITORY_VALUE = 11;
-
     /**
      *
      *
@@ -462,7 +449,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int STEP_FIELD_NUMBER = 1;
   private int step_ = 0;
-
   /**
    *
    *
@@ -478,7 +464,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
   public int getStepValue() {
     return step_;
   }
-
   /**
    *
    *
@@ -501,7 +486,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
 
   public static final int APPLY_RESULTS_FIELD_NUMBER = 2;
   private com.google.cloud.config.v1.ApplyResults applyResults_;
-
   /**
    *
    *
@@ -517,7 +501,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
   public boolean hasApplyResults() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -535,7 +518,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         ? com.google.cloud.config.v1.ApplyResults.getDefaultInstance()
         : applyResults_;
   }
-
   /**
    *
    *
@@ -556,7 +538,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object build_ = "";
-
   /**
    *
    *
@@ -580,7 +561,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -609,7 +589,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logs_ = "";
-
   /**
    *
    *
@@ -634,7 +613,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -858,7 +836,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1101,7 +1078,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int step_ = 0;
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     public int getStepValue() {
       return step_;
     }
-
     /**
      *
      *
@@ -1136,7 +1111,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1130,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
           ? com.google.cloud.config.v1.DeploymentOperationMetadata.DeploymentStep.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1179,7 +1152,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1176,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
             com.google.cloud.config.v1.ApplyResults.Builder,
             com.google.cloud.config.v1.ApplyResultsOrBuilder>
         applyResultsBuilder_;
-
     /**
      *
      *
@@ -1219,7 +1190,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     public boolean hasApplyResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1240,7 +1210,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         return applyResultsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1263,7 +1232,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1252,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1279,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1298,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1312,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return getApplyResultsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1366,7 +1330,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
             : applyResults_;
       }
     }
-
     /**
      *
      *
@@ -1394,7 +1357,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     }
 
     private java.lang.Object build_ = "";
-
     /**
      *
      *
@@ -1417,7 +1379,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1401,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1462,7 +1422,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1480,7 +1439,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1463,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     }
 
     private java.lang.Object logs_ = "";
-
     /**
      *
      *
@@ -1529,7 +1486,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1553,7 +1509,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1576,7 +1531,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1549,6 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

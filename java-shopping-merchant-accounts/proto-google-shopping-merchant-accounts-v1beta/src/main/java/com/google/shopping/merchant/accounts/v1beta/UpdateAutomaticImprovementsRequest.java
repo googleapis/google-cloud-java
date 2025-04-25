@@ -33,7 +33,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.UpdateAutomaticImprovementsRequest)
     UpdateAutomaticImprovementsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAutomaticImprovementsRequest.newBuilder() to construct.
   private UpdateAutomaticImprovementsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
   private int bitField0_;
   public static final int AUTOMATIC_IMPROVEMENTS_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements automaticImprovements_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
   public boolean hasAutomaticImprovements() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
         ? com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements.getDefaultInstance()
         : automaticImprovements_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -393,7 +386,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -635,7 +627,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
             com.google.shopping.merchant.accounts.v1beta.AutomaticImprovements.Builder,
             com.google.shopping.merchant.accounts.v1beta.AutomaticImprovementsOrBuilder>
         automaticImprovementsBuilder_;
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
     public boolean hasAutomaticImprovements() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
         return automaticImprovementsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return getAutomaticImprovementsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
             : automaticImprovements_;
       }
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -947,7 +927,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1022,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1046,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1099,7 +1074,6 @@ public final class UpdateAutomaticImprovementsRequest extends com.google.protobu
             : updateMask_;
       }
     }
-
     /**
      *
      *

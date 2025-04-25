@@ -33,7 +33,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpHeaderMatch)
     HttpHeaderMatchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpHeaderMatch.newBuilder() to construct.
   private HttpHeaderMatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exactMatch_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasExactMatch() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headerName_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasHeaderName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   public static final int INVERT_MATCH_FIELD_NUMBER = 501130268;
   private boolean invertMatch_ = false;
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasInvertMatch() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prefixMatch_ = "";
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasPrefixMatch() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +275,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -313,7 +301,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   public static final int PRESENT_MATCH_FIELD_NUMBER = 67435841;
   private boolean presentMatch_ = false;
-
   /**
    *
    *
@@ -329,7 +316,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasPresentMatch() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -348,7 +334,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   public static final int RANGE_MATCH_FIELD_NUMBER = 97244227;
   private com.google.cloud.compute.v1.Int64RangeMatch rangeMatch_;
-
   /**
    *
    *
@@ -364,7 +349,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasRangeMatch() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -382,7 +366,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.Int64RangeMatch.getDefaultInstance()
         : rangeMatch_;
   }
-
   /**
    *
    *
@@ -403,7 +386,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regexMatch_ = "";
-
   /**
    *
    *
@@ -419,7 +401,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasRegexMatch() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -443,7 +424,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -472,7 +452,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object suffixMatch_ = "";
-
   /**
    *
    *
@@ -488,7 +467,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
   public boolean hasSuffixMatch() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -512,7 +490,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -799,7 +776,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1105,7 +1081,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object exactMatch_ = "";
-
     /**
      *
      *
@@ -1120,7 +1095,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasExactMatch() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1143,7 +1117,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1139,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1160,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1177,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1201,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object headerName_ = "";
-
     /**
      *
      *
@@ -1246,7 +1215,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasHeaderName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1269,7 +1237,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1292,7 +1259,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1314,7 +1280,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1297,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1321,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean invertMatch_;
-
     /**
      *
      *
@@ -1373,7 +1336,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasInvertMatch() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1389,7 +1351,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean getInvertMatch() {
       return invertMatch_;
     }
-
     /**
      *
      *
@@ -1409,7 +1370,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1389,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object prefixMatch_ = "";
-
     /**
      *
      *
@@ -1444,7 +1403,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasPrefixMatch() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1467,7 +1425,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1490,7 +1447,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1512,7 +1468,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1530,7 +1485,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1509,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean presentMatch_;
-
     /**
      *
      *
@@ -1571,7 +1524,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasPresentMatch() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1587,7 +1539,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean getPresentMatch() {
       return presentMatch_;
     }
-
     /**
      *
      *
@@ -1607,7 +1558,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1582,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.Int64RangeMatch.Builder,
             com.google.cloud.compute.v1.Int64RangeMatchOrBuilder>
         rangeMatchBuilder_;
-
     /**
      *
      *
@@ -1647,7 +1596,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasRangeMatch() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1668,7 +1616,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return rangeMatchBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1691,7 +1638,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1712,7 +1658,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1740,7 +1685,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1704,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1775,7 +1718,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRangeMatchFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1794,7 +1736,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
             : rangeMatch_;
       }
     }
-
     /**
      *
      *
@@ -1822,7 +1763,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object regexMatch_ = "";
-
     /**
      *
      *
@@ -1837,7 +1777,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasRegexMatch() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1860,7 +1799,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1883,7 +1821,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1905,7 +1842,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1923,7 +1859,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1948,7 +1883,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object suffixMatch_ = "";
-
     /**
      *
      *
@@ -1963,7 +1897,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     public boolean hasSuffixMatch() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1986,7 +1919,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2009,7 +1941,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2031,7 +1962,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +1979,6 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

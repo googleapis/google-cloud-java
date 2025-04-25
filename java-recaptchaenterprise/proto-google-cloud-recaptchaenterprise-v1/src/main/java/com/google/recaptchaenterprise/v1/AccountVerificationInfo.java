@@ -33,7 +33,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AccountVerificationInfo)
     AccountVerificationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccountVerificationInfo.newBuilder() to construct.
   private AccountVerificationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -200,7 +199,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>RESULT_UNSPECIFIED = 0;</code>
      */
     public static final int RESULT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -212,7 +210,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>SUCCESS_USER_VERIFIED = 1;</code>
      */
     public static final int SUCCESS_USER_VERIFIED_VALUE = 1;
-
     /**
      *
      *
@@ -223,7 +220,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_USER_NOT_VERIFIED = 2;</code>
      */
     public static final int ERROR_USER_NOT_VERIFIED_VALUE = 2;
-
     /**
      *
      *
@@ -235,7 +231,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_SITE_ONBOARDING_INCOMPLETE = 3;</code>
      */
     public static final int ERROR_SITE_ONBOARDING_INCOMPLETE_VALUE = 3;
-
     /**
      *
      *
@@ -247,7 +242,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_RECIPIENT_NOT_ALLOWED = 4;</code>
      */
     public static final int ERROR_RECIPIENT_NOT_ALLOWED_VALUE = 4;
-
     /**
      *
      *
@@ -259,7 +253,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED = 5;</code>
      */
     public static final int ERROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED_VALUE = 5;
-
     /**
      *
      *
@@ -271,7 +264,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_CRITICAL_INTERNAL = 6;</code>
      */
     public static final int ERROR_CRITICAL_INTERNAL_VALUE = 6;
-
     /**
      *
      *
@@ -283,7 +275,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_CUSTOMER_QUOTA_EXHAUSTED = 7;</code>
      */
     public static final int ERROR_CUSTOMER_QUOTA_EXHAUSTED_VALUE = 7;
-
     /**
      *
      *
@@ -296,7 +287,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
      * <code>ERROR_VERIFICATION_BYPASSED = 8;</code>
      */
     public static final int ERROR_VERIFICATION_BYPASSED_VALUE = 8;
-
     /**
      *
      *
@@ -412,7 +402,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.EndpointVerificationInfo> endpoints_;
-
   /**
    *
    *
@@ -429,7 +418,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       getEndpointsList() {
     return endpoints_;
   }
-
   /**
    *
    *
@@ -447,7 +435,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       getEndpointsOrBuilderList() {
     return endpoints_;
   }
-
   /**
    *
    *
@@ -463,7 +450,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   public int getEndpointsCount() {
     return endpoints_.size();
   }
-
   /**
    *
    *
@@ -479,7 +465,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   public com.google.recaptchaenterprise.v1.EndpointVerificationInfo getEndpoints(int index) {
     return endpoints_.get(index);
   }
-
   /**
    *
    *
@@ -501,7 +486,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -526,7 +510,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -554,7 +537,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
 
   public static final int LATEST_VERIFICATION_RESULT_FIELD_NUMBER = 7;
   private int latestVerificationResult_ = 0;
-
   /**
    *
    *
@@ -572,7 +554,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
   public int getLatestVerificationResultValue() {
     return latestVerificationResult_;
   }
-
   /**
    *
    *
@@ -601,7 +582,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
-
   /**
    *
    *
@@ -629,7 +609,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -851,7 +830,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1162,7 +1140,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return endpointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1181,7 +1158,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return endpointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1176,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return endpointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1226,7 +1201,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1224,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1248,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1273,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1295,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1318,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1341,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1362,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1383,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1398,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         int index) {
       return getEndpointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1452,7 +1417,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return endpointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1473,7 +1437,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(endpoints_);
       }
     }
-
     /**
      *
      *
@@ -1491,7 +1454,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
           .addBuilder(
               com.google.recaptchaenterprise.v1.EndpointVerificationInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1510,7 +1472,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
               index,
               com.google.recaptchaenterprise.v1.EndpointVerificationInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1545,7 +1506,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -1569,7 +1529,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1593,7 +1552,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1616,7 +1574,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1592,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1617,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     }
 
     private int latestVerificationResult_ = 0;
-
     /**
      *
      *
@@ -1679,7 +1634,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     public int getLatestVerificationResultValue() {
       return latestVerificationResult_;
     }
-
     /**
      *
      *
@@ -1700,7 +1654,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1724,7 +1677,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
           ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.Result.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1749,7 +1701,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1722,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
     }
 
     private java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -1798,7 +1748,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1825,7 +1774,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1851,7 +1799,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1873,7 +1820,6 @@ public final class AccountVerificationInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

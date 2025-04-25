@@ -37,7 +37,6 @@ public interface ContainerSpecOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ContainerSpecOrBuilder
    * @return A list containing the command.
    */
   java.util.List<java.lang.String> getCommandList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ContainerSpecOrBuilder
    * @return The count of command.
    */
   int getCommandCount();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface ContainerSpecOrBuilder
    * @return The command at the given index.
    */
   java.lang.String getCommand(int index);
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface ContainerSpecOrBuilder
    * @return A list containing the args.
    */
   java.util.List<java.lang.String> getArgsList();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface ContainerSpecOrBuilder
    * @return The count of args.
    */
   int getArgsCount();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface ContainerSpecOrBuilder
    * @return The args at the given index.
    */
   java.lang.String getArgs(int index);
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface ContainerSpecOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 4;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.EnvVar> getEnvList();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface ContainerSpecOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 4;</code>
    */
   com.google.cloud.aiplatform.v1beta1.EnvVar getEnv(int index);
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public interface ContainerSpecOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.EnvVar env = 4;</code>
    */
   int getEnvCount();
-
   /**
    *
    *
@@ -212,7 +202,6 @@ public interface ContainerSpecOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EnvVarOrBuilder>
       getEnvOrBuilderList();
-
   /**
    *
    *

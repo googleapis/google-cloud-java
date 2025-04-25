@@ -34,7 +34,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.IntentCoverage)
     IntentCoverageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IntentCoverage.newBuilder() to construct.
   private IntentCoverage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
      * @return The intent.
      */
     java.lang.String getIntent();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getCovered();
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.IntentCoverage.Intent)
       IntentOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Intent.newBuilder() to construct.
     private Intent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -160,7 +156,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object intent_ = "";
-
     /**
      *
      *
@@ -184,7 +179,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -211,7 +205,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
 
     public static final int COVERED_FIELD_NUMBER = 2;
     private boolean covered_ = false;
-
     /**
      *
      *
@@ -399,7 +392,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object intent_ = "";
-
       /**
        *
        *
@@ -623,7 +614,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -646,7 +636,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -668,7 +657,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -686,7 +674,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -711,7 +698,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean covered_;
-
       /**
        *
        *
@@ -728,7 +714,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       public boolean getCovered() {
         return covered_;
       }
-
       /**
        *
        *
@@ -749,7 +734,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -837,7 +821,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent> intents_;
-
   /**
    *
    *
@@ -851,7 +834,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent> getIntentsList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -866,7 +848,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       getIntentsOrBuilderList() {
     return intents_;
   }
-
   /**
    *
    *
@@ -880,7 +861,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
   public int getIntentsCount() {
     return intents_.size();
   }
-
   /**
    *
    *
@@ -894,7 +874,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent getIntents(int index) {
     return intents_.get(index);
   }
-
   /**
    *
    *
@@ -912,7 +891,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COVERAGE_SCORE_FIELD_NUMBER = 2;
   private float coverageScore_ = 0F;
-
   /**
    *
    *
@@ -1100,7 +1078,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1380,7 +1357,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1397,7 +1373,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1414,7 +1389,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1412,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1433,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1483,7 +1455,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1507,7 +1478,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1498,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1519,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1572,7 +1540,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1559,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1612,7 +1578,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1626,7 +1591,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1644,7 +1608,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1663,7 +1626,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(intents_);
       }
     }
-
     /**
      *
      *
@@ -1677,7 +1639,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       return getIntentsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1693,7 +1654,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.dialogflow.cx.v3.IntentCoverage.Intent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1726,7 +1686,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float coverageScore_;
-
     /**
      *
      *
@@ -1742,7 +1701,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
     public float getCoverageScore() {
       return coverageScore_;
     }
-
     /**
      *
      *
@@ -1762,7 +1720,6 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -43,7 +43,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.DataLayers)
     DataLayersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataLayers.newBuilder() to construct.
   private DataLayers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int IMAGERY_DATE_FIELD_NUMBER = 1;
   private com.google.type.Date imageryDate_;
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageryDate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Date getImageryDate() {
     return imageryDate_ == null ? com.google.type.Date.getDefaultInstance() : imageryDate_;
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMAGERY_PROCESSED_DATE_FIELD_NUMBER = 2;
   private com.google.type.Date imageryProcessedDate_;
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImageryProcessedDate() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Date.getDefaultInstance()
         : imageryProcessedDate_;
   }
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dsmUrl_ = "";
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rgbUrl_ = "";
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object maskUrl_ = "";
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -358,7 +345,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annualFluxUrl_ = "";
-
   /**
    *
    *
@@ -387,7 +373,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -421,7 +406,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object monthlyFluxUrl_ = "";
-
   /**
    *
    *
@@ -447,7 +431,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -479,7 +462,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList hourlyShadeUrls_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -524,7 +506,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getHourlyShadeUrlsList() {
     return hourlyShadeUrls_;
   }
-
   /**
    *
    *
@@ -569,7 +550,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public int getHourlyShadeUrlsCount() {
     return hourlyShadeUrls_.size();
   }
-
   /**
    *
    *
@@ -615,7 +595,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getHourlyShadeUrls(int index) {
     return hourlyShadeUrls_.get(index);
   }
-
   /**
    *
    *
@@ -664,7 +643,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMAGERY_QUALITY_FIELD_NUMBER = 9;
   private int imageryQuality_ = 0;
-
   /**
    *
    *
@@ -680,7 +658,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
   public int getImageryQualityValue() {
     return imageryQuality_;
   }
-
   /**
    *
    *
@@ -948,7 +925,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1292,7 +1268,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         imageryDateBuilder_;
-
     /**
      *
      *
@@ -1309,7 +1284,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageryDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1330,7 +1304,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return imageryDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1355,7 +1328,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1349,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1378,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1399,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1415,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getImageryDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1465,7 +1433,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return imageryDate_ == null ? com.google.type.Date.getDefaultInstance() : imageryDate_;
       }
     }
-
     /**
      *
      *
@@ -1494,7 +1461,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         imageryProcessedDateBuilder_;
-
     /**
      *
      *
@@ -1509,7 +1475,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImageryProcessedDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1530,7 +1495,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return imageryProcessedDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1553,7 +1517,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1536,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1563,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1582,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1596,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getImageryProcessedDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1655,7 +1614,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
             : imageryProcessedDate_;
       }
     }
-
     /**
      *
      *
@@ -1679,7 +1637,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dsmUrl_ = "";
-
     /**
      *
      *
@@ -1704,7 +1661,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1729,7 +1685,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1753,7 +1708,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1727,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1753,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object rgbUrl_ = "";
-
     /**
      *
      *
@@ -1823,7 +1775,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1846,7 +1797,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1868,7 +1818,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1835,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1911,7 +1859,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object maskUrl_ = "";
-
     /**
      *
      *
@@ -1935,7 +1882,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1959,7 +1905,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1982,7 +1927,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1945,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1970,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object annualFluxUrl_ = "";
-
     /**
      *
      *
@@ -2055,7 +1997,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2083,7 +2024,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2110,7 +2050,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2072,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2163,7 +2101,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object monthlyFluxUrl_ = "";
-
     /**
      *
      *
@@ -2188,7 +2125,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2213,7 +2149,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2237,7 +2172,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2257,7 +2191,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2292,7 +2225,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2338,7 +2270,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       hourlyShadeUrls_.makeImmutable();
       return hourlyShadeUrls_;
     }
-
     /**
      *
      *
@@ -2383,7 +2314,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     public int getHourlyShadeUrlsCount() {
       return hourlyShadeUrls_.size();
     }
-
     /**
      *
      *
@@ -2429,7 +2359,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getHourlyShadeUrls(int index) {
       return hourlyShadeUrls_.get(index);
     }
-
     /**
      *
      *
@@ -2475,7 +2404,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getHourlyShadeUrlsBytes(int index) {
       return hourlyShadeUrls_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2529,7 +2457,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2509,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2632,7 +2558,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2681,7 +2606,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2737,7 +2661,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int imageryQuality_ = 0;
-
     /**
      *
      *
@@ -2753,7 +2676,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
     public int getImageryQualityValue() {
       return imageryQuality_;
     }
-
     /**
      *
      *
@@ -2772,7 +2694,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2790,7 +2711,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.solar.v1.ImageryQuality.forNumber(imageryQuality_);
       return result == null ? com.google.maps.solar.v1.ImageryQuality.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2812,7 +2732,6 @@ public final class DataLayers extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

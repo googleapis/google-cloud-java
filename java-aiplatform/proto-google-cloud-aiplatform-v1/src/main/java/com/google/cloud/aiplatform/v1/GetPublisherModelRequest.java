@@ -34,7 +34,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.GetPublisherModelRequest)
     GetPublisherModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetPublisherModelRequest.newBuilder() to construct.
   private GetPublisherModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private int view_ = 0;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
 
   public static final int IS_HUGGING_FACE_MODEL_FIELD_NUMBER = 5;
   private boolean isHuggingFaceModel_ = false;
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object huggingFaceToken_ = "";
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +488,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -740,7 +729,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -767,7 +755,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -794,7 +781,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +806,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +827,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +966,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1005,7 +983,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
           ? com.google.cloud.aiplatform.v1.PublisherModelView.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1072,7 +1047,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1068,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     }
 
     private boolean isHuggingFaceModel_;
-
     /**
      *
      *
@@ -1111,7 +1084,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     public boolean getIsHuggingFaceModel() {
       return isHuggingFaceModel_;
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1124,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object huggingFaceToken_ = "";
-
     /**
      *
      *
@@ -1176,7 +1146,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1168,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1189,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1206,6 @@ public final class GetPublisherModelRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

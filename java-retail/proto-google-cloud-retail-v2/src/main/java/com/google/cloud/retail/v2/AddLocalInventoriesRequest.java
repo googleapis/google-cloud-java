@@ -35,7 +35,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.AddLocalInventoriesRequest)
     AddLocalInventoriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddLocalInventoriesRequest.newBuilder() to construct.
   private AddLocalInventoriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object product_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2.LocalInventory> localInventories_;
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.retail.v2.LocalInventory> getLocalInventoriesList() {
     return localInventories_;
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       getLocalInventoriesOrBuilderList() {
     return localInventories_;
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public int getLocalInventoriesCount() {
     return localInventories_.size();
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public com.google.cloud.retail.v2.LocalInventory getLocalInventories(int index) {
     return localInventories_.get(index);
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
 
   public static final int ADD_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask addMask_;
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public boolean hasAddMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public com.google.protobuf.FieldMask getAddMask() {
     return addMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : addMask_;
   }
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
 
   public static final int ADD_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp addTime_;
-
   /**
    *
    *
@@ -345,7 +333,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public boolean hasAddTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
   public com.google.protobuf.Timestamp getAddTime() {
     return addTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : addTime_;
   }
-
   /**
    *
    *
@@ -382,7 +368,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 6;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -611,7 +596,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -921,7 +905,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object product_ = "";
-
     /**
      *
      *
@@ -952,7 +935,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +965,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1013,7 +994,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1019,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1087,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return localInventoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1107,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return localInventoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1127,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return localInventoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1153,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1177,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1203,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1229,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1253,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1277,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1301,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1324,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1347,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1363,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public com.google.cloud.retail.v2.LocalInventory.Builder getLocalInventoriesBuilder(int index) {
       return getLocalInventoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1418,7 +1384,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return localInventoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1405,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(localInventories_);
       }
     }
-
     /**
      *
      *
@@ -1458,7 +1422,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       return getLocalInventoriesFieldBuilder()
           .addBuilder(com.google.cloud.retail.v2.LocalInventory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1476,7 +1439,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       return getLocalInventoriesFieldBuilder()
           .addBuilder(index, com.google.cloud.retail.v2.LocalInventory.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1521,7 +1483,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         addMaskBuilder_;
-
     /**
      *
      *
@@ -1550,7 +1511,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public boolean hasAddMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1583,7 +1543,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return addMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1620,7 +1579,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1654,7 +1612,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1653,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1686,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1759,7 +1714,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return getAddMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1790,7 +1744,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return addMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : addMask_;
       }
     }
-
     /**
      *
      *
@@ -1837,7 +1790,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         addTimeBuilder_;
-
     /**
      *
      *
@@ -1854,7 +1806,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public boolean hasAddTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1875,7 +1826,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return addTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1900,7 +1850,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1922,7 +1871,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1900,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1974,7 +1921,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1937,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return getAddTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2010,7 +1955,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
         return addTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : addTime_;
       }
     }
-
     /**
      *
      *
@@ -2040,7 +1984,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -2060,7 +2003,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -2084,7 +2026,6 @@ public final class AddLocalInventoriesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

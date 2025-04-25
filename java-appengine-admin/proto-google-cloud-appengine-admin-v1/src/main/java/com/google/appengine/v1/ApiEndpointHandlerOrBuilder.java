@@ -36,7 +36,6 @@ public interface ApiEndpointHandlerOrBuilder
    * @return The scriptPath.
    */
   java.lang.String getScriptPath();
-
   /**
    *
    *

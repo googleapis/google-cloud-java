@@ -42,7 +42,6 @@ public interface NpmPackageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface NpmPackageOrBuilder
    * @return The packageName.
    */
   java.lang.String getPackageName();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface NpmPackageOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface NpmPackageOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface NpmPackageOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface NpmPackageOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface NpmPackageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public interface NpmPackageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface NpmPackageOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface NpmPackageOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

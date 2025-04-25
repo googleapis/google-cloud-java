@@ -33,7 +33,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchDocumentsInputConfig)
     BatchDocumentsInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDocumentsInputConfig.newBuilder() to construct.
   private BatchDocumentsInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
   }
 
   public static final int GCS_PREFIX_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
   public boolean hasGcsPrefix() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.documentai.v1beta3.GcsPrefix.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
   }
 
   public static final int GCS_DOCUMENTS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
   public boolean hasGcsDocuments() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     }
     return com.google.cloud.documentai.v1beta3.GcsDocuments.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -410,7 +402,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
             com.google.cloud.documentai.v1beta3.GcsPrefix.Builder,
             com.google.cloud.documentai.v1beta3.GcsPrefixOrBuilder>
         gcsPrefixBuilder_;
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     public boolean hasGcsPrefix() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
         return com.google.cloud.documentai.v1beta3.GcsPrefix.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     public com.google.cloud.documentai.v1beta3.GcsPrefix.Builder getGcsPrefixBuilder() {
       return getGcsPrefixFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
         return com.google.cloud.documentai.v1beta3.GcsPrefix.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
             com.google.cloud.documentai.v1beta3.GcsDocuments.Builder,
             com.google.cloud.documentai.v1beta3.GcsDocumentsOrBuilder>
         gcsDocumentsBuilder_;
-
     /**
      *
      *
@@ -884,7 +865,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     public boolean hasGcsDocuments() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
         return com.google.cloud.documentai.v1beta3.GcsDocuments.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -933,7 +912,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1001,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
     public com.google.cloud.documentai.v1beta3.GcsDocuments.Builder getGcsDocumentsBuilder() {
       return getGcsDocumentsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class BatchDocumentsInputConfig extends com.google.protobuf.Generat
         return com.google.cloud.documentai.v1beta3.GcsDocuments.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -32,7 +32,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.LicenseResourceRequirements)
     LicenseResourceRequirementsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LicenseResourceRequirements.newBuilder() to construct.
   private LicenseResourceRequirements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int MIN_GUEST_CPU_COUNT_FIELD_NUMBER = 477964836;
   private int minGuestCpuCount_ = 0;
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
   public boolean hasMinGuestCpuCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
 
   public static final int MIN_MEMORY_MB_FIELD_NUMBER = 504785894;
   private int minMemoryMb_ = 0;
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
   public boolean hasMinMemoryMb() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -311,7 +306,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +504,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     private int bitField0_;
 
     private int minGuestCpuCount_;
-
     /**
      *
      *
@@ -526,7 +519,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public boolean hasMinGuestCpuCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -542,7 +534,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public int getMinGuestCpuCount() {
       return minGuestCpuCount_;
     }
-
     /**
      *
      *
@@ -562,7 +553,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -582,7 +572,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     }
 
     private int minMemoryMb_;
-
     /**
      *
      *
@@ -598,7 +587,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public boolean hasMinMemoryMb() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -614,7 +602,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
     public int getMinMemoryMb() {
       return minMemoryMb_;
     }
-
     /**
      *
      *
@@ -634,7 +621,6 @@ public final class LicenseResourceRequirements extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

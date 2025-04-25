@@ -36,7 +36,6 @@ public interface GenerateServiceIdentityResponseOrBuilder
    * @return Whether the identity field is set.
    */
   boolean hasIdentity();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GenerateServiceIdentityResponseOrBuilder
    * @return The identity.
    */
   com.google.cloud.tpu.v2alpha1.ServiceIdentity getIdentity();
-
   /**
    *
    *

@@ -45,7 +45,6 @@ public interface ExplainedAllowPolicyOrBuilder
    * @return The enum numeric value on the wire for allowAccessState.
    */
   int getAllowAccessStateValue();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface ExplainedAllowPolicyOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public interface ExplainedAllowPolicyOrBuilder
    */
   java.util.List<com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation>
       getBindingExplanationsList();
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public interface ExplainedAllowPolicyOrBuilder
    */
   com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation getBindingExplanations(
       int index);
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface ExplainedAllowPolicyOrBuilder
    * </code>
    */
   int getBindingExplanationsCount();
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface ExplainedAllowPolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanationOrBuilder>
       getBindingExplanationsOrBuilderList();
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public interface ExplainedAllowPolicyOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
-
   /**
    *
    *
@@ -252,7 +245,6 @@ public interface ExplainedAllowPolicyOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -268,7 +260,6 @@ public interface ExplainedAllowPolicyOrBuilder
    * @return The policy.
    */
   com.google.iam.v1.Policy getPolicy();
-
   /**
    *
    *

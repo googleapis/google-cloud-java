@@ -33,7 +33,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DeleteProcessorRequest)
     DeleteProcessorRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteProcessorRequest.newBuilder() to construct.
   private DeleteProcessorRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +362,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +561,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -592,7 +585,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +609,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +632,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +807,6 @@ public final class DeleteProcessorRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

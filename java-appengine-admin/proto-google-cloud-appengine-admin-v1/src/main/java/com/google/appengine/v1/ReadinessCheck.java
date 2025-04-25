@@ -34,7 +34,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.ReadinessCheck)
     ReadinessCheckOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReadinessCheck.newBuilder() to construct.
   private ReadinessCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAILURE_THRESHOLD_FIELD_NUMBER = 3;
   private int failureThreshold_ = 0;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUCCESS_THRESHOLD_FIELD_NUMBER = 4;
   private int successThreshold_ = 0;
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHECK_INTERVAL_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration checkInterval_;
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCheckInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : checkInterval_;
   }
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration timeout_;
-
   /**
    *
    *
@@ -286,7 +275,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
-
   /**
    *
    *
@@ -319,7 +306,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APP_START_TIMEOUT_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration appStartTimeout_;
-
   /**
    *
    *
@@ -337,7 +323,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAppStartTimeout() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -357,7 +342,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : appStartTimeout_;
   }
-
   /**
    *
    *
@@ -603,7 +587,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -898,7 +881,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -921,7 +903,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +925,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -966,7 +946,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +963,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +987,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object host_ = "";
-
     /**
      *
      *
@@ -1033,7 +1010,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1055,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1098,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int failureThreshold_;
-
     /**
      *
      *
@@ -1142,7 +1114,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public int getFailureThreshold() {
       return failureThreshold_;
     }
-
     /**
      *
      *
@@ -1163,7 +1134,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1154,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int successThreshold_;
-
     /**
      *
      *
@@ -1201,7 +1170,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public int getSuccessThreshold() {
       return successThreshold_;
     }
-
     /**
      *
      *
@@ -1222,7 +1190,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1215,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         checkIntervalBuilder_;
-
     /**
      *
      *
@@ -1263,7 +1229,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCheckInterval() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1284,7 +1249,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return checkIntervalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1307,7 +1271,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1290,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1317,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1336,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1350,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCheckIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1409,7 +1368,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
             : checkInterval_;
       }
     }
-
     /**
      *
      *
@@ -1442,7 +1400,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
-
     /**
      *
      *
@@ -1457,7 +1414,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1476,7 +1432,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return timeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1454,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1473,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1547,7 +1500,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1567,7 +1519,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1533,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1599,7 +1549,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1581,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         appStartTimeoutBuilder_;
-
     /**
      *
      *
@@ -1649,7 +1597,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAppStartTimeout() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1672,7 +1619,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
         return appStartTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1697,7 +1643,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1719,7 +1664,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1693,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1771,7 +1714,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1730,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAppStartTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1809,7 +1750,6 @@ public final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
             : appStartTimeout_;
       }
     }
-
     /**
      *
      *

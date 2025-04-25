@@ -34,7 +34,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CatalogAttribute)
     CatalogAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CatalogAttribute.newBuilder() to construct.
   private CatalogAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>TEXTUAL = 1;</code>
      */
     public static final int TEXTUAL_VALUE = 1;
-
     /**
      *
      *
@@ -289,7 +286,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>INDEXABLE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int INDEXABLE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -300,7 +296,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>INDEXABLE_ENABLED = 1;</code>
      */
     public static final int INDEXABLE_ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -450,7 +445,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>DYNAMIC_FACETABLE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int DYNAMIC_FACETABLE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -461,7 +455,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>DYNAMIC_FACETABLE_ENABLED = 1;</code>
      */
     public static final int DYNAMIC_FACETABLE_ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -612,7 +605,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int SEARCHABLE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -623,7 +615,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>SEARCHABLE_ENABLED = 1;</code>
      */
     public static final int SEARCHABLE_ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -773,7 +764,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int EXACT_SEARCHABLE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -784,7 +774,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>EXACT_SEARCHABLE_ENABLED = 1;</code>
      */
     public static final int EXACT_SEARCHABLE_ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -935,7 +924,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>RETRIEVABLE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int RETRIEVABLE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -946,7 +934,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>RETRIEVABLE_ENABLED = 1;</code>
      */
     public static final int RETRIEVABLE_ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -1069,7 +1056,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.cloud.retail.v2.Interval facet_intervals = 1;</code>
      */
     java.util.List<com.google.cloud.retail.v2.Interval> getFacetIntervalsList();
-
     /**
      *
      *
@@ -1090,7 +1076,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.cloud.retail.v2.Interval facet_intervals = 1;</code>
      */
     com.google.cloud.retail.v2.Interval getFacetIntervals(int index);
-
     /**
      *
      *
@@ -1111,7 +1096,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.cloud.retail.v2.Interval facet_intervals = 1;</code>
      */
     int getFacetIntervalsCount();
-
     /**
      *
      *
@@ -1133,7 +1117,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     java.util.List<? extends com.google.cloud.retail.v2.IntervalOrBuilder>
         getFacetIntervalsOrBuilderList();
-
     /**
      *
      *
@@ -1170,7 +1153,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     java.util.List<com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValues>
         getIgnoredFacetValuesList();
-
     /**
      *
      *
@@ -1186,7 +1168,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValues
         getIgnoredFacetValues(int index);
-
     /**
      *
      *
@@ -1201,7 +1182,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     int getIgnoredFacetValuesCount();
-
     /**
      *
      *
@@ -1219,7 +1199,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             ? extends
                 com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValuesOrBuilder>
         getIgnoredFacetValuesOrBuilderList();
-
     /**
      *
      *
@@ -1256,7 +1235,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     java.util.List<com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValue>
         getMergedFacetValuesList();
-
     /**
      *
      *
@@ -1277,7 +1255,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValue getMergedFacetValues(
         int index);
-
     /**
      *
      *
@@ -1297,7 +1274,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     int getMergedFacetValuesCount();
-
     /**
      *
      *
@@ -1320,7 +1296,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             ? extends
                 com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValueOrBuilder>
         getMergedFacetValuesOrBuilderList();
-
     /**
      *
      *
@@ -1356,7 +1331,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return Whether the mergedFacet field is set.
      */
     boolean hasMergedFacet();
-
     /**
      *
      *
@@ -1371,7 +1345,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return The mergedFacet.
      */
     com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacet getMergedFacet();
-
     /**
      *
      *
@@ -1401,7 +1374,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return Whether the rerankConfig field is set.
      */
     boolean hasRerankConfig();
-
     /**
      *
      *
@@ -1417,7 +1389,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * @return The rerankConfig.
      */
     com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.RerankConfig getRerankConfig();
-
     /**
      *
      *
@@ -1433,7 +1404,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.RerankConfigOrBuilder
         getRerankConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -1449,7 +1419,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CatalogAttribute.FacetConfig)
       FacetConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FacetConfig.newBuilder() to construct.
     private FacetConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1502,7 +1471,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return A list containing the values.
        */
       java.util.List<java.lang.String> getValuesList();
-
       /**
        *
        *
@@ -1518,7 +1486,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The count of values.
        */
       int getValuesCount();
-
       /**
        *
        *
@@ -1535,7 +1502,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The values at the given index.
        */
       java.lang.String getValues(int index);
-
       /**
        *
        *
@@ -1571,7 +1537,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return Whether the startTime field is set.
        */
       boolean hasStartTime();
-
       /**
        *
        *
@@ -1590,7 +1555,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The startTime.
        */
       com.google.protobuf.Timestamp getStartTime();
-
       /**
        *
        *
@@ -1621,7 +1585,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return Whether the endTime field is set.
        */
       boolean hasEndTime();
-
       /**
        *
        *
@@ -1635,7 +1598,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The endTime.
        */
       com.google.protobuf.Timestamp getEndTime();
-
       /**
        *
        *
@@ -1648,7 +1610,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        */
       com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
     }
-
     /**
      *
      *
@@ -1667,7 +1628,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValues)
         IgnoredFacetValuesOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use IgnoredFacetValues.newBuilder() to construct.
       private IgnoredFacetValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1705,7 +1665,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList values_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -1723,7 +1682,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ProtocolStringList getValuesList() {
         return values_;
       }
-
       /**
        *
        *
@@ -1741,7 +1699,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public int getValuesCount() {
         return values_.size();
       }
-
       /**
        *
        *
@@ -1760,7 +1717,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
-
       /**
        *
        *
@@ -1782,7 +1738,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       public static final int START_TIME_FIELD_NUMBER = 2;
       private com.google.protobuf.Timestamp startTime_;
-
       /**
        *
        *
@@ -1804,7 +1759,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1826,7 +1780,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.Timestamp getStartTime() {
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
-
       /**
        *
        *
@@ -1849,7 +1802,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       public static final int END_TIME_FIELD_NUMBER = 3;
       private com.google.protobuf.Timestamp endTime_;
-
       /**
        *
        *
@@ -1866,7 +1818,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1883,7 +1834,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.Timestamp getEndTime() {
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
-
       /**
        *
        *
@@ -2105,7 +2055,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2373,7 +2322,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -2392,7 +2340,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           values_.makeImmutable();
           return values_;
         }
-
         /**
          *
          *
@@ -2410,7 +2357,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public int getValuesCount() {
           return values_.size();
         }
-
         /**
          *
          *
@@ -2429,7 +2375,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public java.lang.String getValues(int index) {
           return values_.get(index);
         }
-
         /**
          *
          *
@@ -2448,7 +2393,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public com.google.protobuf.ByteString getValuesBytes(int index) {
           return values_.getByteString(index);
         }
-
         /**
          *
          *
@@ -2475,7 +2419,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2501,7 +2444,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2524,7 +2466,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2546,7 +2487,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2580,7 +2520,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             startTimeBuilder_;
-
         /**
          *
          *
@@ -2601,7 +2540,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public boolean hasStartTime() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -2628,7 +2566,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return startTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -2657,7 +2594,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2683,7 +2619,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2717,7 +2652,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           }
           return this;
         }
-
         /**
          *
          *
@@ -2743,7 +2677,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2764,7 +2697,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return getStartTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -2789,7 +2721,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 : startTime_;
           }
         }
-
         /**
          *
          *
@@ -2828,7 +2759,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             endTimeBuilder_;
-
         /**
          *
          *
@@ -2844,7 +2774,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public boolean hasEndTime() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -2864,7 +2793,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return endTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -2888,7 +2816,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2909,7 +2836,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2938,7 +2864,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           }
           return this;
         }
-
         /**
          *
          *
@@ -2959,7 +2884,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2975,7 +2899,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return getEndTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -2993,7 +2916,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
           }
         }
-
         /**
          *
          *
@@ -3110,7 +3032,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return A list containing the values.
        */
       java.util.List<java.lang.String> getValuesList();
-
       /**
        *
        *
@@ -3126,7 +3047,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The count of values.
        */
       int getValuesCount();
-
       /**
        *
        *
@@ -3143,7 +3063,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The values at the given index.
        */
       java.lang.String getValues(int index);
-
       /**
        *
        *
@@ -3174,7 +3093,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The mergedValue.
        */
       java.lang.String getMergedValue();
-
       /**
        *
        *
@@ -3189,7 +3107,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        */
       com.google.protobuf.ByteString getMergedValueBytes();
     }
-
     /**
      *
      *
@@ -3207,7 +3124,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValue)
         MergedFacetValueOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use MergedFacetValue.newBuilder() to construct.
       private MergedFacetValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3245,7 +3161,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList values_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -3263,7 +3178,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ProtocolStringList getValuesList() {
         return values_;
       }
-
       /**
        *
        *
@@ -3281,7 +3195,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public int getValuesCount() {
         return values_.size();
       }
-
       /**
        *
        *
@@ -3300,7 +3213,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public java.lang.String getValues(int index) {
         return values_.get(index);
       }
-
       /**
        *
        *
@@ -3324,7 +3236,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object mergedValue_ = "";
-
       /**
        *
        *
@@ -3349,7 +3260,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return s;
         }
       }
-
       /**
        *
        *
@@ -3561,7 +3471,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3793,7 +3702,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -3812,7 +3720,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           values_.makeImmutable();
           return values_;
         }
-
         /**
          *
          *
@@ -3830,7 +3737,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public int getValuesCount() {
           return values_.size();
         }
-
         /**
          *
          *
@@ -3849,7 +3755,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public java.lang.String getValues(int index) {
           return values_.get(index);
         }
-
         /**
          *
          *
@@ -3868,7 +3773,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public com.google.protobuf.ByteString getValuesBytes(int index) {
           return values_.getByteString(index);
         }
-
         /**
          *
          *
@@ -3895,7 +3799,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3921,7 +3824,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3944,7 +3846,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3966,7 +3867,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3995,7 +3895,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
 
         private java.lang.Object mergedValue_ = "";
-
         /**
          *
          *
@@ -4019,7 +3918,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -4043,7 +3941,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -4066,7 +3963,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4085,7 +3981,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4200,7 +4095,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The mergedFacetKey.
        */
       java.lang.String getMergedFacetKey();
-
       /**
        *
        *
@@ -4219,7 +4113,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        */
       com.google.protobuf.ByteString getMergedFacetKeyBytes();
     }
-
     /**
      *
      *
@@ -4238,7 +4131,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacet)
         MergedFacetOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use MergedFacet.newBuilder() to construct.
       private MergedFacet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4273,7 +4165,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object mergedFacetKey_ = "";
-
       /**
        *
        *
@@ -4302,7 +4193,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return s;
         }
       }
-
       /**
        *
        *
@@ -4495,7 +4385,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4697,7 +4586,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         private int bitField0_;
 
         private java.lang.Object mergedFacetKey_ = "";
-
         /**
          *
          *
@@ -4725,7 +4613,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -4753,7 +4640,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -4780,7 +4666,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4803,7 +4688,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4933,7 +4817,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return A list containing the facetValues.
        */
       java.util.List<java.lang.String> getFacetValuesList();
-
       /**
        *
        *
@@ -4947,7 +4830,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The count of facetValues.
        */
       int getFacetValuesCount();
-
       /**
        *
        *
@@ -4962,7 +4844,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        * @return The facetValues at the given index.
        */
       java.lang.String getFacetValues(int index);
-
       /**
        *
        *
@@ -4978,7 +4859,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
        */
       com.google.protobuf.ByteString getFacetValuesBytes(int index);
     }
-
     /**
      *
      *
@@ -5000,7 +4880,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.CatalogAttribute.FacetConfig.RerankConfig)
         RerankConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use RerankConfig.newBuilder() to construct.
       private RerankConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -5033,7 +4912,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
       public static final int RERANK_FACET_FIELD_NUMBER = 1;
       private boolean rerankFacet_ = false;
-
       /**
        *
        *
@@ -5057,7 +4935,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList facetValues_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -5073,7 +4950,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ProtocolStringList getFacetValuesList() {
         return facetValues_;
       }
-
       /**
        *
        *
@@ -5089,7 +4965,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public int getFacetValuesCount() {
         return facetValues_.size();
       }
-
       /**
        *
        *
@@ -5106,7 +4981,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public java.lang.String getFacetValues(int index) {
         return facetValues_.get(index);
       }
-
       /**
        *
        *
@@ -5304,7 +5178,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -5529,7 +5402,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         private int bitField0_;
 
         private boolean rerankFacet_;
-
         /**
          *
          *
@@ -5547,7 +5419,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public boolean getRerankFacet() {
           return rerankFacet_;
         }
-
         /**
          *
          *
@@ -5569,7 +5440,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5599,7 +5469,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           }
           bitField0_ |= 0x00000002;
         }
-
         /**
          *
          *
@@ -5616,7 +5485,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           facetValues_.makeImmutable();
           return facetValues_;
         }
-
         /**
          *
          *
@@ -5632,7 +5500,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public int getFacetValuesCount() {
           return facetValues_.size();
         }
-
         /**
          *
          *
@@ -5649,7 +5516,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public java.lang.String getFacetValues(int index) {
           return facetValues_.get(index);
         }
-
         /**
          *
          *
@@ -5666,7 +5532,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         public com.google.protobuf.ByteString getFacetValuesBytes(int index) {
           return facetValues_.getByteString(index);
         }
-
         /**
          *
          *
@@ -5691,7 +5556,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5715,7 +5579,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5736,7 +5599,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5756,7 +5618,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5855,7 +5716,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2.Interval> facetIntervals_;
-
     /**
      *
      *
@@ -5879,7 +5739,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public java.util.List<com.google.cloud.retail.v2.Interval> getFacetIntervalsList() {
       return facetIntervals_;
     }
-
     /**
      *
      *
@@ -5904,7 +5763,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getFacetIntervalsOrBuilderList() {
       return facetIntervals_;
     }
-
     /**
      *
      *
@@ -5928,7 +5786,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getFacetIntervalsCount() {
       return facetIntervals_.size();
     }
-
     /**
      *
      *
@@ -5952,7 +5809,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.retail.v2.Interval getFacetIntervals(int index) {
       return facetIntervals_.get(index);
     }
-
     /**
      *
      *
@@ -5983,7 +5839,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     private java.util.List<
             com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValues>
         ignoredFacetValues_;
-
     /**
      *
      *
@@ -6003,7 +5858,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getIgnoredFacetValuesList() {
       return ignoredFacetValues_;
     }
-
     /**
      *
      *
@@ -6024,7 +5878,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getIgnoredFacetValuesOrBuilderList() {
       return ignoredFacetValues_;
     }
-
     /**
      *
      *
@@ -6042,7 +5895,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getIgnoredFacetValuesCount() {
       return ignoredFacetValues_.size();
     }
-
     /**
      *
      *
@@ -6061,7 +5913,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getIgnoredFacetValues(int index) {
       return ignoredFacetValues_.get(index);
     }
-
     /**
      *
      *
@@ -6086,7 +5937,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValue>
         mergedFacetValues_;
-
     /**
      *
      *
@@ -6110,7 +5960,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getMergedFacetValuesList() {
       return mergedFacetValues_;
     }
-
     /**
      *
      *
@@ -6136,7 +5985,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getMergedFacetValuesOrBuilderList() {
       return mergedFacetValues_;
     }
-
     /**
      *
      *
@@ -6159,7 +6007,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getMergedFacetValuesCount() {
       return mergedFacetValues_.size();
     }
-
     /**
      *
      *
@@ -6183,7 +6030,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         getMergedFacetValues(int index) {
       return mergedFacetValues_.get(index);
     }
-
     /**
      *
      *
@@ -6210,7 +6056,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
     public static final int MERGED_FACET_FIELD_NUMBER = 4;
     private com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacet mergedFacet_;
-
     /**
      *
      *
@@ -6228,7 +6073,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public boolean hasMergedFacet() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6248,7 +6092,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacet.getDefaultInstance()
           : mergedFacet_;
     }
-
     /**
      *
      *
@@ -6270,7 +6113,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
     public static final int RERANK_CONFIG_FIELD_NUMBER = 5;
     private com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.RerankConfig rerankConfig_;
-
     /**
      *
      *
@@ -6289,7 +6131,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public boolean hasRerankConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -6311,7 +6152,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance()
           : rerankConfig_;
     }
-
     /**
      *
      *
@@ -6548,7 +6388,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6994,7 +6833,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return facetIntervalsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -7021,7 +6859,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return facetIntervalsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -7048,7 +6885,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return facetIntervalsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -7081,7 +6917,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7112,7 +6947,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7145,7 +6979,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7178,7 +7011,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7209,7 +7041,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7240,7 +7071,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7271,7 +7101,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7301,7 +7130,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7331,7 +7159,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7354,7 +7181,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.retail.v2.Interval.Builder getFacetIntervalsBuilder(int index) {
         return getFacetIntervalsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -7381,7 +7207,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return facetIntervalsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -7409,7 +7234,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(facetIntervals_);
         }
       }
-
       /**
        *
        *
@@ -7433,7 +7257,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         return getFacetIntervalsFieldBuilder()
             .addBuilder(com.google.cloud.retail.v2.Interval.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7457,7 +7280,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         return getFacetIntervalsFieldBuilder()
             .addBuilder(index, com.google.cloud.retail.v2.Interval.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7544,7 +7366,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return ignoredFacetValuesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -7565,7 +7386,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return ignoredFacetValuesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -7587,7 +7407,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return ignoredFacetValuesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -7616,7 +7435,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7643,7 +7461,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7671,7 +7488,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7700,7 +7516,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7726,7 +7541,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7753,7 +7567,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7781,7 +7594,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7805,7 +7617,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7829,7 +7640,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -7847,7 +7657,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           getIgnoredFacetValuesBuilder(int index) {
         return getIgnoredFacetValuesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -7869,7 +7678,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return ignoredFacetValuesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -7894,7 +7702,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(ignoredFacetValues_);
         }
       }
-
       /**
        *
        *
@@ -7915,7 +7722,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValues
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7937,7 +7743,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.IgnoredFacetValues
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -8026,7 +7831,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return mergedFacetValuesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -8052,7 +7856,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return mergedFacetValuesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -8079,7 +7882,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return mergedFacetValuesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -8113,7 +7915,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8145,7 +7946,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8178,7 +7978,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8212,7 +8011,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8243,7 +8041,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8275,7 +8072,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8308,7 +8104,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8337,7 +8132,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8366,7 +8160,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8389,7 +8182,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           getMergedFacetValuesBuilder(int index) {
         return getMergedFacetValuesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -8416,7 +8208,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return mergedFacetValuesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -8445,7 +8236,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(mergedFacetValues_);
         }
       }
-
       /**
        *
        *
@@ -8471,7 +8261,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValue
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -8498,7 +8287,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetValue
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -8550,7 +8338,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
               com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacet.Builder,
               com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.MergedFacetOrBuilder>
           mergedFacetBuilder_;
-
       /**
        *
        *
@@ -8567,7 +8354,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public boolean hasMergedFacet() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -8591,7 +8377,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return mergedFacetBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -8617,7 +8402,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8641,7 +8425,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8674,7 +8457,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8696,7 +8478,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8714,7 +8495,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getMergedFacetFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8737,7 +8517,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
               : mergedFacet_;
         }
       }
-
       /**
        *
        *
@@ -8772,7 +8551,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
               com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.RerankConfig.Builder,
               com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.RerankConfigOrBuilder>
           rerankConfigBuilder_;
-
       /**
        *
        *
@@ -8790,7 +8568,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       public boolean hasRerankConfig() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -8816,7 +8593,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           return rerankConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -8843,7 +8619,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8868,7 +8643,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8902,7 +8676,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -8925,7 +8698,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8944,7 +8716,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getRerankConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8968,7 +8739,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
               : rerankConfig_;
         }
       }
-
       /**
        *
        *
@@ -9067,7 +8837,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -9101,7 +8870,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -9138,7 +8906,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int IN_USE_FIELD_NUMBER = 9;
   private boolean inUse_ = false;
-
   /**
    *
    *
@@ -9179,7 +8946,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int TYPE_FIELD_NUMBER = 10;
   private int type_ = 0;
-
   /**
    *
    *
@@ -9198,7 +8964,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -9224,7 +8989,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int INDEXABLE_OPTION_FIELD_NUMBER = 5;
   private int indexableOption_ = 0;
-
   /**
    *
    *
@@ -9248,7 +9012,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public int getIndexableOptionValue() {
     return indexableOption_;
   }
-
   /**
    *
    *
@@ -9279,7 +9042,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int DYNAMIC_FACETABLE_OPTION_FIELD_NUMBER = 6;
   private int dynamicFacetableOption_ = 0;
-
   /**
    *
    *
@@ -9302,7 +9064,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public int getDynamicFacetableOptionValue() {
     return dynamicFacetableOption_;
   }
-
   /**
    *
    *
@@ -9334,7 +9095,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int SEARCHABLE_OPTION_FIELD_NUMBER = 7;
   private int searchableOption_ = 0;
-
   /**
    *
    *
@@ -9363,7 +9123,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public int getSearchableOptionValue() {
     return searchableOption_;
   }
-
   /**
    *
    *
@@ -9399,7 +9158,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int EXACT_SEARCHABLE_OPTION_FIELD_NUMBER = 11;
   private int exactSearchableOption_ = 0;
-
   /**
    *
    *
@@ -9421,7 +9179,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public int getExactSearchableOptionValue() {
     return exactSearchableOption_;
   }
-
   /**
    *
    *
@@ -9452,7 +9209,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int RETRIEVABLE_OPTION_FIELD_NUMBER = 12;
   private int retrievableOption_ = 0;
-
   /**
    *
    *
@@ -9471,7 +9227,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public int getRetrievableOptionValue() {
     return retrievableOption_;
   }
-
   /**
    *
    *
@@ -9497,7 +9252,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
 
   public static final int FACET_CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.retail.v2.CatalogAttribute.FacetConfig facetConfig_;
-
   /**
    *
    *
@@ -9513,7 +9267,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
   public boolean hasFacetConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -9531,7 +9284,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.getDefaultInstance()
         : facetConfig_;
   }
-
   /**
    *
    *
@@ -9813,7 +9565,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -10119,7 +9870,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -10152,7 +9902,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -10185,7 +9934,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -10217,7 +9965,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10245,7 +9992,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10280,7 +10026,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean inUse_;
-
     /**
      *
      *
@@ -10318,7 +10063,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public boolean getInUse() {
       return inUse_;
     }
-
     /**
      *
      *
@@ -10360,7 +10104,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10402,7 +10145,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -10421,7 +10163,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -10443,7 +10184,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10466,7 +10206,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.AttributeType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -10491,7 +10230,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10514,7 +10252,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private int indexableOption_ = 0;
-
     /**
      *
      *
@@ -10538,7 +10275,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getIndexableOptionValue() {
       return indexableOption_;
     }
-
     /**
      *
      *
@@ -10565,7 +10301,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10593,7 +10328,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.IndexableOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -10624,7 +10358,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10652,7 +10385,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private int dynamicFacetableOption_ = 0;
-
     /**
      *
      *
@@ -10675,7 +10407,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getDynamicFacetableOptionValue() {
       return dynamicFacetableOption_;
     }
-
     /**
      *
      *
@@ -10701,7 +10432,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10730,7 +10460,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.DynamicFacetableOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -10760,7 +10489,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10787,7 +10515,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private int searchableOption_ = 0;
-
     /**
      *
      *
@@ -10816,7 +10543,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getSearchableOptionValue() {
       return searchableOption_;
     }
-
     /**
      *
      *
@@ -10848,7 +10574,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10881,7 +10606,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.SearchableOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -10917,7 +10641,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10950,7 +10673,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private int exactSearchableOption_ = 0;
-
     /**
      *
      *
@@ -10972,7 +10694,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getExactSearchableOptionValue() {
       return exactSearchableOption_;
     }
-
     /**
      *
      *
@@ -10997,7 +10718,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11025,7 +10745,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -11054,7 +10773,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11080,7 +10798,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private int retrievableOption_ = 0;
-
     /**
      *
      *
@@ -11099,7 +10816,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public int getRetrievableOptionValue() {
       return retrievableOption_;
     }
-
     /**
      *
      *
@@ -11121,7 +10837,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11145,7 +10860,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.retail.v2.CatalogAttribute.RetrievableOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -11171,7 +10885,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11199,7 +10912,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             com.google.cloud.retail.v2.CatalogAttribute.FacetConfig.Builder,
             com.google.cloud.retail.v2.CatalogAttribute.FacetConfigOrBuilder>
         facetConfigBuilder_;
-
     /**
      *
      *
@@ -11214,7 +10926,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
     public boolean hasFacetConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -11235,7 +10946,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
         return facetConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11258,7 +10968,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11279,7 +10988,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11308,7 +11016,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -11328,7 +11035,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11343,7 +11049,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getFacetConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11363,7 +11068,6 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
             : facetConfig_;
       }
     }
-
     /**
      *
      *

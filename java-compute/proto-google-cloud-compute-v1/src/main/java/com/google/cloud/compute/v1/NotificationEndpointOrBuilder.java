@@ -36,7 +36,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NotificationEndpointOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface NotificationEndpointOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the grpcSettings field is set.
    */
   boolean hasGrpcSettings();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface NotificationEndpointOrBuilder
    * @return The grpcSettings.
    */
   com.google.cloud.compute.v1.NotificationEndpointGrpcSettings getGrpcSettings();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface NotificationEndpointOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public interface NotificationEndpointOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface NotificationEndpointOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -300,7 +287,6 @@ public interface NotificationEndpointOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public interface NotificationEndpointOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *

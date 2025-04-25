@@ -37,7 +37,6 @@ public interface ListGenerativeQuestionConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.GenerativeQuestionConfig>
       getGenerativeQuestionConfigsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListGenerativeQuestionConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2alpha.GenerativeQuestionConfig getGenerativeQuestionConfigs(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListGenerativeQuestionConfigsResponseOrBuilder
    * </code>
    */
   int getGenerativeQuestionConfigsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListGenerativeQuestionConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.GenerativeQuestionConfigOrBuilder>
       getGenerativeQuestionConfigsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TextOrBuilder
    * @return The enText.
    */
   java.lang.String getEnText();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TextOrBuilder
    * @return The localizedText.
    */
   java.lang.String getLocalizedText();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface TextOrBuilder
    * @return The enum numeric value on the wire for localizationState.
    */
   int getLocalizationStateValue();
-
   /**
    *
    *

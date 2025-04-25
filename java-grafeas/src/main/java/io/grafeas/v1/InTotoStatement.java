@@ -37,7 +37,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:grafeas.v1.InTotoStatement)
     InTotoStatementOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InTotoStatement.newBuilder() to construct.
   private InTotoStatement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     private PredicateCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,7 +123,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,31 +174,26 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Subject> subject_;
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public java.util.List<io.grafeas.v1.Subject> getSubjectList() {
     return subject_;
   }
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
     return subject_;
   }
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public int getSubjectCount() {
     return subject_.size();
   }
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.Subject getSubject(int index) {
     return subject_.get(index);
   }
-
   /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
   @java.lang.Override
   public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index) {
@@ -213,7 +204,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object predicateType_ = "";
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROVENANCE_FIELD_NUMBER = 4;
-
   /**
    * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
    *
@@ -273,7 +261,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   public boolean hasProvenance() {
     return predicateCase_ == 4;
   }
-
   /**
    * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
    *
@@ -286,7 +273,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     }
     return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
   }
-
   /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
   @java.lang.Override
   public io.grafeas.v1.InTotoProvenanceOrBuilder getProvenanceOrBuilder() {
@@ -297,7 +283,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SLSA_PROVENANCE_FIELD_NUMBER = 5;
-
   /**
    * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
    *
@@ -307,7 +292,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   public boolean hasSlsaProvenance() {
     return predicateCase_ == 5;
   }
-
   /**
    * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
    *
@@ -320,7 +304,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     }
     return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
   }
-
   /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceOrBuilder getSlsaProvenanceOrBuilder() {
@@ -331,7 +314,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SLSA_PROVENANCE_ZERO_TWO_FIELD_NUMBER = 6;
-
   /**
    * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
    *
@@ -341,7 +323,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
   public boolean hasSlsaProvenanceZeroTwo() {
     return predicateCase_ == 6;
   }
-
   /**
    * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
    *
@@ -354,7 +335,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     }
     return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
   }
-
   /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
   @java.lang.Override
   public io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder() {
@@ -595,7 +575,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -934,7 +913,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -957,7 +935,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1020,7 +995,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return subjectBuilder_.getMessageList();
       }
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public int getSubjectCount() {
       if (subjectBuilder_ == null) {
@@ -1074,7 +1047,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return subjectBuilder_.getCount();
       }
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject getSubject(int index) {
       if (subjectBuilder_ == null) {
@@ -1083,7 +1055,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return subjectBuilder_.getMessage(index);
       }
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder setSubject(int index, io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
@@ -1098,7 +1069,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder setSubject(int index, io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
@@ -1110,7 +1080,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
@@ -1125,7 +1094,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(int index, io.grafeas.v1.Subject value) {
       if (subjectBuilder_ == null) {
@@ -1140,7 +1108,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
@@ -1152,7 +1119,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addSubject(int index, io.grafeas.v1.Subject.Builder builderForValue) {
       if (subjectBuilder_ == null) {
@@ -1164,7 +1130,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder addAllSubject(java.lang.Iterable<? extends io.grafeas.v1.Subject> values) {
       if (subjectBuilder_ == null) {
@@ -1176,7 +1141,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder clearSubject() {
       if (subjectBuilder_ == null) {
@@ -1188,7 +1152,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public Builder removeSubject(int index) {
       if (subjectBuilder_ == null) {
@@ -1200,12 +1163,10 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder getSubjectBuilder(int index) {
       return getSubjectFieldBuilder().getBuilder(index);
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.SubjectOrBuilder getSubjectOrBuilder(int index) {
       if (subjectBuilder_ == null) {
@@ -1214,7 +1175,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return subjectBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
       if (subjectBuilder_ != null) {
@@ -1223,17 +1183,14 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(subject_);
       }
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder addSubjectBuilder() {
       return getSubjectFieldBuilder().addBuilder(io.grafeas.v1.Subject.getDefaultInstance());
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public io.grafeas.v1.Subject.Builder addSubjectBuilder(int index) {
       return getSubjectFieldBuilder().addBuilder(index, io.grafeas.v1.Subject.getDefaultInstance());
     }
-
     /** <code>repeated .grafeas.v1.Subject subject = 2;</code> */
     public java.util.List<io.grafeas.v1.Subject.Builder> getSubjectBuilderList() {
       return getSubjectFieldBuilder().getBuilderList();
@@ -1255,7 +1212,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object predicateType_ = "";
-
     /**
      *
      *
@@ -1278,7 +1234,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1256,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1323,7 +1277,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1294,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1322,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1.InTotoProvenance.Builder,
             io.grafeas.v1.InTotoProvenanceOrBuilder>
         provenanceBuilder_;
-
     /**
      * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
      *
@@ -1380,7 +1331,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     public boolean hasProvenance() {
       return predicateCase_ == 4;
     }
-
     /**
      * <code>.grafeas.v1.InTotoProvenance provenance = 4;</code>
      *
@@ -1400,7 +1350,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder setProvenance(io.grafeas.v1.InTotoProvenance value) {
       if (provenanceBuilder_ == null) {
@@ -1415,7 +1364,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 4;
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder setProvenance(io.grafeas.v1.InTotoProvenance.Builder builderForValue) {
       if (provenanceBuilder_ == null) {
@@ -1427,7 +1375,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 4;
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder mergeProvenance(io.grafeas.v1.InTotoProvenance value) {
       if (provenanceBuilder_ == null) {
@@ -1451,7 +1398,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 4;
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public Builder clearProvenance() {
       if (provenanceBuilder_ == null) {
@@ -1469,12 +1415,10 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     public io.grafeas.v1.InTotoProvenance.Builder getProvenanceBuilder() {
       return getProvenanceFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     @java.lang.Override
     public io.grafeas.v1.InTotoProvenanceOrBuilder getProvenanceOrBuilder() {
@@ -1487,7 +1431,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return io.grafeas.v1.InTotoProvenance.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.InTotoProvenance provenance = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.InTotoProvenance,
@@ -1516,7 +1459,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1.SlsaProvenance.Builder,
             io.grafeas.v1.SlsaProvenanceOrBuilder>
         slsaProvenanceBuilder_;
-
     /**
      * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
      *
@@ -1526,7 +1468,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     public boolean hasSlsaProvenance() {
       return predicateCase_ == 5;
     }
-
     /**
      * <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code>
      *
@@ -1546,7 +1487,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder setSlsaProvenance(io.grafeas.v1.SlsaProvenance value) {
       if (slsaProvenanceBuilder_ == null) {
@@ -1561,7 +1501,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 5;
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder setSlsaProvenance(io.grafeas.v1.SlsaProvenance.Builder builderForValue) {
       if (slsaProvenanceBuilder_ == null) {
@@ -1573,7 +1512,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 5;
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder mergeSlsaProvenance(io.grafeas.v1.SlsaProvenance value) {
       if (slsaProvenanceBuilder_ == null) {
@@ -1597,7 +1535,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 5;
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public Builder clearSlsaProvenance() {
       if (slsaProvenanceBuilder_ == null) {
@@ -1615,12 +1552,10 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     public io.grafeas.v1.SlsaProvenance.Builder getSlsaProvenanceBuilder() {
       return getSlsaProvenanceFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceOrBuilder getSlsaProvenanceOrBuilder() {
@@ -1633,7 +1568,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return io.grafeas.v1.SlsaProvenance.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.SlsaProvenance slsa_provenance = 5;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.SlsaProvenance,
@@ -1662,7 +1596,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
             io.grafeas.v1.SlsaProvenanceZeroTwo.Builder,
             io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder>
         slsaProvenanceZeroTwoBuilder_;
-
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
      *
@@ -1672,7 +1605,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
     public boolean hasSlsaProvenanceZeroTwo() {
       return predicateCase_ == 6;
     }
-
     /**
      * <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code>
      *
@@ -1692,7 +1624,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder setSlsaProvenanceZeroTwo(io.grafeas.v1.SlsaProvenanceZeroTwo value) {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
@@ -1707,7 +1638,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 6;
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder setSlsaProvenanceZeroTwo(
         io.grafeas.v1.SlsaProvenanceZeroTwo.Builder builderForValue) {
@@ -1720,7 +1650,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 6;
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder mergeSlsaProvenanceZeroTwo(io.grafeas.v1.SlsaProvenanceZeroTwo value) {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
@@ -1745,7 +1674,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       predicateCase_ = 6;
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public Builder clearSlsaProvenanceZeroTwo() {
       if (slsaProvenanceZeroTwoBuilder_ == null) {
@@ -1763,12 +1691,10 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     public io.grafeas.v1.SlsaProvenanceZeroTwo.Builder getSlsaProvenanceZeroTwoBuilder() {
       return getSlsaProvenanceZeroTwoFieldBuilder().getBuilder();
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     @java.lang.Override
     public io.grafeas.v1.SlsaProvenanceZeroTwoOrBuilder getSlsaProvenanceZeroTwoOrBuilder() {
@@ -1781,7 +1707,6 @@ public final class InTotoStatement extends com.google.protobuf.GeneratedMessageV
         return io.grafeas.v1.SlsaProvenanceZeroTwo.getDefaultInstance();
       }
     }
-
     /** <code>.grafeas.v1.SlsaProvenanceZeroTwo slsa_provenance_zero_two = 6;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.SlsaProvenanceZeroTwo,

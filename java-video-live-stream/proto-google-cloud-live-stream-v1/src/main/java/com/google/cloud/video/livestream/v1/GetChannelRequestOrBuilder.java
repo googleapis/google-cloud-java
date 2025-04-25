@@ -39,7 +39,6 @@ public interface GetChannelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

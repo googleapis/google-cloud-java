@@ -36,7 +36,6 @@ public interface LlmModelSettingsOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface LlmModelSettingsOrBuilder
    * @return The promptText.
    */
   java.lang.String getPromptText();
-
   /**
    *
    *

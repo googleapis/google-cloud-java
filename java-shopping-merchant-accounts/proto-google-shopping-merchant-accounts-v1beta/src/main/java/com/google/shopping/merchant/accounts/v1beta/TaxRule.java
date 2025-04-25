@@ -44,7 +44,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TaxRule)
     TaxRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaxRule.newBuilder() to construct.
   private TaxRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
      * @return The start.
      */
     java.lang.String getStart();
-
     /**
      *
      *
@@ -121,7 +119,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
      * @return The end.
      */
     java.lang.String getEnd();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEndBytes();
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TaxRule.TaxPostalCodeRange)
       TaxPostalCodeRangeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TaxPostalCodeRange.newBuilder() to construct.
     private TaxPostalCodeRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,7 +183,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object start_ = "";
-
     /**
      *
      *
@@ -213,7 +207,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -243,7 +236,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object end_ = "";
-
     /**
      *
      *
@@ -268,7 +260,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -466,7 +457,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object start_ = "";
-
       /**
        *
        *
@@ -704,7 +693,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -728,7 +716,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -751,7 +738,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -770,7 +756,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -796,7 +781,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object end_ = "";
-
       /**
        *
        *
@@ -820,7 +804,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -844,7 +827,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -867,7 +849,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -886,7 +867,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -997,7 +977,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     private LocationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1047,7 +1026,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     private RateCalculationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1081,7 +1059,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_ID_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1098,7 +1075,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLocationId() {
     return locationCase_ == 2;
   }
-
   /**
    *
    *
@@ -1120,7 +1096,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POST_CODE_RANGE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1137,7 +1112,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostCodeRange() {
     return locationCase_ == 3;
   }
-
   /**
    *
    *
@@ -1159,7 +1133,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     return com.google.shopping.merchant.accounts.v1beta.TaxRule.TaxPostalCodeRange
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1181,7 +1154,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USE_GOOGLE_RATE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1199,7 +1171,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUseGoogleRate() {
     return rateCalculationCase_ == 4;
   }
-
   /**
    *
    *
@@ -1222,7 +1193,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SELF_SPECIFIED_RATE_MICROS_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1239,7 +1209,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSelfSpecifiedRateMicros() {
     return rateCalculationCase_ == 5;
   }
-
   /**
    *
    *
@@ -1264,7 +1233,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -1288,7 +1256,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1315,7 +1282,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHIPPING_TAXED_FIELD_NUMBER = 6;
   private boolean shippingTaxed_ = false;
-
   /**
    *
    *
@@ -1336,7 +1302,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EFFECTIVE_TIME_PERIOD_FIELD_NUMBER = 7;
   private com.google.type.Interval effectiveTimePeriod_;
-
   /**
    *
    *
@@ -1356,7 +1321,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEffectiveTimePeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1378,7 +1342,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Interval.getDefaultInstance()
         : effectiveTimePeriod_;
   }
-
   /**
    *
    *
@@ -1661,7 +1624,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2019,7 +1981,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLocationId() {
       return locationCase_ == 2;
     }
-
     /**
      *
      *
@@ -2038,7 +1999,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -2059,7 +2019,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2086,7 +2045,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.TaxRule.TaxPostalCodeRange.Builder,
             com.google.shopping.merchant.accounts.v1beta.TaxRule.TaxPostalCodeRangeOrBuilder>
         postCodeRangeBuilder_;
-
     /**
      *
      *
@@ -2104,7 +2062,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostCodeRange() {
       return locationCase_ == 3;
     }
-
     /**
      *
      *
@@ -2136,7 +2093,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2162,7 +2118,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2186,7 +2141,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2179,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       locationCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2253,7 +2206,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2269,7 +2221,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         getPostCodeRangeBuilder() {
       return getPostCodeRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2295,7 +2246,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2349,7 +2299,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUseGoogleRate() {
       return rateCalculationCase_ == 4;
     }
-
     /**
      *
      *
@@ -2369,7 +2318,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -2391,7 +2339,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2429,7 +2376,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSelfSpecifiedRateMicros() {
       return rateCalculationCase_ == 5;
     }
-
     /**
      *
      *
@@ -2448,7 +2394,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -2469,7 +2414,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2492,7 +2436,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -2515,7 +2458,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2538,7 +2480,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2560,7 +2501,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2578,7 +2518,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2603,7 +2542,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean shippingTaxed_;
-
     /**
      *
      *
@@ -2621,7 +2559,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getShippingTaxed() {
       return shippingTaxed_;
     }
-
     /**
      *
      *
@@ -2643,7 +2580,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2670,7 +2606,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         effectiveTimePeriodBuilder_;
-
     /**
      *
      *
@@ -2689,7 +2624,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEffectiveTimePeriod() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2714,7 +2648,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
         return effectiveTimePeriodBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2741,7 +2674,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2765,7 +2697,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2797,7 +2728,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2751,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2840,7 +2769,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEffectiveTimePeriodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2863,7 +2791,6 @@ public final class TaxRule extends com.google.protobuf.GeneratedMessageV3
             : effectiveTimePeriod_;
       }
     }
-
     /**
      *
      *

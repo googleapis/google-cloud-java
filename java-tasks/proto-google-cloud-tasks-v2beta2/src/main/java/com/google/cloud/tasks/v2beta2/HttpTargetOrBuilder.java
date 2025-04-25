@@ -38,7 +38,6 @@ public interface HttpTargetOrBuilder
    * @return Whether the uriOverride field is set.
    */
   boolean hasUriOverride();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface HttpTargetOrBuilder
    * @return The uriOverride.
    */
   com.google.cloud.tasks.v2beta2.UriOverride getUriOverride();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface HttpTargetOrBuilder
    * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public interface HttpTargetOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.tasks.v2beta2.HttpTarget.HeaderOverride> getHeaderOverridesList();
-
   /**
    *
    *
@@ -188,7 +184,6 @@ public interface HttpTargetOrBuilder
    * </code>
    */
   com.google.cloud.tasks.v2beta2.HttpTarget.HeaderOverride getHeaderOverrides(int index);
-
   /**
    *
    *
@@ -231,7 +226,6 @@ public interface HttpTargetOrBuilder
    * </code>
    */
   int getHeaderOverridesCount();
-
   /**
    *
    *
@@ -275,7 +269,6 @@ public interface HttpTargetOrBuilder
    */
   java.util.List<? extends com.google.cloud.tasks.v2beta2.HttpTarget.HeaderOverrideOrBuilder>
       getHeaderOverridesOrBuilderList();
-
   /**
    *
    *
@@ -338,7 +331,6 @@ public interface HttpTargetOrBuilder
    * @return Whether the oauthToken field is set.
    */
   boolean hasOauthToken();
-
   /**
    *
    *
@@ -357,7 +349,6 @@ public interface HttpTargetOrBuilder
    * @return The oauthToken.
    */
   com.google.cloud.tasks.v2beta2.OAuthToken getOauthToken();
-
   /**
    *
    *
@@ -394,7 +385,6 @@ public interface HttpTargetOrBuilder
    * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
-
   /**
    *
    *
@@ -414,7 +404,6 @@ public interface HttpTargetOrBuilder
    * @return The oidcToken.
    */
   com.google.cloud.tasks.v2beta2.OidcToken getOidcToken();
-
   /**
    *
    *

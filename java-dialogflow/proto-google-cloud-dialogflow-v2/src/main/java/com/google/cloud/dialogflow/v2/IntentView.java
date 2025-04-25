@@ -64,7 +64,6 @@ public enum IntentView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INTENT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int INTENT_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

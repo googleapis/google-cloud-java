@@ -38,7 +38,6 @@ public interface DeleteQuotaRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

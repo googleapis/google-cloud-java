@@ -33,7 +33,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MigrationInsight)
     MigrationInsightOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MigrationInsight.newBuilder() to construct.
   private MigrationInsight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
     private MigrationTargetCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,7 +110,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
 
   public static final int FIT_FIELD_NUMBER = 1;
   private com.google.cloud.migrationcenter.v1.FitDescriptor fit_;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
   public boolean hasFit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.migrationcenter.v1.FitDescriptor.getDefaultInstance()
         : fit_;
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int COMPUTE_ENGINE_TARGET_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
   public boolean hasComputeEngineTarget() {
     return migrationTargetCase_ == 10;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.migrationcenter.v1.ComputeEngineMigrationTarget.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -423,7 +415,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +664,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
             com.google.cloud.migrationcenter.v1.FitDescriptor.Builder,
             com.google.cloud.migrationcenter.v1.FitDescriptorOrBuilder>
         fitBuilder_;
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
     public boolean hasFit() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -715,7 +704,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
         return fitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -741,7 +729,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +752,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getFitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
             : fit_;
       }
     }
-
     /**
      *
      *
@@ -894,7 +876,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
             com.google.cloud.migrationcenter.v1.ComputeEngineMigrationTarget.Builder,
             com.google.cloud.migrationcenter.v1.ComputeEngineMigrationTargetOrBuilder>
         computeEngineTargetBuilder_;
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
     public boolean hasComputeEngineTarget() {
       return migrationTargetCase_ == 10;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -970,7 +949,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       migrationTargetCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +971,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       migrationTargetCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1009,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       migrationTargetCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1036,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
         getComputeEngineTargetBuilder() {
       return getComputeEngineTargetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1102,7 +1076,6 @@ public final class MigrationInsight extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

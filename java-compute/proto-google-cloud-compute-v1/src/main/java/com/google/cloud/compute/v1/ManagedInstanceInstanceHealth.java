@@ -32,7 +32,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ManagedInstanceInstanceHealth)
     ManagedInstanceInstanceHealthOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManagedInstanceInstanceHealth.newBuilder() to construct.
   private ManagedInstanceInstanceHealth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -147,7 +146,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>UNDEFINED_DETAILED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_DETAILED_HEALTH_STATE_VALUE = 0;
-
     /**
      *
      *
@@ -158,7 +156,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>DRAINING = 480455402;</code>
      */
     public static final int DRAINING_VALUE = 480455402;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>HEALTHY = 439801213;</code>
      */
     public static final int HEALTHY_VALUE = 439801213;
-
     /**
      *
      *
@@ -180,7 +176,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>TIMEOUT = 477813057;</code>
      */
     public static final int TIMEOUT_VALUE = 477813057;
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>UNHEALTHY = 462118084;</code>
      */
     public static final int UNHEALTHY_VALUE = 462118084;
-
     /**
      *
      *
@@ -302,7 +296,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detailedHealthState_ = "";
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
   public boolean hasDetailedHealthState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -344,7 +336,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -374,7 +365,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheck_ = "";
-
   /**
    *
    *
@@ -390,7 +380,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
   public boolean hasHealthCheck() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -414,7 +403,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -619,7 +607,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -822,7 +809,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object detailedHealthState_ = "";
-
     /**
      *
      *
@@ -838,7 +824,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     public boolean hasDetailedHealthState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -862,7 +847,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -886,7 +870,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +910,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     }
 
     private java.lang.Object healthCheck_ = "";
-
     /**
      *
      *
@@ -969,7 +949,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     public boolean hasHealthCheck() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -992,7 +971,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

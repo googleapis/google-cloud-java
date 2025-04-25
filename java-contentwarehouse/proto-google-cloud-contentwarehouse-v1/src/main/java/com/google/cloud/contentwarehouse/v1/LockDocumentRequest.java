@@ -33,7 +33,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.LockDocumentRequest)
     LockDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LockDocumentRequest.newBuilder() to construct.
   private LockDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object collectionId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
 
   public static final int LOCKING_USER_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.UserInfo lockingUser_;
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
   public boolean hasLockingUser() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.contentwarehouse.v1.UserInfo.getDefaultInstance()
         : lockingUser_;
   }
-
   /**
    *
    *
@@ -416,7 +408,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -673,7 +663,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object collectionId_ = "";
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.contentwarehouse.v1.UserInfo.Builder,
             com.google.cloud.contentwarehouse.v1.UserInfoOrBuilder>
         lockingUserBuilder_;
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
     public boolean hasLockingUser() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
         return lockingUserBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +950,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +977,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLockingUserFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1055,7 +1028,6 @@ public final class LockDocumentRequest extends com.google.protobuf.GeneratedMess
             : lockingUser_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ListAuthorizedCertificatesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ListAuthorizedCertificatesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ListAuthorizedCertificatesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

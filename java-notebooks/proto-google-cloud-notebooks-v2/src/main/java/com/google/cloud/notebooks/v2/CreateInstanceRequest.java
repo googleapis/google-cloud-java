@@ -33,7 +33,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v2.CreateInstanceRequest)
     CreateInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateInstanceRequest.newBuilder() to construct.
   private CreateInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int INSTANCE_FIELD_NUMBER = 3;
   private com.google.cloud.notebooks.v2.Instance instance_;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.notebooks.v2.Instance.getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -482,7 +472,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -726,7 +715,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -803,7 +789,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +918,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +947,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.notebooks.v2.Instance.Builder,
             com.google.cloud.notebooks.v2.InstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -985,7 +963,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1008,7 +985,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1009,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1030,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1059,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1080,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1096,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
             : instance_;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1145,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1198,7 +1167,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1189,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1210,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1227,6 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The attachedCluster.
    */
   java.lang.String getAttachedCluster();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The subjectToken.
    */
   java.lang.String getSubjectToken();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The subjectTokenType.
    */
   java.lang.String getSubjectTokenType();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The grantType.
    */
   java.lang.String getGrantType();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The requestedTokenType.
    */
   java.lang.String getRequestedTokenType();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public interface GenerateAttachedClusterAgentTokenRequestOrBuilder
    * @return The options.
    */
   java.lang.String getOptions();
-
   /**
    *
    *

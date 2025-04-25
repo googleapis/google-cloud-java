@@ -34,7 +34,6 @@ public interface ListRuleSetsResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.RuleSet rule_sets = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.RuleSet> getRuleSetsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRuleSetsResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.RuleSet rule_sets = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.RuleSet getRuleSets(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRuleSetsResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.RuleSet rule_sets = 1;</code>
    */
   int getRuleSetsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRuleSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.RuleSetOrBuilder>
       getRuleSetsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRuleSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

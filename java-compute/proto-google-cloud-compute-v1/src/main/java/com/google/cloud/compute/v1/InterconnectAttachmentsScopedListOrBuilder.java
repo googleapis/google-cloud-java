@@ -37,7 +37,6 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectAttachment>
       getInterconnectAttachmentsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachments(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </code>
    */
   int getInterconnectAttachmentsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder>
       getInterconnectAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

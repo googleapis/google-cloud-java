@@ -33,7 +33,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.Row)
     RowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Row.newBuilder() to construct.
   private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList columnSpecIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getColumnSpecIdsList() {
     return columnSpecIds_;
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public int getColumnSpecIdsCount() {
     return columnSpecIds_.size();
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getColumnSpecIds(int index) {
     return columnSpecIds_.get(index);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Value> values_;
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.Value> getValuesList() {
     return values_;
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList() {
     return values_;
   }
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Value getValues(int index) {
     return values_.get(index);
   }
-
   /**
    *
    *
@@ -436,7 +426,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -693,7 +682,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       columnSpecIds_.makeImmutable();
       return columnSpecIds_;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public int getColumnSpecIdsCount() {
       return columnSpecIds_.size();
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getColumnSpecIds(int index) {
       return columnSpecIds_.get(index);
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getColumnSpecIdsBytes(int index) {
       return columnSpecIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +946,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -988,7 +967,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1015,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1039,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1066,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1117,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1141,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1165,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1189,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1213,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1262,7 +1230,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value.Builder getValuesBuilder(int index) {
       return getValuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1284,7 +1251,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1306,7 +1272,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(values_);
       }
     }
-
     /**
      *
      *
@@ -1324,7 +1289,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Value.Builder addValuesBuilder() {
       return getValuesFieldBuilder().addBuilder(com.google.protobuf.Value.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1343,7 +1307,6 @@ public final class Row extends com.google.protobuf.GeneratedMessageV3
       return getValuesFieldBuilder()
           .addBuilder(index, com.google.protobuf.Value.getDefaultInstance());
     }
-
     /**
      *
      *

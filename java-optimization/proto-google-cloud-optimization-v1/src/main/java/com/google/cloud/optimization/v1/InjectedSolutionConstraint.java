@@ -34,7 +34,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.InjectedSolutionConstraint)
     InjectedSolutionConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InjectedSolutionConstraint.newBuilder() to construct.
   private InjectedSolutionConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
             com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                 .Relaxation>
         getRelaxationsList();
-
     /**
      *
      *
@@ -103,7 +101,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      */
     com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation.Relaxation
         getRelaxations(int index);
-
     /**
      *
      *
@@ -117,7 +114,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * </code>
      */
     int getRelaxationsCount();
-
     /**
      *
      *
@@ -135,7 +131,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                 com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                     .RelaxationOrBuilder>
         getRelaxationsOrBuilderList();
-
     /**
      *
      *
@@ -175,7 +170,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * @return A list containing the vehicleIndices.
      */
     java.util.List<java.lang.Integer> getVehicleIndicesList();
-
     /**
      *
      *
@@ -199,7 +193,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      * @return The count of vehicleIndices.
      */
     int getVehicleIndicesCount();
-
     /**
      *
      *
@@ -225,7 +218,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
      */
     int getVehicleIndices(int index);
   }
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation)
       ConstraintRelaxationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ConstraintRelaxation.newBuilder() to construct.
     private ConstraintRelaxation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -299,7 +290,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * @return The enum numeric value on the wire for level.
        */
       int getLevelValue();
-
       /**
        *
        *
@@ -331,7 +321,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * @return Whether the thresholdTime field is set.
        */
       boolean hasThresholdTime();
-
       /**
        *
        *
@@ -344,7 +333,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        * @return The thresholdTime.
        */
       com.google.protobuf.Timestamp getThresholdTime();
-
       /**
        *
        *
@@ -375,7 +363,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
        */
       int getThresholdVisitCount();
     }
-
     /**
      *
      *
@@ -425,7 +412,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation.Relaxation)
         RelaxationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Relaxation.newBuilder() to construct.
       private Relaxation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -539,7 +525,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <code>LEVEL_UNSPECIFIED = 0;</code>
          */
         public static final int LEVEL_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -553,7 +538,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <code>RELAX_VISIT_TIMES_AFTER_THRESHOLD = 1;</code>
          */
         public static final int RELAX_VISIT_TIMES_AFTER_THRESHOLD_VALUE = 1;
-
         /**
          *
          *
@@ -566,7 +550,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
          * <code>RELAX_VISIT_TIMES_AND_SEQUENCE_AFTER_THRESHOLD = 2;</code>
          */
         public static final int RELAX_VISIT_TIMES_AND_SEQUENCE_AFTER_THRESHOLD_VALUE = 2;
-
         /**
          *
          *
@@ -672,7 +655,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       private int bitField0_;
       public static final int LEVEL_FIELD_NUMBER = 1;
       private int level_ = 0;
-
       /**
        *
        *
@@ -692,7 +674,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       public int getLevelValue() {
         return level_;
       }
-
       /**
        *
        *
@@ -725,7 +706,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
 
       public static final int THRESHOLD_TIME_FIELD_NUMBER = 2;
       private com.google.protobuf.Timestamp thresholdTime_;
-
       /**
        *
        *
@@ -741,7 +721,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       public boolean hasThresholdTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -759,7 +738,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
             ? com.google.protobuf.Timestamp.getDefaultInstance()
             : thresholdTime_;
       }
-
       /**
        *
        *
@@ -778,7 +756,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
 
       public static final int THRESHOLD_VISIT_COUNT_FIELD_NUMBER = 3;
       private int thresholdVisitCount_ = 0;
-
       /**
        *
        *
@@ -1019,7 +996,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1313,7 +1289,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         private int bitField0_;
 
         private int level_ = 0;
-
         /**
          *
          *
@@ -1333,7 +1308,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         public int getLevelValue() {
           return level_;
         }
-
         /**
          *
          *
@@ -1356,7 +1330,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1386,7 +1359,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                   .Relaxation.Level.UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -1415,7 +1387,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1444,7 +1415,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             thresholdTimeBuilder_;
-
         /**
          *
          *
@@ -1459,7 +1429,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         public boolean hasThresholdTime() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -1480,7 +1449,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
             return thresholdTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -1503,7 +1471,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1523,7 +1490,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1551,7 +1517,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           }
           return this;
         }
-
         /**
          *
          *
@@ -1571,7 +1536,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1586,7 +1550,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return getThresholdTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1605,7 +1568,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                 : thresholdTime_;
           }
         }
-
         /**
          *
          *
@@ -1633,7 +1595,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
 
         private int thresholdVisitCount_;
-
         /**
          *
          *
@@ -1655,7 +1616,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         public int getThresholdVisitCount() {
           return thresholdVisitCount_;
         }
-
         /**
          *
          *
@@ -1681,7 +1641,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1785,7 +1744,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
             com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                 .Relaxation>
         relaxations_;
-
     /**
      *
      *
@@ -1805,7 +1763,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         getRelaxationsList() {
       return relaxations_;
     }
-
     /**
      *
      *
@@ -1826,7 +1783,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         getRelaxationsOrBuilderList() {
       return relaxations_;
     }
-
     /**
      *
      *
@@ -1843,7 +1799,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     public int getRelaxationsCount() {
       return relaxations_.size();
     }
-
     /**
      *
      *
@@ -1862,7 +1817,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         getRelaxations(int index) {
       return relaxations_.get(index);
     }
-
     /**
      *
      *
@@ -1886,7 +1840,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList vehicleIndices_ = emptyIntList();
-
     /**
      *
      *
@@ -1913,7 +1866,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     public java.util.List<java.lang.Integer> getVehicleIndicesList() {
       return vehicleIndices_;
     }
-
     /**
      *
      *
@@ -1939,7 +1891,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     public int getVehicleIndicesCount() {
       return vehicleIndices_.size();
     }
-
     /**
      *
      *
@@ -2168,7 +2119,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2505,7 +2455,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           return relaxationsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2525,7 +2474,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           return relaxationsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2547,7 +2495,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           return relaxationsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2577,7 +2524,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2604,7 +2550,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2633,7 +2578,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2663,7 +2607,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2689,7 +2632,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2716,7 +2658,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2744,7 +2685,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2767,7 +2707,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2790,7 +2729,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         return this;
       }
-
       /**
        *
        *
@@ -2808,7 +2746,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           getRelaxationsBuilder(int index) {
         return getRelaxationsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2830,7 +2767,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           return relaxationsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2854,7 +2790,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
           return java.util.Collections.unmodifiableList(relaxations_);
         }
       }
-
       /**
        *
        *
@@ -2875,7 +2810,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                 com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                     .Relaxation.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2897,7 +2831,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
                 com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                     .Relaxation.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2951,7 +2884,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -2978,7 +2910,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         vehicleIndices_.makeImmutable();
         return vehicleIndices_;
       }
-
       /**
        *
        *
@@ -3004,7 +2935,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       public int getVehicleIndicesCount() {
         return vehicleIndices_.size();
       }
-
       /**
        *
        *
@@ -3031,7 +2961,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       public int getVehicleIndices(int index) {
         return vehicleIndices_.getInt(index);
       }
-
       /**
        *
        *
@@ -3064,7 +2993,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3096,7 +3024,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3127,7 +3054,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3230,7 +3156,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> routes_;
-
   /**
    *
    *
@@ -3246,7 +3171,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.optimization.v1.ShipmentRoute> getRoutesList() {
     return routes_;
   }
-
   /**
    *
    *
@@ -3263,7 +3187,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       getRoutesOrBuilderList() {
     return routes_;
   }
-
   /**
    *
    *
@@ -3279,7 +3202,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   public int getRoutesCount() {
     return routes_.size();
   }
-
   /**
    *
    *
@@ -3295,7 +3217,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   public com.google.cloud.optimization.v1.ShipmentRoute getRoutes(int index) {
     return routes_.get(index);
   }
-
   /**
    *
    *
@@ -3316,7 +3237,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.optimization.v1.SkippedShipment> skippedShipments_;
-
   /**
    *
    *
@@ -3332,7 +3252,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       getSkippedShipmentsList() {
     return skippedShipments_;
   }
-
   /**
    *
    *
@@ -3348,7 +3267,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       getSkippedShipmentsOrBuilderList() {
     return skippedShipments_;
   }
-
   /**
    *
    *
@@ -3363,7 +3281,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   public int getSkippedShipmentsCount() {
     return skippedShipments_.size();
   }
-
   /**
    *
    *
@@ -3378,7 +3295,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   public com.google.cloud.optimization.v1.SkippedShipment getSkippedShipments(int index) {
     return skippedShipments_.get(index);
   }
-
   /**
    *
    *
@@ -3401,7 +3317,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   private java.util.List<
           com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation>
       constraintRelaxations_;
-
   /**
    *
    *
@@ -3421,7 +3336,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       getConstraintRelaxationsList() {
     return constraintRelaxations_;
   }
-
   /**
    *
    *
@@ -3443,7 +3357,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       getConstraintRelaxationsOrBuilderList() {
     return constraintRelaxations_;
   }
-
   /**
    *
    *
@@ -3461,7 +3374,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
   public int getConstraintRelaxationsCount() {
     return constraintRelaxations_.size();
   }
-
   /**
    *
    *
@@ -3480,7 +3392,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       getConstraintRelaxations(int index) {
     return constraintRelaxations_.get(index);
   }
-
   /**
    *
    *
@@ -3686,7 +3597,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4066,7 +3976,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return routesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4085,7 +3994,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return routesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4104,7 +4012,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return routesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4129,7 +4036,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4152,7 +4058,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4177,7 +4082,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4202,7 +4106,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4225,7 +4128,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4248,7 +4150,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4271,7 +4172,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4293,7 +4193,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4315,7 +4214,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4330,7 +4228,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
     public com.google.cloud.optimization.v1.ShipmentRoute.Builder getRoutesBuilder(int index) {
       return getRoutesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4349,7 +4246,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return routesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4369,7 +4265,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(routes_);
       }
     }
-
     /**
      *
      *
@@ -4385,7 +4280,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       return getRoutesFieldBuilder()
           .addBuilder(com.google.cloud.optimization.v1.ShipmentRoute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4401,7 +4295,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       return getRoutesFieldBuilder()
           .addBuilder(index, com.google.cloud.optimization.v1.ShipmentRoute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4471,7 +4364,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return skippedShipmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4489,7 +4381,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return skippedShipmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4507,7 +4398,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return skippedShipmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4532,7 +4422,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4554,7 +4443,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4578,7 +4466,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4603,7 +4490,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4625,7 +4511,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4647,7 +4532,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4669,7 +4553,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4690,7 +4573,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4711,7 +4593,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4726,7 +4607,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         int index) {
       return getSkippedShipmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4745,7 +4625,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return skippedShipmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4764,7 +4643,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(skippedShipments_);
       }
     }
-
     /**
      *
      *
@@ -4779,7 +4657,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       return getSkippedShipmentsFieldBuilder()
           .addBuilder(com.google.cloud.optimization.v1.SkippedShipment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4795,7 +4672,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       return getSkippedShipmentsFieldBuilder()
           .addBuilder(index, com.google.cloud.optimization.v1.SkippedShipment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4875,7 +4751,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return constraintRelaxationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4896,7 +4771,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return constraintRelaxationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4918,7 +4792,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return constraintRelaxationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4947,7 +4820,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -4974,7 +4846,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5002,7 +4873,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5031,7 +4901,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5057,7 +4926,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5084,7 +4952,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5113,7 +4980,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5137,7 +5003,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5161,7 +5026,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -5179,7 +5043,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         getConstraintRelaxationsBuilder(int index) {
       return getConstraintRelaxationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5201,7 +5064,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return constraintRelaxationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5226,7 +5088,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(constraintRelaxations_);
       }
     }
-
     /**
      *
      *
@@ -5247,7 +5108,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
               com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5269,7 +5129,6 @@ public final class InjectedSolutionConstraint extends com.google.protobuf.Genera
               com.google.cloud.optimization.v1.InjectedSolutionConstraint.ConstraintRelaxation
                   .getDefaultInstance());
     }
-
     /**
      *
      *

@@ -32,7 +32,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RoutePolicy)
     RoutePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoutePolicy.newBuilder() to construct.
   private RoutePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>ROUTE_POLICY_TYPE_EXPORT = 293086882;</code>
      */
     public static final int ROUTE_POLICY_TYPE_EXPORT_VALUE = 293086882;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -270,7 +265,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +293,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -315,7 +308,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -339,7 +331,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -384,7 +374,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -408,7 +397,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -437,7 +425,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.RoutePolicyPolicyTerm> terms_;
-
   /**
    *
    *
@@ -451,7 +438,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.RoutePolicyPolicyTerm> getTermsList() {
     return terms_;
   }
-
   /**
    *
    *
@@ -466,7 +452,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       getTermsOrBuilderList() {
     return terms_;
   }
-
   /**
    *
    *
@@ -480,7 +465,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public int getTermsCount() {
     return terms_.size();
   }
-
   /**
    *
    *
@@ -494,7 +478,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.RoutePolicyPolicyTerm getTerms(int index) {
     return terms_.get(index);
   }
-
   /**
    *
    *
@@ -513,7 +496,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -530,7 +512,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -555,7 +536,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -797,7 +777,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1092,7 +1071,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1107,7 +1085,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1130,7 +1107,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1129,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1150,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1167,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1191,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -1233,7 +1205,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1256,7 +1227,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1279,7 +1249,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1270,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1287,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1311,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1359,7 +1325,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1382,7 +1347,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1405,7 +1369,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1427,7 +1390,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1407,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1501,7 +1462,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return termsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1518,7 +1478,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return termsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1535,7 +1494,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return termsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1558,7 +1516,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1579,7 +1536,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1558,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1625,7 +1580,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1600,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1620,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1688,7 +1640,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1708,7 +1659,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1728,7 +1678,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1741,7 +1690,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.RoutePolicyPolicyTerm.Builder getTermsBuilder(int index) {
       return getTermsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1758,7 +1706,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return termsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1776,7 +1723,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(terms_);
       }
     }
-
     /**
      *
      *
@@ -1790,7 +1736,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       return getTermsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.RoutePolicyPolicyTerm.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1805,7 +1750,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.compute.v1.RoutePolicyPolicyTerm.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1838,7 +1782,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1854,7 +1797,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1878,7 +1820,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1902,7 +1843,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1925,7 +1865,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1944,7 +1883,6 @@ public final class RoutePolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

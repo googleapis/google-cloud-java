@@ -33,7 +33,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.UpdateKmsConfigRequest)
     UpdateKmsConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateKmsConfigRequest.newBuilder() to construct.
   private UpdateKmsConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
 
   public static final int KMS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.netapp.v1.KmsConfig kmsConfig_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
   public boolean hasKmsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.netapp.v1.KmsConfig.getDefaultInstance()
         : kmsConfig_;
   }
-
   /**
    *
    *
@@ -364,7 +357,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +579,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.netapp.v1.KmsConfig.Builder,
             com.google.cloud.netapp.v1.KmsConfigOrBuilder>
         kmsConfigBuilder_;
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
     public boolean hasKmsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
         return kmsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +892,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getKmsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class UpdateKmsConfigRequest extends com.google.protobuf.GeneratedM
             : kmsConfig_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface BackendServiceCustomMetricOrBuilder
    * @return Whether the dryRun field is set.
    */
   boolean hasDryRun();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BackendServiceCustomMetricOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BackendServiceCustomMetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

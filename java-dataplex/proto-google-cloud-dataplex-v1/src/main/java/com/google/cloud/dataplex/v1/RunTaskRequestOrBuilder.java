@@ -39,7 +39,6 @@ public interface RunTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface RunTaskRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -89,11 +87,9 @@ public interface RunTaskRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface RunTaskRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface RunTaskRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface RunTaskRequestOrBuilder
    * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getArgsCount();
-
   /**
    *
    *
@@ -182,11 +175,9 @@ public interface RunTaskRequestOrBuilder
    * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsArgs(java.lang.String key);
-
   /** Use {@link #getArgsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getArgs();
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public interface RunTaskRequestOrBuilder
    * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getArgsMap();
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public interface RunTaskRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

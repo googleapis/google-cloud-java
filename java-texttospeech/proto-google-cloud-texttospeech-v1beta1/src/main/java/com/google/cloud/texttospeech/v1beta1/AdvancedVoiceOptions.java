@@ -33,7 +33,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions)
     AdvancedVoiceOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdvancedVoiceOptions.newBuilder() to construct.
   private AdvancedVoiceOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int LOW_LATENCY_JOURNEY_SYNTHESIS_FIELD_NUMBER = 1;
   private boolean lowLatencyJourneySynthesis_ = false;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
   public boolean hasLowLatencyJourneySynthesis() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -266,7 +263,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -452,7 +448,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean lowLatencyJourneySynthesis_;
-
     /**
      *
      *
@@ -469,7 +464,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     public boolean hasLowLatencyJourneySynthesis() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -486,7 +480,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     public boolean getLowLatencyJourneySynthesis() {
       return lowLatencyJourneySynthesis_;
     }
-
     /**
      *
      *
@@ -507,7 +500,6 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

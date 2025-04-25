@@ -32,7 +32,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceConsumptionInfo)
     InstanceConsumptionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceConsumptionInfo.newBuilder() to construct.
   private InstanceConsumptionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int GUEST_CPUS_FIELD_NUMBER = 393356754;
   private int guestCpus_ = 0;
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   public boolean hasGuestCpus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
 
   public static final int LOCAL_SSD_GB_FIELD_NUMBER = 329237578;
   private int localSsdGb_ = 0;
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   public boolean hasLocalSsdGb() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
 
   public static final int MEMORY_MB_FIELD_NUMBER = 116001171;
   private int memoryMb_ = 0;
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   public boolean hasMemoryMb() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
 
   public static final int MIN_NODE_CPUS_FIELD_NUMBER = 317231675;
   private int minNodeCpus_ = 0;
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
   public boolean hasMinNodeCpus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -408,7 +399,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -635,7 +625,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int guestCpus_;
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public boolean hasGuestCpus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public int getGuestCpus() {
       return guestCpus_;
     }
-
     /**
      *
      *
@@ -687,7 +674,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     }
 
     private int localSsdGb_;
-
     /**
      *
      *
@@ -723,7 +708,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public boolean hasLocalSsdGb() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -739,7 +723,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public int getLocalSsdGb() {
       return localSsdGb_;
     }
-
     /**
      *
      *
@@ -759,7 +742,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +761,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     }
 
     private int memoryMb_;
-
     /**
      *
      *
@@ -795,7 +776,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public boolean hasMemoryMb() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -811,7 +791,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public int getMemoryMb() {
       return memoryMb_;
     }
-
     /**
      *
      *
@@ -831,7 +810,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +829,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     }
 
     private int minNodeCpus_;
-
     /**
      *
      *
@@ -867,7 +844,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public boolean hasMinNodeCpus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -883,7 +859,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
     public int getMinNodeCpus() {
       return minNodeCpus_;
     }
-
     /**
      *
      *
@@ -903,7 +878,6 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

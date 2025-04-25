@@ -37,7 +37,6 @@ public interface OccurrenceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface OccurrenceOrBuilder
    * @return The resource.
    */
   io.grafeas.v1beta1.Resource getResource();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface OccurrenceOrBuilder
    * @return The noteName.
    */
   java.lang.String getNoteName();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface OccurrenceOrBuilder
    * @return The enum numeric value on the wire for kind.
    */
   int getKindValue();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface OccurrenceOrBuilder
    * @return The remediation.
    */
   java.lang.String getRemediation();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface OccurrenceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface OccurrenceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
-
   /**
    *
    *
@@ -272,7 +261,6 @@ public interface OccurrenceOrBuilder
    * @return The vulnerability.
    */
   io.grafeas.v1beta1.vulnerability.Details getVulnerability();
-
   /**
    *
    *
@@ -296,7 +284,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the build field is set.
    */
   boolean hasBuild();
-
   /**
    *
    *
@@ -309,7 +296,6 @@ public interface OccurrenceOrBuilder
    * @return The build.
    */
   io.grafeas.v1beta1.build.Details getBuild();
-
   /**
    *
    *
@@ -334,7 +320,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the derivedImage field is set.
    */
   boolean hasDerivedImage();
-
   /**
    *
    *
@@ -348,7 +333,6 @@ public interface OccurrenceOrBuilder
    * @return The derivedImage.
    */
   io.grafeas.v1beta1.image.Details getDerivedImage();
-
   /**
    *
    *
@@ -373,7 +357,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the installation field is set.
    */
   boolean hasInstallation();
-
   /**
    *
    *
@@ -386,7 +369,6 @@ public interface OccurrenceOrBuilder
    * @return The installation.
    */
   io.grafeas.v1beta1.pkg.Details getInstallation();
-
   /**
    *
    *
@@ -410,7 +392,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -423,7 +404,6 @@ public interface OccurrenceOrBuilder
    * @return The deployment.
    */
   io.grafeas.v1beta1.deployment.Details getDeployment();
-
   /**
    *
    *
@@ -447,7 +427,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the discovered field is set.
    */
   boolean hasDiscovered();
-
   /**
    *
    *
@@ -460,7 +439,6 @@ public interface OccurrenceOrBuilder
    * @return The discovered.
    */
   io.grafeas.v1beta1.discovery.Details getDiscovered();
-
   /**
    *
    *
@@ -484,7 +462,6 @@ public interface OccurrenceOrBuilder
    * @return Whether the attestation field is set.
    */
   boolean hasAttestation();
-
   /**
    *
    *
@@ -497,7 +474,6 @@ public interface OccurrenceOrBuilder
    * @return The attestation.
    */
   io.grafeas.v1beta1.attestation.Details getAttestation();
-
   /**
    *
    *

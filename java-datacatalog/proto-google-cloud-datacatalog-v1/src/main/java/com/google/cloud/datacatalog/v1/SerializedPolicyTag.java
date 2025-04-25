@@ -34,7 +34,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.SerializedPolicyTag)
     SerializedPolicyTagOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SerializedPolicyTag.newBuilder() to construct.
   private SerializedPolicyTag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object policyTag_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.SerializedPolicyTag> childPolicyTags_;
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       getChildPolicyTagsList() {
     return childPolicyTags_;
   }
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       getChildPolicyTagsOrBuilderList() {
     return childPolicyTags_;
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
   public int getChildPolicyTagsCount() {
     return childPolicyTags_.size();
   }
-
   /**
    *
    *
@@ -299,7 +288,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
   public com.google.cloud.datacatalog.v1.SerializedPolicyTag getChildPolicyTags(int index) {
     return childPolicyTags_.get(index);
   }
-
   /**
    *
    *
@@ -503,7 +491,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -781,7 +768,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object policyTag_ = "";
-
     /**
      *
      *
@@ -806,7 +792,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +816,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -926,7 +907,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +995,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1066,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1085,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1145,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return childPolicyTagsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1190,7 +1161,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return childPolicyTagsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1177,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return childPolicyTagsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1200,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1252,7 +1220,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1242,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1265,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1320,7 +1285,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1305,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1325,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1344,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1363,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1376,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         int index) {
       return getChildPolicyTagsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1434,7 +1393,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return childPolicyTagsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1452,7 +1410,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(childPolicyTags_);
       }
     }
-
     /**
      *
      *
@@ -1466,7 +1423,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
       return getChildPolicyTagsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.SerializedPolicyTag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1482,7 +1438,6 @@ public final class SerializedPolicyTag extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.cloud.datacatalog.v1.SerializedPolicyTag.getDefaultInstance());
     }
-
     /**
      *
      *

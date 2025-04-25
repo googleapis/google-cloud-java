@@ -35,7 +35,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Dataset)
     DatasetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Dataset.newBuilder() to construct.
   private Dataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>UNINITIALIZED = 1;</code>
      */
     public static final int UNINITIALIZED_VALUE = 1;
-
     /**
      *
      *
@@ -152,7 +149,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <code>INITIALIZING = 2;</code>
      */
     public static final int INITIALIZING_VALUE = 2;
-
     /**
      *
      *
@@ -269,7 +265,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gcsPrefix field is set.
      */
     boolean hasGcsPrefix();
-
     /**
      *
      *
@@ -285,7 +280,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return The gcsPrefix.
      */
     com.google.cloud.documentai.v1beta3.GcsPrefix getGcsPrefix();
-
     /**
      *
      *
@@ -300,7 +294,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.documentai.v1beta3.GcsPrefixOrBuilder getGcsPrefixOrBuilder();
   }
-
   /**
    *
    *
@@ -315,7 +308,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig)
       GCSManagedConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GCSManagedConfig.newBuilder() to construct.
     private GCSManagedConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -347,7 +339,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int GCS_PREFIX_FIELD_NUMBER = 1;
     private com.google.cloud.documentai.v1beta3.GcsPrefix gcsPrefix_;
-
     /**
      *
      *
@@ -366,7 +357,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsPrefix() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -387,7 +377,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.documentai.v1beta3.GcsPrefix.getDefaultInstance()
           : gcsPrefix_;
     }
-
     /**
      *
      *
@@ -573,7 +562,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -783,7 +771,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.documentai.v1beta3.GcsPrefix.Builder,
               com.google.cloud.documentai.v1beta3.GcsPrefixOrBuilder>
           gcsPrefixBuilder_;
-
       /**
        *
        *
@@ -801,7 +788,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGcsPrefix() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -825,7 +811,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return gcsPrefixBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -851,7 +836,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -875,7 +859,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -906,7 +889,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -929,7 +911,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -947,7 +928,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getGcsPrefixFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -969,7 +949,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
               : gcsPrefix_;
         }
       }
-
       /**
        *
        *
@@ -1084,7 +1063,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return The collection.
      */
     java.lang.String getCollection();
-
     /**
      *
      *
@@ -1114,7 +1092,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * @return The schema.
      */
     java.lang.String getSchema();
-
     /**
      *
      *
@@ -1131,7 +1108,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSchemaBytes();
   }
-
   /**
    *
    *
@@ -1146,7 +1122,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig)
       DocumentWarehouseConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DocumentWarehouseConfig.newBuilder() to construct.
     private DocumentWarehouseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1182,7 +1157,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object collection_ = "";
-
     /**
      *
      *
@@ -1207,7 +1181,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1210,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
-
     /**
      *
      *
@@ -1264,7 +1236,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1463,7 +1434,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1673,7 +1643,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object collection_ = "";
-
       /**
        *
        *
@@ -1697,7 +1666,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1721,7 +1689,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1744,7 +1711,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1763,7 +1729,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1789,7 +1754,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object schema_ = "";
-
       /**
        *
        *
@@ -1815,7 +1779,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1841,7 +1804,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1866,7 +1828,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1887,7 +1848,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1985,7 +1945,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -2000,7 +1959,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig)
       UnmanagedDatasetConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UnmanagedDatasetConfig.newBuilder() to construct.
     private UnmanagedDatasetConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2182,7 +2140,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2421,7 +2378,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -2436,7 +2392,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig)
       SpannerIndexingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SpannerIndexingConfig.newBuilder() to construct.
     private SpannerIndexingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2618,7 +2573,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2872,7 +2826,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     private StorageSourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2923,7 +2876,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     private IndexingSourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2955,7 +2907,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_MANAGED_CONFIG_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -2975,7 +2926,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsManagedConfig() {
     return storageSourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -2998,7 +2948,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3022,7 +2971,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_WAREHOUSE_CONFIG_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -3044,7 +2992,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocumentWarehouseConfig() {
     return storageSourceCase_ == 5;
   }
-
   /**
    *
    *
@@ -3070,7 +3017,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3094,7 +3040,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNMANAGED_DATASET_CONFIG_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -3114,7 +3059,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnmanagedDatasetConfig() {
     return storageSourceCase_ == 6;
   }
-
   /**
    *
    *
@@ -3138,7 +3082,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3162,7 +3105,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPANNER_INDEXING_CONFIG_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -3182,7 +3124,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpannerIndexingConfig() {
     return indexingSourceCase_ == 4;
   }
-
   /**
    *
    *
@@ -3206,7 +3147,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3233,7 +3173,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3259,7 +3198,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3288,7 +3226,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -3306,7 +3243,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -3329,7 +3265,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 8;
   private boolean satisfiesPzs_ = false;
-
   /**
    *
    *
@@ -3348,7 +3283,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 9;
   private boolean satisfiesPzi_ = false;
-
   /**
    *
    *
@@ -3636,7 +3570,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3989,7 +3922,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig.Builder,
             com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfigOrBuilder>
         gcsManagedConfigBuilder_;
-
     /**
      *
      *
@@ -4009,7 +3941,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsManagedConfig() {
       return storageSourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -4039,7 +3970,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4067,7 +3997,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4092,7 +4021,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4132,7 +4060,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4162,7 +4089,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4180,7 +4106,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getGcsManagedConfigBuilder() {
       return getGcsManagedConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4206,7 +4131,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.documentai.v1beta3.Dataset.GCSManagedConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4250,7 +4174,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfig.Builder,
             com.google.cloud.documentai.v1beta3.Dataset.DocumentWarehouseConfigOrBuilder>
         documentWarehouseConfigBuilder_;
-
     /**
      *
      *
@@ -4272,7 +4195,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocumentWarehouseConfig() {
       return storageSourceCase_ == 5;
     }
-
     /**
      *
      *
@@ -4308,7 +4230,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4336,7 +4257,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4362,7 +4282,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4403,7 +4322,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -4433,7 +4351,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4451,7 +4368,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getDocumentWarehouseConfigBuilder() {
       return getDocumentWarehouseConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4479,7 +4395,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4524,7 +4439,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfig.Builder,
             com.google.cloud.documentai.v1beta3.Dataset.UnmanagedDatasetConfigOrBuilder>
         unmanagedDatasetConfigBuilder_;
-
     /**
      *
      *
@@ -4544,7 +4458,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnmanagedDatasetConfig() {
       return storageSourceCase_ == 6;
     }
-
     /**
      *
      *
@@ -4578,7 +4491,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4606,7 +4518,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4632,7 +4543,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4673,7 +4583,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       storageSourceCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -4703,7 +4612,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4721,7 +4629,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getUnmanagedDatasetConfigBuilder() {
       return getUnmanagedDatasetConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4749,7 +4656,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4794,7 +4700,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfig.Builder,
             com.google.cloud.documentai.v1beta3.Dataset.SpannerIndexingConfigOrBuilder>
         spannerIndexingConfigBuilder_;
-
     /**
      *
      *
@@ -4814,7 +4719,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpannerIndexingConfig() {
       return indexingSourceCase_ == 4;
     }
-
     /**
      *
      *
@@ -4848,7 +4752,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4876,7 +4779,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       indexingSourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4901,7 +4803,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       indexingSourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4942,7 +4843,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       indexingSourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -4972,7 +4872,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4990,7 +4889,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         getSpannerIndexingConfigBuilder() {
       return getSpannerIndexingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5018,7 +4916,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5059,7 +4956,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -5084,7 +4980,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5109,7 +5004,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5133,7 +5027,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5153,7 +5046,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5180,7 +5072,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -5198,7 +5089,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -5219,7 +5109,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5241,7 +5130,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.documentai.v1beta3.Dataset.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5265,7 +5153,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5287,7 +5174,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzs_;
-
     /**
      *
      *
@@ -5303,7 +5189,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
-
     /**
      *
      *
@@ -5323,7 +5208,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5343,7 +5227,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzi_;
-
     /**
      *
      *
@@ -5359,7 +5242,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
-
     /**
      *
      *
@@ -5379,7 +5261,6 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface AzureK8sVersionInfoOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface AzureK8sVersionInfoOrBuilder
    * @return Whether the endOfLifeDate field is set.
    */
   boolean hasEndOfLifeDate();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface AzureK8sVersionInfoOrBuilder
    * @return The endOfLifeDate.
    */
   com.google.type.Date getEndOfLifeDate();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface AzureK8sVersionInfoOrBuilder
    * @return Whether the releaseDate field is set.
    */
   boolean hasReleaseDate();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface AzureK8sVersionInfoOrBuilder
    * @return The releaseDate.
    */
   com.google.type.Date getReleaseDate();
-
   /**
    *
    *

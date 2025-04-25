@@ -36,7 +36,6 @@ public final class AddFulfillmentPlacesMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata)
     AddFulfillmentPlacesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddFulfillmentPlacesMetadata.newBuilder() to construct.
   private AddFulfillmentPlacesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -216,7 +215,6 @@ public final class AddFulfillmentPlacesMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

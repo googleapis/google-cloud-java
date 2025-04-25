@@ -33,7 +33,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Text)
     TextOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Text.newBuilder() to construct.
   private Text(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * <code>MARKDOWN = 1;</code>
      */
     public static final int MARKDOWN_VALUE = 1;
-
     /**
      *
      *
@@ -241,7 +238,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The backgroundColor.
      */
     java.lang.String getBackgroundColor();
-
     /**
      *
      *
@@ -267,7 +263,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The textColor.
      */
     java.lang.String getTextColor();
-
     /**
      *
      *
@@ -295,7 +290,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for horizontalAlignment.
      */
     int getHorizontalAlignmentValue();
-
     /**
      *
      *
@@ -325,7 +319,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for verticalAlignment.
      */
     int getVerticalAlignmentValue();
-
     /**
      *
      *
@@ -353,7 +346,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for padding.
      */
     int getPaddingValue();
-
     /**
      *
      *
@@ -380,7 +372,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for fontSize.
      */
     int getFontSizeValue();
-
     /**
      *
      *
@@ -408,7 +399,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for pointerLocation.
      */
     int getPointerLocationValue();
-
     /**
      *
      *
@@ -423,7 +413,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.monitoring.dashboard.v1.Text.TextStyle.PointerLocation getPointerLocation();
   }
-
   /**
    *
    *
@@ -438,7 +427,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Text.TextStyle)
       TextStyleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TextStyle.newBuilder() to construct.
     private TextStyle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -538,7 +526,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>HORIZONTAL_ALIGNMENT_UNSPECIFIED = 0;</code>
        */
       public static final int HORIZONTAL_ALIGNMENT_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -549,7 +536,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>H_LEFT = 1;</code>
        */
       public static final int H_LEFT_VALUE = 1;
-
       /**
        *
        *
@@ -560,7 +546,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>H_CENTER = 2;</code>
        */
       public static final int H_CENTER_VALUE = 2;
-
       /**
        *
        *
@@ -725,7 +710,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>VERTICAL_ALIGNMENT_UNSPECIFIED = 0;</code>
        */
       public static final int VERTICAL_ALIGNMENT_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -736,7 +720,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>V_TOP = 1;</code>
        */
       public static final int V_TOP_VALUE = 1;
-
       /**
        *
        *
@@ -747,7 +730,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>V_CENTER = 2;</code>
        */
       public static final int V_CENTER_VALUE = 2;
-
       /**
        *
        *
@@ -932,7 +914,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PADDING_SIZE_UNSPECIFIED = 0;</code>
        */
       public static final int PADDING_SIZE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -943,7 +924,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>P_EXTRA_SMALL = 1;</code>
        */
       public static final int P_EXTRA_SMALL_VALUE = 1;
-
       /**
        *
        *
@@ -954,7 +934,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>P_SMALL = 2;</code>
        */
       public static final int P_SMALL_VALUE = 2;
-
       /**
        *
        *
@@ -965,7 +944,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>P_MEDIUM = 3;</code>
        */
       public static final int P_MEDIUM_VALUE = 3;
-
       /**
        *
        *
@@ -976,7 +954,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>P_LARGE = 4;</code>
        */
       public static final int P_LARGE_VALUE = 4;
-
       /**
        *
        *
@@ -1162,7 +1139,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>FONT_SIZE_UNSPECIFIED = 0;</code>
        */
       public static final int FONT_SIZE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1173,7 +1149,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>FS_EXTRA_SMALL = 1;</code>
        */
       public static final int FS_EXTRA_SMALL_VALUE = 1;
-
       /**
        *
        *
@@ -1184,7 +1159,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>FS_SMALL = 2;</code>
        */
       public static final int FS_SMALL_VALUE = 2;
-
       /**
        *
        *
@@ -1195,7 +1169,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>FS_MEDIUM = 3;</code>
        */
       public static final int FS_MEDIUM_VALUE = 3;
-
       /**
        *
        *
@@ -1206,7 +1179,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>FS_LARGE = 4;</code>
        */
       public static final int FS_LARGE_VALUE = 4;
-
       /**
        *
        *
@@ -1463,7 +1435,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>POINTER_LOCATION_UNSPECIFIED = 0;</code>
        */
       public static final int POINTER_LOCATION_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1474,7 +1445,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_TOP = 1;</code>
        */
       public static final int PL_TOP_VALUE = 1;
-
       /**
        *
        *
@@ -1485,7 +1455,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_RIGHT = 2;</code>
        */
       public static final int PL_RIGHT_VALUE = 2;
-
       /**
        *
        *
@@ -1496,7 +1465,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_BOTTOM = 3;</code>
        */
       public static final int PL_BOTTOM_VALUE = 3;
-
       /**
        *
        *
@@ -1507,7 +1475,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_LEFT = 4;</code>
        */
       public static final int PL_LEFT_VALUE = 4;
-
       /**
        *
        *
@@ -1518,7 +1485,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_TOP_LEFT = 5;</code>
        */
       public static final int PL_TOP_LEFT_VALUE = 5;
-
       /**
        *
        *
@@ -1529,7 +1495,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_TOP_RIGHT = 6;</code>
        */
       public static final int PL_TOP_RIGHT_VALUE = 6;
-
       /**
        *
        *
@@ -1540,7 +1505,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_RIGHT_TOP = 7;</code>
        */
       public static final int PL_RIGHT_TOP_VALUE = 7;
-
       /**
        *
        *
@@ -1551,7 +1515,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_RIGHT_BOTTOM = 8;</code>
        */
       public static final int PL_RIGHT_BOTTOM_VALUE = 8;
-
       /**
        *
        *
@@ -1562,7 +1525,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_BOTTOM_RIGHT = 9;</code>
        */
       public static final int PL_BOTTOM_RIGHT_VALUE = 9;
-
       /**
        *
        *
@@ -1573,7 +1535,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_BOTTOM_LEFT = 10;</code>
        */
       public static final int PL_BOTTOM_LEFT_VALUE = 10;
-
       /**
        *
        *
@@ -1584,7 +1545,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
        * <code>PL_LEFT_BOTTOM = 11;</code>
        */
       public static final int PL_LEFT_BOTTOM_VALUE = 11;
-
       /**
        *
        *
@@ -1708,7 +1668,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object backgroundColor_ = "";
-
     /**
      *
      *
@@ -1732,7 +1691,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1761,7 +1719,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object textColor_ = "";
-
     /**
      *
      *
@@ -1785,7 +1742,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1812,7 +1768,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HORIZONTAL_ALIGNMENT_FIELD_NUMBER = 3;
     private int horizontalAlignment_ = 0;
-
     /**
      *
      *
@@ -1830,7 +1785,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public int getHorizontalAlignmentValue() {
       return horizontalAlignment_;
     }
-
     /**
      *
      *
@@ -1857,7 +1811,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VERTICAL_ALIGNMENT_FIELD_NUMBER = 4;
     private int verticalAlignment_ = 0;
-
     /**
      *
      *
@@ -1875,7 +1828,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public int getVerticalAlignmentValue() {
       return verticalAlignment_;
     }
-
     /**
      *
      *
@@ -1902,7 +1854,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PADDING_FIELD_NUMBER = 5;
     private int padding_ = 0;
-
     /**
      *
      *
@@ -1918,7 +1869,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public int getPaddingValue() {
       return padding_;
     }
-
     /**
      *
      *
@@ -1941,7 +1891,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FONT_SIZE_FIELD_NUMBER = 6;
     private int fontSize_ = 0;
-
     /**
      *
      *
@@ -1958,7 +1907,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public int getFontSizeValue() {
       return fontSize_;
     }
-
     /**
      *
      *
@@ -1982,7 +1930,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
     public static final int POINTER_LOCATION_FIELD_NUMBER = 7;
     private int pointerLocation_ = 0;
-
     /**
      *
      *
@@ -1999,7 +1946,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public int getPointerLocationValue() {
       return pointerLocation_;
     }
-
     /**
      *
      *
@@ -2262,7 +2208,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2530,7 +2475,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object backgroundColor_ = "";
-
       /**
        *
        *
@@ -2553,7 +2497,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2576,7 +2519,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2598,7 +2540,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2616,7 +2557,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2641,7 +2581,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object textColor_ = "";
-
       /**
        *
        *
@@ -2664,7 +2603,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2687,7 +2625,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2709,7 +2646,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2727,7 +2663,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2752,7 +2687,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int horizontalAlignment_ = 0;
-
       /**
        *
        *
@@ -2770,7 +2704,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       public int getHorizontalAlignmentValue() {
         return horizontalAlignment_;
       }
-
       /**
        *
        *
@@ -2791,7 +2724,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2815,7 +2747,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.Text.TextStyle.HorizontalAlignment.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2840,7 +2771,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2862,7 +2792,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int verticalAlignment_ = 0;
-
       /**
        *
        *
@@ -2880,7 +2809,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       public int getVerticalAlignmentValue() {
         return verticalAlignment_;
       }
-
       /**
        *
        *
@@ -2901,7 +2829,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2925,7 +2852,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.Text.TextStyle.VerticalAlignment.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2950,7 +2876,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2972,7 +2897,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int padding_ = 0;
-
       /**
        *
        *
@@ -2988,7 +2912,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       public int getPaddingValue() {
         return padding_;
       }
-
       /**
        *
        *
@@ -3007,7 +2930,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3027,7 +2949,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.Text.TextStyle.PaddingSize.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3050,7 +2971,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3070,7 +2990,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int fontSize_ = 0;
-
       /**
        *
        *
@@ -3087,7 +3006,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       public int getFontSizeValue() {
         return fontSize_;
       }
-
       /**
        *
        *
@@ -3107,7 +3025,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3128,7 +3045,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.Text.TextStyle.FontSize.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3151,7 +3067,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3172,7 +3087,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int pointerLocation_ = 0;
-
       /**
        *
        *
@@ -3189,7 +3103,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       public int getPointerLocationValue() {
         return pointerLocation_;
       }
-
       /**
        *
        *
@@ -3209,7 +3122,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3232,7 +3144,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             ? com.google.monitoring.dashboard.v1.Text.TextStyle.PointerLocation.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3256,7 +3167,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3345,7 +3255,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
-
   /**
    *
    *
@@ -3369,7 +3278,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3396,7 +3304,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORMAT_FIELD_NUMBER = 2;
   private int format_ = 0;
-
   /**
    *
    *
@@ -3412,7 +3319,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -3433,7 +3339,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STYLE_FIELD_NUMBER = 3;
   private com.google.monitoring.dashboard.v1.Text.TextStyle style_;
-
   /**
    *
    *
@@ -3449,7 +3354,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStyle() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3467,7 +3371,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         ? com.google.monitoring.dashboard.v1.Text.TextStyle.getDefaultInstance()
         : style_;
   }
-
   /**
    *
    *
@@ -3665,7 +3568,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3891,7 +3793,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object content_ = "";
-
     /**
      *
      *
@@ -3914,7 +3815,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3937,7 +3837,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3959,7 +3858,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3977,7 +3875,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4002,7 +3899,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -4018,7 +3914,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -4037,7 +3932,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4055,7 +3949,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.dashboard.v1.Text.Format.forNumber(format_);
       return result == null ? com.google.monitoring.dashboard.v1.Text.Format.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4077,7 +3970,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4102,7 +3994,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.Text.TextStyle.Builder,
             com.google.monitoring.dashboard.v1.Text.TextStyleOrBuilder>
         styleBuilder_;
-
     /**
      *
      *
@@ -4117,7 +4008,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStyle() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4138,7 +4028,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         return styleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4161,7 +4050,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4182,7 +4070,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4210,7 +4097,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4230,7 +4116,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4245,7 +4130,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStyleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4264,7 +4148,6 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             : style_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.InvalidRule)
     InvalidRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InvalidRule.newBuilder() to construct.
   private InvalidRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int RULE_FIELD_NUMBER = 1;
   private com.google.cloud.contentwarehouse.v1.Rule rule_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.Rule getRule() {
     return rule_ == null ? com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance() : rule_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object error_ = "";
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +334,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -559,7 +552,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.Rule.Builder,
             com.google.cloud.contentwarehouse.v1.RuleOrBuilder>
         ruleBuilder_;
-
     /**
      *
      *
@@ -574,7 +566,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
         return ruleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +673,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +687,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -720,7 +705,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
             : rule_;
       }
     }
-
     /**
      *
      *
@@ -748,7 +732,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object error_ = "";
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -794,7 +776,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -816,7 +797,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +814,6 @@ public final class InvalidRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

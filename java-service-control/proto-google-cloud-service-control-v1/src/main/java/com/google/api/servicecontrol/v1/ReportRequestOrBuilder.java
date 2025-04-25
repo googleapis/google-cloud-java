@@ -41,7 +41,6 @@ public interface ReportRequestOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ReportRequestOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.Operation operations = 2;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.Operation> getOperationsList();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ReportRequestOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.Operation operations = 2;</code>
    */
   com.google.api.servicecontrol.v1.Operation getOperations(int index);
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ReportRequestOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.Operation operations = 2;</code>
    */
   int getOperationsCount();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ReportRequestOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.OperationOrBuilder>
       getOperationsOrBuilderList();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface ReportRequestOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
-
   /**
    *
    *

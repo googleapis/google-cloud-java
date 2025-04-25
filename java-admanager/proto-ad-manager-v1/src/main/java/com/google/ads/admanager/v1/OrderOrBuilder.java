@@ -37,7 +37,6 @@ public interface OrderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface OrderOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface OrderOrBuilder
    * @return The trafficker.
    */
   java.lang.String getTrafficker();
-
   /**
    *
    *
@@ -153,7 +150,6 @@ public interface OrderOrBuilder
    * @return A list containing the advertiserContacts.
    */
   java.util.List<java.lang.String> getAdvertiserContactsList();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface OrderOrBuilder
    * @return The count of advertiserContacts.
    */
   int getAdvertiserContactsCount();
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public interface OrderOrBuilder
    * @return The advertiserContacts at the given index.
    */
   java.lang.String getAdvertiserContacts(int index);
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public interface OrderOrBuilder
    * @return The advertiser.
    */
   java.lang.String getAdvertiser();
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public interface OrderOrBuilder
    * @return A list containing the agencyContacts.
    */
   java.util.List<java.lang.String> getAgencyContactsList();
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public interface OrderOrBuilder
    * @return The count of agencyContacts.
    */
   int getAgencyContactsCount();
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public interface OrderOrBuilder
    * @return The agencyContacts at the given index.
    */
   java.lang.String getAgencyContacts(int index);
-
   /**
    *
    *
@@ -320,7 +310,6 @@ public interface OrderOrBuilder
    * @return The agency.
    */
   java.lang.String getAgency();
-
   /**
    *
    *
@@ -353,7 +342,6 @@ public interface OrderOrBuilder
    * @return A list containing the appliedTeams.
    */
   java.util.List<java.lang.String> getAppliedTeamsList();
-
   /**
    *
    *
@@ -369,7 +357,6 @@ public interface OrderOrBuilder
    * @return The count of appliedTeams.
    */
   int getAppliedTeamsCount();
-
   /**
    *
    *
@@ -386,7 +373,6 @@ public interface OrderOrBuilder
    * @return The appliedTeams at the given index.
    */
   java.lang.String getAppliedTeams(int index);
-
   /**
    *
    *
@@ -419,7 +405,6 @@ public interface OrderOrBuilder
    * @return A list containing the effectiveTeams.
    */
   java.util.List<java.lang.String> getEffectiveTeamsList();
-
   /**
    *
    *
@@ -435,7 +420,6 @@ public interface OrderOrBuilder
    * @return The count of effectiveTeams.
    */
   int getEffectiveTeamsCount();
-
   /**
    *
    *
@@ -452,7 +436,6 @@ public interface OrderOrBuilder
    * @return The effectiveTeams at the given index.
    */
   java.lang.String getEffectiveTeams(int index);
-
   /**
    *
    *
@@ -486,7 +469,6 @@ public interface OrderOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
-
   /**
    *
    *
@@ -517,7 +499,6 @@ public interface OrderOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -547,7 +528,6 @@ public interface OrderOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -563,7 +543,6 @@ public interface OrderOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -593,7 +572,6 @@ public interface OrderOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -609,7 +587,6 @@ public interface OrderOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -677,7 +654,6 @@ public interface OrderOrBuilder
    * @return The lastModifiedByApp.
    */
   java.lang.String getLastModifiedByApp();
-
   /**
    *
    *
@@ -705,7 +681,6 @@ public interface OrderOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -719,7 +694,6 @@ public interface OrderOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -745,7 +719,6 @@ public interface OrderOrBuilder
    * @return The notes.
    */
   java.lang.String getNotes();
-
   /**
    *
    *
@@ -773,7 +746,6 @@ public interface OrderOrBuilder
    * @return The poNumber.
    */
   java.lang.String getPoNumber();
-
   /**
    *
    *
@@ -802,7 +774,6 @@ public interface OrderOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *
@@ -833,7 +804,6 @@ public interface OrderOrBuilder
    * @return The salesperson.
    */
   java.lang.String getSalesperson();
-
   /**
    *
    *
@@ -866,7 +836,6 @@ public interface OrderOrBuilder
    * @return A list containing the secondarySalespeople.
    */
   java.util.List<java.lang.String> getSecondarySalespeopleList();
-
   /**
    *
    *
@@ -883,7 +852,6 @@ public interface OrderOrBuilder
    * @return The count of secondarySalespeople.
    */
   int getSecondarySalespeopleCount();
-
   /**
    *
    *
@@ -901,7 +869,6 @@ public interface OrderOrBuilder
    * @return The secondarySalespeople at the given index.
    */
   java.lang.String getSecondarySalespeople(int index);
-
   /**
    *
    *
@@ -936,7 +903,6 @@ public interface OrderOrBuilder
    * @return A list containing the secondaryTraffickers.
    */
   java.util.List<java.lang.String> getSecondaryTraffickersList();
-
   /**
    *
    *
@@ -953,7 +919,6 @@ public interface OrderOrBuilder
    * @return The count of secondaryTraffickers.
    */
   int getSecondaryTraffickersCount();
-
   /**
    *
    *
@@ -971,7 +936,6 @@ public interface OrderOrBuilder
    * @return The secondaryTraffickers at the given index.
    */
   java.lang.String getSecondaryTraffickers(int index);
-
   /**
    *
    *
@@ -1002,7 +966,6 @@ public interface OrderOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList();
-
   /**
    *
    *
@@ -1015,7 +978,6 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index);
-
   /**
    *
    *
@@ -1028,7 +990,6 @@ public interface OrderOrBuilder
    * </code>
    */
   int getAppliedLabelsCount();
-
   /**
    *
    *
@@ -1042,7 +1003,6 @@ public interface OrderOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
       getAppliedLabelsOrBuilderList();
-
   /**
    *
    *
@@ -1071,7 +1031,6 @@ public interface OrderOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.AppliedLabel> getEffectiveAppliedLabelsList();
-
   /**
    *
    *
@@ -1087,7 +1046,6 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.AppliedLabel getEffectiveAppliedLabels(int index);
-
   /**
    *
    *
@@ -1103,7 +1061,6 @@ public interface OrderOrBuilder
    * </code>
    */
   int getEffectiveAppliedLabelsCount();
-
   /**
    *
    *
@@ -1120,7 +1077,6 @@ public interface OrderOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
       getEffectiveAppliedLabelsOrBuilderList();
-
   /**
    *
    *
@@ -1149,7 +1105,6 @@ public interface OrderOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.CustomFieldValue> getCustomFieldValuesList();
-
   /**
    *
    *
@@ -1162,7 +1117,6 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.CustomFieldValue getCustomFieldValues(int index);
-
   /**
    *
    *
@@ -1175,7 +1129,6 @@ public interface OrderOrBuilder
    * </code>
    */
   int getCustomFieldValuesCount();
-
   /**
    *
    *
@@ -1189,7 +1142,6 @@ public interface OrderOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.CustomFieldValueOrBuilder>
       getCustomFieldValuesOrBuilderList();
-
   /**
    *
    *

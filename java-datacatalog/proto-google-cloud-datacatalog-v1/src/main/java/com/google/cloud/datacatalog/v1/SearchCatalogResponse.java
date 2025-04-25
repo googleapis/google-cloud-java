@@ -34,7 +34,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.SearchCatalogResponse)
     SearchCatalogResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchCatalogResponse.newBuilder() to construct.
   private SearchCatalogResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.SearchCatalogResult> results_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.datacatalog.v1.SearchCatalogResult> getResultsList() {
     return results_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       getResultsOrBuilderList() {
     return results_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public int getResultsCount() {
     return results_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.datacatalog.v1.SearchCatalogResult getResults(int index) {
     return results_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 2;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -284,7 +272,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -502,7 +489,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -817,7 +803,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +878,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +900,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +923,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +943,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +963,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1021,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1034,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1078,7 +1051,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1068,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(results_);
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1081,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       return getResultsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.SearchCatalogResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1126,7 +1096,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.datacatalog.v1.SearchCatalogResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1159,7 +1128,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1175,7 +1143,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1195,7 +1162,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1181,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1239,7 +1204,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1263,7 +1227,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1249,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1267,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1300,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1360,7 +1320,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1380,7 +1339,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1401,7 +1359,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1422,7 +1379,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1451,7 +1407,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1434,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1458,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1481,6 @@ public final class SearchCatalogResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

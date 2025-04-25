@@ -38,7 +38,6 @@ public interface DriveLinkDataOrBuilder
    * @return Whether the driveDataRef field is set.
    */
   boolean hasDriveDataRef();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DriveLinkDataOrBuilder
    * @return The driveDataRef.
    */
   com.google.chat.v1.DriveDataRef getDriveDataRef();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DriveLinkDataOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

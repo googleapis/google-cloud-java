@@ -41,7 +41,6 @@ public interface UpdateConnectorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateConnectorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateConnectorRequestOrBuilder
    * @return Whether the connector field is set.
    */
   boolean hasConnector();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateConnectorRequestOrBuilder
    * @return The connector.
    */
   com.google.cloud.managedkafka.v1.Connector getConnector();
-
   /**
    *
    *

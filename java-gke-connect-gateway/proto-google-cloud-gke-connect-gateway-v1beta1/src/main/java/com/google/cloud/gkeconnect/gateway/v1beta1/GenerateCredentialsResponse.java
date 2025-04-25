@@ -33,7 +33,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.gkeconnect.gateway.v1beta1.GenerateCredentialsResponse)
     GenerateCredentialsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateCredentialsResponse.newBuilder() to construct.
   private GenerateCredentialsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
 
   public static final int KUBECONFIG_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString kubeconfig_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -309,7 +305,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -517,7 +512,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private com.google.protobuf.ByteString kubeconfig_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -533,7 +527,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getKubeconfig() {
       return kubeconfig_;
     }
-
     /**
      *
      *
@@ -555,7 +548,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class GenerateCredentialsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CompleteQueryResponse)
     CompleteQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompleteQueryResponse.newBuilder() to construct.
   private CompleteQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return The suggestion.
      */
     java.lang.String getSuggestion();
-
     /**
      *
      *
@@ -112,7 +110,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return A list containing the completableFieldPaths.
      */
     java.util.List<java.lang.String> getCompletableFieldPathsList();
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return The count of completableFieldPaths.
      */
     int getCompletableFieldPathsCount();
-
     /**
      *
      *
@@ -145,7 +141,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return The completableFieldPaths at the given index.
      */
     java.lang.String getCompletableFieldPaths(int index);
-
     /**
      *
      *
@@ -163,7 +158,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     com.google.protobuf.ByteString getCompletableFieldPathsBytes(int index);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion)
       QuerySuggestionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use QuerySuggestion.newBuilder() to construct.
     private QuerySuggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -215,7 +208,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object suggestion_ = "";
-
     /**
      *
      *
@@ -239,7 +231,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
-
     /**
      *
      *
@@ -269,7 +260,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList completableFieldPaths_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -287,7 +277,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ProtocolStringList getCompletableFieldPathsList() {
       return completableFieldPaths_;
     }
-
     /**
      *
      *
@@ -305,7 +294,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public int getCompletableFieldPathsCount() {
       return completableFieldPaths_.size();
     }
-
     /**
      *
      *
@@ -324,7 +312,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getCompletableFieldPaths(int index) {
       return completableFieldPaths_.get(index);
     }
-
     /**
      *
      *
@@ -531,7 +518,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object suggestion_ = "";
-
       /**
        *
        *
@@ -778,7 +763,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -801,7 +785,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -823,7 +806,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -841,7 +823,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -875,7 +856,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -894,7 +874,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         completableFieldPaths_.makeImmutable();
         return completableFieldPaths_;
       }
-
       /**
        *
        *
@@ -912,7 +891,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public int getCompletableFieldPathsCount() {
         return completableFieldPaths_.size();
       }
-
       /**
        *
        *
@@ -931,7 +909,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public java.lang.String getCompletableFieldPaths(int index) {
         return completableFieldPaths_.get(index);
       }
-
       /**
        *
        *
@@ -950,7 +927,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.ByteString getCompletableFieldPathsBytes(int index) {
         return completableFieldPaths_.getByteString(index);
       }
-
       /**
        *
        *
@@ -977,7 +953,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1003,7 +978,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1026,7 +1000,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1048,7 +1021,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1151,7 +1123,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   private java.util.List<
           com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion>
       querySuggestions_;
-
   /**
    *
    *
@@ -1170,7 +1141,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getQuerySuggestionsList() {
     return querySuggestions_;
   }
-
   /**
    *
    *
@@ -1191,7 +1161,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getQuerySuggestionsOrBuilderList() {
     return querySuggestions_;
   }
-
   /**
    *
    *
@@ -1208,7 +1177,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   public int getQuerySuggestionsCount() {
     return querySuggestions_.size();
   }
-
   /**
    *
    *
@@ -1226,7 +1194,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       getQuerySuggestions(int index) {
     return querySuggestions_.get(index);
   }
-
   /**
    *
    *
@@ -1247,7 +1214,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
   public static final int TAIL_MATCH_TRIGGERED_FIELD_NUMBER = 2;
   private boolean tailMatchTriggered_ = false;
-
   /**
    *
    *
@@ -1438,7 +1404,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1729,7 +1694,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return querySuggestionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1749,7 +1713,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return querySuggestionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1733,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return querySuggestionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1798,7 +1760,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1824,7 +1785,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1851,7 +1811,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1879,7 +1838,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1904,7 +1862,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1887,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1957,7 +1913,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1980,7 +1935,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1957,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2020,7 +1973,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         getQuerySuggestionsBuilder(int index) {
       return getQuerySuggestionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2041,7 +1993,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return querySuggestionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2065,7 +2016,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(querySuggestions_);
       }
     }
-
     /**
      *
      *
@@ -2085,7 +2035,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2106,7 +2055,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               com.google.cloud.discoveryengine.v1beta.CompleteQueryResponse.QuerySuggestion
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2148,7 +2096,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     private boolean tailMatchTriggered_;
-
     /**
      *
      *
@@ -2167,7 +2114,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public boolean getTailMatchTriggered() {
       return tailMatchTriggered_;
     }
-
     /**
      *
      *
@@ -2190,7 +2136,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

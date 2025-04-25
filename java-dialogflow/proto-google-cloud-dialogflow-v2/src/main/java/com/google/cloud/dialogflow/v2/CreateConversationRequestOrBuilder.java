@@ -39,7 +39,6 @@ public interface CreateConversationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateConversationRequestOrBuilder
    * @return Whether the conversation field is set.
    */
   boolean hasConversation();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateConversationRequestOrBuilder
    * @return The conversation.
    */
   com.google.cloud.dialogflow.v2.Conversation getConversation();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface CreateConversationRequestOrBuilder
    * @return The conversationId.
    */
   java.lang.String getConversationId();
-
   /**
    *
    *

@@ -36,16 +36,12 @@ public final class RouteTravelModeProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ".google/maps/routing/v2/route_travel_mode.proto\022\026google.maps.routing.v2*n\n"
-          + "\017RouteTravelMode\022\033\n"
-          + "\027TRAVEL_MODE_UNSPECIFIED\020\000\022\t\n"
-          + "\005DRIVE\020\001\022\013\n"
-          + "\007BICYCLE\020\002\022\010\n"
-          + "\004WALK\020\003\022\017\n"
-          + "\013TWO_WHEELER\020\004\022\013\n"
-          + "\007TRANSIT\020\007B\306\001\n"
-          + "\032com.google.maps.routing.v2B\024RouteTravelModeProtoP\001Z"
+      "\n.google/maps/routing/v2/route_travel_mo"
+          + "de.proto\022\026google.maps.routing.v2*n\n\017Rout"
+          + "eTravelMode\022\033\n\027TRAVEL_MODE_UNSPECIFIED\020\000"
+          + "\022\t\n\005DRIVE\020\001\022\013\n\007BICYCLE\020\002\022\010\n\004WALK\020\003\022\017\n\013TW"
+          + "O_WHEELER\020\004\022\013\n\007TRANSIT\020\007B\306\001\n\032com.google."
+          + "maps.routing.v2B\024RouteTravelModeProtoP\001Z"
           + ":cloud.google.com/go/maps/routing/apiv2/"
           + "routingpb;routingpb\242\002\005GMRV2\252\002\026Google.Map"
           + "s.Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031"

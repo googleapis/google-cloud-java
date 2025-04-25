@@ -36,7 +36,6 @@ public interface UploadedMavenArtifactOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface UploadedMavenArtifactOrBuilder
    * @return Whether the fileHashes field is set.
    */
   boolean hasFileHashes();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface UploadedMavenArtifactOrBuilder
    * @return The fileHashes.
    */
   com.google.cloudbuild.v1.FileHashes getFileHashes();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UploadedMavenArtifactOrBuilder
    * @return Whether the pushTiming field is set.
    */
   boolean hasPushTiming();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface UploadedMavenArtifactOrBuilder
    * @return The pushTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getPushTiming();
-
   /**
    *
    *

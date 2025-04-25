@@ -37,7 +37,6 @@ public interface DataTypeOrBuilder
    * @return Whether the listElementType field is set.
    */
   boolean hasListElementType();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DataTypeOrBuilder
    * @return The listElementType.
    */
   com.google.cloud.automl.v1beta1.DataType getListElementType();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DataTypeOrBuilder
    * @return Whether the structType field is set.
    */
   boolean hasStructType();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface DataTypeOrBuilder
    * @return The structType.
    */
   com.google.cloud.automl.v1beta1.StructType getStructType();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface DataTypeOrBuilder
    * @return Whether the timeFormat field is set.
    */
   boolean hasTimeFormat();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface DataTypeOrBuilder
    * @return The timeFormat.
    */
   java.lang.String getTimeFormat();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface DataTypeOrBuilder
    * @return The enum numeric value on the wire for typeCode.
    */
   int getTypeCodeValue();
-
   /**
    *
    *

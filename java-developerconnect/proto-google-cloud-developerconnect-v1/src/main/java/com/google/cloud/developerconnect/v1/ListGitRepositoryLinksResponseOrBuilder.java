@@ -36,7 +36,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    */
   java.util.List<com.google.cloud.developerconnect.v1.GitRepositoryLink>
       getGitRepositoryLinksList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    * </code>
    */
   com.google.cloud.developerconnect.v1.GitRepositoryLink getGitRepositoryLinks(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    * </code>
    */
   int getGitRepositoryLinksCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.developerconnect.v1.GitRepositoryLinkOrBuilder>
       getGitRepositoryLinksOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -138,7 +132,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -152,7 +145,6 @@ public interface ListGitRepositoryLinksResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

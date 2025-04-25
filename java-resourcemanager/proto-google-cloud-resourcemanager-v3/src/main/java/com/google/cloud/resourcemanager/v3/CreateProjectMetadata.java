@@ -35,7 +35,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.CreateProjectMetadata)
     CreateProjectMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateProjectMetadata.newBuilder() to construct.
   private CreateProjectMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int GETTABLE_FIELD_NUMBER = 2;
   private boolean gettable_ = false;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int READY_FIELD_NUMBER = 3;
   private boolean ready_ = false;
-
   /**
    *
    *
@@ -337,7 +331,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +637,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -758,7 +742,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     }
 
     private boolean gettable_;
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public boolean getGettable() {
       return gettable_;
     }
-
     /**
      *
      *
@@ -798,7 +780,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +801,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     }
 
     private boolean ready_;
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
     public boolean getReady() {
       return ready_;
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class CreateProjectMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

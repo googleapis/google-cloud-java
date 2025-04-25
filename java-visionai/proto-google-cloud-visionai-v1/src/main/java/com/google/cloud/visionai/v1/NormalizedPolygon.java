@@ -33,7 +33,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.NormalizedPolygon)
     NormalizedPolygonOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NormalizedPolygon.newBuilder() to construct.
   private NormalizedPolygon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.NormalizedVertex> normalizedVertices_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.visionai.v1.NormalizedVertex> getNormalizedVerticesList() {
     return normalizedVertices_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       getNormalizedVerticesOrBuilderList() {
     return normalizedVertices_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
   public int getNormalizedVerticesCount() {
     return normalizedVertices_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.visionai.v1.NormalizedVertex getNormalizedVertices(int index) {
     return normalizedVertices_.get(index);
   }
-
   /**
    *
    *
@@ -308,7 +302,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -572,7 +565,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
         return normalizedVerticesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
         return normalizedVerticesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
         return normalizedVerticesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +733,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +754,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +808,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
         int index) {
       return getNormalizedVerticesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
         return normalizedVerticesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -865,7 +844,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(normalizedVertices_);
       }
     }
-
     /**
      *
      *
@@ -880,7 +858,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       return getNormalizedVerticesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.NormalizedVertex.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -896,7 +873,6 @@ public final class NormalizedPolygon extends com.google.protobuf.GeneratedMessag
       return getNormalizedVerticesFieldBuilder()
           .addBuilder(index, com.google.cloud.visionai.v1.NormalizedVertex.getDefaultInstance());
     }
-
     /**
      *
      *

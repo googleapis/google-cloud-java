@@ -36,7 +36,6 @@ public interface UrlOrBuilder
    * @return The enum numeric value on the wire for scheme.
    */
   int getSchemeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface UrlOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UrlOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

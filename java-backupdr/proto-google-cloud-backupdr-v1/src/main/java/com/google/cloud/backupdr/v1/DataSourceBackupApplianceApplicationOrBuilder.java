@@ -36,7 +36,6 @@ public interface DataSourceBackupApplianceApplicationOrBuilder
    * @return The applicationName.
    */
   java.lang.String getApplicationName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DataSourceBackupApplianceApplicationOrBuilder
    * @return The backupAppliance.
    */
   java.lang.String getBackupAppliance();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface DataSourceBackupApplianceApplicationOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface DataSourceBackupApplianceApplicationOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
-
   /**
    *
    *

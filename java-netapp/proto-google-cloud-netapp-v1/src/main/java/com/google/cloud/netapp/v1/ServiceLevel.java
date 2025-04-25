@@ -92,7 +92,6 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int SERVICE_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PREMIUM = 1;</code>
    */
   public static final int PREMIUM_VALUE = 1;
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXTREME = 2;</code>
    */
   public static final int EXTREME_VALUE = 2;
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STANDARD = 3;</code>
    */
   public static final int STANDARD_VALUE = 3;
-
   /**
    *
    *

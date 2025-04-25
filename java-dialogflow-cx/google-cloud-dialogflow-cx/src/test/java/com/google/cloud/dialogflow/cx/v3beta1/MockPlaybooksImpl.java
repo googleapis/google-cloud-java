@@ -177,8 +177,7 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePlaybookVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreatePlaybookVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PlaybookVersion.class.getName(),
                   Exception.class.getName())));
@@ -221,8 +220,7 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPlaybookVersions, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListPlaybookVersions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPlaybookVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -243,8 +241,7 @@ public class MockPlaybooksImpl extends PlaybooksImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePlaybookVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeletePlaybookVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

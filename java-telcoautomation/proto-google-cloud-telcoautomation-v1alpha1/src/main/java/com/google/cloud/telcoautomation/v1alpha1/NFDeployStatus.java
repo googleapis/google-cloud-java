@@ -33,7 +33,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.telcoautomation.v1alpha1.NFDeployStatus)
     NFDeployStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NFDeployStatus.newBuilder() to construct.
   private NFDeployStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGETED_NFS_FIELD_NUMBER = 1;
   private int targetedNfs_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READY_NFS_FIELD_NUMBER = 2;
   private int readyNfs_ = 0;
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatus> sites_;
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       getSitesList() {
     return sites_;
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       getSitesOrBuilderList() {
     return sites_;
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
   public int getSitesCount() {
     return sites_.size();
   }
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatus getSites(int index) {
     return sites_.get(index);
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -630,7 +621,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int targetedNfs_;
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
     public int getTargetedNfs() {
       return targetedNfs_;
     }
-
     /**
      *
      *
@@ -666,7 +655,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int readyNfs_;
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
     public int getReadyNfs() {
       return readyNfs_;
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
         return sitesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
         return sitesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
         return sitesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +899,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +921,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +967,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +988,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1009,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1024,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSitesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1071,7 +1043,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
         return sitesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1063,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(sites_);
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1079,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatus.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1128,7 +1097,6 @@ public final class NFDeployStatus extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.telcoautomation.v1alpha1.NFDeploySiteStatus.getDefaultInstance());
     }
-
     /**
      *
      *

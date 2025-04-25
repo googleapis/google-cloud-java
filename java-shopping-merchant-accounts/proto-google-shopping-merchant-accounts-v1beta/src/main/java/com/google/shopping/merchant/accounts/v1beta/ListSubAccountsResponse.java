@@ -33,7 +33,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListSubAccountsResponse)
     ListSubAccountsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSubAccountsResponse.newBuilder() to construct.
   private ListSubAccountsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.Account> accounts_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.Account> getAccountsList() {
     return accounts_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       getAccountsOrBuilderList() {
     return accounts_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
   public int getAccountsCount() {
     return accounts_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
   public com.google.shopping.merchant.accounts.v1beta.Account getAccounts(int index) {
     return accounts_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return accountsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -673,7 +663,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return accountsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return accountsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +846,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +878,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         int index) {
       return getAccountsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return accountsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -935,7 +912,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(accounts_);
       }
     }
-
     /**
      *
      *
@@ -949,7 +925,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       return getAccountsFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.Account.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -965,7 +940,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.Account.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -998,7 +972,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1022,7 +995,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1018,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1040,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1058,6 @@ public final class ListSubAccountsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

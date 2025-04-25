@@ -38,7 +38,6 @@ public interface GetQaScorecardRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -131,7 +130,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -238,7 +236,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -287,7 +284,6 @@ public interface ListAssetsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
-
   /**
    *
    *
@@ -303,7 +299,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
-
   /**
    *
    *
@@ -353,7 +348,6 @@ public interface ListAssetsRequestOrBuilder
    * @return Whether the compareDuration field is set.
    */
   boolean hasCompareDuration();
-
   /**
    *
    *
@@ -389,7 +383,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The compareDuration.
    */
   com.google.protobuf.Duration getCompareDuration();
-
   /**
    *
    *
@@ -438,7 +431,6 @@ public interface ListAssetsRequestOrBuilder
    * @return Whether the fieldMask field is set.
    */
   boolean hasFieldMask();
-
   /**
    *
    *
@@ -453,7 +445,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The fieldMask.
    */
   com.google.protobuf.FieldMask getFieldMask();
-
   /**
    *
    *
@@ -481,7 +472,6 @@ public interface ListAssetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

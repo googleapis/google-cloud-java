@@ -40,7 +40,6 @@ public interface SearchRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface SearchRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface SearchRequestOrBuilder
    * @return A list containing the languages.
    */
   java.util.List<java.lang.String> getLanguagesList();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface SearchRequestOrBuilder
    * @return The count of languages.
    */
   int getLanguagesCount();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface SearchRequestOrBuilder
    * @return The languages at the given index.
    */
   java.lang.String getLanguages(int index);
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface SearchRequestOrBuilder
    * @return A list containing the types.
    */
   java.util.List<java.lang.String> getTypesList();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface SearchRequestOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface SearchRequestOrBuilder
    * @return The types at the given index.
    */
   java.lang.String getTypes(int index);
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public interface SearchRequestOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface SearchRequestOrBuilder
    * @return The limit.
    */
   com.google.protobuf.Int32Value getLimit();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface BackupVaultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface BackupVaultOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -127,11 +123,9 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface BackupVaultOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface BackupVaultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface BackupVaultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -229,7 +219,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -244,7 +233,6 @@ public interface BackupVaultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the backupMinimumEnforcedRetentionDuration field is set.
    */
   boolean hasBackupMinimumEnforcedRetentionDuration();
-
   /**
    *
    *
@@ -289,7 +276,6 @@ public interface BackupVaultOrBuilder
    * @return The backupMinimumEnforcedRetentionDuration.
    */
   com.google.protobuf.Duration getBackupMinimumEnforcedRetentionDuration();
-
   /**
    *
    *
@@ -317,7 +303,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the deletable field is set.
    */
   boolean hasDeletable();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -359,7 +343,6 @@ public interface BackupVaultOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface BackupVaultOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -418,7 +400,6 @@ public interface BackupVaultOrBuilder
    * @return Whether the effectiveTime field is set.
    */
   boolean hasEffectiveTime();
-
   /**
    *
    *
@@ -433,7 +414,6 @@ public interface BackupVaultOrBuilder
    * @return The effectiveTime.
    */
   com.google.protobuf.Timestamp getEffectiveTime();
-
   /**
    *
    *
@@ -474,7 +454,6 @@ public interface BackupVaultOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -517,7 +496,6 @@ public interface BackupVaultOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -545,7 +523,6 @@ public interface BackupVaultOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -558,11 +535,9 @@ public interface BackupVaultOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -575,7 +550,6 @@ public interface BackupVaultOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -592,7 +566,6 @@ public interface BackupVaultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -624,7 +597,6 @@ public interface BackupVaultOrBuilder
    * @return The enum numeric value on the wire for accessRestriction.
    */
   int getAccessRestrictionValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AugmentPromptResponse)
     AugmentPromptResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AugmentPromptResponse.newBuilder() to construct.
   private AugmentPromptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Content> augmentedPrompt_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.aiplatform.v1.Content> getAugmentedPromptList() {
     return augmentedPrompt_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       getAugmentedPromptOrBuilderList() {
     return augmentedPrompt_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
   public int getAugmentedPromptCount() {
     return augmentedPrompt_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.aiplatform.v1.Content getAugmentedPrompt(int index) {
     return augmentedPrompt_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Fact> facts_;
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.aiplatform.v1.Fact> getFactsList() {
     return facts_;
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       getFactsOrBuilderList() {
     return facts_;
   }
-
   /**
    *
    *
@@ -188,7 +179,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
   public int getFactsCount() {
     return facts_.size();
   }
-
   /**
    *
    *
@@ -202,7 +192,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.aiplatform.v1.Fact getFacts(int index) {
     return facts_.get(index);
   }
-
   /**
    *
    *
@@ -389,7 +378,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -708,7 +696,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return augmentedPromptBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -725,7 +712,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return augmentedPromptBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -742,7 +728,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return augmentedPromptBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +912,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +924,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1.Content.Builder getAugmentedPromptBuilder(int index) {
       return getAugmentedPromptFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -965,7 +940,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return augmentedPromptBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(augmentedPrompt_);
       }
     }
-
     /**
      *
      *
@@ -997,7 +970,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       return getAugmentedPromptFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Content.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1011,7 +983,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       return getAugmentedPromptFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Content.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1065,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1081,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1103,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1123,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1145,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1167,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1186,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1206,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1226,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1245,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1264,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1276,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1.Fact.Builder getFactsBuilder(int index) {
       return getFactsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1334,7 +1292,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return factsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1352,7 +1309,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(facts_);
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1322,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       return getFactsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Fact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1380,7 +1335,6 @@ public final class AugmentPromptResponse extends com.google.protobuf.GeneratedMe
       return getFactsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Fact.getDefaultInstance());
     }
-
     /**
      *
      *

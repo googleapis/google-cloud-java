@@ -34,7 +34,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix)
     PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublicAdvertisedPrefixPublicDelegatedPrefix.newBuilder() to construct.
   private PublicAdvertisedPrefixPublicDelegatedPrefix(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipRange_ = "";
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   public boolean hasIpRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       return s;
     }
   }
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   public boolean hasName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   public boolean hasProject() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -322,7 +310,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       return s;
     }
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -391,7 +376,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       return s;
     }
   }
-
   /**
    *
    *
@@ -638,7 +622,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -900,7 +883,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     private int bitField0_;
 
     private java.lang.Object ipRange_ = "";
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     public boolean hasIpRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +962,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1041,7 +1017,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     public boolean hasName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1064,7 +1039,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1061,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1082,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1099,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1123,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1167,7 +1137,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     public boolean hasProject() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1190,7 +1159,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1181,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1219,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1243,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1293,7 +1257,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1316,7 +1279,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1339,7 +1301,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1322,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1339,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1363,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -1419,7 +1377,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1442,7 +1399,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1465,7 +1421,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1487,7 +1442,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1459,6 @@ public final class PublicAdvertisedPrefixPublicDelegatedPrefix
       onChanged();
       return this;
     }
-
     /**
      *
      *

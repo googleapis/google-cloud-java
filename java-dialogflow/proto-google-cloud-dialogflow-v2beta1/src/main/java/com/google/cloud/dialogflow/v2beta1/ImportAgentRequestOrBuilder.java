@@ -40,7 +40,6 @@ public interface ImportAgentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface ImportAgentRequestOrBuilder
    * @return Whether the agentUri field is set.
    */
   boolean hasAgentUri();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface ImportAgentRequestOrBuilder
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface ImportAgentRequestOrBuilder
    * @return Whether the agentContent field is set.
    */
   boolean hasAgentContent();
-
   /**
    *
    *

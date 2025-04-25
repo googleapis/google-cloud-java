@@ -43,7 +43,6 @@ public interface RecurringAudienceListOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface RecurringAudienceListOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface RecurringAudienceListOrBuilder
    * @return The audienceDisplayName.
    */
   java.lang.String getAudienceDisplayName();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface RecurringAudienceListOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1alpha.AudienceDimension> getDimensionsList();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface RecurringAudienceListOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.AudienceDimension getDimensions(int index);
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface RecurringAudienceListOrBuilder
    * </code>
    */
   int getDimensionsCount();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface RecurringAudienceListOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.AudienceDimensionOrBuilder>
       getDimensionsOrBuilderList();
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface RecurringAudienceListOrBuilder
    * @return Whether the activeDaysRemaining field is set.
    */
   boolean hasActiveDaysRemaining();
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public interface RecurringAudienceListOrBuilder
    * @return A list containing the audienceLists.
    */
   java.util.List<java.lang.String> getAudienceListsList();
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public interface RecurringAudienceListOrBuilder
    * @return The count of audienceLists.
    */
   int getAudienceListsCount();
-
   /**
    *
    *
@@ -294,7 +284,6 @@ public interface RecurringAudienceListOrBuilder
    * @return The audienceLists at the given index.
    */
   java.lang.String getAudienceLists(int index);
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public interface RecurringAudienceListOrBuilder
    * @return Whether the webhookNotification field is set.
    */
   boolean hasWebhookNotification();
-
   /**
    *
    *
@@ -364,7 +352,6 @@ public interface RecurringAudienceListOrBuilder
    * @return The webhookNotification.
    */
   com.google.analytics.data.v1alpha.WebhookNotification getWebhookNotification();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface FetchRepositoryHistoryResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.CommitLogEntry commits = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.CommitLogEntry> getCommitsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FetchRepositoryHistoryResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.CommitLogEntry commits = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.CommitLogEntry getCommits(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FetchRepositoryHistoryResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.CommitLogEntry commits = 1;</code>
    */
   int getCommitsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FetchRepositoryHistoryResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.CommitLogEntryOrBuilder>
       getCommitsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface FetchRepositoryHistoryResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

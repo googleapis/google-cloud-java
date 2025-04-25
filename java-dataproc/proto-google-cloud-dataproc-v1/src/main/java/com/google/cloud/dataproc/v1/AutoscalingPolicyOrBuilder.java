@@ -40,7 +40,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the basicAlgorithm field is set.
    */
   boolean hasBasicAlgorithm();
-
   /**
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -119,7 +116,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return The basicAlgorithm.
    */
   com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm getBasicAlgorithm();
-
   /**
    * <code>
    * .google.cloud.dataproc.v1.BasicAutoscalingAlgorithm basic_algorithm = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -141,7 +137,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the workerConfig field is set.
    */
   boolean hasWorkerConfig();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return The workerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getWorkerConfig();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return Whether the secondaryWorkerConfig field is set.
    */
   boolean hasSecondaryWorkerConfig();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface AutoscalingPolicyOrBuilder
    * @return The secondaryWorkerConfig.
    */
   com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig getSecondaryWorkerConfig();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface AutoscalingPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -248,11 +239,9 @@ public interface AutoscalingPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -269,7 +258,6 @@ public interface AutoscalingPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public interface AutoscalingPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

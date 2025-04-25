@@ -73,7 +73,6 @@ public enum FailureAction implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FAILURE_ACTION_UNSPECIFIED = 0;</code>
    */
   public static final int FAILURE_ACTION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public enum FailureAction implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NO_ACTION = 1;</code>
    */
   public static final int NO_ACTION_VALUE = 1;
-
   /**
    *
    *

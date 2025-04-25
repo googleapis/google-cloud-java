@@ -38,7 +38,6 @@ public interface MembershipEndpointOrBuilder
    * @return Whether the gkeCluster field is set.
    */
   boolean hasGkeCluster();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MembershipEndpointOrBuilder
    * @return The gkeCluster.
    */
   com.google.cloud.gkehub.v1.GkeCluster getGkeCluster();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface MembershipEndpointOrBuilder
    * @return Whether the kubernetesMetadata field is set.
    */
   boolean hasKubernetesMetadata();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface MembershipEndpointOrBuilder
    * @return The kubernetesMetadata.
    */
   com.google.cloud.gkehub.v1.KubernetesMetadata getKubernetesMetadata();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface MembershipEndpointOrBuilder
    * @return Whether the kubernetesResource field is set.
    */
   boolean hasKubernetesResource();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface MembershipEndpointOrBuilder
    * @return The kubernetesResource.
    */
   com.google.cloud.gkehub.v1.KubernetesResource getKubernetesResource();
-
   /**
    *
    *

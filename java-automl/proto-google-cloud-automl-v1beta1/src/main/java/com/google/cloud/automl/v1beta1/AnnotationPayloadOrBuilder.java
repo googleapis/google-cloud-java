@@ -36,7 +36,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the translation field is set.
    */
   boolean hasTranslation();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The translation.
    */
   com.google.cloud.automl.v1beta1.TranslationAnnotation getTranslation();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the classification field is set.
    */
   boolean hasClassification();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The classification.
    */
   com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getClassification();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the imageObjectDetection field is set.
    */
   boolean hasImageObjectDetection();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The imageObjectDetection.
    */
   com.google.cloud.automl.v1beta1.ImageObjectDetectionAnnotation getImageObjectDetection();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the videoClassification field is set.
    */
   boolean hasVideoClassification();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface AnnotationPayloadOrBuilder
    */
   com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
       getVideoClassification();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the videoObjectTracking field is set.
    */
   boolean hasVideoObjectTracking();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The videoObjectTracking.
    */
   com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation getVideoObjectTracking();
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the textExtraction field is set.
    */
   boolean hasTextExtraction();
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The textExtraction.
    */
   com.google.cloud.automl.v1beta1.TextExtractionAnnotation getTextExtraction();
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the textSentiment field is set.
    */
   boolean hasTextSentiment();
-
   /**
    *
    *
@@ -288,7 +275,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The textSentiment.
    */
   com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation getTextSentiment();
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public interface AnnotationPayloadOrBuilder
    * @return Whether the tables field is set.
    */
   boolean hasTables();
-
   /**
    *
    *
@@ -326,7 +311,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The tables.
    */
   com.google.cloud.automl.v1beta1.TablesAnnotation getTables();
-
   /**
    *
    *
@@ -352,7 +336,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The annotationSpecId.
    */
   java.lang.String getAnnotationSpecId();
-
   /**
    *
    *
@@ -385,7 +368,6 @@ public interface AnnotationPayloadOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

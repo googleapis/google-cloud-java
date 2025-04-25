@@ -36,7 +36,6 @@ public interface SafetyInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SafetyInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
-
   /**
    *
    *

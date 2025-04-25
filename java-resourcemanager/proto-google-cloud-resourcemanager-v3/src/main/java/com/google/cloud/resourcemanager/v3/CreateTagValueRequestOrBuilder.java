@@ -39,7 +39,6 @@ public interface CreateTagValueRequestOrBuilder
    * @return Whether the tagValue field is set.
    */
   boolean hasTagValue();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface CreateTagValueRequestOrBuilder
    * @return The tagValue.
    */
   com.google.cloud.resourcemanager.v3.TagValue getTagValue();
-
   /**
    *
    *

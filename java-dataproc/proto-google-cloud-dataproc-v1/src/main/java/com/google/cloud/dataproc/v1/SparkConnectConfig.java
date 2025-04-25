@@ -33,7 +33,6 @@ public final class SparkConnectConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SparkConnectConfig)
     SparkConnectConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SparkConnectConfig.newBuilder() to construct.
   private SparkConnectConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class SparkConnectConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

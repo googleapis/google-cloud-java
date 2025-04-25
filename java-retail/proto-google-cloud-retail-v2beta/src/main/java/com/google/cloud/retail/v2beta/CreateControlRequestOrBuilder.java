@@ -39,7 +39,6 @@ public interface CreateControlRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateControlRequestOrBuilder
    * @return Whether the control field is set.
    */
   boolean hasControl();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateControlRequestOrBuilder
    * @return The control.
    */
   com.google.cloud.retail.v2beta.Control getControl();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreateControlRequestOrBuilder
    * @return The controlId.
    */
   java.lang.String getControlId();
-
   /**
    *
    *

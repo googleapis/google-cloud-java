@@ -835,8 +835,7 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
   public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
-            + " this method yet.");
+        "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

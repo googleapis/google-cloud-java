@@ -34,7 +34,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.servicedirectory.v1beta1.ListEndpointsResponse)
     ListEndpointsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEndpointsResponse.newBuilder() to construct.
   private ListEndpointsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.servicedirectory.v1beta1.Endpoint> endpoints_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.servicedirectory.v1beta1.Endpoint> getEndpointsList() {
     return endpoints_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       getEndpointsOrBuilderList() {
     return endpoints_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
   public int getEndpointsCount() {
     return endpoints_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoints(int index) {
     return endpoints_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return endpointsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return endpointsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return endpointsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +824,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         int index) {
       return getEndpointsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -914,7 +892,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return endpointsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -932,7 +909,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(endpoints_);
       }
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       return getEndpointsFieldBuilder()
           .addBuilder(com.google.cloud.servicedirectory.v1beta1.Endpoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -962,7 +937,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.servicedirectory.v1beta1.Endpoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -995,7 +969,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1019,7 +992,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1037,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1055,6 @@ public final class ListEndpointsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -49,7 +49,6 @@ public interface SourceRepositoryOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface SourceRepositoryOrBuilder
    * @return The deployedUrl.
    */
   java.lang.String getDeployedUrl();
-
   /**
    *
    *

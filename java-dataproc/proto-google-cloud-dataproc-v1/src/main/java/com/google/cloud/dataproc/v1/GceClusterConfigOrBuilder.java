@@ -44,7 +44,6 @@ public interface GceClusterConfigOrBuilder
    * @return The zoneUri.
    */
   java.lang.String getZoneUri();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface GceClusterConfigOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface GceClusterConfigOrBuilder
    * @return The subnetworkUri.
    */
   java.lang.String getSubnetworkUri();
-
   /**
    *
    *
@@ -181,7 +178,6 @@ public interface GceClusterConfigOrBuilder
    * @return Whether the internalIpOnly field is set.
    */
   boolean hasInternalIpOnly();
-
   /**
    *
    *
@@ -224,7 +220,6 @@ public interface GceClusterConfigOrBuilder
    * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
    */
   int getPrivateIpv6GoogleAccessValue();
-
   /**
    *
    *
@@ -263,7 +258,6 @@ public interface GceClusterConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public interface GceClusterConfigOrBuilder
    * @return A list containing the serviceAccountScopes.
    */
   java.util.List<java.lang.String> getServiceAccountScopesList();
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public interface GceClusterConfigOrBuilder
    * @return The count of serviceAccountScopes.
    */
   int getServiceAccountScopesCount();
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public interface GceClusterConfigOrBuilder
    * @return The serviceAccountScopes at the given index.
    */
   java.lang.String getServiceAccountScopes(int index);
-
   /**
    *
    *
@@ -410,7 +401,6 @@ public interface GceClusterConfigOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -424,7 +414,6 @@ public interface GceClusterConfigOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -439,7 +428,6 @@ public interface GceClusterConfigOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -467,7 +455,6 @@ public interface GceClusterConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -480,11 +467,9 @@ public interface GceClusterConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -497,7 +482,6 @@ public interface GceClusterConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -514,7 +498,6 @@ public interface GceClusterConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -542,7 +525,6 @@ public interface GceClusterConfigOrBuilder
    * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
-
   /**
    *
    *
@@ -557,7 +539,6 @@ public interface GceClusterConfigOrBuilder
    * @return The reservationAffinity.
    */
   com.google.cloud.dataproc.v1.ReservationAffinity getReservationAffinity();
-
   /**
    *
    *
@@ -585,7 +566,6 @@ public interface GceClusterConfigOrBuilder
    * @return Whether the nodeGroupAffinity field is set.
    */
   boolean hasNodeGroupAffinity();
-
   /**
    *
    *
@@ -600,7 +580,6 @@ public interface GceClusterConfigOrBuilder
    * @return The nodeGroupAffinity.
    */
   com.google.cloud.dataproc.v1.NodeGroupAffinity getNodeGroupAffinity();
-
   /**
    *
    *
@@ -630,7 +609,6 @@ public interface GceClusterConfigOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
-
   /**
    *
    *
@@ -647,7 +625,6 @@ public interface GceClusterConfigOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.dataproc.v1.ShieldedInstanceConfig getShieldedInstanceConfig();
-
   /**
    *
    *
@@ -678,7 +655,6 @@ public interface GceClusterConfigOrBuilder
    * @return Whether the confidentialInstanceConfig field is set.
    */
   boolean hasConfidentialInstanceConfig();
-
   /**
    *
    *
@@ -694,7 +670,6 @@ public interface GceClusterConfigOrBuilder
    * @return The confidentialInstanceConfig.
    */
   com.google.cloud.dataproc.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
-
   /**
    *
    *

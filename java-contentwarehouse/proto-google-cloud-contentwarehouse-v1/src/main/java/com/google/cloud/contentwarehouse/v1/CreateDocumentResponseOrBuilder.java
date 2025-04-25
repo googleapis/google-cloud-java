@@ -36,7 +36,6 @@ public interface CreateDocumentResponseOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CreateDocumentResponseOrBuilder
    * @return The document.
    */
   com.google.cloud.contentwarehouse.v1.Document getDocument();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface CreateDocumentResponseOrBuilder
    * @return Whether the ruleEngineOutput field is set.
    */
   boolean hasRuleEngineOutput();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface CreateDocumentResponseOrBuilder
    * @return The ruleEngineOutput.
    */
   com.google.cloud.contentwarehouse.v1.RuleEngineOutput getRuleEngineOutput();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface CreateDocumentResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface CreateDocumentResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.contentwarehouse.v1.ResponseMetadata getMetadata();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface CreateDocumentResponseOrBuilder
    * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
    */
   java.util.List<com.google.longrunning.Operation> getLongRunningOperationsList();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface CreateDocumentResponseOrBuilder
    * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
    */
   com.google.longrunning.Operation getLongRunningOperations(int index);
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public interface CreateDocumentResponseOrBuilder
    * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
    */
   int getLongRunningOperationsCount();
-
   /**
    *
    *
@@ -191,7 +182,6 @@ public interface CreateDocumentResponseOrBuilder
    */
   java.util.List<? extends com.google.longrunning.OperationOrBuilder>
       getLongRunningOperationsOrBuilderList();
-
   /**
    *
    *

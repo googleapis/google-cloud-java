@@ -36,7 +36,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ImportProductsResponse)
     ImportProductsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportProductsResponse.newBuilder() to construct.
   private ImportProductsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
 
   public static final int ERRORS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2beta.ImportErrorsConfig errorsConfig_;
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
   public boolean hasErrorsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.retail.v2beta.ImportErrorsConfig.getDefaultInstance()
         : errorsConfig_;
   }
-
   /**
    *
    *
@@ -372,7 +363,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +654,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +828,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -961,7 +935,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +969,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.retail.v2beta.ImportErrorsConfig.Builder,
             com.google.cloud.retail.v2beta.ImportErrorsConfigOrBuilder>
         errorsConfigBuilder_;
-
     /**
      *
      *
@@ -1011,7 +983,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
     public boolean hasErrorsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1032,7 +1003,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
         return errorsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1025,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1045,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1073,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1092,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1106,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1159,7 +1124,6 @@ public final class ImportProductsResponse extends com.google.protobuf.GeneratedM
             : errorsConfig_;
       }
     }
-
     /**
      *
      *

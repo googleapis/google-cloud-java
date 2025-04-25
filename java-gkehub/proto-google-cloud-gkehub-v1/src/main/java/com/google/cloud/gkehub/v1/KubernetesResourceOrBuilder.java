@@ -42,7 +42,6 @@ public interface KubernetesResourceOrBuilder
    * @return The membershipCrManifest.
    */
   java.lang.String getMembershipCrManifest();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface KubernetesResourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkehub.v1.ResourceManifest> getMembershipResourcesList();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface KubernetesResourceOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.v1.ResourceManifest getMembershipResources(int index);
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface KubernetesResourceOrBuilder
    * </code>
    */
   int getMembershipResourcesCount();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface KubernetesResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.v1.ResourceManifestOrBuilder>
       getMembershipResourcesOrBuilderList();
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public interface KubernetesResourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkehub.v1.ResourceManifest> getConnectResourcesList();
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public interface KubernetesResourceOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.v1.ResourceManifest getConnectResources(int index);
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public interface KubernetesResourceOrBuilder
    * </code>
    */
   int getConnectResourcesCount();
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public interface KubernetesResourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.v1.ResourceManifestOrBuilder>
       getConnectResourcesOrBuilderList();
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public interface KubernetesResourceOrBuilder
    * @return Whether the resourceOptions field is set.
    */
   boolean hasResourceOptions();
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public interface KubernetesResourceOrBuilder
    * @return The resourceOptions.
    */
   com.google.cloud.gkehub.v1.ResourceOptions getResourceOptions();
-
   /**
    *
    *

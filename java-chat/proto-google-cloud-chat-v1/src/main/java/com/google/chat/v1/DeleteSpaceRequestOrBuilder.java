@@ -40,7 +40,6 @@ public interface DeleteSpaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

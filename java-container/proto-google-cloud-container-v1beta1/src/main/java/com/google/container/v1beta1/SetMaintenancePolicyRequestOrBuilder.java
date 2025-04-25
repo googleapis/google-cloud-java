@@ -37,7 +37,6 @@ public interface SetMaintenancePolicyRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetMaintenancePolicyRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface SetMaintenancePolicyRequestOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface SetMaintenancePolicyRequestOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface SetMaintenancePolicyRequestOrBuilder
    * @return The maintenancePolicy.
    */
   com.google.container.v1beta1.MaintenancePolicy getMaintenancePolicy();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface SetMaintenancePolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

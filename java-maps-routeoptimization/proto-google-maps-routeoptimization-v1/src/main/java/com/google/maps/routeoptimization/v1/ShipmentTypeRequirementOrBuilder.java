@@ -37,7 +37,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return A list containing the requiredShipmentTypeAlternatives.
    */
   java.util.List<java.lang.String> getRequiredShipmentTypeAlternativesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return The count of requiredShipmentTypeAlternatives.
    */
   int getRequiredShipmentTypeAlternativesCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return The requiredShipmentTypeAlternatives at the given index.
    */
   java.lang.String getRequiredShipmentTypeAlternatives(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return A list containing the dependentShipmentTypes.
    */
   java.util.List<java.lang.String> getDependentShipmentTypesList();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return The count of dependentShipmentTypes.
    */
   int getDependentShipmentTypesCount();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return The dependentShipmentTypes at the given index.
    */
   java.lang.String getDependentShipmentTypes(int index);
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface ShipmentTypeRequirementOrBuilder
    * @return The enum numeric value on the wire for requirementMode.
    */
   int getRequirementModeValue();
-
   /**
    *
    *

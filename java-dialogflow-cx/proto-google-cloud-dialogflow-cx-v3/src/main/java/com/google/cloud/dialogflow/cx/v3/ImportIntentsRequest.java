@@ -34,7 +34,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ImportIntentsRequest)
     ImportIntentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportIntentsRequest.newBuilder() to construct.
   private ImportIntentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -168,7 +167,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>MERGE_OPTION_UNSPECIFIED = 0;</code>
      */
     public static final int MERGE_OPTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -182,7 +180,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>REJECT = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int REJECT_VALUE = 1;
-
     /**
      *
      *
@@ -194,7 +191,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>REPLACE = 2;</code>
      */
     public static final int REPLACE_VALUE = 2;
-
     /**
      *
      *
@@ -206,7 +202,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>MERGE = 3;</code>
      */
     public static final int MERGE_VALUE = 3;
-
     /**
      *
      *
@@ -218,7 +213,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>RENAME = 4;</code>
      */
     public static final int RENAME_VALUE = 4;
-
     /**
      *
      *
@@ -230,7 +224,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
      * <code>REPORT_CONFLICT = 5;</code>
      */
     public static final int REPORT_CONFLICT_VALUE = 5;
-
     /**
      *
      *
@@ -353,7 +346,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     private IntentsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -390,7 +382,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -446,7 +436,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INTENTS_URI_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -469,7 +458,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasIntentsUri() {
     return intentsCase_ == 2;
   }
-
   /**
    *
    *
@@ -505,7 +493,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -543,7 +530,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int INTENTS_CONTENT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -559,7 +545,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasIntentsContent() {
     return intentsCase_ == 3;
   }
-
   /**
    *
    *
@@ -578,7 +563,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.dialogflow.cx.v3.InlineSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -598,7 +582,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MERGE_OPTION_FIELD_NUMBER = 4;
   private int mergeOption_ = 0;
-
   /**
    *
    *
@@ -614,7 +597,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
   public int getMergeOptionValue() {
     return mergeOption_;
   }
-
   /**
    *
    *
@@ -847,7 +829,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1105,7 +1086,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1131,7 +1111,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1136,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1160,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1180,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1229,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasIntentsUri() {
       return intentsCase_ == 2;
     }
-
     /**
      *
      *
@@ -1290,7 +1265,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1327,7 +1301,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1330,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1357,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1422,7 +1393,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.dialogflow.cx.v3.InlineSource.Builder,
             com.google.cloud.dialogflow.cx.v3.InlineSourceOrBuilder>
         intentsContentBuilder_;
-
     /**
      *
      *
@@ -1438,7 +1408,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasIntentsContent() {
       return intentsCase_ == 3;
     }
-
     /**
      *
      *
@@ -1464,7 +1433,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.cx.v3.InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1487,7 +1455,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       intentsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1475,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       intentsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1541,7 +1507,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       intentsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1567,7 +1532,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1544,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dialogflow.cx.v3.InlineSource.Builder getIntentsContentBuilder() {
       return getIntentsContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1601,7 +1564,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dialogflow.cx.v3.InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1636,7 +1598,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int mergeOption_ = 0;
-
     /**
      *
      *
@@ -1653,7 +1614,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
     public int getMergeOptionValue() {
       return mergeOption_;
     }
-
     /**
      *
      *
@@ -1673,7 +1633,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1654,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest.MergeOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1719,7 +1677,6 @@ public final class ImportIntentsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

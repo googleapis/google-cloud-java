@@ -301,19 +301,6 @@ public final class SampleQuerySetServiceGrpc {
     return SampleQuerySetServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static SampleQuerySetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SampleQuerySetServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<SampleQuerySetServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public SampleQuerySetServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new SampleQuerySetServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return SampleQuerySetServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -563,98 +550,6 @@ public final class SampleQuerySetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SampleQuerySetService.
-   *
-   * <pre>
-   * Service for managing
-   * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]s,
-   * </pre>
-   */
-  public static final class SampleQuerySetServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<SampleQuerySetServiceBlockingV2Stub> {
-    private SampleQuerySetServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected SampleQuerySetServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SampleQuerySetServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a
-     * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet].
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.SampleQuerySet getSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.GetSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetSampleQuerySetMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a list of
-     * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]s.
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.ListSampleQuerySetsResponse listSampleQuerySets(
-        com.google.cloud.discoveryengine.v1beta.ListSampleQuerySetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSampleQuerySetsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a
-     * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet]
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.SampleQuerySet createSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.CreateSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateSampleQuerySetMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a
-     * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet].
-     * </pre>
-     */
-    public com.google.cloud.discoveryengine.v1beta.SampleQuerySet updateSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.UpdateSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateSampleQuerySetMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a
-     * [SampleQuerySet][google.cloud.discoveryengine.v1beta.SampleQuerySet].
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteSampleQuerySet(
-        com.google.cloud.discoveryengine.v1beta.DeleteSampleQuerySetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteSampleQuerySetMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service SampleQuerySetService.
    *
    * <pre>
    * Service for managing

@@ -36,7 +36,6 @@ public interface AdditionalPodNetworkConfigOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AdditionalPodNetworkConfigOrBuilder
    * @return The secondaryPodRange.
    */
   java.lang.String getSecondaryPodRange();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AdditionalPodNetworkConfigOrBuilder
    * @return Whether the maxPodsPerNode field is set.
    */
   boolean hasMaxPodsPerNode();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface AdditionalPodNetworkConfigOrBuilder
    * @return The maxPodsPerNode.
    */
   com.google.container.v1.MaxPodsConstraint getMaxPodsPerNode();
-
   /**
    *
    *

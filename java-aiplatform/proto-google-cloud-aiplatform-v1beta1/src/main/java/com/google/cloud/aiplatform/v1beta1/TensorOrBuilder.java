@@ -36,7 +36,6 @@ public interface TensorOrBuilder
    * @return The enum numeric value on the wire for dtype.
    */
   int getDtypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TensorOrBuilder
    * @return A list containing the shape.
    */
   java.util.List<java.lang.Long> getShapeList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TensorOrBuilder
    * @return The count of shape.
    */
   int getShapeCount();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface TensorOrBuilder
    * @return A list containing the boolVal.
    */
   java.util.List<java.lang.Boolean> getBoolValList();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface TensorOrBuilder
    * @return The count of boolVal.
    */
   int getBoolValCount();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface TensorOrBuilder
    * @return A list containing the stringVal.
    */
   java.util.List<java.lang.String> getStringValList();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface TensorOrBuilder
    * @return The count of stringVal.
    */
   int getStringValCount();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface TensorOrBuilder
    * @return The stringVal at the given index.
    */
   java.lang.String getStringVal(int index);
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public interface TensorOrBuilder
    * @return A list containing the bytesVal.
    */
   java.util.List<com.google.protobuf.ByteString> getBytesValList();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface TensorOrBuilder
    * @return The count of bytesVal.
    */
   int getBytesValCount();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface TensorOrBuilder
    * @return A list containing the floatVal.
    */
   java.util.List<java.lang.Float> getFloatValList();
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public interface TensorOrBuilder
    * @return The count of floatVal.
    */
   int getFloatValCount();
-
   /**
    *
    *
@@ -291,7 +279,6 @@ public interface TensorOrBuilder
    * @return A list containing the doubleVal.
    */
   java.util.List<java.lang.Double> getDoubleValList();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface TensorOrBuilder
    * @return The count of doubleVal.
    */
   int getDoubleValCount();
-
   /**
    *
    *
@@ -333,7 +319,6 @@ public interface TensorOrBuilder
    * @return A list containing the intVal.
    */
   java.util.List<java.lang.Integer> getIntValList();
-
   /**
    *
    *
@@ -348,7 +333,6 @@ public interface TensorOrBuilder
    * @return The count of intVal.
    */
   int getIntValCount();
-
   /**
    *
    *
@@ -377,7 +361,6 @@ public interface TensorOrBuilder
    * @return A list containing the int64Val.
    */
   java.util.List<java.lang.Long> getInt64ValList();
-
   /**
    *
    *
@@ -390,7 +373,6 @@ public interface TensorOrBuilder
    * @return The count of int64Val.
    */
   int getInt64ValCount();
-
   /**
    *
    *
@@ -419,7 +401,6 @@ public interface TensorOrBuilder
    * @return A list containing the uintVal.
    */
   java.util.List<java.lang.Integer> getUintValList();
-
   /**
    *
    *
@@ -434,7 +415,6 @@ public interface TensorOrBuilder
    * @return The count of uintVal.
    */
   int getUintValCount();
-
   /**
    *
    *
@@ -463,7 +443,6 @@ public interface TensorOrBuilder
    * @return A list containing the uint64Val.
    */
   java.util.List<java.lang.Long> getUint64ValList();
-
   /**
    *
    *
@@ -476,7 +455,6 @@ public interface TensorOrBuilder
    * @return The count of uint64Val.
    */
   int getUint64ValCount();
-
   /**
    *
    *
@@ -501,7 +479,6 @@ public interface TensorOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor list_val = 11;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tensor> getListValList();
-
   /**
    *
    *
@@ -512,7 +489,6 @@ public interface TensorOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor list_val = 11;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Tensor getListVal(int index);
-
   /**
    *
    *
@@ -523,7 +499,6 @@ public interface TensorOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Tensor list_val = 11;</code>
    */
   int getListValCount();
-
   /**
    *
    *
@@ -535,7 +510,6 @@ public interface TensorOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TensorOrBuilder>
       getListValOrBuilderList();
-
   /**
    *
    *
@@ -557,7 +531,6 @@ public interface TensorOrBuilder
    * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.Tensor&gt; struct_val = 12;</code>
    */
   int getStructValCount();
-
   /**
    *
    *
@@ -568,11 +541,9 @@ public interface TensorOrBuilder
    * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.Tensor&gt; struct_val = 12;</code>
    */
   boolean containsStructVal(java.lang.String key);
-
   /** Use {@link #getStructValMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Tensor> getStructVal();
-
   /**
    *
    *
@@ -583,7 +554,6 @@ public interface TensorOrBuilder
    * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.Tensor&gt; struct_val = 12;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Tensor> getStructValMap();
-
   /**
    *
    *
@@ -598,7 +568,6 @@ public interface TensorOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.Tensor defaultValue);
-
   /**
    *
    *

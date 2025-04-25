@@ -37,7 +37,6 @@ public interface GroundingConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListMonitoredResourceDescriptorsRequest)
     ListMonitoredResourceDescriptorsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMonitoredResourceDescriptorsRequest.newBuilder() to construct.
   private ListMonitoredResourceDescriptorsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListMonitoredResourceDescriptorsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class ListMonitoredResourceDescriptorsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class ListMonitoredResourceDescriptorsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public final class ListMonitoredResourceDescriptorsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -459,7 +451,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -691,7 +682,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -720,7 +710,6 @@ public final class ListMonitoredResourceDescriptorsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +738,6 @@ public final class ListMonitoredResourceDescriptorsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +765,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +788,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -860,7 +845,6 @@ public final class ListMonitoredResourceDescriptorsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class ListMonitoredResourceDescriptorsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -915,7 +898,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +920,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -984,7 +964,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1002,6 @@ public final class ListMonitoredResourceDescriptorsRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1049,7 +1026,6 @@ public final class ListMonitoredResourceDescriptorsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1074,7 +1050,6 @@ public final class ListMonitoredResourceDescriptorsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1073,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1092,6 @@ public final class ListMonitoredResourceDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

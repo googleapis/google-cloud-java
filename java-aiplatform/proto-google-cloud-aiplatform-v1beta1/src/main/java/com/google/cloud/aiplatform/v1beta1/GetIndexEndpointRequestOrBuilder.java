@@ -40,7 +40,6 @@ public interface GetIndexEndpointRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

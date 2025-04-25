@@ -33,7 +33,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.Accelerator)
     AcceleratorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Accelerator.newBuilder() to construct.
   private Accelerator(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COUNT_FIELD_NUMBER = 2;
   private long count_ = 0L;
-
   /**
    *
    *
@@ -318,7 +314,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -516,7 +511,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -546,7 +540,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -576,7 +569,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +621,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long count_;
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     public long getCount() {
       return count_;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

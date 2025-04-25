@@ -34,7 +34,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.UserWorkloadsConfigMap)
     UserWorkloadsConfigMapOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserWorkloadsConfigMap.newBuilder() to construct.
   private UserWorkloadsConfigMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -159,7 +156,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
   public int getDataCount() {
     return internalGetData().getMap().size();
   }
-
   /**
    *
    *
@@ -185,14 +181,12 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     }
     return internalGetData().getMap().containsKey(key);
   }
-
   /** Use {@link #getDataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getData() {
     return getDataMap();
   }
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
     return internalGetData().getMap();
   }
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.String> map = internalGetData().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -460,7 +452,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -696,7 +687,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -720,7 +710,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -744,7 +733,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -767,7 +755,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +822,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     public int getDataCount() {
       return internalGetData().getMap().size();
     }
-
     /**
      *
      *
@@ -862,14 +847,12 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       }
       return internalGetData().getMap().containsKey(key);
     }
-
     /** Use {@link #getDataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getData() {
       return getDataMap();
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
       return internalGetData().getMap();
     }
-
     /**
      *
      *
@@ -922,7 +904,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetData().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -958,7 +939,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       internalGetMutableData().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -984,14 +964,12 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       internalGetMutableData().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableData() {
       bitField0_ |= 0x00000002;
       return internalGetMutableData().getMutableMap();
     }
-
     /**
      *
      *
@@ -1021,7 +999,6 @@ public final class UserWorkloadsConfigMap extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

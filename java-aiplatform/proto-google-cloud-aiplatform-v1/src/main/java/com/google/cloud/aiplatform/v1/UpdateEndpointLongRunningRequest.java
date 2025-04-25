@@ -34,7 +34,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdateEndpointLongRunningRequest)
     UpdateEndpointLongRunningRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateEndpointLongRunningRequest.newBuilder() to construct.
   private UpdateEndpointLongRunningRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
   private int bitField0_;
   public static final int ENDPOINT_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.Endpoint endpoint_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
   public boolean hasEndpoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
         ? com.google.cloud.aiplatform.v1.Endpoint.getDefaultInstance()
         : endpoint_;
   }
-
   /**
    *
    *
@@ -295,7 +291,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
             com.google.cloud.aiplatform.v1.Endpoint.Builder,
             com.google.cloud.aiplatform.v1.EndpointOrBuilder>
         endpointBuilder_;
-
     /**
      *
      *
@@ -523,7 +517,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
     public boolean hasEndpoint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -548,7 +541,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
         return endpointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +662,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
       onChanged();
       return getEndpointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class UpdateEndpointLongRunningRequest extends com.google.protobuf.
             : endpoint_;
       }
     }
-
     /**
      *
      *

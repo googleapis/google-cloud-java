@@ -32,7 +32,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BulkInsertOperationStatus)
     BulkInsertOperationStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BulkInsertOperationStatus.newBuilder() to construct.
   private BulkInsertOperationStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
      * <code>CREATING = 455564985;</code>
      */
     public static final int CREATING_VALUE = 455564985;
-
     /**
      *
      *
@@ -150,7 +147,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
      * <code>DONE = 2104194;</code>
      */
     public static final int DONE_VALUE = 2104194;
-
     /**
      *
      *
@@ -161,7 +157,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
      * <code>ROLLING_BACK = 259411649;</code>
      */
     public static final int ROLLING_BACK_VALUE = 259411649;
-
     /** <code>STATUS_UNSPECIFIED = 42133066;</code> */
     public static final int STATUS_UNSPECIFIED_VALUE = 42133066;
 
@@ -257,7 +252,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int CREATED_VM_COUNT_FIELD_NUMBER = 396924158;
   private int createdVmCount_ = 0;
-
   /**
    *
    *
@@ -273,7 +267,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
   public boolean hasCreatedVmCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -292,7 +285,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
 
   public static final int DELETED_VM_COUNT_FIELD_NUMBER = 271756013;
   private int deletedVmCount_ = 0;
-
   /**
    *
    *
@@ -308,7 +300,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
   public boolean hasDeletedVmCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -327,7 +318,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
 
   public static final int FAILED_TO_CREATE_VM_COUNT_FIELD_NUMBER = 58384104;
   private int failedToCreateVmCount_ = 0;
-
   /**
    *
    *
@@ -343,7 +333,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
   public boolean hasFailedToCreateVmCount() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -364,7 +353,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -381,7 +369,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -406,7 +393,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +420,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
 
   public static final int TARGET_VM_COUNT_FIELD_NUMBER = 532975733;
   private int targetVmCount_ = 0;
-
   /**
    *
    *
@@ -450,7 +435,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
   public boolean hasTargetVmCount() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -689,7 +673,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -932,7 +915,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int createdVmCount_;
-
     /**
      *
      *
@@ -948,7 +930,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public boolean hasCreatedVmCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public int getCreatedVmCount() {
       return createdVmCount_;
     }
-
     /**
      *
      *
@@ -984,7 +964,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     }
 
     private int deletedVmCount_;
-
     /**
      *
      *
@@ -1020,7 +998,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public boolean hasDeletedVmCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public int getDeletedVmCount() {
       return deletedVmCount_;
     }
-
     /**
      *
      *
@@ -1056,7 +1032,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     }
 
     private int failedToCreateVmCount_;
-
     /**
      *
      *
@@ -1092,7 +1066,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public boolean hasFailedToCreateVmCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public int getFailedToCreateVmCount() {
       return failedToCreateVmCount_;
     }
-
     /**
      *
      *
@@ -1128,7 +1100,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -1164,7 +1134,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1188,7 +1157,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1180,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1220,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1245,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     }
 
     private int targetVmCount_;
-
     /**
      *
      *
@@ -1296,7 +1260,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public boolean hasTargetVmCount() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1312,7 +1275,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
     public int getTargetVmCount() {
       return targetVmCount_;
     }
-
     /**
      *
      *
@@ -1332,7 +1294,6 @@ public final class BulkInsertOperationStatus extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

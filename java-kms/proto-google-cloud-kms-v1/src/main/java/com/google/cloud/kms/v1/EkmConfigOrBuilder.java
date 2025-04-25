@@ -38,7 +38,6 @@ public interface EkmConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface EkmConfigOrBuilder
    * @return The defaultEkmConnection.
    */
   java.lang.String getDefaultEkmConnection();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ListTargetsResponse)
     ListTargetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTargetsResponse.newBuilder() to construct.
   private ListTargetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.Target> targets_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.deploy.v1.Target> getTargetsList() {
     return targets_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       getTargetsOrBuilderList() {
     return targets_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   public int getTargetsCount() {
     return targets_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.deploy.v1.Target getTargets(int index) {
     return targets_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -217,7 +208,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -248,7 +237,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -451,7 +439,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -748,7 +735,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return targetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return targetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return targetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +831,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +892,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +931,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +962,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.deploy.v1.Target.Builder getTargetsBuilder(int index) {
       return getTargetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1004,7 +978,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return targetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1022,7 +995,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(targets_);
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1008,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       return getTargetsFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.Target.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       return getTargetsFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.Target.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1082,7 +1052,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1106,7 +1075,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1130,7 +1098,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1120,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1138,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1171,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1222,7 +1186,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1237,7 +1200,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1253,7 +1215,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1269,7 +1230,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1293,7 +1253,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1275,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1294,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1312,6 @@ public final class ListTargetsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

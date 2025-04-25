@@ -38,7 +38,6 @@ public interface CreateRouterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateRouterRequestOrBuilder
    * @return The routerId.
    */
   java.lang.String getRouterId();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CreateRouterRequestOrBuilder
    * @return Whether the router field is set.
    */
   boolean hasRouter();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateRouterRequestOrBuilder
    * @return The router.
    */
   com.google.cloud.edgenetwork.v1.Router getRouter();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface CreateRouterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup)
     MultiSpeakerMarkupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MultiSpeakerMarkup.newBuilder() to construct.
   private MultiSpeakerMarkup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
      * @return The speaker.
      */
     java.lang.String getSpeaker();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getTextBytes();
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn)
       TurnOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Turn.newBuilder() to construct.
     private Turn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -174,7 +169,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object speaker_ = "";
-
     /**
      *
      *
@@ -199,7 +193,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -229,7 +222,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -253,7 +245,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -448,7 +439,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object speaker_ = "";
-
       /**
        *
        *
@@ -679,7 +668,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -703,7 +691,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -726,7 +713,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -745,7 +731,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -771,7 +756,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object text_ = "";
-
       /**
        *
        *
@@ -794,7 +778,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -817,7 +800,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -839,7 +821,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -857,7 +838,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -952,7 +932,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn> turns_;
-
   /**
    *
    *
@@ -969,7 +948,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       getTurnsList() {
     return turns_;
   }
-
   /**
    *
    *
@@ -987,7 +965,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       getTurnsOrBuilderList() {
     return turns_;
   }
-
   /**
    *
    *
@@ -1003,7 +980,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
   public int getTurnsCount() {
     return turns_.size();
   }
-
   /**
    *
    *
@@ -1019,7 +995,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn getTurns(int index) {
     return turns_.get(index);
   }
-
   /**
    *
    *
@@ -1199,7 +1174,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1467,7 +1441,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return turnsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1459,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return turnsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1505,7 +1477,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return turnsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1531,7 +1502,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1525,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1549,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1574,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1629,7 +1596,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1619,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1642,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1663,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1684,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1699,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         int index) {
       return getTurnsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1757,7 +1718,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return turnsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1778,7 +1738,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(turns_);
       }
     }
-
     /**
      *
      *
@@ -1795,7 +1754,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1814,7 +1772,6 @@ public final class MultiSpeakerMarkup extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.texttospeech.v1beta1.MultiSpeakerMarkup.Turn.getDefaultInstance());
     }
-
     /**
      *
      *

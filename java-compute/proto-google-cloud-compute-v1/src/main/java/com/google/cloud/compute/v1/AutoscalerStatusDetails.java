@@ -32,7 +32,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AutoscalerStatusDetails)
     AutoscalerStatusDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoscalerStatusDetails.newBuilder() to construct.
   private AutoscalerStatusDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -289,7 +288,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -300,7 +298,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>ALL_INSTANCES_UNHEALTHY = 404965477;</code>
      */
     public static final int ALL_INSTANCES_UNHEALTHY_VALUE = 404965477;
-
     /**
      *
      *
@@ -311,7 +308,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>BACKEND_SERVICE_DOES_NOT_EXIST = 191417626;</code>
      */
     public static final int BACKEND_SERVICE_DOES_NOT_EXIST_VALUE = 191417626;
-
     /**
      *
      *
@@ -322,7 +318,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>CAPPED_AT_MAX_NUM_REPLICAS = 518617;</code>
      */
     public static final int CAPPED_AT_MAX_NUM_REPLICAS_VALUE = 518617;
-
     /**
      *
      *
@@ -333,7 +328,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code>
      */
     public static final int CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE_VALUE = 328964659;
-
     /**
      *
      *
@@ -344,7 +338,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>CUSTOM_METRIC_INVALID = 204430550;</code>
      */
     public static final int CUSTOM_METRIC_INVALID_VALUE = 204430550;
-
     /**
      *
      *
@@ -355,7 +348,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MIN_EQUALS_MAX = 2821361;</code>
      */
     public static final int MIN_EQUALS_MAX_VALUE = 2821361;
-
     /**
      *
      *
@@ -366,7 +358,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code>
      */
     public static final int MISSING_CUSTOM_METRIC_DATA_POINTS_VALUE = 94885086;
-
     /**
      *
      *
@@ -377,7 +368,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code>
      */
     public static final int MISSING_LOAD_BALANCING_DATA_POINTS_VALUE = 509858898;
-
     /**
      *
      *
@@ -388,7 +378,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MODE_OFF = 164169907;</code>
      */
     public static final int MODE_OFF_VALUE = 164169907;
-
     /**
      *
      *
@@ -399,7 +388,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MODE_ONLY_SCALE_OUT = 3840994;</code>
      */
     public static final int MODE_ONLY_SCALE_OUT_VALUE = 3840994;
-
     /**
      *
      *
@@ -410,7 +398,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MODE_ONLY_UP = 100969842;</code>
      */
     public static final int MODE_ONLY_UP_VALUE = 100969842;
-
     /**
      *
      *
@@ -421,7 +408,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code>
      */
     public static final int MORE_THAN_ONE_BACKEND_SERVICE_VALUE = 151922141;
-
     /**
      *
      *
@@ -432,7 +418,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code>
      */
     public static final int NOT_ENOUGH_QUOTA_AVAILABLE_VALUE = 403101631;
-
     /**
      *
      *
@@ -443,7 +428,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>REGION_RESOURCE_STOCKOUT = 528622846;</code>
      */
     public static final int REGION_RESOURCE_STOCKOUT_VALUE = 528622846;
-
     /**
      *
      *
@@ -454,7 +438,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code>
      */
     public static final int SCALING_TARGET_DOES_NOT_EXIST_VALUE = 122636699;
-
     /**
      *
      *
@@ -465,7 +448,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX = 29275586;</code>
      */
     public static final int SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX_VALUE = 29275586;
-
     /**
      *
      *
@@ -476,10 +458,8 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN = 398287669;</code>
      */
     public static final int SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN_VALUE = 398287669;
-
     /** <code>UNKNOWN = 433141802;</code> */
     public static final int UNKNOWN_VALUE = 433141802;
-
     /**
      *
      *
@@ -490,7 +470,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code>
      */
     public static final int UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION_VALUE = 330845009;
-
     /**
      *
      *
@@ -628,7 +607,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -644,7 +622,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -668,7 +645,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -697,7 +673,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -714,7 +689,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
   public boolean hasType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -739,7 +713,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -943,7 +916,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1146,7 +1118,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1184,7 +1154,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1176,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1229,7 +1197,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1214,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1238,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1288,7 +1253,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1312,7 +1276,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1336,7 +1299,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1359,7 +1321,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1339,6 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

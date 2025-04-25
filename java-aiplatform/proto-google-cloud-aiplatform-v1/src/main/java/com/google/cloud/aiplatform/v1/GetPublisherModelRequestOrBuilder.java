@@ -40,7 +40,6 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public interface GetPublisherModelRequestOrBuilder
    * @return The huggingFaceToken.
    */
   java.lang.String getHuggingFaceToken();
-
   /**
    *
    *

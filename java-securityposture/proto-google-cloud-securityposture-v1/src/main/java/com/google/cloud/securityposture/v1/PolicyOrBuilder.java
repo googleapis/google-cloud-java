@@ -37,7 +37,6 @@ public interface PolicyOrBuilder
    * @return The policyId.
    */
   java.lang.String getPolicyId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface PolicyOrBuilder
    */
   java.util.List<com.google.cloud.securityposture.v1.Policy.ComplianceStandard>
       getComplianceStandardsList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.Policy.ComplianceStandard getComplianceStandards(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   int getComplianceStandardsCount();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface PolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.Policy.ComplianceStandardOrBuilder>
       getComplianceStandardsOrBuilderList();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface PolicyOrBuilder
    * @return Whether the constraint field is set.
    */
   boolean hasConstraint();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface PolicyOrBuilder
    * @return The constraint.
    */
   com.google.cloud.securityposture.v1.Constraint getConstraint();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface PolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

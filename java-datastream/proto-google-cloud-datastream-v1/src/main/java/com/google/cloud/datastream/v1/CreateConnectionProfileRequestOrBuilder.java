@@ -38,7 +38,6 @@ public interface CreateConnectionProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateConnectionProfileRequestOrBuilder
    * @return The connectionProfileId.
    */
   java.lang.String getConnectionProfileId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateConnectionProfileRequestOrBuilder
    * @return Whether the connectionProfile field is set.
    */
   boolean hasConnectionProfile();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateConnectionProfileRequestOrBuilder
    * @return The connectionProfile.
    */
   com.google.cloud.datastream.v1.ConnectionProfile getConnectionProfile();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateConnectionProfileRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

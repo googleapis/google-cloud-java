@@ -33,7 +33,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Catalog)
     CatalogOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Catalog.newBuilder() to construct.
   private Catalog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRODUCT_LEVEL_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.retail.v2.ProductLevelConfig productLevelConfig_;
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductLevelConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2.ProductLevelConfig.getDefaultInstance()
         : productLevelConfig_;
   }
-
   /**
    *
    *
@@ -425,7 +417,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +899,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.ProductLevelConfig.Builder,
             com.google.cloud.retail.v2.ProductLevelConfigOrBuilder>
         productLevelConfigBuilder_;
-
     /**
      *
      *
@@ -935,7 +915,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductLevelConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
         return productLevelConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1034,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProductLevelConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class Catalog extends com.google.protobuf.GeneratedMessageV3
             : productLevelConfig_;
       }
     }
-
     /**
      *
      *

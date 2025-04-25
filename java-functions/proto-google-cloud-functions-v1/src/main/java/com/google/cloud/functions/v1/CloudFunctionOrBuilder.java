@@ -37,7 +37,6 @@ public interface CloudFunctionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CloudFunctionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the sourceArchiveUrl field is set.
    */
   boolean hasSourceArchiveUrl();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface CloudFunctionOrBuilder
    * @return The sourceArchiveUrl.
    */
   java.lang.String getSourceArchiveUrl();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the sourceRepository field is set.
    */
   boolean hasSourceRepository();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface CloudFunctionOrBuilder
    * @return The sourceRepository.
    */
   com.google.cloud.functions.v1.SourceRepository getSourceRepository();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the sourceUploadUrl field is set.
    */
   boolean hasSourceUploadUrl();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface CloudFunctionOrBuilder
    * @return The sourceUploadUrl.
    */
   java.lang.String getSourceUploadUrl();
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the httpsTrigger field is set.
    */
   boolean hasHttpsTrigger();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface CloudFunctionOrBuilder
    * @return The httpsTrigger.
    */
   com.google.cloud.functions.v1.HttpsTrigger getHttpsTrigger();
-
   /**
    *
    *
@@ -266,7 +256,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the eventTrigger field is set.
    */
   boolean hasEventTrigger();
-
   /**
    *
    *
@@ -279,7 +268,6 @@ public interface CloudFunctionOrBuilder
    * @return The eventTrigger.
    */
   com.google.cloud.functions.v1.EventTrigger getEventTrigger();
-
   /**
    *
    *
@@ -305,7 +293,6 @@ public interface CloudFunctionOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *
@@ -335,7 +322,6 @@ public interface CloudFunctionOrBuilder
    * @return The entryPoint.
    */
   java.lang.String getEntryPoint();
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public interface CloudFunctionOrBuilder
    * @return The runtime.
    */
   java.lang.String getRuntime();
-
   /**
    *
    *
@@ -399,7 +384,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
-
   /**
    *
    *
@@ -414,7 +398,6 @@ public interface CloudFunctionOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
-
   /**
    *
    *
@@ -455,7 +438,6 @@ public interface CloudFunctionOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *
@@ -483,7 +465,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -497,7 +478,6 @@ public interface CloudFunctionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -534,7 +514,6 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -545,11 +524,9 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -560,7 +537,6 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; labels = 15;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -575,7 +551,6 @@ public interface CloudFunctionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -597,7 +572,6 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 17;</code>
    */
   int getEnvironmentVariablesCount();
-
   /**
    *
    *
@@ -608,11 +582,9 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 17;</code>
    */
   boolean containsEnvironmentVariables(java.lang.String key);
-
   /** Use {@link #getEnvironmentVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables();
-
   /**
    *
    *
@@ -623,7 +595,6 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap();
-
   /**
    *
    *
@@ -638,7 +609,6 @@ public interface CloudFunctionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -660,7 +630,6 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
    */
   int getBuildEnvironmentVariablesCount();
-
   /**
    *
    *
@@ -671,11 +640,9 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
    */
   boolean containsBuildEnvironmentVariables(java.lang.String key);
-
   /** Use {@link #getBuildEnvironmentVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariables();
-
   /**
    *
    *
@@ -686,7 +653,6 @@ public interface CloudFunctionOrBuilder
    * <code>map&lt;string, string&gt; build_environment_variables = 28;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getBuildEnvironmentVariablesMap();
-
   /**
    *
    *
@@ -701,7 +667,6 @@ public interface CloudFunctionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -728,7 +693,6 @@ public interface CloudFunctionOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -804,7 +768,6 @@ public interface CloudFunctionOrBuilder
    * @return The vpcConnector.
    */
   java.lang.String getVpcConnector();
-
   /**
    *
    *
@@ -842,7 +805,6 @@ public interface CloudFunctionOrBuilder
    * @return The enum numeric value on the wire for vpcConnectorEgressSettings.
    */
   int getVpcConnectorEgressSettingsValue();
-
   /**
    *
    *
@@ -873,7 +835,6 @@ public interface CloudFunctionOrBuilder
    * @return The enum numeric value on the wire for ingressSettings.
    */
   int getIngressSettingsValue();
-
   /**
    *
    *
@@ -928,7 +889,6 @@ public interface CloudFunctionOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -993,7 +953,6 @@ public interface CloudFunctionOrBuilder
    * @return The buildWorkerPool.
    */
   java.lang.String getBuildWorkerPool();
-
   /**
    *
    *
@@ -1031,7 +990,6 @@ public interface CloudFunctionOrBuilder
    * @return The buildId.
    */
   java.lang.String getBuildId();
-
   /**
    *
    *
@@ -1059,7 +1017,6 @@ public interface CloudFunctionOrBuilder
    * @return The buildName.
    */
   java.lang.String getBuildName();
-
   /**
    *
    *
@@ -1085,7 +1042,6 @@ public interface CloudFunctionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.functions.v1.SecretEnvVar> getSecretEnvironmentVariablesList();
-
   /**
    *
    *
@@ -1097,7 +1053,6 @@ public interface CloudFunctionOrBuilder
    * </code>
    */
   com.google.cloud.functions.v1.SecretEnvVar getSecretEnvironmentVariables(int index);
-
   /**
    *
    *
@@ -1109,7 +1064,6 @@ public interface CloudFunctionOrBuilder
    * </code>
    */
   int getSecretEnvironmentVariablesCount();
-
   /**
    *
    *
@@ -1122,7 +1076,6 @@ public interface CloudFunctionOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v1.SecretEnvVarOrBuilder>
       getSecretEnvironmentVariablesOrBuilderList();
-
   /**
    *
    *
@@ -1146,7 +1099,6 @@ public interface CloudFunctionOrBuilder
    * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
    */
   java.util.List<com.google.cloud.functions.v1.SecretVolume> getSecretVolumesList();
-
   /**
    *
    *
@@ -1157,7 +1109,6 @@ public interface CloudFunctionOrBuilder
    * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
    */
   com.google.cloud.functions.v1.SecretVolume getSecretVolumes(int index);
-
   /**
    *
    *
@@ -1168,7 +1119,6 @@ public interface CloudFunctionOrBuilder
    * <code>repeated .google.cloud.functions.v1.SecretVolume secret_volumes = 30;</code>
    */
   int getSecretVolumesCount();
-
   /**
    *
    *
@@ -1180,7 +1130,6 @@ public interface CloudFunctionOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v1.SecretVolumeOrBuilder>
       getSecretVolumesOrBuilderList();
-
   /**
    *
    *
@@ -1205,7 +1154,6 @@ public interface CloudFunctionOrBuilder
    * @return The sourceToken.
    */
   java.lang.String getSourceToken();
-
   /**
    *
    *
@@ -1244,7 +1192,6 @@ public interface CloudFunctionOrBuilder
    * @return The dockerRepository.
    */
   java.lang.String getDockerRepository();
-
   /**
    *
    *
@@ -1295,7 +1242,6 @@ public interface CloudFunctionOrBuilder
    */
   @java.lang.Deprecated
   int getDockerRegistryValue();
-
   /**
    *
    *
@@ -1330,7 +1276,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the automaticUpdatePolicy field is set.
    */
   boolean hasAutomaticUpdatePolicy();
-
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -1339,7 +1284,6 @@ public interface CloudFunctionOrBuilder
    * @return The automaticUpdatePolicy.
    */
   com.google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy getAutomaticUpdatePolicy();
-
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.AutomaticUpdatePolicy automatic_update_policy = 40;
@@ -1356,7 +1300,6 @@ public interface CloudFunctionOrBuilder
    * @return Whether the onDeployUpdatePolicy field is set.
    */
   boolean hasOnDeployUpdatePolicy();
-
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -1365,7 +1308,6 @@ public interface CloudFunctionOrBuilder
    * @return The onDeployUpdatePolicy.
    */
   com.google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy getOnDeployUpdatePolicy();
-
   /**
    * <code>
    * .google.cloud.functions.v1.CloudFunction.OnDeployUpdatePolicy on_deploy_update_policy = 41;
@@ -1388,7 +1330,6 @@ public interface CloudFunctionOrBuilder
    * @return The buildServiceAccount.
    */
   java.lang.String getBuildServiceAccount();
-
   /**
    *
    *

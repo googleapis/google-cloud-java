@@ -33,7 +33,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.GetTableSpecRequest)
     GetTableSpecRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetTableSpecRequest.newBuilder() to construct.
   private GetTableSpecRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
 
   public static final int FIELD_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask fieldMask_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
   public boolean hasFieldMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getFieldMask() {
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
-
   /**
    *
    *
@@ -344,7 +338,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +551,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -608,7 +599,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -652,7 +641,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         fieldMaskBuilder_;
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
     public boolean hasFieldMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
         return fieldMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -741,7 +726,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +745,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +772,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +791,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +805,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -841,7 +821,6 @@ public final class GetTableSpecRequest extends com.google.protobuf.GeneratedMess
         return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
-
     /**
      *
      *

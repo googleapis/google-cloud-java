@@ -36,7 +36,6 @@ public interface RunningServiceOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RunningServiceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface RunningServiceOrBuilder
    * @return The enum numeric value on the wire for startMode.
    */
   int getStartModeValue();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface RunningServiceOrBuilder
    * @return The exePath.
    */
   java.lang.String getExePath();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface RunningServiceOrBuilder
    * @return The cmdline.
    */
   java.lang.String getCmdline();
-
   /**
    *
    *

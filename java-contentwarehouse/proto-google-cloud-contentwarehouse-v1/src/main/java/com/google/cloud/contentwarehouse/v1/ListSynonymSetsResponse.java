@@ -33,7 +33,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ListSynonymSetsResponse)
     ListSynonymSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSynonymSetsResponse.newBuilder() to construct.
   private ListSynonymSetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.SynonymSet> synonymSets_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.contentwarehouse.v1.SynonymSet> getSynonymSetsList() {
     return synonymSets_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       getSynonymSetsOrBuilderList() {
     return synonymSets_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
   public int getSynonymSetsCount() {
     return synonymSets_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
   public com.google.cloud.contentwarehouse.v1.SynonymSet getSynonymSets(int index) {
     return synonymSets_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return synonymSetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return synonymSetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return synonymSetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         int index) {
       return getSynonymSetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -911,7 +889,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return synonymSetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -929,7 +906,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(synonymSets_);
       }
     }
-
     /**
      *
      *
@@ -943,7 +919,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       return getSynonymSetsFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.SynonymSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -958,7 +933,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       return getSynonymSetsFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.SynonymSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1015,7 +988,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1011,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1033,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class ListSynonymSetsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

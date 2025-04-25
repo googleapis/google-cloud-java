@@ -34,7 +34,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.CreateTagTemplateRequest)
     CreateTagTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTagTemplateRequest.newBuilder() to construct.
   private CreateTagTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tagTemplateId_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
 
   public static final int TAG_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1beta1.TagTemplate tagTemplate_;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
   public boolean hasTagTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         ? com.google.cloud.datacatalog.v1beta1.TagTemplate.getDefaultInstance()
         : tagTemplate_;
   }
-
   /**
    *
    *
@@ -429,7 +421,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +654,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -693,7 +683,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -723,7 +712,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +764,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object tagTemplateId_ = "";
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +906,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
             com.google.cloud.datacatalog.v1beta1.TagTemplate.Builder,
             com.google.cloud.datacatalog.v1beta1.TagTemplateOrBuilder>
         tagTemplateBuilder_;
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
     public boolean hasTagTemplate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
         return tagTemplateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +990,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1057,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return getTagTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1104,7 +1077,6 @@ public final class CreateTagTemplateRequest extends com.google.protobuf.Generate
             : tagTemplate_;
       }
     }
-
     /**
      *
      *

@@ -55,7 +55,6 @@ public interface UpdateChannelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface UpdateChannelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -132,7 +130,6 @@ public interface UpdateChannelRequestOrBuilder
    * @return Whether the channel field is set.
    */
   boolean hasChannel();
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public interface UpdateChannelRequestOrBuilder
    * @return The channel.
    */
   com.google.cloud.video.livestream.v1.Channel getChannel();
-
   /**
    *
    *
@@ -185,7 +181,6 @@ public interface UpdateChannelRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

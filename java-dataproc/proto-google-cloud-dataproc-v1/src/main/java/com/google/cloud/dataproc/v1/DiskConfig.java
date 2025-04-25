@@ -33,7 +33,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.DiskConfig)
     DiskConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskConfig.newBuilder() to construct.
   private DiskConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bootDiskType_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOT_DISK_SIZE_GB_FIELD_NUMBER = 1;
   private int bootDiskSizeGb_ = 0;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NUM_LOCAL_SSDS_FIELD_NUMBER = 2;
   private int numLocalSsds_ = 0;
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object localSsdInterface_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOT_DISK_PROVISIONED_IOPS_FIELD_NUMBER = 5;
   private long bootDiskProvisionedIops_ = 0L;
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBootDiskProvisionedIops() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -277,7 +268,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOT_DISK_PROVISIONED_THROUGHPUT_FIELD_NUMBER = 6;
   private long bootDiskProvisionedThroughput_ = 0L;
-
   /**
    *
    *
@@ -298,7 +288,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBootDiskProvisionedThroughput() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -537,7 +526,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -792,7 +780,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object bootDiskType_ = "";
-
     /**
      *
      *
@@ -819,7 +806,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -846,7 +832,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -872,7 +857,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +878,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bootDiskSizeGb_;
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public int getBootDiskSizeGb() {
       return bootDiskSizeGb_;
     }
-
     /**
      *
      *
@@ -959,7 +940,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +959,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int numLocalSsds_;
-
     /**
      *
      *
@@ -1003,7 +982,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public int getNumLocalSsds() {
       return numLocalSsds_;
     }
-
     /**
      *
      *
@@ -1031,7 +1009,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object localSsdInterface_ = "";
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1088,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1113,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1134,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long bootDiskProvisionedIops_;
-
     /**
      *
      *
@@ -1210,7 +1181,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBootDiskProvisionedIops() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1230,7 +1200,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public long getBootDiskProvisionedIops() {
       return bootDiskProvisionedIops_;
     }
-
     /**
      *
      *
@@ -1254,7 +1223,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1246,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long bootDiskProvisionedThroughput_;
-
     /**
      *
      *
@@ -1299,7 +1266,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBootDiskProvisionedThroughput() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1320,7 +1286,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
     public long getBootDiskProvisionedThroughput() {
       return bootDiskProvisionedThroughput_;
     }
-
     /**
      *
      *
@@ -1345,7 +1310,6 @@ public final class DiskConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

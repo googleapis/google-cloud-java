@@ -42,7 +42,6 @@ public interface SecretVolumeOrBuilder
    * @return The mountPath.
    */
   java.lang.String getMountPath();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface SecretVolumeOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface SecretVolumeOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface SecretVolumeOrBuilder
    * <code>repeated .google.cloud.functions.v1.SecretVolume.SecretVersion versions = 4;</code>
    */
   java.util.List<com.google.cloud.functions.v1.SecretVolume.SecretVersion> getVersionsList();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface SecretVolumeOrBuilder
    * <code>repeated .google.cloud.functions.v1.SecretVolume.SecretVersion versions = 4;</code>
    */
   com.google.cloud.functions.v1.SecretVolume.SecretVersion getVersions(int index);
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface SecretVolumeOrBuilder
    * <code>repeated .google.cloud.functions.v1.SecretVolume.SecretVersion versions = 4;</code>
    */
   int getVersionsCount();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface SecretVolumeOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v1.SecretVolume.SecretVersionOrBuilder>
       getVersionsOrBuilderList();
-
   /**
    *
    *

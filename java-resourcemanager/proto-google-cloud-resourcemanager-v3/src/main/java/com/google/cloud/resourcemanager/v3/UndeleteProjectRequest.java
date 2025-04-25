@@ -35,7 +35,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.UndeleteProjectRequest)
     UndeleteProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UndeleteProjectRequest.newBuilder() to construct.
   private UndeleteProjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -287,7 +284,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -474,7 +470,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -501,7 +496,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -528,7 +522,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -554,7 +547,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class UndeleteProjectRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

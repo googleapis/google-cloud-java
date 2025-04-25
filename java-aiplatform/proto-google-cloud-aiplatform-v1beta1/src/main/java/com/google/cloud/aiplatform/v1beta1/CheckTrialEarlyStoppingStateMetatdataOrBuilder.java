@@ -36,7 +36,6 @@ public interface CheckTrialEarlyStoppingStateMetatdataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CheckTrialEarlyStoppingStateMetatdataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface CheckTrialEarlyStoppingStateMetatdataOrBuilder
    * @return The study.
    */
   java.lang.String getStudy();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface CheckTrialEarlyStoppingStateMetatdataOrBuilder
    * @return The trial.
    */
   java.lang.String getTrial();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.ExecuteSqlResponse)
     ExecuteSqlResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExecuteSqlResponse.newBuilder() to construct.
   private ExecuteSqlResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.alloydb.v1beta.SqlResult> sqlResults_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.alloydb.v1beta.SqlResult> getSqlResultsList() {
     return sqlResults_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       getSqlResultsOrBuilderList() {
     return sqlResults_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
   public int getSqlResultsCount() {
     return sqlResults_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.alloydb.v1beta.SqlResult getSqlResults(int index) {
     return sqlResults_.get(index);
   }
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.alloydb.v1beta.ExecuteSqlMetadata metadata_;
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.alloydb.v1beta.ExecuteSqlMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -372,7 +363,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +655,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         return sqlResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         return sqlResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         return sqlResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.alloydb.v1beta.SqlResult.Builder getSqlResultsBuilder(int index) {
       return getSqlResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +899,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         return sqlResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(sqlResults_);
       }
     }
-
     /**
      *
      *
@@ -954,7 +929,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       return getSqlResultsFieldBuilder()
           .addBuilder(com.google.cloud.alloydb.v1beta.SqlResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -968,7 +942,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       return getSqlResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.alloydb.v1beta.SqlResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1006,7 +979,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.alloydb.v1beta.ExecuteSqlMetadata.Builder,
             com.google.cloud.alloydb.v1beta.ExecuteSqlMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1022,7 +994,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1044,7 +1015,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1038,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1059,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1088,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1108,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1123,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1177,7 +1142,6 @@ public final class ExecuteSqlResponse extends com.google.protobuf.GeneratedMessa
             : metadata_;
       }
     }
-
     /**
      *
      *

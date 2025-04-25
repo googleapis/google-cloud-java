@@ -36,7 +36,6 @@ public interface AssociatedEntitiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.GkeCluster> getGkeClustersList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AssociatedEntitiesOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.GkeCluster getGkeClusters(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface AssociatedEntitiesOrBuilder
    * </code>
    */
   int getGkeClustersCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AssociatedEntitiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.GkeClusterOrBuilder>
       getGkeClustersOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface AssociatedEntitiesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.AnthosCluster> getAnthosClustersList();
-
   /**
    *
    *
@@ -115,7 +110,6 @@ public interface AssociatedEntitiesOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.AnthosCluster getAnthosClusters(int index);
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface AssociatedEntitiesOrBuilder
    * </code>
    */
   int getAnthosClustersCount();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface AssociatedEntitiesOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.AnthosClusterOrBuilder>
       getAnthosClustersOrBuilderList();
-
   /**
    *
    *

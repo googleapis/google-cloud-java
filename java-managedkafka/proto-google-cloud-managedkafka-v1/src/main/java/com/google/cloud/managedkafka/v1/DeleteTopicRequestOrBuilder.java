@@ -39,7 +39,6 @@ public interface DeleteTopicRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SalesforceObjectOrBuilder
    * @return The objectName.
    */
   java.lang.String getObjectName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SalesforceObjectOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SalesforceField fields = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.SalesforceField> getFieldsList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface SalesforceObjectOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SalesforceField fields = 2;</code>
    */
   com.google.cloud.datastream.v1.SalesforceField getFields(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface SalesforceObjectOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SalesforceField fields = 2;</code>
    */
   int getFieldsCount();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface SalesforceObjectOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.SalesforceFieldOrBuilder>
       getFieldsOrBuilderList();
-
   /**
    *
    *

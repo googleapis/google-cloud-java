@@ -34,7 +34,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.ListQueuesRequest)
     ListQueuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListQueuesRequest.newBuilder() to construct.
   private ListQueuesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +288,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int READ_MASK_FIELD_NUMBER = 5;
   private com.google.protobuf.FieldMask readMask_;
-
   /**
    *
    *
@@ -316,7 +307,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasReadMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -336,7 +326,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getReadMask() {
     return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
   }
-
   /**
    *
    *
@@ -555,7 +544,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -813,7 +801,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -839,7 +826,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +851,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +875,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +895,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +922,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -971,7 +953,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1014,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1040,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1073,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1117,7 +1094,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1143,7 +1119,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1144,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1201,7 +1175,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1206,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1236,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1291,7 +1262,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1300,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         readMaskBuilder_;
-
     /**
      *
      *
@@ -1349,7 +1318,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasReadMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1372,7 +1340,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return readMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1399,7 +1366,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1389,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1420,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1443,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1461,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getReadMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1519,7 +1481,6 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
         return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
       }
     }
-
     /**
      *
      *

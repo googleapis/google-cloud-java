@@ -101,13 +101,13 @@ public final class ResourcesProto {
           + "v1beta1.Replication.UserManaged.ReplicaB"
           + "\003\340A\002\032\033\n\007Replica\022\020\n\010location\030\001 \001(\tB\r\n\013rep"
           + "lication\"\035\n\rSecretPayload\022\014\n\004data\030\001 \001(\014B"
-          + "\356\001\n&com.google.cloud.secretmanager.v1bet"
+          + "\361\001\n&com.google.cloud.secretmanager.v1bet"
           + "a1B\016ResourcesProtoP\001Z:cloud.google.com/g"
           + "o/secrets/apiv1beta1/secretspb;secretspb"
-          + "\242\002\003GSM\252\002\"Google.Cloud.SecretManager.V1Be"
-          + "ta1\312\002\"Google\\Cloud\\SecretManager\\V1beta1"
-          + "\352\002%Google::Cloud::SecretManager::V1beta1"
-          + "b\006proto3"
+          + "\370\001\001\242\002\003GSM\252\002\"Google.Cloud.SecretManager.V"
+          + "1Beta1\312\002\"Google\\Cloud\\SecretManager\\V1be"
+          + "ta1\352\002%Google::Cloud::SecretManager::V1be"
+          + "ta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

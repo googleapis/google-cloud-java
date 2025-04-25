@@ -34,7 +34,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v1.EventTrigger)
     EventTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EventTrigger.newBuilder() to construct.
   private EventTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventType_ = "";
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -151,7 +148,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -193,7 +189,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -240,7 +235,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -268,7 +262,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FAILURE_POLICY_FIELD_NUMBER = 5;
   private com.google.cloud.functions.v1.FailurePolicy failurePolicy_;
-
   /**
    *
    *
@@ -315,7 +307,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFailurePolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -333,7 +324,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.functions.v1.FailurePolicy.getDefaultInstance()
         : failurePolicy_;
   }
-
   /**
    *
    *
@@ -541,7 +531,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -786,7 +775,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object eventType_ = "";
-
     /**
      *
      *
@@ -822,7 +810,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -858,7 +845,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -893,7 +879,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +909,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +946,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1003,7 +986,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1026,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1065,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1100,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1142,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -1190,7 +1168,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1194,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1219,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1240,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1273,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v1.FailurePolicy.Builder,
             com.google.cloud.functions.v1.FailurePolicyOrBuilder>
         failurePolicyBuilder_;
-
     /**
      *
      *
@@ -1314,7 +1287,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFailurePolicy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1335,7 +1307,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
         return failurePolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1358,7 +1329,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1349,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1376,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1395,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1409,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFailurePolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1461,7 +1427,6 @@ public final class EventTrigger extends com.google.protobuf.GeneratedMessageV3
             : failurePolicy_;
       }
     }
-
     /**
      *
      *

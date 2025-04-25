@@ -74,8 +74,7 @@ public class MockSolarImpl extends SolarImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FindClosestBuildingInsights, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method FindClosestBuildingInsights, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BuildingInsights.class.getName(),
                   Exception.class.getName())));

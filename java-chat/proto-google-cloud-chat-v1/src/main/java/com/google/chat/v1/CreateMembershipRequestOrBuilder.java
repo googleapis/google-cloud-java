@@ -41,7 +41,6 @@ public interface CreateMembershipRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -109,7 +108,6 @@ public interface CreateMembershipRequestOrBuilder
    * @return Whether the membership field is set.
    */
   boolean hasMembership();
-
   /**
    *
    *
@@ -159,7 +157,6 @@ public interface CreateMembershipRequestOrBuilder
    * @return The membership.
    */
   com.google.chat.v1.Membership getMembership();
-
   /**
    *
    *

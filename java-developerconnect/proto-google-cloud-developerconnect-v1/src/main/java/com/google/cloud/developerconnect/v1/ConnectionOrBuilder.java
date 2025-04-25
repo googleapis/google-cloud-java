@@ -36,7 +36,6 @@ public interface ConnectionOrBuilder
    * @return Whether the githubConfig field is set.
    */
   boolean hasGithubConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConnectionOrBuilder
    * @return The githubConfig.
    */
   com.google.cloud.developerconnect.v1.GitHubConfig getGithubConfig();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ConnectionOrBuilder
    * @return Whether the githubEnterpriseConfig field is set.
    */
   boolean hasGithubEnterpriseConfig();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ConnectionOrBuilder
    * @return The githubEnterpriseConfig.
    */
   com.google.cloud.developerconnect.v1.GitHubEnterpriseConfig getGithubEnterpriseConfig();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ConnectionOrBuilder
    * @return Whether the gitlabConfig field is set.
    */
   boolean hasGitlabConfig();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ConnectionOrBuilder
    * @return The gitlabConfig.
    */
   com.google.cloud.developerconnect.v1.GitLabConfig getGitlabConfig();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface ConnectionOrBuilder
    * @return Whether the gitlabEnterpriseConfig field is set.
    */
   boolean hasGitlabEnterpriseConfig();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface ConnectionOrBuilder
    * @return The gitlabEnterpriseConfig.
    */
   com.google.cloud.developerconnect.v1.GitLabEnterpriseConfig getGitlabEnterpriseConfig();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface ConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface ConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public interface ConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface ConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public interface ConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -301,7 +288,6 @@ public interface ConnectionOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -315,7 +301,6 @@ public interface ConnectionOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface ConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -349,11 +333,9 @@ public interface ConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -364,7 +346,6 @@ public interface ConnectionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -379,7 +360,6 @@ public interface ConnectionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -405,7 +385,6 @@ public interface ConnectionOrBuilder
    * @return Whether the installationState field is set.
    */
   boolean hasInstallationState();
-
   /**
    *
    *
@@ -420,7 +399,6 @@ public interface ConnectionOrBuilder
    * @return The installationState.
    */
   com.google.cloud.developerconnect.v1.InstallationState getInstallationState();
-
   /**
    *
    *
@@ -474,7 +452,6 @@ public interface ConnectionOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -486,11 +463,9 @@ public interface ConnectionOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -502,7 +477,6 @@ public interface ConnectionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -518,7 +492,6 @@ public interface ConnectionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -545,7 +518,6 @@ public interface ConnectionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -576,7 +548,6 @@ public interface ConnectionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -608,7 +579,6 @@ public interface ConnectionOrBuilder
    * @return Whether the cryptoKeyConfig field is set.
    */
   boolean hasCryptoKeyConfig();
-
   /**
    *
    *
@@ -624,7 +594,6 @@ public interface ConnectionOrBuilder
    * @return The cryptoKeyConfig.
    */
   com.google.cloud.developerconnect.v1.CryptoKeyConfig getCryptoKeyConfig();
-
   /**
    *
    *

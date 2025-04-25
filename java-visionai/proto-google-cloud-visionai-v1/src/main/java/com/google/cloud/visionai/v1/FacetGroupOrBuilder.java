@@ -36,7 +36,6 @@ public interface FacetGroupOrBuilder
    * @return The facetId.
    */
   java.lang.String getFacetId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface FacetGroupOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface FacetGroupOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetBucket buckets = 3;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.FacetBucket> getBucketsList();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface FacetGroupOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetBucket buckets = 3;</code>
    */
   com.google.cloud.visionai.v1.FacetBucket getBuckets(int index);
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface FacetGroupOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetBucket buckets = 3;</code>
    */
   int getBucketsCount();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface FacetGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.FacetBucketOrBuilder>
       getBucketsOrBuilderList();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface FacetGroupOrBuilder
    * @return The enum numeric value on the wire for bucketType.
    */
   int getBucketTypeValue();
-
   /**
    *
    *

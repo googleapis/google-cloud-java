@@ -34,7 +34,6 @@ public final class UpdateDeploymentResourcePoolRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateDeploymentResourcePoolRequest)
     UpdateDeploymentResourcePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateDeploymentResourcePoolRequest.newBuilder() to construct.
   private UpdateDeploymentResourcePoolRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class UpdateDeploymentResourcePoolRequest
   private int bitField0_;
   public static final int DEPLOYMENT_RESOURCE_POOL_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool deploymentResourcePool_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class UpdateDeploymentResourcePoolRequest
   public boolean hasDeploymentResourcePool() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class UpdateDeploymentResourcePoolRequest
         ? com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.getDefaultInstance()
         : deploymentResourcePool_;
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class UpdateDeploymentResourcePoolRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class UpdateDeploymentResourcePoolRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class UpdateDeploymentResourcePoolRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -373,7 +366,6 @@ public final class UpdateDeploymentResourcePoolRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -610,7 +602,6 @@ public final class UpdateDeploymentResourcePoolRequest
             com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.Builder,
             com.google.cloud.aiplatform.v1beta1.DeploymentResourcePoolOrBuilder>
         deploymentResourcePoolBuilder_;
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class UpdateDeploymentResourcePoolRequest
     public boolean hasDeploymentResourcePool() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class UpdateDeploymentResourcePoolRequest
         return deploymentResourcePoolBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class UpdateDeploymentResourcePoolRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return getDeploymentResourcePoolFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class UpdateDeploymentResourcePoolRequest
             : deploymentResourcePool_;
       }
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class UpdateDeploymentResourcePoolRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class UpdateDeploymentResourcePoolRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class UpdateDeploymentResourcePoolRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +936,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +964,6 @@ public final class UpdateDeploymentResourcePoolRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +984,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class UpdateDeploymentResourcePoolRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1043,7 +1018,6 @@ public final class UpdateDeploymentResourcePoolRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

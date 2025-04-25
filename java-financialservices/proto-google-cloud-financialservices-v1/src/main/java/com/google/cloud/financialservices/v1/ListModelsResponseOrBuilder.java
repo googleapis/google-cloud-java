@@ -34,7 +34,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.financialservices.v1.Model models = 1;</code>
    */
   java.util.List<com.google.cloud.financialservices.v1.Model> getModelsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.financialservices.v1.Model models = 1;</code>
    */
   com.google.cloud.financialservices.v1.Model getModels(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.financialservices.v1.Model models = 1;</code>
    */
   int getModelsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListModelsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.financialservices.v1.ModelOrBuilder>
       getModelsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListModelsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListModelsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListModelsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

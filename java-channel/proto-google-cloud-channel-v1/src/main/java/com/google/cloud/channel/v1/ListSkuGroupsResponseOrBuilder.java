@@ -34,7 +34,6 @@ public interface ListSkuGroupsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.SkuGroup sku_groups = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.SkuGroup> getSkuGroupsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSkuGroupsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.SkuGroup sku_groups = 1;</code>
    */
   com.google.cloud.channel.v1.SkuGroup getSkuGroups(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSkuGroupsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.SkuGroup sku_groups = 1;</code>
    */
   int getSkuGroupsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSkuGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.SkuGroupOrBuilder>
       getSkuGroupsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListSkuGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

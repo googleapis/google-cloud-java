@@ -43,7 +43,6 @@ public interface ControlOrBuilder
    */
   @java.lang.Deprecated
   boolean hasFacetSpec();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ControlOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.retail.v2alpha.SearchRequest.FacetSpec getFacetSpec();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ControlOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ControlOrBuilder
    * @return The rule.
    */
   com.google.cloud.retail.v2alpha.Rule getRule();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface ControlOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ControlOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface ControlOrBuilder
    * @return A list containing the associatedServingConfigIds.
    */
   java.util.List<java.lang.String> getAssociatedServingConfigIdsList();
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public interface ControlOrBuilder
    * @return The count of associatedServingConfigIds.
    */
   int getAssociatedServingConfigIdsCount();
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public interface ControlOrBuilder
    * @return The associatedServingConfigIds at the given index.
    */
   java.lang.String getAssociatedServingConfigIds(int index);
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public interface ControlOrBuilder
    * @return A list containing the solutionTypes.
    */
   java.util.List<com.google.cloud.retail.v2alpha.SolutionType> getSolutionTypesList();
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public interface ControlOrBuilder
    * @return The count of solutionTypes.
    */
   int getSolutionTypesCount();
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public interface ControlOrBuilder
    * @return The solutionTypes at the given index.
    */
   com.google.cloud.retail.v2alpha.SolutionType getSolutionTypes(int index);
-
   /**
    *
    *
@@ -353,7 +341,6 @@ public interface ControlOrBuilder
    * @return A list containing the enum numeric values on the wire for solutionTypes.
    */
   java.util.List<java.lang.Integer> getSolutionTypesValueList();
-
   /**
    *
    *
@@ -395,7 +382,6 @@ public interface ControlOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2alpha.SearchSolutionUseCase>
       getSearchSolutionUseCaseList();
-
   /**
    *
    *
@@ -415,7 +401,6 @@ public interface ControlOrBuilder
    * @return The count of searchSolutionUseCase.
    */
   int getSearchSolutionUseCaseCount();
-
   /**
    *
    *
@@ -436,7 +421,6 @@ public interface ControlOrBuilder
    * @return The searchSolutionUseCase at the given index.
    */
   com.google.cloud.retail.v2alpha.SearchSolutionUseCase getSearchSolutionUseCase(int index);
-
   /**
    *
    *
@@ -456,7 +440,6 @@ public interface ControlOrBuilder
    * @return A list containing the enum numeric values on the wire for searchSolutionUseCase.
    */
   java.util.List<java.lang.Integer> getSearchSolutionUseCaseValueList();
-
   /**
    *
    *

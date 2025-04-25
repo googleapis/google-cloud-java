@@ -37,7 +37,6 @@ public interface CycleStepOrBuilder
    * @return Whether the initializingReplication field is set.
    */
   boolean hasInitializingReplication();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CycleStepOrBuilder
    * @return The initializingReplication.
    */
   com.google.cloud.vmmigration.v1.InitializingReplicationStep getInitializingReplication();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CycleStepOrBuilder
    * @return Whether the replicating field is set.
    */
   boolean hasReplicating();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface CycleStepOrBuilder
    * @return The replicating.
    */
   com.google.cloud.vmmigration.v1.ReplicatingStep getReplicating();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface CycleStepOrBuilder
    * @return Whether the postProcessing field is set.
    */
   boolean hasPostProcessing();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface CycleStepOrBuilder
    * @return The postProcessing.
    */
   com.google.cloud.vmmigration.v1.PostProcessingStep getPostProcessing();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface CycleStepOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface CycleStepOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface CycleStepOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface CycleStepOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

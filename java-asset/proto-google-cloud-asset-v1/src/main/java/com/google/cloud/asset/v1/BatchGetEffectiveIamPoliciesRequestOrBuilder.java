@@ -48,7 +48,6 @@ public interface BatchGetEffectiveIamPoliciesRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface BatchGetEffectiveIamPoliciesRequestOrBuilder
    * @return A list containing the names.
    */
   java.util.List<java.lang.String> getNamesList();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface BatchGetEffectiveIamPoliciesRequestOrBuilder
    * @return The count of names.
    */
   int getNamesCount();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface BatchGetEffectiveIamPoliciesRequestOrBuilder
    * @return The names at the given index.
    */
   java.lang.String getNames(int index);
-
   /**
    *
    *

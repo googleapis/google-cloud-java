@@ -40,7 +40,6 @@ public interface GetDiscoveredServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

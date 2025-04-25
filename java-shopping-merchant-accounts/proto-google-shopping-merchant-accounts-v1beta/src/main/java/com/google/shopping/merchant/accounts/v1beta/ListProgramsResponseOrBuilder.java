@@ -34,7 +34,6 @@ public interface ListProgramsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Program programs = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Program> getProgramsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListProgramsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Program programs = 1;</code>
    */
   com.google.shopping.merchant.accounts.v1beta.Program getPrograms(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListProgramsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Program programs = 1;</code>
    */
   int getProgramsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListProgramsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.ProgramOrBuilder>
       getProgramsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListProgramsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

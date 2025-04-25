@@ -33,7 +33,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExtensionOperation)
     ExtensionOperationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExtensionOperation.newBuilder() to construct.
   private ExtensionOperation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operationId_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
 
   public static final int FUNCTION_DECLARATION_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.FunctionDeclaration functionDeclaration_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
   public boolean hasFunctionDeclaration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1beta1.FunctionDeclaration.getDefaultInstance()
         : functionDeclaration_;
   }
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +574,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object operationId_ = "";
-
     /**
      *
      *
@@ -608,7 +600,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.FunctionDeclaration.Builder,
             com.google.cloud.aiplatform.v1beta1.FunctionDeclarationOrBuilder>
         functionDeclarationBuilder_;
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
     public boolean hasFunctionDeclaration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
         return functionDeclarationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getFunctionDeclarationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class ExtensionOperation extends com.google.protobuf.GeneratedMessa
             : functionDeclaration_;
       }
     }
-
     /**
      *
      *

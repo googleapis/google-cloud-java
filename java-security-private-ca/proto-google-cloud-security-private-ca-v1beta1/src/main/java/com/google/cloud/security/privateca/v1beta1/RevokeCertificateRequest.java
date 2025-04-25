@@ -34,7 +34,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1beta1.RevokeCertificateRequest)
     RevokeCertificateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RevokeCertificateRequest.newBuilder() to construct.
   private RevokeCertificateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
 
   public static final int REASON_FIELD_NUMBER = 2;
   private int reason_ = 0;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
   public int getReasonValue() {
     return reason_;
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -431,7 +424,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +644,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -678,7 +669,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -704,7 +694,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +718,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +738,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     }
 
     private int reason_ = 0;
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     public int getReasonValue() {
       return reason_;
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +823,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
           ? com.google.cloud.security.privateca.v1beta1.RevocationReason.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -989,7 +968,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +997,6 @@ public final class RevokeCertificateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

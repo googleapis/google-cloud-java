@@ -34,7 +34,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.Reservation)
     ReservationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Reservation.newBuilder() to construct.
   private Reservation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,7 +158,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -170,7 +168,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>APPROVED = 3;</code>
      */
     public static final int APPROVED_VALUE = 3;
-
     /**
      *
      *
@@ -181,7 +178,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONING = 4;</code>
      */
     public static final int PROVISIONING_VALUE = 4;
-
     /**
      *
      *
@@ -192,7 +188,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 5;</code>
      */
     public static final int ACTIVE_VALUE = 5;
-
     /**
      *
      *
@@ -203,7 +198,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPROVISIONING = 6;</code>
      */
     public static final int DEPROVISIONING_VALUE = 6;
-
     /**
      *
      *
@@ -214,7 +208,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPIRED = 7;</code>
      */
     public static final int EXPIRED_VALUE = 7;
-
     /**
      *
      *
@@ -349,7 +342,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for capacityUnits.
      */
     int getCapacityUnitsValue();
-
     /**
      *
      *
@@ -376,7 +368,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceType.
      */
     java.lang.String getResourceType();
-
     /**
      *
      *
@@ -402,7 +393,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the interval field is set.
      */
     boolean hasInterval();
-
     /**
      *
      *
@@ -415,7 +405,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return The interval.
      */
     com.google.type.Interval getInterval();
-
     /**
      *
      *
@@ -439,7 +428,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the usage field is set.
      */
     boolean hasUsage();
-
     /**
      *
      *
@@ -452,7 +440,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return The usage.
      */
     com.google.cloud.tpu.v2alpha1.Reservation.Standard.Usage getUsage();
-
     /**
      *
      *
@@ -464,7 +451,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.tpu.v2alpha1.Reservation.Standard.UsageOrBuilder getUsageOrBuilder();
   }
-
   /**
    *
    *
@@ -479,7 +465,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.Reservation.Standard)
       StandardOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Standard.newBuilder() to construct.
     private Standard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -564,7 +549,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        * <code>CAPACITY_UNITS_UNSPECIFIED = 0;</code>
        */
       public static final int CAPACITY_UNITS_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -575,7 +559,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        * <code>CORES = 1;</code>
        */
       public static final int CORES_VALUE = 1;
-
       /**
        *
        *
@@ -693,7 +676,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        */
       long getTotal();
     }
-
     /**
      *
      *
@@ -708,7 +690,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.Reservation.Standard.Usage)
         UsageOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Usage.newBuilder() to construct.
       private Usage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -739,7 +720,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
       public static final int TOTAL_FIELD_NUMBER = 1;
       private long total_ = 0L;
-
       /**
        *
        *
@@ -918,7 +898,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1107,7 +1086,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private long total_;
-
         /**
          *
          *
@@ -1124,7 +1102,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         public long getTotal() {
           return total_;
         }
-
         /**
          *
          *
@@ -1145,7 +1122,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1233,7 +1209,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SIZE_FIELD_NUMBER = 1;
     private int size_ = 0;
-
     /**
      *
      *
@@ -1253,7 +1228,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CAPACITY_UNITS_FIELD_NUMBER = 2;
     private int capacityUnits_ = 0;
-
     /**
      *
      *
@@ -1270,7 +1244,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public int getCapacityUnitsValue() {
       return capacityUnits_;
     }
-
     /**
      *
      *
@@ -1297,7 +1270,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceType_ = "";
-
     /**
      *
      *
@@ -1321,7 +1293,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1348,7 +1319,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INTERVAL_FIELD_NUMBER = 4;
     private com.google.type.Interval interval_;
-
     /**
      *
      *
@@ -1364,7 +1334,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1380,7 +1349,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Interval getInterval() {
       return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
     }
-
     /**
      *
      *
@@ -1397,7 +1365,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int USAGE_FIELD_NUMBER = 5;
     private com.google.cloud.tpu.v2alpha1.Reservation.Standard.Usage usage_;
-
     /**
      *
      *
@@ -1413,7 +1380,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUsage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1431,7 +1397,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.tpu.v2alpha1.Reservation.Standard.Usage.getDefaultInstance()
           : usage_;
     }
-
     /**
      *
      *
@@ -1660,7 +1625,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1922,7 +1886,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int size_;
-
       /**
        *
        *
@@ -1939,7 +1902,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       public int getSize() {
         return size_;
       }
-
       /**
        *
        *
@@ -1960,7 +1922,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1981,7 +1942,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int capacityUnits_ = 0;
-
       /**
        *
        *
@@ -1998,7 +1958,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       public int getCapacityUnitsValue() {
         return capacityUnits_;
       }
-
       /**
        *
        *
@@ -2018,7 +1977,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2040,7 +1998,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.tpu.v2alpha1.Reservation.Standard.CapacityUnits.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2064,7 +2021,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2085,7 +2041,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object resourceType_ = "";
-
       /**
        *
        *
@@ -2108,7 +2063,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2131,7 +2085,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2153,7 +2106,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2171,7 +2123,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2201,7 +2152,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
               com.google.type.Interval.Builder,
               com.google.type.IntervalOrBuilder>
           intervalBuilder_;
-
       /**
        *
        *
@@ -2216,7 +2166,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInterval() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -2235,7 +2184,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           return intervalBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2258,7 +2206,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2278,7 +2225,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2306,7 +2252,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2326,7 +2271,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2341,7 +2285,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getIntervalFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2358,7 +2301,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           return interval_ == null ? com.google.type.Interval.getDefaultInstance() : interval_;
         }
       }
-
       /**
        *
        *
@@ -2391,7 +2333,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.tpu.v2alpha1.Reservation.Standard.Usage.Builder,
               com.google.cloud.tpu.v2alpha1.Reservation.Standard.UsageOrBuilder>
           usageBuilder_;
-
       /**
        *
        *
@@ -2406,7 +2347,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUsage() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -2427,7 +2367,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           return usageBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2450,7 +2389,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2471,7 +2409,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2501,7 +2438,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2521,7 +2457,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2536,7 +2471,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUsageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2555,7 +2489,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
               : usage_;
         }
       }
-
       /**
        *
        *
@@ -2662,7 +2595,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2697,7 +2629,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2722,7 +2653,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2749,7 +2679,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STANDARD_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2765,7 +2694,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStandard() {
     return kindCase_ == 2;
   }
-
   /**
    *
    *
@@ -2784,7 +2712,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.tpu.v2alpha1.Reservation.Standard.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2804,7 +2731,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -2822,7 +2748,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -3035,7 +2960,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3278,7 +3202,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3302,7 +3225,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3326,7 +3248,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3349,7 +3270,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3368,7 +3288,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3398,7 +3317,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.tpu.v2alpha1.Reservation.Standard.Builder,
             com.google.cloud.tpu.v2alpha1.Reservation.StandardOrBuilder>
         standardBuilder_;
-
     /**
      *
      *
@@ -3414,7 +3332,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStandard() {
       return kindCase_ == 2;
     }
-
     /**
      *
      *
@@ -3440,7 +3357,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2alpha1.Reservation.Standard.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3463,7 +3379,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3484,7 +3399,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3517,7 +3431,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3543,7 +3456,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3556,7 +3468,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.tpu.v2alpha1.Reservation.Standard.Builder getStandardBuilder() {
       return getStandardFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3577,7 +3488,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.tpu.v2alpha1.Reservation.Standard.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3612,7 +3522,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3630,7 +3539,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3651,7 +3559,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3671,7 +3578,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.tpu.v2alpha1.Reservation.State.forNumber(state_);
       return result == null ? com.google.cloud.tpu.v2alpha1.Reservation.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -3695,7 +3601,6 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

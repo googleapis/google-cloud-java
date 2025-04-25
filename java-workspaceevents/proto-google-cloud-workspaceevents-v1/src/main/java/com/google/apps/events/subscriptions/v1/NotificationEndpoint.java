@@ -33,7 +33,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.NotificationEndpoint)
     NotificationEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationEndpoint.newBuilder() to construct.
   private NotificationEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     private EndpointCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PUBSUB_TOPIC_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
   public boolean hasPubsubTopic() {
     return endpointCase_ == 1;
   }
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +389,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -637,7 +631,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     public boolean hasPubsubTopic() {
       return endpointCase_ == 1;
     }
-
     /**
      *
      *
@@ -679,7 +672,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -721,7 +713,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -756,7 +747,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +779,6 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *

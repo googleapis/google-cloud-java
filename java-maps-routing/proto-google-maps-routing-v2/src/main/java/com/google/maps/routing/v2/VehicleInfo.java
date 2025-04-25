@@ -33,7 +33,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routing.v2.VehicleInfo)
     VehicleInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VehicleInfo.newBuilder() to construct.
   private VehicleInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EMISSION_TYPE_FIELD_NUMBER = 2;
   private int emissionType_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
   public int getEmissionTypeValue() {
     return emissionType_;
   }
-
   /**
    *
    *
@@ -267,7 +264,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -449,7 +445,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int emissionType_ = 0;
-
     /**
      *
      *
@@ -467,7 +462,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
     public int getEmissionTypeValue() {
       return emissionType_;
     }
-
     /**
      *
      *
@@ -488,7 +482,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -508,7 +501,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.routing.v2.VehicleEmissionType.forNumber(emissionType_);
       return result == null ? com.google.maps.routing.v2.VehicleEmissionType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -532,7 +524,6 @@ public final class VehicleInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

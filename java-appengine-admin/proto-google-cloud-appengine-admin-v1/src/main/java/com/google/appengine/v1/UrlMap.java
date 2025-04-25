@@ -35,7 +35,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.UrlMap)
     UrlMapOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UrlMap.newBuilder() to construct.
   private UrlMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -142,7 +141,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * <code>REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int REDIRECT_HTTP_RESPONSE_CODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +151,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * <code>REDIRECT_HTTP_RESPONSE_CODE_301 = 1;</code>
      */
     public static final int REDIRECT_HTTP_RESPONSE_CODE_301_VALUE = 1;
-
     /**
      *
      *
@@ -164,7 +161,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * <code>REDIRECT_HTTP_RESPONSE_CODE_302 = 2;</code>
      */
     public static final int REDIRECT_HTTP_RESPONSE_CODE_302_VALUE = 2;
-
     /**
      *
      *
@@ -175,7 +171,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * <code>REDIRECT_HTTP_RESPONSE_CODE_303 = 3;</code>
      */
     public static final int REDIRECT_HTTP_RESPONSE_CODE_303_VALUE = 3;
-
     /**
      *
      *
@@ -295,7 +290,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     private HandlerTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -334,7 +328,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlRegex_ = "";
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -390,7 +382,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATIC_FILES_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -406,7 +397,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStaticFiles() {
     return handlerTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -425,7 +415,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.appengine.v1.StaticFilesHandler.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -444,7 +433,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCRIPT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScript() {
     return handlerTypeCase_ == 3;
   }
-
   /**
    *
    *
@@ -483,7 +470,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.appengine.v1.ScriptHandler.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -504,7 +490,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_ENDPOINT_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -520,7 +505,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public boolean hasApiEndpoint() {
     return handlerTypeCase_ == 4;
   }
-
   /**
    *
    *
@@ -539,7 +523,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.appengine.v1.ApiEndpointHandler.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -559,7 +542,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SECURITY_LEVEL_FIELD_NUMBER = 5;
   private int securityLevel_ = 0;
-
   /**
    *
    *
@@ -575,7 +557,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public int getSecurityLevelValue() {
     return securityLevel_;
   }
-
   /**
    *
    *
@@ -596,7 +577,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGIN_FIELD_NUMBER = 6;
   private int login_ = 0;
-
   /**
    *
    *
@@ -613,7 +593,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public int getLoginValue() {
     return login_;
   }
-
   /**
    *
    *
@@ -635,7 +614,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTH_FAIL_ACTION_FIELD_NUMBER = 7;
   private int authFailAction_ = 0;
-
   /**
    *
    *
@@ -652,7 +630,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public int getAuthFailActionValue() {
     return authFailAction_;
   }
-
   /**
    *
    *
@@ -674,7 +651,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REDIRECT_HTTP_RESPONSE_CODE_FIELD_NUMBER = 8;
   private int redirectHttpResponseCode_ = 0;
-
   /**
    *
    *
@@ -692,7 +668,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   public int getRedirectHttpResponseCodeValue() {
     return redirectHttpResponseCode_;
   }
-
   /**
    *
    *
@@ -971,7 +946,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1286,7 +1260,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object urlRegex_ = "";
-
     /**
      *
      *
@@ -1312,7 +1285,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1338,7 +1310,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1363,7 +1334,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1354,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1385,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.StaticFilesHandler.Builder,
             com.google.appengine.v1.StaticFilesHandlerOrBuilder>
         staticFilesBuilder_;
-
     /**
      *
      *
@@ -1432,7 +1400,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStaticFiles() {
       return handlerTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -1458,7 +1425,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.StaticFilesHandler.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1481,7 +1447,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1467,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1499,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1561,7 +1524,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1574,7 +1536,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.StaticFilesHandler.Builder getStaticFilesBuilder() {
       return getStaticFilesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1595,7 +1556,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.StaticFilesHandler.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1634,7 +1594,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.ScriptHandler.Builder,
             com.google.appengine.v1.ScriptHandlerOrBuilder>
         scriptBuilder_;
-
     /**
      *
      *
@@ -1652,7 +1611,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScript() {
       return handlerTypeCase_ == 3;
     }
-
     /**
      *
      *
@@ -1680,7 +1638,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.ScriptHandler.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1705,7 +1662,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1683,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1717,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1790,7 +1744,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1805,7 +1758,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.ScriptHandler.Builder getScriptBuilder() {
       return getScriptFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1828,7 +1780,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.ScriptHandler.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1869,7 +1820,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.ApiEndpointHandler.Builder,
             com.google.appengine.v1.ApiEndpointHandlerOrBuilder>
         apiEndpointBuilder_;
-
     /**
      *
      *
@@ -1885,7 +1835,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApiEndpoint() {
       return handlerTypeCase_ == 4;
     }
-
     /**
      *
      *
@@ -1911,7 +1860,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.ApiEndpointHandler.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1934,7 +1882,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1955,7 +1902,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1988,7 +1934,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       handlerTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1959,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1971,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.ApiEndpointHandler.Builder getApiEndpointBuilder() {
       return getApiEndpointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2048,7 +1991,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         return com.google.appengine.v1.ApiEndpointHandler.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2083,7 +2025,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int securityLevel_ = 0;
-
     /**
      *
      *
@@ -2099,7 +2040,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public int getSecurityLevelValue() {
       return securityLevel_;
     }
-
     /**
      *
      *
@@ -2118,7 +2058,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2136,7 +2075,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           com.google.appengine.v1.SecurityLevel.forNumber(securityLevel_);
       return result == null ? com.google.appengine.v1.SecurityLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2158,7 +2096,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2178,7 +2115,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int login_ = 0;
-
     /**
      *
      *
@@ -2195,7 +2131,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public int getLoginValue() {
       return login_;
     }
-
     /**
      *
      *
@@ -2215,7 +2150,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2168,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           com.google.appengine.v1.LoginRequirement.forNumber(login_);
       return result == null ? com.google.appengine.v1.LoginRequirement.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2257,7 +2190,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2278,7 +2210,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int authFailAction_ = 0;
-
     /**
      *
      *
@@ -2295,7 +2226,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public int getAuthFailActionValue() {
       return authFailAction_;
     }
-
     /**
      *
      *
@@ -2315,7 +2245,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2334,7 +2263,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           com.google.appengine.v1.AuthFailAction.forNumber(authFailAction_);
       return result == null ? com.google.appengine.v1.AuthFailAction.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2357,7 +2285,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2305,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int redirectHttpResponseCode_ = 0;
-
     /**
      *
      *
@@ -2396,7 +2322,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     public int getRedirectHttpResponseCodeValue() {
       return redirectHttpResponseCode_;
     }
-
     /**
      *
      *
@@ -2417,7 +2342,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2364,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
           ? com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2465,7 +2388,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

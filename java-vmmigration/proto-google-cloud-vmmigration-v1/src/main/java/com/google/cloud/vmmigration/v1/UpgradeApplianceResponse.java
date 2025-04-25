@@ -33,7 +33,6 @@ public final class UpgradeApplianceResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.UpgradeApplianceResponse)
     UpgradeApplianceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpgradeApplianceResponse.newBuilder() to construct.
   private UpgradeApplianceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class UpgradeApplianceResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

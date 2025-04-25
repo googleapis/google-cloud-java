@@ -33,7 +33,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.RequestMetadata)
     RequestMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RequestMetadata.newBuilder() to construct.
   private RequestMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int HEADERS_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct headers_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   public boolean hasHeaders() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Struct getHeaders() {
     return headers_ == null ? com.google.protobuf.Struct.getDefaultInstance() : headers_;
   }
-
   /**
    *
    *
@@ -276,7 +272,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -480,7 +475,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         headersBuilder_;
-
     /**
      *
      *
@@ -495,7 +489,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public boolean hasHeaders() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -514,7 +507,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return headersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -537,7 +529,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -557,7 +548,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -585,7 +575,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -605,7 +594,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -620,7 +608,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getHeadersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -637,7 +624,6 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         return headers_ == null ? com.google.protobuf.Struct.getDefaultInstance() : headers_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface CorsPolicyOrBuilder
    * @return Whether the allowCredentials field is set.
    */
   boolean hasAllowCredentials();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CorsPolicyOrBuilder
    * @return A list containing the allowHeaders.
    */
   java.util.List<java.lang.String> getAllowHeadersList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CorsPolicyOrBuilder
    * @return The count of allowHeaders.
    */
   int getAllowHeadersCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface CorsPolicyOrBuilder
    * @return The allowHeaders at the given index.
    */
   java.lang.String getAllowHeaders(int index);
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface CorsPolicyOrBuilder
    * @return A list containing the allowMethods.
    */
   java.util.List<java.lang.String> getAllowMethodsList();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface CorsPolicyOrBuilder
    * @return The count of allowMethods.
    */
   int getAllowMethodsCount();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface CorsPolicyOrBuilder
    * @return The allowMethods at the given index.
    */
   java.lang.String getAllowMethods(int index);
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface CorsPolicyOrBuilder
    * @return A list containing the allowOriginRegexes.
    */
   java.util.List<java.lang.String> getAllowOriginRegexesList();
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public interface CorsPolicyOrBuilder
    * @return The count of allowOriginRegexes.
    */
   int getAllowOriginRegexesCount();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface CorsPolicyOrBuilder
    * @return The allowOriginRegexes at the given index.
    */
   java.lang.String getAllowOriginRegexes(int index);
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public interface CorsPolicyOrBuilder
    * @return A list containing the allowOrigins.
    */
   java.util.List<java.lang.String> getAllowOriginsList();
-
   /**
    *
    *
@@ -237,7 +226,6 @@ public interface CorsPolicyOrBuilder
    * @return The count of allowOrigins.
    */
   int getAllowOriginsCount();
-
   /**
    *
    *
@@ -251,7 +239,6 @@ public interface CorsPolicyOrBuilder
    * @return The allowOrigins at the given index.
    */
   java.lang.String getAllowOrigins(int index);
-
   /**
    *
    *
@@ -278,7 +265,6 @@ public interface CorsPolicyOrBuilder
    * @return Whether the disabled field is set.
    */
   boolean hasDisabled();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface CorsPolicyOrBuilder
    * @return A list containing the exposeHeaders.
    */
   java.util.List<java.lang.String> getExposeHeadersList();
-
   /**
    *
    *
@@ -317,7 +302,6 @@ public interface CorsPolicyOrBuilder
    * @return The count of exposeHeaders.
    */
   int getExposeHeadersCount();
-
   /**
    *
    *
@@ -331,7 +315,6 @@ public interface CorsPolicyOrBuilder
    * @return The exposeHeaders at the given index.
    */
   java.lang.String getExposeHeaders(int index);
-
   /**
    *
    *
@@ -358,7 +341,6 @@ public interface CorsPolicyOrBuilder
    * @return Whether the maxAge field is set.
    */
   boolean hasMaxAge();
-
   /**
    *
    *

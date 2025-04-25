@@ -160,7 +160,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int EV_CONNECTOR_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -171,7 +170,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_OTHER = 1;</code>
    */
   public static final int EV_CONNECTOR_TYPE_OTHER_VALUE = 1;
-
   /**
    *
    *
@@ -182,7 +180,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_J1772 = 2;</code>
    */
   public static final int EV_CONNECTOR_TYPE_J1772_VALUE = 2;
-
   /**
    *
    *
@@ -193,7 +190,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_TYPE_2 = 3;</code>
    */
   public static final int EV_CONNECTOR_TYPE_TYPE_2_VALUE = 3;
-
   /**
    *
    *
@@ -204,7 +200,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_CHADEMO = 4;</code>
    */
   public static final int EV_CONNECTOR_TYPE_CHADEMO_VALUE = 4;
-
   /**
    *
    *
@@ -216,7 +211,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_CCS_COMBO_1 = 5;</code>
    */
   public static final int EV_CONNECTOR_TYPE_CCS_COMBO_1_VALUE = 5;
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_CCS_COMBO_2 = 6;</code>
    */
   public static final int EV_CONNECTOR_TYPE_CCS_COMBO_2_VALUE = 6;
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_TESLA = 7;</code>
    */
   public static final int EV_CONNECTOR_TYPE_TESLA_VALUE = 7;
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_UNSPECIFIED_GB_T = 8;</code>
    */
   public static final int EV_CONNECTOR_TYPE_UNSPECIFIED_GB_T_VALUE = 8;
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public enum EVConnectorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET = 9;</code>
    */
   public static final int EV_CONNECTOR_TYPE_UNSPECIFIED_WALL_OUTLET_VALUE = 9;
-
   /**
    *
    *

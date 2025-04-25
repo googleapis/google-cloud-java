@@ -34,7 +34,6 @@ public final class GetInterconnectRemoteLocationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetInterconnectRemoteLocationRequest)
     GetInterconnectRemoteLocationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetInterconnectRemoteLocationRequest.newBuilder() to construct.
   private GetInterconnectRemoteLocationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GetInterconnectRemoteLocationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectRemoteLocation_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GetInterconnectRemoteLocationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GetInterconnectRemoteLocationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GetInterconnectRemoteLocationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -350,7 +345,6 @@ public final class GetInterconnectRemoteLocationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -554,7 +548,6 @@ public final class GetInterconnectRemoteLocationRequest
     private int bitField0_;
 
     private java.lang.Object interconnectRemoteLocation_ = "";
-
     /**
      *
      *
@@ -579,7 +572,6 @@ public final class GetInterconnectRemoteLocationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -604,7 +596,6 @@ public final class GetInterconnectRemoteLocationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class GetInterconnectRemoteLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class GetInterconnectRemoteLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class GetInterconnectRemoteLocationRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class GetInterconnectRemoteLocationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class GetInterconnectRemoteLocationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class GetInterconnectRemoteLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class GetInterconnectRemoteLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

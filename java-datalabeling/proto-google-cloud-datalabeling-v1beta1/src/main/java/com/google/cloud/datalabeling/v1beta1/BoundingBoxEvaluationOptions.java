@@ -33,7 +33,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.BoundingBoxEvaluationOptions)
     BoundingBoxEvaluationOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BoundingBoxEvaluationOptions.newBuilder() to construct.
   private BoundingBoxEvaluationOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
 
   public static final int IOU_THRESHOLD_FIELD_NUMBER = 1;
   private float iouThreshold_ = 0F;
-
   /**
    *
    *
@@ -248,7 +246,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -438,7 +435,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     private int bitField0_;
 
     private float iouThreshold_;
-
     /**
      *
      *
@@ -459,7 +455,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
     public float getIouThreshold() {
       return iouThreshold_;
     }
-
     /**
      *
      *
@@ -484,7 +479,6 @@ public final class BoundingBoxEvaluationOptions extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

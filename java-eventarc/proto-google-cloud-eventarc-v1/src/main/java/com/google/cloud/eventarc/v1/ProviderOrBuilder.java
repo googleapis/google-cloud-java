@@ -37,7 +37,6 @@ public interface ProviderOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ProviderOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ProviderOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.eventarc.v1.EventType> getEventTypesList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ProviderOrBuilder
    * </code>
    */
   com.google.cloud.eventarc.v1.EventType getEventTypes(int index);
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface ProviderOrBuilder
    * </code>
    */
   int getEventTypesCount();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface ProviderOrBuilder
    */
   java.util.List<? extends com.google.cloud.eventarc.v1.EventTypeOrBuilder>
       getEventTypesOrBuilderList();
-
   /**
    *
    *

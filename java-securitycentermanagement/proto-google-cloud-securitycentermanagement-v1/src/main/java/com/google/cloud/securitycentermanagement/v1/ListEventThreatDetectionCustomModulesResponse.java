@@ -36,7 +36,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ListEventThreatDetectionCustomModulesResponse)
     ListEventThreatDetectionCustomModulesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEventThreatDetectionCustomModulesResponse.newBuilder() to construct.
   private ListEventThreatDetectionCustomModulesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -77,7 +76,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
   private java.util.List<
           com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule>
       eventThreatDetectionCustomModules_;
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       getEventThreatDetectionCustomModulesList() {
     return eventThreatDetectionCustomModules_;
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       getEventThreatDetectionCustomModulesOrBuilderList() {
     return eventThreatDetectionCustomModules_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
   public int getEventThreatDetectionCustomModulesCount() {
     return eventThreatDetectionCustomModules_.size();
   }
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       getEventThreatDetectionCustomModules(int index) {
     return eventThreatDetectionCustomModules_.get(index);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -738,7 +729,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -757,7 +747,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -777,7 +766,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -804,7 +792,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +816,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +841,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +867,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +890,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +914,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +940,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +961,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +982,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +997,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         getEventThreatDetectionCustomModulesBuilder(int index) {
       return getEventThreatDetectionCustomModulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1038,7 +1016,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return eventThreatDetectionCustomModulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1038,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return java.util.Collections.unmodifiableList(eventThreatDetectionCustomModules_);
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1056,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
               com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1100,7 +1075,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
               com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1141,7 +1115,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1165,7 +1138,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1189,7 +1161,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1183,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1231,7 +1201,6 @@ public final class ListEventThreatDetectionCustomModulesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

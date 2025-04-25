@@ -37,7 +37,6 @@ public interface ListApiOperationsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
    */
   java.util.List<com.google.cloud.apihub.v1.ApiOperation> getApiOperationsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListApiOperationsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
    */
   com.google.cloud.apihub.v1.ApiOperation getApiOperations(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface ListApiOperationsResponseOrBuilder
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
    */
   int getApiOperationsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListApiOperationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.ApiOperationOrBuilder>
       getApiOperationsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListApiOperationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

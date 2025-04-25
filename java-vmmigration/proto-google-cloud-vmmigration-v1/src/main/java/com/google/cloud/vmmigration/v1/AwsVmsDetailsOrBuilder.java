@@ -34,7 +34,6 @@ public interface AwsVmsDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.AwsVmDetails details = 1;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.AwsVmDetails> getDetailsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface AwsVmsDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.AwsVmDetails details = 1;</code>
    */
   com.google.cloud.vmmigration.v1.AwsVmDetails getDetails(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface AwsVmsDetailsOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.AwsVmDetails details = 1;</code>
    */
   int getDetailsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface AwsVmsDetailsOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.AwsVmDetailsOrBuilder>
       getDetailsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The apexUri.
    */
   java.lang.String getApexUri();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The databaseTransformsUri.
    */
   java.lang.String getDatabaseTransformsUri();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The graphStudioUri.
    */
   java.lang.String getGraphStudioUri();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The machineLearningNotebookUri.
    */
   java.lang.String getMachineLearningNotebookUri();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The machineLearningUserManagementUri.
    */
   java.lang.String getMachineLearningUserManagementUri();
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The mongoDbUri.
    */
   java.lang.String getMongoDbUri();
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The ordsUri.
    */
   java.lang.String getOrdsUri();
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public interface AutonomousDatabaseConnectionUrlsOrBuilder
    * @return The sqlDevWebUri.
    */
   java.lang.String getSqlDevWebUri();
-
   /**
    *
    *

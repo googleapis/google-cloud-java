@@ -36,7 +36,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateFeatureRequest)
     CreateFeatureRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateFeatureRequest.newBuilder() to construct.
   private CreateFeatureRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
 
   public static final int FEATURE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Feature feature_;
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
   public boolean hasFeature() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.Feature.getDefaultInstance()
         : feature_;
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureId_ = "";
-
   /**
    *
    *
@@ -227,7 +220,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -441,7 +433,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +664,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -731,7 +720,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +747,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +805,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.Feature.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureOrBuilder>
         featureBuilder_;
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     public boolean hasFeature() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         return featureBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -884,7 +867,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getFeatureFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
             : feature_;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1003,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object featureId_ = "";
-
     /**
      *
      *
@@ -1055,7 +1031,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1086,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1109,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * @return Whether the ekCert field is set.
    */
   boolean hasEkCert();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * @return The ekCert.
    */
   java.lang.String getEkCert();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * @return Whether the ekPub field is set.
    */
   boolean hasEkPub();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ShieldedInstanceIdentityEntryOrBuilder
    * @return The ekPub.
    */
   java.lang.String getEkPub();
-
   /**
    *
    *

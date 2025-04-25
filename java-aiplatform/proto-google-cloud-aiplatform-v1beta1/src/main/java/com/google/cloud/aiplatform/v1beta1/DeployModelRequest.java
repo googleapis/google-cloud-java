@@ -34,7 +34,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeployModelRequest)
     DeployModelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployModelRequest.newBuilder() to construct.
   private DeployModelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int DEPLOYED_MODEL_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.DeployedModel deployedModel_;
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasDeployedModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.aiplatform.v1beta1.DeployedModel.getDefaultInstance()
         : deployedModel_;
   }
-
   /**
    *
    *
@@ -238,7 +232,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   public int getTrafficSplitCount() {
     return internalGetTrafficSplit().getMap().size();
   }
-
   /**
    *
    *
@@ -267,14 +260,12 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     }
     return internalGetTrafficSplit().getMap().containsKey(key);
   }
-
   /** Use {@link #getTrafficSplitMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplit() {
     return getTrafficSplitMap();
   }
-
   /**
    *
    *
@@ -300,7 +291,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplitMap() {
     return internalGetTrafficSplit().getMap();
   }
-
   /**
    *
    *
@@ -330,7 +320,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -555,7 +544,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -812,7 +800,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -839,7 +826,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -866,7 +852,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +877,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +898,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +931,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.DeployedModel.Builder,
             com.google.cloud.aiplatform.v1beta1.DeployedModelOrBuilder>
         deployedModelBuilder_;
-
     /**
      *
      *
@@ -969,7 +951,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasDeployedModel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -996,7 +977,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return deployedModelBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1005,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1031,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1065,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1090,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1110,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDeployedModelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1159,7 +1134,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             : deployedModel_;
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1194,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public int getTrafficSplitCount() {
       return internalGetTrafficSplit().getMap().size();
     }
-
     /**
      *
      *
@@ -1249,14 +1222,12 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
       return internalGetTrafficSplit().getMap().containsKey(key);
     }
-
     /** Use {@link #getTrafficSplitMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplit() {
       return getTrafficSplitMap();
     }
-
     /**
      *
      *
@@ -1282,7 +1253,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.Integer> getTrafficSplitMap() {
       return internalGetTrafficSplit().getMap();
     }
-
     /**
      *
      *
@@ -1312,7 +1282,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetTrafficSplit().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1351,7 +1320,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       internalGetMutableTrafficSplit().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1380,14 +1348,12 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       internalGetMutableTrafficSplit().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableTrafficSplit() {
       bitField0_ |= 0x00000004;
       return internalGetMutableTrafficSplit().getMutableMap();
     }
-
     /**
      *
      *
@@ -1418,7 +1384,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *

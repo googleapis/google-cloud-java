@@ -35,7 +35,6 @@ public interface ListTransferableOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.TransferableOffer transferable_offers = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.TransferableOffer> getTransferableOffersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListTransferableOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.TransferableOffer transferable_offers = 1;</code>
    */
   com.google.cloud.channel.v1.TransferableOffer getTransferableOffers(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListTransferableOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.TransferableOffer transferable_offers = 1;</code>
    */
   int getTransferableOffersCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListTransferableOffersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.TransferableOfferOrBuilder>
       getTransferableOffersOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListTransferableOffersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

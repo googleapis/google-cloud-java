@@ -33,7 +33,6 @@ public final class AkamaiCdnKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.AkamaiCdnKey)
     AkamaiCdnKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AkamaiCdnKey.newBuilder() to construct.
   private AkamaiCdnKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class AkamaiCdnKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOKEN_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString tokenKey_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -242,7 +240,6 @@ public final class AkamaiCdnKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -425,7 +422,6 @@ public final class AkamaiCdnKey extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString tokenKey_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -441,7 +437,6 @@ public final class AkamaiCdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTokenKey() {
       return tokenKey_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class AkamaiCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

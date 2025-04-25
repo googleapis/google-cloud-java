@@ -38,7 +38,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.Settings)
     SettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Settings.newBuilder() to construct.
   private Settings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotatorSelector field is set.
      */
     boolean hasAnnotatorSelector();
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      * @return The annotatorSelector.
      */
     com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector();
-
     /**
      *
      *
@@ -156,7 +153,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder
         getAnnotatorSelectorOrBuilder();
   }
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig)
       AnalysisConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AnalysisConfig.newBuilder() to construct.
     private AnalysisConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -203,7 +198,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int RUNTIME_INTEGRATION_ANALYSIS_PERCENTAGE_FIELD_NUMBER = 1;
     private double runtimeIntegrationAnalysisPercentage_ = 0D;
-
     /**
      *
      *
@@ -223,7 +217,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPLOAD_CONVERSATION_ANALYSIS_PERCENTAGE_FIELD_NUMBER = 6;
     private double uploadConversationAnalysisPercentage_ = 0D;
-
     /**
      *
      *
@@ -243,7 +236,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ANNOTATOR_SELECTOR_FIELD_NUMBER = 5;
     private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector annotatorSelector_;
-
     /**
      *
      *
@@ -260,7 +252,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotatorSelector() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -279,7 +270,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.getDefaultInstance()
           : annotatorSelector_;
     }
-
     /**
      *
      *
@@ -497,7 +487,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -736,7 +725,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double runtimeIntegrationAnalysisPercentage_;
-
       /**
        *
        *
@@ -753,7 +741,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       public double getRuntimeIntegrationAnalysisPercentage() {
         return runtimeIntegrationAnalysisPercentage_;
       }
-
       /**
        *
        *
@@ -774,7 +761,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -795,7 +781,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double uploadConversationAnalysisPercentage_;
-
       /**
        *
        *
@@ -812,7 +797,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       public double getUploadConversationAnalysisPercentage() {
         return uploadConversationAnalysisPercentage_;
       }
-
       /**
        *
        *
@@ -833,7 +817,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -859,7 +842,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder,
               com.google.cloud.contactcenterinsights.v1.AnnotatorSelectorOrBuilder>
           annotatorSelectorBuilder_;
-
       /**
        *
        *
@@ -876,7 +858,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnnotatorSelector() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -899,7 +880,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           return annotatorSelectorBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -925,7 +905,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -948,7 +927,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -981,7 +959,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1003,7 +980,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1021,7 +997,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAnnotatorSelectorFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1043,7 +1018,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
               : annotatorSelector_;
         }
       }
-
       /**
        *
        *
@@ -1144,7 +1118,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1170,7 +1143,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1199,7 +1171,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1216,7 +1187,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1233,7 +1203,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1251,7 +1220,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1268,7 +1236,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1285,7 +1252,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1305,7 +1271,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -1331,7 +1296,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1360,7 +1324,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONVERSATION_TTL_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration conversationTtl_;
-
   /**
    *
    *
@@ -1379,7 +1342,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConversationTtl() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1400,7 +1362,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : conversationTtl_;
   }
-
   /**
    *
    *
@@ -1449,7 +1410,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public int getPubsubNotificationSettingsCount() {
     return internalGetPubsubNotificationSettings().getMap().size();
   }
-
   /**
    *
    *
@@ -1483,14 +1443,12 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetPubsubNotificationSettings().getMap().containsKey(key);
   }
-
   /** Use {@link #getPubsubNotificationSettingsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getPubsubNotificationSettings() {
     return getPubsubNotificationSettingsMap();
   }
-
   /**
    *
    *
@@ -1521,7 +1479,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPubsubNotificationSettingsMap() {
     return internalGetPubsubNotificationSettings().getMap();
   }
-
   /**
    *
    *
@@ -1560,7 +1517,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         internalGetPubsubNotificationSettings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1602,7 +1558,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANALYSIS_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig analysisConfig_;
-
   /**
    *
    *
@@ -1619,7 +1574,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnalysisConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1638,7 +1592,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig.getDefaultInstance()
         : analysisConfig_;
   }
-
   /**
    *
    *
@@ -1659,7 +1612,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REDACTION_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.contactcenterinsights.v1.RedactionConfig redactionConfig_;
-
   /**
    *
    *
@@ -1678,7 +1630,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRedactionConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1699,7 +1650,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
         : redactionConfig_;
   }
-
   /**
    *
    *
@@ -1722,7 +1672,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPEECH_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
-
   /**
    *
    *
@@ -1744,7 +1693,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpeechConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1768,7 +1716,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
         : speechConfig_;
   }
-
   /**
    *
    *
@@ -2067,7 +2014,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2446,7 +2392,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2471,7 +2416,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2440,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2520,7 +2463,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2540,7 +2482,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2513,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2589,7 +2529,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2612,7 +2551,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2637,7 +2575,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2596,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2689,7 +2625,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2711,7 +2646,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2728,7 +2662,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2749,7 +2682,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2784,7 +2716,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2801,7 +2732,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2824,7 +2754,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2849,7 +2778,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2871,7 +2799,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2901,7 +2828,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2923,7 +2849,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2940,7 +2865,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2961,7 +2885,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2991,7 +2914,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -3016,7 +2938,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3041,7 +2962,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3065,7 +2985,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3085,7 +3004,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3117,7 +3035,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         conversationTtlBuilder_;
-
     /**
      *
      *
@@ -3135,7 +3052,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConversationTtl() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3159,7 +3075,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return conversationTtlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3185,7 +3100,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3208,7 +3122,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3239,7 +3152,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3262,7 +3174,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3280,7 +3191,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConversationTtlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3302,7 +3212,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : conversationTtl_;
       }
     }
-
     /**
      *
      *
@@ -3362,7 +3271,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public int getPubsubNotificationSettingsCount() {
       return internalGetPubsubNotificationSettings().getMap().size();
     }
-
     /**
      *
      *
@@ -3396,14 +3304,12 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetPubsubNotificationSettings().getMap().containsKey(key);
     }
-
     /** Use {@link #getPubsubNotificationSettingsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getPubsubNotificationSettings() {
       return getPubsubNotificationSettingsMap();
     }
-
     /**
      *
      *
@@ -3434,7 +3340,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPubsubNotificationSettingsMap() {
       return internalGetPubsubNotificationSettings().getMap();
     }
-
     /**
      *
      *
@@ -3473,7 +3378,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
           internalGetPubsubNotificationSettings().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3518,7 +3422,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePubsubNotificationSettings().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3552,7 +3455,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       internalGetMutablePubsubNotificationSettings().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
@@ -3560,7 +3462,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return internalGetMutablePubsubNotificationSettings().getMutableMap();
     }
-
     /**
      *
      *
@@ -3598,7 +3499,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -3638,7 +3538,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.Settings.AnalysisConfigOrBuilder>
         analysisConfigBuilder_;
-
     /**
      *
      *
@@ -3654,7 +3553,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnalysisConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3676,7 +3574,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return analysisConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3701,7 +3598,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3723,7 +3619,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3755,7 +3650,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3776,7 +3670,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3793,7 +3686,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnalysisConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3814,7 +3706,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : analysisConfig_;
       }
     }
-
     /**
      *
      *
@@ -3848,7 +3739,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder>
         redactionConfigBuilder_;
-
     /**
      *
      *
@@ -3866,7 +3756,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRedactionConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3890,7 +3779,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return redactionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3917,7 +3805,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3941,7 +3828,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3974,7 +3860,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3997,7 +3882,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4016,7 +3900,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRedactionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4039,7 +3922,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : redactionConfig_;
       }
     }
-
     /**
      *
      *
@@ -4075,7 +3957,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
         speechConfigBuilder_;
-
     /**
      *
      *
@@ -4096,7 +3977,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpeechConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4123,7 +4003,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         return speechConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4152,7 +4031,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4179,7 +4057,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4214,7 +4091,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4240,7 +4116,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4261,7 +4136,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpeechConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4287,7 +4161,6 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
             : speechConfig_;
       }
     }
-
     /**
      *
      *

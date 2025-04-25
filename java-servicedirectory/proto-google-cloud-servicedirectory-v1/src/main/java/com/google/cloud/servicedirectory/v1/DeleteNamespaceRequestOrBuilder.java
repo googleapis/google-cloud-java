@@ -38,7 +38,6 @@ public interface DeleteNamespaceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

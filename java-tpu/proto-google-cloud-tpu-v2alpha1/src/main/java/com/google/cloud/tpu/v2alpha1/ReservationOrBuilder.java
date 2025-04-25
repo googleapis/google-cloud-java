@@ -37,7 +37,6 @@ public interface ReservationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ReservationOrBuilder
    * @return Whether the standard field is set.
    */
   boolean hasStandard();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ReservationOrBuilder
    * @return The standard.
    */
   com.google.cloud.tpu.v2alpha1.Reservation.Standard getStandard();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ReservationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

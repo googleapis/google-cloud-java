@@ -96,7 +96,6 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MATCHING_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int MATCHING_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -111,7 +110,6 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MATCHING_TYPE_FULL_MATCH = 1;</code>
    */
   public static final int MATCHING_TYPE_FULL_MATCH_VALUE = 1;
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MATCHING_TYPE_PARTIAL_MATCH = 2;</code>
    */
   public static final int MATCHING_TYPE_PARTIAL_MATCH_VALUE = 2;
-
   /**
    *
    *

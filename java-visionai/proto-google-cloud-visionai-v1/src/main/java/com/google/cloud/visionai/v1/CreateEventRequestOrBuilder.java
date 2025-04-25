@@ -38,7 +38,6 @@ public interface CreateEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateEventRequestOrBuilder
    * @return The eventId.
    */
   java.lang.String getEventId();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateEventRequestOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface CreateEventRequestOrBuilder
    * @return The event.
    */
   com.google.cloud.visionai.v1.Event getEvent();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface CreateEventRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

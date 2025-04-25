@@ -37,7 +37,6 @@ public interface ListTensorboardExperimentsResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TensorboardExperiment>
       getTensorboardExperimentsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ListTensorboardExperimentsResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.TensorboardExperiment getTensorboardExperiments(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ListTensorboardExperimentsResponseOrBuilder
    * </code>
    */
   int getTensorboardExperimentsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ListTensorboardExperimentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TensorboardExperimentOrBuilder>
       getTensorboardExperimentsOrBuilderList();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface ListTensorboardExperimentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

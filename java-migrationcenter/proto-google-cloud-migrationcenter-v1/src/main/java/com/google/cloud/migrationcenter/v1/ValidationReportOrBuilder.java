@@ -35,7 +35,6 @@ public interface ValidationReportOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.FileValidationReport> getFileValidationsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ValidationReportOrBuilder
    * </code>
    */
   com.google.cloud.migrationcenter.v1.FileValidationReport getFileValidations(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ValidationReportOrBuilder
    * </code>
    */
   int getFileValidationsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ValidationReportOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.FileValidationReportOrBuilder>
       getFileValidationsOrBuilderList();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface ValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError job_errors = 2;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.ImportError> getJobErrorsList();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface ValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError job_errors = 2;</code>
    */
   com.google.cloud.migrationcenter.v1.ImportError getJobErrors(int index);
-
   /**
    *
    *
@@ -118,7 +112,6 @@ public interface ValidationReportOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.ImportError job_errors = 2;</code>
    */
   int getJobErrorsCount();
-
   /**
    *
    *
@@ -130,7 +123,6 @@ public interface ValidationReportOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.ImportErrorOrBuilder>
       getJobErrorsOrBuilderList();
-
   /**
    *
    *

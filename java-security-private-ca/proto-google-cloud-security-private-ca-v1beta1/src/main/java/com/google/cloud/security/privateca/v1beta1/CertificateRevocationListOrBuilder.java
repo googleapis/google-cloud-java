@@ -39,7 +39,6 @@ public interface CertificateRevocationListOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CertificateRevocationListOrBuilder
   java.util.List<
           com.google.cloud.security.privateca.v1beta1.CertificateRevocationList.RevokedCertificate>
       getRevokedCertificatesList();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CertificateRevocationListOrBuilder
    */
   com.google.cloud.security.privateca.v1beta1.CertificateRevocationList.RevokedCertificate
       getRevokedCertificates(int index);
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface CertificateRevocationListOrBuilder
    * </code>
    */
   int getRevokedCertificatesCount();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface CertificateRevocationListOrBuilder
               com.google.cloud.security.privateca.v1beta1.CertificateRevocationList
                   .RevokedCertificateOrBuilder>
       getRevokedCertificatesOrBuilderList();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface CertificateRevocationListOrBuilder
    * @return The pemCrl.
    */
   java.lang.String getPemCrl();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface CertificateRevocationListOrBuilder
    * @return The accessUrl.
    */
   java.lang.String getAccessUrl();
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public interface CertificateRevocationListOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public interface CertificateRevocationListOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public interface CertificateRevocationListOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface CertificateRevocationListOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -291,7 +280,6 @@ public interface CertificateRevocationListOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public interface CertificateRevocationListOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -325,11 +312,9 @@ public interface CertificateRevocationListOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -340,7 +325,6 @@ public interface CertificateRevocationListOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -355,7 +339,6 @@ public interface CertificateRevocationListOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

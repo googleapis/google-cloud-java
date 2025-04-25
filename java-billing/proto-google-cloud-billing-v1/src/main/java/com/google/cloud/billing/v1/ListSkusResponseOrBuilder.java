@@ -34,7 +34,6 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
   java.util.List<com.google.cloud.billing.v1.Sku> getSkusList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
   com.google.cloud.billing.v1.Sku getSkus(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
   int getSkusCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListSkusResponseOrBuilder
    * <code>repeated .google.cloud.billing.v1.Sku skus = 1;</code>
    */
   java.util.List<? extends com.google.cloud.billing.v1.SkuOrBuilder> getSkusOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSkusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

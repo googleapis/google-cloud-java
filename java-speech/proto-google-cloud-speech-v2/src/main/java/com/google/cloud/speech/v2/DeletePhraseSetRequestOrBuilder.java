@@ -39,7 +39,6 @@ public interface DeletePhraseSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface DeletePhraseSetRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

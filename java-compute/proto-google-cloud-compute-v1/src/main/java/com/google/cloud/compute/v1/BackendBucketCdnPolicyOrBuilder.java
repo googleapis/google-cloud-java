@@ -37,7 +37,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader>
       getBypassCacheOnRequestHeadersList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader
       getBypassCacheOnRequestHeaders(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * </code>
    */
   int getBypassCacheOnRequestHeadersCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface BackendBucketCdnPolicyOrBuilder
           ? extends
               com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
       getBypassCacheOnRequestHeadersOrBuilderList();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the cacheKeyPolicy field is set.
    */
   boolean hasCacheKeyPolicy();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The cacheKeyPolicy.
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy getCacheKeyPolicy();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the cacheMode field is set.
    */
   boolean hasCacheMode();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The cacheMode.
    */
   java.lang.String getCacheMode();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the clientTtl field is set.
    */
   boolean hasClientTtl();
-
   /**
    *
    *
@@ -211,7 +202,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
    * <code>optional int32 default_ttl = 100253422;</code>
@@ -219,12 +210,11 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the defaultTtl field is set.
    */
   boolean hasDefaultTtl();
-
   /**
    *
    *
    * <pre>
-   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-maxage). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
    * </pre>
    *
    * <code>optional int32 default_ttl = 100253422;</code>
@@ -245,7 +235,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the maxTtl field is set.
    */
   boolean hasMaxTtl();
-
   /**
    *
    *
@@ -271,7 +260,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the negativeCaching field is set.
    */
   boolean hasNegativeCaching();
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy>
       getNegativeCachingPolicyList();
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy getNegativeCachingPolicy(
       int index);
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * </code>
    */
   int getNegativeCachingPolicyCount();
-
   /**
    *
    *
@@ -341,7 +326,6 @@ public interface BackendBucketCdnPolicyOrBuilder
           ? extends
               com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicyOrBuilder>
       getNegativeCachingPolicyOrBuilderList();
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the requestCoalescing field is set.
    */
   boolean hasRequestCoalescing();
-
   /**
    *
    *
@@ -386,7 +369,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    *
    *
    * <pre>
-   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
    * </pre>
    *
    * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -394,12 +377,11 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the serveWhileStale field is set.
    */
   boolean hasServeWhileStale();
-
   /**
    *
    *
    * <pre>
-   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-maxage) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
+   * Serve existing content from the cache (if available) when revalidating content with the origin, or when an error is encountered when refreshing the cache. This setting defines the default "max-stale" duration for any cached responses that do not specify a max-stale directive. Stale responses that exceed the TTL configured here will not be served. The default limit (max-stale) is 86400s (1 day), which will allow stale content to be served up to this limit beyond the max-age (or s-max-age) of a cached response. The maximum allowed value is 604800 (1 week). Set this to zero (0) to disable serve-while-stale.
    * </pre>
    *
    * <code>optional int32 serve_while_stale = 236682203;</code>
@@ -420,7 +402,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the signedUrlCacheMaxAgeSec field is set.
    */
   boolean hasSignedUrlCacheMaxAgeSec();
-
   /**
    *
    *
@@ -446,7 +427,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return A list containing the signedUrlKeyNames.
    */
   java.util.List<java.lang.String> getSignedUrlKeyNamesList();
-
   /**
    *
    *
@@ -459,7 +439,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The count of signedUrlKeyNames.
    */
   int getSignedUrlKeyNamesCount();
-
   /**
    *
    *
@@ -473,7 +452,6 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The signedUrlKeyNames at the given index.
    */
   java.lang.String getSignedUrlKeyNames(int index);
-
   /**
    *
    *

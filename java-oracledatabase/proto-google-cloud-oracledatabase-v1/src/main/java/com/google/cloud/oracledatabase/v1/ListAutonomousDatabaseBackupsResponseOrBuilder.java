@@ -37,7 +37,6 @@ public interface ListAutonomousDatabaseBackupsResponseOrBuilder
    */
   java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup>
       getAutonomousDatabaseBackupsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListAutonomousDatabaseBackupsResponseOrBuilder
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup getAutonomousDatabaseBackups(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListAutonomousDatabaseBackupsResponseOrBuilder
    * </code>
    */
   int getAutonomousDatabaseBackupsCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListAutonomousDatabaseBackupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupOrBuilder>
       getAutonomousDatabaseBackupsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ListAutonomousDatabaseBackupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

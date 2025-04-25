@@ -36,7 +36,6 @@ public interface ObjectNameMappingOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ObjectNameMappingOrBuilder
    * @return The source.
    */
   com.google.cloud.bigquery.migration.v2.NameMappingKey getSource();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ObjectNameMappingOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ObjectNameMappingOrBuilder
    * @return The target.
    */
   com.google.cloud.bigquery.migration.v2.NameMappingValue getTarget();
-
   /**
    *
    *

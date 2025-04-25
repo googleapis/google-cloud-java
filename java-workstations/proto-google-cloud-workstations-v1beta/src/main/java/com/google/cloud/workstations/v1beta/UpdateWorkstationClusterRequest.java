@@ -33,7 +33,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest)
     UpdateWorkstationClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateWorkstationClusterRequest.newBuilder() to construct.
   private UpdateWorkstationClusterRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int WORKSTATION_CLUSTER_FIELD_NUMBER = 1;
   private com.google.cloud.workstations.v1beta.WorkstationCluster workstationCluster_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
   public boolean hasWorkstationCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
         ? com.google.cloud.workstations.v1beta.WorkstationCluster.getDefaultInstance()
         : workstationCluster_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -418,7 +409,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -678,7 +668,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
             com.google.cloud.workstations.v1beta.WorkstationCluster.Builder,
             com.google.cloud.workstations.v1beta.WorkstationClusterOrBuilder>
         workstationClusterBuilder_;
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     public boolean hasWorkstationCluster() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
         return workstationClusterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return getWorkstationClusterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
             : workstationCluster_;
       }
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -913,7 +893,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1035,7 +1010,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1026,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1073,7 +1046,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1075,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1120,7 +1091,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1141,7 +1111,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1131,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -1180,7 +1148,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -1202,7 +1169,6 @@ public final class UpdateWorkstationClusterRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

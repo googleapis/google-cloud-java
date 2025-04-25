@@ -39,7 +39,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.appengine.v1.Service)
     ServiceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Service.newBuilder() to construct.
   private Service(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPLIT_FIELD_NUMBER = 3;
   private com.google.appengine.v1.TrafficSplit split_;
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSplit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public com.google.appengine.v1.TrafficSplit getSplit() {
     return split_ == null ? com.google.appengine.v1.TrafficSplit.getDefaultInstance() : split_;
   }
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -306,14 +297,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -337,7 +326,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -368,7 +356,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -402,7 +389,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_SETTINGS_FIELD_NUMBER = 6;
   private com.google.appengine.v1.NetworkSettings networkSettings_;
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetworkSettings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -436,7 +421,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         ? com.google.appengine.v1.NetworkSettings.getDefaultInstance()
         : networkSettings_;
   }
-
   /**
    *
    *
@@ -664,7 +648,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -957,7 +940,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -983,7 +965,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1009,7 +990,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1014,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1034,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1061,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1109,7 +1086,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1111,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1135,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1155,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1187,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.TrafficSplit.Builder,
             com.google.appengine.v1.TrafficSplitOrBuilder>
         splitBuilder_;
-
     /**
      *
      *
@@ -1230,7 +1202,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSplit() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1250,7 +1221,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return splitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1274,7 +1244,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1264,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1292,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1327,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSplitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1379,7 +1344,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return split_ == null ? com.google.appengine.v1.TrafficSplit.getDefaultInstance() : split_;
       }
     }
-
     /**
      *
      *
@@ -1432,7 +1396,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1459,14 +1422,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1490,7 +1451,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1521,7 +1481,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1558,7 +1517,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1585,14 +1543,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1623,7 +1579,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1610,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             com.google.appengine.v1.NetworkSettings.Builder,
             com.google.appengine.v1.NetworkSettingsOrBuilder>
         networkSettingsBuilder_;
-
     /**
      *
      *
@@ -1670,7 +1624,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetworkSettings() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1691,7 +1644,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         return networkSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1666,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1686,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1763,7 +1713,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1732,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1746,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1817,7 +1764,6 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             : networkSettings_;
       }
     }
-
     /**
      *
      *

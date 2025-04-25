@@ -33,7 +33,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRule)
     SecurityPolicyRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyRule.newBuilder() to construct.
   private SecurityPolicyRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int HEADER_ACTION_FIELD_NUMBER = 328077352;
   private com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction headerAction_;
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasHeaderAction() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.getDefaultInstance()
         : headerAction_;
   }
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasKind() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -336,7 +323,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int MATCH_FIELD_NUMBER = 103668165;
   private com.google.cloud.compute.v1.SecurityPolicyRuleMatcher match_;
-
   /**
    *
    *
@@ -352,7 +338,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasMatch() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -370,7 +355,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.getDefaultInstance()
         : match_;
   }
-
   /**
    *
    *
@@ -389,7 +373,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int NETWORK_MATCH_FIELD_NUMBER = 463387764;
   private com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcher networkMatch_;
-
   /**
    *
    *
@@ -407,7 +390,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasNetworkMatch() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -427,7 +409,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcher.getDefaultInstance()
         : networkMatch_;
   }
-
   /**
    *
    *
@@ -450,7 +431,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public static final int PRECONFIGURED_WAF_CONFIG_FIELD_NUMBER = 117805027;
   private com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
       preconfiguredWafConfig_;
-
   /**
    *
    *
@@ -468,7 +448,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasPreconfiguredWafConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -489,7 +468,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.getDefaultInstance()
         : preconfiguredWafConfig_;
   }
-
   /**
    *
    *
@@ -511,7 +489,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int PREVIEW_FIELD_NUMBER = 218686408;
   private boolean preview_ = false;
-
   /**
    *
    *
@@ -527,7 +504,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasPreview() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -546,7 +522,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int PRIORITY_FIELD_NUMBER = 445151652;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -562,7 +537,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasPriority() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -581,7 +555,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int RATE_LIMIT_OPTIONS_FIELD_NUMBER = 67544315;
   private com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions rateLimitOptions_;
-
   /**
    *
    *
@@ -599,7 +572,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasRateLimitOptions() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -619,7 +591,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.getDefaultInstance()
         : rateLimitOptions_;
   }
-
   /**
    *
    *
@@ -641,7 +612,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
   public static final int REDIRECT_OPTIONS_FIELD_NUMBER = 163285307;
   private com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions redirectOptions_;
-
   /**
    *
    *
@@ -659,7 +629,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
   public boolean hasRedirectOptions() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -679,7 +648,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.getDefaultInstance()
         : redirectOptions_;
   }
-
   /**
    *
    *
@@ -1009,7 +977,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1387,7 +1354,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object action_ = "";
-
     /**
      *
      *
@@ -1402,7 +1368,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1425,7 +1390,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1448,7 +1412,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1470,7 +1433,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1450,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1474,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1528,7 +1488,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1551,7 +1510,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1574,7 +1532,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1596,7 +1553,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1570,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1599,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderAction.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleHttpHeaderActionOrBuilder>
         headerActionBuilder_;
-
     /**
      *
      *
@@ -1661,7 +1615,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasHeaderAction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1684,7 +1637,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return headerActionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1710,7 +1662,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1733,7 +1684,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1716,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1737,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1806,7 +1754,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getHeaderActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1828,7 +1775,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             : headerAction_;
       }
     }
-
     /**
      *
      *
@@ -1858,7 +1804,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1873,7 +1818,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasKind() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1896,7 +1840,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1919,7 +1862,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1941,7 +1883,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1959,7 +1900,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1989,7 +1929,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleMatcherOrBuilder>
         matchBuilder_;
-
     /**
      *
      *
@@ -2004,7 +1943,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasMatch() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2025,7 +1963,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return matchBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2048,7 +1985,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2069,7 +2005,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2098,7 +2033,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2118,7 +2052,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2066,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMatchFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2152,7 +2084,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             : match_;
       }
     }
-
     /**
      *
      *
@@ -2185,7 +2116,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcher.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherOrBuilder>
         networkMatchBuilder_;
-
     /**
      *
      *
@@ -2202,7 +2132,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasNetworkMatch() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2225,7 +2154,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return networkMatchBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2251,7 +2179,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2274,7 +2201,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2307,7 +2233,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2329,7 +2254,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2347,7 +2271,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNetworkMatchFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2369,7 +2292,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             : networkMatch_;
       }
     }
-
     /**
      *
      *
@@ -2405,7 +2327,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigOrBuilder>
         preconfiguredWafConfigBuilder_;
-
     /**
      *
      *
@@ -2422,7 +2343,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasPreconfiguredWafConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2447,7 +2367,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return preconfiguredWafConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2473,7 +2392,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2497,7 +2415,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2530,7 +2447,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2552,7 +2468,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2570,7 +2485,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getPreconfiguredWafConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2593,7 +2507,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             : preconfiguredWafConfig_;
       }
     }
-
     /**
      *
      *
@@ -2623,7 +2536,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean preview_;
-
     /**
      *
      *
@@ -2639,7 +2551,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasPreview() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2655,7 +2566,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean getPreview() {
       return preview_;
     }
-
     /**
      *
      *
@@ -2675,7 +2585,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2604,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
 
     private int priority_;
-
     /**
      *
      *
@@ -2711,7 +2619,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasPriority() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2727,7 +2634,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -2747,7 +2653,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2772,7 +2677,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptionsOrBuilder>
         rateLimitOptionsBuilder_;
-
     /**
      *
      *
@@ -2789,7 +2693,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasRateLimitOptions() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2812,7 +2715,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return rateLimitOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2838,7 +2740,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2861,7 +2762,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2894,7 +2794,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2916,7 +2815,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2934,7 +2832,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRateLimitOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2956,7 +2853,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             : rateLimitOptions_;
       }
     }
-
     /**
      *
      *
@@ -2991,7 +2887,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder,
             com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptionsOrBuilder>
         redirectOptionsBuilder_;
-
     /**
      *
      *
@@ -3008,7 +2903,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public boolean hasRedirectOptions() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3031,7 +2925,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         return redirectOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3057,7 +2950,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3080,7 +2972,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3113,7 +3004,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3135,7 +3025,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3153,7 +3042,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRedirectOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3175,7 +3063,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             : redirectOptions_;
       }
     }
-
     /**
      *
      *

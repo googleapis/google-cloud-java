@@ -34,7 +34,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.CreateCertificateTemplateRequest)
     CreateCertificateTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCertificateTemplateRequest.newBuilder() to construct.
   private CreateCertificateTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificateTemplateId_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
 
   public static final int CERTIFICATE_TEMPLATE_FIELD_NUMBER = 3;
   private com.google.cloud.security.privateca.v1.CertificateTemplate certificateTemplate_;
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
   public boolean hasCertificateTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         ? com.google.cloud.security.privateca.v1.CertificateTemplate.getDefaultInstance()
         : certificateTemplate_;
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -521,7 +511,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -780,7 +769,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -807,7 +795,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +821,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +846,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +867,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +895,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
     }
 
     private java.lang.Object certificateTemplateId_ = "";
-
     /**
      *
      *
@@ -935,7 +918,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -982,7 +963,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +981,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1011,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
             com.google.cloud.security.privateca.v1.CertificateTemplate.Builder,
             com.google.cloud.security.privateca.v1.CertificateTemplateOrBuilder>
         certificateTemplateBuilder_;
-
     /**
      *
      *
@@ -1051,7 +1029,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
     public boolean hasCertificateTemplate() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1076,7 +1053,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return certificateTemplateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1104,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1138,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1161,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1180,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return getCertificateTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1232,7 +1203,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
             : certificateTemplate_;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1234,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1299,7 +1268,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1302,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1368,7 +1335,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1364,6 @@ public final class CreateCertificateTemplateRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

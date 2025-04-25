@@ -36,7 +36,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceTemplateOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InstanceTemplateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface InstanceTemplateOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface InstanceTemplateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the properties field is set.
    */
   boolean hasProperties();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface InstanceTemplateOrBuilder
    * @return The properties.
    */
   com.google.cloud.compute.v1.InstanceProperties getProperties();
-
   /**
    *
    *
@@ -255,7 +244,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -268,7 +256,6 @@ public interface InstanceTemplateOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -307,7 +293,6 @@ public interface InstanceTemplateOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -333,7 +318,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the sourceInstance field is set.
    */
   boolean hasSourceInstance();
-
   /**
    *
    *
@@ -346,7 +330,6 @@ public interface InstanceTemplateOrBuilder
    * @return The sourceInstance.
    */
   java.lang.String getSourceInstance();
-
   /**
    *
    *
@@ -374,7 +357,6 @@ public interface InstanceTemplateOrBuilder
    * @return Whether the sourceInstanceParams field is set.
    */
   boolean hasSourceInstanceParams();
-
   /**
    *
    *
@@ -389,7 +371,6 @@ public interface InstanceTemplateOrBuilder
    * @return The sourceInstanceParams.
    */
   com.google.cloud.compute.v1.SourceInstanceParams getSourceInstanceParams();
-
   /**
    *
    *

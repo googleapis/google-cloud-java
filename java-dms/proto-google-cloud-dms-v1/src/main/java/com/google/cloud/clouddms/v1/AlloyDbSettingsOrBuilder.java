@@ -39,7 +39,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return Whether the initialUser field is set.
    */
   boolean hasInitialUser();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return The initialUser.
    */
   com.google.cloud.clouddms.v1.AlloyDbSettings.UserPassword getInitialUser();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface AlloyDbSettingsOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -127,11 +123,9 @@ public interface AlloyDbSettingsOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface AlloyDbSettingsOrBuilder
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface AlloyDbSettingsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return Whether the primaryInstanceSettings field is set.
    */
   boolean hasPrimaryInstanceSettings();
-
   /**
    * <code>
    * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -189,7 +180,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return The primaryInstanceSettings.
    */
   com.google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings getPrimaryInstanceSettings();
-
   /**
    * <code>
    * .google.cloud.clouddms.v1.AlloyDbSettings.PrimaryInstanceSettings primary_instance_settings = 4;
@@ -216,7 +206,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public interface AlloyDbSettingsOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.clouddms.v1.AlloyDbSettings.EncryptionConfig getEncryptionConfig();
-
   /**
    *
    *

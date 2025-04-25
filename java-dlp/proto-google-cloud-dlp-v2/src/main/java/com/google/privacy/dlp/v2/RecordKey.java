@@ -33,7 +33,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RecordKey)
     RecordKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RecordKey.newBuilder() to construct.
   private RecordKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATASTORE_KEY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDatastoreKey() {
     return typeCase_ == 2;
   }
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIG_QUERY_KEY_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigQueryKey() {
     return typeCase_ == 3;
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList idValues_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getIdValuesList() {
     return idValues_;
   }
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   public int getIdValuesCount() {
     return idValues_.size();
   }
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getIdValues(int index) {
     return idValues_.get(index);
   }
-
   /**
    *
    *
@@ -497,7 +485,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -753,7 +740,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DatastoreKey.Builder,
             com.google.privacy.dlp.v2.DatastoreKeyOrBuilder>
         datastoreKeyBuilder_;
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDatastoreKey() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -818,7 +802,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +878,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.DatastoreKey.Builder getDatastoreKeyBuilder() {
       return getDatastoreKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DatastoreKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.BigQueryKey.Builder,
             com.google.privacy.dlp.v2.BigQueryKeyOrBuilder>
         bigQueryKeyBuilder_;
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigQueryKey() {
       return typeCase_ == 3;
     }
-
     /**
      *
      *
@@ -1010,7 +986,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1027,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1111,7 +1083,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1095,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.BigQueryKey.Builder getBigQueryKeyBuilder() {
       return getBigQueryKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1145,7 +1115,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1203,7 +1171,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       idValues_.makeImmutable();
       return idValues_;
     }
-
     /**
      *
      *
@@ -1219,7 +1186,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public int getIdValuesCount() {
       return idValues_.size();
     }
-
     /**
      *
      *
@@ -1236,7 +1202,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getIdValues(int index) {
       return idValues_.get(index);
     }
-
     /**
      *
      *
@@ -1253,7 +1218,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getIdValuesBytes(int index) {
       return idValues_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1278,7 +1242,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1265,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1285,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1304,6 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

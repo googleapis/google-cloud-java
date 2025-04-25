@@ -36,7 +36,6 @@ public interface OwnerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface OwnerOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *

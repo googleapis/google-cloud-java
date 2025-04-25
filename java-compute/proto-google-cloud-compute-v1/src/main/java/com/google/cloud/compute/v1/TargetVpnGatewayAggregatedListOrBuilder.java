@@ -36,7 +36,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -88,12 +85,10 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetVpnGatewaysScopedList>
       getItems();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetVpnGatewaysScopedList>
       getItemsMap();
-
   /**
    *
    *
@@ -124,7 +118,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.TargetVpnGatewaysScopedList defaultValue);
-
   /**
    *
    *
@@ -150,7 +143,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -163,7 +155,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -202,7 +192,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -228,7 +217,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -241,7 +229,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -267,7 +254,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -280,7 +266,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -294,7 +279,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -321,7 +305,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -334,7 +317,6 @@ public interface TargetVpnGatewayAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

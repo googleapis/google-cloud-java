@@ -36,7 +36,6 @@ public interface NodeGroupMaintenanceWindowOrBuilder
    * @return Whether the maintenanceDuration field is set.
    */
   boolean hasMaintenanceDuration();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NodeGroupMaintenanceWindowOrBuilder
    * @return The maintenanceDuration.
    */
   com.google.cloud.compute.v1.Duration getMaintenanceDuration();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface NodeGroupMaintenanceWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface NodeGroupMaintenanceWindowOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *

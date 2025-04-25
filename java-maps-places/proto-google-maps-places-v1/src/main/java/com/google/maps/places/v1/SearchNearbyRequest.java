@@ -33,7 +33,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchNearbyRequest)
     SearchNearbyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchNearbyRequest.newBuilder() to construct.
   private SearchNearbyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -123,7 +122,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * <code>RANK_PREFERENCE_UNSPECIFIED = 0;</code>
      */
     public static final int RANK_PREFERENCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -134,7 +132,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * <code>DISTANCE = 1;</code>
      */
     public static final int DISTANCE_VALUE = 1;
-
     /**
      *
      *
@@ -246,7 +243,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the circle field is set.
      */
     boolean hasCircle();
-
     /**
      *
      *
@@ -259,7 +255,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
      * @return The circle.
      */
     com.google.maps.places.v1.Circle getCircle();
-
     /**
      *
      *
@@ -273,7 +268,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
     com.google.maps.places.v1.SearchNearbyRequest.LocationRestriction.TypeCase getTypeCase();
   }
-
   /**
    *
    *
@@ -288,7 +282,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.SearchNearbyRequest.LocationRestriction)
       LocationRestrictionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LocationRestriction.newBuilder() to construct.
     private LocationRestriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -333,7 +326,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       private TypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -365,7 +357,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CIRCLE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -381,7 +372,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public boolean hasCircle() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -400,7 +390,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       return com.google.maps.places.v1.Circle.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -595,7 +584,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -825,7 +813,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
               com.google.maps.places.v1.Circle.Builder,
               com.google.maps.places.v1.CircleOrBuilder>
           circleBuilder_;
-
       /**
        *
        *
@@ -841,7 +828,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       public boolean hasCircle() {
         return typeCase_ == 2;
       }
-
       /**
        *
        *
@@ -867,7 +853,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -890,7 +875,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -910,7 +894,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -942,7 +925,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -968,7 +950,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -981,7 +962,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       public com.google.maps.places.v1.Circle.Builder getCircleBuilder() {
         return getCircleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1002,7 +982,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1106,7 +1085,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -1136,7 +1114,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1171,7 +1148,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -1204,7 +1180,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1243,7 +1218,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1273,7 +1247,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getIncludedTypesList() {
     return includedTypes_;
   }
-
   /**
    *
    *
@@ -1303,7 +1276,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public int getIncludedTypesCount() {
     return includedTypes_.size();
   }
-
   /**
    *
    *
@@ -1334,7 +1306,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getIncludedTypes(int index) {
     return includedTypes_.get(index);
   }
-
   /**
    *
    *
@@ -1371,7 +1342,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludedTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1405,7 +1375,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getExcludedTypesList() {
     return excludedTypes_;
   }
-
   /**
    *
    *
@@ -1439,7 +1408,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public int getExcludedTypesCount() {
     return excludedTypes_.size();
   }
-
   /**
    *
    *
@@ -1474,7 +1442,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getExcludedTypes(int index) {
     return excludedTypes_.get(index);
   }
-
   /**
    *
    *
@@ -1515,7 +1482,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedPrimaryTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1547,7 +1513,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getIncludedPrimaryTypesList() {
     return includedPrimaryTypes_;
   }
-
   /**
    *
    *
@@ -1579,7 +1544,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public int getIncludedPrimaryTypesCount() {
     return includedPrimaryTypes_.size();
   }
-
   /**
    *
    *
@@ -1612,7 +1576,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getIncludedPrimaryTypes(int index) {
     return includedPrimaryTypes_.get(index);
   }
-
   /**
    *
    *
@@ -1651,7 +1614,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludedPrimaryTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1681,7 +1643,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getExcludedPrimaryTypesList() {
     return excludedPrimaryTypes_;
   }
-
   /**
    *
    *
@@ -1711,7 +1672,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public int getExcludedPrimaryTypesCount() {
     return excludedPrimaryTypes_.size();
   }
-
   /**
    *
    *
@@ -1742,7 +1702,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public java.lang.String getExcludedPrimaryTypes(int index) {
     return excludedPrimaryTypes_.get(index);
   }
-
   /**
    *
    *
@@ -1776,7 +1735,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
   public static final int MAX_RESULT_COUNT_FIELD_NUMBER = 7;
   private int maxResultCount_ = 0;
-
   /**
    *
    *
@@ -1798,7 +1756,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
   public static final int LOCATION_RESTRICTION_FIELD_NUMBER = 8;
   private com.google.maps.places.v1.SearchNearbyRequest.LocationRestriction locationRestriction_;
-
   /**
    *
    *
@@ -1816,7 +1773,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public boolean hasLocationRestriction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1837,7 +1793,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         ? com.google.maps.places.v1.SearchNearbyRequest.LocationRestriction.getDefaultInstance()
         : locationRestriction_;
   }
-
   /**
    *
    *
@@ -1859,7 +1814,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
   public static final int RANK_PREFERENCE_FIELD_NUMBER = 9;
   private int rankPreference_ = 0;
-
   /**
    *
    *
@@ -1875,7 +1829,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public int getRankPreferenceValue() {
     return rankPreference_;
   }
-
   /**
    *
    *
@@ -1898,7 +1851,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ROUTING_PARAMETERS_FIELD_NUMBER = 10;
   private com.google.maps.places.v1.RoutingParameters routingParameters_;
-
   /**
    *
    *
@@ -1916,7 +1868,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRoutingParameters() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1936,7 +1887,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         ? com.google.maps.places.v1.RoutingParameters.getDefaultInstance()
         : routingParameters_;
   }
-
   /**
    *
    *
@@ -2239,7 +2189,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2608,7 +2557,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -2637,7 +2585,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2666,7 +2613,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2694,7 +2640,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2718,7 +2663,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2749,7 +2693,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -2781,7 +2724,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2813,7 +2755,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2844,7 +2785,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2871,7 +2811,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2913,7 +2852,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2944,7 +2882,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       includedTypes_.makeImmutable();
       return includedTypes_;
     }
-
     /**
      *
      *
@@ -2974,7 +2911,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public int getIncludedTypesCount() {
       return includedTypes_.size();
     }
-
     /**
      *
      *
@@ -3005,7 +2941,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getIncludedTypes(int index) {
       return includedTypes_.get(index);
     }
-
     /**
      *
      *
@@ -3036,7 +2971,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getIncludedTypesBytes(int index) {
       return includedTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3075,7 +3009,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3113,7 +3046,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3148,7 +3080,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3182,7 +3113,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3231,7 +3161,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -3266,7 +3195,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       excludedTypes_.makeImmutable();
       return excludedTypes_;
     }
-
     /**
      *
      *
@@ -3300,7 +3228,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public int getExcludedTypesCount() {
       return excludedTypes_.size();
     }
-
     /**
      *
      *
@@ -3335,7 +3262,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getExcludedTypes(int index) {
       return excludedTypes_.get(index);
     }
-
     /**
      *
      *
@@ -3370,7 +3296,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getExcludedTypesBytes(int index) {
       return excludedTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3413,7 +3338,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3455,7 +3379,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3494,7 +3417,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3532,7 +3454,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3585,7 +3506,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -3618,7 +3538,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       includedPrimaryTypes_.makeImmutable();
       return includedPrimaryTypes_;
     }
-
     /**
      *
      *
@@ -3650,7 +3569,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public int getIncludedPrimaryTypesCount() {
       return includedPrimaryTypes_.size();
     }
-
     /**
      *
      *
@@ -3683,7 +3601,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getIncludedPrimaryTypes(int index) {
       return includedPrimaryTypes_.get(index);
     }
-
     /**
      *
      *
@@ -3716,7 +3633,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getIncludedPrimaryTypesBytes(int index) {
       return includedPrimaryTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3757,7 +3673,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3797,7 +3712,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3834,7 +3748,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3870,7 +3783,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3921,7 +3833,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -3952,7 +3863,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       excludedPrimaryTypes_.makeImmutable();
       return excludedPrimaryTypes_;
     }
-
     /**
      *
      *
@@ -3982,7 +3892,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public int getExcludedPrimaryTypesCount() {
       return excludedPrimaryTypes_.size();
     }
-
     /**
      *
      *
@@ -4013,7 +3922,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public java.lang.String getExcludedPrimaryTypes(int index) {
       return excludedPrimaryTypes_.get(index);
     }
-
     /**
      *
      *
@@ -4044,7 +3952,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getExcludedPrimaryTypesBytes(int index) {
       return excludedPrimaryTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4083,7 +3990,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4121,7 +4027,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4156,7 +4061,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4190,7 +4094,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4231,7 +4134,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int maxResultCount_;
-
     /**
      *
      *
@@ -4250,7 +4152,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public int getMaxResultCount() {
       return maxResultCount_;
     }
-
     /**
      *
      *
@@ -4273,7 +4174,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4301,7 +4201,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
             com.google.maps.places.v1.SearchNearbyRequest.LocationRestriction.Builder,
             com.google.maps.places.v1.SearchNearbyRequest.LocationRestrictionOrBuilder>
         locationRestrictionBuilder_;
-
     /**
      *
      *
@@ -4318,7 +4217,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public boolean hasLocationRestriction() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4342,7 +4240,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         return locationRestrictionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4368,7 +4265,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4391,7 +4287,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4424,7 +4319,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -4446,7 +4340,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4464,7 +4357,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLocationRestrictionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4486,7 +4378,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
             : locationRestriction_;
       }
     }
-
     /**
      *
      *
@@ -4516,7 +4407,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     }
 
     private int rankPreference_ = 0;
-
     /**
      *
      *
@@ -4532,7 +4422,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public int getRankPreferenceValue() {
       return rankPreference_;
     }
-
     /**
      *
      *
@@ -4551,7 +4440,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4571,7 +4459,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
           ? com.google.maps.places.v1.SearchNearbyRequest.RankPreference.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4594,7 +4481,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4619,7 +4505,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
             com.google.maps.places.v1.RoutingParameters.Builder,
             com.google.maps.places.v1.RoutingParametersOrBuilder>
         routingParametersBuilder_;
-
     /**
      *
      *
@@ -4636,7 +4521,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRoutingParameters() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4659,7 +4543,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
         return routingParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4684,7 +4567,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4707,7 +4589,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4738,7 +4619,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -4760,7 +4640,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4777,7 +4656,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRoutingParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4798,7 +4676,6 @@ public final class SearchNearbyRequest extends com.google.protobuf.GeneratedMess
             : routingParameters_;
       }
     }
-
     /**
      *
      *

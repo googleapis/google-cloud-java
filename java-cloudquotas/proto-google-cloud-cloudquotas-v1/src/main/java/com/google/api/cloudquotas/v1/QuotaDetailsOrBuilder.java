@@ -51,7 +51,6 @@ public interface QuotaDetailsOrBuilder
    * @return Whether the rolloutInfo field is set.
    */
   boolean hasRolloutInfo();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface QuotaDetailsOrBuilder
    * @return The rolloutInfo.
    */
   com.google.api.cloudquotas.v1.RolloutInfo getRolloutInfo();
-
   /**
    *
    *

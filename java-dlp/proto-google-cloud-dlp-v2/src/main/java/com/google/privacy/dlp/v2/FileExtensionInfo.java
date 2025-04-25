@@ -33,7 +33,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileExtensionInfo)
     FileExtensionInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileExtensionInfo.newBuilder() to construct.
   private FileExtensionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileExtension_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -276,7 +273,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -460,7 +456,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object fileExtension_ = "";
-
     /**
      *
      *
@@ -483,7 +478,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class FileExtensionInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface OnPremClusterOrBuilder
    * @return The resourceLink.
    */
   java.lang.String getResourceLink();
-
   /**
    *
    *
@@ -100,7 +99,6 @@ public interface OnPremClusterOrBuilder
    * @return The enum numeric value on the wire for clusterType.
    */
   int getClusterTypeValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddResourcePoliciesRegionDiskRequest)
     AddResourcePoliciesRegionDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddResourcePoliciesRegionDiskRequest.newBuilder() to construct.
   private AddResourcePoliciesRegionDiskRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class AddResourcePoliciesRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class AddResourcePoliciesRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class AddResourcePoliciesRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       284196750;
   private com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest
       regionDisksAddResourcePoliciesRequestResource_;
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class AddResourcePoliciesRegionDiskRequest
   public boolean hasRegionDisksAddResourcePoliciesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         ? com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.getDefaultInstance()
         : regionDisksAddResourcePoliciesRequestResource_;
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class AddResourcePoliciesRegionDiskRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class AddResourcePoliciesRegionDiskRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -579,7 +566,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -849,7 +835,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
-
     /**
      *
      *
@@ -872,7 +857,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -895,7 +879,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +941,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -985,7 +965,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1012,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1031,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1057,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1128,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1147,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1179,6 @@ public final class AddResourcePoliciesRegionDiskRequest
             com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequest.Builder,
             com.google.cloud.compute.v1.RegionDisksAddResourcePoliciesRequestOrBuilder>
         regionDisksAddResourcePoliciesRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1225,7 +1195,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     public boolean hasRegionDisksAddResourcePoliciesRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1218,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return regionDisksAddResourcePoliciesRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1243,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1265,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1297,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1318,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1335,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return getRegionDisksAddResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1393,7 +1356,6 @@ public final class AddResourcePoliciesRegionDiskRequest
             : regionDisksAddResourcePoliciesRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1425,7 +1387,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1440,7 +1401,6 @@ public final class AddResourcePoliciesRegionDiskRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1463,7 +1423,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1445,6 @@ public final class AddResourcePoliciesRegionDiskRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1508,7 +1466,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1526,7 +1483,6 @@ public final class AddResourcePoliciesRegionDiskRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

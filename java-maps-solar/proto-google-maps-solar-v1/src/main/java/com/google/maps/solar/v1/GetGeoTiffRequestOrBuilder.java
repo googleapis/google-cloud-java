@@ -36,7 +36,6 @@ public interface GetGeoTiffRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

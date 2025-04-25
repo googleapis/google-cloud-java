@@ -39,7 +39,6 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * @return Whether the annotationSpecSet field is set.
    */
   boolean hasAnnotationSpecSet();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CreateAnnotationSpecSetRequestOrBuilder
    * @return The annotationSpecSet.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSet();
-
   /**
    *
    *

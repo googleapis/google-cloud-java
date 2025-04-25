@@ -39,7 +39,6 @@ public interface PullRequestFilterOrBuilder
    * @return Whether the branch field is set.
    */
   boolean hasBranch();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface PullRequestFilterOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface PullRequestFilterOrBuilder
    * @return The enum numeric value on the wire for commentControl.
    */
   int getCommentControlValue();
-
   /**
    *
    *

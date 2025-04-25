@@ -38,7 +38,6 @@ public interface SummarizationHelpfulnessInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SummarizationHelpfulnessInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1beta1.SummarizationHelpfulnessSpec getMetricSpec();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SummarizationHelpfulnessInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface SummarizationHelpfulnessInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1beta1.SummarizationHelpfulnessInstance getInstance();
-
   /**
    *
    *

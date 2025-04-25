@@ -33,7 +33,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertTargetPoolRequest)
     InsertTargetPoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertTargetPoolRequest.newBuilder() to construct.
   private InsertTargetPoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
   public static final int TARGET_POOL_RESOURCE_FIELD_NUMBER = 101281443;
   private com.google.cloud.compute.v1.TargetPool targetPoolResource_;
-
   /**
    *
    *
@@ -270,7 +261,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
   public boolean hasTargetPoolResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.TargetPool.getDefaultInstance()
         : targetPoolResource_;
   }
-
   /**
    *
    *
@@ -507,7 +496,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -756,7 +744,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -781,7 +768,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -806,7 +792,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -902,7 +884,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +908,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -951,7 +931,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +950,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1013,7 +990,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1036,7 +1012,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1034,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1055,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.TargetPool.Builder,
             com.google.cloud.compute.v1.TargetPoolOrBuilder>
         targetPoolResourceBuilder_;
-
     /**
      *
      *
@@ -1146,7 +1117,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     public boolean hasTargetPoolResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1169,7 +1139,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return targetPoolResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1163,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1185,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1214,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1235,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1251,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       onChanged();
       return getTargetPoolResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1307,7 +1271,6 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
             : targetPoolResource_;
       }
     }
-
     /**
      *
      *

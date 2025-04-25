@@ -33,7 +33,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1.ListRegistrationsResponse)
     ListRegistrationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRegistrationsResponse.newBuilder() to construct.
   private ListRegistrationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.domains.v1.Registration> registrations_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.domains.v1.Registration> getRegistrationsList() {
     return registrations_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       getRegistrationsOrBuilderList() {
     return registrations_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
   public int getRegistrationsCount() {
     return registrations_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
   public com.google.cloud.domains.v1.Registration getRegistrations(int index) {
     return registrations_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return registrationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return registrationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return registrationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
     public com.google.cloud.domains.v1.Registration.Builder getRegistrationsBuilder(int index) {
       return getRegistrationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return registrationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(registrations_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       return getRegistrationsFieldBuilder()
           .addBuilder(com.google.cloud.domains.v1.Registration.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       return getRegistrationsFieldBuilder()
           .addBuilder(index, com.google.cloud.domains.v1.Registration.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1026,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1044,6 @@ public final class ListRegistrationsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

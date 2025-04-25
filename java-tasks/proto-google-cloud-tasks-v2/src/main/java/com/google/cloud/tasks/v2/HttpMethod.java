@@ -122,7 +122,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HTTP_METHOD_UNSPECIFIED = 0;</code>
    */
   public static final int HTTP_METHOD_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -133,7 +132,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POST = 1;</code>
    */
   public static final int POST_VALUE = 1;
-
   /**
    *
    *
@@ -144,7 +142,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GET = 2;</code>
    */
   public static final int GET_VALUE = 2;
-
   /**
    *
    *
@@ -155,7 +152,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>HEAD = 3;</code>
    */
   public static final int HEAD_VALUE = 3;
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PUT = 4;</code>
    */
   public static final int PUT_VALUE = 4;
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETE = 5;</code>
    */
   public static final int DELETE_VALUE = 5;
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PATCH = 6;</code>
    */
   public static final int PATCH_VALUE = 6;
-
   /**
    *
    *

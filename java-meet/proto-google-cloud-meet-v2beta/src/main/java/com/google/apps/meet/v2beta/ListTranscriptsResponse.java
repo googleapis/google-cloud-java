@@ -33,7 +33,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.ListTranscriptsResponse)
     ListTranscriptsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTranscriptsResponse.newBuilder() to construct.
   private ListTranscriptsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.meet.v2beta.Transcript> transcripts_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.apps.meet.v2beta.Transcript> getTranscriptsList() {
     return transcripts_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       getTranscriptsOrBuilderList() {
     return transcripts_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
   public int getTranscriptsCount() {
     return transcripts_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
   public com.google.apps.meet.v2beta.Transcript getTranscripts(int index) {
     return transcripts_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return transcriptsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return transcriptsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -678,7 +667,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return transcriptsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +850,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +862,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
     public com.google.apps.meet.v2beta.Transcript.Builder getTranscriptsBuilder(int index) {
       return getTranscriptsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return transcriptsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(transcripts_);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       return getTranscriptsFieldBuilder()
           .addBuilder(com.google.apps.meet.v2beta.Transcript.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       return getTranscriptsFieldBuilder()
           .addBuilder(index, com.google.apps.meet.v2beta.Transcript.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1003,7 +976,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +999,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1039,6 @@ public final class ListTranscriptsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface BusinessGlossaryEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BusinessGlossaryEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BusinessGlossaryEventOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *

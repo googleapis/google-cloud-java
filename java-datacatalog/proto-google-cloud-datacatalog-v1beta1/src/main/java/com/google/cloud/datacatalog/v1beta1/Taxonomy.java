@@ -37,7 +37,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.Taxonomy)
     TaxonomyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Taxonomy.newBuilder() to construct.
   private Taxonomy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,7 +114,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>POLICY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int POLICY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -226,7 +224,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for name.
      */
     int getNameValue();
-
     /**
      *
      *
@@ -252,7 +249,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      * @return The identity.
      */
     java.lang.String getIdentity();
-
     /**
      *
      *
@@ -266,7 +262,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getIdentityBytes();
   }
-
   /**
    *
    *
@@ -281,7 +276,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.Taxonomy.Service)
       ServiceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Service.newBuilder() to construct.
     private Service(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -315,7 +309,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NAME_FIELD_NUMBER = 1;
     private int name_ = 0;
-
     /**
      *
      *
@@ -331,7 +324,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public int getNameValue() {
       return name_;
     }
-
     /**
      *
      *
@@ -356,7 +348,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object identity_ = "";
-
     /**
      *
      *
@@ -380,7 +371,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -579,7 +569,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -780,7 +769,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int name_ = 0;
-
       /**
        *
        *
@@ -796,7 +784,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       public int getNameValue() {
         return name_;
       }
-
       /**
        *
        *
@@ -815,7 +802,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -835,7 +821,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.datacatalog.v1beta1.ManagingSystem.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -857,7 +842,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -877,7 +861,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object identity_ = "";
-
       /**
        *
        *
@@ -900,7 +883,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -923,7 +905,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -945,7 +926,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -963,7 +943,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1056,7 +1035,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1081,7 +1059,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1111,7 +1088,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1139,7 +1115,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1172,7 +1147,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1199,7 +1173,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1229,7 +1202,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POLICY_TAG_COUNT_FIELD_NUMBER = 4;
   private int policyTagCount_ = 0;
-
   /**
    *
    *
@@ -1248,7 +1220,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TAXONOMY_TIMESTAMPS_FIELD_NUMBER = 5;
   private com.google.cloud.datacatalog.v1beta1.SystemTimestamps taxonomyTimestamps_;
-
   /**
    *
    *
@@ -1267,7 +1238,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaxonomyTimestamps() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1288,7 +1258,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.v1beta1.SystemTimestamps.getDefaultInstance()
         : taxonomyTimestamps_;
   }
-
   /**
    *
    *
@@ -1328,7 +1297,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -1350,7 +1318,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>(
         activatedPolicyTypes_, activatedPolicyTypes_converter_);
   }
-
   /**
    *
    *
@@ -1369,7 +1336,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   public int getActivatedPolicyTypesCount() {
     return activatedPolicyTypes_.size();
   }
-
   /**
    *
    *
@@ -1390,7 +1356,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
   }
-
   /**
    *
    *
@@ -1409,7 +1374,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
     return activatedPolicyTypes_;
   }
-
   /**
    *
    *
@@ -1434,7 +1398,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_FIELD_NUMBER = 7;
   private com.google.cloud.datacatalog.v1beta1.Taxonomy.Service service_;
-
   /**
    *
    *
@@ -1454,7 +1417,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasService() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1476,7 +1438,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.getDefaultInstance()
         : service_;
   }
-
   /**
    *
    *
@@ -1738,7 +1699,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2061,7 +2021,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2085,7 +2044,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2109,7 +2067,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2132,7 +2089,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2151,7 +2107,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2177,7 +2132,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2204,7 +2158,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2231,7 +2184,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2257,7 +2209,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2279,7 +2230,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2308,7 +2258,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2334,7 +2283,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2360,7 +2308,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2385,7 +2332,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2352,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2434,7 +2379,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int policyTagCount_;
-
     /**
      *
      *
@@ -2450,7 +2394,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public int getPolicyTagCount() {
       return policyTagCount_;
     }
-
     /**
      *
      *
@@ -2470,7 +2413,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2495,7 +2437,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1beta1.SystemTimestamps.Builder,
             com.google.cloud.datacatalog.v1beta1.SystemTimestampsOrBuilder>
         taxonomyTimestampsBuilder_;
-
     /**
      *
      *
@@ -2513,7 +2454,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaxonomyTimestamps() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2537,7 +2477,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return taxonomyTimestampsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2564,7 +2503,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2588,7 +2526,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2621,7 +2558,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2644,7 +2580,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2663,7 +2598,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaxonomyTimestampsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2686,7 +2620,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
             : taxonomyTimestamps_;
       }
     }
-
     /**
      *
      *
@@ -2725,7 +2658,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
       }
     }
-
     /**
      *
      *
@@ -2746,7 +2678,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>(
           activatedPolicyTypes_, activatedPolicyTypes_converter_);
     }
-
     /**
      *
      *
@@ -2764,7 +2695,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public int getActivatedPolicyTypesCount() {
       return activatedPolicyTypes_.size();
     }
-
     /**
      *
      *
@@ -2784,7 +2714,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
     }
-
     /**
      *
      *
@@ -2811,7 +2740,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2837,7 +2765,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2863,7 +2790,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2884,7 +2810,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2902,7 +2827,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
       return java.util.Collections.unmodifiableList(activatedPolicyTypes_);
     }
-
     /**
      *
      *
@@ -2921,7 +2845,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public int getActivatedPolicyTypesValue(int index) {
       return activatedPolicyTypes_.get(index);
     }
-
     /**
      *
      *
@@ -2944,7 +2867,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2966,7 +2888,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2997,7 +2918,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1beta1.Taxonomy.Service.Builder,
             com.google.cloud.datacatalog.v1beta1.Taxonomy.ServiceOrBuilder>
         serviceBuilder_;
-
     /**
      *
      *
@@ -3016,7 +2936,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasService() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3041,7 +2960,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
         return serviceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3068,7 +2986,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3093,7 +3010,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3126,7 +3042,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3150,7 +3065,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3169,7 +3083,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3192,7 +3105,6 @@ public final class Taxonomy extends com.google.protobuf.GeneratedMessageV3
             : service_;
       }
     }
-
     /**
      *
      *

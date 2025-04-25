@@ -24,8 +24,7 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  * <pre>
  * A secret payload resource in the Secret Manager API. This contains the
- * sensitive secret data that is associated with a
- * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+ * sensitive secret data that is associated with a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.SecretPayload}
@@ -35,7 +34,6 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.SecretPayload)
     SecretPayloadOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecretPayload.newBuilder() to construct.
   private SecretPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +66,6 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -244,14 +241,12 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
    * A secret payload resource in the Secret Manager API. This contains the
-   * sensitive secret data that is associated with a
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * sensitive secret data that is associated with a [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.SecretPayload}
@@ -429,7 +424,6 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -445,7 +439,6 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
-
     /**
      *
      *
@@ -467,7 +460,6 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

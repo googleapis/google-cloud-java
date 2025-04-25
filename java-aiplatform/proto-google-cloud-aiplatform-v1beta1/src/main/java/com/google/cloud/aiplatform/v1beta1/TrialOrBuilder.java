@@ -36,7 +36,6 @@ public interface TrialOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TrialOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface TrialOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface TrialOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Trial.Parameter> getParametersList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface TrialOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Trial.Parameter getParameters(int index);
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface TrialOrBuilder
    * </code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface TrialOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.Trial.ParameterOrBuilder>
       getParametersOrBuilderList();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface TrialOrBuilder
    * @return Whether the finalMeasurement field is set.
    */
   boolean hasFinalMeasurement();
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public interface TrialOrBuilder
    * @return The finalMeasurement.
    */
   com.google.cloud.aiplatform.v1beta1.Measurement getFinalMeasurement();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface TrialOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Measurement> getMeasurementsList();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface TrialOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Measurement getMeasurements(int index);
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public interface TrialOrBuilder
    * </code>
    */
   int getMeasurementsCount();
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public interface TrialOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MeasurementOrBuilder>
       getMeasurementsOrBuilderList();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface TrialOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -318,7 +304,6 @@ public interface TrialOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface TrialOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -360,7 +344,6 @@ public interface TrialOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -393,7 +376,6 @@ public interface TrialOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
-
   /**
    *
    *
@@ -427,7 +409,6 @@ public interface TrialOrBuilder
    * @return The infeasibleReason.
    */
   java.lang.String getInfeasibleReason();
-
   /**
    *
    *
@@ -457,7 +438,6 @@ public interface TrialOrBuilder
    * @return The customJob.
    */
   java.lang.String getCustomJob();
-
   /**
    *
    *
@@ -500,7 +480,6 @@ public interface TrialOrBuilder
    * </code>
    */
   int getWebAccessUrisCount();
-
   /**
    *
    *
@@ -527,11 +506,9 @@ public interface TrialOrBuilder
    * </code>
    */
   boolean containsWebAccessUris(java.lang.String key);
-
   /** Use {@link #getWebAccessUrisMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getWebAccessUris();
-
   /**
    *
    *
@@ -558,7 +535,6 @@ public interface TrialOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getWebAccessUrisMap();
-
   /**
    *
    *
@@ -589,7 +565,6 @@ public interface TrialOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

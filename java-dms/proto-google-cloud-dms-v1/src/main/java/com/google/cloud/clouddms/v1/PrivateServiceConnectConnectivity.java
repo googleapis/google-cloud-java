@@ -34,7 +34,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.PrivateServiceConnectConnectivity)
     PrivateServiceConnectConnectivityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrivateServiceConnectConnectivity.newBuilder() to construct.
   private PrivateServiceConnectConnectivity(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAttachment_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +280,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -472,7 +468,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object serviceAttachment_ = "";
-
     /**
      *
      *
@@ -497,7 +492,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -566,7 +558,6 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

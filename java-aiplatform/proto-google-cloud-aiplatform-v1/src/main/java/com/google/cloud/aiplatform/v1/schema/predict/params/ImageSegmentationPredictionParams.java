@@ -34,7 +34,6 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.predict.params.ImageSegmentationPredictionParams)
     ImageSegmentationPredictionParamsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageSegmentationPredictionParams.newBuilder() to construct.
   private ImageSegmentationPredictionParams(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
 
   public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
   private float confidenceThreshold_ = 0F;
-
   /**
    *
    *
@@ -273,7 +271,6 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -480,7 +477,6 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
     private int bitField0_;
 
     private float confidenceThreshold_;
-
     /**
      *
      *
@@ -499,7 +495,6 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
     public float getConfidenceThreshold() {
       return confidenceThreshold_;
     }
-
     /**
      *
      *
@@ -522,7 +517,6 @@ public final class ImageSegmentationPredictionParams extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

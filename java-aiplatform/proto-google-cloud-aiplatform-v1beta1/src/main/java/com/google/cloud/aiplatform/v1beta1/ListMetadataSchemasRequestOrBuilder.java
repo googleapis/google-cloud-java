@@ -40,7 +40,6 @@ public interface ListMetadataSchemasRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ListMetadataSchemasRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface ListMetadataSchemasRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

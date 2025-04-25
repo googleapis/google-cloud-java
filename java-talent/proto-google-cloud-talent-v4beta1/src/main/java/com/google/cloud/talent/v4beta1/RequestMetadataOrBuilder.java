@@ -52,7 +52,6 @@ public interface RequestMetadataOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
-
   /**
    *
    *
@@ -107,7 +106,6 @@ public interface RequestMetadataOrBuilder
    * @return The sessionId.
    */
   java.lang.String getSessionId();
-
   /**
    *
    *
@@ -159,7 +157,6 @@ public interface RequestMetadataOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
-
   /**
    *
    *
@@ -221,7 +218,6 @@ public interface RequestMetadataOrBuilder
    * @return Whether the deviceInfo field is set.
    */
   boolean hasDeviceInfo();
-
   /**
    *
    *
@@ -235,7 +231,6 @@ public interface RequestMetadataOrBuilder
    * @return The deviceInfo.
    */
   com.google.cloud.talent.v4beta1.DeviceInfo getDeviceInfo();
-
   /**
    *
    *

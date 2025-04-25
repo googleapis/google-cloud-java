@@ -38,7 +38,6 @@ public interface SecretOrBuilder
    * @return The keyName.
    */
   java.lang.String getKeyName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface SecretOrBuilder
    * @return The cipherText.
    */
   java.lang.String getCipherText();
-
   /**
    *
    *

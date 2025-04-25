@@ -38,7 +38,6 @@ public interface RegionalInventoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface RegionalInventoryOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface RegionalInventoryOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface RegionalInventoryOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface RegionalInventoryOrBuilder
    * @return Whether the salePrice field is set.
    */
   boolean hasSalePrice();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface RegionalInventoryOrBuilder
    * @return The salePrice.
    */
   com.google.shopping.type.Price getSalePrice();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface RegionalInventoryOrBuilder
    * @return Whether the salePriceEffectiveDate field is set.
    */
   boolean hasSalePriceEffectiveDate();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface RegionalInventoryOrBuilder
    * @return The salePriceEffectiveDate.
    */
   com.google.type.Interval getSalePriceEffectiveDate();
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public interface RegionalInventoryOrBuilder
    * @return Whether the availability field is set.
    */
   boolean hasAvailability();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface RegionalInventoryOrBuilder
    * @return The availability.
    */
   java.lang.String getAvailability();
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public interface RegionalInventoryOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 8;</code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public interface RegionalInventoryOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 8;</code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
-
   /**
    *
    *
@@ -307,7 +295,6 @@ public interface RegionalInventoryOrBuilder
    * <code>repeated .google.shopping.type.CustomAttribute custom_attributes = 8;</code>
    */
   int getCustomAttributesCount();
-
   /**
    *
    *
@@ -321,7 +308,6 @@ public interface RegionalInventoryOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
-
   /**
    *
    *

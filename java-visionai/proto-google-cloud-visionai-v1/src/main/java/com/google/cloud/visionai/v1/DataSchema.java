@@ -34,7 +34,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.DataSchema)
     DataSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSchema.newBuilder() to construct.
   private DataSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEMA_DETAILS_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.DataSchemaDetails schemaDetails_;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSchemaDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.DataSchemaDetails.getDefaultInstance()
         : schemaDetails_;
   }
-
   /**
    *
    *
@@ -417,7 +409,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -697,7 +686,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.DataSchemaDetails.Builder,
             com.google.cloud.visionai.v1.DataSchemaDetailsOrBuilder>
         schemaDetailsBuilder_;
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchemaDetails() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
         return schemaDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +984,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1003,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1017,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSchemaDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1062,7 +1035,6 @@ public final class DataSchema extends com.google.protobuf.GeneratedMessageV3
             : schemaDetails_;
       }
     }
-
     /**
      *
      *

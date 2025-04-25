@@ -34,7 +34,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.container.v1.AutopilotCompatibilityIssue)
     AutopilotCompatibilityIssueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutopilotCompatibilityIssue.newBuilder() to construct.
   private AutopilotCompatibilityIssue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
      * <code>INCOMPATIBILITY = 1;</code>
      */
     public static final int INCOMPATIBILITY_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
      * <code>ADDITIONAL_CONFIG_REQUIRED = 2;</code>
      */
     public static final int ADDITIONAL_CONFIG_REQUIRED_VALUE = 2;
-
     /**
      *
      *
@@ -264,7 +260,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int LAST_OBSERVATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp lastObservation_;
-
   /**
    *
    *
@@ -280,7 +275,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   public boolean hasLastObservation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -298,7 +292,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastObservation_;
   }
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object constraintType_ = "";
-
   /**
    *
    *
@@ -343,7 +335,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +361,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
 
   public static final int INCOMPATIBILITY_TYPE_FIELD_NUMBER = 3;
   private int incompatibilityType_ = 0;
-
   /**
    *
    *
@@ -387,7 +377,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   public int getIncompatibilityTypeValue() {
     return incompatibilityType_;
   }
-
   /**
    *
    *
@@ -415,7 +404,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subjects_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -430,7 +418,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getSubjectsList() {
     return subjects_;
   }
-
   /**
    *
    *
@@ -445,7 +432,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   public int getSubjectsCount() {
     return subjects_.size();
   }
-
   /**
    *
    *
@@ -461,7 +447,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
   public java.lang.String getSubjects(int index) {
     return subjects_.get(index);
   }
-
   /**
    *
    *
@@ -482,7 +467,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentationUrl_ = "";
-
   /**
    *
    *
@@ -506,7 +490,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -535,7 +518,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -559,7 +541,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -802,7 +783,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1088,7 +1068,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastObservationBuilder_;
-
     /**
      *
      *
@@ -1103,7 +1082,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     public boolean hasLastObservation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1124,7 +1102,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return lastObservationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1124,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1170,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1189,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1203,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return getLastObservationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1249,7 +1221,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
             : lastObservation_;
       }
     }
-
     /**
      *
      *
@@ -1277,7 +1248,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     }
 
     private java.lang.Object constraintType_ = "";
-
     /**
      *
      *
@@ -1300,7 +1270,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1323,7 +1292,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1313,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1363,7 +1330,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1354,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     }
 
     private int incompatibilityType_ = 0;
-
     /**
      *
      *
@@ -1405,7 +1370,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     public int getIncompatibilityTypeValue() {
       return incompatibilityType_;
     }
-
     /**
      *
      *
@@ -1425,7 +1389,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1410,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
           ? com.google.container.v1.AutopilotCompatibilityIssue.IssueType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1471,7 +1433,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1461,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1516,7 +1476,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       subjects_.makeImmutable();
       return subjects_;
     }
-
     /**
      *
      *
@@ -1531,7 +1490,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     public int getSubjectsCount() {
       return subjects_.size();
     }
-
     /**
      *
      *
@@ -1547,7 +1505,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     public java.lang.String getSubjects(int index) {
       return subjects_.get(index);
     }
-
     /**
      *
      *
@@ -1563,7 +1520,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getSubjectsBytes(int index) {
       return subjects_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1587,7 +1543,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1610,7 +1565,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1630,7 +1584,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1602,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1627,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     }
 
     private java.lang.Object documentationUrl_ = "";
-
     /**
      *
      *
@@ -1698,7 +1649,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1721,7 +1671,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1692,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1709,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1786,7 +1733,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1809,7 +1755,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1832,7 +1777,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1854,7 +1798,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1872,7 +1815,6 @@ public final class AutopilotCompatibilityIssue extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

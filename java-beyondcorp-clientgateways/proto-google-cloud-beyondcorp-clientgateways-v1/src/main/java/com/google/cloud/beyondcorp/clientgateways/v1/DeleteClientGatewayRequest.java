@@ -33,7 +33,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientgateways.v1.DeleteClientGatewayRequest)
     DeleteClientGatewayRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteClientGatewayRequest.newBuilder() to construct.
   private DeleteClientGatewayRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -399,7 +393,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -622,7 +615,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -647,7 +639,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -672,7 +663,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -696,7 +686,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +731,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -847,7 +832,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -931,7 +913,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -952,7 +933,6 @@ public final class DeleteClientGatewayRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

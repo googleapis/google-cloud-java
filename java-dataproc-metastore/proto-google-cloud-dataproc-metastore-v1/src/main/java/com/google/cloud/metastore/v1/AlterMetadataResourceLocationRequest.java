@@ -35,7 +35,6 @@ public final class AlterMetadataResourceLocationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.AlterMetadataResourceLocationRequest)
     AlterMetadataResourceLocationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AlterMetadataResourceLocationRequest.newBuilder() to construct.
   private AlterMetadataResourceLocationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class AlterMetadataResourceLocationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class AlterMetadataResourceLocationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class AlterMetadataResourceLocationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceName_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class AlterMetadataResourceLocationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public final class AlterMetadataResourceLocationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationUri_ = "";
-
   /**
    *
    *
@@ -225,7 +219,6 @@ public final class AlterMetadataResourceLocationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -429,7 +422,6 @@ public final class AlterMetadataResourceLocationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +644,6 @@ public final class AlterMetadataResourceLocationRequest
     private int bitField0_;
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -680,7 +671,6 @@ public final class AlterMetadataResourceLocationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +698,6 @@ public final class AlterMetadataResourceLocationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -735,7 +724,6 @@ public final class AlterMetadataResourceLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class AlterMetadataResourceLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class AlterMetadataResourceLocationRequest
     }
 
     private java.lang.Object resourceName_ = "";
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class AlterMetadataResourceLocationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -846,7 +831,6 @@ public final class AlterMetadataResourceLocationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +858,6 @@ public final class AlterMetadataResourceLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class AlterMetadataResourceLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class AlterMetadataResourceLocationRequest
     }
 
     private java.lang.Object locationUri_ = "";
-
     /**
      *
      *
@@ -952,7 +933,6 @@ public final class AlterMetadataResourceLocationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class AlterMetadataResourceLocationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class AlterMetadataResourceLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +993,6 @@ public final class AlterMetadataResourceLocationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

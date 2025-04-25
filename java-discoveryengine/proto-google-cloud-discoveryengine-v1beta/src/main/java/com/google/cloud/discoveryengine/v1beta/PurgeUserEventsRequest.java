@@ -33,7 +33,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.PurgeUserEventsRequest)
     PurgeUserEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PurgeUserEventsRequest.newBuilder() to construct.
   private PurgeUserEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -178,7 +174,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -229,7 +224,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
 
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -429,7 +423,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +638,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -672,7 +664,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -699,7 +690,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +715,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +736,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +764,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -823,7 +810,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -870,7 +856,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +901,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +942,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +990,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -1028,7 +1010,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -1053,7 +1034,6 @@ public final class PurgeUserEventsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

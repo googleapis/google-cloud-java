@@ -35,7 +35,6 @@ public final class BatchCalculateEffectiveSettingsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsRequest)
     BatchCalculateEffectiveSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchCalculateEffectiveSettingsRequest.newBuilder() to construct.
   private BatchCalculateEffectiveSettingsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class BatchCalculateEffectiveSettingsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class BatchCalculateEffectiveSettingsRequest
   private java.util.List<
           com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest>
       requests_;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       getRequestsList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       getRequestsOrBuilderList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class BatchCalculateEffectiveSettingsRequest
   public int getRequestsCount() {
     return requests_.size();
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       getRequests(int index) {
     return requests_.get(index);
   }
-
   /**
    *
    *
@@ -426,7 +418,6 @@ public final class BatchCalculateEffectiveSettingsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +689,6 @@ public final class BatchCalculateEffectiveSettingsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -726,7 +716,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -754,7 +743,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +769,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +791,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +862,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return requestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -896,7 +881,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return requestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -917,7 +901,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return requestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -945,7 +928,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +953,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +979,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1006,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1030,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1055,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1082,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1104,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1126,6 @@ public final class BatchCalculateEffectiveSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1143,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1191,7 +1164,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1187,6 @@ public final class BatchCalculateEffectiveSettingsRequest
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1207,6 @@ public final class BatchCalculateEffectiveSettingsRequest
               com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1258,7 +1228,6 @@ public final class BatchCalculateEffectiveSettingsRequest
               com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest
                   .getDefaultInstance());
     }
-
     /**
      *
      *

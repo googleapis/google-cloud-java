@@ -33,7 +33,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportRegisteredPartiesRequest)
     ExportRegisteredPartiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportRegisteredPartiesRequest.newBuilder() to construct.
   private ExportRegisteredPartiesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,13 +70,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>
@@ -98,13 +96,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>
@@ -128,7 +125,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
 
   public static final int DATASET_FIELD_NUMBER = 2;
   private com.google.cloud.financialservices.v1.BigQueryDestination dataset_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
   public boolean hasDataset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
         ? com.google.cloud.financialservices.v1.BigQueryDestination.getDefaultInstance()
         : dataset_;
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
 
   public static final int LINE_OF_BUSINESS_FIELD_NUMBER = 3;
   private int lineOfBusiness_ = 0;
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
   public int getLineOfBusinessValue() {
     return lineOfBusiness_;
   }
-
   /**
    *
    *
@@ -416,7 +408,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,13 +641,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: `projects/{project}/locations/{location}/instances/{instance}`
+     * format: "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>
@@ -676,13 +666,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: `projects/{project}/locations/{location}/instances/{instance}`
+     * format: "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>
@@ -702,13 +691,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: `projects/{project}/locations/{location}/instances/{instance}`
+     * format: "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>
@@ -727,13 +715,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: `projects/{project}/locations/{location}/instances/{instance}`
+     * format: "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>
@@ -748,13 +735,12 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: `projects/{project}/locations/{location}/instances/{instance}`
+     * format: "projects/{project}/locations/{location}/instances/{instance}"
      * </pre>
      *
      * <code>
@@ -781,7 +767,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
             com.google.cloud.financialservices.v1.BigQueryDestination.Builder,
             com.google.cloud.financialservices.v1.BigQueryDestinationOrBuilder>
         datasetBuilder_;
-
     /**
      *
      *
@@ -798,7 +783,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
     public boolean hasDataset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
         return datasetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return getDatasetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
             : dataset_;
       }
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
     }
 
     private int lineOfBusiness_ = 0;
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
     public int getLineOfBusinessValue() {
       return lineOfBusiness_;
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1026,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
           ? com.google.cloud.financialservices.v1.LineOfBusiness.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1076,7 +1049,6 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

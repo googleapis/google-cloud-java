@@ -34,7 +34,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceGroupConfig)
     InstanceGroupConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupConfig.newBuilder() to construct.
   private InstanceGroupConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,7 +150,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <code>PREEMPTIBILITY_UNSPECIFIED = 0;</code>
      */
     public static final int PREEMPTIBILITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -165,7 +163,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <code>NON_PREEMPTIBLE = 1;</code>
      */
     public static final int NON_PREEMPTIBLE_VALUE = 1;
-
     /**
      *
      *
@@ -181,7 +178,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <code>PREEMPTIBLE = 2;</code>
      */
     public static final int PREEMPTIBLE_VALUE = 2;
-
     /**
      *
      *
@@ -288,7 +284,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int NUM_INSTANCES_FIELD_NUMBER = 1;
   private int numInstances_ = 0;
-
   /**
    *
    *
@@ -315,7 +310,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instanceNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -331,7 +325,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getInstanceNamesList() {
     return instanceNames_;
   }
-
   /**
    *
    *
@@ -347,7 +340,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public int getInstanceNamesCount() {
     return instanceNames_.size();
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public java.lang.String getInstanceNames(int index) {
     return instanceNames_.get(index);
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.InstanceReference> instanceReferences_;
-
   /**
    *
    *
@@ -403,7 +393,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       getInstanceReferencesList() {
     return instanceReferences_;
   }
-
   /**
    *
    *
@@ -420,7 +409,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       getInstanceReferencesOrBuilderList() {
     return instanceReferences_;
   }
-
   /**
    *
    *
@@ -436,7 +424,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public int getInstanceReferencesCount() {
     return instanceReferences_.size();
   }
-
   /**
    *
    *
@@ -452,7 +439,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dataproc.v1.InstanceReference getInstanceReferences(int index) {
     return instanceReferences_.get(index);
   }
-
   /**
    *
    *
@@ -474,7 +460,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageUri_ = "";
-
   /**
    *
    *
@@ -515,7 +500,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -561,7 +545,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineTypeUri_ = "";
-
   /**
    *
    *
@@ -597,7 +580,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -636,7 +618,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int DISK_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dataproc.v1.DiskConfig diskConfig_;
-
   /**
    *
    *
@@ -654,7 +635,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public boolean hasDiskConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -674,7 +654,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
         : diskConfig_;
   }
-
   /**
    *
    *
@@ -695,7 +674,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int IS_PREEMPTIBLE_FIELD_NUMBER = 6;
   private boolean isPreemptible_ = false;
-
   /**
    *
    *
@@ -715,7 +693,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int PREEMPTIBILITY_FIELD_NUMBER = 10;
   private int preemptibility_ = 0;
-
   /**
    *
    *
@@ -739,7 +716,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public int getPreemptibilityValue() {
     return preemptibility_;
   }
-
   /**
    *
    *
@@ -770,7 +746,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int MANAGED_GROUP_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1.ManagedGroupConfig managedGroupConfig_;
-
   /**
    *
    *
@@ -790,7 +765,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public boolean hasManagedGroupConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -812,7 +786,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataproc.v1.ManagedGroupConfig.getDefaultInstance()
         : managedGroupConfig_;
   }
-
   /**
    *
    *
@@ -837,7 +810,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.AcceleratorConfig> accelerators_;
-
   /**
    *
    *
@@ -854,7 +826,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.dataproc.v1.AcceleratorConfig> getAcceleratorsList() {
     return accelerators_;
   }
-
   /**
    *
    *
@@ -872,7 +843,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       getAcceleratorsOrBuilderList() {
     return accelerators_;
   }
-
   /**
    *
    *
@@ -889,7 +859,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public int getAcceleratorsCount() {
     return accelerators_.size();
   }
-
   /**
    *
    *
@@ -906,7 +875,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public com.google.cloud.dataproc.v1.AcceleratorConfig getAccelerators(int index) {
     return accelerators_.get(index);
   }
-
   /**
    *
    *
@@ -929,7 +897,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minCpuPlatform_ = "";
-
   /**
    *
    *
@@ -955,7 +922,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -984,7 +950,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int MIN_NUM_INSTANCES_FIELD_NUMBER = 12;
   private int minNumInstances_ = 0;
-
   /**
    *
    *
@@ -1016,7 +981,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int INSTANCE_FLEXIBILITY_POLICY_FIELD_NUMBER = 13;
   private com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy instanceFlexibilityPolicy_;
-
   /**
    *
    *
@@ -1035,7 +999,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public boolean hasInstanceFlexibilityPolicy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1056,7 +1019,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance()
         : instanceFlexibilityPolicy_;
   }
-
   /**
    *
    *
@@ -1079,7 +1041,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   public static final int STARTUP_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.dataproc.v1.StartupConfig startupConfig_;
-
   /**
    *
    *
@@ -1098,7 +1059,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   public boolean hasStartupConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1119,7 +1079,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataproc.v1.StartupConfig.getDefaultInstance()
         : startupConfig_;
   }
-
   /**
    *
    *
@@ -1456,7 +1415,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1960,7 +1918,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int numInstances_;
-
     /**
      *
      *
@@ -1981,7 +1938,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public int getNumInstances() {
       return numInstances_;
     }
-
     /**
      *
      *
@@ -2006,7 +1962,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2039,7 +1994,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -2056,7 +2010,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       instanceNames_.makeImmutable();
       return instanceNames_;
     }
-
     /**
      *
      *
@@ -2072,7 +2025,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public int getInstanceNamesCount() {
       return instanceNames_.size();
     }
-
     /**
      *
      *
@@ -2089,7 +2041,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public java.lang.String getInstanceNames(int index) {
       return instanceNames_.get(index);
     }
-
     /**
      *
      *
@@ -2106,7 +2057,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getInstanceNamesBytes(int index) {
       return instanceNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2131,7 +2081,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2155,7 +2104,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2176,7 +2124,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2196,7 +2143,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2259,7 +2205,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return instanceReferencesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2278,7 +2223,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return instanceReferencesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2297,7 +2241,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return instanceReferencesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2323,7 +2266,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2346,7 +2288,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2371,7 +2312,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2397,7 +2337,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2420,7 +2359,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2443,7 +2381,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2466,7 +2403,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2488,7 +2424,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2510,7 +2445,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2526,7 +2460,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         int index) {
       return getInstanceReferencesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2546,7 +2479,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return instanceReferencesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2566,7 +2498,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(instanceReferences_);
       }
     }
-
     /**
      *
      *
@@ -2582,7 +2513,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return getInstanceReferencesFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.InstanceReference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2599,7 +2529,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return getInstanceReferencesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.InstanceReference.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2637,7 +2566,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object imageUri_ = "";
-
     /**
      *
      *
@@ -2677,7 +2605,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2717,7 +2644,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2756,7 +2682,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2716,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2833,7 +2757,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object machineTypeUri_ = "";
-
     /**
      *
      *
@@ -2868,7 +2791,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2903,7 +2825,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2937,7 +2858,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2967,7 +2887,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3009,7 +2928,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.DiskConfig.Builder,
             com.google.cloud.dataproc.v1.DiskConfigOrBuilder>
         diskConfigBuilder_;
-
     /**
      *
      *
@@ -3026,7 +2944,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public boolean hasDiskConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3049,7 +2966,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return diskConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3074,7 +2990,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3096,7 +3011,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3126,7 +3040,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3148,7 +3061,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3165,7 +3077,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDiskConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3186,7 +3097,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             : diskConfig_;
       }
     }
-
     /**
      *
      *
@@ -3216,7 +3126,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     private boolean isPreemptible_;
-
     /**
      *
      *
@@ -3233,7 +3142,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public boolean getIsPreemptible() {
       return isPreemptible_;
     }
-
     /**
      *
      *
@@ -3254,7 +3162,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3275,7 +3182,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int preemptibility_ = 0;
-
     /**
      *
      *
@@ -3299,7 +3205,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public int getPreemptibilityValue() {
       return preemptibility_;
     }
-
     /**
      *
      *
@@ -3326,7 +3231,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3355,7 +3259,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3386,7 +3289,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3419,7 +3321,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.ManagedGroupConfig.Builder,
             com.google.cloud.dataproc.v1.ManagedGroupConfigOrBuilder>
         managedGroupConfigBuilder_;
-
     /**
      *
      *
@@ -3438,7 +3339,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public boolean hasManagedGroupConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3463,7 +3363,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return managedGroupConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3490,7 +3389,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3515,7 +3413,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3548,7 +3445,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3572,7 +3468,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3591,7 +3486,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getManagedGroupConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3615,7 +3509,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             : managedGroupConfig_;
       }
     }
-
     /**
      *
      *
@@ -3682,7 +3575,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return acceleratorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3702,7 +3594,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return acceleratorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3722,7 +3613,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return acceleratorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3749,7 +3639,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3773,7 +3662,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3799,7 +3687,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3826,7 +3713,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3850,7 +3736,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3874,7 +3759,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3898,7 +3782,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3921,7 +3804,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3944,7 +3826,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3961,7 +3842,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         int index) {
       return getAcceleratorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3982,7 +3862,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return acceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4003,7 +3882,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(accelerators_);
       }
     }
-
     /**
      *
      *
@@ -4020,7 +3898,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return getAcceleratorsFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4038,7 +3915,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return getAcceleratorsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.AcceleratorConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4074,7 +3950,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object minCpuPlatform_ = "";
-
     /**
      *
      *
@@ -4099,7 +3974,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4124,7 +3998,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4148,7 +4021,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4168,7 +4040,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4195,7 +4066,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
 
     private int minNumInstances_;
-
     /**
      *
      *
@@ -4224,7 +4094,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public int getMinNumInstances() {
       return minNumInstances_;
     }
-
     /**
      *
      *
@@ -4257,7 +4126,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4295,7 +4163,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder,
             com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder>
         instanceFlexibilityPolicyBuilder_;
-
     /**
      *
      *
@@ -4313,7 +4180,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public boolean hasInstanceFlexibilityPolicy() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4337,7 +4203,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return instanceFlexibilityPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4364,7 +4229,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4388,7 +4252,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4421,7 +4284,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -4444,7 +4306,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4463,7 +4324,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getInstanceFlexibilityPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4486,7 +4346,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             : instanceFlexibilityPolicy_;
       }
     }
-
     /**
      *
      *
@@ -4522,7 +4381,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataproc.v1.StartupConfig.Builder,
             com.google.cloud.dataproc.v1.StartupConfigOrBuilder>
         startupConfigBuilder_;
-
     /**
      *
      *
@@ -4540,7 +4398,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public boolean hasStartupConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4564,7 +4421,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         return startupConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4590,7 +4446,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4614,7 +4469,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4645,7 +4499,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -4668,7 +4521,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4686,7 +4538,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getStartupConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4708,7 +4559,6 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             : startupConfig_;
       }
     }
-
     /**
      *
      *

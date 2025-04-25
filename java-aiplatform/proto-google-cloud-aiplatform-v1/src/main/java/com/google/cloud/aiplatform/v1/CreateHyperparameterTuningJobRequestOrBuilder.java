@@ -40,7 +40,6 @@ public interface CreateHyperparameterTuningJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateHyperparameterTuningJobRequestOrBuilder
    * @return Whether the hyperparameterTuningJob field is set.
    */
   boolean hasHyperparameterTuningJob();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateHyperparameterTuningJobRequestOrBuilder
    * @return The hyperparameterTuningJob.
    */
   com.google.cloud.aiplatform.v1.HyperparameterTuningJob getHyperparameterTuningJob();
-
   /**
    *
    *

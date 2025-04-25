@@ -34,7 +34,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.policytroubleshooter.iam.v3.ExplainedAllowPolicy)
     ExplainedAllowPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExplainedAllowPolicy.newBuilder() to construct.
   private ExplainedAllowPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int ALLOW_ACCESS_STATE_FIELD_NUMBER = 1;
   private int allowAccessState_ = 0;
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   public int getAllowAccessStateValue() {
     return allowAccessState_;
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fullResourceName_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation>
       bindingExplanations_;
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       getBindingExplanationsList() {
     return bindingExplanations_;
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       getBindingExplanationsOrBuilderList() {
     return bindingExplanations_;
   }
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   public int getBindingExplanationsCount() {
     return bindingExplanations_.size();
   }
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       getBindingExplanations(int index) {
     return bindingExplanations_.get(index);
   }
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
 
   public static final int RELEVANCE_FIELD_NUMBER = 4;
   private int relevance_ = 0;
-
   /**
    *
    *
@@ -331,7 +320,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   public int getRelevanceValue() {
     return relevance_;
   }
-
   /**
    *
    *
@@ -358,7 +346,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
 
   public static final int POLICY_FIELD_NUMBER = 5;
   private com.google.iam.v1.Policy policy_;
-
   /**
    *
    *
@@ -377,7 +364,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -396,7 +382,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
-
   /**
    *
    *
@@ -631,7 +616,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -941,7 +925,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int allowAccessState_ = 0;
-
     /**
      *
      *
@@ -966,7 +949,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     public int getAllowAccessStateValue() {
       return allowAccessState_;
     }
-
     /**
      *
      *
@@ -994,7 +976,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1005,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.policytroubleshooter.iam.v3.AllowAccessState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1056,7 +1036,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1064,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object fullResourceName_ = "";
-
     /**
      *
      *
@@ -1115,7 +1093,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1122,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1150,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1199,7 +1174,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1247,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return bindingExplanationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1270,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return bindingExplanationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1322,7 +1294,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return bindingExplanationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1324,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1353,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1383,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1413,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1474,7 +1441,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1470,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1499,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1561,7 +1525,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1551,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1571,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         getBindingExplanationsBuilder(int index) {
       return getBindingExplanationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1634,7 +1595,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return bindingExplanationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1660,7 +1620,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(bindingExplanations_);
       }
     }
-
     /**
      *
      *
@@ -1684,7 +1643,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
               com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1709,7 +1667,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
               com.google.cloud.policytroubleshooter.iam.v3.AllowBindingExplanation
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1753,7 +1710,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     }
 
     private int relevance_ = 0;
-
     /**
      *
      *
@@ -1773,7 +1729,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     public int getRelevanceValue() {
       return relevance_;
     }
-
     /**
      *
      *
@@ -1796,7 +1751,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1820,7 +1774,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.policytroubleshooter.iam.v3.HeuristicRelevance.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1847,7 +1800,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1876,7 +1828,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
             com.google.iam.v1.Policy.Builder,
             com.google.iam.v1.PolicyOrBuilder>
         policyBuilder_;
-
     /**
      *
      *
@@ -1894,7 +1845,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1916,7 +1866,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return policyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1942,7 +1891,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1965,7 +1913,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1996,7 +1943,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2019,7 +1965,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2037,7 +1982,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2057,7 +2001,6 @@ public final class ExplainedAllowPolicy extends com.google.protobuf.GeneratedMes
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
     }
-
     /**
      *
      *

@@ -73,8 +73,7 @@ public class MockQuotaAdjusterSettingsManagerImpl extends QuotaAdjusterSettingsM
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateQuotaAdjusterSettings, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method UpdateQuotaAdjusterSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QuotaAdjusterSettings.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockQuotaAdjusterSettingsManagerImpl extends QuotaAdjusterSettingsM
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetQuotaAdjusterSettings, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetQuotaAdjusterSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QuotaAdjusterSettings.class.getName(),
                   Exception.class.getName())));

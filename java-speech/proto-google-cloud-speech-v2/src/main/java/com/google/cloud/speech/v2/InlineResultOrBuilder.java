@@ -36,7 +36,6 @@ public interface InlineResultOrBuilder
    * @return Whether the transcript field is set.
    */
   boolean hasTranscript();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InlineResultOrBuilder
    * @return The transcript.
    */
   com.google.cloud.speech.v2.BatchRecognizeResults getTranscript();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface InlineResultOrBuilder
    * @return The vttCaptions.
    */
   java.lang.String getVttCaptions();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface InlineResultOrBuilder
    * @return The srtCaptions.
    */
   java.lang.String getSrtCaptions();
-
   /**
    *
    *

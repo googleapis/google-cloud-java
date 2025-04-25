@@ -37,7 +37,6 @@ public interface FeatureMonitorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface FeatureMonitorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface FeatureMonitorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface FeatureMonitorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface FeatureMonitorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface FeatureMonitorOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface FeatureMonitorOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -201,11 +194,9 @@ public interface FeatureMonitorOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface FeatureMonitorOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface FeatureMonitorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -285,7 +274,6 @@ public interface FeatureMonitorOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -313,7 +301,6 @@ public interface FeatureMonitorOrBuilder
    * @return Whether the scheduleConfig field is set.
    */
   boolean hasScheduleConfig();
-
   /**
    *
    *
@@ -328,7 +315,6 @@ public interface FeatureMonitorOrBuilder
    * @return The scheduleConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ScheduleConfig getScheduleConfig();
-
   /**
    *
    *
@@ -356,7 +342,6 @@ public interface FeatureMonitorOrBuilder
    * @return Whether the featureSelectionConfig field is set.
    */
   boolean hasFeatureSelectionConfig();
-
   /**
    *
    *
@@ -371,7 +356,6 @@ public interface FeatureMonitorOrBuilder
    * @return The featureSelectionConfig.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureSelectionConfig getFeatureSelectionConfig();
-
   /**
    *
    *

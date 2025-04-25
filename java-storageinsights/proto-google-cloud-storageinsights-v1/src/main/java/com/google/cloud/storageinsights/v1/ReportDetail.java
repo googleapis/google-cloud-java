@@ -35,7 +35,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.storageinsights.v1.ReportDetail)
     ReportDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportDetail.newBuilder() to construct.
   private ReportDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,7 +96,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
      */
     long getProcessedRecordsCount();
   }
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.storageinsights.v1.ReportDetail.Metrics)
       MetricsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Metrics.newBuilder() to construct.
     private Metrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -143,7 +140,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PROCESSED_RECORDS_COUNT_FIELD_NUMBER = 1;
     private long processedRecordsCount_ = 0L;
-
     /**
      *
      *
@@ -321,7 +317,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -507,7 +502,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long processedRecordsCount_;
-
       /**
        *
        *
@@ -523,7 +517,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       public long getProcessedRecordsCount() {
         return processedRecordsCount_;
       }
-
       /**
        *
        *
@@ -543,7 +536,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -631,7 +623,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -656,7 +647,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -684,7 +674,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SNAPSHOT_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp snapshotTime_;
-
   /**
    *
    *
@@ -701,7 +690,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSnapshotTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -720,7 +708,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : snapshotTime_;
   }
-
   /**
    *
    *
@@ -742,7 +729,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reportPathPrefix_ = "";
-
   /**
    *
    *
@@ -772,7 +758,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -805,7 +790,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHARDS_COUNT_FIELD_NUMBER = 9;
   private long shardsCount_ = 0L;
-
   /**
    *
    *
@@ -824,7 +808,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 4;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -840,7 +823,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -856,7 +838,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -897,7 +878,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -914,14 +894,12 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -935,7 +913,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -956,7 +933,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -980,7 +956,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_DATETIME_FIELD_NUMBER = 6;
   private com.google.type.DateTime targetDatetime_;
-
   /**
    *
    *
@@ -997,7 +972,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTargetDatetime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1016,7 +990,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.DateTime.getDefaultInstance()
         : targetDatetime_;
   }
-
   /**
    *
    *
@@ -1036,7 +1009,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPORT_METRICS_FIELD_NUMBER = 7;
   private com.google.cloud.storageinsights.v1.ReportDetail.Metrics reportMetrics_;
-
   /**
    *
    *
@@ -1052,7 +1024,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReportMetrics() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1070,7 +1041,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.storageinsights.v1.ReportDetail.Metrics.getDefaultInstance()
         : reportMetrics_;
   }
-
   /**
    *
    *
@@ -1338,7 +1308,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1683,7 +1652,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1707,7 +1675,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1731,7 +1698,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1754,7 +1720,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1738,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1804,7 +1768,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         snapshotTimeBuilder_;
-
     /**
      *
      *
@@ -1820,7 +1783,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSnapshotTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1842,7 +1804,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return snapshotTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1866,7 +1827,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1887,7 +1847,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1916,7 +1875,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1937,7 +1895,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1953,7 +1910,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSnapshotTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1973,7 +1929,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
             : snapshotTime_;
       }
     }
-
     /**
      *
      *
@@ -2002,7 +1957,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object reportPathPrefix_ = "";
-
     /**
      *
      *
@@ -2031,7 +1985,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2060,7 +2013,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2088,7 +2040,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2112,7 +2063,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2143,7 +2093,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long shardsCount_;
-
     /**
      *
      *
@@ -2159,7 +2108,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public long getShardsCount() {
       return shardsCount_;
     }
-
     /**
      *
      *
@@ -2179,7 +2127,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2202,7 +2149,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -2217,7 +2163,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2236,7 +2181,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2259,7 +2203,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2279,7 +2222,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2307,7 +2249,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2327,7 +2268,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2282,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2359,7 +2298,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *
@@ -2408,7 +2346,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2425,14 +2362,12 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2446,7 +2381,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2467,7 +2401,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2494,7 +2427,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2511,14 +2443,12 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2539,7 +2469,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -2561,7 +2490,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.type.DateTime.Builder,
             com.google.type.DateTimeOrBuilder>
         targetDatetimeBuilder_;
-
     /**
      *
      *
@@ -2577,7 +2505,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTargetDatetime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2599,7 +2526,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return targetDatetimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2623,7 +2549,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2644,7 +2569,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2673,7 +2597,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2694,7 +2617,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2710,7 +2632,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTargetDatetimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2730,7 +2651,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
             : targetDatetime_;
       }
     }
-
     /**
      *
      *
@@ -2764,7 +2684,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.storageinsights.v1.ReportDetail.Metrics.Builder,
             com.google.cloud.storageinsights.v1.ReportDetail.MetricsOrBuilder>
         reportMetricsBuilder_;
-
     /**
      *
      *
@@ -2779,7 +2698,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportMetrics() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2800,7 +2718,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
         return reportMetricsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2824,7 +2741,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2845,7 +2761,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2875,7 +2790,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2895,7 +2809,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2911,7 +2824,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReportMetricsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2931,7 +2843,6 @@ public final class ReportDetail extends com.google.protobuf.GeneratedMessageV3
             : reportMetrics_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ClusterOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ClusterOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ClusterOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ClusterOrBuilder
    * @return The config.
    */
   com.google.cloud.dataproc.v1.ClusterConfig getConfig();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface ClusterOrBuilder
    * @return Whether the virtualClusterConfig field is set.
    */
   boolean hasVirtualClusterConfig();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface ClusterOrBuilder
    * @return The virtualClusterConfig.
    */
   com.google.cloud.dataproc.v1.VirtualClusterConfig getVirtualClusterConfig();
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -237,11 +230,9 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public interface ClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public interface ClusterOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public interface ClusterOrBuilder
    * @return The status.
    */
   com.google.cloud.dataproc.v1.ClusterStatus getStatus();
-
   /**
    *
    *
@@ -352,7 +339,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.ClusterStatus> getStatusHistoryList();
-
   /**
    *
    *
@@ -365,7 +351,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.ClusterStatus getStatusHistory(int index);
-
   /**
    *
    *
@@ -378,7 +363,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getStatusHistoryCount();
-
   /**
    *
    *
@@ -392,7 +376,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
       getStatusHistoryOrBuilderList();
-
   /**
    *
    *
@@ -419,7 +402,6 @@ public interface ClusterOrBuilder
    * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
-
   /**
    *
    *
@@ -451,7 +433,6 @@ public interface ClusterOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -469,7 +450,6 @@ public interface ClusterOrBuilder
    * @return The metrics.
    */
   com.google.cloud.dataproc.v1.ClusterMetrics getMetrics();
-
   /**
    *
    *

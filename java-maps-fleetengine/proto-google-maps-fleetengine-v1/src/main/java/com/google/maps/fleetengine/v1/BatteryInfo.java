@@ -33,7 +33,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.BatteryInfo)
     BatteryInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatteryInfo.newBuilder() to construct.
   private BatteryInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BATTERY_STATUS_FIELD_NUMBER = 1;
   private int batteryStatus_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
   public int getBatteryStatusValue() {
     return batteryStatus_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POWER_SOURCE_FIELD_NUMBER = 2;
   private int powerSource_ = 0;
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
   public int getPowerSourceValue() {
     return powerSource_;
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BATTERY_PERCENTAGE_FIELD_NUMBER = 3;
   private float batteryPercentage_ = 0F;
-
   /**
    *
    *
@@ -340,7 +334,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -548,7 +541,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int batteryStatus_ = 0;
-
     /**
      *
      *
@@ -564,7 +556,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     public int getBatteryStatusValue() {
       return batteryStatus_;
     }
-
     /**
      *
      *
@@ -583,7 +574,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -601,7 +591,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.fleetengine.v1.BatteryStatus.forNumber(batteryStatus_);
       return result == null ? com.google.maps.fleetengine.v1.BatteryStatus.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -623,7 +612,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -643,7 +631,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int powerSource_ = 0;
-
     /**
      *
      *
@@ -659,7 +646,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     public int getPowerSourceValue() {
       return powerSource_;
     }
-
     /**
      *
      *
@@ -678,7 +664,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +681,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.maps.fleetengine.v1.PowerSource.forNumber(powerSource_);
       return result == null ? com.google.maps.fleetengine.v1.PowerSource.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -718,7 +702,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +721,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float batteryPercentage_;
-
     /**
      *
      *
@@ -754,7 +736,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
     public float getBatteryPercentage() {
       return batteryPercentage_;
     }
-
     /**
      *
      *
@@ -774,7 +755,6 @@ public final class BatteryInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Standard)
     StandardOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Standard.newBuilder() to construct.
   private Standard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int VERIFY_FIELD_NUMBER = 1;
   private boolean verify_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREDEPLOY_FIELD_NUMBER = 2;
   private com.google.cloud.deploy.v1.Predeploy predeploy_;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPredeploy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.Predeploy.getDefaultInstance()
         : predeploy_;
   }
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSTDEPLOY_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.Postdeploy postdeploy_;
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostdeploy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.Postdeploy.getDefaultInstance()
         : postdeploy_;
   }
-
   /**
    *
    *
@@ -391,7 +383,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -620,7 +611,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean verify_;
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     public boolean getVerify() {
       return verify_;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Predeploy.Builder,
             com.google.cloud.deploy.v1.PredeployOrBuilder>
         predeployBuilder_;
-
     /**
      *
      *
@@ -699,7 +686,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPredeploy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
         return predeployBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +825,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPredeployFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -866,7 +846,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
             : predeploy_;
       }
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Postdeploy.Builder,
             com.google.cloud.deploy.v1.PostdeployOrBuilder>
         postdeployBuilder_;
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostdeploy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
         return postdeployBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -970,7 +946,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +968,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +998,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1020,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1037,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPostdeployFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1087,7 +1058,6 @@ public final class Standard extends com.google.protobuf.GeneratedMessageV3
             : postdeploy_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface PredictLongRunningResponseOrBuilder
    * @return Whether the generateVideoResponse field is set.
    */
   boolean hasGenerateVideoResponse();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PredictLongRunningResponseOrBuilder
    * @return The generateVideoResponse.
    */
   com.google.cloud.aiplatform.v1beta1.GenerateVideoResponse getGenerateVideoResponse();
-
   /**
    *
    *

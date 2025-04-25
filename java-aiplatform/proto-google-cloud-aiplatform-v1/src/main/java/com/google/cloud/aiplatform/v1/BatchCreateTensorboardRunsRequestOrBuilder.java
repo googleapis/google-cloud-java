@@ -42,7 +42,6 @@ public interface BatchCreateTensorboardRunsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface BatchCreateTensorboardRunsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest> getRequestsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface BatchCreateTensorboardRunsRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest getRequests(int index);
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface BatchCreateTensorboardRunsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface BatchCreateTensorboardRunsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.CreateTensorboardRunRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

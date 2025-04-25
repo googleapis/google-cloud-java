@@ -54,7 +54,6 @@ public interface BatchDocumentInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface BatchDocumentInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.translate.v3.GcsSource getGcsSource();
-
   /**
    *
    *

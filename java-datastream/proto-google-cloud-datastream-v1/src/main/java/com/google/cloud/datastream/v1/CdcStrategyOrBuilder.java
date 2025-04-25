@@ -38,7 +38,6 @@ public interface CdcStrategyOrBuilder
    * @return Whether the mostRecentStartPosition field is set.
    */
   boolean hasMostRecentStartPosition();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CdcStrategyOrBuilder
    * @return The mostRecentStartPosition.
    */
   com.google.cloud.datastream.v1.CdcStrategy.MostRecentStartPosition getMostRecentStartPosition();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CdcStrategyOrBuilder
    * @return Whether the nextAvailableStartPosition field is set.
    */
   boolean hasNextAvailableStartPosition();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface CdcStrategyOrBuilder
    */
   com.google.cloud.datastream.v1.CdcStrategy.NextAvailableStartPosition
       getNextAvailableStartPosition();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface CdcStrategyOrBuilder
    * @return Whether the specificStartPosition field is set.
    */
   boolean hasSpecificStartPosition();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface CdcStrategyOrBuilder
    * @return The specificStartPosition.
    */
   com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition getSpecificStartPosition();
-
   /**
    *
    *

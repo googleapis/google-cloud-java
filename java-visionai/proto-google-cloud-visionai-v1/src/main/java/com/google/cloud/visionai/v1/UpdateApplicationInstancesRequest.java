@@ -33,7 +33,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateApplicationInstancesRequest)
     UpdateApplicationInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateApplicationInstancesRequest.newBuilder() to construct.
   private UpdateApplicationInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -89,7 +88,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
      * @return Whether the updateMask field is set.
      */
     boolean hasUpdateMask();
-
     /**
      *
      *
@@ -107,7 +105,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
      * @return The updateMask.
      */
     com.google.protobuf.FieldMask getUpdateMask();
-
     /**
      *
      *
@@ -138,7 +135,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
      * @return Whether the instance field is set.
      */
     boolean hasInstance();
-
     /**
      *
      *
@@ -153,7 +149,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
      * @return The instance.
      */
     com.google.cloud.visionai.v1.Instance getInstance();
-
     /**
      *
      *
@@ -179,7 +174,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
      * @return The instanceId.
      */
     java.lang.String getInstanceId();
-
     /**
      *
      *
@@ -193,7 +187,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
      */
     com.google.protobuf.ByteString getInstanceIdBytes();
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance}
@@ -203,7 +196,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance)
       UpdateApplicationInstanceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UpdateApplicationInstance.newBuilder() to construct.
     private UpdateApplicationInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -239,7 +231,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     private int bitField0_;
     public static final int UPDATE_MASK_FIELD_NUMBER = 1;
     private com.google.protobuf.FieldMask updateMask_;
-
     /**
      *
      *
@@ -260,7 +251,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -281,7 +271,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     public com.google.protobuf.FieldMask getUpdateMask() {
       return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
-
     /**
      *
      *
@@ -303,7 +292,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
 
     public static final int INSTANCE_FIELD_NUMBER = 2;
     private com.google.cloud.visionai.v1.Instance instance_;
-
     /**
      *
      *
@@ -321,7 +309,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -341,7 +328,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
           ? com.google.cloud.visionai.v1.Instance.getDefaultInstance()
           : instance_;
     }
-
     /**
      *
      *
@@ -364,7 +350,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -388,7 +373,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return s;
       }
     }
-
     /**
      *
      *
@@ -627,7 +611,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code
      * google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance}
@@ -889,7 +872,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
               com.google.protobuf.FieldMask.Builder,
               com.google.protobuf.FieldMaskOrBuilder>
           updateMaskBuilder_;
-
       /**
        *
        *
@@ -909,7 +891,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       public boolean hasUpdateMask() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -935,7 +916,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
           return updateMaskBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -963,7 +943,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -988,7 +967,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1021,7 +999,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1023,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1066,7 +1042,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1090,7 +1065,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
               : updateMask_;
         }
       }
-
       /**
        *
        *
@@ -1128,7 +1102,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
               com.google.cloud.visionai.v1.Instance.Builder,
               com.google.cloud.visionai.v1.InstanceOrBuilder>
           instanceBuilder_;
-
       /**
        *
        *
@@ -1145,7 +1118,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       public boolean hasInstance() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1168,7 +1140,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
           return instanceBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1193,7 +1164,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1215,7 +1185,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1245,7 +1214,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         }
         return this;
       }
-
       /**
        *
        *
@@ -1267,7 +1235,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1284,7 +1251,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return getInstanceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1305,7 +1271,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
               : instance_;
         }
       }
-
       /**
        *
        *
@@ -1335,7 +1300,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
 
       private java.lang.Object instanceId_ = "";
-
       /**
        *
        *
@@ -1358,7 +1322,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1381,7 +1344,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1403,7 +1365,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1421,7 +1382,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1520,7 +1480,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1548,7 +1507,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -1583,7 +1541,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
   private java.util.List<
           com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance>
       applicationInstances_;
-
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -1595,7 +1552,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       getApplicationInstancesList() {
     return applicationInstances_;
   }
-
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -1609,7 +1565,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       getApplicationInstancesOrBuilderList() {
     return applicationInstances_;
   }
-
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -1619,7 +1574,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
   public int getApplicationInstancesCount() {
     return applicationInstances_.size();
   }
-
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -1630,7 +1584,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       getApplicationInstances(int index) {
     return applicationInstances_.get(index);
   }
-
   /**
    * <code>
    * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -1647,7 +1600,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -1683,7 +1635,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -1722,7 +1673,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 4;
   private boolean allowMissing_ = false;
-
   /**
    *
    *
@@ -1930,7 +1880,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2211,7 +2160,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2238,7 +2186,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2265,7 +2212,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2291,7 +2237,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2313,7 +2258,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2380,7 +2324,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return applicationInstancesBuilder_.getMessageList();
       }
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2393,7 +2336,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return applicationInstancesBuilder_.getCount();
       }
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2407,7 +2349,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return applicationInstancesBuilder_.getMessage(index);
       }
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2429,7 +2370,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2449,7 +2389,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2470,7 +2409,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2492,7 +2430,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2511,7 +2448,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2531,7 +2467,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2552,7 +2487,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2568,7 +2502,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2584,7 +2517,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2595,7 +2527,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         getApplicationInstancesBuilder(int index) {
       return getApplicationInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2610,7 +2541,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return applicationInstancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2627,7 +2557,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return java.util.Collections.unmodifiableList(applicationInstances_);
       }
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2641,7 +2570,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
               com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest
                   .UpdateApplicationInstance.getDefaultInstance());
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2656,7 +2584,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
               com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest
                   .UpdateApplicationInstance.getDefaultInstance());
     }
-
     /**
      * <code>
      * repeated .google.cloud.visionai.v1.UpdateApplicationInstancesRequest.UpdateApplicationInstance application_instances = 2;
@@ -2696,7 +2623,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -2731,7 +2657,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2766,7 +2691,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2800,7 +2724,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2830,7 +2753,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2867,7 +2789,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     }
 
     private boolean allowMissing_;
-
     /**
      *
      *
@@ -2884,7 +2805,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
     public boolean getAllowMissing() {
       return allowMissing_;
     }
-
     /**
      *
      *
@@ -2905,7 +2825,6 @@ public final class UpdateApplicationInstancesRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

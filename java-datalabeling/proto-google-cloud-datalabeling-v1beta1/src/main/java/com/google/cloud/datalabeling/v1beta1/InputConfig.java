@@ -33,7 +33,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.InputConfig)
     InputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InputConfig.newBuilder() to construct.
   private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private DataTypeMetadataCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -130,7 +128,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -164,7 +161,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_METADATA_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTextMetadata() {
     return dataTypeMetadataCase_ == 6;
   }
-
   /**
    *
    *
@@ -199,7 +194,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -289,7 +279,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigquerySource() {
     return sourceCase_ == 5;
   }
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -331,7 +319,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_TYPE_FIELD_NUMBER = 1;
   private int dataType_ = 0;
-
   /**
    *
    *
@@ -347,7 +334,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public int getDataTypeValue() {
     return dataType_;
   }
-
   /**
    *
    *
@@ -368,7 +354,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANNOTATION_TYPE_FIELD_NUMBER = 3;
   private int annotationType_ = 0;
-
   /**
    *
    *
@@ -386,7 +371,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationTypeValue() {
     return annotationType_;
   }
-
   /**
    *
    *
@@ -411,7 +395,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLASSIFICATION_METADATA_FIELD_NUMBER = 4;
   private com.google.cloud.datalabeling.v1beta1.ClassificationMetadata classificationMetadata_;
-
   /**
    *
    *
@@ -430,7 +413,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClassificationMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -451,7 +433,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.getDefaultInstance()
         : classificationMetadata_;
   }
-
   /**
    *
    *
@@ -725,7 +706,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1061,7 +1041,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.TextMetadataOrBuilder>
         textMetadataBuilder_;
-
     /**
      *
      *
@@ -1077,7 +1056,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTextMetadata() {
       return dataTypeMetadataCase_ == 6;
     }
-
     /**
      *
      *
@@ -1103,7 +1081,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1103,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       dataTypeMetadataCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1123,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       dataTypeMetadataCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1156,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       dataTypeMetadataCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1181,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1193,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.TextMetadata.Builder getTextMetadataBuilder() {
       return getTextMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1241,7 +1213,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.TextMetadata.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1281,7 +1252,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.GcsSource.Builder,
             com.google.cloud.datalabeling.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -1297,7 +1267,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1323,7 +1292,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1346,7 +1314,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1334,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1366,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1391,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1403,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1460,7 +1423,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1461,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder,
             com.google.cloud.datalabeling.v1beta1.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
-
     /**
      *
      *
@@ -1516,7 +1477,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigquerySource() {
       return sourceCase_ == 5;
     }
-
     /**
      *
      *
@@ -1543,7 +1503,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1567,7 +1526,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1547,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1581,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1651,7 +1607,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1620,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datalabeling.v1beta1.BigQuerySource.Builder getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1688,7 +1642,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datalabeling.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1724,7 +1677,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataType_ = 0;
-
     /**
      *
      *
@@ -1740,7 +1692,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public int getDataTypeValue() {
       return dataType_;
     }
-
     /**
      *
      *
@@ -1759,7 +1710,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1777,7 +1727,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.datalabeling.v1beta1.DataType.forNumber(dataType_);
       return result == null ? com.google.cloud.datalabeling.v1beta1.DataType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1799,7 +1748,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1819,7 +1767,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int annotationType_ = 0;
-
     /**
      *
      *
@@ -1837,7 +1784,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationTypeValue() {
       return annotationType_;
     }
-
     /**
      *
      *
@@ -1858,7 +1804,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1880,7 +1825,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datalabeling.v1beta1.AnnotationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1904,7 +1848,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1931,7 +1874,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datalabeling.v1beta1.ClassificationMetadata.Builder,
             com.google.cloud.datalabeling.v1beta1.ClassificationMetadataOrBuilder>
         classificationMetadataBuilder_;
-
     /**
      *
      *
@@ -1949,7 +1891,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClassificationMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1974,7 +1915,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return classificationMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2001,7 +1941,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2025,7 +1964,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2059,7 +1997,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2082,7 +2019,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2101,7 +2037,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getClassificationMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2124,7 +2059,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             : classificationMetadata_;
       }
     }
-
     /**
      *
      *

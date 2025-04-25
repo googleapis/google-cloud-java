@@ -37,7 +37,6 @@ public interface ScheduledOperationDetailsOrBuilder
    * @return The enum numeric value on the wire for dayOfWeek.
    */
   int getDayOfWeekValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ScheduledOperationDetailsOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ScheduledOperationDetailsOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface ScheduledOperationDetailsOrBuilder
    * @return Whether the stopTime field is set.
    */
   boolean hasStopTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ScheduledOperationDetailsOrBuilder
    * @return The stopTime.
    */
   com.google.type.TimeOfDay getStopTime();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface NotificationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface NotificationOrBuilder
    * @return Whether the subject field is set.
    */
   boolean hasSubject();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface NotificationOrBuilder
    * @return The subject.
    */
   com.google.cloud.advisorynotifications.v1.Subject getSubject();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface NotificationOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Message messages = 3;</code>
    */
   java.util.List<com.google.cloud.advisorynotifications.v1.Message> getMessagesList();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface NotificationOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Message messages = 3;</code>
    */
   com.google.cloud.advisorynotifications.v1.Message getMessages(int index);
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface NotificationOrBuilder
    * <code>repeated .google.cloud.advisorynotifications.v1.Message messages = 3;</code>
    */
   int getMessagesCount();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface NotificationOrBuilder
    */
   java.util.List<? extends com.google.cloud.advisorynotifications.v1.MessageOrBuilder>
       getMessagesOrBuilderList();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface NotificationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface NotificationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface NotificationOrBuilder
    * @return The enum numeric value on the wire for notificationType.
    */
   int getNotificationTypeValue();
-
   /**
    *
    *

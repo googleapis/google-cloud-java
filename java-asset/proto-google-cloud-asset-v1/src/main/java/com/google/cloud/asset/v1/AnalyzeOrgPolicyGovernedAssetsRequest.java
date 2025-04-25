@@ -35,7 +35,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest)
     AnalyzeOrgPolicyGovernedAssetsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder() to construct.
   private AnalyzeOrgPolicyGovernedAssetsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object scope_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object constraint_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -245,7 +239,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -298,7 +291,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -316,7 +308,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
   public boolean hasPageSize() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -339,7 +330,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -363,7 +353,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -589,7 +578,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -840,7 +828,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     private int bitField0_;
 
     private java.lang.Object scope_ = "";
-
     /**
      *
      *
@@ -868,7 +855,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +882,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +908,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +930,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +959,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     }
 
     private java.lang.Object constraint_ = "";
-
     /**
      *
      *
@@ -1001,7 +983,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1007,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1030,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1049,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1075,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1146,7 +1123,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1171,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1218,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1261,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1311,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1356,7 +1328,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     public boolean hasPageSize() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1374,7 +1345,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1396,7 +1366,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1387,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1441,7 +1409,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1431,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1452,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1469,6 @@ public final class AnalyzeOrgPolicyGovernedAssetsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

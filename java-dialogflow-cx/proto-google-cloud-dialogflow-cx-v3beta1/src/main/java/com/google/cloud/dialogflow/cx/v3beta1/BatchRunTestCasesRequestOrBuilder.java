@@ -39,7 +39,6 @@ public interface BatchRunTestCasesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BatchRunTestCasesRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface BatchRunTestCasesRequestOrBuilder
    * @return A list containing the testCases.
    */
   java.util.List<java.lang.String> getTestCasesList();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface BatchRunTestCasesRequestOrBuilder
    * @return The count of testCases.
    */
   int getTestCasesCount();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface BatchRunTestCasesRequestOrBuilder
    * @return The testCases at the given index.
    */
   java.lang.String getTestCases(int index);
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ReportStatusRequestOrBuilder
    * @return The appConnector.
    */
   java.lang.String getAppConnector();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ReportStatusRequestOrBuilder
    * @return Whether the resourceInfo field is set.
    */
   boolean hasResourceInfo();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ReportStatusRequestOrBuilder
    * @return The resourceInfo.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo getResourceInfo();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ReportStatusRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

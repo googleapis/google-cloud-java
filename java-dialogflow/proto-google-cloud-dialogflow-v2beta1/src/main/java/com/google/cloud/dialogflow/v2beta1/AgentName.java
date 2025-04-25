@@ -90,9 +90,7 @@ public class AgentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  /**
-   * @deprecated Please use {@link #ofProjectName()} instead
-   */
+  /** @deprecated Please use {@link #ofProjectName()} instead */
   @Deprecated
   public static AgentName ofProjectAgentName(String project) {
     return newBuilder().setProject(project).build();
@@ -102,9 +100,7 @@ public class AgentName implements ResourceName {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();
   }
 
-  /**
-   * @deprecated Please use {@link #ofProjectLocationName()} instead
-   */
+  /** @deprecated Please use {@link #ofProjectLocationName()} instead */
   @Deprecated
   public static AgentName ofProjectLocationAgentName(String project, String location) {
     return newProjectLocationAgentBuilder().setProject(project).setLocation(location).build();

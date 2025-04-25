@@ -38,7 +38,6 @@ public interface StandardScheduleOrBuilder
    * @return The enum numeric value on the wire for recurrenceType.
    */
   int getRecurrenceTypeValue();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface StandardScheduleOrBuilder
    * @return A list containing the daysOfWeek.
    */
   java.util.List<com.google.type.DayOfWeek> getDaysOfWeekList();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface StandardScheduleOrBuilder
    * @return The count of daysOfWeek.
    */
   int getDaysOfWeekCount();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface StandardScheduleOrBuilder
    * @return The daysOfWeek at the given index.
    */
   com.google.type.DayOfWeek getDaysOfWeek(int index);
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface StandardScheduleOrBuilder
    * @return A list containing the enum numeric values on the wire for daysOfWeek.
    */
   java.util.List<java.lang.Integer> getDaysOfWeekValueList();
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public interface StandardScheduleOrBuilder
    * @return A list containing the daysOfMonth.
    */
   java.util.List<java.lang.Integer> getDaysOfMonthList();
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public interface StandardScheduleOrBuilder
    * @return The count of daysOfMonth.
    */
   int getDaysOfMonthCount();
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public interface StandardScheduleOrBuilder
    * @return Whether the weekDayOfMonth field is set.
    */
   boolean hasWeekDayOfMonth();
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public interface StandardScheduleOrBuilder
    * @return The weekDayOfMonth.
    */
   com.google.cloud.backupdr.v1.WeekDayOfMonth getWeekDayOfMonth();
-
   /**
    *
    *
@@ -310,7 +301,6 @@ public interface StandardScheduleOrBuilder
    * @return A list containing the months.
    */
   java.util.List<com.google.type.Month> getMonthsList();
-
   /**
    *
    *
@@ -327,7 +317,6 @@ public interface StandardScheduleOrBuilder
    * @return The count of months.
    */
   int getMonthsCount();
-
   /**
    *
    *
@@ -345,7 +334,6 @@ public interface StandardScheduleOrBuilder
    * @return The months at the given index.
    */
   com.google.type.Month getMonths(int index);
-
   /**
    *
    *
@@ -362,7 +350,6 @@ public interface StandardScheduleOrBuilder
    * @return A list containing the enum numeric values on the wire for months.
    */
   java.util.List<java.lang.Integer> getMonthsValueList();
-
   /**
    *
    *
@@ -399,7 +386,6 @@ public interface StandardScheduleOrBuilder
    * @return Whether the backupWindow field is set.
    */
   boolean hasBackupWindow();
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public interface StandardScheduleOrBuilder
    * @return The backupWindow.
    */
   com.google.cloud.backupdr.v1.BackupWindow getBackupWindow();
-
   /**
    *
    *
@@ -451,7 +436,6 @@ public interface StandardScheduleOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *

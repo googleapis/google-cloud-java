@@ -33,7 +33,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.SpriteSheet)
     SpriteSheetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpriteSheet.newBuilder() to construct.
   private SpriteSheet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object format_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filePrefix_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPRITE_WIDTH_PIXELS_FIELD_NUMBER = 3;
   private int spriteWidthPixels_ = 0;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPRITE_HEIGHT_PIXELS_FIELD_NUMBER = 4;
   private int spriteHeightPixels_ = 0;
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COLUMN_COUNT_FIELD_NUMBER = 5;
   private int columnCount_ = 0;
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_COUNT_FIELD_NUMBER = 6;
   private int rowCount_ = 0;
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTERVAL_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration interval_;
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getInterval() {
     return interval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : interval_;
   }
-
   /**
    *
    *
@@ -321,7 +309,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUALITY_FIELD_NUMBER = 8;
   private int quality_ = 0;
-
   /**
    *
    *
@@ -568,7 +555,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -862,7 +848,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object format_ = "";
-
     /**
      *
      *
@@ -889,7 +874,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +900,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -942,7 +925,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +946,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +974,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object filePrefix_ = "";
-
     /**
      *
      *
@@ -1020,7 +1000,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1026,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1051,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1072,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1100,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spriteWidthPixels_;
-
     /**
      *
      *
@@ -1140,7 +1115,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public int getSpriteWidthPixels() {
       return spriteWidthPixels_;
     }
-
     /**
      *
      *
@@ -1160,7 +1134,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1153,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int spriteHeightPixels_;
-
     /**
      *
      *
@@ -1196,7 +1168,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public int getSpriteHeightPixels() {
       return spriteHeightPixels_;
     }
-
     /**
      *
      *
@@ -1216,7 +1187,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1206,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int columnCount_;
-
     /**
      *
      *
@@ -1253,7 +1222,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public int getColumnCount() {
       return columnCount_;
     }
-
     /**
      *
      *
@@ -1274,7 +1242,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int rowCount_;
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public int getRowCount() {
       return rowCount_;
     }
-
     /**
      *
      *
@@ -1335,7 +1300,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1326,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         intervalBuilder_;
-
     /**
      *
      *
@@ -1378,7 +1341,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInterval() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1398,7 +1360,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return intervalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1422,7 +1383,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1403,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1431,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1493,7 +1451,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1509,7 +1466,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1527,7 +1483,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
         return interval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : interval_;
       }
     }
-
     /**
      *
      *
@@ -1556,7 +1511,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int quality_;
-
     /**
      *
      *
@@ -1575,7 +1529,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
     public int getQuality() {
       return quality_;
     }
-
     /**
      *
      *
@@ -1598,7 +1551,6 @@ public final class SpriteSheet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

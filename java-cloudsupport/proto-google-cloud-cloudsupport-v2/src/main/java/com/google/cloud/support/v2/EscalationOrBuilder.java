@@ -38,7 +38,6 @@ public interface EscalationOrBuilder
    * @return The enum numeric value on the wire for reason.
    */
   int getReasonValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface EscalationOrBuilder
    * @return The justification.
    */
   java.lang.String getJustification();
-
   /**
    *
    *

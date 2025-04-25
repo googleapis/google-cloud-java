@@ -37,7 +37,6 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the locationFeatures.
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.LocationFeature> getLocationFeaturesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface LocationMetadataOrBuilder
    * @return The count of locationFeatures.
    */
   int getLocationFeaturesCount();
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface LocationMetadataOrBuilder
    * @return The locationFeatures at the given index.
    */
   com.google.cloud.networkconnectivity.v1.LocationFeature getLocationFeatures(int index);
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the enum numeric values on the wire for locationFeatures.
    */
   java.util.List<java.lang.Integer> getLocationFeaturesValueList();
-
   /**
    *
    *

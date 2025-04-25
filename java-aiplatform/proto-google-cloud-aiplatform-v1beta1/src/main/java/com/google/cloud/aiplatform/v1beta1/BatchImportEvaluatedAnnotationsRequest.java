@@ -35,7 +35,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest)
     BatchImportEvaluatedAnnotationsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchImportEvaluatedAnnotationsRequest.newBuilder() to construct.
   private BatchImportEvaluatedAnnotationsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotation>
       evaluatedAnnotations_;
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       getEvaluatedAnnotationsList() {
     return evaluatedAnnotations_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       getEvaluatedAnnotationsOrBuilderList() {
     return evaluatedAnnotations_;
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
   public int getEvaluatedAnnotationsCount() {
     return evaluatedAnnotations_.size();
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       int index) {
     return evaluatedAnnotations_.get(index);
   }
-
   /**
    *
    *
@@ -399,7 +391,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +811,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return evaluatedAnnotationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -844,7 +829,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return evaluatedAnnotationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return evaluatedAnnotationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -890,7 +873,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +921,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +946,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +968,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +991,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1056,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1071,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         getEvaluatedAnnotationsBuilder(int index) {
       return getEvaluatedAnnotationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1117,7 +1090,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return evaluatedAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1110,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
         return java.util.Collections.unmodifiableList(evaluatedAnnotations_);
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1126,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
       return getEvaluatedAnnotationsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1173,7 +1143,6 @@ public final class BatchImportEvaluatedAnnotationsRequest
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.getDefaultInstance());
     }
-
     /**
      *
      *

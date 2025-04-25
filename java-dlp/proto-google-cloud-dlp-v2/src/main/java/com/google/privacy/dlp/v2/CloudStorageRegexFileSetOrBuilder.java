@@ -36,7 +36,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return The bucketName.
    */
   java.lang.String getBucketName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return A list containing the includeRegex.
    */
   java.util.List<java.lang.String> getIncludeRegexList();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return The count of includeRegex.
    */
   int getIncludeRegexCount();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return The includeRegex at the given index.
    */
   java.lang.String getIncludeRegex(int index);
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return A list containing the excludeRegex.
    */
   java.util.List<java.lang.String> getExcludeRegexList();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return The count of excludeRegex.
    */
   int getExcludeRegexCount();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface CloudStorageRegexFileSetOrBuilder
    * @return The excludeRegex at the given index.
    */
   java.lang.String getExcludeRegex(int index);
-
   /**
    *
    *

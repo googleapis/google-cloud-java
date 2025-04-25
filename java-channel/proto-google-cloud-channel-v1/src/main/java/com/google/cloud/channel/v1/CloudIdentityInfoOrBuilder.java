@@ -36,7 +36,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The enum numeric value on the wire for customerType.
    */
   int getCustomerTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The primaryDomain.
    */
   java.lang.String getPrimaryDomain();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The alternateEmail.
    */
   java.lang.String getAlternateEmail();
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The adminConsoleUri.
    */
   java.lang.String getAdminConsoleUri();
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return Whether the eduData field is set.
    */
   boolean hasEduData();
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public interface CloudIdentityInfoOrBuilder
    * @return The eduData.
    */
   com.google.cloud.channel.v1.EduData getEduData();
-
   /**
    *
    *

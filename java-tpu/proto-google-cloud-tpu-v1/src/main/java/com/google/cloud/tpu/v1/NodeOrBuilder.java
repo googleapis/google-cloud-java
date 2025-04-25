@@ -38,7 +38,6 @@ public interface NodeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface NodeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface NodeOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface NodeOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface NodeOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPort();
-
   /**
    *
    *
@@ -189,7 +184,6 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface NodeOrBuilder
    * @return The healthDescription.
    */
   java.lang.String getHealthDescription();
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public interface NodeOrBuilder
    * @return The tensorflowVersion.
    */
   java.lang.String getTensorflowVersion();
-
   /**
    *
    *
@@ -272,7 +264,6 @@ public interface NodeOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -307,7 +298,6 @@ public interface NodeOrBuilder
    * @return The cidrBlock.
    */
   java.lang.String getCidrBlock();
-
   /**
    *
    *
@@ -343,7 +333,6 @@ public interface NodeOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -373,7 +362,6 @@ public interface NodeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -387,7 +375,6 @@ public interface NodeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -412,7 +399,6 @@ public interface NodeOrBuilder
    * @return Whether the schedulingConfig field is set.
    */
   boolean hasSchedulingConfig();
-
   /**
    *
    *
@@ -425,7 +411,6 @@ public interface NodeOrBuilder
    * @return The schedulingConfig.
    */
   com.google.cloud.tpu.v1.SchedulingConfig getSchedulingConfig();
-
   /**
    *
    *
@@ -451,7 +436,6 @@ public interface NodeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.tpu.v1.NetworkEndpoint> getNetworkEndpointsList();
-
   /**
    *
    *
@@ -466,7 +450,6 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v1.NetworkEndpoint getNetworkEndpoints(int index);
-
   /**
    *
    *
@@ -481,7 +464,6 @@ public interface NodeOrBuilder
    * </code>
    */
   int getNetworkEndpointsCount();
-
   /**
    *
    *
@@ -497,7 +479,6 @@ public interface NodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v1.NetworkEndpointOrBuilder>
       getNetworkEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -525,7 +506,6 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for health.
    */
   int getHealthValue();
-
   /**
    *
    *
@@ -549,7 +529,6 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -560,11 +539,9 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -575,7 +552,6 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -590,7 +566,6 @@ public interface NodeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -633,7 +608,6 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for apiVersion.
    */
   int getApiVersionValue();
-
   /**
    *
    *
@@ -661,7 +635,6 @@ public interface NodeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.tpu.v1.Symptom> getSymptomsList();
-
   /**
    *
    *
@@ -674,7 +647,6 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v1.Symptom getSymptoms(int index);
-
   /**
    *
    *
@@ -687,7 +659,6 @@ public interface NodeOrBuilder
    * </code>
    */
   int getSymptomsCount();
-
   /**
    *
    *
@@ -700,7 +671,6 @@ public interface NodeOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.tpu.v1.SymptomOrBuilder> getSymptomsOrBuilderList();
-
   /**
    *
    *

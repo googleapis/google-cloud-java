@@ -35,7 +35,6 @@ public interface SearchAgentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Agent agents = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Agent> getAgentsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SearchAgentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Agent agents = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Agent getAgents(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SearchAgentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Agent agents = 1;</code>
    */
   int getAgentsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SearchAgentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.AgentOrBuilder>
       getAgentsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface SearchAgentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.Trace)
     TraceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Trace.newBuilder() to construct.
   private Trace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object traceId_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> spans_;
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.devtools.cloudtrace.v1.TraceSpan> getSpansList() {
     return spans_;
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       getSpansOrBuilderList() {
     return spans_;
   }
-
   /**
    *
    *
@@ -225,7 +217,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public int getSpansCount() {
     return spans_.size();
   }
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   public com.google.devtools.cloudtrace.v1.TraceSpan getSpans(int index) {
     return spans_.get(index);
   }
-
   /**
    *
    *
@@ -432,7 +422,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -693,7 +682,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object traceId_ = "";
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return spansBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -973,7 +951,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return spansBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return spansBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1009,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1031,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1053,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1072,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1092,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1112,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1131,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1150,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1162,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v1.TraceSpan.Builder getSpansBuilder(int index) {
       return getSpansFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1212,7 +1178,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return spansBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1195,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spans_);
       }
     }
-
     /**
      *
      *
@@ -1244,7 +1208,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       return getSpansFieldBuilder()
           .addBuilder(com.google.devtools.cloudtrace.v1.TraceSpan.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1258,7 +1221,6 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       return getSpansFieldBuilder()
           .addBuilder(index, com.google.devtools.cloudtrace.v1.TraceSpan.getDefaultInstance());
     }
-
     /**
      *
      *

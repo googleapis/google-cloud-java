@@ -33,7 +33,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest)
     CreateAttachedClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAttachedClusterRequest.newBuilder() to construct.
   private CreateAttachedClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
 
   public static final int ATTACHED_CLUSTER_FIELD_NUMBER = 2;
   private com.google.cloud.gkemulticloud.v1.AttachedCluster attachedCluster_;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
   public boolean hasAttachedCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
         ? com.google.cloud.gkemulticloud.v1.AttachedCluster.getDefaultInstance()
         : attachedCluster_;
   }
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object attachedClusterId_ = "";
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -479,7 +470,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -725,7 +715,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -757,7 +746,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -789,7 +777,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -820,7 +807,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +833,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +871,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
             com.google.cloud.gkemulticloud.v1.AttachedCluster.Builder,
             com.google.cloud.gkemulticloud.v1.AttachedClusterOrBuilder>
         attachedClusterBuilder_;
-
     /**
      *
      *
@@ -904,7 +888,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     public boolean hasAttachedCluster() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -928,7 +911,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
         return attachedClusterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -954,7 +936,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +959,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +990,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1012,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1029,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return getAttachedClusterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1074,7 +1051,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
             : attachedCluster_;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1081,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object attachedClusterId_ = "";
-
     /**
      *
      *
@@ -1136,7 +1111,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1141,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1170,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1195,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1227,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1272,7 +1242,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1292,7 +1261,6 @@ public final class CreateAttachedClusterRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

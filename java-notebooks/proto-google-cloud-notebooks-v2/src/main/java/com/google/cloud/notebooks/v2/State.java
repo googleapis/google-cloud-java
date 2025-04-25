@@ -153,7 +153,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -164,7 +163,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STARTING = 1;</code>
    */
   public static final int STARTING_VALUE = 1;
-
   /**
    *
    *
@@ -176,7 +174,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROVISIONING = 2;</code>
    */
   public static final int PROVISIONING_VALUE = 2;
-
   /**
    *
    *
@@ -187,7 +184,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTIVE = 3;</code>
    */
   public static final int ACTIVE_VALUE = 3;
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STOPPING = 4;</code>
    */
   public static final int STOPPING_VALUE = 4;
-
   /**
    *
    *
@@ -209,7 +204,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STOPPED = 5;</code>
    */
   public static final int STOPPED_VALUE = 5;
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETED = 6;</code>
    */
   public static final int DELETED_VALUE = 6;
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADING = 7;</code>
    */
   public static final int UPGRADING_VALUE = 7;
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INITIALIZING = 8;</code>
    */
   public static final int INITIALIZING_VALUE = 8;
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SUSPENDING = 9;</code>
    */
   public static final int SUSPENDING_VALUE = 9;
-
   /**
    *
    *

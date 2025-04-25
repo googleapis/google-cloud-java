@@ -37,7 +37,6 @@ public interface VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
    * @return Whether the unsatisfiedReason field is set.
    */
   boolean hasUnsatisfiedReason();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface VpnGatewayStatusHighAvailabilityRequirementStateOrBuilder
    * @return The unsatisfiedReason.
    */
   java.lang.String getUnsatisfiedReason();
-
   /**
    *
    *

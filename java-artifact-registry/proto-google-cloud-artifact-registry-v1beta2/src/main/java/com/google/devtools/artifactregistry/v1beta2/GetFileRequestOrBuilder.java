@@ -36,7 +36,6 @@ public interface GetFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

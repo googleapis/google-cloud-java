@@ -37,7 +37,6 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * @return Whether the instanceState field is set.
    */
   boolean hasInstanceState();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * @return The instanceState.
    */
   java.lang.String getInstanceState();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * @return Whether the portName field is set.
    */
   boolean hasPortName();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder
    * @return The portName.
    */
   java.lang.String getPortName();
-
   /**
    *
    *

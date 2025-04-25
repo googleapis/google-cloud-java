@@ -34,7 +34,6 @@ public interface ListImportJobsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.kms.v1.ImportJob> getImportJobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListImportJobsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
   com.google.cloud.kms.v1.ImportJob getImportJobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListImportJobsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
   int getImportJobsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListImportJobsResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.ImportJob import_jobs = 1;</code>
    */
   java.util.List<? extends com.google.cloud.kms.v1.ImportJobOrBuilder> getImportJobsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListImportJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

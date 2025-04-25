@@ -33,7 +33,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.script.type.AddOnWidgetSet)
     AddOnWidgetSetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddOnWidgetSet.newBuilder() to construct.
   private AddOnWidgetSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -167,7 +166,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>WIDGET_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int WIDGET_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -178,7 +176,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>DATE_PICKER = 1;</code>
      */
     public static final int DATE_PICKER_VALUE = 1;
-
     /**
      *
      *
@@ -189,7 +186,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>STYLED_BUTTONS = 2;</code>
      */
     public static final int STYLED_BUTTONS_VALUE = 2;
-
     /**
      *
      *
@@ -200,7 +196,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>PERSISTENT_FORMS = 3;</code>
      */
     public static final int PERSISTENT_FORMS_VALUE = 3;
-
     /**
      *
      *
@@ -211,7 +206,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>FIXED_FOOTER = 4;</code>
      */
     public static final int FIXED_FOOTER_VALUE = 4;
-
     /**
      *
      *
@@ -222,7 +216,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_SUBJECT_AND_RECIPIENTS = 5;</code>
      */
     public static final int UPDATE_SUBJECT_AND_RECIPIENTS_VALUE = 5;
-
     /**
      *
      *
@@ -233,7 +226,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
      * <code>GRID_WIDGET = 6;</code>
      */
     public static final int GRID_WIDGET_VALUE = 6;
-
     /**
      *
      *
@@ -357,7 +349,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -376,7 +367,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.apps.script.type.AddOnWidgetSet.WidgetType>(
         usedWidgets_, usedWidgets_converter_);
   }
-
   /**
    *
    *
@@ -392,7 +382,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
   public int getUsedWidgetsCount() {
     return usedWidgets_.size();
   }
-
   /**
    *
    *
@@ -409,7 +398,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
   public com.google.apps.script.type.AddOnWidgetSet.WidgetType getUsedWidgets(int index) {
     return usedWidgets_converter_.convert(usedWidgets_.get(index));
   }
-
   /**
    *
    *
@@ -425,7 +413,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getUsedWidgetsValueList() {
     return usedWidgets_;
   }
-
   /**
    *
    *
@@ -620,7 +607,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -836,7 +822,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.apps.script.type.AddOnWidgetSet.WidgetType>(
           usedWidgets_, usedWidgets_converter_);
     }
-
     /**
      *
      *
@@ -869,7 +853,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     public int getUsedWidgetsCount() {
       return usedWidgets_.size();
     }
-
     /**
      *
      *
@@ -885,7 +868,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.script.type.AddOnWidgetSet.WidgetType getUsedWidgets(int index) {
       return usedWidgets_converter_.convert(usedWidgets_.get(index));
     }
-
     /**
      *
      *
@@ -909,7 +891,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +912,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +951,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +965,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getUsedWidgetsValueList() {
       return java.util.Collections.unmodifiableList(usedWidgets_);
     }
-
     /**
      *
      *
@@ -1003,7 +980,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     public int getUsedWidgetsValue(int index) {
       return usedWidgets_.get(index);
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1017,6 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

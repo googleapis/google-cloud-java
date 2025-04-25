@@ -45,7 +45,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SentimentAnalysisResult)
     SentimentAnalysisResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SentimentAnalysisResult.newBuilder() to construct.
   private SentimentAnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int QUERY_TEXT_SENTIMENT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.Sentiment queryTextSentiment_;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
   public boolean hasQueryTextSentiment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
         ? com.google.cloud.dialogflow.v2.Sentiment.getDefaultInstance()
         : queryTextSentiment_;
   }
-
   /**
    *
    *
@@ -293,7 +289,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -513,7 +508,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
             com.google.cloud.dialogflow.v2.Sentiment.Builder,
             com.google.cloud.dialogflow.v2.SentimentOrBuilder>
         queryTextSentimentBuilder_;
-
     /**
      *
      *
@@ -528,7 +522,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     public boolean hasQueryTextSentiment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
         return queryTextSentimentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -572,7 +564,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +645,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       onChanged();
       return getQueryTextSentimentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -676,7 +663,6 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
             : queryTextSentiment_;
       }
     }
-
     /**
      *
      *

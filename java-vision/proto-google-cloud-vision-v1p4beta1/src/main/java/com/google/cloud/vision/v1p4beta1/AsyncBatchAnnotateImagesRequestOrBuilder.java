@@ -36,7 +36,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.AnnotateImageRequest> getRequestsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   com.google.cloud.vision.v1p4beta1.AnnotateImageRequest getRequests(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface AsyncBatchAnnotateImagesRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.vision.v1p4beta1.OutputConfig getOutputConfig();
-
   /**
    *
    *

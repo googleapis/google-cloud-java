@@ -38,7 +38,6 @@ public interface PickTimeSeriesFilterOrBuilder
    * @return The enum numeric value on the wire for rankingMethod.
    */
   int getRankingMethodValue();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface PickTimeSeriesFilterOrBuilder
    * @return The enum numeric value on the wire for direction.
    */
   int getDirectionValue();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface PickTimeSeriesFilterOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface PickTimeSeriesFilterOrBuilder
    * @return The interval.
    */
   com.google.type.Interval getInterval();
-
   /**
    *
    *

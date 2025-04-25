@@ -36,7 +36,6 @@ public interface BlockOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BlockOrBuilder
    * @return The property.
    */
   com.google.cloud.vision.v1p2beta1.TextAnnotation.TextProperty getProperty();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface BlockOrBuilder
    * @return Whether the boundingBox field is set.
    */
   boolean hasBoundingBox();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface BlockOrBuilder
    * @return The boundingBox.
    */
   com.google.cloud.vision.v1p2beta1.BoundingPoly getBoundingBox();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface BlockOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.Paragraph> getParagraphsList();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface BlockOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
    */
   com.google.cloud.vision.v1p2beta1.Paragraph getParagraphs(int index);
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface BlockOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.Paragraph paragraphs = 3;</code>
    */
   int getParagraphsCount();
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public interface BlockOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.ParagraphOrBuilder>
       getParagraphsOrBuilderList();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface BlockOrBuilder
    * @return The enum numeric value on the wire for blockType.
    */
   int getBlockTypeValue();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TestCaseErrorOrBuilder
    * @return Whether the testCase field is set.
    */
   boolean hasTestCase();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TestCaseErrorOrBuilder
    * @return The testCase.
    */
   com.google.cloud.dialogflow.cx.v3.TestCase getTestCase();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface TestCaseErrorOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface TestCaseErrorOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *

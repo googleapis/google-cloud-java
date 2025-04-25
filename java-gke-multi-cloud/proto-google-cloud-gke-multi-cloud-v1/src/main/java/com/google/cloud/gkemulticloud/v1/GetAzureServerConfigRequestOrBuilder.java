@@ -46,7 +46,6 @@ public interface GetAzureServerConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

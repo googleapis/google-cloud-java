@@ -33,7 +33,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.EnvVarSource)
     EnvVarSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnvVarSource.newBuilder() to construct.
   private EnvVarSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SECRET_KEY_REF_FIELD_NUMBER = 1;
   private com.google.cloud.run.v2.SecretKeySelector secretKeyRef_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSecretKeyRef() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.run.v2.SecretKeySelector.getDefaultInstance()
         : secretKeyRef_;
   }
-
   /**
    *
    *
@@ -278,7 +274,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +476,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.run.v2.SecretKeySelector.Builder,
             com.google.cloud.run.v2.SecretKeySelectorOrBuilder>
         secretKeyRefBuilder_;
-
     /**
      *
      *
@@ -496,7 +490,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecretKeyRef() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -517,7 +510,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
         return secretKeyRefBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -540,7 +532,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -561,7 +552,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -589,7 +579,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -609,7 +598,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +612,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSecretKeyRefFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -643,7 +630,6 @@ public final class EnvVarSource extends com.google.protobuf.GeneratedMessageV3
             : secretKeyRef_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DiskPartition)
     DiskPartitionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskPartition.newBuilder() to construct.
   private DiskPartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileSystem_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mountPoint_ = "";
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAPACITY_BYTES_FIELD_NUMBER = 4;
   private long capacityBytes_ = 0L;
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FREE_BYTES_FIELD_NUMBER = 5;
   private long freeBytes_ = 0L;
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uuid_ = "";
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUB_PARTITIONS_FIELD_NUMBER = 7;
   private com.google.cloud.migrationcenter.v1.DiskPartitionList subPartitions_;
-
   /**
    *
    *
@@ -336,7 +324,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubPartitions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -354,7 +341,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.migrationcenter.v1.DiskPartitionList.getDefaultInstance()
         : subPartitions_;
   }
-
   /**
    *
    *
@@ -590,7 +576,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -876,7 +861,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -899,7 +883,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +905,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +926,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +943,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object fileSystem_ = "";
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1011,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1049,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1073,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mountPoint_ = "";
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1117,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1138,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1155,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long capacityBytes_;
-
     /**
      *
      *
@@ -1225,7 +1194,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     public long getCapacityBytes() {
       return capacityBytes_;
     }
-
     /**
      *
      *
@@ -1245,7 +1213,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1232,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long freeBytes_;
-
     /**
      *
      *
@@ -1281,7 +1247,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     public long getFreeBytes() {
       return freeBytes_;
     }
-
     /**
      *
      *
@@ -1301,7 +1266,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1285,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uuid_ = "";
-
     /**
      *
      *
@@ -1344,7 +1307,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1367,7 +1329,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1350,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1367,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1437,7 +1396,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.migrationcenter.v1.DiskPartitionList.Builder,
             com.google.cloud.migrationcenter.v1.DiskPartitionListOrBuilder>
         subPartitionsBuilder_;
-
     /**
      *
      *
@@ -1452,7 +1410,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubPartitions() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1473,7 +1430,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
         return subPartitionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1496,7 +1452,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1517,7 +1472,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1500,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1519,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1533,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSubPartitionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1601,7 +1552,6 @@ public final class DiskPartition extends com.google.protobuf.GeneratedMessageV3
             : subPartitions_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class ListIdentityAwareProxyClientsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.ListIdentityAwareProxyClientsResponse)
     ListIdentityAwareProxyClientsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListIdentityAwareProxyClientsResponse.newBuilder() to construct.
   private ListIdentityAwareProxyClientsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListIdentityAwareProxyClientsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iap.v1.IdentityAwareProxyClient>
       identityAwareProxyClients_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ListIdentityAwareProxyClientsResponse
       getIdentityAwareProxyClientsList() {
     return identityAwareProxyClients_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListIdentityAwareProxyClientsResponse
       getIdentityAwareProxyClientsOrBuilderList() {
     return identityAwareProxyClients_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListIdentityAwareProxyClientsResponse
   public int getIdentityAwareProxyClientsCount() {
     return identityAwareProxyClients_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class ListIdentityAwareProxyClientsResponse
   public com.google.cloud.iap.v1.IdentityAwareProxyClient getIdentityAwareProxyClients(int index) {
     return identityAwareProxyClients_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class ListIdentityAwareProxyClientsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListIdentityAwareProxyClientsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +372,6 @@ public final class ListIdentityAwareProxyClientsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +658,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return identityAwareProxyClientsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -686,7 +676,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return identityAwareProxyClientsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return identityAwareProxyClientsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -732,7 +720,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class ListIdentityAwareProxyClientsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class ListIdentityAwareProxyClientsResponse
         getIdentityAwareProxyClientsBuilder(int index) {
       return getIdentityAwareProxyClientsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return identityAwareProxyClientsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return java.util.Collections.unmodifiableList(identityAwareProxyClients_);
       }
     }
-
     /**
      *
      *
@@ -993,7 +969,6 @@ public final class ListIdentityAwareProxyClientsResponse
       return getIdentityAwareProxyClientsFieldBuilder()
           .addBuilder(com.google.cloud.iap.v1.IdentityAwareProxyClient.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1010,7 +985,6 @@ public final class ListIdentityAwareProxyClientsResponse
       return getIdentityAwareProxyClientsFieldBuilder()
           .addBuilder(index, com.google.cloud.iap.v1.IdentityAwareProxyClient.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1048,7 +1022,6 @@ public final class ListIdentityAwareProxyClientsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1068,6 @@ public final class ListIdentityAwareProxyClientsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1090,6 @@ public final class ListIdentityAwareProxyClientsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1108,6 @@ public final class ListIdentityAwareProxyClientsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ReviewDocumentRequest)
     ReviewDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReviewDocumentRequest.newBuilder() to construct.
   private ReviewDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,7 +110,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>DEFAULT = 0;</code>
      */
     public static final int DEFAULT_VALUE = 0;
-
     /**
      *
      *
@@ -224,7 +222,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -256,7 +253,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int INLINE_DOCUMENT_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -272,7 +268,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInlineDocument() {
     return sourceCase_ == 4;
   }
-
   /**
    *
    *
@@ -291,7 +286,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object humanReviewConfig_ = "";
-
   /**
    *
    *
@@ -341,7 +334,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DOCUMENT_FIELD_NUMBER = 2;
   private com.google.cloud.documentai.v1beta3.Document document_;
-
   /**
    *
    *
@@ -391,7 +382,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -412,7 +402,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()
         : document_;
   }
-
   /**
    *
    *
@@ -432,7 +421,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ENABLE_SCHEMA_VALIDATION_FIELD_NUMBER = 3;
   private boolean enableSchemaValidation_ = false;
-
   /**
    *
    *
@@ -451,7 +439,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int PRIORITY_FIELD_NUMBER = 5;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -467,7 +454,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   public int getPriorityValue() {
     return priority_;
   }
-
   /**
    *
    *
@@ -490,7 +476,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DOCUMENT_SCHEMA_FIELD_NUMBER = 6;
   private com.google.cloud.documentai.v1beta3.DocumentSchema documentSchema_;
-
   /**
    *
    *
@@ -506,7 +491,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDocumentSchema() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -524,7 +508,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
         : documentSchema_;
   }
-
   /**
    *
    *
@@ -773,7 +756,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1085,7 +1067,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.documentai.v1beta3.Document.Builder,
             com.google.cloud.documentai.v1beta3.DocumentOrBuilder>
         inlineDocumentBuilder_;
-
     /**
      *
      *
@@ -1101,7 +1082,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInlineDocument() {
       return sourceCase_ == 4;
     }
-
     /**
      *
      *
@@ -1127,7 +1107,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1150,7 +1129,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1149,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1181,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1206,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1218,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.documentai.v1beta3.Document.Builder getInlineDocumentBuilder() {
       return getInlineDocumentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1264,7 +1238,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1299,7 +1272,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object humanReviewConfig_ = "";
-
     /**
      *
      *
@@ -1326,7 +1298,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1353,7 +1324,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1379,7 +1349,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1370,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1403,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.documentai.v1beta3.Document.Builder,
             com.google.cloud.documentai.v1beta3.DocumentOrBuilder>
         documentBuilder_;
-
     /**
      *
      *
@@ -1453,7 +1420,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1477,7 +1443,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return documentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1501,7 +1466,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1487,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1515,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1535,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1550,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1609,7 +1569,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             : document_;
       }
     }
-
     /**
      *
      *
@@ -1637,7 +1596,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean enableSchemaValidation_;
-
     /**
      *
      *
@@ -1653,7 +1611,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean getEnableSchemaValidation() {
       return enableSchemaValidation_;
     }
-
     /**
      *
      *
@@ -1673,7 +1630,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1649,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int priority_ = 0;
-
     /**
      *
      *
@@ -1709,7 +1664,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public int getPriorityValue() {
       return priority_;
     }
-
     /**
      *
      *
@@ -1728,7 +1682,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1748,7 +1701,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.documentai.v1beta3.ReviewDocumentRequest.Priority.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1771,7 +1723,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1747,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
             com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>
         documentSchemaBuilder_;
-
     /**
      *
      *
@@ -1811,7 +1761,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDocumentSchema() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1832,7 +1781,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
         return documentSchemaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1855,7 +1803,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1876,7 +1823,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1905,7 +1851,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1925,7 +1870,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1940,7 +1884,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDocumentSchemaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1960,7 +1903,6 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
             : documentSchema_;
       }
     }
-
     /**
      *
      *

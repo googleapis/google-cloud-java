@@ -36,7 +36,6 @@ public interface TextEntityExtractionConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
-
   /**
    *
    *

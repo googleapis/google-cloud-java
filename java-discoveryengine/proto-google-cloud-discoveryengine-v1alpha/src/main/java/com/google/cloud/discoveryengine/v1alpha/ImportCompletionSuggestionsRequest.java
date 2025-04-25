@@ -35,7 +35,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportCompletionSuggestionsRequest)
     ImportCompletionSuggestionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportCompletionSuggestionsRequest.newBuilder() to construct.
   private ImportCompletionSuggestionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -86,7 +85,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
      */
     java.util.List<com.google.cloud.discoveryengine.v1alpha.CompletionSuggestion>
         getSuggestionsList();
-
     /**
      *
      *
@@ -99,7 +97,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
      * </code>
      */
     com.google.cloud.discoveryengine.v1alpha.CompletionSuggestion getSuggestions(int index);
-
     /**
      *
      *
@@ -112,7 +109,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
      * </code>
      */
     int getSuggestionsCount();
-
     /**
      *
      *
@@ -126,7 +122,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
      */
     java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.CompletionSuggestionOrBuilder>
         getSuggestionsOrBuilderList();
-
     /**
      *
      *
@@ -141,7 +136,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     com.google.cloud.discoveryengine.v1alpha.CompletionSuggestionOrBuilder getSuggestionsOrBuilder(
         int index);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportCompletionSuggestionsRequest.InlineSource)
       InlineSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InlineSource.newBuilder() to construct.
     private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -195,7 +188,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1alpha.CompletionSuggestion>
         suggestions_;
-
     /**
      *
      *
@@ -212,7 +204,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         getSuggestionsList() {
       return suggestions_;
     }
-
     /**
      *
      *
@@ -230,7 +221,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         getSuggestionsOrBuilderList() {
       return suggestions_;
     }
-
     /**
      *
      *
@@ -246,7 +236,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public int getSuggestionsCount() {
       return suggestions_.size();
     }
-
     /**
      *
      *
@@ -262,7 +251,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public com.google.cloud.discoveryengine.v1alpha.CompletionSuggestion getSuggestions(int index) {
       return suggestions_.get(index);
     }
-
     /**
      *
      *
@@ -468,7 +456,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
           return suggestionsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -785,7 +771,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
           return suggestionsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -805,7 +790,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
           return suggestionsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -831,7 +815,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -855,7 +838,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -881,7 +863,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -907,7 +888,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -930,7 +910,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -954,7 +933,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -979,7 +957,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -1001,7 +978,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -1023,7 +999,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         }
         return this;
       }
-
       /**
        *
        *
@@ -1039,7 +1014,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
           getSuggestionsBuilder(int index) {
         return getSuggestionsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1059,7 +1033,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
           return suggestionsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1080,7 +1053,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
           return java.util.Collections.unmodifiableList(suggestions_);
         }
       }
-
       /**
        *
        *
@@ -1098,7 +1070,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             .addBuilder(
                 com.google.cloud.discoveryengine.v1alpha.CompletionSuggestion.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1117,7 +1088,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
                 index,
                 com.google.cloud.discoveryengine.v1alpha.CompletionSuggestion.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1244,7 +1214,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1280,7 +1249,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   }
 
   public static final int INLINE_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1298,7 +1266,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   public boolean hasInlineSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -1323,7 +1290,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     return com.google.cloud.discoveryengine.v1alpha.ImportCompletionSuggestionsRequest.InlineSource
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1349,7 +1315,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1365,7 +1330,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   public boolean hasGcsSource() {
     return sourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -1384,7 +1348,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     }
     return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1403,7 +1366,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1419,7 +1381,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   public boolean hasBigquerySource() {
     return sourceCase_ == 4;
   }
-
   /**
    *
    *
@@ -1438,7 +1399,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     }
     return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1461,7 +1421,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1490,7 +1449,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -1522,7 +1480,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
 
   public static final int ERROR_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig errorConfig_;
-
   /**
    *
    *
@@ -1538,7 +1495,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
   public boolean hasErrorConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1556,7 +1512,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         ? com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.getDefaultInstance()
         : errorConfig_;
   }
-
   /**
    *
    *
@@ -1815,7 +1770,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2130,7 +2084,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             com.google.cloud.discoveryengine.v1alpha.ImportCompletionSuggestionsRequest
                 .InlineSourceOrBuilder>
         inlineSourceBuilder_;
-
     /**
      *
      *
@@ -2148,7 +2101,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public boolean hasInlineSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -2181,7 +2133,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             .InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2208,7 +2159,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2233,7 +2183,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2275,7 +2224,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2303,7 +2251,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -2320,7 +2267,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         getInlineSourceBuilder() {
       return getInlineSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2348,7 +2294,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             .InlineSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2399,7 +2344,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder,
             com.google.cloud.discoveryengine.v1alpha.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -2415,7 +2359,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -2441,7 +2384,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2464,7 +2406,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2485,7 +2426,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2518,7 +2458,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2544,7 +2483,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -2557,7 +2495,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public com.google.cloud.discoveryengine.v1alpha.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2578,7 +2515,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return com.google.cloud.discoveryengine.v1alpha.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2617,7 +2553,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             com.google.cloud.discoveryengine.v1alpha.BigQuerySource.Builder,
             com.google.cloud.discoveryengine.v1alpha.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
-
     /**
      *
      *
@@ -2633,7 +2568,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public boolean hasBigquerySource() {
       return sourceCase_ == 4;
     }
-
     /**
      *
      *
@@ -2659,7 +2593,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2683,7 +2616,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2704,7 +2636,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2739,7 +2670,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       sourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2765,7 +2695,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -2779,7 +2708,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2801,7 +2729,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return com.google.cloud.discoveryengine.v1alpha.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2836,7 +2763,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2864,7 +2790,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2892,7 +2817,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2919,7 +2843,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2942,7 +2865,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2977,7 +2899,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfig.Builder,
             com.google.cloud.discoveryengine.v1alpha.ImportErrorConfigOrBuilder>
         errorConfigBuilder_;
-
     /**
      *
      *
@@ -2992,7 +2913,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
     public boolean hasErrorConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3013,7 +2933,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
         return errorConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3037,7 +2956,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3058,7 +2976,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3089,7 +3006,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -3109,7 +3025,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3125,7 +3040,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3145,7 +3059,6 @@ public final class ImportCompletionSuggestionsRequest extends com.google.protobu
             : errorConfig_;
       }
     }
-
     /**
      *
      *

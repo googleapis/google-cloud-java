@@ -36,7 +36,6 @@ public interface OperationOrBuilder
    * @return Whether the clientOperationId field is set.
    */
   boolean hasClientOperationId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OperationOrBuilder
    * @return The clientOperationId.
    */
   java.lang.String getClientOperationId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface OperationOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface OperationOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface OperationOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface OperationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface OperationOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface OperationOrBuilder
    * @return The endTime.
    */
   java.lang.String getEndTime();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface OperationOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface OperationOrBuilder
    * @return The error.
    */
   com.google.cloud.compute.v1.Error getError();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface OperationOrBuilder
    * @return Whether the httpErrorMessage field is set.
    */
   boolean hasHttpErrorMessage();
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public interface OperationOrBuilder
    * @return The httpErrorMessage.
    */
   java.lang.String getHttpErrorMessage();
-
   /**
    *
    *
@@ -276,7 +264,6 @@ public interface OperationOrBuilder
    * @return Whether the httpErrorStatusCode field is set.
    */
   boolean hasHttpErrorStatusCode();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface OperationOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -330,7 +316,6 @@ public interface OperationOrBuilder
    * @return Whether the insertTime field is set.
    */
   boolean hasInsertTime();
-
   /**
    *
    *
@@ -343,7 +328,6 @@ public interface OperationOrBuilder
    * @return The insertTime.
    */
   java.lang.String getInsertTime();
-
   /**
    *
    *
@@ -365,7 +349,6 @@ public interface OperationOrBuilder
    * @return Whether the instancesBulkInsertOperationMetadata field is set.
    */
   boolean hasInstancesBulkInsertOperationMetadata();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
@@ -375,7 +358,6 @@ public interface OperationOrBuilder
    */
   com.google.cloud.compute.v1.InstancesBulkInsertOperationMetadata
       getInstancesBulkInsertOperationMetadata();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.InstancesBulkInsertOperationMetadata instances_bulk_insert_operation_metadata = 89146177;
@@ -396,7 +378,6 @@ public interface OperationOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -409,7 +390,6 @@ public interface OperationOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -435,7 +415,6 @@ public interface OperationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -448,7 +427,6 @@ public interface OperationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -474,7 +452,6 @@ public interface OperationOrBuilder
    * @return Whether the operationGroupId field is set.
    */
   boolean hasOperationGroupId();
-
   /**
    *
    *
@@ -487,7 +464,6 @@ public interface OperationOrBuilder
    * @return The operationGroupId.
    */
   java.lang.String getOperationGroupId();
-
   /**
    *
    *
@@ -513,7 +489,6 @@ public interface OperationOrBuilder
    * @return Whether the operationType field is set.
    */
   boolean hasOperationType();
-
   /**
    *
    *
@@ -526,7 +501,6 @@ public interface OperationOrBuilder
    * @return The operationType.
    */
   java.lang.String getOperationType();
-
   /**
    *
    *
@@ -552,7 +526,6 @@ public interface OperationOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
-
   /**
    *
    *
@@ -578,7 +551,6 @@ public interface OperationOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -591,7 +563,6 @@ public interface OperationOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -617,7 +588,6 @@ public interface OperationOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -630,7 +600,6 @@ public interface OperationOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -658,7 +627,6 @@ public interface OperationOrBuilder
    * @return Whether the setCommonInstanceMetadataOperationMetadata field is set.
    */
   boolean hasSetCommonInstanceMetadataOperationMetadata();
-
   /**
    *
    *
@@ -674,7 +642,6 @@ public interface OperationOrBuilder
    */
   com.google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadata
       getSetCommonInstanceMetadataOperationMetadata();
-
   /**
    *
    *
@@ -701,7 +668,6 @@ public interface OperationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -714,7 +680,6 @@ public interface OperationOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *
@@ -742,7 +707,6 @@ public interface OperationOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -757,7 +721,6 @@ public interface OperationOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *
@@ -785,7 +748,6 @@ public interface OperationOrBuilder
    * @return Whether the statusMessage field is set.
    */
   boolean hasStatusMessage();
-
   /**
    *
    *
@@ -798,7 +760,6 @@ public interface OperationOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *
@@ -824,7 +785,6 @@ public interface OperationOrBuilder
    * @return Whether the targetId field is set.
    */
   boolean hasTargetId();
-
   /**
    *
    *
@@ -850,7 +810,6 @@ public interface OperationOrBuilder
    * @return Whether the targetLink field is set.
    */
   boolean hasTargetLink();
-
   /**
    *
    *
@@ -863,7 +822,6 @@ public interface OperationOrBuilder
    * @return The targetLink.
    */
   java.lang.String getTargetLink();
-
   /**
    *
    *
@@ -889,7 +847,6 @@ public interface OperationOrBuilder
    * @return Whether the user field is set.
    */
   boolean hasUser();
-
   /**
    *
    *
@@ -902,7 +859,6 @@ public interface OperationOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -926,7 +882,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
-
   /**
    *
    *
@@ -937,7 +892,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
-
   /**
    *
    *
@@ -948,7 +902,6 @@ public interface OperationOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -960,7 +913,6 @@ public interface OperationOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
-
   /**
    *
    *
@@ -984,7 +936,6 @@ public interface OperationOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -997,7 +948,6 @@ public interface OperationOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

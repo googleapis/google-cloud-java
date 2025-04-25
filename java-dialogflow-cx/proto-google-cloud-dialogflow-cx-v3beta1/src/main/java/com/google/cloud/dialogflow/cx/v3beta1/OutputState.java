@@ -102,7 +102,6 @@ public enum OutputState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OUTPUT_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int OUTPUT_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -113,7 +112,6 @@ public enum OutputState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OUTPUT_STATE_OK = 1;</code>
    */
   public static final int OUTPUT_STATE_OK_VALUE = 1;
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public enum OutputState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OUTPUT_STATE_CANCELLED = 2;</code>
    */
   public static final int OUTPUT_STATE_CANCELLED_VALUE = 2;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public enum OutputState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OUTPUT_STATE_FAILED = 3;</code>
    */
   public static final int OUTPUT_STATE_FAILED_VALUE = 3;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public enum OutputState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OUTPUT_STATE_ESCALATED = 4;</code>
    */
   public static final int OUTPUT_STATE_ESCALATED_VALUE = 4;
-
   /**
    *
    *

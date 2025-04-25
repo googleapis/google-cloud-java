@@ -32,7 +32,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallPolicyRuleSecureTag)
     FirewallPolicyRuleSecureTagOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FirewallPolicyRuleSecureTag.newBuilder() to construct.
   private FirewallPolicyRuleSecureTag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,10 +100,8 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-
     /** <code>EFFECTIVE = 244201863;</code> */
     public static final int EFFECTIVE_VALUE = 244201863;
-
     /** <code>INEFFECTIVE = 304458242;</code> */
     public static final int INEFFECTIVE_VALUE = 304458242;
 
@@ -198,7 +195,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -214,7 +210,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -238,7 +233,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -267,7 +261,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
-
   /**
    *
    *
@@ -284,7 +277,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
   public boolean hasState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -309,7 +301,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -514,7 +505,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -717,7 +707,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -732,7 +721,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -755,7 +743,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -800,7 +786,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +827,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     }
 
     private java.lang.Object state_ = "";
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
     public boolean hasState() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -930,7 +910,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class FirewallPolicyRuleSecureTag extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

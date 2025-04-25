@@ -33,7 +33,6 @@ public final class ShuttingDownSourceVMStep extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.ShuttingDownSourceVMStep)
     ShuttingDownSourceVMStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShuttingDownSourceVMStep.newBuilder() to construct.
   private ShuttingDownSourceVMStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ShuttingDownSourceVMStep extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

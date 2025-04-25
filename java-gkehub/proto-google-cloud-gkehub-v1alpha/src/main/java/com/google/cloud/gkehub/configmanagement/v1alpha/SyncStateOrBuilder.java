@@ -36,7 +36,6 @@ public interface SyncStateOrBuilder
    * @return The sourceToken.
    */
   java.lang.String getSourceToken();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SyncStateOrBuilder
    * @return The importToken.
    */
   java.lang.String getImportToken();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SyncStateOrBuilder
    * @return The syncToken.
    */
   java.lang.String getSyncToken();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface SyncStateOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getLastSync();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface SyncStateOrBuilder
    * @return Whether the lastSyncTime field is set.
    */
   boolean hasLastSyncTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface SyncStateOrBuilder
    * @return The lastSyncTime.
    */
   com.google.protobuf.Timestamp getLastSyncTime();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface SyncStateOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface SyncStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1alpha.SyncError errors = 6;</code>
    */
   java.util.List<com.google.cloud.gkehub.configmanagement.v1alpha.SyncError> getErrorsList();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface SyncStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1alpha.SyncError errors = 6;</code>
    */
   com.google.cloud.gkehub.configmanagement.v1alpha.SyncError getErrors(int index);
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public interface SyncStateOrBuilder
    * <code>repeated .google.cloud.gkehub.configmanagement.v1alpha.SyncError errors = 6;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public interface SyncStateOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.configmanagement.v1alpha.SyncErrorOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *

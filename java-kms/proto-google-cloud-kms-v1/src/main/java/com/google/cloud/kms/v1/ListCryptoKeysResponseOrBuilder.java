@@ -34,7 +34,6 @@ public interface ListCryptoKeysResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKey crypto_keys = 1;</code>
    */
   java.util.List<com.google.cloud.kms.v1.CryptoKey> getCryptoKeysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCryptoKeysResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKey crypto_keys = 1;</code>
    */
   com.google.cloud.kms.v1.CryptoKey getCryptoKeys(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCryptoKeysResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKey crypto_keys = 1;</code>
    */
   int getCryptoKeysCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListCryptoKeysResponseOrBuilder
    * <code>repeated .google.cloud.kms.v1.CryptoKey crypto_keys = 1;</code>
    */
   java.util.List<? extends com.google.cloud.kms.v1.CryptoKeyOrBuilder> getCryptoKeysOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListCryptoKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

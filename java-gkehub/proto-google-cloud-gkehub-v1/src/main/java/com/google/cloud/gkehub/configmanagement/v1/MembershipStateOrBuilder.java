@@ -37,7 +37,6 @@ public interface MembershipStateOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the membershipSpec field is set.
    */
   boolean hasMembershipSpec();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface MembershipStateOrBuilder
    * @return The membershipSpec.
    */
   com.google.cloud.gkehub.configmanagement.v1.MembershipSpec getMembershipSpec();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the operatorState field is set.
    */
   boolean hasOperatorState();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface MembershipStateOrBuilder
    * @return The operatorState.
    */
   com.google.cloud.gkehub.configmanagement.v1.OperatorState getOperatorState();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the configSyncState field is set.
    */
   boolean hasConfigSyncState();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface MembershipStateOrBuilder
    * @return The configSyncState.
    */
   com.google.cloud.gkehub.configmanagement.v1.ConfigSyncState getConfigSyncState();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the policyControllerState field is set.
    */
   boolean hasPolicyControllerState();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface MembershipStateOrBuilder
    * @return The policyControllerState.
    */
   com.google.cloud.gkehub.configmanagement.v1.PolicyControllerState getPolicyControllerState();
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public interface MembershipStateOrBuilder
    * @return Whether the hierarchyControllerState field is set.
    */
   boolean hasHierarchyControllerState();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface MembershipStateOrBuilder
    */
   com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerState
       getHierarchyControllerState();
-
   /**
    *
    *

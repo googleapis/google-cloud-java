@@ -37,7 +37,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.User)
     UserOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use User.newBuilder() to construct.
   private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -113,7 +112,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -124,7 +122,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
      * <code>HUMAN = 1;</code>
      */
     public static final int HUMAN_VALUE = 1;
-
     /**
      *
      *
@@ -223,7 +220,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -268,7 +264,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -342,7 +336,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +364,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domainId_ = "";
-
   /**
    *
    *
@@ -395,7 +387,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +413,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 5;
   private int type_ = 0;
-
   /**
    *
    *
@@ -438,7 +428,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -458,7 +447,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_ANONYMOUS_FIELD_NUMBER = 7;
   private boolean isAnonymous_ = false;
-
   /**
    *
    *
@@ -669,7 +657,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -908,7 +895,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -952,7 +938,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -996,7 +981,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1023,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1061,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1106,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1147,7 +1128,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1170,7 +1150,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1192,7 +1171,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1188,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1212,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object domainId_ = "";
-
     /**
      *
      *
@@ -1258,7 +1234,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1281,7 +1256,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1303,7 +1277,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1294,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1318,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1362,7 +1333,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1381,7 +1351,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1367,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       com.google.chat.v1.User.Type result = com.google.chat.v1.User.Type.forNumber(type_);
       return result == null ? com.google.chat.v1.User.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1420,7 +1388,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1440,7 +1407,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isAnonymous_;
-
     /**
      *
      *
@@ -1457,7 +1423,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsAnonymous() {
       return isAnonymous_;
     }
-
     /**
      *
      *
@@ -1478,7 +1443,6 @@ public final class User extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

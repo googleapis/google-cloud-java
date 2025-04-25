@@ -35,7 +35,6 @@ public final class TrajectoryInOrderMatchSpec extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchSpec)
     TrajectoryInOrderMatchSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrajectoryInOrderMatchSpec.newBuilder() to construct.
   private TrajectoryInOrderMatchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class TrajectoryInOrderMatchSpec extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CustomVoiceParamsOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CustomVoiceParamsOrBuilder
    */
   @java.lang.Deprecated
   int getReportedUsageValue();
-
   /**
    *
    *

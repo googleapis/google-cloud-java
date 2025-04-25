@@ -39,7 +39,6 @@ public interface UpdateCaPoolRequestOrBuilder
    * @return Whether the caPool field is set.
    */
   boolean hasCaPool();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateCaPoolRequestOrBuilder
    * @return The caPool.
    */
   com.google.cloud.security.privateca.v1.CaPool getCaPool();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateCaPoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateCaPoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface UpdateCaPoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

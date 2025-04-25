@@ -33,7 +33,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetMacsecConfigInterconnectRequest)
     GetMacsecConfigInterconnectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetMacsecConfigInterconnectRequest.newBuilder() to construct.
   private GetMacsecConfigInterconnectRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnect_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -341,7 +336,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -544,7 +538,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object interconnect_ = "";
-
     /**
      *
      *
@@ -567,7 +560,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +726,6 @@ public final class GetMacsecConfigInterconnectRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

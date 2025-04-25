@@ -36,7 +36,6 @@ public interface ImportDocumentTemplateOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ImportDocumentTemplateOrBuilder
    * @return A list containing the knowledgeTypes.
    */
   java.util.List<com.google.cloud.dialogflow.v2.Document.KnowledgeType> getKnowledgeTypesList();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ImportDocumentTemplateOrBuilder
    * @return The count of knowledgeTypes.
    */
   int getKnowledgeTypesCount();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ImportDocumentTemplateOrBuilder
    * @return The knowledgeTypes at the given index.
    */
   com.google.cloud.dialogflow.v2.Document.KnowledgeType getKnowledgeTypes(int index);
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ImportDocumentTemplateOrBuilder
    * @return A list containing the enum numeric values on the wire for knowledgeTypes.
    */
   java.util.List<java.lang.Integer> getKnowledgeTypesValueList();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ImportDocumentTemplateOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -154,11 +148,9 @@ public interface ImportDocumentTemplateOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -172,7 +164,6 @@ public interface ImportDocumentTemplateOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -190,7 +181,6 @@ public interface ImportDocumentTemplateOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

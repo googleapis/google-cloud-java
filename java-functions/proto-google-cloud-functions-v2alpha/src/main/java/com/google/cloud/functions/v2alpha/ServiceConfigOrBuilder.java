@@ -40,7 +40,6 @@ public interface ServiceConfigOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ServiceConfigOrBuilder
    * @return The availableMemory.
    */
   java.lang.String getAvailableMemory();
-
   /**
    *
    *
@@ -125,7 +123,6 @@ public interface ServiceConfigOrBuilder
    * @return The availableCpu.
    */
   java.lang.String getAvailableCpu();
-
   /**
    *
    *
@@ -153,7 +150,6 @@ public interface ServiceConfigOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 4;</code>
    */
   int getEnvironmentVariablesCount();
-
   /**
    *
    *
@@ -164,11 +160,9 @@ public interface ServiceConfigOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 4;</code>
    */
   boolean containsEnvironmentVariables(java.lang.String key);
-
   /** Use {@link #getEnvironmentVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariables();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface ServiceConfigOrBuilder
    * <code>map&lt;string, string&gt; environment_variables = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvironmentVariablesMap();
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public interface ServiceConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -264,7 +256,6 @@ public interface ServiceConfigOrBuilder
    * @return The vpcConnector.
    */
   java.lang.String getVpcConnector();
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public interface ServiceConfigOrBuilder
    * @return The enum numeric value on the wire for vpcConnectorEgressSettings.
    */
   int getVpcConnectorEgressSettingsValue();
-
   /**
    *
    *
@@ -326,7 +316,6 @@ public interface ServiceConfigOrBuilder
    * @return The enum numeric value on the wire for ingressSettings.
    */
   int getIngressSettingsValue();
-
   /**
    *
    *
@@ -354,7 +343,6 @@ public interface ServiceConfigOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -381,7 +369,6 @@ public interface ServiceConfigOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
-
   /**
    *
    *
@@ -425,7 +412,6 @@ public interface ServiceConfigOrBuilder
    */
   java.util.List<com.google.cloud.functions.v2alpha.SecretEnvVar>
       getSecretEnvironmentVariablesList();
-
   /**
    *
    *
@@ -437,7 +423,6 @@ public interface ServiceConfigOrBuilder
    * </code>
    */
   com.google.cloud.functions.v2alpha.SecretEnvVar getSecretEnvironmentVariables(int index);
-
   /**
    *
    *
@@ -449,7 +434,6 @@ public interface ServiceConfigOrBuilder
    * </code>
    */
   int getSecretEnvironmentVariablesCount();
-
   /**
    *
    *
@@ -462,7 +446,6 @@ public interface ServiceConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v2alpha.SecretEnvVarOrBuilder>
       getSecretEnvironmentVariablesOrBuilderList();
-
   /**
    *
    *
@@ -486,7 +469,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.cloud.functions.v2alpha.SecretVolume secret_volumes = 19;</code>
    */
   java.util.List<com.google.cloud.functions.v2alpha.SecretVolume> getSecretVolumesList();
-
   /**
    *
    *
@@ -497,7 +479,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.cloud.functions.v2alpha.SecretVolume secret_volumes = 19;</code>
    */
   com.google.cloud.functions.v2alpha.SecretVolume getSecretVolumes(int index);
-
   /**
    *
    *
@@ -508,7 +489,6 @@ public interface ServiceConfigOrBuilder
    * <code>repeated .google.cloud.functions.v2alpha.SecretVolume secret_volumes = 19;</code>
    */
   int getSecretVolumesCount();
-
   /**
    *
    *
@@ -520,7 +500,6 @@ public interface ServiceConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v2alpha.SecretVolumeOrBuilder>
       getSecretVolumesOrBuilderList();
-
   /**
    *
    *
@@ -544,7 +523,6 @@ public interface ServiceConfigOrBuilder
    * @return The revision.
    */
   java.lang.String getRevision();
-
   /**
    *
    *
@@ -587,7 +565,6 @@ public interface ServiceConfigOrBuilder
    * @return The enum numeric value on the wire for securityLevel.
    */
   int getSecurityLevelValue();
-
   /**
    *
    *
@@ -617,7 +594,6 @@ public interface ServiceConfigOrBuilder
    * @return The binaryAuthorizationPolicy.
    */
   java.lang.String getBinaryAuthorizationPolicy();
-
   /**
    *
    *

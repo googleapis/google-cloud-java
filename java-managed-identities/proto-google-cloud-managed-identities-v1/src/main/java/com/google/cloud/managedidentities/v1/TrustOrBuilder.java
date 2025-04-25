@@ -37,7 +37,6 @@ public interface TrustOrBuilder
    * @return The targetDomainName.
    */
   java.lang.String getTargetDomainName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface TrustOrBuilder
    * @return The enum numeric value on the wire for trustType.
    */
   int getTrustTypeValue();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface TrustOrBuilder
    * @return The enum numeric value on the wire for trustDirection.
    */
   int getTrustDirectionValue();
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public interface TrustOrBuilder
    * @return A list containing the targetDnsIpAddresses.
    */
   java.util.List<java.lang.String> getTargetDnsIpAddressesList();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface TrustOrBuilder
    * @return The count of targetDnsIpAddresses.
    */
   int getTargetDnsIpAddressesCount();
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public interface TrustOrBuilder
    * @return The targetDnsIpAddresses at the given index.
    */
   java.lang.String getTargetDnsIpAddresses(int index);
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface TrustOrBuilder
    * @return The trustHandshakeSecret.
    */
   java.lang.String getTrustHandshakeSecret();
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public interface TrustOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -246,7 +238,6 @@ public interface TrustOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public interface TrustOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public interface TrustOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface TrustOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public interface TrustOrBuilder
    * @return The stateDescription.
    */
   java.lang.String getStateDescription();
-
   /**
    *
    *
@@ -369,7 +356,6 @@ public interface TrustOrBuilder
    * @return Whether the lastTrustHeartbeatTime field is set.
    */
   boolean hasLastTrustHeartbeatTime();
-
   /**
    *
    *
@@ -384,7 +370,6 @@ public interface TrustOrBuilder
    * @return The lastTrustHeartbeatTime.
    */
   com.google.protobuf.Timestamp getLastTrustHeartbeatTime();
-
   /**
    *
    *

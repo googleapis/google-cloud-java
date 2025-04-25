@@ -42,7 +42,6 @@ public interface UpdateLicensePoolRequestOrBuilder
    * @return Whether the licensePool field is set.
    */
   boolean hasLicensePool();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateLicensePoolRequestOrBuilder
    * @return The licensePool.
    */
   com.google.cloud.commerce.consumer.procurement.v1.LicensePool getLicensePool();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface UpdateLicensePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateLicensePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

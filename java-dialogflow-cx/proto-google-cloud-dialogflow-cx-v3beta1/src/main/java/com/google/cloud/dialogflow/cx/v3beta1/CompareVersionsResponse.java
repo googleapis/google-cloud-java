@@ -34,7 +34,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.CompareVersionsResponse)
     CompareVersionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CompareVersionsResponse.newBuilder() to construct.
   private CompareVersionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object baseVersionContentJson_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetVersionContentJson_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
 
   public static final int COMPARE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp compareTime_;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
   public boolean hasCompareTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getCompareTime() {
     return compareTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : compareTime_;
   }
-
   /**
    *
    *
@@ -406,7 +398,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -640,7 +631,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object baseVersionContentJson_ = "";
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object targetVersionContentJson_ = "";
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         compareTimeBuilder_;
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
     public boolean hasCompareTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
         return compareTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -926,7 +904,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +969,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +983,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
       onChanged();
       return getCompareTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1028,7 +1001,6 @@ public final class CompareVersionsResponse extends com.google.protobuf.Generated
             : compareTime_;
       }
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest)
     AssessDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AssessDataRequest.newBuilder() to construct.
   private AssessDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * @return The modelName.
      */
     java.lang.String getModelName();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for datasetUsage.
      */
     int getDatasetUsageValue();
-
     /**
      *
      *
@@ -129,7 +126,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .DatasetUsage
         getDatasetUsage();
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.TuningValidationAssessmentConfig)
       TuningValidationAssessmentConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TuningValidationAssessmentConfig.newBuilder() to construct.
     private TuningValidationAssessmentConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -235,7 +230,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
        * <code>DATASET_USAGE_UNSPECIFIED = 0;</code>
        */
       public static final int DATASET_USAGE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -246,7 +240,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
        * <code>SFT_TRAINING = 1;</code>
        */
       public static final int SFT_TRAINING_VALUE = 1;
-
       /**
        *
        *
@@ -348,7 +341,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelName_ = "";
-
     /**
      *
      *
@@ -372,7 +364,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -399,7 +390,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     public static final int DATASET_USAGE_FIELD_NUMBER = 2;
     private int datasetUsage_ = 0;
-
     /**
      *
      *
@@ -417,7 +407,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public int getDatasetUsageValue() {
       return datasetUsage_;
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -868,7 +856,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -891,7 +878,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -914,7 +900,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -936,7 +921,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -954,7 +938,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -979,7 +962,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
 
       private int datasetUsage_ = 0;
-
       /**
        *
        *
@@ -997,7 +979,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       public int getDatasetUsageValue() {
         return datasetUsage_;
       }
-
       /**
        *
        *
@@ -1018,7 +999,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1026,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
                 .DatasetUsage.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1073,7 +1052,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1182,7 +1160,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * @return The modelName.
      */
     java.lang.String getModelName();
-
     /**
      *
      *
@@ -1196,7 +1173,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getModelNameBytes();
   }
-
   /**
    *
    *
@@ -1213,7 +1189,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.TuningResourceUsageAssessmentConfig)
       TuningResourceUsageAssessmentConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TuningResourceUsageAssessmentConfig.newBuilder() to construct.
     private TuningResourceUsageAssessmentConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1251,7 +1226,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelName_ = "";
-
     /**
      *
      *
@@ -1275,7 +1249,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1459,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1700,7 +1672,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -1723,7 +1694,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1746,7 +1716,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1768,7 +1737,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1786,7 +1754,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1898,7 +1865,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * @return The modelName.
      */
     java.lang.String getModelName();
-
     /**
      *
      *
@@ -1912,7 +1878,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getModelNameBytes();
   }
-
   /**
    *
    *
@@ -1929,7 +1894,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionValidationAssessmentConfig)
       BatchPredictionValidationAssessmentConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BatchPredictionValidationAssessmentConfig.newBuilder() to construct.
     private BatchPredictionValidationAssessmentConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1967,7 +1931,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelName_ = "";
-
     /**
      *
      *
@@ -1991,7 +1954,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -2204,7 +2166,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2422,7 +2383,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -2445,7 +2405,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2468,7 +2427,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2490,7 +2448,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2508,7 +2465,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2623,7 +2579,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * @return The modelName.
      */
     java.lang.String getModelName();
-
     /**
      *
      *
@@ -2637,7 +2592,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getModelNameBytes();
   }
-
   /**
    *
    *
@@ -2654,7 +2608,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataRequest.BatchPredictionResourceUsageAssessmentConfig)
       BatchPredictionResourceUsageAssessmentConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use BatchPredictionResourceUsageAssessmentConfig.newBuilder() to construct.
     private BatchPredictionResourceUsageAssessmentConfig(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2692,7 +2645,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelName_ = "";
-
     /**
      *
      *
@@ -2716,7 +2668,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -2929,7 +2880,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3147,7 +3097,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -3170,7 +3119,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3193,7 +3141,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3215,7 +3162,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3233,7 +3179,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3351,7 +3296,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     private AssessmentConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3405,7 +3349,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     private ReadConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3439,7 +3382,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TUNING_VALIDATION_ASSESSMENT_CONFIG_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -3457,7 +3399,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTuningValidationAssessmentConfig() {
     return assessmentConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -3482,7 +3423,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.AssessDataRequest.TuningValidationAssessmentConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3508,7 +3448,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TUNING_RESOURCE_USAGE_ASSESSMENT_CONFIG_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -3526,7 +3465,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasTuningResourceUsageAssessmentConfig() {
     return assessmentConfigCase_ == 3;
   }
-
   /**
    *
    *
@@ -3551,7 +3489,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.AssessDataRequest.TuningResourceUsageAssessmentConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3577,7 +3514,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BATCH_PREDICTION_VALIDATION_ASSESSMENT_CONFIG_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -3595,7 +3531,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasBatchPredictionValidationAssessmentConfig() {
     return assessmentConfigCase_ == 6;
   }
-
   /**
    *
    *
@@ -3621,7 +3556,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
         .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3647,7 +3581,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -3666,7 +3599,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasBatchPredictionResourceUsageAssessmentConfig() {
     return assessmentConfigCase_ == 7;
   }
-
   /**
    *
    *
@@ -3693,7 +3625,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.AssessDataRequest
         .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3720,7 +3651,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -3739,7 +3669,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasGeminiTemplateConfig() {
     return readConfigCase_ == 4;
   }
-
   /**
    *
    *
@@ -3761,7 +3690,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3784,7 +3712,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REQUEST_COLUMN_NAME_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -3800,7 +3727,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasRequestColumnName() {
     return readConfigCase_ == 5;
   }
-
   /**
    *
    *
@@ -3829,7 +3755,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -3863,7 +3788,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3891,7 +3815,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -4218,7 +4141,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4575,7 +4497,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.AssessDataRequest
                 .TuningValidationAssessmentConfigOrBuilder>
         tuningValidationAssessmentConfigBuilder_;
-
     /**
      *
      *
@@ -4593,7 +4514,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTuningValidationAssessmentConfig() {
       return assessmentConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -4626,7 +4546,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .TuningValidationAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4653,7 +4572,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4678,7 +4596,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4720,7 +4637,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -4748,7 +4664,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4765,7 +4680,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         getTuningValidationAssessmentConfigBuilder() {
       return getTuningValidationAssessmentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4793,7 +4707,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .TuningValidationAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4846,7 +4759,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.AssessDataRequest
                 .TuningResourceUsageAssessmentConfigOrBuilder>
         tuningResourceUsageAssessmentConfigBuilder_;
-
     /**
      *
      *
@@ -4864,7 +4776,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasTuningResourceUsageAssessmentConfig() {
       return assessmentConfigCase_ == 3;
     }
-
     /**
      *
      *
@@ -4897,7 +4808,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .TuningResourceUsageAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4924,7 +4834,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4949,7 +4858,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4991,7 +4899,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -5019,7 +4926,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5036,7 +4942,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         getTuningResourceUsageAssessmentConfigBuilder() {
       return getTuningResourceUsageAssessmentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5064,7 +4969,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .TuningResourceUsageAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5118,7 +5022,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.AssessDataRequest
                 .BatchPredictionValidationAssessmentConfigOrBuilder>
         batchPredictionValidationAssessmentConfigBuilder_;
-
     /**
      *
      *
@@ -5136,7 +5039,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchPredictionValidationAssessmentConfig() {
       return assessmentConfigCase_ == 6;
     }
-
     /**
      *
      *
@@ -5170,7 +5072,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5198,7 +5099,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5223,7 +5123,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5266,7 +5165,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -5294,7 +5192,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5311,7 +5208,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         getBatchPredictionValidationAssessmentConfigBuilder() {
       return getBatchPredictionValidationAssessmentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5340,7 +5236,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .BatchPredictionValidationAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5394,7 +5289,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.AssessDataRequest
                 .BatchPredictionResourceUsageAssessmentConfigOrBuilder>
         batchPredictionResourceUsageAssessmentConfigBuilder_;
-
     /**
      *
      *
@@ -5413,7 +5307,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasBatchPredictionResourceUsageAssessmentConfig() {
       return assessmentConfigCase_ == 7;
     }
-
     /**
      *
      *
@@ -5448,7 +5341,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5477,7 +5369,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -5503,7 +5394,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -5547,7 +5437,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       assessmentConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -5576,7 +5465,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5594,7 +5482,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         getBatchPredictionResourceUsageAssessmentConfigBuilder() {
       return getBatchPredictionResourceUsageAssessmentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5624,7 +5511,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5676,7 +5562,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder>
         geminiTemplateConfigBuilder_;
-
     /**
      *
      *
@@ -5695,7 +5580,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasGeminiTemplateConfig() {
       return readConfigCase_ == 4;
     }
-
     /**
      *
      *
@@ -5724,7 +5608,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5751,7 +5634,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       readConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5775,7 +5657,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       readConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5813,7 +5694,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       readConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -5842,7 +5722,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5859,7 +5738,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         getGeminiTemplateConfigBuilder() {
       return getGeminiTemplateConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5884,7 +5762,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -5938,7 +5815,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRequestColumnName() {
       return readConfigCase_ == 5;
     }
-
     /**
      *
      *
@@ -5968,7 +5844,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5998,7 +5873,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6021,7 +5895,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6042,7 +5915,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6068,7 +5940,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -6095,7 +5966,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6122,7 +5992,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6148,7 +6017,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6170,7 +6038,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

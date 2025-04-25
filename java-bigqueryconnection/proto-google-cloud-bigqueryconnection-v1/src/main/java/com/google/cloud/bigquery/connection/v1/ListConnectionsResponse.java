@@ -34,7 +34,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.ListConnectionsResponse)
     ListConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConnectionsResponse.newBuilder() to construct.
   private ListConnectionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.connection.v1.Connection> connections_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.bigquery.connection.v1.Connection> getConnectionsList() {
     return connections_;
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       getConnectionsOrBuilderList() {
     return connections_;
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   public int getConnectionsCount() {
     return connections_.size();
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
   public com.google.cloud.bigquery.connection.v1.Connection getConnections(int index) {
     return connections_.get(index);
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -619,7 +610,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +692,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +824,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +846,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +889,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +909,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +929,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +948,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +967,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +980,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         int index) {
       return getConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return connectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(connections_);
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1027,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
       return getConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.connection.v1.Connection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1072,7 +1042,6 @@ public final class ListConnectionsResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.bigquery.connection.v1.Connection.getDefaultInstance());
     }
-
     /**
      *
      *

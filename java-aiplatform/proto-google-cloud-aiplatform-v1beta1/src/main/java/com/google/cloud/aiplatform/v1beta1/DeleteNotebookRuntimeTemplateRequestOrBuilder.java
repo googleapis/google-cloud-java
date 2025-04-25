@@ -40,7 +40,6 @@ public interface DeleteNotebookRuntimeTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

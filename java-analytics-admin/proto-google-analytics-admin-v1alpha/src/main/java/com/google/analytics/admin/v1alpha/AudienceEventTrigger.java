@@ -33,7 +33,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.AudienceEventTrigger)
     AudienceEventTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AudienceEventTrigger.newBuilder() to construct.
   private AudienceEventTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
      * <code>LOG_CONDITION_UNSPECIFIED = 0;</code>
      */
     public static final int LOG_CONDITION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
      * <code>AUDIENCE_JOINED = 1;</code>
      */
     public static final int AUDIENCE_JOINED_VALUE = 1;
-
     /**
      *
      *
@@ -232,7 +229,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventName_ = "";
-
   /**
    *
    *
@@ -256,7 +252,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +278,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
 
   public static final int LOG_CONDITION_FIELD_NUMBER = 2;
   private int logCondition_ = 0;
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
   public int getLogConditionValue() {
     return logCondition_;
   }
-
   /**
    *
    *
@@ -500,7 +493,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +690,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object eventName_ = "";
-
     /**
      *
      *
@@ -721,7 +712,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -744,7 +734,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +755,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +772,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +796,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     }
 
     private int logCondition_ = 0;
-
     /**
      *
      *
@@ -827,7 +813,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     public int getLogConditionValue() {
       return logCondition_;
     }
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +855,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
           ? com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -896,7 +879,6 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

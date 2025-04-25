@@ -34,7 +34,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupRequest)
     SetNamedPortsRegionInstanceGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetNamedPortsRegionInstanceGroupRequest.newBuilder() to construct.
   private SetNamedPortsRegionInstanceGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroup_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       1574938;
   private com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest
       regionInstanceGroupsSetNamedPortsRequestResource_;
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
   public boolean hasRegionInstanceGroupsSetNamedPortsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         ? com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest.getDefaultInstance()
         : regionInstanceGroupsSetNamedPortsRequestResource_;
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -344,7 +332,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -580,7 +567,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -853,7 +839,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroup_ = "";
-
     /**
      *
      *
@@ -876,7 +861,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +883,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -921,7 +904,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -989,7 +969,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1014,7 +993,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1016,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1035,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1061,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1110,7 +1085,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1109,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1183,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
             com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest.Builder,
             com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequestOrBuilder>
         regionInstanceGroupsSetNamedPortsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1229,7 +1199,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     public boolean hasRegionInstanceGroupsSetNamedPortsRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1254,7 +1223,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return regionInstanceGroupsSetNamedPortsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1248,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1305,7 +1272,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1304,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1325,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1342,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return getRegionInstanceGroupsSetNamedPortsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1401,7 +1364,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
             : regionInstanceGroupsSetNamedPortsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1395,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1448,7 +1409,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1471,7 +1431,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1494,7 +1453,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1516,7 +1474,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1491,6 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

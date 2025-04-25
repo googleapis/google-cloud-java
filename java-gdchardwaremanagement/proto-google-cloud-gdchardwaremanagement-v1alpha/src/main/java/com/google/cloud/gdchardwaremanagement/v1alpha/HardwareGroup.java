@@ -34,7 +34,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup)
     HardwareGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HardwareGroup.newBuilder() to construct.
   private HardwareGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -183,7 +182,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -194,7 +192,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_INFO_NEEDED = 1;</code>
      */
     public static final int ADDITIONAL_INFO_NEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -205,7 +202,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>BUILDING = 2;</code>
      */
     public static final int BUILDING_VALUE = 2;
-
     /**
      *
      *
@@ -216,7 +212,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>SHIPPING = 3;</code>
      */
     public static final int SHIPPING_VALUE = 3;
-
     /**
      *
      *
@@ -227,7 +222,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALLING = 4;</code>
      */
     public static final int INSTALLING_VALUE = 4;
-
     /**
      *
      *
@@ -238,7 +232,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTIALLY_INSTALLED = 5;</code>
      */
     public static final int PARTIALLY_INSTALLED_VALUE = 5;
-
     /**
      *
      *
@@ -249,7 +242,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTALLED = 6;</code>
      */
     public static final int INSTALLED_VALUE = 6;
-
     /**
      *
      *
@@ -361,7 +353,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -387,7 +378,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -416,7 +406,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -433,7 +422,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -450,7 +438,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -468,7 +455,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -485,7 +471,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -502,7 +487,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -544,7 +528,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -563,14 +546,12 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -586,7 +567,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -609,7 +589,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -635,7 +614,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HARDWARE_COUNT_FIELD_NUMBER = 5;
   private int hardwareCount_ = 0;
-
   /**
    *
    *
@@ -654,7 +632,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.gdchardwaremanagement.v1alpha.HardwareConfig config_;
-
   /**
    *
    *
@@ -672,7 +649,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -692,7 +668,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gdchardwaremanagement.v1alpha.HardwareConfig.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -716,7 +691,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object site_ = "";
-
   /**
    *
    *
@@ -744,7 +718,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -775,7 +748,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
-
   /**
    *
    *
@@ -793,7 +765,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -820,7 +791,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -847,7 +817,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -877,7 +846,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUESTED_INSTALLATION_DATE_FIELD_NUMBER = 10;
   private com.google.type.Date requestedInstallationDate_;
-
   /**
    *
    *
@@ -896,7 +864,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestedInstallationDate() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -917,7 +884,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Date.getDefaultInstance()
         : requestedInstallationDate_;
   }
-
   /**
    *
    *
@@ -1213,7 +1179,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1589,7 +1554,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1614,7 +1578,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1639,7 +1602,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1663,7 +1625,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1683,7 +1644,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1715,7 +1675,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1732,7 +1691,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1755,7 +1713,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1780,7 +1737,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1802,7 +1758,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1832,7 +1787,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1854,7 +1808,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1824,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1892,7 +1844,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1927,7 +1878,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1944,7 +1894,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1967,7 +1916,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1992,7 +1940,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1961,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2044,7 +1990,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2066,7 +2011,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2027,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2104,7 +2047,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2158,7 +2100,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2177,14 +2118,12 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2200,7 +2139,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2223,7 +2161,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2252,7 +2189,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2271,14 +2207,12 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2301,7 +2235,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2320,7 +2253,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int hardwareCount_;
-
     /**
      *
      *
@@ -2336,7 +2268,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public int getHardwareCount() {
       return hardwareCount_;
     }
-
     /**
      *
      *
@@ -2356,7 +2287,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2381,7 +2311,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gdchardwaremanagement.v1alpha.HardwareConfig.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.HardwareConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -2398,7 +2327,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2421,7 +2349,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2446,7 +2373,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2469,7 +2395,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2502,7 +2427,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2524,7 +2448,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2542,7 +2465,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2564,7 +2486,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             : config_;
       }
     }
-
     /**
      *
      *
@@ -2594,7 +2515,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object site_ = "";
-
     /**
      *
      *
@@ -2621,7 +2541,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2648,7 +2567,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2674,7 +2592,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2696,7 +2613,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2725,7 +2641,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2743,7 +2658,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2764,7 +2678,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2786,7 +2699,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2811,7 +2723,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2833,7 +2744,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -2859,7 +2769,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2885,7 +2794,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2910,7 +2818,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2931,7 +2838,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2962,7 +2868,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         requestedInstallationDateBuilder_;
-
     /**
      *
      *
@@ -2980,7 +2885,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestedInstallationDate() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3004,7 +2908,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
         return requestedInstallationDateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3030,7 +2933,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3053,7 +2955,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3084,7 +2985,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3107,7 +3007,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3125,7 +3024,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequestedInstallationDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3147,7 +3045,6 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
             : requestedInstallationDate_;
       }
     }
-
     /**
      *
      *

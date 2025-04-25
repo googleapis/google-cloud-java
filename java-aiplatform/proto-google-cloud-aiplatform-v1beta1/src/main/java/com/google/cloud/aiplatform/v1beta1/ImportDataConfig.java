@@ -34,7 +34,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportDataConfig)
     ImportDataConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDataConfig.newBuilder() to construct.
   private ImportDataConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,7 +125,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -208,7 +203,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   public int getDataItemLabelsCount() {
     return internalGetDataItemLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -237,14 +231,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     return internalGetDataItemLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getDataItemLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDataItemLabels() {
     return getDataItemLabelsMap();
   }
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getDataItemLabelsMap() {
     return internalGetDataItemLabels().getMap();
   }
-
   /**
    *
    *
@@ -303,7 +294,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDataItemLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -365,7 +355,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   public int getAnnotationLabelsCount() {
     return internalGetAnnotationLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -392,14 +381,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
     return internalGetAnnotationLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels() {
     return getAnnotationLabelsMap();
   }
-
   /**
    *
    *
@@ -423,7 +410,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap() {
     return internalGetAnnotationLabels().getMap();
   }
-
   /**
    *
    *
@@ -454,7 +440,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotationLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -490,7 +475,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object importSchemaUri_ = "";
-
   /**
    *
    *
@@ -517,7 +501,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -762,7 +745,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1062,7 +1044,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -1078,7 +1059,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -1104,7 +1084,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1127,7 +1106,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1126,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1158,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1207,7 +1183,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1220,7 +1195,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1241,7 +1215,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1303,7 +1276,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public int getDataItemLabelsCount() {
       return internalGetDataItemLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1332,14 +1304,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       return internalGetDataItemLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getDataItemLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDataItemLabels() {
       return getDataItemLabelsMap();
     }
-
     /**
      *
      *
@@ -1365,7 +1335,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getDataItemLabelsMap() {
       return internalGetDataItemLabels().getMap();
     }
-
     /**
      *
      *
@@ -1398,7 +1367,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDataItemLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1437,7 +1405,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableDataItemLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1466,14 +1433,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableDataItemLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDataItemLabels() {
       bitField0_ |= 0x00000002;
       return internalGetMutableDataItemLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1506,7 +1471,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1563,7 +1527,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public int getAnnotationLabelsCount() {
       return internalGetAnnotationLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1590,14 +1553,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       }
       return internalGetAnnotationLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels() {
       return getAnnotationLabelsMap();
     }
-
     /**
      *
      *
@@ -1621,7 +1582,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap() {
       return internalGetAnnotationLabels().getMap();
     }
-
     /**
      *
      *
@@ -1653,7 +1613,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
           internalGetAnnotationLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1691,7 +1650,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableAnnotationLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1718,14 +1676,12 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableAnnotationLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotationLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableAnnotationLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1756,7 +1712,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1739,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object importSchemaUri_ = "";
-
     /**
      *
      *
@@ -1810,7 +1764,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1836,7 +1789,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1813,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1882,7 +1833,6 @@ public final class ImportDataConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

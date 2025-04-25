@@ -34,7 +34,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.ExternalAccessRule)
     ExternalAccessRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExternalAccessRule.newBuilder() to construct.
   private ExternalAccessRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -128,7 +127,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * <code>ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int ACTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * <code>ALLOW = 1;</code>
      */
     public static final int ALLOW_VALUE = 1;
-
     /**
      *
      *
@@ -309,7 +306,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -320,7 +316,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -331,7 +326,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
-
     /**
      *
      *
@@ -342,7 +336,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
-
     /**
      *
      *
@@ -460,7 +453,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the ipAddress field is set.
      */
     boolean hasIpAddress();
-
     /**
      *
      *
@@ -473,7 +465,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * @return The ipAddress.
      */
     java.lang.String getIpAddress();
-
     /**
      *
      *
@@ -499,7 +490,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the ipAddressRange field is set.
      */
     boolean hasIpAddressRange();
-
     /**
      *
      *
@@ -512,7 +502,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * @return The ipAddressRange.
      */
     java.lang.String getIpAddressRange();
-
     /**
      *
      *
@@ -543,7 +532,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the externalAddress field is set.
      */
     boolean hasExternalAddress();
-
     /**
      *
      *
@@ -561,7 +549,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
      * @return The externalAddress.
      */
     java.lang.String getExternalAddress();
-
     /**
      *
      *
@@ -582,7 +569,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
     com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange.IpRangeCase getIpRangeCase();
   }
-
   /**
    *
    *
@@ -597,7 +583,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange)
       IpRangeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IpRange.newBuilder() to construct.
     private IpRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -644,7 +629,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       private IpRangeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -680,7 +664,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int IP_ADDRESS_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -695,7 +678,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public boolean hasIpAddress() {
       return ipRangeCase_ == 1;
     }
-
     /**
      *
      *
@@ -723,7 +705,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -753,7 +734,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int IP_ADDRESS_RANGE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -768,7 +748,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public boolean hasIpAddressRange() {
       return ipRangeCase_ == 2;
     }
-
     /**
      *
      *
@@ -796,7 +775,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -826,7 +804,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int EXTERNAL_ADDRESS_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -846,7 +823,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public boolean hasExternalAddress() {
       return ipRangeCase_ == 3;
     }
-
     /**
      *
      *
@@ -879,7 +855,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1088,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1374,7 +1348,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       public boolean hasIpAddress() {
         return ipRangeCase_ == 1;
       }
-
       /**
        *
        *
@@ -1403,7 +1376,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1432,7 +1404,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1454,7 +1425,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1474,7 +1444,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1513,7 +1482,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       public boolean hasIpAddressRange() {
         return ipRangeCase_ == 2;
       }
-
       /**
        *
        *
@@ -1542,7 +1510,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1571,7 +1538,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1593,7 +1559,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1613,7 +1578,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1657,7 +1621,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       public boolean hasExternalAddress() {
         return ipRangeCase_ == 3;
       }
-
       /**
        *
        *
@@ -1691,7 +1654,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1725,7 +1687,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1752,7 +1713,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1777,7 +1737,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1876,7 +1835,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1904,7 +1862,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1935,7 +1892,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1952,7 +1908,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1969,7 +1924,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1987,7 +1941,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -2004,7 +1957,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2021,7 +1973,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -2041,7 +1992,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -2065,7 +2015,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2092,7 +2041,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   public static final int PRIORITY_FIELD_NUMBER = 6;
   private int priority_ = 0;
-
   /**
    *
    *
@@ -2117,7 +2065,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   public static final int ACTION_FIELD_NUMBER = 7;
   private int action_ = 0;
-
   /**
    *
    *
@@ -2133,7 +2080,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public int getActionValue() {
     return action_;
   }
-
   /**
    *
    *
@@ -2158,7 +2104,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipProtocol_ = "";
-
   /**
    *
    *
@@ -2184,7 +2129,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -2216,7 +2160,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange>
       sourceIpRanges_;
-
   /**
    *
    *
@@ -2237,7 +2180,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       getSourceIpRangesList() {
     return sourceIpRanges_;
   }
-
   /**
    *
    *
@@ -2259,7 +2201,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       getSourceIpRangesOrBuilderList() {
     return sourceIpRanges_;
   }
-
   /**
    *
    *
@@ -2279,7 +2220,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public int getSourceIpRangesCount() {
     return sourceIpRanges_.size();
   }
-
   /**
    *
    *
@@ -2299,7 +2239,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange getSourceIpRanges(int index) {
     return sourceIpRanges_.get(index);
   }
-
   /**
    *
    *
@@ -2326,7 +2265,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourcePorts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2345,7 +2283,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getSourcePortsList() {
     return sourcePorts_;
   }
-
   /**
    *
    *
@@ -2364,7 +2301,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public int getSourcePortsCount() {
     return sourcePorts_.size();
   }
-
   /**
    *
    *
@@ -2384,7 +2320,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public java.lang.String getSourcePorts(int index) {
     return sourcePorts_.get(index);
   }
-
   /**
    *
    *
@@ -2410,7 +2345,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange>
       destinationIpRanges_;
-
   /**
    *
    *
@@ -2433,7 +2367,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       getDestinationIpRangesList() {
     return destinationIpRanges_;
   }
-
   /**
    *
    *
@@ -2457,7 +2390,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       getDestinationIpRangesOrBuilderList() {
     return destinationIpRanges_;
   }
-
   /**
    *
    *
@@ -2479,7 +2411,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public int getDestinationIpRangesCount() {
     return destinationIpRanges_.size();
   }
-
   /**
    *
    *
@@ -2502,7 +2433,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       int index) {
     return destinationIpRanges_.get(index);
   }
-
   /**
    *
    *
@@ -2531,7 +2461,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList destinationPorts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2550,7 +2479,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getDestinationPortsList() {
     return destinationPorts_;
   }
-
   /**
    *
    *
@@ -2569,7 +2497,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public int getDestinationPortsCount() {
     return destinationPorts_.size();
   }
-
   /**
    *
    *
@@ -2589,7 +2516,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public java.lang.String getDestinationPorts(int index) {
     return destinationPorts_.get(index);
   }
-
   /**
    *
    *
@@ -2612,7 +2538,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 13;
   private int state_ = 0;
-
   /**
    *
    *
@@ -2630,7 +2555,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -2657,7 +2581,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -2681,7 +2604,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -3010,7 +2932,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3493,7 +3414,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3520,7 +3440,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3547,7 +3466,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3573,7 +3491,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3595,7 +3512,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3629,7 +3545,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3646,7 +3561,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3669,7 +3583,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3694,7 +3607,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3716,7 +3628,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3746,7 +3657,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3768,7 +3678,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3785,7 +3694,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3806,7 +3714,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3841,7 +3748,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3858,7 +3764,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3881,7 +3786,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3906,7 +3810,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3928,7 +3831,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3958,7 +3860,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3980,7 +3881,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3997,7 +3897,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4018,7 +3917,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4048,7 +3946,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -4071,7 +3968,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4094,7 +3990,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4116,7 +4011,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4134,7 +4028,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4159,7 +4052,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     private int priority_;
-
     /**
      *
      *
@@ -4181,7 +4073,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public int getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -4207,7 +4098,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4233,7 +4123,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     private int action_ = 0;
-
     /**
      *
      *
@@ -4249,7 +4138,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public int getActionValue() {
       return action_;
     }
-
     /**
      *
      *
@@ -4268,7 +4156,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4288,7 +4175,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.vmwareengine.v1.ExternalAccessRule.Action.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4310,7 +4196,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4330,7 +4215,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object ipProtocol_ = "";
-
     /**
      *
      *
@@ -4355,7 +4239,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4380,7 +4263,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4404,7 +4286,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4424,7 +4305,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4491,7 +4371,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return sourceIpRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4514,7 +4393,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return sourceIpRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4538,7 +4416,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return sourceIpRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4568,7 +4445,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4596,7 +4472,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4626,7 +4501,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4656,7 +4530,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4683,7 +4556,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4711,7 +4583,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4739,7 +4610,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4765,7 +4635,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4791,7 +4660,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -4811,7 +4679,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         getSourceIpRangesBuilder(int index) {
       return getSourceIpRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4835,7 +4702,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return sourceIpRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4860,7 +4726,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(sourceIpRanges_);
       }
     }
-
     /**
      *
      *
@@ -4882,7 +4747,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4905,7 +4769,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4955,7 +4818,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -4975,7 +4837,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       sourcePorts_.makeImmutable();
       return sourcePorts_;
     }
-
     /**
      *
      *
@@ -4994,7 +4855,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public int getSourcePortsCount() {
       return sourcePorts_.size();
     }
-
     /**
      *
      *
@@ -5014,7 +4874,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public java.lang.String getSourcePorts(int index) {
       return sourcePorts_.get(index);
     }
-
     /**
      *
      *
@@ -5034,7 +4893,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getSourcePortsBytes(int index) {
       return sourcePorts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5062,7 +4920,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5089,7 +4946,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5113,7 +4969,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5136,7 +4991,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5208,7 +5062,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return destinationIpRangesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5233,7 +5086,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return destinationIpRangesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5259,7 +5111,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return destinationIpRangesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5291,7 +5142,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5321,7 +5171,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5353,7 +5202,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5385,7 +5233,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5414,7 +5261,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5444,7 +5290,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5474,7 +5319,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5502,7 +5346,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5530,7 +5373,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -5552,7 +5394,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         getDestinationIpRangesBuilder(int index) {
       return getDestinationIpRangesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -5578,7 +5419,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return destinationIpRangesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -5605,7 +5445,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(destinationIpRanges_);
       }
     }
-
     /**
      *
      *
@@ -5629,7 +5468,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5654,7 +5492,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.vmwareengine.v1.ExternalAccessRule.IpRange.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -5706,7 +5543,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000400;
     }
-
     /**
      *
      *
@@ -5726,7 +5562,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       destinationPorts_.makeImmutable();
       return destinationPorts_;
     }
-
     /**
      *
      *
@@ -5745,7 +5580,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public int getDestinationPortsCount() {
       return destinationPorts_.size();
     }
-
     /**
      *
      *
@@ -5765,7 +5599,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public java.lang.String getDestinationPorts(int index) {
       return destinationPorts_.get(index);
     }
-
     /**
      *
      *
@@ -5785,7 +5618,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getDestinationPortsBytes(int index) {
       return destinationPorts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -5813,7 +5645,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5840,7 +5671,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5864,7 +5694,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5887,7 +5716,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5917,7 +5745,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -5935,7 +5762,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -5956,7 +5782,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5978,7 +5803,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.vmwareengine.v1.ExternalAccessRule.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6002,7 +5826,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6024,7 +5847,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -6047,7 +5869,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6070,7 +5891,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6092,7 +5912,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6110,7 +5929,6 @@ public final class ExternalAccessRule extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

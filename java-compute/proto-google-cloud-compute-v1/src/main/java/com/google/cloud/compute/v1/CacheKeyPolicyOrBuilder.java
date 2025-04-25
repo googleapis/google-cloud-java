@@ -36,7 +36,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return Whether the includeHost field is set.
    */
   boolean hasIncludeHost();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return A list containing the includeHttpHeaders.
    */
   java.util.List<java.lang.String> getIncludeHttpHeadersList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The count of includeHttpHeaders.
    */
   int getIncludeHttpHeadersCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The includeHttpHeaders at the given index.
    */
   java.lang.String getIncludeHttpHeaders(int index);
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return A list containing the includeNamedCookies.
    */
   java.util.List<java.lang.String> getIncludeNamedCookiesList();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The count of includeNamedCookies.
    */
   int getIncludeNamedCookiesCount();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The includeNamedCookies at the given index.
    */
   java.lang.String getIncludeNamedCookies(int index);
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return Whether the includeProtocol field is set.
    */
   boolean hasIncludeProtocol();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return Whether the includeQueryString field is set.
    */
   boolean hasIncludeQueryString();
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return A list containing the queryStringBlacklist.
    */
   java.util.List<java.lang.String> getQueryStringBlacklistList();
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The count of queryStringBlacklist.
    */
   int getQueryStringBlacklistCount();
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The queryStringBlacklist at the given index.
    */
   java.lang.String getQueryStringBlacklist(int index);
-
   /**
    *
    *
@@ -276,7 +264,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return A list containing the queryStringWhitelist.
    */
   java.util.List<java.lang.String> getQueryStringWhitelistList();
-
   /**
    *
    *
@@ -289,7 +276,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The count of queryStringWhitelist.
    */
   int getQueryStringWhitelistCount();
-
   /**
    *
    *
@@ -303,7 +289,6 @@ public interface CacheKeyPolicyOrBuilder
    * @return The queryStringWhitelist at the given index.
    */
   java.lang.String getQueryStringWhitelist(int index);
-
   /**
    *
    *

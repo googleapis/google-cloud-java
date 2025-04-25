@@ -33,7 +33,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.NetworkUsageSample)
     NetworkUsageSampleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkUsageSample.newBuilder() to construct.
   private NetworkUsageSample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
 
   public static final int AVERAGE_INGRESS_BPS_FIELD_NUMBER = 1;
   private float averageIngressBps_ = 0F;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
 
   public static final int AVERAGE_EGRESS_BPS_FIELD_NUMBER = 2;
   private float averageEgressBps_ = 0F;
-
   /**
    *
    *
@@ -273,7 +270,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -469,7 +465,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private float averageIngressBps_;
-
     /**
      *
      *
@@ -486,7 +481,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
     public float getAverageIngressBps() {
       return averageIngressBps_;
     }
-
     /**
      *
      *
@@ -507,7 +501,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -528,7 +521,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
     }
 
     private float averageEgressBps_;
-
     /**
      *
      *
@@ -545,7 +537,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
     public float getAverageEgressBps() {
       return averageEgressBps_;
     }
-
     /**
      *
      *
@@ -566,7 +557,6 @@ public final class NetworkUsageSample extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

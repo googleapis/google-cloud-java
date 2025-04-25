@@ -38,7 +38,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the defaultCustomErrorResponsePolicy field is set.
    */
   boolean hasDefaultCustomErrorResponsePolicy();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PathMatcherOrBuilder
    * @return The defaultCustomErrorResponsePolicy.
    */
   com.google.cloud.compute.v1.CustomErrorResponsePolicy getDefaultCustomErrorResponsePolicy();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the defaultRouteAction field is set.
    */
   boolean hasDefaultRouteAction();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface PathMatcherOrBuilder
    * @return The defaultRouteAction.
    */
   com.google.cloud.compute.v1.HttpRouteAction getDefaultRouteAction();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the defaultService field is set.
    */
   boolean hasDefaultService();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface PathMatcherOrBuilder
    * @return The defaultService.
    */
   java.lang.String getDefaultService();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the defaultUrlRedirect field is set.
    */
   boolean hasDefaultUrlRedirect();
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public interface PathMatcherOrBuilder
    * @return The defaultUrlRedirect.
    */
   com.google.cloud.compute.v1.HttpRedirectAction getDefaultUrlRedirect();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface PathMatcherOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the headerAction field is set.
    */
   boolean hasHeaderAction();
-
   /**
    *
    *
@@ -251,7 +240,6 @@ public interface PathMatcherOrBuilder
    * @return The headerAction.
    */
   com.google.cloud.compute.v1.HttpHeaderAction getHeaderAction();
-
   /**
    *
    *
@@ -275,7 +263,6 @@ public interface PathMatcherOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -288,7 +275,6 @@ public interface PathMatcherOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -312,7 +298,6 @@ public interface PathMatcherOrBuilder
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
    */
   java.util.List<com.google.cloud.compute.v1.PathRule> getPathRulesList();
-
   /**
    *
    *
@@ -323,7 +308,6 @@ public interface PathMatcherOrBuilder
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
    */
   com.google.cloud.compute.v1.PathRule getPathRules(int index);
-
   /**
    *
    *
@@ -334,7 +318,6 @@ public interface PathMatcherOrBuilder
    * <code>repeated .google.cloud.compute.v1.PathRule path_rules = 104439901;</code>
    */
   int getPathRulesCount();
-
   /**
    *
    *
@@ -346,7 +329,6 @@ public interface PathMatcherOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.PathRuleOrBuilder>
       getPathRulesOrBuilderList();
-
   /**
    *
    *
@@ -368,7 +350,6 @@ public interface PathMatcherOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpRouteRule> getRouteRulesList();
-
   /**
    *
    *
@@ -379,7 +360,6 @@ public interface PathMatcherOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
    */
   com.google.cloud.compute.v1.HttpRouteRule getRouteRules(int index);
-
   /**
    *
    *
@@ -390,7 +370,6 @@ public interface PathMatcherOrBuilder
    * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
    */
   int getRouteRulesCount();
-
   /**
    *
    *
@@ -402,7 +381,6 @@ public interface PathMatcherOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpRouteRuleOrBuilder>
       getRouteRulesOrBuilderList();
-
   /**
    *
    *

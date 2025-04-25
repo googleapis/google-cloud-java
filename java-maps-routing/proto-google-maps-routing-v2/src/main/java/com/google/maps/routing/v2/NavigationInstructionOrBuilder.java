@@ -38,7 +38,6 @@ public interface NavigationInstructionOrBuilder
    * @return The enum numeric value on the wire for maneuver.
    */
   int getManeuverValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface NavigationInstructionOrBuilder
    * @return The instructions.
    */
   java.lang.String getInstructions();
-
   /**
    *
    *

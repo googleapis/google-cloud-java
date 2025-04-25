@@ -33,7 +33,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.PersonDetectionConfig)
     PersonDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PersonDetectionConfig.newBuilder() to construct.
   private PersonDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
 
   public static final int INCLUDE_BOUNDING_BOXES_FIELD_NUMBER = 1;
   private boolean includeBoundingBoxes_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
 
   public static final int INCLUDE_POSE_LANDMARKS_FIELD_NUMBER = 2;
   private boolean includePoseLandmarks_ = false;
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
 
   public static final int INCLUDE_ATTRIBUTES_FIELD_NUMBER = 3;
   private boolean includeAttributes_ = false;
-
   /**
    *
    *
@@ -302,7 +298,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +506,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private boolean includeBoundingBoxes_;
-
     /**
      *
      *
@@ -528,7 +522,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     public boolean getIncludeBoundingBoxes() {
       return includeBoundingBoxes_;
     }
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -570,7 +562,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean includePoseLandmarks_;
-
     /**
      *
      *
@@ -587,7 +578,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     public boolean getIncludePoseLandmarks() {
       return includePoseLandmarks_;
     }
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +618,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     }
 
     private boolean includeAttributes_;
-
     /**
      *
      *
@@ -648,7 +636,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
     public boolean getIncludeAttributes() {
       return includeAttributes_;
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class PersonDetectionConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

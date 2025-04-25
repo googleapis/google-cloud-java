@@ -37,7 +37,6 @@ public interface GenerateHlsUriResponseOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface GenerateHlsUriResponseOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.Partition.TemporalPartition>
       getTemporalPartitionsList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface GenerateHlsUriResponseOrBuilder
    * </code>
    */
   com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartitions(int index);
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface GenerateHlsUriResponseOrBuilder
    * </code>
    */
   int getTemporalPartitionsCount();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface GenerateHlsUriResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
       getTemporalPartitionsOrBuilderList();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface ProjectSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface ProjectSettingsOrBuilder
    * @return The enum numeric value on the wire for legacyRedirectionState.
    */
   int getLegacyRedirectionStateValue();
-
   /**
    *
    *

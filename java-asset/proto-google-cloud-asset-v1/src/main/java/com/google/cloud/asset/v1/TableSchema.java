@@ -33,7 +33,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.TableSchema)
     TableSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TableSchema.newBuilder() to construct.
   private TableSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.TableFieldSchema> fields_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.asset.v1.TableFieldSchema> getFieldsList() {
     return fields_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       getFieldsOrBuilderList() {
     return fields_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
   public int getFieldsCount() {
     return fields_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.asset.v1.TableFieldSchema getFields(int index) {
     return fields_.get(index);
   }
-
   /**
    *
    *
@@ -299,7 +293,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -559,7 +552,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +670,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +689,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +729,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +748,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +767,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +779,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.TableFieldSchema.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -815,7 +795,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -833,7 +812,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fields_);
       }
     }
-
     /**
      *
      *
@@ -847,7 +825,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       return getFieldsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.TableFieldSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -861,7 +838,6 @@ public final class TableSchema extends com.google.protobuf.GeneratedMessageV3
       return getFieldsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.TableFieldSchema.getDefaultInstance());
     }
-
     /**
      *
      *

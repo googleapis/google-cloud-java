@@ -39,7 +39,6 @@ public interface EvaluationJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface EvaluationJobOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface EvaluationJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface EvaluationJobOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface EvaluationJobOrBuilder
    * @return The modelVersion.
    */
   java.lang.String getModelVersion();
-
   /**
    *
    *
@@ -208,7 +203,6 @@ public interface EvaluationJobOrBuilder
    * @return Whether the evaluationJobConfig field is set.
    */
   boolean hasEvaluationJobConfig();
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public interface EvaluationJobOrBuilder
    * @return The evaluationJobConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJobConfig getEvaluationJobConfig();
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public interface EvaluationJobOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
-
   /**
    *
    *
@@ -298,7 +290,6 @@ public interface EvaluationJobOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Attempt> getAttemptsList();
-
   /**
    *
    *
@@ -310,7 +301,6 @@ public interface EvaluationJobOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Attempt getAttempts(int index);
-
   /**
    *
    *
@@ -322,7 +312,6 @@ public interface EvaluationJobOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Attempt attempts = 9;</code>
    */
   int getAttemptsCount();
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public interface EvaluationJobOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AttemptOrBuilder>
       getAttemptsOrBuilderList();
-
   /**
    *
    *
@@ -360,7 +348,6 @@ public interface EvaluationJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -373,7 +360,6 @@ public interface EvaluationJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

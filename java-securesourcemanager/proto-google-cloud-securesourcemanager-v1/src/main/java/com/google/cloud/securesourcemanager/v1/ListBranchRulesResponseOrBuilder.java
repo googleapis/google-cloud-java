@@ -34,7 +34,6 @@ public interface ListBranchRulesResponseOrBuilder
    * <code>repeated .google.cloud.securesourcemanager.v1.BranchRule branch_rules = 1;</code>
    */
   java.util.List<com.google.cloud.securesourcemanager.v1.BranchRule> getBranchRulesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBranchRulesResponseOrBuilder
    * <code>repeated .google.cloud.securesourcemanager.v1.BranchRule branch_rules = 1;</code>
    */
   com.google.cloud.securesourcemanager.v1.BranchRule getBranchRules(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBranchRulesResponseOrBuilder
    * <code>repeated .google.cloud.securesourcemanager.v1.BranchRule branch_rules = 1;</code>
    */
   int getBranchRulesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListBranchRulesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.securesourcemanager.v1.BranchRuleOrBuilder>
       getBranchRulesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListBranchRulesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

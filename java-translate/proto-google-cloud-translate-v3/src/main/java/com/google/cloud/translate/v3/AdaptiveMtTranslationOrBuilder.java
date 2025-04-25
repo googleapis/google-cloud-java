@@ -36,7 +36,6 @@ public interface AdaptiveMtTranslationOrBuilder
    * @return The translatedText.
    */
   java.lang.String getTranslatedText();
-
   /**
    *
    *

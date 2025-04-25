@@ -35,7 +35,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.CloudExportAdditionalProperties)
     CloudExportAdditionalPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudExportAdditionalProperties.newBuilder() to construct.
   private CloudExportAdditionalProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -77,7 +76,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object propertyName_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public boolean hasPropertyName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList textValue_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public com.google.protobuf.ProtocolStringList getTextValueList() {
     return textValue_;
   }
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public int getTextValueCount() {
     return textValue_.size();
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public java.lang.String getTextValue(int index) {
     return textValue_.get(index);
   }
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 3;
   private boolean boolValue_ = false;
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public boolean hasBoolValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -269,7 +259,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList intValue_ = emptyLongList();
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public java.util.List<java.lang.Long> getIntValueList() {
     return intValue_;
   }
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public int getIntValueCount() {
     return intValue_.size();
   }
-
   /**
    *
    *
@@ -329,7 +316,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList floatValue_ = emptyFloatList();
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public java.util.List<java.lang.Float> getFloatValueList() {
     return floatValue_;
   }
-
   /**
    *
    *
@@ -364,7 +349,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public int getFloatValueCount() {
     return floatValue_.size();
   }
-
   /**
    *
    *
@@ -387,7 +371,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   public static final int MIN_VALUE_FIELD_NUMBER = 6;
   private float minValue_ = 0F;
-
   /**
    *
    *
@@ -404,7 +387,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public boolean hasMinValue() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -424,7 +406,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   public static final int MAX_VALUE_FIELD_NUMBER = 7;
   private float maxValue_ = 0F;
-
   /**
    *
    *
@@ -441,7 +422,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public boolean hasMaxValue() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -463,7 +443,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unitCode_ = "";
-
   /**
    *
    *
@@ -480,7 +459,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
   public boolean hasUnitCode() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -505,7 +483,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -825,7 +802,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1175,7 +1151,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object propertyName_ = "";
-
     /**
      *
      *
@@ -1192,7 +1167,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public boolean hasPropertyName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1217,7 +1191,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1215,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1266,7 +1238,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1257,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1321,7 +1291,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1340,7 +1309,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       textValue_.makeImmutable();
       return textValue_;
     }
-
     /**
      *
      *
@@ -1358,7 +1326,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public int getTextValueCount() {
       return textValue_.size();
     }
-
     /**
      *
      *
@@ -1377,7 +1344,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public java.lang.String getTextValue(int index) {
       return textValue_.get(index);
     }
-
     /**
      *
      *
@@ -1396,7 +1362,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public com.google.protobuf.ByteString getTextValueBytes(int index) {
       return textValue_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1423,7 +1388,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1413,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1435,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1494,7 +1456,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1484,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     }
 
     private boolean boolValue_;
-
     /**
      *
      *
@@ -1540,7 +1500,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public boolean hasBoolValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1557,7 +1516,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public boolean getBoolValue() {
       return boolValue_;
     }
-
     /**
      *
      *
@@ -1578,7 +1536,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1563,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1624,7 +1580,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       intValue_.makeImmutable();
       return intValue_;
     }
-
     /**
      *
      *
@@ -1641,7 +1596,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public int getIntValueCount() {
       return intValue_.size();
     }
-
     /**
      *
      *
@@ -1659,7 +1613,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public long getIntValue(int index) {
       return intValue_.getLong(index);
     }
-
     /**
      *
      *
@@ -1683,7 +1636,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1706,7 +1658,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1728,7 +1679,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1764,7 +1714,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1782,7 +1731,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       floatValue_.makeImmutable();
       return floatValue_;
     }
-
     /**
      *
      *
@@ -1799,7 +1747,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public int getFloatValueCount() {
       return floatValue_.size();
     }
-
     /**
      *
      *
@@ -1817,7 +1764,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public float getFloatValue(int index) {
       return floatValue_.getFloat(index);
     }
-
     /**
      *
      *
@@ -1841,7 +1787,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1809,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1830,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1851,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     }
 
     private float minValue_;
-
     /**
      *
      *
@@ -1925,7 +1867,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public boolean hasMinValue() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1942,7 +1883,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public float getMinValue() {
       return minValue_;
     }
-
     /**
      *
      *
@@ -1963,7 +1903,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1923,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     }
 
     private float maxValue_;
-
     /**
      *
      *
@@ -2001,7 +1939,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public boolean hasMaxValue() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2018,7 +1955,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public float getMaxValue() {
       return maxValue_;
     }
-
     /**
      *
      *
@@ -2039,7 +1975,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2060,7 +1995,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     }
 
     private java.lang.Object unitCode_ = "";
-
     /**
      *
      *
@@ -2076,7 +2010,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
     public boolean hasUnitCode() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2100,7 +2033,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2124,7 +2056,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2147,7 +2078,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2096,6 @@ public final class CloudExportAdditionalProperties extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface TargetResourceOrBuilder
    * @return Whether the gcpResource field is set.
    */
   boolean hasGcpResource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetResourceOrBuilder
    * @return The gcpResource.
    */
   com.google.cloud.backupdr.v1.GcpResource getGcpResource();
-
   /**
    *
    *

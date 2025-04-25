@@ -37,7 +37,6 @@ public interface SubsettingOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SubsettingOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
-
   /**
    *
    *

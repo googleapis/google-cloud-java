@@ -36,7 +36,6 @@ public interface GroundingMetadataOrBuilder
    * @return A list containing the webSearchQueries.
    */
   java.util.List<java.lang.String> getWebSearchQueriesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GroundingMetadataOrBuilder
    * @return The count of webSearchQueries.
    */
   int getWebSearchQueriesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface GroundingMetadataOrBuilder
    * @return The webSearchQueries at the given index.
    */
   java.lang.String getWebSearchQueries(int index);
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface GroundingMetadataOrBuilder
    * @return Whether the searchEntryPoint field is set.
    */
   boolean hasSearchEntryPoint();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface GroundingMetadataOrBuilder
    * @return The searchEntryPoint.
    */
   com.google.cloud.aiplatform.v1beta1.SearchEntryPoint getSearchEntryPoint();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface GroundingMetadataOrBuilder
    * @return A list containing the retrievalQueries.
    */
   java.util.List<java.lang.String> getRetrievalQueriesList();
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public interface GroundingMetadataOrBuilder
    * @return The count of retrievalQueries.
    */
   int getRetrievalQueriesCount();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface GroundingMetadataOrBuilder
    * @return The retrievalQueries at the given index.
    */
   java.lang.String getRetrievalQueries(int index);
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public interface GroundingMetadataOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingChunk> getGroundingChunksList();
-
   /**
    *
    *
@@ -196,7 +187,6 @@ public interface GroundingMetadataOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
    */
   com.google.cloud.aiplatform.v1beta1.GroundingChunk getGroundingChunks(int index);
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface GroundingMetadataOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.GroundingChunk grounding_chunks = 5;</code>
    */
   int getGroundingChunksCount();
-
   /**
    *
    *
@@ -219,7 +208,6 @@ public interface GroundingMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingChunkOrBuilder>
       getGroundingChunksOrBuilderList();
-
   /**
    *
    *
@@ -244,7 +232,6 @@ public interface GroundingMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.GroundingSupport> getGroundingSupportsList();
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public interface GroundingMetadataOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.GroundingSupport getGroundingSupports(int index);
-
   /**
    *
    *
@@ -270,7 +256,6 @@ public interface GroundingMetadataOrBuilder
    * </code>
    */
   int getGroundingSupportsCount();
-
   /**
    *
    *
@@ -284,7 +269,6 @@ public interface GroundingMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.GroundingSupportOrBuilder>
       getGroundingSupportsOrBuilderList();
-
   /**
    *
    *
@@ -313,7 +297,6 @@ public interface GroundingMetadataOrBuilder
    * @return Whether the retrievalMetadata field is set.
    */
   boolean hasRetrievalMetadata();
-
   /**
    *
    *
@@ -328,7 +311,6 @@ public interface GroundingMetadataOrBuilder
    * @return The retrievalMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.RetrievalMetadata getRetrievalMetadata();
-
   /**
    *
    *

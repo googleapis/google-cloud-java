@@ -39,7 +39,6 @@ public interface RecognizerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface RecognizerOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface RecognizerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface RecognizerOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getModel();
-
   /**
    *
    *
@@ -199,7 +195,6 @@ public interface RecognizerOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<java.lang.String> getLanguageCodesList();
-
   /**
    *
    *
@@ -233,7 +228,6 @@ public interface RecognizerOrBuilder
    */
   @java.lang.Deprecated
   int getLanguageCodesCount();
-
   /**
    *
    *
@@ -268,7 +262,6 @@ public interface RecognizerOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getLanguageCodes(int index);
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public interface RecognizerOrBuilder
    * @return Whether the defaultRecognitionConfig field is set.
    */
   boolean hasDefaultRecognitionConfig();
-
   /**
    *
    *
@@ -335,7 +327,6 @@ public interface RecognizerOrBuilder
    * @return The defaultRecognitionConfig.
    */
   com.google.cloud.speech.v2.RecognitionConfig getDefaultRecognitionConfig();
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public interface RecognizerOrBuilder
    * <code>map&lt;string, string&gt; annotations = 7;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -375,11 +365,9 @@ public interface RecognizerOrBuilder
    * <code>map&lt;string, string&gt; annotations = 7;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -392,7 +380,6 @@ public interface RecognizerOrBuilder
    * <code>map&lt;string, string&gt; annotations = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -409,7 +396,6 @@ public interface RecognizerOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -437,7 +423,6 @@ public interface RecognizerOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -466,7 +451,6 @@ public interface RecognizerOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -480,7 +464,6 @@ public interface RecognizerOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -506,7 +489,6 @@ public interface RecognizerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -520,7 +502,6 @@ public interface RecognizerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -546,7 +527,6 @@ public interface RecognizerOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -560,7 +540,6 @@ public interface RecognizerOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -586,7 +565,6 @@ public interface RecognizerOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -600,7 +578,6 @@ public interface RecognizerOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -627,7 +604,6 @@ public interface RecognizerOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -674,7 +650,6 @@ public interface RecognizerOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -710,7 +685,6 @@ public interface RecognizerOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
-
   /**
    *
    *

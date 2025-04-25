@@ -36,7 +36,6 @@ public interface UpdatePersistentResourceOperationMetadataOrBuilder
    * @return Whether the genericMetadata field is set.
    */
   boolean hasGenericMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdatePersistentResourceOperationMetadataOrBuilder
    * @return The genericMetadata.
    */
   com.google.cloud.aiplatform.v1.GenericOperationMetadata getGenericMetadata();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface UpdatePersistentResourceOperationMetadataOrBuilder
    * @return The progressMessage.
    */
   java.lang.String getProgressMessage();
-
   /**
    *
    *

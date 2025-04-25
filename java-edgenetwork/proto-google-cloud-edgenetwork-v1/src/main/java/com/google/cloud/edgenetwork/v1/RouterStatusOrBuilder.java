@@ -36,7 +36,6 @@ public interface RouterStatusOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RouterStatusOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus> getBgpPeerStatusList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RouterStatusOrBuilder
    * </code>
    */
   com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatus getBgpPeerStatus(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface RouterStatusOrBuilder
    * </code>
    */
   int getBgpPeerStatusCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface RouterStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.edgenetwork.v1.RouterStatus.BgpPeerStatusOrBuilder>
       getBgpPeerStatusOrBuilderList();
-
   /**
    *
    *

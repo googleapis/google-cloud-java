@@ -33,7 +33,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest)
     ProjectsSetDefaultNetworkTierRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProjectsSetDefaultNetworkTierRequest.newBuilder() to construct.
   private ProjectsSetDefaultNetworkTierRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -138,7 +137,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>FIXED_STANDARD = 310464328;</code>
      */
     public static final int FIXED_STANDARD_VALUE = 310464328;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>PREMIUM = 399530551;</code>
      */
     public static final int PREMIUM_VALUE = 399530551;
-
     /**
      *
      *
@@ -171,7 +167,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>STANDARD = 484642493;</code>
      */
     public static final int STANDARD_VALUE = 484642493;
-
     /**
      *
      *
@@ -277,7 +272,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkTier_ = "";
-
   /**
    *
    *
@@ -294,7 +288,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
   public boolean hasNetworkTier() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -319,7 +312,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -510,7 +502,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +692,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
     private int bitField0_;
 
     private java.lang.Object networkTier_ = "";
-
     /**
      *
      *
@@ -717,7 +707,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
     public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -741,7 +730,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +793,6 @@ public final class ProjectsSetDefaultNetworkTierRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

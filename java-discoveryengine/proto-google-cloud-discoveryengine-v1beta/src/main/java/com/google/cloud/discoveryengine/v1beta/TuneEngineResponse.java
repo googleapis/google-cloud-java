@@ -33,7 +33,6 @@ public final class TuneEngineResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.TuneEngineResponse)
     TuneEngineResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TuneEngineResponse.newBuilder() to construct.
   private TuneEngineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class TuneEngineResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

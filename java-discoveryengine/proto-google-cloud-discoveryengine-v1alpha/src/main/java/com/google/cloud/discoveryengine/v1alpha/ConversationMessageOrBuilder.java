@@ -36,7 +36,6 @@ public interface ConversationMessageOrBuilder
    * @return Whether the userInput field is set.
    */
   boolean hasUserInput();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConversationMessageOrBuilder
    * @return The userInput.
    */
   com.google.cloud.discoveryengine.v1alpha.TextInput getUserInput();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ConversationMessageOrBuilder
    * @return Whether the reply field is set.
    */
   boolean hasReply();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ConversationMessageOrBuilder
    * @return The reply.
    */
   com.google.cloud.discoveryengine.v1alpha.Reply getReply();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface ConversationMessageOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface ConversationMessageOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CustomConfig)
     CustomConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomConfig.newBuilder() to construct.
   private CustomConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -141,7 +140,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -152,7 +150,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CRITICAL = 1;</code>
      */
     public static final int CRITICAL_VALUE = 1;
-
     /**
      *
      *
@@ -163,7 +160,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH = 2;</code>
      */
     public static final int HIGH_VALUE = 2;
-
     /**
      *
      *
@@ -174,7 +170,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MEDIUM = 3;</code>
      */
     public static final int MEDIUM_VALUE = 3;
-
     /**
      *
      *
@@ -291,7 +286,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Property>
         getPropertiesList();
-
     /**
      *
      *
@@ -305,7 +299,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Property getProperties(
         int index);
-
     /**
      *
      *
@@ -318,7 +311,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getPropertiesCount();
-
     /**
      *
      *
@@ -334,7 +326,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.PropertyOrBuilder>
         getPropertiesOrBuilderList();
-
     /**
      *
      *
@@ -349,7 +340,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.PropertyOrBuilder
         getPropertiesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -367,7 +357,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec)
       CustomOutputSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CustomOutputSpec.newBuilder() to construct.
     private CustomOutputSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -415,7 +404,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The name.
        */
       java.lang.String getName();
-
       /**
        *
        *
@@ -443,7 +431,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the valueExpression field is set.
        */
       boolean hasValueExpression();
-
       /**
        *
        *
@@ -458,7 +445,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The valueExpression.
        */
       com.google.type.Expr getValueExpression();
-
       /**
        *
        *
@@ -472,7 +458,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.type.ExprOrBuilder getValueExpressionOrBuilder();
     }
-
     /**
      *
      *
@@ -487,7 +472,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Property)
         PropertyOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Property.newBuilder() to construct.
       private Property(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -524,7 +508,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -548,7 +531,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -575,7 +557,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
       public static final int VALUE_EXPRESSION_FIELD_NUMBER = 2;
       private com.google.type.Expr valueExpression_;
-
       /**
        *
        *
@@ -593,7 +574,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValueExpression() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -613,7 +593,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.type.Expr.getDefaultInstance()
             : valueExpression_;
       }
-
       /**
        *
        *
@@ -816,7 +795,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1049,7 +1027,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object name_ = "";
-
         /**
          *
          *
@@ -1072,7 +1049,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1095,7 +1071,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1117,7 +1092,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1135,7 +1109,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1163,7 +1136,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
             valueExpressionBuilder_;
-
         /**
          *
          *
@@ -1180,7 +1152,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         public boolean hasValueExpression() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -1203,7 +1174,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             return valueExpressionBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -1228,7 +1198,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1250,7 +1219,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1280,7 +1248,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1302,7 +1269,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1319,7 +1285,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getValueExpressionFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1340,7 +1305,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
                 : valueExpression_;
           }
         }
-
         /**
          *
          *
@@ -1441,7 +1405,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Property>
         properties_;
-
     /**
      *
      *
@@ -1458,7 +1421,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         getPropertiesList() {
       return properties_;
     }
-
     /**
      *
      *
@@ -1477,7 +1439,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         getPropertiesOrBuilderList() {
       return properties_;
     }
-
     /**
      *
      *
@@ -1493,7 +1454,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return properties_.size();
     }
-
     /**
      *
      *
@@ -1510,7 +1470,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return properties_.get(index);
     }
-
     /**
      *
      *
@@ -1692,7 +1651,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1977,7 +1935,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1996,7 +1953,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2016,7 +1972,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2043,7 +1998,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2068,7 +2022,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2094,7 +2047,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2121,7 +2073,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2145,7 +2096,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2170,7 +2120,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2196,7 +2145,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2218,7 +2166,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2240,7 +2187,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2256,7 +2202,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           getPropertiesBuilder(int index) {
         return getPropertiesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2276,7 +2221,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           return propertiesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2299,7 +2243,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(properties_);
         }
       }
-
       /**
        *
        *
@@ -2318,7 +2261,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Property
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2338,7 +2280,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Property
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2458,7 +2399,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the resourceTypes.
      */
     java.util.List<java.lang.String> getResourceTypesList();
-
     /**
      *
      *
@@ -2471,7 +2411,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The count of resourceTypes.
      */
     int getResourceTypesCount();
-
     /**
      *
      *
@@ -2485,7 +2424,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The resourceTypes at the given index.
      */
     java.lang.String getResourceTypes(int index);
-
     /**
      *
      *
@@ -2500,7 +2438,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getResourceTypesBytes(int index);
   }
-
   /**
    *
    *
@@ -2515,7 +2452,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CustomConfig.ResourceSelector)
       ResourceSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ResourceSelector.newBuilder() to construct.
     private ResourceSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2551,7 +2487,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList resourceTypes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -2566,7 +2501,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getResourceTypesList() {
       return resourceTypes_;
     }
-
     /**
      *
      *
@@ -2581,7 +2515,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public int getResourceTypesCount() {
       return resourceTypes_.size();
     }
-
     /**
      *
      *
@@ -2597,7 +2530,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getResourceTypes(int index) {
       return resourceTypes_.get(index);
     }
-
     /**
      *
      *
@@ -2783,7 +2715,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2993,7 +2924,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -3009,7 +2939,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         resourceTypes_.makeImmutable();
         return resourceTypes_;
       }
-
       /**
        *
        *
@@ -3024,7 +2953,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public int getResourceTypesCount() {
         return resourceTypes_.size();
       }
-
       /**
        *
        *
@@ -3040,7 +2968,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getResourceTypes(int index) {
         return resourceTypes_.get(index);
       }
-
       /**
        *
        *
@@ -3056,7 +2983,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
         return resourceTypes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -3080,7 +3006,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3103,7 +3028,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3123,7 +3047,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3142,7 +3065,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3237,7 +3159,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PREDICATE_FIELD_NUMBER = 1;
   private com.google.type.Expr predicate_;
-
   /**
    *
    *
@@ -3254,7 +3175,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPredicate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3271,7 +3191,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Expr getPredicate() {
     return predicate_ == null ? com.google.type.Expr.getDefaultInstance() : predicate_;
   }
-
   /**
    *
    *
@@ -3289,7 +3208,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_OUTPUT_FIELD_NUMBER = 2;
   private com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec customOutput_;
-
   /**
    *
    *
@@ -3305,7 +3223,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomOutput() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3323,7 +3240,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.getDefaultInstance()
         : customOutput_;
   }
-
   /**
    *
    *
@@ -3343,7 +3259,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_SELECTOR_FIELD_NUMBER = 3;
   private com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector resourceSelector_;
-
   /**
    *
    *
@@ -3361,7 +3276,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceSelector() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3381,7 +3295,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector.getDefaultInstance()
         : resourceSelector_;
   }
-
   /**
    *
    *
@@ -3403,7 +3316,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SEVERITY_FIELD_NUMBER = 4;
   private int severity_ = 0;
-
   /**
    *
    *
@@ -3419,7 +3331,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
   public int getSeverityValue() {
     return severity_;
   }
-
   /**
    *
    *
@@ -3444,7 +3355,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -3471,7 +3381,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3503,7 +3412,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object recommendation_ = "";
-
   /**
    *
    *
@@ -3529,7 +3437,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3779,7 +3686,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4067,7 +3973,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
         predicateBuilder_;
-
     /**
      *
      *
@@ -4083,7 +3988,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPredicate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4103,7 +4007,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return predicateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4127,7 +4030,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4148,7 +4050,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4177,7 +4078,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4198,7 +4098,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4214,7 +4113,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPredicateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4232,7 +4130,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return predicate_ == null ? com.google.type.Expr.getDefaultInstance() : predicate_;
       }
     }
-
     /**
      *
      *
@@ -4262,7 +4159,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpec.Builder,
             com.google.cloud.securitycenter.v1.CustomConfig.CustomOutputSpecOrBuilder>
         customOutputBuilder_;
-
     /**
      *
      *
@@ -4277,7 +4173,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomOutput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4298,7 +4193,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return customOutputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4322,7 +4216,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4343,7 +4236,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4374,7 +4266,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4394,7 +4285,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4410,7 +4300,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomOutputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4430,7 +4319,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             : customOutput_;
       }
     }
-
     /**
      *
      *
@@ -4463,7 +4351,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelector.Builder,
             com.google.cloud.securitycenter.v1.CustomConfig.ResourceSelectorOrBuilder>
         resourceSelectorBuilder_;
-
     /**
      *
      *
@@ -4480,7 +4367,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceSelector() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4503,7 +4389,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return resourceSelectorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4529,7 +4414,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4552,7 +4436,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4585,7 +4468,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4607,7 +4489,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4625,7 +4506,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceSelectorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4647,7 +4527,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
             : resourceSelector_;
       }
     }
-
     /**
      *
      *
@@ -4677,7 +4556,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int severity_ = 0;
-
     /**
      *
      *
@@ -4693,7 +4571,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSeverityValue() {
       return severity_;
     }
-
     /**
      *
      *
@@ -4712,7 +4589,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4732,7 +4608,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v1.CustomConfig.Severity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4754,7 +4629,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4774,7 +4648,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -4800,7 +4673,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4826,7 +4698,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4851,7 +4722,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4872,7 +4742,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4900,7 +4769,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object recommendation_ = "";
-
     /**
      *
      *
@@ -4925,7 +4793,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4950,7 +4817,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4974,7 +4840,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4994,7 +4859,6 @@ public final class CustomConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

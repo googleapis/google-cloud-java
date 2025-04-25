@@ -34,7 +34,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.SearchRequest)
     SearchRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchRequest.newBuilder() to construct.
   private SearchRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList languages_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLanguagesList() {
     return languages_;
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getLanguagesCount() {
     return languages_.size();
   }
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLanguages(int index) {
     return languages_.get(index);
   }
-
   /**
    *
    *
@@ -260,7 +251,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList types_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTypesList() {
     return types_;
   }
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public int getTypesCount() {
     return types_.size();
   }
-
   /**
    *
    *
@@ -312,7 +300,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTypes(int index) {
     return types_.get(index);
   }
-
   /**
    *
    *
@@ -333,7 +320,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIMIT_FIELD_NUMBER = 6;
   private com.google.protobuf.Int32Value limit_;
-
   /**
    *
    *
@@ -349,7 +335,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLimit() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -365,7 +350,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Int32Value getLimit() {
     return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
   }
-
   /**
    *
    *
@@ -595,7 +579,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -869,7 +852,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -896,7 +878,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -949,7 +929,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +950,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +978,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1022,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1092,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1136,7 +1108,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       languages_.makeImmutable();
       return languages_;
     }
-
     /**
      *
      *
@@ -1152,7 +1123,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getLanguagesCount() {
       return languages_.size();
     }
-
     /**
      *
      *
@@ -1169,7 +1139,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLanguages(int index) {
       return languages_.get(index);
     }
-
     /**
      *
      *
@@ -1186,7 +1155,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLanguagesBytes(int index) {
       return languages_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1211,7 +1179,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1235,7 +1202,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1222,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1276,7 +1241,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1275,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1329,7 +1292,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       types_.makeImmutable();
       return types_;
     }
-
     /**
      *
      *
@@ -1346,7 +1308,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public int getTypesCount() {
       return types_.size();
     }
-
     /**
      *
      *
@@ -1364,7 +1325,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTypes(int index) {
       return types_.get(index);
     }
-
     /**
      *
      *
@@ -1382,7 +1342,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTypesBytes(int index) {
       return types_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1408,7 +1367,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1433,7 +1391,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1412,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1432,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1509,7 +1464,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         limitBuilder_;
-
     /**
      *
      *
@@ -1524,7 +1478,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1543,7 +1496,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return limitBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1566,7 +1518,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1586,7 +1537,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1614,7 +1564,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1583,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1597,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLimitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1666,7 +1613,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
       }
     }
-
     /**
      *
      *

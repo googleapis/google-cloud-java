@@ -40,7 +40,6 @@ public interface UploadRagFileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface UploadRagFileRequestOrBuilder
    * @return Whether the ragFile field is set.
    */
   boolean hasRagFile();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UploadRagFileRequestOrBuilder
    * @return The ragFile.
    */
   com.google.cloud.aiplatform.v1beta1.RagFile getRagFile();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface UploadRagFileRequestOrBuilder
    * @return Whether the uploadRagFileConfig field is set.
    */
   boolean hasUploadRagFileConfig();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface UploadRagFileRequestOrBuilder
    * @return The uploadRagFileConfig.
    */
   com.google.cloud.aiplatform.v1beta1.UploadRagFileConfig getUploadRagFileConfig();
-
   /**
    *
    *

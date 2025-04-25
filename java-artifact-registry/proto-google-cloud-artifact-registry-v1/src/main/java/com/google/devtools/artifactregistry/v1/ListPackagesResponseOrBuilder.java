@@ -34,7 +34,6 @@ public interface ListPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Package packages = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.Package> getPackagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Package packages = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.Package getPackages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPackagesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Package packages = 1;</code>
    */
   int getPackagesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPackagesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.PackageOrBuilder>
       getPackagesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListPackagesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

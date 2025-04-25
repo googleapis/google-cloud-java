@@ -38,7 +38,6 @@ public interface ControlPlaneEndpointsConfigOrBuilder
    * @return Whether the dnsEndpointConfig field is set.
    */
   boolean hasDnsEndpointConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ControlPlaneEndpointsConfigOrBuilder
    * @return The dnsEndpointConfig.
    */
   com.google.container.v1.ControlPlaneEndpointsConfig.DNSEndpointConfig getDnsEndpointConfig();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ControlPlaneEndpointsConfigOrBuilder
    * @return Whether the ipEndpointsConfig field is set.
    */
   boolean hasIpEndpointsConfig();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface ControlPlaneEndpointsConfigOrBuilder
    * @return The ipEndpointsConfig.
    */
   com.google.container.v1.ControlPlaneEndpointsConfig.IPEndpointsConfig getIpEndpointsConfig();
-
   /**
    *
    *

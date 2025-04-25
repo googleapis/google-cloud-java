@@ -33,7 +33,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DistillationHyperParameters)
     DistillationHyperParametersOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DistillationHyperParameters.newBuilder() to construct.
   private DistillationHyperParameters(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int EPOCH_COUNT_FIELD_NUMBER = 1;
   private long epochCount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
   public boolean hasEpochCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
 
   public static final int LEARNING_RATE_MULTIPLIER_FIELD_NUMBER = 2;
   private double learningRateMultiplier_ = 0D;
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
   public boolean hasLearningRateMultiplier() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
 
   public static final int ADAPTER_SIZE_FIELD_NUMBER = 3;
   private int adapterSize_ = 0;
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
   public int getAdapterSizeValue() {
     return adapterSize_;
   }
-
   /**
    *
    *
@@ -382,7 +375,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -599,7 +591,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     private int bitField0_;
 
     private long epochCount_;
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     public boolean hasEpochCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     public long getEpochCount() {
       return epochCount_;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     }
 
     private double learningRateMultiplier_;
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     public boolean hasLearningRateMultiplier() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     public double getLearningRateMultiplier() {
       return learningRateMultiplier_;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     }
 
     private int adapterSize_ = 0;
-
     /**
      *
      *
@@ -769,7 +752,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
     public int getAdapterSizeValue() {
       return adapterSize_;
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +795,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
           ? com.google.cloud.aiplatform.v1beta1.SupervisedHyperParameters.AdapterSize.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -839,7 +819,6 @@ public final class DistillationHyperParameters extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

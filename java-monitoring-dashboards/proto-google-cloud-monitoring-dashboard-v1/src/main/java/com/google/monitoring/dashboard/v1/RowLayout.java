@@ -34,7 +34,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.RowLayout)
     RowLayoutOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RowLayout.newBuilder() to construct.
   private RowLayout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -96,7 +95,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
     java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList();
-
     /**
      *
      *
@@ -107,7 +105,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
     com.google.monitoring.dashboard.v1.Widget getWidgets(int index);
-
     /**
      *
      *
@@ -118,7 +115,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
      */
     int getWidgetsCount();
-
     /**
      *
      *
@@ -130,7 +126,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.monitoring.dashboard.v1.WidgetOrBuilder>
         getWidgetsOrBuilderList();
-
     /**
      *
      *
@@ -142,7 +137,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.monitoring.dashboard.v1.WidgetOrBuilder getWidgetsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.RowLayout.Row)
       RowOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Row.newBuilder() to construct.
     private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -190,7 +183,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WEIGHT_FIELD_NUMBER = 1;
     private long weight_ = 0L;
-
     /**
      *
      *
@@ -214,7 +206,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.monitoring.dashboard.v1.Widget> widgets_;
-
     /**
      *
      *
@@ -228,7 +219,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList() {
       return widgets_;
     }
-
     /**
      *
      *
@@ -243,7 +233,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         getWidgetsOrBuilderList() {
       return widgets_;
     }
-
     /**
      *
      *
@@ -257,7 +246,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
     public int getWidgetsCount() {
       return widgets_.size();
     }
-
     /**
      *
      *
@@ -271,7 +259,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Widget getWidgets(int index) {
       return widgets_.get(index);
     }
-
     /**
      *
      *
@@ -457,7 +444,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long weight_;
-
       /**
        *
        *
@@ -723,7 +708,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       public long getWeight() {
         return weight_;
       }
-
       /**
        *
        *
@@ -746,7 +730,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -800,7 +783,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
           return widgetsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -817,7 +799,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
           return widgetsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -834,7 +815,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
           return widgetsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -857,7 +837,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -878,7 +857,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -901,7 +879,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -924,7 +901,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -944,7 +920,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -965,7 +940,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -986,7 +960,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1006,7 +979,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1026,7 +998,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1039,7 +1010,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.dashboard.v1.Widget.Builder getWidgetsBuilder(int index) {
         return getWidgetsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1056,7 +1026,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
           return widgetsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1074,7 +1043,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(widgets_);
         }
       }
-
       /**
        *
        *
@@ -1088,7 +1056,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return getWidgetsFieldBuilder()
             .addBuilder(com.google.monitoring.dashboard.v1.Widget.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1102,7 +1069,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return getWidgetsFieldBuilder()
             .addBuilder(index, com.google.monitoring.dashboard.v1.Widget.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1202,7 +1168,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.RowLayout.Row> rows_;
-
   /**
    *
    *
@@ -1216,7 +1181,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.dashboard.v1.RowLayout.Row> getRowsList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -1231,7 +1195,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       getRowsOrBuilderList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -1245,7 +1208,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
   public int getRowsCount() {
     return rows_.size();
   }
-
   /**
    *
    *
@@ -1259,7 +1221,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.dashboard.v1.RowLayout.Row getRows(int index) {
     return rows_.get(index);
   }
-
   /**
    *
    *
@@ -1435,7 +1396,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1697,7 +1657,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1673,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1731,7 +1689,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1754,7 +1711,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1775,7 +1731,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1753,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1821,7 +1775,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1842,7 +1795,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1815,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1835,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1904,7 +1854,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1924,7 +1873,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1937,7 +1885,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.RowLayout.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1954,7 +1901,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1918,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-
     /**
      *
      *
@@ -1986,7 +1931,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       return getRowsFieldBuilder()
           .addBuilder(com.google.monitoring.dashboard.v1.RowLayout.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2000,7 +1944,6 @@ public final class RowLayout extends com.google.protobuf.GeneratedMessageV3
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.monitoring.dashboard.v1.RowLayout.Row.getDefaultInstance());
     }
-
     /**
      *
      *

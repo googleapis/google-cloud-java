@@ -38,7 +38,6 @@ public interface GetEndpointRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the date field is set.
    */
   boolean hasDate();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return The date.
    */
   com.google.type.Date getDate();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the isYourDomain field is set.
    */
   boolean hasIsYourDomain();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the reportCountryCode field is set.
    */
   boolean hasReportCountryCode();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return The reportCountryCode.
    */
   java.lang.String getReportCountryCode();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the reportCategoryId field is set.
    */
   boolean hasReportCategoryId();
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the trafficSource field is set.
    */
   boolean hasTrafficSource();
-
   /**
    *
    *
@@ -265,7 +256,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return The enum numeric value on the wire for trafficSource.
    */
   int getTrafficSourceValue();
-
   /**
    *
    *
@@ -299,7 +289,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the rank field is set.
    */
   boolean hasRank();
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the adsOrganicRatio field is set.
    */
   boolean hasAdsOrganicRatio();
-
   /**
    *
    *
@@ -370,7 +358,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the pageOverlapRate field is set.
    */
   boolean hasPageOverlapRate();
-
   /**
    *
    *
@@ -406,7 +393,6 @@ public interface CompetitiveVisibilityTopMerchantViewOrBuilder
    * @return Whether the higherPositionRate field is set.
    */
   boolean hasHigherPositionRate();
-
   /**
    *
    *

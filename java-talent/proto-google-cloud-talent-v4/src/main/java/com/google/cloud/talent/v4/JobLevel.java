@@ -104,7 +104,6 @@ public enum JobLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JOB_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int JOB_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -116,7 +115,6 @@ public enum JobLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTRY_LEVEL = 1;</code>
    */
   public static final int ENTRY_LEVEL_VALUE = 1;
-
   /**
    *
    *
@@ -128,7 +126,6 @@ public enum JobLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXPERIENCED = 2;</code>
    */
   public static final int EXPERIENCED_VALUE = 2;
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public enum JobLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MANAGER = 3;</code>
    */
   public static final int MANAGER_VALUE = 3;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public enum JobLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DIRECTOR = 4;</code>
    */
   public static final int DIRECTOR_VALUE = 4;
-
   /**
    *
    *

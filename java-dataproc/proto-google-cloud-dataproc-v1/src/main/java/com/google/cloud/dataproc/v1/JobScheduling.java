@@ -33,7 +33,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.JobScheduling)
     JobSchedulingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobScheduling.newBuilder() to construct.
   private JobScheduling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_FAILURES_PER_HOUR_FIELD_NUMBER = 1;
   private int maxFailuresPerHour_ = 0;
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_FAILURES_TOTAL_FIELD_NUMBER = 2;
   private int maxFailuresTotal_ = 0;
-
   /**
    *
    *
@@ -288,7 +285,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +479,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int maxFailuresPerHour_;
-
     /**
      *
      *
@@ -510,7 +505,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     public int getMaxFailuresPerHour() {
       return maxFailuresPerHour_;
     }
-
     /**
      *
      *
@@ -541,7 +535,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -572,7 +565,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxFailuresTotal_;
-
     /**
      *
      *
@@ -597,7 +589,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     public int getMaxFailuresTotal() {
       return maxFailuresTotal_;
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

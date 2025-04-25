@@ -41,7 +41,6 @@ public interface AddContextChildrenRequestOrBuilder
    * @return The context.
    */
   java.lang.String getContext();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface AddContextChildrenRequestOrBuilder
    * @return A list containing the childContexts.
    */
   java.util.List<java.lang.String> getChildContextsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface AddContextChildrenRequestOrBuilder
    * @return The count of childContexts.
    */
   int getChildContextsCount();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface AddContextChildrenRequestOrBuilder
    * @return The childContexts at the given index.
    */
   java.lang.String getChildContexts(int index);
-
   /**
    *
    *

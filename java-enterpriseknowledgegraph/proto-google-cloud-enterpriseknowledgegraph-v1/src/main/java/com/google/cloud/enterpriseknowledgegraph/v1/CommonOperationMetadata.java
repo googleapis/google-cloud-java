@@ -33,7 +33,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata)
     CommonOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommonOperationMetadata.newBuilder() to construct.
   private CommonOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -157,7 +156,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -168,7 +166,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
-
     /**
      *
      *
@@ -179,7 +176,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
      * <code>CANCELLING = 2;</code>
      */
     public static final int CANCELLING_VALUE = 2;
-
     /**
      *
      *
@@ -190,7 +186,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -201,7 +196,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
      * <code>FAILED = 4;</code>
      */
     public static final int FAILED_VALUE = 4;
-
     /**
      *
      *
@@ -212,7 +206,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
      * <code>CANCELLED = 5;</code>
      */
     public static final int CANCELLED_VALUE = 5;
-
     /**
      *
      *
@@ -320,7 +313,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -336,7 +328,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -360,7 +351,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -376,7 +366,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -392,7 +381,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -409,7 +397,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -425,7 +412,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -441,7 +427,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -651,7 +636,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -889,7 +873,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -906,7 +889,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -926,7 +908,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
           ? com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -972,7 +952,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +977,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1013,7 +991,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1034,7 +1011,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1052,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1098,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1112,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1159,7 +1130,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1192,7 +1162,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1207,7 +1176,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1228,7 +1196,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1218,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1237,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1264,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1283,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1334,7 +1297,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1353,7 +1315,6 @@ public final class CommonOperationMetadata extends com.google.protobuf.Generated
             : updateTime_;
       }
     }
-
     /**
      *
      *

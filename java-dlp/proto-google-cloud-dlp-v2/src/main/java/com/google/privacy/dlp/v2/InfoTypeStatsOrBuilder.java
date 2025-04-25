@@ -36,7 +36,6 @@ public interface InfoTypeStatsOrBuilder
    * @return Whether the infoType field is set.
    */
   boolean hasInfoType();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InfoTypeStatsOrBuilder
    * @return The infoType.
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
-
   /**
    *
    *

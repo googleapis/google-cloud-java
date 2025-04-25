@@ -33,7 +33,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Violation)
     ViolationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Violation.newBuilder() to construct.
   private Violation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOLVED = 1;</code>
      */
     public static final int RESOLVED_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * <code>UNRESOLVED = 2;</code>
      */
     public static final int UNRESOLVED_VALUE = 2;
-
     /**
      *
      *
@@ -271,7 +267,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the instructions field is set.
      */
     boolean hasInstructions();
-
     /**
      *
      *
@@ -286,7 +281,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return The instructions.
      */
     com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions getInstructions();
-
     /**
      *
      *
@@ -315,7 +309,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the compliantValues.
      */
     java.util.List<java.lang.String> getCompliantValuesList();
-
     /**
      *
      *
@@ -330,7 +323,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return The count of compliantValues.
      */
     int getCompliantValuesCount();
-
     /**
      *
      *
@@ -346,7 +338,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return The compliantValues at the given index.
      */
     java.lang.String getCompliantValues(int index);
-
     /**
      *
      *
@@ -378,7 +369,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for remediationType.
      */
     int getRemediationTypeValue();
-
     /**
      *
      *
@@ -396,7 +386,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.RemediationType
         getRemediationType();
   }
-
   /**
    *
    *
@@ -412,7 +401,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Violation.Remediation)
       RemediationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Remediation.newBuilder() to construct.
     private Remediation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -533,7 +521,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * <code>REMEDIATION_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int REMEDIATION_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -544,7 +531,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * <code>REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION = 1;</code>
        */
       public static final int REMEDIATION_BOOLEAN_ORG_POLICY_VIOLATION_VALUE = 1;
-
       /**
        *
        *
@@ -556,7 +542,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * <code>REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION = 2;</code>
        */
       public static final int REMEDIATION_LIST_ALLOWED_VALUES_ORG_POLICY_VIOLATION_VALUE = 2;
-
       /**
        *
        *
@@ -568,7 +553,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * <code>REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION = 3;</code>
        */
       public static final int REMEDIATION_LIST_DENIED_VALUES_ORG_POLICY_VIOLATION_VALUE = 3;
-
       /**
        *
        *
@@ -580,7 +564,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        */
       public static final int
           REMEDIATION_RESTRICT_CMEK_CRYPTO_KEY_PROJECTS_ORG_POLICY_VIOLATION_VALUE = 4;
-
       /**
        *
        *
@@ -705,7 +688,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the gcloudInstructions field is set.
        */
       boolean hasGcloudInstructions();
-
       /**
        *
        *
@@ -721,7 +703,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Gcloud
           getGcloudInstructions();
-
       /**
        *
        *
@@ -750,7 +731,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the consoleInstructions field is set.
        */
       boolean hasConsoleInstructions();
-
       /**
        *
        *
@@ -766,7 +746,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Console
           getConsoleInstructions();
-
       /**
        *
        *
@@ -781,7 +760,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.ConsoleOrBuilder
           getConsoleInstructionsOrBuilder();
     }
-
     /**
      *
      *
@@ -796,7 +774,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions)
         InstructionsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Instructions.newBuilder() to construct.
       private Instructions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -843,7 +820,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the gcloudCommands.
          */
         java.util.List<java.lang.String> getGcloudCommandsList();
-
         /**
          *
          *
@@ -856,7 +832,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The count of gcloudCommands.
          */
         int getGcloudCommandsCount();
-
         /**
          *
          *
@@ -870,7 +845,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The gcloudCommands at the given index.
          */
         java.lang.String getGcloudCommands(int index);
-
         /**
          *
          *
@@ -897,7 +871,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the steps.
          */
         java.util.List<java.lang.String> getStepsList();
-
         /**
          *
          *
@@ -910,7 +883,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The count of steps.
          */
         int getStepsCount();
-
         /**
          *
          *
@@ -924,7 +896,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The steps at the given index.
          */
         java.lang.String getSteps(int index);
-
         /**
          *
          *
@@ -951,7 +922,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the additionalLinks.
          */
         java.util.List<java.lang.String> getAdditionalLinksList();
-
         /**
          *
          *
@@ -964,7 +934,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The count of additionalLinks.
          */
         int getAdditionalLinksCount();
-
         /**
          *
          *
@@ -978,7 +947,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The additionalLinks at the given index.
          */
         java.lang.String getAdditionalLinks(int index);
-
         /**
          *
          *
@@ -993,7 +961,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getAdditionalLinksBytes(int index);
       }
-
       /**
        *
        *
@@ -1009,7 +976,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Gcloud)
           GcloudOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use Gcloud.newBuilder() to construct.
         private Gcloud(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -1049,7 +1015,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList gcloudCommands_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -1064,7 +1029,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getGcloudCommandsList() {
           return gcloudCommands_;
         }
-
         /**
          *
          *
@@ -1079,7 +1043,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public int getGcloudCommandsCount() {
           return gcloudCommands_.size();
         }
-
         /**
          *
          *
@@ -1095,7 +1058,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getGcloudCommands(int index) {
           return gcloudCommands_.get(index);
         }
-
         /**
          *
          *
@@ -1117,7 +1079,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList steps_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -1132,7 +1093,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getStepsList() {
           return steps_;
         }
-
         /**
          *
          *
@@ -1147,7 +1107,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public int getStepsCount() {
           return steps_.size();
         }
-
         /**
          *
          *
@@ -1163,7 +1122,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getSteps(int index) {
           return steps_.get(index);
         }
-
         /**
          *
          *
@@ -1185,7 +1143,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList additionalLinks_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -1200,7 +1157,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getAdditionalLinksList() {
           return additionalLinks_;
         }
-
         /**
          *
          *
@@ -1215,7 +1171,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public int getAdditionalLinksCount() {
           return additionalLinks_.size();
         }
-
         /**
          *
          *
@@ -1231,7 +1186,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getAdditionalLinks(int index) {
           return additionalLinks_.get(index);
         }
-
         /**
          *
          *
@@ -1477,7 +1431,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -1747,7 +1700,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000001;
           }
-
           /**
            *
            *
@@ -1763,7 +1715,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             gcloudCommands_.makeImmutable();
             return gcloudCommands_;
           }
-
           /**
            *
            *
@@ -1778,7 +1729,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public int getGcloudCommandsCount() {
             return gcloudCommands_.size();
           }
-
           /**
            *
            *
@@ -1794,7 +1744,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getGcloudCommands(int index) {
             return gcloudCommands_.get(index);
           }
-
           /**
            *
            *
@@ -1810,7 +1759,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getGcloudCommandsBytes(int index) {
             return gcloudCommands_.getByteString(index);
           }
-
           /**
            *
            *
@@ -1834,7 +1782,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1857,7 +1804,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1877,7 +1823,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1896,7 +1841,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1930,7 +1874,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000002;
           }
-
           /**
            *
            *
@@ -1946,7 +1889,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             steps_.makeImmutable();
             return steps_;
           }
-
           /**
            *
            *
@@ -1961,7 +1903,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public int getStepsCount() {
             return steps_.size();
           }
-
           /**
            *
            *
@@ -1977,7 +1918,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getSteps(int index) {
             return steps_.get(index);
           }
-
           /**
            *
            *
@@ -1993,7 +1933,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getStepsBytes(int index) {
             return steps_.getByteString(index);
           }
-
           /**
            *
            *
@@ -2017,7 +1956,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2040,7 +1978,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2060,7 +1997,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2079,7 +2015,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2113,7 +2048,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000004;
           }
-
           /**
            *
            *
@@ -2129,7 +2063,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             additionalLinks_.makeImmutable();
             return additionalLinks_;
           }
-
           /**
            *
            *
@@ -2144,7 +2077,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public int getAdditionalLinksCount() {
             return additionalLinks_.size();
           }
-
           /**
            *
            *
@@ -2160,7 +2092,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getAdditionalLinks(int index) {
             return additionalLinks_.get(index);
           }
-
           /**
            *
            *
@@ -2176,7 +2107,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getAdditionalLinksBytes(int index) {
             return additionalLinks_.getByteString(index);
           }
-
           /**
            *
            *
@@ -2200,7 +2130,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2223,7 +2152,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2243,7 +2171,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2262,7 +2189,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2375,7 +2301,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the consoleUris.
          */
         java.util.List<java.lang.String> getConsoleUrisList();
-
         /**
          *
          *
@@ -2388,7 +2313,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The count of consoleUris.
          */
         int getConsoleUrisCount();
-
         /**
          *
          *
@@ -2402,7 +2326,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The consoleUris at the given index.
          */
         java.lang.String getConsoleUris(int index);
-
         /**
          *
          *
@@ -2429,7 +2352,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the steps.
          */
         java.util.List<java.lang.String> getStepsList();
-
         /**
          *
          *
@@ -2442,7 +2364,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The count of steps.
          */
         int getStepsCount();
-
         /**
          *
          *
@@ -2456,7 +2377,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The steps at the given index.
          */
         java.lang.String getSteps(int index);
-
         /**
          *
          *
@@ -2483,7 +2403,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the additionalLinks.
          */
         java.util.List<java.lang.String> getAdditionalLinksList();
-
         /**
          *
          *
@@ -2496,7 +2415,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The count of additionalLinks.
          */
         int getAdditionalLinksCount();
-
         /**
          *
          *
@@ -2510,7 +2428,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return The additionalLinks at the given index.
          */
         java.lang.String getAdditionalLinks(int index);
-
         /**
          *
          *
@@ -2525,7 +2442,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getAdditionalLinksBytes(int index);
       }
-
       /**
        *
        *
@@ -2541,7 +2457,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Console)
           ConsoleOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use Console.newBuilder() to construct.
         private Console(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -2581,7 +2496,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList consoleUris_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -2596,7 +2510,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getConsoleUrisList() {
           return consoleUris_;
         }
-
         /**
          *
          *
@@ -2611,7 +2524,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public int getConsoleUrisCount() {
           return consoleUris_.size();
         }
-
         /**
          *
          *
@@ -2627,7 +2539,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getConsoleUris(int index) {
           return consoleUris_.get(index);
         }
-
         /**
          *
          *
@@ -2649,7 +2560,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList steps_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -2664,7 +2574,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getStepsList() {
           return steps_;
         }
-
         /**
          *
          *
@@ -2679,7 +2588,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public int getStepsCount() {
           return steps_.size();
         }
-
         /**
          *
          *
@@ -2695,7 +2603,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getSteps(int index) {
           return steps_.get(index);
         }
-
         /**
          *
          *
@@ -2717,7 +2624,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList additionalLinks_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -2732,7 +2638,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getAdditionalLinksList() {
           return additionalLinks_;
         }
-
         /**
          *
          *
@@ -2747,7 +2652,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public int getAdditionalLinksCount() {
           return additionalLinks_.size();
         }
-
         /**
          *
          *
@@ -2763,7 +2667,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getAdditionalLinks(int index) {
           return additionalLinks_.get(index);
         }
-
         /**
          *
          *
@@ -3011,7 +2914,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -3281,7 +3183,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000001;
           }
-
           /**
            *
            *
@@ -3297,7 +3198,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             consoleUris_.makeImmutable();
             return consoleUris_;
           }
-
           /**
            *
            *
@@ -3312,7 +3212,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public int getConsoleUrisCount() {
             return consoleUris_.size();
           }
-
           /**
            *
            *
@@ -3328,7 +3227,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getConsoleUris(int index) {
             return consoleUris_.get(index);
           }
-
           /**
            *
            *
@@ -3344,7 +3242,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getConsoleUrisBytes(int index) {
             return consoleUris_.getByteString(index);
           }
-
           /**
            *
            *
@@ -3368,7 +3265,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3391,7 +3287,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3411,7 +3306,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3430,7 +3324,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3464,7 +3357,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000002;
           }
-
           /**
            *
            *
@@ -3480,7 +3372,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             steps_.makeImmutable();
             return steps_;
           }
-
           /**
            *
            *
@@ -3495,7 +3386,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public int getStepsCount() {
             return steps_.size();
           }
-
           /**
            *
            *
@@ -3511,7 +3401,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getSteps(int index) {
             return steps_.get(index);
           }
-
           /**
            *
            *
@@ -3527,7 +3416,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getStepsBytes(int index) {
             return steps_.getByteString(index);
           }
-
           /**
            *
            *
@@ -3551,7 +3439,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3574,7 +3461,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3594,7 +3480,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3613,7 +3498,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3647,7 +3531,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000004;
           }
-
           /**
            *
            *
@@ -3663,7 +3546,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             additionalLinks_.makeImmutable();
             return additionalLinks_;
           }
-
           /**
            *
            *
@@ -3678,7 +3560,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public int getAdditionalLinksCount() {
             return additionalLinks_.size();
           }
-
           /**
            *
            *
@@ -3694,7 +3575,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getAdditionalLinks(int index) {
             return additionalLinks_.get(index);
           }
-
           /**
            *
            *
@@ -3710,7 +3590,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getAdditionalLinksBytes(int index) {
             return additionalLinks_.getByteString(index);
           }
-
           /**
            *
            *
@@ -3734,7 +3613,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3757,7 +3635,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3777,7 +3654,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3796,7 +3672,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3896,7 +3771,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public static final int GCLOUD_INSTRUCTIONS_FIELD_NUMBER = 1;
       private com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Gcloud
           gcloudInstructions_;
-
       /**
        *
        *
@@ -3914,7 +3788,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGcloudInstructions() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3936,7 +3809,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()
             : gcloudInstructions_;
       }
-
       /**
        *
        *
@@ -3961,7 +3833,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public static final int CONSOLE_INSTRUCTIONS_FIELD_NUMBER = 2;
       private com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Console
           consoleInstructions_;
-
       /**
        *
        *
@@ -3979,7 +3850,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasConsoleInstructions() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -4001,7 +3871,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()
             : consoleInstructions_;
       }
-
       /**
        *
        *
@@ -4215,7 +4084,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4466,7 +4334,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions
                     .GcloudOrBuilder>
             gcloudInstructionsBuilder_;
-
         /**
          *
          *
@@ -4483,7 +4350,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public boolean hasGcloudInstructions() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -4508,7 +4374,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             return gcloudInstructionsBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -4535,7 +4400,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4560,7 +4424,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4594,7 +4457,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -4616,7 +4478,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4635,7 +4496,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getGcloudInstructionsFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -4659,7 +4519,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 : gcloudInstructions_;
           }
         }
-
         /**
          *
          *
@@ -4702,7 +4561,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions
                     .ConsoleOrBuilder>
             consoleInstructionsBuilder_;
-
         /**
          *
          *
@@ -4719,7 +4577,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public boolean hasConsoleInstructions() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -4744,7 +4601,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             return consoleInstructionsBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -4771,7 +4627,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4796,7 +4651,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4830,7 +4684,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -4852,7 +4705,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4871,7 +4723,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getConsoleInstructionsFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -4895,7 +4746,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 : consoleInstructions_;
           }
         }
-
         /**
          *
          *
@@ -5002,7 +4852,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public static final int INSTRUCTIONS_FIELD_NUMBER = 1;
     private com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions
         instructions_;
-
     /**
      *
      *
@@ -5020,7 +4869,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInstructions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -5042,7 +4890,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : instructions_;
     }
-
     /**
      *
      *
@@ -5068,7 +4915,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList compliantValues_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -5085,7 +4931,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getCompliantValuesList() {
       return compliantValues_;
     }
-
     /**
      *
      *
@@ -5102,7 +4947,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public int getCompliantValuesCount() {
       return compliantValues_.size();
     }
-
     /**
      *
      *
@@ -5120,7 +4964,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCompliantValues(int index) {
       return compliantValues_.get(index);
     }
-
     /**
      *
      *
@@ -5141,7 +4984,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REMEDIATION_TYPE_FIELD_NUMBER = 3;
     private int remediationType_ = 0;
-
     /**
      *
      *
@@ -5160,7 +5002,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public int getRemediationTypeValue() {
       return remediationType_;
     }
-
     /**
      *
      *
@@ -5384,7 +5225,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5633,7 +5473,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Instructions.Builder,
               com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.InstructionsOrBuilder>
           instructionsBuilder_;
-
       /**
        *
        *
@@ -5650,7 +5489,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInstructions() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -5675,7 +5513,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           return instructionsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5701,7 +5538,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5725,7 +5561,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5758,7 +5593,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5780,7 +5614,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5798,7 +5631,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getInstructionsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5821,7 +5653,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               : instructions_;
         }
       }
-
       /**
        *
        *
@@ -5860,7 +5691,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -5878,7 +5708,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         compliantValues_.makeImmutable();
         return compliantValues_;
       }
-
       /**
        *
        *
@@ -5895,7 +5724,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public int getCompliantValuesCount() {
         return compliantValues_.size();
       }
-
       /**
        *
        *
@@ -5913,7 +5741,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getCompliantValues(int index) {
         return compliantValues_.get(index);
       }
-
       /**
        *
        *
@@ -5931,7 +5758,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getCompliantValuesBytes(int index) {
         return compliantValues_.getByteString(index);
       }
-
       /**
        *
        *
@@ -5957,7 +5783,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5982,7 +5807,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6004,7 +5828,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6025,7 +5848,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6053,7 +5875,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int remediationType_ = 0;
-
       /**
        *
        *
@@ -6072,7 +5893,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public int getRemediationTypeValue() {
         return remediationType_;
       }
-
       /**
        *
        *
@@ -6094,7 +5914,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6120,7 +5939,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -6146,7 +5964,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6240,7 +6057,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -6265,7 +6081,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6295,7 +6110,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -6320,7 +6134,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6348,7 +6161,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BEGIN_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp beginTime_;
-
   /**
    *
    *
@@ -6365,7 +6177,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBeginTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -6382,7 +6193,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getBeginTime() {
     return beginTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginTime_;
   }
-
   /**
    *
    *
@@ -6400,7 +6210,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -6417,7 +6226,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -6434,7 +6242,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -6452,7 +6259,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOLVE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp resolveTime_;
-
   /**
    *
    *
@@ -6470,7 +6276,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResolveTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -6488,7 +6293,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getResolveTime() {
     return resolveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : resolveTime_;
   }
-
   /**
    *
    *
@@ -6509,7 +6313,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object category_ = "";
-
   /**
    *
    *
@@ -6534,7 +6337,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6562,7 +6364,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
-
   /**
    *
    *
@@ -6580,7 +6381,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -6607,7 +6407,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nonCompliantOrgPolicy_ = "";
-
   /**
    *
    *
@@ -6637,7 +6436,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6670,7 +6468,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FOLDER_ID_FIELD_NUMBER = 9;
   private long folderId_ = 0L;
-
   /**
    *
    *
@@ -6689,7 +6486,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMEDIATION_FIELD_NUMBER = 13;
   private com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation remediation_;
-
   /**
    *
    *
@@ -6707,7 +6503,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemediation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -6727,7 +6522,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.getDefaultInstance()
         : remediation_;
   }
-
   /**
    *
    *
@@ -7009,7 +6803,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7353,7 +7146,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -7377,7 +7169,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7401,7 +7192,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7424,7 +7214,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7443,7 +7232,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7469,7 +7257,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -7493,7 +7280,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7517,7 +7303,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7540,7 +7325,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7559,7 +7343,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7590,7 +7373,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         beginTimeBuilder_;
-
     /**
      *
      *
@@ -7606,7 +7388,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBeginTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -7626,7 +7407,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return beginTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7650,7 +7430,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7671,7 +7450,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7700,7 +7478,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7721,7 +7498,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7737,7 +7513,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBeginTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7755,7 +7530,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return beginTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginTime_;
       }
     }
-
     /**
      *
      *
@@ -7789,7 +7563,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -7806,7 +7579,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -7829,7 +7601,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7854,7 +7625,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7876,7 +7646,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7906,7 +7675,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7928,7 +7696,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7945,7 +7712,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7966,7 +7732,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -8001,7 +7766,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         resolveTimeBuilder_;
-
     /**
      *
      *
@@ -8019,7 +7783,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResolveTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -8043,7 +7806,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return resolveTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8069,7 +7831,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8092,7 +7853,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8123,7 +7883,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8146,7 +7905,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8164,7 +7922,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResolveTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8186,7 +7943,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             : resolveTime_;
       }
     }
-
     /**
      *
      *
@@ -8217,7 +7973,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object category_ = "";
-
     /**
      *
      *
@@ -8241,7 +7996,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8265,7 +8019,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8288,7 +8041,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8307,7 +8059,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8333,7 +8084,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -8351,7 +8101,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -8372,7 +8121,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8394,7 +8142,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.cloudcontrolspartner.v1.Violation.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -8418,7 +8165,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8440,7 +8186,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nonCompliantOrgPolicy_ = "";
-
     /**
      *
      *
@@ -8469,7 +8214,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8498,7 +8242,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8526,7 +8269,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8550,7 +8292,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8581,7 +8322,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long folderId_;
-
     /**
      *
      *
@@ -8597,7 +8337,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public long getFolderId() {
       return folderId_;
     }
-
     /**
      *
      *
@@ -8617,7 +8356,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8642,7 +8380,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.cloudcontrolspartner.v1.Violation.Remediation.Builder,
             com.google.cloud.cloudcontrolspartner.v1.Violation.RemediationOrBuilder>
         remediationBuilder_;
-
     /**
      *
      *
@@ -8659,7 +8396,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemediation() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -8682,7 +8418,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         return remediationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8708,7 +8443,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8731,7 +8465,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8764,7 +8497,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8786,7 +8518,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8804,7 +8535,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRemediationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8826,7 +8556,6 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             : remediation_;
       }
     }
-
     /**
      *
      *

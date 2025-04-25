@@ -37,7 +37,6 @@ public interface AudienceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AudienceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AudienceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public interface AudienceOrBuilder
    * @return Whether the eventTrigger field is set.
    */
   boolean hasEventTrigger();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface AudienceOrBuilder
    * @return The eventTrigger.
    */
   com.google.analytics.admin.v1alpha.AudienceEventTrigger getEventTrigger();
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public interface AudienceOrBuilder
    * @return The enum numeric value on the wire for exclusionDurationMode.
    */
   int getExclusionDurationModeValue();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public interface AudienceOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.AudienceFilterClause> getFilterClausesList();
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public interface AudienceOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.AudienceFilterClause getFilterClauses(int index);
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public interface AudienceOrBuilder
    * </code>
    */
   int getFilterClausesCount();
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public interface AudienceOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.AudienceFilterClauseOrBuilder>
       getFilterClausesOrBuilderList();
-
   /**
    *
    *
@@ -300,7 +290,6 @@ public interface AudienceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public interface AudienceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

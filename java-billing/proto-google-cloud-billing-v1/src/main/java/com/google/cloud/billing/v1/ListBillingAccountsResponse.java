@@ -33,7 +33,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.ListBillingAccountsResponse)
     ListBillingAccountsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBillingAccountsResponse.newBuilder() to construct.
   private ListBillingAccountsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.billing.v1.BillingAccount> billingAccounts_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.billing.v1.BillingAccount> getBillingAccountsList() {
     return billingAccounts_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       getBillingAccountsOrBuilderList() {
     return billingAccounts_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
   public int getBillingAccountsCount() {
     return billingAccounts_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
   public com.google.cloud.billing.v1.BillingAccount getBillingAccounts(int index) {
     return billingAccounts_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return billingAccountsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return billingAccountsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return billingAccountsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
     public com.google.cloud.billing.v1.BillingAccount.Builder getBillingAccountsBuilder(int index) {
       return getBillingAccountsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -906,7 +884,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return billingAccountsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -924,7 +901,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(billingAccounts_);
       }
     }
-
     /**
      *
      *
@@ -938,7 +914,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       return getBillingAccountsFieldBuilder()
           .addBuilder(com.google.cloud.billing.v1.BillingAccount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -952,7 +927,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       return getBillingAccountsFieldBuilder()
           .addBuilder(index, com.google.cloud.billing.v1.BillingAccount.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1013,7 +986,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1010,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1033,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1052,6 @@ public final class ListBillingAccountsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The targetColumn.
    */
   java.lang.String getTargetColumn();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The timeSeriesIdentifierColumn.
    */
   java.lang.String getTimeSeriesIdentifierColumn();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The timeColumn.
    */
   java.lang.String getTimeColumn();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface AutoMlForecastingInputsOrBuilder
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
               .Transformation>
       getTransformationsList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface AutoMlForecastingInputsOrBuilder
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
           .Transformation
       getTransformations(int index);
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * </code>
    */
   int getTransformationsCount();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface AutoMlForecastingInputsOrBuilder
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.TransformationOrBuilder>
       getTransformationsOrBuilderList();
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The optimizationObjective.
    */
   java.lang.String getOptimizationObjective();
-
   /**
    *
    *
@@ -299,7 +291,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The weightColumn.
    */
   java.lang.String getWeightColumn();
-
   /**
    *
    *
@@ -332,7 +323,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return A list containing the timeSeriesAttributeColumns.
    */
   java.util.List<java.lang.String> getTimeSeriesAttributeColumnsList();
-
   /**
    *
    *
@@ -347,7 +337,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The count of timeSeriesAttributeColumns.
    */
   int getTimeSeriesAttributeColumnsCount();
-
   /**
    *
    *
@@ -363,7 +352,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The timeSeriesAttributeColumns at the given index.
    */
   java.lang.String getTimeSeriesAttributeColumns(int index);
-
   /**
    *
    *
@@ -395,7 +383,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return A list containing the unavailableAtForecastColumns.
    */
   java.util.List<java.lang.String> getUnavailableAtForecastColumnsList();
-
   /**
    *
    *
@@ -411,7 +398,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The count of unavailableAtForecastColumns.
    */
   int getUnavailableAtForecastColumnsCount();
-
   /**
    *
    *
@@ -428,7 +414,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The unavailableAtForecastColumns at the given index.
    */
   java.lang.String getUnavailableAtForecastColumns(int index);
-
   /**
    *
    *
@@ -462,7 +447,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return A list containing the availableAtForecastColumns.
    */
   java.util.List<java.lang.String> getAvailableAtForecastColumnsList();
-
   /**
    *
    *
@@ -479,7 +463,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The count of availableAtForecastColumns.
    */
   int getAvailableAtForecastColumnsCount();
-
   /**
    *
    *
@@ -497,7 +480,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The availableAtForecastColumns at the given index.
    */
   java.lang.String getAvailableAtForecastColumns(int index);
-
   /**
    *
    *
@@ -530,7 +512,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return Whether the dataGranularity field is set.
    */
   boolean hasDataGranularity();
-
   /**
    *
    *
@@ -547,7 +528,6 @@ public interface AutoMlForecastingInputsOrBuilder
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
           .Granularity
       getDataGranularity();
-
   /**
    *
    *
@@ -608,7 +588,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return Whether the exportEvaluatedDataItemsConfig field is set.
    */
   boolean hasExportEvaluatedDataItemsConfig();
-
   /**
    *
    *
@@ -625,7 +604,6 @@ public interface AutoMlForecastingInputsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig
       getExportEvaluatedDataItemsConfig();
-
   /**
    *
    *
@@ -657,7 +635,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return A list containing the quantiles.
    */
   java.util.List<java.lang.Double> getQuantilesList();
-
   /**
    *
    *
@@ -673,7 +650,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The count of quantiles.
    */
   int getQuantilesCount();
-
   /**
    *
    *
@@ -709,7 +685,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The validationOptions.
    */
   java.lang.String getValidationOptions();
-
   /**
    *
    *
@@ -741,7 +716,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return A list containing the additionalExperiments.
    */
   java.util.List<java.lang.String> getAdditionalExperimentsList();
-
   /**
    *
    *
@@ -754,7 +728,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The count of additionalExperiments.
    */
   int getAdditionalExperimentsCount();
-
   /**
    *
    *
@@ -768,7 +741,6 @@ public interface AutoMlForecastingInputsOrBuilder
    * @return The additionalExperiments at the given index.
    */
   java.lang.String getAdditionalExperiments(int index);
-
   /**
    *
    *

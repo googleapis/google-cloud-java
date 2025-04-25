@@ -36,7 +36,6 @@ public interface BackendServiceUsedByOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BackendServiceUsedByOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return Whether the homepageTrigger field is set.
    */
   boolean hasHomepageTrigger();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return The homepageTrigger.
    */
   com.google.apps.script.type.HomepageExtensionPoint getHomepageTrigger();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CalendarAddOnManifestOrBuilder
    */
   java.util.List<com.google.apps.script.type.calendar.ConferenceSolution>
       getConferenceSolutionList();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface CalendarAddOnManifestOrBuilder
    * </code>
    */
   com.google.apps.script.type.calendar.ConferenceSolution getConferenceSolution(int index);
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface CalendarAddOnManifestOrBuilder
    * </code>
    */
   int getConferenceSolutionCount();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface CalendarAddOnManifestOrBuilder
    */
   java.util.List<? extends com.google.apps.script.type.calendar.ConferenceSolutionOrBuilder>
       getConferenceSolutionOrBuilderList();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return The createSettingsUrlFunction.
    */
   java.lang.String getCreateSettingsUrlFunction();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return Whether the eventOpenTrigger field is set.
    */
   boolean hasEventOpenTrigger();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return The eventOpenTrigger.
    */
   com.google.apps.script.type.calendar.CalendarExtensionPoint getEventOpenTrigger();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return Whether the eventUpdateTrigger field is set.
    */
   boolean hasEventUpdateTrigger();
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return The eventUpdateTrigger.
    */
   com.google.apps.script.type.calendar.CalendarExtensionPoint getEventUpdateTrigger();
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public interface CalendarAddOnManifestOrBuilder
    * @return The enum numeric value on the wire for currentEventAccess.
    */
   int getCurrentEventAccessValue();
-
   /**
    *
    *

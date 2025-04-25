@@ -33,7 +33,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig)
     ScanConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ScanConfig.newBuilder() to construct.
   private ScanConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>USER_AGENT_UNSPECIFIED = 0;</code>
      */
     public static final int USER_AGENT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CHROME_LINUX = 1;</code>
      */
     public static final int CHROME_LINUX_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CHROME_ANDROID = 2;</code>
      */
     public static final int CHROME_ANDROID_VALUE = 2;
-
     /**
      *
      *
@@ -309,7 +305,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>RISK_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int RISK_LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -320,7 +315,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>NORMAL = 1;</code>
      */
     public static final int NORMAL_VALUE = 1;
-
     /**
      *
      *
@@ -472,7 +466,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPORT_TO_SECURITY_COMMAND_CENTER_UNSPECIFIED = 0;</code>
      */
     public static final int EXPORT_TO_SECURITY_COMMAND_CENTER_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -483,7 +476,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     boolean hasGoogleAccount();
-
     /**
      *
      *
@@ -624,7 +615,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
         getGoogleAccount();
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customAccount field is set.
      */
     boolean hasCustomAccount();
-
     /**
      *
      *
@@ -670,7 +659,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount
         getCustomAccount();
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iapCredential field is set.
      */
     boolean hasIapCredential();
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
         getIapCredential();
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.AuthenticationCase
         getAuthenticationCase();
   }
-
   /**
    *
    *
@@ -748,7 +733,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication)
       AuthenticationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Authentication.newBuilder() to construct.
     private Authentication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -795,7 +779,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The username.
        */
       java.lang.String getUsername();
-
       /**
        *
        *
@@ -822,7 +805,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The password.
        */
       java.lang.String getPassword();
-
       /**
        *
        *
@@ -837,7 +819,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getPasswordBytes();
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount)
         GoogleAccountOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use GoogleAccount.newBuilder() to construct.
       private GoogleAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -892,7 +872,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -916,7 +895,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -945,7 +923,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object password_ = "";
-
       /**
        *
        *
@@ -970,7 +947,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1177,7 +1153,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1397,7 +1372,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object username_ = "";
-
         /**
          *
          *
@@ -1420,7 +1394,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1443,7 +1416,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1465,7 +1437,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1483,7 +1454,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1508,7 +1478,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object password_ = "";
-
         /**
          *
          *
@@ -1532,7 +1501,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1556,7 +1524,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1579,7 +1546,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1598,7 +1564,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1709,7 +1674,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The username.
        */
       java.lang.String getUsername();
-
       /**
        *
        *
@@ -1736,7 +1700,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The password.
        */
       java.lang.String getPassword();
-
       /**
        *
        *
@@ -1763,7 +1726,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The loginUrl.
        */
       java.lang.String getLoginUrl();
-
       /**
        *
        *
@@ -1777,7 +1739,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getLoginUrlBytes();
     }
-
     /**
      *
      *
@@ -1793,7 +1754,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount)
         CustomAccountOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use CustomAccount.newBuilder() to construct.
       private CustomAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1832,7 +1792,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -1856,7 +1815,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1885,7 +1843,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object password_ = "";
-
       /**
        *
        *
@@ -1910,7 +1867,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1940,7 +1896,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object loginUrl_ = "";
-
       /**
        *
        *
@@ -1964,7 +1919,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -2179,7 +2133,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2414,7 +2367,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object username_ = "";
-
         /**
          *
          *
@@ -2437,7 +2389,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2460,7 +2411,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2482,7 +2432,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2500,7 +2449,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2525,7 +2473,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object password_ = "";
-
         /**
          *
          *
@@ -2549,7 +2496,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2573,7 +2519,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2596,7 +2541,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2615,7 +2559,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2641,7 +2584,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object loginUrl_ = "";
-
         /**
          *
          *
@@ -2664,7 +2606,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2687,7 +2628,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2709,7 +2649,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2727,7 +2666,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2840,7 +2778,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the iapTestServiceAccountInfo field is set.
        */
       boolean hasIapTestServiceAccountInfo();
-
       /**
        *
        *
@@ -2858,7 +2795,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
               .IapTestServiceAccountInfo
           getIapTestServiceAccountInfo();
-
       /**
        *
        *
@@ -2879,7 +2815,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .IapCredentialsCase
           getIapCredentialsCase();
     }
-
     /**
      *
      *
@@ -2895,7 +2830,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential)
         IapCredentialOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use IapCredential.newBuilder() to construct.
       private IapCredential(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2945,7 +2879,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          * @return The targetAudienceClientId.
          */
         java.lang.String getTargetAudienceClientId();
-
         /**
          *
          *
@@ -2961,7 +2894,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getTargetAudienceClientIdBytes();
       }
-
       /**
        *
        *
@@ -2979,7 +2911,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential.IapTestServiceAccountInfo)
           IapTestServiceAccountInfoOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use IapTestServiceAccountInfo.newBuilder() to construct.
         private IapTestServiceAccountInfo(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3017,7 +2948,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object targetAudienceClientId_ = "";
-
         /**
          *
          *
@@ -3043,7 +2973,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             return s;
           }
         }
-
         /**
          *
          *
@@ -3265,7 +3194,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -3484,7 +3412,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private java.lang.Object targetAudienceClientId_ = "";
-
           /**
            *
            *
@@ -3509,7 +3436,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -3534,7 +3460,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -3558,7 +3483,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3578,7 +3502,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3692,7 +3615,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         private IapCredentialsCase(int value) {
           this.value = value;
         }
-
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -3724,7 +3646,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int IAP_TEST_SERVICE_ACCOUNT_INFO_FIELD_NUMBER = 1;
-
       /**
        *
        *
@@ -3743,7 +3664,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIapTestServiceAccountInfo() {
         return iapCredentialsCase_ == 1;
       }
-
       /**
        *
        *
@@ -3770,7 +3690,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
             .IapTestServiceAccountInfo.getDefaultInstance();
       }
-
       /**
        *
        *
@@ -3991,7 +3910,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4235,7 +4153,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
                     .IapTestServiceAccountInfoOrBuilder>
             iapTestServiceAccountInfoBuilder_;
-
         /**
          *
          *
@@ -4254,7 +4171,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         public boolean hasIapTestServiceAccountInfo() {
           return iapCredentialsCase_ == 1;
         }
-
         /**
          *
          *
@@ -4289,7 +4205,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 .IapTestServiceAccountInfo.getDefaultInstance();
           }
         }
-
         /**
          *
          *
@@ -4318,7 +4233,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           iapCredentialsCase_ = 1;
           return this;
         }
-
         /**
          *
          *
@@ -4344,7 +4258,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           iapCredentialsCase_ = 1;
           return this;
         }
-
         /**
          *
          *
@@ -4388,7 +4301,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           iapCredentialsCase_ = 1;
           return this;
         }
-
         /**
          *
          *
@@ -4417,7 +4329,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -4435,7 +4346,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             getIapTestServiceAccountInfoBuilder() {
           return getIapTestServiceAccountInfoFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -4464,7 +4374,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
                 .IapTestServiceAccountInfo.getDefaultInstance();
           }
         }
-
         /**
          *
          *
@@ -4599,7 +4508,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       private AuthenticationCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4635,7 +4543,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOOGLE_ACCOUNT_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -4656,7 +4563,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleAccount() {
       return authenticationCase_ == 1;
     }
-
     /**
      *
      *
@@ -4683,7 +4589,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.GoogleAccount
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -4708,7 +4613,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CUSTOM_ACCOUNT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -4726,7 +4630,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomAccount() {
       return authenticationCase_ == 2;
     }
-
     /**
      *
      *
@@ -4750,7 +4653,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.CustomAccount
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -4774,7 +4676,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int IAP_CREDENTIAL_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -4792,7 +4693,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIapCredential() {
       return authenticationCase_ == 4;
     }
-
     /**
      *
      *
@@ -4816,7 +4716,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.IapCredential
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5061,7 +4960,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5327,7 +5225,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
                   .GoogleAccountOrBuilder>
           googleAccountBuilder_;
-
       /**
        *
        *
@@ -5348,7 +5245,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGoogleAccount() {
         return authenticationCase_ == 1;
       }
-
       /**
        *
        *
@@ -5383,7 +5279,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5410,7 +5305,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -5435,7 +5329,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -5477,7 +5370,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -5506,7 +5398,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5523,7 +5414,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           getGoogleAccountBuilder() {
         return getGoogleAccountFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5550,7 +5440,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5600,7 +5489,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
                   .CustomAccountOrBuilder>
           customAccountBuilder_;
-
       /**
        *
        *
@@ -5618,7 +5506,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCustomAccount() {
         return authenticationCase_ == 2;
       }
-
       /**
        *
        *
@@ -5650,7 +5537,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5676,7 +5562,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -5700,7 +5585,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -5741,7 +5625,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -5769,7 +5652,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5785,7 +5667,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           getCustomAccountBuilder() {
         return getCustomAccountFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5811,7 +5692,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5861,7 +5741,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication
                   .IapCredentialOrBuilder>
           iapCredentialBuilder_;
-
       /**
        *
        *
@@ -5879,7 +5758,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIapCredential() {
         return authenticationCase_ == 4;
       }
-
       /**
        *
        *
@@ -5911,7 +5789,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5937,7 +5814,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -5961,7 +5837,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -6002,7 +5877,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         authenticationCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -6030,7 +5904,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6046,7 +5919,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           getIapCredentialBuilder() {
         return getIapCredentialFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -6072,7 +5944,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -6202,7 +6073,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduleTime field is set.
      */
     boolean hasScheduleTime();
-
     /**
      *
      *
@@ -6218,7 +6088,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The scheduleTime.
      */
     com.google.protobuf.Timestamp getScheduleTime();
-
     /**
      *
      *
@@ -6246,7 +6115,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
      */
     int getIntervalDurationDays();
   }
-
   /**
    *
    *
@@ -6261,7 +6129,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ScanConfig.Schedule)
       ScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Schedule.newBuilder() to construct.
     private Schedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6293,7 +6160,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SCHEDULE_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp scheduleTime_;
-
     /**
      *
      *
@@ -6312,7 +6178,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6333,7 +6198,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : scheduleTime_;
     }
-
     /**
      *
      *
@@ -6355,7 +6219,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INTERVAL_DURATION_DAYS_FIELD_NUMBER = 2;
     private int intervalDurationDays_ = 0;
-
     /**
      *
      *
@@ -6547,7 +6410,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6771,7 +6633,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           scheduleTimeBuilder_;
-
       /**
        *
        *
@@ -6789,7 +6650,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScheduleTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -6813,7 +6673,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           return scheduleTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -6839,7 +6698,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6862,7 +6720,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6893,7 +6750,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6916,7 +6772,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6934,7 +6789,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getScheduleTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -6956,7 +6810,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               : scheduleTime_;
         }
       }
-
       /**
        *
        *
@@ -6987,7 +6840,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int intervalDurationDays_;
-
       /**
        *
        *
@@ -7003,7 +6855,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       public int getIntervalDurationDays() {
         return intervalDurationDays_;
       }
-
       /**
        *
        *
@@ -7023,7 +6874,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7112,7 +6962,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -7138,7 +6987,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -7169,7 +7017,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -7193,7 +7040,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -7220,7 +7066,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_QPS_FIELD_NUMBER = 3;
   private int maxQps_ = 0;
-
   /**
    *
    *
@@ -7245,7 +7090,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList startingUrls_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -7260,7 +7104,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
     return startingUrls_;
   }
-
   /**
    *
    *
@@ -7275,7 +7118,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStartingUrlsCount() {
     return startingUrls_.size();
   }
-
   /**
    *
    *
@@ -7291,7 +7133,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getStartingUrls(int index) {
     return startingUrls_.get(index);
   }
-
   /**
    *
    *
@@ -7310,7 +7151,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTHENTICATION_FIELD_NUMBER = 5;
   private com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication authentication_;
-
   /**
    *
    *
@@ -7327,7 +7167,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuthentication() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -7346,7 +7185,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.getDefaultInstance()
         : authentication_;
   }
-
   /**
    *
    *
@@ -7367,7 +7205,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USER_AGENT_FIELD_NUMBER = 6;
   private int userAgent_ = 0;
-
   /**
    *
    *
@@ -7383,7 +7220,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public int getUserAgentValue() {
     return userAgent_;
   }
-
   /**
    *
    *
@@ -7409,7 +7245,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList blacklistPatterns_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -7425,7 +7260,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getBlacklistPatternsList() {
     return blacklistPatterns_;
   }
-
   /**
    *
    *
@@ -7441,7 +7275,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public int getBlacklistPatternsCount() {
     return blacklistPatterns_.size();
   }
-
   /**
    *
    *
@@ -7458,7 +7291,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getBlacklistPatterns(int index) {
     return blacklistPatterns_.get(index);
   }
-
   /**
    *
    *
@@ -7478,7 +7310,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEDULE_FIELD_NUMBER = 8;
   private com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule schedule_;
-
   /**
    *
    *
@@ -7494,7 +7325,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSchedule() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -7512,7 +7342,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule.getDefaultInstance()
         : schedule_;
   }
-
   /**
    *
    *
@@ -7532,7 +7361,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPORT_TO_SECURITY_COMMAND_CENTER_FIELD_NUMBER = 10;
   private int exportToSecurityCommandCenter_ = 0;
-
   /**
    *
    *
@@ -7551,7 +7379,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public int getExportToSecurityCommandCenterValue() {
     return exportToSecurityCommandCenter_;
   }
-
   /**
    *
    *
@@ -7580,7 +7407,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RISK_LEVEL_FIELD_NUMBER = 12;
   private int riskLevel_ = 0;
-
   /**
    *
    *
@@ -7596,7 +7422,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
   public int getRiskLevelValue() {
     return riskLevel_;
   }
-
   /**
    *
    *
@@ -7619,7 +7444,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MANAGED_SCAN_FIELD_NUMBER = 13;
   private boolean managedScan_ = false;
-
   /**
    *
    *
@@ -7639,7 +7463,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATIC_IP_SCAN_FIELD_NUMBER = 14;
   private boolean staticIpScan_ = false;
-
   /**
    *
    *
@@ -7659,7 +7482,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IGNORE_HTTP_STATUS_ERRORS_FIELD_NUMBER = 15;
   private boolean ignoreHttpStatusErrors_ = false;
-
   /**
    *
    *
@@ -7982,7 +7804,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -8366,7 +8187,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -8391,7 +8211,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8416,7 +8235,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8440,7 +8258,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8460,7 +8277,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8487,7 +8303,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -8510,7 +8325,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8533,7 +8347,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8555,7 +8368,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8573,7 +8385,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8598,7 +8409,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxQps_;
-
     /**
      *
      *
@@ -8617,7 +8427,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public int getMaxQps() {
       return maxQps_;
     }
-
     /**
      *
      *
@@ -8640,7 +8449,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8671,7 +8479,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -8687,7 +8494,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       startingUrls_.makeImmutable();
       return startingUrls_;
     }
-
     /**
      *
      *
@@ -8702,7 +8508,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStartingUrlsCount() {
       return startingUrls_.size();
     }
-
     /**
      *
      *
@@ -8718,7 +8523,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getStartingUrls(int index) {
       return startingUrls_.get(index);
     }
-
     /**
      *
      *
@@ -8734,7 +8538,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
       return startingUrls_.getByteString(index);
     }
-
     /**
      *
      *
@@ -8758,7 +8561,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8781,7 +8583,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8801,7 +8602,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8820,7 +8620,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8851,7 +8650,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1.ScanConfig.Authentication.Builder,
             com.google.cloud.websecurityscanner.v1.ScanConfig.AuthenticationOrBuilder>
         authenticationBuilder_;
-
     /**
      *
      *
@@ -8868,7 +8666,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthentication() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -8891,7 +8688,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return authenticationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8917,7 +8713,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8940,7 +8735,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8973,7 +8767,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8995,7 +8788,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9013,7 +8805,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuthenticationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9035,7 +8826,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             : authentication_;
       }
     }
-
     /**
      *
      *
@@ -9065,7 +8855,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int userAgent_ = 0;
-
     /**
      *
      *
@@ -9081,7 +8870,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public int getUserAgentValue() {
       return userAgent_;
     }
-
     /**
      *
      *
@@ -9100,7 +8888,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9120,7 +8907,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1.ScanConfig.UserAgent.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -9142,7 +8928,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9170,7 +8955,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -9187,7 +8971,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       blacklistPatterns_.makeImmutable();
       return blacklistPatterns_;
     }
-
     /**
      *
      *
@@ -9203,7 +8986,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public int getBlacklistPatternsCount() {
       return blacklistPatterns_.size();
     }
-
     /**
      *
      *
@@ -9220,7 +9002,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getBlacklistPatterns(int index) {
       return blacklistPatterns_.get(index);
     }
-
     /**
      *
      *
@@ -9237,7 +9018,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBlacklistPatternsBytes(int index) {
       return blacklistPatterns_.getByteString(index);
     }
-
     /**
      *
      *
@@ -9262,7 +9042,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9286,7 +9065,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9307,7 +9085,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9327,7 +9104,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9359,7 +9135,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.websecurityscanner.v1.ScanConfig.Schedule.Builder,
             com.google.cloud.websecurityscanner.v1.ScanConfig.ScheduleOrBuilder>
         scheduleBuilder_;
-
     /**
      *
      *
@@ -9374,7 +9149,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchedule() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -9395,7 +9169,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
         return scheduleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9418,7 +9191,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9439,7 +9211,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9469,7 +9240,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9489,7 +9259,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9504,7 +9273,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9524,7 +9292,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
             : schedule_;
       }
     }
-
     /**
      *
      *
@@ -9552,7 +9319,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exportToSecurityCommandCenter_ = 0;
-
     /**
      *
      *
@@ -9571,7 +9337,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public int getExportToSecurityCommandCenterValue() {
       return exportToSecurityCommandCenter_;
     }
-
     /**
      *
      *
@@ -9593,7 +9358,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9619,7 +9383,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -9645,7 +9408,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9668,7 +9430,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int riskLevel_ = 0;
-
     /**
      *
      *
@@ -9684,7 +9445,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public int getRiskLevelValue() {
       return riskLevel_;
     }
-
     /**
      *
      *
@@ -9703,7 +9463,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9723,7 +9482,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1.ScanConfig.RiskLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -9745,7 +9503,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9765,7 +9522,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean managedScan_;
-
     /**
      *
      *
@@ -9782,7 +9538,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getManagedScan() {
       return managedScan_;
     }
-
     /**
      *
      *
@@ -9803,7 +9558,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9824,7 +9578,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean staticIpScan_;
-
     /**
      *
      *
@@ -9841,7 +9594,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getStaticIpScan() {
       return staticIpScan_;
     }
-
     /**
      *
      *
@@ -9862,7 +9614,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9883,7 +9634,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean ignoreHttpStatusErrors_;
-
     /**
      *
      *
@@ -9899,7 +9649,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getIgnoreHttpStatusErrors() {
       return ignoreHttpStatusErrors_;
     }
-
     /**
      *
      *
@@ -9919,7 +9668,6 @@ public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

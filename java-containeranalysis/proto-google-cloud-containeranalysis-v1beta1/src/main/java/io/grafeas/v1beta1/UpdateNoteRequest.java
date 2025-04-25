@@ -33,7 +33,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.UpdateNoteRequest)
     UpdateNoteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateNoteRequest.newBuilder() to construct.
   private UpdateNoteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int NOTE_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.Note note_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasNote() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
   public io.grafeas.v1beta1.Note getNote() {
     return note_ == null ? io.grafeas.v1beta1.Note.getDefaultInstance() : note_;
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -402,7 +393,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -633,7 +623,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
             io.grafeas.v1beta1.Note.Builder,
             io.grafeas.v1beta1.NoteOrBuilder>
         noteBuilder_;
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasNote() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
         return noteBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +812,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +839,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +858,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +872,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNoteFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -911,7 +888,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
         return note_ == null ? io.grafeas.v1beta1.Note.getDefaultInstance() : note_;
       }
     }
-
     /**
      *
      *
@@ -943,7 +919,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -958,7 +933,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1002,7 +975,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +994,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1021,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1040,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1054,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1104,7 +1072,6 @@ public final class UpdateNoteRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *

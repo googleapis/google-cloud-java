@@ -34,7 +34,6 @@ public interface RouteLegStepTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 1;</code>
    */
   java.util.List<com.google.maps.routing.v2.SpeedReadingInterval> getSpeedReadingIntervalsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RouteLegStepTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 1;</code>
    */
   com.google.maps.routing.v2.SpeedReadingInterval getSpeedReadingIntervals(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RouteLegStepTravelAdvisoryOrBuilder
    * <code>repeated .google.maps.routing.v2.SpeedReadingInterval speed_reading_intervals = 1;</code>
    */
   int getSpeedReadingIntervalsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface RouteLegStepTravelAdvisoryOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.SpeedReadingIntervalOrBuilder>
       getSpeedReadingIntervalsOrBuilderList();
-
   /**
    *
    *

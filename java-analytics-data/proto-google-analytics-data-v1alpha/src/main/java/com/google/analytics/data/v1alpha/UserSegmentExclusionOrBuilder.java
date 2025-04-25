@@ -40,7 +40,6 @@ public interface UserSegmentExclusionOrBuilder
    * @return The enum numeric value on the wire for userExclusionDuration.
    */
   int getUserExclusionDurationValue();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface UserSegmentExclusionOrBuilder
    * @return Whether the userExclusionCriteria field is set.
    */
   boolean hasUserExclusionCriteria();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UserSegmentExclusionOrBuilder
    * @return The userExclusionCriteria.
    */
   com.google.analytics.data.v1alpha.UserSegmentCriteria getUserExclusionCriteria();
-
   /**
    *
    *

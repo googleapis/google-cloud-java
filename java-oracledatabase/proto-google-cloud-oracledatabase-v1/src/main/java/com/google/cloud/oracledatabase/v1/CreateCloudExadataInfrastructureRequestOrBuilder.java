@@ -39,7 +39,6 @@ public interface CreateCloudExadataInfrastructureRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateCloudExadataInfrastructureRequestOrBuilder
    * @return The cloudExadataInfrastructureId.
    */
   java.lang.String getCloudExadataInfrastructureId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CreateCloudExadataInfrastructureRequestOrBuilder
    * @return Whether the cloudExadataInfrastructure field is set.
    */
   boolean hasCloudExadataInfrastructure();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateCloudExadataInfrastructureRequestOrBuilder
    * @return The cloudExadataInfrastructure.
    */
   com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure getCloudExadataInfrastructure();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface CreateCloudExadataInfrastructureRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RagQuery)
     RagQueryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RagQuery.newBuilder() to construct.
   private RagQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     private QueryCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return queryCase_ == 1;
   }
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RAG_RETRIEVAL_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1.RagRetrievalConfig ragRetrievalConfig_;
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRagRetrievalConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.getDefaultInstance()
         : ragRetrievalConfig_;
   }
-
   /**
    *
    *
@@ -428,7 +420,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -686,7 +677,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return queryCase_ == 1;
     }
-
     /**
      *
      *
@@ -715,7 +705,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -744,7 +733,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +754,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.RagRetrievalConfig.Builder,
             com.google.cloud.aiplatform.v1.RagRetrievalConfigOrBuilder>
         ragRetrievalConfigBuilder_;
-
     /**
      *
      *
@@ -833,7 +818,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRagRetrievalConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
         return ragRetrievalConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +886,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +938,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +955,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRagRetrievalConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class RagQuery extends com.google.protobuf.GeneratedMessageV3
             : ragRetrievalConfig_;
       }
     }
-
     /**
      *
      *

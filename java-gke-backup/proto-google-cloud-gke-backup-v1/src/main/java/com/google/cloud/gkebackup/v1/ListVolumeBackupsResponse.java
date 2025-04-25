@@ -33,7 +33,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.ListVolumeBackupsResponse)
     ListVolumeBackupsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListVolumeBackupsResponse.newBuilder() to construct.
   private ListVolumeBackupsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.VolumeBackup> volumeBackups_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.gkebackup.v1.VolumeBackup> getVolumeBackupsList() {
     return volumeBackups_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       getVolumeBackupsOrBuilderList() {
     return volumeBackups_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
   public int getVolumeBackupsCount() {
     return volumeBackups_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
   public com.google.cloud.gkebackup.v1.VolumeBackup getVolumeBackups(int index) {
     return volumeBackups_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return volumeBackupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return volumeBackupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return volumeBackupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
     public com.google.cloud.gkebackup.v1.VolumeBackup.Builder getVolumeBackupsBuilder(int index) {
       return getVolumeBackupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return volumeBackupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(volumeBackups_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       return getVolumeBackupsFieldBuilder()
           .addBuilder(com.google.cloud.gkebackup.v1.VolumeBackup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       return getVolumeBackupsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkebackup.v1.VolumeBackup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1018,7 +991,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1017,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1063,6 @@ public final class ListVolumeBackupsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

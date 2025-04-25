@@ -36,7 +36,6 @@ public interface UpdateCustomMetricRequestOrBuilder
    * @return Whether the customMetric field is set.
    */
   boolean hasCustomMetric();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateCustomMetricRequestOrBuilder
    * @return The customMetric.
    */
   com.google.analytics.admin.v1beta.CustomMetric getCustomMetric();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateCustomMetricRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdateCustomMetricRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

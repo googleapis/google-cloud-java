@@ -34,7 +34,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput)
     PersonalProtectiveEquipmentDetectionOutputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PersonalProtectiveEquipmentDetectionOutput.newBuilder() to construct.
   private PersonalProtectiveEquipmentDetectionOutput(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -84,7 +83,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     long getPersonEntityId();
   }
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PersonEntity)
       PersonEntityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PersonEntity.newBuilder() to construct.
     private PersonEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -133,7 +130,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int PERSON_ENTITY_ID_FIELD_NUMBER = 1;
     private long personEntityId_ = 0L;
-
     /**
      *
      *
@@ -333,7 +329,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -540,7 +535,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       private int bitField0_;
 
       private long personEntityId_;
-
       /**
        *
        *
@@ -556,7 +550,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public long getPersonEntityId() {
         return personEntityId_;
       }
-
       /**
        *
        *
@@ -576,7 +569,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -696,7 +688,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return The ppeLabelString.
      */
     java.lang.String getPpeLabelString();
-
     /**
      *
      *
@@ -723,7 +714,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return The ppeSupercategoryLabelString.
      */
     java.lang.String getPpeSupercategoryLabelString();
-
     /**
      *
      *
@@ -751,7 +741,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     long getPpeEntityId();
   }
-
   /**
    *
    *
@@ -767,7 +756,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PPEEntity)
       PPEEntityOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PPEEntity.newBuilder() to construct.
     private PPEEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -803,7 +791,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int PPE_LABEL_ID_FIELD_NUMBER = 1;
     private long ppeLabelId_ = 0L;
-
     /**
      *
      *
@@ -824,7 +811,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ppeLabelString_ = "";
-
     /**
      *
      *
@@ -848,7 +834,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return s;
       }
     }
-
     /**
      *
      *
@@ -877,7 +862,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ppeSupercategoryLabelString_ = "";
-
     /**
      *
      *
@@ -902,7 +886,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return s;
       }
     }
-
     /**
      *
      *
@@ -930,7 +913,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int PPE_ENTITY_ID_FIELD_NUMBER = 4;
     private long ppeEntityId_ = 0L;
-
     /**
      *
      *
@@ -1147,7 +1129,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1394,7 +1375,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       private int bitField0_;
 
       private long ppeLabelId_;
-
       /**
        *
        *
@@ -1410,7 +1390,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public long getPpeLabelId() {
         return ppeLabelId_;
       }
-
       /**
        *
        *
@@ -1430,7 +1409,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1450,7 +1428,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private java.lang.Object ppeLabelString_ = "";
-
       /**
        *
        *
@@ -1473,7 +1450,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1496,7 +1472,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1518,7 +1493,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1536,7 +1510,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1561,7 +1534,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private java.lang.Object ppeSupercategoryLabelString_ = "";
-
       /**
        *
        *
@@ -1585,7 +1557,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1609,7 +1580,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1632,7 +1602,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1651,7 +1620,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1677,7 +1645,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private long ppeEntityId_;
-
       /**
        *
        *
@@ -1693,7 +1660,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public long getPpeEntityId() {
         return ppeEntityId_;
       }
-
       /**
        *
        *
@@ -1713,7 +1679,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1858,7 +1823,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     float getHeight();
   }
-
   /**
    *
    *
@@ -1874,7 +1838,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.NormalizedBoundingBox)
       NormalizedBoundingBoxOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NormalizedBoundingBox.newBuilder() to construct.
     private NormalizedBoundingBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1907,7 +1870,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int XMIN_FIELD_NUMBER = 1;
     private float xmin_ = 0F;
-
     /**
      *
      *
@@ -1926,7 +1888,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int YMIN_FIELD_NUMBER = 2;
     private float ymin_ = 0F;
-
     /**
      *
      *
@@ -1945,7 +1906,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int WIDTH_FIELD_NUMBER = 3;
     private float width_ = 0F;
-
     /**
      *
      *
@@ -1964,7 +1924,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int HEIGHT_FIELD_NUMBER = 4;
     private float height_ = 0F;
-
     /**
      *
      *
@@ -2199,7 +2158,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2454,7 +2412,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       private int bitField0_;
 
       private float xmin_;
-
       /**
        *
        *
@@ -2470,7 +2427,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getXmin() {
         return xmin_;
       }
-
       /**
        *
        *
@@ -2490,7 +2446,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2510,7 +2465,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float ymin_;
-
       /**
        *
        *
@@ -2526,7 +2480,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getYmin() {
         return ymin_;
       }
-
       /**
        *
        *
@@ -2546,7 +2499,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2566,7 +2518,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float width_;
-
       /**
        *
        *
@@ -2582,7 +2533,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getWidth() {
         return width_;
       }
-
       /**
        *
        *
@@ -2602,7 +2552,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2622,7 +2571,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float height_;
-
       /**
        *
        *
@@ -2638,7 +2586,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getHeight() {
         return height_;
       }
-
       /**
        *
        *
@@ -2658,7 +2605,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2781,7 +2727,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the normalizedBoundingBox field is set.
      */
     boolean hasNormalizedBoundingBox();
-
     /**
      *
      *
@@ -2797,7 +2742,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.NormalizedBoundingBox
         getNormalizedBoundingBox();
-
     /**
      *
      *
@@ -2840,7 +2784,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the personEntity field is set.
      */
     boolean hasPersonEntity();
-
     /**
      *
      *
@@ -2856,7 +2799,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PersonEntity
         getPersonEntity();
-
     /**
      *
      *
@@ -2871,7 +2813,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PersonEntityOrBuilder
         getPersonEntityOrBuilder();
   }
-
   /**
    *
    *
@@ -2888,7 +2829,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PersonIdentifiedBox)
       PersonIdentifiedBoxOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PersonIdentifiedBox.newBuilder() to construct.
     private PersonIdentifiedBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2922,7 +2862,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     private int bitField0_;
     public static final int BOX_ID_FIELD_NUMBER = 1;
     private long boxId_ = 0L;
-
     /**
      *
      *
@@ -2943,7 +2882,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     private com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
             .NormalizedBoundingBox
         normalizedBoundingBox_;
-
     /**
      *
      *
@@ -2961,7 +2899,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasNormalizedBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2984,7 +2921,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               .NormalizedBoundingBox.getDefaultInstance()
           : normalizedBoundingBox_;
     }
-
     /**
      *
      *
@@ -3008,7 +2944,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 3;
     private float confidenceScore_ = 0F;
-
     /**
      *
      *
@@ -3028,7 +2963,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public static final int PERSON_ENTITY_FIELD_NUMBER = 4;
     private com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PersonEntity
         personEntity_;
-
     /**
      *
      *
@@ -3046,7 +2980,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasPersonEntity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3068,7 +3001,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               .getDefaultInstance()
           : personEntity_;
     }
-
     /**
      *
      *
@@ -3315,7 +3247,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3596,7 +3527,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       private int bitField0_;
 
       private long boxId_;
-
       /**
        *
        *
@@ -3612,7 +3542,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public long getBoxId() {
         return boxId_;
       }
-
       /**
        *
        *
@@ -3632,7 +3561,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3662,7 +3590,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                   .NormalizedBoundingBoxOrBuilder>
           normalizedBoundingBoxBuilder_;
-
       /**
        *
        *
@@ -3679,7 +3606,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasNormalizedBoundingBox() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -3705,7 +3631,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return normalizedBoundingBoxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3733,7 +3658,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3758,7 +3682,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3793,7 +3716,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -3815,7 +3737,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3834,7 +3755,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return getNormalizedBoundingBoxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3858,7 +3778,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               : normalizedBoundingBox_;
         }
       }
-
       /**
        *
        *
@@ -3894,7 +3813,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float confidenceScore_;
-
       /**
        *
        *
@@ -3910,7 +3828,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getConfidenceScore() {
         return confidenceScore_;
       }
-
       /**
        *
        *
@@ -3930,7 +3847,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3958,7 +3874,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                   .PersonEntityOrBuilder>
           personEntityBuilder_;
-
       /**
        *
        *
@@ -3975,7 +3890,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasPersonEntity() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -4000,7 +3914,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return personEntityBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4027,7 +3940,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4052,7 +3964,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4086,7 +3997,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -4108,7 +4018,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4127,7 +4036,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return getPersonEntityFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4151,7 +4059,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               : personEntity_;
         }
       }
-
       /**
        *
        *
@@ -4288,7 +4195,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the normalizedBoundingBox field is set.
      */
     boolean hasNormalizedBoundingBox();
-
     /**
      *
      *
@@ -4304,7 +4210,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.NormalizedBoundingBox
         getNormalizedBoundingBox();
-
     /**
      *
      *
@@ -4347,7 +4252,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the ppeEntity field is set.
      */
     boolean hasPpeEntity();
-
     /**
      *
      *
@@ -4363,7 +4267,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PPEEntity
         getPpeEntity();
-
     /**
      *
      *
@@ -4378,7 +4281,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PPEEntityOrBuilder
         getPpeEntityOrBuilder();
   }
-
   /**
    *
    *
@@ -4394,7 +4296,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PPEIdentifiedBox)
       PPEIdentifiedBoxOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PPEIdentifiedBox.newBuilder() to construct.
     private PPEIdentifiedBox(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4428,7 +4329,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     private int bitField0_;
     public static final int BOX_ID_FIELD_NUMBER = 1;
     private long boxId_ = 0L;
-
     /**
      *
      *
@@ -4449,7 +4349,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     private com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
             .NormalizedBoundingBox
         normalizedBoundingBox_;
-
     /**
      *
      *
@@ -4467,7 +4366,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasNormalizedBoundingBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4490,7 +4388,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               .NormalizedBoundingBox.getDefaultInstance()
           : normalizedBoundingBox_;
     }
-
     /**
      *
      *
@@ -4514,7 +4411,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 3;
     private float confidenceScore_ = 0F;
-
     /**
      *
      *
@@ -4534,7 +4430,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public static final int PPE_ENTITY_FIELD_NUMBER = 4;
     private com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PPEEntity
         ppeEntity_;
-
     /**
      *
      *
@@ -4552,7 +4447,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasPpeEntity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4574,7 +4468,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               .getDefaultInstance()
           : ppeEntity_;
     }
-
     /**
      *
      *
@@ -4821,7 +4714,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5098,7 +4990,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       private int bitField0_;
 
       private long boxId_;
-
       /**
        *
        *
@@ -5114,7 +5005,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public long getBoxId() {
         return boxId_;
       }
-
       /**
        *
        *
@@ -5134,7 +5024,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5164,7 +5053,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                   .NormalizedBoundingBoxOrBuilder>
           normalizedBoundingBoxBuilder_;
-
       /**
        *
        *
@@ -5181,7 +5069,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasNormalizedBoundingBox() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -5207,7 +5094,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return normalizedBoundingBoxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5235,7 +5121,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5260,7 +5145,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5295,7 +5179,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -5317,7 +5200,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5336,7 +5218,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return getNormalizedBoundingBoxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5360,7 +5241,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               : normalizedBoundingBox_;
         }
       }
-
       /**
        *
        *
@@ -5396,7 +5276,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float confidenceScore_;
-
       /**
        *
        *
@@ -5412,7 +5291,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getConfidenceScore() {
         return confidenceScore_;
       }
-
       /**
        *
        *
@@ -5432,7 +5310,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5460,7 +5337,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                   .PPEEntityOrBuilder>
           ppeEntityBuilder_;
-
       /**
        *
        *
@@ -5477,7 +5353,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasPpeEntity() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -5502,7 +5377,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return ppeEntityBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5528,7 +5402,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5552,7 +5425,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5585,7 +5457,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -5607,7 +5478,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5626,7 +5496,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return getPpeEntityFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5650,7 +5519,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               : ppeEntity_;
         }
       }
-
       /**
        *
        *
@@ -5785,7 +5653,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the detectedPersonIdentifiedBox field is set.
      */
     boolean hasDetectedPersonIdentifiedBox();
-
     /**
      *
      *
@@ -5801,7 +5668,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PersonIdentifiedBox
         getDetectedPersonIdentifiedBox();
-
     /**
      *
      *
@@ -5832,7 +5698,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
             com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                 .PPEIdentifiedBox>
         getDetectedPpeIdentifiedBoxesList();
-
     /**
      *
      *
@@ -5846,7 +5711,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.PPEIdentifiedBox
         getDetectedPpeIdentifiedBoxes(int index);
-
     /**
      *
      *
@@ -5859,7 +5723,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * </code>
      */
     int getDetectedPpeIdentifiedBoxesCount();
-
     /**
      *
      *
@@ -5876,7 +5739,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
                 com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                     .PPEIdentifiedBoxOrBuilder>
         getDetectedPpeIdentifiedBoxesOrBuilderList();
-
     /**
      *
      *
@@ -5905,7 +5767,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the faceCoverageScore field is set.
      */
     boolean hasFaceCoverageScore();
-
     /**
      *
      *
@@ -5932,7 +5793,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the eyesCoverageScore field is set.
      */
     boolean hasEyesCoverageScore();
-
     /**
      *
      *
@@ -5958,7 +5818,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the headCoverageScore field is set.
      */
     boolean hasHeadCoverageScore();
-
     /**
      *
      *
@@ -5984,7 +5843,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the handsCoverageScore field is set.
      */
     boolean hasHandsCoverageScore();
-
     /**
      *
      *
@@ -6010,7 +5868,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the bodyCoverageScore field is set.
      */
     boolean hasBodyCoverageScore();
-
     /**
      *
      *
@@ -6036,7 +5893,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      * @return Whether the feetCoverageScore field is set.
      */
     boolean hasFeetCoverageScore();
-
     /**
      *
      *
@@ -6050,7 +5906,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
      */
     float getFeetCoverageScore();
   }
-
   /**
    *
    *
@@ -6067,7 +5922,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.DetectedPerson)
       DetectedPersonOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DetectedPerson.newBuilder() to construct.
     private DetectedPerson(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6103,7 +5957,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     private int bitField0_;
     public static final int PERSON_ID_FIELD_NUMBER = 1;
     private long personId_ = 0L;
-
     /**
      *
      *
@@ -6124,7 +5977,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     private com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
             .PersonIdentifiedBox
         detectedPersonIdentifiedBox_;
-
     /**
      *
      *
@@ -6142,7 +5994,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasDetectedPersonIdentifiedBox() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6165,7 +6016,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               .PersonIdentifiedBox.getDefaultInstance()
           : detectedPersonIdentifiedBox_;
     }
-
     /**
      *
      *
@@ -6194,7 +6044,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
             com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                 .PPEIdentifiedBox>
         detectedPpeIdentifiedBoxes_;
-
     /**
      *
      *
@@ -6213,7 +6062,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         getDetectedPpeIdentifiedBoxesList() {
       return detectedPpeIdentifiedBoxes_;
     }
-
     /**
      *
      *
@@ -6233,7 +6081,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         getDetectedPpeIdentifiedBoxesOrBuilderList() {
       return detectedPpeIdentifiedBoxes_;
     }
-
     /**
      *
      *
@@ -6249,7 +6096,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public int getDetectedPpeIdentifiedBoxesCount() {
       return detectedPpeIdentifiedBoxes_.size();
     }
-
     /**
      *
      *
@@ -6266,7 +6112,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         getDetectedPpeIdentifiedBoxes(int index) {
       return detectedPpeIdentifiedBoxes_.get(index);
     }
-
     /**
      *
      *
@@ -6287,7 +6132,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int FACE_COVERAGE_SCORE_FIELD_NUMBER = 4;
     private float faceCoverageScore_ = 0F;
-
     /**
      *
      *
@@ -6304,7 +6148,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasFaceCoverageScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -6324,7 +6167,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int EYES_COVERAGE_SCORE_FIELD_NUMBER = 5;
     private float eyesCoverageScore_ = 0F;
-
     /**
      *
      *
@@ -6340,7 +6182,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasEyesCoverageScore() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -6359,7 +6200,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int HEAD_COVERAGE_SCORE_FIELD_NUMBER = 6;
     private float headCoverageScore_ = 0F;
-
     /**
      *
      *
@@ -6375,7 +6215,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasHeadCoverageScore() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -6394,7 +6233,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int HANDS_COVERAGE_SCORE_FIELD_NUMBER = 7;
     private float handsCoverageScore_ = 0F;
-
     /**
      *
      *
@@ -6410,7 +6248,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasHandsCoverageScore() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -6429,7 +6266,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int BODY_COVERAGE_SCORE_FIELD_NUMBER = 8;
     private float bodyCoverageScore_ = 0F;
-
     /**
      *
      *
@@ -6445,7 +6281,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasBodyCoverageScore() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -6464,7 +6299,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
 
     public static final int FEET_COVERAGE_SCORE_FIELD_NUMBER = 9;
     private float feetCoverageScore_ = 0F;
-
     /**
      *
      *
@@ -6480,7 +6314,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasFeetCoverageScore() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -6801,7 +6634,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7197,7 +7029,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       private int bitField0_;
 
       private long personId_;
-
       /**
        *
        *
@@ -7213,7 +7044,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public long getPersonId() {
         return personId_;
       }
-
       /**
        *
        *
@@ -7233,7 +7063,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7263,7 +7092,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                   .PersonIdentifiedBoxOrBuilder>
           detectedPersonIdentifiedBoxBuilder_;
-
       /**
        *
        *
@@ -7280,7 +7108,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasDetectedPersonIdentifiedBox() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -7306,7 +7133,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return detectedPersonIdentifiedBoxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -7334,7 +7160,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7359,7 +7184,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7394,7 +7218,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7416,7 +7239,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7435,7 +7257,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return getDetectedPersonIdentifiedBoxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -7459,7 +7280,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               : detectedPersonIdentifiedBox_;
         }
       }
-
       /**
        *
        *
@@ -7539,7 +7359,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return detectedPpeIdentifiedBoxesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -7558,7 +7377,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return detectedPpeIdentifiedBoxesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -7579,7 +7397,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return detectedPpeIdentifiedBoxesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -7607,7 +7424,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7633,7 +7449,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7660,7 +7475,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7688,7 +7502,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7713,7 +7526,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7739,7 +7551,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7767,7 +7578,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7789,7 +7599,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7811,7 +7620,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         }
         return this;
       }
-
       /**
        *
        *
@@ -7828,7 +7636,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           getDetectedPpeIdentifiedBoxesBuilder(int index) {
         return getDetectedPpeIdentifiedBoxesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -7849,7 +7656,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return detectedPpeIdentifiedBoxesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -7872,7 +7678,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
           return java.util.Collections.unmodifiableList(detectedPpeIdentifiedBoxes_);
         }
       }
-
       /**
        *
        *
@@ -7892,7 +7697,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
                 com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                     .PPEIdentifiedBox.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7913,7 +7717,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
                 com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput
                     .PPEIdentifiedBox.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7959,7 +7762,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float faceCoverageScore_;
-
       /**
        *
        *
@@ -7976,7 +7778,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasFaceCoverageScore() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -7993,7 +7794,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getFaceCoverageScore() {
         return faceCoverageScore_;
       }
-
       /**
        *
        *
@@ -8014,7 +7814,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8035,7 +7834,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float eyesCoverageScore_;
-
       /**
        *
        *
@@ -8051,7 +7849,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasEyesCoverageScore() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -8067,7 +7864,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getEyesCoverageScore() {
         return eyesCoverageScore_;
       }
-
       /**
        *
        *
@@ -8087,7 +7883,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8107,7 +7902,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float headCoverageScore_;
-
       /**
        *
        *
@@ -8123,7 +7917,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasHeadCoverageScore() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -8139,7 +7932,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getHeadCoverageScore() {
         return headCoverageScore_;
       }
-
       /**
        *
        *
@@ -8159,7 +7951,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8179,7 +7970,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float handsCoverageScore_;
-
       /**
        *
        *
@@ -8195,7 +7985,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasHandsCoverageScore() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -8211,7 +8000,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getHandsCoverageScore() {
         return handsCoverageScore_;
       }
-
       /**
        *
        *
@@ -8231,7 +8019,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8251,7 +8038,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float bodyCoverageScore_;
-
       /**
        *
        *
@@ -8267,7 +8053,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasBodyCoverageScore() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -8283,7 +8068,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getBodyCoverageScore() {
         return bodyCoverageScore_;
       }
-
       /**
        *
        *
@@ -8303,7 +8087,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8323,7 +8106,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
 
       private float feetCoverageScore_;
-
       /**
        *
        *
@@ -8339,7 +8121,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public boolean hasFeetCoverageScore() {
         return ((bitField0_ & 0x00000100) != 0);
       }
-
       /**
        *
        *
@@ -8355,7 +8136,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       public float getFeetCoverageScore() {
         return feetCoverageScore_;
       }
-
       /**
        *
        *
@@ -8375,7 +8155,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8468,7 +8247,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
   private int bitField0_;
   public static final int CURRENT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp currentTime_;
-
   /**
    *
    *
@@ -8484,7 +8262,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
   public boolean hasCurrentTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -8500,7 +8277,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
   public com.google.protobuf.Timestamp getCurrentTime() {
     return currentTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : currentTime_;
   }
-
   /**
    *
    *
@@ -8521,7 +8297,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
   private java.util.List<
           com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.DetectedPerson>
       detectedPersons_;
-
   /**
    *
    *
@@ -8539,7 +8314,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       getDetectedPersonsList() {
     return detectedPersons_;
   }
-
   /**
    *
    *
@@ -8559,7 +8333,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       getDetectedPersonsOrBuilderList() {
     return detectedPersons_;
   }
-
   /**
    *
    *
@@ -8575,7 +8348,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
   public int getDetectedPersonsCount() {
     return detectedPersons_.size();
   }
-
   /**
    *
    *
@@ -8592,7 +8364,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       getDetectedPersons(int index) {
     return detectedPersons_.get(index);
   }
-
   /**
    *
    *
@@ -8788,7 +8559,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -9069,7 +8839,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         currentTimeBuilder_;
-
     /**
      *
      *
@@ -9084,7 +8853,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
     public boolean hasCurrentTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -9105,7 +8873,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return currentTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9128,7 +8895,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9148,7 +8914,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9176,7 +8941,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9196,7 +8960,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9211,7 +8974,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       onChanged();
       return getCurrentTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9230,7 +8992,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
             : currentTime_;
       }
     }
-
     /**
      *
      *
@@ -9299,7 +9060,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return detectedPersonsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -9318,7 +9078,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return detectedPersonsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -9338,7 +9097,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return detectedPersonsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -9366,7 +9124,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9392,7 +9149,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9419,7 +9175,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9447,7 +9202,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9472,7 +9226,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9498,7 +9251,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9525,7 +9277,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9547,7 +9298,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9569,7 +9319,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
       }
       return this;
     }
-
     /**
      *
      *
@@ -9586,7 +9335,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         getDetectedPersonsBuilder(int index) {
       return getDetectedPersonsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9607,7 +9355,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return detectedPersonsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -9630,7 +9377,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
         return java.util.Collections.unmodifiableList(detectedPersons_);
       }
     }
-
     /**
      *
      *
@@ -9650,7 +9396,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.DetectedPerson
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -9671,7 +9416,6 @@ public final class PersonalProtectiveEquipmentDetectionOutput
               com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionOutput.DetectedPerson
                   .getDefaultInstance());
     }
-
     /**
      *
      *

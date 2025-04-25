@@ -33,7 +33,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.ListNodePoolsResponse)
     ListNodePoolsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNodePoolsResponse.newBuilder() to construct.
   private ListNodePoolsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.edgecontainer.v1.NodePool> nodePools_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.edgecontainer.v1.NodePool> getNodePoolsList() {
     return nodePools_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       getNodePoolsOrBuilderList() {
     return nodePools_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public int getNodePoolsCount() {
     return nodePools_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.edgecontainer.v1.NodePool getNodePools(int index) {
     return nodePools_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -450,7 +438,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -750,7 +737,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +895,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.edgecontainer.v1.NodePool.Builder getNodePoolsBuilder(int index) {
       return getNodePoolsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1007,7 +981,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1025,7 +998,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(nodePools_);
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1011,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       return getNodePoolsFieldBuilder()
           .addBuilder(com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       return getNodePoolsFieldBuilder()
           .addBuilder(index, com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1086,7 +1056,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1109,7 +1078,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1100,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1121,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1138,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1170,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1221,7 +1185,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1236,7 +1199,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1252,7 +1214,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1268,7 +1229,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1292,7 +1252,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1274,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1293,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1311,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

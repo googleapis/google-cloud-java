@@ -39,7 +39,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the dimensions.
    */
   java.util.List<com.google.ads.admanager.v1.Report.Dimension> getDimensionsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ReportDefinitionOrBuilder
    * @return The count of dimensions.
    */
   int getDimensionsCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface ReportDefinitionOrBuilder
    * @return The dimensions at the given index.
    */
   com.google.ads.admanager.v1.Report.Dimension getDimensions(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the enum numeric values on the wire for dimensions.
    */
   java.util.List<java.lang.Integer> getDimensionsValueList();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the metrics.
    */
   java.util.List<com.google.ads.admanager.v1.Report.Metric> getMetricsList();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface ReportDefinitionOrBuilder
    * @return The count of metrics.
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface ReportDefinitionOrBuilder
    * @return The metrics at the given index.
    */
   com.google.ads.admanager.v1.Report.Metric getMetrics(int index);
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the enum numeric values on the wire for metrics.
    */
   java.util.List<java.lang.Integer> getMetricsValueList();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.Report.Filter> getFiltersList();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.Report.Filter getFilters(int index);
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   int getFiltersCount();
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface ReportDefinitionOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.Report.FilterOrBuilder>
       getFiltersOrBuilderList();
-
   /**
    *
    *
@@ -270,7 +258,6 @@ public interface ReportDefinitionOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -301,7 +288,6 @@ public interface ReportDefinitionOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -330,7 +316,6 @@ public interface ReportDefinitionOrBuilder
    * @return Whether the dateRange field is set.
    */
   boolean hasDateRange();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface ReportDefinitionOrBuilder
    * @return The dateRange.
    */
   com.google.ads.admanager.v1.Report.DateRange getDateRange();
-
   /**
    *
    *
@@ -374,7 +358,6 @@ public interface ReportDefinitionOrBuilder
    * @return Whether the comparisonDateRange field is set.
    */
   boolean hasComparisonDateRange();
-
   /**
    *
    *
@@ -390,7 +373,6 @@ public interface ReportDefinitionOrBuilder
    * @return The comparisonDateRange.
    */
   com.google.ads.admanager.v1.Report.DateRange getComparisonDateRange();
-
   /**
    *
    *
@@ -421,7 +403,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the customDimensionKeyIds.
    */
   java.util.List<java.lang.Long> getCustomDimensionKeyIdsList();
-
   /**
    *
    *
@@ -438,7 +419,6 @@ public interface ReportDefinitionOrBuilder
    * @return The count of customDimensionKeyIds.
    */
   int getCustomDimensionKeyIdsCount();
-
   /**
    *
    *
@@ -473,7 +453,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the lineItemCustomFieldIds.
    */
   java.util.List<java.lang.Long> getLineItemCustomFieldIdsList();
-
   /**
    *
    *
@@ -490,7 +469,6 @@ public interface ReportDefinitionOrBuilder
    * @return The count of lineItemCustomFieldIds.
    */
   int getLineItemCustomFieldIdsCount();
-
   /**
    *
    *
@@ -525,7 +503,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the orderCustomFieldIds.
    */
   java.util.List<java.lang.Long> getOrderCustomFieldIdsList();
-
   /**
    *
    *
@@ -542,7 +519,6 @@ public interface ReportDefinitionOrBuilder
    * @return The count of orderCustomFieldIds.
    */
   int getOrderCustomFieldIdsCount();
-
   /**
    *
    *
@@ -577,7 +553,6 @@ public interface ReportDefinitionOrBuilder
    * @return A list containing the creativeCustomFieldIds.
    */
   java.util.List<java.lang.Long> getCreativeCustomFieldIdsList();
-
   /**
    *
    *
@@ -594,7 +569,6 @@ public interface ReportDefinitionOrBuilder
    * @return The count of creativeCustomFieldIds.
    */
   int getCreativeCustomFieldIdsCount();
-
   /**
    *
    *
@@ -627,7 +601,6 @@ public interface ReportDefinitionOrBuilder
    * @return The enum numeric value on the wire for reportType.
    */
   int getReportTypeValue();
-
   /**
    *
    *
@@ -662,7 +635,6 @@ public interface ReportDefinitionOrBuilder
    * @return The enum numeric value on the wire for timePeriodColumn.
    */
   int getTimePeriodColumnValue();
-
   /**
    *
    *
@@ -696,7 +668,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.Report.Flag> getFlagsList();
-
   /**
    *
    *
@@ -710,7 +681,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.Report.Flag getFlags(int index);
-
   /**
    *
    *
@@ -724,7 +694,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   int getFlagsCount();
-
   /**
    *
    *
@@ -739,7 +708,6 @@ public interface ReportDefinitionOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.Report.FlagOrBuilder>
       getFlagsOrBuilderList();
-
   /**
    *
    *
@@ -766,7 +734,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   java.util.List<com.google.ads.admanager.v1.Report.Sort> getSortsList();
-
   /**
    *
    *
@@ -779,7 +746,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.Report.Sort getSorts(int index);
-
   /**
    *
    *
@@ -792,7 +758,6 @@ public interface ReportDefinitionOrBuilder
    * </code>
    */
   int getSortsCount();
-
   /**
    *
    *
@@ -806,7 +771,6 @@ public interface ReportDefinitionOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.Report.SortOrBuilder>
       getSortsOrBuilderList();
-
   /**
    *
    *

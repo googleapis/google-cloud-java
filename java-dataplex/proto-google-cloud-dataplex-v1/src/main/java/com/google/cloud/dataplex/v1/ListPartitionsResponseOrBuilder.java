@@ -34,7 +34,6 @@ public interface ListPartitionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Partition partitions = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Partition> getPartitionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPartitionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Partition partitions = 1;</code>
    */
   com.google.cloud.dataplex.v1.Partition getPartitions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPartitionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Partition partitions = 1;</code>
    */
   int getPartitionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPartitionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.PartitionOrBuilder>
       getPartitionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListPartitionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

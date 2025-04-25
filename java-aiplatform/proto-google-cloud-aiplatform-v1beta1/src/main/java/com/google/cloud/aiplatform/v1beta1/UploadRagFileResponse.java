@@ -34,7 +34,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UploadRagFileResponse)
     UploadRagFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadRagFileResponse.newBuilder() to construct.
   private UploadRagFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     private ResultCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -114,7 +112,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RAG_FILE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
   public boolean hasRagFile() {
     return resultCase_ == 1;
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.aiplatform.v1beta1.RagFile.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ERROR_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
   public boolean hasError() {
     return resultCase_ == 4;
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     }
     return com.google.rpc.Status.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -411,7 +403,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.RagFile.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileOrBuilder>
         ragFileBuilder_;
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     public boolean hasRagFile() {
       return resultCase_ == 1;
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.aiplatform.v1beta1.RagFile.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       resultCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       resultCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       resultCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.aiplatform.v1beta1.RagFile.Builder getRagFileBuilder() {
       return getRagFileFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
         return com.google.cloud.aiplatform.v1beta1.RagFile.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     public boolean hasError() {
       return resultCase_ == 4;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       resultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       resultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       resultCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
     public com.google.rpc.Status.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1040,7 +1014,6 @@ public final class UploadRagFileResponse extends com.google.protobuf.GeneratedMe
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
-
     /**
      *
      *

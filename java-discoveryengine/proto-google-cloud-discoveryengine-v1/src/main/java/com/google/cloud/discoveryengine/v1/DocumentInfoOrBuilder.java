@@ -36,7 +36,6 @@ public interface DocumentInfoOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DocumentInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DocumentInfoOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface DocumentInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface DocumentInfoOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface DocumentInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface DocumentInfoOrBuilder
    * @return Whether the quantity field is set.
    */
   boolean hasQuantity();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface DocumentInfoOrBuilder
    * @return A list containing the promotionIds.
    */
   java.util.List<java.lang.String> getPromotionIdsList();
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public interface DocumentInfoOrBuilder
    * @return The count of promotionIds.
    */
   int getPromotionIdsCount();
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface DocumentInfoOrBuilder
    * @return The promotionIds at the given index.
    */
   java.lang.String getPromotionIds(int index);
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public interface DocumentInfoOrBuilder
    * @return Whether the conversionValue field is set.
    */
   boolean hasConversionValue();
-
   /**
    *
    *

@@ -52,7 +52,6 @@ public interface CreateDiscoveryConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface CreateDiscoveryConfigRequestOrBuilder
    * @return Whether the discoveryConfig field is set.
    */
   boolean hasDiscoveryConfig();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface CreateDiscoveryConfigRequestOrBuilder
    * @return The discoveryConfig.
    */
   com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface CreateDiscoveryConfigRequestOrBuilder
    * @return The configId.
    */
   java.lang.String getConfigId();
-
   /**
    *
    *

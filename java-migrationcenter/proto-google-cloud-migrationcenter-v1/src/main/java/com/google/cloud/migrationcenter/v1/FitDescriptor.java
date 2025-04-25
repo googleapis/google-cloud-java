@@ -33,7 +33,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.FitDescriptor)
     FitDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FitDescriptor.newBuilder() to construct.
   private FitDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
      * <code>FIT_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int FIT_LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
      * <code>FIT = 1;</code>
      */
     public static final int FIT_VALUE = 1;
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_FIT = 2;</code>
      */
     public static final int NO_FIT_VALUE = 2;
-
     /**
      *
      *
@@ -250,7 +246,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIT_LEVEL_FIELD_NUMBER = 1;
   private int fitLevel_ = 0;
-
   /**
    *
    *
@@ -266,7 +261,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
   public int getFitLevelValue() {
     return fitLevel_;
   }
-
   /**
    *
    *
@@ -450,7 +444,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -633,7 +626,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int fitLevel_ = 0;
-
     /**
      *
      *
@@ -649,7 +641,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
     public int getFitLevelValue() {
       return fitLevel_;
     }
-
     /**
      *
      *
@@ -668,7 +659,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +678,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.migrationcenter.v1.FitDescriptor.FitLevel.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class FitDescriptor extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

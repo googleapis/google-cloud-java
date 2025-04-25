@@ -43,7 +43,6 @@ public interface CreateTransitionRouteGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CreateTransitionRouteGroupRequestOrBuilder
    * @return Whether the transitionRouteGroup field is set.
    */
   boolean hasTransitionRouteGroup();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateTransitionRouteGroupRequestOrBuilder
    * @return The transitionRouteGroup.
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup getTransitionRouteGroup();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface CreateTransitionRouteGroupRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

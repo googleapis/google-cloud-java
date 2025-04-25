@@ -34,7 +34,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DatabaseResourceCollection)
     DatabaseResourceCollectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatabaseResourceCollection.newBuilder() to construct.
   private DatabaseResourceCollection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
     private PatternCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,7 +109,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
   }
 
   public static final int INCLUDE_REGEXES_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
   public boolean hasIncludeRegexes() {
     return patternCase_ == 1;
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
     }
     return com.google.privacy.dlp.v2.DatabaseResourceRegexes.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -338,7 +333,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +552,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
             com.google.privacy.dlp.v2.DatabaseResourceRegexes.Builder,
             com.google.privacy.dlp.v2.DatabaseResourceRegexesOrBuilder>
         includeRegexesBuilder_;
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
     public boolean hasIncludeRegexes() {
       return patternCase_ == 1;
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
         return com.google.privacy.dlp.v2.DatabaseResourceRegexes.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
     public com.google.privacy.dlp.v2.DatabaseResourceRegexes.Builder getIncludeRegexesBuilder() {
       return getIncludeRegexesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class DatabaseResourceCollection extends com.google.protobuf.Genera
         return com.google.privacy.dlp.v2.DatabaseResourceRegexes.getDefaultInstance();
       }
     }
-
     /**
      *
      *

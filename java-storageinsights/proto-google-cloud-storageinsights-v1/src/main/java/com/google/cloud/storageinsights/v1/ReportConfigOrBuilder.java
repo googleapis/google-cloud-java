@@ -37,7 +37,6 @@ public interface ReportConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ReportConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ReportConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ReportConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ReportConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface ReportConfigOrBuilder
    * @return Whether the frequencyOptions field is set.
    */
   boolean hasFrequencyOptions();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface ReportConfigOrBuilder
    * @return The frequencyOptions.
    */
   com.google.cloud.storageinsights.v1.FrequencyOptions getFrequencyOptions();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface ReportConfigOrBuilder
    * @return Whether the csvOptions field is set.
    */
   boolean hasCsvOptions();
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface ReportConfigOrBuilder
    * @return The csvOptions.
    */
   com.google.cloud.storageinsights.v1.CSVOptions getCsvOptions();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface ReportConfigOrBuilder
    * @return Whether the parquetOptions field is set.
    */
   boolean hasParquetOptions();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface ReportConfigOrBuilder
    * @return The parquetOptions.
    */
   com.google.cloud.storageinsights.v1.ParquetOptions getParquetOptions();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface ReportConfigOrBuilder
    * @return Whether the objectMetadataReportOptions field is set.
    */
   boolean hasObjectMetadataReportOptions();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface ReportConfigOrBuilder
    * @return The objectMetadataReportOptions.
    */
   com.google.cloud.storageinsights.v1.ObjectMetadataReportOptions getObjectMetadataReportOptions();
-
   /**
    *
    *
@@ -297,7 +284,6 @@ public interface ReportConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -308,11 +294,9 @@ public interface ReportConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -323,7 +307,6 @@ public interface ReportConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -338,7 +321,6 @@ public interface ReportConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -363,7 +345,6 @@ public interface ReportConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

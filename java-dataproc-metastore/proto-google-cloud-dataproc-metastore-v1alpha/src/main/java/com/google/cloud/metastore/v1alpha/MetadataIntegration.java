@@ -33,7 +33,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1alpha.MetadataIntegration)
     MetadataIntegrationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MetadataIntegration.newBuilder() to construct.
   private MetadataIntegration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int DATA_CATALOG_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.metastore.v1alpha.DataCatalogConfig dataCatalogConfig_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
   public boolean hasDataCatalogConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.metastore.v1alpha.DataCatalogConfig.getDefaultInstance()
         : dataCatalogConfig_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
 
   public static final int DATAPLEX_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.metastore.v1alpha.DataplexConfig dataplexConfig_;
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
   public boolean hasDataplexConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.metastore.v1alpha.DataplexConfig.getDefaultInstance()
         : dataplexConfig_;
   }
-
   /**
    *
    *
@@ -349,7 +342,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +569,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
             com.google.cloud.metastore.v1alpha.DataCatalogConfig.Builder,
             com.google.cloud.metastore.v1alpha.DataCatalogConfigOrBuilder>
         dataCatalogConfigBuilder_;
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     public boolean hasDataCatalogConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         return dataCatalogConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +646,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDataCatalogConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -744,7 +728,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
             : dataCatalogConfig_;
       }
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
             com.google.cloud.metastore.v1alpha.DataplexConfig.Builder,
             com.google.cloud.metastore.v1alpha.DataplexConfigOrBuilder>
         dataplexConfigBuilder_;
-
     /**
      *
      *
@@ -792,7 +774,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
     public boolean hasDataplexConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -813,7 +794,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
         return dataplexConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +836,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +864,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +883,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +897,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDataplexConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -940,7 +915,6 @@ public final class MetadataIntegration extends com.google.protobuf.GeneratedMess
             : dataplexConfig_;
       }
     }
-
     /**
      *
      *

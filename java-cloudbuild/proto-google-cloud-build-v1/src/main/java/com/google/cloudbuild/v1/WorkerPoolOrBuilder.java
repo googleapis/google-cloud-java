@@ -40,7 +40,6 @@ public interface WorkerPoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface WorkerPoolOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface WorkerPoolOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface WorkerPoolOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -135,11 +131,9 @@ public interface WorkerPoolOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface WorkerPoolOrBuilder
    * <code>map&lt;string, string&gt; annotations = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface WorkerPoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface WorkerPoolOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public interface WorkerPoolOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -280,7 +268,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -295,7 +282,6 @@ public interface WorkerPoolOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public interface WorkerPoolOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -351,7 +336,6 @@ public interface WorkerPoolOrBuilder
    * @return Whether the privatePoolV1Config field is set.
    */
   boolean hasPrivatePoolV1Config();
-
   /**
    *
    *
@@ -364,7 +348,6 @@ public interface WorkerPoolOrBuilder
    * @return The privatePoolV1Config.
    */
   com.google.cloudbuild.v1.PrivatePoolV1Config getPrivatePoolV1Config();
-
   /**
    *
    *
@@ -390,7 +373,6 @@ public interface WorkerPoolOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

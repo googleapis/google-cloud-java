@@ -25,7 +25,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.RunTaskResponse)
     RunTaskResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunTaskResponse.newBuilder() to construct.
   private RunTaskResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -57,7 +56,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int JOB_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.Job job_;
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
   public boolean hasJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.dataplex.v1.Job getJob() {
     return job_ == null ? com.google.cloud.dataplex.v1.Job.getDefaultInstance() : job_;
   }
-
   /**
    *
    *
@@ -268,7 +264,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.dataplex.v1.RunTaskResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -463,7 +458,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dataplex.v1.Job.Builder,
             com.google.cloud.dataplex.v1.JobOrBuilder>
         jobBuilder_;
-
     /**
      *
      *
@@ -478,7 +472,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
     public boolean hasJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -497,7 +490,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
         return jobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -520,7 +512,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -540,7 +531,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +558,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -588,7 +577,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -603,7 +591,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -620,7 +607,6 @@ public final class RunTaskResponse extends com.google.protobuf.GeneratedMessageV
         return job_ == null ? com.google.cloud.dataplex.v1.Job.getDefaultInstance() : job_;
       }
     }
-
     /**
      *
      *

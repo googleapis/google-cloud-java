@@ -36,7 +36,6 @@ public interface FileIODetailsOrBuilder
    * @return The filePattern.
    */
   java.lang.String getFilePattern();
-
   /**
    *
    *

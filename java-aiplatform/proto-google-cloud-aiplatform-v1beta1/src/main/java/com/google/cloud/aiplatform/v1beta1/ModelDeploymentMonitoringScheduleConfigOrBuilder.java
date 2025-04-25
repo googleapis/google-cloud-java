@@ -39,7 +39,6 @@ public interface ModelDeploymentMonitoringScheduleConfigOrBuilder
    * @return Whether the monitorInterval field is set.
    */
   boolean hasMonitorInterval();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ModelDeploymentMonitoringScheduleConfigOrBuilder
    * @return The monitorInterval.
    */
   com.google.protobuf.Duration getMonitorInterval();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ModelDeploymentMonitoringScheduleConfigOrBuilder
    * @return Whether the monitorWindow field is set.
    */
   boolean hasMonitorWindow();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ModelDeploymentMonitoringScheduleConfigOrBuilder
    * @return The monitorWindow.
    */
   com.google.protobuf.Duration getMonitorWindow();
-
   /**
    *
    *

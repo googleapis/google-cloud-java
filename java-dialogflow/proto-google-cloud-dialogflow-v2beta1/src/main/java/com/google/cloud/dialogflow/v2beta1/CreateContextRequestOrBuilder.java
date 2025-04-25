@@ -50,7 +50,6 @@ public interface CreateContextRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface CreateContextRequestOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface CreateContextRequestOrBuilder
    * @return The context.
    */
   com.google.cloud.dialogflow.v2beta1.Context getContext();
-
   /**
    *
    *

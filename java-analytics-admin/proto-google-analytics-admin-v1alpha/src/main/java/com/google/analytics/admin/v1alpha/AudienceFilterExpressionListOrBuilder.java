@@ -36,7 +36,6 @@ public interface AudienceFilterExpressionListOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.AudienceFilterExpression>
       getFilterExpressionsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface AudienceFilterExpressionListOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.AudienceFilterExpression getFilterExpressions(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface AudienceFilterExpressionListOrBuilder
    * </code>
    */
   int getFilterExpressionsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface AudienceFilterExpressionListOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.AudienceFilterExpressionOrBuilder>
       getFilterExpressionsOrBuilderList();
-
   /**
    *
    *

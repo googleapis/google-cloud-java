@@ -35,7 +35,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.WorkforceIdentitySettings)
     WorkforceIdentitySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkforceIdentitySettings.newBuilder() to construct.
   private WorkforceIdentitySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList workforcePools_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getWorkforcePoolsList() {
     return workforcePools_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
   public int getWorkforcePoolsCount() {
     return workforcePools_.size();
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
   public java.lang.String getWorkforcePools(int index) {
     return workforcePools_.get(index);
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
 
   public static final int OAUTH2_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.OAuth2 oauth2_;
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
   public boolean hasOauth2() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
   public com.google.cloud.iap.v1.OAuth2 getOauth2() {
     return oauth2_ == null ? com.google.cloud.iap.v1.OAuth2.getDefaultInstance() : oauth2_;
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -598,7 +589,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       workforcePools_.makeImmutable();
       return workforcePools_;
     }
-
     /**
      *
      *
@@ -629,7 +618,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
     public int getWorkforcePoolsCount() {
       return workforcePools_.size();
     }
-
     /**
      *
      *
@@ -645,7 +633,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
     public java.lang.String getWorkforcePools(int index) {
       return workforcePools_.get(index);
     }
-
     /**
      *
      *
@@ -661,7 +648,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getWorkforcePoolsBytes(int index) {
       return workforcePools_.getByteString(index);
     }
-
     /**
      *
      *
@@ -685,7 +671,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +693,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +712,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +730,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +760,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
             com.google.cloud.iap.v1.OAuth2.Builder,
             com.google.cloud.iap.v1.OAuth2OrBuilder>
         oauth2Builder_;
-
     /**
      *
      *
@@ -794,7 +775,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
     public boolean hasOauth2() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -814,7 +794,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
         return oauth2Builder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -838,7 +817,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +837,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +865,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +885,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +900,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
       onChanged();
       return getOauth2FieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -943,7 +917,6 @@ public final class WorkforceIdentitySettings extends com.google.protobuf.Generat
         return oauth2_ == null ? com.google.cloud.iap.v1.OAuth2.getDefaultInstance() : oauth2_;
       }
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> getDimensionHeadersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
    */
   com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionHeader dimension_headers = 1;</code>
    */
   int getDimensionHeadersCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface QueryReportTaskResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.DimensionHeaderOrBuilder>
       getDimensionHeadersOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.MetricHeader> getMetricHeadersList();
-
   /**
    *
    *
@@ -109,7 +104,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
    */
   com.google.analytics.data.v1alpha.MetricHeader getMetricHeaders(int index);
-
   /**
    *
    *
@@ -121,7 +115,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricHeader metric_headers = 2;</code>
    */
   int getMetricHeadersCount();
-
   /**
    *
    *
@@ -134,7 +127,6 @@ public interface QueryReportTaskResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.MetricHeaderOrBuilder>
       getMetricHeadersOrBuilderList();
-
   /**
    *
    *
@@ -157,7 +149,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.Row> getRowsList();
-
   /**
    *
    *
@@ -168,7 +159,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   com.google.analytics.data.v1alpha.Row getRows(int index);
-
   /**
    *
    *
@@ -179,7 +169,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -190,7 +179,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row rows = 3;</code>
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.RowOrBuilder> getRowsOrBuilderList();
-
   /**
    *
    *
@@ -212,7 +200,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row totals = 4;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.Row> getTotalsList();
-
   /**
    *
    *
@@ -223,7 +210,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row totals = 4;</code>
    */
   com.google.analytics.data.v1alpha.Row getTotals(int index);
-
   /**
    *
    *
@@ -234,7 +220,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row totals = 4;</code>
    */
   int getTotalsCount();
-
   /**
    *
    *
@@ -245,7 +230,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row totals = 4;</code>
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.RowOrBuilder> getTotalsOrBuilderList();
-
   /**
    *
    *
@@ -267,7 +251,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row maximums = 5;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.Row> getMaximumsList();
-
   /**
    *
    *
@@ -278,7 +261,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row maximums = 5;</code>
    */
   com.google.analytics.data.v1alpha.Row getMaximums(int index);
-
   /**
    *
    *
@@ -289,7 +271,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row maximums = 5;</code>
    */
   int getMaximumsCount();
-
   /**
    *
    *
@@ -301,7 +282,6 @@ public interface QueryReportTaskResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.RowOrBuilder>
       getMaximumsOrBuilderList();
-
   /**
    *
    *
@@ -323,7 +303,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row minimums = 6;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.Row> getMinimumsList();
-
   /**
    *
    *
@@ -334,7 +313,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row minimums = 6;</code>
    */
   com.google.analytics.data.v1alpha.Row getMinimums(int index);
-
   /**
    *
    *
@@ -345,7 +323,6 @@ public interface QueryReportTaskResponseOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.Row minimums = 6;</code>
    */
   int getMinimumsCount();
-
   /**
    *
    *
@@ -357,7 +334,6 @@ public interface QueryReportTaskResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.RowOrBuilder>
       getMinimumsOrBuilderList();
-
   /**
    *
    *
@@ -394,7 +370,6 @@ public interface QueryReportTaskResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -407,7 +382,6 @@ public interface QueryReportTaskResponseOrBuilder
    * @return The metadata.
    */
   com.google.analytics.data.v1alpha.ResponseMetaData getMetadata();
-
   /**
    *
    *

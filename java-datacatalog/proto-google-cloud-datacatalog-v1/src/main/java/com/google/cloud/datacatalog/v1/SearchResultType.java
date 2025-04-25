@@ -82,7 +82,6 @@ public enum SearchResultType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SEARCH_RESULT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int SEARCH_RESULT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum SearchResultType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>ENTRY = 1;</code>
    */
   public static final int ENTRY_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum SearchResultType implements com.google.protobuf.ProtocolMessageEnum 
    * <code>TAG_TEMPLATE = 2;</code>
    */
   public static final int TAG_TEMPLATE_VALUE = 2;
-
   /**
    *
    *

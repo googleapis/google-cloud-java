@@ -36,7 +36,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The ruleName.
    */
   java.lang.String getRuleName();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The enum numeric value on the wire for ruleType.
    */
   int getRuleTypeValue();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The enum numeric value on the wire for evalutionType.
    */
   int getEvalutionTypeValue();
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The ruleDimension.
    */
   java.lang.String getRuleDimension();
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public interface DataQualityScanRuleResultOrBuilder
    * @return The enum numeric value on the wire for result.
    */
   int getResultValue();
-
   /**
    *
    *

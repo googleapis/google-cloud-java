@@ -34,7 +34,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest)
     SetAutomatedGa4ConfigurationOptOutRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetAutomatedGa4ConfigurationOptOutRequest.newBuilder() to construct.
   private SetAutomatedGa4ConfigurationOptOutRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
 
   public static final int OPT_OUT_FIELD_NUMBER = 2;
   private boolean optOut_ = false;
-
   /**
    *
    *
@@ -321,7 +317,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -530,7 +525,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
     private int bitField0_;
 
     private java.lang.Object property_ = "";
-
     /**
      *
      *
@@ -556,7 +550,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -582,7 +575,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
     }
 
     private boolean optOut_;
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
     public boolean getOptOut() {
       return optOut_;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class SetAutomatedGa4ConfigurationOptOutRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

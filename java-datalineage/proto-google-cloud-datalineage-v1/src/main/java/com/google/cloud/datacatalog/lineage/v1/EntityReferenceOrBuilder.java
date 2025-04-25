@@ -38,7 +38,6 @@ public interface EntityReferenceOrBuilder
    * @return The fullyQualifiedName.
    */
   java.lang.String getFullyQualifiedName();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class AdUnitStatusEnum extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.AdUnitStatusEnum)
     AdUnitStatusEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdUnitStatusEnum.newBuilder() to construct.
   private AdUnitStatusEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,7 +125,6 @@ public final class AdUnitStatusEnum extends com.google.protobuf.GeneratedMessage
      * <code>AD_UNIT_STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int AD_UNIT_STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -137,7 +135,6 @@ public final class AdUnitStatusEnum extends com.google.protobuf.GeneratedMessage
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -148,7 +145,6 @@ public final class AdUnitStatusEnum extends com.google.protobuf.GeneratedMessage
      * <code>INACTIVE = 2;</code>
      */
     public static final int INACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -395,7 +391,6 @@ public final class AdUnitStatusEnum extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

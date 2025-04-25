@@ -37,7 +37,6 @@ public interface AssetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface AssetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AssetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AssetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface AssetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -153,11 +147,9 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface AssetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface AssetOrBuilder
    * @return Whether the video field is set.
    */
   boolean hasVideo();
-
   /**
    *
    *
@@ -220,7 +209,6 @@ public interface AssetOrBuilder
    * @return The video.
    */
   com.google.cloud.video.livestream.v1.Asset.VideoAsset getVideo();
-
   /**
    *
    *
@@ -244,7 +232,6 @@ public interface AssetOrBuilder
    * @return Whether the image field is set.
    */
   boolean hasImage();
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public interface AssetOrBuilder
    * @return The image.
    */
   com.google.cloud.video.livestream.v1.Asset.ImageAsset getImage();
-
   /**
    *
    *
@@ -291,7 +277,6 @@ public interface AssetOrBuilder
    * @return The crc32c.
    */
   java.lang.String getCrc32C();
-
   /**
    *
    *
@@ -329,7 +314,6 @@ public interface AssetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -358,7 +342,6 @@ public interface AssetOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -372,7 +355,6 @@ public interface AssetOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *

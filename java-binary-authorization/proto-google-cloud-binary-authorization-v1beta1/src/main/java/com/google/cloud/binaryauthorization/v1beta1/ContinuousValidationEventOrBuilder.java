@@ -38,7 +38,6 @@ public interface ContinuousValidationEventOrBuilder
    * @return Whether the podEvent field is set.
    */
   boolean hasPodEvent();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ContinuousValidationEventOrBuilder
   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent
           .ContinuousValidationPodEvent
       getPodEvent();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ContinuousValidationEventOrBuilder
    * @return Whether the configErrorEvent field is set.
    */
   boolean hasConfigErrorEvent();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ContinuousValidationEventOrBuilder
    */
   com.google.cloud.binaryauthorization.v1beta1.ContinuousValidationEvent.ConfigErrorEvent
       getConfigErrorEvent();
-
   /**
    *
    *

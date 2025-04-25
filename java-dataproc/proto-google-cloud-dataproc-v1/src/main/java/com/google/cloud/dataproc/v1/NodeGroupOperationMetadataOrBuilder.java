@@ -36,7 +36,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The nodeGroupId.
    */
   java.lang.String getNodeGroupId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The status.
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> getStatusHistoryList();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index);
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * </code>
    */
   int getStatusHistoryCount();
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>
       getStatusHistoryOrBuilderList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -262,11 +251,9 @@ public interface NodeGroupOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -277,7 +264,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -292,7 +278,6 @@ public interface NodeGroupOperationMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -316,7 +301,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return A list containing the warnings.
    */
   java.util.List<java.lang.String> getWarningsList();
-
   /**
    *
    *
@@ -329,7 +313,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The count of warnings.
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -343,7 +326,6 @@ public interface NodeGroupOperationMetadataOrBuilder
    * @return The warnings at the given index.
    */
   java.lang.String getWarnings(int index);
-
   /**
    *
    *

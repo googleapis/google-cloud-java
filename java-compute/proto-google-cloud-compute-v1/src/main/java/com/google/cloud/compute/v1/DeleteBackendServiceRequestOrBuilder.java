@@ -36,7 +36,6 @@ public interface DeleteBackendServiceRequestOrBuilder
    * @return The backendService.
    */
   java.lang.String getBackendService();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DeleteBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DeleteBackendServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface DeleteBackendServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -32,7 +32,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StoragePoolTypesScopedList)
     StoragePoolTypesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StoragePoolTypesScopedList.newBuilder() to construct.
   private StoragePoolTypesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.StoragePoolType> storagePoolTypes_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.compute.v1.StoragePoolType> getStoragePoolTypesList() {
     return storagePoolTypes_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       getStoragePoolTypesOrBuilderList() {
     return storagePoolTypes_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
   public int getStoragePoolTypesCount() {
     return storagePoolTypes_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.StoragePoolType getStoragePoolTypes(int index) {
     return storagePoolTypes_.get(index);
   }
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +651,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         return storagePoolTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         return storagePoolTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         return storagePoolTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         int index) {
       return getStoragePoolTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -935,7 +912,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         return storagePoolTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(storagePoolTypes_);
       }
     }
-
     /**
      *
      *
@@ -969,7 +944,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       return getStoragePoolTypesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.StoragePoolType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -985,7 +959,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       return getStoragePoolTypesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.StoragePoolType.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1042,7 +1014,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1063,7 +1034,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1086,7 +1056,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1075,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1102,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1121,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1135,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1188,7 +1153,6 @@ public final class StoragePoolTypesScopedList extends com.google.protobuf.Genera
             : warning_;
       }
     }
-
     /**
      *
      *

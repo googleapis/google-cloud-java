@@ -37,7 +37,6 @@ public interface BackendServiceConnectionTrackingPolicyOrBuilder
    * @return Whether the connectionPersistenceOnUnhealthyBackends field is set.
    */
   boolean hasConnectionPersistenceOnUnhealthyBackends();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface BackendServiceConnectionTrackingPolicyOrBuilder
    * @return The connectionPersistenceOnUnhealthyBackends.
    */
   java.lang.String getConnectionPersistenceOnUnhealthyBackends();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface BackendServiceConnectionTrackingPolicyOrBuilder
    * @return Whether the enableStrongAffinity field is set.
    */
   boolean hasEnableStrongAffinity();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface BackendServiceConnectionTrackingPolicyOrBuilder
    * @return Whether the idleTimeoutSec field is set.
    */
   boolean hasIdleTimeoutSec();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface BackendServiceConnectionTrackingPolicyOrBuilder
    * @return Whether the trackingMode field is set.
    */
   boolean hasTrackingMode();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface BackendServiceConnectionTrackingPolicyOrBuilder
    * @return The trackingMode.
    */
   java.lang.String getTrackingMode();
-
   /**
    *
    *

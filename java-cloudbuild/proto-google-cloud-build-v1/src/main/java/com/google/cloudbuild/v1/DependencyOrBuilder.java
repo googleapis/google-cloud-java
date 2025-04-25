@@ -37,7 +37,6 @@ public interface DependencyOrBuilder
    * @return Whether the empty field is set.
    */
   boolean hasEmpty();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DependencyOrBuilder
    * @return Whether the gitSource field is set.
    */
   boolean hasGitSource();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DependencyOrBuilder
    * @return The gitSource.
    */
   com.google.cloudbuild.v1.Dependency.GitSourceDependency getGitSource();
-
   /**
    *
    *

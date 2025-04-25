@@ -38,7 +38,6 @@ public interface GenerateStatelessSummaryRequestOrBuilder
    * @return Whether the statelessConversation field is set.
    */
   boolean hasStatelessConversation();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface GenerateStatelessSummaryRequestOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest.MinimalConversation
       getStatelessConversation();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface GenerateStatelessSummaryRequestOrBuilder
    * @return Whether the conversationProfile field is set.
    */
   boolean hasConversationProfile();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface GenerateStatelessSummaryRequestOrBuilder
    * @return The conversationProfile.
    */
   com.google.cloud.dialogflow.v2beta1.ConversationProfile getConversationProfile();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface GenerateStatelessSummaryRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
-
   /**
    *
    *

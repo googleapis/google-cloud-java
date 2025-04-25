@@ -113,7 +113,6 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPARISON_UNSPECIFIED = 0;</code>
    */
   public static final int COMPARISON_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -124,7 +123,6 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPARISON_GT = 1;</code>
    */
   public static final int COMPARISON_GT_VALUE = 1;
-
   /**
    *
    *
@@ -135,7 +133,6 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPARISON_GE = 2;</code>
    */
   public static final int COMPARISON_GE_VALUE = 2;
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPARISON_LT = 3;</code>
    */
   public static final int COMPARISON_LT_VALUE = 3;
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPARISON_LE = 4;</code>
    */
   public static final int COMPARISON_LE_VALUE = 4;
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public enum ComparisonType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPARISON_EQ = 5;</code>
    */
   public static final int COMPARISON_EQ_VALUE = 5;
-
   /**
    *
    *

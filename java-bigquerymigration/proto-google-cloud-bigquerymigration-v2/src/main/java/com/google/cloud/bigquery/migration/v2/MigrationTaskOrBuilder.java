@@ -38,7 +38,6 @@ public interface MigrationTaskOrBuilder
    * @return Whether the translationConfigDetails field is set.
    */
   boolean hasTranslationConfigDetails();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface MigrationTaskOrBuilder
    * @return The translationConfigDetails.
    */
   com.google.cloud.bigquery.migration.v2.TranslationConfigDetails getTranslationConfigDetails();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface MigrationTaskOrBuilder
    * @return Whether the translationDetails field is set.
    */
   boolean hasTranslationDetails();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface MigrationTaskOrBuilder
    * @return The translationDetails.
    */
   com.google.cloud.bigquery.migration.v2.TranslationDetails getTranslationDetails();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface MigrationTaskOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface MigrationTaskOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface MigrationTaskOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public interface MigrationTaskOrBuilder
    * @return Whether the processingError field is set.
    */
   boolean hasProcessingError();
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public interface MigrationTaskOrBuilder
    * @return The processingError.
    */
   com.google.rpc.ErrorInfo getProcessingError();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface MigrationTaskOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface MigrationTaskOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public interface MigrationTaskOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public interface MigrationTaskOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public interface MigrationTaskOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.ResourceErrorDetail>
       getResourceErrorDetailsList();
-
   /**
    *
    *
@@ -353,7 +339,6 @@ public interface MigrationTaskOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2.ResourceErrorDetail getResourceErrorDetails(int index);
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public interface MigrationTaskOrBuilder
    * </code>
    */
   int getResourceErrorDetailsCount();
-
   /**
    *
    *
@@ -384,7 +368,6 @@ public interface MigrationTaskOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.ResourceErrorDetailOrBuilder>
       getResourceErrorDetailsOrBuilderList();
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public interface MigrationTaskOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.TimeSeries> getMetricsList();
-
   /**
    *
    *
@@ -438,7 +420,6 @@ public interface MigrationTaskOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
    */
   com.google.cloud.bigquery.migration.v2.TimeSeries getMetrics(int index);
-
   /**
    *
    *
@@ -449,7 +430,6 @@ public interface MigrationTaskOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.TimeSeries metrics = 19;</code>
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -461,7 +441,6 @@ public interface MigrationTaskOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.TimeSeriesOrBuilder>
       getMetricsOrBuilderList();
-
   /**
    *
    *
@@ -487,7 +466,6 @@ public interface MigrationTaskOrBuilder
    * @return Whether the taskResult field is set.
    */
   boolean hasTaskResult();
-
   /**
    *
    *
@@ -502,7 +480,6 @@ public interface MigrationTaskOrBuilder
    * @return The taskResult.
    */
   com.google.cloud.bigquery.migration.v2.MigrationTaskResult getTaskResult();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface AutoraterConfigOrBuilder
    * @return Whether the samplingCount field is set.
    */
   boolean hasSamplingCount();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface AutoraterConfigOrBuilder
    * @return Whether the flipEnabled field is set.
    */
   boolean hasFlipEnabled();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface AutoraterConfigOrBuilder
    * @return The autoraterModel.
    */
   java.lang.String getAutoraterModel();
-
   /**
    *
    *

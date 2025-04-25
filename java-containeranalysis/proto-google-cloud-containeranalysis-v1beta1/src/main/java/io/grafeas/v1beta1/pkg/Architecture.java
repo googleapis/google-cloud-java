@@ -72,7 +72,6 @@ public enum Architecture implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ARCHITECTURE_UNSPECIFIED = 0;</code>
    */
   public static final int ARCHITECTURE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum Architecture implements com.google.protobuf.ProtocolMessageEnum {
    * <code>X86 = 1;</code>
    */
   public static final int X86_VALUE = 1;
-
   /**
    *
    *

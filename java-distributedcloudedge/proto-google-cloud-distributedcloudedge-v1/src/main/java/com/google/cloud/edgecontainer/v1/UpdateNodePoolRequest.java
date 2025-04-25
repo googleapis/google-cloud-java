@@ -33,7 +33,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.UpdateNodePoolRequest)
     UpdateNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateNodePoolRequest.newBuilder() to construct.
   private UpdateNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
   public static final int NODE_POOL_FIELD_NUMBER = 2;
   private com.google.cloud.edgecontainer.v1.NodePool nodePool_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
   public boolean hasNodePool() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.edgecontainer.v1.NodePool.getDefaultInstance()
         : nodePool_;
   }
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -424,7 +415,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +652,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +774,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.edgecontainer.v1.NodePool.Builder,
             com.google.cloud.edgecontainer.v1.NodePoolOrBuilder>
         nodePoolBuilder_;
-
     /**
      *
      *
@@ -907,7 +887,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     public boolean hasNodePool() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         return nodePoolBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1008,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getNodePoolFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1053,7 +1026,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             : nodePool_;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1106,7 +1077,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1101,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1124,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1143,6 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

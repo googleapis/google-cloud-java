@@ -37,7 +37,6 @@ public interface PromotionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface PromotionOrBuilder
    * @return The promotionId.
    */
   java.lang.String getPromotionId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface PromotionOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface PromotionOrBuilder
    * @return The targetCountry.
    */
   java.lang.String getTargetCountry();
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public interface PromotionOrBuilder
    */
   java.util.List<com.google.shopping.merchant.promotions.v1beta.RedemptionChannel>
       getRedemptionChannelList();
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public interface PromotionOrBuilder
    * @return The count of redemptionChannel.
    */
   int getRedemptionChannelCount();
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public interface PromotionOrBuilder
    * @return The redemptionChannel at the given index.
    */
   com.google.shopping.merchant.promotions.v1beta.RedemptionChannel getRedemptionChannel(int index);
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public interface PromotionOrBuilder
    * @return A list containing the enum numeric values on the wire for redemptionChannel.
    */
   java.util.List<java.lang.Integer> getRedemptionChannelValueList();
-
   /**
    *
    *
@@ -260,7 +252,6 @@ public interface PromotionOrBuilder
    * @return The dataSource.
    */
   java.lang.String getDataSource();
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public interface PromotionOrBuilder
    * @return Whether the attributes field is set.
    */
   boolean hasAttributes();
-
   /**
    *
    *
@@ -303,7 +293,6 @@ public interface PromotionOrBuilder
    * @return The attributes.
    */
   com.google.shopping.merchant.promotions.v1beta.Attributes getAttributes();
-
   /**
    *
    *
@@ -334,7 +323,6 @@ public interface PromotionOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.type.CustomAttribute> getCustomAttributesList();
-
   /**
    *
    *
@@ -352,7 +340,6 @@ public interface PromotionOrBuilder
    * </code>
    */
   com.google.shopping.type.CustomAttribute getCustomAttributes(int index);
-
   /**
    *
    *
@@ -370,7 +357,6 @@ public interface PromotionOrBuilder
    * </code>
    */
   int getCustomAttributesCount();
-
   /**
    *
    *
@@ -389,7 +375,6 @@ public interface PromotionOrBuilder
    */
   java.util.List<? extends com.google.shopping.type.CustomAttributeOrBuilder>
       getCustomAttributesOrBuilderList();
-
   /**
    *
    *
@@ -425,7 +410,6 @@ public interface PromotionOrBuilder
    * @return Whether the promotionStatus field is set.
    */
   boolean hasPromotionStatus();
-
   /**
    *
    *
@@ -443,7 +427,6 @@ public interface PromotionOrBuilder
    * @return The promotionStatus.
    */
   com.google.shopping.merchant.promotions.v1beta.PromotionStatus getPromotionStatus();
-
   /**
    *
    *
@@ -483,7 +466,6 @@ public interface PromotionOrBuilder
    * @return Whether the versionNumber field is set.
    */
   boolean hasVersionNumber();
-
   /**
    *
    *

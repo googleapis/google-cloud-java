@@ -36,7 +36,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface BatchOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

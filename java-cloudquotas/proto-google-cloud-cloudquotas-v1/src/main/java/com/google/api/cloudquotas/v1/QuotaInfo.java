@@ -34,7 +34,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1.QuotaInfo)
     QuotaInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuotaInfo.newBuilder() to construct.
   private QuotaInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTAINER_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CONTAINER_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PROJECT = 1;</code>
      */
     public static final int PROJECT_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>FOLDER = 2;</code>
      */
     public static final int FOLDER_VALUE = 2;
-
     /**
      *
      *
@@ -263,7 +259,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -290,7 +285,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -322,7 +316,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object quotaId_ = "";
-
   /**
    *
    *
@@ -347,7 +340,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metric_ = "";
-
   /**
    *
    *
@@ -403,7 +394,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +424,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -459,7 +448,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -487,7 +475,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_PRECISE_FIELD_NUMBER = 5;
   private boolean isPrecise_ = false;
-
   /**
    *
    *
@@ -509,7 +496,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object refreshInterval_ = "";
-
   /**
    *
    *
@@ -536,7 +522,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -566,7 +551,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTAINER_TYPE_FIELD_NUMBER = 7;
   private int containerType_ = 0;
-
   /**
    *
    *
@@ -582,7 +566,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public int getContainerTypeValue() {
     return containerType_;
   }
-
   /**
    *
    *
@@ -608,7 +591,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dimensions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -623,7 +605,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDimensionsList() {
     return dimensions_;
   }
-
   /**
    *
    *
@@ -638,7 +619,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public int getDimensionsCount() {
     return dimensions_.size();
   }
-
   /**
    *
    *
@@ -654,7 +634,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDimensions(int index) {
     return dimensions_.get(index);
   }
-
   /**
    *
    *
@@ -675,7 +654,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricDisplayName_ = "";
-
   /**
    *
    *
@@ -699,7 +677,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -728,7 +705,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object quotaDisplayName_ = "";
-
   /**
    *
    *
@@ -752,7 +728,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -781,7 +756,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricUnit_ = "";
-
   /**
    *
    *
@@ -805,7 +779,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -832,7 +805,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUOTA_INCREASE_ELIGIBILITY_FIELD_NUMBER = 12;
   private com.google.api.cloudquotas.v1.QuotaIncreaseEligibility quotaIncreaseEligibility_;
-
   /**
    *
    *
@@ -849,7 +821,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuotaIncreaseEligibility() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -868,7 +839,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.api.cloudquotas.v1.QuotaIncreaseEligibility.getDefaultInstance()
         : quotaIncreaseEligibility_;
   }
-
   /**
    *
    *
@@ -889,7 +859,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_FIXED_FIELD_NUMBER = 13;
   private boolean isFixed_ = false;
-
   /**
    *
    *
@@ -910,7 +879,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.cloudquotas.v1.DimensionsInfo> dimensionsInfos_;
-
   /**
    *
    *
@@ -925,7 +893,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.api.cloudquotas.v1.DimensionsInfo> getDimensionsInfosList() {
     return dimensionsInfos_;
   }
-
   /**
    *
    *
@@ -941,7 +908,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       getDimensionsInfosOrBuilderList() {
     return dimensionsInfos_;
   }
-
   /**
    *
    *
@@ -956,7 +922,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public int getDimensionsInfosCount() {
     return dimensionsInfos_.size();
   }
-
   /**
    *
    *
@@ -971,7 +936,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.api.cloudquotas.v1.DimensionsInfo getDimensionsInfos(int index) {
     return dimensionsInfos_.get(index);
   }
-
   /**
    *
    *
@@ -990,7 +954,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IS_CONCURRENT_FIELD_NUMBER = 15;
   private boolean isConcurrent_ = false;
-
   /**
    *
    *
@@ -1012,7 +975,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceRequestQuotaUri_ = "";
-
   /**
    *
    *
@@ -1038,7 +1000,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1378,7 +1339,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1851,7 +1811,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1877,7 +1836,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1903,7 +1861,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1928,7 +1885,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1949,7 +1905,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1977,7 +1932,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object quotaId_ = "";
-
     /**
      *
      *
@@ -2001,7 +1955,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2025,7 +1978,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2048,7 +2000,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2067,7 +2018,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2093,7 +2043,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object metric_ = "";
-
     /**
      *
      *
@@ -2118,7 +2067,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2143,7 +2091,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2167,7 +2114,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2187,7 +2133,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2214,7 +2159,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -2238,7 +2182,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2205,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2285,7 +2227,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2304,7 +2245,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2330,7 +2270,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isPrecise_;
-
     /**
      *
      *
@@ -2347,7 +2286,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsPrecise() {
       return isPrecise_;
     }
-
     /**
      *
      *
@@ -2368,7 +2306,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2389,7 +2326,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object refreshInterval_ = "";
-
     /**
      *
      *
@@ -2415,7 +2351,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2441,7 +2376,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2466,7 +2400,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2487,7 +2420,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2515,7 +2447,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int containerType_ = 0;
-
     /**
      *
      *
@@ -2531,7 +2462,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public int getContainerTypeValue() {
       return containerType_;
     }
-
     /**
      *
      *
@@ -2550,7 +2480,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2570,7 +2499,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.api.cloudquotas.v1.QuotaInfo.ContainerType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2592,7 +2520,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2620,7 +2547,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2636,7 +2562,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       dimensions_.makeImmutable();
       return dimensions_;
     }
-
     /**
      *
      *
@@ -2651,7 +2576,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public int getDimensionsCount() {
       return dimensions_.size();
     }
-
     /**
      *
      *
@@ -2667,7 +2591,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDimensions(int index) {
       return dimensions_.get(index);
     }
-
     /**
      *
      *
@@ -2683,7 +2606,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDimensionsBytes(int index) {
       return dimensions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2707,7 +2629,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2651,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2750,7 +2670,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2769,7 +2688,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2795,7 +2713,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object metricDisplayName_ = "";
-
     /**
      *
      *
@@ -2818,7 +2735,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2841,7 +2757,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2863,7 +2778,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2881,7 +2795,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2906,7 +2819,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object quotaDisplayName_ = "";
-
     /**
      *
      *
@@ -2929,7 +2841,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2952,7 +2863,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2974,7 +2884,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2992,7 +2901,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2925,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object metricUnit_ = "";
-
     /**
      *
      *
@@ -3040,7 +2947,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3063,7 +2969,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3085,7 +2990,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3103,7 +3007,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3133,7 +3036,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.api.cloudquotas.v1.QuotaIncreaseEligibility.Builder,
             com.google.api.cloudquotas.v1.QuotaIncreaseEligibilityOrBuilder>
         quotaIncreaseEligibilityBuilder_;
-
     /**
      *
      *
@@ -3149,7 +3051,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuotaIncreaseEligibility() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3171,7 +3072,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return quotaIncreaseEligibilityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3196,7 +3096,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3218,7 +3117,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3249,7 +3147,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3270,7 +3167,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3287,7 +3183,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getQuotaIncreaseEligibilityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3308,7 +3203,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
             : quotaIncreaseEligibility_;
       }
     }
-
     /**
      *
      *
@@ -3337,7 +3231,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isFixed_;
-
     /**
      *
      *
@@ -3353,7 +3246,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsFixed() {
       return isFixed_;
     }
-
     /**
      *
      *
@@ -3373,7 +3265,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3426,7 +3317,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return dimensionsInfosBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3444,7 +3334,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return dimensionsInfosBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3462,7 +3351,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return dimensionsInfosBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3487,7 +3375,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3509,7 +3396,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3533,7 +3419,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3558,7 +3443,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3580,7 +3464,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3602,7 +3485,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3506,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3645,7 +3526,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3546,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3681,7 +3560,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDimensionsInfosFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3700,7 +3578,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return dimensionsInfosBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3719,7 +3596,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(dimensionsInfos_);
       }
     }
-
     /**
      *
      *
@@ -3734,7 +3610,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return getDimensionsInfosFieldBuilder()
           .addBuilder(com.google.api.cloudquotas.v1.DimensionsInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3750,7 +3625,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       return getDimensionsInfosFieldBuilder()
           .addBuilder(index, com.google.api.cloudquotas.v1.DimensionsInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3787,7 +3661,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean isConcurrent_;
-
     /**
      *
      *
@@ -3804,7 +3677,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsConcurrent() {
       return isConcurrent_;
     }
-
     /**
      *
      *
@@ -3825,7 +3697,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3846,7 +3717,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceRequestQuotaUri_ = "";
-
     /**
      *
      *
@@ -3871,7 +3741,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3896,7 +3765,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3920,7 +3788,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3940,7 +3807,6 @@ public final class QuotaInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

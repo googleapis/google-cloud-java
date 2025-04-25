@@ -305,8 +305,7 @@ public class MessageName implements ResourceName {
     private Builder(MessageName messageName) {
       Preconditions.checkArgument(
           Objects.equals(messageName.pathTemplate, PROJECT_CONVERSATION_MESSAGE),
-          "toBuilder is only supported when MessageName has the pattern of"
-              + " projects/{project}/conversations/{conversation}/messages/{message}");
+          "toBuilder is only supported when MessageName has the pattern of projects/{project}/conversations/{conversation}/messages/{message}");
       this.project = messageName.project;
       this.conversation = messageName.conversation;
       this.message = messageName.message;

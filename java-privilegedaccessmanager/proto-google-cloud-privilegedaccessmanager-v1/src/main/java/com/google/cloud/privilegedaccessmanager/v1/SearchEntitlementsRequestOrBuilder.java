@@ -38,7 +38,6 @@ public interface SearchEntitlementsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SearchEntitlementsRequestOrBuilder
    * @return The enum numeric value on the wire for callerAccessType.
    */
   int getCallerAccessTypeValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface SearchEntitlementsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public interface SearchEntitlementsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

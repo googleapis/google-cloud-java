@@ -33,7 +33,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SanitizeUserPromptResponse)
     SanitizeUserPromptResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SanitizeUserPromptResponse.newBuilder() to construct.
   private SanitizeUserPromptResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int SANITIZATION_RESULT_FIELD_NUMBER = 1;
   private com.google.cloud.modelarmor.v1.SanitizationResult sanitizationResult_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
   public boolean hasSanitizationResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
         ? com.google.cloud.modelarmor.v1.SanitizationResult.getDefaultInstance()
         : sanitizationResult_;
   }
-
   /**
    *
    *
@@ -288,7 +284,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -496,7 +491,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
             com.google.cloud.modelarmor.v1.SanitizationResult.Builder,
             com.google.cloud.modelarmor.v1.SanitizationResultOrBuilder>
         sanitizationResultBuilder_;
-
     /**
      *
      *
@@ -513,7 +507,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
     public boolean hasSanitizationResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -536,7 +529,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
         return sanitizationResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -561,7 +553,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +644,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
       onChanged();
       return getSanitizationResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -678,7 +665,6 @@ public final class SanitizeUserPromptResponse extends com.google.protobuf.Genera
             : sanitizationResult_;
       }
     }
-
     /**
      *
      *

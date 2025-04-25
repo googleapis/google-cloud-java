@@ -33,7 +33,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListCustomTargetingValuesRequest)
     ListCustomTargetingValuesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCustomTargetingValuesRequest.newBuilder() to construct.
   private ListCustomTargetingValuesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -277,7 +269,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -303,7 +294,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -332,7 +322,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
 
   public static final int SKIP_FIELD_NUMBER = 6;
   private int skip_ = 0;
-
   /**
    *
    *
@@ -554,7 +543,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -813,7 +801,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -840,7 +827,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -867,7 +853,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -893,7 +878,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +899,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +927,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -963,7 +945,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -986,7 +967,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +989,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1038,7 +1017,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1045,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1095,7 +1072,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1095,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1125,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1175,7 +1149,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1173,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1224,7 +1196,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1215,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1241,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1296,7 +1265,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1321,7 +1289,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1331,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1357,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     }
 
     private int skip_;
-
     /**
      *
      *
@@ -1408,7 +1372,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
     public int getSkip() {
       return skip_;
     }
-
     /**
      *
      *
@@ -1428,7 +1391,6 @@ public final class ListCustomTargetingValuesRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

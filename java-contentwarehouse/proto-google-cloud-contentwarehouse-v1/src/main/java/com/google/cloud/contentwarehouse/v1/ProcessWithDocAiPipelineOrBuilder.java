@@ -38,7 +38,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return A list containing the documents.
    */
   java.util.List<java.lang.String> getDocumentsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return The count of documents.
    */
   int getDocumentsCount();
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return The documents at the given index.
    */
   java.lang.String getDocuments(int index);
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return The exportFolderPath.
    */
   java.lang.String getExportFolderPath();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return Whether the processorInfo field is set.
    */
   boolean hasProcessorInfo();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return The processorInfo.
    */
   com.google.cloud.contentwarehouse.v1.ProcessorInfo getProcessorInfo();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface ProcessWithDocAiPipelineOrBuilder
    * @return The processorResultsFolderPath.
    */
   java.lang.String getProcessorResultsFolderPath();
-
   /**
    *
    *

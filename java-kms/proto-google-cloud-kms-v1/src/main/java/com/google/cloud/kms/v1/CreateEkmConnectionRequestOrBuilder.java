@@ -40,7 +40,6 @@ public interface CreateEkmConnectionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateEkmConnectionRequestOrBuilder
    * @return The ekmConnectionId.
    */
   java.lang.String getEkmConnectionId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CreateEkmConnectionRequestOrBuilder
    * @return Whether the ekmConnection field is set.
    */
   boolean hasEkmConnection();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateEkmConnectionRequestOrBuilder
    * @return The ekmConnection.
    */
   com.google.cloud.kms.v1.EkmConnection getEkmConnection();
-
   /**
    *
    *

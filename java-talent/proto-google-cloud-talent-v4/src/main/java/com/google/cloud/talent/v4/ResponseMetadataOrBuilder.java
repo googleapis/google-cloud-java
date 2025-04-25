@@ -37,7 +37,6 @@ public interface ResponseMetadataOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

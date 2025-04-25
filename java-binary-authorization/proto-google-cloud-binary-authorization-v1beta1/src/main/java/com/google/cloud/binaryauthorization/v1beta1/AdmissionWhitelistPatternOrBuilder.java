@@ -42,7 +42,6 @@ public interface AdmissionWhitelistPatternOrBuilder
    * @return The namePattern.
    */
   java.lang.String getNamePattern();
-
   /**
    *
    *

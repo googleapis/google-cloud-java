@@ -33,7 +33,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.GetJobMetricsRequest)
     GetJobMetricsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetJobMetricsRequest.newBuilder() to construct.
   private GetJobMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -473,7 +463,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -717,7 +706,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +923,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -980,7 +957,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1004,7 +980,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1028,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1048,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1063,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1109,7 +1080,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1108,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1163,7 +1132,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1156,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1212,7 +1179,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1198,6 @@ public final class GetJobMetricsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

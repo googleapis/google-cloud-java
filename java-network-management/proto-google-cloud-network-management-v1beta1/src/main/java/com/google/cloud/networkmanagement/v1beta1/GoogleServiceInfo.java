@@ -37,7 +37,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.GoogleServiceInfo)
     GoogleServiceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GoogleServiceInfo.newBuilder() to construct.
   private GoogleServiceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -183,7 +182,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GOOGLE_SERVICE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int GOOGLE_SERVICE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -195,7 +193,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>IAP = 1;</code>
      */
     public static final int IAP_VALUE = 1;
-
     /**
      *
      *
@@ -209,7 +206,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GFE_PROXY_OR_HEALTH_CHECK_PROBER = 2;</code>
      */
     public static final int GFE_PROXY_OR_HEALTH_CHECK_PROBER_VALUE = 2;
-
     /**
      *
      *
@@ -223,7 +219,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>CLOUD_DNS = 3;</code>
      */
     public static final int CLOUD_DNS_VALUE = 3;
-
     /**
      *
      *
@@ -234,7 +229,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GOOGLE_API = 4;</code>
      */
     public static final int GOOGLE_API_VALUE = 4;
-
     /**
      *
      *
@@ -246,7 +240,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GOOGLE_API_PSC = 5;</code>
      */
     public static final int GOOGLE_API_PSC_VALUE = 5;
-
     /**
      *
      *
@@ -258,7 +251,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>GOOGLE_API_VPC_SC = 6;</code>
      */
     public static final int GOOGLE_API_VPC_SC_VALUE = 6;
-
     /**
      *
      *
@@ -373,7 +365,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceIp_ = "";
-
   /**
    *
    *
@@ -397,7 +388,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -424,7 +414,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
 
   public static final int GOOGLE_SERVICE_TYPE_FIELD_NUMBER = 2;
   private int googleServiceType_ = 0;
-
   /**
    *
    *
@@ -442,7 +431,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
   public int getGoogleServiceTypeValue() {
     return googleServiceType_;
   }
-
   /**
    *
    *
@@ -643,7 +631,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -848,7 +835,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object sourceIp_ = "";
-
     /**
      *
      *
@@ -871,7 +857,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -894,7 +879,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +900,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +917,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +941,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
     }
 
     private int googleServiceType_ = 0;
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
     public int getGoogleServiceTypeValue() {
       return googleServiceType_;
     }
-
     /**
      *
      *
@@ -998,7 +978,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1002,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1048,7 +1026,6 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.ListComponentsResponse)
     ListComponentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListComponentsResponse.newBuilder() to construct.
   private ListComponentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList components_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getComponentsList() {
     return components_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
   public int getComponentsCount() {
     return components_.size();
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
   public java.lang.String getComponents(int index) {
     return components_.get(index);
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +358,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -590,7 +582,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -606,7 +597,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       components_.makeImmutable();
       return components_;
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
     public int getComponentsCount() {
       return components_.size();
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
     public java.lang.String getComponents(int index) {
       return components_.get(index);
     }
-
     /**
      *
      *
@@ -653,7 +641,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getComponentsBytes(int index) {
       return components_.getByteString(index);
     }
-
     /**
      *
      *
@@ -677,7 +664,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +686,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +705,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +723,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +748,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -789,7 +771,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -813,7 +794,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +834,6 @@ public final class ListComponentsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -263,7 +263,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -274,7 +273,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROVISIONING = 1;</code>
    */
   public static final int PROVISIONING_VALUE = 1;
-
   /**
    *
    *
@@ -285,7 +283,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AVAILABLE = 2;</code>
    */
   public static final int AVAILABLE_VALUE = 2;
-
   /**
    *
    *
@@ -296,7 +293,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STOPPING = 3;</code>
    */
   public static final int STOPPING_VALUE = 3;
-
   /**
    *
    *
@@ -307,7 +303,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STOPPED = 4;</code>
    */
   public static final int STOPPED_VALUE = 4;
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STARTING = 5;</code>
    */
   public static final int STARTING_VALUE = 5;
-
   /**
    *
    *
@@ -329,7 +323,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TERMINATING = 6;</code>
    */
   public static final int TERMINATING_VALUE = 6;
-
   /**
    *
    *
@@ -340,7 +333,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TERMINATED = 7;</code>
    */
   public static final int TERMINATED_VALUE = 7;
-
   /**
    *
    *
@@ -351,7 +343,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNAVAILABLE = 8;</code>
    */
   public static final int UNAVAILABLE_VALUE = 8;
-
   /**
    *
    *
@@ -362,7 +353,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESTORE_IN_PROGRESS = 9;</code>
    */
   public static final int RESTORE_IN_PROGRESS_VALUE = 9;
-
   /**
    *
    *
@@ -373,7 +363,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESTORE_FAILED = 10;</code>
    */
   public static final int RESTORE_FAILED_VALUE = 10;
-
   /**
    *
    *
@@ -384,7 +373,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BACKUP_IN_PROGRESS = 11;</code>
    */
   public static final int BACKUP_IN_PROGRESS_VALUE = 11;
-
   /**
    *
    *
@@ -395,7 +383,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SCALE_IN_PROGRESS = 12;</code>
    */
   public static final int SCALE_IN_PROGRESS_VALUE = 12;
-
   /**
    *
    *
@@ -407,7 +394,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AVAILABLE_NEEDS_ATTENTION = 13;</code>
    */
   public static final int AVAILABLE_NEEDS_ATTENTION_VALUE = 13;
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATING = 14;</code>
    */
   public static final int UPDATING_VALUE = 14;
-
   /**
    *
    *
@@ -429,7 +414,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MAINTENANCE_IN_PROGRESS = 15;</code>
    */
   public static final int MAINTENANCE_IN_PROGRESS_VALUE = 15;
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESTARTING = 16;</code>
    */
   public static final int RESTARTING_VALUE = 16;
-
   /**
    *
    *
@@ -451,7 +434,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RECREATING = 17;</code>
    */
   public static final int RECREATING_VALUE = 17;
-
   /**
    *
    *
@@ -462,7 +444,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROLE_CHANGE_IN_PROGRESS = 18;</code>
    */
   public static final int ROLE_CHANGE_IN_PROGRESS_VALUE = 18;
-
   /**
    *
    *
@@ -473,7 +454,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPGRADING = 19;</code>
    */
   public static final int UPGRADING_VALUE = 19;
-
   /**
    *
    *
@@ -484,7 +464,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INACCESSIBLE = 20;</code>
    */
   public static final int INACCESSIBLE_VALUE = 20;
-
   /**
    *
    *

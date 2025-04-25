@@ -40,7 +40,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The enum numeric value on the wire for plan.
    */
   int getPlanValue();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface CapacityCommitmentOrBuilder
    * @return Whether the commitmentStartTime field is set.
    */
   boolean hasCommitmentStartTime();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The commitmentStartTime.
    */
   com.google.protobuf.Timestamp getCommitmentStartTime();
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public interface CapacityCommitmentOrBuilder
    * @return Whether the commitmentEndTime field is set.
    */
   boolean hasCommitmentEndTime();
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The commitmentEndTime.
    */
   com.google.protobuf.Timestamp getCommitmentEndTime();
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public interface CapacityCommitmentOrBuilder
    * @return Whether the failureStatus field is set.
    */
   boolean hasFailureStatus();
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The failureStatus.
    */
   com.google.rpc.Status getFailureStatus();
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The enum numeric value on the wire for renewalPlan.
    */
   int getRenewalPlanValue();
-
   /**
    *
    *
@@ -339,7 +329,6 @@ public interface CapacityCommitmentOrBuilder
    * @return The enum numeric value on the wire for edition.
    */
   int getEditionValue();
-
   /**
    *
    *

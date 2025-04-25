@@ -38,7 +38,6 @@ public interface HostProjectRegistrationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface HostProjectRegistrationOrBuilder
    * @return The gcpProject.
    */
   java.lang.String getGcpProject();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface HostProjectRegistrationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface HostProjectRegistrationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

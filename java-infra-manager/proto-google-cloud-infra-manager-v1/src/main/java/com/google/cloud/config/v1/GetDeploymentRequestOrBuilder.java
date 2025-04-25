@@ -39,7 +39,6 @@ public interface GetDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

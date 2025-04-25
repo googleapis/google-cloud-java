@@ -35,7 +35,6 @@ public final class TabularClassificationPredictionResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.TabularClassificationPredictionResult)
     TabularClassificationPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TabularClassificationPredictionResult.newBuilder() to construct.
   private TabularClassificationPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -77,7 +76,6 @@ public final class TabularClassificationPredictionResult
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList classes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class TabularClassificationPredictionResult
   public com.google.protobuf.ProtocolStringList getClassesList() {
     return classes_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class TabularClassificationPredictionResult
   public int getClassesCount() {
     return classes_.size();
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class TabularClassificationPredictionResult
   public java.lang.String getClasses(int index) {
     return classes_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class TabularClassificationPredictionResult
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList scores_ = emptyFloatList();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class TabularClassificationPredictionResult
   public java.util.List<java.lang.Float> getScoresList() {
     return scores_;
   }
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class TabularClassificationPredictionResult
   public int getScoresCount() {
     return scores_.size();
   }
-
   /**
    *
    *
@@ -421,7 +413,6 @@ public final class TabularClassificationPredictionResult
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -689,7 +680,6 @@ public final class TabularClassificationPredictionResult
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -706,7 +696,6 @@ public final class TabularClassificationPredictionResult
       classes_.makeImmutable();
       return classes_;
     }
-
     /**
      *
      *
@@ -722,7 +711,6 @@ public final class TabularClassificationPredictionResult
     public int getClassesCount() {
       return classes_.size();
     }
-
     /**
      *
      *
@@ -739,7 +727,6 @@ public final class TabularClassificationPredictionResult
     public java.lang.String getClasses(int index) {
       return classes_.get(index);
     }
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class TabularClassificationPredictionResult
     public com.google.protobuf.ByteString getClassesBytes(int index) {
       return classes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +869,6 @@ public final class TabularClassificationPredictionResult
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class TabularClassificationPredictionResult
       scores_.makeImmutable();
       return scores_;
     }
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class TabularClassificationPredictionResult
     public int getScoresCount() {
       return scores_.size();
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class TabularClassificationPredictionResult
     public float getScores(int index) {
       return scores_.getFloat(index);
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +964,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class TabularClassificationPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface AuditConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AuditLogConfig> getAuditLogConfigsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface AuditConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   com.google.cloud.compute.v1.AuditLogConfig getAuditLogConfigs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface AuditConfigOrBuilder
    * <code>repeated .google.cloud.compute.v1.AuditLogConfig audit_log_configs = 488420626;</code>
    */
   int getAuditLogConfigsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface AuditConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AuditLogConfigOrBuilder>
       getAuditLogConfigsOrBuilderList();
-
   /**
    *
    *
@@ -86,14 +82,12 @@ public interface AuditConfigOrBuilder
    * @return A list containing the exemptedMembers.
    */
   java.util.List<java.lang.String> getExemptedMembersList();
-
   /**
    * <code>repeated string exempted_members = 232615576;</code>
    *
    * @return The count of exemptedMembers.
    */
   int getExemptedMembersCount();
-
   /**
    * <code>repeated string exempted_members = 232615576;</code>
    *
@@ -101,7 +95,6 @@ public interface AuditConfigOrBuilder
    * @return The exemptedMembers at the given index.
    */
   java.lang.String getExemptedMembers(int index);
-
   /**
    * <code>repeated string exempted_members = 232615576;</code>
    *
@@ -122,7 +115,6 @@ public interface AuditConfigOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -135,7 +127,6 @@ public interface AuditConfigOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *

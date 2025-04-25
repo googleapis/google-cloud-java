@@ -36,7 +36,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ResponseMessageOrBuilder
    * @return The text.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text getText();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ResponseMessageOrBuilder
    * @return The payload.
    */
   com.google.protobuf.Struct getPayload();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the conversationSuccess field is set.
    */
   boolean hasConversationSuccess();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface ResponseMessageOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.ConversationSuccess
       getConversationSuccess();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the outputAudioText field is set.
    */
   boolean hasOutputAudioText();
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public interface ResponseMessageOrBuilder
    * @return The outputAudioText.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.OutputAudioText getOutputAudioText();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the liveAgentHandoff field is set.
    */
   boolean hasLiveAgentHandoff();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface ResponseMessageOrBuilder
    * @return The liveAgentHandoff.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.LiveAgentHandoff getLiveAgentHandoff();
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the endInteraction field is set.
    */
   boolean hasEndInteraction();
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public interface ResponseMessageOrBuilder
    * @return The endInteraction.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.EndInteraction getEndInteraction();
-
   /**
    *
    *
@@ -309,7 +297,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the playAudio field is set.
    */
   boolean hasPlayAudio();
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public interface ResponseMessageOrBuilder
    * @return The playAudio.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.PlayAudio getPlayAudio();
-
   /**
    *
    *
@@ -360,7 +346,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the mixedAudio field is set.
    */
   boolean hasMixedAudio();
-
   /**
    *
    *
@@ -379,7 +364,6 @@ public interface ResponseMessageOrBuilder
    * @return The mixedAudio.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.MixedAudio getMixedAudio();
-
   /**
    *
    *
@@ -413,7 +397,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the telephonyTransferCall field is set.
    */
   boolean hasTelephonyTransferCall();
-
   /**
    *
    *
@@ -430,7 +413,6 @@ public interface ResponseMessageOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.TelephonyTransferCall
       getTelephonyTransferCall();
-
   /**
    *
    *
@@ -461,7 +443,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the knowledgeInfoCard field is set.
    */
   boolean hasKnowledgeInfoCard();
-
   /**
    *
    *
@@ -477,7 +458,6 @@ public interface ResponseMessageOrBuilder
    * @return The knowledgeInfoCard.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard getKnowledgeInfoCard();
-
   /**
    *
    *
@@ -506,7 +486,6 @@ public interface ResponseMessageOrBuilder
    * @return Whether the toolCall field is set.
    */
   boolean hasToolCall();
-
   /**
    *
    *
@@ -520,7 +499,6 @@ public interface ResponseMessageOrBuilder
    * @return The toolCall.
    */
   com.google.cloud.dialogflow.cx.v3beta1.ToolCall getToolCall();
-
   /**
    *
    *
@@ -548,7 +526,6 @@ public interface ResponseMessageOrBuilder
    * @return The channel.
    */
   java.lang.String getChannel();
-
   /**
    *
    *

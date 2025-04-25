@@ -36,7 +36,6 @@ public interface UnassignRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UnassignRequestOrBuilder
    * @return A list containing the usernames.
    */
   java.util.List<java.lang.String> getUsernamesList();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UnassignRequestOrBuilder
    * @return The count of usernames.
    */
   int getUsernamesCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UnassignRequestOrBuilder
    * @return The usernames at the given index.
    */
   java.lang.String getUsernames(int index);
-
   /**
    *
    *

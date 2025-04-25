@@ -41,7 +41,6 @@ public interface UpdateAnalysisRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateAnalysisRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateAnalysisRequestOrBuilder
    * @return Whether the analysis field is set.
    */
   boolean hasAnalysis();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateAnalysisRequestOrBuilder
    * @return The analysis.
    */
   com.google.cloud.visionai.v1.Analysis getAnalysis();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateAnalysisRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

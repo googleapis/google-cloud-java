@@ -34,7 +34,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.FunnelResponseMetadata)
     FunnelResponseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FunnelResponseMetadata.newBuilder() to construct.
   private FunnelResponseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> samplingMetadatas_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       getSamplingMetadatasList() {
     return samplingMetadatas_;
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       getSamplingMetadatasOrBuilderList() {
     return samplingMetadatas_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
   public int getSamplingMetadatasCount() {
     return samplingMetadatas_.size();
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
   public com.google.analytics.data.v1alpha.SamplingMetadata getSamplingMetadatas(int index) {
     return samplingMetadatas_.get(index);
   }
-
   /**
    *
    *
@@ -341,7 +335,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -615,7 +608,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
         return samplingMetadatasBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -639,7 +631,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
         return samplingMetadatasBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -663,7 +654,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
         return samplingMetadatasBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -694,7 +684,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +711,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +824,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +851,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +877,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +903,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
         int index) {
       return getSamplingMetadatasFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -967,7 +947,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
         return samplingMetadatasBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -992,7 +971,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(samplingMetadatas_);
       }
     }
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       return getSamplingMetadatasFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.SamplingMetadata.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1037,7 +1014,6 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.analytics.data.v1alpha.SamplingMetadata.getDefaultInstance());
     }
-
     /**
      *
      *

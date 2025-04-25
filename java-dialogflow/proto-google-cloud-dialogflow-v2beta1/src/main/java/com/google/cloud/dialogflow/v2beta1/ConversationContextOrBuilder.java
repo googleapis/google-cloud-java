@@ -36,7 +36,6 @@ public interface ConversationContextOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.MessageEntry> getMessageEntriesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ConversationContextOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.MessageEntry getMessageEntries(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ConversationContextOrBuilder
    * </code>
    */
   int getMessageEntriesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ConversationContextOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.MessageEntryOrBuilder>
       getMessageEntriesOrBuilderList();
-
   /**
    *
    *

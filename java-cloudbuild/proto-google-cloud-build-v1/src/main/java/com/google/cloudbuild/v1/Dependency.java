@@ -34,7 +34,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Dependency)
     DependencyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Dependency.newBuilder() to construct.
   private Dependency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the repository field is set.
      */
     boolean hasRepository();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return The repository.
      */
     com.google.cloudbuild.v1.Dependency.GitSourceRepository getRepository();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return The revision.
      */
     java.lang.String getRevision();
-
     /**
      *
      *
@@ -176,7 +172,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return The destPath.
      */
     java.lang.String getDestPath();
-
     /**
      *
      *
@@ -190,7 +185,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDestPathBytes();
   }
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Dependency.GitSourceDependency)
       GitSourceDependencyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GitSourceDependency.newBuilder() to construct.
     private GitSourceDependency(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -240,7 +233,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int REPOSITORY_FIELD_NUMBER = 1;
     private com.google.cloudbuild.v1.Dependency.GitSourceRepository repository_;
-
     /**
      *
      *
@@ -258,7 +250,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRepository() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -278,7 +269,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloudbuild.v1.Dependency.GitSourceRepository.getDefaultInstance()
           : repository_;
     }
-
     /**
      *
      *
@@ -302,7 +292,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object revision_ = "";
-
     /**
      *
      *
@@ -326,7 +315,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -353,7 +341,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
     public static final int RECURSE_SUBMODULES_FIELD_NUMBER = 3;
     private boolean recurseSubmodules_ = false;
-
     /**
      *
      *
@@ -372,7 +359,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DEPTH_FIELD_NUMBER = 4;
     private long depth_ = 0L;
-
     /**
      *
      *
@@ -394,7 +380,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object destPath_ = "";
-
     /**
      *
      *
@@ -418,7 +403,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -645,7 +629,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
               com.google.cloudbuild.v1.Dependency.GitSourceRepository.Builder,
               com.google.cloudbuild.v1.Dependency.GitSourceRepositoryOrBuilder>
           repositoryBuilder_;
-
       /**
        *
        *
@@ -926,7 +908,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRepository() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -949,7 +930,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return repositoryBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -974,7 +954,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -997,7 +976,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1029,7 +1007,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1051,7 +1028,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1069,7 +1045,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRepositoryFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1091,7 +1066,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
               : repository_;
         }
       }
-
       /**
        *
        *
@@ -1121,7 +1095,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object revision_ = "";
-
       /**
        *
        *
@@ -1144,7 +1117,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1167,7 +1139,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1189,7 +1160,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1207,7 +1177,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1232,7 +1201,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean recurseSubmodules_;
-
       /**
        *
        *
@@ -1248,7 +1216,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       public boolean getRecurseSubmodules() {
         return recurseSubmodules_;
       }
-
       /**
        *
        *
@@ -1268,7 +1235,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1288,7 +1254,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long depth_;
-
       /**
        *
        *
@@ -1305,7 +1270,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       public long getDepth() {
         return depth_;
       }
-
       /**
        *
        *
@@ -1326,7 +1290,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1347,7 +1310,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object destPath_ = "";
-
       /**
        *
        *
@@ -1370,7 +1332,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1393,7 +1354,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1415,7 +1375,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1433,7 +1392,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1538,7 +1496,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the url field is set.
      */
     boolean hasUrl();
-
     /**
      *
      *
@@ -1551,7 +1508,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return The url.
      */
     java.lang.String getUrl();
-
     /**
      *
      *
@@ -1579,7 +1535,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the developerConnect field is set.
      */
     boolean hasDeveloperConnect();
-
     /**
      *
      *
@@ -1594,7 +1549,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
      * @return The developerConnect.
      */
     java.lang.String getDeveloperConnect();
-
     /**
      *
      *
@@ -1612,7 +1566,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloudbuild.v1.Dependency.GitSourceRepository.RepotypeCase getRepotypeCase();
   }
-
   /**
    *
    *
@@ -1627,7 +1580,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.Dependency.GitSourceRepository)
       GitSourceRepositoryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GitSourceRepository.newBuilder() to construct.
     private GitSourceRepository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1673,7 +1625,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       private RepotypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1707,7 +1658,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URL_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1722,7 +1672,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUrl() {
       return repotypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -1750,7 +1699,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1780,7 +1728,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DEVELOPER_CONNECT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -1797,7 +1744,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeveloperConnect() {
       return repotypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -1827,7 +1773,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2045,7 +1990,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2289,7 +2233,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUrl() {
         return repotypeCase_ == 1;
       }
-
       /**
        *
        *
@@ -2318,7 +2261,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2347,7 +2289,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2369,7 +2310,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2389,7 +2329,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2430,7 +2369,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDeveloperConnect() {
         return repotypeCase_ == 2;
       }
-
       /**
        *
        *
@@ -2461,7 +2399,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2492,7 +2429,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2516,7 +2452,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2538,7 +2473,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2645,7 +2579,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     private DepCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2679,7 +2612,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMPTY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -2696,7 +2628,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEmpty() {
     return depCase_ == 1;
   }
-
   /**
    *
    *
@@ -2718,7 +2649,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GIT_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2734,7 +2664,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGitSource() {
     return depCase_ == 2;
   }
-
   /**
    *
    *
@@ -2753,7 +2682,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloudbuild.v1.Dependency.GitSourceDependency.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2958,7 +2886,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3197,7 +3124,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEmpty() {
       return depCase_ == 1;
     }
-
     /**
      *
      *
@@ -3216,7 +3142,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -3237,7 +3162,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3264,7 +3188,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.Dependency.GitSourceDependency.Builder,
             com.google.cloudbuild.v1.Dependency.GitSourceDependencyOrBuilder>
         gitSourceBuilder_;
-
     /**
      *
      *
@@ -3280,7 +3203,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGitSource() {
       return depCase_ == 2;
     }
-
     /**
      *
      *
@@ -3306,7 +3228,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v1.Dependency.GitSourceDependency.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3329,7 +3250,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       depCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3350,7 +3270,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       depCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3384,7 +3303,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       depCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3410,7 +3328,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3423,7 +3340,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.Dependency.GitSourceDependency.Builder getGitSourceBuilder() {
       return getGitSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3445,7 +3361,6 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloudbuild.v1.Dependency.GitSourceDependency.getDefaultInstance();
       }
     }
-
     /**
      *
      *

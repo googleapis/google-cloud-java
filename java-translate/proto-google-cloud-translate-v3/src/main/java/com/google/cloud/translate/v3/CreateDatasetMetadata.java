@@ -33,7 +33,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.CreateDatasetMetadata)
     CreateDatasetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDatasetMetadata.newBuilder() to construct.
   private CreateDatasetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -218,7 +208,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasError() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -452,7 +440,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -702,7 +689,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -737,7 +722,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
           com.google.cloud.translate.v3.OperationState.forNumber(state_);
       return result == null ? com.google.cloud.translate.v3.OperationState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +784,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -817,7 +798,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -838,7 +818,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -861,7 +840,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +859,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +905,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +919,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -963,7 +937,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -996,7 +969,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1011,7 +983,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1032,7 +1003,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1025,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1044,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1071,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1090,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1104,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1157,7 +1122,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1152,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -1203,7 +1166,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasError() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1222,7 +1184,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1206,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1225,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1252,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1271,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1285,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1345,7 +1301,6 @@ public final class CreateDatasetMetadata extends com.google.protobuf.GeneratedMe
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *

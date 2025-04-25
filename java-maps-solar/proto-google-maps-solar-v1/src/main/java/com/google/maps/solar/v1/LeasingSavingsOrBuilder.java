@@ -68,7 +68,6 @@ public interface LeasingSavingsOrBuilder
    * @return Whether the annualLeasingCost field is set.
    */
   boolean hasAnnualLeasingCost();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface LeasingSavingsOrBuilder
    * @return The annualLeasingCost.
    */
   com.google.type.Money getAnnualLeasingCost();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface LeasingSavingsOrBuilder
    * @return Whether the savings field is set.
    */
   boolean hasSavings();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface LeasingSavingsOrBuilder
    * @return The savings.
    */
   com.google.maps.solar.v1.SavingsOverTime getSavings();
-
   /**
    *
    *

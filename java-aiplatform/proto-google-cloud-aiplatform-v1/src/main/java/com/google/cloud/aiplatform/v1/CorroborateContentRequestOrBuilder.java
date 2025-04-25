@@ -41,7 +41,6 @@ public interface CorroborateContentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CorroborateContentRequestOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CorroborateContentRequestOrBuilder
    * @return The content.
    */
   com.google.cloud.aiplatform.v1.Content getContent();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CorroborateContentRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Fact> getFactsList();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface CorroborateContentRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Fact getFacts(int index);
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface CorroborateContentRequestOrBuilder
    * </code>
    */
   int getFactsCount();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface CorroborateContentRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.FactOrBuilder> getFactsOrBuilderList();
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public interface CorroborateContentRequestOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface CorroborateContentRequestOrBuilder
    * @return The parameters.
    */
   com.google.cloud.aiplatform.v1.CorroborateContentRequest.Parameters getParameters();
-
   /**
    *
    *

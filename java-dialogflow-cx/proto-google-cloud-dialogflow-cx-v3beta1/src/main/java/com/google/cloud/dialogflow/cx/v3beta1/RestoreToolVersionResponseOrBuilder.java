@@ -36,7 +36,6 @@ public interface RestoreToolVersionResponseOrBuilder
    * @return Whether the tool field is set.
    */
   boolean hasTool();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RestoreToolVersionResponseOrBuilder
    * @return The tool.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Tool getTool();
-
   /**
    *
    *

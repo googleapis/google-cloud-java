@@ -52,7 +52,6 @@ public interface PipelineReadyConditionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface PipelineReadyConditionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

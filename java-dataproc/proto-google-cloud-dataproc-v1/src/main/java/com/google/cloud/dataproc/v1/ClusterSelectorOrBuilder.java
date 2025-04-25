@@ -40,7 +40,6 @@ public interface ClusterSelectorOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ClusterSelectorOrBuilder
    * </code>
    */
   int getClusterLabelsCount();
-
   /**
    *
    *
@@ -83,11 +81,9 @@ public interface ClusterSelectorOrBuilder
    * </code>
    */
   boolean containsClusterLabels(java.lang.String key);
-
   /** Use {@link #getClusterLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getClusterLabels();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ClusterSelectorOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface ClusterSelectorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

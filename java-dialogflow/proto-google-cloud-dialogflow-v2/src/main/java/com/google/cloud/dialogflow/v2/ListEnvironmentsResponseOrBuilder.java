@@ -35,7 +35,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.Environment> getEnvironmentsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
   com.google.cloud.dialogflow.v2.Environment getEnvironments(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.Environment environments = 1;</code>
    */
   int getEnvironmentsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListEnvironmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.EnvironmentOrBuilder>
       getEnvironmentsOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

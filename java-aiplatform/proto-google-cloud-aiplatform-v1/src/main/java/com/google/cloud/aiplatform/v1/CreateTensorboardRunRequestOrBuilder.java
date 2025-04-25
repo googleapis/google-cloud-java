@@ -40,7 +40,6 @@ public interface CreateTensorboardRunRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateTensorboardRunRequestOrBuilder
    * @return Whether the tensorboardRun field is set.
    */
   boolean hasTensorboardRun();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateTensorboardRunRequestOrBuilder
    * @return The tensorboardRun.
    */
   com.google.cloud.aiplatform.v1.TensorboardRun getTensorboardRun();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateTensorboardRunRequestOrBuilder
    * @return The tensorboardRunId.
    */
   java.lang.String getTensorboardRunId();
-
   /**
    *
    *

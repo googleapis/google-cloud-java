@@ -77,7 +77,6 @@ public interface OperatorMetadataOrBuilder
    * @return A list containing the comments.
    */
   java.util.List<java.lang.String> getCommentsList();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface OperatorMetadataOrBuilder
    * @return The count of comments.
    */
   int getCommentsCount();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface OperatorMetadataOrBuilder
    * @return The comments at the given index.
    */
   java.lang.String getComments(int index);
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface DeleteRagFileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

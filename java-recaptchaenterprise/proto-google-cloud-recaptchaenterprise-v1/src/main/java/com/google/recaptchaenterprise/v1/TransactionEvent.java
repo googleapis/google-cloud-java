@@ -33,7 +33,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TransactionEvent)
     TransactionEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransactionEvent.newBuilder() to construct.
   private TransactionEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -316,7 +315,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>TRANSACTION_EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TRANSACTION_EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -329,7 +327,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>MERCHANT_APPROVE = 1;</code>
      */
     public static final int MERCHANT_APPROVE_VALUE = 1;
-
     /**
      *
      *
@@ -342,7 +339,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>MERCHANT_DENY = 2;</code>
      */
     public static final int MERCHANT_DENY_VALUE = 2;
-
     /**
      *
      *
@@ -354,7 +350,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>MANUAL_REVIEW = 3;</code>
      */
     public static final int MANUAL_REVIEW_VALUE = 3;
-
     /**
      *
      *
@@ -365,7 +360,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>AUTHORIZATION = 4;</code>
      */
     public static final int AUTHORIZATION_VALUE = 4;
-
     /**
      *
      *
@@ -378,7 +372,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>AUTHORIZATION_DECLINE = 5;</code>
      */
     public static final int AUTHORIZATION_DECLINE_VALUE = 5;
-
     /**
      *
      *
@@ -390,7 +383,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>PAYMENT_CAPTURE = 6;</code>
      */
     public static final int PAYMENT_CAPTURE_VALUE = 6;
-
     /**
      *
      *
@@ -402,7 +394,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>PAYMENT_CAPTURE_DECLINE = 7;</code>
      */
     public static final int PAYMENT_CAPTURE_DECLINE_VALUE = 7;
-
     /**
      *
      *
@@ -414,7 +405,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>CANCEL = 8;</code>
      */
     public static final int CANCEL_VALUE = 8;
-
     /**
      *
      *
@@ -428,7 +418,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>CHARGEBACK_INQUIRY = 9;</code>
      */
     public static final int CHARGEBACK_INQUIRY_VALUE = 9;
-
     /**
      *
      *
@@ -441,7 +430,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>CHARGEBACK_ALERT = 10;</code>
      */
     public static final int CHARGEBACK_ALERT_VALUE = 10;
-
     /**
      *
      *
@@ -456,7 +444,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>FRAUD_NOTIFICATION = 11;</code>
      */
     public static final int FRAUD_NOTIFICATION_VALUE = 11;
-
     /**
      *
      *
@@ -470,7 +457,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>CHARGEBACK = 12;</code>
      */
     public static final int CHARGEBACK_VALUE = 12;
-
     /**
      *
      *
@@ -484,7 +470,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>CHARGEBACK_REPRESENTMENT = 13;</code>
      */
     public static final int CHARGEBACK_REPRESENTMENT_VALUE = 13;
-
     /**
      *
      *
@@ -497,7 +482,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>CHARGEBACK_REVERSE = 14;</code>
      */
     public static final int CHARGEBACK_REVERSE_VALUE = 14;
-
     /**
      *
      *
@@ -511,7 +495,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>REFUND_REQUEST = 15;</code>
      */
     public static final int REFUND_REQUEST_VALUE = 15;
-
     /**
      *
      *
@@ -525,7 +508,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>REFUND_DECLINE = 16;</code>
      */
     public static final int REFUND_DECLINE_VALUE = 16;
-
     /**
      *
      *
@@ -539,7 +521,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
      * <code>REFUND = 17;</code>
      */
     public static final int REFUND_VALUE = 17;
-
     /**
      *
      *
@@ -676,7 +657,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int EVENT_TYPE_FIELD_NUMBER = 1;
   private int eventType_ = 0;
-
   /**
    *
    *
@@ -694,7 +674,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
   public int getEventTypeValue() {
     return eventType_;
   }
-
   /**
    *
    *
@@ -722,7 +701,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
-
   /**
    *
    *
@@ -748,7 +726,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -777,7 +754,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
 
   public static final int VALUE_FIELD_NUMBER = 3;
   private double value_ = 0D;
-
   /**
    *
    *
@@ -798,7 +774,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
 
   public static final int EVENT_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp eventTime_;
-
   /**
    *
    *
@@ -816,7 +791,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -834,7 +808,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
-
   /**
    *
    *
@@ -1051,7 +1024,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1291,7 +1263,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int eventType_ = 0;
-
     /**
      *
      *
@@ -1309,7 +1280,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     public int getEventTypeValue() {
       return eventType_;
     }
-
     /**
      *
      *
@@ -1330,7 +1300,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1322,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
           ? com.google.recaptchaenterprise.v1.TransactionEvent.TransactionEventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1378,7 +1346,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1367,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object reason_ = "";
-
     /**
      *
      *
@@ -1425,7 +1391,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1450,7 +1415,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1474,7 +1438,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1494,7 +1457,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1483,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     }
 
     private double value_;
-
     /**
      *
      *
@@ -1539,7 +1500,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     public double getValue() {
       return value_;
     }
-
     /**
      *
      *
@@ -1561,7 +1521,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1588,7 +1547,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
-
     /**
      *
      *
@@ -1605,7 +1563,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1626,7 +1583,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
         return eventTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1607,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1628,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1703,7 +1657,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1678,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1694,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1761,7 +1712,6 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
-
     /**
      *
      *

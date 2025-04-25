@@ -33,7 +33,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.UpdateServiceLevelObjectiveRequest)
     UpdateServiceLevelObjectiveRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateServiceLevelObjectiveRequest.newBuilder() to construct.
   private UpdateServiceLevelObjectiveRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
   private int bitField0_;
   public static final int SERVICE_LEVEL_OBJECTIVE_FIELD_NUMBER = 1;
   private com.google.monitoring.v3.ServiceLevelObjective serviceLevelObjective_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
   public boolean hasServiceLevelObjective() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
         ? com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()
         : serviceLevelObjective_;
   }
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -356,7 +349,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +575,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
             com.google.monitoring.v3.ServiceLevelObjective.Builder,
             com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder>
         serviceLevelObjectiveBuilder_;
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
     public boolean hasServiceLevelObjective() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
         return serviceLevelObjectiveBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return getServiceLevelObjectiveFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
             : serviceLevelObjective_;
       }
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -868,7 +848,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +913,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -970,7 +945,6 @@ public final class UpdateServiceLevelObjectiveRequest extends com.google.protobu
             : updateMask_;
       }
     }
-
     /**
      *
      *

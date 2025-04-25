@@ -38,7 +38,6 @@ public interface DeleteEndpointRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

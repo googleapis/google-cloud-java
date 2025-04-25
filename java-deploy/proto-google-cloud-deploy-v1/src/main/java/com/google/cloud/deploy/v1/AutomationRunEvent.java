@@ -34,7 +34,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AutomationRunEvent)
     AutomationRunEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomationRunEvent.newBuilder() to construct.
   private AutomationRunEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object message_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object automationRun_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pipelineUid_ = "";
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object automationId_ = "";
-
   /**
    *
    *
@@ -260,7 +252,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ruleId_ = "";
-
   /**
    *
    *
@@ -313,7 +303,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -342,7 +331,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destinationTargetId_ = "";
-
   /**
    *
    *
@@ -366,7 +354,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -393,7 +380,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
 
   public static final int TYPE_FIELD_NUMBER = 7;
   private int type_ = 0;
-
   /**
    *
    *
@@ -409,7 +395,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -640,7 +625,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -913,7 +897,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -937,7 +920,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -961,7 +943,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +965,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +983,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object automationRun_ = "";
-
     /**
      *
      *
@@ -1052,7 +1030,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1052,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1073,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object pipelineUid_ = "";
-
     /**
      *
      *
@@ -1163,7 +1136,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1158,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1208,7 +1179,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1196,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1220,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object automationId_ = "";
-
     /**
      *
      *
@@ -1274,7 +1242,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1264,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1319,7 +1285,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1326,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object ruleId_ = "";
-
     /**
      *
      *
@@ -1385,7 +1348,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1370,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1430,7 +1391,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1408,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1473,7 +1432,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object destinationTargetId_ = "";
-
     /**
      *
      *
@@ -1496,7 +1454,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1519,7 +1476,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1541,7 +1497,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1514,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1538,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1600,7 +1553,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1619,7 +1571,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1636,7 +1587,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       com.google.cloud.deploy.v1.Type result = com.google.cloud.deploy.v1.Type.forNumber(type_);
       return result == null ? com.google.cloud.deploy.v1.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1658,7 +1608,6 @@ public final class AutomationRunEvent extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

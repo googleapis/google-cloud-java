@@ -36,7 +36,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.JobTrigger)
     JobTriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobTrigger.newBuilder() to construct.
   private JobTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>STATUS_UNSPECIFIED = 0;</code>
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTHY = 1;</code>
      */
     public static final int HEALTHY_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * <code>PAUSED = 2;</code>
      */
     public static final int PAUSED_VALUE = 2;
-
     /**
      *
      *
@@ -274,7 +270,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schedule field is set.
      */
     boolean hasSchedule();
-
     /**
      *
      *
@@ -287,7 +282,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return The schedule.
      */
     com.google.privacy.dlp.v2.Schedule getSchedule();
-
     /**
      *
      *
@@ -311,7 +305,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the manual field is set.
      */
     boolean hasManual();
-
     /**
      *
      *
@@ -324,7 +317,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return The manual.
      */
     com.google.privacy.dlp.v2.Manual getManual();
-
     /**
      *
      *
@@ -338,7 +330,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
     com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
   }
-
   /**
    *
    *
@@ -353,7 +344,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.JobTrigger.Trigger)
       TriggerOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Trigger.newBuilder() to construct.
     private Trigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -399,7 +389,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       private TriggerCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -433,7 +422,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SCHEDULE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -449,7 +437,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchedule() {
       return triggerCase_ == 1;
     }
-
     /**
      *
      *
@@ -468,7 +455,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -487,7 +473,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MANUAL_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -503,7 +488,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasManual() {
       return triggerCase_ == 2;
     }
-
     /**
      *
      *
@@ -522,7 +506,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -730,7 +713,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -968,7 +950,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.Schedule.Builder,
               com.google.privacy.dlp.v2.ScheduleOrBuilder>
           scheduleBuilder_;
-
       /**
        *
        *
@@ -984,7 +965,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSchedule() {
         return triggerCase_ == 1;
       }
-
       /**
        *
        *
@@ -1010,7 +990,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           return com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1033,7 +1012,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1053,7 +1031,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1086,7 +1063,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -1112,7 +1088,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1125,7 +1100,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.Schedule.Builder getScheduleBuilder() {
         return getScheduleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1146,7 +1120,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           return com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1183,7 +1156,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.Manual.Builder,
               com.google.privacy.dlp.v2.ManualOrBuilder>
           manualBuilder_;
-
       /**
        *
        *
@@ -1199,7 +1171,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       public boolean hasManual() {
         return triggerCase_ == 2;
       }
-
       /**
        *
        *
@@ -1225,7 +1196,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1248,7 +1218,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1268,7 +1237,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1301,7 +1269,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         triggerCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1327,7 +1294,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1340,7 +1306,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.Manual.Builder getManualBuilder() {
         return getManualFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1361,7 +1326,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           return com.google.privacy.dlp.v2.Manual.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1474,7 +1438,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     private JobCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1509,7 +1472,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1535,7 +1497,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1566,7 +1527,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -1590,7 +1550,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1619,7 +1578,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1643,7 +1601,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1669,7 +1626,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1685,7 +1641,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInspectJob() {
     return jobCase_ == 4;
   }
-
   /**
    *
    *
@@ -1704,7 +1659,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1726,7 +1680,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> triggers_;
-
   /**
    *
    *
@@ -1742,7 +1695,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> getTriggersList() {
     return triggers_;
   }
-
   /**
    *
    *
@@ -1759,7 +1711,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       getTriggersOrBuilderList() {
     return triggers_;
   }
-
   /**
    *
    *
@@ -1775,7 +1726,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public int getTriggersCount() {
     return triggers_.size();
   }
-
   /**
    *
    *
@@ -1791,7 +1741,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.JobTrigger.Trigger getTriggers(int index) {
     return triggers_.get(index);
   }
-
   /**
    *
    *
@@ -1812,7 +1761,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
-
   /**
    *
    *
@@ -1831,7 +1779,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -1851,7 +1798,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -1870,7 +1816,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -1889,7 +1834,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -1911,7 +1855,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1928,7 +1871,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1945,7 +1887,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1963,7 +1904,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1980,7 +1920,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1997,7 +1936,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -2015,7 +1953,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_RUN_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp lastRunTime_;
-
   /**
    *
    *
@@ -2033,7 +1970,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastRunTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2051,7 +1987,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getLastRunTime() {
     return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
   }
-
   /**
    *
    *
@@ -2070,7 +2005,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 10;
   private int status_ = 0;
-
   /**
    *
    *
@@ -2088,7 +2022,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -2381,7 +2314,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2840,7 +2772,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2865,7 +2796,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2890,7 +2820,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2914,7 +2843,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2934,7 +2862,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2961,7 +2888,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2984,7 +2910,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3007,7 +2932,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3029,7 +2953,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3047,7 +2970,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3072,7 +2994,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3095,7 +3016,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3118,7 +3038,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3140,7 +3059,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3158,7 +3076,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3187,7 +3104,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.InspectJobConfig.Builder,
             com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
         inspectJobBuilder_;
-
     /**
      *
      *
@@ -3203,7 +3119,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInspectJob() {
       return jobCase_ == 4;
     }
-
     /**
      *
      *
@@ -3229,7 +3144,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3252,7 +3166,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       jobCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3273,7 +3186,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       jobCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3306,7 +3218,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       jobCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3332,7 +3243,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3345,7 +3255,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.InspectJobConfig.Builder getInspectJobBuilder() {
       return getInspectJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3366,7 +3275,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3435,7 +3343,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3454,7 +3361,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3473,7 +3379,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3498,7 +3403,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3521,7 +3425,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3546,7 +3449,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3571,7 +3473,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3594,7 +3495,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3617,7 +3517,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3640,7 +3539,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3662,7 +3560,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3684,7 +3581,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3699,7 +3595,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder getTriggersBuilder(int index) {
       return getTriggersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3718,7 +3613,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return triggersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3738,7 +3632,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(triggers_);
       }
     }
-
     /**
      *
      *
@@ -3754,7 +3647,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return getTriggersFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3770,7 +3662,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return getTriggersFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3841,7 +3732,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3863,7 +3753,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3885,7 +3774,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3913,7 +3801,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3938,7 +3825,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3966,7 +3852,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3994,7 +3879,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4019,7 +3903,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4044,7 +3927,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4070,7 +3952,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4095,7 +3976,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4120,7 +4000,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4138,7 +4017,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4160,7 +4038,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4183,7 +4060,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -4202,7 +4078,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4221,7 +4096,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4263,7 +4137,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4280,7 +4153,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -4303,7 +4175,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4328,7 +4199,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4350,7 +4220,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4380,7 +4249,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4402,7 +4270,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4419,7 +4286,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4440,7 +4306,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4475,7 +4340,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4492,7 +4356,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -4515,7 +4378,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4540,7 +4402,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4562,7 +4423,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4592,7 +4452,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4614,7 +4473,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4631,7 +4489,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4652,7 +4509,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4687,7 +4543,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastRunTimeBuilder_;
-
     /**
      *
      *
@@ -4704,7 +4559,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastRunTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4727,7 +4581,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
         return lastRunTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4752,7 +4605,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4774,7 +4626,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4804,7 +4655,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4826,7 +4676,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4843,7 +4692,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLastRunTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4864,7 +4712,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
             : lastRunTime_;
       }
     }
-
     /**
      *
      *
@@ -4894,7 +4741,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -4912,7 +4758,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -4933,7 +4778,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4953,7 +4797,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
           com.google.privacy.dlp.v2.JobTrigger.Status.forNumber(status_);
       return result == null ? com.google.privacy.dlp.v2.JobTrigger.Status.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4977,7 +4820,6 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

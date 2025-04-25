@@ -34,7 +34,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AuditConfig> getAuditConfigsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   com.google.cloud.compute.v1.AuditConfig getAuditConfigs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
    */
   int getAuditConfigsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface PolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AuditConfigOrBuilder>
       getAuditConfigsOrBuilderList();
-
   /**
    *
    *
@@ -90,7 +86,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   com.google.cloud.compute.v1.Binding getBindings(int index);
-
   /**
    *
    *
@@ -112,7 +106,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   int getBindingsCount();
-
   /**
    *
    *
@@ -123,7 +116,6 @@ public interface PolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder> getBindingsOrBuilderList();
-
   /**
    *
    *
@@ -147,7 +139,6 @@ public interface PolicyOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    *
    *
@@ -160,7 +151,6 @@ public interface PolicyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -180,7 +170,6 @@ public interface PolicyOrBuilder
    * @return Whether the iamOwned field is set.
    */
   boolean hasIamOwned();
-
   /**
    * <code>optional bool iam_owned = 450566203;</code>
    *
@@ -200,7 +189,6 @@ public interface PolicyOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *

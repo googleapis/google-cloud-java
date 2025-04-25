@@ -34,7 +34,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata)
     ImportDataOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDataOperationMetadata.newBuilder() to construct.
   private ImportDataOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -493,7 +488,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -508,7 +502,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -553,7 +545,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -605,7 +595,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -625,7 +614,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +629,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -661,7 +648,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface StopConnectorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

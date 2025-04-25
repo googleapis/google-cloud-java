@@ -34,7 +34,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2.StackdriverLoggingConfig)
     StackdriverLoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StackdriverLoggingConfig.newBuilder() to construct.
   private StackdriverLoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
 
   public static final int SAMPLING_RATIO_FIELD_NUMBER = 1;
   private double samplingRatio_ = 0D;
-
   /**
    *
    *
@@ -248,7 +246,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -432,7 +429,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private double samplingRatio_;
-
     /**
      *
      *
@@ -451,7 +447,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
     public double getSamplingRatio() {
       return samplingRatio_;
     }
-
     /**
      *
      *
@@ -474,7 +469,6 @@ public final class StackdriverLoggingConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

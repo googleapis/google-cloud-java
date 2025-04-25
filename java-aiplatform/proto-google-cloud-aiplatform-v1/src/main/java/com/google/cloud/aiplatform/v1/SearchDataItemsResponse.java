@@ -34,7 +34,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SearchDataItemsResponse)
     SearchDataItemsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchDataItemsResponse.newBuilder() to construct.
   private SearchDataItemsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.DataItemView> dataItemViews_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.aiplatform.v1.DataItemView> getDataItemViewsList() {
     return dataItemViews_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       getDataItemViewsOrBuilderList() {
     return dataItemViews_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
   public int getDataItemViewsCount() {
     return dataItemViews_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
   public com.google.cloud.aiplatform.v1.DataItemView getDataItemViews(int index) {
     return dataItemViews_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +642,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return dataItemViewsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return dataItemViewsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return dataItemViewsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +820,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +858,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +870,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
     public com.google.cloud.aiplatform.v1.DataItemView.Builder getDataItemViewsBuilder(int index) {
       return getDataItemViewsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -909,7 +887,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return dataItemViewsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -927,7 +904,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(dataItemViews_);
       }
     }
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       return getDataItemViewsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.DataItemView.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       return getDataItemViewsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.DataItemView.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1015,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1039,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1059,6 @@ public final class SearchDataItemsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

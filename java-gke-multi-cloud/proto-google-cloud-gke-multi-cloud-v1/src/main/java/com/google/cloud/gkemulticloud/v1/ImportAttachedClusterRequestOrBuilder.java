@@ -45,7 +45,6 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return The fleetMembership.
    */
   java.lang.String getFleetMembership();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return The platformVersion.
    */
   java.lang.String getPlatformVersion();
-
   /**
    *
    *
@@ -155,7 +152,6 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return The distribution.
    */
   java.lang.String getDistribution();
-
   /**
    *
    *
@@ -185,7 +181,6 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public interface ImportAttachedClusterRequestOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig();
-
   /**
    *
    *

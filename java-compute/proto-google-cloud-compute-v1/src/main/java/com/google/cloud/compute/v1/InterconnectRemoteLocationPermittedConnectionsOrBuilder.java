@@ -36,7 +36,6 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    * @return Whether the interconnectLocation field is set.
    */
   boolean hasInterconnectLocation();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    * @return The interconnectLocation.
    */
   java.lang.String getInterconnectLocation();
-
   /**
    *
    *

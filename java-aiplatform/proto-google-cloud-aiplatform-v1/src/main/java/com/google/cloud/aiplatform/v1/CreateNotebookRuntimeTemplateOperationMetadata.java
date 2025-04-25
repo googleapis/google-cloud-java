@@ -35,7 +35,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateNotebookRuntimeTemplateOperationMetadata)
     CreateNotebookRuntimeTemplateOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNotebookRuntimeTemplateOperationMetadata.newBuilder() to construct.
   private CreateNotebookRuntimeTemplateOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -293,7 +289,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +506,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -526,7 +520,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -547,7 +540,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -571,7 +563,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +646,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -678,7 +665,6 @@ public final class CreateNotebookRuntimeTemplateOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *

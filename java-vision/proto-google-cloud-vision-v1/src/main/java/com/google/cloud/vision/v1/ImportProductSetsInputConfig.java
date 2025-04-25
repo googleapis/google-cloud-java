@@ -33,7 +33,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ImportProductSetsInputConfig)
     ImportProductSetsInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportProductSetsInputConfig.newBuilder() to construct.
   private ImportProductSetsInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     }
     return com.google.cloud.vision.v1.ImportProductSetsGcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -341,7 +336,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -561,7 +555,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
             com.google.cloud.vision.v1.ImportProductSetsGcsSource.Builder,
             com.google.cloud.vision.v1.ImportProductSetsGcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -578,7 +571,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
         return com.google.cloud.vision.v1.ImportProductSetsGcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +701,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
     public com.google.cloud.vision.v1.ImportProductSetsGcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ImportProductSetsInputConfig extends com.google.protobuf.Gene
         return com.google.cloud.vision.v1.ImportProductSetsGcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ConnectedSiteTagOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ConnectedSiteTagOrBuilder
    * @return The tagId.
    */
   java.lang.String getTagId();
-
   /**
    *
    *

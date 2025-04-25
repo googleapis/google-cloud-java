@@ -39,7 +39,6 @@ public interface ImportErrorsConfigOrBuilder
    * @return Whether the gcsPrefix field is set.
    */
   boolean hasGcsPrefix();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ImportErrorsConfigOrBuilder
    * @return The gcsPrefix.
    */
   java.lang.String getGcsPrefix();
-
   /**
    *
    *

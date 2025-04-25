@@ -38,7 +38,6 @@ public interface MachineSeriesOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *

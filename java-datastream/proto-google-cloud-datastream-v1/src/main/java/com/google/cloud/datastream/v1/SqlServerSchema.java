@@ -33,7 +33,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerSchema)
     SqlServerSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SqlServerSchema.newBuilder() to construct.
   private SqlServerSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schema_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.SqlServerTable> tables_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.datastream.v1.SqlServerTable> getTablesList() {
     return tables_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       getTablesOrBuilderList() {
     return tables_;
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
   public int getTablesCount() {
     return tables_.size();
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.datastream.v1.SqlServerTable getTables(int index) {
     return tables_.get(index);
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -608,7 +599,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object schema_ = "";
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return tablesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return tablesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return tablesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +854,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +874,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +894,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +964,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.datastream.v1.SqlServerTable.Builder getTablesBuilder(int index) {
       return getTablesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return tablesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1025,7 +997,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(tables_);
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1010,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       return getTablesFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.SqlServerTable.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1053,7 +1023,6 @@ public final class SqlServerSchema extends com.google.protobuf.GeneratedMessageV
       return getTablesFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.SqlServerTable.getDefaultInstance());
     }
-
     /**
      *
      *

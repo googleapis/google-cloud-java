@@ -33,7 +33,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor)
     ComputeEngineShapeDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComputeEngineShapeDescriptor.newBuilder() to construct.
   private ComputeEngineShapeDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
 
   public static final int MEMORY_MB_FIELD_NUMBER = 1;
   private int memoryMb_ = 0;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
 
   public static final int PHYSICAL_CORE_COUNT_FIELD_NUMBER = 2;
   private int physicalCoreCount_ = 0;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
 
   public static final int LOGICAL_CORE_COUNT_FIELD_NUMBER = 3;
   private int logicalCoreCount_ = 0;
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object series_ = "";
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor> storage_;
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       getStorageList() {
     return storage_;
   }
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       getStorageOrBuilderList() {
     return storage_;
   }
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
   public int getStorageCount() {
     return storage_.size();
   }
-
   /**
    *
    *
@@ -292,7 +280,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
   public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor getStorage(int index) {
     return storage_.get(index);
   }
-
   /**
    *
    *
@@ -515,7 +502,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -820,7 +806,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     private int bitField0_;
 
     private int memoryMb_;
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     public int getMemoryMb() {
       return memoryMb_;
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     }
 
     private int physicalCoreCount_;
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     public int getPhysicalCoreCount() {
       return physicalCoreCount_;
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     }
 
     private int logicalCoreCount_;
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     public int getLogicalCoreCount() {
       return logicalCoreCount_;
     }
-
     /**
      *
      *
@@ -968,7 +946,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +965,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     }
 
     private java.lang.Object series_ = "";
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1009,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1030,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1047,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1071,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     }
 
     private java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -1122,7 +1093,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1115,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1167,7 +1136,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1153,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1244,7 +1211,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return storageBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1227,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return storageBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1243,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return storageBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1302,7 +1266,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1287,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1309,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1332,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1352,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1373,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1436,7 +1394,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1456,7 +1413,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1432,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1445,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         int index) {
       return getStorageFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1508,7 +1462,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return storageBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1480,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(storage_);
       }
     }
-
     /**
      *
      *
@@ -1543,7 +1495,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
           .addBuilder(
               com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1560,7 +1511,6 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
               index,
               com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *

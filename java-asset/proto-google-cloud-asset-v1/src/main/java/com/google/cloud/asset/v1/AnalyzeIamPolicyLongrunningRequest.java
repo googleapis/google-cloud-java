@@ -34,7 +34,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest)
     AnalyzeIamPolicyLongrunningRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeIamPolicyLongrunningRequest.newBuilder() to construct.
   private AnalyzeIamPolicyLongrunningRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
   private int bitField0_;
   public static final int ANALYSIS_QUERY_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1.IamPolicyAnalysisQuery analysisQuery_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
   public boolean hasAnalysisQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()
         : analysisQuery_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object savedAnalysisQuery_ = "";
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig outputConfig_;
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         ? com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -460,7 +451,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -704,7 +694,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
             com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder>
         analysisQueryBuilder_;
-
     /**
      *
      *
@@ -721,7 +710,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     public boolean hasAnalysisQuery() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         return analysisQueryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +829,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +845,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return getAnalysisQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
             : analysisQuery_;
       }
     }
-
     /**
      *
      *
@@ -913,7 +894,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     }
 
     private java.lang.Object savedAnalysisQuery_ = "";
-
     /**
      *
      *
@@ -951,7 +931,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -989,7 +968,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1004,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1036,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
             com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.Builder,
             com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -1122,7 +1097,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1146,7 +1120,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1145,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1168,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1200,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1252,7 +1222,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1240,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1294,7 +1262,6 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
             : outputConfig_;
       }
     }
-
     /**
      *
      *

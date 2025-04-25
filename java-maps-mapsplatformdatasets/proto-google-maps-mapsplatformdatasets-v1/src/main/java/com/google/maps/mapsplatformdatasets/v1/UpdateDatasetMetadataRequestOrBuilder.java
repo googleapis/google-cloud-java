@@ -39,7 +39,6 @@ public interface UpdateDatasetMetadataRequestOrBuilder
    * @return Whether the dataset field is set.
    */
   boolean hasDataset();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateDatasetMetadataRequestOrBuilder
    * @return The dataset.
    */
   com.google.maps.mapsplatformdatasets.v1.Dataset getDataset();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateDatasetMetadataRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface UpdateDatasetMetadataRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

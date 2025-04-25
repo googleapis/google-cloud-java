@@ -34,7 +34,6 @@ public interface ListInputsResponseOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Input inputs = 1;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Input> getInputsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListInputsResponseOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Input inputs = 1;</code>
    */
   com.google.cloud.video.livestream.v1.Input getInputs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListInputsResponseOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Input inputs = 1;</code>
    */
   int getInputsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListInputsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.InputOrBuilder>
       getInputsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListInputsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListInputsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListInputsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListInputsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

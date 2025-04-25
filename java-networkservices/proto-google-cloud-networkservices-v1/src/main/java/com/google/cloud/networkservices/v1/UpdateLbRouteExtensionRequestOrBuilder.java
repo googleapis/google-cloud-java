@@ -41,7 +41,6 @@ public interface UpdateLbRouteExtensionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateLbRouteExtensionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateLbRouteExtensionRequestOrBuilder
    * @return Whether the lbRouteExtension field is set.
    */
   boolean hasLbRouteExtension();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateLbRouteExtensionRequestOrBuilder
    * @return The lbRouteExtension.
    */
   com.google.cloud.networkservices.v1.LbRouteExtension getLbRouteExtension();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface UpdateLbRouteExtensionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

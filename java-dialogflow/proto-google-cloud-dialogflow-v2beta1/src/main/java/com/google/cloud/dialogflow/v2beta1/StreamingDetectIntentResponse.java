@@ -51,7 +51,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse)
     StreamingDetectIntentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingDetectIntentResponse.newBuilder() to construct.
   private StreamingDetectIntentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object responseId_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int RECOGNITION_RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognitionResult_;
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasRecognitionResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         ? com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance()
         : recognitionResult_;
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int QUERY_RESULT_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.v2beta1.QueryResult queryResult_;
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasQueryResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         ? com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance()
         : queryResult_;
   }
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> alternativeQueryResults_;
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       getAlternativeQueryResultsList() {
     return alternativeQueryResults_;
   }
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       getAlternativeQueryResultsOrBuilderList() {
     return alternativeQueryResults_;
   }
-
   /**
    *
    *
@@ -325,7 +313,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public int getAlternativeQueryResultsCount() {
     return alternativeQueryResults_.size();
   }
-
   /**
    *
    *
@@ -347,7 +334,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index) {
     return alternativeQueryResults_.get(index);
   }
-
   /**
    *
    *
@@ -373,7 +359,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int WEBHOOK_STATUS_FIELD_NUMBER = 4;
   private com.google.rpc.Status webhookStatus_;
-
   /**
    *
    *
@@ -389,7 +374,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasWebhookStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -405,7 +389,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public com.google.rpc.Status getWebhookStatus() {
     return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
   }
-
   /**
    *
    *
@@ -422,7 +405,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int OUTPUT_AUDIO_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -450,7 +432,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int OUTPUT_AUDIO_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.v2beta1.OutputAudioConfig outputAudioConfig_;
-
   /**
    *
    *
@@ -466,7 +447,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasOutputAudioConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -484,7 +464,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         ? com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.getDefaultInstance()
         : outputAudioConfig_;
   }
-
   /**
    *
    *
@@ -504,7 +483,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
 
   public static final int DEBUGGING_INFO_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo debuggingInfo_;
-
   /**
    *
    *
@@ -522,7 +500,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
   public boolean hasDebuggingInfo() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -542,7 +519,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         ? com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo.getDefaultInstance()
         : debuggingInfo_;
   }
-
   /**
    *
    *
@@ -816,7 +792,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1217,7 +1192,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object responseId_ = "";
-
     /**
      *
      *
@@ -1241,7 +1215,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1265,7 +1238,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1288,7 +1260,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1278,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1308,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder,
             com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder>
         recognitionResultBuilder_;
-
     /**
      *
      *
@@ -1354,7 +1323,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasRecognitionResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1376,7 +1344,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return recognitionResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1401,7 +1368,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1389,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1420,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1440,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1493,7 +1456,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return getRecognitionResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1514,7 +1476,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             : recognitionResult_;
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1509,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2beta1.QueryResult.Builder,
             com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
         queryResultBuilder_;
-
     /**
      *
      *
@@ -1564,7 +1524,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasQueryResult() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1586,7 +1545,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return queryResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1610,7 +1568,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1589,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1618,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1683,7 +1638,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1653,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return getQueryResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1719,7 +1672,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             : queryResult_;
       }
     }
-
     /**
      *
      *
@@ -1790,7 +1742,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return alternativeQueryResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1815,7 +1766,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return alternativeQueryResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1840,7 +1790,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return alternativeQueryResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1872,7 +1821,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1901,7 +1849,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1933,7 +1880,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1965,7 +1911,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1994,7 +1939,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2023,7 +1967,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2052,7 +1995,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2080,7 +2022,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2108,7 +2049,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2130,7 +2070,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         getAlternativeQueryResultsBuilder(int index) {
       return getAlternativeQueryResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2156,7 +2095,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return alternativeQueryResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2182,7 +2120,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(alternativeQueryResults_);
       }
     }
-
     /**
      *
      *
@@ -2205,7 +2142,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       return getAlternativeQueryResultsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2228,7 +2164,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       return getAlternativeQueryResultsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.QueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2275,7 +2210,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         webhookStatusBuilder_;
-
     /**
      *
      *
@@ -2290,7 +2224,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasWebhookStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2309,7 +2242,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return webhookStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2332,7 +2264,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2352,7 +2283,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2380,7 +2310,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2400,7 +2329,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2415,7 +2343,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return getWebhookStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2432,7 +2359,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return webhookStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : webhookStatus_;
       }
     }
-
     /**
      *
      *
@@ -2458,7 +2384,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     }
 
     private com.google.protobuf.ByteString outputAudio_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2483,7 +2408,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getOutputAudio() {
       return outputAudio_;
     }
-
     /**
      *
      *
@@ -2514,7 +2438,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2548,7 +2471,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfig.Builder,
             com.google.cloud.dialogflow.v2beta1.OutputAudioConfigOrBuilder>
         outputAudioConfigBuilder_;
-
     /**
      *
      *
@@ -2563,7 +2485,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasOutputAudioConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2584,7 +2505,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return outputAudioConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2608,7 +2528,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2629,7 +2548,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2577,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2679,7 +2596,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2611,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return getOutputAudioConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2715,7 +2630,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             : outputAudioConfig_;
       }
     }
-
     /**
      *
      *
@@ -2748,7 +2662,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo.Builder,
             com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfoOrBuilder>
         debuggingInfoBuilder_;
-
     /**
      *
      *
@@ -2765,7 +2678,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     public boolean hasDebuggingInfo() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2789,7 +2701,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
         return debuggingInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2815,7 +2726,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2839,7 +2749,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2872,7 +2781,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -2894,7 +2802,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2912,7 +2819,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       onChanged();
       return getDebuggingInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2935,7 +2841,6 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
             : debuggingInfo_;
       }
     }
-
     /**
      *
      *

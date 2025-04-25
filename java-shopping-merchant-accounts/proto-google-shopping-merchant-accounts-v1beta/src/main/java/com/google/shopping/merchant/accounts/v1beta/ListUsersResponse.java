@@ -33,7 +33,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.ListUsersResponse)
     ListUsersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListUsersResponse.newBuilder() to construct.
   private ListUsersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.User> users_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.shopping.merchant.accounts.v1beta.User> getUsersList() {
     return users_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       getUsersOrBuilderList() {
     return users_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
   public int getUsersCount() {
     return users_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
   public com.google.shopping.merchant.accounts.v1beta.User getUsers(int index) {
     return users_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return usersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return usersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return usersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
     public com.google.shopping.merchant.accounts.v1beta.User.Builder getUsersBuilder(int index) {
       return getUsersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return usersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(users_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       return getUsersFieldBuilder()
           .addBuilder(com.google.shopping.merchant.accounts.v1beta.User.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -952,7 +927,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.shopping.merchant.accounts.v1beta.User.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -985,7 +959,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1009,7 +982,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1005,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1027,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1045,6 @@ public final class ListUsersResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

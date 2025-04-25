@@ -35,7 +35,6 @@ public interface PipelineDescriptionOrBuilder
    * </code>
    */
   java.util.List<com.google.dataflow.v1beta3.TransformSummary> getOriginalPipelineTransformList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface PipelineDescriptionOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.TransformSummary getOriginalPipelineTransform(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface PipelineDescriptionOrBuilder
    * </code>
    */
   int getOriginalPipelineTransformCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface PipelineDescriptionOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.TransformSummaryOrBuilder>
       getOriginalPipelineTransformOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface PipelineDescriptionOrBuilder
    * </code>
    */
   java.util.List<com.google.dataflow.v1beta3.ExecutionStageSummary> getExecutionPipelineStageList();
-
   /**
    *
    *
@@ -109,7 +104,6 @@ public interface PipelineDescriptionOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.ExecutionStageSummary getExecutionPipelineStage(int index);
-
   /**
    *
    *
@@ -121,7 +115,6 @@ public interface PipelineDescriptionOrBuilder
    * </code>
    */
   int getExecutionPipelineStageCount();
-
   /**
    *
    *
@@ -134,7 +127,6 @@ public interface PipelineDescriptionOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ExecutionStageSummaryOrBuilder>
       getExecutionPipelineStageOrBuilderList();
-
   /**
    *
    *
@@ -158,7 +150,6 @@ public interface PipelineDescriptionOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.DisplayData> getDisplayDataList();
-
   /**
    *
    *
@@ -169,7 +160,6 @@ public interface PipelineDescriptionOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 3;</code>
    */
   com.google.dataflow.v1beta3.DisplayData getDisplayData(int index);
-
   /**
    *
    *
@@ -180,7 +170,6 @@ public interface PipelineDescriptionOrBuilder
    * <code>repeated .google.dataflow.v1beta3.DisplayData display_data = 3;</code>
    */
   int getDisplayDataCount();
-
   /**
    *
    *
@@ -192,7 +181,6 @@ public interface PipelineDescriptionOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.DisplayDataOrBuilder>
       getDisplayDataOrBuilderList();
-
   /**
    *
    *

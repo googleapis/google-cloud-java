@@ -37,7 +37,6 @@ public interface PerformanceSampleOrBuilder
    * @return Whether the sampleTime field is set.
    */
   boolean hasSampleTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PerformanceSampleOrBuilder
    * @return The sampleTime.
    */
   com.google.protobuf.Timestamp getSampleTime();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface PerformanceSampleOrBuilder
    * @return Whether the memory field is set.
    */
   boolean hasMemory();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface PerformanceSampleOrBuilder
    * @return The memory.
    */
   com.google.cloud.migrationcenter.v1.MemoryUsageSample getMemory();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface PerformanceSampleOrBuilder
    * @return Whether the cpu field is set.
    */
   boolean hasCpu();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface PerformanceSampleOrBuilder
    * @return The cpu.
    */
   com.google.cloud.migrationcenter.v1.CpuUsageSample getCpu();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface PerformanceSampleOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface PerformanceSampleOrBuilder
    * @return The network.
    */
   com.google.cloud.migrationcenter.v1.NetworkUsageSample getNetwork();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface PerformanceSampleOrBuilder
    * @return Whether the disk field is set.
    */
   boolean hasDisk();
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public interface PerformanceSampleOrBuilder
    * @return The disk.
    */
   com.google.cloud.migrationcenter.v1.DiskUsageSample getDisk();
-
   /**
    *
    *

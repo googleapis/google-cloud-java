@@ -35,7 +35,6 @@ public final class AnalyzeIamPolicyLongrunningResponse
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse)
     AnalyzeIamPolicyLongrunningResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeIamPolicyLongrunningResponse.newBuilder() to construct.
   private AnalyzeIamPolicyLongrunningResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,7 +215,6 @@ public final class AnalyzeIamPolicyLongrunningResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

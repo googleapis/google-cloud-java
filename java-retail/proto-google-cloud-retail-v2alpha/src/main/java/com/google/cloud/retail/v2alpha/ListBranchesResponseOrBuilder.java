@@ -34,7 +34,6 @@ public interface ListBranchesResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Branch branches = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2alpha.Branch> getBranchesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListBranchesResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Branch branches = 1;</code>
    */
   com.google.cloud.retail.v2alpha.Branch getBranches(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListBranchesResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2alpha.Branch branches = 1;</code>
    */
   int getBranchesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListBranchesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2alpha.BranchOrBuilder>
       getBranchesOrBuilderList();
-
   /**
    *
    *

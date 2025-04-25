@@ -33,7 +33,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.DocumentDimensions)
     DocumentDimensionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DocumentDimensions.newBuilder() to construct.
   private DocumentDimensions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * <code>DOCUMENT_DIMENSION_UNIT_UNSPECIFIED = 0;</code>
      */
     public static final int DOCUMENT_DIMENSION_UNIT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * <code>INCH = 1;</code>
      */
     public static final int INCH_VALUE = 1;
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
      * <code>CENTIMETER = 2;</code>
      */
     public static final int CENTIMETER_VALUE = 2;
-
     /**
      *
      *
@@ -251,7 +247,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
 
   public static final int UNIT_FIELD_NUMBER = 1;
   private int unit_ = 0;
-
   /**
    *
    *
@@ -267,7 +262,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
   public int getUnitValue() {
     return unit_;
   }
-
   /**
    *
    *
@@ -290,7 +284,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
 
   public static final int WIDTH_FIELD_NUMBER = 2;
   private float width_ = 0F;
-
   /**
    *
    *
@@ -309,7 +302,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
 
   public static final int HEIGHT_FIELD_NUMBER = 3;
   private float height_ = 0F;
-
   /**
    *
    *
@@ -511,7 +503,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -719,7 +710,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int unit_ = 0;
-
     /**
      *
      *
@@ -735,7 +725,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     public int getUnitValue() {
       return unit_;
     }
-
     /**
      *
      *
@@ -754,7 +743,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +762,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.automl.v1.DocumentDimensions.DocumentDimensionUnit.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -797,7 +784,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     }
 
     private float width_;
-
     /**
      *
      *
@@ -833,7 +818,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     public float getWidth() {
       return width_;
     }
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +856,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     }
 
     private float height_;
-
     /**
      *
      *
@@ -889,7 +871,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
     public float getHeight() {
       return height_;
     }
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class DocumentDimensions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

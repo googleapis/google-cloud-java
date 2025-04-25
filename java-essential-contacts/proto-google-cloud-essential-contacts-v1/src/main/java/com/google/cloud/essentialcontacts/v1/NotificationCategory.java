@@ -142,7 +142,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>NOTIFICATION_CATEGORY_UNSPECIFIED = 0;</code>
    */
   public static final int NOTIFICATION_CATEGORY_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -154,7 +153,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>ALL = 2;</code>
    */
   public static final int ALL_VALUE = 2;
-
   /**
    *
    *
@@ -165,7 +163,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>SUSPENSION = 3;</code>
    */
   public static final int SUSPENSION_VALUE = 3;
-
   /**
    *
    *
@@ -177,7 +174,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>SECURITY = 5;</code>
    */
   public static final int SECURITY_VALUE = 5;
-
   /**
    *
    *
@@ -189,7 +185,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>TECHNICAL = 6;</code>
    */
   public static final int TECHNICAL_VALUE = 6;
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>BILLING = 7;</code>
    */
   public static final int BILLING_VALUE = 7;
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>LEGAL = 8;</code>
    */
   public static final int LEGAL_VALUE = 8;
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public enum NotificationCategory implements com.google.protobuf.ProtocolMessageE
    * <code>PRODUCT_UPDATES = 9;</code>
    */
   public static final int PRODUCT_UPDATES_VALUE = 9;
-
   /**
    *
    *

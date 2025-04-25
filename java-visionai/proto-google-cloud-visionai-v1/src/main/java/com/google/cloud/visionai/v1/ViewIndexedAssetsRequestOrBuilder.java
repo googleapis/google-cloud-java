@@ -40,7 +40,6 @@ public interface ViewIndexedAssetsRequestOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ViewIndexedAssetsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface ViewIndexedAssetsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

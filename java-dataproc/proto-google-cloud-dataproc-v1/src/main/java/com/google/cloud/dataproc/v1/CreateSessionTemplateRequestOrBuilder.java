@@ -38,7 +38,6 @@ public interface CreateSessionTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateSessionTemplateRequestOrBuilder
    * @return Whether the sessionTemplate field is set.
    */
   boolean hasSessionTemplate();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateSessionTemplateRequestOrBuilder
    * @return The sessionTemplate.
    */
   com.google.cloud.dataproc.v1.SessionTemplate getSessionTemplate();
-
   /**
    *
    *

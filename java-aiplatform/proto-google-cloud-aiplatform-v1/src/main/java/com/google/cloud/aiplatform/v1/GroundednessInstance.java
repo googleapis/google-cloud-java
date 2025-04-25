@@ -33,7 +33,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.GroundednessInstance)
     GroundednessInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GroundednessInstance.newBuilder() to construct.
   private GroundednessInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
   public boolean hasContext() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -385,7 +378,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -589,7 +581,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
-
     /**
      *
      *
@@ -604,7 +595,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +677,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
     public boolean hasContext() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -779,7 +762,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -802,7 +784,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +802,6 @@ public final class GroundednessInstance extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

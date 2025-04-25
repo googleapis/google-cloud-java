@@ -37,7 +37,6 @@ public interface UpdateReportRequestOrBuilder
    * @return Whether the report field is set.
    */
   boolean hasReport();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateReportRequestOrBuilder
    * @return The report.
    */
   com.google.ads.admanager.v1.Report getReport();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface UpdateReportRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface UpdateReportRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

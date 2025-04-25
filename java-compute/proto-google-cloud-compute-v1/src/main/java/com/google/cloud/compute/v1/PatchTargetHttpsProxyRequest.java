@@ -33,7 +33,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchTargetHttpsProxyRequest)
     PatchTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchTargetHttpsProxyRequest.newBuilder() to construct.
   private PatchTargetHttpsProxyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
 
   public static final int TARGET_HTTPS_PROXY_RESOURCE_FIELD_NUMBER = 433657473;
   private com.google.cloud.compute.v1.TargetHttpsProxy targetHttpsProxyResource_;
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
   public boolean hasTargetHttpsProxyResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.TargetHttpsProxy.getDefaultInstance()
         : targetHttpsProxyResource_;
   }
-
   /**
    *
    *
@@ -505,7 +494,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -754,7 +742,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -779,7 +766,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -913,7 +894,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +978,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1043,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.TargetHttpsProxy.Builder,
             com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder>
         targetHttpsProxyResourceBuilder_;
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
     public boolean hasTargetHttpsProxyResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
         return targetHttpsProxyResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1151,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1173,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1237,7 +1204,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1225,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1277,7 +1242,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
       onChanged();
       return getTargetHttpsProxyResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1299,7 +1263,6 @@ public final class PatchTargetHttpsProxyRequest extends com.google.protobuf.Gene
             : targetHttpsProxyResource_;
       }
     }
-
     /**
      *
      *

@@ -43,7 +43,6 @@ public interface UpdateRunRequestOrBuilder
    * @return Whether the run field is set.
    */
   boolean hasRun();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UpdateRunRequestOrBuilder
    * @return The run.
    */
   com.google.cloud.datacatalog.lineage.v1.Run getRun();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface UpdateRunRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface UpdateRunRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

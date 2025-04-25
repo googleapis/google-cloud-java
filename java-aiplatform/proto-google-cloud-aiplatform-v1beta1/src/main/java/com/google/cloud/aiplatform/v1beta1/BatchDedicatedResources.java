@@ -34,7 +34,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BatchDedicatedResources)
     BatchDedicatedResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchDedicatedResources.newBuilder() to construct.
   private BatchDedicatedResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int MACHINE_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
   public boolean hasMachineSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
         ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
         : machineSpec_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
 
   public static final int STARTING_REPLICA_COUNT_FIELD_NUMBER = 2;
   private int startingReplicaCount_ = 0;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
 
   public static final int MAX_REPLICA_COUNT_FIELD_NUMBER = 3;
   private int maxReplicaCount_ = 0;
-
   /**
    *
    *
@@ -347,7 +341,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +572,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder>
         machineSpecBuilder_;
-
     /**
      *
      *
@@ -596,7 +588,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public boolean hasMachineSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
         return machineSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +686,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -737,7 +723,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
             : machineSpec_;
       }
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     }
 
     private int startingReplicaCount_;
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public int getStartingReplicaCount() {
       return startingReplicaCount_;
     }
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     }
 
     private int maxReplicaCount_;
-
     /**
      *
      *
@@ -867,7 +847,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
     public int getMaxReplicaCount() {
       return maxReplicaCount_;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class BatchDedicatedResources extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

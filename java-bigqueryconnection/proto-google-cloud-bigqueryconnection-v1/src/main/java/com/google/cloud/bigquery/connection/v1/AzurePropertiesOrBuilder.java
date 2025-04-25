@@ -36,7 +36,6 @@ public interface AzurePropertiesOrBuilder
    * @return The application.
    */
   java.lang.String getApplication();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AzurePropertiesOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface AzurePropertiesOrBuilder
    * @return The objectId.
    */
   java.lang.String getObjectId();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface AzurePropertiesOrBuilder
    * @return The customerTenantId.
    */
   java.lang.String getCustomerTenantId();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface AzurePropertiesOrBuilder
    * @return The redirectUri.
    */
   java.lang.String getRedirectUri();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface AzurePropertiesOrBuilder
    * @return The federatedApplicationClientId.
    */
   java.lang.String getFederatedApplicationClientId();
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public interface AzurePropertiesOrBuilder
    * @return The identity.
    */
   java.lang.String getIdentity();
-
   /**
    *
    *

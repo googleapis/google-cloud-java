@@ -39,7 +39,6 @@ public interface GetSearchAds360LinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

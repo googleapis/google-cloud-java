@@ -41,7 +41,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterUser> getAdminUsersList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AttachedClusterUser getAdminUsers(int index);
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    * </code>
    */
   int getAdminUsersCount();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterUserOrBuilder>
       getAdminUsersOrBuilderList();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterGroup> getAdminGroupsList();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AttachedClusterGroup getAdminGroups(int index);
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    * </code>
    */
   int getAdminGroupsCount();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface AttachedClustersAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AttachedClusterGroupOrBuilder>
       getAdminGroupsOrBuilderList();
-
   /**
    *
    *

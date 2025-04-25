@@ -36,7 +36,6 @@ public interface VersionDescriptionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VersionDescriptionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

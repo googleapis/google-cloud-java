@@ -34,7 +34,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.MacSignResponse)
     MacSignResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MacSignResponse.newBuilder() to construct.
   private MacSignResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAC_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString mac_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int MAC_CRC32C_FIELD_NUMBER = 3;
   private com.google.protobuf.Int64Value macCrc32C_;
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
   public boolean hasMacCrc32C() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Int64Value getMacCrc32C() {
     return macCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : macCrc32C_;
   }
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 4;
   private boolean verifiedDataCrc32C_ = false;
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
   private int protectionLevel_ = 0;
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
   public int getProtectionLevelValue() {
     return protectionLevel_;
   }
-
   /**
    *
    *
@@ -501,7 +491,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -754,7 +743,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -779,7 +767,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -804,7 +791,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -828,7 +814,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +859,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.ByteString mac_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getMac() {
       return mac_;
     }
-
     /**
      *
      *
@@ -913,7 +895,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         macCrc32CBuilder_;
-
     /**
      *
      *
@@ -965,7 +945,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public boolean hasMacCrc32C() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -998,7 +977,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
         return macCrc32CBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1011,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1042,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1081,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1138,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMacCrc32CFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1195,7 +1168,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
             : macCrc32C_;
       }
     }
-
     /**
      *
      *
@@ -1235,7 +1207,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean verifiedDataCrc32C_;
-
     /**
      *
      *
@@ -1264,7 +1235,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public boolean getVerifiedDataCrc32C() {
       return verifiedDataCrc32C_;
     }
-
     /**
      *
      *
@@ -1297,7 +1267,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1299,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     private int protectionLevel_ = 0;
-
     /**
      *
      *
@@ -1347,7 +1315,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public int getProtectionLevelValue() {
       return protectionLevel_;
     }
-
     /**
      *
      *
@@ -1367,7 +1334,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1352,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1409,7 +1374,6 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

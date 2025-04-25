@@ -40,7 +40,6 @@ public interface CreateIndexRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface CreateIndexRequestOrBuilder
    * @return The indexId.
    */
   java.lang.String getIndexId();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface CreateIndexRequestOrBuilder
    * @return Whether the index field is set.
    */
   boolean hasIndex();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface CreateIndexRequestOrBuilder
    * @return The index.
    */
   com.google.cloud.visionai.v1.Index getIndex();
-
   /**
    *
    *

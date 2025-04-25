@@ -38,7 +38,6 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
@@ -91,7 +90,6 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
-import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
@@ -123,7 +121,6 @@ import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
-import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
@@ -165,7 +162,6 @@ import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
-import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
@@ -220,8 +216,6 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
-import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
-import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
@@ -237,7 +231,6 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
 import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
-import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
 import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
@@ -247,8 +240,6 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
-import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
-import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
@@ -273,7 +264,6 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
-import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
@@ -6117,247 +6107,6 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
-  private static final ApiMethodDescriptor<
-          CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      createReportingDataAnnotationMethodDescriptor =
-          ApiMethodDescriptor
-              .<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateReportingDataAnnotation")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<CreateReportingDataAnnotationRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{parent=properties/*}/reportingDataAnnotations",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<CreateReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody(
-                                      "reportingDataAnnotation",
-                                      request.getReportingDataAnnotation(),
-                                      true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ReportingDataAnnotation>newBuilder()
-                      .setDefaultInstance(ReportingDataAnnotation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<
-          GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-      getReportingDataAnnotationMethodDescriptor =
-          ApiMethodDescriptor
-              .<GetReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetReportingDataAnnotation")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<GetReportingDataAnnotationRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{name=properties/*/reportingDataAnnotations/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<GetReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<GetReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ReportingDataAnnotation>newBuilder()
-                      .setDefaultInstance(ReportingDataAnnotation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<
-          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-      listReportingDataAnnotationsMethodDescriptor =
-          ApiMethodDescriptor
-              .<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-                  newBuilder()
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListReportingDataAnnotations")
-              .setHttpMethod("GET")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<ListReportingDataAnnotationsRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{parent=properties/*}/reportingDataAnnotations",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<ListReportingDataAnnotationsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "parent", request.getParent());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<ListReportingDataAnnotationsRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "filter", request.getFilter());
-                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
-                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ListReportingDataAnnotationsResponse>newBuilder()
-                      .setDefaultInstance(ListReportingDataAnnotationsResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<
-          UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      updateReportingDataAnnotationMethodDescriptor =
-          ApiMethodDescriptor
-              .<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateReportingDataAnnotation")
-              .setHttpMethod("PATCH")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UpdateReportingDataAnnotationRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{reportingDataAnnotation.name=properties/*/reportingDataAnnotations/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields,
-                                "reportingDataAnnotation.name",
-                                request.getReportingDataAnnotation().getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UpdateReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody(
-                                      "reportingDataAnnotation",
-                                      request.getReportingDataAnnotation(),
-                                      true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<ReportingDataAnnotation>newBuilder()
-                      .setDefaultInstance(ReportingDataAnnotation.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<DeleteReportingDataAnnotationRequest, Empty>
-      deleteReportingDataAnnotationMethodDescriptor =
-          ApiMethodDescriptor.<DeleteReportingDataAnnotationRequest, Empty>newBuilder()
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteReportingDataAnnotation")
-              .setHttpMethod("DELETE")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<DeleteReportingDataAnnotationRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{name=properties/*/reportingDataAnnotations/*}",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<DeleteReportingDataAnnotationRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(request -> null)
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<Empty>newBuilder()
-                      .setDefaultInstance(Empty.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
-  private static final ApiMethodDescriptor<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-      submitUserDeletionMethodDescriptor =
-          ApiMethodDescriptor.<SubmitUserDeletionRequest, SubmitUserDeletionResponse>newBuilder()
-              .setFullMethodName(
-                  "google.analytics.admin.v1alpha.AnalyticsAdminService/SubmitUserDeletion")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<SubmitUserDeletionRequest>newBuilder()
-                      .setPath(
-                          "/v1alpha/{name=properties/*}:submitUserDeletion",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<SubmitUserDeletionRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putPathParam(fields, "name", request.getName());
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<SubmitUserDeletionRequest> serializer =
-                                ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().clearName().build(), true))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<SubmitUserDeletionResponse>newBuilder()
-                      .setDefaultInstance(SubmitUserDeletionResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
-
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -6690,22 +6439,6 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       updateSubpropertyEventFilterCallable;
   private final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
       deleteSubpropertyEventFilterCallable;
-  private final UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      createReportingDataAnnotationCallable;
-  private final UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-      getReportingDataAnnotationCallable;
-  private final UnaryCallable<
-          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-      listReportingDataAnnotationsCallable;
-  private final UnaryCallable<
-          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
-      listReportingDataAnnotationsPagedCallable;
-  private final UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      updateReportingDataAnnotationCallable;
-  private final UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
-      deleteReportingDataAnnotationCallable;
-  private final UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-      submitUserDeletionCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -8582,85 +8315,6 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       return builder.build();
                     })
                 .build();
-    HttpJsonCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        createReportingDataAnnotationTransportSettings =
-            HttpJsonCallSettings
-                .<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
-                .setMethodDescriptor(createReportingDataAnnotationMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-        getReportingDataAnnotationTransportSettings =
-            HttpJsonCallSettings
-                .<GetReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
-                .setMethodDescriptor(getReportingDataAnnotationMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-        listReportingDataAnnotationsTransportSettings =
-            HttpJsonCallSettings
-                .<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-                    newBuilder()
-                .setMethodDescriptor(listReportingDataAnnotationsMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("parent", String.valueOf(request.getParent()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        updateReportingDataAnnotationTransportSettings =
-            HttpJsonCallSettings
-                .<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>newBuilder()
-                .setMethodDescriptor(updateReportingDataAnnotationMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add(
-                          "reporting_data_annotation.name",
-                          String.valueOf(request.getReportingDataAnnotation().getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<DeleteReportingDataAnnotationRequest, Empty>
-        deleteReportingDataAnnotationTransportSettings =
-            HttpJsonCallSettings.<DeleteReportingDataAnnotationRequest, Empty>newBuilder()
-                .setMethodDescriptor(deleteReportingDataAnnotationMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
-    HttpJsonCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-        submitUserDeletionTransportSettings =
-            HttpJsonCallSettings.<SubmitUserDeletionRequest, SubmitUserDeletionResponse>newBuilder()
-                .setMethodDescriptor(submitUserDeletionMethodDescriptor)
-                .setTypeRegistry(typeRegistry)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -9469,41 +9123,6 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             deleteSubpropertyEventFilterTransportSettings,
             settings.deleteSubpropertyEventFilterSettings(),
             clientContext);
-    this.createReportingDataAnnotationCallable =
-        callableFactory.createUnaryCallable(
-            createReportingDataAnnotationTransportSettings,
-            settings.createReportingDataAnnotationSettings(),
-            clientContext);
-    this.getReportingDataAnnotationCallable =
-        callableFactory.createUnaryCallable(
-            getReportingDataAnnotationTransportSettings,
-            settings.getReportingDataAnnotationSettings(),
-            clientContext);
-    this.listReportingDataAnnotationsCallable =
-        callableFactory.createUnaryCallable(
-            listReportingDataAnnotationsTransportSettings,
-            settings.listReportingDataAnnotationsSettings(),
-            clientContext);
-    this.listReportingDataAnnotationsPagedCallable =
-        callableFactory.createPagedCallable(
-            listReportingDataAnnotationsTransportSettings,
-            settings.listReportingDataAnnotationsSettings(),
-            clientContext);
-    this.updateReportingDataAnnotationCallable =
-        callableFactory.createUnaryCallable(
-            updateReportingDataAnnotationTransportSettings,
-            settings.updateReportingDataAnnotationSettings(),
-            clientContext);
-    this.deleteReportingDataAnnotationCallable =
-        callableFactory.createUnaryCallable(
-            deleteReportingDataAnnotationTransportSettings,
-            settings.deleteReportingDataAnnotationSettings(),
-            clientContext);
-    this.submitUserDeletionCallable =
-        callableFactory.createUnaryCallable(
-            submitUserDeletionTransportSettings,
-            settings.submitUserDeletionSettings(),
-            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -9662,12 +9281,6 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(listSubpropertyEventFiltersMethodDescriptor);
     methodDescriptors.add(updateSubpropertyEventFilterMethodDescriptor);
     methodDescriptors.add(deleteSubpropertyEventFilterMethodDescriptor);
-    methodDescriptors.add(createReportingDataAnnotationMethodDescriptor);
-    methodDescriptors.add(getReportingDataAnnotationMethodDescriptor);
-    methodDescriptors.add(listReportingDataAnnotationsMethodDescriptor);
-    methodDescriptors.add(updateReportingDataAnnotationMethodDescriptor);
-    methodDescriptors.add(deleteReportingDataAnnotationMethodDescriptor);
-    methodDescriptors.add(submitUserDeletionMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -10685,49 +10298,6 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
       deleteSubpropertyEventFilterCallable() {
     return deleteSubpropertyEventFilterCallable;
-  }
-
-  @Override
-  public UnaryCallable<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      createReportingDataAnnotationCallable() {
-    return createReportingDataAnnotationCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-      getReportingDataAnnotationCallable() {
-    return getReportingDataAnnotationCallable;
-  }
-
-  @Override
-  public UnaryCallable<ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-      listReportingDataAnnotationsCallable() {
-    return listReportingDataAnnotationsCallable;
-  }
-
-  @Override
-  public UnaryCallable<
-          ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsPagedResponse>
-      listReportingDataAnnotationsPagedCallable() {
-    return listReportingDataAnnotationsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      updateReportingDataAnnotationCallable() {
-    return updateReportingDataAnnotationCallable;
-  }
-
-  @Override
-  public UnaryCallable<DeleteReportingDataAnnotationRequest, Empty>
-      deleteReportingDataAnnotationCallable() {
-    return deleteReportingDataAnnotationCallable;
-  }
-
-  @Override
-  public UnaryCallable<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-      submitUserDeletionCallable() {
-    return submitUserDeletionCallable;
   }
 
   @Override

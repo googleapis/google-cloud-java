@@ -36,7 +36,6 @@ public interface PhraseMatchRuleConfigOrBuilder
    * @return Whether the exactMatchConfig field is set.
    */
   boolean hasExactMatchConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PhraseMatchRuleConfigOrBuilder
    * @return The exactMatchConfig.
    */
   com.google.cloud.contactcenterinsights.v1.ExactMatchConfig getExactMatchConfig();
-
   /**
    *
    *

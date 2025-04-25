@@ -34,7 +34,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ConversionValues)
     ConversionValuesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConversionValues.newBuilder() to construct.
   private ConversionValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
 
   public static final int FINE_VALUE_FIELD_NUMBER = 2;
   private int fineValue_ = 0;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
   public boolean hasFineValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
 
   public static final int COARSE_VALUE_FIELD_NUMBER = 3;
   private int coarseValue_ = 0;
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
   public int getCoarseValueValue() {
     return coarseValue_;
   }
-
   /**
    *
    *
@@ -219,7 +212,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.EventMapping> eventMappings_;
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.analytics.admin.v1alpha.EventMapping> getEventMappingsList() {
     return eventMappings_;
   }
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       getEventMappingsOrBuilderList() {
     return eventMappings_;
   }
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
   public int getEventMappingsCount() {
     return eventMappings_.size();
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
   public com.google.analytics.admin.v1alpha.EventMapping getEventMappings(int index) {
     return eventMappings_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
 
   public static final int LOCK_ENABLED_FIELD_NUMBER = 5;
   private boolean lockEnabled_ = false;
-
   /**
    *
    *
@@ -526,7 +513,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -816,7 +802,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -840,7 +825,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     }
 
     private int fineValue_;
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     public boolean hasFineValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -976,7 +955,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     public int getFineValue() {
       return fineValue_;
     }
-
     /**
      *
      *
@@ -1002,7 +980,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1005,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     }
 
     private int coarseValue_ = 0;
-
     /**
      *
      *
@@ -1048,7 +1024,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     public int getCoarseValueValue() {
       return coarseValue_;
     }
-
     /**
      *
      *
@@ -1071,7 +1046,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1067,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
           com.google.analytics.admin.v1alpha.CoarseValue.forNumber(coarseValue_);
       return result == null ? com.google.analytics.admin.v1alpha.CoarseValue.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1119,7 +1092,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1150,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return eventMappingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return eventMappingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1186,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return eventMappingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1211,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1233,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1257,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1282,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1304,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1326,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1348,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1407,7 +1369,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1390,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1405,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         int index) {
       return getEventMappingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1465,7 +1424,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return eventMappingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1485,7 +1443,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(eventMappings_);
       }
     }
-
     /**
      *
      *
@@ -1501,7 +1458,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       return getEventMappingsFieldBuilder()
           .addBuilder(com.google.analytics.admin.v1alpha.EventMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1518,7 +1474,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       return getEventMappingsFieldBuilder()
           .addBuilder(index, com.google.analytics.admin.v1alpha.EventMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1556,7 +1511,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean lockEnabled_;
-
     /**
      *
      *
@@ -1573,7 +1527,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
     public boolean getLockEnabled() {
       return lockEnabled_;
     }
-
     /**
      *
      *
@@ -1594,7 +1547,6 @@ public final class ConversionValues extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -94,7 +94,6 @@ public enum EncodingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NONE = 0;</code>
    */
   public static final int NONE_VALUE = 0;
-
   /**
    *
    *
@@ -107,7 +106,6 @@ public enum EncodingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UTF8 = 1;</code>
    */
   public static final int UTF8_VALUE = 1;
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public enum EncodingType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UTF16 = 2;</code>
    */
   public static final int UTF16_VALUE = 2;
-
   /**
    *
    *

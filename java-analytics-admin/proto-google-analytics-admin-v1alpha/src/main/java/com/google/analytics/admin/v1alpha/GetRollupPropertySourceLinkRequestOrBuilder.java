@@ -41,7 +41,6 @@ public interface GetRollupPropertySourceLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

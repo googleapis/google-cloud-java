@@ -34,7 +34,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.advisorynotifications.v1.Notification)
     NotificationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Notification.newBuilder() to construct.
   private Notification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBJECT_FIELD_NUMBER = 2;
   private com.google.cloud.advisorynotifications.v1.Subject subject_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubject() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.advisorynotifications.v1.Subject.getDefaultInstance()
         : subject_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.advisorynotifications.v1.Message> messages_;
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.advisorynotifications.v1.Message> getMessagesList() {
     return messages_;
   }
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       getMessagesOrBuilderList() {
     return messages_;
   }
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public int getMessagesCount() {
     return messages_.size();
   }
-
   /**
    *
    *
@@ -241,7 +231,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.advisorynotifications.v1.Message getMessages(int index) {
     return messages_.get(index);
   }
-
   /**
    *
    *
@@ -259,7 +248,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -276,7 +264,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +280,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -311,7 +297,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NOTIFICATION_TYPE_FIELD_NUMBER = 12;
   private int notificationType_ = 0;
-
   /**
    *
    *
@@ -327,7 +312,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   public int getNotificationTypeValue() {
     return notificationType_;
   }
-
   /**
    *
    *
@@ -560,7 +544,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -870,7 +853,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -896,7 +878,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +903,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +927,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +947,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.advisorynotifications.v1.Subject.Builder,
             com.google.cloud.advisorynotifications.v1.SubjectOrBuilder>
         subjectBuilder_;
-
     /**
      *
      *
@@ -1016,7 +993,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubject() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return subjectBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1055,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1082,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1115,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSubjectFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1163,7 +1133,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
             : subject_;
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1192,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1208,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1224,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1246,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1266,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1288,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1310,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1330,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1350,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1370,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1389,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1408,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1420,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.advisorynotifications.v1.Message.Builder getMessagesBuilder(int index) {
       return getMessagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1481,7 +1437,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1454,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(messages_);
       }
     }
-
     /**
      *
      *
@@ -1513,7 +1467,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       return getMessagesFieldBuilder()
           .addBuilder(com.google.cloud.advisorynotifications.v1.Message.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1528,7 +1481,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.advisorynotifications.v1.Message.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1566,7 +1518,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1583,7 +1534,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1606,7 +1556,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1631,7 +1580,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1653,7 +1601,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1683,7 +1630,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1705,7 +1651,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1667,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1743,7 +1687,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1773,7 +1716,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int notificationType_ = 0;
-
     /**
      *
      *
@@ -1789,7 +1731,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     public int getNotificationTypeValue() {
       return notificationType_;
     }
-
     /**
      *
      *
@@ -1808,7 +1749,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1828,7 +1768,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.advisorynotifications.v1.NotificationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1851,7 +1790,6 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

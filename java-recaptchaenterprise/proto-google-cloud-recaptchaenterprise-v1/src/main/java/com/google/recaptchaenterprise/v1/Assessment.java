@@ -33,7 +33,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.Assessment)
     AssessmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Assessment.newBuilder() to construct.
   private Assessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_FIELD_NUMBER = 2;
   private com.google.recaptchaenterprise.v1.Event event_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEvent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public com.google.recaptchaenterprise.v1.Event getEvent() {
     return event_ == null ? com.google.recaptchaenterprise.v1.Event.getDefaultInstance() : event_;
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RISK_ANALYSIS_FIELD_NUMBER = 3;
   private com.google.recaptchaenterprise.v1.RiskAnalysis riskAnalysis_;
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRiskAnalysis() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.RiskAnalysis.getDefaultInstance()
         : riskAnalysis_;
   }
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOKEN_PROPERTIES_FIELD_NUMBER = 4;
   private com.google.recaptchaenterprise.v1.TokenProperties tokenProperties_;
-
   /**
    *
    *
@@ -258,7 +248,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTokenProperties() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.TokenProperties.getDefaultInstance()
         : tokenProperties_;
   }
-
   /**
    *
    *
@@ -299,7 +287,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_VERIFICATION_FIELD_NUMBER = 5;
   private com.google.recaptchaenterprise.v1.AccountVerificationInfo accountVerification_;
-
   /**
    *
    *
@@ -318,7 +305,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccountVerification() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -339,7 +325,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.AccountVerificationInfo.getDefaultInstance()
         : accountVerification_;
   }
-
   /**
    *
    *
@@ -362,7 +347,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACCOUNT_DEFENDER_ASSESSMENT_FIELD_NUMBER = 6;
   private com.google.recaptchaenterprise.v1.AccountDefenderAssessment accountDefenderAssessment_;
-
   /**
    *
    *
@@ -381,7 +365,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAccountDefenderAssessment() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -403,7 +386,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.getDefaultInstance()
         : accountDefenderAssessment_;
   }
-
   /**
    *
    *
@@ -427,7 +409,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public static final int PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER = 8;
   private com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
       privatePasswordLeakVerification_;
-
   /**
    *
    *
@@ -447,7 +428,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrivatePasswordLeakVerification() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -470,7 +450,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.getDefaultInstance()
         : privatePasswordLeakVerification_;
   }
-
   /**
    *
    *
@@ -494,7 +473,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIREWALL_POLICY_ASSESSMENT_FIELD_NUMBER = 10;
   private com.google.recaptchaenterprise.v1.FirewallPolicyAssessment firewallPolicyAssessment_;
-
   /**
    *
    *
@@ -513,7 +491,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFirewallPolicyAssessment() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -534,7 +511,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.getDefaultInstance()
         : firewallPolicyAssessment_;
   }
-
   /**
    *
    *
@@ -557,7 +533,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FRAUD_PREVENTION_ASSESSMENT_FIELD_NUMBER = 11;
   private com.google.recaptchaenterprise.v1.FraudPreventionAssessment fraudPreventionAssessment_;
-
   /**
    *
    *
@@ -576,7 +551,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFraudPreventionAssessment() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -598,7 +572,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.FraudPreventionAssessment.getDefaultInstance()
         : fraudPreventionAssessment_;
   }
-
   /**
    *
    *
@@ -621,7 +594,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FRAUD_SIGNALS_FIELD_NUMBER = 13;
   private com.google.recaptchaenterprise.v1.FraudSignals fraudSignals_;
-
   /**
    *
    *
@@ -640,7 +612,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFraudSignals() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -661,7 +632,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.FraudSignals.getDefaultInstance()
         : fraudSignals_;
   }
-
   /**
    *
    *
@@ -683,7 +653,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PHONE_FRAUD_ASSESSMENT_FIELD_NUMBER = 12;
   private com.google.recaptchaenterprise.v1.PhoneFraudAssessment phoneFraudAssessment_;
-
   /**
    *
    *
@@ -703,7 +672,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhoneFraudAssessment() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -725,7 +693,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.PhoneFraudAssessment.getDefaultInstance()
         : phoneFraudAssessment_;
   }
-
   /**
    *
    *
@@ -749,7 +716,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSESSMENT_ENVIRONMENT_FIELD_NUMBER = 14;
   private com.google.recaptchaenterprise.v1.AssessmentEnvironment assessmentEnvironment_;
-
   /**
    *
    *
@@ -769,7 +735,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAssessmentEnvironment() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -791,7 +756,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.AssessmentEnvironment.getDefaultInstance()
         : assessmentEnvironment_;
   }
-
   /**
    *
    *
@@ -1140,7 +1104,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1575,7 +1538,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1601,7 +1563,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1627,7 +1588,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1652,7 +1612,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1632,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1706,7 +1664,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.Event.Builder,
             com.google.recaptchaenterprise.v1.EventOrBuilder>
         eventBuilder_;
-
     /**
      *
      *
@@ -1723,7 +1680,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEvent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1746,7 +1702,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return eventBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1771,7 +1726,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1793,7 +1747,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1823,7 +1776,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1845,7 +1797,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1862,7 +1813,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1883,7 +1833,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : event_;
       }
     }
-
     /**
      *
      *
@@ -1918,7 +1867,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.RiskAnalysis.Builder,
             com.google.recaptchaenterprise.v1.RiskAnalysisOrBuilder>
         riskAnalysisBuilder_;
-
     /**
      *
      *
@@ -1935,7 +1883,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRiskAnalysis() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1958,7 +1905,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return riskAnalysisBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1983,7 +1929,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2006,7 +1951,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2037,7 +1981,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2059,7 +2002,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2076,7 +2018,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRiskAnalysisFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2097,7 +2038,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : riskAnalysis_;
       }
     }
-
     /**
      *
      *
@@ -2132,7 +2072,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.TokenProperties.Builder,
             com.google.recaptchaenterprise.v1.TokenPropertiesOrBuilder>
         tokenPropertiesBuilder_;
-
     /**
      *
      *
@@ -2149,7 +2088,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTokenProperties() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2172,7 +2110,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return tokenPropertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2197,7 +2134,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2156,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2251,7 +2186,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2273,7 +2207,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2223,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTokenPropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2312,7 +2244,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : tokenProperties_;
       }
     }
-
     /**
      *
      *
@@ -2347,7 +2278,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.AccountVerificationInfo.Builder,
             com.google.recaptchaenterprise.v1.AccountVerificationInfoOrBuilder>
         accountVerificationBuilder_;
-
     /**
      *
      *
@@ -2365,7 +2295,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccountVerification() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2389,7 +2318,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return accountVerificationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2416,7 +2344,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2367,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2399,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2496,7 +2421,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2515,7 +2439,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccountVerificationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2538,7 +2461,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : accountVerification_;
       }
     }
-
     /**
      *
      *
@@ -2574,7 +2496,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.AccountDefenderAssessment.Builder,
             com.google.recaptchaenterprise.v1.AccountDefenderAssessmentOrBuilder>
         accountDefenderAssessmentBuilder_;
-
     /**
      *
      *
@@ -2592,7 +2513,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAccountDefenderAssessment() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2617,7 +2537,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return accountDefenderAssessmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2644,7 +2563,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2668,7 +2586,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2702,7 +2619,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2725,7 +2641,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2744,7 +2659,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAccountDefenderAssessmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2767,7 +2681,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : accountDefenderAssessment_;
       }
     }
-
     /**
      *
      *
@@ -2804,7 +2717,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification.Builder,
             com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerificationOrBuilder>
         privatePasswordLeakVerificationBuilder_;
-
     /**
      *
      *
@@ -2823,7 +2735,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrivatePasswordLeakVerification() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2849,7 +2760,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return privatePasswordLeakVerificationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2877,7 +2787,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2902,7 +2811,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2937,7 +2845,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2961,7 +2868,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2981,7 +2887,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPrivatePasswordLeakVerificationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3005,7 +2910,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : privatePasswordLeakVerification_;
       }
     }
-
     /**
      *
      *
@@ -3042,7 +2946,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder,
             com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder>
         firewallPolicyAssessmentBuilder_;
-
     /**
      *
      *
@@ -3060,7 +2963,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFirewallPolicyAssessment() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3085,7 +2987,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return firewallPolicyAssessmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3112,7 +3013,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3136,7 +3036,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3170,7 +3069,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3193,7 +3091,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3212,7 +3109,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFirewallPolicyAssessmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3235,7 +3131,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : firewallPolicyAssessment_;
       }
     }
-
     /**
      *
      *
@@ -3271,7 +3166,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FraudPreventionAssessment.Builder,
             com.google.recaptchaenterprise.v1.FraudPreventionAssessmentOrBuilder>
         fraudPreventionAssessmentBuilder_;
-
     /**
      *
      *
@@ -3289,7 +3183,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFraudPreventionAssessment() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3314,7 +3207,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return fraudPreventionAssessmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3341,7 +3233,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3365,7 +3256,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3399,7 +3289,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3422,7 +3311,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3441,7 +3329,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFraudPreventionAssessmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3464,7 +3351,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : fraudPreventionAssessment_;
       }
     }
-
     /**
      *
      *
@@ -3500,7 +3386,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.FraudSignals.Builder,
             com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder>
         fraudSignalsBuilder_;
-
     /**
      *
      *
@@ -3518,7 +3403,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFraudSignals() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3542,7 +3426,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return fraudSignalsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3568,7 +3451,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3592,7 +3474,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3505,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3647,7 +3527,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3665,7 +3544,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFraudSignalsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3687,7 +3565,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : fraudSignals_;
       }
     }
-
     /**
      *
      *
@@ -3723,7 +3600,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.PhoneFraudAssessment.Builder,
             com.google.recaptchaenterprise.v1.PhoneFraudAssessmentOrBuilder>
         phoneFraudAssessmentBuilder_;
-
     /**
      *
      *
@@ -3742,7 +3618,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhoneFraudAssessment() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3767,7 +3642,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return phoneFraudAssessmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3795,7 +3669,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3820,7 +3693,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3854,7 +3726,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3878,7 +3749,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3898,7 +3768,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPhoneFraudAssessmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3922,7 +3791,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : phoneFraudAssessment_;
       }
     }
-
     /**
      *
      *
@@ -3959,7 +3827,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.AssessmentEnvironment.Builder,
             com.google.recaptchaenterprise.v1.AssessmentEnvironmentOrBuilder>
         assessmentEnvironmentBuilder_;
-
     /**
      *
      *
@@ -3978,7 +3845,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAssessmentEnvironment() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4003,7 +3869,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         return assessmentEnvironmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4031,7 +3896,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4056,7 +3920,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4090,7 +3953,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4114,7 +3976,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4134,7 +3995,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAssessmentEnvironmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4158,7 +4018,6 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
             : assessmentEnvironment_;
       }
     }
-
     /**
      *
      *

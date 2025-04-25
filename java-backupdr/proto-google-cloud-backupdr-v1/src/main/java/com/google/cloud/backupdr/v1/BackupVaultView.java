@@ -73,7 +73,6 @@ public enum BackupVaultView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BACKUP_VAULT_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int BACKUP_VAULT_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public enum BackupVaultView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BACKUP_VAULT_VIEW_BASIC = 1;</code>
    */
   public static final int BACKUP_VAULT_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

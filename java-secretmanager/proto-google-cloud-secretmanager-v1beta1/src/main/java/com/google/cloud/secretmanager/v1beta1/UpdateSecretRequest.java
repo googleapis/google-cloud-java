@@ -23,8 +23,7 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for
- * [SecretManagerService.UpdateSecret][google.cloud.secrets.v1beta1.SecretManagerService.UpdateSecret].
+ * Request message for [SecretManagerService.UpdateSecret][google.cloud.secrets.v1beta1.SecretManagerService.UpdateSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.UpdateSecretRequest}
@@ -34,7 +33,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.UpdateSecretRequest)
     UpdateSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSecretRequest.newBuilder() to construct.
   private UpdateSecretRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,13 +64,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int SECRET_FIELD_NUMBER = 1;
   private com.google.cloud.secretmanager.v1beta1.Secret secret_;
-
   /**
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-   * values.
+   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
    * </pre>
    *
    * <code>
@@ -85,13 +81,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSecret() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-   * values.
+   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
    * </pre>
    *
    * <code>
@@ -106,13 +100,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.secretmanager.v1beta1.Secret.getDefaultInstance()
         : secret_;
   }
-
   /**
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-   * values.
+   * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
    * </pre>
    *
    * <code>
@@ -128,7 +120,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -145,7 +136,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +152,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -357,13 +346,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
-   * Request message for
-   * [SecretManagerService.UpdateSecret][google.cloud.secrets.v1beta1.SecretManagerService.UpdateSecret].
+   * Request message for [SecretManagerService.UpdateSecret][google.cloud.secrets.v1beta1.SecretManagerService.UpdateSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.UpdateSecretRequest}
@@ -581,13 +568,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.secretmanager.v1beta1.Secret.Builder,
             com.google.cloud.secretmanager.v1beta1.SecretOrBuilder>
         secretBuilder_;
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -599,13 +584,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSecret() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -623,13 +606,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
         return secretBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -649,13 +630,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -673,13 +652,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -704,13 +681,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -727,13 +702,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -745,13 +718,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSecretFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -767,13 +738,11 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
             : secret_;
       }
     }
-
     /**
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field
-     * values.
+     * Required. [Secret][google.cloud.secrets.v1beta1.Secret] with updated field values.
      * </pre>
      *
      * <code>
@@ -803,7 +772,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -819,7 +787,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -841,7 +808,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -865,7 +831,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +851,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +879,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +899,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +914,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -972,7 +933,6 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
-
     /**
      *
      *

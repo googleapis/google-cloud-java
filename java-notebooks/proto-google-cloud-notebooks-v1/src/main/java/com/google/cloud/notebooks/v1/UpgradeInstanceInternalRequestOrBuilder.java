@@ -37,7 +37,6 @@ public interface UpgradeInstanceInternalRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface UpgradeInstanceInternalRequestOrBuilder
    * @return The vmId.
    */
   java.lang.String getVmId();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface UpgradeInstanceInternalRequestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

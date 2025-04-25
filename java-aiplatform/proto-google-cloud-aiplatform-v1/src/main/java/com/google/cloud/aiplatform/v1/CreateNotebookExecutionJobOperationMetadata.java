@@ -35,7 +35,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateNotebookExecutionJobOperationMetadata)
     CreateNotebookExecutionJobOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNotebookExecutionJobOperationMetadata.newBuilder() to construct.
   private CreateNotebookExecutionJobOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object progressMessage_ = "";
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       return s;
     }
   }
-
   /**
    *
    *
@@ -359,7 +353,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +584,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
             : genericMetadata_;
       }
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
     }
 
     private java.lang.Object progressMessage_ = "";
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -857,7 +838,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class CreateNotebookExecutionJobOperationMetadata
       onChanged();
       return this;
     }
-
     /**
      *
      *

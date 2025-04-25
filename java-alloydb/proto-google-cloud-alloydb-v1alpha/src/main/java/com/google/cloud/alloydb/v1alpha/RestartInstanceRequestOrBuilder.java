@@ -39,7 +39,6 @@ public interface RestartInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface RestartInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -134,7 +132,6 @@ public interface RestartInstanceRequestOrBuilder
    * @return A list containing the nodeIds.
    */
   java.util.List<java.lang.String> getNodeIdsList();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface RestartInstanceRequestOrBuilder
    * @return The count of nodeIds.
    */
   int getNodeIdsCount();
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface RestartInstanceRequestOrBuilder
    * @return The nodeIds at the given index.
    */
   java.lang.String getNodeIds(int index);
-
   /**
    *
    *

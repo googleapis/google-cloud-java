@@ -36,7 +36,6 @@ public interface RunTaskResponseOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RunTaskResponseOrBuilder
    * @return The job.
    */
   com.google.cloud.dataplex.v1.Job getJob();
-
   /**
    *
    *

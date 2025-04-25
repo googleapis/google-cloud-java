@@ -36,7 +36,6 @@ public interface WorkstationClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface WorkstationClusterOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface WorkstationClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -141,11 +137,9 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface WorkstationClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface WorkstationClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -213,11 +204,9 @@ public interface WorkstationClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -231,7 +220,6 @@ public interface WorkstationClusterOrBuilder
    * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -249,7 +237,6 @@ public interface WorkstationClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -277,7 +264,6 @@ public interface WorkstationClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -291,7 +277,6 @@ public interface WorkstationClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -317,7 +302,6 @@ public interface WorkstationClusterOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -331,7 +315,6 @@ public interface WorkstationClusterOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -357,7 +340,6 @@ public interface WorkstationClusterOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -371,7 +353,6 @@ public interface WorkstationClusterOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -398,7 +379,6 @@ public interface WorkstationClusterOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -427,7 +407,6 @@ public interface WorkstationClusterOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -456,7 +435,6 @@ public interface WorkstationClusterOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
-
   /**
    *
    *
@@ -487,7 +465,6 @@ public interface WorkstationClusterOrBuilder
    * @return The controlPlaneIp.
    */
   java.lang.String getControlPlaneIp();
-
   /**
    *
    *
@@ -518,7 +495,6 @@ public interface WorkstationClusterOrBuilder
    * @return Whether the privateClusterConfig field is set.
    */
   boolean hasPrivateClusterConfig();
-
   /**
    *
    *
@@ -534,7 +510,6 @@ public interface WorkstationClusterOrBuilder
    */
   com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig
       getPrivateClusterConfig();
-
   /**
    *
    *
@@ -577,7 +552,6 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getConditionsList();
-
   /**
    *
    *
@@ -590,7 +564,6 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   com.google.rpc.Status getConditions(int index);
-
   /**
    *
    *
@@ -603,7 +576,6 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   int getConditionsCount();
-
   /**
    *
    *
@@ -616,7 +588,6 @@ public interface WorkstationClusterOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getConditionsOrBuilderList();
-
   /**
    *
    *

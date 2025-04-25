@@ -36,7 +36,6 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * @return The transcript.
    */
   java.lang.String getTranscript();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p1beta1.WordInfo> getWordsList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
   com.google.cloud.videointelligence.v1p1beta1.WordInfo getWords(int index);
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface SpeechRecognitionAlternativeOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
   int getWordsCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SpeechRecognitionAlternativeOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>
       getWordsOrBuilderList();
-
   /**
    *
    *

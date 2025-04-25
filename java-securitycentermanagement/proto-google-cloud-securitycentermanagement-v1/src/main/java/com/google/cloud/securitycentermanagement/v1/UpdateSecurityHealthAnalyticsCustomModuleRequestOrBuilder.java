@@ -43,7 +43,6 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return Whether the securityHealthAnalyticsCustomModule field is set.
    */
   boolean hasSecurityHealthAnalyticsCustomModule();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface UpdateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    */
   com.google.cloud.securitycentermanagement.v1.SecurityHealthAnalyticsCustomModule
       getSecurityHealthAnalyticsCustomModule();
-
   /**
    *
    *

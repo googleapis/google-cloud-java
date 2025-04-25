@@ -34,7 +34,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeResponse)
     CheckUpgradeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CheckUpgradeResponse.newBuilder() to construct.
   private CheckUpgradeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,7 +134,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * <code>CONFLICT_RESULT_UNSPECIFIED = 0;</code>
      */
     public static final int CONFLICT_RESULT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -146,7 +144,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
      * <code>CONFLICT = 1;</code>
      */
     public static final int CONFLICT_VALUE = 1;
-
     /**
      *
      *
@@ -248,7 +245,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object buildLogUri_ = "";
-
   /**
    *
    *
@@ -272,7 +268,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +294,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
 
   public static final int CONTAINS_PYPI_MODULES_CONFLICT_FIELD_NUMBER = 4;
   private int containsPypiModulesConflict_ = 0;
-
   /**
    *
    *
@@ -317,7 +311,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   public int getContainsPypiModulesConflictValue() {
     return containsPypiModulesConflict_;
   }
-
   /**
    *
    *
@@ -348,7 +341,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pypiConflictBuildLogExtract_ = "";
-
   /**
    *
    *
@@ -374,7 +366,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -405,7 +396,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageVersion_ = "";
-
   /**
    *
    *
@@ -429,7 +419,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -482,7 +471,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   public int getPypiDependenciesCount() {
     return internalGetPypiDependencies().getMap().size();
   }
-
   /**
    *
    *
@@ -500,14 +488,12 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     }
     return internalGetPypiDependencies().getMap().containsKey(key);
   }
-
   /** Use {@link #getPypiDependenciesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getPypiDependencies() {
     return getPypiDependenciesMap();
   }
-
   /**
    *
    *
@@ -522,7 +508,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getPypiDependenciesMap() {
     return internalGetPypiDependencies().getMap();
   }
-
   /**
    *
    *
@@ -544,7 +529,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetPypiDependencies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -787,7 +771,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1069,7 +1052,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object buildLogUri_ = "";
-
     /**
      *
      *
@@ -1092,7 +1074,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1096,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1117,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1134,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1158,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     }
 
     private int containsPypiModulesConflict_ = 0;
-
     /**
      *
      *
@@ -1198,7 +1175,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     public int getContainsPypiModulesConflictValue() {
       return containsPypiModulesConflict_;
     }
-
     /**
      *
      *
@@ -1219,7 +1195,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1246,7 +1221,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
               .ConflictResult.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1272,7 +1246,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1267,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pypiConflictBuildLogExtract_ = "";
-
     /**
      *
      *
@@ -1320,7 +1292,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1346,7 +1317,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1371,7 +1341,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1361,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1420,7 +1388,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object imageVersion_ = "";
-
     /**
      *
      *
@@ -1443,7 +1410,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1466,7 +1432,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1488,7 +1453,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1470,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1522,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     public int getPypiDependenciesCount() {
       return internalGetPypiDependencies().getMap().size();
     }
-
     /**
      *
      *
@@ -1577,14 +1539,12 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       }
       return internalGetPypiDependencies().getMap().containsKey(key);
     }
-
     /** Use {@link #getPypiDependenciesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getPypiDependencies() {
       return getPypiDependenciesMap();
     }
-
     /**
      *
      *
@@ -1599,7 +1559,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getPypiDependenciesMap() {
       return internalGetPypiDependencies().getMap();
     }
-
     /**
      *
      *
@@ -1622,7 +1581,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
           internalGetPypiDependencies().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1651,7 +1609,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       internalGetMutablePypiDependencies().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1669,14 +1626,12 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       internalGetMutablePypiDependencies().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutablePypiDependencies() {
       bitField0_ |= 0x00000010;
       return internalGetMutablePypiDependencies().getMutableMap();
     }
-
     /**
      *
      *
@@ -1698,7 +1653,6 @@ public final class CheckUpgradeResponse extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *

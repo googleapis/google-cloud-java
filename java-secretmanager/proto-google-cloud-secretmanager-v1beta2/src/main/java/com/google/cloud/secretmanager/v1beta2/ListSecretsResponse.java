@@ -34,7 +34,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1beta2.ListSecretsResponse)
     ListSecretsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSecretsResponse.newBuilder() to construct.
   private ListSecretsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.secretmanager.v1beta2.Secret> secrets_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.secretmanager.v1beta2.Secret> getSecretsList() {
     return secrets_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       getSecretsOrBuilderList() {
     return secrets_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
   public int getSecretsCount() {
     return secrets_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.secretmanager.v1beta2.Secret getSecrets(int index) {
     return secrets_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -406,7 +397,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -698,7 +688,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return secretsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return secretsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return secretsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -758,7 +745,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +789,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +833,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +928,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.secretmanager.v1beta2.Secret.Builder getSecretsBuilder(int index) {
       return getSecretsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -968,7 +945,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return secretsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -987,7 +963,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(secrets_);
       }
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       return getSecretsFieldBuilder()
           .addBuilder(com.google.cloud.secretmanager.v1beta2.Secret.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       return getSecretsFieldBuilder()
           .addBuilder(index, com.google.cloud.secretmanager.v1beta2.Secret.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1051,7 +1024,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1076,7 +1048,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1101,7 +1072,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1095,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1114,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1140,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1191,7 +1158,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1214,7 +1180,6 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

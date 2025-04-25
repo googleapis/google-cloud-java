@@ -64,7 +64,6 @@ public enum EventCriteriaScoping implements com.google.protobuf.ProtocolMessageE
    * <code>EVENT_CRITERIA_SCOPING_UNSPECIFIED = 0;</code>
    */
   public static final int EVENT_CRITERIA_SCOPING_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

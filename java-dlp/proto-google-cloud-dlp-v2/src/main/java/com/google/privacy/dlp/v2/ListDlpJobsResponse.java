@@ -33,7 +33,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListDlpJobsResponse)
     ListDlpJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDlpJobsResponse.newBuilder() to construct.
   private ListDlpJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DlpJob> jobs_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.privacy.dlp.v2.DlpJob> getJobsList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       getJobsOrBuilderList() {
     return jobs_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
   public int getJobsCount() {
     return jobs_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
   public com.google.privacy.dlp.v2.DlpJob getJobs(int index) {
     return jobs_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -638,7 +629,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return jobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -655,7 +645,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return jobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return jobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.DlpJob.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -892,7 +870,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return jobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -910,7 +887,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(jobs_);
       }
     }
-
     /**
      *
      *
@@ -924,7 +900,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       return getJobsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.DlpJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -938,7 +913,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       return getJobsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.DlpJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -970,7 +944,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -993,7 +966,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1016,7 +988,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1009,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1026,6 @@ public final class ListDlpJobsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

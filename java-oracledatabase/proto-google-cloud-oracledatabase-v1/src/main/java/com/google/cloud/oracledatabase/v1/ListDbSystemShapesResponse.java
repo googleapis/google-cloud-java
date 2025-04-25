@@ -33,7 +33,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.ListDbSystemShapesResponse)
     ListDbSystemShapesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDbSystemShapesResponse.newBuilder() to construct.
   private ListDbSystemShapesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.oracledatabase.v1.DbSystemShape> dbSystemShapes_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.oracledatabase.v1.DbSystemShape> getDbSystemShapesList() {
     return dbSystemShapes_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       getDbSystemShapesOrBuilderList() {
     return dbSystemShapes_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
   public int getDbSystemShapesCount() {
     return dbSystemShapes_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
   public com.google.cloud.oracledatabase.v1.DbSystemShape getDbSystemShapes(int index) {
     return dbSystemShapes_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return dbSystemShapesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return dbSystemShapesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return dbSystemShapesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         int index) {
       return getDbSystemShapesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -911,7 +889,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return dbSystemShapesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -929,7 +906,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(dbSystemShapes_);
       }
     }
-
     /**
      *
      *
@@ -943,7 +919,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       return getDbSystemShapesFieldBuilder()
           .addBuilder(com.google.cloud.oracledatabase.v1.DbSystemShape.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -958,7 +933,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       return getDbSystemShapesFieldBuilder()
           .addBuilder(index, com.google.cloud.oracledatabase.v1.DbSystemShape.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -994,7 +968,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1033,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1050,6 @@ public final class ListDbSystemShapesResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

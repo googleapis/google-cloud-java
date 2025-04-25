@@ -38,7 +38,6 @@ public interface AuxiliaryServicesConfigOrBuilder
    * @return Whether the metastoreConfig field is set.
    */
   boolean hasMetastoreConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AuxiliaryServicesConfigOrBuilder
    * @return The metastoreConfig.
    */
   com.google.cloud.dataproc.v1.MetastoreConfig getMetastoreConfig();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AuxiliaryServicesConfigOrBuilder
    * @return Whether the sparkHistoryServerConfig field is set.
    */
   boolean hasSparkHistoryServerConfig();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface AuxiliaryServicesConfigOrBuilder
    * @return The sparkHistoryServerConfig.
    */
   com.google.cloud.dataproc.v1.SparkHistoryServerConfig getSparkHistoryServerConfig();
-
   /**
    *
    *

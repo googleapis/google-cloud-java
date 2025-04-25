@@ -38,7 +38,6 @@ public interface ExportInsightsDataRequestOrBuilder
    * @return Whether the bigQueryDestination field is set.
    */
   boolean hasBigQueryDestination();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ExportInsightsDataRequestOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination
       getBigQueryDestination();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ExportInsightsDataRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface ExportInsightsDataRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface ExportInsightsDataRequestOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface ExportInsightsDataRequestOrBuilder
    * @return The enum numeric value on the wire for writeDisposition.
    */
   int getWriteDispositionValue();
-
   /**
    *
    *

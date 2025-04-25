@@ -33,7 +33,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.UploadFileInfo)
     UploadFileInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadFileInfo.newBuilder() to construct.
   private UploadFileInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signedUri_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
   public int getHeadersCount() {
     return internalGetHeaders().getMap().size();
   }
-
   /**
    *
    *
@@ -174,14 +170,12 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetHeaders().getMap().containsKey(key);
   }
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
   }
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URI_EXPIRATION_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp uriExpirationTime_;
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUriExpirationTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : uriExpirationTime_;
   }
-
   /**
    *
    *
@@ -490,7 +479,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +737,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object signedUri_ = "";
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -817,7 +802,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +819,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +867,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
-
     /**
      *
      *
@@ -902,14 +884,12 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
-
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
-
     /**
      *
      *
@@ -924,7 +904,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
-
     /**
      *
      *
@@ -946,7 +925,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -992,14 +969,12 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
       bitField0_ |= 0x00000002;
       return internalGetMutableHeaders().getMutableMap();
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         uriExpirationTimeBuilder_;
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUriExpirationTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
         return uriExpirationTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1080,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1101,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1130,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1151,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1167,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUriExpirationTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1221,7 +1187,6 @@ public final class UploadFileInfo extends com.google.protobuf.GeneratedMessageV3
             : uriExpirationTime_;
       }
     }
-
     /**
      *
      *

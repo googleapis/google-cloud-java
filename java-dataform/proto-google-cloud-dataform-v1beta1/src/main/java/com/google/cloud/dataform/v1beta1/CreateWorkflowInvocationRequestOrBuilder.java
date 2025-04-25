@@ -39,7 +39,6 @@ public interface CreateWorkflowInvocationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateWorkflowInvocationRequestOrBuilder
    * @return Whether the workflowInvocation field is set.
    */
   boolean hasWorkflowInvocation();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateWorkflowInvocationRequestOrBuilder
    * @return The workflowInvocation.
    */
   com.google.cloud.dataform.v1beta1.WorkflowInvocation getWorkflowInvocation();
-
   /**
    *
    *

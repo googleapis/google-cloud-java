@@ -33,7 +33,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.UpdateSpecRequest)
     UpdateSpecRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSpecRequest.newBuilder() to construct.
   private UpdateSpecRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.apihub.v1.Spec spec_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.apihub.v1.Spec getSpec() {
     return spec_ == null ? com.google.cloud.apihub.v1.Spec.getDefaultInstance() : spec_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -354,7 +347,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +568,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.apihub.v1.Spec.Builder,
             com.google.cloud.apihub.v1.SpecOrBuilder>
         specBuilder_;
-
     /**
      *
      *
@@ -595,7 +586,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
         return specBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
         return spec_ == null ? com.google.cloud.apihub.v1.Spec.getDefaultInstance() : spec_;
       }
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -818,7 +800,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -864,7 +844,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +892,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +912,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class UpdateSpecRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
-
     /**
      *
      *

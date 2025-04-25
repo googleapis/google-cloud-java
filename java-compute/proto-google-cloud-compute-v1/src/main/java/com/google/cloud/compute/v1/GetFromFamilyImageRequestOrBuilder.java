@@ -36,7 +36,6 @@ public interface GetFromFamilyImageRequestOrBuilder
    * @return The family.
    */
   java.lang.String getFamily();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetFromFamilyImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

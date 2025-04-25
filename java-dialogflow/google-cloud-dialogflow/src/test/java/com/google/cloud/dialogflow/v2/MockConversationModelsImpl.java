@@ -73,8 +73,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversationModel, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateConversationModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -95,8 +94,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConversationModel, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetConversationModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversationModel.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversationModels, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListConversationModels, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversationModelsResponse.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConversationModel, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteConversationModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +158,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeployConversationModel, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeployConversationModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -184,8 +179,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UndeployConversationModel, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UndeployConversationModel, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -207,8 +201,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConversationModelEvaluation,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetConversationModelEvaluation, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversationModelEvaluation.class.getName(),
                   Exception.class.getName())));
@@ -230,8 +223,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversationModelEvaluations,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ListConversationModelEvaluations, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversationModelEvaluationsResponse.class.getName(),
                   Exception.class.getName())));
@@ -253,8 +245,7 @@ public class MockConversationModelsImpl extends ConversationModelsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversationModelEvaluation,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method CreateConversationModelEvaluation, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

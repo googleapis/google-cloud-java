@@ -33,7 +33,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.appengine.v1.StandardSchedulerSettings)
     StandardSchedulerSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StandardSchedulerSettings.newBuilder() to construct.
   private StandardSchedulerSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
 
   public static final int TARGET_CPU_UTILIZATION_FIELD_NUMBER = 1;
   private double targetCpuUtilization_ = 0D;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
 
   public static final int TARGET_THROUGHPUT_UTILIZATION_FIELD_NUMBER = 2;
   private double targetThroughputUtilization_ = 0D;
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 3;
   private int minInstances_ = 0;
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 4;
   private int maxInstances_ = 0;
-
   /**
    *
    *
@@ -335,7 +330,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +551,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     private int bitField0_;
 
     private double targetCpuUtilization_;
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public double getTargetCpuUtilization() {
       return targetCpuUtilization_;
     }
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -613,7 +604,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     }
 
     private double targetThroughputUtilization_;
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public double getTargetThroughputUtilization() {
       return targetThroughputUtilization_;
     }
-
     /**
      *
      *
@@ -649,7 +638,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     }
 
     private int minInstances_;
-
     /**
      *
      *
@@ -686,7 +673,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public int getMinInstances() {
       return minInstances_;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +713,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     }
 
     private int maxInstances_;
-
     /**
      *
      *
@@ -745,7 +729,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
     public int getMaxInstances() {
       return maxInstances_;
     }
-
     /**
      *
      *
@@ -766,7 +749,6 @@ public final class StandardSchedulerSettings extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

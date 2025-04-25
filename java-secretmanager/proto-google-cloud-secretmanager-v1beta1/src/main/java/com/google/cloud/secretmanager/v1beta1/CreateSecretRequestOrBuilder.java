@@ -39,7 +39,6 @@ public interface CreateSecretRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateSecretRequestOrBuilder
    * @return The secretId.
    */
   java.lang.String getSecretId();
-
   /**
    *
    *
@@ -94,8 +92,7 @@ public interface CreateSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-   * field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
    * <code>
@@ -105,13 +102,11 @@ public interface CreateSecretRequestOrBuilder
    * @return Whether the secret field is set.
    */
   boolean hasSecret();
-
   /**
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-   * field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
    * <code>
@@ -121,13 +116,11 @@ public interface CreateSecretRequestOrBuilder
    * @return The secret.
    */
   com.google.cloud.secretmanager.v1beta1.Secret getSecret();
-
   /**
    *
    *
    * <pre>
-   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial
-   * field values.
+   * Required. A [Secret][google.cloud.secrets.v1beta1.Secret] with initial field values.
    * </pre>
    *
    * <code>

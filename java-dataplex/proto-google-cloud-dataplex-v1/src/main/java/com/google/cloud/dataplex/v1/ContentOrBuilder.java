@@ -39,7 +39,6 @@ public interface ContentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ContentOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ContentOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface ContentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface ContentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface ContentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface ContentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface ContentOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -217,11 +209,9 @@ public interface ContentOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public interface ContentOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -247,7 +236,6 @@ public interface ContentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -271,7 +259,6 @@ public interface ContentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -297,7 +284,6 @@ public interface ContentOrBuilder
    * @return Whether the dataText field is set.
    */
   boolean hasDataText();
-
   /**
    *
    *
@@ -310,7 +296,6 @@ public interface ContentOrBuilder
    * @return The dataText.
    */
   java.lang.String getDataText();
-
   /**
    *
    *
@@ -336,7 +321,6 @@ public interface ContentOrBuilder
    * @return Whether the sqlScript field is set.
    */
   boolean hasSqlScript();
-
   /**
    *
    *
@@ -349,7 +333,6 @@ public interface ContentOrBuilder
    * @return The sqlScript.
    */
   com.google.cloud.dataplex.v1.Content.SqlScript getSqlScript();
-
   /**
    *
    *
@@ -373,7 +356,6 @@ public interface ContentOrBuilder
    * @return Whether the notebook field is set.
    */
   boolean hasNotebook();
-
   /**
    *
    *
@@ -386,7 +368,6 @@ public interface ContentOrBuilder
    * @return The notebook.
    */
   com.google.cloud.dataplex.v1.Content.Notebook getNotebook();
-
   /**
    *
    *

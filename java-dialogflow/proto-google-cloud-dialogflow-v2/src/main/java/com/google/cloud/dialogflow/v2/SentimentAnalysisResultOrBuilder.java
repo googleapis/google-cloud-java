@@ -36,7 +36,6 @@ public interface SentimentAnalysisResultOrBuilder
    * @return Whether the queryTextSentiment field is set.
    */
   boolean hasQueryTextSentiment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SentimentAnalysisResultOrBuilder
    * @return The queryTextSentiment.
    */
   com.google.cloud.dialogflow.v2.Sentiment getQueryTextSentiment();
-
   /**
    *
    *

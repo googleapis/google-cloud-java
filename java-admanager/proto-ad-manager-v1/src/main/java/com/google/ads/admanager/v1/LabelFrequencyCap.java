@@ -33,7 +33,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.LabelFrequencyCap)
     LabelFrequencyCapOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelFrequencyCap.newBuilder() to construct.
   private LabelFrequencyCap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object label_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
 
   public static final int FREQUENCY_CAP_FIELD_NUMBER = 2;
   private com.google.ads.admanager.v1.FrequencyCap frequencyCap_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
   public boolean hasFrequencyCap() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
         ? com.google.ads.admanager.v1.FrequencyCap.getDefaultInstance()
         : frequencyCap_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object label_ = "";
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
             com.google.ads.admanager.v1.FrequencyCap.Builder,
             com.google.ads.admanager.v1.FrequencyCapOrBuilder>
         frequencyCapBuilder_;
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
     public boolean hasFrequencyCap() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -731,7 +717,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
         return frequencyCapBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -754,7 +739,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +759,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +819,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getFrequencyCapFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class LabelFrequencyCap extends com.google.protobuf.GeneratedMessag
             : frequencyCap_;
       }
     }
-
     /**
      *
      *

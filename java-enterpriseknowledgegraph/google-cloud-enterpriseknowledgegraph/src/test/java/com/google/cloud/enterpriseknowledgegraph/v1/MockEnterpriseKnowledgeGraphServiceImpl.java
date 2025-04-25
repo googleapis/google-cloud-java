@@ -75,8 +75,7 @@ public class MockEnterpriseKnowledgeGraphServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateEntityReconciliationJob, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CreateEntityReconciliationJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EntityReconciliationJob.class.getName(),
                   Exception.class.getName())));
@@ -98,8 +97,7 @@ public class MockEnterpriseKnowledgeGraphServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetEntityReconciliationJob, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetEntityReconciliationJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EntityReconciliationJob.class.getName(),
                   Exception.class.getName())));
@@ -121,8 +119,7 @@ public class MockEnterpriseKnowledgeGraphServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListEntityReconciliationJobs, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListEntityReconciliationJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEntityReconciliationJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -143,8 +140,7 @@ public class MockEnterpriseKnowledgeGraphServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelEntityReconciliationJob, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CancelEntityReconciliationJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -165,8 +161,7 @@ public class MockEnterpriseKnowledgeGraphServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteEntityReconciliationJob, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method DeleteEntityReconciliationJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

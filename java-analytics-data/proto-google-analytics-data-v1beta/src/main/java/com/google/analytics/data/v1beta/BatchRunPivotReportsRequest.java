@@ -33,7 +33,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.BatchRunPivotReportsRequest)
     BatchRunPivotReportsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRunPivotReportsRequest.newBuilder() to construct.
   private BatchRunPivotReportsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.RunPivotReportRequest> requests_;
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
   public java.util.List<com.google.analytics.data.v1beta.RunPivotReportRequest> getRequestsList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       getRequestsOrBuilderList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
   public int getRequestsCount() {
     return requests_.size();
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
   public com.google.analytics.data.v1beta.RunPivotReportRequest getRequests(int index) {
     return requests_.get(index);
   }
-
   /**
    *
    *
@@ -387,7 +379,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -637,7 +628,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object property_ = "";
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +809,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return requestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -841,7 +826,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return requestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return requestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -884,7 +867,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +977,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1022,7 +999,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1039,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1053,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1098,7 +1071,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1103,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
       return getRequestsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.RunPivotReportRequest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1149,7 +1119,6 @@ public final class BatchRunPivotReportsRequest extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.analytics.data.v1beta.RunPivotReportRequest.getDefaultInstance());
     }
-
     /**
      *
      *

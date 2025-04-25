@@ -36,7 +36,6 @@ public interface GetPacketMirroringRequestOrBuilder
    * @return The packetMirroring.
    */
   java.lang.String getPacketMirroring();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetPacketMirroringRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetPacketMirroringRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

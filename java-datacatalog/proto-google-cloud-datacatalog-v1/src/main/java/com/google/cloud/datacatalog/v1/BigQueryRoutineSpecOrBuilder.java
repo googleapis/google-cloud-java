@@ -36,7 +36,6 @@ public interface BigQueryRoutineSpecOrBuilder
    * @return A list containing the importedLibraries.
    */
   java.util.List<java.lang.String> getImportedLibrariesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BigQueryRoutineSpecOrBuilder
    * @return The count of importedLibraries.
    */
   int getImportedLibrariesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface BigQueryRoutineSpecOrBuilder
    * @return The importedLibraries at the given index.
    */
   java.lang.String getImportedLibraries(int index);
-
   /**
    *
    *

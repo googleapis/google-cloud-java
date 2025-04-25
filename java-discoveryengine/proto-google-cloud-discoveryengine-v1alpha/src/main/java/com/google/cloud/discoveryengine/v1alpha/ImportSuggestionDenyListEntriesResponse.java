@@ -37,7 +37,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesResponse)
     ImportSuggestionDenyListEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportSuggestionDenyListEntriesResponse.newBuilder() to construct.
   private ImportSuggestionDenyListEntriesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ImportSuggestionDenyListEntriesResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ImportSuggestionDenyListEntriesResponse
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ImportSuggestionDenyListEntriesResponse
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ImportSuggestionDenyListEntriesResponse
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ImportSuggestionDenyListEntriesResponse
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ImportSuggestionDenyListEntriesResponse
 
   public static final int IMPORTED_ENTRIES_COUNT_FIELD_NUMBER = 2;
   private long importedEntriesCount_ = 0L;
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public final class ImportSuggestionDenyListEntriesResponse
 
   public static final int FAILED_ENTRIES_COUNT_FIELD_NUMBER = 3;
   private long failedEntriesCount_ = 0L;
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -674,7 +665,6 @@ public final class ImportSuggestionDenyListEntriesResponse
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class ImportSuggestionDenyListEntriesResponse
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class ImportSuggestionDenyListEntriesResponse
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +889,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class ImportSuggestionDenyListEntriesResponse
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class ImportSuggestionDenyListEntriesResponse
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -957,7 +933,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1001,7 +975,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     }
 
     private long importedEntriesCount_;
-
     /**
      *
      *
@@ -1017,7 +990,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     public long getImportedEntriesCount() {
       return importedEntriesCount_;
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1028,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     }
 
     private long failedEntriesCount_;
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class ImportSuggestionDenyListEntriesResponse
     public long getFailedEntriesCount() {
       return failedEntriesCount_;
     }
-
     /**
      *
      *
@@ -1093,7 +1062,6 @@ public final class ImportSuggestionDenyListEntriesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

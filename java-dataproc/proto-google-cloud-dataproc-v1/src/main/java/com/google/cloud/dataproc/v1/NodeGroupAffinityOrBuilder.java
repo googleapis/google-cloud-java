@@ -45,7 +45,6 @@ public interface NodeGroupAffinityOrBuilder
    * @return The nodeGroupUri.
    */
   java.lang.String getNodeGroupUri();
-
   /**
    *
    *

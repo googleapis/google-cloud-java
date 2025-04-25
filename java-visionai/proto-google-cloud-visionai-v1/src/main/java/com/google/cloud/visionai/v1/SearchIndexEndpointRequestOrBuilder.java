@@ -36,7 +36,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * @return Whether the imageQuery field is set.
    */
   boolean hasImageQuery();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * @return The imageQuery.
    */
   com.google.cloud.visionai.v1.ImageQuery getImageQuery();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * @return Whether the textQuery field is set.
    */
   boolean hasTextQuery();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * @return The textQuery.
    */
   java.lang.String getTextQuery();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria criteria = 4;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Criteria> getCriteriaList();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria criteria = 4;</code>
    */
   com.google.cloud.visionai.v1.Criteria getCriteria(int index);
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria criteria = 4;</code>
    */
   int getCriteriaCount();
-
   /**
    *
    *
@@ -178,7 +170,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CriteriaOrBuilder>
       getCriteriaOrBuilderList();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria exclusion_criteria = 7;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Criteria> getExclusionCriteriaList();
-
   /**
    *
    *
@@ -213,7 +203,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria exclusion_criteria = 7;</code>
    */
   com.google.cloud.visionai.v1.Criteria getExclusionCriteria(int index);
-
   /**
    *
    *
@@ -225,7 +214,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Criteria exclusion_criteria = 7;</code>
    */
   int getExclusionCriteriaCount();
-
   /**
    *
    *
@@ -238,7 +226,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CriteriaOrBuilder>
       getExclusionCriteriaOrBuilderList();
-
   /**
    *
    *
@@ -281,7 +268,6 @@ public interface SearchIndexEndpointRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

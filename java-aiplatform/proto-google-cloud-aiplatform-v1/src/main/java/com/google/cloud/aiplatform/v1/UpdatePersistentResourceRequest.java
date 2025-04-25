@@ -33,7 +33,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdatePersistentResourceRequest)
     UpdatePersistentResourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdatePersistentResourceRequest.newBuilder() to construct.
   private UpdatePersistentResourceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,7 +65,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int PERSISTENT_RESOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.PersistentResource persistentResource_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
   public boolean hasPersistentResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
         ? com.google.cloud.aiplatform.v1.PersistentResource.getDefaultInstance()
         : persistentResource_;
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -370,7 +363,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -600,7 +592,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
             com.google.cloud.aiplatform.v1.PersistentResource.Builder,
             com.google.cloud.aiplatform.v1.PersistentResourceOrBuilder>
         persistentResourceBuilder_;
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
     public boolean hasPersistentResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
         return persistentResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return getPersistentResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
             : persistentResource_;
       }
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -870,7 +852,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -918,7 +898,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +969,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class UpdatePersistentResourceRequest extends com.google.protobuf.G
             : updateMask_;
       }
     }
-
     /**
      *
      *

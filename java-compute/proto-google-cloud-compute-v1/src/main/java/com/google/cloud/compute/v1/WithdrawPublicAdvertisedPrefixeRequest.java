@@ -34,7 +34,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.WithdrawPublicAdvertisedPrefixeRequest)
     WithdrawPublicAdvertisedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WithdrawPublicAdvertisedPrefixeRequest.newBuilder() to construct.
   private WithdrawPublicAdvertisedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicAdvertisedPrefix_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -437,7 +429,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +653,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -687,7 +677,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
     }
 
     private java.lang.Object publicAdvertisedPrefix_ = "";
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -937,7 +916,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class WithdrawPublicAdvertisedPrefixeRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

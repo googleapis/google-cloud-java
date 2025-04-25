@@ -33,7 +33,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.PartOfSpeech)
     PartOfSpeechOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PartOfSpeech.newBuilder() to construct.
   private PartOfSpeech(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -238,7 +237,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -249,7 +247,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ADJ = 1;</code>
      */
     public static final int ADJ_VALUE = 1;
-
     /**
      *
      *
@@ -260,7 +257,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ADP = 2;</code>
      */
     public static final int ADP_VALUE = 2;
-
     /**
      *
      *
@@ -271,7 +267,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ADV = 3;</code>
      */
     public static final int ADV_VALUE = 3;
-
     /**
      *
      *
@@ -282,7 +277,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>CONJ = 4;</code>
      */
     public static final int CONJ_VALUE = 4;
-
     /**
      *
      *
@@ -293,7 +287,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>DET = 5;</code>
      */
     public static final int DET_VALUE = 5;
-
     /**
      *
      *
@@ -304,7 +297,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>NOUN = 6;</code>
      */
     public static final int NOUN_VALUE = 6;
-
     /**
      *
      *
@@ -315,7 +307,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>NUM = 7;</code>
      */
     public static final int NUM_VALUE = 7;
-
     /**
      *
      *
@@ -326,7 +317,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PRON = 8;</code>
      */
     public static final int PRON_VALUE = 8;
-
     /**
      *
      *
@@ -337,7 +327,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PRT = 9;</code>
      */
     public static final int PRT_VALUE = 9;
-
     /**
      *
      *
@@ -348,7 +337,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PUNCT = 10;</code>
      */
     public static final int PUNCT_VALUE = 10;
-
     /**
      *
      *
@@ -359,7 +347,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>VERB = 11;</code>
      */
     public static final int VERB_VALUE = 11;
-
     /**
      *
      *
@@ -370,7 +357,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>X = 12;</code>
      */
     public static final int X_VALUE = 12;
-
     /**
      *
      *
@@ -550,7 +536,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ASPECT_UNKNOWN = 0;</code>
      */
     public static final int ASPECT_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -561,7 +546,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PERFECTIVE = 1;</code>
      */
     public static final int PERFECTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -572,7 +556,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPERFECTIVE = 2;</code>
      */
     public static final int IMPERFECTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>CASE_UNKNOWN = 0;</code>
      */
     public static final int CASE_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCUSATIVE = 1;</code>
      */
     public static final int ACCUSATIVE_VALUE = 1;
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ADVERBIAL = 2;</code>
      */
     public static final int ADVERBIAL_VALUE = 2;
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLEMENTIVE = 3;</code>
      */
     public static final int COMPLEMENTIVE_VALUE = 3;
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>DATIVE = 4;</code>
      */
     public static final int DATIVE_VALUE = 4;
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>GENITIVE = 5;</code>
      */
     public static final int GENITIVE_VALUE = 5;
-
     /**
      *
      *
@@ -910,7 +887,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTRUMENTAL = 6;</code>
      */
     public static final int INSTRUMENTAL_VALUE = 6;
-
     /**
      *
      *
@@ -921,7 +897,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCATIVE = 7;</code>
      */
     public static final int LOCATIVE_VALUE = 7;
-
     /**
      *
      *
@@ -932,7 +907,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>NOMINATIVE = 8;</code>
      */
     public static final int NOMINATIVE_VALUE = 8;
-
     /**
      *
      *
@@ -943,7 +917,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>OBLIQUE = 9;</code>
      */
     public static final int OBLIQUE_VALUE = 9;
-
     /**
      *
      *
@@ -954,7 +927,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PARTITIVE = 10;</code>
      */
     public static final int PARTITIVE_VALUE = 10;
-
     /**
      *
      *
@@ -965,7 +937,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PREPOSITIONAL = 11;</code>
      */
     public static final int PREPOSITIONAL_VALUE = 11;
-
     /**
      *
      *
@@ -976,7 +947,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>REFLEXIVE_CASE = 12;</code>
      */
     public static final int REFLEXIVE_CASE_VALUE = 12;
-
     /**
      *
      *
@@ -987,7 +957,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>RELATIVE_CASE = 13;</code>
      */
     public static final int RELATIVE_CASE_VALUE = 13;
-
     /**
      *
      *
@@ -1252,7 +1221,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>FORM_UNKNOWN = 0;</code>
      */
     public static final int FORM_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -1263,7 +1231,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ADNOMIAL = 1;</code>
      */
     public static final int ADNOMIAL_VALUE = 1;
-
     /**
      *
      *
@@ -1274,7 +1241,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>AUXILIARY = 2;</code>
      */
     public static final int AUXILIARY_VALUE = 2;
-
     /**
      *
      *
@@ -1285,7 +1251,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>COMPLEMENTIZER = 3;</code>
      */
     public static final int COMPLEMENTIZER_VALUE = 3;
-
     /**
      *
      *
@@ -1296,7 +1261,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>FINAL_ENDING = 4;</code>
      */
     public static final int FINAL_ENDING_VALUE = 4;
-
     /**
      *
      *
@@ -1307,7 +1271,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>GERUND = 5;</code>
      */
     public static final int GERUND_VALUE = 5;
-
     /**
      *
      *
@@ -1318,7 +1281,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>REALIS = 6;</code>
      */
     public static final int REALIS_VALUE = 6;
-
     /**
      *
      *
@@ -1329,7 +1291,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>IRREALIS = 7;</code>
      */
     public static final int IRREALIS_VALUE = 7;
-
     /**
      *
      *
@@ -1340,7 +1301,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>SHORT = 8;</code>
      */
     public static final int SHORT_VALUE = 8;
-
     /**
      *
      *
@@ -1351,7 +1311,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>LONG = 9;</code>
      */
     public static final int LONG_VALUE = 9;
-
     /**
      *
      *
@@ -1362,7 +1321,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ORDER = 10;</code>
      */
     public static final int ORDER_VALUE = 10;
-
     /**
      *
      *
@@ -1538,7 +1496,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>GENDER_UNKNOWN = 0;</code>
      */
     public static final int GENDER_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -1549,7 +1506,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>FEMININE = 1;</code>
      */
     public static final int FEMININE_VALUE = 1;
-
     /**
      *
      *
@@ -1560,7 +1516,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>MASCULINE = 2;</code>
      */
     public static final int MASCULINE_VALUE = 2;
-
     /**
      *
      *
@@ -1750,7 +1705,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>MOOD_UNKNOWN = 0;</code>
      */
     public static final int MOOD_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -1761,7 +1715,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>CONDITIONAL_MOOD = 1;</code>
      */
     public static final int CONDITIONAL_MOOD_VALUE = 1;
-
     /**
      *
      *
@@ -1772,7 +1725,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPERATIVE = 2;</code>
      */
     public static final int IMPERATIVE_VALUE = 2;
-
     /**
      *
      *
@@ -1783,7 +1735,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>INDICATIVE = 3;</code>
      */
     public static final int INDICATIVE_VALUE = 3;
-
     /**
      *
      *
@@ -1794,7 +1745,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERROGATIVE = 4;</code>
      */
     public static final int INTERROGATIVE_VALUE = 4;
-
     /**
      *
      *
@@ -1805,7 +1755,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>JUSSIVE = 5;</code>
      */
     public static final int JUSSIVE_VALUE = 5;
-
     /**
      *
      *
@@ -1971,7 +1920,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>NUMBER_UNKNOWN = 0;</code>
      */
     public static final int NUMBER_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -1982,7 +1930,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>SINGULAR = 1;</code>
      */
     public static final int SINGULAR_VALUE = 1;
-
     /**
      *
      *
@@ -1993,7 +1940,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PLURAL = 2;</code>
      */
     public static final int PLURAL_VALUE = 2;
-
     /**
      *
      *
@@ -2163,7 +2109,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PERSON_UNKNOWN = 0;</code>
      */
     public static final int PERSON_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -2174,7 +2119,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>FIRST = 1;</code>
      */
     public static final int FIRST_VALUE = 1;
-
     /**
      *
      *
@@ -2185,7 +2129,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>SECOND = 2;</code>
      */
     public static final int SECOND_VALUE = 2;
-
     /**
      *
      *
@@ -2196,7 +2139,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>THIRD = 3;</code>
      */
     public static final int THIRD_VALUE = 3;
-
     /**
      *
      *
@@ -2348,7 +2290,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPER_UNKNOWN = 0;</code>
      */
     public static final int PROPER_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -2359,7 +2300,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PROPER = 1;</code>
      */
     public static final int PROPER_VALUE = 1;
-
     /**
      *
      *
@@ -2509,7 +2449,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>RECIPROCITY_UNKNOWN = 0;</code>
      */
     public static final int RECIPROCITY_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -2520,7 +2459,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>RECIPROCAL = 1;</code>
      */
     public static final int RECIPROCAL_VALUE = 1;
-
     /**
      *
      *
@@ -2708,7 +2646,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>TENSE_UNKNOWN = 0;</code>
      */
     public static final int TENSE_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -2719,7 +2656,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>CONDITIONAL_TENSE = 1;</code>
      */
     public static final int CONDITIONAL_TENSE_VALUE = 1;
-
     /**
      *
      *
@@ -2730,7 +2666,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>FUTURE = 2;</code>
      */
     public static final int FUTURE_VALUE = 2;
-
     /**
      *
      *
@@ -2741,7 +2676,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PAST = 3;</code>
      */
     public static final int PAST_VALUE = 3;
-
     /**
      *
      *
@@ -2752,7 +2686,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>PRESENT = 4;</code>
      */
     public static final int PRESENT_VALUE = 4;
-
     /**
      *
      *
@@ -2763,7 +2696,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPERFECT = 5;</code>
      */
     public static final int IMPERFECT_VALUE = 5;
-
     /**
      *
      *
@@ -2930,7 +2862,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>VOICE_UNKNOWN = 0;</code>
      */
     public static final int VOICE_UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -2941,7 +2872,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -2952,7 +2882,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * <code>CAUSATIVE = 2;</code>
      */
     public static final int CAUSATIVE_VALUE = 2;
-
     /**
      *
      *
@@ -3051,7 +2980,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TAG_FIELD_NUMBER = 1;
   private int tag_ = 0;
-
   /**
    *
    *
@@ -3067,7 +2995,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getTagValue() {
     return tag_;
   }
-
   /**
    *
    *
@@ -3090,7 +3017,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASPECT_FIELD_NUMBER = 2;
   private int aspect_ = 0;
-
   /**
    *
    *
@@ -3106,7 +3032,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getAspectValue() {
     return aspect_;
   }
-
   /**
    *
    *
@@ -3129,7 +3054,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CASE_FIELD_NUMBER = 3;
   private int case_ = 0;
-
   /**
    *
    *
@@ -3145,7 +3069,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getCaseValue() {
     return case_;
   }
-
   /**
    *
    *
@@ -3168,7 +3091,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORM_FIELD_NUMBER = 4;
   private int form_ = 0;
-
   /**
    *
    *
@@ -3184,7 +3106,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getFormValue() {
     return form_;
   }
-
   /**
    *
    *
@@ -3207,7 +3128,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GENDER_FIELD_NUMBER = 5;
   private int gender_ = 0;
-
   /**
    *
    *
@@ -3223,7 +3143,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getGenderValue() {
     return gender_;
   }
-
   /**
    *
    *
@@ -3246,7 +3165,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MOOD_FIELD_NUMBER = 6;
   private int mood_ = 0;
-
   /**
    *
    *
@@ -3262,7 +3180,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getMoodValue() {
     return mood_;
   }
-
   /**
    *
    *
@@ -3285,7 +3202,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NUMBER_FIELD_NUMBER = 7;
   private int number_ = 0;
-
   /**
    *
    *
@@ -3301,7 +3217,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getNumberValue() {
     return number_;
   }
-
   /**
    *
    *
@@ -3324,7 +3239,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PERSON_FIELD_NUMBER = 8;
   private int person_ = 0;
-
   /**
    *
    *
@@ -3340,7 +3254,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getPersonValue() {
     return person_;
   }
-
   /**
    *
    *
@@ -3363,7 +3276,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROPER_FIELD_NUMBER = 9;
   private int proper_ = 0;
-
   /**
    *
    *
@@ -3379,7 +3291,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getProperValue() {
     return proper_;
   }
-
   /**
    *
    *
@@ -3402,7 +3313,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECIPROCITY_FIELD_NUMBER = 10;
   private int reciprocity_ = 0;
-
   /**
    *
    *
@@ -3418,7 +3328,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getReciprocityValue() {
     return reciprocity_;
   }
-
   /**
    *
    *
@@ -3441,7 +3350,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TENSE_FIELD_NUMBER = 11;
   private int tense_ = 0;
-
   /**
    *
    *
@@ -3457,7 +3365,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getTenseValue() {
     return tense_;
   }
-
   /**
    *
    *
@@ -3480,7 +3387,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VOICE_FIELD_NUMBER = 12;
   private int voice_ = 0;
-
   /**
    *
    *
@@ -3496,7 +3402,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   public int getVoiceValue() {
     return voice_;
   }
-
   /**
    *
    *
@@ -3789,7 +3694,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4114,7 +4018,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int tag_ = 0;
-
     /**
      *
      *
@@ -4130,7 +4033,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getTagValue() {
       return tag_;
     }
-
     /**
      *
      *
@@ -4149,7 +4051,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4169,7 +4070,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Tag.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4191,7 +4091,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4211,7 +4110,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int aspect_ = 0;
-
     /**
      *
      *
@@ -4227,7 +4125,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getAspectValue() {
       return aspect_;
     }
-
     /**
      *
      *
@@ -4246,7 +4143,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4266,7 +4162,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4288,7 +4183,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4308,7 +4202,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int case_ = 0;
-
     /**
      *
      *
@@ -4324,7 +4217,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getCaseValue() {
       return case_;
     }
-
     /**
      *
      *
@@ -4343,7 +4235,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4363,7 +4254,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Case.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4385,7 +4275,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4405,7 +4294,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int form_ = 0;
-
     /**
      *
      *
@@ -4421,7 +4309,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getFormValue() {
       return form_;
     }
-
     /**
      *
      *
@@ -4440,7 +4327,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4460,7 +4346,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Form.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4482,7 +4367,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4502,7 +4386,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int gender_ = 0;
-
     /**
      *
      *
@@ -4518,7 +4401,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getGenderValue() {
       return gender_;
     }
-
     /**
      *
      *
@@ -4537,7 +4419,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4557,7 +4438,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Gender.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4579,7 +4459,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4599,7 +4478,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int mood_ = 0;
-
     /**
      *
      *
@@ -4615,7 +4493,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getMoodValue() {
       return mood_;
     }
-
     /**
      *
      *
@@ -4634,7 +4511,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4654,7 +4530,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Mood.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4676,7 +4551,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4696,7 +4570,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int number_ = 0;
-
     /**
      *
      *
@@ -4712,7 +4585,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getNumberValue() {
       return number_;
     }
-
     /**
      *
      *
@@ -4731,7 +4603,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4751,7 +4622,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Number.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4773,7 +4643,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4793,7 +4662,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int person_ = 0;
-
     /**
      *
      *
@@ -4809,7 +4677,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getPersonValue() {
       return person_;
     }
-
     /**
      *
      *
@@ -4828,7 +4695,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4848,7 +4714,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Person.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4870,7 +4735,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4890,7 +4754,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int proper_ = 0;
-
     /**
      *
      *
@@ -4906,7 +4769,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getProperValue() {
       return proper_;
     }
-
     /**
      *
      *
@@ -4925,7 +4787,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4945,7 +4806,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Proper.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4967,7 +4827,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4987,7 +4846,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int reciprocity_ = 0;
-
     /**
      *
      *
@@ -5003,7 +4861,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getReciprocityValue() {
       return reciprocity_;
     }
-
     /**
      *
      *
@@ -5022,7 +4879,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5042,7 +4898,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5065,7 +4920,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5085,7 +4939,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tense_ = 0;
-
     /**
      *
      *
@@ -5101,7 +4954,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getTenseValue() {
       return tense_;
     }
-
     /**
      *
      *
@@ -5120,7 +4972,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5140,7 +4991,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Tense.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5162,7 +5012,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5182,7 +5031,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int voice_ = 0;
-
     /**
      *
      *
@@ -5198,7 +5046,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public int getVoiceValue() {
       return voice_;
     }
-
     /**
      *
      *
@@ -5217,7 +5064,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5237,7 +5083,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Voice.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5259,7 +5104,6 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

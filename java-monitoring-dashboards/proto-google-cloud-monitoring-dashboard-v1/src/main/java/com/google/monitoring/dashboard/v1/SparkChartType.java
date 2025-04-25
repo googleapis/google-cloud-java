@@ -72,7 +72,6 @@ public enum SparkChartType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPARK_CHART_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int SPARK_CHART_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum SparkChartType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPARK_LINE = 1;</code>
    */
   public static final int SPARK_LINE_VALUE = 1;
-
   /**
    *
    *

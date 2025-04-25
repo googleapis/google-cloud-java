@@ -238,19 +238,6 @@ public final class AccountLabelsServiceGrpc {
     return AccountLabelsServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static AccountLabelsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AccountLabelsServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<AccountLabelsServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public AccountLabelsServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new AccountLabelsServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return AccountLabelsServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -449,79 +436,6 @@ public final class AccountLabelsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AccountLabelsService.
-   *
-   * <pre>
-   * Manages Merchant Center and CSS accounts labels.
-   * </pre>
-   */
-  public static final class AccountLabelsServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<AccountLabelsServiceBlockingV2Stub> {
-    private AccountLabelsServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected AccountLabelsServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new AccountLabelsServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the labels owned by an account.
-     * </pre>
-     */
-    public com.google.shopping.css.v1.ListAccountLabelsResponse listAccountLabels(
-        com.google.shopping.css.v1.ListAccountLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAccountLabelsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a new label, not assigned to any account.
-     * </pre>
-     */
-    public com.google.shopping.css.v1.AccountLabel createAccountLabel(
-        com.google.shopping.css.v1.CreateAccountLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateAccountLabelMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a label.
-     * </pre>
-     */
-    public com.google.shopping.css.v1.AccountLabel updateAccountLabel(
-        com.google.shopping.css.v1.UpdateAccountLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateAccountLabelMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a label and removes it from all accounts to which it was assigned.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteAccountLabel(
-        com.google.shopping.css.v1.DeleteAccountLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteAccountLabelMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service AccountLabelsService.
    *
    * <pre>
    * Manages Merchant Center and CSS accounts labels.

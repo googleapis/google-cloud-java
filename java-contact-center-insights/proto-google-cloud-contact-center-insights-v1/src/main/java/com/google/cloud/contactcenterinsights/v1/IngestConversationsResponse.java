@@ -33,7 +33,6 @@ public final class IngestConversationsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IngestConversationsResponse)
     IngestConversationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IngestConversationsResponse.newBuilder() to construct.
   private IngestConversationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class IngestConversationsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

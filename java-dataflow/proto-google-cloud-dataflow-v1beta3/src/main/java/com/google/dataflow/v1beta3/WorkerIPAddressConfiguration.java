@@ -72,7 +72,6 @@ public enum WorkerIPAddressConfiguration implements com.google.protobuf.Protocol
    * <code>WORKER_IP_UNSPECIFIED = 0;</code>
    */
   public static final int WORKER_IP_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum WorkerIPAddressConfiguration implements com.google.protobuf.Protocol
    * <code>WORKER_IP_PUBLIC = 1;</code>
    */
   public static final int WORKER_IP_PUBLIC_VALUE = 1;
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ExecuteAirflowCommandRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ExecuteAirflowCommandRequestOrBuilder
    * @return The command.
    */
   java.lang.String getCommand();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ExecuteAirflowCommandRequestOrBuilder
    * @return The subcommand.
    */
   java.lang.String getSubcommand();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ExecuteAirflowCommandRequestOrBuilder
    * @return A list containing the parameters.
    */
   java.util.List<java.lang.String> getParametersList();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface ExecuteAirflowCommandRequestOrBuilder
    * @return The count of parameters.
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface ExecuteAirflowCommandRequestOrBuilder
    * @return The parameters at the given index.
    */
   java.lang.String getParameters(int index);
-
   /**
    *
    *

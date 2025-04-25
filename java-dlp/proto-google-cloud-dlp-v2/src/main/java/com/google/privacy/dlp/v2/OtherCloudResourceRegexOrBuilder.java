@@ -36,7 +36,6 @@ public interface OtherCloudResourceRegexOrBuilder
    * @return Whether the amazonS3BucketRegex field is set.
    */
   boolean hasAmazonS3BucketRegex();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OtherCloudResourceRegexOrBuilder
    * @return The amazonS3BucketRegex.
    */
   com.google.privacy.dlp.v2.AmazonS3BucketRegex getAmazonS3BucketRegex();
-
   /**
    *
    *

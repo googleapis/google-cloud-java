@@ -36,7 +36,6 @@ public interface CveOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface CveOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Reference references = 2;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Reference> getReferencesList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface CveOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Reference references = 2;</code>
    */
   com.google.cloud.securitycenter.v2.Reference getReferences(int index);
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface CveOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Reference references = 2;</code>
    */
   int getReferencesCount();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface CveOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ReferenceOrBuilder>
       getReferencesOrBuilderList();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface CveOrBuilder
    * @return Whether the cvssv3 field is set.
    */
   boolean hasCvssv3();
-
   /**
    *
    *
@@ -138,7 +132,6 @@ public interface CveOrBuilder
    * @return The cvssv3.
    */
   com.google.cloud.securitycenter.v2.Cvssv3 getCvssv3();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface CveOrBuilder
    * @return The enum numeric value on the wire for impact.
    */
   int getImpactValue();
-
   /**
    *
    *
@@ -203,7 +195,6 @@ public interface CveOrBuilder
    * @return The enum numeric value on the wire for exploitationActivity.
    */
   int getExploitationActivityValue();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface CveOrBuilder
    * @return Whether the exploitReleaseDate field is set.
    */
   boolean hasExploitReleaseDate();
-
   /**
    *
    *
@@ -270,7 +260,6 @@ public interface CveOrBuilder
    * @return The exploitReleaseDate.
    */
   com.google.protobuf.Timestamp getExploitReleaseDate();
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public interface CveOrBuilder
    * @return Whether the firstExploitationDate field is set.
    */
   boolean hasFirstExploitationDate();
-
   /**
    *
    *
@@ -307,7 +295,6 @@ public interface CveOrBuilder
    * @return The firstExploitationDate.
    */
   com.google.protobuf.Timestamp getFirstExploitationDate();
-
   /**
    *
    *

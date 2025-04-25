@@ -69,7 +69,6 @@ public interface ContainerStoppedEventOrBuilder
    * @return The stderr.
    */
   java.lang.String getStderr();
-
   /**
    *
    *

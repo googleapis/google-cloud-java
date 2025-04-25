@@ -304,8 +304,7 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateFeatureMonitor, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateFeatureMonitor, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -369,8 +368,7 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateFeatureMonitor, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateFeatureMonitor, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -391,8 +389,7 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteFeatureMonitor, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteFeatureMonitor, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -413,8 +410,7 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateFeatureMonitorJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateFeatureMonitorJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FeatureMonitorJob.class.getName(),
                   Exception.class.getName())));
@@ -435,8 +431,7 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetFeatureMonitorJob, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetFeatureMonitorJob, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FeatureMonitorJob.class.getName(),
                   Exception.class.getName())));
@@ -458,8 +453,7 @@ public class MockFeatureRegistryServiceImpl extends FeatureRegistryServiceImplBa
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListFeatureMonitorJobs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListFeatureMonitorJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListFeatureMonitorJobsResponse.class.getName(),
                   Exception.class.getName())));

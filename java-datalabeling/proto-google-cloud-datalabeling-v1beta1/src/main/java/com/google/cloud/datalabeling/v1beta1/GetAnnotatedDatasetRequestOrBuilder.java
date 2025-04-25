@@ -40,7 +40,6 @@ public interface GetAnnotatedDatasetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

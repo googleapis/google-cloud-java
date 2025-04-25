@@ -36,7 +36,6 @@ public interface OutputConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OutputConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.asset.v1p2beta1.GcsDestination getGcsDestination();
-
   /**
    *
    *

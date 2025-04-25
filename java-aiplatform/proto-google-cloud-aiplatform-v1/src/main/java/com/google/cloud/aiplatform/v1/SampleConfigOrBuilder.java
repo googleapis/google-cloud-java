@@ -36,7 +36,6 @@ public interface SampleConfigOrBuilder
    * @return Whether the initialBatchSamplePercentage field is set.
    */
   boolean hasInitialBatchSamplePercentage();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SampleConfigOrBuilder
    * @return Whether the followingBatchSamplePercentage field is set.
    */
   boolean hasFollowingBatchSamplePercentage();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface SampleConfigOrBuilder
    * @return The enum numeric value on the wire for sampleStrategy.
    */
   int getSampleStrategyValue();
-
   /**
    *
    *

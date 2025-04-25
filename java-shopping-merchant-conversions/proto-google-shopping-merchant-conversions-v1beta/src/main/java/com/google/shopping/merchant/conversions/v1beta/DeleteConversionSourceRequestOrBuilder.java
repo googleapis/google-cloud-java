@@ -39,7 +39,6 @@ public interface DeleteConversionSourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ProcessLinksOrBuilder
    * @return The process.
    */
   java.lang.String getProcess();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ProcessLinksOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.ProcessLinkInfo links = 2;</code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfo> getLinksList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ProcessLinksOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.ProcessLinkInfo links = 2;</code>
    */
   com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfo getLinks(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface ProcessLinksOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.ProcessLinkInfo links = 2;</code>
    */
   int getLinksCount();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ProcessLinksOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.ProcessLinkInfoOrBuilder>
       getLinksOrBuilderList();
-
   /**
    *
    *

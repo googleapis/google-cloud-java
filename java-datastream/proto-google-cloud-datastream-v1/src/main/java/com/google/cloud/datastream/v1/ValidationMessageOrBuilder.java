@@ -36,7 +36,6 @@ public interface ValidationMessageOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ValidationMessageOrBuilder
    * @return The enum numeric value on the wire for level.
    */
   int getLevelValue();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface ValidationMessageOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -97,11 +94,9 @@ public interface ValidationMessageOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -112,7 +107,6 @@ public interface ValidationMessageOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -127,7 +121,6 @@ public interface ValidationMessageOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -151,7 +144,6 @@ public interface ValidationMessageOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *

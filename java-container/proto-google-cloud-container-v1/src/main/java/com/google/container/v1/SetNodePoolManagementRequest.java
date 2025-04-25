@@ -34,7 +34,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.container.v1.SetNodePoolManagementRequest)
     SetNodePoolManagementRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetNodePoolManagementRequest.newBuilder() to construct.
   private SetNodePoolManagementRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -230,7 +224,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -263,7 +256,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodePoolId_ = "";
-
   /**
    *
    *
@@ -291,7 +283,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -322,7 +313,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
 
   public static final int MANAGEMENT_FIELD_NUMBER = 5;
   private com.google.container.v1.NodeManagement management_;
-
   /**
    *
    *
@@ -340,7 +330,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
   public boolean hasManagement() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -360,7 +349,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         ? com.google.container.v1.NodeManagement.getDefaultInstance()
         : management_;
   }
-
   /**
    *
    *
@@ -383,7 +371,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -409,7 +396,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -645,7 +631,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -920,7 +905,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -948,7 +932,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +959,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +985,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1007,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1036,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1085,7 +1064,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1114,7 +1092,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1119,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1142,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1172,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1224,7 +1198,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1224,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1277,7 +1249,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1270,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1298,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nodePoolId_ = "";
-
     /**
      *
      *
@@ -1355,7 +1324,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1382,7 +1350,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1375,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1396,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1429,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
             com.google.container.v1.NodeManagement.Builder,
             com.google.container.v1.NodeManagementOrBuilder>
         managementBuilder_;
-
     /**
      *
      *
@@ -1481,7 +1445,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     public boolean hasManagement() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1504,7 +1467,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return managementBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1529,7 +1491,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1551,7 +1512,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1541,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1562,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1578,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return getManagementFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1641,7 +1598,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
             : management_;
       }
     }
-
     /**
      *
      *
@@ -1671,7 +1627,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1696,7 +1651,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1721,7 +1675,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1745,7 +1698,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1765,7 +1717,6 @@ public final class SetNodePoolManagementRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

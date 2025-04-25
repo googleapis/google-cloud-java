@@ -36,7 +36,6 @@ public interface ModelGardenSourceOrBuilder
    * @return The publicModelName.
    */
   java.lang.String getPublicModelName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ModelGardenSourceOrBuilder
    * @return The versionId.
    */
   java.lang.String getVersionId();
-
   /**
    *
    *

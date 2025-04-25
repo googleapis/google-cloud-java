@@ -42,7 +42,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return Whether the funnelTable field is set.
    */
   boolean hasFunnelTable();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return The funnelTable.
    */
   com.google.analytics.data.v1alpha.FunnelSubReport getFunnelTable();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return Whether the funnelVisualization field is set.
    */
   boolean hasFunnelVisualization();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return The funnelVisualization.
    */
   com.google.analytics.data.v1alpha.FunnelSubReport getFunnelVisualization();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return Whether the propertyQuota field is set.
    */
   boolean hasPropertyQuota();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return The propertyQuota.
    */
   com.google.analytics.data.v1alpha.PropertyQuota getPropertyQuota();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface RunFunnelReportResponseOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

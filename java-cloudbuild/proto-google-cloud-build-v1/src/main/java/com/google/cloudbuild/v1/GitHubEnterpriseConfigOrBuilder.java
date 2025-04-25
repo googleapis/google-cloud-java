@@ -38,7 +38,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The hostUrl.
    */
   java.lang.String getHostUrl();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The webhookKey.
    */
   java.lang.String getWebhookKey();
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The peeredNetwork.
    */
   java.lang.String getPeeredNetwork();
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return Whether the secrets field is set.
    */
   boolean hasSecrets();
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The secrets.
    */
   com.google.cloudbuild.v1.GitHubEnterpriseSecrets getSecrets();
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public interface GitHubEnterpriseConfigOrBuilder
    * @return The sslCa.
    */
   java.lang.String getSslCa();
-
   /**
    *
    *

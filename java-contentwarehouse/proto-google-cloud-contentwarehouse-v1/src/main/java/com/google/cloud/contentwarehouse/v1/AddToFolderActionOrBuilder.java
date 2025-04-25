@@ -38,7 +38,6 @@ public interface AddToFolderActionOrBuilder
    * @return A list containing the folders.
    */
   java.util.List<java.lang.String> getFoldersList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AddToFolderActionOrBuilder
    * @return The count of folders.
    */
   int getFoldersCount();
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface AddToFolderActionOrBuilder
    * @return The folders at the given index.
    */
   java.lang.String getFolders(int index);
-
   /**
    *
    *

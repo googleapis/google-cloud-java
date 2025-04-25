@@ -33,7 +33,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.WorkerDetails)
     WorkerDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkerDetails.newBuilder() to construct.
   private WorkerDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerName_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.WorkItemDetails> workItems_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.WorkItemDetails> getWorkItemsList() {
     return workItems_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       getWorkItemsOrBuilderList() {
     return workItems_;
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
   public int getWorkItemsCount() {
     return workItems_.size();
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.WorkItemDetails getWorkItems(int index) {
     return workItems_.get(index);
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -608,7 +599,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object workerName_ = "";
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return workItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return workItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return workItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.WorkItemDetails.Builder getWorkItemsBuilder(int index) {
       return getWorkItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return workItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(workItems_);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1011,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       return getWorkItemsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.WorkItemDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1054,7 +1024,6 @@ public final class WorkerDetails extends com.google.protobuf.GeneratedMessageV3
       return getWorkItemsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.WorkItemDetails.getDefaultInstance());
     }
-
     /**
      *
      *

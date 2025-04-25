@@ -42,7 +42,6 @@ public interface TransitionAttributesOrBuilder
    * @return The srcTag.
    */
   java.lang.String getSrcTag();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface TransitionAttributesOrBuilder
    * @return The excludedSrcTag.
    */
   java.lang.String getExcludedSrcTag();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface TransitionAttributesOrBuilder
    * @return The dstTag.
    */
   java.lang.String getDstTag();
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public interface TransitionAttributesOrBuilder
    * @return The excludedDstTag.
    */
   java.lang.String getExcludedDstTag();
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public interface TransitionAttributesOrBuilder
    * @return Whether the distanceLimit field is set.
    */
   boolean hasDistanceLimit();
-
   /**
    *
    *
@@ -214,7 +209,6 @@ public interface TransitionAttributesOrBuilder
    * @return The distanceLimit.
    */
   com.google.cloud.optimization.v1.DistanceLimit getDistanceLimit();
-
   /**
    *
    *
@@ -244,7 +238,6 @@ public interface TransitionAttributesOrBuilder
    * @return Whether the delay field is set.
    */
   boolean hasDelay();
-
   /**
    *
    *
@@ -260,7 +253,6 @@ public interface TransitionAttributesOrBuilder
    * @return The delay.
    */
   com.google.protobuf.Duration getDelay();
-
   /**
    *
    *

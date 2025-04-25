@@ -36,7 +36,6 @@ public interface ResourceOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ResourceOrBuilder
    * @return The discoveryDocumentUri.
    */
   java.lang.String getDiscoveryDocumentUri();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface ResourceOrBuilder
    * @return The discoveryName.
    */
   java.lang.String getDiscoveryName();
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public interface ResourceOrBuilder
    * @return The resourceUrl.
    */
   java.lang.String getResourceUrl();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface ResourceOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -211,7 +206,6 @@ public interface ResourceOrBuilder
    * @return Whether the data field is set.
    */
   boolean hasData();
-
   /**
    *
    *
@@ -225,7 +219,6 @@ public interface ResourceOrBuilder
    * @return The data.
    */
   com.google.protobuf.Struct getData();
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public interface ResourceOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *

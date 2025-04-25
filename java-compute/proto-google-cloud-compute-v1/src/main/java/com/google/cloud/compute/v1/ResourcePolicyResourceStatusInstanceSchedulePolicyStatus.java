@@ -34,7 +34,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyResourceStatusInstanceSchedulePolicyStatus)
     ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicyResourceStatusInstanceSchedulePolicyStatus.newBuilder() to construct.
   private ResourcePolicyResourceStatusInstanceSchedulePolicyStatus(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lastRunStartTime_ = "";
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
   public boolean hasLastRunStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextRunStartTime_ = "";
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
   public boolean hasNextRunStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       return s;
     }
   }
-
   /**
    *
    *
@@ -398,7 +391,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +613,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     private int bitField0_;
 
     private java.lang.Object lastRunStartTime_ = "";
-
     /**
      *
      *
@@ -636,7 +627,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     public boolean hasLastRunStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -704,7 +692,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     }
 
     private java.lang.Object nextRunStartTime_ = "";
-
     /**
      *
      *
@@ -762,7 +747,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
     public boolean hasNextRunStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +829,6 @@ public final class ResourcePolicyResourceStatusInstanceSchedulePolicyStatus
       onChanged();
       return this;
     }
-
     /**
      *
      *

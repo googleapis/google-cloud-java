@@ -33,7 +33,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ListLunsResponse)
     ListLunsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLunsResponse.newBuilder() to construct.
   private ListLunsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.Lun> luns_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.baremetalsolution.v2.Lun> getLunsList() {
     return luns_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       getLunsOrBuilderList() {
     return luns_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   public int getLunsCount() {
     return luns_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.baremetalsolution.v2.Lun getLuns(int index) {
     return luns_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -450,7 +438,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -749,7 +736,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return lunsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return lunsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -783,7 +768,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return lunsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +951,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +963,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.baremetalsolution.v2.Lun.Builder getLunsBuilder(int index) {
       return getLunsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return lunsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +996,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(luns_);
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1009,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       return getLunsFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.Lun.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1051,7 +1022,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       return getLunsFieldBuilder()
           .addBuilder(index, com.google.cloud.baremetalsolution.v2.Lun.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1083,7 +1053,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1106,7 +1075,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1097,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1118,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1169,7 +1135,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1167,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1218,7 +1182,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1233,7 +1196,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1249,7 +1211,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1265,7 +1226,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1289,7 +1249,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1271,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1290,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1308,6 @@ public final class ListLunsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

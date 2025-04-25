@@ -36,7 +36,6 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The containerImage.
    */
   java.lang.String getContainerImage();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return A list containing the capabilities.
    */
   java.util.List<java.lang.String> getCapabilitiesList();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The count of capabilities.
    */
   int getCapabilitiesCount();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface SdkHarnessContainerImageOrBuilder
    * @return The capabilities at the given index.
    */
   java.lang.String getCapabilities(int index);
-
   /**
    *
    *

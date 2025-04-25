@@ -37,7 +37,6 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * @return The interconnectAttachment.
    */
   java.lang.String getInterconnectAttachment();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

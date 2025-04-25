@@ -40,7 +40,6 @@ public interface GetToolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

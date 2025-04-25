@@ -37,7 +37,6 @@ public interface AllocateQuotaResponseOrBuilder
    * @return The operationId.
    */
   java.lang.String getOperationId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AllocateQuotaResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.QuotaError allocate_errors = 2;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.QuotaError> getAllocateErrorsList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AllocateQuotaResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.QuotaError allocate_errors = 2;</code>
    */
   com.google.api.servicecontrol.v1.QuotaError getAllocateErrors(int index);
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface AllocateQuotaResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.QuotaError allocate_errors = 2;</code>
    */
   int getAllocateErrorsCount();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface AllocateQuotaResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.QuotaErrorOrBuilder>
       getAllocateErrorsOrBuilderList();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface AllocateQuotaResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet quota_metrics = 3;</code>
    */
   java.util.List<com.google.api.servicecontrol.v1.MetricValueSet> getQuotaMetricsList();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface AllocateQuotaResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet quota_metrics = 3;</code>
    */
   com.google.api.servicecontrol.v1.MetricValueSet getQuotaMetrics(int index);
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface AllocateQuotaResponseOrBuilder
    * <code>repeated .google.api.servicecontrol.v1.MetricValueSet quota_metrics = 3;</code>
    */
   int getQuotaMetricsCount();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface AllocateQuotaResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicecontrol.v1.MetricValueSetOrBuilder>
       getQuotaMetricsOrBuilderList();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface AllocateQuotaResponseOrBuilder
    * @return The serviceConfigId.
    */
   java.lang.String getServiceConfigId();
-
   /**
    *
    *

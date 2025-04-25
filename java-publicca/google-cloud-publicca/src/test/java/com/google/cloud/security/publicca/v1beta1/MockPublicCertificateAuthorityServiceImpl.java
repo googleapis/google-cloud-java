@@ -74,8 +74,7 @@ public class MockPublicCertificateAuthorityServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateExternalAccountKey, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateExternalAccountKey, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExternalAccountKey.class.getName(),
                   Exception.class.getName())));

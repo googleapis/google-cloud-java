@@ -34,7 +34,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.ImportConversationDataRequest)
     ImportConversationDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportConversationDataRequest.newBuilder() to construct.
   private ImportConversationDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2.InputConfig inputConfig_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
         ? com.google.cloud.dialogflow.v2.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +572,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -633,7 +624,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
             com.google.cloud.dialogflow.v2.InputConfig.Builder,
             com.google.cloud.dialogflow.v2.InputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -732,7 +719,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +816,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class ImportConversationDataRequest extends com.google.protobuf.Gen
             : inputConfig_;
       }
     }
-
     /**
      *
      *

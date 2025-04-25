@@ -34,7 +34,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.TimeSeriesData)
     TimeSeriesDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimeSeriesData.newBuilder() to construct.
   private TimeSeriesData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
     java.util.List<com.google.monitoring.v3.TypedValue> getValuesList();
-
     /**
      *
      *
@@ -92,7 +90,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
     com.google.monitoring.v3.TypedValue getValues(int index);
-
     /**
      *
      *
@@ -103,7 +100,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
     int getValuesCount();
-
     /**
      *
      *
@@ -114,7 +110,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.monitoring.v3.TypedValue values = 1;</code>
      */
     java.util.List<? extends com.google.monitoring.v3.TypedValueOrBuilder> getValuesOrBuilderList();
-
     /**
      *
      *
@@ -138,7 +133,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeInterval field is set.
      */
     boolean hasTimeInterval();
-
     /**
      *
      *
@@ -151,7 +145,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      * @return The timeInterval.
      */
     com.google.monitoring.v3.TimeInterval getTimeInterval();
-
     /**
      *
      *
@@ -163,7 +156,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.monitoring.v3.TimeIntervalOrBuilder getTimeIntervalOrBuilder();
   }
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.TimeSeriesData.PointData)
       PointDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PointData.newBuilder() to construct.
     private PointData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -216,7 +207,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.monitoring.v3.TypedValue> values_;
-
     /**
      *
      *
@@ -230,7 +220,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.monitoring.v3.TypedValue> getValuesList() {
       return values_;
     }
-
     /**
      *
      *
@@ -245,7 +234,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         getValuesOrBuilderList() {
       return values_;
     }
-
     /**
      *
      *
@@ -259,7 +247,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -273,7 +260,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.TypedValue getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -290,7 +276,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TIME_INTERVAL_FIELD_NUMBER = 2;
     private com.google.monitoring.v3.TimeInterval timeInterval_;
-
     /**
      *
      *
@@ -306,7 +291,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -324,7 +308,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
           : timeInterval_;
     }
-
     /**
      *
      *
@@ -517,7 +500,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -815,7 +797,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -832,7 +813,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -849,7 +829,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -872,7 +851,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -893,7 +871,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -916,7 +893,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -939,7 +915,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -959,7 +934,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -980,7 +954,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1001,7 +974,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1021,7 +993,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1041,7 +1012,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1054,7 +1024,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.v3.TypedValue.Builder getValuesBuilder(int index) {
         return getValuesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1071,7 +1040,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1089,7 +1057,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(values_);
         }
       }
-
       /**
        *
        *
@@ -1103,7 +1070,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return getValuesFieldBuilder()
             .addBuilder(com.google.monitoring.v3.TypedValue.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1117,7 +1083,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return getValuesFieldBuilder()
             .addBuilder(index, com.google.monitoring.v3.TypedValue.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1154,7 +1119,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
               com.google.monitoring.v3.TimeInterval.Builder,
               com.google.monitoring.v3.TimeIntervalOrBuilder>
           timeIntervalBuilder_;
-
       /**
        *
        *
@@ -1169,7 +1133,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimeInterval() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1190,7 +1153,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           return timeIntervalBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1213,7 +1175,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1234,7 +1195,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1262,7 +1222,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1282,7 +1241,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1297,7 +1255,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimeIntervalFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1316,7 +1273,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
               : timeInterval_;
         }
       }
-
       /**
        *
        *
@@ -1411,7 +1367,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.LabelValue> labelValues_;
-
   /**
    *
    *
@@ -1428,7 +1383,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.v3.LabelValue> getLabelValuesList() {
     return labelValues_;
   }
-
   /**
    *
    *
@@ -1446,7 +1400,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       getLabelValuesOrBuilderList() {
     return labelValues_;
   }
-
   /**
    *
    *
@@ -1463,7 +1416,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   public int getLabelValuesCount() {
     return labelValues_.size();
   }
-
   /**
    *
    *
@@ -1480,7 +1432,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.v3.LabelValue getLabelValues(int index) {
     return labelValues_.get(index);
   }
-
   /**
    *
    *
@@ -1502,7 +1453,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.TimeSeriesData.PointData> pointData_;
-
   /**
    *
    *
@@ -1516,7 +1466,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.v3.TimeSeriesData.PointData> getPointDataList() {
     return pointData_;
   }
-
   /**
    *
    *
@@ -1531,7 +1480,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       getPointDataOrBuilderList() {
     return pointData_;
   }
-
   /**
    *
    *
@@ -1545,7 +1493,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   public int getPointDataCount() {
     return pointData_.size();
   }
-
   /**
    *
    *
@@ -1559,7 +1506,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.v3.TimeSeriesData.PointData getPointData(int index) {
     return pointData_.get(index);
   }
-
   /**
    *
    *
@@ -1746,7 +1692,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2067,7 +2012,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return labelValuesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2087,7 +2031,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return labelValuesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2107,7 +2050,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return labelValuesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2133,7 +2075,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2157,7 +2098,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2183,7 +2123,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2209,7 +2148,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2232,7 +2170,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2256,7 +2193,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2280,7 +2216,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2303,7 +2238,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2326,7 +2260,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2275,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.LabelValue.Builder getLabelValuesBuilder(int index) {
       return getLabelValuesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2362,7 +2294,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return labelValuesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2383,7 +2314,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(labelValues_);
       }
     }
-
     /**
      *
      *
@@ -2400,7 +2330,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       return getLabelValuesFieldBuilder()
           .addBuilder(com.google.monitoring.v3.LabelValue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2417,7 +2346,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       return getLabelValuesFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.LabelValue.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2484,7 +2412,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return pointDataBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2501,7 +2428,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return pointDataBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2518,7 +2444,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return pointDataBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2542,7 +2467,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2563,7 +2487,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2586,7 +2509,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2610,7 +2532,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2552,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2652,7 +2572,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2673,7 +2592,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2693,7 +2611,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2713,7 +2630,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2727,7 +2643,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getPointDataFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2745,7 +2660,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return pointDataBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2763,7 +2677,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pointData_);
       }
     }
-
     /**
      *
      *
@@ -2777,7 +2690,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       return getPointDataFieldBuilder()
           .addBuilder(com.google.monitoring.v3.TimeSeriesData.PointData.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2793,7 +2705,6 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.monitoring.v3.TimeSeriesData.PointData.getDefaultInstance());
     }
-
     /**
      *
      *

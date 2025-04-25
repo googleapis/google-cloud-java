@@ -34,7 +34,6 @@ public final class ImageObjectDetectionDatasetMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImageObjectDetectionDatasetMetadata)
     ImageObjectDetectionDatasetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImageObjectDetectionDatasetMetadata.newBuilder() to construct.
   private ImageObjectDetectionDatasetMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -216,7 +215,6 @@ public final class ImageObjectDetectionDatasetMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

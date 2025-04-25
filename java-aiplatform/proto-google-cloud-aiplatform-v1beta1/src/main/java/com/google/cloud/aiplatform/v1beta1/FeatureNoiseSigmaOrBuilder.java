@@ -37,7 +37,6 @@ public interface FeatureNoiseSigmaOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.NoiseSigmaForFeature>
       getNoiseSigmaList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface FeatureNoiseSigmaOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.NoiseSigmaForFeature getNoiseSigma(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface FeatureNoiseSigmaOrBuilder
    * </code>
    */
   int getNoiseSigmaCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface FeatureNoiseSigmaOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma.NoiseSigmaForFeatureOrBuilder>
       getNoiseSigmaOrBuilderList();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return Whether the metricPromptTemplate field is set.
    */
   boolean hasMetricPromptTemplate();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PairwiseMetricSpecOrBuilder
    * @return The metricPromptTemplate.
    */
   java.lang.String getMetricPromptTemplate();
-
   /**
    *
    *

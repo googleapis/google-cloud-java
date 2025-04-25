@@ -33,7 +33,6 @@ public final class InstancesStartWithEncryptionKeyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest)
     InstancesStartWithEncryptionKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstancesStartWithEncryptionKeyRequest.newBuilder() to construct.
   private InstancesStartWithEncryptionKeyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class InstancesStartWithEncryptionKeyRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk> disks_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       getDisksList() {
     return disks_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       getDisksOrBuilderList() {
     return disks_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class InstancesStartWithEncryptionKeyRequest
   public int getDisksCount() {
     return disks_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class InstancesStartWithEncryptionKeyRequest
   public com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk getDisks(int index) {
     return disks_.get(index);
   }
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class InstancesStartWithEncryptionKeyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class InstancesStartWithEncryptionKeyRequest
         return disksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -603,7 +595,6 @@ public final class InstancesStartWithEncryptionKeyRequest
         return disksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class InstancesStartWithEncryptionKeyRequest
         return disksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class InstancesStartWithEncryptionKeyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class InstancesStartWithEncryptionKeyRequest
         int index) {
       return getDisksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class InstancesStartWithEncryptionKeyRequest
         return disksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class InstancesStartWithEncryptionKeyRequest
         return java.util.Collections.unmodifiableList(disks_);
       }
     }
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class InstancesStartWithEncryptionKeyRequest
           .addBuilder(
               com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class InstancesStartWithEncryptionKeyRequest
               index,
               com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk.getDefaultInstance());
     }
-
     /**
      *
      *

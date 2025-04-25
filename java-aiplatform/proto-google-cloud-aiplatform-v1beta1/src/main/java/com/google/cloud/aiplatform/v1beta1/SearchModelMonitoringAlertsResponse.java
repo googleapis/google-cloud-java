@@ -35,7 +35,6 @@ public final class SearchModelMonitoringAlertsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SearchModelMonitoringAlertsResponse)
     SearchModelMonitoringAlertsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchModelMonitoringAlertsResponse.newBuilder() to construct.
   private SearchModelMonitoringAlertsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class SearchModelMonitoringAlertsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlert>
       modelMonitoringAlerts_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class SearchModelMonitoringAlertsResponse
       getModelMonitoringAlertsList() {
     return modelMonitoringAlerts_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class SearchModelMonitoringAlertsResponse
       getModelMonitoringAlertsOrBuilderList() {
     return modelMonitoringAlerts_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class SearchModelMonitoringAlertsResponse
   public int getModelMonitoringAlertsCount() {
     return modelMonitoringAlerts_.size();
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class SearchModelMonitoringAlertsResponse
       int index) {
     return modelMonitoringAlerts_.get(index);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class SearchModelMonitoringAlertsResponse
 
   public static final int TOTAL_NUMBER_ALERTS_FIELD_NUMBER = 2;
   private long totalNumberAlerts_ = 0L;
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public final class SearchModelMonitoringAlertsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class SearchModelMonitoringAlertsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +413,6 @@ public final class SearchModelMonitoringAlertsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -730,7 +720,6 @@ public final class SearchModelMonitoringAlertsResponse
         return modelMonitoringAlertsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -750,7 +739,6 @@ public final class SearchModelMonitoringAlertsResponse
         return modelMonitoringAlertsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -771,7 +759,6 @@ public final class SearchModelMonitoringAlertsResponse
         return modelMonitoringAlertsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -798,7 +785,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +809,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +884,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +908,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +932,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class SearchModelMonitoringAlertsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class SearchModelMonitoringAlertsResponse
         getModelMonitoringAlertsBuilder(int index) {
       return getModelMonitoringAlertsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1035,7 +1012,6 @@ public final class SearchModelMonitoringAlertsResponse
         return modelMonitoringAlertsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class SearchModelMonitoringAlertsResponse
         return java.util.Collections.unmodifiableList(modelMonitoringAlerts_);
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class SearchModelMonitoringAlertsResponse
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlert.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1095,7 +1069,6 @@ public final class SearchModelMonitoringAlertsResponse
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlert.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1134,7 +1107,6 @@ public final class SearchModelMonitoringAlertsResponse
     }
 
     private long totalNumberAlerts_;
-
     /**
      *
      *
@@ -1150,7 +1122,6 @@ public final class SearchModelMonitoringAlertsResponse
     public long getTotalNumberAlerts() {
       return totalNumberAlerts_;
     }
-
     /**
      *
      *
@@ -1170,7 +1141,6 @@ public final class SearchModelMonitoringAlertsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1190,7 +1160,6 @@ public final class SearchModelMonitoringAlertsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1215,7 +1184,6 @@ public final class SearchModelMonitoringAlertsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1208,6 @@ public final class SearchModelMonitoringAlertsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1231,6 @@ public final class SearchModelMonitoringAlertsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1284,7 +1250,6 @@ public final class SearchModelMonitoringAlertsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

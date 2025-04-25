@@ -34,7 +34,6 @@ public interface NodeTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NodeType> getNodeTypesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface NodeTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   com.google.cloud.compute.v1.NodeType getNodeTypes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface NodeTypesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
    */
   int getNodeTypesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface NodeTypesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NodeTypeOrBuilder>
       getNodeTypesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface NodeTypesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface NodeTypesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

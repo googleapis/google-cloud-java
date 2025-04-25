@@ -37,7 +37,6 @@ public interface CelebrityTrackOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity>
       getCelebritiesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface CelebrityTrackOrBuilder
    */
   com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack.RecognizedCelebrity getCelebrities(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface CelebrityTrackOrBuilder
    * </code>
    */
   int getCelebritiesCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface CelebrityTrackOrBuilder
               com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack
                   .RecognizedCelebrityOrBuilder>
       getCelebritiesOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface CelebrityTrackOrBuilder
    * @return Whether the faceTrack field is set.
    */
   boolean hasFaceTrack();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface CelebrityTrackOrBuilder
    * @return The faceTrack.
    */
   com.google.cloud.videointelligence.v1p3beta1.Track getFaceTrack();
-
   /**
    *
    *

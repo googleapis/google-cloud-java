@@ -48,7 +48,6 @@ public interface SessionSegmentConditionGroupOrBuilder
    * @return The enum numeric value on the wire for conditionScoping.
    */
   int getConditionScopingValue();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface SessionSegmentConditionGroupOrBuilder
    * @return Whether the segmentFilterExpression field is set.
    */
   boolean hasSegmentFilterExpression();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface SessionSegmentConditionGroupOrBuilder
    * @return The segmentFilterExpression.
    */
   com.google.analytics.data.v1alpha.SegmentFilterExpression getSegmentFilterExpression();
-
   /**
    *
    *

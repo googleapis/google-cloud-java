@@ -38,7 +38,6 @@ public interface GetServiceConnectionPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

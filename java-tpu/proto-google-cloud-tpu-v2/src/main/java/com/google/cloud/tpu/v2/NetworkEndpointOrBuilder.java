@@ -36,7 +36,6 @@ public interface NetworkEndpointOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface NetworkEndpointOrBuilder
    * @return Whether the accessConfig field is set.
    */
   boolean hasAccessConfig();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface NetworkEndpointOrBuilder
    * @return The accessConfig.
    */
   com.google.cloud.tpu.v2.AccessConfig getAccessConfig();
-
   /**
    *
    *

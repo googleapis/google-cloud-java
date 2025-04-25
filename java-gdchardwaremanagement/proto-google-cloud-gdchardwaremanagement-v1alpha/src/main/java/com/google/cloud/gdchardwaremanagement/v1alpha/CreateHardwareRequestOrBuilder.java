@@ -39,7 +39,6 @@ public interface CreateHardwareRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateHardwareRequestOrBuilder
    * @return The hardwareId.
    */
   java.lang.String getHardwareId();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CreateHardwareRequestOrBuilder
    * @return Whether the hardware field is set.
    */
   boolean hasHardware();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CreateHardwareRequestOrBuilder
    * @return The hardware.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Hardware getHardware();
-
   /**
    *
    *

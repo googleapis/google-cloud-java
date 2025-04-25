@@ -36,7 +36,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the fractionSplit field is set.
    */
   boolean hasFractionSplit();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InputDataConfigOrBuilder
    * @return The fractionSplit.
    */
   com.google.cloud.aiplatform.v1beta1.FractionSplit getFractionSplit();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the filterSplit field is set.
    */
   boolean hasFilterSplit();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface InputDataConfigOrBuilder
    * @return The filterSplit.
    */
   com.google.cloud.aiplatform.v1beta1.FilterSplit getFilterSplit();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the predefinedSplit field is set.
    */
   boolean hasPredefinedSplit();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface InputDataConfigOrBuilder
    * @return The predefinedSplit.
    */
   com.google.cloud.aiplatform.v1beta1.PredefinedSplit getPredefinedSplit();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the timestampSplit field is set.
    */
   boolean hasTimestampSplit();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface InputDataConfigOrBuilder
    * @return The timestampSplit.
    */
   com.google.cloud.aiplatform.v1beta1.TimestampSplit getTimestampSplit();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the stratifiedSplit field is set.
    */
   boolean hasStratifiedSplit();
-
   /**
    *
    *
@@ -213,7 +204,6 @@ public interface InputDataConfigOrBuilder
    * @return The stratifiedSplit.
    */
   com.google.cloud.aiplatform.v1beta1.StratifiedSplit getStratifiedSplit();
-
   /**
    *
    *
@@ -258,7 +248,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface InputDataConfigOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getGcsDestination();
-
   /**
    *
    *
@@ -351,7 +339,6 @@ public interface InputDataConfigOrBuilder
    * @return Whether the bigqueryDestination field is set.
    */
   boolean hasBigqueryDestination();
-
   /**
    *
    *
@@ -382,7 +369,6 @@ public interface InputDataConfigOrBuilder
    * @return The bigqueryDestination.
    */
   com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigqueryDestination();
-
   /**
    *
    *
@@ -431,7 +417,6 @@ public interface InputDataConfigOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
-
   /**
    *
    *
@@ -472,7 +457,6 @@ public interface InputDataConfigOrBuilder
    * @return The annotationsFilter.
    */
   java.lang.String getAnnotationsFilter();
-
   /**
    *
    *
@@ -529,7 +513,6 @@ public interface InputDataConfigOrBuilder
    * @return The annotationSchemaUri.
    */
   java.lang.String getAnnotationSchemaUri();
-
   /**
    *
    *
@@ -595,7 +578,6 @@ public interface InputDataConfigOrBuilder
    * @return The savedQueryId.
    */
   java.lang.String getSavedQueryId();
-
   /**
    *
    *

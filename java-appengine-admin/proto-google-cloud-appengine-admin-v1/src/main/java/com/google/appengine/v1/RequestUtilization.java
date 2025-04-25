@@ -34,7 +34,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.appengine.v1.RequestUtilization)
     RequestUtilizationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RequestUtilization.newBuilder() to construct.
   private RequestUtilization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
 
   public static final int TARGET_REQUEST_COUNT_PER_SECOND_FIELD_NUMBER = 1;
   private int targetRequestCountPerSecond_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
 
   public static final int TARGET_CONCURRENT_REQUESTS_FIELD_NUMBER = 2;
   private int targetConcurrentRequests_ = 0;
-
   /**
    *
    *
@@ -270,7 +267,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -466,7 +462,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int targetRequestCountPerSecond_;
-
     /**
      *
      *
@@ -482,7 +477,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     public int getTargetRequestCountPerSecond() {
       return targetRequestCountPerSecond_;
     }
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -522,7 +515,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     }
 
     private int targetConcurrentRequests_;
-
     /**
      *
      *
@@ -538,7 +530,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
     public int getTargetConcurrentRequests() {
       return targetConcurrentRequests_;
     }
-
     /**
      *
      *
@@ -558,7 +549,6 @@ public final class RequestUtilization extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

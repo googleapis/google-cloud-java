@@ -46,7 +46,6 @@ public interface UpdateAlertConfigRequestOrBuilder
    * @return Whether the alertConfig field is set.
    */
   boolean hasAlertConfig();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateAlertConfigRequestOrBuilder
    * @return The alertConfig.
    */
   com.google.cloud.retail.v2alpha.AlertConfig getAlertConfig();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface UpdateAlertConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface UpdateAlertConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

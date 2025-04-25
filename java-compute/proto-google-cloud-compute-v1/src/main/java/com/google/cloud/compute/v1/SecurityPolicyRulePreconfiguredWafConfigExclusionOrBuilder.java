@@ -38,7 +38,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams>
       getRequestCookiesToExcludeList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       getRequestCookiesToExclude(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * </code>
    */
   int getRequestCookiesToExcludeCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder>
       getRequestCookiesToExcludeOrBuilderList();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams>
       getRequestHeadersToExcludeList();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       getRequestHeadersToExclude(int index);
-
   /**
    *
    *
@@ -138,7 +132,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * </code>
    */
   int getRequestHeadersToExcludeCount();
-
   /**
    *
    *
@@ -155,7 +148,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder>
       getRequestHeadersToExcludeOrBuilderList();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams>
       getRequestQueryParamsToExcludeList();
-
   /**
    *
    *
@@ -198,7 +189,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       getRequestQueryParamsToExclude(int index);
-
   /**
    *
    *
@@ -211,7 +201,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * </code>
    */
   int getRequestQueryParamsToExcludeCount();
-
   /**
    *
    *
@@ -228,7 +217,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder>
       getRequestQueryParamsToExcludeOrBuilderList();
-
   /**
    *
    *
@@ -257,7 +245,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
   java.util.List<
           com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams>
       getRequestUrisToExcludeList();
-
   /**
    *
    *
@@ -271,7 +258,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    */
   com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
       getRequestUrisToExclude(int index);
-
   /**
    *
    *
@@ -284,7 +270,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * </code>
    */
   int getRequestUrisToExcludeCount();
-
   /**
    *
    *
@@ -301,7 +286,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
               com.google.cloud.compute.v1
                   .SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder>
       getRequestUrisToExcludeOrBuilderList();
-
   /**
    *
    *
@@ -328,7 +312,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * @return A list containing the targetRuleIds.
    */
   java.util.List<java.lang.String> getTargetRuleIdsList();
-
   /**
    *
    *
@@ -341,7 +324,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * @return The count of targetRuleIds.
    */
   int getTargetRuleIdsCount();
-
   /**
    *
    *
@@ -355,7 +337,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * @return The targetRuleIds at the given index.
    */
   java.lang.String getTargetRuleIds(int index);
-
   /**
    *
    *
@@ -382,7 +363,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * @return Whether the targetRuleSet field is set.
    */
   boolean hasTargetRuleSet();
-
   /**
    *
    *
@@ -395,7 +375,6 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    * @return The targetRuleSet.
    */
   java.lang.String getTargetRuleSet();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface CreateIntentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface CreateIntentRequestOrBuilder
    * @return Whether the intent field is set.
    */
   boolean hasIntent();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateIntentRequestOrBuilder
    * @return The intent.
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateIntentRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface CreateIntentRequestOrBuilder
    * @return The enum numeric value on the wire for intentView.
    */
   int getIntentViewValue();
-
   /**
    *
    *

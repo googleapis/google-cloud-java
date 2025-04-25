@@ -33,7 +33,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.SourceTargetMapping)
     SourceTargetMappingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceTargetMapping.newBuilder() to construct.
   private SourceTargetMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int SOURCE_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.migration.v2.SourceSpec sourceSpec_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
   public boolean hasSourceSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.bigquery.migration.v2.SourceSpec.getDefaultInstance()
         : sourceSpec_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
 
   public static final int TARGET_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.migration.v2.TargetSpec targetSpec_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
   public boolean hasTargetSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.bigquery.migration.v2.TargetSpec.getDefaultInstance()
         : targetSpec_;
   }
-
   /**
    *
    *
@@ -348,7 +341,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -571,7 +563,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
             com.google.cloud.bigquery.migration.v2.SourceSpec.Builder,
             com.google.cloud.bigquery.migration.v2.SourceSpecOrBuilder>
         sourceSpecBuilder_;
-
     /**
      *
      *
@@ -586,7 +577,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
     public boolean hasSourceSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -607,7 +597,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
         return sourceSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -630,7 +619,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +667,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +686,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +700,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSourceSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -734,7 +718,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
             : sourceSpec_;
       }
     }
-
     /**
      *
      *
@@ -767,7 +750,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
             com.google.cloud.bigquery.migration.v2.TargetSpec.Builder,
             com.google.cloud.bigquery.migration.v2.TargetSpecOrBuilder>
         targetSpecBuilder_;
-
     /**
      *
      *
@@ -782,7 +764,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
     public boolean hasTargetSpec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -803,7 +784,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
         return targetSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -826,7 +806,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +826,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +854,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +873,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +887,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTargetSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -930,7 +905,6 @@ public final class SourceTargetMapping extends com.google.protobuf.GeneratedMess
             : targetSpec_;
       }
     }
-
     /**
      *
      *

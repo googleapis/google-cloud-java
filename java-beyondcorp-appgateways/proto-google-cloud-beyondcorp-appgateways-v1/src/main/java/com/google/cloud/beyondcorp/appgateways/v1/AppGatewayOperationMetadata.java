@@ -33,7 +33,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.appgateways.v1.AppGatewayOperationMetadata)
     AppGatewayOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AppGatewayOperationMetadata.newBuilder() to construct.
   private AppGatewayOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object verb_ = "";
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +271,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusMessage_ = "";
-
   /**
    *
    *
@@ -306,7 +294,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -333,7 +320,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
 
   public static final int REQUESTED_CANCELLATION_FIELD_NUMBER = 6;
   private boolean requestedCancellation_ = false;
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object apiVersion_ = "";
-
   /**
    *
    *
@@ -382,7 +367,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -632,7 +616,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -936,7 +919,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -953,7 +935,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -976,7 +957,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1001,7 +981,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1002,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1031,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1052,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1068,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1113,7 +1088,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1122,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1164,7 +1137,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1184,7 +1156,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1208,7 +1179,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1199,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1227,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1247,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1307,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     }
 
     private java.lang.Object target_ = "";
-
     /**
      *
      *
@@ -1365,7 +1329,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1388,7 +1351,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1410,7 +1372,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1389,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1453,7 +1413,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     }
 
     private java.lang.Object verb_ = "";
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1457,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1521,7 +1478,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1495,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1519,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     }
 
     private java.lang.Object statusMessage_ = "";
-
     /**
      *
      *
@@ -1587,7 +1541,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1610,7 +1563,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1584,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1650,7 +1601,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1675,7 +1625,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     }
 
     private boolean requestedCancellation_;
-
     /**
      *
      *
@@ -1695,7 +1644,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     public boolean getRequestedCancellation() {
       return requestedCancellation_;
     }
-
     /**
      *
      *
@@ -1719,7 +1667,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1743,7 +1690,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
     }
 
     private java.lang.Object apiVersion_ = "";
-
     /**
      *
      *
@@ -1766,7 +1712,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1789,7 +1734,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1811,7 +1755,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1829,7 +1772,6 @@ public final class AppGatewayOperationMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.Runnable)
     RunnableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Runnable.newBuilder() to construct.
   private Runnable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,7 +93,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The imageUri.
      */
     java.lang.String getImageUri();
-
     /**
      *
      *
@@ -123,7 +121,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the commands.
      */
     java.util.List<java.lang.String> getCommandsList();
-
     /**
      *
      *
@@ -139,7 +136,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The count of commands.
      */
     int getCommandsCount();
-
     /**
      *
      *
@@ -156,7 +152,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The commands at the given index.
      */
     java.lang.String getCommands(int index);
-
     /**
      *
      *
@@ -187,7 +182,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The entrypoint.
      */
     java.lang.String getEntrypoint();
-
     /**
      *
      *
@@ -224,7 +218,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the volumes.
      */
     java.util.List<java.lang.String> getVolumesList();
-
     /**
      *
      *
@@ -247,7 +240,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The count of volumes.
      */
     int getVolumesCount();
-
     /**
      *
      *
@@ -271,7 +263,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The volumes at the given index.
      */
     java.lang.String getVolumes(int index);
-
     /**
      *
      *
@@ -311,7 +302,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The options.
      */
     java.lang.String getOptions();
-
     /**
      *
      *
@@ -371,7 +361,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The username.
      */
     java.lang.String getUsername();
-
     /**
      *
      *
@@ -426,7 +415,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The password.
      */
     java.lang.String getPassword();
-
     /**
      *
      *
@@ -483,7 +471,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getEnableImageStreaming();
   }
-
   /**
    *
    *
@@ -498,7 +485,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.Runnable.Container)
       ContainerOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Container.newBuilder() to construct.
     private Container(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -539,7 +525,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object imageUri_ = "";
-
     /**
      *
      *
@@ -563,7 +548,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -593,7 +577,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList commands_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -611,7 +594,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getCommandsList() {
       return commands_;
     }
-
     /**
      *
      *
@@ -629,7 +611,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public int getCommandsCount() {
       return commands_.size();
     }
-
     /**
      *
      *
@@ -648,7 +629,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCommands(int index) {
       return commands_.get(index);
     }
-
     /**
      *
      *
@@ -672,7 +652,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entrypoint_ = "";
-
     /**
      *
      *
@@ -697,7 +676,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -728,7 +706,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList volumes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -753,7 +730,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getVolumesList() {
       return volumes_;
     }
-
     /**
      *
      *
@@ -778,7 +754,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public int getVolumesCount() {
       return volumes_.size();
     }
-
     /**
      *
      *
@@ -804,7 +779,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getVolumes(int index) {
       return volumes_.get(index);
     }
-
     /**
      *
      *
@@ -835,7 +809,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object options_ = "";
-
     /**
      *
      *
@@ -862,7 +835,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -892,7 +864,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BLOCK_EXTERNAL_NETWORK_FIELD_NUMBER = 9;
     private boolean blockExternalNetwork_ = false;
-
     /**
      *
      *
@@ -916,7 +887,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -955,7 +925,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -999,7 +968,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -1037,7 +1005,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1045,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_IMAGE_STREAMING_FIELD_NUMBER = 12;
     private boolean enableImageStreaming_ = false;
-
     /**
      *
      *
@@ -1357,7 +1323,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1674,7 +1639,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object imageUri_ = "";
-
       /**
        *
        *
@@ -1697,7 +1661,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1720,7 +1683,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1742,7 +1704,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1760,7 +1721,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1793,7 +1753,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1812,7 +1771,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         commands_.makeImmutable();
         return commands_;
       }
-
       /**
        *
        *
@@ -1830,7 +1788,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public int getCommandsCount() {
         return commands_.size();
       }
-
       /**
        *
        *
@@ -1849,7 +1806,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getCommands(int index) {
         return commands_.get(index);
       }
-
       /**
        *
        *
@@ -1868,7 +1824,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getCommandsBytes(int index) {
         return commands_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1895,7 +1850,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1921,7 +1875,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1944,7 +1897,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1966,7 +1918,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1995,7 +1946,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object entrypoint_ = "";
-
       /**
        *
        *
@@ -2019,7 +1969,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2043,7 +1992,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2066,7 +2014,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2085,7 +2032,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2119,7 +2065,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -2145,7 +2090,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         volumes_.makeImmutable();
         return volumes_;
       }
-
       /**
        *
        *
@@ -2170,7 +2114,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public int getVolumesCount() {
         return volumes_.size();
       }
-
       /**
        *
        *
@@ -2196,7 +2139,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getVolumes(int index) {
         return volumes_.get(index);
       }
-
       /**
        *
        *
@@ -2222,7 +2164,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getVolumesBytes(int index) {
         return volumes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -2256,7 +2197,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2289,7 +2229,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2319,7 +2258,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2348,7 +2286,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2384,7 +2321,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object options_ = "";
-
       /**
        *
        *
@@ -2410,7 +2346,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2436,7 +2371,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2461,7 +2395,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2482,7 +2415,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2510,7 +2442,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean blockExternalNetwork_;
-
       /**
        *
        *
@@ -2529,7 +2460,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public boolean getBlockExternalNetwork() {
         return blockExternalNetwork_;
       }
-
       /**
        *
        *
@@ -2552,7 +2482,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2575,7 +2504,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -2613,7 +2541,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2651,7 +2578,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2688,7 +2614,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2721,7 +2646,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2761,7 +2685,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object password_ = "";
-
       /**
        *
        *
@@ -2798,7 +2721,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2835,7 +2757,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2871,7 +2792,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2903,7 +2823,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2942,7 +2861,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean enableImageStreaming_;
-
       /**
        *
        *
@@ -2974,7 +2892,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableImageStreaming() {
         return enableImageStreaming_;
       }
-
       /**
        *
        *
@@ -3010,7 +2927,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3134,7 +3050,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the path field is set.
      */
     boolean hasPath();
-
     /**
      *
      *
@@ -3155,7 +3070,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The path.
      */
     java.lang.String getPath();
-
     /**
      *
      *
@@ -3197,7 +3111,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the text field is set.
      */
     boolean hasText();
-
     /**
      *
      *
@@ -3218,7 +3131,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The text.
      */
     java.lang.String getText();
-
     /**
      *
      *
@@ -3242,7 +3154,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.batch.v1.Runnable.Script.CommandCase getCommandCase();
   }
-
   /**
    *
    *
@@ -3257,7 +3168,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.Runnable.Script)
       ScriptOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Script.newBuilder() to construct.
     private Script(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3303,7 +3213,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       private CommandCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -3337,7 +3246,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PATH_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -3360,7 +3268,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPath() {
       return commandCase_ == 1;
     }
-
     /**
      *
      *
@@ -3396,7 +3303,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3434,7 +3340,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TEXT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -3457,7 +3362,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return commandCase_ == 2;
     }
-
     /**
      *
      *
@@ -3493,7 +3397,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3716,7 +3619,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3966,7 +3868,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public boolean hasPath() {
         return commandCase_ == 1;
       }
-
       /**
        *
        *
@@ -4003,7 +3904,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4040,7 +3940,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4070,7 +3969,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4098,7 +3996,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4153,7 +4050,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       public boolean hasText() {
         return commandCase_ == 2;
       }
-
       /**
        *
        *
@@ -4190,7 +4086,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4227,7 +4122,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4257,7 +4151,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4285,7 +4178,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4399,7 +4291,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -4414,7 +4305,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -4430,7 +4320,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1.Runnable.Barrier)
       BarrierOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Barrier.newBuilder() to construct.
     private Barrier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4465,7 +4354,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4490,7 +4378,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -4676,7 +4563,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4864,7 +4750,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -4888,7 +4773,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4912,7 +4796,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4935,7 +4818,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4954,7 +4836,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5062,7 +4943,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     private ExecutableCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5098,7 +4978,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTAINER_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -5114,7 +4993,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContainer() {
     return executableCase_ == 1;
   }
-
   /**
    *
    *
@@ -5133,7 +5011,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.batch.v1.Runnable.Container.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5152,7 +5029,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCRIPT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -5168,7 +5044,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScript() {
     return executableCase_ == 2;
   }
-
   /**
    *
    *
@@ -5187,7 +5062,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.batch.v1.Runnable.Script.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5206,7 +5080,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BARRIER_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -5222,7 +5095,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBarrier() {
     return executableCase_ == 6;
   }
-
   /**
    *
    *
@@ -5241,7 +5113,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.batch.v1.Runnable.Barrier.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5263,7 +5134,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -5290,7 +5160,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5320,7 +5189,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IGNORE_EXIT_STATUS_FIELD_NUMBER = 3;
   private boolean ignoreExitStatus_ = false;
-
   /**
    *
    *
@@ -5342,7 +5210,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BACKGROUND_FIELD_NUMBER = 4;
   private boolean background_ = false;
-
   /**
    *
    *
@@ -5372,7 +5239,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALWAYS_RUN_FIELD_NUMBER = 5;
   private boolean alwaysRun_ = false;
-
   /**
    *
    *
@@ -5398,7 +5264,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 7;
   private com.google.cloud.batch.v1.Environment environment_;
-
   /**
    *
    *
@@ -5415,7 +5280,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5434,7 +5298,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1.Environment.getDefaultInstance()
         : environment_;
   }
-
   /**
    *
    *
@@ -5454,7 +5317,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration timeout_;
-
   /**
    *
    *
@@ -5470,7 +5332,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -5486,7 +5347,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
-
   /**
    *
    *
@@ -5527,7 +5387,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -5544,14 +5403,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -5565,7 +5422,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -5586,7 +5442,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -5891,7 +5746,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6287,7 +6141,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.Runnable.Container.Builder,
             com.google.cloud.batch.v1.Runnable.ContainerOrBuilder>
         containerBuilder_;
-
     /**
      *
      *
@@ -6303,7 +6156,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContainer() {
       return executableCase_ == 1;
     }
-
     /**
      *
      *
@@ -6329,7 +6181,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1.Runnable.Container.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6352,7 +6203,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -6373,7 +6223,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -6406,7 +6255,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -6432,7 +6280,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6445,7 +6292,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Runnable.Container.Builder getContainerBuilder() {
       return getContainerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6466,7 +6312,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1.Runnable.Container.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6505,7 +6350,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.Runnable.Script.Builder,
             com.google.cloud.batch.v1.Runnable.ScriptOrBuilder>
         scriptBuilder_;
-
     /**
      *
      *
@@ -6521,7 +6365,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScript() {
       return executableCase_ == 2;
     }
-
     /**
      *
      *
@@ -6547,7 +6390,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1.Runnable.Script.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6570,7 +6412,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6590,7 +6431,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6623,7 +6463,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6649,7 +6488,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6662,7 +6500,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Runnable.Script.Builder getScriptBuilder() {
       return getScriptFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6683,7 +6520,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1.Runnable.Script.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6722,7 +6558,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.Runnable.Barrier.Builder,
             com.google.cloud.batch.v1.Runnable.BarrierOrBuilder>
         barrierBuilder_;
-
     /**
      *
      *
@@ -6738,7 +6573,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBarrier() {
       return executableCase_ == 6;
     }
-
     /**
      *
      *
@@ -6764,7 +6598,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1.Runnable.Barrier.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6787,7 +6620,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -6807,7 +6639,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -6840,7 +6671,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       executableCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -6866,7 +6696,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6879,7 +6708,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.batch.v1.Runnable.Barrier.Builder getBarrierBuilder() {
       return getBarrierFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6900,7 +6728,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.batch.v1.Runnable.Barrier.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6935,7 +6762,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -6961,7 +6787,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6987,7 +6812,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7012,7 +6836,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7033,7 +6856,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7061,7 +6883,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean ignoreExitStatus_;
-
     /**
      *
      *
@@ -7080,7 +6901,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean getIgnoreExitStatus() {
       return ignoreExitStatus_;
     }
-
     /**
      *
      *
@@ -7103,7 +6923,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7126,7 +6945,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean background_;
-
     /**
      *
      *
@@ -7153,7 +6971,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean getBackground() {
       return background_;
     }
-
     /**
      *
      *
@@ -7184,7 +7001,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7215,7 +7031,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean alwaysRun_;
-
     /**
      *
      *
@@ -7238,7 +7053,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean getAlwaysRun() {
       return alwaysRun_;
     }
-
     /**
      *
      *
@@ -7265,7 +7079,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7297,7 +7110,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1.Environment.Builder,
             com.google.cloud.batch.v1.EnvironmentOrBuilder>
         environmentBuilder_;
-
     /**
      *
      *
@@ -7313,7 +7125,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -7335,7 +7146,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return environmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7359,7 +7169,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7380,7 +7189,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7409,7 +7217,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7430,7 +7237,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7446,7 +7252,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7466,7 +7271,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             : environment_;
       }
     }
-
     /**
      *
      *
@@ -7500,7 +7304,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
-
     /**
      *
      *
@@ -7515,7 +7318,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -7534,7 +7336,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return timeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7557,7 +7358,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7577,7 +7377,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7605,7 +7404,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7625,7 +7423,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7640,7 +7437,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7657,7 +7453,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
-
     /**
      *
      *
@@ -7709,7 +7504,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -7726,14 +7520,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -7747,7 +7539,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -7768,7 +7559,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -7795,7 +7585,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -7812,14 +7601,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -7840,7 +7627,6 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       return this;
     }
-
     /**
      *
      *

@@ -35,7 +35,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.container.v1.RollbackNodePoolUpgradeRequest)
     RollbackNodePoolUpgradeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RollbackNodePoolUpgradeRequest.newBuilder() to construct.
   private RollbackNodePoolUpgradeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -264,7 +257,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodePoolId_ = "";
-
   /**
    *
    *
@@ -292,7 +284,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -325,7 +316,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -351,7 +341,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -380,7 +369,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
 
   public static final int RESPECT_PDB_FIELD_NUMBER = 7;
   private boolean respectPdb_ = false;
-
   /**
    *
    *
@@ -603,7 +591,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -863,7 +850,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -891,7 +877,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -919,7 +904,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -946,7 +930,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +952,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +981,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1028,7 +1009,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1037,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1064,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1087,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1117,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1169,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1194,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1242,7 +1215,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1243,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nodePoolId_ = "";
-
     /**
      *
      *
@@ -1298,7 +1269,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1325,7 +1295,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1320,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1341,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1369,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1427,7 +1393,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1452,7 +1417,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1476,7 +1440,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1496,7 +1459,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1485,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     }
 
     private boolean respectPdb_;
-
     /**
      *
      *
@@ -1540,7 +1501,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
     public boolean getRespectPdb() {
       return respectPdb_;
     }
-
     /**
      *
      *
@@ -1561,7 +1521,6 @@ public final class RollbackNodePoolUpgradeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

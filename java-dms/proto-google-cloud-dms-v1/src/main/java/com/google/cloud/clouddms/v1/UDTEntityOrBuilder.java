@@ -36,7 +36,6 @@ public interface UDTEntityOrBuilder
    * @return The udtSqlCode.
    */
   java.lang.String getUdtSqlCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface UDTEntityOrBuilder
    * @return The udtBody.
    */
   java.lang.String getUdtBody();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface UDTEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UDTEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *

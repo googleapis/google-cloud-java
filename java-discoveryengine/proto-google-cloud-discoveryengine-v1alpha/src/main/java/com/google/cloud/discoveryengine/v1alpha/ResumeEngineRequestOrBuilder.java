@@ -40,7 +40,6 @@ public interface ResumeEngineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

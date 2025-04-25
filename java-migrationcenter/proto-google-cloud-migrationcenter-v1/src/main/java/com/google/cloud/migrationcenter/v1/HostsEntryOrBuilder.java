@@ -36,7 +36,6 @@ public interface HostsEntryOrBuilder
    * @return The ip.
    */
   java.lang.String getIp();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HostsEntryOrBuilder
    * @return A list containing the hostNames.
    */
   java.util.List<java.lang.String> getHostNamesList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface HostsEntryOrBuilder
    * @return The count of hostNames.
    */
   int getHostNamesCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface HostsEntryOrBuilder
    * @return The hostNames at the given index.
    */
   java.lang.String getHostNames(int index);
-
   /**
    *
    *

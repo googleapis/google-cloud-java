@@ -42,7 +42,6 @@ public interface AccessTupleOrBuilder
    * @return The principal.
    */
   java.lang.String getPrincipal();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface AccessTupleOrBuilder
    * @return The fullResourceName.
    */
   java.lang.String getFullResourceName();
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public interface AccessTupleOrBuilder
    * @return The permission.
    */
   java.lang.String getPermission();
-
   /**
    *
    *

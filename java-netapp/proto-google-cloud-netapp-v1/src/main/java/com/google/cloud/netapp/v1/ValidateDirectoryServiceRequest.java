@@ -34,7 +34,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.ValidateDirectoryServiceRequest)
     ValidateDirectoryServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ValidateDirectoryServiceRequest.newBuilder() to construct.
   private ValidateDirectoryServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
 
   public static final int DIRECTORY_SERVICE_TYPE_FIELD_NUMBER = 2;
   private int directoryServiceType_ = 0;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
   public int getDirectoryServiceTypeValue() {
     return directoryServiceType_;
   }
-
   /**
    *
    *
@@ -334,7 +329,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -533,7 +527,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -558,7 +551,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +617,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
     }
 
     private int directoryServiceType_ = 0;
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
     public int getDirectoryServiceTypeValue() {
       return directoryServiceType_;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +693,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
           com.google.cloud.netapp.v1.DirectoryServiceType.forNumber(directoryServiceType_);
       return result == null ? com.google.cloud.netapp.v1.DirectoryServiceType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class ValidateDirectoryServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

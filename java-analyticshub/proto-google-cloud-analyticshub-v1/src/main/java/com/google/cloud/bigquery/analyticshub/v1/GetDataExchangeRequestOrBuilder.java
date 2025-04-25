@@ -39,7 +39,6 @@ public interface GetDataExchangeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

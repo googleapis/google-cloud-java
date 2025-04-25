@@ -37,7 +37,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.EffectiveTag)
     EffectiveTagOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EffectiveTag.newBuilder() to construct.
   private EffectiveTag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tagValue_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object namespacedTagValue_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tagKey_ = "";
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object namespacedTagKey_ = "";
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -302,7 +293,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tagKeyParentName_ = "";
-
   /**
    *
    *
@@ -328,7 +318,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -357,7 +346,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INHERITED_FIELD_NUMBER = 5;
   private boolean inherited_ = false;
-
   /**
    *
    *
@@ -581,7 +569,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -843,7 +830,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object tagValue_ = "";
-
     /**
      *
      *
@@ -866,7 +852,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +874,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -911,7 +895,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +912,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +936,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object namespacedTagValue_ = "";
-
     /**
      *
      *
@@ -980,7 +961,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +986,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1010,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1030,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1057,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tagKey_ = "";
-
     /**
      *
      *
@@ -1104,7 +1080,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1128,7 +1103,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1125,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1143,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1168,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object namespacedTagKey_ = "";
-
     /**
      *
      *
@@ -1222,7 +1193,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1248,7 +1218,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1242,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1262,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1289,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tagKeyParentName_ = "";
-
     /**
      *
      *
@@ -1347,7 +1313,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1372,7 +1337,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1396,7 +1360,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1379,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1405,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean inherited_;
-
     /**
      *
      *
@@ -1462,7 +1423,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
     public boolean getInherited() {
       return inherited_;
     }
-
     /**
      *
      *
@@ -1485,7 +1445,6 @@ public final class EffectiveTag extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface CreateOrderRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateOrderRequestOrBuilder
    * @return The orderId.
    */
   java.lang.String getOrderId();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CreateOrderRequestOrBuilder
    * @return Whether the order field is set.
    */
   boolean hasOrder();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface CreateOrderRequestOrBuilder
    * @return The order.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Order getOrder();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface CreateOrderRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

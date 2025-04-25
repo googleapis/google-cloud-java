@@ -38,7 +38,6 @@ public interface StreamingTranslateSpeechResultOrBuilder
    * @return Whether the textTranslationResult field is set.
    */
   boolean hasTextTranslationResult();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface StreamingTranslateSpeechResultOrBuilder
    */
   com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.TextTranslationResult
       getTextTranslationResult();
-
   /**
    *
    *

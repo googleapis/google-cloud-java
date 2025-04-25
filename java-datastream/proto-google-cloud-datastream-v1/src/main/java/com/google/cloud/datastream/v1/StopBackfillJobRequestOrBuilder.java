@@ -39,7 +39,6 @@ public interface StopBackfillJobRequestOrBuilder
    * @return The object.
    */
   java.lang.String getObject();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.GetGuestAttributesResponse)
     GetGuestAttributesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetGuestAttributesResponse.newBuilder() to construct.
   private GetGuestAttributesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.tpu.v2.GuestAttributes> guestAttributes_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.tpu.v2.GuestAttributes> getGuestAttributesList() {
     return guestAttributes_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       getGuestAttributesOrBuilderList() {
     return guestAttributes_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
   public int getGuestAttributesCount() {
     return guestAttributes_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
   public com.google.cloud.tpu.v2.GuestAttributes getGuestAttributes(int index) {
     return guestAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -566,7 +559,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
         return guestAttributesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
         return guestAttributesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
         return guestAttributesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -623,7 +613,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +655,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +677,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +697,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +737,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +756,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +775,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +787,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
     public com.google.cloud.tpu.v2.GuestAttributes.Builder getGuestAttributesBuilder(int index) {
       return getGuestAttributesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -823,7 +803,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
         return guestAttributesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -841,7 +820,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(guestAttributes_);
       }
     }
-
     /**
      *
      *
@@ -855,7 +833,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       return getGuestAttributesFieldBuilder()
           .addBuilder(com.google.cloud.tpu.v2.GuestAttributes.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -869,7 +846,6 @@ public final class GetGuestAttributesResponse extends com.google.protobuf.Genera
       return getGuestAttributesFieldBuilder()
           .addBuilder(index, com.google.cloud.tpu.v2.GuestAttributes.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetShieldedInstanceIdentityInstanceRequest)
     GetShieldedInstanceIdentityInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetShieldedInstanceIdentityInstanceRequest.newBuilder() to construct.
   private GetShieldedInstanceIdentityInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -406,7 +399,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +621,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -697,7 +686,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -715,7 +703,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class GetShieldedInstanceIdentityInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

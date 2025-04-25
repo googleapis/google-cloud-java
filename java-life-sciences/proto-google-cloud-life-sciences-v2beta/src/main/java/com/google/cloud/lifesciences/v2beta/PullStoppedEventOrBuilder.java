@@ -36,7 +36,6 @@ public interface PullStoppedEventOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public interface ValidationResultOrBuilder
    * <code>repeated .google.cloud.datastream.v1.Validation validations = 1;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.Validation> getValidationsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ValidationResultOrBuilder
    * <code>repeated .google.cloud.datastream.v1.Validation validations = 1;</code>
    */
   com.google.cloud.datastream.v1.Validation getValidations(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ValidationResultOrBuilder
    * <code>repeated .google.cloud.datastream.v1.Validation validations = 1;</code>
    */
   int getValidationsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ValidationResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.ValidationOrBuilder>
       getValidationsOrBuilderList();
-
   /**
    *
    *

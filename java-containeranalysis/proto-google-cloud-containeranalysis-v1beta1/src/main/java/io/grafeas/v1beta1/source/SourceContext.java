@@ -34,7 +34,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.source.SourceContext)
     SourceContextOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceContext.newBuilder() to construct.
   private SourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -93,7 +92,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     private ContextCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -129,7 +127,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_REPO_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRepo() {
     return contextCase_ == 1;
   }
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GERRIT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGerrit() {
     return contextCase_ == 2;
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GIT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGit() {
     return contextCase_ == 3;
   }
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -333,14 +321,12 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -354,7 +340,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -375,7 +360,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -617,7 +601,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -911,7 +894,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder,
             io.grafeas.v1beta1.source.CloudRepoSourceContextOrBuilder>
         cloudRepoBuilder_;
-
     /**
      *
      *
@@ -927,7 +909,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRepo() {
       return contextCase_ == 1;
     }
-
     /**
      *
      *
@@ -953,7 +934,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -976,7 +956,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1030,7 +1008,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1033,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1045,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.source.CloudRepoSourceContext.Builder getCloudRepoBuilder() {
       return getCloudRepoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1090,7 +1065,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.source.CloudRepoSourceContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1103,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.source.GerritSourceContext.Builder,
             io.grafeas.v1beta1.source.GerritSourceContextOrBuilder>
         gerritBuilder_;
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGerrit() {
       return contextCase_ == 2;
     }
-
     /**
      *
      *
@@ -1171,7 +1143,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1165,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1185,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1217,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1242,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.source.GerritSourceContext.Builder getGerritBuilder() {
       return getGerritFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.source.GerritSourceContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1312,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.source.GitSourceContext.Builder,
             io.grafeas.v1beta1.source.GitSourceContextOrBuilder>
         gitBuilder_;
-
     /**
      *
      *
@@ -1363,7 +1327,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGit() {
       return contextCase_ == 3;
     }
-
     /**
      *
      *
@@ -1389,7 +1352,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1412,7 +1374,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1393,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1425,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       contextCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1450,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1462,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.source.GitSourceContext.Builder getGitBuilder() {
       return getGitFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1525,7 +1482,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
         return io.grafeas.v1beta1.source.GitSourceContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1584,7 +1540,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1601,14 +1556,12 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1622,7 +1575,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1643,7 +1595,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1670,7 +1621,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1687,14 +1637,12 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1715,7 +1663,6 @@ public final class SourceContext extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

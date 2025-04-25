@@ -38,7 +38,6 @@ public interface DeleteGlossaryEntryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

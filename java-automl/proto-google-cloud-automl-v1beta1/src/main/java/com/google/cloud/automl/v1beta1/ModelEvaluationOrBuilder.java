@@ -41,7 +41,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the classificationEvaluationMetrics field is set.
    */
   boolean hasClassificationEvaluationMetrics();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
       getClassificationEvaluationMetrics();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the regressionEvaluationMetrics field is set.
    */
   boolean hasRegressionEvaluationMetrics();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.RegressionProto.RegressionEvaluationMetrics
       getRegressionEvaluationMetrics();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the translationEvaluationMetrics field is set.
    */
   boolean hasTranslationEvaluationMetrics();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public interface ModelEvaluationOrBuilder
    * @return The translationEvaluationMetrics.
    */
   com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics getTranslationEvaluationMetrics();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the imageObjectDetectionEvaluationMetrics field is set.
    */
   boolean hasImageObjectDetectionEvaluationMetrics();
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.ImageObjectDetectionEvaluationMetrics
       getImageObjectDetectionEvaluationMetrics();
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the videoObjectTrackingEvaluationMetrics field is set.
    */
   boolean hasVideoObjectTrackingEvaluationMetrics();
-
   /**
    *
    *
@@ -248,7 +239,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.VideoObjectTrackingEvaluationMetrics
       getVideoObjectTrackingEvaluationMetrics();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the textSentimentEvaluationMetrics field is set.
    */
   boolean hasTextSentimentEvaluationMetrics();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
       getTextSentimentEvaluationMetrics();
-
   /**
    *
    *
@@ -322,7 +310,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the textExtractionEvaluationMetrics field is set.
    */
   boolean hasTextExtractionEvaluationMetrics();
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1beta1.TextExtractionEvaluationMetrics
       getTextExtractionEvaluationMetrics();
-
   /**
    *
    *
@@ -368,7 +354,6 @@ public interface ModelEvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -405,7 +390,6 @@ public interface ModelEvaluationOrBuilder
    * @return The annotationSpecId.
    */
   java.lang.String getAnnotationSpecId();
-
   /**
    *
    *
@@ -450,7 +434,6 @@ public interface ModelEvaluationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -487,7 +470,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -500,7 +482,6 @@ public interface ModelEvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

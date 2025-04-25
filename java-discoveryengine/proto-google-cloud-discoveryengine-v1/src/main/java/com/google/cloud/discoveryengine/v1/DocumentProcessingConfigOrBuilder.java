@@ -38,7 +38,6 @@ public interface DocumentProcessingConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DocumentProcessingConfigOrBuilder
    * @return Whether the chunkingConfig field is set.
    */
   boolean hasChunkingConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface DocumentProcessingConfigOrBuilder
    * @return The chunkingConfig.
    */
   com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ChunkingConfig getChunkingConfig();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface DocumentProcessingConfigOrBuilder
    * @return Whether the defaultParsingConfig field is set.
    */
   boolean hasDefaultParsingConfig();
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public interface DocumentProcessingConfigOrBuilder
    */
   com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig
       getDefaultParsingConfig();
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public interface DocumentProcessingConfigOrBuilder
    * </code>
    */
   int getParsingConfigOverridesCount();
-
   /**
    *
    *
@@ -205,14 +199,12 @@ public interface DocumentProcessingConfigOrBuilder
    * </code>
    */
   boolean containsParsingConfigOverrides(java.lang.String key);
-
   /** Use {@link #getParsingConfigOverridesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig>
       getParsingConfigOverrides();
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public interface DocumentProcessingConfigOrBuilder
           java.lang.String,
           com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig>
       getParsingConfigOverridesMap();
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public interface DocumentProcessingConfigOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.discoveryengine.v1.DocumentProcessingConfig.ParsingConfig defaultValue);
-
   /**
    *
    *

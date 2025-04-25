@@ -35,7 +35,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ConverseConversationRequest)
     ConverseConversationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConverseConversationRequest.newBuilder() to construct.
   private ConverseConversationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -150,7 +147,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   public static final int QUERY_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1alpha.TextInput query_;
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         ? com.google.cloud.discoveryengine.v1alpha.TextInput.getDefaultInstance()
         : query_;
   }
-
   /**
    *
    *
@@ -211,7 +205,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object servingConfig_ = "";
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   public static final int CONVERSATION_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1alpha.Conversation conversation_;
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public boolean hasConversation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         ? com.google.cloud.discoveryengine.v1alpha.Conversation.getDefaultInstance()
         : conversation_;
   }
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   public static final int SAFE_SEARCH_FIELD_NUMBER = 6;
   private boolean safeSearch_ = false;
-
   /**
    *
    *
@@ -368,7 +356,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public int getUserLabelsCount() {
     return internalGetUserLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -401,14 +388,12 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
     return internalGetUserLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
     return getUserLabelsMap();
   }
-
   /**
    *
    *
@@ -438,7 +423,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
     return internalGetUserLabels().getMap();
   }
-
   /**
    *
    *
@@ -475,7 +459,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -516,7 +499,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public static final int SUMMARY_SPEC_FIELD_NUMBER = 8;
   private com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SummarySpec
       summarySpec_;
-
   /**
    *
    *
@@ -534,7 +516,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public boolean hasSummarySpec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -556,7 +537,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             .getDefaultInstance()
         : summarySpec_;
   }
-
   /**
    *
    *
@@ -582,7 +562,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -621,7 +600,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -663,7 +641,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
 
   public static final int BOOST_SPEC_FIELD_NUMBER = 10;
   private com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec boostSpec_;
-
   /**
    *
    *
@@ -681,7 +658,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
   public boolean hasBoostSpec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -701,7 +677,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         ? com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec.getDefaultInstance()
         : boostSpec_;
   }
-
   /**
    *
    *
@@ -982,7 +957,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1348,7 +1322,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1378,7 +1351,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1380,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1437,7 +1408,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1432,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1499,7 +1468,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             com.google.cloud.discoveryengine.v1alpha.TextInput.Builder,
             com.google.cloud.discoveryengine.v1alpha.TextInputOrBuilder>
         queryBuilder_;
-
     /**
      *
      *
@@ -1516,7 +1484,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1539,7 +1506,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return queryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1564,7 +1530,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1587,7 +1552,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1581,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1639,7 +1602,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1656,7 +1618,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return getQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1677,7 +1638,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             : query_;
       }
     }
-
     /**
      *
      *
@@ -1707,7 +1667,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object servingConfig_ = "";
-
     /**
      *
      *
@@ -1732,7 +1691,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1757,7 +1715,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1781,7 +1738,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1757,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1788,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             com.google.cloud.discoveryengine.v1alpha.Conversation.Builder,
             com.google.cloud.discoveryengine.v1alpha.ConversationOrBuilder>
         conversationBuilder_;
-
     /**
      *
      *
@@ -1850,7 +1804,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public boolean hasConversation() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1873,7 +1826,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return conversationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1898,7 +1850,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1921,7 +1872,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1902,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1974,7 +1923,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1939,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return getConversationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2013,7 +1960,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             : conversation_;
       }
     }
-
     /**
      *
      *
@@ -2043,7 +1989,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
 
     private boolean safeSearch_;
-
     /**
      *
      *
@@ -2059,7 +2004,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public boolean getSafeSearch() {
       return safeSearch_;
     }
-
     /**
      *
      *
@@ -2079,7 +2023,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2126,7 +2069,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public int getUserLabelsCount() {
       return internalGetUserLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2159,14 +2101,12 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       }
       return internalGetUserLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getUserLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
       return getUserLabelsMap();
     }
-
     /**
      *
      *
@@ -2196,7 +2136,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
       return internalGetUserLabels().getMap();
     }
-
     /**
      *
      *
@@ -2233,7 +2172,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2276,7 +2214,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2309,14 +2246,12 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableUserLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2353,7 +2288,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -2394,7 +2328,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             com.google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec
                 .SummarySpecOrBuilder>
         summarySpecBuilder_;
-
     /**
      *
      *
@@ -2411,7 +2344,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public boolean hasSummarySpec() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2436,7 +2368,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return summarySpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2463,7 +2394,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2487,7 +2417,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2521,7 +2450,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2543,7 +2471,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2562,7 +2489,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return getSummarySpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2586,7 +2512,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             : summarySpec_;
       }
     }
-
     /**
      *
      *
@@ -2620,7 +2545,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -2658,7 +2582,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2696,7 +2619,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2733,7 +2655,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2766,7 +2687,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2811,7 +2731,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpec.Builder,
             com.google.cloud.discoveryengine.v1alpha.SearchRequest.BoostSpecOrBuilder>
         boostSpecBuilder_;
-
     /**
      *
      *
@@ -2828,7 +2747,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
     public boolean hasBoostSpec() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2851,7 +2769,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
         return boostSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2877,7 +2794,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2900,7 +2816,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2933,7 +2848,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -2955,7 +2869,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2973,7 +2886,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
       onChanged();
       return getBoostSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2995,7 +2907,6 @@ public final class ConverseConversationRequest extends com.google.protobuf.Gener
             : boostSpec_;
       }
     }
-
     /**
      *
      *

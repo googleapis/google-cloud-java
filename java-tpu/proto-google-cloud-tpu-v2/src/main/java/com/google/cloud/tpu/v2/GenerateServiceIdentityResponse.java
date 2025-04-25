@@ -34,7 +34,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2.GenerateServiceIdentityResponse)
     GenerateServiceIdentityResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateServiceIdentityResponse.newBuilder() to construct.
   private GenerateServiceIdentityResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
   private int bitField0_;
   public static final int IDENTITY_FIELD_NUMBER = 1;
   private com.google.cloud.tpu.v2.ServiceIdentity identity_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
   public boolean hasIdentity() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
         ? com.google.cloud.tpu.v2.ServiceIdentity.getDefaultInstance()
         : identity_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -488,7 +483,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
             com.google.cloud.tpu.v2.ServiceIdentity.Builder,
             com.google.cloud.tpu.v2.ServiceIdentityOrBuilder>
         identityBuilder_;
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
     public boolean hasIdentity() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
         return identityBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +558,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +585,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +604,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +618,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
       onChanged();
       return getIdentityFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -649,7 +636,6 @@ public final class GenerateServiceIdentityResponse extends com.google.protobuf.G
             : identity_;
       }
     }
-
     /**
      *
      *

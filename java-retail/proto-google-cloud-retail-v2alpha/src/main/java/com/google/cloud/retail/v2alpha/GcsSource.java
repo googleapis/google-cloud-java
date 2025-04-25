@@ -33,7 +33,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.GcsSource)
     GcsSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GcsSource.newBuilder() to construct.
   private GcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList inputUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getInputUrisList() {
     return inputUris_;
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public int getInputUrisCount() {
     return inputUris_.size();
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getInputUris(int index) {
     return inputUris_.get(index);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataSchema_ = "";
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -439,7 +432,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +645,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -676,7 +667,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       inputUris_.makeImmutable();
       return inputUris_;
     }
-
     /**
      *
      *
@@ -698,7 +688,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public int getInputUrisCount() {
       return inputUris_.size();
     }
-
     /**
      *
      *
@@ -721,7 +710,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getInputUris(int index) {
       return inputUris_.get(index);
     }
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getInputUrisBytes(int index) {
       return inputUris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -775,7 +762,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +842,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataSchema_ = "";
-
     /**
      *
      *
@@ -939,7 +921,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +968,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1014,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1056,6 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

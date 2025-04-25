@@ -38,7 +38,6 @@ public interface CreateStreamRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateStreamRequestOrBuilder
    * @return The streamId.
    */
   java.lang.String getStreamId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateStreamRequestOrBuilder
    * @return Whether the stream field is set.
    */
   boolean hasStream();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateStreamRequestOrBuilder
    * @return The stream.
    */
   com.google.cloud.datastream.v1alpha1.Stream getStream();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateStreamRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

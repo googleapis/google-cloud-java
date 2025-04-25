@@ -41,7 +41,6 @@ public interface UpdateAppConnectorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateAppConnectorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateAppConnectorRequestOrBuilder
    * @return Whether the appConnector field is set.
    */
   boolean hasAppConnector();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateAppConnectorRequestOrBuilder
    * @return The appConnector.
    */
   com.google.cloud.beyondcorp.appconnectors.v1.AppConnector getAppConnector();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface UpdateAppConnectorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

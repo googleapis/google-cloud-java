@@ -33,7 +33,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig)
     CrossClusterReplicationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CrossClusterReplicationConfig.newBuilder() to construct.
   private CrossClusterReplicationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,7 +133,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * <code>CLUSTER_ROLE_UNSPECIFIED = 0;</code>
      */
     public static final int CLUSTER_ROLE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -146,7 +144,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * <code>NONE = 1;</code>
      */
     public static final int NONE_VALUE = 1;
-
     /**
      *
      *
@@ -158,7 +155,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * <code>PRIMARY = 2;</code>
      */
     public static final int PRIMARY_VALUE = 2;
-
     /**
      *
      *
@@ -276,7 +272,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * @return The cluster.
      */
     java.lang.String getCluster();
-
     /**
      *
      *
@@ -303,7 +298,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * @return The uid.
      */
     java.lang.String getUid();
-
     /**
      *
      *
@@ -317,7 +311,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      */
     com.google.protobuf.ByteString getUidBytes();
   }
-
   /**
    *
    *
@@ -334,7 +327,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster)
       RemoteClusterOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RemoteCluster.newBuilder() to construct.
     private RemoteCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -372,7 +364,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cluster_ = "";
-
     /**
      *
      *
@@ -397,7 +388,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return s;
       }
     }
-
     /**
      *
      *
@@ -427,7 +417,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -451,7 +440,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return s;
       }
     }
-
     /**
      *
      *
@@ -655,7 +643,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -879,7 +866,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       private int bitField0_;
 
       private java.lang.Object cluster_ = "";
-
       /**
        *
        *
@@ -903,7 +889,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -927,7 +912,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -950,7 +934,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -969,7 +952,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -995,7 +977,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
 
       private java.lang.Object uid_ = "";
-
       /**
        *
        *
@@ -1018,7 +999,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1041,7 +1021,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1063,7 +1042,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1081,7 +1059,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1194,7 +1171,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * @return Whether the primaryCluster field is set.
      */
     boolean hasPrimaryCluster();
-
     /**
      *
      *
@@ -1211,7 +1187,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      */
     com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
         getPrimaryCluster();
-
     /**
      *
      *
@@ -1242,7 +1217,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     java.util.List<
             com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster>
         getSecondaryClustersList();
-
     /**
      *
      *
@@ -1257,7 +1231,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      */
     com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
         getSecondaryClusters(int index);
-
     /**
      *
      *
@@ -1271,7 +1244,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
      * </code>
      */
     int getSecondaryClustersCount();
-
     /**
      *
      *
@@ -1289,7 +1261,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
                 com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
                     .RemoteClusterOrBuilder>
         getSecondaryClustersOrBuilderList();
-
     /**
      *
      *
@@ -1305,7 +1276,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteClusterOrBuilder
         getSecondaryClustersOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -1322,7 +1292,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Membership)
       MembershipOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Membership.newBuilder() to construct.
     private Membership(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1358,7 +1327,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public static final int PRIMARY_CLUSTER_FIELD_NUMBER = 1;
     private com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
         primaryCluster_;
-
     /**
      *
      *
@@ -1377,7 +1345,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public boolean hasPrimaryCluster() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1400,7 +1367,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
               .getDefaultInstance()
           : primaryCluster_;
     }
-
     /**
      *
      *
@@ -1429,7 +1395,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     private java.util.List<
             com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster>
         secondaryClusters_;
-
     /**
      *
      *
@@ -1448,7 +1413,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         getSecondaryClustersList() {
       return secondaryClusters_;
     }
-
     /**
      *
      *
@@ -1469,7 +1433,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         getSecondaryClustersOrBuilderList() {
       return secondaryClusters_;
     }
-
     /**
      *
      *
@@ -1486,7 +1449,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public int getSecondaryClustersCount() {
       return secondaryClusters_.size();
     }
-
     /**
      *
      *
@@ -1504,7 +1466,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         getSecondaryClusters(int index) {
       return secondaryClusters_.get(index);
     }
-
     /**
      *
      *
@@ -1710,7 +1671,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2005,7 +1965,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
               com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
                   .RemoteClusterOrBuilder>
           primaryClusterBuilder_;
-
       /**
        *
        *
@@ -2023,7 +1982,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       public boolean hasPrimaryCluster() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2049,7 +2007,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return primaryClusterBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2077,7 +2034,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2102,7 +2058,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2137,7 +2092,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2160,7 +2114,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2180,7 +2133,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         onChanged();
         return getPrimaryClusterFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2205,7 +2157,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
               : primaryCluster_;
         }
       }
-
       /**
        *
        *
@@ -2283,7 +2234,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return secondaryClustersBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2303,7 +2253,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return secondaryClustersBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2324,7 +2273,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return secondaryClustersBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2353,7 +2301,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2379,7 +2326,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2407,7 +2353,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2436,7 +2381,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2461,7 +2405,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2487,7 +2430,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2515,7 +2457,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2538,7 +2479,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2561,7 +2501,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         }
         return this;
       }
-
       /**
        *
        *
@@ -2579,7 +2518,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           getSecondaryClustersBuilder(int index) {
         return getSecondaryClustersFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2601,7 +2539,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return secondaryClustersBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2625,7 +2562,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
           return java.util.Collections.unmodifiableList(secondaryClusters_);
         }
       }
-
       /**
        *
        *
@@ -2646,7 +2582,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
                 com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2668,7 +2603,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
                 com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2785,7 +2719,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int CLUSTER_ROLE_FIELD_NUMBER = 1;
   private int clusterRole_ = 0;
-
   /**
    *
    *
@@ -2803,7 +2736,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public int getClusterRoleValue() {
     return clusterRole_;
   }
-
   /**
    *
    *
@@ -2832,7 +2764,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public static final int PRIMARY_CLUSTER_FIELD_NUMBER = 2;
   private com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
       primaryCluster_;
-
   /**
    *
    *
@@ -2853,7 +2784,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public boolean hasPrimaryCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2878,7 +2808,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             .getDefaultInstance()
         : primaryCluster_;
   }
-
   /**
    *
    *
@@ -2908,7 +2837,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   private java.util.List<
           com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster>
       secondaryClusters_;
-
   /**
    *
    *
@@ -2928,7 +2856,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       getSecondaryClustersList() {
     return secondaryClusters_;
   }
-
   /**
    *
    *
@@ -2950,7 +2877,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       getSecondaryClustersOrBuilderList() {
     return secondaryClusters_;
   }
-
   /**
    *
    *
@@ -2968,7 +2894,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public int getSecondaryClustersCount() {
     return secondaryClusters_.size();
   }
-
   /**
    *
    *
@@ -2987,7 +2912,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       getSecondaryClusters(int index) {
     return secondaryClusters_.get(index);
   }
-
   /**
    *
    *
@@ -3009,7 +2933,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -3026,7 +2949,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3043,7 +2965,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -3062,7 +2983,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public static final int MEMBERSHIP_FIELD_NUMBER = 5;
   private com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.Membership
       membership_;
-
   /**
    *
    *
@@ -3089,7 +3009,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
   public boolean hasMembership() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3120,7 +3039,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             .getDefaultInstance()
         : membership_;
   }
-
   /**
    *
    *
@@ -3371,7 +3289,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3694,7 +3611,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int clusterRole_ = 0;
-
     /**
      *
      *
@@ -3712,7 +3628,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public int getClusterRoleValue() {
       return clusterRole_;
     }
-
     /**
      *
      *
@@ -3733,7 +3648,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3758,7 +3672,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3783,7 +3696,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3813,7 +3725,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
                 .RemoteClusterOrBuilder>
         primaryClusterBuilder_;
-
     /**
      *
      *
@@ -3833,7 +3744,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public boolean hasPrimaryCluster() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3861,7 +3771,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return primaryClusterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3890,7 +3799,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3917,7 +3825,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3953,7 +3860,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -3978,7 +3884,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4000,7 +3905,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return getPrimaryClusterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4027,7 +3931,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             : primaryCluster_;
       }
     }
-
     /**
      *
      *
@@ -4107,7 +4010,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return secondaryClustersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4128,7 +4030,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return secondaryClustersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4150,7 +4051,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return secondaryClustersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4179,7 +4079,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4206,7 +4105,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4234,7 +4132,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4263,7 +4160,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4289,7 +4185,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4316,7 +4211,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4345,7 +4239,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4369,7 +4262,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4393,7 +4285,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4412,7 +4303,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         getSecondaryClustersBuilder(int index) {
       return getSecondaryClustersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4435,7 +4325,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return secondaryClustersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4460,7 +4349,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(secondaryClusters_);
       }
     }
-
     /**
      *
      *
@@ -4482,7 +4370,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
               com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4505,7 +4392,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
               com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4556,7 +4442,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4573,7 +4458,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4596,7 +4480,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4621,7 +4504,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4643,7 +4525,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4673,7 +4554,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4695,7 +4575,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4712,7 +4591,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4733,7 +4611,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4770,7 +4647,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             com.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig
                 .MembershipOrBuilder>
         membershipBuilder_;
-
     /**
      *
      *
@@ -4796,7 +4672,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
     public boolean hasMembership() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4830,7 +4705,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
         return membershipBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4865,7 +4739,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4898,7 +4771,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4940,7 +4812,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -4971,7 +4842,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4998,7 +4868,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
       onChanged();
       return getMembershipFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5030,7 +4899,6 @@ public final class CrossClusterReplicationConfig extends com.google.protobuf.Gen
             : membership_;
       }
     }
-
     /**
      *
      *

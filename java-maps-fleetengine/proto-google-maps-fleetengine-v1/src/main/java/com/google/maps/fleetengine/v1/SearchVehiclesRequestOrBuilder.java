@@ -36,7 +36,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return Whether the pickupPoint field is set.
    */
   boolean hasPickupPoint();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The pickupPoint.
    */
   com.google.maps.fleetengine.v1.TerminalLocation getPickupPoint();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return Whether the dropoffPoint field is set.
    */
   boolean hasDropoffPoint();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The dropoffPoint.
    */
   com.google.maps.fleetengine.v1.TerminalLocation getDropoffPoint();
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return A list containing the tripTypes.
    */
   java.util.List<com.google.maps.fleetengine.v1.TripType> getTripTypesList();
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The count of tripTypes.
    */
   int getTripTypesCount();
-
   /**
    *
    *
@@ -271,7 +262,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The tripTypes at the given index.
    */
   com.google.maps.fleetengine.v1.TripType getTripTypes(int index);
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for tripTypes.
    */
   java.util.List<java.lang.Integer> getTripTypesValueList();
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return Whether the maximumStaleness field is set.
    */
   boolean hasMaximumStaleness();
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The maximumStaleness.
    */
   com.google.protobuf.Duration getMaximumStaleness();
-
   /**
    *
    *
@@ -367,7 +354,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.fleetengine.v1.Vehicle.VehicleType> getVehicleTypesList();
-
   /**
    *
    *
@@ -382,7 +368,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.Vehicle.VehicleType getVehicleTypes(int index);
-
   /**
    *
    *
@@ -397,7 +382,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   int getVehicleTypesCount();
-
   /**
    *
    *
@@ -413,7 +397,6 @@ public interface SearchVehiclesRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.Vehicle.VehicleTypeOrBuilder>
       getVehicleTypesOrBuilderList();
-
   /**
    *
    *
@@ -460,7 +443,6 @@ public interface SearchVehiclesRequestOrBuilder
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
   java.util.List<com.google.maps.fleetengine.v1.VehicleAttribute> getRequiredAttributesList();
-
   /**
    *
    *
@@ -492,7 +474,6 @@ public interface SearchVehiclesRequestOrBuilder
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
   com.google.maps.fleetengine.v1.VehicleAttribute getRequiredAttributes(int index);
-
   /**
    *
    *
@@ -524,7 +505,6 @@ public interface SearchVehiclesRequestOrBuilder
    * <code>repeated .maps.fleetengine.v1.VehicleAttribute required_attributes = 12;</code>
    */
   int getRequiredAttributesCount();
-
   /**
    *
    *
@@ -557,7 +537,6 @@ public interface SearchVehiclesRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleAttributeOrBuilder>
       getRequiredAttributesOrBuilderList();
-
   /**
    *
    *
@@ -607,7 +586,6 @@ public interface SearchVehiclesRequestOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.v1.VehicleAttributeList>
       getRequiredOneOfAttributesList();
-
   /**
    *
    *
@@ -623,7 +601,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.VehicleAttributeList getRequiredOneOfAttributes(int index);
-
   /**
    *
    *
@@ -639,7 +616,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   int getRequiredOneOfAttributesCount();
-
   /**
    *
    *
@@ -656,7 +632,6 @@ public interface SearchVehiclesRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleAttributeListOrBuilder>
       getRequiredOneOfAttributesOrBuilderList();
-
   /**
    *
    *
@@ -710,7 +685,6 @@ public interface SearchVehiclesRequestOrBuilder
    */
   java.util.List<com.google.maps.fleetengine.v1.VehicleAttributeList>
       getRequiredOneOfAttributeSetsList();
-
   /**
    *
    *
@@ -746,7 +720,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.VehicleAttributeList getRequiredOneOfAttributeSets(int index);
-
   /**
    *
    *
@@ -782,7 +755,6 @@ public interface SearchVehiclesRequestOrBuilder
    * </code>
    */
   int getRequiredOneOfAttributeSetsCount();
-
   /**
    *
    *
@@ -819,7 +791,6 @@ public interface SearchVehiclesRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleAttributeListOrBuilder>
       getRequiredOneOfAttributeSetsOrBuilderList();
-
   /**
    *
    *
@@ -871,7 +842,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The enum numeric value on the wire for orderBy.
    */
   int getOrderByValue();
-
   /**
    *
    *
@@ -921,7 +891,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The tripId.
    */
   java.lang.String getTripId();
-
   /**
    *
    *
@@ -951,7 +920,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The enum numeric value on the wire for currentTripsPresent.
    */
   int getCurrentTripsPresentValue();
-
   /**
    *
    *
@@ -1002,7 +970,6 @@ public interface SearchVehiclesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

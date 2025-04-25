@@ -33,7 +33,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ProvisioningConfig)
     ProvisioningConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ProvisioningConfig.newBuilder() to construct.
   private ProvisioningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -181,7 +180,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -192,7 +190,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>DRAFT = 1;</code>
      */
     public static final int DRAFT_VALUE = 1;
-
     /**
      *
      *
@@ -203,7 +200,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>SUBMITTED = 2;</code>
      */
     public static final int SUBMITTED_VALUE = 2;
-
     /**
      *
      *
@@ -216,7 +212,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>PROVISIONING = 3;</code>
      */
     public static final int PROVISIONING_VALUE = 3;
-
     /**
      *
      *
@@ -227,7 +222,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>PROVISIONED = 4;</code>
      */
     public static final int PROVISIONED_VALUE = 4;
-
     /**
      *
      *
@@ -239,7 +233,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>VALIDATED = 5;</code>
      */
     public static final int VALIDATED_VALUE = 5;
-
     /**
      *
      *
@@ -250,7 +243,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
      * <code>CANCELLED = 6;</code>
      */
     public static final int CANCELLED_VALUE = 6;
-
     /**
      *
      *
@@ -362,7 +354,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -387,7 +378,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -417,7 +407,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.InstanceConfig> instances_;
-
   /**
    *
    *
@@ -431,7 +420,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.baremetalsolution.v2.InstanceConfig> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -446,7 +434,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -460,7 +447,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -474,7 +460,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.baremetalsolution.v2.InstanceConfig getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -494,7 +479,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkConfig> networks_;
-
   /**
    *
    *
@@ -508,7 +492,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.baremetalsolution.v2.NetworkConfig> getNetworksList() {
     return networks_;
   }
-
   /**
    *
    *
@@ -523,7 +506,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       getNetworksOrBuilderList() {
     return networks_;
   }
-
   /**
    *
    *
@@ -537,7 +519,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public int getNetworksCount() {
     return networks_.size();
   }
-
   /**
    *
    *
@@ -551,7 +532,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.baremetalsolution.v2.NetworkConfig getNetworks(int index) {
     return networks_.get(index);
   }
-
   /**
    *
    *
@@ -571,7 +551,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.VolumeConfig> volumes_;
-
   /**
    *
    *
@@ -585,7 +564,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.baremetalsolution.v2.VolumeConfig> getVolumesList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -600,7 +578,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       getVolumesOrBuilderList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -614,7 +591,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public int getVolumesCount() {
     return volumes_.size();
   }
-
   /**
    *
    *
@@ -628,7 +604,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.baremetalsolution.v2.VolumeConfig getVolumes(int index) {
     return volumes_.get(index);
   }
-
   /**
    *
    *
@@ -648,7 +623,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ticketId_ = "";
-
   /**
    *
    *
@@ -672,7 +646,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -701,7 +674,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object handoverServiceAccount_ = "";
-
   /**
    *
    *
@@ -726,7 +698,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -756,7 +727,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
-
   /**
    *
    *
@@ -784,7 +754,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -815,7 +784,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
-
   /**
    *
    *
@@ -833,7 +801,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -860,7 +827,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -885,7 +851,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -913,7 +878,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -930,7 +894,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -947,7 +910,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -967,7 +929,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cloudConsoleUri_ = "";
-
   /**
    *
    *
@@ -991,7 +952,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1018,7 +978,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int VPC_SC_ENABLED_FIELD_NUMBER = 12;
   private boolean vpcScEnabled_ = false;
-
   /**
    *
    *
@@ -1039,7 +998,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statusMessage_ = "";
-
   /**
    *
    *
@@ -1063,7 +1021,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1092,7 +1049,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customId_ = "";
-
   /**
    *
    *
@@ -1116,7 +1072,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1433,7 +1388,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1957,7 +1911,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1981,7 +1934,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2005,7 +1957,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2028,7 +1979,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2047,7 +1997,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2106,7 +2055,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2123,7 +2071,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2140,7 +2087,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2164,7 +2110,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2185,7 +2130,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2208,7 +2152,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2232,7 +2175,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2253,7 +2195,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2274,7 +2215,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2295,7 +2235,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2315,7 +2254,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2335,7 +2273,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2286,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2367,7 +2303,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2385,7 +2320,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -2399,7 +2333,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.InstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2415,7 +2348,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.baremetalsolution.v2.InstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2480,7 +2412,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return networksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2497,7 +2428,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return networksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2514,7 +2444,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return networksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2538,7 +2467,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2487,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2582,7 +2509,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2606,7 +2532,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2627,7 +2552,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2648,7 +2572,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2669,7 +2592,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2689,7 +2611,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2709,7 +2630,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2723,7 +2643,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         int index) {
       return getNetworksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2741,7 +2660,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return networksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2759,7 +2677,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(networks_);
       }
     }
-
     /**
      *
      *
@@ -2773,7 +2690,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return getNetworksFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.NetworkConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2789,7 +2705,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.baremetalsolution.v2.NetworkConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2854,7 +2769,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return volumesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2871,7 +2785,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return volumesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2888,7 +2801,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return volumesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2911,7 +2823,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2932,7 +2843,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2955,7 +2865,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2978,7 +2887,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2999,7 +2907,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3020,7 +2927,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3041,7 +2947,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3061,7 +2966,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3081,7 +2985,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3094,7 +2997,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.baremetalsolution.v2.VolumeConfig.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3112,7 +3014,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3130,7 +3031,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
-
     /**
      *
      *
@@ -3144,7 +3044,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.VolumeConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3159,7 +3058,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.baremetalsolution.v2.VolumeConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3192,7 +3090,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object ticketId_ = "";
-
     /**
      *
      *
@@ -3215,7 +3112,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3238,7 +3134,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3260,7 +3155,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3278,7 +3172,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3303,7 +3196,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object handoverServiceAccount_ = "";
-
     /**
      *
      *
@@ -3327,7 +3219,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3351,7 +3242,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3374,7 +3264,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3393,7 +3282,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3419,7 +3307,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object email_ = "";
-
     /**
      *
      *
@@ -3446,7 +3333,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3473,7 +3359,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3499,7 +3384,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3521,7 +3405,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3550,7 +3433,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3568,7 +3450,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3589,7 +3470,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3611,7 +3491,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.baremetalsolution.v2.ProvisioningConfig.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3635,7 +3514,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3657,7 +3535,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -3681,7 +3558,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3705,7 +3581,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3728,7 +3603,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3747,7 +3621,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3778,7 +3651,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3795,7 +3667,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3818,7 +3689,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3843,7 +3713,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3865,7 +3734,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3895,7 +3763,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3917,7 +3784,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3934,7 +3800,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3955,7 +3820,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3985,7 +3849,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object cloudConsoleUri_ = "";
-
     /**
      *
      *
@@ -4008,7 +3871,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4031,7 +3893,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4053,7 +3914,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4071,7 +3931,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4096,7 +3955,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean vpcScEnabled_;
-
     /**
      *
      *
@@ -4112,7 +3970,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     public boolean getVpcScEnabled() {
       return vpcScEnabled_;
     }
-
     /**
      *
      *
@@ -4132,7 +3989,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4152,7 +4008,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object statusMessage_ = "";
-
     /**
      *
      *
@@ -4175,7 +4030,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4198,7 +4052,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4220,7 +4073,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4238,7 +4090,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4263,7 +4114,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object customId_ = "";
-
     /**
      *
      *
@@ -4286,7 +4136,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4309,7 +4158,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4331,7 +4179,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4349,7 +4196,6 @@ public final class ProvisioningConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface HomepageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface HomepageOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface HomepageOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *

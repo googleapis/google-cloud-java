@@ -33,7 +33,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.SmartReplyData)
     SmartReplyDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SmartReplyData.newBuilder() to construct.
   private SmartReplyData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reply_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_SCORE_FIELD_NUMBER = 2;
   private double confidenceScore_ = 0D;
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -195,14 +190,12 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -239,7 +231,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object queryRecord_ = "";
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -518,7 +507,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -772,7 +760,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object reply_ = "";
-
     /**
      *
      *
@@ -795,7 +782,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -840,7 +825,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +842,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double confidenceScore_;
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     public double getConfidenceScore() {
       return confidenceScore_;
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +950,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -988,14 +967,12 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1032,7 +1008,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1060,7 +1035,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1078,14 +1052,12 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1096,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object queryRecord_ = "";
-
     /**
      *
      *
@@ -1150,7 +1120,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1175,7 +1144,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1199,7 +1167,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1219,7 +1186,6 @@ public final class SmartReplyData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

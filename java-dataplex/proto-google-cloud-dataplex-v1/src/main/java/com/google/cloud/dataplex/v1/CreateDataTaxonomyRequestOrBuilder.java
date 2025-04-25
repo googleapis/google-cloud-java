@@ -33,7 +33,6 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -60,7 +59,6 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return The dataTaxonomyId.
    */
   java.lang.String getDataTaxonomyId();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return Whether the dataTaxonomy field is set.
    */
   boolean hasDataTaxonomy();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface CreateDataTaxonomyRequestOrBuilder
    * @return The dataTaxonomy.
    */
   com.google.cloud.dataplex.v1.DataTaxonomy getDataTaxonomy();
-
   /**
    *
    *

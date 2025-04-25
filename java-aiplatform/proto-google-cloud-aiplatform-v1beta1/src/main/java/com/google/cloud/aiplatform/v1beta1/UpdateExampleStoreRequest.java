@@ -34,7 +34,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UpdateExampleStoreRequest)
     UpdateExampleStoreRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateExampleStoreRequest.newBuilder() to construct.
   private UpdateExampleStoreRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int EXAMPLE_STORE_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.ExampleStore exampleStore_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
   public boolean hasExampleStore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
         ? com.google.cloud.aiplatform.v1beta1.ExampleStore.getDefaultInstance()
         : exampleStore_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -366,7 +359,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +586,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.ExampleStore.Builder,
             com.google.cloud.aiplatform.v1beta1.ExampleStoreOrBuilder>
         exampleStoreBuilder_;
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
     public boolean hasExampleStore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
         return exampleStoreBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +700,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return getExampleStoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -773,7 +757,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
             : exampleStore_;
       }
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1009,7 +984,6 @@ public final class UpdateExampleStoreRequest extends com.google.protobuf.Generat
             : updateMask_;
       }
     }
-
     /**
      *
      *

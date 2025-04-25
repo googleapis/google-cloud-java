@@ -42,7 +42,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> getEntitiesList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityType.Entity getEntities(int index);
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * </code>
    */
   int getEntitiesCount();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface BatchUpdateEntitiesRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

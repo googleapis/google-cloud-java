@@ -42,7 +42,6 @@ public interface PubsubTargetOrBuilder
    * @return The topicName.
    */
   java.lang.String getTopicName();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface PubsubTargetOrBuilder
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -105,11 +103,9 @@ public interface PubsubTargetOrBuilder
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface PubsubTargetOrBuilder
    * <code>map&lt;string, string&gt; attributes = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface PubsubTargetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return The connectionId.
    */
   java.lang.String getConnectionId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return Whether the connection field is set.
    */
   boolean hasConnection();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return The connection.
    */
   com.google.cloud.developerconnect.v1.Connection getConnection();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateConnectionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

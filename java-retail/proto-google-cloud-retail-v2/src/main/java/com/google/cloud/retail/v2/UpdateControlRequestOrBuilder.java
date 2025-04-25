@@ -37,7 +37,6 @@ public interface UpdateControlRequestOrBuilder
    * @return Whether the control field is set.
    */
   boolean hasControl();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateControlRequestOrBuilder
    * @return The control.
    */
   com.google.cloud.retail.v2.Control getControl();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateControlRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface UpdateControlRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

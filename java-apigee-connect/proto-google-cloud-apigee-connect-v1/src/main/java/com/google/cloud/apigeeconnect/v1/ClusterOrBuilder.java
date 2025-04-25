@@ -36,7 +36,6 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ClusterOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SqlIpConfigOrBuilder
    * @return Whether the enableIpv4 field is set.
    */
   boolean hasEnableIpv4();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SqlIpConfigOrBuilder
    * @return The enableIpv4.
    */
   com.google.protobuf.BoolValue getEnableIpv4();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SqlIpConfigOrBuilder
    * @return The privateNetwork.
    */
   java.lang.String getPrivateNetwork();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface SqlIpConfigOrBuilder
    * @return The allocatedIpRange.
    */
   java.lang.String getAllocatedIpRange();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface SqlIpConfigOrBuilder
    * @return Whether the requireSsl field is set.
    */
   boolean hasRequireSsl();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface SqlIpConfigOrBuilder
    * @return The requireSsl.
    */
   com.google.protobuf.BoolValue getRequireSsl();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface SqlIpConfigOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.SqlAclEntry authorized_networks = 4;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.SqlAclEntry> getAuthorizedNetworksList();
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public interface SqlIpConfigOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.SqlAclEntry authorized_networks = 4;</code>
    */
   com.google.cloud.clouddms.v1.SqlAclEntry getAuthorizedNetworks(int index);
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface SqlIpConfigOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.SqlAclEntry authorized_networks = 4;</code>
    */
   int getAuthorizedNetworksCount();
-
   /**
    *
    *
@@ -222,7 +213,6 @@ public interface SqlIpConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.SqlAclEntryOrBuilder>
       getAuthorizedNetworksOrBuilderList();
-
   /**
    *
    *

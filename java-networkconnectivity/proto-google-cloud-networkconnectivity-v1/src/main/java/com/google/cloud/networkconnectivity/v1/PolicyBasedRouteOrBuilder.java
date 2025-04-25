@@ -38,7 +38,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the virtualMachine field is set.
    */
   boolean hasVirtualMachine();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The virtualMachine.
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.VirtualMachine getVirtualMachine();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the interconnectAttachment field is set.
    */
   boolean hasInterconnectAttachment();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface PolicyBasedRouteOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.InterconnectAttachment
       getInterconnectAttachment();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the nextHopIlbIp field is set.
    */
   boolean hasNextHopIlbIp();
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The nextHopIlbIp.
    */
   java.lang.String getNextHopIlbIp();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the nextHopOtherRoutes field is set.
    */
   boolean hasNextHopOtherRoutes();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The enum numeric value on the wire for nextHopOtherRoutes.
    */
   int getNextHopOtherRoutesValue();
-
   /**
    *
    *
@@ -222,7 +214,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -290,7 +279,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -304,7 +292,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -327,7 +314,6 @@ public interface PolicyBasedRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -338,11 +324,9 @@ public interface PolicyBasedRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -353,7 +337,6 @@ public interface PolicyBasedRouteOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -368,7 +351,6 @@ public interface PolicyBasedRouteOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -393,7 +375,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -423,7 +404,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -454,7 +434,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -469,7 +448,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The filter.
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Filter getFilter();
-
   /**
    *
    *
@@ -514,7 +492,6 @@ public interface PolicyBasedRouteOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings>
       getWarningsList();
-
   /**
    *
    *
@@ -528,7 +505,6 @@ public interface PolicyBasedRouteOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.Warnings getWarnings(int index);
-
   /**
    *
    *
@@ -542,7 +518,6 @@ public interface PolicyBasedRouteOrBuilder
    * </code>
    */
   int getWarningsCount();
-
   /**
    *
    *
@@ -558,7 +533,6 @@ public interface PolicyBasedRouteOrBuilder
   java.util.List<
           ? extends com.google.cloud.networkconnectivity.v1.PolicyBasedRoute.WarningsOrBuilder>
       getWarningsOrBuilderList();
-
   /**
    *
    *
@@ -586,7 +560,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -613,7 +586,6 @@ public interface PolicyBasedRouteOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *

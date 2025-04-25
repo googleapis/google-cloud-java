@@ -74,7 +74,6 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
    * <code>QUOTA_SAFETY_CHECK_UNSPECIFIED = 0;</code>
    */
   public static final int QUOTA_SAFETY_CHECK_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum QuotaSafetyCheck implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LIMIT_DECREASE_BELOW_USAGE = 1;</code>
    */
   public static final int LIMIT_DECREASE_BELOW_USAGE_VALUE = 1;
-
   /**
    *
    *

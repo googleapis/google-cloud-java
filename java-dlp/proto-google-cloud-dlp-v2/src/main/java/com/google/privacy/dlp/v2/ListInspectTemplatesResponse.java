@@ -33,7 +33,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListInspectTemplatesResponse)
     ListInspectTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListInspectTemplatesResponse.newBuilder() to construct.
   private ListInspectTemplatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InspectTemplate> inspectTemplates_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.privacy.dlp.v2.InspectTemplate> getInspectTemplatesList() {
     return inspectTemplates_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       getInspectTemplatesOrBuilderList() {
     return inspectTemplates_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
   public int getInspectTemplatesCount() {
     return inspectTemplates_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
   public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplates(int index) {
     return inspectTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return inspectTemplatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return inspectTemplatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return inspectTemplatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.InspectTemplate.Builder getInspectTemplatesBuilder(int index) {
       return getInspectTemplatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -904,7 +882,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return inspectTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -922,7 +899,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(inspectTemplates_);
       }
     }
-
     /**
      *
      *
@@ -936,7 +912,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       return getInspectTemplatesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -950,7 +925,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       return getInspectTemplatesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -986,7 +960,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1010,7 +983,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1006,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1028,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1046,6 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

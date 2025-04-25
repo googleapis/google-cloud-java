@@ -66,7 +66,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -101,7 +100,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.OptimizeToursValidationError.FieldReference>
       getFieldsList();
-
   /**
    *
    *
@@ -123,7 +121,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    */
   com.google.maps.routeoptimization.v1.OptimizeToursValidationError.FieldReference getFields(
       int index);
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    * </code>
    */
   int getFieldsCount();
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public interface OptimizeToursValidationErrorOrBuilder
               com.google.maps.routeoptimization.v1.OptimizeToursValidationError
                   .FieldReferenceOrBuilder>
       getFieldsOrBuilderList();
-
   /**
    *
    *
@@ -209,7 +204,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
-
   /**
    *
    *
@@ -242,7 +236,6 @@ public interface OptimizeToursValidationErrorOrBuilder
    * @return The offendingValues.
    */
   java.lang.String getOffendingValues();
-
   /**
    *
    *

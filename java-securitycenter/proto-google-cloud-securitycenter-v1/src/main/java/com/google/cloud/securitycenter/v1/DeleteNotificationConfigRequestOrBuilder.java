@@ -41,7 +41,6 @@ public interface DeleteNotificationConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

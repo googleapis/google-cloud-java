@@ -34,7 +34,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.EnhancedMeasurementSettings)
     EnhancedMeasurementSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnhancedMeasurementSettings.newBuilder() to construct.
   private EnhancedMeasurementSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int STREAM_ENABLED_FIELD_NUMBER = 2;
   private boolean streamEnabled_ = false;
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int SCROLLS_ENABLED_FIELD_NUMBER = 3;
   private boolean scrollsEnabled_ = false;
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int OUTBOUND_CLICKS_ENABLED_FIELD_NUMBER = 4;
   private boolean outboundClicksEnabled_ = false;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int SITE_SEARCH_ENABLED_FIELD_NUMBER = 5;
   private boolean siteSearchEnabled_ = false;
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int VIDEO_ENGAGEMENT_ENABLED_FIELD_NUMBER = 6;
   private boolean videoEngagementEnabled_ = false;
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int FILE_DOWNLOADS_ENABLED_FIELD_NUMBER = 7;
   private boolean fileDownloadsEnabled_ = false;
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int PAGE_CHANGES_ENABLED_FIELD_NUMBER = 8;
   private boolean pageChangesEnabled_ = false;
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   public static final int FORM_INTERACTIONS_ENABLED_FIELD_NUMBER = 9;
   private boolean formInteractionsEnabled_ = false;
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object searchQueryParameter_ = "";
-
   /**
    *
    *
@@ -319,7 +307,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -349,7 +336,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uriQueryParameter_ = "";
-
   /**
    *
    *
@@ -374,7 +360,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -650,7 +635,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -973,7 +957,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -999,7 +982,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1007,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1031,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1051,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1078,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean streamEnabled_;
-
     /**
      *
      *
@@ -1119,7 +1097,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getStreamEnabled() {
       return streamEnabled_;
     }
-
     /**
      *
      *
@@ -1143,7 +1120,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1143,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean scrollsEnabled_;
-
     /**
      *
      *
@@ -1184,7 +1159,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getScrollsEnabled() {
       return scrollsEnabled_;
     }
-
     /**
      *
      *
@@ -1205,7 +1179,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1199,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean outboundClicksEnabled_;
-
     /**
      *
      *
@@ -1243,7 +1215,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getOutboundClicksEnabled() {
       return outboundClicksEnabled_;
     }
-
     /**
      *
      *
@@ -1264,7 +1235,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1285,7 +1255,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean siteSearchEnabled_;
-
     /**
      *
      *
@@ -1302,7 +1271,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getSiteSearchEnabled() {
       return siteSearchEnabled_;
     }
-
     /**
      *
      *
@@ -1323,7 +1291,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1311,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean videoEngagementEnabled_;
-
     /**
      *
      *
@@ -1361,7 +1327,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getVideoEngagementEnabled() {
       return videoEngagementEnabled_;
     }
-
     /**
      *
      *
@@ -1382,7 +1347,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1403,7 +1367,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean fileDownloadsEnabled_;
-
     /**
      *
      *
@@ -1420,7 +1383,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getFileDownloadsEnabled() {
       return fileDownloadsEnabled_;
     }
-
     /**
      *
      *
@@ -1441,7 +1403,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1423,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean pageChangesEnabled_;
-
     /**
      *
      *
@@ -1479,7 +1439,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getPageChangesEnabled() {
       return pageChangesEnabled_;
     }
-
     /**
      *
      *
@@ -1500,7 +1459,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1479,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private boolean formInteractionsEnabled_;
-
     /**
      *
      *
@@ -1539,7 +1496,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public boolean getFormInteractionsEnabled() {
       return formInteractionsEnabled_;
     }
-
     /**
      *
      *
@@ -1561,7 +1517,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1538,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private java.lang.Object searchQueryParameter_ = "";
-
     /**
      *
      *
@@ -1607,7 +1561,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1631,7 +1584,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1654,7 +1606,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1624,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1699,7 +1649,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
 
     private java.lang.Object uriQueryParameter_ = "";
-
     /**
      *
      *
@@ -1723,7 +1672,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1747,7 +1695,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1717,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1789,7 +1735,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

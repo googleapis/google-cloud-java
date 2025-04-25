@@ -41,7 +41,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig)
     WorkstationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WorkstationConfig.newBuilder() to construct.
   private WorkstationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,7 +110,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the gceInstance field is set.
      */
     boolean hasGceInstance();
-
     /**
      *
      *
@@ -125,7 +123,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The gceInstance.
      */
     com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance getGceInstance();
-
     /**
      *
      *
@@ -141,7 +138,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     com.google.cloud.workstations.v1.WorkstationConfig.Host.ConfigCase getConfigCase();
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.Host)
       HostOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Host.newBuilder() to construct.
     private Host(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -206,7 +201,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The machineType.
        */
       java.lang.String getMachineType();
-
       /**
        *
        *
@@ -252,7 +246,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The serviceAccount.
        */
       java.lang.String getServiceAccount();
-
       /**
        *
        *
@@ -299,7 +292,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return A list containing the serviceAccountScopes.
        */
       java.util.List<java.lang.String> getServiceAccountScopesList();
-
       /**
        *
        *
@@ -317,7 +309,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The count of serviceAccountScopes.
        */
       int getServiceAccountScopesCount();
-
       /**
        *
        *
@@ -336,7 +327,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The serviceAccountScopes at the given index.
        */
       java.lang.String getServiceAccountScopes(int index);
-
       /**
        *
        *
@@ -374,7 +364,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return A list containing the tags.
        */
       java.util.List<java.lang.String> getTagsList();
-
       /**
        *
        *
@@ -393,7 +382,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The count of tags.
        */
       int getTagsCount();
-
       /**
        *
        *
@@ -413,7 +401,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The tags at the given index.
        */
       java.lang.String getTags(int index);
-
       /**
        *
        *
@@ -544,7 +531,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return Whether the shieldedInstanceConfig field is set.
        */
       boolean hasShieldedInstanceConfig();
-
       /**
        *
        *
@@ -560,7 +546,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        */
       com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig
           getShieldedInstanceConfig();
-
       /**
        *
        *
@@ -590,7 +575,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return Whether the confidentialInstanceConfig field is set.
        */
       boolean hasConfidentialInstanceConfig();
-
       /**
        *
        *
@@ -607,7 +591,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
               .GceConfidentialInstanceConfig
           getConfidentialInstanceConfig();
-
       /**
        *
        *
@@ -637,7 +620,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        */
       int getBootDiskSizeGb();
     }
-
     /**
      *
      *
@@ -652,7 +634,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance)
         GceInstanceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use GceInstance.newBuilder() to construct.
       private GceInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -731,7 +712,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          */
         boolean getEnableIntegrityMonitoring();
       }
-
       /**
        *
        *
@@ -748,7 +728,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig)
           GceShieldedInstanceConfigOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use GceShieldedInstanceConfig.newBuilder() to construct.
         private GceShieldedInstanceConfig(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -782,7 +761,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
         public static final int ENABLE_SECURE_BOOT_FIELD_NUMBER = 1;
         private boolean enableSecureBoot_ = false;
-
         /**
          *
          *
@@ -801,7 +779,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
         public static final int ENABLE_VTPM_FIELD_NUMBER = 2;
         private boolean enableVtpm_ = false;
-
         /**
          *
          *
@@ -820,7 +797,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
         public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 3;
         private boolean enableIntegrityMonitoring_ = false;
-
         /**
          *
          *
@@ -1053,7 +1029,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -1295,7 +1270,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           private int bitField0_;
 
           private boolean enableSecureBoot_;
-
           /**
            *
            *
@@ -1311,7 +1285,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           public boolean getEnableSecureBoot() {
             return enableSecureBoot_;
           }
-
           /**
            *
            *
@@ -1331,7 +1304,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1351,7 +1323,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
 
           private boolean enableVtpm_;
-
           /**
            *
            *
@@ -1367,7 +1338,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           public boolean getEnableVtpm() {
             return enableVtpm_;
           }
-
           /**
            *
            *
@@ -1387,7 +1357,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1407,7 +1376,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
 
           private boolean enableIntegrityMonitoring_;
-
           /**
            *
            *
@@ -1424,7 +1392,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           public boolean getEnableIntegrityMonitoring() {
             return enableIntegrityMonitoring_;
           }
-
           /**
            *
            *
@@ -1445,7 +1412,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1556,7 +1522,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          */
         boolean getEnableConfidentialCompute();
       }
-
       /**
        *
        *
@@ -1573,7 +1538,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig)
           GceConfidentialInstanceConfigOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use GceConfidentialInstanceConfig.newBuilder() to construct.
         private GceConfidentialInstanceConfig(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1607,7 +1571,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
         public static final int ENABLE_CONFIDENTIAL_COMPUTE_FIELD_NUMBER = 1;
         private boolean enableConfidentialCompute_ = false;
-
         /**
          *
          *
@@ -1822,7 +1785,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -2038,7 +2000,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           private int bitField0_;
 
           private boolean enableConfidentialCompute_;
-
           /**
            *
            *
@@ -2055,7 +2016,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           public boolean getEnableConfidentialCompute() {
             return enableConfidentialCompute_;
           }
-
           /**
            *
            *
@@ -2076,7 +2036,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2173,7 +2132,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object machineType_ = "";
-
       /**
        *
        *
@@ -2201,7 +2159,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -2234,7 +2191,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object serviceAccount_ = "";
-
       /**
        *
        *
@@ -2274,7 +2230,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -2320,7 +2275,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -2340,7 +2294,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
         return serviceAccountScopes_;
       }
-
       /**
        *
        *
@@ -2360,7 +2313,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getServiceAccountScopesCount() {
         return serviceAccountScopes_.size();
       }
-
       /**
        *
        *
@@ -2381,7 +2333,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public java.lang.String getServiceAccountScopes(int index) {
         return serviceAccountScopes_.get(index);
       }
-
       /**
        *
        *
@@ -2408,7 +2359,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList tags_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -2429,7 +2379,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ProtocolStringList getTagsList() {
         return tags_;
       }
-
       /**
        *
        *
@@ -2450,7 +2399,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getTagsCount() {
         return tags_.size();
       }
-
       /**
        *
        *
@@ -2472,7 +2420,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
-
       /**
        *
        *
@@ -2497,7 +2444,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int POOL_SIZE_FIELD_NUMBER = 5;
       private int poolSize_ = 0;
-
       /**
        *
        *
@@ -2518,7 +2464,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int POOLED_INSTANCES_FIELD_NUMBER = 12;
       private int pooledInstances_ = 0;
-
       /**
        *
        *
@@ -2538,7 +2483,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int DISABLE_PUBLIC_IP_ADDRESSES_FIELD_NUMBER = 6;
       private boolean disablePublicIpAddresses_ = false;
-
       /**
        *
        *
@@ -2564,7 +2508,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int ENABLE_NESTED_VIRTUALIZATION_FIELD_NUMBER = 7;
       private boolean enableNestedVirtualization_ = false;
-
       /**
        *
        *
@@ -2619,7 +2562,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
               .GceShieldedInstanceConfig
           shieldedInstanceConfig_;
-
       /**
        *
        *
@@ -2637,7 +2579,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasShieldedInstanceConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2660,7 +2601,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 .GceShieldedInstanceConfig.getDefaultInstance()
             : shieldedInstanceConfig_;
       }
-
       /**
        *
        *
@@ -2686,7 +2626,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
               .GceConfidentialInstanceConfig
           confidentialInstanceConfig_;
-
       /**
        *
        *
@@ -2704,7 +2643,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasConfidentialInstanceConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2727,7 +2665,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 .GceConfidentialInstanceConfig.getDefaultInstance()
             : confidentialInstanceConfig_;
       }
-
       /**
        *
        *
@@ -2751,7 +2688,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int BOOT_DISK_SIZE_GB_FIELD_NUMBER = 9;
       private int bootDiskSizeGb_ = 0;
-
       /**
        *
        *
@@ -3057,7 +2993,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3436,7 +3371,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private java.lang.Object machineType_ = "";
-
         /**
          *
          *
@@ -3463,7 +3397,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3490,7 +3423,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3516,7 +3448,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3538,7 +3469,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3567,7 +3497,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object serviceAccount_ = "";
-
         /**
          *
          *
@@ -3606,7 +3535,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3645,7 +3573,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3683,7 +3610,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3717,7 +3643,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3767,7 +3692,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           bitField0_ |= 0x00000004;
         }
-
         /**
          *
          *
@@ -3789,7 +3713,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           serviceAccountScopes_.makeImmutable();
           return serviceAccountScopes_;
         }
-
         /**
          *
          *
@@ -3810,7 +3733,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getServiceAccountScopesCount() {
           return serviceAccountScopes_.size();
         }
-
         /**
          *
          *
@@ -3832,7 +3754,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public java.lang.String getServiceAccountScopes(int index) {
           return serviceAccountScopes_.get(index);
         }
-
         /**
          *
          *
@@ -3854,7 +3775,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
           return serviceAccountScopes_.getByteString(index);
         }
-
         /**
          *
          *
@@ -3884,7 +3804,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3913,7 +3832,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3939,7 +3857,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3964,7 +3881,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4004,7 +3920,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           bitField0_ |= 0x00000008;
         }
-
         /**
          *
          *
@@ -4026,7 +3941,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           tags_.makeImmutable();
           return tags_;
         }
-
         /**
          *
          *
@@ -4047,7 +3961,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getTagsCount() {
           return tags_.size();
         }
-
         /**
          *
          *
@@ -4069,7 +3982,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public java.lang.String getTags(int index) {
           return tags_.get(index);
         }
-
         /**
          *
          *
@@ -4091,7 +4003,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public com.google.protobuf.ByteString getTagsBytes(int index) {
           return tags_.getByteString(index);
         }
-
         /**
          *
          *
@@ -4121,7 +4032,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4150,7 +4060,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4176,7 +4085,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4201,7 +4109,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4233,7 +4140,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private int poolSize_;
-
         /**
          *
          *
@@ -4251,7 +4157,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getPoolSize() {
           return poolSize_;
         }
-
         /**
          *
          *
@@ -4273,7 +4178,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4295,7 +4199,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private int pooledInstances_;
-
         /**
          *
          *
@@ -4312,7 +4215,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getPooledInstances() {
           return pooledInstances_;
         }
-
         /**
          *
          *
@@ -4333,7 +4235,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4354,7 +4255,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private boolean disablePublicIpAddresses_;
-
         /**
          *
          *
@@ -4377,7 +4277,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public boolean getDisablePublicIpAddresses() {
           return disablePublicIpAddresses_;
         }
-
         /**
          *
          *
@@ -4404,7 +4303,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4431,7 +4329,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private boolean enableNestedVirtualization_;
-
         /**
          *
          *
@@ -4481,7 +4378,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public boolean getEnableNestedVirtualization() {
           return enableNestedVirtualization_;
         }
-
         /**
          *
          *
@@ -4535,7 +4431,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4599,7 +4494,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
                     .GceShieldedInstanceConfigOrBuilder>
             shieldedInstanceConfigBuilder_;
-
         /**
          *
          *
@@ -4616,7 +4510,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public boolean hasShieldedInstanceConfig() {
           return ((bitField0_ & 0x00000100) != 0);
         }
-
         /**
          *
          *
@@ -4642,7 +4535,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return shieldedInstanceConfigBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -4670,7 +4562,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4695,7 +4586,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4730,7 +4620,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
-
         /**
          *
          *
@@ -4752,7 +4641,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4771,7 +4659,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return getShieldedInstanceConfigFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -4795,7 +4682,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 : shieldedInstanceConfig_;
           }
         }
-
         /**
          *
          *
@@ -4841,7 +4727,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
                     .GceConfidentialInstanceConfigOrBuilder>
             confidentialInstanceConfigBuilder_;
-
         /**
          *
          *
@@ -4858,7 +4743,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public boolean hasConfidentialInstanceConfig() {
           return ((bitField0_ & 0x00000200) != 0);
         }
-
         /**
          *
          *
@@ -4884,7 +4768,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return confidentialInstanceConfigBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -4912,7 +4795,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4937,7 +4819,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4972,7 +4853,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
-
         /**
          *
          *
@@ -4994,7 +4874,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5013,7 +4892,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return getConfidentialInstanceConfigFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -5037,7 +4915,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 : confidentialInstanceConfig_;
           }
         }
-
         /**
          *
          *
@@ -5073,7 +4950,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private int bootDiskSizeGb_;
-
         /**
          *
          *
@@ -5090,7 +4966,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getBootDiskSizeGb() {
           return bootDiskSizeGb_;
         }
-
         /**
          *
          *
@@ -5111,7 +4986,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5215,7 +5089,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private ConfigCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5247,7 +5120,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int GCE_INSTANCE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -5264,7 +5136,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasGceInstance() {
       return configCase_ == 1;
     }
-
     /**
      *
      *
@@ -5285,7 +5156,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
           .getDefaultInstance();
     }
-
     /**
      *
      *
@@ -5483,7 +5353,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5706,7 +5575,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.Builder,
               com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstanceOrBuilder>
           gceInstanceBuilder_;
-
       /**
        *
        *
@@ -5723,7 +5591,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasGceInstance() {
         return configCase_ == 1;
       }
-
       /**
        *
        *
@@ -5752,7 +5619,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -5777,7 +5643,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         configCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -5800,7 +5665,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         configCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -5838,7 +5702,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         configCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -5865,7 +5728,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -5880,7 +5742,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           getGceInstanceBuilder() {
         return getGceInstanceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5904,7 +5765,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -6024,7 +5884,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the gcePd field is set.
      */
     boolean hasGcePd();
-
     /**
      *
      *
@@ -6040,7 +5899,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk
         getGcePd();
-
     /**
      *
      *
@@ -6068,7 +5926,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The mountPath.
      */
     java.lang.String getMountPath();
-
     /**
      *
      *
@@ -6085,7 +5942,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.DirectoryTypeCase
         getDirectoryTypeCase();
   }
-
   /**
    *
    *
@@ -6100,7 +5956,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory)
       PersistentDirectoryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PersistentDirectory.newBuilder() to construct.
     private PersistentDirectory(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6174,7 +6029,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The fsType.
        */
       java.lang.String getFsType();
-
       /**
        *
        *
@@ -6206,7 +6060,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The diskType.
        */
       java.lang.String getDiskType();
-
       /**
        *
        *
@@ -6239,7 +6092,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The sourceSnapshot.
        */
       java.lang.String getSourceSnapshot();
-
       /**
        *
        *
@@ -6274,7 +6126,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        * @return The enum numeric value on the wire for reclaimPolicy.
        */
       int getReclaimPolicyValue();
-
       /**
        *
        *
@@ -6294,7 +6145,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .GceRegionalPersistentDisk.ReclaimPolicy
           getReclaimPolicy();
     }
-
     /**
      *
      *
@@ -6320,7 +6170,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk)
         GceRegionalPersistentDiskOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use GceRegionalPersistentDisk.newBuilder() to construct.
       private GceRegionalPersistentDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -6412,7 +6261,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <code>RECLAIM_POLICY_UNSPECIFIED = 0;</code>
          */
         public static final int RECLAIM_POLICY_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -6423,7 +6271,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * <code>DELETE = 1;</code>
          */
         public static final int DELETE_VALUE = 1;
-
         /**
          *
          *
@@ -6528,7 +6375,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int SIZE_GB_FIELD_NUMBER = 1;
       private int sizeGb_ = 0;
-
       /**
        *
        *
@@ -6558,7 +6404,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object fsType_ = "";
-
       /**
        *
        *
@@ -6586,7 +6431,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -6619,7 +6463,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object diskType_ = "";
-
       /**
        *
        *
@@ -6645,7 +6488,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -6676,7 +6518,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object sourceSnapshot_ = "";
-
       /**
        *
        *
@@ -6705,7 +6546,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
-
       /**
        *
        *
@@ -6737,7 +6577,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
       public static final int RECLAIM_POLICY_FIELD_NUMBER = 4;
       private int reclaimPolicy_ = 0;
-
       /**
        *
        *
@@ -6757,7 +6596,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getReclaimPolicyValue() {
         return reclaimPolicy_;
       }
-
       /**
        *
        *
@@ -7020,7 +6858,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -7303,7 +7140,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         private int bitField0_;
 
         private int sizeGb_;
-
         /**
          *
          *
@@ -7328,7 +7164,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getSizeGb() {
           return sizeGb_;
         }
-
         /**
          *
          *
@@ -7357,7 +7192,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7386,7 +7220,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object fsType_ = "";
-
         /**
          *
          *
@@ -7413,7 +7246,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -7440,7 +7272,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -7466,7 +7297,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7488,7 +7318,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7517,7 +7346,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object diskType_ = "";
-
         /**
          *
          *
@@ -7542,7 +7370,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -7567,7 +7394,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -7591,7 +7417,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7611,7 +7436,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7638,7 +7462,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private java.lang.Object sourceSnapshot_ = "";
-
         /**
          *
          *
@@ -7666,7 +7489,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -7694,7 +7516,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -7721,7 +7542,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7744,7 +7564,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7774,7 +7593,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
 
         private int reclaimPolicy_ = 0;
-
         /**
          *
          *
@@ -7794,7 +7612,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public int getReclaimPolicyValue() {
           return reclaimPolicy_;
         }
-
         /**
          *
          *
@@ -7817,7 +7634,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7847,7 +7663,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                   .GceRegionalPersistentDisk.ReclaimPolicy.UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -7876,7 +7691,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -7987,7 +7801,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private DirectoryTypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -8019,7 +7832,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int GCE_PD_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -8037,7 +7849,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasGcePd() {
       return directoryTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -8063,7 +7874,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory
           .GceRegionalPersistentDisk.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -8092,7 +7902,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object mountPath_ = "";
-
     /**
      *
      *
@@ -8116,7 +7925,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -8335,7 +8143,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -8586,7 +8393,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory
                   .GceRegionalPersistentDiskOrBuilder>
           gcePdBuilder_;
-
       /**
        *
        *
@@ -8604,7 +8410,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public boolean hasGcePd() {
         return directoryTypeCase_ == 2;
       }
-
       /**
        *
        *
@@ -8638,7 +8443,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .GceRegionalPersistentDisk.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8666,7 +8470,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         directoryTypeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -8691,7 +8494,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         directoryTypeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -8734,7 +8536,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         directoryTypeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -8762,7 +8563,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -8779,7 +8579,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           getGcePdBuilder() {
         return getGcePdFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -8807,7 +8606,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .GceRegionalPersistentDisk.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -8854,7 +8652,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object mountPath_ = "";
-
       /**
        *
        *
@@ -8877,7 +8674,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8900,7 +8696,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8922,7 +8717,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8940,7 +8734,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9060,7 +8853,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The image.
      */
     java.lang.String getImage();
-
     /**
      *
      *
@@ -9098,7 +8890,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the command.
      */
     java.util.List<java.lang.String> getCommandList();
-
     /**
      *
      *
@@ -9112,7 +8903,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The count of command.
      */
     int getCommandCount();
-
     /**
      *
      *
@@ -9127,7 +8917,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The command at the given index.
      */
     java.lang.String getCommand(int index);
-
     /**
      *
      *
@@ -9155,7 +8944,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the args.
      */
     java.util.List<java.lang.String> getArgsList();
-
     /**
      *
      *
@@ -9168,7 +8956,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The count of args.
      */
     int getArgsCount();
-
     /**
      *
      *
@@ -9182,7 +8969,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The args at the given index.
      */
     java.lang.String getArgs(int index);
-
     /**
      *
      *
@@ -9207,7 +8993,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getEnvCount();
-
     /**
      *
      *
@@ -9218,11 +9003,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     boolean containsEnv(java.lang.String key);
-
     /** Use {@link #getEnvMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getEnv();
-
     /**
      *
      *
@@ -9233,7 +9016,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getEnvMap();
-
     /**
      *
      *
@@ -9248,7 +9030,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
-
     /**
      *
      *
@@ -9272,7 +9053,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The workingDir.
      */
     java.lang.String getWorkingDir();
-
     /**
      *
      *
@@ -9300,7 +9080,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      */
     int getRunAsUser();
   }
-
   /**
    *
    *
@@ -9315,7 +9094,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.Container)
       ContainerOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Container.newBuilder() to construct.
     private Container(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9365,7 +9143,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object image_ = "";
-
     /**
      *
      *
@@ -9400,7 +9177,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -9441,7 +9217,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList command_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -9457,7 +9232,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ProtocolStringList getCommandList() {
       return command_;
     }
-
     /**
      *
      *
@@ -9473,7 +9247,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public int getCommandCount() {
       return command_.size();
     }
-
     /**
      *
      *
@@ -9490,7 +9263,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getCommand(int index) {
       return command_.get(index);
     }
-
     /**
      *
      *
@@ -9513,7 +9285,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList args_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -9528,7 +9299,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ProtocolStringList getArgsList() {
       return args_;
     }
-
     /**
      *
      *
@@ -9543,7 +9313,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public int getArgsCount() {
       return args_.size();
     }
-
     /**
      *
      *
@@ -9559,7 +9328,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getArgs(int index) {
       return args_.get(index);
     }
-
     /**
      *
      *
@@ -9602,7 +9370,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public int getEnvCount() {
       return internalGetEnv().getMap().size();
     }
-
     /**
      *
      *
@@ -9619,14 +9386,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return internalGetEnv().getMap().containsKey(key);
     }
-
     /** Use {@link #getEnvMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getEnv() {
       return getEnvMap();
     }
-
     /**
      *
      *
@@ -9640,7 +9405,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
       return internalGetEnv().getMap();
     }
-
     /**
      *
      *
@@ -9661,7 +9425,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -9687,7 +9450,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object workingDir_ = "";
-
     /**
      *
      *
@@ -9711,7 +9473,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -9738,7 +9499,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     public static final int RUN_AS_USER_FIELD_NUMBER = 6;
     private int runAsUser_ = 0;
-
     /**
      *
      *
@@ -9984,7 +9744,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -10285,7 +10044,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object image_ = "";
-
       /**
        *
        *
@@ -10319,7 +10077,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -10353,7 +10110,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -10386,7 +10142,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10415,7 +10170,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10459,7 +10213,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -10476,7 +10229,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         command_.makeImmutable();
         return command_;
       }
-
       /**
        *
        *
@@ -10492,7 +10244,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getCommandCount() {
         return command_.size();
       }
-
       /**
        *
        *
@@ -10509,7 +10260,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public java.lang.String getCommand(int index) {
         return command_.get(index);
       }
-
       /**
        *
        *
@@ -10526,7 +10276,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ByteString getCommandBytes(int index) {
         return command_.getByteString(index);
       }
-
       /**
        *
        *
@@ -10551,7 +10300,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10575,7 +10323,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10596,7 +10343,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10616,7 +10362,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10651,7 +10396,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -10667,7 +10411,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         args_.makeImmutable();
         return args_;
       }
-
       /**
        *
        *
@@ -10682,7 +10425,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getArgsCount() {
         return args_.size();
       }
-
       /**
        *
        *
@@ -10698,7 +10440,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public java.lang.String getArgs(int index) {
         return args_.get(index);
       }
-
       /**
        *
        *
@@ -10714,7 +10455,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ByteString getArgsBytes(int index) {
         return args_.getByteString(index);
       }
-
       /**
        *
        *
@@ -10738,7 +10478,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10761,7 +10500,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10781,7 +10519,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10800,7 +10537,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -10850,7 +10586,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getEnvCount() {
         return internalGetEnv().getMap().size();
       }
-
       /**
        *
        *
@@ -10867,14 +10602,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         return internalGetEnv().getMap().containsKey(key);
       }
-
       /** Use {@link #getEnvMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getEnv() {
         return getEnvMap();
       }
-
       /**
        *
        *
@@ -10888,7 +10621,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
         return internalGetEnv().getMap();
       }
-
       /**
        *
        *
@@ -10909,7 +10641,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         java.util.Map<java.lang.String, java.lang.String> map = internalGetEnv().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -10936,7 +10667,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         internalGetMutableEnv().getMutableMap().clear();
         return this;
       }
-
       /**
        *
        *
@@ -10953,14 +10683,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         internalGetMutableEnv().getMutableMap().remove(key);
         return this;
       }
-
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableEnv() {
         bitField0_ |= 0x00000008;
         return internalGetMutableEnv().getMutableMap();
       }
-
       /**
        *
        *
@@ -10981,7 +10709,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000008;
         return this;
       }
-
       /**
        *
        *
@@ -10998,7 +10725,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object workingDir_ = "";
-
       /**
        *
        *
@@ -11021,7 +10747,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11044,7 +10769,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11066,7 +10790,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11084,7 +10807,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11109,7 +10831,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private int runAsUser_;
-
       /**
        *
        *
@@ -11126,7 +10847,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getRunAsUser() {
         return runAsUser_;
       }
-
       /**
        *
        *
@@ -11147,7 +10867,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11253,7 +10972,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The kmsKey.
      */
     java.lang.String getKmsKey();
-
     /**
      *
      *
@@ -11287,7 +11005,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The kmsKeyServiceAccount.
      */
     java.lang.String getKmsKeyServiceAccount();
-
     /**
      *
      *
@@ -11307,7 +11024,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getKmsKeyServiceAccountBytes();
   }
-
   /**
    *
    *
@@ -11327,7 +11043,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey)
       CustomerEncryptionKeyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CustomerEncryptionKey.newBuilder() to construct.
     private CustomerEncryptionKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11364,7 +11079,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kmsKey_ = "";
-
     /**
      *
      *
@@ -11390,7 +11104,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -11421,7 +11134,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kmsKeyServiceAccount_ = "";
-
     /**
      *
      *
@@ -11451,7 +11163,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -11659,7 +11370,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -11878,7 +11588,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object kmsKey_ = "";
-
       /**
        *
        *
@@ -11903,7 +11612,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -11928,7 +11636,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -11952,7 +11659,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11972,7 +11678,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -11999,7 +11704,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object kmsKeyServiceAccount_ = "";
-
       /**
        *
        *
@@ -12028,7 +11732,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -12057,7 +11760,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -12085,7 +11787,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12109,7 +11810,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12224,7 +11924,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return The path.
      */
     java.lang.String getPath();
-
     /**
      *
      *
@@ -12251,7 +11950,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      */
     int getPort();
   }
-
   /**
    *
    *
@@ -12266,7 +11964,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)
       ReadinessCheckOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ReadinessCheck.newBuilder() to construct.
     private ReadinessCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12301,7 +11998,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -12325,7 +12021,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -12352,7 +12047,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
     public static final int PORT_FIELD_NUMBER = 2;
     private int port_ = 0;
-
     /**
      *
      *
@@ -12540,7 +12234,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -12748,7 +12441,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object path_ = "";
-
       /**
        *
        *
@@ -12771,7 +12463,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -12794,7 +12485,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -12816,7 +12506,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12834,7 +12523,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12859,7 +12547,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
 
       private int port_;
-
       /**
        *
        *
@@ -12875,7 +12562,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       public int getPort() {
         return port_;
       }
-
       /**
        *
        *
@@ -12895,7 +12581,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -12986,7 +12671,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -13010,7 +12694,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -13039,7 +12722,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -13063,7 +12745,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -13092,7 +12773,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -13117,7 +12797,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -13145,7 +12824,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RECONCILING_FIELD_NUMBER = 4;
   private boolean reconciling_ = false;
-
   /**
    *
    *
@@ -13190,7 +12868,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -13208,14 +12885,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -13230,7 +12905,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -13252,7 +12926,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -13301,7 +12974,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -13321,14 +12993,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -13345,7 +13015,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -13369,7 +13038,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -13396,7 +13064,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -13413,7 +13080,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -13430,7 +13096,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -13448,7 +13113,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -13466,7 +13130,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -13484,7 +13147,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -13503,7 +13165,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int DELETE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp deleteTime_;
-
   /**
    *
    *
@@ -13520,7 +13181,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -13537,7 +13197,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
-
   /**
    *
    *
@@ -13557,7 +13216,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -13583,7 +13241,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -13612,7 +13269,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int IDLE_TIMEOUT_FIELD_NUMBER = 10;
   private com.google.protobuf.Duration idleTimeout_;
-
   /**
    *
    *
@@ -13637,7 +13293,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasIdleTimeout() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -13662,7 +13317,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Duration getIdleTimeout() {
     return idleTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleTimeout_;
   }
-
   /**
    *
    *
@@ -13688,7 +13342,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RUNNING_TIMEOUT_FIELD_NUMBER = 11;
   private com.google.protobuf.Duration runningTimeout_;
-
   /**
    *
    *
@@ -13726,7 +13379,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRunningTimeout() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -13766,7 +13418,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : runningTimeout_;
   }
-
   /**
    *
    *
@@ -13807,7 +13458,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int HOST_FIELD_NUMBER = 12;
   private com.google.cloud.workstations.v1.WorkstationConfig.Host host_;
-
   /**
    *
    *
@@ -13825,7 +13475,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasHost() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -13845,7 +13494,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.workstations.v1.WorkstationConfig.Host.getDefaultInstance()
         : host_;
   }
-
   /**
    *
    *
@@ -13869,7 +13517,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory>
       persistentDirectories_;
-
   /**
    *
    *
@@ -13886,7 +13533,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       getPersistentDirectoriesList() {
     return persistentDirectories_;
   }
-
   /**
    *
    *
@@ -13904,7 +13550,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       getPersistentDirectoriesOrBuilderList() {
     return persistentDirectories_;
   }
-
   /**
    *
    *
@@ -13920,7 +13565,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public int getPersistentDirectoriesCount() {
     return persistentDirectories_.size();
   }
-
   /**
    *
    *
@@ -13937,7 +13581,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       getPersistentDirectories(int index) {
     return persistentDirectories_.get(index);
   }
-
   /**
    *
    *
@@ -13957,7 +13600,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int CONTAINER_FIELD_NUMBER = 14;
   private com.google.cloud.workstations.v1.WorkstationConfig.Container container_;
-
   /**
    *
    *
@@ -13976,7 +13618,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasContainer() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -13997,7 +13638,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.workstations.v1.WorkstationConfig.Container.getDefaultInstance()
         : container_;
   }
-
   /**
    *
    *
@@ -14020,7 +13660,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int ENCRYPTION_KEY_FIELD_NUMBER = 17;
   private com.google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryptionKey_;
-
   /**
    *
    *
@@ -14055,7 +13694,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasEncryptionKey() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -14094,7 +13732,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : encryptionKey_;
   }
-
   /**
    *
    *
@@ -14137,7 +13774,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
       readinessChecks_;
-
   /**
    *
    *
@@ -14156,7 +13792,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       getReadinessChecksList() {
     return readinessChecks_;
   }
-
   /**
    *
    *
@@ -14176,7 +13811,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       getReadinessChecksOrBuilderList() {
     return readinessChecks_;
   }
-
   /**
    *
    *
@@ -14194,7 +13828,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public int getReadinessChecksCount() {
     return readinessChecks_.size();
   }
-
   /**
    *
    *
@@ -14213,7 +13846,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       int index) {
     return readinessChecks_.get(index);
   }
-
   /**
    *
    *
@@ -14238,7 +13870,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList replicaZones_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -14261,7 +13892,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getReplicaZonesList() {
     return replicaZones_;
   }
-
   /**
    *
    *
@@ -14284,7 +13914,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public int getReplicaZonesCount() {
     return replicaZones_.size();
   }
-
   /**
    *
    *
@@ -14308,7 +13937,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public java.lang.String getReplicaZones(int index) {
     return replicaZones_.get(index);
   }
-
   /**
    *
    *
@@ -14335,7 +13963,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int DEGRADED_FIELD_NUMBER = 15;
   private boolean degraded_ = false;
-
   /**
    *
    *
@@ -14359,7 +13986,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> conditions_;
-
   /**
    *
    *
@@ -14374,7 +14000,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.rpc.Status> getConditionsList() {
     return conditions_;
   }
-
   /**
    *
    *
@@ -14389,7 +14014,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getConditionsOrBuilderList() {
     return conditions_;
   }
-
   /**
    *
    *
@@ -14404,7 +14028,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public int getConditionsCount() {
     return conditions_.size();
   }
-
   /**
    *
    *
@@ -14419,7 +14042,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
   public com.google.rpc.Status getConditions(int index) {
     return conditions_.get(index);
   }
-
   /**
    *
    *
@@ -14836,7 +14458,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -15529,7 +15150,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -15552,7 +15172,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -15575,7 +15194,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -15597,7 +15215,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15615,7 +15232,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15640,7 +15256,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -15663,7 +15278,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -15686,7 +15300,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -15708,7 +15321,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15726,7 +15338,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15751,7 +15362,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -15775,7 +15385,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -15799,7 +15408,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -15822,7 +15430,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15841,7 +15448,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15867,7 +15473,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean reconciling_;
-
     /**
      *
      *
@@ -15884,7 +15489,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean getReconciling() {
       return reconciling_;
     }
-
     /**
      *
      *
@@ -15905,7 +15509,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15953,7 +15556,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -15971,14 +15573,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -15993,7 +15593,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -16015,7 +15614,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -16043,7 +15641,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -16061,14 +15658,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000010;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -16090,7 +15685,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -16132,7 +15726,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -16152,14 +15745,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -16176,7 +15767,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -16200,7 +15790,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -16230,7 +15819,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -16250,14 +15838,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -16281,7 +15867,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -16306,7 +15891,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -16323,7 +15907,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -16346,7 +15929,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16371,7 +15953,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16393,7 +15974,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16423,7 +16003,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -16445,7 +16024,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16462,7 +16040,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16483,7 +16060,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -16518,7 +16094,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -16536,7 +16111,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -16560,7 +16134,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16586,7 +16159,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16609,7 +16181,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16640,7 +16211,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -16663,7 +16233,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16681,7 +16250,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16703,7 +16271,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -16739,7 +16306,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
-
     /**
      *
      *
@@ -16756,7 +16322,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -16779,7 +16344,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return deleteTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16804,7 +16368,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16826,7 +16389,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16856,7 +16418,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -16878,7 +16439,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16895,7 +16455,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16916,7 +16475,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : deleteTime_;
       }
     }
-
     /**
      *
      *
@@ -16946,7 +16504,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -16971,7 +16528,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -16996,7 +16552,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -17020,7 +16575,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17040,7 +16594,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17072,7 +16625,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         idleTimeoutBuilder_;
-
     /**
      *
      *
@@ -17096,7 +16648,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasIdleTimeout() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -17126,7 +16677,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return idleTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17158,7 +16708,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17187,7 +16736,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17224,7 +16772,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -17253,7 +16800,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17277,7 +16823,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getIdleTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17305,7 +16850,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : idleTimeout_;
       }
     }
-
     /**
      *
      *
@@ -17347,7 +16891,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         runningTimeoutBuilder_;
-
     /**
      *
      *
@@ -17385,7 +16928,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRunningTimeout() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -17429,7 +16971,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return runningTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17475,7 +17016,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17518,7 +17058,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17569,7 +17108,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -17612,7 +17150,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17650,7 +17187,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRunningTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17692,7 +17228,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : runningTimeout_;
       }
     }
-
     /**
      *
      *
@@ -17748,7 +17283,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.workstations.v1.WorkstationConfig.Host.Builder,
             com.google.cloud.workstations.v1.WorkstationConfig.HostOrBuilder>
         hostBuilder_;
-
     /**
      *
      *
@@ -17765,7 +17299,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasHost() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -17788,7 +17321,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return hostBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17813,7 +17345,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17836,7 +17367,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17867,7 +17397,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -17889,7 +17418,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17906,7 +17434,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHostFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17927,7 +17454,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : host_;
       }
     }
-
     /**
      *
      *
@@ -17994,7 +17520,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return persistentDirectoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -18013,7 +17538,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return persistentDirectoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -18033,7 +17557,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return persistentDirectoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -18059,7 +17582,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18084,7 +17606,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18110,7 +17631,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18136,7 +17656,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18160,7 +17679,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18185,7 +17703,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18210,7 +17727,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18232,7 +17748,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18254,7 +17769,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18270,7 +17784,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         getPersistentDirectoriesBuilder(int index) {
       return getPersistentDirectoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -18290,7 +17803,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return persistentDirectoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -18312,7 +17824,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(persistentDirectories_);
       }
     }
-
     /**
      *
      *
@@ -18331,7 +17842,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18351,7 +17861,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -18395,7 +17904,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.workstations.v1.WorkstationConfig.Container.Builder,
             com.google.cloud.workstations.v1.WorkstationConfig.ContainerOrBuilder>
         containerBuilder_;
-
     /**
      *
      *
@@ -18413,7 +17921,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasContainer() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -18437,7 +17944,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return containerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18464,7 +17970,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18488,7 +17993,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18522,7 +18026,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18545,7 +18048,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18564,7 +18066,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getContainerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18587,7 +18088,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : container_;
       }
     }
-
     /**
      *
      *
@@ -18623,7 +18123,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey.Builder,
             com.google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKeyOrBuilder>
         encryptionKeyBuilder_;
-
     /**
      *
      *
@@ -18657,7 +18156,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasEncryptionKey() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -18699,7 +18197,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return encryptionKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18742,7 +18239,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18783,7 +18279,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18833,7 +18328,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -18872,7 +18366,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18907,7 +18400,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEncryptionKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18947,7 +18439,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             : encryptionKey_;
       }
     }
-
     /**
      *
      *
@@ -19033,7 +18524,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return readinessChecksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -19054,7 +18544,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return readinessChecksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -19076,7 +18565,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return readinessChecksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -19104,7 +18592,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19130,7 +18617,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19158,7 +18644,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19186,7 +18671,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19211,7 +18695,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19237,7 +18720,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19264,7 +18746,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19288,7 +18769,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19312,7 +18792,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19330,7 +18809,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         getReadinessChecksBuilder(int index) {
       return getReadinessChecksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -19352,7 +18830,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return readinessChecksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -19375,7 +18852,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(readinessChecks_);
       }
     }
-
     /**
      *
      *
@@ -19396,7 +18872,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -19418,7 +18893,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -19466,7 +18940,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00020000;
     }
-
     /**
      *
      *
@@ -19490,7 +18963,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       replicaZones_.makeImmutable();
       return replicaZones_;
     }
-
     /**
      *
      *
@@ -19513,7 +18985,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public int getReplicaZonesCount() {
       return replicaZones_.size();
     }
-
     /**
      *
      *
@@ -19537,7 +19008,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getReplicaZones(int index) {
       return replicaZones_.get(index);
     }
-
     /**
      *
      *
@@ -19561,7 +19031,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getReplicaZonesBytes(int index) {
       return replicaZones_.getByteString(index);
     }
-
     /**
      *
      *
@@ -19593,7 +19062,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19624,7 +19092,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19652,7 +19119,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19679,7 +19145,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19713,7 +19178,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean degraded_;
-
     /**
      *
      *
@@ -19732,7 +19196,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public boolean getDegraded() {
       return degraded_;
     }
-
     /**
      *
      *
@@ -19755,7 +19218,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19808,7 +19270,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return conditionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -19827,7 +19288,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return conditionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -19846,7 +19306,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return conditionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -19871,7 +19330,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19893,7 +19351,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19918,7 +19375,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19943,7 +19399,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19965,7 +19420,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -19987,7 +19441,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -20009,7 +19462,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -20031,7 +19483,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -20053,7 +19504,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -20068,7 +19518,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.rpc.Status.Builder getConditionsBuilder(int index) {
       return getConditionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -20087,7 +19536,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return conditionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -20106,7 +19554,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(conditions_);
       }
     }
-
     /**
      *
      *
@@ -20121,7 +19568,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public com.google.rpc.Status.Builder addConditionsBuilder() {
       return getConditionsFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -20137,7 +19583,6 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return getConditionsFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *

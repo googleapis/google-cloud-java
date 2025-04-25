@@ -37,7 +37,6 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
    * @return Whether the regionInstanceGroupManagersApplyUpdatesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersApplyUpdatesRequestResource();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest
       getRegionInstanceGroupManagersApplyUpdatesRequestResource();
-
   /**
    *
    *

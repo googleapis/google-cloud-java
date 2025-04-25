@@ -38,7 +38,6 @@ public interface InsertNetworkRequestOrBuilder
    * @return Whether the networkResource field is set.
    */
   boolean hasNetworkResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertNetworkRequestOrBuilder
    * @return The networkResource.
    */
   com.google.cloud.compute.v1.Network getNetworkResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface InsertNetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface InsertNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

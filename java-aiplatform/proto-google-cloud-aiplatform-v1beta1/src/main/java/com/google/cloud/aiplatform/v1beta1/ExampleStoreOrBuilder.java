@@ -38,7 +38,6 @@ public interface ExampleStoreOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ExampleStoreOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ExampleStoreOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ExampleStoreOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface ExampleStoreOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface ExampleStoreOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface ExampleStoreOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface ExampleStoreOrBuilder
    * @return Whether the exampleStoreConfig field is set.
    */
   boolean hasExampleStoreConfig();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface ExampleStoreOrBuilder
    * @return The exampleStoreConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ExampleStoreConfig getExampleStoreConfig();
-
   /**
    *
    *

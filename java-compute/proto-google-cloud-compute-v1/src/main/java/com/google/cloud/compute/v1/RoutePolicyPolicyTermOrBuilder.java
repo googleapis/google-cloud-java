@@ -34,7 +34,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * <code>repeated .google.cloud.compute.v1.Expr actions = 448809213;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Expr> getActionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * <code>repeated .google.cloud.compute.v1.Expr actions = 448809213;</code>
    */
   com.google.cloud.compute.v1.Expr getActions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * <code>repeated .google.cloud.compute.v1.Expr actions = 448809213;</code>
    */
   int getActionsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * <code>repeated .google.cloud.compute.v1.Expr actions = 448809213;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ExprOrBuilder> getActionsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * @return Whether the match field is set.
    */
   boolean hasMatch();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * @return The match.
    */
   com.google.cloud.compute.v1.Expr getMatch();
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface RoutePolicyPolicyTermOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
-
   /**
    *
    *

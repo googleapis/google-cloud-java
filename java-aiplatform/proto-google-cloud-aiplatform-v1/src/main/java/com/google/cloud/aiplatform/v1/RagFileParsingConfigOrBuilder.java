@@ -36,7 +36,6 @@ public interface RagFileParsingConfigOrBuilder
    * @return Whether the layoutParser field is set.
    */
   boolean hasLayoutParser();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RagFileParsingConfigOrBuilder
    * @return The layoutParser.
    */
   com.google.cloud.aiplatform.v1.RagFileParsingConfig.LayoutParser getLayoutParser();
-
   /**
    *
    *

@@ -54,7 +54,6 @@ public interface ListRecommendationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -116,7 +115,6 @@ public interface ListRecommendationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -165,7 +163,6 @@ public interface ListRecommendationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

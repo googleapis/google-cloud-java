@@ -42,7 +42,6 @@ public interface GetNodeTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CreateEntitySignalsMappingRequest)
     CreateEntitySignalsMappingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEntitySignalsMappingRequest.newBuilder() to construct.
   private CreateEntitySignalsMappingRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
 
   public static final int ENTITY_SIGNALS_MAPPING_FIELD_NUMBER = 2;
   private com.google.ads.admanager.v1.EntitySignalsMapping entitySignalsMapping_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
   public boolean hasEntitySignalsMapping() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
         ? com.google.ads.admanager.v1.EntitySignalsMapping.getDefaultInstance()
         : entitySignalsMapping_;
   }
-
   /**
    *
    *
@@ -360,7 +354,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +574,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -633,7 +624,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
             com.google.ads.admanager.v1.EntitySignalsMapping.Builder,
             com.google.ads.admanager.v1.EntitySignalsMappingOrBuilder>
         entitySignalsMappingBuilder_;
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
     public boolean hasEntitySignalsMapping() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
         return entitySignalsMappingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
       onChanged();
       return getEntitySignalsMappingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
             : entitySignalsMapping_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the videoStreamInputConfig field is set.
    */
   boolean hasVideoStreamInputConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ProcessorConfigOrBuilder
    * @return The videoStreamInputConfig.
    */
   com.google.cloud.visionai.v1.VideoStreamInputConfig getVideoStreamInputConfig();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the aiEnabledDevicesInputConfig field is set.
    */
   boolean hasAiEnabledDevicesInputConfig();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ProcessorConfigOrBuilder
    * @return The aiEnabledDevicesInputConfig.
    */
   com.google.cloud.visionai.v1.AIEnabledDevicesInputConfig getAiEnabledDevicesInputConfig();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the mediaWarehouseConfig field is set.
    */
   boolean hasMediaWarehouseConfig();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ProcessorConfigOrBuilder
    * @return The mediaWarehouseConfig.
    */
   com.google.cloud.visionai.v1.MediaWarehouseConfig getMediaWarehouseConfig();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the personBlurConfig field is set.
    */
   boolean hasPersonBlurConfig();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface ProcessorConfigOrBuilder
    * @return The personBlurConfig.
    */
   com.google.cloud.visionai.v1.PersonBlurConfig getPersonBlurConfig();
-
   /**
    *
    *
@@ -191,7 +183,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the occupancyCountConfig field is set.
    */
   boolean hasOccupancyCountConfig();
-
   /**
    *
    *
@@ -204,7 +195,6 @@ public interface ProcessorConfigOrBuilder
    * @return The occupancyCountConfig.
    */
   com.google.cloud.visionai.v1.OccupancyCountConfig getOccupancyCountConfig();
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the personVehicleDetectionConfig field is set.
    */
   boolean hasPersonVehicleDetectionConfig();
-
   /**
    *
    *
@@ -245,7 +234,6 @@ public interface ProcessorConfigOrBuilder
    * @return The personVehicleDetectionConfig.
    */
   com.google.cloud.visionai.v1.PersonVehicleDetectionConfig getPersonVehicleDetectionConfig();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the vertexAutomlVisionConfig field is set.
    */
   boolean hasVertexAutomlVisionConfig();
-
   /**
    *
    *
@@ -287,7 +274,6 @@ public interface ProcessorConfigOrBuilder
    * @return The vertexAutomlVisionConfig.
    */
   com.google.cloud.visionai.v1.VertexAutoMLVisionConfig getVertexAutomlVisionConfig();
-
   /**
    *
    *
@@ -313,7 +299,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the vertexAutomlVideoConfig field is set.
    */
   boolean hasVertexAutomlVideoConfig();
-
   /**
    *
    *
@@ -326,7 +311,6 @@ public interface ProcessorConfigOrBuilder
    * @return The vertexAutomlVideoConfig.
    */
   com.google.cloud.visionai.v1.VertexAutoMLVideoConfig getVertexAutomlVideoConfig();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the vertexCustomConfig field is set.
    */
   boolean hasVertexCustomConfig();
-
   /**
    *
    *
@@ -364,7 +347,6 @@ public interface ProcessorConfigOrBuilder
    * @return The vertexCustomConfig.
    */
   com.google.cloud.visionai.v1.VertexCustomConfig getVertexCustomConfig();
-
   /**
    *
    *
@@ -390,7 +372,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the generalObjectDetectionConfig field is set.
    */
   boolean hasGeneralObjectDetectionConfig();
-
   /**
    *
    *
@@ -405,7 +386,6 @@ public interface ProcessorConfigOrBuilder
    * @return The generalObjectDetectionConfig.
    */
   com.google.cloud.visionai.v1.GeneralObjectDetectionConfig getGeneralObjectDetectionConfig();
-
   /**
    *
    *
@@ -432,7 +412,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the bigQueryConfig field is set.
    */
   boolean hasBigQueryConfig();
-
   /**
    *
    *
@@ -445,7 +424,6 @@ public interface ProcessorConfigOrBuilder
    * @return The bigQueryConfig.
    */
   com.google.cloud.visionai.v1.BigQueryConfig getBigQueryConfig();
-
   /**
    *
    *
@@ -469,7 +447,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the gcsOutputConfig field is set.
    */
   boolean hasGcsOutputConfig();
-
   /**
    *
    *
@@ -482,7 +459,6 @@ public interface ProcessorConfigOrBuilder
    * @return The gcsOutputConfig.
    */
   com.google.cloud.visionai.v1.GcsOutputConfig getGcsOutputConfig();
-
   /**
    *
    *
@@ -506,7 +482,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the productRecognizerConfig field is set.
    */
   boolean hasProductRecognizerConfig();
-
   /**
    *
    *
@@ -519,7 +494,6 @@ public interface ProcessorConfigOrBuilder
    * @return The productRecognizerConfig.
    */
   com.google.cloud.visionai.v1.ProductRecognizerConfig getProductRecognizerConfig();
-
   /**
    *
    *
@@ -546,7 +520,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the personalProtectiveEquipmentDetectionConfig field is set.
    */
   boolean hasPersonalProtectiveEquipmentDetectionConfig();
-
   /**
    *
    *
@@ -562,7 +535,6 @@ public interface ProcessorConfigOrBuilder
    */
   com.google.cloud.visionai.v1.PersonalProtectiveEquipmentDetectionConfig
       getPersonalProtectiveEquipmentDetectionConfig();
-
   /**
    *
    *
@@ -589,7 +561,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the tagRecognizerConfig field is set.
    */
   boolean hasTagRecognizerConfig();
-
   /**
    *
    *
@@ -602,7 +573,6 @@ public interface ProcessorConfigOrBuilder
    * @return The tagRecognizerConfig.
    */
   com.google.cloud.visionai.v1.TagRecognizerConfig getTagRecognizerConfig();
-
   /**
    *
    *
@@ -626,7 +596,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the universalInputConfig field is set.
    */
   boolean hasUniversalInputConfig();
-
   /**
    *
    *
@@ -639,7 +608,6 @@ public interface ProcessorConfigOrBuilder
    * @return The universalInputConfig.
    */
   com.google.cloud.visionai.v1.UniversalInputConfig getUniversalInputConfig();
-
   /**
    *
    *
@@ -664,7 +632,6 @@ public interface ProcessorConfigOrBuilder
    * @return Whether the experimentalConfig field is set.
    */
   boolean hasExperimentalConfig();
-
   /**
    *
    *
@@ -678,7 +645,6 @@ public interface ProcessorConfigOrBuilder
    * @return The experimentalConfig.
    */
   com.google.protobuf.Struct getExperimentalConfig();
-
   /**
    *
    *

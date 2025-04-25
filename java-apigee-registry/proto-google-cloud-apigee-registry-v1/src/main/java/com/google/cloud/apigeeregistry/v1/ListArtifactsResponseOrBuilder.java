@@ -34,7 +34,6 @@ public interface ListArtifactsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.Artifact artifacts = 1;</code>
    */
   java.util.List<com.google.cloud.apigeeregistry.v1.Artifact> getArtifactsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListArtifactsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.Artifact artifacts = 1;</code>
    */
   com.google.cloud.apigeeregistry.v1.Artifact getArtifacts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListArtifactsResponseOrBuilder
    * <code>repeated .google.cloud.apigeeregistry.v1.Artifact artifacts = 1;</code>
    */
   int getArtifactsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListArtifactsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apigeeregistry.v1.ArtifactOrBuilder>
       getArtifactsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListArtifactsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

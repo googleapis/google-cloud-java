@@ -37,7 +37,6 @@ public interface EventUpdateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface EventUpdateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface EventUpdateOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface EventUpdateOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface EventUpdateOrBuilder
    * @return The symptom.
    */
   java.lang.String getSymptom();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface EventUpdateOrBuilder
    * @return The workaround.
    */
   java.lang.String getWorkaround();
-
   /**
    *
    *

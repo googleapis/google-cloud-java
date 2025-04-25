@@ -48,7 +48,6 @@ public enum AnnotationSentiment implements com.google.protobuf.ProtocolMessageEn
 
   /** <code>ANNOTATION_SENTIMENT_UNSPECIFIED = 0;</code> */
   public static final int ANNOTATION_SENTIMENT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public enum AnnotationSentiment implements com.google.protobuf.ProtocolMessageEn
    * <code>NEGATIVE = 1;</code>
    */
   public static final int NEGATIVE_VALUE = 1;
-
   /**
    *
    *

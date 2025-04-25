@@ -36,7 +36,6 @@ public interface IntervalOrBuilder
    * @return Whether the minimum field is set.
    */
   boolean hasMinimum();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface IntervalOrBuilder
    * @return Whether the exclusiveMinimum field is set.
    */
   boolean hasExclusiveMinimum();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface IntervalOrBuilder
    * @return Whether the maximum field is set.
    */
   boolean hasMaximum();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface IntervalOrBuilder
    * @return Whether the exclusiveMaximum field is set.
    */
   boolean hasExclusiveMaximum();
-
   /**
    *
    *

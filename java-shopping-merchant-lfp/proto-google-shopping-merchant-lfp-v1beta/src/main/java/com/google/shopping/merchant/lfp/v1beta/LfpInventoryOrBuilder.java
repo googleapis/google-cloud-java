@@ -40,7 +40,6 @@ public interface LfpInventoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface LfpInventoryOrBuilder
    * @return The storeCode.
    */
   java.lang.String getStoreCode();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface LfpInventoryOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public interface LfpInventoryOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -184,7 +180,6 @@ public interface LfpInventoryOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
-
   /**
    *
    *
@@ -210,7 +205,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the gtin field is set.
    */
   boolean hasGtin();
-
   /**
    *
    *
@@ -223,7 +217,6 @@ public interface LfpInventoryOrBuilder
    * @return The gtin.
    */
   java.lang.String getGtin();
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public interface LfpInventoryOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public interface LfpInventoryOrBuilder
    * @return The availability.
    */
   java.lang.String getAvailability();
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the quantity field is set.
    */
   boolean hasQuantity();
-
   /**
    *
    *
@@ -347,7 +336,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the collectionTime field is set.
    */
   boolean hasCollectionTime();
-
   /**
    *
    *
@@ -363,7 +351,6 @@ public interface LfpInventoryOrBuilder
    * @return The collectionTime.
    */
   com.google.protobuf.Timestamp getCollectionTime();
-
   /**
    *
    *
@@ -393,7 +380,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the pickupMethod field is set.
    */
   boolean hasPickupMethod();
-
   /**
    *
    *
@@ -409,7 +395,6 @@ public interface LfpInventoryOrBuilder
    * @return The pickupMethod.
    */
   java.lang.String getPickupMethod();
-
   /**
    *
    *
@@ -441,7 +426,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the pickupSla field is set.
    */
   boolean hasPickupSla();
-
   /**
    *
    *
@@ -457,7 +441,6 @@ public interface LfpInventoryOrBuilder
    * @return The pickupSla.
    */
   java.lang.String getPickupSla();
-
   /**
    *
    *
@@ -488,7 +471,6 @@ public interface LfpInventoryOrBuilder
    * @return Whether the feedLabel field is set.
    */
   boolean hasFeedLabel();
-
   /**
    *
    *
@@ -503,7 +485,6 @@ public interface LfpInventoryOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
-
   /**
    *
    *

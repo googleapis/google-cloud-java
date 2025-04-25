@@ -36,7 +36,6 @@ public interface AutocompletePlacesResponseOrBuilder
    */
   java.util.List<com.google.maps.places.v1.AutocompletePlacesResponse.Suggestion>
       getSuggestionsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface AutocompletePlacesResponseOrBuilder
    * </code>
    */
   com.google.maps.places.v1.AutocompletePlacesResponse.Suggestion getSuggestions(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface AutocompletePlacesResponseOrBuilder
    * </code>
    */
   int getSuggestionsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface AutocompletePlacesResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.AutocompletePlacesResponse.SuggestionOrBuilder>
       getSuggestionsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    * @return Whether the instancesReportHostAsFaultyRequestResource field is set.
    */
   boolean hasInstancesReportHostAsFaultyRequestResource();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequest
       getInstancesReportHostAsFaultyRequestResource();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface ReportHostAsFaultyInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

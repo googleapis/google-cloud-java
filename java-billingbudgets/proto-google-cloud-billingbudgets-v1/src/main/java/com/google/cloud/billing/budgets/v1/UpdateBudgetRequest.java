@@ -33,7 +33,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1.UpdateBudgetRequest)
     UpdateBudgetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateBudgetRequest.newBuilder() to construct.
   private UpdateBudgetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int BUDGET_FIELD_NUMBER = 1;
   private com.google.cloud.billing.budgets.v1.Budget budget_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
   public boolean hasBudget() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.billing.budgets.v1.Budget.getDefaultInstance()
         : budget_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -371,7 +364,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +586,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.billing.budgets.v1.Budget.Builder,
             com.google.cloud.billing.budgets.v1.BudgetOrBuilder>
         budgetBuilder_;
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     public boolean hasBudget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
         return budgetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -662,7 +651,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBudgetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
             : budget_;
       }
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +897,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +955,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +975,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1024,7 +999,6 @@ public final class UpdateBudgetRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
-
     /**
      *
      *

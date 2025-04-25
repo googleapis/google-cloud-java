@@ -33,7 +33,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.UpdateDeliveryVehicleRequest)
     UpdateDeliveryVehicleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateDeliveryVehicleRequest.newBuilder() to construct.
   private UpdateDeliveryVehicleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int HEADER_FIELD_NUMBER = 1;
   private com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader header_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
   public boolean hasHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
         ? com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.getDefaultInstance()
         : header_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
 
   public static final int DELIVERY_VEHICLE_FIELD_NUMBER = 3;
   private com.google.maps.fleetengine.delivery.v1.DeliveryVehicle deliveryVehicle_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
   public boolean hasDeliveryVehicle() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
         ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicle.getDefaultInstance()
         : deliveryVehicle_;
   }
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -444,7 +434,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -694,7 +683,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeaderOrBuilder>
         headerBuilder_;
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
     public boolean hasHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return headerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return getHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
             : header_;
       }
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
             com.google.maps.fleetengine.delivery.v1.DeliveryVehicle.Builder,
             com.google.maps.fleetengine.delivery.v1.DeliveryVehicleOrBuilder>
         deliveryVehicleBuilder_;
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
     public boolean hasDeliveryVehicle() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return deliveryVehicleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +981,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1035,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1053,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return getDeliveryVehicleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1103,7 +1075,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
             : deliveryVehicle_;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1110,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1159,7 +1129,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1185,7 +1154,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1213,7 +1181,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1205,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1237,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1261,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1280,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1340,7 +1303,6 @@ public final class UpdateDeliveryVehicleRequest extends com.google.protobuf.Gene
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface CreateTestCaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateTestCaseRequestOrBuilder
    * @return Whether the testCase field is set.
    */
   boolean hasTestCase();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateTestCaseRequestOrBuilder
    * @return The testCase.
    */
   com.google.cloud.dialogflow.cx.v3.TestCase getTestCase();
-
   /**
    *
    *

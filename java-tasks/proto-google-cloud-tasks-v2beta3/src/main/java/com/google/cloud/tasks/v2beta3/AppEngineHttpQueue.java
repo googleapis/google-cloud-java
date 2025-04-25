@@ -49,7 +49,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.AppEngineHttpQueue)
     AppEngineHttpQueueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AppEngineHttpQueue.newBuilder() to construct.
   private AppEngineHttpQueue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int APP_ENGINE_ROUTING_OVERRIDE_FIELD_NUMBER = 1;
   private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRoutingOverride_;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
   public boolean hasAppEngineRoutingOverride() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
         : appEngineRoutingOverride_;
   }
-
   /**
    *
    *
@@ -320,7 +316,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -544,7 +539,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
             com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder,
             com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder>
         appEngineRoutingOverrideBuilder_;
-
     /**
      *
      *
@@ -566,7 +560,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
     public boolean hasAppEngineRoutingOverride() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -594,7 +587,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
         return appEngineRoutingOverrideBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -625,7 +617,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +644,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -690,7 +680,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAppEngineRoutingOverrideFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class AppEngineHttpQueue extends com.google.protobuf.GeneratedMessa
             : appEngineRoutingOverride_;
       }
     }
-
     /**
      *
      *

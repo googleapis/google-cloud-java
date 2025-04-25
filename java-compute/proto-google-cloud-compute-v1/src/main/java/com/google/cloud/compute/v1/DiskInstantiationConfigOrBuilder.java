@@ -36,7 +36,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return Whether the customImage field is set.
    */
   boolean hasCustomImage();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return The customImage.
    */
   java.lang.String getCustomImage();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return Whether the deviceName field is set.
    */
   boolean hasDeviceName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return The deviceName.
    */
   java.lang.String getDeviceName();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return Whether the instantiateFrom field is set.
    */
   boolean hasInstantiateFrom();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface DiskInstantiationConfigOrBuilder
    * @return The instantiateFrom.
    */
   java.lang.String getInstantiateFrom();
-
   /**
    *
    *

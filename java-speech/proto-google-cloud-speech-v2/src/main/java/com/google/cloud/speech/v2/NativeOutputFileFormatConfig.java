@@ -33,7 +33,6 @@ public final class NativeOutputFileFormatConfig extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.NativeOutputFileFormatConfig)
     NativeOutputFileFormatConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NativeOutputFileFormatConfig.newBuilder() to construct.
   private NativeOutputFileFormatConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class NativeOutputFileFormatConfig extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

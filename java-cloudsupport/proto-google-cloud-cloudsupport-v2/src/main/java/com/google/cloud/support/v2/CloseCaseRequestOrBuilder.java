@@ -38,7 +38,6 @@ public interface CloseCaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

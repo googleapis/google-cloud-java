@@ -33,7 +33,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.essentialcontacts.v1.Contact)
     ContactOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Contact.newBuilder() to construct.
   private Contact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object email_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -220,7 +214,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.essentialcontacts.v1.NotificationCategory>(
         notificationCategorySubscriptions_, notificationCategorySubscriptions_converter_);
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public int getNotificationCategorySubscriptionsCount() {
     return notificationCategorySubscriptions_.size();
   }
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     return notificationCategorySubscriptions_converter_.convert(
         notificationCategorySubscriptions_.get(index));
   }
-
   /**
    *
    *
@@ -281,7 +272,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getNotificationCategorySubscriptionsValueList() {
     return notificationCategorySubscriptions_;
   }
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageTag_ = "";
-
   /**
    *
    *
@@ -336,7 +325,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +354,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALIDATION_STATE_FIELD_NUMBER = 8;
   private int validationState_ = 0;
-
   /**
    *
    *
@@ -385,7 +372,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public int getValidationStateValue() {
     return validationState_;
   }
-
   /**
    *
    *
@@ -411,7 +397,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALIDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp validateTime_;
-
   /**
    *
    *
@@ -429,7 +414,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValidateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -449,7 +433,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : validateTime_;
   }
-
   /**
    *
    *
@@ -700,7 +683,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -998,7 +980,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1022,7 +1003,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1026,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1069,7 +1048,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1066,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1091,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object email_ = "";
-
     /**
      *
      *
@@ -1138,7 +1114,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1137,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1159,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1204,7 +1177,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1211,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1260,7 +1231,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.essentialcontacts.v1.NotificationCategory>(
           notificationCategorySubscriptions_, notificationCategorySubscriptions_converter_);
     }
-
     /**
      *
      *
@@ -1278,7 +1248,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     public int getNotificationCategorySubscriptionsCount() {
       return notificationCategorySubscriptions_.size();
     }
-
     /**
      *
      *
@@ -1299,7 +1268,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       return notificationCategorySubscriptions_converter_.convert(
           notificationCategorySubscriptions_.get(index));
     }
-
     /**
      *
      *
@@ -1326,7 +1294,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1319,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1344,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1364,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1382,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getNotificationCategorySubscriptionsValueList() {
       return java.util.Collections.unmodifiableList(notificationCategorySubscriptions_);
     }
-
     /**
      *
      *
@@ -1438,7 +1401,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     public int getNotificationCategorySubscriptionsValue(int index) {
       return notificationCategorySubscriptions_.get(index);
     }
-
     /**
      *
      *
@@ -1461,7 +1423,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1483,7 +1444,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1471,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object languageTag_ = "";
-
     /**
      *
      *
@@ -1537,7 +1496,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1563,7 +1521,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1588,7 +1545,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1565,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1637,7 +1592,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int validationState_ = 0;
-
     /**
      *
      *
@@ -1656,7 +1610,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     public int getValidationStateValue() {
       return validationState_;
     }
-
     /**
      *
      *
@@ -1678,7 +1631,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1701,7 +1653,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.essentialcontacts.v1.ValidationState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1726,7 +1677,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1704,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         validateTimeBuilder_;
-
     /**
      *
      *
@@ -1771,7 +1720,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValidateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1794,7 +1742,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
         return validateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1819,7 +1766,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1787,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1816,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1893,7 +1837,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1910,7 +1853,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValidateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1931,7 +1873,6 @@ public final class Contact extends com.google.protobuf.GeneratedMessageV3
             : validateTime_;
       }
     }
-
     /**
      *
      *

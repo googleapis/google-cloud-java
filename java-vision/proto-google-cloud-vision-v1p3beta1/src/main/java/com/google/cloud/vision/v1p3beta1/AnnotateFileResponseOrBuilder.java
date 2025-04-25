@@ -36,7 +36,6 @@ public interface AnnotateFileResponseOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnnotateFileResponseOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.vision.v1p3beta1.InputConfig getInputConfig();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface AnnotateFileResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> getResponsesList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface AnnotateFileResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
    */
   com.google.cloud.vision.v1p3beta1.AnnotateImageResponse getResponses(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface AnnotateFileResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
    */
   int getResponsesCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface AnnotateFileResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList();
-
   /**
    *
    *

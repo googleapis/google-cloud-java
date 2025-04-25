@@ -35,7 +35,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.AutomaticImprovements)
     AutomaticImprovementsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomaticImprovements.newBuilder() to construct.
   private AutomaticImprovements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
 
   public static final int ITEM_UPDATES_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates itemUpdates_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
   public boolean hasItemUpdates() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
         ? com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates.getDefaultInstance()
         : itemUpdates_;
   }
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
   public static final int IMAGE_IMPROVEMENTS_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements
       imageImprovements_;
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
   public boolean hasImageImprovements() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : imageImprovements_;
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
   public static final int SHIPPING_IMPROVEMENTS_FIELD_NUMBER = 4;
   private com.google.shopping.merchant.accounts.v1beta.AutomaticShippingImprovements
       shippingImprovements_;
-
   /**
    *
    *
@@ -315,7 +305,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
   public boolean hasShippingImprovements() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -349,7 +338,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             .getDefaultInstance()
         : shippingImprovements_;
   }
-
   /**
    *
    *
@@ -586,7 +574,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -856,7 +843,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -880,7 +866,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +889,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +911,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +929,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +959,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdates.Builder,
             com.google.shopping.merchant.accounts.v1beta.AutomaticItemUpdatesOrBuilder>
         itemUpdatesBuilder_;
-
     /**
      *
      *
@@ -1000,7 +981,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
     public boolean hasItemUpdates() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1029,7 +1009,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
         return itemUpdatesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1040,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1068,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1106,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1133,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1156,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return getItemUpdatesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1209,7 +1183,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             : itemUpdates_;
       }
     }
-
     /**
      *
      *
@@ -1251,7 +1224,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements.Builder,
             com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovementsOrBuilder>
         imageImprovementsBuilder_;
-
     /**
      *
      *
@@ -1275,7 +1247,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
     public boolean hasImageImprovements() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1307,7 +1278,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
         return imageImprovementsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1340,7 +1310,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1340,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1411,7 +1379,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1440,7 +1407,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1431,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return getImageImprovementsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1495,7 +1460,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             : imageImprovements_;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1502,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             com.google.shopping.merchant.accounts.v1beta.AutomaticShippingImprovements.Builder,
             com.google.shopping.merchant.accounts.v1beta.AutomaticShippingImprovementsOrBuilder>
         shippingImprovementsBuilder_;
-
     /**
      *
      *
@@ -1567,7 +1530,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
     public boolean hasShippingImprovements() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1604,7 +1566,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
         return shippingImprovementsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1642,7 +1603,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1678,7 +1638,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1723,7 +1682,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1715,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1787,7 +1744,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
       onChanged();
       return getShippingImprovementsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1822,7 +1778,6 @@ public final class AutomaticImprovements extends com.google.protobuf.GeneratedMe
             : shippingImprovements_;
       }
     }
-
     /**
      *
      *

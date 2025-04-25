@@ -40,7 +40,6 @@ public interface ListDocumentsRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface ListDocumentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -136,7 +134,6 @@ public interface ListDocumentsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

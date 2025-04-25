@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -29,28 +30,42 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class SessionName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_SESSION =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/sessions/{session}");
   private static final PathTemplate PROJECT_LOCATION_REASONING_ENGINE_SESSION =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
-  private final String reasoningEngine;
   private final String session;
+  private final String reasoningEngine;
 
   @Deprecated
   protected SessionName() {
     project = null;
     location = null;
-    reasoningEngine = null;
     session = null;
+    reasoningEngine = null;
   }
 
   private SessionName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
+    session = Preconditions.checkNotNull(builder.getSession());
+    reasoningEngine = null;
+    pathTemplate = PROJECT_LOCATION_SESSION;
+  }
+
+  private SessionName(ProjectLocationReasoningEngineSessionBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
     reasoningEngine = Preconditions.checkNotNull(builder.getReasoningEngine());
     session = Preconditions.checkNotNull(builder.getSession());
+    pathTemplate = PROJECT_LOCATION_REASONING_ENGINE_SESSION;
   }
 
   public String getProject() {
@@ -61,25 +76,43 @@ public class SessionName implements ResourceName {
     return location;
   }
 
-  public String getReasoningEngine() {
-    return reasoningEngine;
-  }
-
   public String getSession() {
     return session;
+  }
+
+  public String getReasoningEngine() {
+    return reasoningEngine;
   }
 
   public static Builder newBuilder() {
     return new Builder();
   }
 
+  public static Builder newProjectLocationSessionBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationReasoningEngineSessionBuilder
+      newProjectLocationReasoningEngineSessionBuilder() {
+    return new ProjectLocationReasoningEngineSessionBuilder();
+  }
+
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  public static SessionName of(
+  public static SessionName of(String project, String location, String session) {
+    return newBuilder().setProject(project).setLocation(location).setSession(session).build();
+  }
+
+  public static SessionName ofProjectLocationSessionName(
+      String project, String location, String session) {
+    return newBuilder().setProject(project).setLocation(location).setSession(session).build();
+  }
+
+  public static SessionName ofProjectLocationReasoningEngineSessionName(
       String project, String location, String reasoningEngine, String session) {
-    return newBuilder()
+    return newProjectLocationReasoningEngineSessionBuilder()
         .setProject(project)
         .setLocation(location)
         .setReasoningEngine(reasoningEngine)
@@ -87,9 +120,28 @@ public class SessionName implements ResourceName {
         .build();
   }
 
-  public static String format(
-      String project, String location, String reasoningEngine, String session) {
+  public static String format(String project, String location, String session) {
     return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSession(session)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationSessionName(
+      String project, String location, String session) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setSession(session)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationReasoningEngineSessionName(
+      String project, String location, String reasoningEngine, String session) {
+    return newProjectLocationReasoningEngineSessionBuilder()
         .setProject(project)
         .setLocation(location)
         .setReasoningEngine(reasoningEngine)
@@ -102,14 +154,20 @@ public class SessionName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_REASONING_ENGINE_SESSION.validatedMatch(
-            formattedString, "SessionName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("reasoning_engine"),
-        matchMap.get("session"));
+    if (PROJECT_LOCATION_SESSION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_SESSION.match(formattedString);
+      return ofProjectLocationSessionName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("session"));
+    } else if (PROJECT_LOCATION_REASONING_ENGINE_SESSION.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_REASONING_ENGINE_SESSION.match(formattedString);
+      return ofProjectLocationReasoningEngineSessionName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("reasoning_engine"),
+          matchMap.get("session"));
+    }
+    throw new ValidationException("SessionName.parse: formattedString not in valid format");
   }
 
   public static List<SessionName> parseList(List<String> formattedStrings) {
@@ -133,7 +191,8 @@ public class SessionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_REASONING_ENGINE_SESSION.matches(formattedString);
+    return PROJECT_LOCATION_SESSION.matches(formattedString)
+        || PROJECT_LOCATION_REASONING_ENGINE_SESSION.matches(formattedString);
   }
 
   @Override
@@ -148,11 +207,11 @@ public class SessionName implements ResourceName {
           if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (reasoningEngine != null) {
-            fieldMapBuilder.put("reasoning_engine", reasoningEngine);
-          }
           if (session != null) {
             fieldMapBuilder.put("session", session);
+          }
+          if (reasoningEngine != null) {
+            fieldMapBuilder.put("reasoning_engine", reasoningEngine);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -167,15 +226,7 @@ public class SessionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_REASONING_ENGINE_SESSION.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "reasoning_engine",
-        reasoningEngine,
-        "session",
-        session);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -187,8 +238,8 @@ public class SessionName implements ResourceName {
       SessionName that = ((SessionName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.reasoningEngine, that.reasoningEngine)
-          && Objects.equals(this.session, that.session);
+          && Objects.equals(this.session, that.session)
+          && Objects.equals(this.reasoningEngine, that.reasoningEngine);
     }
     return false;
   }
@@ -197,27 +248,78 @@ public class SessionName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
-    h ^= Objects.hashCode(reasoningEngine);
-    h *= 1000003;
     h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(reasoningEngine);
     return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/sessions/{session}. */
+  public static class Builder {
+    private String project;
+    private String location;
+    private String session;
+
+    protected Builder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getSession() {
+      return session;
+    }
+
+    public Builder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public Builder setSession(String session) {
+      this.session = session;
+      return this;
+    }
+
+    private Builder(SessionName sessionName) {
+      Preconditions.checkArgument(
+          Objects.equals(sessionName.pathTemplate, PROJECT_LOCATION_SESSION),
+          "toBuilder is only supported when SessionName has the pattern of projects/{project}/locations/{location}/sessions/{session}");
+      this.project = sessionName.project;
+      this.location = sessionName.location;
+      this.session = sessionName.session;
+    }
+
+    public SessionName build() {
+      return new SessionName(this);
+    }
   }
 
   /**
    * Builder for
    * projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}.
    */
-  public static class Builder {
+  public static class ProjectLocationReasoningEngineSessionBuilder {
     private String project;
     private String location;
     private String reasoningEngine;
     private String session;
 
-    protected Builder() {}
+    protected ProjectLocationReasoningEngineSessionBuilder() {}
 
     public String getProject() {
       return project;
@@ -235,31 +337,24 @@ public class SessionName implements ResourceName {
       return session;
     }
 
-    public Builder setProject(String project) {
+    public ProjectLocationReasoningEngineSessionBuilder setProject(String project) {
       this.project = project;
       return this;
     }
 
-    public Builder setLocation(String location) {
+    public ProjectLocationReasoningEngineSessionBuilder setLocation(String location) {
       this.location = location;
       return this;
     }
 
-    public Builder setReasoningEngine(String reasoningEngine) {
+    public ProjectLocationReasoningEngineSessionBuilder setReasoningEngine(String reasoningEngine) {
       this.reasoningEngine = reasoningEngine;
       return this;
     }
 
-    public Builder setSession(String session) {
+    public ProjectLocationReasoningEngineSessionBuilder setSession(String session) {
       this.session = session;
       return this;
-    }
-
-    private Builder(SessionName sessionName) {
-      this.project = sessionName.project;
-      this.location = sessionName.location;
-      this.reasoningEngine = sessionName.reasoningEngine;
-      this.session = sessionName.session;
     }
 
     public SessionName build() {

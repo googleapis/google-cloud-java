@@ -33,7 +33,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CoherenceInstance)
     CoherenceInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CoherenceInstance.newBuilder() to construct.
   private CoherenceInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -298,7 +294,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -486,7 +481,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
-
     /**
      *
      *
@@ -501,7 +495,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -569,7 +560,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +577,6 @@ public final class CoherenceInstance extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

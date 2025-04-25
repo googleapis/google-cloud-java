@@ -39,7 +39,6 @@ public interface AppEngineRoutingOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface AppEngineRoutingOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface AppEngineRoutingOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -215,7 +212,6 @@ public interface AppEngineRoutingOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UrlMapTest)
     UrlMapTestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UrlMapTest.newBuilder() to construct.
   private UrlMapTest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object expectedOutputUrl_ = "";
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpectedOutputUrl() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPECTED_REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 18888047;
   private int expectedRedirectResponseCode_ = 0;
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpectedRedirectResponseCode() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> headers_;
-
   /**
    *
    *
@@ -261,7 +251,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.UrlMapTestHeader> getHeadersList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       getHeadersOrBuilderList() {
     return headers_;
   }
-
   /**
    *
    *
@@ -290,7 +278,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public int getHeadersCount() {
     return headers_.size();
   }
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.UrlMapTestHeader getHeaders(int index) {
     return headers_.get(index);
   }
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
-
   /**
    *
    *
@@ -339,7 +324,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHost() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -363,7 +347,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -392,7 +375,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object path_ = "";
-
   /**
    *
    *
@@ -408,7 +390,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPath() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -432,7 +413,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -461,7 +441,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -477,7 +456,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasService() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -501,7 +479,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -774,7 +751,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1099,7 +1075,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1114,7 +1089,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1137,7 +1111,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1133,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1154,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1171,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1195,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object expectedOutputUrl_ = "";
-
     /**
      *
      *
@@ -1240,7 +1209,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpectedOutputUrl() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1263,7 +1231,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1253,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1308,7 +1274,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1315,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int expectedRedirectResponseCode_;
-
     /**
      *
      *
@@ -1367,7 +1330,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpectedRedirectResponseCode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1383,7 +1345,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public int getExpectedRedirectResponseCode() {
       return expectedRedirectResponseCode_;
     }
-
     /**
      *
      *
@@ -1403,7 +1364,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1414,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1471,7 +1430,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1488,7 +1446,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1511,7 +1468,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1532,7 +1488,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1510,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1578,7 +1532,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1552,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1572,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1592,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1661,7 +1611,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1681,7 +1630,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1694,7 +1642,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.UrlMapTestHeader.Builder getHeadersBuilder(int index) {
       return getHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1711,7 +1658,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return headersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1729,7 +1675,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(headers_);
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1688,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return getHeadersFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.UrlMapTestHeader.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1757,7 +1701,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       return getHeadersFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.UrlMapTestHeader.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1790,7 +1733,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object host_ = "";
-
     /**
      *
      *
@@ -1805,7 +1747,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHost() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1828,7 +1769,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1851,7 +1791,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1873,7 +1812,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1891,7 +1829,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1916,7 +1853,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object path_ = "";
-
     /**
      *
      *
@@ -1931,7 +1867,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPath() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1954,7 +1889,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1977,7 +1911,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1999,7 +1932,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2017,7 +1949,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2042,7 +1973,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -2057,7 +1987,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasService() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2080,7 +2009,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2103,7 +2031,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2125,7 +2052,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2143,7 +2069,6 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

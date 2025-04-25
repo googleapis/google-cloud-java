@@ -38,7 +38,6 @@ public interface GetActiveDirectoryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

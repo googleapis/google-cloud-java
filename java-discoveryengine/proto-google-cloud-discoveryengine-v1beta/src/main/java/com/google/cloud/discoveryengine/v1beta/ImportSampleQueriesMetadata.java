@@ -35,7 +35,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.ImportSampleQueriesMetadata)
     ImportSampleQueriesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportSampleQueriesMetadata.newBuilder() to construct.
   private ImportSampleQueriesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
 
   public static final int SUCCESS_COUNT_FIELD_NUMBER = 3;
   private long successCount_ = 0L;
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
 
   public static final int FAILURE_COUNT_FIELD_NUMBER = 4;
   private long failureCount_ = 0L;
-
   /**
    *
    *
@@ -208,7 +199,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
 
   public static final int TOTAL_COUNT_FIELD_NUMBER = 5;
   private long totalCount_ = 0L;
-
   /**
    *
    *
@@ -434,7 +424,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -705,7 +694,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -720,7 +708,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +796,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -915,7 +894,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -961,7 +938,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +986,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1006,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1021,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1068,7 +1040,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     }
 
     private long successCount_;
-
     /**
      *
      *
@@ -1114,7 +1084,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     public long getSuccessCount() {
       return successCount_;
     }
-
     /**
      *
      *
@@ -1135,7 +1104,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1124,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     }
 
     private long failureCount_;
-
     /**
      *
      *
@@ -1173,7 +1140,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     public long getFailureCount() {
       return failureCount_;
     }
-
     /**
      *
      *
@@ -1194,7 +1160,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1180,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     }
 
     private long totalCount_;
-
     /**
      *
      *
@@ -1233,7 +1197,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
     public long getTotalCount() {
       return totalCount_;
     }
-
     /**
      *
      *
@@ -1255,7 +1218,6 @@ public final class ImportSampleQueriesMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

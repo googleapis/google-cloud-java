@@ -36,7 +36,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return Whether the exactMatch field is set.
    */
   boolean hasExactMatch();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return The exactMatch.
    */
   java.lang.String getExactMatch();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return Whether the presentMatch field is set.
    */
   boolean hasPresentMatch();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return Whether the regexMatch field is set.
    */
   boolean hasRegexMatch();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface HttpQueryParameterMatchOrBuilder
    * @return The regexMatch.
    */
   java.lang.String getRegexMatch();
-
   /**
    *
    *

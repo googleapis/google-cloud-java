@@ -39,7 +39,6 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    * @return Whether the predictionApiKeyRegistration field is set.
    */
   boolean hasPredictionApiKeyRegistration();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface CreatePredictionApiKeyRegistrationRequestOrBuilder
    */
   com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
       getPredictionApiKeyRegistration();
-
   /**
    *
    *

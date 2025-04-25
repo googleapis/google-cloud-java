@@ -34,7 +34,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.TemporalAsset)
     TemporalAssetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TemporalAsset.newBuilder() to construct.
   private TemporalAsset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIOR_ASSET_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int PRIOR_ASSET_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>PRESENT = 1;</code>
      */
     public static final int PRESENT_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>INVALID = 2;</code>
      */
     public static final int INVALID_VALUE = 2;
-
     /**
      *
      *
@@ -171,7 +167,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>DOES_NOT_EXIST = 3;</code>
      */
     public static final int DOES_NOT_EXIST_VALUE = 3;
-
     /**
      *
      *
@@ -275,7 +270,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1.TimeWindow window_;
-
   /**
    *
    *
@@ -291,7 +285,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -307,7 +300,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.asset.v1.TimeWindow getWindow() {
     return window_ == null ? com.google.cloud.asset.v1.TimeWindow.getDefaultInstance() : window_;
   }
-
   /**
    *
    *
@@ -324,7 +316,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETED_FIELD_NUMBER = 2;
   private boolean deleted_ = false;
-
   /**
    *
    *
@@ -343,7 +334,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSET_FIELD_NUMBER = 3;
   private com.google.cloud.asset.v1.Asset asset_;
-
   /**
    *
    *
@@ -359,7 +349,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAsset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -375,7 +364,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.asset.v1.Asset getAsset() {
     return asset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : asset_;
   }
-
   /**
    *
    *
@@ -392,7 +380,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIOR_ASSET_STATE_FIELD_NUMBER = 4;
   private int priorAssetState_ = 0;
-
   /**
    *
    *
@@ -408,7 +395,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public int getPriorAssetStateValue() {
     return priorAssetState_;
   }
-
   /**
    *
    *
@@ -431,7 +417,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIOR_ASSET_FIELD_NUMBER = 5;
   private com.google.cloud.asset.v1.Asset priorAsset_;
-
   /**
    *
    *
@@ -448,7 +433,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPriorAsset() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -465,7 +449,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.asset.v1.Asset getPriorAsset() {
     return priorAsset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : priorAsset_;
   }
-
   /**
    *
    *
@@ -694,7 +677,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -962,7 +944,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1.TimeWindow.Builder,
             com.google.cloud.asset.v1.TimeWindowOrBuilder>
         windowBuilder_;
-
     /**
      *
      *
@@ -977,7 +958,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -998,7 +978,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         return windowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1021,7 +1000,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1019,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1046,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1065,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1079,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1123,7 +1097,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             : window_;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1124,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean deleted_;
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean getDeleted() {
       return deleted_;
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1182,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1.Asset.Builder,
             com.google.cloud.asset.v1.AssetOrBuilder>
         assetBuilder_;
-
     /**
      *
      *
@@ -1227,7 +1196,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAsset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1246,7 +1214,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         return assetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1269,7 +1236,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1255,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1282,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1301,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1315,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1369,7 +1331,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         return asset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : asset_;
       }
     }
-
     /**
      *
      *
@@ -1397,7 +1358,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int priorAssetState_ = 0;
-
     /**
      *
      *
@@ -1413,7 +1373,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public int getPriorAssetStateValue() {
       return priorAssetState_;
     }
-
     /**
      *
      *
@@ -1432,7 +1391,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1410,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1475,7 +1432,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1500,7 +1456,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1.Asset.Builder,
             com.google.cloud.asset.v1.AssetOrBuilder>
         priorAssetBuilder_;
-
     /**
      *
      *
@@ -1516,7 +1471,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPriorAsset() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1538,7 +1492,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
         return priorAssetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1562,7 +1515,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1535,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1612,7 +1563,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1633,7 +1583,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1598,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriorAssetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1669,7 +1617,6 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             : priorAsset_;
       }
     }
-
     /**
      *
      *

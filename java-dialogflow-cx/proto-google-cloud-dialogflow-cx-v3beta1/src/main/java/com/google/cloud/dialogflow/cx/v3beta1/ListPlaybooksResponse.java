@@ -34,7 +34,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ListPlaybooksResponse)
     ListPlaybooksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListPlaybooksResponse.newBuilder() to construct.
   private ListPlaybooksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook> playbooks_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Playbook> getPlaybooksList() {
     return playbooks_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       getPlaybooksOrBuilderList() {
     return playbooks_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
   public int getPlaybooksCount() {
     return playbooks_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybooks(int index) {
     return playbooks_.get(index);
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return playbooksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return playbooksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return playbooksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -717,7 +705,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +749,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +888,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.dialogflow.cx.v3beta1.Playbook.Builder getPlaybooksBuilder(int index) {
       return getPlaybooksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -928,7 +906,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return playbooksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(playbooks_);
       }
     }
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       return getPlaybooksFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Playbook.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       return getPlaybooksFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3beta1.Playbook.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1011,7 +985,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1031,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1053,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class ListPlaybooksResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

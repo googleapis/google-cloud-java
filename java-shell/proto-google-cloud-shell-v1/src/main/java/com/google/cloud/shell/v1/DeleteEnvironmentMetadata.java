@@ -34,7 +34,6 @@ public final class DeleteEnvironmentMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.DeleteEnvironmentMetadata)
     DeleteEnvironmentMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteEnvironmentMetadata.newBuilder() to construct.
   private DeleteEnvironmentMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DeleteEnvironmentMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

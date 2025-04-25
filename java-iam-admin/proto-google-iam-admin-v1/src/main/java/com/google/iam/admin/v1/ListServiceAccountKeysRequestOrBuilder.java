@@ -43,7 +43,6 @@ public interface ListServiceAccountKeysRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ListServiceAccountKeysRequestOrBuilder
    * @return A list containing the keyTypes.
    */
   java.util.List<com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType> getKeyTypesList();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ListServiceAccountKeysRequestOrBuilder
    * @return The count of keyTypes.
    */
   int getKeyTypesCount();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ListServiceAccountKeysRequestOrBuilder
    * @return The keyTypes at the given index.
    */
   com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyTypes(int index);
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ListServiceAccountKeysRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for keyTypes.
    */
   java.util.List<java.lang.Integer> getKeyTypesValueList();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ZoneOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ZoneOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ZoneOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ZoneOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ZoneOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface ZoneOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface ZoneOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface ZoneOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -211,11 +203,9 @@ public interface ZoneOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public interface ZoneOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -241,7 +230,6 @@ public interface ZoneOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public interface ZoneOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -292,7 +279,6 @@ public interface ZoneOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -321,7 +307,6 @@ public interface ZoneOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface ZoneOrBuilder
    * @return Whether the discoverySpec field is set.
    */
   boolean hasDiscoverySpec();
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public interface ZoneOrBuilder
    * @return The discoverySpec.
    */
   com.google.cloud.dataplex.v1.Zone.DiscoverySpec getDiscoverySpec();
-
   /**
    *
    *
@@ -398,7 +381,6 @@ public interface ZoneOrBuilder
    * @return Whether the resourceSpec field is set.
    */
   boolean hasResourceSpec();
-
   /**
    *
    *
@@ -414,7 +396,6 @@ public interface ZoneOrBuilder
    * @return The resourceSpec.
    */
   com.google.cloud.dataplex.v1.Zone.ResourceSpec getResourceSpec();
-
   /**
    *
    *
@@ -443,7 +424,6 @@ public interface ZoneOrBuilder
    * @return Whether the assetStatus field is set.
    */
   boolean hasAssetStatus();
-
   /**
    *
    *
@@ -458,7 +438,6 @@ public interface ZoneOrBuilder
    * @return The assetStatus.
    */
   com.google.cloud.dataplex.v1.AssetStatus getAssetStatus();
-
   /**
    *
    *

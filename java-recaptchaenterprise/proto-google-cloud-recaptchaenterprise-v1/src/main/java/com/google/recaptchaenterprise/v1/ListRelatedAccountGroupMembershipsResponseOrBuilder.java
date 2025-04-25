@@ -37,7 +37,6 @@ public interface ListRelatedAccountGroupMembershipsResponseOrBuilder
    */
   java.util.List<com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership>
       getRelatedAccountGroupMembershipsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListRelatedAccountGroupMembershipsResponseOrBuilder
    */
   com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership getRelatedAccountGroupMemberships(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListRelatedAccountGroupMembershipsResponseOrBuilder
    * </code>
    */
   int getRelatedAccountGroupMembershipsCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListRelatedAccountGroupMembershipsResponseOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.RelatedAccountGroupMembershipOrBuilder>
       getRelatedAccountGroupMembershipsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ListRelatedAccountGroupMembershipsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

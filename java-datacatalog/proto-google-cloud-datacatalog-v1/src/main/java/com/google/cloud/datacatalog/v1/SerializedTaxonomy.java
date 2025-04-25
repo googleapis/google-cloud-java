@@ -35,7 +35,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.SerializedTaxonomy)
     SerializedTaxonomyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SerializedTaxonomy.newBuilder() to construct.
   private SerializedTaxonomy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.SerializedPolicyTag> policyTags_;
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.datacatalog.v1.SerializedPolicyTag> getPolicyTagsList() {
     return policyTags_;
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       getPolicyTagsOrBuilderList() {
     return policyTags_;
   }
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   public int getPolicyTagsCount() {
     return policyTags_.size();
   }
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.datacatalog.v1.SerializedPolicyTag getPolicyTags(int index) {
     return policyTags_.get(index);
   }
-
   /**
    *
    *
@@ -275,7 +265,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
                   : result;
             }
           };
-
   /**
    *
    *
@@ -295,7 +284,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         java.lang.Integer, com.google.cloud.datacatalog.v1.Taxonomy.PolicyType>(
         activatedPolicyTypes_, activatedPolicyTypes_converter_);
   }
-
   /**
    *
    *
@@ -312,7 +300,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   public int getActivatedPolicyTypesCount() {
     return activatedPolicyTypes_.size();
   }
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.datacatalog.v1.Taxonomy.PolicyType getActivatedPolicyTypes(int index) {
     return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
   }
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
   public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
     return activatedPolicyTypes_;
   }
-
   /**
    *
    *
@@ -574,7 +559,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -874,7 +858,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -922,7 +904,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -945,7 +926,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +969,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1015,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1055,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1113,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return policyTagsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return policyTagsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1173,7 +1145,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return policyTagsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1218,7 +1188,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1233,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1253,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1273,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1293,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1312,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1331,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1344,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         int index) {
       return getPolicyTagsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1400,7 +1361,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return policyTagsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1418,7 +1378,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(policyTags_);
       }
     }
-
     /**
      *
      *
@@ -1432,7 +1391,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       return getPolicyTagsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.SerializedPolicyTag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1448,7 +1406,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.datacatalog.v1.SerializedPolicyTag.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1489,7 +1446,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000008;
       }
     }
-
     /**
      *
      *
@@ -1508,7 +1464,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
           java.lang.Integer, com.google.cloud.datacatalog.v1.Taxonomy.PolicyType>(
           activatedPolicyTypes_, activatedPolicyTypes_converter_);
     }
-
     /**
      *
      *
@@ -1524,7 +1479,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public int getActivatedPolicyTypesCount() {
       return activatedPolicyTypes_.size();
     }
-
     /**
      *
      *
@@ -1541,7 +1495,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.datacatalog.v1.Taxonomy.PolicyType getActivatedPolicyTypes(int index) {
       return activatedPolicyTypes_converter_.convert(activatedPolicyTypes_.get(index));
     }
-
     /**
      *
      *
@@ -1566,7 +1519,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1590,7 +1542,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1564,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1582,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1597,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList() {
       return java.util.Collections.unmodifiableList(activatedPolicyTypes_);
     }
-
     /**
      *
      *
@@ -1665,7 +1613,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
     public int getActivatedPolicyTypesValue(int index) {
       return activatedPolicyTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1686,7 +1633,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1706,7 +1652,6 @@ public final class SerializedTaxonomy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

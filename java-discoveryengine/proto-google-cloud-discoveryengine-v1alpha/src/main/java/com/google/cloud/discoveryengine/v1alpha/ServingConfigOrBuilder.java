@@ -36,7 +36,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the mediaConfig field is set.
    */
   boolean hasMediaConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ServingConfigOrBuilder
    * @return The mediaConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.ServingConfig.MediaConfig getMediaConfig();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the genericConfig field is set.
    */
   boolean hasGenericConfig();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ServingConfigOrBuilder
    * @return The genericConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.ServingConfig.GenericConfig getGenericConfig();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface ServingConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ServingConfigOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface ServingConfigOrBuilder
    * @return The enum numeric value on the wire for solutionType.
    */
   int getSolutionTypeValue();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface ServingConfigOrBuilder
    * @return The modelId.
    */
   java.lang.String getModelId();
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public interface ServingConfigOrBuilder
    * @return The diversityLevel.
    */
   java.lang.String getDiversityLevel();
-
   /**
    *
    *
@@ -309,7 +300,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the embeddingConfig field is set.
    */
   boolean hasEmbeddingConfig();
-
   /**
    *
    *
@@ -328,7 +318,6 @@ public interface ServingConfigOrBuilder
    * @return The embeddingConfig.
    */
   com.google.cloud.discoveryengine.v1alpha.EmbeddingConfig getEmbeddingConfig();
-
   /**
    *
    *
@@ -387,7 +376,6 @@ public interface ServingConfigOrBuilder
    * @return The rankingExpression.
    */
   java.lang.String getRankingExpression();
-
   /**
    *
    *
@@ -442,7 +430,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the guidedSearchSpec field is set.
    */
   boolean hasGuidedSearchSpec();
-
   /**
    *
    *
@@ -455,7 +442,6 @@ public interface ServingConfigOrBuilder
    * @return The guidedSearchSpec.
    */
   com.google.cloud.discoveryengine.v1alpha.GuidedSearchSpec getGuidedSearchSpec();
-
   /**
    *
    *
@@ -483,7 +469,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the customFineTuningSpec field is set.
    */
   boolean hasCustomFineTuningSpec();
-
   /**
    *
    *
@@ -500,7 +485,6 @@ public interface ServingConfigOrBuilder
    * @return The customFineTuningSpec.
    */
   com.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec getCustomFineTuningSpec();
-
   /**
    *
    *
@@ -530,7 +514,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -544,7 +527,6 @@ public interface ServingConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -570,7 +552,6 @@ public interface ServingConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -584,7 +565,6 @@ public interface ServingConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -612,7 +592,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the filterControlIds.
    */
   java.util.List<java.lang.String> getFilterControlIdsList();
-
   /**
    *
    *
@@ -628,7 +607,6 @@ public interface ServingConfigOrBuilder
    * @return The count of filterControlIds.
    */
   int getFilterControlIdsCount();
-
   /**
    *
    *
@@ -645,7 +623,6 @@ public interface ServingConfigOrBuilder
    * @return The filterControlIds at the given index.
    */
   java.lang.String getFilterControlIds(int index);
-
   /**
    *
    *
@@ -678,7 +655,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the boostControlIds.
    */
   java.util.List<java.lang.String> getBoostControlIdsList();
-
   /**
    *
    *
@@ -694,7 +670,6 @@ public interface ServingConfigOrBuilder
    * @return The count of boostControlIds.
    */
   int getBoostControlIdsCount();
-
   /**
    *
    *
@@ -711,7 +686,6 @@ public interface ServingConfigOrBuilder
    * @return The boostControlIds at the given index.
    */
   java.lang.String getBoostControlIds(int index);
-
   /**
    *
    *
@@ -747,7 +721,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the redirectControlIds.
    */
   java.util.List<java.lang.String> getRedirectControlIdsList();
-
   /**
    *
    *
@@ -766,7 +739,6 @@ public interface ServingConfigOrBuilder
    * @return The count of redirectControlIds.
    */
   int getRedirectControlIdsCount();
-
   /**
    *
    *
@@ -786,7 +758,6 @@ public interface ServingConfigOrBuilder
    * @return The redirectControlIds at the given index.
    */
   java.lang.String getRedirectControlIds(int index);
-
   /**
    *
    *
@@ -825,7 +796,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the synonymsControlIds.
    */
   java.util.List<java.lang.String> getSynonymsControlIdsList();
-
   /**
    *
    *
@@ -844,7 +814,6 @@ public interface ServingConfigOrBuilder
    * @return The count of synonymsControlIds.
    */
   int getSynonymsControlIdsCount();
-
   /**
    *
    *
@@ -864,7 +833,6 @@ public interface ServingConfigOrBuilder
    * @return The synonymsControlIds at the given index.
    */
   java.lang.String getSynonymsControlIds(int index);
-
   /**
    *
    *
@@ -903,7 +871,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the onewaySynonymsControlIds.
    */
   java.util.List<java.lang.String> getOnewaySynonymsControlIdsList();
-
   /**
    *
    *
@@ -922,7 +889,6 @@ public interface ServingConfigOrBuilder
    * @return The count of onewaySynonymsControlIds.
    */
   int getOnewaySynonymsControlIdsCount();
-
   /**
    *
    *
@@ -942,7 +908,6 @@ public interface ServingConfigOrBuilder
    * @return The onewaySynonymsControlIds at the given index.
    */
   java.lang.String getOnewaySynonymsControlIds(int index);
-
   /**
    *
    *
@@ -983,7 +948,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the dissociateControlIds.
    */
   java.util.List<java.lang.String> getDissociateControlIdsList();
-
   /**
    *
    *
@@ -1004,7 +968,6 @@ public interface ServingConfigOrBuilder
    * @return The count of dissociateControlIds.
    */
   int getDissociateControlIdsCount();
-
   /**
    *
    *
@@ -1026,7 +989,6 @@ public interface ServingConfigOrBuilder
    * @return The dissociateControlIds at the given index.
    */
   java.lang.String getDissociateControlIds(int index);
-
   /**
    *
    *
@@ -1068,7 +1030,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the replacementControlIds.
    */
   java.util.List<java.lang.String> getReplacementControlIdsList();
-
   /**
    *
    *
@@ -1088,7 +1049,6 @@ public interface ServingConfigOrBuilder
    * @return The count of replacementControlIds.
    */
   int getReplacementControlIdsCount();
-
   /**
    *
    *
@@ -1109,7 +1069,6 @@ public interface ServingConfigOrBuilder
    * @return The replacementControlIds at the given index.
    */
   java.lang.String getReplacementControlIds(int index);
-
   /**
    *
    *
@@ -1147,7 +1106,6 @@ public interface ServingConfigOrBuilder
    * @return A list containing the ignoreControlIds.
    */
   java.util.List<java.lang.String> getIgnoreControlIdsList();
-
   /**
    *
    *
@@ -1164,7 +1122,6 @@ public interface ServingConfigOrBuilder
    * @return The count of ignoreControlIds.
    */
   int getIgnoreControlIdsCount();
-
   /**
    *
    *
@@ -1182,7 +1139,6 @@ public interface ServingConfigOrBuilder
    * @return The ignoreControlIds at the given index.
    */
   java.lang.String getIgnoreControlIds(int index);
-
   /**
    *
    *

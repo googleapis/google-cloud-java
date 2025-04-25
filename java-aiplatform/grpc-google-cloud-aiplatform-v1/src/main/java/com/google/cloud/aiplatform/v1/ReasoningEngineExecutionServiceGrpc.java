@@ -152,20 +152,6 @@ public final class ReasoningEngineExecutionServiceGrpc {
     return ReasoningEngineExecutionServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ReasoningEngineExecutionServiceBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ReasoningEngineExecutionServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ReasoningEngineExecutionServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public ReasoningEngineExecutionServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ReasoningEngineExecutionServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ReasoningEngineExecutionServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -307,55 +293,6 @@ public final class ReasoningEngineExecutionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ReasoningEngineExecutionService.
-   *
-   * <pre>
-   * A service for executing queries on Reasoning Engine.
-   * </pre>
-   */
-  public static final class ReasoningEngineExecutionServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ReasoningEngineExecutionServiceBlockingV2Stub> {
-    private ReasoningEngineExecutionServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ReasoningEngineExecutionServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ReasoningEngineExecutionServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Queries using a reasoning engine.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1.QueryReasoningEngineResponse queryReasoningEngine(
-        com.google.cloud.aiplatform.v1.QueryReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getQueryReasoningEngineMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Streams queries using a reasoning engine.
-     * </pre>
-     */
-    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
-    public io.grpc.stub.BlockingClientCall<?, com.google.api.HttpBody> streamQueryReasoningEngine(
-        com.google.cloud.aiplatform.v1.StreamQueryReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
-          getChannel(), getStreamQueryReasoningEngineMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * ReasoningEngineExecutionService.
    *
    * <pre>
    * A service for executing queries on Reasoning Engine.

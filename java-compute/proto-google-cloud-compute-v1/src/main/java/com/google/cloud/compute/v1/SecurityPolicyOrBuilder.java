@@ -32,7 +32,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the adaptiveProtectionConfig field is set.
    */
   boolean hasAdaptiveProtectionConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -41,7 +40,6 @@ public interface SecurityPolicyOrBuilder
    * @return The adaptiveProtectionConfig.
    */
   com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig getAdaptiveProtectionConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfig adaptive_protection_config = 150240735;
@@ -58,7 +56,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the advancedOptionsConfig field is set.
    */
   boolean hasAdvancedOptionsConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -67,7 +64,6 @@ public interface SecurityPolicyOrBuilder
    * @return The advancedOptionsConfig.
    */
   com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig getAdvancedOptionsConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig advanced_options_config = 449276352;
@@ -88,7 +84,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface SecurityPolicyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -123,7 +117,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the ddosProtectionConfig field is set.
    */
   boolean hasDdosProtectionConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -132,7 +125,6 @@ public interface SecurityPolicyOrBuilder
    * @return The ddosProtectionConfig.
    */
   com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig getDdosProtectionConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig ddos_protection_config = 50315853;
@@ -153,7 +145,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -166,7 +157,6 @@ public interface SecurityPolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -192,7 +182,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -205,7 +194,6 @@ public interface SecurityPolicyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -231,7 +219,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -270,7 +256,6 @@ public interface SecurityPolicyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -296,7 +281,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -309,7 +293,6 @@ public interface SecurityPolicyOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -333,7 +316,6 @@ public interface SecurityPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -344,11 +326,9 @@ public interface SecurityPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -359,7 +339,6 @@ public interface SecurityPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -374,7 +353,6 @@ public interface SecurityPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -398,7 +376,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -411,7 +388,6 @@ public interface SecurityPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -433,7 +409,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the recaptchaOptionsConfig field is set.
    */
   boolean hasRecaptchaOptionsConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -442,7 +417,6 @@ public interface SecurityPolicyOrBuilder
    * @return The recaptchaOptionsConfig.
    */
   com.google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig getRecaptchaOptionsConfig();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.SecurityPolicyRecaptchaOptionsConfig recaptcha_options_config = 519006811;
@@ -463,7 +437,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -476,7 +449,6 @@ public interface SecurityPolicyOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -500,7 +472,6 @@ public interface SecurityPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicyRule> getRulesList();
-
   /**
    *
    *
@@ -511,7 +482,6 @@ public interface SecurityPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRule getRules(int index);
-
   /**
    *
    *
@@ -522,7 +492,6 @@ public interface SecurityPolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.SecurityPolicyRule rules = 108873975;</code>
    */
   int getRulesCount();
-
   /**
    *
    *
@@ -534,7 +503,6 @@ public interface SecurityPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder>
       getRulesOrBuilderList();
-
   /**
    *
    *
@@ -558,7 +526,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -571,7 +538,6 @@ public interface SecurityPolicyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -598,7 +564,6 @@ public interface SecurityPolicyOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -612,7 +577,6 @@ public interface SecurityPolicyOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -640,7 +604,6 @@ public interface SecurityPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.SecurityPolicyUserDefinedField>
       getUserDefinedFieldsList();
-
   /**
    *
    *
@@ -653,7 +616,6 @@ public interface SecurityPolicyOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyUserDefinedField getUserDefinedFields(int index);
-
   /**
    *
    *
@@ -666,7 +628,6 @@ public interface SecurityPolicyOrBuilder
    * </code>
    */
   int getUserDefinedFieldsCount();
-
   /**
    *
    *
@@ -680,7 +641,6 @@ public interface SecurityPolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SecurityPolicyUserDefinedFieldOrBuilder>
       getUserDefinedFieldsOrBuilderList();
-
   /**
    *
    *

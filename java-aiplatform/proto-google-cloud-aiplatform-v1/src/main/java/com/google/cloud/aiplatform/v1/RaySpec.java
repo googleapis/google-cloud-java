@@ -36,7 +36,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RaySpec)
     RaySpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RaySpec.newBuilder() to construct.
   private RaySpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageUri_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -172,7 +169,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
   public int getResourcePoolImagesCount() {
     return internalGetResourcePoolImages().getMap().size();
   }
-
   /**
    *
    *
@@ -199,14 +195,12 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetResourcePoolImages().getMap().containsKey(key);
   }
-
   /** Use {@link #getResourcePoolImagesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImages() {
     return getResourcePoolImagesMap();
   }
-
   /**
    *
    *
@@ -230,7 +224,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImagesMap() {
     return internalGetResourcePoolImages().getMap();
   }
-
   /**
    *
    *
@@ -262,7 +255,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         internalGetResourcePoolImages().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -299,7 +291,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object headNodeResourcePoolId_ = "";
-
   /**
    *
    *
@@ -326,7 +317,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -356,7 +346,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RAY_METRIC_SPEC_FIELD_NUMBER = 8;
   private com.google.cloud.aiplatform.v1.RayMetricSpec rayMetricSpec_;
-
   /**
    *
    *
@@ -374,7 +363,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRayMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -394,7 +382,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.RayMetricSpec.getDefaultInstance()
         : rayMetricSpec_;
   }
-
   /**
    *
    *
@@ -415,7 +402,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RAY_LOGS_SPEC_FIELD_NUMBER = 10;
   private com.google.cloud.aiplatform.v1.RayLogsSpec rayLogsSpec_;
-
   /**
    *
    *
@@ -433,7 +419,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRayLogsSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -453,7 +438,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.RayLogsSpec.getDefaultInstance()
         : rayLogsSpec_;
   }
-
   /**
    *
    *
@@ -688,7 +672,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -982,7 +965,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object imageUri_ = "";
-
     /**
      *
      *
@@ -1010,7 +992,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1019,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1045,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1067,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1146,7 +1124,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     public int getResourcePoolImagesCount() {
       return internalGetResourcePoolImages().getMap().size();
     }
-
     /**
      *
      *
@@ -1173,14 +1150,12 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetResourcePoolImages().getMap().containsKey(key);
     }
-
     /** Use {@link #getResourcePoolImagesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImages() {
       return getResourcePoolImagesMap();
     }
-
     /**
      *
      *
@@ -1204,7 +1179,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getResourcePoolImagesMap() {
       return internalGetResourcePoolImages().getMap();
     }
-
     /**
      *
      *
@@ -1236,7 +1210,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
           internalGetResourcePoolImages().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1274,7 +1247,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourcePoolImages().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1301,14 +1273,12 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourcePoolImages().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourcePoolImages() {
       bitField0_ |= 0x00000002;
       return internalGetMutableResourcePoolImages().getMutableMap();
     }
-
     /**
      *
      *
@@ -1339,7 +1309,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1367,7 +1336,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object headNodeResourcePoolId_ = "";
-
     /**
      *
      *
@@ -1393,7 +1361,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1419,7 +1386,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1444,7 +1410,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1430,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1462,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.RayMetricSpec.Builder,
             com.google.cloud.aiplatform.v1.RayMetricSpecOrBuilder>
         rayMetricSpecBuilder_;
-
     /**
      *
      *
@@ -1515,7 +1478,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRayMetricSpec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1538,7 +1500,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         return rayMetricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1563,7 +1524,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1586,7 +1546,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1576,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1639,7 +1597,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1656,7 +1613,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRayMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1677,7 +1633,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
             : rayMetricSpec_;
       }
     }
-
     /**
      *
      *
@@ -1712,7 +1667,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.RayLogsSpec.Builder,
             com.google.cloud.aiplatform.v1.RayLogsSpecOrBuilder>
         rayLogsSpecBuilder_;
-
     /**
      *
      *
@@ -1729,7 +1683,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRayLogsSpec() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1752,7 +1705,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
         return rayLogsSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1777,7 +1729,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1751,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1830,7 +1780,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1852,7 +1801,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1869,7 +1817,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRayLogsSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1890,7 +1837,6 @@ public final class RaySpec extends com.google.protobuf.GeneratedMessageV3
             : rayLogsSpec_;
       }
     }
-
     /**
      *
      *

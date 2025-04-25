@@ -37,7 +37,6 @@ public interface VertexDatasetResourceReferenceOrBuilder
    * @return The datasetResourceName.
    */
   java.lang.String getDatasetResourceName();
-
   /**
    *
    *

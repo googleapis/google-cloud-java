@@ -32,7 +32,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ServerBinding)
     ServerBindingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ServerBinding.newBuilder() to construct.
   private ServerBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,7 +116,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -128,7 +126,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTART_NODE_ON_ANY_SERVER = 502950985;</code>
      */
     public static final int RESTART_NODE_ON_ANY_SERVER_VALUE = 502950985;
-
     /**
      *
      *
@@ -139,7 +136,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTART_NODE_ON_MINIMAL_SERVERS = 204166495;</code>
      */
     public static final int RESTART_NODE_ON_MINIMAL_SERVERS_VALUE = 204166495;
-
     /** <code>SERVER_BINDING_TYPE_UNSPECIFIED = 180825512;</code> */
     public static final int SERVER_BINDING_TYPE_UNSPECIFIED_VALUE = 180825512;
 
@@ -233,7 +229,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -250,7 +245,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +269,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -465,7 +458,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +643,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -667,7 +658,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -715,7 +704,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

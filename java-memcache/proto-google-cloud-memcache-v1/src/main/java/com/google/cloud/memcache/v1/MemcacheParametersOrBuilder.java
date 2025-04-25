@@ -40,7 +40,6 @@ public interface MemcacheParametersOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface MemcacheParametersOrBuilder
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   int getParamsCount();
-
   /**
    *
    *
@@ -79,11 +77,9 @@ public interface MemcacheParametersOrBuilder
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   boolean containsParams(java.lang.String key);
-
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParams();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface MemcacheParametersOrBuilder
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParamsMap();
-
   /**
    *
    *
@@ -109,7 +104,6 @@ public interface MemcacheParametersOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

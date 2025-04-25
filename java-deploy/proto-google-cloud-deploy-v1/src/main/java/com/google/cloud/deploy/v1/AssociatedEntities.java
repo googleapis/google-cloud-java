@@ -33,7 +33,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AssociatedEntities)
     AssociatedEntitiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AssociatedEntities.newBuilder() to construct.
   private AssociatedEntities(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.GkeCluster> gkeClusters_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.deploy.v1.GkeCluster> getGkeClustersList() {
     return gkeClusters_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       getGkeClustersOrBuilderList() {
     return gkeClusters_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
   public int getGkeClustersCount() {
     return gkeClusters_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.deploy.v1.GkeCluster getGkeClusters(int index) {
     return gkeClusters_.get(index);
   }
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.AnthosCluster> anthosClusters_;
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.deploy.v1.AnthosCluster> getAnthosClustersList() {
     return anthosClusters_;
   }
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       getAnthosClustersOrBuilderList() {
     return anthosClusters_;
   }
-
   /**
    *
    *
@@ -204,7 +195,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
   public int getAnthosClustersCount() {
     return anthosClusters_.size();
   }
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.deploy.v1.AnthosCluster getAnthosClusters(int index) {
     return anthosClusters_.get(index);
   }
-
   /**
    *
    *
@@ -409,7 +398,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -727,7 +715,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return gkeClustersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return gkeClustersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return gkeClustersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +845,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +931,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +966,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.deploy.v1.GkeCluster.Builder getGkeClustersBuilder(int index) {
       return getGkeClustersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1009,7 +984,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return gkeClustersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1003,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(gkeClusters_);
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1018,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       return getGkeClustersFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.GkeCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       return getGkeClustersFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.GkeCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1130,7 +1101,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return anthosClustersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1149,7 +1119,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return anthosClustersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1137,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return anthosClustersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1161,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1183,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1207,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1231,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1253,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1312,7 +1275,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1335,7 +1297,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1318,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1339,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1394,7 +1353,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.deploy.v1.AnthosCluster.Builder getAnthosClustersBuilder(int index) {
       return getAnthosClustersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1413,7 +1371,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return anthosClustersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1390,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(anthosClusters_);
       }
     }
-
     /**
      *
      *
@@ -1449,7 +1405,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       return getAnthosClustersFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1465,7 +1420,6 @@ public final class AssociatedEntities extends com.google.protobuf.GeneratedMessa
       return getAnthosClustersFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.AnthosCluster.getDefaultInstance());
     }
-
     /**
      *
      *

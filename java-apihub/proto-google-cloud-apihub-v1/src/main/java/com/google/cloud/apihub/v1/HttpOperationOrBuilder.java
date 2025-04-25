@@ -37,7 +37,6 @@ public interface HttpOperationOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface HttpOperationOrBuilder
    * @return The path.
    */
   com.google.cloud.apihub.v1.Path getPath();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface HttpOperationOrBuilder
    * @return The enum numeric value on the wire for method.
    */
   int getMethodValue();
-
   /**
    *
    *

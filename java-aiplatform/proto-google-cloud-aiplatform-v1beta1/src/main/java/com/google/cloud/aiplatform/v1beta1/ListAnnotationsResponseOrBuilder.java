@@ -34,7 +34,6 @@ public interface ListAnnotationsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Annotation annotations = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Annotation> getAnnotationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAnnotationsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Annotation annotations = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Annotation getAnnotations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAnnotationsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Annotation annotations = 1;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAnnotationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.AnnotationOrBuilder>
       getAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListAnnotationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

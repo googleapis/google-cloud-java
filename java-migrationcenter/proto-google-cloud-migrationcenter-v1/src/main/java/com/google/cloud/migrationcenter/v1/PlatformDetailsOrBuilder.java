@@ -36,7 +36,6 @@ public interface PlatformDetailsOrBuilder
    * @return Whether the vmwareDetails field is set.
    */
   boolean hasVmwareDetails();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PlatformDetailsOrBuilder
    * @return The vmwareDetails.
    */
   com.google.cloud.migrationcenter.v1.VmwarePlatformDetails getVmwareDetails();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface PlatformDetailsOrBuilder
    * @return Whether the awsEc2Details field is set.
    */
   boolean hasAwsEc2Details();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface PlatformDetailsOrBuilder
    * @return The awsEc2Details.
    */
   com.google.cloud.migrationcenter.v1.AwsEc2PlatformDetails getAwsEc2Details();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface PlatformDetailsOrBuilder
    * @return Whether the azureVmDetails field is set.
    */
   boolean hasAzureVmDetails();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface PlatformDetailsOrBuilder
    * @return The azureVmDetails.
    */
   com.google.cloud.migrationcenter.v1.AzureVmPlatformDetails getAzureVmDetails();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface PlatformDetailsOrBuilder
    * @return Whether the genericDetails field is set.
    */
   boolean hasGenericDetails();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface PlatformDetailsOrBuilder
    * @return The genericDetails.
    */
   com.google.cloud.migrationcenter.v1.GenericPlatformDetails getGenericDetails();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface PlatformDetailsOrBuilder
    * @return Whether the physicalDetails field is set.
    */
   boolean hasPhysicalDetails();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface PlatformDetailsOrBuilder
    * @return The physicalDetails.
    */
   com.google.cloud.migrationcenter.v1.PhysicalPlatformDetails getPhysicalDetails();
-
   /**
    *
    *

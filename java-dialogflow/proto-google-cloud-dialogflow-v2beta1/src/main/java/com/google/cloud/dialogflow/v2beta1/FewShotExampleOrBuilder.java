@@ -38,7 +38,6 @@ public interface FewShotExampleOrBuilder
    * @return Whether the conversationContext field is set.
    */
   boolean hasConversationContext();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface FewShotExampleOrBuilder
    * @return The conversationContext.
    */
   com.google.cloud.dialogflow.v2beta1.ConversationContext getConversationContext();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface FewShotExampleOrBuilder
    * </code>
    */
   int getExtraInfoCount();
-
   /**
    *
    *
@@ -95,11 +92,9 @@ public interface FewShotExampleOrBuilder
    * </code>
    */
   boolean containsExtraInfo(java.lang.String key);
-
   /** Use {@link #getExtraInfoMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getExtraInfo();
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface FewShotExampleOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getExtraInfoMap();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface FewShotExampleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface FewShotExampleOrBuilder
    * @return Whether the summarizationSectionList field is set.
    */
   boolean hasSummarizationSectionList();
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface FewShotExampleOrBuilder
    * @return The summarizationSectionList.
    */
   com.google.cloud.dialogflow.v2beta1.SummarizationSectionList getSummarizationSectionList();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface FewShotExampleOrBuilder
    * @return Whether the output field is set.
    */
   boolean hasOutput();
-
   /**
    *
    *
@@ -216,7 +206,6 @@ public interface FewShotExampleOrBuilder
    * @return The output.
    */
   com.google.cloud.dialogflow.v2beta1.GeneratorSuggestion getOutput();
-
   /**
    *
    *

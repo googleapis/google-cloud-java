@@ -33,7 +33,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.CreateDocumentRequest)
     CreateDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDocumentRequest.newBuilder() to construct.
   private CreateDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int DOCUMENT_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.Document document_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()
         : document_;
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int POLICY_FIELD_NUMBER = 4;
   private com.google.iam.v1.Policy policy_;
-
   /**
    *
    *
@@ -261,7 +251,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
-
   /**
    *
    *
@@ -300,7 +288,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CLOUD_AI_DOCUMENT_OPTION_FIELD_NUMBER = 5;
   private com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloudAiDocumentOption_;
-
   /**
    *
    *
@@ -320,7 +307,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCloudAiDocumentOption() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption.getDefaultInstance()
         : cloudAiDocumentOption_;
   }
-
   /**
    *
    *
@@ -366,7 +351,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CREATE_MASK_FIELD_NUMBER = 6;
   private com.google.protobuf.FieldMask createMask_;
-
   /**
    *
    *
@@ -386,7 +370,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCreateMask() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -406,7 +389,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getCreateMask() {
     return createMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : createMask_;
   }
-
   /**
    *
    *
@@ -656,7 +638,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -951,7 +932,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +982,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1026,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1058,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.Document.Builder,
             com.google.cloud.contentwarehouse.v1.DocumentOrBuilder>
         documentBuilder_;
-
     /**
      *
      *
@@ -1099,7 +1074,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1122,7 +1096,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return documentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1120,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1142,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1171,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1192,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1208,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1260,7 +1228,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             : document_;
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1262,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
-
     /**
      *
      *
@@ -1311,7 +1277,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1333,7 +1298,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return requestMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1357,7 +1321,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1342,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1372,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1392,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1408,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1469,7 +1428,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             : requestMetadata_;
       }
     }
-
     /**
      *
      *
@@ -1503,7 +1461,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.iam.v1.Policy.Builder,
             com.google.iam.v1.PolicyOrBuilder>
         policyBuilder_;
-
     /**
      *
      *
@@ -1521,7 +1478,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1543,7 +1499,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return policyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1524,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1592,7 +1546,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1576,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1598,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1664,7 +1615,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1684,7 +1634,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
     }
-
     /**
      *
      *
@@ -1719,7 +1668,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption.Builder,
             com.google.cloud.contentwarehouse.v1.CloudAIDocumentOptionOrBuilder>
         cloudAiDocumentOptionBuilder_;
-
     /**
      *
      *
@@ -1738,7 +1686,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCloudAiDocumentOption() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1763,7 +1710,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return cloudAiDocumentOptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1791,7 +1737,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1816,7 +1761,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1851,7 +1795,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1875,7 +1818,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1895,7 +1837,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCloudAiDocumentOptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1919,7 +1860,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             : cloudAiDocumentOption_;
       }
     }
-
     /**
      *
      *
@@ -1956,7 +1896,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         createMaskBuilder_;
-
     /**
      *
      *
@@ -1975,7 +1914,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCreateMask() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2000,7 +1938,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         return createMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2027,7 +1964,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2051,7 +1987,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2083,7 +2018,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2107,7 +2041,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2126,7 +2059,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCreateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2149,7 +2081,6 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
             : createMask_;
       }
     }
-
     /**
      *
      *

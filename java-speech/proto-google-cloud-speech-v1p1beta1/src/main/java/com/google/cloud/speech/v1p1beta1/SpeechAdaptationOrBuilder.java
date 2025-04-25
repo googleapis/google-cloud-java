@@ -36,7 +36,6 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.PhraseSet> getPhraseSetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
   com.google.cloud.speech.v1p1beta1.PhraseSet getPhraseSets(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.PhraseSet phrase_sets = 1;</code>
    */
   int getPhraseSetsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface SpeechAdaptationOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.PhraseSetOrBuilder>
       getPhraseSetsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface SpeechAdaptationOrBuilder
    * @return A list containing the phraseSetReferences.
    */
   java.util.List<java.lang.String> getPhraseSetReferencesList();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface SpeechAdaptationOrBuilder
    * @return The count of phraseSetReferences.
    */
   int getPhraseSetReferencesCount();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface SpeechAdaptationOrBuilder
    * @return The phraseSetReferences at the given index.
    */
   java.lang.String getPhraseSetReferences(int index);
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.CustomClass> getCustomClassesList();
-
   /**
    *
    *
@@ -175,7 +167,6 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   com.google.cloud.speech.v1p1beta1.CustomClass getCustomClasses(int index);
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface SpeechAdaptationOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.CustomClass custom_classes = 3;</code>
    */
   int getCustomClassesCount();
-
   /**
    *
    *
@@ -204,7 +194,6 @@ public interface SpeechAdaptationOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.CustomClassOrBuilder>
       getCustomClassesOrBuilderList();
-
   /**
    *
    *
@@ -233,7 +222,6 @@ public interface SpeechAdaptationOrBuilder
    * @return Whether the abnfGrammar field is set.
    */
   boolean hasAbnfGrammar();
-
   /**
    *
    *
@@ -248,7 +236,6 @@ public interface SpeechAdaptationOrBuilder
    * @return The abnfGrammar.
    */
   com.google.cloud.speech.v1p1beta1.SpeechAdaptation.ABNFGrammar getAbnfGrammar();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.CreateBackupVaultRequest)
     CreateBackupVaultRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBackupVaultRequest.newBuilder() to construct.
   private CreateBackupVaultRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupVaultId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
 
   public static final int BACKUP_VAULT_FIELD_NUMBER = 3;
   private com.google.cloud.netapp.v1.BackupVault backupVault_;
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
   public boolean hasBackupVault() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
         ? com.google.cloud.netapp.v1.BackupVault.getDefaultInstance()
         : backupVault_;
   }
-
   /**
    *
    *
@@ -427,7 +419,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object backupVaultId_ = "";
-
     /**
      *
      *
@@ -810,7 +795,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +846,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +900,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
             com.google.cloud.netapp.v1.BackupVault.Builder,
             com.google.cloud.netapp.v1.BackupVaultOrBuilder>
         backupVaultBuilder_;
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
     public boolean hasBackupVault() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -959,7 +938,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
         return backupVaultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -984,7 +962,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1012,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1033,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1049,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
       onChanged();
       return getBackupVaultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class CreateBackupVaultRequest extends com.google.protobuf.Generate
             : backupVault_;
       }
     }
-
     /**
      *
      *

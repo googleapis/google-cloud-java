@@ -35,7 +35,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.FlowImportStrategy)
     FlowImportStrategyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FlowImportStrategy.newBuilder() to construct.
   private FlowImportStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
 
   public static final int GLOBAL_IMPORT_STRATEGY_FIELD_NUMBER = 1;
   private int globalImportStrategy_ = 0;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
   public int getGlobalImportStrategyValue() {
     return globalImportStrategy_;
   }
-
   /**
    *
    *
@@ -281,7 +278,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -466,7 +462,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int globalImportStrategy_ = 0;
-
     /**
      *
      *
@@ -488,7 +483,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
     public int getGlobalImportStrategyValue() {
       return globalImportStrategy_;
     }
-
     /**
      *
      *
@@ -513,7 +507,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -539,7 +532,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.dialogflow.cx.v3beta1.ImportStrategy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -568,7 +560,6 @@ public final class FlowImportStrategy extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface BatchUpdateGenerativeQuestionConfigsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface BatchUpdateGenerativeQuestionConfigsRequestOrBuilder
    */
   java.util.List<com.google.cloud.retail.v2beta.UpdateGenerativeQuestionConfigRequest>
       getRequestsList();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface BatchUpdateGenerativeQuestionConfigsRequestOrBuilder
    * </code>
    */
   com.google.cloud.retail.v2beta.UpdateGenerativeQuestionConfigRequest getRequests(int index);
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface BatchUpdateGenerativeQuestionConfigsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface BatchUpdateGenerativeQuestionConfigsRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.retail.v2beta.UpdateGenerativeQuestionConfigRequestOrBuilder>
       getRequestsOrBuilderList();
-
   /**
    *
    *

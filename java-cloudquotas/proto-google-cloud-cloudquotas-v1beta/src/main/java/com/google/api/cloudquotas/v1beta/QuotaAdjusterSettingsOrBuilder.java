@@ -38,7 +38,6 @@ public interface QuotaAdjusterSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface QuotaAdjusterSettingsOrBuilder
    * @return The enum numeric value on the wire for enablement.
    */
   int getEnablementValue();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface QuotaAdjusterSettingsOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface QuotaAdjusterSettingsOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface QuotaAdjusterSettingsOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

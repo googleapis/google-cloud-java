@@ -36,7 +36,6 @@ public interface ConferenceSolutionOrBuilder
    * @return The onCreateFunction.
    */
   java.lang.String getOnCreateFunction();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ConferenceSolutionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ConferenceSolutionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ConferenceSolutionOrBuilder
    * @return The logoUrl.
    */
   java.lang.String getLogoUrl();
-
   /**
    *
    *

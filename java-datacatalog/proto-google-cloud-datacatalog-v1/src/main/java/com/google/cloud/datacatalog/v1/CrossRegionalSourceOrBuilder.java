@@ -38,7 +38,6 @@ public interface CrossRegionalSourceOrBuilder
    * @return The taxonomy.
    */
   java.lang.String getTaxonomy();
-
   /**
    *
    *

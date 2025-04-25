@@ -266,19 +266,6 @@ public final class SessionControllerGrpc {
     return SessionControllerStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static SessionControllerBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SessionControllerBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<SessionControllerBlockingV2Stub>() {
-          @java.lang.Override
-          public SessionControllerBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new SessionControllerBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return SessionControllerBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -506,93 +493,6 @@ public final class SessionControllerGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SessionController.
-   *
-   * <pre>
-   * The `SessionController` provides methods to manage interactive sessions.
-   * </pre>
-   */
-  public static final class SessionControllerBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<SessionControllerBlockingV2Stub> {
-    private SessionControllerBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected SessionControllerBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SessionControllerBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Create an interactive session asynchronously.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createSession(
-        com.google.cloud.dataproc.v1.CreateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateSessionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets the resource representation for an interactive session.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.Session getSession(
-        com.google.cloud.dataproc.v1.GetSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetSessionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists interactive sessions.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.ListSessionsResponse listSessions(
-        com.google.cloud.dataproc.v1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListSessionsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Terminates the interactive session.
-     * </pre>
-     */
-    public com.google.longrunning.Operation terminateSession(
-        com.google.cloud.dataproc.v1.TerminateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getTerminateSessionMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the interactive session resource. If the session is not in terminal
-     * state, it is terminated, and then deleted.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteSession(
-        com.google.cloud.dataproc.v1.DeleteSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service SessionController.
    *
    * <pre>
    * The `SessionController` provides methods to manage interactive sessions.

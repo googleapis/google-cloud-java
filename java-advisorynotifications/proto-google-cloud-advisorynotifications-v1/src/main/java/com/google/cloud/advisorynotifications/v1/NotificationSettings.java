@@ -33,7 +33,6 @@ public final class NotificationSettings extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.advisorynotifications.v1.NotificationSettings)
     NotificationSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationSettings.newBuilder() to construct.
   private NotificationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class NotificationSettings extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class NotificationSettings extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -427,7 +424,6 @@ public final class NotificationSettings extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -443,7 +439,6 @@ public final class NotificationSettings extends com.google.protobuf.GeneratedMes
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -463,7 +458,6 @@ public final class NotificationSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.CloudSpannerProperties)
     CloudSpannerPropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudSpannerProperties.newBuilder() to construct.
   private CloudSpannerProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   public static final int USE_PARALLELISM_FIELD_NUMBER = 2;
   private boolean useParallelism_ = false;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   public static final int MAX_PARALLELISM_FIELD_NUMBER = 5;
   private int maxParallelism_ = 0;
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   public static final int USE_SERVERLESS_ANALYTICS_FIELD_NUMBER = 3;
   private boolean useServerlessAnalytics_ = false;
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   public static final int USE_DATA_BOOST_FIELD_NUMBER = 6;
   private boolean useDataBoost_ = false;
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseRole_ = "";
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -484,7 +475,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -739,7 +729,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object database_ = "";
-
     /**
      *
      *
@@ -762,7 +751,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +773,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +811,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +835,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     }
 
     private boolean useParallelism_;
-
     /**
      *
      *
@@ -866,7 +850,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public boolean getUseParallelism() {
       return useParallelism_;
     }
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     }
 
     private int maxParallelism_;
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public int getMaxParallelism() {
       return maxParallelism_;
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +962,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     }
 
     private boolean useServerlessAnalytics_;
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public boolean getUseServerlessAnalytics() {
       return useServerlessAnalytics_;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     }
 
     private boolean useDataBoost_;
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     public boolean getUseDataBoost() {
       return useDataBoost_;
     }
-
     /**
      *
      *
@@ -1091,7 +1065,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1116,7 +1089,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object databaseRole_ = "";
-
     /**
      *
      *
@@ -1148,7 +1120,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1151,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1211,7 +1181,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1207,6 @@ public final class CloudSpannerProperties extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

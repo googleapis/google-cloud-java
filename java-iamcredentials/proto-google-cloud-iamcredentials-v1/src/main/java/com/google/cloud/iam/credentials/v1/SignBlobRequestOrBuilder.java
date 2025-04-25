@@ -41,7 +41,6 @@ public interface SignBlobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -81,7 +80,6 @@ public interface SignBlobRequestOrBuilder
    * @return A list containing the delegates.
    */
   java.util.List<java.lang.String> getDelegatesList();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface SignBlobRequestOrBuilder
    * @return The count of delegates.
    */
   int getDelegatesCount();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface SignBlobRequestOrBuilder
    * @return The delegates at the given index.
    */
   java.lang.String getDelegates(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ListBacktestResultsResponse)
     ListBacktestResultsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListBacktestResultsResponse.newBuilder() to construct.
   private ListBacktestResultsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.financialservices.v1.BacktestResult> backtestResults_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       getBacktestResultsList() {
     return backtestResults_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       getBacktestResultsOrBuilderList() {
     return backtestResults_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
   public int getBacktestResultsCount() {
     return backtestResults_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
   public com.google.cloud.financialservices.v1.BacktestResult getBacktestResults(int index) {
     return backtestResults_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -252,7 +241,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -457,7 +445,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -765,7 +752,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return backtestResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -782,7 +768,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return backtestResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return backtestResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +912,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +951,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +970,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +983,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         int index) {
       return getBacktestResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1026,7 +1000,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return backtestResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1017,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(backtestResults_);
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1031,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       return getBacktestResultsFieldBuilder()
           .addBuilder(com.google.cloud.financialservices.v1.BacktestResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
           .addBuilder(
               index, com.google.cloud.financialservices.v1.BacktestResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1111,7 +1081,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1136,7 +1105,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1129,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1152,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1171,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1240,7 +1205,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1256,7 +1220,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1271,7 +1234,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1287,7 +1249,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1303,7 +1264,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1327,7 +1287,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1309,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1328,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1346,6 @@ public final class ListBacktestResultsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

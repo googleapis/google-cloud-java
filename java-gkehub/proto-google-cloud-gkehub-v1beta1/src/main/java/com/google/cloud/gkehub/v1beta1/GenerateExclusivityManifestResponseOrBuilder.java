@@ -37,7 +37,6 @@ public interface GenerateExclusivityManifestResponseOrBuilder
    * @return The crdManifest.
    */
   java.lang.String getCrdManifest();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface GenerateExclusivityManifestResponseOrBuilder
    * @return The crManifest.
    */
   java.lang.String getCrManifest();
-
   /**
    *
    *

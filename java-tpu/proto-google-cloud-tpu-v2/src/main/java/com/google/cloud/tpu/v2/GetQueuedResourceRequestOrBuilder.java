@@ -38,7 +38,6 @@ public interface GetQueuedResourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

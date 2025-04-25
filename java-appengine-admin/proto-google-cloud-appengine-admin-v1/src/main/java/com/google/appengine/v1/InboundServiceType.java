@@ -133,7 +133,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_UNSPECIFIED = 0;</code>
    */
   public static final int INBOUND_SERVICE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -144,7 +143,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_MAIL = 1;</code>
    */
   public static final int INBOUND_SERVICE_MAIL_VALUE = 1;
-
   /**
    *
    *
@@ -155,7 +153,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_MAIL_BOUNCE = 2;</code>
    */
   public static final int INBOUND_SERVICE_MAIL_BOUNCE_VALUE = 2;
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_XMPP_ERROR = 3;</code>
    */
   public static final int INBOUND_SERVICE_XMPP_ERROR_VALUE = 3;
-
   /**
    *
    *
@@ -177,7 +173,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_XMPP_MESSAGE = 4;</code>
    */
   public static final int INBOUND_SERVICE_XMPP_MESSAGE_VALUE = 4;
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_XMPP_SUBSCRIBE = 5;</code>
    */
   public static final int INBOUND_SERVICE_XMPP_SUBSCRIBE_VALUE = 5;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_XMPP_PRESENCE = 6;</code>
    */
   public static final int INBOUND_SERVICE_XMPP_PRESENCE_VALUE = 6;
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public enum InboundServiceType implements com.google.protobuf.ProtocolMessageEnu
    * <code>INBOUND_SERVICE_CHANNEL_PRESENCE = 7;</code>
    */
   public static final int INBOUND_SERVICE_CHANNEL_PRESENCE_VALUE = 7;
-
   /**
    *
    *

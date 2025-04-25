@@ -176,19 +176,6 @@ public final class SolarGrpc {
     return SolarStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static SolarBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<SolarBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<SolarBlockingV2Stub>() {
-          @java.lang.Override
-          public SolarBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new SolarBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return SolarBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -356,67 +343,6 @@ public final class SolarGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Solar.
-   *
-   * <pre>
-   * Service definition for the Solar API.
-   * </pre>
-   */
-  public static final class SolarBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<SolarBlockingV2Stub> {
-    private SolarBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected SolarBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new SolarBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Locates the closest building to a query point. Returns an error with
-     * code `NOT_FOUND` if there are no buildings within approximately 50m of the
-     * query point.
-     * </pre>
-     */
-    public com.google.maps.solar.v1.BuildingInsights findClosestBuildingInsights(
-        com.google.maps.solar.v1.FindClosestBuildingInsightsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFindClosestBuildingInsightsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets solar information for a region surrounding a location.
-     * Returns an error with code `NOT_FOUND` if the location is outside
-     * the coverage area.
-     * </pre>
-     */
-    public com.google.maps.solar.v1.DataLayers getDataLayers(
-        com.google.maps.solar.v1.GetDataLayersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetDataLayersMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns an image by its ID.
-     * </pre>
-     */
-    public com.google.api.HttpBody getGeoTiff(com.google.maps.solar.v1.GetGeoTiffRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetGeoTiffMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service Solar.
    *
    * <pre>
    * Service definition for the Solar API.

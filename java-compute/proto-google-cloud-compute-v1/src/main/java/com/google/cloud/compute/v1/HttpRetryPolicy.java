@@ -33,7 +33,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HttpRetryPolicy)
     HttpRetryPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HttpRetryPolicy.newBuilder() to construct.
   private HttpRetryPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int NUM_RETRIES_FIELD_NUMBER = 251680141;
   private int numRetries_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   public boolean hasNumRetries() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
 
   public static final int PER_TRY_TIMEOUT_FIELD_NUMBER = 280041147;
   private com.google.cloud.compute.v1.Duration perTryTimeout_;
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   public boolean hasPerTryTimeout() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
         : perTryTimeout_;
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList retryConditions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getRetryConditionsList() {
     return retryConditions_;
   }
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   public int getRetryConditionsCount() {
     return retryConditions_.size();
   }
-
   /**
    *
    *
@@ -204,7 +195,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getRetryConditions(int index) {
     return retryConditions_.get(index);
   }
-
   /**
    *
    *
@@ -417,7 +407,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -652,7 +641,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int numRetries_;
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public boolean hasNumRetries() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public int getNumRetries() {
       return numRetries_;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.Duration.Builder,
             com.google.cloud.compute.v1.DurationOrBuilder>
         perTryTimeoutBuilder_;
-
     /**
      *
      *
@@ -744,7 +728,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public boolean hasPerTryTimeout() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -765,7 +748,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
         return perTryTimeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -788,7 +770,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +789,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +835,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +849,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPerTryTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -890,7 +867,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
             : perTryTimeout_;
       }
     }
-
     /**
      *
      *
@@ -926,7 +902,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -942,7 +917,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       retryConditions_.makeImmutable();
       return retryConditions_;
     }
-
     /**
      *
      *
@@ -957,7 +931,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public int getRetryConditionsCount() {
       return retryConditions_.size();
     }
-
     /**
      *
      *
@@ -973,7 +946,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getRetryConditions(int index) {
       return retryConditions_.get(index);
     }
-
     /**
      *
      *
@@ -989,7 +961,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getRetryConditionsBytes(int index) {
       return retryConditions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1013,7 +984,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1006,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1025,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1043,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

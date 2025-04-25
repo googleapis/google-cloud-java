@@ -39,7 +39,6 @@ public interface CreateAuthorizationPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateAuthorizationPolicyRequestOrBuilder
    * @return The authorizationPolicyId.
    */
   java.lang.String getAuthorizationPolicyId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface CreateAuthorizationPolicyRequestOrBuilder
    * @return Whether the authorizationPolicy field is set.
    */
   boolean hasAuthorizationPolicy();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateAuthorizationPolicyRequestOrBuilder
    * @return The authorizationPolicy.
    */
   com.google.cloud.networksecurity.v1.AuthorizationPolicy getAuthorizationPolicy();
-
   /**
    *
    *

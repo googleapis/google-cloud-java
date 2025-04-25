@@ -36,7 +36,6 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    * @return Whether the forceSuspend field is set.
    */
   boolean hasForceSuspend();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    * @return A list containing the instances.
    */
   java.util.List<java.lang.String> getInstancesList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    * @return The count of instances.
    */
   int getInstancesCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface RegionInstanceGroupManagersSuspendInstancesRequestOrBuilder
    * @return The instances at the given index.
    */
   java.lang.String getInstances(int index);
-
   /**
    *
    *

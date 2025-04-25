@@ -278,19 +278,6 @@ public final class GenAiTuningServiceGrpc {
     return GenAiTuningServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static GenAiTuningServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GenAiTuningServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<GenAiTuningServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public GenAiTuningServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new GenAiTuningServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return GenAiTuningServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -551,106 +538,6 @@ public final class GenAiTuningServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GenAiTuningService.
-   *
-   * <pre>
-   * A service for creating and managing GenAI Tuning Jobs.
-   * </pre>
-   */
-  public static final class GenAiTuningServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<GenAiTuningServiceBlockingV2Stub> {
-    private GenAiTuningServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected GenAiTuningServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new GenAiTuningServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a TuningJob. A created TuningJob right away will be attempted to
-     * be run.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.TuningJob createTuningJob(
-        com.google.cloud.aiplatform.v1beta1.CreateTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateTuningJobMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a TuningJob.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.TuningJob getTuningJob(
-        com.google.cloud.aiplatform.v1beta1.GetTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetTuningJobMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists TuningJobs in a Location.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.ListTuningJobsResponse listTuningJobs(
-        com.google.cloud.aiplatform.v1beta1.ListTuningJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListTuningJobsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Cancels a TuningJob.
-     * Starts asynchronous cancellation on the TuningJob. The server makes a best
-     * effort to cancel the job, but success is not guaranteed. Clients can use
-     * [GenAiTuningService.GetTuningJob][google.cloud.aiplatform.v1beta1.GenAiTuningService.GetTuningJob]
-     * or other methods to check whether the cancellation succeeded or whether the
-     * job completed despite cancellation. On successful cancellation, the
-     * TuningJob is not deleted; instead it becomes a job with a
-     * [TuningJob.error][google.cloud.aiplatform.v1beta1.TuningJob.error] value
-     * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
-     * to `Code.CANCELLED`, and
-     * [TuningJob.state][google.cloud.aiplatform.v1beta1.TuningJob.state] is set
-     * to `CANCELLED`.
-     * </pre>
-     */
-    public com.google.protobuf.Empty cancelTuningJob(
-        com.google.cloud.aiplatform.v1beta1.CancelTuningJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCancelTuningJobMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Rebase a TunedModel.
-     * Creates a LongRunningOperation that takes a legacy Tuned GenAI model
-     * Reference and creates a TuningJob based on newly available model.
-     * </pre>
-     */
-    public com.google.longrunning.Operation rebaseTunedModel(
-        com.google.cloud.aiplatform.v1beta1.RebaseTunedModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRebaseTunedModelMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service GenAiTuningService.
    *
    * <pre>
    * A service for creating and managing GenAI Tuning Jobs.

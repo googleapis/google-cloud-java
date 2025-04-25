@@ -34,7 +34,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.GetStageExecutionDetailsRequest)
     GetStageExecutionDetailsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetStageExecutionDetailsRequest.newBuilder() to construct.
   private GetStageExecutionDetailsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stageId_ = "";
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +355,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   public static final int START_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -383,7 +370,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -399,7 +385,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -416,7 +401,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
 
   public static final int END_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -432,7 +416,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -448,7 +431,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -696,7 +678,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1003,7 +984,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1026,7 +1006,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1028,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1049,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1066,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1090,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -1137,7 +1112,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1134,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1155,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1172,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1225,7 +1196,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1250,7 +1220,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1244,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1299,7 +1267,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1286,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1312,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object stageId_ = "";
-
     /**
      *
      *
@@ -1369,7 +1334,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1392,7 +1356,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1414,7 +1377,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1394,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1457,7 +1418,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1475,7 +1435,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1497,7 +1456,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1477,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1544,7 +1501,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1569,7 +1525,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1593,7 +1548,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1613,7 +1567,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1598,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1660,7 +1612,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1679,7 +1630,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1702,7 +1652,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1671,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1698,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1717,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1785,7 +1731,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1802,7 +1747,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1835,7 +1779,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1850,7 +1793,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1869,7 +1811,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1892,7 +1833,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1912,7 +1852,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1940,7 +1879,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -1960,7 +1898,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1975,7 +1912,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1992,7 +1928,6 @@ public final class GetStageExecutionDetailsRequest extends com.google.protobuf.G
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

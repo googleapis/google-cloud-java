@@ -35,7 +35,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.CloudDlpInspection)
     CloudDlpInspectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudDlpInspection.newBuilder() to construct.
   private CloudDlpInspection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inspectJob_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object infoType_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
 
   public static final int INFO_TYPE_COUNT_FIELD_NUMBER = 3;
   private long infoTypeCount_ = 0L;
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
 
   public static final int FULL_SCAN_FIELD_NUMBER = 4;
   private boolean fullScan_ = false;
-
   /**
    *
    *
@@ -405,7 +398,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -633,7 +625,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object inspectJob_ = "";
-
     /**
      *
      *
@@ -657,7 +648,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object infoType_ = "";
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +852,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     }
 
     private long infoTypeCount_;
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     public long getInfoTypeCount() {
       return infoTypeCount_;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean fullScan_;
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
     public boolean getFullScan() {
       return fullScan_;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class CloudDlpInspection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

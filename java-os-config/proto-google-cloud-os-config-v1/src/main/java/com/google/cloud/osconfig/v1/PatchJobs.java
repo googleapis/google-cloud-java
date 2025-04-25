@@ -47,7 +47,6 @@ public final class PatchJobs {
      * @return The parent.
      */
     java.lang.String getParent();
-
     /**
      *
      *
@@ -76,7 +75,6 @@ public final class PatchJobs {
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -106,7 +104,6 @@ public final class PatchJobs {
      * @return Whether the instanceFilter field is set.
      */
     boolean hasInstanceFilter();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class PatchJobs {
      * @return The instanceFilter.
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter getInstanceFilter();
-
     /**
      *
      *
@@ -151,7 +147,6 @@ public final class PatchJobs {
      * @return Whether the patchConfig field is set.
      */
     boolean hasPatchConfig();
-
     /**
      *
      *
@@ -165,7 +160,6 @@ public final class PatchJobs {
      * @return The patchConfig.
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchConfig getPatchConfig();
-
     /**
      *
      *
@@ -191,7 +185,6 @@ public final class PatchJobs {
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
-
     /**
      *
      *
@@ -205,7 +198,6 @@ public final class PatchJobs {
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
-
     /**
      *
      *
@@ -244,7 +236,6 @@ public final class PatchJobs {
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -270,7 +261,6 @@ public final class PatchJobs {
      * @return Whether the rollout field is set.
      */
     boolean hasRollout();
-
     /**
      *
      *
@@ -283,7 +273,6 @@ public final class PatchJobs {
      * @return The rollout.
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchRollout getRollout();
-
     /**
      *
      *
@@ -295,7 +284,6 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder();
   }
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ExecutePatchJobRequest)
       ExecutePatchJobRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExecutePatchJobRequest.newBuilder() to construct.
     private ExecutePatchJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -349,7 +336,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -375,7 +361,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -406,7 +391,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -431,7 +415,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -459,7 +442,6 @@ public final class PatchJobs {
 
     public static final int INSTANCE_FILTER_FIELD_NUMBER = 7;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter instanceFilter_;
-
     /**
      *
      *
@@ -478,7 +460,6 @@ public final class PatchJobs {
     public boolean hasInstanceFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -499,7 +480,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.getDefaultInstance()
           : instanceFilter_;
     }
-
     /**
      *
      *
@@ -522,7 +502,6 @@ public final class PatchJobs {
 
     public static final int PATCH_CONFIG_FIELD_NUMBER = 4;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchConfig patchConfig_;
-
     /**
      *
      *
@@ -539,7 +518,6 @@ public final class PatchJobs {
     public boolean hasPatchConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -558,7 +536,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.getDefaultInstance()
           : patchConfig_;
     }
-
     /**
      *
      *
@@ -578,7 +555,6 @@ public final class PatchJobs {
 
     public static final int DURATION_FIELD_NUMBER = 5;
     private com.google.protobuf.Duration duration_;
-
     /**
      *
      *
@@ -595,7 +571,6 @@ public final class PatchJobs {
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -612,7 +587,6 @@ public final class PatchJobs {
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
-
     /**
      *
      *
@@ -630,7 +604,6 @@ public final class PatchJobs {
 
     public static final int DRY_RUN_FIELD_NUMBER = 6;
     private boolean dryRun_ = false;
-
     /**
      *
      *
@@ -652,7 +625,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -676,7 +648,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -703,7 +674,6 @@ public final class PatchJobs {
 
     public static final int ROLLOUT_FIELD_NUMBER = 9;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchRollout rollout_;
-
     /**
      *
      *
@@ -719,7 +689,6 @@ public final class PatchJobs {
     public boolean hasRollout() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -737,7 +706,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.getDefaultInstance()
           : rollout_;
     }
-
     /**
      *
      *
@@ -998,7 +966,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1323,7 +1290,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
-
       /**
        *
        *
@@ -1348,7 +1314,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1373,7 +1338,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1397,7 +1361,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1417,7 +1380,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1444,7 +1406,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -1468,7 +1429,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1492,7 +1452,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1515,7 +1474,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1534,7 +1492,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1565,7 +1522,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilterOrBuilder>
           instanceFilterBuilder_;
-
       /**
        *
        *
@@ -1583,7 +1539,6 @@ public final class PatchJobs {
       public boolean hasInstanceFilter() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1607,7 +1562,6 @@ public final class PatchJobs {
           return instanceFilterBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1634,7 +1588,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1658,7 +1611,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1692,7 +1644,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -1715,7 +1666,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1734,7 +1684,6 @@ public final class PatchJobs {
         onChanged();
         return getInstanceFilterFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1757,7 +1706,6 @@ public final class PatchJobs {
               : instanceFilter_;
         }
       }
-
       /**
        *
        *
@@ -1793,7 +1741,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchConfigOrBuilder>
           patchConfigBuilder_;
-
       /**
        *
        *
@@ -1809,7 +1756,6 @@ public final class PatchJobs {
       public boolean hasPatchConfig() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1831,7 +1777,6 @@ public final class PatchJobs {
           return patchConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1855,7 +1800,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1877,7 +1821,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1907,7 +1850,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -1928,7 +1870,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1944,7 +1885,6 @@ public final class PatchJobs {
         onChanged();
         return getPatchConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1964,7 +1904,6 @@ public final class PatchJobs {
               : patchConfig_;
         }
       }
-
       /**
        *
        *
@@ -1998,7 +1937,6 @@ public final class PatchJobs {
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           durationBuilder_;
-
       /**
        *
        *
@@ -2014,7 +1952,6 @@ public final class PatchJobs {
       public boolean hasDuration() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -2034,7 +1971,6 @@ public final class PatchJobs {
           return durationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2058,7 +1994,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2079,7 +2014,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2108,7 +2042,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -2129,7 +2062,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2145,7 +2077,6 @@ public final class PatchJobs {
         onChanged();
         return getDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2163,7 +2094,6 @@ public final class PatchJobs {
           return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
         }
       }
-
       /**
        *
        *
@@ -2192,7 +2122,6 @@ public final class PatchJobs {
       }
 
       private boolean dryRun_;
-
       /**
        *
        *
@@ -2209,7 +2138,6 @@ public final class PatchJobs {
       public boolean getDryRun() {
         return dryRun_;
       }
-
       /**
        *
        *
@@ -2230,7 +2158,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2251,7 +2178,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -2274,7 +2200,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2297,7 +2222,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2319,7 +2243,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2337,7 +2260,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2367,7 +2289,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder>
           rolloutBuilder_;
-
       /**
        *
        *
@@ -2382,7 +2303,6 @@ public final class PatchJobs {
       public boolean hasRollout() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -2403,7 +2323,6 @@ public final class PatchJobs {
           return rolloutBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2426,7 +2345,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2447,7 +2365,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2476,7 +2393,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -2496,7 +2412,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2511,7 +2426,6 @@ public final class PatchJobs {
         onChanged();
         return getRolloutFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2530,7 +2444,6 @@ public final class PatchJobs {
               : rollout_;
         }
       }
-
       /**
        *
        *
@@ -2643,7 +2556,6 @@ public final class PatchJobs {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -2659,7 +2571,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -2674,7 +2585,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.GetPatchJobRequest)
       GetPatchJobRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GetPatchJobRequest.newBuilder() to construct.
     private GetPatchJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2709,7 +2619,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2735,7 +2644,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -2923,7 +2831,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3111,7 +3018,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -3136,7 +3042,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3161,7 +3066,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3185,7 +3089,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3205,7 +3108,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3315,7 +3217,6 @@ public final class PatchJobs {
      * @return The parent.
      */
     java.lang.String getParent();
-
     /**
      *
      *
@@ -3358,7 +3259,6 @@ public final class PatchJobs {
      * @return The pageToken.
      */
     java.lang.String getPageToken();
-
     /**
      *
      *
@@ -3387,7 +3287,6 @@ public final class PatchJobs {
      * @return The filter.
      */
     java.lang.String getFilter();
-
     /**
      *
      *
@@ -3403,7 +3302,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
-
   /**
    *
    *
@@ -3419,7 +3317,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ListPatchJobInstanceDetailsRequest)
       ListPatchJobInstanceDetailsRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListPatchJobInstanceDetailsRequest.newBuilder() to construct.
     private ListPatchJobInstanceDetailsRequest(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3458,7 +3355,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -3485,7 +3381,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -3515,7 +3410,6 @@ public final class PatchJobs {
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 2;
     private int pageSize_ = 0;
-
     /**
      *
      *
@@ -3536,7 +3430,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -3561,7 +3454,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -3591,7 +3483,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -3617,7 +3508,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -3839,7 +3729,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4081,7 +3970,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
-
       /**
        *
        *
@@ -4107,7 +3995,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4133,7 +4020,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4158,7 +4044,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4179,7 +4064,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4207,7 +4091,6 @@ public final class PatchJobs {
       }
 
       private int pageSize_;
-
       /**
        *
        *
@@ -4223,7 +4106,6 @@ public final class PatchJobs {
       public int getPageSize() {
         return pageSize_;
       }
-
       /**
        *
        *
@@ -4243,7 +4125,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4263,7 +4144,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object pageToken_ = "";
-
       /**
        *
        *
@@ -4287,7 +4167,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4311,7 +4190,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4334,7 +4212,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4353,7 +4230,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4379,7 +4255,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -4404,7 +4279,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4429,7 +4303,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4453,7 +4326,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4473,7 +4345,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4585,7 +4456,6 @@ public final class PatchJobs {
      */
     java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails>
         getPatchJobInstanceDetailsList();
-
     /**
      *
      *
@@ -4599,7 +4469,6 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails getPatchJobInstanceDetails(
         int index);
-
     /**
      *
      *
@@ -4612,7 +4481,6 @@ public final class PatchJobs {
      * </code>
      */
     int getPatchJobInstanceDetailsCount();
-
     /**
      *
      *
@@ -4627,7 +4495,6 @@ public final class PatchJobs {
     java.util.List<
             ? extends com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetailsOrBuilder>
         getPatchJobInstanceDetailsOrBuilderList();
-
     /**
      *
      *
@@ -4654,7 +4521,6 @@ public final class PatchJobs {
      * @return The nextPageToken.
      */
     java.lang.String getNextPageToken();
-
     /**
      *
      *
@@ -4668,7 +4534,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getNextPageTokenBytes();
   }
-
   /**
    *
    *
@@ -4684,7 +4549,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ListPatchJobInstanceDetailsResponse)
       ListPatchJobInstanceDetailsResponseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListPatchJobInstanceDetailsResponse.newBuilder() to construct.
     private ListPatchJobInstanceDetailsResponse(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -4723,7 +4587,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails>
         patchJobInstanceDetails_;
-
     /**
      *
      *
@@ -4740,7 +4603,6 @@ public final class PatchJobs {
         getPatchJobInstanceDetailsList() {
       return patchJobInstanceDetails_;
     }
-
     /**
      *
      *
@@ -4758,7 +4620,6 @@ public final class PatchJobs {
         getPatchJobInstanceDetailsOrBuilderList() {
       return patchJobInstanceDetails_;
     }
-
     /**
      *
      *
@@ -4774,7 +4635,6 @@ public final class PatchJobs {
     public int getPatchJobInstanceDetailsCount() {
       return patchJobInstanceDetails_.size();
     }
-
     /**
      *
      *
@@ -4791,7 +4651,6 @@ public final class PatchJobs {
         getPatchJobInstanceDetails(int index) {
       return patchJobInstanceDetails_.get(index);
     }
-
     /**
      *
      *
@@ -4813,7 +4672,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -4837,7 +4695,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -5044,7 +4901,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5343,7 +5199,6 @@ public final class PatchJobs {
           return patchJobInstanceDetailsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -5362,7 +5217,6 @@ public final class PatchJobs {
           return patchJobInstanceDetailsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -5382,7 +5236,6 @@ public final class PatchJobs {
           return patchJobInstanceDetailsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -5408,7 +5261,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5432,7 +5284,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5458,7 +5309,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5484,7 +5334,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5507,7 +5356,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5531,7 +5379,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5556,7 +5403,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5578,7 +5424,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5600,7 +5445,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -5616,7 +5460,6 @@ public final class PatchJobs {
           getPatchJobInstanceDetailsBuilder(int index) {
         return getPatchJobInstanceDetailsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -5636,7 +5479,6 @@ public final class PatchJobs {
           return patchJobInstanceDetailsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -5657,7 +5499,6 @@ public final class PatchJobs {
           return java.util.Collections.unmodifiableList(patchJobInstanceDetails_);
         }
       }
-
       /**
        *
        *
@@ -5676,7 +5517,6 @@ public final class PatchJobs {
                 com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5696,7 +5536,6 @@ public final class PatchJobs {
                 com.google.cloud.osconfig.v1.PatchJobs.PatchJobInstanceDetails
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5734,7 +5573,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object nextPageToken_ = "";
-
       /**
        *
        *
@@ -5757,7 +5595,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5780,7 +5617,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5802,7 +5638,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5820,7 +5655,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5929,7 +5763,6 @@ public final class PatchJobs {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -5956,7 +5789,6 @@ public final class PatchJobs {
      * @return The instanceSystemId.
      */
     java.lang.String getInstanceSystemId();
-
     /**
      *
      *
@@ -5983,7 +5815,6 @@ public final class PatchJobs {
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
-
     /**
      *
      *
@@ -6009,7 +5840,6 @@ public final class PatchJobs {
      * @return The failureReason.
      */
     java.lang.String getFailureReason();
-
     /**
      *
      *
@@ -6036,7 +5866,6 @@ public final class PatchJobs {
      */
     long getAttemptCount();
   }
-
   /**
    *
    *
@@ -6054,7 +5883,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchJobInstanceDetails)
       PatchJobInstanceDetailsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PatchJobInstanceDetails.newBuilder() to construct.
     private PatchJobInstanceDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6092,7 +5920,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -6116,7 +5943,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -6145,7 +5971,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object instanceSystemId_ = "";
-
     /**
      *
      *
@@ -6170,7 +5995,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -6198,7 +6022,6 @@ public final class PatchJobs {
 
     public static final int STATE_FIELD_NUMBER = 3;
     private int state_ = 0;
-
     /**
      *
      *
@@ -6214,7 +6037,6 @@ public final class PatchJobs {
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -6239,7 +6061,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object failureReason_ = "";
-
     /**
      *
      *
@@ -6263,7 +6084,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -6290,7 +6110,6 @@ public final class PatchJobs {
 
     public static final int ATTEMPT_COUNT_FIELD_NUMBER = 5;
     private long attemptCount_ = 0L;
-
     /**
      *
      *
@@ -6508,7 +6327,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6759,7 +6577,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -6782,7 +6599,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6805,7 +6621,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6827,7 +6642,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6845,7 +6659,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6870,7 +6683,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object instanceSystemId_ = "";
-
       /**
        *
        *
@@ -6894,7 +6706,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -6918,7 +6729,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -6941,7 +6751,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6960,7 +6769,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6986,7 +6794,6 @@ public final class PatchJobs {
       }
 
       private int state_ = 0;
-
       /**
        *
        *
@@ -7002,7 +6809,6 @@ public final class PatchJobs {
       public int getStateValue() {
         return state_;
       }
-
       /**
        *
        *
@@ -7021,7 +6827,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7041,7 +6846,6 @@ public final class PatchJobs {
             ? com.google.cloud.osconfig.v1.PatchJobs.Instance.PatchState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7063,7 +6867,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7083,7 +6886,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object failureReason_ = "";
-
       /**
        *
        *
@@ -7106,7 +6908,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7129,7 +6930,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7151,7 +6951,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7169,7 +6968,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7194,7 +6992,6 @@ public final class PatchJobs {
       }
 
       private long attemptCount_;
-
       /**
        *
        *
@@ -7210,7 +7007,6 @@ public final class PatchJobs {
       public long getAttemptCount() {
         return attemptCount_;
       }
-
       /**
        *
        *
@@ -7230,7 +7026,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7335,7 +7130,6 @@ public final class PatchJobs {
      * @return The parent.
      */
     java.lang.String getParent();
-
     /**
      *
      *
@@ -7377,7 +7171,6 @@ public final class PatchJobs {
      * @return The pageToken.
      */
     java.lang.String getPageToken();
-
     /**
      *
      *
@@ -7406,7 +7199,6 @@ public final class PatchJobs {
      * @return The filter.
      */
     java.lang.String getFilter();
-
     /**
      *
      *
@@ -7422,7 +7214,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getFilterBytes();
   }
-
   /**
    *
    *
@@ -7437,7 +7228,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ListPatchJobsRequest)
       ListPatchJobsRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListPatchJobsRequest.newBuilder() to construct.
     private ListPatchJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7474,7 +7264,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -7500,7 +7289,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -7529,7 +7317,6 @@ public final class PatchJobs {
 
     public static final int PAGE_SIZE_FIELD_NUMBER = 2;
     private int pageSize_ = 0;
-
     /**
      *
      *
@@ -7550,7 +7337,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -7575,7 +7361,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -7605,7 +7390,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -7631,7 +7415,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -7846,7 +7629,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -8080,7 +7862,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
-
       /**
        *
        *
@@ -8105,7 +7886,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8130,7 +7910,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8154,7 +7933,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8174,7 +7952,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8201,7 +7978,6 @@ public final class PatchJobs {
       }
 
       private int pageSize_;
-
       /**
        *
        *
@@ -8217,7 +7993,6 @@ public final class PatchJobs {
       public int getPageSize() {
         return pageSize_;
       }
-
       /**
        *
        *
@@ -8237,7 +8012,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8257,7 +8031,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object pageToken_ = "";
-
       /**
        *
        *
@@ -8281,7 +8054,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8305,7 +8077,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8328,7 +8099,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8347,7 +8117,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8373,7 +8142,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object filter_ = "";
-
       /**
        *
        *
@@ -8398,7 +8166,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -8423,7 +8190,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -8447,7 +8213,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8467,7 +8232,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -8573,7 +8337,6 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
     java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJob> getPatchJobsList();
-
     /**
      *
      *
@@ -8584,7 +8347,6 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchJob getPatchJobs(int index);
-
     /**
      *
      *
@@ -8595,7 +8357,6 @@ public final class PatchJobs {
      * <code>repeated .google.cloud.osconfig.v1.PatchJob patch_jobs = 1;</code>
      */
     int getPatchJobsCount();
-
     /**
      *
      *
@@ -8607,7 +8368,6 @@ public final class PatchJobs {
      */
     java.util.List<? extends com.google.cloud.osconfig.v1.PatchJobs.PatchJobOrBuilder>
         getPatchJobsOrBuilderList();
-
     /**
      *
      *
@@ -8631,7 +8391,6 @@ public final class PatchJobs {
      * @return The nextPageToken.
      */
     java.lang.String getNextPageToken();
-
     /**
      *
      *
@@ -8645,7 +8404,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getNextPageTokenBytes();
   }
-
   /**
    *
    *
@@ -8660,7 +8418,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ListPatchJobsResponse)
       ListPatchJobsResponseOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ListPatchJobsResponse.newBuilder() to construct.
     private ListPatchJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8696,7 +8453,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJob> patchJobs_;
-
     /**
      *
      *
@@ -8710,7 +8466,6 @@ public final class PatchJobs {
     public java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchJob> getPatchJobsList() {
       return patchJobs_;
     }
-
     /**
      *
      *
@@ -8725,7 +8480,6 @@ public final class PatchJobs {
         getPatchJobsOrBuilderList() {
       return patchJobs_;
     }
-
     /**
      *
      *
@@ -8739,7 +8493,6 @@ public final class PatchJobs {
     public int getPatchJobsCount() {
       return patchJobs_.size();
     }
-
     /**
      *
      *
@@ -8753,7 +8506,6 @@ public final class PatchJobs {
     public com.google.cloud.osconfig.v1.PatchJobs.PatchJob getPatchJobs(int index) {
       return patchJobs_.get(index);
     }
-
     /**
      *
      *
@@ -8773,7 +8525,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -8797,7 +8548,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -8994,7 +8744,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -9279,7 +9028,6 @@ public final class PatchJobs {
           return patchJobsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -9296,7 +9044,6 @@ public final class PatchJobs {
           return patchJobsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -9313,7 +9060,6 @@ public final class PatchJobs {
           return patchJobsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -9337,7 +9083,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9358,7 +9103,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9381,7 +9125,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9405,7 +9148,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9426,7 +9168,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9447,7 +9188,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9468,7 +9208,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9488,7 +9227,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9508,7 +9246,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -9522,7 +9259,6 @@ public final class PatchJobs {
           int index) {
         return getPatchJobsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -9540,7 +9276,6 @@ public final class PatchJobs {
           return patchJobsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -9558,7 +9293,6 @@ public final class PatchJobs {
           return java.util.Collections.unmodifiableList(patchJobs_);
         }
       }
-
       /**
        *
        *
@@ -9572,7 +9306,6 @@ public final class PatchJobs {
         return getPatchJobsFieldBuilder()
             .addBuilder(com.google.cloud.osconfig.v1.PatchJobs.PatchJob.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -9588,7 +9321,6 @@ public final class PatchJobs {
             .addBuilder(
                 index, com.google.cloud.osconfig.v1.PatchJobs.PatchJob.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -9621,7 +9353,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object nextPageToken_ = "";
-
       /**
        *
        *
@@ -9644,7 +9375,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -9667,7 +9397,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -9689,7 +9418,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9707,7 +9435,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -9816,7 +9543,6 @@ public final class PatchJobs {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -9843,7 +9569,6 @@ public final class PatchJobs {
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -9870,7 +9595,6 @@ public final class PatchJobs {
      * @return The description.
      */
     java.lang.String getDescription();
-
     /**
      *
      *
@@ -9897,7 +9621,6 @@ public final class PatchJobs {
      * @return Whether the createTime field is set.
      */
     boolean hasCreateTime();
-
     /**
      *
      *
@@ -9910,7 +9633,6 @@ public final class PatchJobs {
      * @return The createTime.
      */
     com.google.protobuf.Timestamp getCreateTime();
-
     /**
      *
      *
@@ -9934,7 +9656,6 @@ public final class PatchJobs {
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
-
     /**
      *
      *
@@ -9947,7 +9668,6 @@ public final class PatchJobs {
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
-
     /**
      *
      *
@@ -9971,7 +9691,6 @@ public final class PatchJobs {
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
-
     /**
      *
      *
@@ -9997,7 +9716,6 @@ public final class PatchJobs {
      * @return Whether the instanceFilter field is set.
      */
     boolean hasInstanceFilter();
-
     /**
      *
      *
@@ -10010,7 +9728,6 @@ public final class PatchJobs {
      * @return The instanceFilter.
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter getInstanceFilter();
-
     /**
      *
      *
@@ -10035,7 +9752,6 @@ public final class PatchJobs {
      * @return Whether the patchConfig field is set.
      */
     boolean hasPatchConfig();
-
     /**
      *
      *
@@ -10048,7 +9764,6 @@ public final class PatchJobs {
      * @return The patchConfig.
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchConfig getPatchConfig();
-
     /**
      *
      *
@@ -10073,7 +9788,6 @@ public final class PatchJobs {
      * @return Whether the duration field is set.
      */
     boolean hasDuration();
-
     /**
      *
      *
@@ -10087,7 +9801,6 @@ public final class PatchJobs {
      * @return The duration.
      */
     com.google.protobuf.Duration getDuration();
-
     /**
      *
      *
@@ -10113,7 +9826,6 @@ public final class PatchJobs {
      * @return Whether the instanceDetailsSummary field is set.
      */
     boolean hasInstanceDetailsSummary();
-
     /**
      *
      *
@@ -10128,7 +9840,6 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchJob.InstanceDetailsSummary
         getInstanceDetailsSummary();
-
     /**
      *
      *
@@ -10169,7 +9880,6 @@ public final class PatchJobs {
      * @return The errorMessage.
      */
     java.lang.String getErrorMessage();
-
     /**
      *
      *
@@ -10212,7 +9922,6 @@ public final class PatchJobs {
      * @return The patchDeployment.
      */
     java.lang.String getPatchDeployment();
-
     /**
      *
      *
@@ -10240,7 +9949,6 @@ public final class PatchJobs {
      * @return Whether the rollout field is set.
      */
     boolean hasRollout();
-
     /**
      *
      *
@@ -10253,7 +9961,6 @@ public final class PatchJobs {
      * @return The rollout.
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchRollout getRollout();
-
     /**
      *
      *
@@ -10265,7 +9972,6 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder getRolloutOrBuilder();
   }
-
   /**
    *
    *
@@ -10288,7 +9994,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchJob)
       PatchJobOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PatchJob.newBuilder() to construct.
     private PatchJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10428,7 +10133,6 @@ public final class PatchJobs {
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -10439,7 +10143,6 @@ public final class PatchJobs {
        * <code>STARTED = 1;</code>
        */
       public static final int STARTED_VALUE = 1;
-
       /**
        *
        *
@@ -10450,7 +10153,6 @@ public final class PatchJobs {
        * <code>INSTANCE_LOOKUP = 2;</code>
        */
       public static final int INSTANCE_LOOKUP_VALUE = 2;
-
       /**
        *
        *
@@ -10461,7 +10163,6 @@ public final class PatchJobs {
        * <code>PATCHING = 3;</code>
        */
       public static final int PATCHING_VALUE = 3;
-
       /**
        *
        *
@@ -10472,7 +10173,6 @@ public final class PatchJobs {
        * <code>SUCCEEDED = 4;</code>
        */
       public static final int SUCCEEDED_VALUE = 4;
-
       /**
        *
        *
@@ -10483,7 +10183,6 @@ public final class PatchJobs {
        * <code>COMPLETED_WITH_ERRORS = 5;</code>
        */
       public static final int COMPLETED_WITH_ERRORS_VALUE = 5;
-
       /**
        *
        *
@@ -10494,7 +10193,6 @@ public final class PatchJobs {
        * <code>CANCELED = 6;</code>
        */
       public static final int CANCELED_VALUE = 6;
-
       /**
        *
        *
@@ -10803,7 +10501,6 @@ public final class PatchJobs {
        */
       long getNoAgentDetectedInstanceCount();
     }
-
     /**
      *
      *
@@ -10821,7 +10518,6 @@ public final class PatchJobs {
         // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchJob.InstanceDetailsSummary)
         InstanceDetailsSummaryOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use InstanceDetailsSummary.newBuilder() to construct.
       private InstanceDetailsSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -10853,7 +10549,6 @@ public final class PatchJobs {
 
       public static final int PENDING_INSTANCE_COUNT_FIELD_NUMBER = 1;
       private long pendingInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10872,7 +10567,6 @@ public final class PatchJobs {
 
       public static final int INACTIVE_INSTANCE_COUNT_FIELD_NUMBER = 2;
       private long inactiveInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10891,7 +10585,6 @@ public final class PatchJobs {
 
       public static final int NOTIFIED_INSTANCE_COUNT_FIELD_NUMBER = 3;
       private long notifiedInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10910,7 +10603,6 @@ public final class PatchJobs {
 
       public static final int STARTED_INSTANCE_COUNT_FIELD_NUMBER = 4;
       private long startedInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10929,7 +10621,6 @@ public final class PatchJobs {
 
       public static final int DOWNLOADING_PATCHES_INSTANCE_COUNT_FIELD_NUMBER = 5;
       private long downloadingPatchesInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10948,7 +10639,6 @@ public final class PatchJobs {
 
       public static final int APPLYING_PATCHES_INSTANCE_COUNT_FIELD_NUMBER = 6;
       private long applyingPatchesInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10967,7 +10657,6 @@ public final class PatchJobs {
 
       public static final int REBOOTING_INSTANCE_COUNT_FIELD_NUMBER = 7;
       private long rebootingInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -10986,7 +10675,6 @@ public final class PatchJobs {
 
       public static final int SUCCEEDED_INSTANCE_COUNT_FIELD_NUMBER = 8;
       private long succeededInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11005,7 +10693,6 @@ public final class PatchJobs {
 
       public static final int SUCCEEDED_REBOOT_REQUIRED_INSTANCE_COUNT_FIELD_NUMBER = 9;
       private long succeededRebootRequiredInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11024,7 +10711,6 @@ public final class PatchJobs {
 
       public static final int FAILED_INSTANCE_COUNT_FIELD_NUMBER = 10;
       private long failedInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11043,7 +10729,6 @@ public final class PatchJobs {
 
       public static final int ACKED_INSTANCE_COUNT_FIELD_NUMBER = 11;
       private long ackedInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11062,7 +10747,6 @@ public final class PatchJobs {
 
       public static final int TIMED_OUT_INSTANCE_COUNT_FIELD_NUMBER = 12;
       private long timedOutInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11081,7 +10765,6 @@ public final class PatchJobs {
 
       public static final int PRE_PATCH_STEP_INSTANCE_COUNT_FIELD_NUMBER = 13;
       private long prePatchStepInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11100,7 +10783,6 @@ public final class PatchJobs {
 
       public static final int POST_PATCH_STEP_INSTANCE_COUNT_FIELD_NUMBER = 14;
       private long postPatchStepInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11119,7 +10801,6 @@ public final class PatchJobs {
 
       public static final int NO_AGENT_DETECTED_INSTANCE_COUNT_FIELD_NUMBER = 15;
       private long noAgentDetectedInstanceCount_ = 0L;
-
       /**
        *
        *
@@ -11459,7 +11140,6 @@ public final class PatchJobs {
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -11842,7 +11522,6 @@ public final class PatchJobs {
         private int bitField0_;
 
         private long pendingInstanceCount_;
-
         /**
          *
          *
@@ -11858,7 +11537,6 @@ public final class PatchJobs {
         public long getPendingInstanceCount() {
           return pendingInstanceCount_;
         }
-
         /**
          *
          *
@@ -11878,7 +11556,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -11898,7 +11575,6 @@ public final class PatchJobs {
         }
 
         private long inactiveInstanceCount_;
-
         /**
          *
          *
@@ -11914,7 +11590,6 @@ public final class PatchJobs {
         public long getInactiveInstanceCount() {
           return inactiveInstanceCount_;
         }
-
         /**
          *
          *
@@ -11934,7 +11609,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -11954,7 +11628,6 @@ public final class PatchJobs {
         }
 
         private long notifiedInstanceCount_;
-
         /**
          *
          *
@@ -11970,7 +11643,6 @@ public final class PatchJobs {
         public long getNotifiedInstanceCount() {
           return notifiedInstanceCount_;
         }
-
         /**
          *
          *
@@ -11990,7 +11662,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12010,7 +11681,6 @@ public final class PatchJobs {
         }
 
         private long startedInstanceCount_;
-
         /**
          *
          *
@@ -12026,7 +11696,6 @@ public final class PatchJobs {
         public long getStartedInstanceCount() {
           return startedInstanceCount_;
         }
-
         /**
          *
          *
@@ -12046,7 +11715,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12066,7 +11734,6 @@ public final class PatchJobs {
         }
 
         private long downloadingPatchesInstanceCount_;
-
         /**
          *
          *
@@ -12082,7 +11749,6 @@ public final class PatchJobs {
         public long getDownloadingPatchesInstanceCount() {
           return downloadingPatchesInstanceCount_;
         }
-
         /**
          *
          *
@@ -12102,7 +11768,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12122,7 +11787,6 @@ public final class PatchJobs {
         }
 
         private long applyingPatchesInstanceCount_;
-
         /**
          *
          *
@@ -12138,7 +11802,6 @@ public final class PatchJobs {
         public long getApplyingPatchesInstanceCount() {
           return applyingPatchesInstanceCount_;
         }
-
         /**
          *
          *
@@ -12158,7 +11821,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12178,7 +11840,6 @@ public final class PatchJobs {
         }
 
         private long rebootingInstanceCount_;
-
         /**
          *
          *
@@ -12194,7 +11855,6 @@ public final class PatchJobs {
         public long getRebootingInstanceCount() {
           return rebootingInstanceCount_;
         }
-
         /**
          *
          *
@@ -12214,7 +11874,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12234,7 +11893,6 @@ public final class PatchJobs {
         }
 
         private long succeededInstanceCount_;
-
         /**
          *
          *
@@ -12250,7 +11908,6 @@ public final class PatchJobs {
         public long getSucceededInstanceCount() {
           return succeededInstanceCount_;
         }
-
         /**
          *
          *
@@ -12270,7 +11927,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12290,7 +11946,6 @@ public final class PatchJobs {
         }
 
         private long succeededRebootRequiredInstanceCount_;
-
         /**
          *
          *
@@ -12306,7 +11961,6 @@ public final class PatchJobs {
         public long getSucceededRebootRequiredInstanceCount() {
           return succeededRebootRequiredInstanceCount_;
         }
-
         /**
          *
          *
@@ -12326,7 +11980,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12346,7 +11999,6 @@ public final class PatchJobs {
         }
 
         private long failedInstanceCount_;
-
         /**
          *
          *
@@ -12362,7 +12014,6 @@ public final class PatchJobs {
         public long getFailedInstanceCount() {
           return failedInstanceCount_;
         }
-
         /**
          *
          *
@@ -12382,7 +12033,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12402,7 +12052,6 @@ public final class PatchJobs {
         }
 
         private long ackedInstanceCount_;
-
         /**
          *
          *
@@ -12418,7 +12067,6 @@ public final class PatchJobs {
         public long getAckedInstanceCount() {
           return ackedInstanceCount_;
         }
-
         /**
          *
          *
@@ -12438,7 +12086,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12458,7 +12105,6 @@ public final class PatchJobs {
         }
 
         private long timedOutInstanceCount_;
-
         /**
          *
          *
@@ -12474,7 +12120,6 @@ public final class PatchJobs {
         public long getTimedOutInstanceCount() {
           return timedOutInstanceCount_;
         }
-
         /**
          *
          *
@@ -12494,7 +12139,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12514,7 +12158,6 @@ public final class PatchJobs {
         }
 
         private long prePatchStepInstanceCount_;
-
         /**
          *
          *
@@ -12530,7 +12173,6 @@ public final class PatchJobs {
         public long getPrePatchStepInstanceCount() {
           return prePatchStepInstanceCount_;
         }
-
         /**
          *
          *
@@ -12550,7 +12192,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12570,7 +12211,6 @@ public final class PatchJobs {
         }
 
         private long postPatchStepInstanceCount_;
-
         /**
          *
          *
@@ -12586,7 +12226,6 @@ public final class PatchJobs {
         public long getPostPatchStepInstanceCount() {
           return postPatchStepInstanceCount_;
         }
-
         /**
          *
          *
@@ -12606,7 +12245,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12626,7 +12264,6 @@ public final class PatchJobs {
         }
 
         private long noAgentDetectedInstanceCount_;
-
         /**
          *
          *
@@ -12644,7 +12281,6 @@ public final class PatchJobs {
         public long getNoAgentDetectedInstanceCount() {
           return noAgentDetectedInstanceCount_;
         }
-
         /**
          *
          *
@@ -12666,7 +12302,6 @@ public final class PatchJobs {
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12760,7 +12395,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -12785,7 +12419,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -12815,7 +12448,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -12839,7 +12471,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -12868,7 +12499,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -12893,7 +12523,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -12921,7 +12550,6 @@ public final class PatchJobs {
 
     public static final int CREATE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp createTime_;
-
     /**
      *
      *
@@ -12937,7 +12565,6 @@ public final class PatchJobs {
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -12953,7 +12580,6 @@ public final class PatchJobs {
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
-
     /**
      *
      *
@@ -12970,7 +12596,6 @@ public final class PatchJobs {
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp updateTime_;
-
     /**
      *
      *
@@ -12986,7 +12611,6 @@ public final class PatchJobs {
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -13002,7 +12626,6 @@ public final class PatchJobs {
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
-
     /**
      *
      *
@@ -13019,7 +12642,6 @@ public final class PatchJobs {
 
     public static final int STATE_FIELD_NUMBER = 5;
     private int state_ = 0;
-
     /**
      *
      *
@@ -13035,7 +12657,6 @@ public final class PatchJobs {
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -13058,7 +12679,6 @@ public final class PatchJobs {
 
     public static final int INSTANCE_FILTER_FIELD_NUMBER = 13;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter instanceFilter_;
-
     /**
      *
      *
@@ -13074,7 +12694,6 @@ public final class PatchJobs {
     public boolean hasInstanceFilter() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -13092,7 +12711,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.getDefaultInstance()
           : instanceFilter_;
     }
-
     /**
      *
      *
@@ -13112,7 +12730,6 @@ public final class PatchJobs {
 
     public static final int PATCH_CONFIG_FIELD_NUMBER = 7;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchConfig patchConfig_;
-
     /**
      *
      *
@@ -13128,7 +12745,6 @@ public final class PatchJobs {
     public boolean hasPatchConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -13146,7 +12762,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.getDefaultInstance()
           : patchConfig_;
     }
-
     /**
      *
      *
@@ -13165,7 +12780,6 @@ public final class PatchJobs {
 
     public static final int DURATION_FIELD_NUMBER = 8;
     private com.google.protobuf.Duration duration_;
-
     /**
      *
      *
@@ -13182,7 +12796,6 @@ public final class PatchJobs {
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -13199,7 +12812,6 @@ public final class PatchJobs {
     public com.google.protobuf.Duration getDuration() {
       return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
     }
-
     /**
      *
      *
@@ -13218,7 +12830,6 @@ public final class PatchJobs {
     public static final int INSTANCE_DETAILS_SUMMARY_FIELD_NUMBER = 9;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchJob.InstanceDetailsSummary
         instanceDetailsSummary_;
-
     /**
      *
      *
@@ -13235,7 +12846,6 @@ public final class PatchJobs {
     public boolean hasInstanceDetailsSummary() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -13256,7 +12866,6 @@ public final class PatchJobs {
               .getDefaultInstance()
           : instanceDetailsSummary_;
     }
-
     /**
      *
      *
@@ -13278,7 +12887,6 @@ public final class PatchJobs {
 
     public static final int DRY_RUN_FIELD_NUMBER = 10;
     private boolean dryRun_ = false;
-
     /**
      *
      *
@@ -13300,7 +12908,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object errorMessage_ = "";
-
     /**
      *
      *
@@ -13325,7 +12932,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -13353,7 +12959,6 @@ public final class PatchJobs {
 
     public static final int PERCENT_COMPLETE_FIELD_NUMBER = 12;
     private double percentComplete_ = 0D;
-
     /**
      *
      *
@@ -13375,7 +12980,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object patchDeployment_ = "";
-
     /**
      *
      *
@@ -13401,7 +13005,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -13430,7 +13033,6 @@ public final class PatchJobs {
 
     public static final int ROLLOUT_FIELD_NUMBER = 16;
     private com.google.cloud.osconfig.v1.PatchJobs.PatchRollout rollout_;
-
     /**
      *
      *
@@ -13446,7 +13048,6 @@ public final class PatchJobs {
     public boolean hasRollout() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -13464,7 +13065,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.getDefaultInstance()
           : rollout_;
     }
-
     /**
      *
      *
@@ -13810,7 +13410,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -14257,7 +13856,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -14281,7 +13879,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14305,7 +13902,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14328,7 +13924,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14347,7 +13942,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14373,7 +13967,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -14396,7 +13989,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14419,7 +14011,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14441,7 +14032,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14459,7 +14049,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14484,7 +14073,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object description_ = "";
-
       /**
        *
        *
@@ -14508,7 +14096,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -14532,7 +14119,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -14555,7 +14141,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14574,7 +14159,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14605,7 +14189,6 @@ public final class PatchJobs {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           createTimeBuilder_;
-
       /**
        *
        *
@@ -14620,7 +14203,6 @@ public final class PatchJobs {
       public boolean hasCreateTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -14641,7 +14223,6 @@ public final class PatchJobs {
           return createTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14664,7 +14245,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14684,7 +14264,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14712,7 +14291,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -14732,7 +14310,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14747,7 +14324,6 @@ public final class PatchJobs {
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14766,7 +14342,6 @@ public final class PatchJobs {
               : createTime_;
         }
       }
-
       /**
        *
        *
@@ -14799,7 +14374,6 @@ public final class PatchJobs {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
-
       /**
        *
        *
@@ -14814,7 +14388,6 @@ public final class PatchJobs {
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -14835,7 +14408,6 @@ public final class PatchJobs {
           return updateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14858,7 +14430,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14878,7 +14449,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14906,7 +14476,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -14926,7 +14495,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14941,7 +14509,6 @@ public final class PatchJobs {
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14960,7 +14527,6 @@ public final class PatchJobs {
               : updateTime_;
         }
       }
-
       /**
        *
        *
@@ -14988,7 +14554,6 @@ public final class PatchJobs {
       }
 
       private int state_ = 0;
-
       /**
        *
        *
@@ -15004,7 +14569,6 @@ public final class PatchJobs {
       public int getStateValue() {
         return state_;
       }
-
       /**
        *
        *
@@ -15023,7 +14587,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15043,7 +14606,6 @@ public final class PatchJobs {
             ? com.google.cloud.osconfig.v1.PatchJobs.PatchJob.State.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -15065,7 +14627,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15090,7 +14651,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilterOrBuilder>
           instanceFilterBuilder_;
-
       /**
        *
        *
@@ -15105,7 +14665,6 @@ public final class PatchJobs {
       public boolean hasInstanceFilter() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -15126,7 +14685,6 @@ public final class PatchJobs {
           return instanceFilterBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15150,7 +14708,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15171,7 +14728,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15202,7 +14758,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -15222,7 +14777,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15238,7 +14792,6 @@ public final class PatchJobs {
         onChanged();
         return getInstanceFilterFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15258,7 +14811,6 @@ public final class PatchJobs {
               : instanceFilter_;
         }
       }
-
       /**
        *
        *
@@ -15291,7 +14843,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchConfigOrBuilder>
           patchConfigBuilder_;
-
       /**
        *
        *
@@ -15306,7 +14857,6 @@ public final class PatchJobs {
       public boolean hasPatchConfig() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -15327,7 +14877,6 @@ public final class PatchJobs {
           return patchConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15350,7 +14899,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15371,7 +14919,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15400,7 +14947,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -15420,7 +14966,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15435,7 +14980,6 @@ public final class PatchJobs {
         onChanged();
         return getPatchConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15454,7 +14998,6 @@ public final class PatchJobs {
               : patchConfig_;
         }
       }
-
       /**
        *
        *
@@ -15487,7 +15030,6 @@ public final class PatchJobs {
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           durationBuilder_;
-
       /**
        *
        *
@@ -15503,7 +15045,6 @@ public final class PatchJobs {
       public boolean hasDuration() {
         return ((bitField0_ & 0x00000100) != 0);
       }
-
       /**
        *
        *
@@ -15523,7 +15064,6 @@ public final class PatchJobs {
           return durationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15547,7 +15087,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15568,7 +15107,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15597,7 +15135,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -15618,7 +15155,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15634,7 +15170,6 @@ public final class PatchJobs {
         onChanged();
         return getDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15652,7 +15187,6 @@ public final class PatchJobs {
           return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
         }
       }
-
       /**
        *
        *
@@ -15687,7 +15221,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchJob.InstanceDetailsSummary.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchJob.InstanceDetailsSummaryOrBuilder>
           instanceDetailsSummaryBuilder_;
-
       /**
        *
        *
@@ -15704,7 +15237,6 @@ public final class PatchJobs {
       public boolean hasInstanceDetailsSummary() {
         return ((bitField0_ & 0x00000200) != 0);
       }
-
       /**
        *
        *
@@ -15729,7 +15261,6 @@ public final class PatchJobs {
           return instanceDetailsSummaryBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -15755,7 +15286,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15779,7 +15309,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15812,7 +15341,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -15834,7 +15362,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15852,7 +15379,6 @@ public final class PatchJobs {
         onChanged();
         return getInstanceDetailsSummaryFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -15875,7 +15401,6 @@ public final class PatchJobs {
               : instanceDetailsSummary_;
         }
       }
-
       /**
        *
        *
@@ -15905,7 +15430,6 @@ public final class PatchJobs {
       }
 
       private boolean dryRun_;
-
       /**
        *
        *
@@ -15922,7 +15446,6 @@ public final class PatchJobs {
       public boolean getDryRun() {
         return dryRun_;
       }
-
       /**
        *
        *
@@ -15943,7 +15466,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -15964,7 +15486,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object errorMessage_ = "";
-
       /**
        *
        *
@@ -15988,7 +15509,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -16012,7 +15532,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -16035,7 +15554,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16054,7 +15572,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16080,7 +15597,6 @@ public final class PatchJobs {
       }
 
       private double percentComplete_;
-
       /**
        *
        *
@@ -16097,7 +15613,6 @@ public final class PatchJobs {
       public double getPercentComplete() {
         return percentComplete_;
       }
-
       /**
        *
        *
@@ -16118,7 +15633,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16139,7 +15653,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object patchDeployment_ = "";
-
       /**
        *
        *
@@ -16164,7 +15677,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -16189,7 +15701,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -16213,7 +15724,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16233,7 +15743,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16265,7 +15774,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.PatchRolloutOrBuilder>
           rolloutBuilder_;
-
       /**
        *
        *
@@ -16280,7 +15788,6 @@ public final class PatchJobs {
       public boolean hasRollout() {
         return ((bitField0_ & 0x00004000) != 0);
       }
-
       /**
        *
        *
@@ -16301,7 +15808,6 @@ public final class PatchJobs {
           return rolloutBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -16324,7 +15830,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16345,7 +15850,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16374,7 +15878,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -16394,7 +15897,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -16409,7 +15911,6 @@ public final class PatchJobs {
         onChanged();
         return getRolloutFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -16428,7 +15929,6 @@ public final class PatchJobs {
               : rollout_;
         }
       }
-
       /**
        *
        *
@@ -16536,7 +16036,6 @@ public final class PatchJobs {
      * @return The enum numeric value on the wire for rebootConfig.
      */
     int getRebootConfigValue();
-
     /**
      *
      *
@@ -16563,7 +16062,6 @@ public final class PatchJobs {
      * @return Whether the apt field is set.
      */
     boolean hasApt();
-
     /**
      *
      *
@@ -16577,7 +16075,6 @@ public final class PatchJobs {
      * @return The apt.
      */
     com.google.cloud.osconfig.v1.PatchJobs.AptSettings getApt();
-
     /**
      *
      *
@@ -16603,7 +16100,6 @@ public final class PatchJobs {
      * @return Whether the yum field is set.
      */
     boolean hasYum();
-
     /**
      *
      *
@@ -16617,7 +16113,6 @@ public final class PatchJobs {
      * @return The yum.
      */
     com.google.cloud.osconfig.v1.PatchJobs.YumSettings getYum();
-
     /**
      *
      *
@@ -16643,7 +16138,6 @@ public final class PatchJobs {
      * @return Whether the goo field is set.
      */
     boolean hasGoo();
-
     /**
      *
      *
@@ -16657,7 +16151,6 @@ public final class PatchJobs {
      * @return The goo.
      */
     com.google.cloud.osconfig.v1.PatchJobs.GooSettings getGoo();
-
     /**
      *
      *
@@ -16683,7 +16176,6 @@ public final class PatchJobs {
      * @return Whether the zypper field is set.
      */
     boolean hasZypper();
-
     /**
      *
      *
@@ -16697,7 +16189,6 @@ public final class PatchJobs {
      * @return The zypper.
      */
     com.google.cloud.osconfig.v1.PatchJobs.ZypperSettings getZypper();
-
     /**
      *
      *
@@ -16722,7 +16213,6 @@ public final class PatchJobs {
      * @return Whether the windowsUpdate field is set.
      */
     boolean hasWindowsUpdate();
-
     /**
      *
      *
@@ -16735,7 +16225,6 @@ public final class PatchJobs {
      * @return The windowsUpdate.
      */
     com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings getWindowsUpdate();
-
     /**
      *
      *
@@ -16760,7 +16249,6 @@ public final class PatchJobs {
      * @return Whether the preStep field is set.
      */
     boolean hasPreStep();
-
     /**
      *
      *
@@ -16773,7 +16261,6 @@ public final class PatchJobs {
      * @return The preStep.
      */
     com.google.cloud.osconfig.v1.PatchJobs.ExecStep getPreStep();
-
     /**
      *
      *
@@ -16797,7 +16284,6 @@ public final class PatchJobs {
      * @return Whether the postStep field is set.
      */
     boolean hasPostStep();
-
     /**
      *
      *
@@ -16810,7 +16296,6 @@ public final class PatchJobs {
      * @return The postStep.
      */
     com.google.cloud.osconfig.v1.PatchJobs.ExecStep getPostStep();
-
     /**
      *
      *
@@ -16835,7 +16320,6 @@ public final class PatchJobs {
      */
     boolean getMigInstancesAllowed();
   }
-
   /**
    *
    *
@@ -16851,7 +16335,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchConfig)
       PatchConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PatchConfig.newBuilder() to construct.
     private PatchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -16948,7 +16431,6 @@ public final class PatchJobs {
        * <code>REBOOT_CONFIG_UNSPECIFIED = 0;</code>
        */
       public static final int REBOOT_CONFIG_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -16962,7 +16444,6 @@ public final class PatchJobs {
        * <code>DEFAULT = 1;</code>
        */
       public static final int DEFAULT_VALUE = 1;
-
       /**
        *
        *
@@ -16973,7 +16454,6 @@ public final class PatchJobs {
        * <code>ALWAYS = 2;</code>
        */
       public static final int ALWAYS_VALUE = 2;
-
       /**
        *
        *
@@ -17075,7 +16555,6 @@ public final class PatchJobs {
     private int bitField0_;
     public static final int REBOOT_CONFIG_FIELD_NUMBER = 1;
     private int rebootConfig_ = 0;
-
     /**
      *
      *
@@ -17091,7 +16570,6 @@ public final class PatchJobs {
     public int getRebootConfigValue() {
       return rebootConfig_;
     }
-
     /**
      *
      *
@@ -17114,7 +16592,6 @@ public final class PatchJobs {
 
     public static final int APT_FIELD_NUMBER = 3;
     private com.google.cloud.osconfig.v1.PatchJobs.AptSettings apt_;
-
     /**
      *
      *
@@ -17131,7 +16608,6 @@ public final class PatchJobs {
     public boolean hasApt() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -17150,7 +16626,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.AptSettings.getDefaultInstance()
           : apt_;
     }
-
     /**
      *
      *
@@ -17170,7 +16645,6 @@ public final class PatchJobs {
 
     public static final int YUM_FIELD_NUMBER = 4;
     private com.google.cloud.osconfig.v1.PatchJobs.YumSettings yum_;
-
     /**
      *
      *
@@ -17187,7 +16661,6 @@ public final class PatchJobs {
     public boolean hasYum() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -17206,7 +16679,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.YumSettings.getDefaultInstance()
           : yum_;
     }
-
     /**
      *
      *
@@ -17226,7 +16698,6 @@ public final class PatchJobs {
 
     public static final int GOO_FIELD_NUMBER = 5;
     private com.google.cloud.osconfig.v1.PatchJobs.GooSettings goo_;
-
     /**
      *
      *
@@ -17243,7 +16714,6 @@ public final class PatchJobs {
     public boolean hasGoo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -17262,7 +16732,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.GooSettings.getDefaultInstance()
           : goo_;
     }
-
     /**
      *
      *
@@ -17282,7 +16751,6 @@ public final class PatchJobs {
 
     public static final int ZYPPER_FIELD_NUMBER = 6;
     private com.google.cloud.osconfig.v1.PatchJobs.ZypperSettings zypper_;
-
     /**
      *
      *
@@ -17299,7 +16767,6 @@ public final class PatchJobs {
     public boolean hasZypper() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -17318,7 +16785,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.ZypperSettings.getDefaultInstance()
           : zypper_;
     }
-
     /**
      *
      *
@@ -17338,7 +16804,6 @@ public final class PatchJobs {
 
     public static final int WINDOWS_UPDATE_FIELD_NUMBER = 7;
     private com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings windowsUpdate_;
-
     /**
      *
      *
@@ -17354,7 +16819,6 @@ public final class PatchJobs {
     public boolean hasWindowsUpdate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -17372,7 +16836,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.getDefaultInstance()
           : windowsUpdate_;
     }
-
     /**
      *
      *
@@ -17392,7 +16855,6 @@ public final class PatchJobs {
 
     public static final int PRE_STEP_FIELD_NUMBER = 8;
     private com.google.cloud.osconfig.v1.PatchJobs.ExecStep preStep_;
-
     /**
      *
      *
@@ -17408,7 +16870,6 @@ public final class PatchJobs {
     public boolean hasPreStep() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -17426,7 +16887,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStep.getDefaultInstance()
           : preStep_;
     }
-
     /**
      *
      *
@@ -17445,7 +16905,6 @@ public final class PatchJobs {
 
     public static final int POST_STEP_FIELD_NUMBER = 9;
     private com.google.cloud.osconfig.v1.PatchJobs.ExecStep postStep_;
-
     /**
      *
      *
@@ -17461,7 +16920,6 @@ public final class PatchJobs {
     public boolean hasPostStep() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -17479,7 +16937,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStep.getDefaultInstance()
           : postStep_;
     }
-
     /**
      *
      *
@@ -17498,7 +16955,6 @@ public final class PatchJobs {
 
     public static final int MIG_INSTANCES_ALLOWED_FIELD_NUMBER = 10;
     private boolean migInstancesAllowed_ = false;
-
     /**
      *
      *
@@ -17788,7 +17244,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -18132,7 +17587,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private int rebootConfig_ = 0;
-
       /**
        *
        *
@@ -18148,7 +17602,6 @@ public final class PatchJobs {
       public int getRebootConfigValue() {
         return rebootConfig_;
       }
-
       /**
        *
        *
@@ -18167,7 +17620,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18188,7 +17640,6 @@ public final class PatchJobs {
             ? com.google.cloud.osconfig.v1.PatchJobs.PatchConfig.RebootConfig.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -18211,7 +17662,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18236,7 +17686,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.AptSettings.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.AptSettingsOrBuilder>
           aptBuilder_;
-
       /**
        *
        *
@@ -18252,7 +17701,6 @@ public final class PatchJobs {
       public boolean hasApt() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -18274,7 +17722,6 @@ public final class PatchJobs {
           return aptBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -18298,7 +17745,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18320,7 +17766,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18349,7 +17794,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -18370,7 +17814,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18386,7 +17829,6 @@ public final class PatchJobs {
         onChanged();
         return getAptFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -18406,7 +17848,6 @@ public final class PatchJobs {
               : apt_;
         }
       }
-
       /**
        *
        *
@@ -18440,7 +17881,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.YumSettings.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.YumSettingsOrBuilder>
           yumBuilder_;
-
       /**
        *
        *
@@ -18456,7 +17896,6 @@ public final class PatchJobs {
       public boolean hasYum() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -18478,7 +17917,6 @@ public final class PatchJobs {
           return yumBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -18502,7 +17940,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18524,7 +17961,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18553,7 +17989,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -18574,7 +18009,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18590,7 +18024,6 @@ public final class PatchJobs {
         onChanged();
         return getYumFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -18610,7 +18043,6 @@ public final class PatchJobs {
               : yum_;
         }
       }
-
       /**
        *
        *
@@ -18644,7 +18076,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.GooSettings.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.GooSettingsOrBuilder>
           gooBuilder_;
-
       /**
        *
        *
@@ -18660,7 +18091,6 @@ public final class PatchJobs {
       public boolean hasGoo() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -18682,7 +18112,6 @@ public final class PatchJobs {
           return gooBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -18706,7 +18135,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18728,7 +18156,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18757,7 +18184,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -18778,7 +18204,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18794,7 +18219,6 @@ public final class PatchJobs {
         onChanged();
         return getGooFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -18814,7 +18238,6 @@ public final class PatchJobs {
               : goo_;
         }
       }
-
       /**
        *
        *
@@ -18848,7 +18271,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.ZypperSettings.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.ZypperSettingsOrBuilder>
           zypperBuilder_;
-
       /**
        *
        *
@@ -18864,7 +18286,6 @@ public final class PatchJobs {
       public boolean hasZypper() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -18886,7 +18307,6 @@ public final class PatchJobs {
           return zypperBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -18910,7 +18330,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18932,7 +18351,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18962,7 +18380,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -18983,7 +18400,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -18999,7 +18415,6 @@ public final class PatchJobs {
         onChanged();
         return getZypperFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -19019,7 +18434,6 @@ public final class PatchJobs {
               : zypper_;
         }
       }
-
       /**
        *
        *
@@ -19053,7 +18467,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettingsOrBuilder>
           windowsUpdateBuilder_;
-
       /**
        *
        *
@@ -19068,7 +18481,6 @@ public final class PatchJobs {
       public boolean hasWindowsUpdate() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -19089,7 +18501,6 @@ public final class PatchJobs {
           return windowsUpdateBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -19113,7 +18524,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19134,7 +18544,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19165,7 +18574,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -19185,7 +18593,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19201,7 +18608,6 @@ public final class PatchJobs {
         onChanged();
         return getWindowsUpdateFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -19221,7 +18627,6 @@ public final class PatchJobs {
               : windowsUpdate_;
         }
       }
-
       /**
        *
        *
@@ -19254,7 +18659,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.ExecStep.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.ExecStepOrBuilder>
           preStepBuilder_;
-
       /**
        *
        *
@@ -19269,7 +18673,6 @@ public final class PatchJobs {
       public boolean hasPreStep() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -19290,7 +18693,6 @@ public final class PatchJobs {
           return preStepBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -19313,7 +18715,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19334,7 +18735,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19362,7 +18762,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -19382,7 +18781,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19397,7 +18795,6 @@ public final class PatchJobs {
         onChanged();
         return getPreStepFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -19416,7 +18813,6 @@ public final class PatchJobs {
               : preStep_;
         }
       }
-
       /**
        *
        *
@@ -19449,7 +18845,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.ExecStep.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.ExecStepOrBuilder>
           postStepBuilder_;
-
       /**
        *
        *
@@ -19464,7 +18859,6 @@ public final class PatchJobs {
       public boolean hasPostStep() {
         return ((bitField0_ & 0x00000080) != 0);
       }
-
       /**
        *
        *
@@ -19485,7 +18879,6 @@ public final class PatchJobs {
           return postStepBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -19508,7 +18901,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19529,7 +18921,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19558,7 +18949,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -19578,7 +18968,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19593,7 +18982,6 @@ public final class PatchJobs {
         onChanged();
         return getPostStepFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -19612,7 +19000,6 @@ public final class PatchJobs {
               : postStep_;
         }
       }
-
       /**
        *
        *
@@ -19640,7 +19027,6 @@ public final class PatchJobs {
       }
 
       private boolean migInstancesAllowed_;
-
       /**
        *
        *
@@ -19656,7 +19042,6 @@ public final class PatchJobs {
       public boolean getMigInstancesAllowed() {
         return migInstancesAllowed_;
       }
-
       /**
        *
        *
@@ -19676,7 +19061,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -19763,7 +19147,6 @@ public final class PatchJobs {
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.Instance)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -19778,7 +19161,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.Instance)
       InstanceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Instance.newBuilder() to construct.
     private Instance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -19992,7 +19374,6 @@ public final class PatchJobs {
        * <code>PATCH_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int PATCH_STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -20003,7 +19384,6 @@ public final class PatchJobs {
        * <code>PENDING = 1;</code>
        */
       public static final int PENDING_VALUE = 1;
-
       /**
        *
        *
@@ -20014,7 +19394,6 @@ public final class PatchJobs {
        * <code>INACTIVE = 2;</code>
        */
       public static final int INACTIVE_VALUE = 2;
-
       /**
        *
        *
@@ -20025,7 +19404,6 @@ public final class PatchJobs {
        * <code>NOTIFIED = 3;</code>
        */
       public static final int NOTIFIED_VALUE = 3;
-
       /**
        *
        *
@@ -20036,7 +19414,6 @@ public final class PatchJobs {
        * <code>STARTED = 4;</code>
        */
       public static final int STARTED_VALUE = 4;
-
       /**
        *
        *
@@ -20047,7 +19424,6 @@ public final class PatchJobs {
        * <code>DOWNLOADING_PATCHES = 5;</code>
        */
       public static final int DOWNLOADING_PATCHES_VALUE = 5;
-
       /**
        *
        *
@@ -20058,7 +19434,6 @@ public final class PatchJobs {
        * <code>APPLYING_PATCHES = 6;</code>
        */
       public static final int APPLYING_PATCHES_VALUE = 6;
-
       /**
        *
        *
@@ -20069,7 +19444,6 @@ public final class PatchJobs {
        * <code>REBOOTING = 7;</code>
        */
       public static final int REBOOTING_VALUE = 7;
-
       /**
        *
        *
@@ -20080,7 +19454,6 @@ public final class PatchJobs {
        * <code>SUCCEEDED = 8;</code>
        */
       public static final int SUCCEEDED_VALUE = 8;
-
       /**
        *
        *
@@ -20091,7 +19464,6 @@ public final class PatchJobs {
        * <code>SUCCEEDED_REBOOT_REQUIRED = 9;</code>
        */
       public static final int SUCCEEDED_REBOOT_REQUIRED_VALUE = 9;
-
       /**
        *
        *
@@ -20102,7 +19474,6 @@ public final class PatchJobs {
        * <code>FAILED = 10;</code>
        */
       public static final int FAILED_VALUE = 10;
-
       /**
        *
        *
@@ -20113,7 +19484,6 @@ public final class PatchJobs {
        * <code>ACKED = 11;</code>
        */
       public static final int ACKED_VALUE = 11;
-
       /**
        *
        *
@@ -20124,7 +19494,6 @@ public final class PatchJobs {
        * <code>TIMED_OUT = 12;</code>
        */
       public static final int TIMED_OUT_VALUE = 12;
-
       /**
        *
        *
@@ -20135,7 +19504,6 @@ public final class PatchJobs {
        * <code>RUNNING_PRE_PATCH_STEP = 13;</code>
        */
       public static final int RUNNING_PRE_PATCH_STEP_VALUE = 13;
-
       /**
        *
        *
@@ -20146,7 +19514,6 @@ public final class PatchJobs {
        * <code>RUNNING_POST_PATCH_STEP = 14;</code>
        */
       public static final int RUNNING_POST_PATCH_STEP_VALUE = 14;
-
       /**
        *
        *
@@ -20422,7 +19789,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -20667,7 +20033,6 @@ public final class PatchJobs {
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -20683,7 +20048,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getNameBytes();
   }
-
   /**
    *
    *
@@ -20698,7 +20062,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.CancelPatchJobRequest)
       CancelPatchJobRequestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CancelPatchJobRequest.newBuilder() to construct.
     private CancelPatchJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -20733,7 +20096,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -20759,7 +20121,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -20947,7 +20308,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -21138,7 +20498,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -21163,7 +20522,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -21188,7 +20546,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -21212,7 +20569,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -21232,7 +20588,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -21343,7 +20698,6 @@ public final class PatchJobs {
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -21370,7 +20724,6 @@ public final class PatchJobs {
      * @return A list containing the excludes.
      */
     java.util.List<java.lang.String> getExcludesList();
-
     /**
      *
      *
@@ -21383,7 +20736,6 @@ public final class PatchJobs {
      * @return The count of excludes.
      */
     int getExcludesCount();
-
     /**
      *
      *
@@ -21397,7 +20749,6 @@ public final class PatchJobs {
      * @return The excludes at the given index.
      */
     java.lang.String getExcludes(int index);
-
     /**
      *
      *
@@ -21427,7 +20778,6 @@ public final class PatchJobs {
      * @return A list containing the exclusivePackages.
      */
     java.util.List<java.lang.String> getExclusivePackagesList();
-
     /**
      *
      *
@@ -21443,7 +20793,6 @@ public final class PatchJobs {
      * @return The count of exclusivePackages.
      */
     int getExclusivePackagesCount();
-
     /**
      *
      *
@@ -21460,7 +20809,6 @@ public final class PatchJobs {
      * @return The exclusivePackages at the given index.
      */
     java.lang.String getExclusivePackages(int index);
-
     /**
      *
      *
@@ -21478,7 +20826,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getExclusivePackagesBytes(int index);
   }
-
   /**
    *
    *
@@ -21494,7 +20841,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.AptSettings)
       AptSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AptSettings.newBuilder() to construct.
     private AptSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -21580,7 +20926,6 @@ public final class PatchJobs {
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -21591,7 +20936,6 @@ public final class PatchJobs {
        * <code>DIST = 1;</code>
        */
       public static final int DIST_VALUE = 1;
-
       /**
        *
        *
@@ -21690,7 +21034,6 @@ public final class PatchJobs {
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
-
     /**
      *
      *
@@ -21707,7 +21050,6 @@ public final class PatchJobs {
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -21734,7 +21076,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -21749,7 +21090,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExcludesList() {
       return excludes_;
     }
-
     /**
      *
      *
@@ -21764,7 +21104,6 @@ public final class PatchJobs {
     public int getExcludesCount() {
       return excludes_.size();
     }
-
     /**
      *
      *
@@ -21780,7 +21119,6 @@ public final class PatchJobs {
     public java.lang.String getExcludes(int index) {
       return excludes_.get(index);
     }
-
     /**
      *
      *
@@ -21802,7 +21140,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList exclusivePackages_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -21820,7 +21157,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExclusivePackagesList() {
       return exclusivePackages_;
     }
-
     /**
      *
      *
@@ -21838,7 +21174,6 @@ public final class PatchJobs {
     public int getExclusivePackagesCount() {
       return exclusivePackages_.size();
     }
-
     /**
      *
      *
@@ -21857,7 +21192,6 @@ public final class PatchJobs {
     public java.lang.String getExclusivePackages(int index) {
       return exclusivePackages_.get(index);
     }
-
     /**
      *
      *
@@ -22071,7 +21405,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -22302,7 +21635,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -22319,7 +21651,6 @@ public final class PatchJobs {
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -22339,7 +21670,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22360,7 +21690,6 @@ public final class PatchJobs {
             ? com.google.cloud.osconfig.v1.PatchJobs.AptSettings.Type.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -22383,7 +21712,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22412,7 +21740,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -22428,7 +21755,6 @@ public final class PatchJobs {
         excludes_.makeImmutable();
         return excludes_;
       }
-
       /**
        *
        *
@@ -22443,7 +21769,6 @@ public final class PatchJobs {
       public int getExcludesCount() {
         return excludes_.size();
       }
-
       /**
        *
        *
@@ -22459,7 +21784,6 @@ public final class PatchJobs {
       public java.lang.String getExcludes(int index) {
         return excludes_.get(index);
       }
-
       /**
        *
        *
@@ -22475,7 +21799,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExcludesBytes(int index) {
         return excludes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -22499,7 +21822,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22522,7 +21844,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22542,7 +21863,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22561,7 +21881,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22595,7 +21914,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -22614,7 +21932,6 @@ public final class PatchJobs {
         exclusivePackages_.makeImmutable();
         return exclusivePackages_;
       }
-
       /**
        *
        *
@@ -22632,7 +21949,6 @@ public final class PatchJobs {
       public int getExclusivePackagesCount() {
         return exclusivePackages_.size();
       }
-
       /**
        *
        *
@@ -22651,7 +21967,6 @@ public final class PatchJobs {
       public java.lang.String getExclusivePackages(int index) {
         return exclusivePackages_.get(index);
       }
-
       /**
        *
        *
@@ -22670,7 +21985,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExclusivePackagesBytes(int index) {
         return exclusivePackages_.getByteString(index);
       }
-
       /**
        *
        *
@@ -22697,7 +22011,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22723,7 +22036,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22746,7 +22058,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22768,7 +22079,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -22905,7 +22215,6 @@ public final class PatchJobs {
      * @return A list containing the excludes.
      */
     java.util.List<java.lang.String> getExcludesList();
-
     /**
      *
      *
@@ -22919,7 +22228,6 @@ public final class PatchJobs {
      * @return The count of excludes.
      */
     int getExcludesCount();
-
     /**
      *
      *
@@ -22934,7 +22242,6 @@ public final class PatchJobs {
      * @return The excludes at the given index.
      */
     java.lang.String getExcludes(int index);
-
     /**
      *
      *
@@ -22965,7 +22272,6 @@ public final class PatchJobs {
      * @return A list containing the exclusivePackages.
      */
     java.util.List<java.lang.String> getExclusivePackagesList();
-
     /**
      *
      *
@@ -22981,7 +22287,6 @@ public final class PatchJobs {
      * @return The count of exclusivePackages.
      */
     int getExclusivePackagesCount();
-
     /**
      *
      *
@@ -22998,7 +22303,6 @@ public final class PatchJobs {
      * @return The exclusivePackages at the given index.
      */
     java.lang.String getExclusivePackages(int index);
-
     /**
      *
      *
@@ -23016,7 +22320,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getExclusivePackagesBytes(int index);
   }
-
   /**
    *
    *
@@ -23034,7 +22337,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.YumSettings)
       YumSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use YumSettings.newBuilder() to construct.
     private YumSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -23068,7 +22370,6 @@ public final class PatchJobs {
 
     public static final int SECURITY_FIELD_NUMBER = 1;
     private boolean security_ = false;
-
     /**
      *
      *
@@ -23088,7 +22389,6 @@ public final class PatchJobs {
 
     public static final int MINIMAL_FIELD_NUMBER = 2;
     private boolean minimal_ = false;
-
     /**
      *
      *
@@ -23110,7 +22410,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -23126,7 +22425,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExcludesList() {
       return excludes_;
     }
-
     /**
      *
      *
@@ -23142,7 +22440,6 @@ public final class PatchJobs {
     public int getExcludesCount() {
       return excludes_.size();
     }
-
     /**
      *
      *
@@ -23159,7 +22456,6 @@ public final class PatchJobs {
     public java.lang.String getExcludes(int index) {
       return excludes_.get(index);
     }
-
     /**
      *
      *
@@ -23182,7 +22478,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList exclusivePackages_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -23200,7 +22495,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExclusivePackagesList() {
       return exclusivePackages_;
     }
-
     /**
      *
      *
@@ -23218,7 +22512,6 @@ public final class PatchJobs {
     public int getExclusivePackagesCount() {
       return exclusivePackages_.size();
     }
-
     /**
      *
      *
@@ -23237,7 +22530,6 @@ public final class PatchJobs {
     public java.lang.String getExclusivePackages(int index) {
       return exclusivePackages_.get(index);
     }
-
     /**
      *
      *
@@ -23458,7 +22750,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -23704,7 +22995,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private boolean security_;
-
       /**
        *
        *
@@ -23721,7 +23011,6 @@ public final class PatchJobs {
       public boolean getSecurity() {
         return security_;
       }
-
       /**
        *
        *
@@ -23742,7 +23031,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -23763,7 +23051,6 @@ public final class PatchJobs {
       }
 
       private boolean minimal_;
-
       /**
        *
        *
@@ -23779,7 +23066,6 @@ public final class PatchJobs {
       public boolean getMinimal() {
         return minimal_;
       }
-
       /**
        *
        *
@@ -23799,7 +23085,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -23827,7 +23112,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -23844,7 +23128,6 @@ public final class PatchJobs {
         excludes_.makeImmutable();
         return excludes_;
       }
-
       /**
        *
        *
@@ -23860,7 +23143,6 @@ public final class PatchJobs {
       public int getExcludesCount() {
         return excludes_.size();
       }
-
       /**
        *
        *
@@ -23877,7 +23159,6 @@ public final class PatchJobs {
       public java.lang.String getExcludes(int index) {
         return excludes_.get(index);
       }
-
       /**
        *
        *
@@ -23894,7 +23175,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExcludesBytes(int index) {
         return excludes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -23919,7 +23199,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -23943,7 +23222,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -23964,7 +23242,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -23984,7 +23261,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24019,7 +23295,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -24038,7 +23313,6 @@ public final class PatchJobs {
         exclusivePackages_.makeImmutable();
         return exclusivePackages_;
       }
-
       /**
        *
        *
@@ -24056,7 +23330,6 @@ public final class PatchJobs {
       public int getExclusivePackagesCount() {
         return exclusivePackages_.size();
       }
-
       /**
        *
        *
@@ -24075,7 +23348,6 @@ public final class PatchJobs {
       public java.lang.String getExclusivePackages(int index) {
         return exclusivePackages_.get(index);
       }
-
       /**
        *
        *
@@ -24094,7 +23366,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExclusivePackagesBytes(int index) {
         return exclusivePackages_.getByteString(index);
       }
-
       /**
        *
        *
@@ -24121,7 +23392,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24147,7 +23417,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24170,7 +23439,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24192,7 +23460,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -24288,7 +23555,6 @@ public final class PatchJobs {
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.osconfig.v1.GooSettings)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -24303,7 +23569,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.GooSettings)
       GooSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GooSettings.newBuilder() to construct.
     private GooSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -24483,7 +23748,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -24753,7 +24017,6 @@ public final class PatchJobs {
      * @return A list containing the categories.
      */
     java.util.List<java.lang.String> getCategoriesList();
-
     /**
      *
      *
@@ -24767,7 +24030,6 @@ public final class PatchJobs {
      * @return The count of categories.
      */
     int getCategoriesCount();
-
     /**
      *
      *
@@ -24782,7 +24044,6 @@ public final class PatchJobs {
      * @return The categories at the given index.
      */
     java.lang.String getCategories(int index);
-
     /**
      *
      *
@@ -24811,7 +24072,6 @@ public final class PatchJobs {
      * @return A list containing the severities.
      */
     java.util.List<java.lang.String> getSeveritiesList();
-
     /**
      *
      *
@@ -24825,7 +24085,6 @@ public final class PatchJobs {
      * @return The count of severities.
      */
     int getSeveritiesCount();
-
     /**
      *
      *
@@ -24840,7 +24099,6 @@ public final class PatchJobs {
      * @return The severities at the given index.
      */
     java.lang.String getSeverities(int index);
-
     /**
      *
      *
@@ -24868,7 +24126,6 @@ public final class PatchJobs {
      * @return A list containing the excludes.
      */
     java.util.List<java.lang.String> getExcludesList();
-
     /**
      *
      *
@@ -24881,7 +24138,6 @@ public final class PatchJobs {
      * @return The count of excludes.
      */
     int getExcludesCount();
-
     /**
      *
      *
@@ -24895,7 +24151,6 @@ public final class PatchJobs {
      * @return The excludes at the given index.
      */
     java.lang.String getExcludes(int index);
-
     /**
      *
      *
@@ -24924,7 +24179,6 @@ public final class PatchJobs {
      * @return A list containing the exclusivePatches.
      */
     java.util.List<java.lang.String> getExclusivePatchesList();
-
     /**
      *
      *
@@ -24939,7 +24193,6 @@ public final class PatchJobs {
      * @return The count of exclusivePatches.
      */
     int getExclusivePatchesCount();
-
     /**
      *
      *
@@ -24955,7 +24208,6 @@ public final class PatchJobs {
      * @return The exclusivePatches at the given index.
      */
     java.lang.String getExclusivePatches(int index);
-
     /**
      *
      *
@@ -24972,7 +24224,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getExclusivePatchesBytes(int index);
   }
-
   /**
    *
    *
@@ -24988,7 +24239,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ZypperSettings)
       ZypperSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ZypperSettings.newBuilder() to construct.
     private ZypperSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -25024,7 +24274,6 @@ public final class PatchJobs {
 
     public static final int WITH_OPTIONAL_FIELD_NUMBER = 1;
     private boolean withOptional_ = false;
-
     /**
      *
      *
@@ -25043,7 +24292,6 @@ public final class PatchJobs {
 
     public static final int WITH_UPDATE_FIELD_NUMBER = 2;
     private boolean withUpdate_ = false;
-
     /**
      *
      *
@@ -25065,7 +24313,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList categories_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -25081,7 +24328,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getCategoriesList() {
       return categories_;
     }
-
     /**
      *
      *
@@ -25097,7 +24343,6 @@ public final class PatchJobs {
     public int getCategoriesCount() {
       return categories_.size();
     }
-
     /**
      *
      *
@@ -25114,7 +24359,6 @@ public final class PatchJobs {
     public java.lang.String getCategories(int index) {
       return categories_.get(index);
     }
-
     /**
      *
      *
@@ -25137,7 +24381,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList severities_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -25153,7 +24396,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getSeveritiesList() {
       return severities_;
     }
-
     /**
      *
      *
@@ -25169,7 +24411,6 @@ public final class PatchJobs {
     public int getSeveritiesCount() {
       return severities_.size();
     }
-
     /**
      *
      *
@@ -25186,7 +24427,6 @@ public final class PatchJobs {
     public java.lang.String getSeverities(int index) {
       return severities_.get(index);
     }
-
     /**
      *
      *
@@ -25209,7 +24449,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -25224,7 +24463,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExcludesList() {
       return excludes_;
     }
-
     /**
      *
      *
@@ -25239,7 +24477,6 @@ public final class PatchJobs {
     public int getExcludesCount() {
       return excludes_.size();
     }
-
     /**
      *
      *
@@ -25255,7 +24492,6 @@ public final class PatchJobs {
     public java.lang.String getExcludes(int index) {
       return excludes_.get(index);
     }
-
     /**
      *
      *
@@ -25277,7 +24513,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList exclusivePatches_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -25294,7 +24529,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExclusivePatchesList() {
       return exclusivePatches_;
     }
-
     /**
      *
      *
@@ -25311,7 +24545,6 @@ public final class PatchJobs {
     public int getExclusivePatchesCount() {
       return exclusivePatches_.size();
     }
-
     /**
      *
      *
@@ -25329,7 +24562,6 @@ public final class PatchJobs {
     public java.lang.String getExclusivePatches(int index) {
       return exclusivePatches_.get(index);
     }
-
     /**
      *
      *
@@ -25582,7 +24814,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -25870,7 +25101,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private boolean withOptional_;
-
       /**
        *
        *
@@ -25886,7 +25116,6 @@ public final class PatchJobs {
       public boolean getWithOptional() {
         return withOptional_;
       }
-
       /**
        *
        *
@@ -25906,7 +25135,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -25926,7 +25154,6 @@ public final class PatchJobs {
       }
 
       private boolean withUpdate_;
-
       /**
        *
        *
@@ -25942,7 +25169,6 @@ public final class PatchJobs {
       public boolean getWithUpdate() {
         return withUpdate_;
       }
-
       /**
        *
        *
@@ -25962,7 +25188,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -25990,7 +25215,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -26007,7 +25231,6 @@ public final class PatchJobs {
         categories_.makeImmutable();
         return categories_;
       }
-
       /**
        *
        *
@@ -26023,7 +25246,6 @@ public final class PatchJobs {
       public int getCategoriesCount() {
         return categories_.size();
       }
-
       /**
        *
        *
@@ -26040,7 +25262,6 @@ public final class PatchJobs {
       public java.lang.String getCategories(int index) {
         return categories_.get(index);
       }
-
       /**
        *
        *
@@ -26057,7 +25278,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getCategoriesBytes(int index) {
         return categories_.getByteString(index);
       }
-
       /**
        *
        *
@@ -26082,7 +25302,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26106,7 +25325,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26127,7 +25345,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26147,7 +25364,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26182,7 +25398,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -26199,7 +25414,6 @@ public final class PatchJobs {
         severities_.makeImmutable();
         return severities_;
       }
-
       /**
        *
        *
@@ -26215,7 +25429,6 @@ public final class PatchJobs {
       public int getSeveritiesCount() {
         return severities_.size();
       }
-
       /**
        *
        *
@@ -26232,7 +25445,6 @@ public final class PatchJobs {
       public java.lang.String getSeverities(int index) {
         return severities_.get(index);
       }
-
       /**
        *
        *
@@ -26249,7 +25461,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getSeveritiesBytes(int index) {
         return severities_.getByteString(index);
       }
-
       /**
        *
        *
@@ -26274,7 +25485,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26298,7 +25508,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26319,7 +25528,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26339,7 +25547,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26374,7 +25581,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000010;
       }
-
       /**
        *
        *
@@ -26390,7 +25596,6 @@ public final class PatchJobs {
         excludes_.makeImmutable();
         return excludes_;
       }
-
       /**
        *
        *
@@ -26405,7 +25610,6 @@ public final class PatchJobs {
       public int getExcludesCount() {
         return excludes_.size();
       }
-
       /**
        *
        *
@@ -26421,7 +25625,6 @@ public final class PatchJobs {
       public java.lang.String getExcludes(int index) {
         return excludes_.get(index);
       }
-
       /**
        *
        *
@@ -26437,7 +25640,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExcludesBytes(int index) {
         return excludes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -26461,7 +25663,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26484,7 +25685,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26504,7 +25704,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26523,7 +25722,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26557,7 +25755,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000020;
       }
-
       /**
        *
        *
@@ -26575,7 +25772,6 @@ public final class PatchJobs {
         exclusivePatches_.makeImmutable();
         return exclusivePatches_;
       }
-
       /**
        *
        *
@@ -26592,7 +25788,6 @@ public final class PatchJobs {
       public int getExclusivePatchesCount() {
         return exclusivePatches_.size();
       }
-
       /**
        *
        *
@@ -26610,7 +25805,6 @@ public final class PatchJobs {
       public java.lang.String getExclusivePatches(int index) {
         return exclusivePatches_.get(index);
       }
-
       /**
        *
        *
@@ -26628,7 +25822,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExclusivePatchesBytes(int index) {
         return exclusivePatches_.getByteString(index);
       }
-
       /**
        *
        *
@@ -26654,7 +25847,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26679,7 +25871,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26701,7 +25892,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26722,7 +25912,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -26834,7 +26023,6 @@ public final class PatchJobs {
      */
     java.util.List<com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Classification>
         getClassificationsList();
-
     /**
      *
      *
@@ -26850,7 +26038,6 @@ public final class PatchJobs {
      * @return The count of classifications.
      */
     int getClassificationsCount();
-
     /**
      *
      *
@@ -26868,7 +26055,6 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Classification getClassifications(
         int index);
-
     /**
      *
      *
@@ -26884,7 +26070,6 @@ public final class PatchJobs {
      * @return A list containing the enum numeric values on the wire for classifications.
      */
     java.util.List<java.lang.Integer> getClassificationsValueList();
-
     /**
      *
      *
@@ -26914,7 +26099,6 @@ public final class PatchJobs {
      * @return A list containing the excludes.
      */
     java.util.List<java.lang.String> getExcludesList();
-
     /**
      *
      *
@@ -26927,7 +26111,6 @@ public final class PatchJobs {
      * @return The count of excludes.
      */
     int getExcludesCount();
-
     /**
      *
      *
@@ -26941,7 +26124,6 @@ public final class PatchJobs {
      * @return The excludes at the given index.
      */
     java.lang.String getExcludes(int index);
-
     /**
      *
      *
@@ -26970,7 +26152,6 @@ public final class PatchJobs {
      * @return A list containing the exclusivePatches.
      */
     java.util.List<java.lang.String> getExclusivePatchesList();
-
     /**
      *
      *
@@ -26985,7 +26166,6 @@ public final class PatchJobs {
      * @return The count of exclusivePatches.
      */
     int getExclusivePatchesCount();
-
     /**
      *
      *
@@ -27001,7 +26181,6 @@ public final class PatchJobs {
      * @return The exclusivePatches at the given index.
      */
     java.lang.String getExclusivePatches(int index);
-
     /**
      *
      *
@@ -27018,7 +26197,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getExclusivePatchesBytes(int index);
   }
-
   /**
    *
    *
@@ -27033,7 +26211,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.WindowsUpdateSettings)
       WindowsUpdateSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use WindowsUpdateSettings.newBuilder() to construct.
     private WindowsUpdateSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -27208,7 +26385,6 @@ public final class PatchJobs {
        * <code>CLASSIFICATION_UNSPECIFIED = 0;</code>
        */
       public static final int CLASSIFICATION_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -27220,7 +26396,6 @@ public final class PatchJobs {
        * <code>CRITICAL = 1;</code>
        */
       public static final int CRITICAL_VALUE = 1;
-
       /**
        *
        *
@@ -27234,7 +26409,6 @@ public final class PatchJobs {
        * <code>SECURITY = 2;</code>
        */
       public static final int SECURITY_VALUE = 2;
-
       /**
        *
        *
@@ -27248,7 +26422,6 @@ public final class PatchJobs {
        * <code>DEFINITION = 3;</code>
        */
       public static final int DEFINITION_VALUE = 3;
-
       /**
        *
        *
@@ -27259,7 +26432,6 @@ public final class PatchJobs {
        * <code>DRIVER = 4;</code>
        */
       public static final int DRIVER_VALUE = 4;
-
       /**
        *
        *
@@ -27272,7 +26444,6 @@ public final class PatchJobs {
        * <code>FEATURE_PACK = 5;</code>
        */
       public static final int FEATURE_PACK_VALUE = 5;
-
       /**
        *
        *
@@ -27287,7 +26458,6 @@ public final class PatchJobs {
        * <code>SERVICE_PACK = 6;</code>
        */
       public static final int SERVICE_PACK_VALUE = 6;
-
       /**
        *
        *
@@ -27298,7 +26468,6 @@ public final class PatchJobs {
        * <code>TOOL = 7;</code>
        */
       public static final int TOOL_VALUE = 7;
-
       /**
        *
        *
@@ -27312,7 +26481,6 @@ public final class PatchJobs {
        * <code>UPDATE_ROLLUP = 8;</code>
        */
       public static final int UPDATE_ROLLUP_VALUE = 8;
-
       /**
        *
        *
@@ -27449,7 +26617,6 @@ public final class PatchJobs {
                     : result;
               }
             };
-
     /**
      *
      *
@@ -27473,7 +26640,6 @@ public final class PatchJobs {
           com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Classification>(
           classifications_, classifications_converter_);
     }
-
     /**
      *
      *
@@ -27492,7 +26658,6 @@ public final class PatchJobs {
     public int getClassificationsCount() {
       return classifications_.size();
     }
-
     /**
      *
      *
@@ -27513,7 +26678,6 @@ public final class PatchJobs {
         getClassifications(int index) {
       return classifications_converter_.convert(classifications_.get(index));
     }
-
     /**
      *
      *
@@ -27532,7 +26696,6 @@ public final class PatchJobs {
     public java.util.List<java.lang.Integer> getClassificationsValueList() {
       return classifications_;
     }
-
     /**
      *
      *
@@ -27560,7 +26723,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList excludes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -27575,7 +26737,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExcludesList() {
       return excludes_;
     }
-
     /**
      *
      *
@@ -27590,7 +26751,6 @@ public final class PatchJobs {
     public int getExcludesCount() {
       return excludes_.size();
     }
-
     /**
      *
      *
@@ -27606,7 +26766,6 @@ public final class PatchJobs {
     public java.lang.String getExcludes(int index) {
       return excludes_.get(index);
     }
-
     /**
      *
      *
@@ -27628,7 +26787,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList exclusivePatches_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -27645,7 +26803,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getExclusivePatchesList() {
       return exclusivePatches_;
     }
-
     /**
      *
      *
@@ -27662,7 +26819,6 @@ public final class PatchJobs {
     public int getExclusivePatchesCount() {
       return exclusivePatches_.size();
     }
-
     /**
      *
      *
@@ -27680,7 +26836,6 @@ public final class PatchJobs {
     public java.lang.String getExclusivePatches(int index) {
       return exclusivePatches_.get(index);
     }
-
     /**
      *
      *
@@ -27909,7 +27064,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -28178,7 +27332,6 @@ public final class PatchJobs {
           bitField0_ |= 0x00000001;
         }
       }
-
       /**
        *
        *
@@ -28201,7 +27354,6 @@ public final class PatchJobs {
             com.google.cloud.osconfig.v1.PatchJobs.WindowsUpdateSettings.Classification>(
             classifications_, classifications_converter_);
       }
-
       /**
        *
        *
@@ -28219,7 +27371,6 @@ public final class PatchJobs {
       public int getClassificationsCount() {
         return classifications_.size();
       }
-
       /**
        *
        *
@@ -28239,7 +27390,6 @@ public final class PatchJobs {
           getClassifications(int index) {
         return classifications_converter_.convert(classifications_.get(index));
       }
-
       /**
        *
        *
@@ -28267,7 +27417,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28293,7 +27442,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28322,7 +27470,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28343,7 +27490,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28361,7 +27507,6 @@ public final class PatchJobs {
       public java.util.List<java.lang.Integer> getClassificationsValueList() {
         return java.util.Collections.unmodifiableList(classifications_);
       }
-
       /**
        *
        *
@@ -28380,7 +27525,6 @@ public final class PatchJobs {
       public int getClassificationsValue(int index) {
         return classifications_.get(index);
       }
-
       /**
        *
        *
@@ -28403,7 +27547,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28425,7 +27568,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28459,7 +27601,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -28475,7 +27616,6 @@ public final class PatchJobs {
         excludes_.makeImmutable();
         return excludes_;
       }
-
       /**
        *
        *
@@ -28490,7 +27630,6 @@ public final class PatchJobs {
       public int getExcludesCount() {
         return excludes_.size();
       }
-
       /**
        *
        *
@@ -28506,7 +27645,6 @@ public final class PatchJobs {
       public java.lang.String getExcludes(int index) {
         return excludes_.get(index);
       }
-
       /**
        *
        *
@@ -28522,7 +27660,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExcludesBytes(int index) {
         return excludes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -28546,7 +27683,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28569,7 +27705,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28589,7 +27724,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28608,7 +27742,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28642,7 +27775,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -28660,7 +27792,6 @@ public final class PatchJobs {
         exclusivePatches_.makeImmutable();
         return exclusivePatches_;
       }
-
       /**
        *
        *
@@ -28677,7 +27808,6 @@ public final class PatchJobs {
       public int getExclusivePatchesCount() {
         return exclusivePatches_.size();
       }
-
       /**
        *
        *
@@ -28695,7 +27825,6 @@ public final class PatchJobs {
       public java.lang.String getExclusivePatches(int index) {
         return exclusivePatches_.get(index);
       }
-
       /**
        *
        *
@@ -28713,7 +27842,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getExclusivePatchesBytes(int index) {
         return exclusivePatches_.getByteString(index);
       }
-
       /**
        *
        *
@@ -28739,7 +27867,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28764,7 +27891,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28786,7 +27912,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28807,7 +27932,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -28918,7 +28042,6 @@ public final class PatchJobs {
      * @return Whether the linuxExecStepConfig field is set.
      */
     boolean hasLinuxExecStepConfig();
-
     /**
      *
      *
@@ -28931,7 +28054,6 @@ public final class PatchJobs {
      * @return The linuxExecStepConfig.
      */
     com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig getLinuxExecStepConfig();
-
     /**
      *
      *
@@ -28956,7 +28078,6 @@ public final class PatchJobs {
      * @return Whether the windowsExecStepConfig field is set.
      */
     boolean hasWindowsExecStepConfig();
-
     /**
      *
      *
@@ -28969,7 +28090,6 @@ public final class PatchJobs {
      * @return The windowsExecStepConfig.
      */
     com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig getWindowsExecStepConfig();
-
     /**
      *
      *
@@ -28982,7 +28102,6 @@ public final class PatchJobs {
     com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfigOrBuilder
         getWindowsExecStepConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -28997,7 +28116,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ExecStep)
       ExecStepOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExecStep.newBuilder() to construct.
     private ExecStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -29029,7 +28147,6 @@ public final class PatchJobs {
     private int bitField0_;
     public static final int LINUX_EXEC_STEP_CONFIG_FIELD_NUMBER = 1;
     private com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig linuxExecStepConfig_;
-
     /**
      *
      *
@@ -29045,7 +28162,6 @@ public final class PatchJobs {
     public boolean hasLinuxExecStepConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -29063,7 +28179,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.getDefaultInstance()
           : linuxExecStepConfig_;
     }
-
     /**
      *
      *
@@ -29083,7 +28198,6 @@ public final class PatchJobs {
 
     public static final int WINDOWS_EXEC_STEP_CONFIG_FIELD_NUMBER = 2;
     private com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig windowsExecStepConfig_;
-
     /**
      *
      *
@@ -29099,7 +28213,6 @@ public final class PatchJobs {
     public boolean hasWindowsExecStepConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -29117,7 +28230,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.getDefaultInstance()
           : windowsExecStepConfig_;
     }
-
     /**
      *
      *
@@ -29316,7 +28428,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -29550,7 +28661,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfigOrBuilder>
           linuxExecStepConfigBuilder_;
-
       /**
        *
        *
@@ -29565,7 +28675,6 @@ public final class PatchJobs {
       public boolean hasLinuxExecStepConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -29586,7 +28695,6 @@ public final class PatchJobs {
           return linuxExecStepConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -29610,7 +28718,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -29631,7 +28738,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -29661,7 +28767,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -29681,7 +28786,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -29697,7 +28801,6 @@ public final class PatchJobs {
         onChanged();
         return getLinuxExecStepConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -29717,7 +28820,6 @@ public final class PatchJobs {
               : linuxExecStepConfig_;
         }
       }
-
       /**
        *
        *
@@ -29750,7 +28852,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfigOrBuilder>
           windowsExecStepConfigBuilder_;
-
       /**
        *
        *
@@ -29765,7 +28866,6 @@ public final class PatchJobs {
       public boolean hasWindowsExecStepConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -29786,7 +28886,6 @@ public final class PatchJobs {
           return windowsExecStepConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -29810,7 +28909,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -29831,7 +28929,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -29861,7 +28958,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -29881,7 +28977,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -29897,7 +28992,6 @@ public final class PatchJobs {
         onChanged();
         return getWindowsExecStepConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -29917,7 +29011,6 @@ public final class PatchJobs {
               : windowsExecStepConfig_;
         }
       }
-
       /**
        *
        *
@@ -30025,7 +29118,6 @@ public final class PatchJobs {
      * @return Whether the localPath field is set.
      */
     boolean hasLocalPath();
-
     /**
      *
      *
@@ -30038,7 +29130,6 @@ public final class PatchJobs {
      * @return The localPath.
      */
     java.lang.String getLocalPath();
-
     /**
      *
      *
@@ -30064,7 +29155,6 @@ public final class PatchJobs {
      * @return Whether the gcsObject field is set.
      */
     boolean hasGcsObject();
-
     /**
      *
      *
@@ -30077,7 +29167,6 @@ public final class PatchJobs {
      * @return The gcsObject.
      */
     com.google.cloud.osconfig.v1.PatchJobs.GcsObject getGcsObject();
-
     /**
      *
      *
@@ -30102,7 +29191,6 @@ public final class PatchJobs {
      * @return A list containing the allowedSuccessCodes.
      */
     java.util.List<java.lang.Integer> getAllowedSuccessCodesList();
-
     /**
      *
      *
@@ -30116,7 +29204,6 @@ public final class PatchJobs {
      * @return The count of allowedSuccessCodes.
      */
     int getAllowedSuccessCodesCount();
-
     /**
      *
      *
@@ -30147,7 +29234,6 @@ public final class PatchJobs {
      * @return The enum numeric value on the wire for interpreter.
      */
     int getInterpreterValue();
-
     /**
      *
      *
@@ -30166,7 +29252,6 @@ public final class PatchJobs {
 
     com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.ExecutableCase getExecutableCase();
   }
-
   /**
    *
    *
@@ -30181,7 +29266,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.ExecStepConfig)
       ExecStepConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ExecStepConfig.newBuilder() to construct.
     private ExecStepConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -30272,7 +29356,6 @@ public final class PatchJobs {
        * <code>INTERPRETER_UNSPECIFIED = 0;</code>
        */
       public static final int INTERPRETER_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -30284,7 +29367,6 @@ public final class PatchJobs {
        * <code>SHELL = 1;</code>
        */
       public static final int SHELL_VALUE = 1;
-
       /**
        *
        *
@@ -30399,7 +29481,6 @@ public final class PatchJobs {
       private ExecutableCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -30433,7 +29514,6 @@ public final class PatchJobs {
     }
 
     public static final int LOCAL_PATH_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -30448,7 +29528,6 @@ public final class PatchJobs {
     public boolean hasLocalPath() {
       return executableCase_ == 1;
     }
-
     /**
      *
      *
@@ -30476,7 +29555,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -30506,7 +29584,6 @@ public final class PatchJobs {
     }
 
     public static final int GCS_OBJECT_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -30522,7 +29599,6 @@ public final class PatchJobs {
     public boolean hasGcsObject() {
       return executableCase_ == 2;
     }
-
     /**
      *
      *
@@ -30541,7 +29617,6 @@ public final class PatchJobs {
       }
       return com.google.cloud.osconfig.v1.PatchJobs.GcsObject.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -30563,7 +29638,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList allowedSuccessCodes_ = emptyIntList();
-
     /**
      *
      *
@@ -30580,7 +29654,6 @@ public final class PatchJobs {
     public java.util.List<java.lang.Integer> getAllowedSuccessCodesList() {
       return allowedSuccessCodes_;
     }
-
     /**
      *
      *
@@ -30596,7 +29669,6 @@ public final class PatchJobs {
     public int getAllowedSuccessCodesCount() {
       return allowedSuccessCodes_.size();
     }
-
     /**
      *
      *
@@ -30618,7 +29690,6 @@ public final class PatchJobs {
 
     public static final int INTERPRETER_FIELD_NUMBER = 4;
     private int interpreter_ = 0;
-
     /**
      *
      *
@@ -30637,7 +29708,6 @@ public final class PatchJobs {
     public int getInterpreterValue() {
       return interpreter_;
     }
-
     /**
      *
      *
@@ -30892,7 +29962,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -31186,7 +30255,6 @@ public final class PatchJobs {
       public boolean hasLocalPath() {
         return executableCase_ == 1;
       }
-
       /**
        *
        *
@@ -31215,7 +30283,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -31244,7 +30311,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -31266,7 +30332,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -31286,7 +30351,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -31315,7 +30379,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.PatchJobs.GcsObject.Builder,
               com.google.cloud.osconfig.v1.PatchJobs.GcsObjectOrBuilder>
           gcsObjectBuilder_;
-
       /**
        *
        *
@@ -31331,7 +30394,6 @@ public final class PatchJobs {
       public boolean hasGcsObject() {
         return executableCase_ == 2;
       }
-
       /**
        *
        *
@@ -31357,7 +30419,6 @@ public final class PatchJobs {
           return com.google.cloud.osconfig.v1.PatchJobs.GcsObject.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -31380,7 +30441,6 @@ public final class PatchJobs {
         executableCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -31401,7 +30461,6 @@ public final class PatchJobs {
         executableCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -31435,7 +30494,6 @@ public final class PatchJobs {
         executableCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -31461,7 +30519,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -31474,7 +30531,6 @@ public final class PatchJobs {
       public com.google.cloud.osconfig.v1.PatchJobs.GcsObject.Builder getGcsObjectBuilder() {
         return getGcsObjectFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -31495,7 +30551,6 @@ public final class PatchJobs {
           return com.google.cloud.osconfig.v1.PatchJobs.GcsObject.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -31537,7 +30592,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -31554,7 +30608,6 @@ public final class PatchJobs {
         allowedSuccessCodes_.makeImmutable();
         return allowedSuccessCodes_;
       }
-
       /**
        *
        *
@@ -31570,7 +30623,6 @@ public final class PatchJobs {
       public int getAllowedSuccessCodesCount() {
         return allowedSuccessCodes_.size();
       }
-
       /**
        *
        *
@@ -31587,7 +30639,6 @@ public final class PatchJobs {
       public int getAllowedSuccessCodes(int index) {
         return allowedSuccessCodes_.getInt(index);
       }
-
       /**
        *
        *
@@ -31610,7 +30661,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -31632,7 +30682,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -31654,7 +30703,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -31675,7 +30723,6 @@ public final class PatchJobs {
       }
 
       private int interpreter_ = 0;
-
       /**
        *
        *
@@ -31694,7 +30741,6 @@ public final class PatchJobs {
       public int getInterpreterValue() {
         return interpreter_;
       }
-
       /**
        *
        *
@@ -31716,7 +30762,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -31740,7 +30785,6 @@ public final class PatchJobs {
             ? com.google.cloud.osconfig.v1.PatchJobs.ExecStepConfig.Interpreter.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -31766,7 +30810,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -31869,7 +30912,6 @@ public final class PatchJobs {
      * @return The bucket.
      */
     java.lang.String getBucket();
-
     /**
      *
      *
@@ -31895,7 +30937,6 @@ public final class PatchJobs {
      * @return The object.
      */
     java.lang.String getObject();
-
     /**
      *
      *
@@ -31923,7 +30964,6 @@ public final class PatchJobs {
      */
     long getGenerationNumber();
   }
-
   /**
    *
    *
@@ -31938,7 +30978,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.GcsObject)
       GcsObjectOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GcsObject.newBuilder() to construct.
     private GcsObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -31974,7 +31013,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bucket_ = "";
-
     /**
      *
      *
@@ -31998,7 +31036,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -32027,7 +31064,6 @@ public final class PatchJobs {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object object_ = "";
-
     /**
      *
      *
@@ -32051,7 +31087,6 @@ public final class PatchJobs {
         return s;
       }
     }
-
     /**
      *
      *
@@ -32078,7 +31113,6 @@ public final class PatchJobs {
 
     public static final int GENERATION_NUMBER_FIELD_NUMBER = 3;
     private long generationNumber_ = 0L;
-
     /**
      *
      *
@@ -32274,7 +31308,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -32490,7 +31523,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private java.lang.Object bucket_ = "";
-
       /**
        *
        *
@@ -32513,7 +31545,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -32536,7 +31567,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -32558,7 +31588,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -32576,7 +31605,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -32601,7 +31629,6 @@ public final class PatchJobs {
       }
 
       private java.lang.Object object_ = "";
-
       /**
        *
        *
@@ -32624,7 +31651,6 @@ public final class PatchJobs {
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -32647,7 +31673,6 @@ public final class PatchJobs {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -32669,7 +31694,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -32687,7 +31711,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -32712,7 +31735,6 @@ public final class PatchJobs {
       }
 
       private long generationNumber_;
-
       /**
        *
        *
@@ -32729,7 +31751,6 @@ public final class PatchJobs {
       public long getGenerationNumber() {
         return generationNumber_;
       }
-
       /**
        *
        *
@@ -32750,7 +31771,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -32866,7 +31886,6 @@ public final class PatchJobs {
      */
     java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel>
         getGroupLabelsList();
-
     /**
      *
      *
@@ -32879,7 +31898,6 @@ public final class PatchJobs {
      * </code>
      */
     com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel getGroupLabels(int index);
-
     /**
      *
      *
@@ -32892,7 +31910,6 @@ public final class PatchJobs {
      * </code>
      */
     int getGroupLabelsCount();
-
     /**
      *
      *
@@ -32908,7 +31925,6 @@ public final class PatchJobs {
             ? extends
                 com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabelOrBuilder>
         getGroupLabelsOrBuilderList();
-
     /**
      *
      *
@@ -32936,7 +31952,6 @@ public final class PatchJobs {
      * @return A list containing the zones.
      */
     java.util.List<java.lang.String> getZonesList();
-
     /**
      *
      *
@@ -32950,7 +31965,6 @@ public final class PatchJobs {
      * @return The count of zones.
      */
     int getZonesCount();
-
     /**
      *
      *
@@ -32965,7 +31979,6 @@ public final class PatchJobs {
      * @return The zones at the given index.
      */
     java.lang.String getZones(int index);
-
     /**
      *
      *
@@ -32996,7 +32009,6 @@ public final class PatchJobs {
      * @return A list containing the instances.
      */
     java.util.List<java.lang.String> getInstancesList();
-
     /**
      *
      *
@@ -33012,7 +32024,6 @@ public final class PatchJobs {
      * @return The count of instances.
      */
     int getInstancesCount();
-
     /**
      *
      *
@@ -33029,7 +32040,6 @@ public final class PatchJobs {
      * @return The instances at the given index.
      */
     java.lang.String getInstances(int index);
-
     /**
      *
      *
@@ -33061,7 +32071,6 @@ public final class PatchJobs {
      * @return A list containing the instanceNamePrefixes.
      */
     java.util.List<java.lang.String> getInstanceNamePrefixesList();
-
     /**
      *
      *
@@ -33076,7 +32085,6 @@ public final class PatchJobs {
      * @return The count of instanceNamePrefixes.
      */
     int getInstanceNamePrefixesCount();
-
     /**
      *
      *
@@ -33092,7 +32100,6 @@ public final class PatchJobs {
      * @return The instanceNamePrefixes at the given index.
      */
     java.lang.String getInstanceNamePrefixes(int index);
-
     /**
      *
      *
@@ -33109,7 +32116,6 @@ public final class PatchJobs {
      */
     com.google.protobuf.ByteString getInstanceNamePrefixesBytes(int index);
   }
-
   /**
    *
    *
@@ -33127,7 +32133,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchInstanceFilter)
       PatchInstanceFilterOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PatchInstanceFilter.newBuilder() to construct.
     private PatchInstanceFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -33177,7 +32182,6 @@ public final class PatchJobs {
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
       int getLabelsCount();
-
       /**
        *
        *
@@ -33189,11 +32193,9 @@ public final class PatchJobs {
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
       boolean containsLabels(java.lang.String key);
-
       /** Use {@link #getLabelsMap()} instead. */
       @java.lang.Deprecated
       java.util.Map<java.lang.String, java.lang.String> getLabels();
-
       /**
        *
        *
@@ -33205,7 +32207,6 @@ public final class PatchJobs {
        * <code>map&lt;string, string&gt; labels = 1;</code>
        */
       java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
       /**
        *
        *
@@ -33221,7 +32222,6 @@ public final class PatchJobs {
           java.lang.String key,
           /* nullable */
           java.lang.String defaultValue);
-
       /**
        *
        *
@@ -33234,7 +32234,6 @@ public final class PatchJobs {
        */
       java.lang.String getLabelsOrThrow(java.lang.String key);
     }
-
     /**
      *
      *
@@ -33256,7 +32255,6 @@ public final class PatchJobs {
         // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchInstanceFilter.GroupLabel)
         GroupLabelOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use GroupLabel.newBuilder() to construct.
       private GroupLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -33324,7 +32322,6 @@ public final class PatchJobs {
       public int getLabelsCount() {
         return internalGetLabels().getMap().size();
       }
-
       /**
        *
        *
@@ -33342,14 +32339,12 @@ public final class PatchJobs {
         }
         return internalGetLabels().getMap().containsKey(key);
       }
-
       /** Use {@link #getLabelsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getLabels() {
         return getLabelsMap();
       }
-
       /**
        *
        *
@@ -33364,7 +32359,6 @@ public final class PatchJobs {
       public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
         return internalGetLabels().getMap();
       }
-
       /**
        *
        *
@@ -33386,7 +32380,6 @@ public final class PatchJobs {
         java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
-
       /**
        *
        *
@@ -33581,7 +32574,6 @@ public final class PatchJobs {
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -33840,7 +32832,6 @@ public final class PatchJobs {
         public int getLabelsCount() {
           return internalGetLabels().getMap().size();
         }
-
         /**
          *
          *
@@ -33858,14 +32849,12 @@ public final class PatchJobs {
           }
           return internalGetLabels().getMap().containsKey(key);
         }
-
         /** Use {@link #getLabelsMap()} instead. */
         @java.lang.Override
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getLabels() {
           return getLabelsMap();
         }
-
         /**
          *
          *
@@ -33880,7 +32869,6 @@ public final class PatchJobs {
         public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
           return internalGetLabels().getMap();
         }
-
         /**
          *
          *
@@ -33902,7 +32890,6 @@ public final class PatchJobs {
           java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
           return map.containsKey(key) ? map.get(key) : defaultValue;
         }
-
         /**
          *
          *
@@ -33930,7 +32917,6 @@ public final class PatchJobs {
           internalGetMutableLabels().getMutableMap().clear();
           return this;
         }
-
         /**
          *
          *
@@ -33948,14 +32934,12 @@ public final class PatchJobs {
           internalGetMutableLabels().getMutableMap().remove(key);
           return this;
         }
-
         /** Use alternate mutation accessors instead. */
         @java.lang.Deprecated
         public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
           bitField0_ |= 0x00000001;
           return internalGetMutableLabels().getMutableMap();
         }
-
         /**
          *
          *
@@ -33977,7 +32961,6 @@ public final class PatchJobs {
           bitField0_ |= 0x00000001;
           return this;
         }
-
         /**
          *
          *
@@ -34064,7 +33047,6 @@ public final class PatchJobs {
 
     public static final int ALL_FIELD_NUMBER = 1;
     private boolean all_ = false;
-
     /**
      *
      *
@@ -34087,7 +33069,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel>
         groupLabels_;
-
     /**
      *
      *
@@ -34104,7 +33085,6 @@ public final class PatchJobs {
         getGroupLabelsList() {
       return groupLabels_;
     }
-
     /**
      *
      *
@@ -34123,7 +33103,6 @@ public final class PatchJobs {
         getGroupLabelsOrBuilderList() {
       return groupLabels_;
     }
-
     /**
      *
      *
@@ -34139,7 +33118,6 @@ public final class PatchJobs {
     public int getGroupLabelsCount() {
       return groupLabels_.size();
     }
-
     /**
      *
      *
@@ -34156,7 +33134,6 @@ public final class PatchJobs {
         int index) {
       return groupLabels_.get(index);
     }
-
     /**
      *
      *
@@ -34179,7 +33156,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList zones_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -34195,7 +33171,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getZonesList() {
       return zones_;
     }
-
     /**
      *
      *
@@ -34211,7 +33186,6 @@ public final class PatchJobs {
     public int getZonesCount() {
       return zones_.size();
     }
-
     /**
      *
      *
@@ -34228,7 +33202,6 @@ public final class PatchJobs {
     public java.lang.String getZones(int index) {
       return zones_.get(index);
     }
-
     /**
      *
      *
@@ -34251,7 +33224,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList instances_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -34269,7 +33241,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getInstancesList() {
       return instances_;
     }
-
     /**
      *
      *
@@ -34287,7 +33258,6 @@ public final class PatchJobs {
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -34306,7 +33276,6 @@ public final class PatchJobs {
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -34331,7 +33300,6 @@ public final class PatchJobs {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList instanceNamePrefixes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -34348,7 +33316,6 @@ public final class PatchJobs {
     public com.google.protobuf.ProtocolStringList getInstanceNamePrefixesList() {
       return instanceNamePrefixes_;
     }
-
     /**
      *
      *
@@ -34365,7 +33332,6 @@ public final class PatchJobs {
     public int getInstanceNamePrefixesCount() {
       return instanceNamePrefixes_.size();
     }
-
     /**
      *
      *
@@ -34383,7 +33349,6 @@ public final class PatchJobs {
     public java.lang.String getInstanceNamePrefixes(int index) {
       return instanceNamePrefixes_.get(index);
     }
-
     /**
      *
      *
@@ -34623,7 +33588,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -34944,7 +33908,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private boolean all_;
-
       /**
        *
        *
@@ -34961,7 +33924,6 @@ public final class PatchJobs {
       public boolean getAll() {
         return all_;
       }
-
       /**
        *
        *
@@ -34982,7 +33944,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35040,7 +34001,6 @@ public final class PatchJobs {
           return groupLabelsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -35059,7 +34019,6 @@ public final class PatchJobs {
           return groupLabelsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -35079,7 +34038,6 @@ public final class PatchJobs {
           return groupLabelsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -35105,7 +34063,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35130,7 +34087,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35156,7 +34112,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35182,7 +34137,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35206,7 +34160,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35231,7 +34184,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35256,7 +34208,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35278,7 +34229,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35300,7 +34250,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -35316,7 +34265,6 @@ public final class PatchJobs {
           getGroupLabelsBuilder(int index) {
         return getGroupLabelsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -35336,7 +34284,6 @@ public final class PatchJobs {
           return groupLabelsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -35358,7 +34305,6 @@ public final class PatchJobs {
           return java.util.Collections.unmodifiableList(groupLabels_);
         }
       }
-
       /**
        *
        *
@@ -35377,7 +34323,6 @@ public final class PatchJobs {
                 com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -35397,7 +34342,6 @@ public final class PatchJobs {
                 com.google.cloud.osconfig.v1.PatchJobs.PatchInstanceFilter.GroupLabel
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -35444,7 +34388,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -35461,7 +34404,6 @@ public final class PatchJobs {
         zones_.makeImmutable();
         return zones_;
       }
-
       /**
        *
        *
@@ -35477,7 +34419,6 @@ public final class PatchJobs {
       public int getZonesCount() {
         return zones_.size();
       }
-
       /**
        *
        *
@@ -35494,7 +34435,6 @@ public final class PatchJobs {
       public java.lang.String getZones(int index) {
         return zones_.get(index);
       }
-
       /**
        *
        *
@@ -35511,7 +34451,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getZonesBytes(int index) {
         return zones_.getByteString(index);
       }
-
       /**
        *
        *
@@ -35536,7 +34475,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35560,7 +34498,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35581,7 +34518,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35601,7 +34537,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35636,7 +34571,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -35655,7 +34589,6 @@ public final class PatchJobs {
         instances_.makeImmutable();
         return instances_;
       }
-
       /**
        *
        *
@@ -35673,7 +34606,6 @@ public final class PatchJobs {
       public int getInstancesCount() {
         return instances_.size();
       }
-
       /**
        *
        *
@@ -35692,7 +34624,6 @@ public final class PatchJobs {
       public java.lang.String getInstances(int index) {
         return instances_.get(index);
       }
-
       /**
        *
        *
@@ -35711,7 +34642,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getInstancesBytes(int index) {
         return instances_.getByteString(index);
       }
-
       /**
        *
        *
@@ -35738,7 +34668,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35764,7 +34693,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35787,7 +34715,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35809,7 +34736,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35847,7 +34773,6 @@ public final class PatchJobs {
         }
         bitField0_ |= 0x00000010;
       }
-
       /**
        *
        *
@@ -35865,7 +34790,6 @@ public final class PatchJobs {
         instanceNamePrefixes_.makeImmutable();
         return instanceNamePrefixes_;
       }
-
       /**
        *
        *
@@ -35882,7 +34806,6 @@ public final class PatchJobs {
       public int getInstanceNamePrefixesCount() {
         return instanceNamePrefixes_.size();
       }
-
       /**
        *
        *
@@ -35900,7 +34823,6 @@ public final class PatchJobs {
       public java.lang.String getInstanceNamePrefixes(int index) {
         return instanceNamePrefixes_.get(index);
       }
-
       /**
        *
        *
@@ -35918,7 +34840,6 @@ public final class PatchJobs {
       public com.google.protobuf.ByteString getInstanceNamePrefixesBytes(int index) {
         return instanceNamePrefixes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -35944,7 +34865,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35969,7 +34889,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -35991,7 +34910,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -36012,7 +34930,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -36121,7 +35038,6 @@ public final class PatchJobs {
      * @return The enum numeric value on the wire for mode.
      */
     int getModeValue();
-
     /**
      *
      *
@@ -36169,7 +35085,6 @@ public final class PatchJobs {
      * @return Whether the disruptionBudget field is set.
      */
     boolean hasDisruptionBudget();
-
     /**
      *
      *
@@ -36204,7 +35119,6 @@ public final class PatchJobs {
      * @return The disruptionBudget.
      */
     com.google.cloud.osconfig.v1.Common.FixedOrPercent getDisruptionBudget();
-
     /**
      *
      *
@@ -36238,7 +35152,6 @@ public final class PatchJobs {
      */
     com.google.cloud.osconfig.v1.Common.FixedOrPercentOrBuilder getDisruptionBudgetOrBuilder();
   }
-
   /**
    *
    *
@@ -36254,7 +35167,6 @@ public final class PatchJobs {
       // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1.PatchRollout)
       PatchRolloutOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PatchRollout.newBuilder() to construct.
     private PatchRollout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -36343,7 +35255,6 @@ public final class PatchJobs {
        * <code>MODE_UNSPECIFIED = 0;</code>
        */
       public static final int MODE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -36359,7 +35270,6 @@ public final class PatchJobs {
        * <code>ZONE_BY_ZONE = 1;</code>
        */
       public static final int ZONE_BY_ZONE_VALUE = 1;
-
       /**
        *
        *
@@ -36459,7 +35369,6 @@ public final class PatchJobs {
     private int bitField0_;
     public static final int MODE_FIELD_NUMBER = 1;
     private int mode_ = 0;
-
     /**
      *
      *
@@ -36475,7 +35384,6 @@ public final class PatchJobs {
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -36498,7 +35406,6 @@ public final class PatchJobs {
 
     public static final int DISRUPTION_BUDGET_FIELD_NUMBER = 2;
     private com.google.cloud.osconfig.v1.Common.FixedOrPercent disruptionBudget_;
-
     /**
      *
      *
@@ -36536,7 +35443,6 @@ public final class PatchJobs {
     public boolean hasDisruptionBudget() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -36576,7 +35482,6 @@ public final class PatchJobs {
           ? com.google.cloud.osconfig.v1.Common.FixedOrPercent.getDefaultInstance()
           : disruptionBudget_;
     }
-
     /**
      *
      *
@@ -36795,7 +35700,6 @@ public final class PatchJobs {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -37015,7 +35919,6 @@ public final class PatchJobs {
       private int bitField0_;
 
       private int mode_ = 0;
-
       /**
        *
        *
@@ -37031,7 +35934,6 @@ public final class PatchJobs {
       public int getModeValue() {
         return mode_;
       }
-
       /**
        *
        *
@@ -37050,7 +35952,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -37070,7 +35971,6 @@ public final class PatchJobs {
             ? com.google.cloud.osconfig.v1.PatchJobs.PatchRollout.Mode.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -37092,7 +35992,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -37117,7 +36016,6 @@ public final class PatchJobs {
               com.google.cloud.osconfig.v1.Common.FixedOrPercent.Builder,
               com.google.cloud.osconfig.v1.Common.FixedOrPercentOrBuilder>
           disruptionBudgetBuilder_;
-
       /**
        *
        *
@@ -37154,7 +36052,6 @@ public final class PatchJobs {
       public boolean hasDisruptionBudget() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -37197,7 +36094,6 @@ public final class PatchJobs {
           return disruptionBudgetBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -37242,7 +36138,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -37285,7 +36180,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -37337,7 +36231,6 @@ public final class PatchJobs {
         }
         return this;
       }
-
       /**
        *
        *
@@ -37379,7 +36272,6 @@ public final class PatchJobs {
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -37417,7 +36309,6 @@ public final class PatchJobs {
         onChanged();
         return getDisruptionBudgetFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -37459,7 +36350,6 @@ public final class PatchJobs {
               : disruptionBudget_;
         }
       }
-
       /**
        *
        *
@@ -37677,222 +36567,155 @@ public final class PatchJobs {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ")google/cloud/osconfig/v1/patch_jobs.pr"
+      "\n)google/cloud/osconfig/v1/patch_jobs.pr"
           + "oto\022\030google.cloud.osconfig.v1\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
           + "rce.proto\032.google/cloud/osconfig/v1/osco"
           + "nfig_common.proto\032\036google/protobuf/durat"
-          + "ion.proto\032\037google/protobuf/timestamp.proto\"\211\003\n"
-          + "\026ExecutePatchJobRequest\022C\n"
-          + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
-          + "+cloudresourcemanager.googleapis.com/Project\022\023\n"
-          + "\013description\030\002 \001(\t\022K\n"
-          + "\017instance_filter\030\007"
-          + " \001(\0132-.google.cloud.osconfig.v1.PatchInstanceFilterB\003\340A\002\022;\n"
-          + "\014patch_config\030\004 \001(\0132%.google.cloud.osconfig.v1.PatchConfig\022+\n"
-          + "\010duration\030\005 \001(\0132\031.google.protobuf.Duration\022\017\n"
-          + "\007dry_run\030\006 \001(\010\022\024\n"
-          + "\014display_name\030\010 \001(\t\0227\n"
-          + "\007rollout\030\t \001(\0132&.google.cloud.osconfig.v1.PatchRollout\"L\n"
-          + "\022GetPatchJobRequest\0226\n"
-          + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " osconfig.googleapis.com/PatchJob\"\225\001\n"
-          + "\"ListPatchJobInstanceDetailsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " osconfig.googleapis.com/PatchJob\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\022\016\n"
-          + "\006filter\030\004 \001(\t\"\225\001\n"
-          + "#ListPatchJobInstanceDetailsResponse\022U\n"
-          + "\032patch_job_instance_details\030\001"
-          + " \003(\01321.google.cloud.osconfig.v1.PatchJobInstanceDetails\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\326\001\n"
-          + "\027PatchJobInstanceDetails\0222\n"
-          + "\004name\030\001 \001(\tB$\372A!\n"
-          + "\037compute.googleapis.com/Instance\022\032\n"
-          + "\022instance_system_id\030\002 \001(\t\022<\n"
-          + "\005state\030\003 \001(\0162-.google.cloud.osconfig.v1.Instance.PatchState\022\026\n"
-          + "\016failure_reason\030\004 \001(\t\022\025\n\r"
-          + "attempt_count\030\005 \001(\003\"\222\001\n"
-          + "\024ListPatchJobsRequest\022C\n"
-          + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
-          + "+cloudresourcemanager.googleapis.com/Project\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\022\016\n"
-          + "\006filter\030\004 \001(\t\"h\n"
-          + "\025ListPatchJobsResponse\0226\n\n"
-          + "patch_jobs\030\001 \003(\0132\".google.cloud.osconfig.v1.PatchJob\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\334\013\n"
-          + "\010PatchJob\022\014\n"
-          + "\004name\030\001 \001(\t\022\024\n"
-          + "\014display_name\030\016 \001(\t\022\023\n"
-          + "\013description\030\002 \001(\t\022/\n"
-          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022/\n"
-          + "\013update_time\030\004 \001(\0132\032.google.protobuf.Timestamp\0227\n"
-          + "\005state\030\005 \001(\0162(.google.cloud.osconfig.v1.PatchJob.State\022F\n"
-          + "\017instance_filter\030\r"
-          + " \001(\0132-.google.cloud.osconfig.v1.PatchInstanceFilter\022;\n"
-          + "\014patch_config\030\007 \001(\0132%.google.cloud.osconfig.v1.PatchConfig\022+\n"
-          + "\010duration\030\010 \001(\0132\031.google.protobuf.Duration\022[\n"
-          + "\030instance_details_summary\030\t"
-          + " \001(\01329.google.cloud.osconfig.v1.PatchJob.InstanceDetailsSummary\022\017\n"
-          + "\007dry_run\030\n"
-          + " \001(\010\022\025\n\r"
-          + "error_message\030\013 \001(\t\022\030\n"
-          + "\020percent_complete\030\014 \001(\001\022I\n"
-          + "\020patch_deployment\030\017 \001(\tB/\340A\003\372A)\n"
-          + "\'osconfig.googleapis.com/PatchDeployment\0227\n"
-          + "\007rollout\030\020 \001(\0132&.google.cloud.osconfig.v1.PatchRollout\032\275\004\n"
-          + "\026InstanceDetailsSummary\022\036\n"
-          + "\026pending_instance_count\030\001 \001(\003\022\037\n"
-          + "\027inactive_instance_count\030\002 \001(\003\022\037\n"
-          + "\027notified_instance_count\030\003 \001(\003\022\036\n"
-          + "\026started_instance_count\030\004 \001(\003\022*\n"
-          + "\"downloading_patches_instance_count\030\005 \001(\003\022\'\n"
-          + "\037applying_patches_instance_count\030\006 \001(\003\022 \n"
-          + "\030rebooting_instance_count\030\007 \001(\003\022 \n"
-          + "\030succeeded_instance_count\030\010 \001(\003\0220\n"
-          + "(succeeded_reboot_required_instance_count\030\t \001(\003\022\035\n"
-          + "\025failed_instance_count\030\n"
-          + " \001(\003\022\034\n"
-          + "\024acked_instance_count\030\013 \001(\003\022 \n"
-          + "\030timed_out_instance_count\030\014 \001(\003\022%\n"
-          + "\035pre_patch_step_instance_count\030\r"
-          + " \001(\003\022&\n"
-          + "\036post_patch_step_instance_count\030\016 \001(\003\022(\n"
-          + " no_agent_detected_instance_count\030\017 \001(\003\"\225\001\n"
-          + "\005State\022\025\n"
-          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
-          + "\007STARTED\020\001\022\023\n"
-          + "\017INSTANCE_LOOKUP\020\002\022\014\n"
-          + "\010PATCHING\020\003\022\r\n"
-          + "\tSUCCEEDED\020\004\022\031\n"
-          + "\025COMPLETED_WITH_ERRORS\020\005\022\014\n"
-          + "\010CANCELED\020\006\022\r\n"
-          + "\tTIMED_OUT\020\007:O\352AL\n"
-          + " osconfig.googleapis.com/PatchJob\022(projects/{project}/patchJobs/{patch_job}\"\326\004\n"
-          + "\013PatchConfig\022I\n\r"
-          + "reboot_config\030\001 \001(\01622.goo"
-          + "gle.cloud.osconfig.v1.PatchConfig.RebootConfig\0222\n"
-          + "\003apt\030\003 \001(\0132%.google.cloud.osconfig.v1.AptSettings\0222\n"
-          + "\003yum\030\004 \001(\0132%.google.cloud.osconfig.v1.YumSettings\0222\n"
-          + "\003goo\030\005 \001(\0132%.google.cloud.osconfig.v1.GooSettings\0228\n"
-          + "\006zypper\030\006 \001(\0132(.google.cloud.osconfig.v1.ZypperSettings\022G\n"
-          + "\016windows_update\030\007"
-          + " \001(\0132/.google.cloud.osconfig.v1.WindowsUpdateSettings\0224\n"
-          + "\010pre_step\030\010 \001(\0132\".google.cloud.osconfig.v1.ExecStep\0225\n"
-          + "\tpost_step\030\t \001(\0132\".google.cloud.osconfig.v1.ExecStep\022\035\n"
-          + "\025mig_instances_allowed\030\n"
-          + " \001(\010\"Q\n"
-          + "\014RebootConfig\022\035\n"
-          + "\031REBOOT_CONFIG_UNSPECIFIED\020\000\022\013\n"
-          + "\007DEFAULT\020\001\022\n\n"
-          + "\006ALWAYS\020\002\022\t\n"
-          + "\005NEVER\020\003\"\316\002\n"
-          + "\010Instance\"\301\002\n\n"
-          + "PatchState\022\033\n"
-          + "\027PATCH_STATE_UNSPECIFIED\020\000\022\013\n"
-          + "\007PENDING\020\001\022\014\n"
-          + "\010INACTIVE\020\002\022\014\n"
-          + "\010NOTIFIED\020\003\022\013\n"
-          + "\007STARTED\020\004\022\027\n"
-          + "\023DOWNLOADING_PATCHES\020\005\022\024\n"
-          + "\020APPLYING_PATCHES\020\006\022\r\n"
-          + "\tREBOOTING\020\007\022\r\n"
-          + "\tSUCCEEDED\020\010\022\035\n"
-          + "\031SUCCEEDED_REBOOT_REQUIRED\020\t\022\n\n"
-          + "\006FAILED\020\n"
-          + "\022\t\n"
-          + "\005ACKED\020\013\022\r"
-          + "\n"
-          + "\tTIMED_OUT\020\014\022\032\n"
-          + "\026RUNNING_PRE_PATCH_STEP\020\r"
-          + "\022\033\n"
-          + "\027RUNNING_POST_PATCH_STEP\020\016\022\025\n"
-          + "\021NO_AGENT_DETECTED\020\017\"O\n"
-          + "\025CancelPatchJobRequest\0226\n"
-          + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " osconfig.googleapis.com/PatchJob\"\252\001\n"
-          + "\013AptSettings\0228\n"
-          + "\004type\030\001 \001(\0162*.google.cloud.osconfig.v1.AptSettings.Type\022\020\n"
-          + "\010excludes\030\002 \003(\t\022\032\n"
-          + "\022exclusive_packages\030\003 \003(\t\"3\n"
-          + "\004Type\022\024\n"
-          + "\020TYPE_UNSPECIFIED\020\000\022\010\n"
-          + "\004DIST\020\001\022\013\n"
-          + "\007UPGRADE\020\002\"^\n"
-          + "\013YumSettings\022\020\n"
-          + "\010security\030\001 \001(\010\022\017\n"
-          + "\007minimal\030\002 \001(\010\022\020\n"
-          + "\010excludes\030\003 \003(\t\022\032\n"
-          + "\022exclusive_packages\030\004 \003(\t\"\r\n"
-          + "\013GooSettings\"\221\001\n"
-          + "\016ZypperSettings\022\025\n"
-          + "\r"
-          + "with_optional\030\001 \001(\010\022\023\n"
-          + "\013with_update\030\002 \001(\010\022\022\n\n"
-          + "categories\030\003 \003(\t\022\022\n\n"
-          + "severities\030\004 \003(\t\022\020\n"
-          + "\010excludes\030\005 \003(\t\022\031\n"
-          + "\021exclusive_patches\030\006 \003(\t\"\325\002\n"
-          + "\025WindowsUpdateSettings\022W\n"
-          + "\017classifications\030\001 \003(\0162>.google.cloud.osconfi"
-          + "g.v1.WindowsUpdateSettings.Classification\022\020\n"
-          + "\010excludes\030\002 \003(\t\022\031\n"
-          + "\021exclusive_patches\030\003 \003(\t\"\265\001\n"
-          + "\016Classification\022\036\n"
-          + "\032CLASSIFICATION_UNSPECIFIED\020\000\022\014\n"
-          + "\010CRITICAL\020\001\022\014\n"
-          + "\010SECURITY\020\002\022\016\n\n"
-          + "DEFINITION\020\003\022\n\n"
-          + "\006DRIVER\020\004\022\020\n"
-          + "\014FEATURE_PACK\020\005\022\020\n"
-          + "\014SERVICE_PACK\020\006\022\010\n"
-          + "\004TOOL\020\007\022\021\n\r"
-          + "UPDATE_ROLLUP\020\010\022\n\n"
-          + "\006UPDATE\020\t\"\240\001\n"
-          + "\010ExecStep\022H\n"
-          + "\026linux_exec_step_config\030\001"
-          + " \001(\0132(.google.cloud.osconfig.v1.ExecStepConfig\022J\n"
-          + "\030windows_exec_step_config\030\002"
-          + " \001(\0132(.google.cloud.osconfig.v1.ExecStepConfig\"\240\002\n"
-          + "\016ExecStepConfig\022\024\n\n"
-          + "local_path\030\001 \001(\tH\000\0229\n\n"
-          + "gcs_object\030\002 \001(\0132#.google.cloud.osconfig.v1.GcsObjectH\000\022\035\n"
-          + "\025allowed_success_codes\030\003 \003(\005\022I\n"
-          + "\013interpreter\030\004 \001(\01624.google.cloud"
-          + ".osconfig.v1.ExecStepConfig.Interpreter\"E\n"
-          + "\013Interpreter\022\033\n"
-          + "\027INTERPRETER_UNSPECIFIED\020\000\022\t\n"
-          + "\005SHELL\020\001\022\016\n\n"
-          + "POWERSHELL\020\002B\014\n\n"
-          + "executable\"U\n"
-          + "\tGcsObject\022\023\n"
-          + "\006bucket\030\001 \001(\tB\003\340A\002\022\023\n"
-          + "\006object\030\002 \001(\tB\003\340A\002\022\036\n"
-          + "\021generation_number\030\003 \001(\003B\003\340A\002\"\310\002\n"
-          + "\023PatchInstanceFilter\022\013\n"
-          + "\003all\030\001 \001(\010\022N\n"
-          + "\014group_labels\030\002 \003(\01328.google."
-          + "cloud.osconfig.v1.PatchInstanceFilter.GroupLabel\022\r\n"
-          + "\005zones\030\003 \003(\t\022\021\n"
-          + "\tinstances\030\004 \003(\t\022\036\n"
-          + "\026instance_name_prefixes\030\005 \003(\t\032\221\001\n\n"
-          + "GroupLabel\022T\n"
-          + "\006labels\030\001 \003(\0132D.google.cloud"
-          + ".osconfig.v1.PatchInstanceFilter.GroupLabel.LabelsEntry\032-\n"
-          + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\324\001\n"
-          + "\014PatchRollout\0229\n"
-          + "\004mode\030\001 \001(\0162+.google.cloud.osconfig.v1.PatchRollout.Mode\022C\n"
-          + "\021disruption_budget\030\002 \001(\0132(.google.cloud.osconfig.v1.FixedOrPercent\"D\n"
-          + "\004Mode\022\024\n"
-          + "\020MODE_UNSPECIFIED\020\000\022\020\n"
-          + "\014ZONE_BY_ZONE\020\001\022\024\n"
-          + "\020CONCURRENT_ZONES\020\002B\267\001\n"
-          + "\034com.google.cloud.osconfig.v1B\tPatchJobsZ8cloud.google.com/go/osconfig/apiv1/os"
+          + "ion.proto\032\037google/protobuf/timestamp.pro"
+          + "to\"\211\003\n\026ExecutePatchJobRequest\022C\n\006parent\030"
+          + "\001 \001(\tB3\340A\002\372A-\n+cloudresourcemanager.goog"
+          + "leapis.com/Project\022\023\n\013description\030\002 \001(\t\022"
+          + "K\n\017instance_filter\030\007 \001(\0132-.google.cloud."
+          + "osconfig.v1.PatchInstanceFilterB\003\340A\002\022;\n\014"
+          + "patch_config\030\004 \001(\0132%.google.cloud.osconf"
+          + "ig.v1.PatchConfig\022+\n\010duration\030\005 \001(\0132\031.go"
+          + "ogle.protobuf.Duration\022\017\n\007dry_run\030\006 \001(\010\022"
+          + "\024\n\014display_name\030\010 \001(\t\0227\n\007rollout\030\t \001(\0132&"
+          + ".google.cloud.osconfig.v1.PatchRollout\"L"
+          + "\n\022GetPatchJobRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372"
+          + "A\"\n osconfig.googleapis.com/PatchJob\"\225\001\n"
+          + "\"ListPatchJobInstanceDetailsRequest\0228\n\006p"
+          + "arent\030\001 \001(\tB(\340A\002\372A\"\n osconfig.googleapis"
+          + ".com/PatchJob\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage"
+          + "_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\225\001\n#ListPat"
+          + "chJobInstanceDetailsResponse\022U\n\032patch_jo"
+          + "b_instance_details\030\001 \003(\01321.google.cloud."
+          + "osconfig.v1.PatchJobInstanceDetails\022\027\n\017n"
+          + "ext_page_token\030\002 \001(\t\"\326\001\n\027PatchJobInstanc"
+          + "eDetails\0222\n\004name\030\001 \001(\tB$\372A!\n\037compute.goo"
+          + "gleapis.com/Instance\022\032\n\022instance_system_"
+          + "id\030\002 \001(\t\022<\n\005state\030\003 \001(\0162-.google.cloud.o"
+          + "sconfig.v1.Instance.PatchState\022\026\n\016failur"
+          + "e_reason\030\004 \001(\t\022\025\n\rattempt_count\030\005 \001(\003\"\222\001"
+          + "\n\024ListPatchJobsRequest\022C\n\006parent\030\001 \001(\tB3"
+          + "\340A\002\372A-\n+cloudresourcemanager.googleapis."
+          + "com/Project\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
+          + "oken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"h\n\025ListPatchJ"
+          + "obsResponse\0226\n\npatch_jobs\030\001 \003(\0132\".google"
+          + ".cloud.osconfig.v1.PatchJob\022\027\n\017next_page"
+          + "_token\030\002 \001(\t\"\334\013\n\010PatchJob\022\014\n\004name\030\001 \001(\t\022"
+          + "\024\n\014display_name\030\016 \001(\t\022\023\n\013description\030\002 \001"
+          + "(\t\022/\n\013create_time\030\003 \001(\0132\032.google.protobu"
+          + "f.Timestamp\022/\n\013update_time\030\004 \001(\0132\032.googl"
+          + "e.protobuf.Timestamp\0227\n\005state\030\005 \001(\0162(.go"
+          + "ogle.cloud.osconfig.v1.PatchJob.State\022F\n"
+          + "\017instance_filter\030\r \001(\0132-.google.cloud.os"
+          + "config.v1.PatchInstanceFilter\022;\n\014patch_c"
+          + "onfig\030\007 \001(\0132%.google.cloud.osconfig.v1.P"
+          + "atchConfig\022+\n\010duration\030\010 \001(\0132\031.google.pr"
+          + "otobuf.Duration\022[\n\030instance_details_summ"
+          + "ary\030\t \001(\01329.google.cloud.osconfig.v1.Pat"
+          + "chJob.InstanceDetailsSummary\022\017\n\007dry_run\030"
+          + "\n \001(\010\022\025\n\rerror_message\030\013 \001(\t\022\030\n\020percent_"
+          + "complete\030\014 \001(\001\022I\n\020patch_deployment\030\017 \001(\t"
+          + "B/\340A\003\372A)\n\'osconfig.googleapis.com/PatchD"
+          + "eployment\0227\n\007rollout\030\020 \001(\0132&.google.clou"
+          + "d.osconfig.v1.PatchRollout\032\275\004\n\026InstanceD"
+          + "etailsSummary\022\036\n\026pending_instance_count\030"
+          + "\001 \001(\003\022\037\n\027inactive_instance_count\030\002 \001(\003\022\037"
+          + "\n\027notified_instance_count\030\003 \001(\003\022\036\n\026start"
+          + "ed_instance_count\030\004 \001(\003\022*\n\"downloading_p"
+          + "atches_instance_count\030\005 \001(\003\022\'\n\037applying_"
+          + "patches_instance_count\030\006 \001(\003\022 \n\030rebootin"
+          + "g_instance_count\030\007 \001(\003\022 \n\030succeeded_inst"
+          + "ance_count\030\010 \001(\003\0220\n(succeeded_reboot_req"
+          + "uired_instance_count\030\t \001(\003\022\035\n\025failed_ins"
+          + "tance_count\030\n \001(\003\022\034\n\024acked_instance_coun"
+          + "t\030\013 \001(\003\022 \n\030timed_out_instance_count\030\014 \001("
+          + "\003\022%\n\035pre_patch_step_instance_count\030\r \001(\003"
+          + "\022&\n\036post_patch_step_instance_count\030\016 \001(\003"
+          + "\022(\n no_agent_detected_instance_count\030\017 \001"
+          + "(\003\"\225\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007S"
+          + "TARTED\020\001\022\023\n\017INSTANCE_LOOKUP\020\002\022\014\n\010PATCHIN"
+          + "G\020\003\022\r\n\tSUCCEEDED\020\004\022\031\n\025COMPLETED_WITH_ERR"
+          + "ORS\020\005\022\014\n\010CANCELED\020\006\022\r\n\tTIMED_OUT\020\007:O\352AL\n"
+          + " osconfig.googleapis.com/PatchJob\022(proje"
+          + "cts/{project}/patchJobs/{patch_job}\"\326\004\n\013"
+          + "PatchConfig\022I\n\rreboot_config\030\001 \001(\01622.goo"
+          + "gle.cloud.osconfig.v1.PatchConfig.Reboot"
+          + "Config\0222\n\003apt\030\003 \001(\0132%.google.cloud.oscon"
+          + "fig.v1.AptSettings\0222\n\003yum\030\004 \001(\0132%.google"
+          + ".cloud.osconfig.v1.YumSettings\0222\n\003goo\030\005 "
+          + "\001(\0132%.google.cloud.osconfig.v1.GooSettin"
+          + "gs\0228\n\006zypper\030\006 \001(\0132(.google.cloud.osconf"
+          + "ig.v1.ZypperSettings\022G\n\016windows_update\030\007"
+          + " \001(\0132/.google.cloud.osconfig.v1.WindowsU"
+          + "pdateSettings\0224\n\010pre_step\030\010 \001(\0132\".google"
+          + ".cloud.osconfig.v1.ExecStep\0225\n\tpost_step"
+          + "\030\t \001(\0132\".google.cloud.osconfig.v1.ExecSt"
+          + "ep\022\035\n\025mig_instances_allowed\030\n \001(\010\"Q\n\014Reb"
+          + "ootConfig\022\035\n\031REBOOT_CONFIG_UNSPECIFIED\020\000"
+          + "\022\013\n\007DEFAULT\020\001\022\n\n\006ALWAYS\020\002\022\t\n\005NEVER\020\003\"\316\002\n"
+          + "\010Instance\"\301\002\n\nPatchState\022\033\n\027PATCH_STATE_"
+          + "UNSPECIFIED\020\000\022\013\n\007PENDING\020\001\022\014\n\010INACTIVE\020\002"
+          + "\022\014\n\010NOTIFIED\020\003\022\013\n\007STARTED\020\004\022\027\n\023DOWNLOADI"
+          + "NG_PATCHES\020\005\022\024\n\020APPLYING_PATCHES\020\006\022\r\n\tRE"
+          + "BOOTING\020\007\022\r\n\tSUCCEEDED\020\010\022\035\n\031SUCCEEDED_RE"
+          + "BOOT_REQUIRED\020\t\022\n\n\006FAILED\020\n\022\t\n\005ACKED\020\013\022\r"
+          + "\n\tTIMED_OUT\020\014\022\032\n\026RUNNING_PRE_PATCH_STEP\020"
+          + "\r\022\033\n\027RUNNING_POST_PATCH_STEP\020\016\022\025\n\021NO_AGE"
+          + "NT_DETECTED\020\017\"O\n\025CancelPatchJobRequest\0226"
+          + "\n\004name\030\001 \001(\tB(\340A\002\372A\"\n osconfig.googleapi"
+          + "s.com/PatchJob\"\252\001\n\013AptSettings\0228\n\004type\030\001"
+          + " \001(\0162*.google.cloud.osconfig.v1.AptSetti"
+          + "ngs.Type\022\020\n\010excludes\030\002 \003(\t\022\032\n\022exclusive_"
+          + "packages\030\003 \003(\t\"3\n\004Type\022\024\n\020TYPE_UNSPECIFI"
+          + "ED\020\000\022\010\n\004DIST\020\001\022\013\n\007UPGRADE\020\002\"^\n\013YumSettin"
+          + "gs\022\020\n\010security\030\001 \001(\010\022\017\n\007minimal\030\002 \001(\010\022\020\n"
+          + "\010excludes\030\003 \003(\t\022\032\n\022exclusive_packages\030\004 "
+          + "\003(\t\"\r\n\013GooSettings\"\221\001\n\016ZypperSettings\022\025\n"
+          + "\rwith_optional\030\001 \001(\010\022\023\n\013with_update\030\002 \001("
+          + "\010\022\022\n\ncategories\030\003 \003(\t\022\022\n\nseverities\030\004 \003("
+          + "\t\022\020\n\010excludes\030\005 \003(\t\022\031\n\021exclusive_patches"
+          + "\030\006 \003(\t\"\325\002\n\025WindowsUpdateSettings\022W\n\017clas"
+          + "sifications\030\001 \003(\0162>.google.cloud.osconfi"
+          + "g.v1.WindowsUpdateSettings.Classificatio"
+          + "n\022\020\n\010excludes\030\002 \003(\t\022\031\n\021exclusive_patches"
+          + "\030\003 \003(\t\"\265\001\n\016Classification\022\036\n\032CLASSIFICAT"
+          + "ION_UNSPECIFIED\020\000\022\014\n\010CRITICAL\020\001\022\014\n\010SECUR"
+          + "ITY\020\002\022\016\n\nDEFINITION\020\003\022\n\n\006DRIVER\020\004\022\020\n\014FEA"
+          + "TURE_PACK\020\005\022\020\n\014SERVICE_PACK\020\006\022\010\n\004TOOL\020\007\022"
+          + "\021\n\rUPDATE_ROLLUP\020\010\022\n\n\006UPDATE\020\t\"\240\001\n\010ExecS"
+          + "tep\022H\n\026linux_exec_step_config\030\001 \001(\0132(.go"
+          + "ogle.cloud.osconfig.v1.ExecStepConfig\022J\n"
+          + "\030windows_exec_step_config\030\002 \001(\0132(.google"
+          + ".cloud.osconfig.v1.ExecStepConfig\"\240\002\n\016Ex"
+          + "ecStepConfig\022\024\n\nlocal_path\030\001 \001(\tH\000\0229\n\ngc"
+          + "s_object\030\002 \001(\0132#.google.cloud.osconfig.v"
+          + "1.GcsObjectH\000\022\035\n\025allowed_success_codes\030\003"
+          + " \003(\005\022I\n\013interpreter\030\004 \001(\01624.google.cloud"
+          + ".osconfig.v1.ExecStepConfig.Interpreter\""
+          + "E\n\013Interpreter\022\033\n\027INTERPRETER_UNSPECIFIE"
+          + "D\020\000\022\t\n\005SHELL\020\001\022\016\n\nPOWERSHELL\020\002B\014\n\nexecut"
+          + "able\"U\n\tGcsObject\022\023\n\006bucket\030\001 \001(\tB\003\340A\002\022\023"
+          + "\n\006object\030\002 \001(\tB\003\340A\002\022\036\n\021generation_number"
+          + "\030\003 \001(\003B\003\340A\002\"\310\002\n\023PatchInstanceFilter\022\013\n\003a"
+          + "ll\030\001 \001(\010\022N\n\014group_labels\030\002 \003(\01328.google."
+          + "cloud.osconfig.v1.PatchInstanceFilter.Gr"
+          + "oupLabel\022\r\n\005zones\030\003 \003(\t\022\021\n\tinstances\030\004 \003"
+          + "(\t\022\036\n\026instance_name_prefixes\030\005 \003(\t\032\221\001\n\nG"
+          + "roupLabel\022T\n\006labels\030\001 \003(\0132D.google.cloud"
+          + ".osconfig.v1.PatchInstanceFilter.GroupLa"
+          + "bel.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\324\001\n\014PatchRollout\022"
+          + "9\n\004mode\030\001 \001(\0162+.google.cloud.osconfig.v1"
+          + ".PatchRollout.Mode\022C\n\021disruption_budget\030"
+          + "\002 \001(\0132(.google.cloud.osconfig.v1.FixedOr"
+          + "Percent\"D\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\020\n"
+          + "\014ZONE_BY_ZONE\020\001\022\024\n\020CONCURRENT_ZONES\020\002B\267\001"
+          + "\n\034com.google.cloud.osconfig.v1B\tPatchJob"
+          + "sZ8cloud.google.com/go/osconfig/apiv1/os"
           + "configpb;osconfigpb\252\002\030Google.Cloud.OsCon"
           + "fig.V1\312\002\030Google\\Cloud\\OsConfig\\V1\352\002\033Goog"
           + "le::Cloud::OsConfig::V1b\006proto3"

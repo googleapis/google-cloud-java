@@ -38,7 +38,6 @@ public interface UndeployProcessorVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

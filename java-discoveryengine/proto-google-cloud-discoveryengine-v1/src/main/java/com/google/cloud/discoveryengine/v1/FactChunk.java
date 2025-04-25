@@ -33,7 +33,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.FactChunk)
     FactChunkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FactChunk.newBuilder() to construct.
   private FactChunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object chunkText_ = "";
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEX_FIELD_NUMBER = 4;
   private int index_ = 0;
-
   /**
    *
    *
@@ -236,7 +230,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
   public int getSourceMetadataCount() {
     return internalGetSourceMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -253,14 +246,12 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetSourceMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getSourceMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getSourceMetadata() {
     return getSourceMetadataMap();
   }
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getSourceMetadataMap() {
     return internalGetSourceMetadata().getMap();
   }
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetSourceMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -511,7 +500,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -764,7 +752,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object chunkText_ = "";
-
     /**
      *
      *
@@ -787,7 +774,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -810,7 +796,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +908,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -952,7 +932,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +952,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int index_;
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     public int getIndex() {
       return index_;
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     public int getSourceMetadataCount() {
       return internalGetSourceMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -1101,14 +1075,12 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetSourceMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getSourceMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getSourceMetadata() {
       return getSourceMetadataMap();
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getSourceMetadataMap() {
       return internalGetSourceMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1143,7 +1114,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetSourceMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1170,7 +1140,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSourceMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1187,14 +1156,12 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableSourceMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableSourceMetadata() {
       bitField0_ |= 0x00000008;
       return internalGetMutableSourceMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1215,7 +1182,6 @@ public final class FactChunk extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

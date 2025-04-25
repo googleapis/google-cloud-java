@@ -33,7 +33,6 @@ public final class ReleaseLeaseResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ReleaseLeaseResponse)
     ReleaseLeaseResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReleaseLeaseResponse.newBuilder() to construct.
   private ReleaseLeaseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class ReleaseLeaseResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

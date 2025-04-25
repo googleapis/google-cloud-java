@@ -34,7 +34,6 @@ public final class ListNotificationChannelDescriptorsRequest
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListNotificationChannelDescriptorsRequest)
     ListNotificationChannelDescriptorsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotificationChannelDescriptorsRequest.newBuilder() to construct.
   private ListNotificationChannelDescriptorsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListNotificationChannelDescriptorsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class ListNotificationChannelDescriptorsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +143,6 @@ public final class ListNotificationChannelDescriptorsRequest
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class ListNotificationChannelDescriptorsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class ListNotificationChannelDescriptorsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -401,7 +395,6 @@ public final class ListNotificationChannelDescriptorsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +614,6 @@ public final class ListNotificationChannelDescriptorsRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -656,7 +648,6 @@ public final class ListNotificationChannelDescriptorsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -691,7 +682,6 @@ public final class ListNotificationChannelDescriptorsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -725,7 +715,6 @@ public final class ListNotificationChannelDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +744,6 @@ public final class ListNotificationChannelDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +780,6 @@ public final class ListNotificationChannelDescriptorsRequest
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -810,7 +797,6 @@ public final class ListNotificationChannelDescriptorsRequest
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class ListNotificationChannelDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class ListNotificationChannelDescriptorsRequest
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class ListNotificationChannelDescriptorsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +887,6 @@ public final class ListNotificationChannelDescriptorsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -928,7 +910,6 @@ public final class ListNotificationChannelDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class ListNotificationChannelDescriptorsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

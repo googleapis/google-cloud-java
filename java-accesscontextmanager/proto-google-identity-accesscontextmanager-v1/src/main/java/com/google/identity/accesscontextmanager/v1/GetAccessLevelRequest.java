@@ -33,7 +33,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.GetAccessLevelRequest)
     GetAccessLevelRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetAccessLevelRequest.newBuilder() to construct.
   private GetAccessLevelRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ACCESS_LEVEL_FORMAT_FIELD_NUMBER = 2;
   private int accessLevelFormat_ = 0;
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
   public int getAccessLevelFormatValue() {
     return accessLevelFormat_;
   }
-
   /**
    *
    *
@@ -357,7 +352,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -560,7 +554,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -589,7 +582,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -618,7 +610,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -646,7 +637,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +690,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int accessLevelFormat_ = 0;
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
     public int getAccessLevelFormatValue() {
       return accessLevelFormat_;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
           ? com.google.identity.accesscontextmanager.v1.LevelFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class GetAccessLevelRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

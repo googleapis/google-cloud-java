@@ -29,7 +29,7 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>
@@ -39,13 +39,12 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>
@@ -70,7 +69,6 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    * @return Whether the dataset field is set.
    */
   boolean hasDataset();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    * @return The dataset.
    */
   com.google.cloud.financialservices.v1.BigQueryDestination getDataset();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class LoadSnapshotResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.LoadSnapshotResponse)
     LoadSnapshotResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoadSnapshotResponse.newBuilder() to construct.
   private LoadSnapshotResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class LoadSnapshotResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

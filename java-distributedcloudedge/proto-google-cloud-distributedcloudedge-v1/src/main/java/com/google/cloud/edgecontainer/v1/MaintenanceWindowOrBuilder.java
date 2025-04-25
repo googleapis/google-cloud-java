@@ -36,7 +36,6 @@ public interface MaintenanceWindowOrBuilder
    * @return Whether the recurringWindow field is set.
    */
   boolean hasRecurringWindow();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MaintenanceWindowOrBuilder
    * @return The recurringWindow.
    */
   com.google.cloud.edgecontainer.v1.RecurringTimeWindow getRecurringWindow();
-
   /**
    *
    *

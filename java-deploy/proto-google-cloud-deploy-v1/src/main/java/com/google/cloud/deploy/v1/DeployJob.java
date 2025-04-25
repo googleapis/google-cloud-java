@@ -33,7 +33,6 @@ public final class DeployJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployJob)
     DeployJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployJob.newBuilder() to construct.
   private DeployJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -210,7 +209,6 @@ public final class DeployJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

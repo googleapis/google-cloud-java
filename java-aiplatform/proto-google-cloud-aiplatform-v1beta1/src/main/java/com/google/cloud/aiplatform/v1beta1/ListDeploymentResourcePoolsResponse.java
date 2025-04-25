@@ -34,7 +34,6 @@ public final class ListDeploymentResourcePoolsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsResponse)
     ListDeploymentResourcePoolsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDeploymentResourcePoolsResponse.newBuilder() to construct.
   private ListDeploymentResourcePoolsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListDeploymentResourcePoolsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool>
       deploymentResourcePools_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListDeploymentResourcePoolsResponse
       getDeploymentResourcePoolsList() {
     return deploymentResourcePools_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ListDeploymentResourcePoolsResponse
       getDeploymentResourcePoolsOrBuilderList() {
     return deploymentResourcePools_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ListDeploymentResourcePoolsResponse
   public int getDeploymentResourcePoolsCount() {
     return deploymentResourcePools_.size();
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ListDeploymentResourcePoolsResponse
       int index) {
     return deploymentResourcePools_.get(index);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ListDeploymentResourcePoolsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListDeploymentResourcePoolsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -388,7 +380,6 @@ public final class ListDeploymentResourcePoolsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,7 +673,6 @@ public final class ListDeploymentResourcePoolsResponse
         return deploymentResourcePoolsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -701,7 +691,6 @@ public final class ListDeploymentResourcePoolsResponse
         return deploymentResourcePoolsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -721,7 +710,6 @@ public final class ListDeploymentResourcePoolsResponse
         return deploymentResourcePoolsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -747,7 +735,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +830,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +853,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +876,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +897,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +918,6 @@ public final class ListDeploymentResourcePoolsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class ListDeploymentResourcePoolsResponse
         getDeploymentResourcePoolsBuilder(int index) {
       return getDeploymentResourcePoolsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class ListDeploymentResourcePoolsResponse
         return deploymentResourcePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -995,7 +972,6 @@ public final class ListDeploymentResourcePoolsResponse
         return java.util.Collections.unmodifiableList(deploymentResourcePools_);
       }
     }
-
     /**
      *
      *
@@ -1013,7 +989,6 @@ public final class ListDeploymentResourcePoolsResponse
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1032,7 +1007,6 @@ public final class ListDeploymentResourcePoolsResponse
               index,
               com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1070,7 +1044,6 @@ public final class ListDeploymentResourcePoolsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1094,7 +1067,6 @@ public final class ListDeploymentResourcePoolsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1090,6 @@ public final class ListDeploymentResourcePoolsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1112,6 @@ public final class ListDeploymentResourcePoolsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1130,6 @@ public final class ListDeploymentResourcePoolsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

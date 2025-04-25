@@ -36,7 +36,6 @@ public interface ResourceInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ResourceInfoOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ResourceInfoOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ResourceInfoOrBuilder
    * @return The resource.
    */
   com.google.protobuf.Any getResource();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ResourceInfoOrBuilder
    * @return Whether the time field is set.
    */
   boolean hasTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ResourceInfoOrBuilder
    * @return The time.
    */
   com.google.protobuf.Timestamp getTime();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface ResourceInfoOrBuilder
    * <code>repeated .google.cloud.beyondcorp.appconnectors.v1.ResourceInfo sub = 5;</code>
    */
   java.util.List<com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo> getSubList();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface ResourceInfoOrBuilder
    * <code>repeated .google.cloud.beyondcorp.appconnectors.v1.ResourceInfo sub = 5;</code>
    */
   com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo getSub(int index);
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface ResourceInfoOrBuilder
    * <code>repeated .google.cloud.beyondcorp.appconnectors.v1.ResourceInfo sub = 5;</code>
    */
   int getSubCount();
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public interface ResourceInfoOrBuilder
    */
   java.util.List<? extends com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoOrBuilder>
       getSubOrBuilderList();
-
   /**
    *
    *

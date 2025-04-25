@@ -34,7 +34,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.WeeklySchedule)
     WeeklyScheduleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WeeklySchedule.newBuilder() to construct.
   private WeeklySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SNAPSHOTS_TO_KEEP_FIELD_NUMBER = 1;
   private double snapshotsToKeep_ = 0D;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSnapshotsToKeep() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINUTE_FIELD_NUMBER = 2;
   private double minute_ = 0D;
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMinute() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HOUR_FIELD_NUMBER = 3;
   private double hour_ = 0D;
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHour() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object day_ = "";
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDay() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -462,7 +452,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +681,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private double snapshotsToKeep_;
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSnapshotsToKeep() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public double getSnapshotsToKeep() {
       return snapshotsToKeep_;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +749,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double minute_;
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMinute() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -798,7 +781,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public double getMinute() {
       return minute_;
     }
-
     /**
      *
      *
@@ -819,7 +801,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double hour_;
-
     /**
      *
      *
@@ -856,7 +836,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHour() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -872,7 +851,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public double getHour() {
       return hour_;
     }
-
     /**
      *
      *
@@ -892,7 +870,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +889,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object day_ = "";
-
     /**
      *
      *
@@ -928,7 +904,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDay() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -952,7 +927,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +950,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +972,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +990,6 @@ public final class WeeklySchedule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

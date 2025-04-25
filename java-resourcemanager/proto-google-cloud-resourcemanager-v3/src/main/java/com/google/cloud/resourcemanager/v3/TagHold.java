@@ -36,7 +36,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.TagHold)
     TagHoldOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TagHold.newBuilder() to construct.
   private TagHold(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object holder_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object origin_ = "";
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object helpLink_ = "";
-
   /**
    *
    *
@@ -276,7 +268,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -305,7 +296,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -322,7 +312,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -339,7 +328,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -555,7 +543,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -816,7 +803,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -842,7 +828,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -868,7 +853,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +924,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object holder_ = "";
-
     /**
      *
      *
@@ -967,7 +948,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -992,7 +972,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1016,7 +995,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1014,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1040,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object origin_ = "";
-
     /**
      *
      *
@@ -1089,7 +1065,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1134,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1161,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object helpLink_ = "";
-
     /**
      *
      *
@@ -1214,7 +1185,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1209,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1263,7 +1232,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1283,7 +1251,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1282,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1332,7 +1298,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1355,7 +1320,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1380,7 +1344,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1402,7 +1365,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1394,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1415,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1431,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1492,7 +1451,6 @@ public final class TagHold extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface ApproveBlueprintRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

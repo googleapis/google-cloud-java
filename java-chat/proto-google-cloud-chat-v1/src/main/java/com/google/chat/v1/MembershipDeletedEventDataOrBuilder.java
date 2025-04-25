@@ -36,7 +36,6 @@ public interface MembershipDeletedEventDataOrBuilder
    * @return Whether the membership field is set.
    */
   boolean hasMembership();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MembershipDeletedEventDataOrBuilder
    * @return The membership.
    */
   com.google.chat.v1.Membership getMembership();
-
   /**
    *
    *

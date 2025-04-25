@@ -42,7 +42,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return The config.
    */
   com.google.protobuf.Struct getConfig();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return The enum numeric value on the wire for enablementState.
    */
   int getEnablementStateValue();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -196,7 +190,6 @@ public interface EffectiveEventThreatDetectionCustomModuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

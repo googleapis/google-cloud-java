@@ -41,7 +41,6 @@ public interface DisableAdvancedSiteSearchRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
-
   /**
    *
    *

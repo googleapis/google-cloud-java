@@ -97,7 +97,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.AppEngineHttpRequest)
     AppEngineHttpRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AppEngineHttpRequest.newBuilder() to construct.
   private AppEngineHttpRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,7 +144,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private int httpMethod_ = 0;
-
   /**
    *
    *
@@ -168,7 +166,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   public int getHttpMethodValue() {
     return httpMethod_;
   }
-
   /**
    *
    *
@@ -196,7 +193,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
   public static final int APP_ENGINE_ROUTING_FIELD_NUMBER = 2;
   private com.google.cloud.tasks.v2beta3.AppEngineRouting appEngineRouting_;
-
   /**
    *
    *
@@ -218,7 +214,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   public boolean hasAppEngineRouting() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -242,7 +237,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.tasks.v2beta3.AppEngineRouting.getDefaultInstance()
         : appEngineRouting_;
   }
-
   /**
    *
    *
@@ -269,7 +263,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object relativeUri_ = "";
-
   /**
    *
    *
@@ -298,7 +291,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -354,7 +346,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   public int getHeadersCount() {
     return internalGetHeaders().getMap().size();
   }
-
   /**
    *
    *
@@ -415,14 +406,12 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     }
     return internalGetHeaders().getMap().containsKey(key);
   }
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
   }
-
   /**
    *
    *
@@ -480,7 +469,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
-
   /**
    *
    *
@@ -545,7 +533,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -613,7 +600,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
 
   public static final int BODY_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -844,7 +830,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1191,7 +1176,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int httpMethod_ = 0;
-
     /**
      *
      *
@@ -1214,7 +1198,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     public int getHttpMethodValue() {
       return httpMethod_;
     }
-
     /**
      *
      *
@@ -1240,7 +1223,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1265,7 +1247,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
           com.google.cloud.tasks.v2beta3.HttpMethod.forNumber(httpMethod_);
       return result == null ? com.google.cloud.tasks.v2beta3.HttpMethod.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1294,7 +1275,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1306,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.tasks.v2beta3.AppEngineRouting.Builder,
             com.google.cloud.tasks.v2beta3.AppEngineRoutingOrBuilder>
         appEngineRoutingBuilder_;
-
     /**
      *
      *
@@ -1347,7 +1326,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     public boolean hasAppEngineRouting() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1374,7 +1352,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
         return appEngineRoutingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1403,7 +1380,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1430,7 +1406,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1440,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1491,7 +1465,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1485,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAppEngineRoutingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1537,7 +1509,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
             : appEngineRouting_;
       }
     }
-
     /**
      *
      *
@@ -1571,7 +1542,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object relativeUri_ = "";
-
     /**
      *
      *
@@ -1599,7 +1569,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1627,7 +1596,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1654,7 +1622,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1644,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1731,7 +1697,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     public int getHeadersCount() {
       return internalGetHeaders().getMap().size();
     }
-
     /**
      *
      *
@@ -1792,14 +1757,12 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       }
       return internalGetHeaders().getMap().containsKey(key);
     }
-
     /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
-
     /**
      *
      *
@@ -1857,7 +1820,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
-
     /**
      *
      *
@@ -1922,7 +1884,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1993,7 +1954,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2054,14 +2014,12 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
       bitField0_ |= 0x00000008;
       return internalGetMutableHeaders().getMutableMap();
     }
-
     /**
      *
      *
@@ -2126,7 +2084,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2187,7 +2144,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -2207,7 +2163,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
-
     /**
      *
      *
@@ -2233,7 +2188,6 @@ public final class AppEngineHttpRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

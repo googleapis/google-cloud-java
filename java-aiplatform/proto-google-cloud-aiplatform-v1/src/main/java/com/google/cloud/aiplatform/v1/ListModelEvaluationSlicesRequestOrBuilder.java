@@ -40,7 +40,6 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -118,7 +116,6 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -149,7 +146,6 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    * @return Whether the readMask field is set.
    */
   boolean hasReadMask();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface ListModelEvaluationSlicesRequestOrBuilder
    * @return The readMask.
    */
   com.google.protobuf.FieldMask getReadMask();
-
   /**
    *
    *

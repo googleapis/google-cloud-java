@@ -33,7 +33,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ListInstancesResponse)
     ListInstancesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListInstancesResponse.newBuilder() to construct.
   private ListInstancesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.Instance> instances_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.baremetalsolution.v2.Instance> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.baremetalsolution.v2.Instance getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -450,7 +438,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -750,7 +737,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +895,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -957,7 +934,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +953,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.baremetalsolution.v2.Instance.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1008,7 +982,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1026,7 +999,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.Instance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1054,7 +1025,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.baremetalsolution.v2.Instance.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1087,7 +1057,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1110,7 +1079,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1133,7 +1101,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1122,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1139,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1171,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1222,7 +1186,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1237,7 +1200,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1253,7 +1215,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1269,7 +1230,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1293,7 +1253,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1275,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1294,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1312,6 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

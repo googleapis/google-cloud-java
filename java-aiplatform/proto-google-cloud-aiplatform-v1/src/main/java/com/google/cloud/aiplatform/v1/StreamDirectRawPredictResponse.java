@@ -34,7 +34,6 @@ public final class StreamDirectRawPredictResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StreamDirectRawPredictResponse)
     StreamDirectRawPredictResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamDirectRawPredictResponse.newBuilder() to construct.
   private StreamDirectRawPredictResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class StreamDirectRawPredictResponse extends com.google.protobuf.Ge
 
   public static final int OUTPUT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString output_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -245,7 +243,6 @@ public final class StreamDirectRawPredictResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -432,7 +429,6 @@ public final class StreamDirectRawPredictResponse extends com.google.protobuf.Ge
     private int bitField0_;
 
     private com.google.protobuf.ByteString output_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -448,7 +444,6 @@ public final class StreamDirectRawPredictResponse extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getOutput() {
       return output_;
     }
-
     /**
      *
      *
@@ -470,7 +465,6 @@ public final class StreamDirectRawPredictResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

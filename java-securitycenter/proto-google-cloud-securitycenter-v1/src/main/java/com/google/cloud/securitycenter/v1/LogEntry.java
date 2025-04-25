@@ -33,7 +33,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.LogEntry)
     LogEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LogEntry.newBuilder() to construct.
   private LogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     private LogEntryCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_LOGGING_ENTRY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudLoggingEntry() {
     return logEntryCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.securitycenter.v1.CloudLoggingEntry.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -338,7 +333,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -557,7 +551,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.CloudLoggingEntry.Builder,
             com.google.cloud.securitycenter.v1.CloudLoggingEntryOrBuilder>
         cloudLoggingEntryBuilder_;
-
     /**
      *
      *
@@ -573,7 +566,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudLoggingEntry() {
       return logEntryCase_ == 1;
     }
-
     /**
      *
      *
@@ -599,7 +591,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securitycenter.v1.CloudLoggingEntry.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -623,7 +614,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       logEntryCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -644,7 +634,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       logEntryCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       logEntryCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         getCloudLoggingEntryBuilder() {
       return getCloudLoggingEntryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securitycenter.v1.CloudLoggingEntry.getDefaultInstance();
       }
     }
-
     /**
      *
      *

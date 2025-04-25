@@ -34,7 +34,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.StartIPRotationRequest)
     StartIPRotationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartIPRotationRequest.newBuilder() to construct.
   private StartIPRotationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -290,7 +282,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -318,7 +309,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
 
   public static final int ROTATE_CREDENTIALS_FIELD_NUMBER = 7;
   private boolean rotateCredentials_ = false;
-
   /**
    *
    *
@@ -530,7 +520,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -774,7 +763,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -803,7 +791,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -832,7 +819,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +846,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +869,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +899,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -944,7 +927,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -973,7 +955,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1001,7 +982,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1005,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1035,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1084,7 +1062,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1089,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1115,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1137,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1166,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1216,7 +1189,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1212,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1263,7 +1234,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1252,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1277,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean rotateCredentials_;
-
     /**
      *
      *
@@ -1324,7 +1292,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
     public boolean getRotateCredentials() {
       return rotateCredentials_;
     }
-
     /**
      *
      *
@@ -1344,7 +1311,6 @@ public final class StartIPRotationRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RetrieveContextsRequest)
     RetrieveContextsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetrieveContextsRequest.newBuilder() to construct.
   private RetrieveContextsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     java.util.List<
             com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.RagResource>
         getRagResourcesList();
-
     /**
      *
      *
@@ -104,7 +102,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      */
     com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.RagResource
         getRagResources(int index);
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      * </code>
      */
     int getRagResourcesCount();
-
     /**
      *
      *
@@ -140,7 +136,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
                 com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore
                     .RagResourceOrBuilder>
         getRagResourcesOrBuilderList();
-
     /**
      *
      *
@@ -177,7 +172,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
      */
     @java.lang.Deprecated
     boolean hasVectorDistanceThreshold();
-
     /**
      *
      *
@@ -198,7 +192,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     @java.lang.Deprecated
     double getVectorDistanceThreshold();
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore)
       VertexRagStoreOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VertexRagStore.newBuilder() to construct.
     private VertexRagStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -265,7 +257,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        * @return The ragCorpus.
        */
       java.lang.String getRagCorpus();
-
       /**
        *
        *
@@ -296,7 +287,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        * @return A list containing the ragFileIds.
        */
       java.util.List<java.lang.String> getRagFileIdsList();
-
       /**
        *
        *
@@ -310,7 +300,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        * @return The count of ragFileIds.
        */
       int getRagFileIdsCount();
-
       /**
        *
        *
@@ -325,7 +314,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        * @return The ragFileIds at the given index.
        */
       java.lang.String getRagFileIds(int index);
-
       /**
        *
        *
@@ -341,7 +329,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
        */
       com.google.protobuf.ByteString getRagFileIdsBytes(int index);
     }
-
     /**
      *
      *
@@ -357,7 +344,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.RagResource)
         RagResourceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use RagResource.newBuilder() to construct.
       private RagResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -395,7 +381,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object ragCorpus_ = "";
-
       /**
        *
        *
@@ -423,7 +408,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           return s;
         }
       }
-
       /**
        *
        *
@@ -457,7 +441,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList ragFileIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -473,7 +456,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       public com.google.protobuf.ProtocolStringList getRagFileIdsList() {
         return ragFileIds_;
       }
-
       /**
        *
        *
@@ -489,7 +471,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       public int getRagFileIdsCount() {
         return ragFileIds_.size();
       }
-
       /**
        *
        *
@@ -506,7 +487,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       public java.lang.String getRagFileIds(int index) {
         return ragFileIds_.get(index);
       }
-
       /**
        *
        *
@@ -724,7 +704,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -954,7 +933,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         private int bitField0_;
 
         private java.lang.Object ragCorpus_ = "";
-
         /**
          *
          *
@@ -981,7 +959,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1008,7 +985,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1034,7 +1010,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1056,7 +1031,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1093,7 +1067,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           }
           bitField0_ |= 0x00000002;
         }
-
         /**
          *
          *
@@ -1110,7 +1083,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           ragFileIds_.makeImmutable();
           return ragFileIds_;
         }
-
         /**
          *
          *
@@ -1126,7 +1098,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         public int getRagFileIdsCount() {
           return ragFileIds_.size();
         }
-
         /**
          *
          *
@@ -1143,7 +1114,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         public java.lang.String getRagFileIds(int index) {
           return ragFileIds_.get(index);
         }
-
         /**
          *
          *
@@ -1160,7 +1130,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         public com.google.protobuf.ByteString getRagFileIdsBytes(int index) {
           return ragFileIds_.getByteString(index);
         }
-
         /**
          *
          *
@@ -1185,7 +1154,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1209,7 +1177,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1230,7 +1197,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1250,7 +1216,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1353,7 +1318,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     private java.util.List<
             com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.RagResource>
         ragResources_;
-
     /**
      *
      *
@@ -1374,7 +1338,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         getRagResourcesList() {
       return ragResources_;
     }
-
     /**
      *
      *
@@ -1397,7 +1360,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         getRagResourcesOrBuilderList() {
       return ragResources_;
     }
-
     /**
      *
      *
@@ -1416,7 +1378,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     public int getRagResourcesCount() {
       return ragResources_.size();
     }
-
     /**
      *
      *
@@ -1436,7 +1397,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         getRagResources(int index) {
       return ragResources_.get(index);
     }
-
     /**
      *
      *
@@ -1460,7 +1420,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
 
     public static final int VECTOR_DISTANCE_THRESHOLD_FIELD_NUMBER = 2;
     private double vectorDistanceThreshold_ = 0D;
-
     /**
      *
      *
@@ -1483,7 +1442,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     public boolean hasVectorDistanceThreshold() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1690,7 +1648,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1997,7 +1954,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           return ragResourcesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2019,7 +1975,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           return ragResourcesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2042,7 +1997,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           return ragResourcesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2072,7 +2026,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2100,7 +2053,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2129,7 +2081,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2159,7 +2110,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2186,7 +2136,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2214,7 +2163,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2244,7 +2192,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2269,7 +2216,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2294,7 +2240,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -2314,7 +2259,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           getRagResourcesBuilder(int index) {
         return getRagResourcesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2338,7 +2282,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           return ragResourcesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2364,7 +2307,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
           return java.util.Collections.unmodifiableList(ragResources_);
         }
       }
-
       /**
        *
        *
@@ -2387,7 +2329,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
                 com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.RagResource
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2411,7 +2352,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
                 com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.RagResource
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2458,7 +2398,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       }
 
       private double vectorDistanceThreshold_;
-
       /**
        *
        *
@@ -2481,7 +2420,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       public boolean hasVectorDistanceThreshold() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2504,7 +2442,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       public double getVectorDistanceThreshold() {
         return vectorDistanceThreshold_;
       }
-
       /**
        *
        *
@@ -2531,7 +2468,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2642,7 +2578,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     private DataSourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2674,7 +2609,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
   }
 
   public static final int VERTEX_RAG_STORE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2691,7 +2625,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
   public boolean hasVertexRagStore() {
     return dataSourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -2712,7 +2645,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     return com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2737,7 +2669,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -2766,7 +2697,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -2798,7 +2728,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
 
   public static final int QUERY_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.RagQuery query_;
-
   /**
    *
    *
@@ -2815,7 +2744,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
   public boolean hasQuery() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2832,7 +2760,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
   public com.google.cloud.aiplatform.v1.RagQuery getQuery() {
     return query_ == null ? com.google.cloud.aiplatform.v1.RagQuery.getDefaultInstance() : query_;
   }
-
   /**
    *
    *
@@ -3048,7 +2975,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3312,7 +3238,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStore.Builder,
             com.google.cloud.aiplatform.v1.RetrieveContextsRequest.VertexRagStoreOrBuilder>
         vertexRagStoreBuilder_;
-
     /**
      *
      *
@@ -3330,7 +3255,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     public boolean hasVertexRagStore() {
       return dataSourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -3362,7 +3286,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3388,7 +3311,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3412,7 +3334,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3451,7 +3372,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       dataSourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3479,7 +3399,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3495,7 +3414,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         getVertexRagStoreBuilder() {
       return getVertexRagStoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3521,7 +3439,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3560,7 +3477,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -3588,7 +3504,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3616,7 +3531,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3643,7 +3557,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3579,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3701,7 +3613,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             com.google.cloud.aiplatform.v1.RagQuery.Builder,
             com.google.cloud.aiplatform.v1.RagQueryOrBuilder>
         queryBuilder_;
-
     /**
      *
      *
@@ -3718,7 +3629,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
     public boolean hasQuery() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3741,7 +3651,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
         return queryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3766,7 +3675,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3788,7 +3696,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3818,7 +3725,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3840,7 +3746,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3857,7 +3762,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
       onChanged();
       return getQueryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3878,7 +3782,6 @@ public final class RetrieveContextsRequest extends com.google.protobuf.Generated
             : query_;
       }
     }
-
     /**
      *
      *

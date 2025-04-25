@@ -38,7 +38,6 @@ public interface DirectoryServicesConfigOrBuilder
    * @return Whether the managedActiveDirectory field is set.
    */
   boolean hasManagedActiveDirectory();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DirectoryServicesConfigOrBuilder
    * @return The managedActiveDirectory.
    */
   com.google.cloud.filestore.v1beta1.ManagedActiveDirectoryConfig getManagedActiveDirectory();
-
   /**
    *
    *

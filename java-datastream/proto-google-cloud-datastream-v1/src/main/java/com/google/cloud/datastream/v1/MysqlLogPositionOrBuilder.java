@@ -36,7 +36,6 @@ public interface MysqlLogPositionOrBuilder
    * @return The logFile.
    */
   java.lang.String getLogFile();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MysqlLogPositionOrBuilder
    * @return Whether the logPosition field is set.
    */
   boolean hasLogPosition();
-
   /**
    *
    *

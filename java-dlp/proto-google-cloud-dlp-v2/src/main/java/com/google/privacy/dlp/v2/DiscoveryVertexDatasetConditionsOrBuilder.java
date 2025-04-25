@@ -37,7 +37,6 @@ public interface DiscoveryVertexDatasetConditionsOrBuilder
    * @return Whether the createdAfter field is set.
    */
   boolean hasCreatedAfter();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DiscoveryVertexDatasetConditionsOrBuilder
    * @return The createdAfter.
    */
   com.google.protobuf.Timestamp getCreatedAfter();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface DiscoveryVertexDatasetConditionsOrBuilder
    * @return Whether the minAge field is set.
    */
   boolean hasMinAge();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface DiscoveryVertexDatasetConditionsOrBuilder
    * @return The minAge.
    */
   com.google.protobuf.Duration getMinAge();
-
   /**
    *
    *

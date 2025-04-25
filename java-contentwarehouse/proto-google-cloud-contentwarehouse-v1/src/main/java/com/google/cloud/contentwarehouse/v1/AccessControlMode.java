@@ -82,7 +82,6 @@ public enum AccessControlMode implements com.google.protobuf.ProtocolMessageEnum
    * <code>ACL_MODE_UNKNOWN = 0;</code>
    */
   public static final int ACL_MODE_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum AccessControlMode implements com.google.protobuf.ProtocolMessageEnum
    * <code>ACL_MODE_UNIVERSAL_ACCESS = 1;</code>
    */
   public static final int ACL_MODE_UNIVERSAL_ACCESS_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum AccessControlMode implements com.google.protobuf.ProtocolMessageEnum
    * <code>ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID = 2;</code>
    */
   public static final int ACL_MODE_DOCUMENT_LEVEL_ACCESS_CONTROL_BYOID_VALUE = 2;
-
   /**
    *
    *

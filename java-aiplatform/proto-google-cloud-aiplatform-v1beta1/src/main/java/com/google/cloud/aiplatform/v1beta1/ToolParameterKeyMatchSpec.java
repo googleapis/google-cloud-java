@@ -33,7 +33,6 @@ public final class ToolParameterKeyMatchSpec extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ToolParameterKeyMatchSpec)
     ToolParameterKeyMatchSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ToolParameterKeyMatchSpec.newBuilder() to construct.
   private ToolParameterKeyMatchSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ToolParameterKeyMatchSpec extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

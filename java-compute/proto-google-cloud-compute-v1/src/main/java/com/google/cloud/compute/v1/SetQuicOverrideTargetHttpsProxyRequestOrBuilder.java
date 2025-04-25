@@ -38,7 +38,6 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
    * @return Whether the targetHttpsProxiesSetQuicOverrideRequestResource field is set.
    */
   boolean hasTargetHttpsProxiesSetQuicOverrideRequestResource();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
    */
   com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest
       getTargetHttpsProxiesSetQuicOverrideRequestResource();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
    * @return The targetHttpsProxy.
    */
   java.lang.String getTargetHttpsProxy();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public interface QueryErrorListOrBuilder
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.QueryError> getErrorsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface QueryErrorListOrBuilder
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
   com.google.monitoring.v3.QueryError getErrors(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface QueryErrorListOrBuilder
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -71,7 +68,6 @@ public interface QueryErrorListOrBuilder
    * <code>repeated .google.monitoring.v3.QueryError errors = 1;</code>
    */
   java.util.List<? extends com.google.monitoring.v3.QueryErrorOrBuilder> getErrorsOrBuilderList();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface QueryErrorListOrBuilder
    * @return The errorSummary.
    */
   java.lang.String getErrorSummary();
-
   /**
    *
    *

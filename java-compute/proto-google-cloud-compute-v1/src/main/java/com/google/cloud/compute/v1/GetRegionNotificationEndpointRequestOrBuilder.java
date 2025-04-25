@@ -37,7 +37,6 @@ public interface GetRegionNotificationEndpointRequestOrBuilder
    * @return The notificationEndpoint.
    */
   java.lang.String getNotificationEndpoint();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface GetRegionNotificationEndpointRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface GetRegionNotificationEndpointRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

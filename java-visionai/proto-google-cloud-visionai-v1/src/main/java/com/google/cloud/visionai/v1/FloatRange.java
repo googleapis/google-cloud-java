@@ -33,7 +33,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.FloatRange)
     FloatRangeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FloatRange.newBuilder() to construct.
   private FloatRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_FIELD_NUMBER = 1;
   private float start_ = 0F;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStart() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_FIELD_NUMBER = 2;
   private float end_ = 0F;
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnd() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -312,7 +307,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +505,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float start_;
-
     /**
      *
      *
@@ -527,7 +520,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStart() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -543,7 +535,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     public float getStart() {
       return start_;
     }
-
     /**
      *
      *
@@ -563,7 +554,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -583,7 +573,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float end_;
-
     /**
      *
      *
@@ -599,7 +588,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnd() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -615,7 +603,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
     public float getEnd() {
       return end_;
     }
-
     /**
      *
      *
@@ -635,7 +622,6 @@ public final class FloatRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

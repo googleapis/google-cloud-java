@@ -49,7 +49,6 @@ public interface AudioStreamPropertyOrBuilder
    * @return Whether the audioFormat field is set.
    */
   boolean hasAudioFormat();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AudioStreamPropertyOrBuilder
    * @return The audioFormat.
    */
   com.google.cloud.video.livestream.v1.AudioFormat getAudioFormat();
-
   /**
    *
    *

@@ -43,7 +43,6 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface ListSecurityCenterServicesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

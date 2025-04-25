@@ -34,7 +34,6 @@ public interface DateTimeRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.DateTimeRange date_time_ranges = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.DateTimeRange> getDateTimeRangesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface DateTimeRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.DateTimeRange date_time_ranges = 1;</code>
    */
   com.google.cloud.visionai.v1.DateTimeRange getDateTimeRanges(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface DateTimeRangeArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.DateTimeRange date_time_ranges = 1;</code>
    */
   int getDateTimeRangesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface DateTimeRangeArrayOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.DateTimeRangeOrBuilder>
       getDateTimeRangesOrBuilderList();
-
   /**
    *
    *

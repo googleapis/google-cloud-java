@@ -36,7 +36,6 @@ public interface ModelSpecOrBuilder
    * @return Whether the vertexModelSpec field is set.
    */
   boolean hasVertexModelSpec();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ModelSpecOrBuilder
    * @return The vertexModelSpec.
    */
   com.google.cloud.datacatalog.v1.VertexModelSpec getVertexModelSpec();
-
   /**
    *
    *

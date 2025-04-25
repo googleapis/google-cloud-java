@@ -38,7 +38,6 @@ public interface SearchFilesRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface SearchFilesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface SearchFilesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

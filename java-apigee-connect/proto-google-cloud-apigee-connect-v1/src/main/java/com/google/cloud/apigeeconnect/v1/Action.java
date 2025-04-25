@@ -62,7 +62,6 @@ public enum Action implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTION_UNSPECIFIED = 0;</code>
    */
   public static final int ACTION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

@@ -304,20 +304,6 @@ public final class DataprocMetastoreFederationGrpc {
     return DataprocMetastoreFederationStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static DataprocMetastoreFederationBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<DataprocMetastoreFederationBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<DataprocMetastoreFederationBlockingV2Stub>() {
-          @java.lang.Override
-          public DataprocMetastoreFederationBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new DataprocMetastoreFederationBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return DataprocMetastoreFederationBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -582,104 +568,6 @@ public final class DataprocMetastoreFederationGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataprocMetastoreFederation.
-   *
-   * <pre>
-   * Configures and manages metastore federation services.
-   * Dataproc Metastore Federation Service allows federating a collection of
-   * backend metastores like BigQuery, Dataplex Lakes, and other Dataproc
-   * Metastores. The Federation Service exposes a gRPC URL through which metadata
-   * from the backend metastores are served at query time.
-   * The Dataproc Metastore Federation API defines the following resource model:
-   * * The service works with a collection of Google Cloud projects.
-   * * Each project has a collection of available locations.
-   * * Each location has a collection of federations.
-   * * Dataproc Metastore Federations are resources with names of the
-   * form:
-   * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
-   * </pre>
-   */
-  public static final class DataprocMetastoreFederationBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<DataprocMetastoreFederationBlockingV2Stub> {
-    private DataprocMetastoreFederationBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected DataprocMetastoreFederationBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new DataprocMetastoreFederationBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists federations in a project and location.
-     * </pre>
-     */
-    public com.google.cloud.metastore.v1beta.ListFederationsResponse listFederations(
-        com.google.cloud.metastore.v1beta.ListFederationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListFederationsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets the details of a single federation.
-     * </pre>
-     */
-    public com.google.cloud.metastore.v1beta.Federation getFederation(
-        com.google.cloud.metastore.v1beta.GetFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetFederationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a metastore federation in a project and location.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createFederation(
-        com.google.cloud.metastore.v1beta.CreateFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateFederationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the fields of a federation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation updateFederation(
-        com.google.cloud.metastore.v1beta.UpdateFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateFederationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a single federation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteFederation(
-        com.google.cloud.metastore.v1beta.DeleteFederationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteFederationMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * DataprocMetastoreFederation.
    *
    * <pre>
    * Configures and manages metastore federation services.

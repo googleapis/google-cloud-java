@@ -41,7 +41,6 @@ public interface PredefinedSplitOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *

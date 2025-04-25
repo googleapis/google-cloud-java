@@ -40,7 +40,6 @@ public interface GenericSignedAttestationOrBuilder
    * @return The enum numeric value on the wire for contentType.
    */
   int getContentTypeValue();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface GenericSignedAttestationOrBuilder
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
   java.util.List<io.grafeas.v1beta1.common.Signature> getSignaturesList();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface GenericSignedAttestationOrBuilder
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
   io.grafeas.v1beta1.common.Signature getSignatures(int index);
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GenericSignedAttestationOrBuilder
    * <code>repeated .grafeas.v1beta1.Signature signatures = 3;</code>
    */
   int getSignaturesCount();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface GenericSignedAttestationOrBuilder
    */
   java.util.List<? extends io.grafeas.v1beta1.common.SignatureOrBuilder>
       getSignaturesOrBuilderList();
-
   /**
    *
    *

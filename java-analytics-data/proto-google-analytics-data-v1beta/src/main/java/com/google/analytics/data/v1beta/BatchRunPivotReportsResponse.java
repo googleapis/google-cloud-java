@@ -33,7 +33,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.BatchRunPivotReportsResponse)
     BatchRunPivotReportsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchRunPivotReportsResponse.newBuilder() to construct.
   private BatchRunPivotReportsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.RunPivotReportResponse> pivotReports_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       getPivotReportsList() {
     return pivotReports_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       getPivotReportsOrBuilderList() {
     return pivotReports_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
   public int getPivotReportsCount() {
     return pivotReports_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
   public com.google.analytics.data.v1beta.RunPivotReportResponse getPivotReports(int index) {
     return pivotReports_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -655,7 +646,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return pivotReportsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -672,7 +662,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return pivotReportsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return pivotReportsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -713,7 +701,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +767,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +880,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         int index) {
       return getPivotReportsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -919,7 +897,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return pivotReportsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(pivotReports_);
       }
     }
-
     /**
      *
      *
@@ -953,7 +929,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       return getPivotReportsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1beta.RunPivotReportResponse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -969,7 +944,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.analytics.data.v1beta.RunPivotReportResponse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1002,7 +976,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1027,7 +1000,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1024,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class BatchRunPivotReportsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

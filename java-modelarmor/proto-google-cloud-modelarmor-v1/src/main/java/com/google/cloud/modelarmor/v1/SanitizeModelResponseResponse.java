@@ -33,7 +33,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SanitizeModelResponseResponse)
     SanitizeModelResponseResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SanitizeModelResponseResponse.newBuilder() to construct.
   private SanitizeModelResponseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int SANITIZATION_RESULT_FIELD_NUMBER = 1;
   private com.google.cloud.modelarmor.v1.SanitizationResult sanitizationResult_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
   public boolean hasSanitizationResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
         ? com.google.cloud.modelarmor.v1.SanitizationResult.getDefaultInstance()
         : sanitizationResult_;
   }
-
   /**
    *
    *
@@ -288,7 +284,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -499,7 +494,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
             com.google.cloud.modelarmor.v1.SanitizationResult.Builder,
             com.google.cloud.modelarmor.v1.SanitizationResultOrBuilder>
         sanitizationResultBuilder_;
-
     /**
      *
      *
@@ -516,7 +510,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
     public boolean hasSanitizationResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -539,7 +532,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
         return sanitizationResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -564,7 +556,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +578,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +609,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +647,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
       onChanged();
       return getSanitizationResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -681,7 +668,6 @@ public final class SanitizeModelResponseResponse extends com.google.protobuf.Gen
             : sanitizationResult_;
       }
     }
-
     /**
      *
      *

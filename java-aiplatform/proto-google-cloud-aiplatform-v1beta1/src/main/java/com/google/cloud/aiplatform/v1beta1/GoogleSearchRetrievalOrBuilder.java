@@ -37,7 +37,6 @@ public interface GoogleSearchRetrievalOrBuilder
    * @return Whether the dynamicRetrievalConfig field is set.
    */
   boolean hasDynamicRetrievalConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface GoogleSearchRetrievalOrBuilder
    * @return The dynamicRetrievalConfig.
    */
   com.google.cloud.aiplatform.v1beta1.DynamicRetrievalConfig getDynamicRetrievalConfig();
-
   /**
    *
    *

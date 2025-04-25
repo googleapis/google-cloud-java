@@ -37,7 +37,6 @@ public interface ProjectRepoIdOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ProjectRepoIdOrBuilder
    * @return The repoName.
    */
   java.lang.String getRepoName();
-
   /**
    *
    *

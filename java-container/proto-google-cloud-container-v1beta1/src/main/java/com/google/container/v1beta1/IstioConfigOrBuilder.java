@@ -55,7 +55,6 @@ public interface IstioConfigOrBuilder
    */
   @java.lang.Deprecated
   int getAuthValue();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListFeatureViewsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FeatureView feature_views = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.FeatureView> getFeatureViewsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListFeatureViewsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FeatureView feature_views = 1;</code>
    */
   com.google.cloud.aiplatform.v1.FeatureView getFeatureViews(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListFeatureViewsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.FeatureView feature_views = 1;</code>
    */
   int getFeatureViewsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListFeatureViewsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.FeatureViewOrBuilder>
       getFeatureViewsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListFeatureViewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

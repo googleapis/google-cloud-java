@@ -37,7 +37,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The resellerCloudIdentityId.
    */
   java.lang.String getResellerCloudIdentityId();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The enum numeric value on the wire for linkState.
    */
   int getLinkStateValue();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The inviteLinkUri.
    */
   java.lang.String getInviteLinkUri();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The publicId.
    */
   java.lang.String getPublicId();
-
   /**
    *
    *
@@ -256,7 +247,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return Whether the channelPartnerCloudIdentityInfo field is set.
    */
   boolean hasChannelPartnerCloudIdentityInfo();
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public interface ChannelPartnerLinkOrBuilder
    * @return The channelPartnerCloudIdentityInfo.
    */
   com.google.cloud.channel.v1.CloudIdentityInfo getChannelPartnerCloudIdentityInfo();
-
   /**
    *
    *

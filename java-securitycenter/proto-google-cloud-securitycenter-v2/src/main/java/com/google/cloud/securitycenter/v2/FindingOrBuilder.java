@@ -49,7 +49,6 @@ public interface FindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface FindingOrBuilder
    * @return The canonicalName.
    */
   java.lang.String getCanonicalName();
-
   /**
    *
    *
@@ -156,7 +154,6 @@ public interface FindingOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -198,7 +195,6 @@ public interface FindingOrBuilder
    * @return The resourceName.
    */
   java.lang.String getResourceName();
-
   /**
    *
    *
@@ -230,7 +226,6 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -259,7 +254,6 @@ public interface FindingOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *
@@ -288,7 +282,6 @@ public interface FindingOrBuilder
    * @return The externalUri.
    */
   java.lang.String getExternalUri();
-
   /**
    *
    *
@@ -317,7 +310,6 @@ public interface FindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 9;</code>
    */
   int getSourcePropertiesCount();
-
   /**
    *
    *
@@ -331,11 +323,9 @@ public interface FindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 9;</code>
    */
   boolean containsSourceProperties(java.lang.String key);
-
   /** Use {@link #getSourcePropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.protobuf.Value> getSourceProperties();
-
   /**
    *
    *
@@ -349,7 +339,6 @@ public interface FindingOrBuilder
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 9;</code>
    */
   java.util.Map<java.lang.String, com.google.protobuf.Value> getSourcePropertiesMap();
-
   /**
    *
    *
@@ -367,7 +356,6 @@ public interface FindingOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.protobuf.Value defaultValue);
-
   /**
    *
    *
@@ -398,7 +386,6 @@ public interface FindingOrBuilder
    * @return Whether the securityMarks field is set.
    */
   boolean hasSecurityMarks();
-
   /**
    *
    *
@@ -415,7 +402,6 @@ public interface FindingOrBuilder
    * @return The securityMarks.
    */
   com.google.cloud.securitycenter.v2.SecurityMarks getSecurityMarks();
-
   /**
    *
    *
@@ -449,7 +435,6 @@ public interface FindingOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
-
   /**
    *
    *
@@ -468,7 +453,6 @@ public interface FindingOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
-
   /**
    *
    *
@@ -500,7 +484,6 @@ public interface FindingOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -515,7 +498,6 @@ public interface FindingOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -542,7 +524,6 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -571,7 +552,6 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for mute.
    */
   int getMuteValue();
-
   /**
    *
    *
@@ -601,7 +581,6 @@ public interface FindingOrBuilder
    * @return Whether the muteInfo field is set.
    */
   boolean hasMuteInfo();
-
   /**
    *
    *
@@ -616,7 +595,6 @@ public interface FindingOrBuilder
    * @return The muteInfo.
    */
   com.google.cloud.securitycenter.v2.Finding.MuteInfo getMuteInfo();
-
   /**
    *
    *
@@ -642,7 +620,6 @@ public interface FindingOrBuilder
    * @return The enum numeric value on the wire for findingClass.
    */
   int getFindingClassValue();
-
   /**
    *
    *
@@ -672,7 +649,6 @@ public interface FindingOrBuilder
    * @return Whether the indicator field is set.
    */
   boolean hasIndicator();
-
   /**
    *
    *
@@ -689,7 +665,6 @@ public interface FindingOrBuilder
    * @return The indicator.
    */
   com.google.cloud.securitycenter.v2.Indicator getIndicator();
-
   /**
    *
    *
@@ -719,7 +694,6 @@ public interface FindingOrBuilder
    * @return Whether the vulnerability field is set.
    */
   boolean hasVulnerability();
-
   /**
    *
    *
@@ -734,7 +708,6 @@ public interface FindingOrBuilder
    * @return The vulnerability.
    */
   com.google.cloud.securitycenter.v2.Vulnerability getVulnerability();
-
   /**
    *
    *
@@ -762,7 +735,6 @@ public interface FindingOrBuilder
    * @return Whether the muteUpdateTime field is set.
    */
   boolean hasMuteUpdateTime();
-
   /**
    *
    *
@@ -777,7 +749,6 @@ public interface FindingOrBuilder
    * @return The muteUpdateTime.
    */
   com.google.protobuf.Timestamp getMuteUpdateTime();
-
   /**
    *
    *
@@ -804,7 +775,6 @@ public interface FindingOrBuilder
    * </code>
    */
   int getExternalSystemsCount();
-
   /**
    *
    *
@@ -818,12 +788,10 @@ public interface FindingOrBuilder
    * </code>
    */
   boolean containsExternalSystems(java.lang.String key);
-
   /** Use {@link #getExternalSystemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.securitycenter.v2.ExternalSystem>
       getExternalSystems();
-
   /**
    *
    *
@@ -838,7 +806,6 @@ public interface FindingOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.securitycenter.v2.ExternalSystem>
       getExternalSystemsMap();
-
   /**
    *
    *
@@ -856,7 +823,6 @@ public interface FindingOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.securitycenter.v2.ExternalSystem defaultValue);
-
   /**
    *
    *
@@ -884,7 +850,6 @@ public interface FindingOrBuilder
    * @return Whether the mitreAttack field is set.
    */
   boolean hasMitreAttack();
-
   /**
    *
    *
@@ -898,7 +863,6 @@ public interface FindingOrBuilder
    * @return The mitreAttack.
    */
   com.google.cloud.securitycenter.v2.MitreAttack getMitreAttack();
-
   /**
    *
    *
@@ -924,7 +888,6 @@ public interface FindingOrBuilder
    * @return Whether the access field is set.
    */
   boolean hasAccess();
-
   /**
    *
    *
@@ -938,7 +901,6 @@ public interface FindingOrBuilder
    * @return The access.
    */
   com.google.cloud.securitycenter.v2.Access getAccess();
-
   /**
    *
    *
@@ -961,7 +923,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Connection connections = 23;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Connection> getConnectionsList();
-
   /**
    *
    *
@@ -972,7 +933,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Connection connections = 23;</code>
    */
   com.google.cloud.securitycenter.v2.Connection getConnections(int index);
-
   /**
    *
    *
@@ -983,7 +943,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Connection connections = 23;</code>
    */
   int getConnectionsCount();
-
   /**
    *
    *
@@ -995,7 +954,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ConnectionOrBuilder>
       getConnectionsOrBuilderList();
-
   /**
    *
    *
@@ -1022,7 +980,6 @@ public interface FindingOrBuilder
    * @return The muteInitiator.
    */
   java.lang.String getMuteInitiator();
-
   /**
    *
    *
@@ -1049,7 +1006,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Process processes = 25;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Process> getProcessesList();
-
   /**
    *
    *
@@ -1060,7 +1016,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Process processes = 25;</code>
    */
   com.google.cloud.securitycenter.v2.Process getProcesses(int index);
-
   /**
    *
    *
@@ -1071,7 +1026,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Process processes = 25;</code>
    */
   int getProcessesCount();
-
   /**
    *
    *
@@ -1083,7 +1037,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ProcessOrBuilder>
       getProcessesOrBuilderList();
-
   /**
    *
    *
@@ -1123,7 +1076,6 @@ public interface FindingOrBuilder
    * </code>
    */
   int getContactsCount();
-
   /**
    *
    *
@@ -1152,11 +1104,9 @@ public interface FindingOrBuilder
    * </code>
    */
   boolean containsContacts(java.lang.String key);
-
   /** Use {@link #getContactsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.securitycenter.v2.ContactDetails> getContacts();
-
   /**
    *
    *
@@ -1186,7 +1136,6 @@ public interface FindingOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.securitycenter.v2.ContactDetails>
       getContactsMap();
-
   /**
    *
    *
@@ -1219,7 +1168,6 @@ public interface FindingOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.securitycenter.v2.ContactDetails defaultValue);
-
   /**
    *
    *
@@ -1260,7 +1208,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Compliance compliances = 27;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Compliance> getCompliancesList();
-
   /**
    *
    *
@@ -1272,7 +1219,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Compliance compliances = 27;</code>
    */
   com.google.cloud.securitycenter.v2.Compliance getCompliances(int index);
-
   /**
    *
    *
@@ -1284,7 +1230,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Compliance compliances = 27;</code>
    */
   int getCompliancesCount();
-
   /**
    *
    *
@@ -1297,7 +1242,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ComplianceOrBuilder>
       getCompliancesOrBuilderList();
-
   /**
    *
    *
@@ -1323,7 +1267,6 @@ public interface FindingOrBuilder
    * @return The parentDisplayName.
    */
   java.lang.String getParentDisplayName();
-
   /**
    *
    *
@@ -1350,7 +1293,6 @@ public interface FindingOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -1376,7 +1318,6 @@ public interface FindingOrBuilder
    * @return Whether the exfiltration field is set.
    */
   boolean hasExfiltration();
-
   /**
    *
    *
@@ -1389,7 +1330,6 @@ public interface FindingOrBuilder
    * @return The exfiltration.
    */
   com.google.cloud.securitycenter.v2.Exfiltration getExfiltration();
-
   /**
    *
    *
@@ -1411,7 +1351,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.IamBinding iam_bindings = 32;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.IamBinding> getIamBindingsList();
-
   /**
    *
    *
@@ -1422,7 +1361,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.IamBinding iam_bindings = 32;</code>
    */
   com.google.cloud.securitycenter.v2.IamBinding getIamBindings(int index);
-
   /**
    *
    *
@@ -1433,7 +1371,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.IamBinding iam_bindings = 32;</code>
    */
   int getIamBindingsCount();
-
   /**
    *
    *
@@ -1445,7 +1382,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.IamBindingOrBuilder>
       getIamBindingsOrBuilderList();
-
   /**
    *
    *
@@ -1469,7 +1405,6 @@ public interface FindingOrBuilder
    * @return The nextSteps.
    */
   java.lang.String getNextSteps();
-
   /**
    *
    *
@@ -1497,7 +1432,6 @@ public interface FindingOrBuilder
    * @return The moduleName.
    */
   java.lang.String getModuleName();
-
   /**
    *
    *
@@ -1524,7 +1458,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Container containers = 35;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.Container> getContainersList();
-
   /**
    *
    *
@@ -1536,7 +1469,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Container containers = 35;</code>
    */
   com.google.cloud.securitycenter.v2.Container getContainers(int index);
-
   /**
    *
    *
@@ -1548,7 +1480,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.Container containers = 35;</code>
    */
   int getContainersCount();
-
   /**
    *
    *
@@ -1561,7 +1492,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.ContainerOrBuilder>
       getContainersOrBuilderList();
-
   /**
    *
    *
@@ -1586,7 +1516,6 @@ public interface FindingOrBuilder
    * @return Whether the kubernetes field is set.
    */
   boolean hasKubernetes();
-
   /**
    *
    *
@@ -1599,7 +1528,6 @@ public interface FindingOrBuilder
    * @return The kubernetes.
    */
   com.google.cloud.securitycenter.v2.Kubernetes getKubernetes();
-
   /**
    *
    *
@@ -1623,7 +1551,6 @@ public interface FindingOrBuilder
    * @return Whether the database field is set.
    */
   boolean hasDatabase();
-
   /**
    *
    *
@@ -1636,7 +1563,6 @@ public interface FindingOrBuilder
    * @return The database.
    */
   com.google.cloud.securitycenter.v2.Database getDatabase();
-
   /**
    *
    *
@@ -1660,7 +1586,6 @@ public interface FindingOrBuilder
    * @return Whether the attackExposure field is set.
    */
   boolean hasAttackExposure();
-
   /**
    *
    *
@@ -1673,7 +1598,6 @@ public interface FindingOrBuilder
    * @return The attackExposure.
    */
   com.google.cloud.securitycenter.v2.AttackExposure getAttackExposure();
-
   /**
    *
    *
@@ -1695,7 +1619,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.File files = 39;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.File> getFilesList();
-
   /**
    *
    *
@@ -1706,7 +1629,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.File files = 39;</code>
    */
   com.google.cloud.securitycenter.v2.File getFiles(int index);
-
   /**
    *
    *
@@ -1717,7 +1639,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.File files = 39;</code>
    */
   int getFilesCount();
-
   /**
    *
    *
@@ -1729,7 +1650,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.FileOrBuilder>
       getFilesOrBuilderList();
-
   /**
    *
    *
@@ -1754,7 +1674,6 @@ public interface FindingOrBuilder
    * @return Whether the cloudDlpInspection field is set.
    */
   boolean hasCloudDlpInspection();
-
   /**
    *
    *
@@ -1768,7 +1687,6 @@ public interface FindingOrBuilder
    * @return The cloudDlpInspection.
    */
   com.google.cloud.securitycenter.v2.CloudDlpInspection getCloudDlpInspection();
-
   /**
    *
    *
@@ -1793,7 +1711,6 @@ public interface FindingOrBuilder
    * @return Whether the cloudDlpDataProfile field is set.
    */
   boolean hasCloudDlpDataProfile();
-
   /**
    *
    *
@@ -1806,7 +1723,6 @@ public interface FindingOrBuilder
    * @return The cloudDlpDataProfile.
    */
   com.google.cloud.securitycenter.v2.CloudDlpDataProfile getCloudDlpDataProfile();
-
   /**
    *
    *
@@ -1830,7 +1746,6 @@ public interface FindingOrBuilder
    * @return Whether the kernelRootkit field is set.
    */
   boolean hasKernelRootkit();
-
   /**
    *
    *
@@ -1843,7 +1758,6 @@ public interface FindingOrBuilder
    * @return The kernelRootkit.
    */
   com.google.cloud.securitycenter.v2.KernelRootkit getKernelRootkit();
-
   /**
    *
    *
@@ -1865,7 +1779,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.OrgPolicy org_policies = 43;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.OrgPolicy> getOrgPoliciesList();
-
   /**
    *
    *
@@ -1876,7 +1789,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.OrgPolicy org_policies = 43;</code>
    */
   com.google.cloud.securitycenter.v2.OrgPolicy getOrgPolicies(int index);
-
   /**
    *
    *
@@ -1887,7 +1799,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.OrgPolicy org_policies = 43;</code>
    */
   int getOrgPoliciesCount();
-
   /**
    *
    *
@@ -1899,7 +1810,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.OrgPolicyOrBuilder>
       getOrgPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -1923,7 +1833,6 @@ public interface FindingOrBuilder
    * @return Whether the application field is set.
    */
   boolean hasApplication();
-
   /**
    *
    *
@@ -1936,7 +1845,6 @@ public interface FindingOrBuilder
    * @return The application.
    */
   com.google.cloud.securitycenter.v2.Application getApplication();
-
   /**
    *
    *
@@ -1961,7 +1869,6 @@ public interface FindingOrBuilder
    * @return Whether the backupDisasterRecovery field is set.
    */
   boolean hasBackupDisasterRecovery();
-
   /**
    *
    *
@@ -1975,7 +1882,6 @@ public interface FindingOrBuilder
    * @return The backupDisasterRecovery.
    */
   com.google.cloud.securitycenter.v2.BackupDisasterRecovery getBackupDisasterRecovery();
-
   /**
    *
    *
@@ -2001,7 +1907,6 @@ public interface FindingOrBuilder
    * @return Whether the securityPosture field is set.
    */
   boolean hasSecurityPosture();
-
   /**
    *
    *
@@ -2014,7 +1919,6 @@ public interface FindingOrBuilder
    * @return The securityPosture.
    */
   com.google.cloud.securitycenter.v2.SecurityPosture getSecurityPosture();
-
   /**
    *
    *
@@ -2036,7 +1940,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.LogEntry log_entries = 49;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.LogEntry> getLogEntriesList();
-
   /**
    *
    *
@@ -2047,7 +1950,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.LogEntry log_entries = 49;</code>
    */
   com.google.cloud.securitycenter.v2.LogEntry getLogEntries(int index);
-
   /**
    *
    *
@@ -2058,7 +1960,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.LogEntry log_entries = 49;</code>
    */
   int getLogEntriesCount();
-
   /**
    *
    *
@@ -2070,7 +1971,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.LogEntryOrBuilder>
       getLogEntriesOrBuilderList();
-
   /**
    *
    *
@@ -2092,7 +1992,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.LoadBalancer load_balancers = 50;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.LoadBalancer> getLoadBalancersList();
-
   /**
    *
    *
@@ -2103,7 +2002,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.LoadBalancer load_balancers = 50;</code>
    */
   com.google.cloud.securitycenter.v2.LoadBalancer getLoadBalancers(int index);
-
   /**
    *
    *
@@ -2114,7 +2012,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.LoadBalancer load_balancers = 50;</code>
    */
   int getLoadBalancersCount();
-
   /**
    *
    *
@@ -2126,7 +2023,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.LoadBalancerOrBuilder>
       getLoadBalancersOrBuilderList();
-
   /**
    *
    *
@@ -2150,7 +2046,6 @@ public interface FindingOrBuilder
    * @return Whether the cloudArmor field is set.
    */
   boolean hasCloudArmor();
-
   /**
    *
    *
@@ -2163,7 +2058,6 @@ public interface FindingOrBuilder
    * @return The cloudArmor.
    */
   com.google.cloud.securitycenter.v2.CloudArmor getCloudArmor();
-
   /**
    *
    *
@@ -2187,7 +2081,6 @@ public interface FindingOrBuilder
    * @return Whether the notebook field is set.
    */
   boolean hasNotebook();
-
   /**
    *
    *
@@ -2200,7 +2093,6 @@ public interface FindingOrBuilder
    * @return The notebook.
    */
   com.google.cloud.securitycenter.v2.Notebook getNotebook();
-
   /**
    *
    *
@@ -2228,7 +2120,6 @@ public interface FindingOrBuilder
    * @return Whether the toxicCombination field is set.
    */
   boolean hasToxicCombination();
-
   /**
    *
    *
@@ -2245,7 +2136,6 @@ public interface FindingOrBuilder
    * @return The toxicCombination.
    */
   com.google.cloud.securitycenter.v2.ToxicCombination getToxicCombination();
-
   /**
    *
    *
@@ -2273,7 +2163,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.GroupMembership group_memberships = 57;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.GroupMembership> getGroupMembershipsList();
-
   /**
    *
    *
@@ -2286,7 +2175,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.GroupMembership group_memberships = 57;</code>
    */
   com.google.cloud.securitycenter.v2.GroupMembership getGroupMemberships(int index);
-
   /**
    *
    *
@@ -2299,7 +2187,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.GroupMembership group_memberships = 57;</code>
    */
   int getGroupMembershipsCount();
-
   /**
    *
    *
@@ -2313,7 +2200,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.GroupMembershipOrBuilder>
       getGroupMembershipsOrBuilderList();
-
   /**
    *
    *
@@ -2340,7 +2226,6 @@ public interface FindingOrBuilder
    * @return Whether the disk field is set.
    */
   boolean hasDisk();
-
   /**
    *
    *
@@ -2353,7 +2238,6 @@ public interface FindingOrBuilder
    * @return The disk.
    */
   com.google.cloud.securitycenter.v2.Disk getDisk();
-
   /**
    *
    *
@@ -2375,7 +2259,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.DataAccessEvent> getDataAccessEventsList();
-
   /**
    *
    *
@@ -2386,7 +2269,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
    */
   com.google.cloud.securitycenter.v2.DataAccessEvent getDataAccessEvents(int index);
-
   /**
    *
    *
@@ -2397,7 +2279,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.DataAccessEvent data_access_events = 61;</code>
    */
   int getDataAccessEventsCount();
-
   /**
    *
    *
@@ -2409,7 +2290,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.DataAccessEventOrBuilder>
       getDataAccessEventsOrBuilderList();
-
   /**
    *
    *
@@ -2432,7 +2312,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
    */
   java.util.List<com.google.cloud.securitycenter.v2.DataFlowEvent> getDataFlowEventsList();
-
   /**
    *
    *
@@ -2443,7 +2322,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
    */
   com.google.cloud.securitycenter.v2.DataFlowEvent getDataFlowEvents(int index);
-
   /**
    *
    *
@@ -2454,7 +2332,6 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v2.DataFlowEvent data_flow_events = 62;</code>
    */
   int getDataFlowEventsCount();
-
   /**
    *
    *
@@ -2466,7 +2343,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.DataFlowEventOrBuilder>
       getDataFlowEventsOrBuilderList();
-
   /**
    *
    *
@@ -2491,7 +2367,6 @@ public interface FindingOrBuilder
    */
   java.util.List<com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent>
       getDataRetentionDeletionEventsList();
-
   /**
    *
    *
@@ -2505,7 +2380,6 @@ public interface FindingOrBuilder
    */
   com.google.cloud.securitycenter.v2.DataRetentionDeletionEvent getDataRetentionDeletionEvents(
       int index);
-
   /**
    *
    *
@@ -2518,7 +2392,6 @@ public interface FindingOrBuilder
    * </code>
    */
   int getDataRetentionDeletionEventsCount();
-
   /**
    *
    *
@@ -2532,7 +2405,6 @@ public interface FindingOrBuilder
    */
   java.util.List<? extends com.google.cloud.securitycenter.v2.DataRetentionDeletionEventOrBuilder>
       getDataRetentionDeletionEventsOrBuilderList();
-
   /**
    *
    *

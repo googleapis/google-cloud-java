@@ -33,7 +33,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.WebKeySettings)
     WebKeySettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WebKeySettings.newBuilder() to construct.
   private WebKeySettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>INTEGRATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INTEGRATION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>SCORE = 1;</code>
      */
     public static final int SCORE_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CHECKBOX = 2;</code>
      */
     public static final int CHECKBOX_VALUE = 2;
-
     /**
      *
      *
@@ -325,7 +321,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>CHALLENGE_SECURITY_PREFERENCE_UNSPECIFIED = 0;</code>
      */
     public static final int CHALLENGE_SECURITY_PREFERENCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -336,7 +331,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>USABILITY = 1;</code>
      */
     public static final int USABILITY_VALUE = 1;
-
     /**
      *
      *
@@ -347,7 +341,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
      * <code>BALANCE = 2;</code>
      */
     public static final int BALANCE_VALUE = 2;
-
     /**
      *
      *
@@ -449,7 +442,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOW_ALL_DOMAINS_FIELD_NUMBER = 3;
   private boolean allowAllDomains_ = false;
-
   /**
    *
    *
@@ -471,7 +463,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedDomains_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -489,7 +480,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getAllowedDomainsList() {
     return allowedDomains_;
   }
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   public int getAllowedDomainsCount() {
     return allowedDomains_.size();
   }
-
   /**
    *
    *
@@ -526,7 +515,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getAllowedDomains(int index) {
     return allowedDomains_.get(index);
   }
-
   /**
    *
    *
@@ -548,7 +536,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOW_AMP_TRAFFIC_FIELD_NUMBER = 2;
   private boolean allowAmpTraffic_ = false;
-
   /**
    *
    *
@@ -568,7 +555,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INTEGRATION_TYPE_FIELD_NUMBER = 4;
   private int integrationType_ = 0;
-
   /**
    *
    *
@@ -586,7 +572,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   public int getIntegrationTypeValue() {
     return integrationType_;
   }
-
   /**
    *
    *
@@ -612,7 +597,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHALLENGE_SECURITY_PREFERENCE_FIELD_NUMBER = 5;
   private int challengeSecurityPreference_ = 0;
-
   /**
    *
    *
@@ -632,7 +616,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
   public int getChallengeSecurityPreferenceValue() {
     return challengeSecurityPreference_;
   }
-
   /**
    *
    *
@@ -874,7 +857,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1118,7 +1100,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean allowAllDomains_;
-
     /**
      *
      *
@@ -1134,7 +1115,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowAllDomains() {
       return allowAllDomains_;
     }
-
     /**
      *
      *
@@ -1154,7 +1134,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1182,7 +1161,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1201,7 +1179,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       allowedDomains_.makeImmutable();
       return allowedDomains_;
     }
-
     /**
      *
      *
@@ -1219,7 +1196,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedDomainsCount() {
       return allowedDomains_.size();
     }
-
     /**
      *
      *
@@ -1238,7 +1214,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowedDomains(int index) {
       return allowedDomains_.get(index);
     }
-
     /**
      *
      *
@@ -1257,7 +1232,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getAllowedDomainsBytes(int index) {
       return allowedDomains_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1284,7 +1258,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1283,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1305,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1326,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1354,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean allowAmpTraffic_;
-
     /**
      *
      *
@@ -1401,7 +1370,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowAmpTraffic() {
       return allowAmpTraffic_;
     }
-
     /**
      *
      *
@@ -1422,7 +1390,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1410,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int integrationType_ = 0;
-
     /**
      *
      *
@@ -1461,7 +1427,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public int getIntegrationTypeValue() {
       return integrationType_;
     }
-
     /**
      *
      *
@@ -1482,7 +1447,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1469,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
           ? com.google.recaptchaenterprise.v1.WebKeySettings.IntegrationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1530,7 +1493,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1552,7 +1514,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int challengeSecurityPreference_ = 0;
-
     /**
      *
      *
@@ -1572,7 +1533,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
     public int getChallengeSecurityPreferenceValue() {
       return challengeSecurityPreference_;
     }
-
     /**
      *
      *
@@ -1595,7 +1555,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1581,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1649,7 +1607,6 @@ public final class WebKeySettings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

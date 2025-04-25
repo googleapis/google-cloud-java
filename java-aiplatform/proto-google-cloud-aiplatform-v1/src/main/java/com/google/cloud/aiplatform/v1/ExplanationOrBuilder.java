@@ -62,7 +62,6 @@ public interface ExplanationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Attribution> getAttributionsList();
-
   /**
    *
    *
@@ -101,7 +100,6 @@ public interface ExplanationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Attribution getAttributions(int index);
-
   /**
    *
    *
@@ -140,7 +138,6 @@ public interface ExplanationOrBuilder
    * </code>
    */
   int getAttributionsCount();
-
   /**
    *
    *
@@ -180,7 +177,6 @@ public interface ExplanationOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.AttributionOrBuilder>
       getAttributionsOrBuilderList();
-
   /**
    *
    *
@@ -235,7 +231,6 @@ public interface ExplanationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Neighbor> getNeighborsList();
-
   /**
    *
    *
@@ -251,7 +246,6 @@ public interface ExplanationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Neighbor getNeighbors(int index);
-
   /**
    *
    *
@@ -267,7 +261,6 @@ public interface ExplanationOrBuilder
    * </code>
    */
   int getNeighborsCount();
-
   /**
    *
    *
@@ -284,7 +277,6 @@ public interface ExplanationOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.NeighborOrBuilder>
       getNeighborsOrBuilderList();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return Whether the nodePool field is set.
    */
   boolean hasNodePool();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The nodePool.
    */
   com.google.cloud.edgecontainer.v1.NodePool getNodePool();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

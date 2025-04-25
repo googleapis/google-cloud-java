@@ -33,7 +33,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleSchema)
     OracleSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OracleSchema.newBuilder() to construct.
   private OracleSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schema_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.OracleTable> oracleTables_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1.OracleTable> getOracleTablesList() {
     return oracleTables_;
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       getOracleTablesOrBuilderList() {
     return oracleTables_;
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
   public int getOracleTablesCount() {
     return oracleTables_.size();
   }
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1.OracleTable getOracleTables(int index) {
     return oracleTables_.get(index);
   }
-
   /**
    *
    *
@@ -364,7 +356,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -608,7 +599,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object schema_ = "";
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return oracleTablesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -768,7 +753,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return oracleTablesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return oracleTablesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +875,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.OracleTable.Builder getOracleTablesBuilder(int index) {
       return getOracleTablesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1008,7 +981,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return oracleTablesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1026,7 +998,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(oracleTables_);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1011,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       return getOracleTablesFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.OracleTable.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1054,7 +1024,6 @@ public final class OracleSchema extends com.google.protobuf.GeneratedMessageV3
       return getOracleTablesFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.OracleTable.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig)
     StreamingLabelDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingLabelDetectionConfig.newBuilder() to construct.
   private StreamingLabelDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
 
   public static final int STATIONARY_CAMERA_FIELD_NUMBER = 1;
   private boolean stationaryCamera_ = false;
-
   /**
    *
    *
@@ -251,7 +249,6 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -445,7 +442,6 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
     private int bitField0_;
 
     private boolean stationaryCamera_;
-
     /**
      *
      *
@@ -463,7 +459,6 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
     public boolean getStationaryCamera() {
       return stationaryCamera_;
     }
-
     /**
      *
      *
@@ -485,7 +480,6 @@ public final class StreamingLabelDetectionConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

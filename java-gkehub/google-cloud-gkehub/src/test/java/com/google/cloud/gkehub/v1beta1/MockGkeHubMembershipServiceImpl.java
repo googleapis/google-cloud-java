@@ -179,8 +179,7 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GenerateConnectManifest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConnectManifestResponse.class.getName(),
                   Exception.class.getName())));
@@ -224,8 +223,7 @@ public class MockGkeHubMembershipServiceImpl extends GkeHubMembershipServiceImpl
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateExclusivityManifest, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method GenerateExclusivityManifest, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateExclusivityManifestResponse.class.getName(),
                   Exception.class.getName())));

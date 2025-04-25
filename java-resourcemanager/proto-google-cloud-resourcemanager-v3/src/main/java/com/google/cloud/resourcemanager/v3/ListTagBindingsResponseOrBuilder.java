@@ -34,7 +34,6 @@ public interface ListTagBindingsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.TagBinding> getTagBindingsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTagBindingsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.TagBinding getTagBindings(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTagBindingsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
    */
   int getTagBindingsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTagBindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.TagBindingOrBuilder>
       getTagBindingsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ListTagBindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

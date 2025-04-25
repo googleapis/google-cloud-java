@@ -40,7 +40,6 @@ public interface FeatureSpecOrBuilder
    * @return A list containing the allowlistedServiceAccounts.
    */
   java.util.List<java.lang.String> getAllowlistedServiceAccountsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface FeatureSpecOrBuilder
    * @return The count of allowlistedServiceAccounts.
    */
   int getAllowlistedServiceAccountsCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface FeatureSpecOrBuilder
    * @return The allowlistedServiceAccounts at the given index.
    */
   java.lang.String getAllowlistedServiceAccounts(int index);
-
   /**
    *
    *

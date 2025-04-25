@@ -33,7 +33,6 @@ public final class BulkMuteFindingsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.BulkMuteFindingsResponse)
     BulkMuteFindingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BulkMuteFindingsResponse.newBuilder() to construct.
   private BulkMuteFindingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class BulkMuteFindingsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

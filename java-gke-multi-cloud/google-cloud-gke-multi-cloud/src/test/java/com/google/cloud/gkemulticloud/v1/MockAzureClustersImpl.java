@@ -264,8 +264,7 @@ public class MockAzureClustersImpl extends AzureClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateAzureClusterAgentToken,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GenerateAzureClusterAgentToken, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAzureClusterAgentTokenResponse.class.getName(),
                   Exception.class.getName())));
@@ -287,8 +286,7 @@ public class MockAzureClustersImpl extends AzureClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateAzureAccessToken, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GenerateAzureAccessToken, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAzureAccessTokenResponse.class.getName(),
                   Exception.class.getName())));
@@ -415,8 +413,7 @@ public class MockAzureClustersImpl extends AzureClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAzureOpenIdConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetAzureOpenIdConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AzureOpenIdConfig.class.getName(),
                   Exception.class.getName())));
@@ -458,8 +455,7 @@ public class MockAzureClustersImpl extends AzureClustersImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAzureServerConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetAzureServerConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AzureServerConfig.class.getName(),
                   Exception.class.getName())));

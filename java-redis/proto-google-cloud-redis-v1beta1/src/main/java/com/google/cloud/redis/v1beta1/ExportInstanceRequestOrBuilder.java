@@ -38,7 +38,6 @@ public interface ExportInstanceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ExportInstanceRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ExportInstanceRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.redis.v1beta1.OutputConfig getOutputConfig();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.lifesciences.v2beta.VirtualMachine)
     VirtualMachineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VirtualMachine.newBuilder() to construct.
   private VirtualMachine(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PREEMPTIBLE_FIELD_NUMBER = 2;
   private boolean preemptible_ = false;
-
   /**
    *
    *
@@ -195,7 +191,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -220,14 +215,12 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -278,7 +270,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -312,7 +303,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.lifesciences.v2beta.Disk> disks_;
-
   /**
    *
    *
@@ -328,7 +318,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.lifesciences.v2beta.Disk> getDisksList() {
     return disks_;
   }
-
   /**
    *
    *
@@ -345,7 +334,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       getDisksOrBuilderList() {
     return disks_;
   }
-
   /**
    *
    *
@@ -361,7 +349,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public int getDisksCount() {
     return disks_.size();
   }
-
   /**
    *
    *
@@ -377,7 +364,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.lifesciences.v2beta.Disk getDisks(int index) {
     return disks_.get(index);
   }
-
   /**
    *
    *
@@ -396,7 +382,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_FIELD_NUMBER = 5;
   private com.google.cloud.lifesciences.v2beta.Network network_;
-
   /**
    *
    *
@@ -412,7 +397,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetwork() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -430,7 +414,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.lifesciences.v2beta.Network.getDefaultInstance()
         : network_;
   }
-
   /**
    *
    *
@@ -451,7 +434,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.lifesciences.v2beta.Accelerator> accelerators_;
-
   /**
    *
    *
@@ -465,7 +447,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.lifesciences.v2beta.Accelerator> getAcceleratorsList() {
     return accelerators_;
   }
-
   /**
    *
    *
@@ -480,7 +461,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       getAcceleratorsOrBuilderList() {
     return accelerators_;
   }
-
   /**
    *
    *
@@ -494,7 +474,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public int getAcceleratorsCount() {
     return accelerators_.size();
   }
-
   /**
    *
    *
@@ -508,7 +487,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.lifesciences.v2beta.Accelerator getAccelerators(int index) {
     return accelerators_.get(index);
   }
-
   /**
    *
    *
@@ -526,7 +504,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 7;
   private com.google.cloud.lifesciences.v2beta.ServiceAccount serviceAccount_;
-
   /**
    *
    *
@@ -543,7 +520,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServiceAccount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -562,7 +538,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.lifesciences.v2beta.ServiceAccount.getDefaultInstance()
         : serviceAccount_;
   }
-
   /**
    *
    *
@@ -582,7 +557,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOT_DISK_SIZE_GB_FIELD_NUMBER = 8;
   private int bootDiskSizeGb_ = 0;
-
   /**
    *
    *
@@ -606,7 +580,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpuPlatform_ = "";
-
   /**
    *
    *
@@ -637,7 +610,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -673,7 +645,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bootImage_ = "";
-
   /**
    *
    *
@@ -709,7 +680,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -750,7 +720,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nvidiaDriverVersion_ = "";
-
   /**
    *
    *
@@ -780,7 +749,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -813,7 +781,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_STACKDRIVER_MONITORING_FIELD_NUMBER = 12;
   private boolean enableStackdriverMonitoring_ = false;
-
   /**
    *
    *
@@ -835,7 +802,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dockerCacheImages_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -858,7 +824,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDockerCacheImagesList() {
     return dockerCacheImages_;
   }
-
   /**
    *
    *
@@ -881,7 +846,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public int getDockerCacheImagesCount() {
     return dockerCacheImages_.size();
   }
-
   /**
    *
    *
@@ -905,7 +869,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDockerCacheImages(int index) {
     return dockerCacheImages_.get(index);
   }
-
   /**
    *
    *
@@ -934,7 +897,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.lifesciences.v2beta.Volume> volumes_;
-
   /**
    *
    *
@@ -950,7 +912,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.lifesciences.v2beta.Volume> getVolumesList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -967,7 +928,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       getVolumesOrBuilderList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -983,7 +943,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public int getVolumesCount() {
     return volumes_.size();
   }
-
   /**
    *
    *
@@ -999,7 +958,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.lifesciences.v2beta.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
-
   /**
    *
    *
@@ -1020,7 +978,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservation_ = "";
-
   /**
    *
    *
@@ -1045,7 +1002,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1388,7 +1344,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1961,7 +1916,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -1990,7 +1944,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2019,7 +1972,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2047,7 +1999,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2071,7 +2022,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2052,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean preemptible_;
-
     /**
      *
      *
@@ -2118,7 +2067,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public boolean getPreemptible() {
       return preemptible_;
     }
-
     /**
      *
      *
@@ -2138,7 +2086,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2182,7 +2129,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2207,14 +2153,12 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2236,7 +2180,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2265,7 +2208,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2300,7 +2242,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2325,14 +2266,12 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2361,7 +2300,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -2419,7 +2357,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return disksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2438,7 +2375,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return disksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2457,7 +2393,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return disksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2482,7 +2417,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2505,7 +2439,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2530,7 +2463,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2555,7 +2487,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2577,7 +2508,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2530,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2623,7 +2552,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2645,7 +2573,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2667,7 +2594,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2682,7 +2608,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Disk.Builder getDisksBuilder(int index) {
       return getDisksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2701,7 +2626,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return disksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2721,7 +2645,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(disks_);
       }
     }
-
     /**
      *
      *
@@ -2737,7 +2660,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return getDisksFieldBuilder()
           .addBuilder(com.google.cloud.lifesciences.v2beta.Disk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2753,7 +2675,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return getDisksFieldBuilder()
           .addBuilder(index, com.google.cloud.lifesciences.v2beta.Disk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2792,7 +2713,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.Network.Builder,
             com.google.cloud.lifesciences.v2beta.NetworkOrBuilder>
         networkBuilder_;
-
     /**
      *
      *
@@ -2807,7 +2727,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetwork() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2828,7 +2747,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return networkBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2851,7 +2769,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2872,7 +2789,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2900,7 +2816,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2920,7 +2835,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2935,7 +2849,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2954,7 +2867,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             : network_;
       }
     }
-
     /**
      *
      *
@@ -3015,7 +2927,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return acceleratorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3032,7 +2943,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return acceleratorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3049,7 +2959,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return acceleratorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3073,7 +2982,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3094,7 +3002,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3117,7 +3024,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3141,7 +3047,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3162,7 +3067,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3183,7 +3087,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3107,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3224,7 +3126,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3244,7 +3145,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3258,7 +3158,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAcceleratorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3276,7 +3175,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return acceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3294,7 +3192,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(accelerators_);
       }
     }
-
     /**
      *
      *
@@ -3308,7 +3205,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return getAcceleratorsFieldBuilder()
           .addBuilder(com.google.cloud.lifesciences.v2beta.Accelerator.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3323,7 +3219,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return getAcceleratorsFieldBuilder()
           .addBuilder(index, com.google.cloud.lifesciences.v2beta.Accelerator.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3361,7 +3256,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.lifesciences.v2beta.ServiceAccount.Builder,
             com.google.cloud.lifesciences.v2beta.ServiceAccountOrBuilder>
         serviceAccountBuilder_;
-
     /**
      *
      *
@@ -3377,7 +3271,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServiceAccount() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3399,7 +3292,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return serviceAccountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3423,7 +3315,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3445,7 +3336,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3475,7 +3365,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3496,7 +3385,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3512,7 +3400,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getServiceAccountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3533,7 +3420,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
             : serviceAccount_;
       }
     }
-
     /**
      *
      *
@@ -3562,7 +3448,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bootDiskSizeGb_;
-
     /**
      *
      *
@@ -3581,7 +3466,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public int getBootDiskSizeGb() {
       return bootDiskSizeGb_;
     }
-
     /**
      *
      *
@@ -3604,7 +3488,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3627,7 +3510,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cpuPlatform_ = "";
-
     /**
      *
      *
@@ -3657,7 +3539,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3687,7 +3568,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3716,7 +3596,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3741,7 +3620,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3773,7 +3651,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object bootImage_ = "";
-
     /**
      *
      *
@@ -3808,7 +3685,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3843,7 +3719,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3877,7 +3752,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3907,7 +3781,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3944,7 +3817,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nvidiaDriverVersion_ = "";
-
     /**
      *
      *
@@ -3973,7 +3845,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4002,7 +3873,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4030,7 +3900,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4054,7 +3923,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4085,7 +3953,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableStackdriverMonitoring_;
-
     /**
      *
      *
@@ -4101,7 +3968,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableStackdriverMonitoring() {
       return enableStackdriverMonitoring_;
     }
-
     /**
      *
      *
@@ -4121,7 +3987,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4149,7 +4014,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00001000;
     }
-
     /**
      *
      *
@@ -4173,7 +4037,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       dockerCacheImages_.makeImmutable();
       return dockerCacheImages_;
     }
-
     /**
      *
      *
@@ -4196,7 +4059,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public int getDockerCacheImagesCount() {
       return dockerCacheImages_.size();
     }
-
     /**
      *
      *
@@ -4220,7 +4082,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDockerCacheImages(int index) {
       return dockerCacheImages_.get(index);
     }
-
     /**
      *
      *
@@ -4244,7 +4105,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDockerCacheImagesBytes(int index) {
       return dockerCacheImages_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4276,7 +4136,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4307,7 +4166,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4335,7 +4193,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4362,7 +4219,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4429,7 +4285,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4448,7 +4303,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4467,7 +4321,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4492,7 +4345,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4515,7 +4367,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4540,7 +4391,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4565,7 +4415,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4587,7 +4436,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4610,7 +4458,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4633,7 +4480,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4655,7 +4501,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4677,7 +4522,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4692,7 +4536,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4711,7 +4554,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4731,7 +4573,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
-
     /**
      *
      *
@@ -4747,7 +4588,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloud.lifesciences.v2beta.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4763,7 +4603,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.cloud.lifesciences.v2beta.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4798,7 +4637,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object reservation_ = "";
-
     /**
      *
      *
@@ -4822,7 +4660,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4846,7 +4683,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4869,7 +4705,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4888,7 +4723,6 @@ public final class VirtualMachine extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetXpnResourcesProjectsRequest)
     GetXpnResourcesProjectsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetXpnResourcesProjectsRequest.newBuilder() to construct.
   private GetXpnResourcesProjectsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -193,7 +186,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -286,7 +275,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -339,7 +326,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +352,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -382,7 +367,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -630,7 +614,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -893,7 +876,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -908,7 +890,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -931,7 +912,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +955,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +972,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -1035,7 +1011,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1064,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1106,7 +1078,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1129,7 +1100,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1122,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1143,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1160,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1217,7 +1184,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1232,7 +1198,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1255,7 +1220,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1278,7 +1242,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1300,7 +1263,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1280,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1304,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1366,7 +1326,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1348,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1411,7 +1369,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1429,7 +1386,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1410,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -1470,7 +1425,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1486,7 +1440,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -1506,7 +1459,6 @@ public final class GetXpnResourcesProjectsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

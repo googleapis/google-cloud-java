@@ -38,7 +38,6 @@ public interface RestartWebServerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

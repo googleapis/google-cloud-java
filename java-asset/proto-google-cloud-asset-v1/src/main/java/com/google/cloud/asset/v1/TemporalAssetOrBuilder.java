@@ -36,7 +36,6 @@ public interface TemporalAssetOrBuilder
    * @return Whether the window field is set.
    */
   boolean hasWindow();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TemporalAssetOrBuilder
    * @return The window.
    */
   com.google.cloud.asset.v1.TimeWindow getWindow();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface TemporalAssetOrBuilder
    * @return Whether the asset field is set.
    */
   boolean hasAsset();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface TemporalAssetOrBuilder
    * @return The asset.
    */
   com.google.cloud.asset.v1.Asset getAsset();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface TemporalAssetOrBuilder
    * @return The enum numeric value on the wire for priorAssetState.
    */
   int getPriorAssetStateValue();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface TemporalAssetOrBuilder
    * @return Whether the priorAsset field is set.
    */
   boolean hasPriorAsset();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface TemporalAssetOrBuilder
    * @return The priorAsset.
    */
   com.google.cloud.asset.v1.Asset getPriorAsset();
-
   /**
    *
    *

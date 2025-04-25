@@ -37,7 +37,6 @@ public interface SerializedTaxonomyOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface SerializedTaxonomyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface SerializedTaxonomyOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag> getPolicyTagsList();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface SerializedTaxonomyOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
   com.google.cloud.datacatalog.v1beta1.SerializedPolicyTag getPolicyTags(int index);
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SerializedTaxonomyOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.SerializedPolicyTag policy_tags = 3;</code>
    */
   int getPolicyTagsCount();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface SerializedTaxonomyOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.SerializedPolicyTagOrBuilder>
       getPolicyTagsOrBuilderList();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface SerializedTaxonomyOrBuilder
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType>
       getActivatedPolicyTypesList();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface SerializedTaxonomyOrBuilder
    * @return The count of activatedPolicyTypes.
    */
   int getActivatedPolicyTypesCount();
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public interface SerializedTaxonomyOrBuilder
    * @return The activatedPolicyTypes at the given index.
    */
   com.google.cloud.datacatalog.v1beta1.Taxonomy.PolicyType getActivatedPolicyTypes(int index);
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public interface SerializedTaxonomyOrBuilder
    * @return A list containing the enum numeric values on the wire for activatedPolicyTypes.
    */
   java.util.List<java.lang.Integer> getActivatedPolicyTypesValueList();
-
   /**
    *
    *

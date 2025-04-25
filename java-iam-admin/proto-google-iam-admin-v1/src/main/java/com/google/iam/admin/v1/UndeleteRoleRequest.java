@@ -33,7 +33,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.iam.admin.v1.UndeleteRoleRequest)
     UndeleteRoleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UndeleteRoleRequest.newBuilder() to construct.
   private UndeleteRoleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
 
   public static final int ETAG_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -349,7 +345,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -546,7 +541,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -591,7 +585,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -636,7 +629,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -680,7 +672,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +711,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +757,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -783,7 +772,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getEtag() {
       return etag_;
     }
-
     /**
      *
      *
@@ -805,7 +793,6 @@ public final class UndeleteRoleRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

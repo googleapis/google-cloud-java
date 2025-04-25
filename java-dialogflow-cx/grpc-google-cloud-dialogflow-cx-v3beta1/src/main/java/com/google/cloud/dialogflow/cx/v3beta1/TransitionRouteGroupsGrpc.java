@@ -314,19 +314,6 @@ public final class TransitionRouteGroupsGrpc {
     return TransitionRouteGroupsStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static TransitionRouteGroupsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<TransitionRouteGroupsBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<TransitionRouteGroupsBlockingV2Stub>() {
-          @java.lang.Override
-          public TransitionRouteGroupsBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new TransitionRouteGroupsBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return TransitionRouteGroupsBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -594,108 +581,6 @@ public final class TransitionRouteGroupsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TransitionRouteGroups.
-   *
-   * <pre>
-   * Service for managing
-   * [TransitionRouteGroups][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-   * </pre>
-   */
-  public static final class TransitionRouteGroupsBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<TransitionRouteGroupsBlockingV2Stub> {
-    private TransitionRouteGroupsBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected TransitionRouteGroupsBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new TransitionRouteGroupsBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all transition route groups in the specified flow.
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsResponse
-        listTransitionRouteGroups(
-            com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListTransitionRouteGroupsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified
-     * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup getTransitionRouteGroup(
-        com.google.cloud.dialogflow.cx.v3beta1.GetTransitionRouteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetTransitionRouteGroupMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates an
-     * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
-     * in the specified flow.
-     * Note: You should always train a flow prior to sending it queries. See the
-     * [training
-     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup createTransitionRouteGroup(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateTransitionRouteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateTransitionRouteGroupMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified
-     * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-     * Note: You should always train a flow prior to sending it queries. See the
-     * [training
-     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
-     * </pre>
-     */
-    public com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup updateTransitionRouteGroup(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateTransitionRouteGroupMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified
-     * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-     * Note: You should always train a flow prior to sending it queries. See the
-     * [training
-     * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteTransitionRouteGroup(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteTransitionRouteGroupMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service TransitionRouteGroups.
    *
    * <pre>
    * Service for managing

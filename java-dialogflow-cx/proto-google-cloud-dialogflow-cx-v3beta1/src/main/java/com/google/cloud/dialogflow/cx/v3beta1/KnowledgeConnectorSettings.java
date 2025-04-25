@@ -35,7 +35,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings)
     KnowledgeConnectorSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KnowledgeConnectorSettings.newBuilder() to construct.
   private KnowledgeConnectorSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     private TargetCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
 
   public static final int TRIGGER_FULFILLMENT_FIELD_NUMBER = 3;
   private com.google.cloud.dialogflow.cx.v3beta1.Fulfillment triggerFulfillment_;
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   public boolean hasTriggerFulfillment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         ? com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()
         : triggerFulfillment_;
   }
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_PAGE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   public boolean hasTargetPage() {
     return targetCase_ == 4;
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +279,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   }
 
   public static final int TARGET_FLOW_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   public boolean hasTargetFlow() {
     return targetCase_ == 5;
   }
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +359,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnection>
       dataStoreConnections_;
-
   /**
    *
    *
@@ -388,7 +375,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       getDataStoreConnectionsList() {
     return dataStoreConnections_;
   }
-
   /**
    *
    *
@@ -406,7 +392,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       getDataStoreConnectionsOrBuilderList() {
     return dataStoreConnections_;
   }
-
   /**
    *
    *
@@ -422,7 +407,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
   public int getDataStoreConnectionsCount() {
     return dataStoreConnections_.size();
   }
-
   /**
    *
    *
@@ -439,7 +423,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       int index) {
     return dataStoreConnections_.get(index);
   }
-
   /**
    *
    *
@@ -679,7 +662,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1022,7 +1004,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -1038,7 +1019,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -1058,7 +1038,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1062,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
             com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.FulfillmentOrBuilder>
         triggerFulfillmentBuilder_;
-
     /**
      *
      *
@@ -1104,7 +1082,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     public boolean hasTriggerFulfillment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1131,7 +1108,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return triggerFulfillmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1160,7 +1136,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1162,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1197,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1222,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1243,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return getTriggerFulfillmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1297,7 +1268,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
             : triggerFulfillment_;
       }
     }
-
     /**
      *
      *
@@ -1347,7 +1317,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     public boolean hasTargetPage() {
       return targetCase_ == 4;
     }
-
     /**
      *
      *
@@ -1378,7 +1347,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1409,7 +1377,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1400,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1421,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1463,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
     public boolean hasTargetFlow() {
       return targetCase_ == 5;
     }
-
     /**
      *
      *
@@ -1529,7 +1493,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1560,7 +1523,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1584,7 +1546,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1567,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1669,7 +1629,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return dataStoreConnectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1688,7 +1647,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return dataStoreConnectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1708,7 +1666,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return dataStoreConnectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1734,7 +1691,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1714,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1739,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1810,7 +1764,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1786,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1809,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1881,7 +1832,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1903,7 +1853,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1925,7 +1874,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1941,7 +1889,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         getDataStoreConnectionsBuilder(int index) {
       return getDataStoreConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1961,7 +1908,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return dataStoreConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1982,7 +1928,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(dataStoreConnections_);
       }
     }
-
     /**
      *
      *
@@ -2000,7 +1945,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
           .addBuilder(
               com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2019,7 +1963,6 @@ public final class KnowledgeConnectorSettings extends com.google.protobuf.Genera
               index,
               com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnection.getDefaultInstance());
     }
-
     /**
      *
      *

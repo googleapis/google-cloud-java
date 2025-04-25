@@ -39,7 +39,6 @@ public interface RenewLeaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface RenewLeaseRequestOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface RenewLeaseRequestOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface RenewLeaseRequestOrBuilder
    * @return Whether the leaseDuration field is set.
    */
   boolean hasLeaseDuration();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface RenewLeaseRequestOrBuilder
    * @return The leaseDuration.
    */
   com.google.protobuf.Duration getLeaseDuration();
-
   /**
    *
    *
@@ -184,7 +179,6 @@ public interface RenewLeaseRequestOrBuilder
    * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
-
   /**
    *
    *

@@ -177,8 +177,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method MarkRecommendationDismissed, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method MarkRecommendationDismissed, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
@@ -199,8 +198,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method MarkRecommendationClaimed, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method MarkRecommendationClaimed, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
@@ -221,8 +219,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method MarkRecommendationSucceeded, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method MarkRecommendationSucceeded, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
@@ -243,8 +240,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method MarkRecommendationFailed, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method MarkRecommendationFailed, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Recommendation.class.getName(),
                   Exception.class.getName())));
@@ -265,8 +261,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetRecommenderConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetRecommenderConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RecommenderConfig.class.getName(),
                   Exception.class.getName())));
@@ -287,8 +282,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateRecommenderConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateRecommenderConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   RecommenderConfig.class.getName(),
                   Exception.class.getName())));
@@ -309,8 +303,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetInsightTypeConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetInsightTypeConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   InsightTypeConfig.class.getName(),
                   Exception.class.getName())));
@@ -331,8 +324,7 @@ public class MockRecommenderImpl extends RecommenderImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateInsightTypeConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateInsightTypeConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   InsightTypeConfig.class.getName(),
                   Exception.class.getName())));

@@ -34,7 +34,6 @@ public interface ListTunnelDestGroupsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.TunnelDestGroup tunnel_dest_groups = 1;</code>
    */
   java.util.List<com.google.cloud.iap.v1.TunnelDestGroup> getTunnelDestGroupsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTunnelDestGroupsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.TunnelDestGroup tunnel_dest_groups = 1;</code>
    */
   com.google.cloud.iap.v1.TunnelDestGroup getTunnelDestGroups(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTunnelDestGroupsResponseOrBuilder
    * <code>repeated .google.cloud.iap.v1.TunnelDestGroup tunnel_dest_groups = 1;</code>
    */
   int getTunnelDestGroupsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTunnelDestGroupsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.iap.v1.TunnelDestGroupOrBuilder>
       getTunnelDestGroupsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTunnelDestGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

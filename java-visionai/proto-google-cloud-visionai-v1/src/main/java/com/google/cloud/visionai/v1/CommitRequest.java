@@ -36,7 +36,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CommitRequest)
     CommitRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommitRequest.newBuilder() to construct.
   private CommitRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OFFSET_FIELD_NUMBER = 1;
   private long offset_ = 0L;
-
   /**
    *
    *
@@ -243,7 +241,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -428,7 +425,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long offset_;
-
     /**
      *
      *
@@ -444,7 +440,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public long getOffset() {
       return offset_;
     }
-
     /**
      *
      *
@@ -464,7 +459,6 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

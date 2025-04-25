@@ -36,7 +36,6 @@ public interface InstanceGroupManagersScopedListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroupManager> getInstanceGroupManagersList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceGroupManagersScopedListOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManager getInstanceGroupManagers(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface InstanceGroupManagersScopedListOrBuilder
    * </code>
    */
   int getInstanceGroupManagersCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface InstanceGroupManagersScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupManagerOrBuilder>
       getInstanceGroupManagersOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface InstanceGroupManagersScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -116,7 +111,6 @@ public interface InstanceGroupManagersScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

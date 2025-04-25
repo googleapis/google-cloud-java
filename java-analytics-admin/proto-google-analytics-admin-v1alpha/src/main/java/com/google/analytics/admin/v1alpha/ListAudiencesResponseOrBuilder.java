@@ -34,7 +34,6 @@ public interface ListAudiencesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.Audience audiences = 1;</code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.Audience> getAudiencesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAudiencesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.Audience audiences = 1;</code>
    */
   com.google.analytics.admin.v1alpha.Audience getAudiences(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAudiencesResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.Audience audiences = 1;</code>
    */
   int getAudiencesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAudiencesResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.AudienceOrBuilder>
       getAudiencesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAudiencesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface FileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface FileOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Hash hashes = 4;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.Hash> getHashesList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface FileOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Hash hashes = 4;</code>
    */
   com.google.devtools.artifactregistry.v1.Hash getHashes(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface FileOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.Hash hashes = 4;</code>
    */
   int getHashesCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface FileOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.HashOrBuilder>
       getHashesOrBuilderList();
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public interface FileOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface FileOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface FileOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface FileOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public interface FileOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface FileOrBuilder
    * @return Whether the fetchTime field is set.
    */
   boolean hasFetchTime();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface FileOrBuilder
    * @return The fetchTime.
    */
   com.google.protobuf.Timestamp getFetchTime();
-
   /**
    *
    *
@@ -283,7 +271,6 @@ public interface FileOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -295,11 +282,9 @@ public interface FileOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -311,7 +296,6 @@ public interface FileOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -327,7 +311,6 @@ public interface FileOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

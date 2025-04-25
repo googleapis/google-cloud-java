@@ -34,7 +34,6 @@ public interface FetchProcessorTypesResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.ProcessorType processor_types = 1;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.ProcessorType> getProcessorTypesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FetchProcessorTypesResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.ProcessorType processor_types = 1;</code>
    */
   com.google.cloud.documentai.v1beta3.ProcessorType getProcessorTypes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FetchProcessorTypesResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.ProcessorType processor_types = 1;</code>
    */
   int getProcessorTypesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FetchProcessorTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.ProcessorTypeOrBuilder>
       getProcessorTypesOrBuilderList();
-
   /**
    *
    *

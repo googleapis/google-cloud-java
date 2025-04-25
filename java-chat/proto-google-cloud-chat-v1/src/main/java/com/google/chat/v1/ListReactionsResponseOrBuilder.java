@@ -34,7 +34,6 @@ public interface ListReactionsResponseOrBuilder
    * <code>repeated .google.chat.v1.Reaction reactions = 1;</code>
    */
   java.util.List<com.google.chat.v1.Reaction> getReactionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReactionsResponseOrBuilder
    * <code>repeated .google.chat.v1.Reaction reactions = 1;</code>
    */
   com.google.chat.v1.Reaction getReactions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReactionsResponseOrBuilder
    * <code>repeated .google.chat.v1.Reaction reactions = 1;</code>
    */
   int getReactionsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListReactionsResponseOrBuilder
    * <code>repeated .google.chat.v1.Reaction reactions = 1;</code>
    */
   java.util.List<? extends com.google.chat.v1.ReactionOrBuilder> getReactionsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListReactionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

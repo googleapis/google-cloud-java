@@ -35,7 +35,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.ClusterUpdate)
     ClusterUpdateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClusterUpdate.newBuilder() to construct.
   private ClusterUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredNodeVersion_ = "";
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredMonitoringService_ = "";
-
   /**
    *
    *
@@ -190,7 +186,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -227,7 +222,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_ADDONS_CONFIG_FIELD_NUMBER = 6;
   private com.google.container.v1beta1.AddonsConfig desiredAddonsConfig_;
-
   /**
    *
    *
@@ -243,7 +237,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredAddonsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -261,7 +254,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.AddonsConfig.getDefaultInstance()
         : desiredAddonsConfig_;
   }
-
   /**
    *
    *
@@ -282,7 +274,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredNodePoolId_ = "";
-
   /**
    *
    *
@@ -309,7 +300,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -341,7 +331,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredImageType_ = "";
-
   /**
    *
    *
@@ -366,7 +355,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +382,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_NODE_POOL_AUTOSCALING_FIELD_NUMBER = 9;
   private com.google.container.v1beta1.NodePoolAutoscaling desiredNodePoolAutoscaling_;
-
   /**
    *
    *
@@ -413,7 +400,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNodePoolAutoscaling() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -434,7 +420,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.NodePoolAutoscaling.getDefaultInstance()
         : desiredNodePoolAutoscaling_;
   }
-
   /**
    *
    *
@@ -460,7 +445,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList desiredLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -482,7 +466,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDesiredLocationsList() {
     return desiredLocations_;
   }
-
   /**
    *
    *
@@ -504,7 +487,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getDesiredLocationsCount() {
     return desiredLocations_.size();
   }
-
   /**
    *
    *
@@ -527,7 +509,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDesiredLocations(int index) {
     return desiredLocations_.get(index);
   }
-
   /**
    *
    *
@@ -554,7 +535,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int DESIRED_MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 12;
   private com.google.container.v1beta1.MasterAuthorizedNetworksConfig
       desiredMasterAuthorizedNetworksConfig_;
-
   /**
    *
    *
@@ -572,7 +552,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredMasterAuthorizedNetworksConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -593,7 +572,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.MasterAuthorizedNetworksConfig.getDefaultInstance()
         : desiredMasterAuthorizedNetworksConfig_;
   }
-
   /**
    *
    *
@@ -615,7 +593,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_POD_SECURITY_POLICY_CONFIG_FIELD_NUMBER = 14;
   private com.google.container.v1beta1.PodSecurityPolicyConfig desiredPodSecurityPolicyConfig_;
-
   /**
    *
    *
@@ -633,7 +610,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredPodSecurityPolicyConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -653,7 +629,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.PodSecurityPolicyConfig.getDefaultInstance()
         : desiredPodSecurityPolicyConfig_;
   }
-
   /**
    *
    *
@@ -675,7 +650,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_CLUSTER_AUTOSCALING_FIELD_NUMBER = 15;
   private com.google.container.v1beta1.ClusterAutoscaling desiredClusterAutoscaling_;
-
   /**
    *
    *
@@ -691,7 +665,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredClusterAutoscaling() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -709,7 +682,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ClusterAutoscaling.getDefaultInstance()
         : desiredClusterAutoscaling_;
   }
-
   /**
    *
    *
@@ -729,7 +701,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_BINARY_AUTHORIZATION_FIELD_NUMBER = 16;
   private com.google.container.v1beta1.BinaryAuthorization desiredBinaryAuthorization_;
-
   /**
    *
    *
@@ -745,7 +716,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredBinaryAuthorization() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -763,7 +733,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.BinaryAuthorization.getDefaultInstance()
         : desiredBinaryAuthorization_;
   }
-
   /**
    *
    *
@@ -785,7 +754,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredLoggingService_ = "";
-
   /**
    *
    *
@@ -819,7 +787,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -856,7 +823,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_RESOURCE_USAGE_EXPORT_CONFIG_FIELD_NUMBER = 21;
   private com.google.container.v1beta1.ResourceUsageExportConfig desiredResourceUsageExportConfig_;
-
   /**
    *
    *
@@ -874,7 +840,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredResourceUsageExportConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -895,7 +860,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ResourceUsageExportConfig.getDefaultInstance()
         : desiredResourceUsageExportConfig_;
   }
-
   /**
    *
    *
@@ -917,7 +881,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_VERTICAL_POD_AUTOSCALING_FIELD_NUMBER = 22;
   private com.google.container.v1beta1.VerticalPodAutoscaling desiredVerticalPodAutoscaling_;
-
   /**
    *
    *
@@ -934,7 +897,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredVerticalPodAutoscaling() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -953,7 +915,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.VerticalPodAutoscaling.getDefaultInstance()
         : desiredVerticalPodAutoscaling_;
   }
-
   /**
    *
    *
@@ -974,7 +935,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER = 25;
   private com.google.container.v1beta1.PrivateClusterConfig desiredPrivateClusterConfig_;
-
   /**
    *
    *
@@ -996,7 +956,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredPrivateClusterConfig() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1020,7 +979,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.PrivateClusterConfig.getDefaultInstance()
         : desiredPrivateClusterConfig_;
   }
-
   /**
    *
    *
@@ -1046,7 +1004,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_INTRA_NODE_VISIBILITY_CONFIG_FIELD_NUMBER = 26;
   private com.google.container.v1beta1.IntraNodeVisibilityConfig desiredIntraNodeVisibilityConfig_;
-
   /**
    *
    *
@@ -1064,7 +1021,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredIntraNodeVisibilityConfig() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1085,7 +1041,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.IntraNodeVisibilityConfig.getDefaultInstance()
         : desiredIntraNodeVisibilityConfig_;
   }
-
   /**
    *
    *
@@ -1107,7 +1062,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_DEFAULT_SNAT_STATUS_FIELD_NUMBER = 28;
   private com.google.container.v1beta1.DefaultSnatStatus desiredDefaultSnatStatus_;
-
   /**
    *
    *
@@ -1123,7 +1077,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredDefaultSnatStatus() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1141,7 +1094,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.DefaultSnatStatus.getDefaultInstance()
         : desiredDefaultSnatStatus_;
   }
-
   /**
    *
    *
@@ -1161,7 +1113,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_CLUSTER_TELEMETRY_FIELD_NUMBER = 30;
   private com.google.container.v1beta1.ClusterTelemetry desiredClusterTelemetry_;
-
   /**
    *
    *
@@ -1177,7 +1128,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredClusterTelemetry() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1195,7 +1145,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ClusterTelemetry.getDefaultInstance()
         : desiredClusterTelemetry_;
   }
-
   /**
    *
    *
@@ -1215,7 +1164,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_RELEASE_CHANNEL_FIELD_NUMBER = 31;
   private com.google.container.v1beta1.ReleaseChannel desiredReleaseChannel_;
-
   /**
    *
    *
@@ -1231,7 +1179,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredReleaseChannel() {
     return ((bitField0_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -1249,7 +1196,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ReleaseChannel.getDefaultInstance()
         : desiredReleaseChannel_;
   }
-
   /**
    *
    *
@@ -1268,7 +1214,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER = 37;
   private com.google.container.v1beta1.PrivateClusterConfig privateClusterConfig_;
-
   /**
    *
    *
@@ -1291,7 +1236,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrivateClusterConfig() {
     return ((bitField0_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -1316,7 +1260,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.PrivateClusterConfig.getDefaultInstance()
         : privateClusterConfig_;
   }
-
   /**
    *
    *
@@ -1341,7 +1284,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_TPU_CONFIG_FIELD_NUMBER = 38;
   private com.google.container.v1beta1.TpuConfig desiredTpuConfig_;
-
   /**
    *
    *
@@ -1357,7 +1299,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredTpuConfig() {
     return ((bitField0_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -1375,7 +1316,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.TpuConfig.getDefaultInstance()
         : desiredTpuConfig_;
   }
-
   /**
    *
    *
@@ -1394,7 +1334,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_L4ILB_SUBSETTING_CONFIG_FIELD_NUMBER = 39;
   private com.google.container.v1beta1.ILBSubsettingConfig desiredL4IlbSubsettingConfig_;
-
   /**
    *
    *
@@ -1411,7 +1350,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredL4IlbSubsettingConfig() {
     return ((bitField0_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -1430,7 +1368,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ILBSubsettingConfig.getDefaultInstance()
         : desiredL4IlbSubsettingConfig_;
   }
-
   /**
    *
    *
@@ -1451,7 +1388,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_DATAPATH_PROVIDER_FIELD_NUMBER = 50;
   private int desiredDatapathProvider_ = 0;
-
   /**
    *
    *
@@ -1467,7 +1403,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getDesiredDatapathProviderValue() {
     return desiredDatapathProvider_;
   }
-
   /**
    *
    *
@@ -1488,7 +1423,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 51;
   private int desiredPrivateIpv6GoogleAccess_ = 0;
-
   /**
    *
    *
@@ -1506,7 +1440,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getDesiredPrivateIpv6GoogleAccessValue() {
     return desiredPrivateIpv6GoogleAccess_;
   }
-
   /**
    *
    *
@@ -1532,7 +1465,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_NOTIFICATION_CONFIG_FIELD_NUMBER = 55;
   private com.google.container.v1beta1.NotificationConfig desiredNotificationConfig_;
-
   /**
    *
    *
@@ -1548,7 +1480,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNotificationConfig() {
     return ((bitField0_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -1566,7 +1497,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.NotificationConfig.getDefaultInstance()
         : desiredNotificationConfig_;
   }
-
   /**
    *
    *
@@ -1588,7 +1518,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object desiredMasterVersion_ = "";
-
   /**
    *
    *
@@ -1622,7 +1551,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1659,7 +1587,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_GCFS_CONFIG_FIELD_NUMBER = 109;
   private com.google.container.v1beta1.GcfsConfig desiredGcfsConfig_;
-
   /**
    *
    *
@@ -1675,7 +1602,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredGcfsConfig() {
     return ((bitField0_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -1693,7 +1619,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.GcfsConfig.getDefaultInstance()
         : desiredGcfsConfig_;
   }
-
   /**
    *
    *
@@ -1712,7 +1637,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_DATABASE_ENCRYPTION_FIELD_NUMBER = 46;
   private com.google.container.v1beta1.DatabaseEncryption desiredDatabaseEncryption_;
-
   /**
    *
    *
@@ -1728,7 +1652,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredDatabaseEncryption() {
     return ((bitField0_ & 0x00040000) != 0);
   }
-
   /**
    *
    *
@@ -1746,7 +1669,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.DatabaseEncryption.getDefaultInstance()
         : desiredDatabaseEncryption_;
   }
-
   /**
    *
    *
@@ -1766,7 +1688,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 47;
   private com.google.container.v1beta1.WorkloadIdentityConfig desiredWorkloadIdentityConfig_;
-
   /**
    *
    *
@@ -1783,7 +1704,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredWorkloadIdentityConfig() {
     return ((bitField0_ & 0x00080000) != 0);
   }
-
   /**
    *
    *
@@ -1802,7 +1722,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.WorkloadIdentityConfig.getDefaultInstance()
         : desiredWorkloadIdentityConfig_;
   }
-
   /**
    *
    *
@@ -1823,7 +1742,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_WORKLOAD_CERTIFICATES_FIELD_NUMBER = 61;
   private com.google.container.v1beta1.WorkloadCertificates desiredWorkloadCertificates_;
-
   /**
    *
    *
@@ -1840,7 +1758,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredWorkloadCertificates() {
     return ((bitField0_ & 0x00100000) != 0);
   }
-
   /**
    *
    *
@@ -1859,7 +1776,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.WorkloadCertificates.getDefaultInstance()
         : desiredWorkloadCertificates_;
   }
-
   /**
    *
    *
@@ -1880,7 +1796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_MESH_CERTIFICATES_FIELD_NUMBER = 67;
   private com.google.container.v1beta1.MeshCertificates desiredMeshCertificates_;
-
   /**
    *
    *
@@ -1897,7 +1812,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredMeshCertificates() {
     return ((bitField0_ & 0x00200000) != 0);
   }
-
   /**
    *
    *
@@ -1916,7 +1830,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.MeshCertificates.getDefaultInstance()
         : desiredMeshCertificates_;
   }
-
   /**
    *
    *
@@ -1937,7 +1850,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_WORKLOAD_ALTS_CONFIG_FIELD_NUMBER = 62;
   private com.google.container.v1beta1.WorkloadALTSConfig desiredWorkloadAltsConfig_;
-
   /**
    *
    *
@@ -1953,7 +1865,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredWorkloadAltsConfig() {
     return ((bitField0_ & 0x00400000) != 0);
   }
-
   /**
    *
    *
@@ -1971,7 +1882,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.WorkloadALTSConfig.getDefaultInstance()
         : desiredWorkloadAltsConfig_;
   }
-
   /**
    *
    *
@@ -1991,7 +1901,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_SHIELDED_NODES_FIELD_NUMBER = 48;
   private com.google.container.v1beta1.ShieldedNodes desiredShieldedNodes_;
-
   /**
    *
    *
@@ -2007,7 +1916,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredShieldedNodes() {
     return ((bitField0_ & 0x00800000) != 0);
   }
-
   /**
    *
    *
@@ -2025,7 +1933,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ShieldedNodes.getDefaultInstance()
         : desiredShieldedNodes_;
   }
-
   /**
    *
    *
@@ -2044,7 +1951,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_COST_MANAGEMENT_CONFIG_FIELD_NUMBER = 49;
   private com.google.container.v1beta1.CostManagementConfig desiredCostManagementConfig_;
-
   /**
    *
    *
@@ -2061,7 +1967,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredCostManagementConfig() {
     return ((bitField0_ & 0x01000000) != 0);
   }
-
   /**
    *
    *
@@ -2080,7 +1985,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.CostManagementConfig.getDefaultInstance()
         : desiredCostManagementConfig_;
   }
-
   /**
    *
    *
@@ -2101,7 +2005,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_MASTER_FIELD_NUMBER = 52;
   private com.google.container.v1beta1.Master desiredMaster_;
-
   /**
    *
    *
@@ -2117,7 +2020,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredMaster() {
     return ((bitField0_ & 0x02000000) != 0);
   }
-
   /**
    *
    *
@@ -2135,7 +2037,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.Master.getDefaultInstance()
         : desiredMaster_;
   }
-
   /**
    *
    *
@@ -2154,7 +2055,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_DNS_CONFIG_FIELD_NUMBER = 53;
   private com.google.container.v1beta1.DNSConfig desiredDnsConfig_;
-
   /**
    *
    *
@@ -2170,7 +2070,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredDnsConfig() {
     return ((bitField0_ & 0x04000000) != 0);
   }
-
   /**
    *
    *
@@ -2188,7 +2087,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.DNSConfig.getDefaultInstance()
         : desiredDnsConfig_;
   }
-
   /**
    *
    *
@@ -2207,7 +2105,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_SERVICE_EXTERNAL_IPS_CONFIG_FIELD_NUMBER = 60;
   private com.google.container.v1beta1.ServiceExternalIPsConfig desiredServiceExternalIpsConfig_;
-
   /**
    *
    *
@@ -2226,7 +2123,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredServiceExternalIpsConfig() {
     return ((bitField0_ & 0x08000000) != 0);
   }
-
   /**
    *
    *
@@ -2248,7 +2144,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ServiceExternalIPsConfig.getDefaultInstance()
         : desiredServiceExternalIpsConfig_;
   }
-
   /**
    *
    *
@@ -2271,7 +2166,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_AUTHENTICATOR_GROUPS_CONFIG_FIELD_NUMBER = 63;
   private com.google.container.v1beta1.AuthenticatorGroupsConfig desiredAuthenticatorGroupsConfig_;
-
   /**
    *
    *
@@ -2290,7 +2184,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredAuthenticatorGroupsConfig() {
     return ((bitField0_ & 0x10000000) != 0);
   }
-
   /**
    *
    *
@@ -2312,7 +2205,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.AuthenticatorGroupsConfig.getDefaultInstance()
         : desiredAuthenticatorGroupsConfig_;
   }
-
   /**
    *
    *
@@ -2335,7 +2227,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_LOGGING_CONFIG_FIELD_NUMBER = 64;
   private com.google.container.v1beta1.LoggingConfig desiredLoggingConfig_;
-
   /**
    *
    *
@@ -2351,7 +2242,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredLoggingConfig() {
     return ((bitField0_ & 0x20000000) != 0);
   }
-
   /**
    *
    *
@@ -2369,7 +2259,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.LoggingConfig.getDefaultInstance()
         : desiredLoggingConfig_;
   }
-
   /**
    *
    *
@@ -2388,7 +2277,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_MONITORING_CONFIG_FIELD_NUMBER = 65;
   private com.google.container.v1beta1.MonitoringConfig desiredMonitoringConfig_;
-
   /**
    *
    *
@@ -2404,7 +2292,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredMonitoringConfig() {
     return ((bitField0_ & 0x40000000) != 0);
   }
-
   /**
    *
    *
@@ -2422,7 +2309,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.MonitoringConfig.getDefaultInstance()
         : desiredMonitoringConfig_;
   }
-
   /**
    *
    *
@@ -2442,7 +2328,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_IDENTITY_SERVICE_CONFIG_FIELD_NUMBER = 66;
   private com.google.container.v1beta1.IdentityServiceConfig desiredIdentityServiceConfig_;
-
   /**
    *
    *
@@ -2459,7 +2344,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredIdentityServiceConfig() {
     return ((bitField0_ & 0x80000000) != 0);
   }
-
   /**
    *
    *
@@ -2478,7 +2362,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.IdentityServiceConfig.getDefaultInstance()
         : desiredIdentityServiceConfig_;
   }
-
   /**
    *
    *
@@ -2499,7 +2382,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 71;
   private boolean desiredEnablePrivateEndpoint_ = false;
-
   /**
    *
    *
@@ -2515,7 +2397,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredEnablePrivateEndpoint() {
     return ((bitField1_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2534,7 +2415,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_NODE_POOL_AUTO_CONFIG_NETWORK_TAGS_FIELD_NUMBER = 110;
   private com.google.container.v1beta1.NetworkTags desiredNodePoolAutoConfigNetworkTags_;
-
   /**
    *
    *
@@ -2552,7 +2432,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNodePoolAutoConfigNetworkTags() {
     return ((bitField1_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2572,7 +2451,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.NetworkTags.getDefaultInstance()
         : desiredNodePoolAutoConfigNetworkTags_;
   }
-
   /**
    *
    *
@@ -2594,7 +2472,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_PROTECT_CONFIG_FIELD_NUMBER = 112;
   private com.google.container.v1beta1.ProtectConfig desiredProtectConfig_;
-
   /**
    *
    *
@@ -2616,7 +2493,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredProtectConfig() {
     return ((bitField1_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2640,7 +2516,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
         : desiredProtectConfig_;
   }
-
   /**
    *
    *
@@ -2663,7 +2538,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_GATEWAY_API_CONFIG_FIELD_NUMBER = 114;
   private com.google.container.v1beta1.GatewayAPIConfig desiredGatewayApiConfig_;
-
   /**
    *
    *
@@ -2679,7 +2553,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredGatewayApiConfig() {
     return ((bitField1_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -2697,7 +2570,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.GatewayAPIConfig.getDefaultInstance()
         : desiredGatewayApiConfig_;
   }
-
   /**
    *
    *
@@ -2719,7 +2591,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -2745,7 +2616,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2774,7 +2644,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER = 116;
   private com.google.container.v1beta1.NodePoolLoggingConfig desiredNodePoolLoggingConfig_;
-
   /**
    *
    *
@@ -2791,7 +2660,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNodePoolLoggingConfig() {
     return ((bitField1_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -2810,7 +2678,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.NodePoolLoggingConfig.getDefaultInstance()
         : desiredNodePoolLoggingConfig_;
   }
-
   /**
    *
    *
@@ -2831,7 +2698,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_FLEET_FIELD_NUMBER = 117;
   private com.google.container.v1beta1.Fleet desiredFleet_;
-
   /**
    *
    *
@@ -2847,7 +2713,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredFleet() {
     return ((bitField1_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -2865,7 +2730,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.Fleet.getDefaultInstance()
         : desiredFleet_;
   }
-
   /**
    *
    *
@@ -2884,7 +2748,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_STACK_TYPE_FIELD_NUMBER = 119;
   private int desiredStackType_ = 0;
-
   /**
    *
    *
@@ -2902,7 +2765,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getDesiredStackTypeValue() {
     return desiredStackType_;
   }
-
   /**
    *
    *
@@ -2925,7 +2787,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER = 120;
   private com.google.container.v1beta1.AdditionalPodRangesConfig additionalPodRangesConfig_;
-
   /**
    *
    *
@@ -2943,7 +2804,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdditionalPodRangesConfig() {
     return ((bitField1_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -2963,7 +2823,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
         : additionalPodRangesConfig_;
   }
-
   /**
    *
    *
@@ -2985,7 +2844,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REMOVED_ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER = 121;
   private com.google.container.v1beta1.AdditionalPodRangesConfig removedAdditionalPodRangesConfig_;
-
   /**
    *
    *
@@ -3005,7 +2863,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemovedAdditionalPodRangesConfig() {
     return ((bitField1_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -3028,7 +2885,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
         : removedAdditionalPodRangesConfig_;
   }
-
   /**
    *
    *
@@ -3052,7 +2908,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_K8S_BETA_APIS_FIELD_NUMBER = 122;
   private com.google.container.v1beta1.K8sBetaAPIConfig enableK8SBetaApis_;
-
   /**
    *
    *
@@ -3068,7 +2923,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnableK8SBetaApis() {
     return ((bitField1_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -3086,7 +2940,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
         : enableK8SBetaApis_;
   }
-
   /**
    *
    *
@@ -3105,7 +2958,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_SECURITY_POSTURE_CONFIG_FIELD_NUMBER = 124;
   private com.google.container.v1beta1.SecurityPostureConfig desiredSecurityPostureConfig_;
-
   /**
    *
    *
@@ -3122,7 +2974,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredSecurityPostureConfig() {
     return ((bitField1_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -3141,7 +2992,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.SecurityPostureConfig.getDefaultInstance()
         : desiredSecurityPostureConfig_;
   }
-
   /**
    *
    *
@@ -3163,7 +3013,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int DESIRED_NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER = 125;
   private com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
       desiredNetworkPerformanceConfig_;
-
   /**
    *
    *
@@ -3181,7 +3030,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNetworkPerformanceConfig() {
     return ((bitField1_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -3203,7 +3051,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : desiredNetworkPerformanceConfig_;
   }
-
   /**
    *
    *
@@ -3226,7 +3073,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_ENABLE_FQDN_NETWORK_POLICY_FIELD_NUMBER = 126;
   private boolean desiredEnableFqdnNetworkPolicy_ = false;
-
   /**
    *
    *
@@ -3242,7 +3088,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredEnableFqdnNetworkPolicy() {
     return ((bitField1_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -3261,7 +3106,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_AUTOPILOT_WORKLOAD_POLICY_CONFIG_FIELD_NUMBER = 128;
   private com.google.container.v1beta1.WorkloadPolicyConfig desiredAutopilotWorkloadPolicyConfig_;
-
   /**
    *
    *
@@ -3279,7 +3123,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredAutopilotWorkloadPolicyConfig() {
     return ((bitField1_ & 0x00001000) != 0);
   }
-
   /**
    *
    *
@@ -3300,7 +3143,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.WorkloadPolicyConfig.getDefaultInstance()
         : desiredAutopilotWorkloadPolicyConfig_;
   }
-
   /**
    *
    *
@@ -3322,7 +3164,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_K8S_BETA_APIS_FIELD_NUMBER = 131;
   private com.google.container.v1beta1.K8sBetaAPIConfig desiredK8SBetaApis_;
-
   /**
    *
    *
@@ -3338,7 +3179,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredK8SBetaApis() {
     return ((bitField1_ & 0x00002000) != 0);
   }
-
   /**
    *
    *
@@ -3356,7 +3196,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.K8sBetaAPIConfig.getDefaultInstance()
         : desiredK8SBetaApis_;
   }
-
   /**
    *
    *
@@ -3375,7 +3214,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_HOST_MAINTENANCE_POLICY_FIELD_NUMBER = 132;
   private com.google.container.v1beta1.HostMaintenancePolicy desiredHostMaintenancePolicy_;
-
   /**
    *
    *
@@ -3393,7 +3231,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredHostMaintenancePolicy() {
     return ((bitField1_ & 0x00004000) != 0);
   }
-
   /**
    *
    *
@@ -3413,7 +3250,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
         : desiredHostMaintenancePolicy_;
   }
-
   /**
    *
    *
@@ -3435,7 +3271,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_CONTAINERD_CONFIG_FIELD_NUMBER = 134;
   private com.google.container.v1beta1.ContainerdConfig desiredContainerdConfig_;
-
   /**
    *
    *
@@ -3451,7 +3286,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredContainerdConfig() {
     return ((bitField1_ & 0x00008000) != 0);
   }
-
   /**
    *
    *
@@ -3469,7 +3303,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ContainerdConfig.getDefaultInstance()
         : desiredContainerdConfig_;
   }
-
   /**
    *
    *
@@ -3489,7 +3322,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_ENABLE_MULTI_NETWORKING_FIELD_NUMBER = 135;
   private boolean desiredEnableMultiNetworking_ = false;
-
   /**
    *
    *
@@ -3505,7 +3337,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredEnableMultiNetworking() {
     return ((bitField1_ & 0x00010000) != 0);
   }
-
   /**
    *
    *
@@ -3525,7 +3356,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public static final int DESIRED_NODE_POOL_AUTO_CONFIG_RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 136;
   private com.google.container.v1beta1.ResourceManagerTags
       desiredNodePoolAutoConfigResourceManagerTags_;
-
   /**
    *
    *
@@ -3544,7 +3374,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
     return ((bitField1_ & 0x00020000) != 0);
   }
-
   /**
    *
    *
@@ -3566,7 +3395,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.ResourceManagerTags.getDefaultInstance()
         : desiredNodePoolAutoConfigResourceManagerTags_;
   }
-
   /**
    *
    *
@@ -3589,7 +3417,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER = 137;
   private int desiredInTransitEncryptionConfig_ = 0;
-
   /**
    *
    *
@@ -3608,7 +3435,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredInTransitEncryptionConfig() {
     return ((bitField1_ & 0x00040000) != 0);
   }
-
   /**
    *
    *
@@ -3627,7 +3453,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getDesiredInTransitEncryptionConfigValue() {
     return desiredInTransitEncryptionConfig_;
   }
-
   /**
    *
    *
@@ -3655,7 +3480,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_ENABLE_CILIUM_CLUSTERWIDE_NETWORK_POLICY_FIELD_NUMBER = 138;
   private boolean desiredEnableCiliumClusterwideNetworkPolicy_ = false;
-
   /**
    *
    *
@@ -3671,7 +3495,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
     return ((bitField1_ & 0x00080000) != 0);
   }
-
   /**
    *
    *
@@ -3690,7 +3513,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_SECRET_MANAGER_CONFIG_FIELD_NUMBER = 139;
   private com.google.container.v1beta1.SecretManagerConfig desiredSecretManagerConfig_;
-
   /**
    *
    *
@@ -3708,7 +3530,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredSecretManagerConfig() {
     return ((bitField1_ & 0x00100000) != 0);
   }
-
   /**
    *
    *
@@ -3728,7 +3549,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
         : desiredSecretManagerConfig_;
   }
-
   /**
    *
    *
@@ -3750,7 +3570,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_NODE_KUBELET_CONFIG_FIELD_NUMBER = 141;
   private com.google.container.v1beta1.NodeKubeletConfig desiredNodeKubeletConfig_;
-
   /**
    *
    *
@@ -3766,7 +3585,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNodeKubeletConfig() {
     return ((bitField1_ & 0x00200000) != 0);
   }
-
   /**
    *
    *
@@ -3784,7 +3602,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
         : desiredNodeKubeletConfig_;
   }
-
   /**
    *
    *
@@ -3804,7 +3621,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESIRED_NODE_POOL_AUTO_CONFIG_KUBELET_CONFIG_FIELD_NUMBER = 142;
   private com.google.container.v1beta1.NodeKubeletConfig desiredNodePoolAutoConfigKubeletConfig_;
-
   /**
    *
    *
@@ -3823,7 +3639,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDesiredNodePoolAutoConfigKubeletConfig() {
     return ((bitField1_ & 0x00400000) != 0);
   }
-
   /**
    *
    *
@@ -3845,7 +3660,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.container.v1beta1.NodeKubeletConfig.getDefaultInstance()
         : desiredNodePoolAutoConfigKubeletConfig_;
   }
-
   /**
    *
    *
@@ -5054,7 +4868,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6652,7 +6465,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     private int bitField2_;
 
     private java.lang.Object desiredNodeVersion_ = "";
-
     /**
      *
      *
@@ -6685,7 +6497,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6718,7 +6529,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6750,7 +6560,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6778,7 +6587,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6813,7 +6621,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object desiredMonitoringService_ = "";
-
     /**
      *
      *
@@ -6846,7 +6653,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6879,7 +6685,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6911,7 +6716,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6939,7 +6743,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6979,7 +6782,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.AddonsConfig.Builder,
             com.google.container.v1beta1.AddonsConfigOrBuilder>
         desiredAddonsConfigBuilder_;
-
     /**
      *
      *
@@ -6994,7 +6796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredAddonsConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -7015,7 +6816,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredAddonsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7038,7 +6838,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7059,7 +6858,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7088,7 +6886,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7108,7 +6905,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7123,7 +6919,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredAddonsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7142,7 +6937,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredAddonsConfig_;
       }
     }
-
     /**
      *
      *
@@ -7170,7 +6964,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object desiredNodePoolId_ = "";
-
     /**
      *
      *
@@ -7196,7 +6989,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7222,7 +7014,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7247,7 +7038,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7268,7 +7058,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7296,7 +7085,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object desiredImageType_ = "";
-
     /**
      *
      *
@@ -7320,7 +7108,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7344,7 +7131,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7367,7 +7153,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7386,7 +7171,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7417,7 +7201,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NodePoolAutoscaling.Builder,
             com.google.container.v1beta1.NodePoolAutoscalingOrBuilder>
         desiredNodePoolAutoscalingBuilder_;
-
     /**
      *
      *
@@ -7435,7 +7218,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNodePoolAutoscaling() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -7459,7 +7241,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNodePoolAutoscalingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7486,7 +7267,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7510,7 +7290,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7543,7 +7322,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7566,7 +7344,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7585,7 +7362,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNodePoolAutoscalingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7608,7 +7384,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNodePoolAutoscaling_;
       }
     }
-
     /**
      *
      *
@@ -7647,7 +7422,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -7670,7 +7444,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       desiredLocations_.makeImmutable();
       return desiredLocations_;
     }
-
     /**
      *
      *
@@ -7692,7 +7465,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getDesiredLocationsCount() {
       return desiredLocations_.size();
     }
-
     /**
      *
      *
@@ -7715,7 +7487,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDesiredLocations(int index) {
       return desiredLocations_.get(index);
     }
-
     /**
      *
      *
@@ -7738,7 +7509,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDesiredLocationsBytes(int index) {
       return desiredLocations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -7769,7 +7539,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7799,7 +7568,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7826,7 +7594,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7852,7 +7619,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7891,7 +7657,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.MasterAuthorizedNetworksConfig.Builder,
             com.google.container.v1beta1.MasterAuthorizedNetworksConfigOrBuilder>
         desiredMasterAuthorizedNetworksConfigBuilder_;
-
     /**
      *
      *
@@ -7908,7 +7673,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredMasterAuthorizedNetworksConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -7932,7 +7696,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredMasterAuthorizedNetworksConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7958,7 +7721,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7981,7 +7743,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8014,7 +7775,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8036,7 +7796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8054,7 +7813,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8076,7 +7834,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredMasterAuthorizedNetworksConfig_;
       }
     }
-
     /**
      *
      *
@@ -8111,7 +7868,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.PodSecurityPolicyConfig.Builder,
             com.google.container.v1beta1.PodSecurityPolicyConfigOrBuilder>
         desiredPodSecurityPolicyConfigBuilder_;
-
     /**
      *
      *
@@ -8128,7 +7884,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredPodSecurityPolicyConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -8152,7 +7907,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredPodSecurityPolicyConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8178,7 +7932,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8201,7 +7954,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8233,7 +7985,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8255,7 +8006,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8273,7 +8023,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredPodSecurityPolicyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8295,7 +8044,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredPodSecurityPolicyConfig_;
       }
     }
-
     /**
      *
      *
@@ -8330,7 +8078,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ClusterAutoscaling.Builder,
             com.google.container.v1beta1.ClusterAutoscalingOrBuilder>
         desiredClusterAutoscalingBuilder_;
-
     /**
      *
      *
@@ -8345,7 +8092,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredClusterAutoscaling() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -8366,7 +8112,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredClusterAutoscalingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8390,7 +8135,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8411,7 +8155,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8441,7 +8184,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8461,7 +8203,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8477,7 +8218,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredClusterAutoscalingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8497,7 +8237,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredClusterAutoscaling_;
       }
     }
-
     /**
      *
      *
@@ -8530,7 +8269,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.BinaryAuthorization.Builder,
             com.google.container.v1beta1.BinaryAuthorizationOrBuilder>
         desiredBinaryAuthorizationBuilder_;
-
     /**
      *
      *
@@ -8545,7 +8283,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredBinaryAuthorization() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -8566,7 +8303,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredBinaryAuthorizationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8590,7 +8326,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8611,7 +8346,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8641,7 +8375,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8661,7 +8394,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8677,7 +8409,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredBinaryAuthorizationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8697,7 +8428,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredBinaryAuthorization_;
       }
     }
-
     /**
      *
      *
@@ -8725,7 +8455,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object desiredLoggingService_ = "";
-
     /**
      *
      *
@@ -8758,7 +8487,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8791,7 +8519,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8823,7 +8550,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8851,7 +8577,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8892,7 +8617,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ResourceUsageExportConfig.Builder,
             com.google.container.v1beta1.ResourceUsageExportConfigOrBuilder>
         desiredResourceUsageExportConfigBuilder_;
-
     /**
      *
      *
@@ -8909,7 +8633,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredResourceUsageExportConfig() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -8933,7 +8656,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredResourceUsageExportConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8959,7 +8681,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8982,7 +8703,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9014,7 +8734,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9036,7 +8755,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9054,7 +8772,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredResourceUsageExportConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9076,7 +8793,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredResourceUsageExportConfig_;
       }
     }
-
     /**
      *
      *
@@ -9111,7 +8827,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.VerticalPodAutoscaling.Builder,
             com.google.container.v1beta1.VerticalPodAutoscalingOrBuilder>
         desiredVerticalPodAutoscalingBuilder_;
-
     /**
      *
      *
@@ -9127,7 +8842,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredVerticalPodAutoscaling() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -9149,7 +8863,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredVerticalPodAutoscalingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9174,7 +8887,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9196,7 +8908,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9227,7 +8938,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9248,7 +8958,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9265,7 +8974,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredVerticalPodAutoscalingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9286,7 +8994,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredVerticalPodAutoscaling_;
       }
     }
-
     /**
      *
      *
@@ -9320,7 +9027,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.PrivateClusterConfig.Builder,
             com.google.container.v1beta1.PrivateClusterConfigOrBuilder>
         desiredPrivateClusterConfigBuilder_;
-
     /**
      *
      *
@@ -9341,7 +9047,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredPrivateClusterConfig() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -9368,7 +9073,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredPrivateClusterConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9398,7 +9102,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9425,7 +9128,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9461,7 +9163,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9487,7 +9188,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9509,7 +9209,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredPrivateClusterConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9535,7 +9234,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredPrivateClusterConfig_;
       }
     }
-
     /**
      *
      *
@@ -9575,7 +9273,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.IntraNodeVisibilityConfig.Builder,
             com.google.container.v1beta1.IntraNodeVisibilityConfigOrBuilder>
         desiredIntraNodeVisibilityConfigBuilder_;
-
     /**
      *
      *
@@ -9592,7 +9289,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredIntraNodeVisibilityConfig() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -9616,7 +9312,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredIntraNodeVisibilityConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9642,7 +9337,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9665,7 +9359,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9697,7 +9390,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9719,7 +9411,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9737,7 +9428,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredIntraNodeVisibilityConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9759,7 +9449,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredIntraNodeVisibilityConfig_;
       }
     }
-
     /**
      *
      *
@@ -9794,7 +9483,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.DefaultSnatStatus.Builder,
             com.google.container.v1beta1.DefaultSnatStatusOrBuilder>
         desiredDefaultSnatStatusBuilder_;
-
     /**
      *
      *
@@ -9809,7 +9497,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredDefaultSnatStatus() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -9830,7 +9517,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredDefaultSnatStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9854,7 +9540,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9875,7 +9560,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9905,7 +9589,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9925,7 +9608,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9941,7 +9623,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredDefaultSnatStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9961,7 +9642,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredDefaultSnatStatus_;
       }
     }
-
     /**
      *
      *
@@ -9994,7 +9674,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ClusterTelemetry.Builder,
             com.google.container.v1beta1.ClusterTelemetryOrBuilder>
         desiredClusterTelemetryBuilder_;
-
     /**
      *
      *
@@ -10009,7 +9688,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredClusterTelemetry() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -10030,7 +9708,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredClusterTelemetryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10053,7 +9730,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10074,7 +9750,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10104,7 +9779,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10124,7 +9798,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10140,7 +9813,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredClusterTelemetryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10160,7 +9832,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredClusterTelemetry_;
       }
     }
-
     /**
      *
      *
@@ -10193,7 +9864,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ReleaseChannel.Builder,
             com.google.container.v1beta1.ReleaseChannelOrBuilder>
         desiredReleaseChannelBuilder_;
-
     /**
      *
      *
@@ -10208,7 +9878,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredReleaseChannel() {
       return ((bitField0_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -10229,7 +9898,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredReleaseChannelBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10252,7 +9920,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10273,7 +9940,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10302,7 +9968,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10322,7 +9987,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10337,7 +10001,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredReleaseChannelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10357,7 +10020,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredReleaseChannel_;
       }
     }
-
     /**
      *
      *
@@ -10390,7 +10052,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.PrivateClusterConfig.Builder,
             com.google.container.v1beta1.PrivateClusterConfigOrBuilder>
         privateClusterConfigBuilder_;
-
     /**
      *
      *
@@ -10412,7 +10073,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrivateClusterConfig() {
       return ((bitField0_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -10440,7 +10100,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return privateClusterConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10469,7 +10128,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10495,7 +10153,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10530,7 +10187,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10555,7 +10211,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10576,7 +10231,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPrivateClusterConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10601,7 +10255,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : privateClusterConfig_;
       }
     }
-
     /**
      *
      *
@@ -10638,7 +10291,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.TpuConfig.Builder,
             com.google.container.v1beta1.TpuConfigOrBuilder>
         desiredTpuConfigBuilder_;
-
     /**
      *
      *
@@ -10653,7 +10305,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredTpuConfig() {
       return ((bitField0_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -10674,7 +10325,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredTpuConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10697,7 +10347,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10718,7 +10367,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10746,7 +10394,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10766,7 +10413,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10781,7 +10427,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredTpuConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10800,7 +10445,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredTpuConfig_;
       }
     }
-
     /**
      *
      *
@@ -10833,7 +10477,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ILBSubsettingConfig.Builder,
             com.google.container.v1beta1.ILBSubsettingConfigOrBuilder>
         desiredL4IlbSubsettingConfigBuilder_;
-
     /**
      *
      *
@@ -10849,7 +10492,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredL4IlbSubsettingConfig() {
       return ((bitField0_ & 0x00200000) != 0);
     }
-
     /**
      *
      *
@@ -10871,7 +10513,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredL4IlbSubsettingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10896,7 +10537,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10918,7 +10558,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10949,7 +10588,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10970,7 +10608,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10987,7 +10624,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredL4IlbSubsettingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11008,7 +10644,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredL4IlbSubsettingConfig_;
       }
     }
-
     /**
      *
      *
@@ -11037,7 +10672,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int desiredDatapathProvider_ = 0;
-
     /**
      *
      *
@@ -11053,7 +10687,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getDesiredDatapathProviderValue() {
       return desiredDatapathProvider_;
     }
-
     /**
      *
      *
@@ -11072,7 +10705,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11090,7 +10722,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1beta1.DatapathProvider.forNumber(desiredDatapathProvider_);
       return result == null ? com.google.container.v1beta1.DatapathProvider.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -11112,7 +10743,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11132,7 +10762,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int desiredPrivateIpv6GoogleAccess_ = 0;
-
     /**
      *
      *
@@ -11150,7 +10779,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getDesiredPrivateIpv6GoogleAccessValue() {
       return desiredPrivateIpv6GoogleAccess_;
     }
-
     /**
      *
      *
@@ -11171,7 +10799,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11195,7 +10822,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.PrivateIPv6GoogleAccess.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -11220,7 +10846,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11247,7 +10872,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NotificationConfig.Builder,
             com.google.container.v1beta1.NotificationConfigOrBuilder>
         desiredNotificationConfigBuilder_;
-
     /**
      *
      *
@@ -11262,7 +10886,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNotificationConfig() {
       return ((bitField0_ & 0x01000000) != 0);
     }
-
     /**
      *
      *
@@ -11283,7 +10906,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNotificationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11307,7 +10929,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11328,7 +10949,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11358,7 +10978,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11378,7 +10997,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11394,7 +11012,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNotificationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11414,7 +11031,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNotificationConfig_;
       }
     }
-
     /**
      *
      *
@@ -11442,7 +11058,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object desiredMasterVersion_ = "";
-
     /**
      *
      *
@@ -11475,7 +11090,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -11508,7 +11122,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -11540,7 +11153,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11568,7 +11180,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11608,7 +11219,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.GcfsConfig.Builder,
             com.google.container.v1beta1.GcfsConfigOrBuilder>
         desiredGcfsConfigBuilder_;
-
     /**
      *
      *
@@ -11623,7 +11233,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredGcfsConfig() {
       return ((bitField0_ & 0x04000000) != 0);
     }
-
     /**
      *
      *
@@ -11644,7 +11253,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredGcfsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11667,7 +11275,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11688,7 +11295,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11716,7 +11322,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11736,7 +11341,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11751,7 +11355,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredGcfsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11770,7 +11373,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredGcfsConfig_;
       }
     }
-
     /**
      *
      *
@@ -11803,7 +11405,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.DatabaseEncryption.Builder,
             com.google.container.v1beta1.DatabaseEncryptionOrBuilder>
         desiredDatabaseEncryptionBuilder_;
-
     /**
      *
      *
@@ -11818,7 +11419,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredDatabaseEncryption() {
       return ((bitField0_ & 0x08000000) != 0);
     }
-
     /**
      *
      *
@@ -11839,7 +11439,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredDatabaseEncryptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -11863,7 +11462,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11884,7 +11482,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11914,7 +11511,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11934,7 +11530,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -11950,7 +11545,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredDatabaseEncryptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11970,7 +11564,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredDatabaseEncryption_;
       }
     }
-
     /**
      *
      *
@@ -12003,7 +11596,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.WorkloadIdentityConfig.Builder,
             com.google.container.v1beta1.WorkloadIdentityConfigOrBuilder>
         desiredWorkloadIdentityConfigBuilder_;
-
     /**
      *
      *
@@ -12019,7 +11611,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredWorkloadIdentityConfig() {
       return ((bitField0_ & 0x10000000) != 0);
     }
-
     /**
      *
      *
@@ -12041,7 +11632,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredWorkloadIdentityConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12066,7 +11656,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12088,7 +11677,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12119,7 +11707,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12140,7 +11727,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12157,7 +11743,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredWorkloadIdentityConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12178,7 +11763,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredWorkloadIdentityConfig_;
       }
     }
-
     /**
      *
      *
@@ -12212,7 +11796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.WorkloadCertificates.Builder,
             com.google.container.v1beta1.WorkloadCertificatesOrBuilder>
         desiredWorkloadCertificatesBuilder_;
-
     /**
      *
      *
@@ -12229,7 +11812,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredWorkloadCertificates() {
       return ((bitField0_ & 0x20000000) != 0);
     }
-
     /**
      *
      *
@@ -12252,7 +11834,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredWorkloadCertificatesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12278,7 +11859,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12301,7 +11881,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12333,7 +11912,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12355,7 +11933,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12373,7 +11950,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredWorkloadCertificatesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12395,7 +11971,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredWorkloadCertificates_;
       }
     }
-
     /**
      *
      *
@@ -12430,7 +12005,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.MeshCertificates.Builder,
             com.google.container.v1beta1.MeshCertificatesOrBuilder>
         desiredMeshCertificatesBuilder_;
-
     /**
      *
      *
@@ -12446,7 +12020,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredMeshCertificates() {
       return ((bitField0_ & 0x40000000) != 0);
     }
-
     /**
      *
      *
@@ -12468,7 +12041,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredMeshCertificatesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12492,7 +12064,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12514,7 +12085,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12545,7 +12115,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12566,7 +12135,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12583,7 +12151,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredMeshCertificatesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12604,7 +12171,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredMeshCertificates_;
       }
     }
-
     /**
      *
      *
@@ -12638,7 +12204,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.WorkloadALTSConfig.Builder,
             com.google.container.v1beta1.WorkloadALTSConfigOrBuilder>
         desiredWorkloadAltsConfigBuilder_;
-
     /**
      *
      *
@@ -12653,7 +12218,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredWorkloadAltsConfig() {
       return ((bitField0_ & 0x80000000) != 0);
     }
-
     /**
      *
      *
@@ -12674,7 +12238,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredWorkloadAltsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12698,7 +12261,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12719,7 +12281,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12749,7 +12310,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12769,7 +12329,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12785,7 +12344,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredWorkloadAltsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -12805,7 +12363,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredWorkloadAltsConfig_;
       }
     }
-
     /**
      *
      *
@@ -12838,7 +12395,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ShieldedNodes.Builder,
             com.google.container.v1beta1.ShieldedNodesOrBuilder>
         desiredShieldedNodesBuilder_;
-
     /**
      *
      *
@@ -12853,7 +12409,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredShieldedNodes() {
       return ((bitField1_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -12874,7 +12429,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredShieldedNodesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -12897,7 +12451,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12918,7 +12471,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12947,7 +12499,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12967,7 +12518,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -12982,7 +12532,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredShieldedNodesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13001,7 +12550,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredShieldedNodes_;
       }
     }
-
     /**
      *
      *
@@ -13034,7 +12582,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.CostManagementConfig.Builder,
             com.google.container.v1beta1.CostManagementConfigOrBuilder>
         desiredCostManagementConfigBuilder_;
-
     /**
      *
      *
@@ -13050,7 +12597,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredCostManagementConfig() {
       return ((bitField1_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -13072,7 +12618,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredCostManagementConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13097,7 +12642,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13119,7 +12663,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13150,7 +12693,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13171,7 +12713,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13188,7 +12729,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredCostManagementConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13209,7 +12749,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredCostManagementConfig_;
       }
     }
-
     /**
      *
      *
@@ -13243,7 +12782,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.Master.Builder,
             com.google.container.v1beta1.MasterOrBuilder>
         desiredMasterBuilder_;
-
     /**
      *
      *
@@ -13258,7 +12796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredMaster() {
       return ((bitField1_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -13279,7 +12816,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredMasterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13302,7 +12838,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13322,7 +12857,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13350,7 +12884,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13370,7 +12903,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13385,7 +12917,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredMasterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13404,7 +12935,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredMaster_;
       }
     }
-
     /**
      *
      *
@@ -13437,7 +12967,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.DNSConfig.Builder,
             com.google.container.v1beta1.DNSConfigOrBuilder>
         desiredDnsConfigBuilder_;
-
     /**
      *
      *
@@ -13452,7 +12981,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredDnsConfig() {
       return ((bitField1_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -13473,7 +13001,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredDnsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13496,7 +13023,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13517,7 +13043,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13545,7 +13070,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13565,7 +13089,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13580,7 +13103,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredDnsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13599,7 +13121,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredDnsConfig_;
       }
     }
-
     /**
      *
      *
@@ -13632,7 +13153,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ServiceExternalIPsConfig.Builder,
             com.google.container.v1beta1.ServiceExternalIPsConfigOrBuilder>
         desiredServiceExternalIpsConfigBuilder_;
-
     /**
      *
      *
@@ -13650,7 +13170,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredServiceExternalIpsConfig() {
       return ((bitField1_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -13675,7 +13194,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredServiceExternalIpsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13702,7 +13220,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13726,7 +13243,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13759,7 +13275,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -13782,7 +13297,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13801,7 +13315,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredServiceExternalIpsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -13824,7 +13337,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredServiceExternalIpsConfig_;
       }
     }
-
     /**
      *
      *
@@ -13861,7 +13373,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.AuthenticatorGroupsConfig.Builder,
             com.google.container.v1beta1.AuthenticatorGroupsConfigOrBuilder>
         desiredAuthenticatorGroupsConfigBuilder_;
-
     /**
      *
      *
@@ -13879,7 +13390,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredAuthenticatorGroupsConfig() {
       return ((bitField1_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -13904,7 +13414,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredAuthenticatorGroupsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -13931,7 +13440,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13955,7 +13463,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -13988,7 +13495,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14011,7 +13517,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14030,7 +13535,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredAuthenticatorGroupsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14053,7 +13557,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredAuthenticatorGroupsConfig_;
       }
     }
-
     /**
      *
      *
@@ -14089,7 +13592,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.LoggingConfig.Builder,
             com.google.container.v1beta1.LoggingConfigOrBuilder>
         desiredLoggingConfigBuilder_;
-
     /**
      *
      *
@@ -14104,7 +13606,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredLoggingConfig() {
       return ((bitField1_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -14125,7 +13626,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredLoggingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -14148,7 +13648,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14169,7 +13668,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14198,7 +13696,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14218,7 +13715,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14233,7 +13729,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredLoggingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14252,7 +13747,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredLoggingConfig_;
       }
     }
-
     /**
      *
      *
@@ -14285,7 +13779,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.MonitoringConfig.Builder,
             com.google.container.v1beta1.MonitoringConfigOrBuilder>
         desiredMonitoringConfigBuilder_;
-
     /**
      *
      *
@@ -14300,7 +13793,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredMonitoringConfig() {
       return ((bitField1_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -14321,7 +13813,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredMonitoringConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -14344,7 +13835,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14365,7 +13855,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14395,7 +13884,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14415,7 +13903,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14431,7 +13918,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredMonitoringConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14451,7 +13937,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredMonitoringConfig_;
       }
     }
-
     /**
      *
      *
@@ -14484,7 +13969,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.IdentityServiceConfig.Builder,
             com.google.container.v1beta1.IdentityServiceConfigOrBuilder>
         desiredIdentityServiceConfigBuilder_;
-
     /**
      *
      *
@@ -14500,7 +13984,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredIdentityServiceConfig() {
       return ((bitField1_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -14522,7 +14005,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredIdentityServiceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -14547,7 +14029,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14569,7 +14050,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14600,7 +14080,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14621,7 +14100,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14638,7 +14116,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredIdentityServiceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14659,7 +14136,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredIdentityServiceConfig_;
       }
     }
-
     /**
      *
      *
@@ -14688,7 +14164,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean desiredEnablePrivateEndpoint_;
-
     /**
      *
      *
@@ -14704,7 +14179,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredEnablePrivateEndpoint() {
       return ((bitField1_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -14720,7 +14194,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean getDesiredEnablePrivateEndpoint() {
       return desiredEnablePrivateEndpoint_;
     }
-
     /**
      *
      *
@@ -14740,7 +14213,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14765,7 +14237,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NetworkTags.Builder,
             com.google.container.v1beta1.NetworkTagsOrBuilder>
         desiredNodePoolAutoConfigNetworkTagsBuilder_;
-
     /**
      *
      *
@@ -14782,7 +14253,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNodePoolAutoConfigNetworkTags() {
       return ((bitField1_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -14805,7 +14275,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNodePoolAutoConfigNetworkTagsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -14831,7 +14300,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14854,7 +14322,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14886,7 +14353,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -14908,7 +14374,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -14926,7 +14391,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNodePoolAutoConfigNetworkTagsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -14948,7 +14412,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNodePoolAutoConfigNetworkTags_;
       }
     }
-
     /**
      *
      *
@@ -14983,7 +14446,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ProtectConfig.Builder,
             com.google.container.v1beta1.ProtectConfigOrBuilder>
         desiredProtectConfigBuilder_;
-
     /**
      *
      *
@@ -15004,7 +14466,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredProtectConfig() {
       return ((bitField1_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -15031,7 +14492,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredProtectConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -15058,7 +14518,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15083,7 +14542,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15116,7 +14574,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15140,7 +14597,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15159,7 +14615,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredProtectConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15182,7 +14637,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredProtectConfig_;
       }
     }
-
     /**
      *
      *
@@ -15218,7 +14672,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.GatewayAPIConfig.Builder,
             com.google.container.v1beta1.GatewayAPIConfigOrBuilder>
         desiredGatewayApiConfigBuilder_;
-
     /**
      *
      *
@@ -15233,7 +14686,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredGatewayApiConfig() {
       return ((bitField1_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -15254,7 +14706,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredGatewayApiConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -15277,7 +14728,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15298,7 +14748,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15328,7 +14777,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15348,7 +14796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15364,7 +14811,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredGatewayApiConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15384,7 +14830,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredGatewayApiConfig_;
       }
     }
-
     /**
      *
      *
@@ -15412,7 +14857,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -15437,7 +14881,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -15462,7 +14905,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -15486,7 +14928,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15506,7 +14947,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15538,7 +14978,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NodePoolLoggingConfig.Builder,
             com.google.container.v1beta1.NodePoolLoggingConfigOrBuilder>
         desiredNodePoolLoggingConfigBuilder_;
-
     /**
      *
      *
@@ -15554,7 +14993,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNodePoolLoggingConfig() {
       return ((bitField1_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -15576,7 +15014,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNodePoolLoggingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -15601,7 +15038,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15623,7 +15059,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15654,7 +15089,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15675,7 +15109,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15692,7 +15125,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNodePoolLoggingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15713,7 +15145,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNodePoolLoggingConfig_;
       }
     }
-
     /**
      *
      *
@@ -15747,7 +15178,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.Fleet.Builder,
             com.google.container.v1beta1.FleetOrBuilder>
         desiredFleetBuilder_;
-
     /**
      *
      *
@@ -15762,7 +15192,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredFleet() {
       return ((bitField1_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -15783,7 +15212,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredFleetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -15806,7 +15234,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15826,7 +15253,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15854,7 +15280,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -15874,7 +15299,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15889,7 +15313,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredFleetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -15908,7 +15331,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredFleet_;
       }
     }
-
     /**
      *
      *
@@ -15936,7 +15358,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int desiredStackType_ = 0;
-
     /**
      *
      *
@@ -15954,7 +15375,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getDesiredStackTypeValue() {
       return desiredStackType_;
     }
-
     /**
      *
      *
@@ -15975,7 +15395,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -15995,7 +15414,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.container.v1beta1.StackType.forNumber(desiredStackType_);
       return result == null ? com.google.container.v1beta1.StackType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -16019,7 +15437,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16046,7 +15463,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
             com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
         additionalPodRangesConfigBuilder_;
-
     /**
      *
      *
@@ -16063,7 +15479,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdditionalPodRangesConfig() {
       return ((bitField1_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -16086,7 +15501,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return additionalPodRangesConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16112,7 +15526,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16135,7 +15548,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16167,7 +15579,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16189,7 +15600,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16207,7 +15617,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdditionalPodRangesConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16229,7 +15638,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : additionalPodRangesConfig_;
       }
     }
-
     /**
      *
      *
@@ -16265,7 +15673,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
             com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
         removedAdditionalPodRangesConfigBuilder_;
-
     /**
      *
      *
@@ -16284,7 +15691,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemovedAdditionalPodRangesConfig() {
       return ((bitField1_ & 0x00040000) != 0);
     }
-
     /**
      *
      *
@@ -16310,7 +15716,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return removedAdditionalPodRangesConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16338,7 +15743,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16363,7 +15767,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16397,7 +15800,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16421,7 +15823,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16441,7 +15842,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRemovedAdditionalPodRangesConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16465,7 +15865,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : removedAdditionalPodRangesConfig_;
       }
     }
-
     /**
      *
      *
@@ -16502,7 +15901,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
             com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>
         enableK8SBetaApisBuilder_;
-
     /**
      *
      *
@@ -16517,7 +15915,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnableK8SBetaApis() {
       return ((bitField1_ & 0x00080000) != 0);
     }
-
     /**
      *
      *
@@ -16538,7 +15935,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return enableK8SBetaApisBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16561,7 +15957,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16582,7 +15977,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16611,7 +16005,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16631,7 +16024,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16646,7 +16038,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEnableK8SBetaApisFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16665,7 +16056,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : enableK8SBetaApis_;
       }
     }
-
     /**
      *
      *
@@ -16698,7 +16088,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.SecurityPostureConfig.Builder,
             com.google.container.v1beta1.SecurityPostureConfigOrBuilder>
         desiredSecurityPostureConfigBuilder_;
-
     /**
      *
      *
@@ -16714,7 +16103,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredSecurityPostureConfig() {
       return ((bitField1_ & 0x00100000) != 0);
     }
-
     /**
      *
      *
@@ -16736,7 +16124,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredSecurityPostureConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16761,7 +16148,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16783,7 +16169,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16814,7 +16199,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -16835,7 +16219,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -16852,7 +16235,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredSecurityPostureConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -16873,7 +16255,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredSecurityPostureConfig_;
       }
     }
-
     /**
      *
      *
@@ -16908,7 +16289,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder,
             com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfigOrBuilder>
         desiredNetworkPerformanceConfigBuilder_;
-
     /**
      *
      *
@@ -16925,7 +16305,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNetworkPerformanceConfig() {
       return ((bitField1_ & 0x00200000) != 0);
     }
-
     /**
      *
      *
@@ -16950,7 +16329,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNetworkPerformanceConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -16976,7 +16354,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17000,7 +16377,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17033,7 +16409,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17055,7 +16430,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17073,7 +16447,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNetworkPerformanceConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17096,7 +16469,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNetworkPerformanceConfig_;
       }
     }
-
     /**
      *
      *
@@ -17127,7 +16499,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean desiredEnableFqdnNetworkPolicy_;
-
     /**
      *
      *
@@ -17143,7 +16514,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredEnableFqdnNetworkPolicy() {
       return ((bitField1_ & 0x00400000) != 0);
     }
-
     /**
      *
      *
@@ -17159,7 +16529,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean getDesiredEnableFqdnNetworkPolicy() {
       return desiredEnableFqdnNetworkPolicy_;
     }
-
     /**
      *
      *
@@ -17179,7 +16548,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17204,7 +16572,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.WorkloadPolicyConfig.Builder,
             com.google.container.v1beta1.WorkloadPolicyConfigOrBuilder>
         desiredAutopilotWorkloadPolicyConfigBuilder_;
-
     /**
      *
      *
@@ -17221,7 +16588,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredAutopilotWorkloadPolicyConfig() {
       return ((bitField1_ & 0x00800000) != 0);
     }
-
     /**
      *
      *
@@ -17245,7 +16611,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredAutopilotWorkloadPolicyConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17271,7 +16636,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17294,7 +16658,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17326,7 +16689,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17348,7 +16710,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17366,7 +16727,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredAutopilotWorkloadPolicyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17388,7 +16748,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredAutopilotWorkloadPolicyConfig_;
       }
     }
-
     /**
      *
      *
@@ -17423,7 +16782,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.K8sBetaAPIConfig.Builder,
             com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder>
         desiredK8SBetaApisBuilder_;
-
     /**
      *
      *
@@ -17438,7 +16796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredK8SBetaApis() {
       return ((bitField1_ & 0x01000000) != 0);
     }
-
     /**
      *
      *
@@ -17459,7 +16816,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredK8SBetaApisBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17482,7 +16838,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17503,7 +16858,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17532,7 +16886,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17552,7 +16905,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17567,7 +16919,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredK8SBetaApisFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17586,7 +16937,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredK8SBetaApis_;
       }
     }
-
     /**
      *
      *
@@ -17619,7 +16969,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.HostMaintenancePolicy.Builder,
             com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>
         desiredHostMaintenancePolicyBuilder_;
-
     /**
      *
      *
@@ -17636,7 +16985,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredHostMaintenancePolicy() {
       return ((bitField1_ & 0x02000000) != 0);
     }
-
     /**
      *
      *
@@ -17659,7 +17007,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredHostMaintenancePolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17685,7 +17032,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17708,7 +17054,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17740,7 +17085,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17762,7 +17106,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17780,7 +17123,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredHostMaintenancePolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -17802,7 +17144,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredHostMaintenancePolicy_;
       }
     }
-
     /**
      *
      *
@@ -17837,7 +17178,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ContainerdConfig.Builder,
             com.google.container.v1beta1.ContainerdConfigOrBuilder>
         desiredContainerdConfigBuilder_;
-
     /**
      *
      *
@@ -17852,7 +17192,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredContainerdConfig() {
       return ((bitField1_ & 0x04000000) != 0);
     }
-
     /**
      *
      *
@@ -17873,7 +17212,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredContainerdConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -17896,7 +17234,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17917,7 +17254,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17947,7 +17283,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -17967,7 +17302,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -17983,7 +17317,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredContainerdConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18003,7 +17336,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredContainerdConfig_;
       }
     }
-
     /**
      *
      *
@@ -18031,7 +17363,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean desiredEnableMultiNetworking_;
-
     /**
      *
      *
@@ -18047,7 +17378,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredEnableMultiNetworking() {
       return ((bitField1_ & 0x08000000) != 0);
     }
-
     /**
      *
      *
@@ -18063,7 +17393,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean getDesiredEnableMultiNetworking() {
       return desiredEnableMultiNetworking_;
     }
-
     /**
      *
      *
@@ -18083,7 +17412,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18109,7 +17437,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.ResourceManagerTags.Builder,
             com.google.container.v1beta1.ResourceManagerTagsOrBuilder>
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_;
-
     /**
      *
      *
@@ -18127,7 +17454,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
       return ((bitField1_ & 0x10000000) != 0);
     }
-
     /**
      *
      *
@@ -18152,7 +17478,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNodePoolAutoConfigResourceManagerTagsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18179,7 +17504,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18203,7 +17527,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18236,7 +17559,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18259,7 +17581,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18278,7 +17599,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18301,7 +17621,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNodePoolAutoConfigResourceManagerTags_;
       }
     }
-
     /**
      *
      *
@@ -18334,7 +17653,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int desiredInTransitEncryptionConfig_ = 0;
-
     /**
      *
      *
@@ -18353,7 +17671,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredInTransitEncryptionConfig() {
       return ((bitField1_ & 0x20000000) != 0);
     }
-
     /**
      *
      *
@@ -18372,7 +17689,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getDesiredInTransitEncryptionConfigValue() {
       return desiredInTransitEncryptionConfig_;
     }
-
     /**
      *
      *
@@ -18394,7 +17710,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18419,7 +17734,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.InTransitEncryptionConfig.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -18445,7 +17759,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18468,7 +17781,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean desiredEnableCiliumClusterwideNetworkPolicy_;
-
     /**
      *
      *
@@ -18484,7 +17796,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
       return ((bitField1_ & 0x40000000) != 0);
     }
-
     /**
      *
      *
@@ -18500,7 +17811,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean getDesiredEnableCiliumClusterwideNetworkPolicy() {
       return desiredEnableCiliumClusterwideNetworkPolicy_;
     }
-
     /**
      *
      *
@@ -18520,7 +17830,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18545,7 +17854,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.SecretManagerConfig.Builder,
             com.google.container.v1beta1.SecretManagerConfigOrBuilder>
         desiredSecretManagerConfigBuilder_;
-
     /**
      *
      *
@@ -18562,7 +17870,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredSecretManagerConfig() {
       return ((bitField1_ & 0x80000000) != 0);
     }
-
     /**
      *
      *
@@ -18585,7 +17892,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredSecretManagerConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18611,7 +17917,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18634,7 +17939,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18666,7 +17970,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18688,7 +17991,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18706,7 +18008,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredSecretManagerConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18728,7 +18029,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredSecretManagerConfig_;
       }
     }
-
     /**
      *
      *
@@ -18763,7 +18063,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NodeKubeletConfig.Builder,
             com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
         desiredNodeKubeletConfigBuilder_;
-
     /**
      *
      *
@@ -18778,7 +18077,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNodeKubeletConfig() {
       return ((bitField2_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -18799,7 +18097,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNodeKubeletConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -18823,7 +18120,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18844,7 +18140,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18874,7 +18169,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -18894,7 +18188,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -18910,7 +18203,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNodeKubeletConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -18930,7 +18222,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNodeKubeletConfig_;
       }
     }
-
     /**
      *
      *
@@ -18963,7 +18254,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             com.google.container.v1beta1.NodeKubeletConfig.Builder,
             com.google.container.v1beta1.NodeKubeletConfigOrBuilder>
         desiredNodePoolAutoConfigKubeletConfigBuilder_;
-
     /**
      *
      *
@@ -18981,7 +18271,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDesiredNodePoolAutoConfigKubeletConfig() {
       return ((bitField2_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -19006,7 +18295,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return desiredNodePoolAutoConfigKubeletConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -19033,7 +18321,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19057,7 +18344,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19090,7 +18376,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -19113,7 +18398,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -19132,7 +18416,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDesiredNodePoolAutoConfigKubeletConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -19155,7 +18438,6 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
             : desiredNodePoolAutoConfigKubeletConfig_;
       }
     }
-
     /**
      *
      *

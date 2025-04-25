@@ -39,7 +39,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return The inlineSource.
    */
   com.google.api.serviceusage.v1beta1.OverrideInlineSource getInlineSource();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return A list containing the forceOnly.
    */
   java.util.List<com.google.api.serviceusage.v1beta1.QuotaSafetyCheck> getForceOnlyList();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return The count of forceOnly.
    */
   int getForceOnlyCount();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return The forceOnly at the given index.
    */
   com.google.api.serviceusage.v1beta1.QuotaSafetyCheck getForceOnly(int index);
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface ImportConsumerOverridesRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for forceOnly.
    */
   java.util.List<java.lang.Integer> getForceOnlyValueList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.GetUtilizationReportRequest)
     GetUtilizationReportRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetUtilizationReportRequest.newBuilder() to construct.
   private GetUtilizationReportRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -538,7 +532,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -563,7 +556,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +622,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
           ? com.google.cloud.vmmigration.v1.UtilizationReportView.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -748,7 +733,6 @@ public final class GetUtilizationReportRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return The nodeGroup.
    */
   java.lang.String getNodeGroup();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return Whether the nodeGroupResource field is set.
    */
   boolean hasNodeGroupResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return The nodeGroupResource.
    */
   com.google.cloud.compute.v1.NodeGroup getNodeGroupResource();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface PatchNodeGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

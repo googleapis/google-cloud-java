@@ -36,7 +36,6 @@ public interface MachineNetworkDetailsOrBuilder
    * @return The primaryIpAddress.
    */
   java.lang.String getPrimaryIpAddress();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface MachineNetworkDetailsOrBuilder
    * @return The publicIpAddress.
    */
   java.lang.String getPublicIpAddress();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface MachineNetworkDetailsOrBuilder
    * @return The primaryMacAddress.
    */
   java.lang.String getPrimaryMacAddress();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface MachineNetworkDetailsOrBuilder
    * @return Whether the adapters field is set.
    */
   boolean hasAdapters();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface MachineNetworkDetailsOrBuilder
    * @return The adapters.
    */
   com.google.cloud.migrationcenter.v1.NetworkAdapterList getAdapters();
-
   /**
    *
    *

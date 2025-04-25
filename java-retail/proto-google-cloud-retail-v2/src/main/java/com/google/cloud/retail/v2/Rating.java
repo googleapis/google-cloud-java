@@ -33,7 +33,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Rating)
     RatingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Rating.newBuilder() to construct.
   private Rating(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RATING_COUNT_FIELD_NUMBER = 1;
   private int ratingCount_ = 0;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVERAGE_RATING_FIELD_NUMBER = 2;
   private float averageRating_ = 0F;
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList ratingHistogram_ = emptyIntList();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getRatingHistogramList() {
     return ratingHistogram_;
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
   public int getRatingHistogramCount() {
     return ratingHistogram_.size();
   }
-
   /**
    *
    *
@@ -374,7 +368,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -602,7 +595,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int ratingCount_;
-
     /**
      *
      *
@@ -622,7 +614,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public int getRatingCount() {
       return ratingCount_;
     }
-
     /**
      *
      *
@@ -646,7 +637,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float averageRating_;
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public float getAverageRating() {
       return averageRating_;
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       ratingHistogram_.makeImmutable();
       return ratingHistogram_;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public int getRatingHistogramCount() {
       return ratingHistogram_.size();
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
     public int getRatingHistogram(int index) {
       return ratingHistogram_.getInt(index);
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class Rating extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface AutoscalingPolicyCpuUtilizationOrBuilder
    * @return Whether the predictiveMethod field is set.
    */
   boolean hasPredictiveMethod();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AutoscalingPolicyCpuUtilizationOrBuilder
    * @return The predictiveMethod.
    */
   java.lang.String getPredictiveMethod();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface AutoscalingPolicyCpuUtilizationOrBuilder
    * @return Whether the utilizationTarget field is set.
    */
   boolean hasUtilizationTarget();
-
   /**
    *
    *

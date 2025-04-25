@@ -33,7 +33,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ScoreMetrics)
     ScoreMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ScoreMetrics.newBuilder() to construct.
   private ScoreMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int OVERALL_METRICS_FIELD_NUMBER = 1;
   private com.google.recaptchaenterprise.v1.ScoreDistribution overallMetrics_;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOverallMetrics() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         ? com.google.recaptchaenterprise.v1.ScoreDistribution.getDefaultInstance()
         : overallMetrics_;
   }
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
   public int getActionMetricsCount() {
     return internalGetActionMetrics().getMap().size();
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetActionMetrics().getMap().containsKey(key);
   }
-
   /** Use {@link #getActionMetricsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -191,7 +185,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       getActionMetrics() {
     return getActionMetricsMap();
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       getActionMetricsMap() {
     return internalGetActionMetrics().getMap();
   }
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         internalGetActionMetrics().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -445,7 +436,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.recaptchaenterprise.v1.ScoreDistribution.Builder,
             com.google.recaptchaenterprise.v1.ScoreDistributionOrBuilder>
         overallMetricsBuilder_;
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOverallMetrics() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         return overallMetricsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOverallMetricsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
             : overallMetrics_;
       }
     }
-
     /**
      *
      *
@@ -903,8 +884,7 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ActionMetricsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ActionMetricsConverter actionMetricsConverter =
         new ActionMetricsConverter();
@@ -945,7 +925,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
     public int getActionMetricsCount() {
       return internalGetActionMetrics().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -965,7 +944,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetActionMetrics().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getActionMetricsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -973,7 +951,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         getActionMetrics() {
       return getActionMetricsMap();
     }
-
     /**
      *
      *
@@ -991,7 +968,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
         getActionMetricsMap() {
       return internalGetActionMetrics().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1017,7 +993,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableActionMetrics().ensureBuilderMap();
       return map.containsKey(key) ? actionMetricsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1049,7 +1024,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableActionMetrics().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1043,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableActionMetrics().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
@@ -1077,7 +1050,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetMutableActionMetrics().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1102,7 +1074,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1100,6 @@ public final class ScoreMetrics extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

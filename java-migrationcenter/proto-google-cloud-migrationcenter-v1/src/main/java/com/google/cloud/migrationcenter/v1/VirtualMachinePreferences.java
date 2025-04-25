@@ -36,7 +36,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.VirtualMachinePreferences)
     VirtualMachinePreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VirtualMachinePreferences.newBuilder() to construct.
   private VirtualMachinePreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int TARGET_PRODUCT_FIELD_NUMBER = 2;
   private int targetProduct_ = 0;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public int getTargetProductValue() {
     return targetProduct_;
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
 
   public static final int REGION_PREFERENCES_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.RegionPreferences regionPreferences_;
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public boolean hasRegionPreferences() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         ? com.google.cloud.migrationcenter.v1.RegionPreferences.getDefaultInstance()
         : regionPreferences_;
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
 
   public static final int COMMITMENT_PLAN_FIELD_NUMBER = 4;
   private int commitmentPlan_ = 0;
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public int getCommitmentPlanValue() {
     return commitmentPlan_;
   }
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
 
   public static final int SIZING_OPTIMIZATION_STRATEGY_FIELD_NUMBER = 5;
   private int sizingOptimizationStrategy_ = 0;
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public int getSizingOptimizationStrategyValue() {
     return sizingOptimizationStrategy_;
   }
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
 
   public static final int COMPUTE_ENGINE_PREFERENCES_FIELD_NUMBER = 6;
   private com.google.cloud.migrationcenter.v1.ComputeEnginePreferences computeEnginePreferences_;
-
   /**
    *
    *
@@ -291,7 +280,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public boolean hasComputeEnginePreferences() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -312,7 +300,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         ? com.google.cloud.migrationcenter.v1.ComputeEnginePreferences.getDefaultInstance()
         : computeEnginePreferences_;
   }
-
   /**
    *
    *
@@ -334,7 +321,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
 
   public static final int VMWARE_ENGINE_PREFERENCES_FIELD_NUMBER = 7;
   private com.google.cloud.migrationcenter.v1.VmwareEnginePreferences vmwareEnginePreferences_;
-
   /**
    *
    *
@@ -352,7 +338,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public boolean hasVmwareEnginePreferences() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -372,7 +357,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         ? com.google.cloud.migrationcenter.v1.VmwareEnginePreferences.getDefaultInstance()
         : vmwareEnginePreferences_;
   }
-
   /**
    *
    *
@@ -394,7 +378,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
 
   public static final int SOLE_TENANCY_PREFERENCES_FIELD_NUMBER = 8;
   private com.google.cloud.migrationcenter.v1.SoleTenancyPreferences soleTenancyPreferences_;
-
   /**
    *
    *
@@ -411,7 +394,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
   public boolean hasSoleTenancyPreferences() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -430,7 +412,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         ? com.google.cloud.migrationcenter.v1.SoleTenancyPreferences.getDefaultInstance()
         : soleTenancyPreferences_;
   }
-
   /**
    *
    *
@@ -703,7 +684,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1020,7 +1000,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int targetProduct_ = 0;
-
     /**
      *
      *
@@ -1039,7 +1018,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public int getTargetProductValue() {
       return targetProduct_;
     }
-
     /**
      *
      *
@@ -1061,7 +1039,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1062,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
           ? com.google.cloud.migrationcenter.v1.ComputeMigrationTargetProduct.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1111,7 +1087,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             com.google.cloud.migrationcenter.v1.RegionPreferences.Builder,
             com.google.cloud.migrationcenter.v1.RegionPreferencesOrBuilder>
         regionPreferencesBuilder_;
-
     /**
      *
      *
@@ -1156,7 +1130,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public boolean hasRegionPreferences() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1179,7 +1152,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         return regionPreferencesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1177,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1199,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1230,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1251,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1268,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return getRegionPreferencesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1322,7 +1289,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             : regionPreferences_;
       }
     }
-
     /**
      *
      *
@@ -1352,7 +1318,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     }
 
     private int commitmentPlan_ = 0;
-
     /**
      *
      *
@@ -1371,7 +1336,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public int getCommitmentPlanValue() {
       return commitmentPlan_;
     }
-
     /**
      *
      *
@@ -1393,7 +1357,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1379,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
           ? com.google.cloud.migrationcenter.v1.CommitmentPlan.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1441,7 +1403,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1425,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     }
 
     private int sizingOptimizationStrategy_ = 0;
-
     /**
      *
      *
@@ -1486,7 +1446,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public int getSizingOptimizationStrategyValue() {
       return sizingOptimizationStrategy_;
     }
-
     /**
      *
      *
@@ -1511,7 +1470,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1497,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
           ? com.google.cloud.migrationcenter.v1.SizingOptimizationStrategy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1568,7 +1525,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1555,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             com.google.cloud.migrationcenter.v1.ComputeEnginePreferences.Builder,
             com.google.cloud.migrationcenter.v1.ComputeEnginePreferencesOrBuilder>
         computeEnginePreferencesBuilder_;
-
     /**
      *
      *
@@ -1617,7 +1572,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public boolean hasComputeEnginePreferences() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1642,7 +1596,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         return computeEnginePreferencesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1669,7 +1622,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1645,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1678,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1700,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1769,7 +1718,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return getComputeEnginePreferencesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1792,7 +1740,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             : computeEnginePreferences_;
       }
     }
-
     /**
      *
      *
@@ -1828,7 +1775,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             com.google.cloud.migrationcenter.v1.VmwareEnginePreferences.Builder,
             com.google.cloud.migrationcenter.v1.VmwareEnginePreferencesOrBuilder>
         vmwareEnginePreferencesBuilder_;
-
     /**
      *
      *
@@ -1845,7 +1791,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public boolean hasVmwareEnginePreferences() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1869,7 +1814,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         return vmwareEnginePreferencesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1895,7 +1839,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1918,7 +1861,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1951,7 +1893,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1973,7 +1914,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1931,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return getVmwareEnginePreferencesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2013,7 +1952,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             : vmwareEnginePreferences_;
       }
     }
-
     /**
      *
      *
@@ -2048,7 +1986,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             com.google.cloud.migrationcenter.v1.SoleTenancyPreferences.Builder,
             com.google.cloud.migrationcenter.v1.SoleTenancyPreferencesOrBuilder>
         soleTenancyPreferencesBuilder_;
-
     /**
      *
      *
@@ -2064,7 +2001,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
     public boolean hasSoleTenancyPreferences() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2086,7 +2022,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
         return soleTenancyPreferencesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2111,7 +2046,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2133,7 +2067,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2165,7 +2098,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2186,7 +2118,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2134,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
       onChanged();
       return getSoleTenancyPreferencesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2224,7 +2154,6 @@ public final class VirtualMachinePreferences extends com.google.protobuf.Generat
             : soleTenancyPreferences_;
       }
     }
-
     /**
      *
      *

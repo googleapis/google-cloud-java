@@ -38,7 +38,6 @@ public interface SetLabelsSecurityPolicyRequestOrBuilder
    * @return Whether the globalSetLabelsRequestResource field is set.
    */
   boolean hasGlobalSetLabelsRequestResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SetLabelsSecurityPolicyRequestOrBuilder
    * @return The globalSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.GlobalSetLabelsRequest getGlobalSetLabelsRequestResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SetLabelsSecurityPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface SetLabelsSecurityPolicyRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *

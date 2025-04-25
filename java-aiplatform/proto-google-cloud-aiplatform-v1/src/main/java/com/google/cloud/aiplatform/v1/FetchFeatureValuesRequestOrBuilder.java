@@ -39,7 +39,6 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return The featureView.
    */
   java.lang.String getFeatureView();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return Whether the dataKey field is set.
    */
   boolean hasDataKey();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return The dataKey.
    */
   com.google.cloud.aiplatform.v1.FeatureViewDataKey getDataKey();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface FetchFeatureValuesRequestOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
-
   /**
    *
    *

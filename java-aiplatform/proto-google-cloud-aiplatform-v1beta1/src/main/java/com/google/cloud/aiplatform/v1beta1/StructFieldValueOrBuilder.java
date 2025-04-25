@@ -36,7 +36,6 @@ public interface StructFieldValueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StructFieldValueOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface StructFieldValueOrBuilder
    * @return The value.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureValue getValue();
-
   /**
    *
    *

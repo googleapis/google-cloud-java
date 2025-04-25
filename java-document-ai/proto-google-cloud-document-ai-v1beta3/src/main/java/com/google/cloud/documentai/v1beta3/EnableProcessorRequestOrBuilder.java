@@ -38,7 +38,6 @@ public interface EnableProcessorRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

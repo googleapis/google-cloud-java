@@ -34,7 +34,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.package.Installation)
     InstallationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Installation.newBuilder() to construct.
   private Installation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.pkg.Location> location_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1beta1.pkg.Location> getLocationList() {
     return location_;
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       getLocationOrBuilderList() {
     return location_;
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
   public int getLocationCount() {
     return location_.size();
   }
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1beta1.pkg.Location getLocation(int index) {
     return location_.get(index);
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -611,7 +602,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +903,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +944,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +964,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +977,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.pkg.Location.Builder getLocationBuilder(int index) {
       return getLocationFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1021,7 +994,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return locationBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1012,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(location_);
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1026,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       return getLocationFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.pkg.Location.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1070,7 +1040,6 @@ public final class Installation extends com.google.protobuf.GeneratedMessageV3
       return getLocationFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.pkg.Location.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.Xxe)
     XxeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Xxe.newBuilder() to construct.
   private Xxe(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,7 +107,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCATION_UNSPECIFIED = 0;</code>
      */
     public static final int LOCATION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -205,7 +203,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object payloadValue_ = "";
-
   /**
    *
    *
@@ -230,7 +227,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -258,7 +254,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAYLOAD_LOCATION_FIELD_NUMBER = 2;
   private int payloadLocation_ = 0;
-
   /**
    *
    *
@@ -274,7 +269,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
   public int getPayloadLocationValue() {
     return payloadLocation_;
   }
-
   /**
    *
    *
@@ -465,7 +459,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -662,7 +655,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object payloadValue_ = "";
-
     /**
      *
      *
@@ -686,7 +678,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +701,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -733,7 +723,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +741,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +766,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int payloadLocation_ = 0;
-
     /**
      *
      *
@@ -794,7 +781,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
     public int getPayloadLocationValue() {
       return payloadLocation_;
     }
-
     /**
      *
      *
@@ -813,7 +799,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +818,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1.Xxe.Location.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class Xxe extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

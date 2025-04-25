@@ -36,7 +36,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetInstanceOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TargetInstanceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TargetInstanceOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface TargetInstanceOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface TargetInstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the natPolicy field is set.
    */
   boolean hasNatPolicy();
-
   /**
    *
    *
@@ -272,7 +260,6 @@ public interface TargetInstanceOrBuilder
    * @return The natPolicy.
    */
   java.lang.String getNatPolicy();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -312,7 +298,6 @@ public interface TargetInstanceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface TargetInstanceOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
-
   /**
    *
    *
@@ -377,7 +360,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -390,7 +372,6 @@ public interface TargetInstanceOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -416,7 +397,6 @@ public interface TargetInstanceOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -429,7 +409,6 @@ public interface TargetInstanceOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -30,7 +30,6 @@ public interface InterconnectRemoteLocationConstraintsSubnetLengthRangeOrBuilder
    * @return Whether the max field is set.
    */
   boolean hasMax();
-
   /**
    * <code>optional int32 max = 107876;</code>
    *
@@ -44,7 +43,6 @@ public interface InterconnectRemoteLocationConstraintsSubnetLengthRangeOrBuilder
    * @return Whether the min field is set.
    */
   boolean hasMin();
-
   /**
    * <code>optional int32 min = 108114;</code>
    *

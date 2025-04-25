@@ -33,7 +33,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.MembershipState)
     MembershipStateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MembershipState.newBuilder() to construct.
   private MembershipState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -232,7 +231,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>LIFECYCLE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int LIFECYCLE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -245,7 +243,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>NOT_INSTALLED = 1;</code>
      */
     public static final int NOT_INSTALLED_VALUE = 1;
-
     /**
      *
      *
@@ -259,7 +256,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>INSTALLING = 2;</code>
      */
     public static final int INSTALLING_VALUE = 2;
-
     /**
      *
      *
@@ -275,7 +271,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>ACTIVE = 3;</code>
      */
     public static final int ACTIVE_VALUE = 3;
-
     /**
      *
      *
@@ -291,7 +286,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>UPDATING = 4;</code>
      */
     public static final int UPDATING_VALUE = 4;
-
     /**
      *
      *
@@ -304,7 +298,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>DECOMMISSIONING = 5;</code>
      */
     public static final int DECOMMISSIONING_VALUE = 5;
-
     /**
      *
      *
@@ -321,7 +314,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>CLUSTER_ERROR = 6;</code>
      */
     public static final int CLUSTER_ERROR_VALUE = 6;
-
     /**
      *
      *
@@ -338,7 +330,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>HUB_ERROR = 7;</code>
      */
     public static final int HUB_ERROR_VALUE = 7;
-
     /**
      *
      *
@@ -351,7 +342,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>SUSPENDED = 8;</code>
      */
     public static final int SUSPENDED_VALUE = 8;
-
     /**
      *
      *
@@ -500,7 +490,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   public int getComponentStatesCount() {
     return internalGetComponentStates().getMap().size();
   }
-
   /**
    *
    *
@@ -522,7 +511,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetComponentStates().getMap().containsKey(key);
   }
-
   /** Use {@link #getComponentStatesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -531,7 +519,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       getComponentStates() {
     return getComponentStatesMap();
   }
-
   /**
    *
    *
@@ -552,7 +539,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       getComponentStatesMap() {
     return internalGetComponentStates().getMap();
   }
-
   /**
    *
    *
@@ -580,7 +566,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         map = internalGetComponentStates().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -611,7 +596,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
-
   /**
    *
    *
@@ -629,7 +613,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -656,7 +639,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
 
   public static final int POLICY_CONTENT_STATE_FIELD_NUMBER = 6;
   private com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentState policyContentState_;
-
   /**
    *
    *
@@ -673,7 +655,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   public boolean hasPolicyContentState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -693,7 +674,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentState.getDefaultInstance()
         : policyContentState_;
   }
-
   /**
    *
    *
@@ -912,7 +892,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1196,8 +1175,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return ComponentStatesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ComponentStatesConverter componentStatesConverter =
         new ComponentStatesConverter();
@@ -1238,7 +1216,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public int getComponentStatesCount() {
       return internalGetComponentStates().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1260,7 +1237,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetComponentStates().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getComponentStatesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1269,7 +1245,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         getComponentStates() {
       return getComponentStatesMap();
     }
-
     /**
      *
      *
@@ -1290,7 +1265,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         getComponentStatesMap() {
       return internalGetComponentStates().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1320,7 +1294,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           map = internalGetMutableComponentStates().ensureBuilderMap();
       return map.containsKey(key) ? componentStatesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1356,7 +1329,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       internalGetMutableComponentStates().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1378,7 +1350,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       internalGetMutableComponentStates().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1387,7 +1358,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000001;
       return internalGetMutableComponentStates().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1415,7 +1385,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1414,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1481,7 +1449,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1499,7 +1466,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1520,7 +1486,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1510,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1570,7 +1534,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1560,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentState.Builder,
             com.google.cloud.gkehub.policycontroller.v1beta.PolicyContentStateOrBuilder>
         policyContentStateBuilder_;
-
     /**
      *
      *
@@ -1614,7 +1576,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public boolean hasPolicyContentState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1639,7 +1600,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
         return policyContentStateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1665,7 +1625,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1648,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1680,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1744,7 +1701,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1762,7 +1718,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getPolicyContentStateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1785,7 +1740,6 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
             : policyContentState_;
       }
     }
-
     /**
      *
      *

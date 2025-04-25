@@ -40,7 +40,6 @@ public interface SavedQueryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface SavedQueryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface SavedQueryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface SavedQueryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface SavedQueryOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface SavedQueryOrBuilder
    * @return Whether the lastUpdateTime field is set.
    */
   boolean hasLastUpdateTime();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface SavedQueryOrBuilder
    * @return The lastUpdateTime.
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public interface SavedQueryOrBuilder
    * @return The lastUpdater.
    */
   java.lang.String getLastUpdater();
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public interface SavedQueryOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -248,11 +239,9 @@ public interface SavedQueryOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface SavedQueryOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -282,7 +270,6 @@ public interface SavedQueryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -308,7 +295,6 @@ public interface SavedQueryOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -321,7 +307,6 @@ public interface SavedQueryOrBuilder
    * @return The content.
    */
   com.google.cloud.asset.v1.SavedQuery.QueryContent getContent();
-
   /**
    *
    *

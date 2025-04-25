@@ -39,7 +39,6 @@ public interface SupportedLanguageOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface SupportedLanguageOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The responseId.
    */
   java.lang.String getResponseId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the recognitionResult field is set.
    */
   boolean hasRecognitionResult();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The recognitionResult.
    */
   com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getRecognitionResult();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index);
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * </code>
    */
   int getAlternativeQueryResultsCount();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
       getAlternativeQueryResultsOrBuilderList();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the webhookStatus field is set.
    */
   boolean hasWebhookStatus();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The webhookStatus.
    */
   com.google.rpc.Status getWebhookStatus();
-
   /**
    *
    *
@@ -301,7 +290,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the outputAudioConfig field is set.
    */
   boolean hasOutputAudioConfig();
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The outputAudioConfig.
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
-
   /**
    *
    *
@@ -340,7 +327,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return Whether the debuggingInfo field is set.
    */
   boolean hasDebuggingInfo();
-
   /**
    *
    *
@@ -355,7 +341,6 @@ public interface StreamingDetectIntentResponseOrBuilder
    * @return The debuggingInfo.
    */
   com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo getDebuggingInfo();
-
   /**
    *
    *

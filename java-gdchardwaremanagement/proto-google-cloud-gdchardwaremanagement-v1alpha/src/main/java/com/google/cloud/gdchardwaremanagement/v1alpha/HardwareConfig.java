@@ -33,7 +33,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.HardwareConfig)
     HardwareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HardwareConfig.newBuilder() to construct.
   private HardwareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sku_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POWER_SUPPLY_FIELD_NUMBER = 2;
   private int powerSupply_ = 0;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPowerSupplyValue() {
     return powerSupply_;
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBSCRIPTION_DURATION_MONTHS_FIELD_NUMBER = 3;
   private int subscriptionDurationMonths_ = 0;
-
   /**
    *
    *
@@ -373,7 +367,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +580,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sku_ = "";
-
     /**
      *
      *
@@ -615,7 +607,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +634,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -670,7 +660,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int powerSupply_ = 0;
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPowerSupplyValue() {
       return powerSupply_;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.gdchardwaremanagement.v1alpha.PowerSupply.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int subscriptionDurationMonths_;
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
     public int getSubscriptionDurationMonths() {
       return subscriptionDurationMonths_;
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class HardwareConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

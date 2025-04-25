@@ -33,7 +33,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.TextToSpeechSettings)
     TextToSpeechSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextToSpeechSettings.newBuilder() to construct.
   private TextToSpeechSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_TEXT_TO_SPEECH_FIELD_NUMBER = 1;
   private boolean enableTextToSpeech_ = false;
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
 
   public static final int OUTPUT_AUDIO_ENCODING_FIELD_NUMBER = 2;
   private int outputAudioEncoding_ = 0;
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
   public int getOutputAudioEncodingValue() {
     return outputAudioEncoding_;
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 3;
   private int sampleRateHertz_ = 0;
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
   public int getSynthesizeSpeechConfigsCount() {
     return internalGetSynthesizeSpeechConfigs().getMap().size();
   }
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     }
     return internalGetSynthesizeSpeechConfigs().getMap().containsKey(key);
   }
-
   /** Use {@link #getSynthesizeSpeechConfigsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -226,7 +219,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       getSynthesizeSpeechConfigs() {
     return getSynthesizeSpeechConfigsMap();
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       getSynthesizeSpeechConfigsMap() {
     return internalGetSynthesizeSpeechConfigs().getMap();
   }
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
         internalGetSynthesizeSpeechConfigs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -506,7 +496,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -761,7 +750,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enableTextToSpeech_;
-
     /**
      *
      *
@@ -778,7 +766,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public boolean getEnableTextToSpeech() {
       return enableTextToSpeech_;
     }
-
     /**
      *
      *
@@ -799,7 +786,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +806,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     }
 
     private int outputAudioEncoding_ = 0;
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public int getOutputAudioEncodingValue() {
       return outputAudioEncoding_;
     }
-
     /**
      *
      *
@@ -859,7 +843,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.v2.OutputAudioEncoding.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     }
 
     private int sampleRateHertz_;
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
-
     /**
      *
      *
@@ -972,7 +951,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,8 +993,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
           defaultEntry() {
         return SynthesizeSpeechConfigsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final SynthesizeSpeechConfigsConverter synthesizeSpeechConfigsConverter =
         new SynthesizeSpeechConfigsConverter();
@@ -1058,7 +1035,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
     public int getSynthesizeSpeechConfigsCount() {
       return internalGetSynthesizeSpeechConfigs().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1079,7 +1055,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       }
       return internalGetSynthesizeSpeechConfigs().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getSynthesizeSpeechConfigsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1087,7 +1062,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
         getSynthesizeSpeechConfigs() {
       return getSynthesizeSpeechConfigsMap();
     }
-
     /**
      *
      *
@@ -1106,7 +1080,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
         getSynthesizeSpeechConfigsMap() {
       return internalGetSynthesizeSpeechConfigs().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1136,7 +1109,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
           ? synthesizeSpeechConfigsConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -1170,7 +1142,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       internalGetMutableSynthesizeSpeechConfigs().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1162,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       internalGetMutableSynthesizeSpeechConfigs().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.SynthesizeSpeechConfig>
@@ -1199,7 +1169,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000008;
       return internalGetMutableSynthesizeSpeechConfigs().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1225,7 +1194,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1221,6 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

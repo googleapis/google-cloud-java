@@ -30,14 +30,12 @@ public interface NetworkProfileLocationOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    * <code>optional string name = 3373707;</code>
    *
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    * <code>optional string name = 3373707;</code>
    *
@@ -58,7 +56,6 @@ public interface NetworkProfileLocationOrBuilder
    * @return Whether the scope field is set.
    */
   boolean hasScope();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface NetworkProfileLocationOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *

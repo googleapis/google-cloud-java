@@ -38,7 +38,6 @@ public interface CreatePipelineRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreatePipelineRequestOrBuilder
    * @return Whether the pipeline field is set.
    */
   boolean hasPipeline();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreatePipelineRequestOrBuilder
    * @return The pipeline.
    */
   com.google.cloud.eventarc.v1.Pipeline getPipeline();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreatePipelineRequestOrBuilder
    * @return The pipelineId.
    */
   java.lang.String getPipelineId();
-
   /**
    *
    *

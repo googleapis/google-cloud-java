@@ -35,7 +35,6 @@ public final class StreamingSynthesizeResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.StreamingSynthesizeResponse)
     StreamingSynthesizeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingSynthesizeResponse.newBuilder() to construct.
   private StreamingSynthesizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class StreamingSynthesizeResponse extends com.google.protobuf.Gener
 
   public static final int AUDIO_CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -246,7 +244,6 @@ public final class StreamingSynthesizeResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -434,7 +431,6 @@ public final class StreamingSynthesizeResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private com.google.protobuf.ByteString audioContent_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -451,7 +447,6 @@ public final class StreamingSynthesizeResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getAudioContent() {
       return audioContent_;
     }
-
     /**
      *
      *
@@ -474,7 +469,6 @@ public final class StreamingSynthesizeResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

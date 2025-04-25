@@ -33,7 +33,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest)
     DiscoverConnectionProfileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoverConnectionProfileRequest.newBuilder() to construct.
   private DiscoverConnectionProfileRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,7 +81,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     private TargetCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -132,7 +130,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     private DepthCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -182,7 +179,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     private DataObjectCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -219,7 +215,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -246,7 +241,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -275,7 +269,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int CONNECTION_PROFILE_FIELD_NUMBER = 200;
-
   /**
    *
    *
@@ -291,7 +284,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   public boolean hasConnectionProfile() {
     return targetCase_ == 200;
   }
-
   /**
    *
    *
@@ -310,7 +302,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     }
     return com.google.cloud.datastream.v1alpha1.ConnectionProfile.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -330,7 +321,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int CONNECTION_PROFILE_NAME_FIELD_NUMBER = 201;
-
   /**
    *
    *
@@ -345,7 +335,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   public boolean hasConnectionProfileName() {
     return targetCase_ == 201;
   }
-
   /**
    *
    *
@@ -373,7 +362,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -403,7 +391,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int RECURSIVE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -420,7 +407,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   public boolean hasRecursive() {
     return depthCase_ == 3;
   }
-
   /**
    *
    *
@@ -442,7 +428,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int RECURSION_DEPTH_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -458,7 +443,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   public boolean hasRecursionDepth() {
     return depthCase_ == 4;
   }
-
   /**
    *
    *
@@ -479,7 +463,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int ORACLE_RDBMS_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -495,7 +478,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   public boolean hasOracleRdbms() {
     return dataObjectCase_ == 100;
   }
-
   /**
    *
    *
@@ -514,7 +496,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     }
     return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -533,7 +514,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   }
 
   public static final int MYSQL_RDBMS_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -549,7 +529,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
   public boolean hasMysqlRdbms() {
     return dataObjectCase_ == 101;
   }
-
   /**
    *
    *
@@ -568,7 +547,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     }
     return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -862,7 +840,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1219,7 +1196,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1245,7 +1221,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1271,7 +1246,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1270,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1290,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1321,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
             com.google.cloud.datastream.v1alpha1.ConnectionProfile.Builder,
             com.google.cloud.datastream.v1alpha1.ConnectionProfileOrBuilder>
         connectionProfileBuilder_;
-
     /**
      *
      *
@@ -1365,7 +1336,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public boolean hasConnectionProfile() {
       return targetCase_ == 200;
     }
-
     /**
      *
      *
@@ -1391,7 +1361,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return com.google.cloud.datastream.v1alpha1.ConnectionProfile.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1415,7 +1384,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       targetCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -1436,7 +1404,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       targetCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1438,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       targetCase_ = 200;
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1463,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1476,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         getConnectionProfileBuilder() {
       return getConnectionProfileFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1533,7 +1497,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return com.google.cloud.datastream.v1alpha1.ConnectionProfile.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1545,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public boolean hasConnectionProfileName() {
       return targetCase_ == 201;
     }
-
     /**
      *
      *
@@ -1611,7 +1573,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1640,7 +1601,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1662,7 +1622,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1641,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1679,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public boolean hasRecursive() {
       return depthCase_ == 3;
     }
-
     /**
      *
      *
@@ -1740,7 +1697,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       return false;
     }
-
     /**
      *
      *
@@ -1761,7 +1717,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1752,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public boolean hasRecursionDepth() {
       return depthCase_ == 4;
     }
-
     /**
      *
      *
@@ -1815,7 +1769,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       return 0;
     }
-
     /**
      *
      *
@@ -1835,7 +1788,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1861,7 +1813,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
             com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder>
         oracleRdbmsBuilder_;
-
     /**
      *
      *
@@ -1877,7 +1828,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public boolean hasOracleRdbms() {
       return dataObjectCase_ == 100;
     }
-
     /**
      *
      *
@@ -1903,7 +1853,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1926,7 +1875,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1947,7 +1895,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1981,7 +1928,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -2007,7 +1953,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -2020,7 +1965,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder getOracleRdbmsBuilder() {
       return getOracleRdbmsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2041,7 +1985,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2080,7 +2023,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
             com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.MysqlRdbmsOrBuilder>
         mysqlRdbmsBuilder_;
-
     /**
      *
      *
@@ -2096,7 +2038,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public boolean hasMysqlRdbms() {
       return dataObjectCase_ == 101;
     }
-
     /**
      *
      *
@@ -2122,7 +2063,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2145,7 +2085,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2105,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2200,7 +2138,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2226,7 +2163,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2175,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     public com.google.cloud.datastream.v1alpha1.MysqlRdbms.Builder getMysqlRdbmsBuilder() {
       return getMysqlRdbmsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2260,7 +2195,6 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
         return com.google.cloud.datastream.v1alpha1.MysqlRdbms.getDefaultInstance();
       }
     }
-
     /**
      *
      *

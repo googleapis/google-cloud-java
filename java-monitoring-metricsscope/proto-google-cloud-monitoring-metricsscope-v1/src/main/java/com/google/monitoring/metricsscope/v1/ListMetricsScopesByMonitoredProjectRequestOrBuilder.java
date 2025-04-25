@@ -38,7 +38,6 @@ public interface ListMetricsScopesByMonitoredProjectRequestOrBuilder
    * @return The monitoredResourceContainer.
    */
   java.lang.String getMonitoredResourceContainer();
-
   /**
    *
    *

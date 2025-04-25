@@ -33,7 +33,6 @@ public final class AddIpOverrideResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AddIpOverrideResponse)
     AddIpOverrideResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddIpOverrideResponse.newBuilder() to construct.
   private AddIpOverrideResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class AddIpOverrideResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.OSImage)
     OSImageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OSImage.newBuilder() to construct.
   private OSImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object code_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -202,7 +196,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList applicableInstanceTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getApplicableInstanceTypesList() {
     return applicableInstanceTypes_;
   }
-
   /**
    *
    *
@@ -266,7 +257,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   public int getApplicableInstanceTypesCount() {
     return applicableInstanceTypes_.size();
   }
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getApplicableInstanceTypes(int index) {
     return applicableInstanceTypes_.get(index);
   }
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList supportedNetworkTemplates_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSupportedNetworkTemplatesList() {
     return supportedNetworkTemplates_;
   }
-
   /**
    *
    *
@@ -338,7 +325,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   public int getSupportedNetworkTemplatesCount() {
     return supportedNetworkTemplates_.size();
   }
-
   /**
    *
    *
@@ -354,7 +340,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSupportedNetworkTemplates(int index) {
     return supportedNetworkTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -584,7 +569,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -842,7 +826,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -865,7 +848,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +870,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +891,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +976,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +997,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1014,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1038,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1087,7 +1060,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1082,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1103,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1120,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1153,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1202,7 +1170,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       applicableInstanceTypes_.makeImmutable();
       return applicableInstanceTypes_;
     }
-
     /**
      *
      *
@@ -1219,7 +1186,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     public int getApplicableInstanceTypesCount() {
       return applicableInstanceTypes_.size();
     }
-
     /**
      *
      *
@@ -1237,7 +1203,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getApplicableInstanceTypes(int index) {
       return applicableInstanceTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1255,7 +1220,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getApplicableInstanceTypesBytes(int index) {
       return applicableInstanceTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1281,7 +1245,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1269,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1290,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1310,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1386,7 +1346,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1402,7 +1361,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       supportedNetworkTemplates_.makeImmutable();
       return supportedNetworkTemplates_;
     }
-
     /**
      *
      *
@@ -1417,7 +1375,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     public int getSupportedNetworkTemplatesCount() {
       return supportedNetworkTemplates_.size();
     }
-
     /**
      *
      *
@@ -1433,7 +1390,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSupportedNetworkTemplates(int index) {
       return supportedNetworkTemplates_.get(index);
     }
-
     /**
      *
      *
@@ -1449,7 +1405,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSupportedNetworkTemplatesBytes(int index) {
       return supportedNetworkTemplates_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1473,7 +1428,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1496,7 +1450,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1469,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1487,6 @@ public final class OSImage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

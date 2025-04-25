@@ -34,7 +34,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.VehicleAttribute)
     VehicleAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VehicleAttribute.newBuilder() to construct.
   private VehicleAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     private VehicleAttributeValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -123,7 +121,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
   public boolean hasStringValue() {
     return vehicleAttributeValueCase_ == 3;
   }
-
   /**
    *
    *
@@ -281,7 +273,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -317,7 +308,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -333,7 +323,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
   public boolean hasBoolValue() {
     return vehicleAttributeValueCase_ == 4;
   }
-
   /**
    *
    *
@@ -354,7 +343,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NUMBER_VALUE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -370,7 +358,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
   public boolean hasNumberValue() {
     return vehicleAttributeValueCase_ == 5;
   }
-
   /**
    *
    *
@@ -614,7 +601,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -879,7 +865,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -902,7 +887,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -925,7 +909,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -947,7 +930,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +947,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +971,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -1013,7 +993,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1015,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1036,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1053,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1097,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     public boolean hasStringValue() {
       return vehicleAttributeValueCase_ == 3;
     }
-
     /**
      *
      *
@@ -1156,7 +1131,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1165,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1219,7 +1192,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1245,7 +1217,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1289,7 +1260,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     public boolean hasBoolValue() {
       return vehicleAttributeValueCase_ == 4;
     }
-
     /**
      *
      *
@@ -1307,7 +1277,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       }
       return false;
     }
-
     /**
      *
      *
@@ -1327,7 +1296,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1330,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
     public boolean hasNumberValue() {
       return vehicleAttributeValueCase_ == 5;
     }
-
     /**
      *
      *
@@ -1380,7 +1347,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -1400,7 +1366,6 @@ public final class VehicleAttribute extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

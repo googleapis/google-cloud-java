@@ -36,7 +36,6 @@ public interface DiscoveryEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DiscoveryEventOrBuilder
    * @return The lakeId.
    */
   java.lang.String getLakeId();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DiscoveryEventOrBuilder
    * @return The zoneId.
    */
   java.lang.String getZoneId();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface DiscoveryEventOrBuilder
    * @return The assetId.
    */
   java.lang.String getAssetId();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface DiscoveryEventOrBuilder
    * @return The dataLocation.
    */
   java.lang.String getDataLocation();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface DiscoveryEventOrBuilder
    * @return The datascanId.
    */
   java.lang.String getDatascanId();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface DiscoveryEventOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface DiscoveryEventOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface DiscoveryEventOrBuilder
    * @return The config.
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.ConfigDetails getConfig();
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public interface DiscoveryEventOrBuilder
    * @return Whether the entity field is set.
    */
   boolean hasEntity();
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public interface DiscoveryEventOrBuilder
    * @return The entity.
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.EntityDetails getEntity();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface DiscoveryEventOrBuilder
    * @return Whether the partition field is set.
    */
   boolean hasPartition();
-
   /**
    *
    *
@@ -305,7 +293,6 @@ public interface DiscoveryEventOrBuilder
    * @return The partition.
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.PartitionDetails getPartition();
-
   /**
    *
    *
@@ -329,7 +316,6 @@ public interface DiscoveryEventOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public interface DiscoveryEventOrBuilder
    * @return The action.
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.ActionDetails getAction();
-
   /**
    *
    *
@@ -366,7 +351,6 @@ public interface DiscoveryEventOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
-
   /**
    *
    *
@@ -379,7 +363,6 @@ public interface DiscoveryEventOrBuilder
    * @return The table.
    */
   com.google.cloud.dataplex.v1.DiscoveryEvent.TableDetails getTable();
-
   /**
    *
    *

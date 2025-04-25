@@ -36,7 +36,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.AuthorizationPolicy)
     AuthorizationPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AuthorizationPolicy.newBuilder() to construct.
   private AuthorizationPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,7 +136,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * <code>ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int ACTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * <code>ALLOW = 1;</code>
      */
     public static final int ALLOW_VALUE = 1;
-
     /**
      *
      *
@@ -268,7 +265,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source>
         getSourcesList();
-
     /**
      *
      *
@@ -284,7 +280,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source getSources(int index);
-
     /**
      *
      *
@@ -300,7 +295,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     int getSourcesCount();
-
     /**
      *
      *
@@ -318,7 +312,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     java.util.List<
             ? extends com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.SourceOrBuilder>
         getSourcesOrBuilderList();
-
     /**
      *
      *
@@ -353,7 +346,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination>
         getDestinationsList();
-
     /**
      *
      *
@@ -371,7 +363,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      */
     com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination getDestinations(
         int index);
-
     /**
      *
      *
@@ -388,7 +379,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
      * </code>
      */
     int getDestinationsCount();
-
     /**
      *
      *
@@ -408,7 +398,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             ? extends
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.DestinationOrBuilder>
         getDestinationsOrBuilderList();
-
     /**
      *
      *
@@ -427,7 +416,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.DestinationOrBuilder
         getDestinationsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -442,7 +430,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.AuthorizationPolicy.Rule)
       RuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Rule.newBuilder() to construct.
     private Rule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -496,7 +483,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return A list containing the principals.
        */
       java.util.List<java.lang.String> getPrincipalsList();
-
       /**
        *
        *
@@ -514,7 +500,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The count of principals.
        */
       int getPrincipalsCount();
-
       /**
        *
        *
@@ -533,7 +518,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The principals at the given index.
        */
       java.lang.String getPrincipals(int index);
-
       /**
        *
        *
@@ -569,7 +553,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return A list containing the ipBlocks.
        */
       java.util.List<java.lang.String> getIpBlocksList();
-
       /**
        *
        *
@@ -586,7 +569,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The count of ipBlocks.
        */
       int getIpBlocksCount();
-
       /**
        *
        *
@@ -604,7 +586,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The ipBlocks at the given index.
        */
       java.lang.String getIpBlocks(int index);
-
       /**
        *
        *
@@ -623,7 +604,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        */
       com.google.protobuf.ByteString getIpBlocksBytes(int index);
     }
-
     /**
      *
      *
@@ -638,7 +618,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source)
         SourceOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Source.newBuilder() to construct.
       private Source(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -675,7 +654,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList principals_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -695,7 +673,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ProtocolStringList getPrincipalsList() {
         return principals_;
       }
-
       /**
        *
        *
@@ -715,7 +692,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public int getPrincipalsCount() {
         return principals_.size();
       }
-
       /**
        *
        *
@@ -736,7 +712,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public java.lang.String getPrincipals(int index) {
         return principals_.get(index);
       }
-
       /**
        *
        *
@@ -763,7 +738,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList ipBlocks_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -782,7 +756,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ProtocolStringList getIpBlocksList() {
         return ipBlocks_;
       }
-
       /**
        *
        *
@@ -801,7 +774,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public int getIpBlocksCount() {
         return ipBlocks_.size();
       }
-
       /**
        *
        *
@@ -821,7 +793,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public java.lang.String getIpBlocks(int index) {
         return ipBlocks_.get(index);
       }
-
       /**
        *
        *
@@ -1028,7 +999,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1263,7 +1233,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -1284,7 +1253,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           principals_.makeImmutable();
           return principals_;
         }
-
         /**
          *
          *
@@ -1304,7 +1272,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public int getPrincipalsCount() {
           return principals_.size();
         }
-
         /**
          *
          *
@@ -1325,7 +1292,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public java.lang.String getPrincipals(int index) {
           return principals_.get(index);
         }
-
         /**
          *
          *
@@ -1346,7 +1312,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public com.google.protobuf.ByteString getPrincipalsBytes(int index) {
           return principals_.getByteString(index);
         }
-
         /**
          *
          *
@@ -1375,7 +1340,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1403,7 +1367,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1428,7 +1391,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1452,7 +1414,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1491,7 +1452,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           bitField0_ |= 0x00000002;
         }
-
         /**
          *
          *
@@ -1511,7 +1471,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           ipBlocks_.makeImmutable();
           return ipBlocks_;
         }
-
         /**
          *
          *
@@ -1530,7 +1489,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public int getIpBlocksCount() {
           return ipBlocks_.size();
         }
-
         /**
          *
          *
@@ -1550,7 +1508,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public java.lang.String getIpBlocks(int index) {
           return ipBlocks_.get(index);
         }
-
         /**
          *
          *
@@ -1570,7 +1527,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public com.google.protobuf.ByteString getIpBlocksBytes(int index) {
           return ipBlocks_.getByteString(index);
         }
-
         /**
          *
          *
@@ -1598,7 +1554,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1625,7 +1580,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1649,7 +1603,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1672,7 +1625,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1789,7 +1741,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return A list containing the hosts.
        */
       java.util.List<java.lang.String> getHostsList();
-
       /**
        *
        *
@@ -1805,7 +1756,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The count of hosts.
        */
       int getHostsCount();
-
       /**
        *
        *
@@ -1822,7 +1772,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The hosts at the given index.
        */
       java.lang.String getHosts(int index);
-
       /**
        *
        *
@@ -1852,7 +1801,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return A list containing the ports.
        */
       java.util.List<java.lang.Integer> getPortsList();
-
       /**
        *
        *
@@ -1865,7 +1813,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The count of ports.
        */
       int getPortsCount();
-
       /**
        *
        *
@@ -1893,7 +1840,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return A list containing the methods.
        */
       java.util.List<java.lang.String> getMethodsList();
-
       /**
        *
        *
@@ -1907,7 +1853,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The count of methods.
        */
       int getMethodsCount();
-
       /**
        *
        *
@@ -1922,7 +1867,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return The methods at the given index.
        */
       java.lang.String getMethods(int index);
-
       /**
        *
        *
@@ -1956,7 +1900,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        * @return Whether the httpHeaderMatch field is set.
        */
       boolean hasHttpHeaderMatch();
-
       /**
        *
        *
@@ -1976,7 +1919,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
        */
       com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination.HttpHeaderMatch
           getHttpHeaderMatch();
-
       /**
        *
        *
@@ -1996,7 +1938,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               .HttpHeaderMatchOrBuilder
           getHttpHeaderMatchOrBuilder();
     }
-
     /**
      *
      *
@@ -2011,7 +1952,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination)
         DestinationOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Destination.newBuilder() to construct.
       private Destination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2068,7 +2008,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return Whether the regexMatch field is set.
          */
         boolean hasRegexMatch();
-
         /**
          *
          *
@@ -2087,7 +2026,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return The regexMatch.
          */
         java.lang.String getRegexMatch();
-
         /**
          *
          *
@@ -2122,7 +2060,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
          * @return The headerName.
          */
         java.lang.String getHeaderName();
-
         /**
          *
          *
@@ -2143,7 +2080,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 .TypeCase
             getTypeCase();
       }
-
       /**
        *
        *
@@ -2159,7 +2095,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination.HttpHeaderMatch)
           HttpHeaderMatchOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use HttpHeaderMatch.newBuilder() to construct.
         private HttpHeaderMatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -2208,7 +2143,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           private TypeCase(int value) {
             this.value = value;
           }
-
           /**
            * @param value The number of the enum to look for.
            * @return The enum associated with the given number.
@@ -2240,7 +2174,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
 
         public static final int REGEX_MATCH_FIELD_NUMBER = 2;
-
         /**
          *
          *
@@ -2261,7 +2194,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public boolean hasRegexMatch() {
           return typeCase_ == 2;
         }
-
         /**
          *
          *
@@ -2295,7 +2227,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             return s;
           }
         }
-
         /**
          *
          *
@@ -2334,7 +2265,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object headerName_ = "";
-
         /**
          *
          *
@@ -2361,7 +2291,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             return s;
           }
         }
-
         /**
          *
          *
@@ -2602,7 +2531,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -2883,7 +2811,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           public boolean hasRegexMatch() {
             return typeCase_ == 2;
           }
-
           /**
            *
            *
@@ -2918,7 +2845,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -2953,7 +2879,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -2981,7 +2906,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3007,7 +2931,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             }
             return this;
           }
-
           /**
            *
            *
@@ -3038,7 +2961,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
 
           private java.lang.Object headerName_ = "";
-
           /**
            *
            *
@@ -3064,7 +2986,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -3090,7 +3011,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -3115,7 +3035,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3136,7 +3055,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3241,7 +3159,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList hosts_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -3259,7 +3176,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ProtocolStringList getHostsList() {
         return hosts_;
       }
-
       /**
        *
        *
@@ -3277,7 +3193,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public int getHostsCount() {
         return hosts_.size();
       }
-
       /**
        *
        *
@@ -3296,7 +3211,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public java.lang.String getHosts(int index) {
         return hosts_.get(index);
       }
-
       /**
        *
        *
@@ -3320,7 +3234,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
       @SuppressWarnings("serial")
       private com.google.protobuf.Internal.IntList ports_ = emptyIntList();
-
       /**
        *
        *
@@ -3336,7 +3249,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public java.util.List<java.lang.Integer> getPortsList() {
         return ports_;
       }
-
       /**
        *
        *
@@ -3351,7 +3263,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public int getPortsCount() {
         return ports_.size();
       }
-
       /**
        *
        *
@@ -3375,7 +3286,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList methods_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -3391,7 +3301,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public com.google.protobuf.ProtocolStringList getMethodsList() {
         return methods_;
       }
-
       /**
        *
        *
@@ -3407,7 +3316,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public int getMethodsCount() {
         return methods_.size();
       }
-
       /**
        *
        *
@@ -3424,7 +3332,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public java.lang.String getMethods(int index) {
         return methods_.get(index);
       }
-
       /**
        *
        *
@@ -3446,7 +3353,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       private com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
               .HttpHeaderMatch
           httpHeaderMatch_;
-
       /**
        *
        *
@@ -3468,7 +3374,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       public boolean hasHttpHeaderMatch() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3495,7 +3400,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 .HttpHeaderMatch.getDefaultInstance()
             : httpHeaderMatch_;
       }
-
       /**
        *
        *
@@ -3754,7 +3658,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4057,7 +3960,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           bitField0_ |= 0x00000001;
         }
-
         /**
          *
          *
@@ -4076,7 +3978,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           hosts_.makeImmutable();
           return hosts_;
         }
-
         /**
          *
          *
@@ -4094,7 +3995,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public int getHostsCount() {
           return hosts_.size();
         }
-
         /**
          *
          *
@@ -4113,7 +4013,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public java.lang.String getHosts(int index) {
           return hosts_.get(index);
         }
-
         /**
          *
          *
@@ -4132,7 +4031,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public com.google.protobuf.ByteString getHostsBytes(int index) {
           return hosts_.getByteString(index);
         }
-
         /**
          *
          *
@@ -4159,7 +4057,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4185,7 +4082,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4208,7 +4104,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4230,7 +4125,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4266,7 +4160,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           bitField0_ |= 0x00000002;
         }
-
         /**
          *
          *
@@ -4282,7 +4175,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           ports_.makeImmutable();
           return ports_;
         }
-
         /**
          *
          *
@@ -4297,7 +4189,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public int getPortsCount() {
           return ports_.size();
         }
-
         /**
          *
          *
@@ -4313,7 +4204,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public int getPorts(int index) {
           return ports_.getInt(index);
         }
-
         /**
          *
          *
@@ -4335,7 +4225,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4356,7 +4245,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4376,7 +4264,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4404,7 +4291,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           bitField0_ |= 0x00000004;
         }
-
         /**
          *
          *
@@ -4421,7 +4307,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           methods_.makeImmutable();
           return methods_;
         }
-
         /**
          *
          *
@@ -4437,7 +4322,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public int getMethodsCount() {
           return methods_.size();
         }
-
         /**
          *
          *
@@ -4454,7 +4338,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public java.lang.String getMethods(int index) {
           return methods_.get(index);
         }
-
         /**
          *
          *
@@ -4471,7 +4354,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public com.google.protobuf.ByteString getMethodsBytes(int index) {
           return methods_.getByteString(index);
         }
-
         /**
          *
          *
@@ -4496,7 +4378,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4520,7 +4401,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4541,7 +4421,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4561,7 +4440,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4598,7 +4476,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
                     .HttpHeaderMatchOrBuilder>
             httpHeaderMatchBuilder_;
-
         /**
          *
          *
@@ -4619,7 +4496,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         public boolean hasHttpHeaderMatch() {
           return ((bitField0_ & 0x00000008) != 0);
         }
-
         /**
          *
          *
@@ -4649,7 +4525,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             return httpHeaderMatchBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -4680,7 +4555,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4709,7 +4583,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4747,7 +4620,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           }
           return this;
         }
-
         /**
          *
          *
@@ -4773,7 +4645,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4796,7 +4667,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           onChanged();
           return getHttpHeaderMatchFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -4824,7 +4694,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 : httpHeaderMatch_;
           }
         }
-
         /**
          *
          *
@@ -4936,7 +4805,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source>
         sources_;
-
     /**
      *
      *
@@ -4956,7 +4824,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         getSourcesList() {
       return sources_;
     }
-
     /**
      *
      *
@@ -4977,7 +4844,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         getSourcesOrBuilderList() {
       return sources_;
     }
-
     /**
      *
      *
@@ -4996,7 +4862,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public int getSourcesCount() {
       return sources_.size();
     }
-
     /**
      *
      *
@@ -5016,7 +4881,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         int index) {
       return sources_.get(index);
     }
-
     /**
      *
      *
@@ -5042,7 +4906,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination>
         destinations_;
-
     /**
      *
      *
@@ -5063,7 +4926,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         getDestinationsList() {
       return destinations_;
     }
-
     /**
      *
      *
@@ -5086,7 +4948,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         getDestinationsOrBuilderList() {
       return destinations_;
     }
-
     /**
      *
      *
@@ -5106,7 +4967,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public int getDestinationsCount() {
       return destinations_.size();
     }
-
     /**
      *
      *
@@ -5127,7 +4987,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         int index) {
       return destinations_.get(index);
     }
-
     /**
      *
      *
@@ -5323,7 +5182,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5659,7 +5517,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return sourcesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -5681,7 +5538,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return sourcesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -5704,7 +5560,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return sourcesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -5733,7 +5588,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5761,7 +5615,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5790,7 +5643,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5819,7 +5671,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5846,7 +5697,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5874,7 +5724,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5902,7 +5751,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5927,7 +5775,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5952,7 +5799,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -5971,7 +5817,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           getSourcesBuilder(int index) {
         return getSourcesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -5994,7 +5839,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return sourcesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -6019,7 +5863,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return java.util.Collections.unmodifiableList(sources_);
         }
       }
-
       /**
        *
        *
@@ -6041,7 +5884,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6064,7 +5906,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Source
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6146,7 +5987,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return destinationsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -6169,7 +6009,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return destinationsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -6193,7 +6032,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return destinationsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -6224,7 +6062,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6253,7 +6090,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6283,7 +6119,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6314,7 +6149,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6342,7 +6176,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6371,7 +6204,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6401,7 +6233,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6427,7 +6258,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6453,7 +6283,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
-
       /**
        *
        *
@@ -6473,7 +6302,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           getDestinationsBuilder(int index) {
         return getDestinationsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -6497,7 +6325,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return destinationsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -6523,7 +6350,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           return java.util.Collections.unmodifiableList(destinations_);
         }
       }
-
       /**
        *
        *
@@ -6546,7 +6372,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6570,7 +6395,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.Destination
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -6685,7 +6509,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -6710,7 +6533,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -6740,7 +6562,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -6764,7 +6585,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -6791,7 +6611,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -6808,7 +6627,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -6825,7 +6643,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -6843,7 +6660,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -6860,7 +6676,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -6877,7 +6692,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -6919,7 +6733,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -6936,14 +6749,12 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -6957,7 +6768,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -6978,7 +6788,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -7002,7 +6811,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
   public static final int ACTION_FIELD_NUMBER = 6;
   private int action_ = 0;
-
   /**
    *
    *
@@ -7021,7 +6829,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public int getActionValue() {
     return action_;
   }
-
   /**
    *
    *
@@ -7049,7 +6856,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule> rules_;
-
   /**
    *
    *
@@ -7069,7 +6875,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       getRulesList() {
     return rules_;
   }
-
   /**
    *
    *
@@ -7090,7 +6895,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       getRulesOrBuilderList() {
     return rules_;
   }
-
   /**
    *
    *
@@ -7109,7 +6913,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public int getRulesCount() {
     return rules_.size();
   }
-
   /**
    *
    *
@@ -7128,7 +6931,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
   public com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule getRules(int index) {
     return rules_.get(index);
   }
-
   /**
    *
    *
@@ -7387,7 +7189,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7755,7 +7556,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -7779,7 +7579,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7803,7 +7602,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7826,7 +7624,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7845,7 +7642,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7871,7 +7667,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -7894,7 +7689,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7917,7 +7711,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7939,7 +7732,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7957,7 +7749,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7987,7 +7778,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -8004,7 +7794,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -8027,7 +7816,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8052,7 +7840,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8074,7 +7861,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8104,7 +7890,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8126,7 +7911,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8143,7 +7927,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8164,7 +7947,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -8199,7 +7981,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -8216,7 +7997,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -8239,7 +8019,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8264,7 +8043,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8286,7 +8064,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8316,7 +8093,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8338,7 +8114,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8355,7 +8130,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8376,7 +8150,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -8430,7 +8203,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -8447,14 +8219,12 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -8468,7 +8238,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -8489,7 +8258,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -8516,7 +8284,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -8533,14 +8300,12 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -8561,7 +8326,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -8578,7 +8342,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     }
 
     private int action_ = 0;
-
     /**
      *
      *
@@ -8597,7 +8360,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
     public int getActionValue() {
       return action_;
     }
-
     /**
      *
      *
@@ -8619,7 +8381,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8642,7 +8403,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.networksecurity.v1.AuthorizationPolicy.Action.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -8667,7 +8427,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8729,7 +8488,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return rulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8751,7 +8509,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return rulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8773,7 +8530,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return rulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8802,7 +8558,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8829,7 +8584,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8857,7 +8611,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8886,7 +8639,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8912,7 +8664,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8939,7 +8690,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8966,7 +8716,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -8991,7 +8740,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -9016,7 +8764,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -9035,7 +8782,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9058,7 +8804,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -9082,7 +8827,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(rules_);
       }
     }
-
     /**
      *
      *
@@ -9102,7 +8846,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -9124,7 +8867,6 @@ public final class AuthorizationPolicy extends com.google.protobuf.GeneratedMess
               index,
               com.google.cloud.networksecurity.v1.AuthorizationPolicy.Rule.getDefaultInstance());
     }
-
     /**
      *
      *

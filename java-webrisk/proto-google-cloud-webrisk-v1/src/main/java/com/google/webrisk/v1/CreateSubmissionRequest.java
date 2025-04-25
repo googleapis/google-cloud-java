@@ -33,7 +33,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.CreateSubmissionRequest)
     CreateSubmissionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSubmissionRequest.newBuilder() to construct.
   private CreateSubmissionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
 
   public static final int SUBMISSION_FIELD_NUMBER = 2;
   private com.google.webrisk.v1.Submission submission_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
   public boolean hasSubmission() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         ? com.google.webrisk.v1.Submission.getDefaultInstance()
         : submission_;
   }
-
   /**
    *
    *
@@ -356,7 +350,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
             com.google.webrisk.v1.Submission.Builder,
             com.google.webrisk.v1.SubmissionOrBuilder>
         submissionBuilder_;
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
     public boolean hasSubmission() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
         return submissionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
       onChanged();
       return getSubmissionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -877,7 +857,6 @@ public final class CreateSubmissionRequest extends com.google.protobuf.Generated
             : submission_;
       }
     }
-
     /**
      *
      *

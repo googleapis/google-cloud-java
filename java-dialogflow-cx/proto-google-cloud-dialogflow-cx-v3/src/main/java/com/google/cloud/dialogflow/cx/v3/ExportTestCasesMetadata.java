@@ -35,7 +35,6 @@ public final class ExportTestCasesMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ExportTestCasesMetadata)
     ExportTestCasesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportTestCasesMetadata.newBuilder() to construct.
   private ExportTestCasesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class ExportTestCasesMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

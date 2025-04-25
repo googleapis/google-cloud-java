@@ -33,7 +33,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4beta1.ListCompaniesResponse)
     ListCompaniesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCompaniesResponse.newBuilder() to construct.
   private ListCompaniesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.Company> companies_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.talent.v4beta1.Company> getCompaniesList() {
     return companies_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       getCompaniesOrBuilderList() {
     return companies_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public int getCompaniesCount() {
     return companies_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.talent.v4beta1.Company getCompanies(int index) {
     return companies_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
 
   public static final int METADATA_FIELD_NUMBER = 3;
   private com.google.cloud.talent.v4beta1.ResponseMetadata metadata_;
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +223,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -436,7 +425,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -743,7 +731,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.talent.v4beta1.Company.Builder getCompaniesBuilder(int index) {
       return getCompaniesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return companiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1017,7 +991,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(companies_);
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1004,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       return getCompaniesFieldBuilder()
           .addBuilder(com.google.cloud.talent.v4beta1.Company.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1045,7 +1017,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       return getCompaniesFieldBuilder()
           .addBuilder(index, com.google.cloud.talent.v4beta1.Company.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1101,7 +1071,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1093,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1114,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1131,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1160,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
             com.google.cloud.talent.v4beta1.ResponseMetadata.Builder,
             com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -1210,7 +1175,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1232,7 +1196,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1219,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1240,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1268,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1288,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1303,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1364,7 +1322,6 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
             : metadata_;
       }
     }
-
     /**
      *
      *

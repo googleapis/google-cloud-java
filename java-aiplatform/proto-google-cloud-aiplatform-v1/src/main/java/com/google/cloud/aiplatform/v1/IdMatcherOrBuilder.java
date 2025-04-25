@@ -41,7 +41,6 @@ public interface IdMatcherOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.String> getIdsList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface IdMatcherOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface IdMatcherOrBuilder
    * @return The ids at the given index.
    */
   java.lang.String getIds(int index);
-
   /**
    *
    *

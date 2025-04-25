@@ -37,7 +37,6 @@ public interface ListChannelPartnerRepricingConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
       getChannelPartnerRepricingConfigsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListChannelPartnerRepricingConfigsResponseOrBuilder
    */
   com.google.cloud.channel.v1.ChannelPartnerRepricingConfig getChannelPartnerRepricingConfigs(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListChannelPartnerRepricingConfigsResponseOrBuilder
    * </code>
    */
   int getChannelPartnerRepricingConfigsCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface ListChannelPartnerRepricingConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.ChannelPartnerRepricingConfigOrBuilder>
       getChannelPartnerRepricingConfigsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListChannelPartnerRepricingConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

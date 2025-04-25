@@ -38,7 +38,6 @@ public interface VehicleJourneySegmentOrBuilder
    * @return Whether the stop field is set.
    */
   boolean hasStop();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface VehicleJourneySegmentOrBuilder
    * @return The stop.
    */
   com.google.maps.fleetengine.delivery.v1.VehicleStop getStop();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface VehicleJourneySegmentOrBuilder
    * @return Whether the drivingDistanceMeters field is set.
    */
   boolean hasDrivingDistanceMeters();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface VehicleJourneySegmentOrBuilder
    * @return The drivingDistanceMeters.
    */
   com.google.protobuf.Int32Value getDrivingDistanceMeters();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface VehicleJourneySegmentOrBuilder
    * @return Whether the drivingDuration field is set.
    */
   boolean hasDrivingDuration();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface VehicleJourneySegmentOrBuilder
    * @return The drivingDuration.
    */
   com.google.protobuf.Duration getDrivingDuration();
-
   /**
    *
    *
@@ -225,7 +219,6 @@ public interface VehicleJourneySegmentOrBuilder
    * </code>
    */
   java.util.List<com.google.type.LatLng> getPathList();
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public interface VehicleJourneySegmentOrBuilder
    * </code>
    */
   com.google.type.LatLng getPath(int index);
-
   /**
    *
    *
@@ -275,7 +267,6 @@ public interface VehicleJourneySegmentOrBuilder
    * </code>
    */
   int getPathCount();
-
   /**
    *
    *
@@ -300,7 +291,6 @@ public interface VehicleJourneySegmentOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.type.LatLngOrBuilder> getPathOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ConversionWorkspace)
     ConversionWorkspaceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConversionWorkspace.newBuilder() to construct.
   private ConversionWorkspace(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.clouddms.v1.DatabaseEngineInfo source_;
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public boolean hasSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.clouddms.v1.DatabaseEngineInfo.getDefaultInstance()
         : source_;
   }
-
   /**
    *
    *
@@ -195,7 +189,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   public static final int DESTINATION_FIELD_NUMBER = 3;
   private com.google.cloud.clouddms.v1.DatabaseEngineInfo destination_;
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public boolean hasDestination() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.clouddms.v1.DatabaseEngineInfo.getDefaultInstance()
         : destination_;
   }
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public int getGlobalSettingsCount() {
     return internalGetGlobalSettings().getMap().size();
   }
-
   /**
    *
    *
@@ -302,14 +292,12 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     }
     return internalGetGlobalSettings().getMap().containsKey(key);
   }
-
   /** Use {@link #getGlobalSettingsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getGlobalSettings() {
     return getGlobalSettingsMap();
   }
-
   /**
    *
    *
@@ -328,7 +316,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, java.lang.String> getGlobalSettingsMap() {
     return internalGetGlobalSettings().getMap();
   }
-
   /**
    *
    *
@@ -354,7 +341,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     java.util.Map<java.lang.String, java.lang.String> map = internalGetGlobalSettings().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -383,7 +369,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   public static final int HAS_UNCOMMITTED_CHANGES_FIELD_NUMBER = 5;
   private boolean hasUncommittedChanges_ = false;
-
   /**
    *
    *
@@ -405,7 +390,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestCommitId_ = "";
-
   /**
    *
    *
@@ -429,7 +413,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -456,7 +439,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   public static final int LATEST_COMMIT_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp latestCommitTime_;
-
   /**
    *
    *
@@ -474,7 +456,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public boolean hasLatestCommitTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -494,7 +475,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : latestCommitTime_;
   }
-
   /**
    *
    *
@@ -515,7 +495,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -532,7 +511,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -549,7 +527,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -567,7 +544,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -584,7 +560,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -601,7 +576,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -621,7 +595,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -645,7 +618,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -943,7 +915,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1320,7 +1291,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1344,7 +1314,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1368,7 +1337,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1391,7 +1359,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1377,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1407,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.DatabaseEngineInfo.Builder,
             com.google.cloud.clouddms.v1.DatabaseEngineInfoOrBuilder>
         sourceBuilder_;
-
     /**
      *
      *
@@ -1458,7 +1423,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public boolean hasSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1481,7 +1445,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return sourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1506,7 +1469,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1491,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1559,7 +1520,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1541,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1557,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1619,7 +1577,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             : source_;
       }
     }
-
     /**
      *
      *
@@ -1654,7 +1611,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             com.google.cloud.clouddms.v1.DatabaseEngineInfo.Builder,
             com.google.cloud.clouddms.v1.DatabaseEngineInfoOrBuilder>
         destinationBuilder_;
-
     /**
      *
      *
@@ -1671,7 +1627,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public boolean hasDestination() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1694,7 +1649,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return destinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1719,7 +1673,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1742,7 +1695,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1725,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1795,7 +1746,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1812,7 +1762,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1833,7 +1782,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             : destination_;
       }
     }
-
     /**
      *
      *
@@ -1890,7 +1838,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public int getGlobalSettingsCount() {
       return internalGetGlobalSettings().getMap().size();
     }
-
     /**
      *
      *
@@ -1913,14 +1860,12 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       }
       return internalGetGlobalSettings().getMap().containsKey(key);
     }
-
     /** Use {@link #getGlobalSettingsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getGlobalSettings() {
       return getGlobalSettingsMap();
     }
-
     /**
      *
      *
@@ -1940,7 +1885,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, java.lang.String> getGlobalSettingsMap() {
       return internalGetGlobalSettings().getMap();
     }
-
     /**
      *
      *
@@ -1967,7 +1911,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       java.util.Map<java.lang.String, java.lang.String> map = internalGetGlobalSettings().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2000,7 +1943,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       internalGetMutableGlobalSettings().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2023,14 +1965,12 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       internalGetMutableGlobalSettings().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableGlobalSettings() {
       bitField0_ |= 0x00000008;
       return internalGetMutableGlobalSettings().getMutableMap();
     }
-
     /**
      *
      *
@@ -2057,7 +1997,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2080,7 +2019,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     }
 
     private boolean hasUncommittedChanges_;
-
     /**
      *
      *
@@ -2097,7 +2035,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public boolean getHasUncommittedChanges() {
       return hasUncommittedChanges_;
     }
-
     /**
      *
      *
@@ -2118,7 +2055,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2075,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object latestCommitId_ = "";
-
     /**
      *
      *
@@ -2162,7 +2097,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2185,7 +2119,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2207,7 +2140,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2157,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2255,7 +2186,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         latestCommitTimeBuilder_;
-
     /**
      *
      *
@@ -2272,7 +2202,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public boolean hasLatestCommitTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2295,7 +2224,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return latestCommitTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2320,7 +2248,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2269,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2372,7 +2298,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2394,7 +2319,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2411,7 +2335,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLatestCommitTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2432,7 +2355,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             : latestCommitTime_;
       }
     }
-
     /**
      *
      *
@@ -2467,7 +2389,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2484,7 +2405,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2507,7 +2427,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2532,7 +2451,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2554,7 +2472,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2584,7 +2501,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2606,7 +2522,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2623,7 +2538,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2644,7 +2558,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2679,7 +2592,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2696,7 +2608,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2719,7 +2630,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2744,7 +2654,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2766,7 +2675,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2796,7 +2704,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2818,7 +2725,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2835,7 +2741,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2856,7 +2761,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2886,7 +2790,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2909,7 +2812,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2932,7 +2834,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2954,7 +2855,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2972,7 +2872,6 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

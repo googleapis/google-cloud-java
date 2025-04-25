@@ -34,7 +34,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.VpcAccess)
     VpcAccessOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VpcAccess.newBuilder() to construct.
   private VpcAccess(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * <code>VPC_EGRESS_UNSPECIFIED = 0;</code>
      */
     public static final int VPC_EGRESS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * <code>ALL_TRAFFIC = 1;</code>
      */
     public static final int ALL_TRAFFIC_VALUE = 1;
-
     /**
      *
      *
@@ -247,7 +244,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * @return The network.
      */
     java.lang.String getNetwork();
-
     /**
      *
      *
@@ -281,7 +277,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * @return The subnetwork.
      */
     java.lang.String getSubnetwork();
-
     /**
      *
      *
@@ -311,7 +306,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the tags.
      */
     java.util.List<java.lang.String> getTagsList();
-
     /**
      *
      *
@@ -324,7 +318,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * @return The count of tags.
      */
     int getTagsCount();
-
     /**
      *
      *
@@ -338,7 +331,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * @return The tags at the given index.
      */
     java.lang.String getTags(int index);
-
     /**
      *
      *
@@ -353,7 +345,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTagsBytes(int index);
   }
-
   /**
    *
    *
@@ -368,7 +359,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.run.v2.VpcAccess.NetworkInterface)
       NetworkInterfaceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NetworkInterface.newBuilder() to construct.
     private NetworkInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -405,7 +395,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -433,7 +422,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -466,7 +454,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object subnetwork_ = "";
-
     /**
      *
      *
@@ -494,7 +481,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -528,7 +514,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList tags_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -543,7 +528,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_;
     }
-
     /**
      *
      *
@@ -558,7 +542,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     public int getTagsCount() {
       return tags_.size();
     }
-
     /**
      *
      *
@@ -574,7 +557,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTags(int index) {
       return tags_.get(index);
     }
-
     /**
      *
      *
@@ -776,7 +758,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1001,7 +982,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object network_ = "";
-
       /**
        *
        *
@@ -1028,7 +1008,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1055,7 +1034,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1081,7 +1059,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1103,7 +1080,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1132,7 +1108,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object subnetwork_ = "";
-
       /**
        *
        *
@@ -1159,7 +1134,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1186,7 +1160,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1212,7 +1185,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1234,7 +1206,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1271,7 +1242,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000004;
       }
-
       /**
        *
        *
@@ -1287,7 +1257,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         tags_.makeImmutable();
         return tags_;
       }
-
       /**
        *
        *
@@ -1302,7 +1271,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       public int getTagsCount() {
         return tags_.size();
       }
-
       /**
        *
        *
@@ -1318,7 +1286,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getTags(int index) {
         return tags_.get(index);
       }
-
       /**
        *
        *
@@ -1334,7 +1301,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getTagsBytes(int index) {
         return tags_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1358,7 +1324,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1381,7 +1346,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1401,7 +1365,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1420,7 +1383,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1513,7 +1475,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connector_ = "";
-
   /**
    *
    *
@@ -1541,7 +1502,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1572,7 +1532,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EGRESS_FIELD_NUMBER = 2;
   private int egress_ = 0;
-
   /**
    *
    *
@@ -1591,7 +1550,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
   public int getEgressValue() {
     return egress_;
   }
-
   /**
    *
    *
@@ -1617,7 +1575,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface> networkInterfaces_;
-
   /**
    *
    *
@@ -1635,7 +1592,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       getNetworkInterfacesList() {
     return networkInterfaces_;
   }
-
   /**
    *
    *
@@ -1653,7 +1609,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       getNetworkInterfacesOrBuilderList() {
     return networkInterfaces_;
   }
-
   /**
    *
    *
@@ -1670,7 +1625,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
   public int getNetworkInterfacesCount() {
     return networkInterfaces_.size();
   }
-
   /**
    *
    *
@@ -1687,7 +1641,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index) {
     return networkInterfaces_.get(index);
   }
-
   /**
    *
    *
@@ -1884,7 +1837,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2142,7 +2094,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object connector_ = "";
-
     /**
      *
      *
@@ -2169,7 +2120,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2196,7 +2146,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2222,7 +2171,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2244,7 +2192,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2273,7 +2220,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int egress_ = 0;
-
     /**
      *
      *
@@ -2292,7 +2238,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     public int getEgressValue() {
       return egress_;
     }
-
     /**
      *
      *
@@ -2314,7 +2259,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2335,7 +2279,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.run.v2.VpcAccess.VpcEgress.forNumber(egress_);
       return result == null ? com.google.cloud.run.v2.VpcAccess.VpcEgress.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2360,7 +2303,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2420,7 +2362,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2440,7 +2381,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2460,7 +2400,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2487,7 +2426,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2511,7 +2449,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2537,7 +2474,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2564,7 +2500,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2588,7 +2523,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2612,7 +2546,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2636,7 +2569,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2591,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2682,7 +2613,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2629,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNetworkInterfacesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2720,7 +2649,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return networkInterfacesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2741,7 +2669,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(networkInterfaces_);
       }
     }
-
     /**
      *
      *
@@ -2759,7 +2686,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       return getNetworkInterfacesFieldBuilder()
           .addBuilder(com.google.cloud.run.v2.VpcAccess.NetworkInterface.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2778,7 +2704,6 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.run.v2.VpcAccess.NetworkInterface.getDefaultInstance());
     }
-
     /**
      *
      *

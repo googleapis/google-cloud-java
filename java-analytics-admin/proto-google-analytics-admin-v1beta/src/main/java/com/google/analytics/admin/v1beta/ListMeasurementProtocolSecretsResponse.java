@@ -34,7 +34,6 @@ public final class ListMeasurementProtocolSecretsResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.ListMeasurementProtocolSecretsResponse)
     ListMeasurementProtocolSecretsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMeasurementProtocolSecretsResponse.newBuilder() to construct.
   private ListMeasurementProtocolSecretsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListMeasurementProtocolSecretsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1beta.MeasurementProtocolSecret>
       measurementProtocolSecrets_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListMeasurementProtocolSecretsResponse
       getMeasurementProtocolSecretsList() {
     return measurementProtocolSecrets_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ListMeasurementProtocolSecretsResponse
       getMeasurementProtocolSecretsOrBuilderList() {
     return measurementProtocolSecrets_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ListMeasurementProtocolSecretsResponse
   public int getMeasurementProtocolSecretsCount() {
     return measurementProtocolSecrets_.size();
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ListMeasurementProtocolSecretsResponse
       int index) {
     return measurementProtocolSecrets_.get(index);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ListMeasurementProtocolSecretsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListMeasurementProtocolSecretsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -389,7 +381,6 @@ public final class ListMeasurementProtocolSecretsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -683,7 +674,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return measurementProtocolSecretsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return measurementProtocolSecretsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -722,7 +711,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return measurementProtocolSecretsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +809,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +831,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +854,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +898,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class ListMeasurementProtocolSecretsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +934,6 @@ public final class ListMeasurementProtocolSecretsResponse
         getMeasurementProtocolSecretsBuilder(int index) {
       return getMeasurementProtocolSecretsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -975,7 +953,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return measurementProtocolSecretsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -996,7 +973,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return java.util.Collections.unmodifiableList(measurementProtocolSecrets_);
       }
     }
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class ListMeasurementProtocolSecretsResponse
           .addBuilder(
               com.google.analytics.admin.v1beta.MeasurementProtocolSecret.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1033,7 +1008,6 @@ public final class ListMeasurementProtocolSecretsResponse
               index,
               com.google.analytics.admin.v1beta.MeasurementProtocolSecret.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1071,7 +1045,6 @@ public final class ListMeasurementProtocolSecretsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1095,7 +1068,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1119,7 +1091,6 @@ public final class ListMeasurementProtocolSecretsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1113,6 @@ public final class ListMeasurementProtocolSecretsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1131,6 @@ public final class ListMeasurementProtocolSecretsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

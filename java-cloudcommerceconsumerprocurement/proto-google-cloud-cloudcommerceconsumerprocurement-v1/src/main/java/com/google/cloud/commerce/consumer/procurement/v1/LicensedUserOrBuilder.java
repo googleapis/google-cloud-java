@@ -37,7 +37,6 @@ public interface LicensedUserOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface LicensedUserOrBuilder
    * @return Whether the assignTime field is set.
    */
   boolean hasAssignTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface LicensedUserOrBuilder
    * @return The assignTime.
    */
   com.google.protobuf.Timestamp getAssignTime();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface LicensedUserOrBuilder
    * @return Whether the recentUsageTime field is set.
    */
   boolean hasRecentUsageTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface LicensedUserOrBuilder
    * @return The recentUsageTime.
    */
   com.google.protobuf.Timestamp getRecentUsageTime();
-
   /**
    *
    *

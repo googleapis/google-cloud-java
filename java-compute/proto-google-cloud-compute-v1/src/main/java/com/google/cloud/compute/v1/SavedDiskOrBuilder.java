@@ -37,7 +37,6 @@ public interface SavedDiskOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SavedDiskOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SavedDiskOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface SavedDiskOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface SavedDiskOrBuilder
    * @return Whether the sourceDisk field is set.
    */
   boolean hasSourceDisk();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface SavedDiskOrBuilder
    * @return The sourceDisk.
    */
   java.lang.String getSourceDisk();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface SavedDiskOrBuilder
    * @return Whether the storageBytes field is set.
    */
   boolean hasStorageBytes();
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public interface SavedDiskOrBuilder
    * @return Whether the storageBytesStatus field is set.
    */
   boolean hasStorageBytesStatus();
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public interface SavedDiskOrBuilder
    * @return The storageBytesStatus.
    */
   java.lang.String getStorageBytesStatus();
-
   /**
    *
    *

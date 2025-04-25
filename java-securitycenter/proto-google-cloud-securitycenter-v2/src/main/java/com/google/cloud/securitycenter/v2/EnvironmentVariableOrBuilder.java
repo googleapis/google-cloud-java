@@ -36,7 +36,6 @@ public interface EnvironmentVariableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EnvironmentVariableOrBuilder
    * @return The val.
    */
   java.lang.String getVal();
-
   /**
    *
    *

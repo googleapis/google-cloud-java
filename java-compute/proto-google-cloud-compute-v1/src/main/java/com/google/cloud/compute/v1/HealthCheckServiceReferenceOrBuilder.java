@@ -30,14 +30,12 @@ public interface HealthCheckServiceReferenceOrBuilder
    * @return Whether the healthCheckService field is set.
    */
   boolean hasHealthCheckService();
-
   /**
    * <code>optional string health_check_service = 408374747;</code>
    *
    * @return The healthCheckService.
    */
   java.lang.String getHealthCheckService();
-
   /**
    * <code>optional string health_check_service = 408374747;</code>
    *

@@ -36,7 +36,6 @@ public interface HierarchyControllerVersionOrBuilder
    * @return The hnc.
    */
   java.lang.String getHnc();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HierarchyControllerVersionOrBuilder
    * @return The extension.
    */
   java.lang.String getExtension();
-
   /**
    *
    *

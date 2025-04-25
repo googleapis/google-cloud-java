@@ -33,7 +33,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.DependencyEntityReference)
     DependencyEntityReferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DependencyEntityReference.newBuilder() to construct.
   private DependencyEntityReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
     private IdentifierCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
   }
 
   public static final int OPERATION_RESOURCE_NAME_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
   public boolean hasOperationResourceName() {
     return identifierCase_ == 2;
   }
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
   }
 
   public static final int EXTERNAL_API_RESOURCE_NAME_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
   public boolean hasExternalApiResourceName() {
     return identifierCase_ == 3;
   }
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +274,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -306,7 +297,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -525,7 +515,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -783,7 +772,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
     public boolean hasOperationResourceName() {
       return identifierCase_ == 2;
     }
-
     /**
      *
      *
@@ -815,7 +803,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -847,7 +834,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -872,7 +858,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +880,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +924,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
     public boolean hasExternalApiResourceName() {
       return identifierCase_ == 3;
     }
-
     /**
      *
      *
@@ -972,7 +955,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1004,7 +986,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1010,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1032,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1059,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1103,7 +1081,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1103,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1124,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1141,6 @@ public final class DependencyEntityReference extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

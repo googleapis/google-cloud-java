@@ -40,7 +40,6 @@ public interface IndexedAssetOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface IndexedAssetOrBuilder
    * @return The asset.
    */
   java.lang.String getAsset();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface IndexedAssetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface IndexedAssetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface IndexedAssetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface IndexedAssetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

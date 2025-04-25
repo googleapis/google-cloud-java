@@ -38,7 +38,6 @@ public interface CreateActiveDirectoryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateActiveDirectoryRequestOrBuilder
    * @return Whether the activeDirectory field is set.
    */
   boolean hasActiveDirectory();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateActiveDirectoryRequestOrBuilder
    * @return The activeDirectory.
    */
   com.google.cloud.netapp.v1.ActiveDirectory getActiveDirectory();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface CreateActiveDirectoryRequestOrBuilder
    * @return The activeDirectoryId.
    */
   java.lang.String getActiveDirectoryId();
-
   /**
    *
    *

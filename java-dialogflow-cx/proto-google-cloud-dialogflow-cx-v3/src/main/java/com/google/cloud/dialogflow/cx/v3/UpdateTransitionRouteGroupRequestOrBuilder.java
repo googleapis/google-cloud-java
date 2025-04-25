@@ -38,7 +38,6 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * @return Whether the transitionRouteGroup field is set.
    */
   boolean hasTransitionRouteGroup();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * @return The transitionRouteGroup.
    */
   com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup getTransitionRouteGroup();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface UpdateTransitionRouteGroupRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

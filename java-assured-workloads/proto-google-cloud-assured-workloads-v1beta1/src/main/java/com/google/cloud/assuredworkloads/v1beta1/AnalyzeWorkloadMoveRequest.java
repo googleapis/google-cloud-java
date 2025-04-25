@@ -34,7 +34,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest)
     AnalyzeWorkloadMoveRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalyzeWorkloadMoveRequest.newBuilder() to construct.
   private AnalyzeWorkloadMoveRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     private ProjectOrWorkloadResourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
   }
 
   public static final int SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
   public boolean hasSource() {
     return projectOrWorkloadResourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
   }
 
   public static final int PROJECT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
   public boolean hasProject() {
     return projectOrWorkloadResourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -254,7 +247,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -292,7 +284,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object target_ = "";
-
   /**
    *
    *
@@ -321,7 +312,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -550,7 +540,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -818,7 +807,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     public boolean hasSource() {
       return projectOrWorkloadResourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -851,7 +839,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -884,7 +871,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +896,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +919,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +966,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     public boolean hasProject() {
       return projectOrWorkloadResourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1016,7 +999,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1032,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1058,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1082,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -1132,7 +1111,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object target_ = "";
-
     /**
      *
      *
@@ -1160,7 +1138,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1165,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1191,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1213,6 @@ public final class AnalyzeWorkloadMoveRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

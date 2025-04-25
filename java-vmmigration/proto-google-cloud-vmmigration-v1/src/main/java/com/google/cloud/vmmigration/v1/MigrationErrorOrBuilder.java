@@ -38,7 +38,6 @@ public interface MigrationErrorOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface MigrationErrorOrBuilder
    * @return Whether the errorMessage field is set.
    */
   boolean hasErrorMessage();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface MigrationErrorOrBuilder
    * @return The errorMessage.
    */
   com.google.rpc.LocalizedMessage getErrorMessage();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface MigrationErrorOrBuilder
    * @return Whether the actionItem field is set.
    */
   boolean hasActionItem();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface MigrationErrorOrBuilder
    * @return The actionItem.
    */
   com.google.rpc.LocalizedMessage getActionItem();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface MigrationErrorOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Help.Link> getHelpLinksList();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface MigrationErrorOrBuilder
    * </code>
    */
   com.google.rpc.Help.Link getHelpLinks(int index);
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface MigrationErrorOrBuilder
    * </code>
    */
   int getHelpLinksCount();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface MigrationErrorOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.Help.LinkOrBuilder> getHelpLinksOrBuilderList();
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public interface MigrationErrorOrBuilder
    * @return Whether the errorTime field is set.
    */
   boolean hasErrorTime();
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public interface MigrationErrorOrBuilder
    * @return The errorTime.
    */
   com.google.protobuf.Timestamp getErrorTime();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.AccessApprovalSettings)
     AccessApprovalSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessApprovalSettings.newBuilder() to construct.
   private AccessApprovalSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList notificationEmails_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getNotificationEmailsList() {
     return notificationEmails_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   public int getNotificationEmailsCount() {
     return notificationEmails_.size();
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   public java.lang.String getNotificationEmails(int index) {
     return notificationEmails_.get(index);
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.accessapproval.v1.EnrolledService> enrolledServices_;
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       getEnrolledServicesList() {
     return enrolledServices_;
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       getEnrolledServicesOrBuilderList() {
     return enrolledServices_;
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   public int getEnrolledServicesCount() {
     return enrolledServices_.size();
   }
-
   /**
    *
    *
@@ -310,7 +299,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   public com.google.cloud.accessapproval.v1.EnrolledService getEnrolledServices(int index) {
     return enrolledServices_.get(index);
   }
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   public static final int ENROLLED_ANCESTOR_FIELD_NUMBER = 4;
   private boolean enrolledAncestor_ = false;
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activeKeyVersion_ = "";
-
   /**
    *
    *
@@ -390,7 +376,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +405,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   public static final int ANCESTOR_HAS_ACTIVE_KEY_VERSION_FIELD_NUMBER = 7;
   private boolean ancestorHasActiveKeyVersion_ = false;
-
   /**
    *
    *
@@ -443,7 +427,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
 
   public static final int INVALID_KEY_VERSION_FIELD_NUMBER = 8;
   private boolean invalidKeyVersion_ = false;
-
   /**
    *
    *
@@ -690,7 +673,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1013,7 +995,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1040,7 +1021,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1047,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1072,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1093,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1129,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1171,7 +1147,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       notificationEmails_.makeImmutable();
       return notificationEmails_;
     }
-
     /**
      *
      *
@@ -1189,7 +1164,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public int getNotificationEmailsCount() {
       return notificationEmails_.size();
     }
-
     /**
      *
      *
@@ -1208,7 +1182,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public java.lang.String getNotificationEmails(int index) {
       return notificationEmails_.get(index);
     }
-
     /**
      *
      *
@@ -1227,7 +1200,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getNotificationEmailsBytes(int index) {
       return notificationEmails_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1254,7 +1226,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1251,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1273,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1294,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1366,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return enrolledServicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1425,7 +1392,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return enrolledServicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1452,7 +1418,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return enrolledServicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1486,7 +1451,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1517,7 +1481,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1513,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1546,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1615,7 +1576,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1606,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1636,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1665,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1737,7 +1694,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1761,7 +1717,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         int index) {
       return getEnrolledServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1789,7 +1744,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return enrolledServicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1817,7 +1771,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(enrolledServices_);
       }
     }
-
     /**
      *
      *
@@ -1841,7 +1794,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       return getEnrolledServicesFieldBuilder()
           .addBuilder(com.google.cloud.accessapproval.v1.EnrolledService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1867,7 +1819,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.accessapproval.v1.EnrolledService.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1913,7 +1864,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     }
 
     private boolean enrolledAncestor_;
-
     /**
      *
      *
@@ -1933,7 +1883,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public boolean getEnrolledAncestor() {
       return enrolledAncestor_;
     }
-
     /**
      *
      *
@@ -1957,7 +1906,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1981,7 +1929,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object activeKeyVersion_ = "";
-
     /**
      *
      *
@@ -2007,7 +1954,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2033,7 +1979,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2058,7 +2003,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2079,7 +2023,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2107,7 +2050,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     }
 
     private boolean ancestorHasActiveKeyVersion_;
-
     /**
      *
      *
@@ -2127,7 +2069,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public boolean getAncestorHasActiveKeyVersion() {
       return ancestorHasActiveKeyVersion_;
     }
-
     /**
      *
      *
@@ -2151,7 +2092,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2175,7 +2115,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     }
 
     private boolean invalidKeyVersion_;
-
     /**
      *
      *
@@ -2197,7 +2136,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public boolean getInvalidKeyVersion() {
       return invalidKeyVersion_;
     }
-
     /**
      *
      *
@@ -2223,7 +2161,6 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

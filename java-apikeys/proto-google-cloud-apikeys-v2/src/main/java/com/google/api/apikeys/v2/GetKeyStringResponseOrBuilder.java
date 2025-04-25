@@ -36,7 +36,6 @@ public interface GetKeyStringResponseOrBuilder
    * @return The keyString.
    */
   java.lang.String getKeyString();
-
   /**
    *
    *

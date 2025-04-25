@@ -34,7 +34,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.UpdateFulfillmentRequest)
     UpdateFulfillmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateFulfillmentRequest.newBuilder() to construct.
   private UpdateFulfillmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int FULFILLMENT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2.Fulfillment fulfillment_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
   public boolean hasFulfillment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
         ? com.google.cloud.dialogflow.v2.Fulfillment.getDefaultInstance()
         : fulfillment_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -357,7 +350,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +574,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.v2.Fulfillment.Builder,
             com.google.cloud.dialogflow.v2.FulfillmentOrBuilder>
         fulfillmentBuilder_;
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
     public boolean hasFulfillment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
         return fulfillmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +724,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return getFulfillmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -760,7 +744,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
             : fulfillment_;
       }
     }
-
     /**
      *
      *
@@ -795,7 +778,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -812,7 +794,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -835,7 +816,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +890,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +911,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -972,7 +947,6 @@ public final class UpdateFulfillmentRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
-
     /**
      *
      *

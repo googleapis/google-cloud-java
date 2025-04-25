@@ -35,7 +35,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2.Tile)
     TileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Tile.newBuilder() to construct.
   private Tile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     private ProductAttributeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_ATTRIBUTE_VALUE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductAttributeValue() {
     return productAttributeCase_ == 1;
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2.ProductAttributeValue.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRODUCT_ATTRIBUTE_INTERVAL_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProductAttributeInterval() {
     return productAttributeCase_ == 2;
   }
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.retail.v2.ProductAttributeInterval.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object representativeProductId_ = "";
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -476,7 +466,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -728,7 +717,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.ProductAttributeValue.Builder,
             com.google.cloud.retail.v2.ProductAttributeValueOrBuilder>
         productAttributeValueBuilder_;
-
     /**
      *
      *
@@ -744,7 +732,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductAttributeValue() {
       return productAttributeCase_ == 1;
     }
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2.ProductAttributeValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -794,7 +780,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       productAttributeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       productAttributeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +834,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       productAttributeCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +859,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         getProductAttributeValueBuilder() {
       return getProductAttributeValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -912,7 +893,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2.ProductAttributeValue.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -951,7 +931,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2.ProductAttributeInterval.Builder,
             com.google.cloud.retail.v2.ProductAttributeIntervalOrBuilder>
         productAttributeIntervalBuilder_;
-
     /**
      *
      *
@@ -967,7 +946,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProductAttributeInterval() {
       return productAttributeCase_ == 2;
     }
-
     /**
      *
      *
@@ -993,7 +971,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2.ProductAttributeInterval.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1017,7 +994,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       productAttributeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1014,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       productAttributeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1048,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       productAttributeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1086,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         getProductAttributeIntervalBuilder() {
       return getProductAttributeIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1135,7 +1107,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.retail.v2.ProductAttributeInterval.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object representativeProductId_ = "";
-
     /**
      *
      *
@@ -1194,7 +1164,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1186,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1207,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1224,6 @@ public final class Tile extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

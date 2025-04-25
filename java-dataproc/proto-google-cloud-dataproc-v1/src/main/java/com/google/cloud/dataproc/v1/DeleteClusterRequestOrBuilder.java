@@ -37,7 +37,6 @@ public interface DeleteClusterRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DeleteClusterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface DeleteClusterRequestOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface DeleteClusterRequestOrBuilder
    * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface DeleteClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

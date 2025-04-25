@@ -35,7 +35,6 @@ public final class TransferEntitlementsToGoogleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.TransferEntitlementsToGoogleRequest)
     TransferEntitlementsToGoogleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferEntitlementsToGoogleRequest.newBuilder() to construct.
   private TransferEntitlementsToGoogleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class TransferEntitlementsToGoogleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class TransferEntitlementsToGoogleRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class TransferEntitlementsToGoogleRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Entitlement> entitlements_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class TransferEntitlementsToGoogleRequest
   public java.util.List<com.google.cloud.channel.v1.Entitlement> getEntitlementsList() {
     return entitlements_;
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class TransferEntitlementsToGoogleRequest
       getEntitlementsOrBuilderList() {
     return entitlements_;
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class TransferEntitlementsToGoogleRequest
   public int getEntitlementsCount() {
     return entitlements_.size();
   }
-
   /**
    *
    *
@@ -195,7 +188,6 @@ public final class TransferEntitlementsToGoogleRequest
   public com.google.cloud.channel.v1.Entitlement getEntitlements(int index) {
     return entitlements_.get(index);
   }
-
   /**
    *
    *
@@ -216,7 +208,6 @@ public final class TransferEntitlementsToGoogleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class TransferEntitlementsToGoogleRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -467,7 +457,6 @@ public final class TransferEntitlementsToGoogleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -733,7 +722,6 @@ public final class TransferEntitlementsToGoogleRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class TransferEntitlementsToGoogleRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +770,6 @@ public final class TransferEntitlementsToGoogleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +793,6 @@ public final class TransferEntitlementsToGoogleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +812,6 @@ public final class TransferEntitlementsToGoogleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class TransferEntitlementsToGoogleRequest
         return entitlementsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class TransferEntitlementsToGoogleRequest
         return entitlementsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -926,7 +908,6 @@ public final class TransferEntitlementsToGoogleRequest
         return entitlementsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -951,7 +932,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +954,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +978,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1024,7 +1002,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1047,7 +1024,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1046,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1068,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1089,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1110,6 @@ public final class TransferEntitlementsToGoogleRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1124,6 @@ public final class TransferEntitlementsToGoogleRequest
     public com.google.cloud.channel.v1.Entitlement.Builder getEntitlementsBuilder(int index) {
       return getEntitlementsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class TransferEntitlementsToGoogleRequest
         return entitlementsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1161,6 @@ public final class TransferEntitlementsToGoogleRequest
         return java.util.Collections.unmodifiableList(entitlements_);
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1176,6 @@ public final class TransferEntitlementsToGoogleRequest
       return getEntitlementsFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.Entitlement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1223,7 +1191,6 @@ public final class TransferEntitlementsToGoogleRequest
       return getEntitlementsFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.Entitlement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1258,7 +1225,6 @@ public final class TransferEntitlementsToGoogleRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1292,7 +1258,6 @@ public final class TransferEntitlementsToGoogleRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class TransferEntitlementsToGoogleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1359,7 +1323,6 @@ public final class TransferEntitlementsToGoogleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1351,6 @@ public final class TransferEntitlementsToGoogleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

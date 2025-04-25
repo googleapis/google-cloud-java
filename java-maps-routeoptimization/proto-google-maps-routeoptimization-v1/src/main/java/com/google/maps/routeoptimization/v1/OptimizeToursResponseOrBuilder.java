@@ -35,7 +35,6 @@ public interface OptimizeToursResponseOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.ShipmentRoute routes = 1;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.ShipmentRoute> getRoutesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface OptimizeToursResponseOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.ShipmentRoute routes = 1;</code>
    */
   com.google.maps.routeoptimization.v1.ShipmentRoute getRoutes(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface OptimizeToursResponseOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.ShipmentRoute routes = 1;</code>
    */
   int getRoutesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface OptimizeToursResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.ShipmentRouteOrBuilder>
       getRoutesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface OptimizeToursResponseOrBuilder
    * @return The requestLabel.
    */
   java.lang.String getRequestLabel();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface OptimizeToursResponseOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment skipped_shipments = 4;</code>
    */
   java.util.List<com.google.maps.routeoptimization.v1.SkippedShipment> getSkippedShipmentsList();
-
   /**
    *
    *
@@ -136,7 +130,6 @@ public interface OptimizeToursResponseOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment skipped_shipments = 4;</code>
    */
   com.google.maps.routeoptimization.v1.SkippedShipment getSkippedShipments(int index);
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface OptimizeToursResponseOrBuilder
    * <code>repeated .google.maps.routeoptimization.v1.SkippedShipment skipped_shipments = 4;</code>
    */
   int getSkippedShipmentsCount();
-
   /**
    *
    *
@@ -159,7 +151,6 @@ public interface OptimizeToursResponseOrBuilder
    */
   java.util.List<? extends com.google.maps.routeoptimization.v1.SkippedShipmentOrBuilder>
       getSkippedShipmentsOrBuilderList();
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface OptimizeToursResponseOrBuilder
    */
   java.util.List<com.google.maps.routeoptimization.v1.OptimizeToursValidationError>
       getValidationErrorsList();
-
   /**
    *
    *
@@ -206,7 +196,6 @@ public interface OptimizeToursResponseOrBuilder
    * </code>
    */
   com.google.maps.routeoptimization.v1.OptimizeToursValidationError getValidationErrors(int index);
-
   /**
    *
    *
@@ -223,7 +212,6 @@ public interface OptimizeToursResponseOrBuilder
    * </code>
    */
   int getValidationErrorsCount();
-
   /**
    *
    *
@@ -242,7 +230,6 @@ public interface OptimizeToursResponseOrBuilder
   java.util.List<
           ? extends com.google.maps.routeoptimization.v1.OptimizeToursValidationErrorOrBuilder>
       getValidationErrorsOrBuilderList();
-
   /**
    *
    *
@@ -273,7 +260,6 @@ public interface OptimizeToursResponseOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -286,7 +272,6 @@ public interface OptimizeToursResponseOrBuilder
    * @return The metrics.
    */
   com.google.maps.routeoptimization.v1.OptimizeToursResponse.Metrics getMetrics();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface ListServicePerimetersRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ListServicePerimetersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

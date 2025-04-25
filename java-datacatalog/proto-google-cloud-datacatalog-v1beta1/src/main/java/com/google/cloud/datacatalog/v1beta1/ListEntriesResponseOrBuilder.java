@@ -34,7 +34,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.Entry entries = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.Entry> getEntriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.Entry entries = 1;</code>
    */
   com.google.cloud.datacatalog.v1beta1.Entry getEntries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEntriesResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1beta1.Entry entries = 1;</code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEntriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.EntryOrBuilder>
       getEntriesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

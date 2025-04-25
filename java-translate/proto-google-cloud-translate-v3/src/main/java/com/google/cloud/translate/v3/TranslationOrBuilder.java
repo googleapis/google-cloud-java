@@ -38,7 +38,6 @@ public interface TranslationOrBuilder
    * @return The translatedText.
    */
   java.lang.String getTranslatedText();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface TranslationOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface TranslationOrBuilder
    * @return The detectedLanguageCode.
    */
   java.lang.String getDetectedLanguageCode();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface TranslationOrBuilder
    * @return Whether the glossaryConfig field is set.
    */
   boolean hasGlossaryConfig();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface TranslationOrBuilder
    * @return The glossaryConfig.
    */
   com.google.cloud.translate.v3.TranslateTextGlossaryConfig getGlossaryConfig();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListDocumentSchemasResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.DocumentSchema document_schemas = 1;</code>
    */
   java.util.List<com.google.cloud.contentwarehouse.v1.DocumentSchema> getDocumentSchemasList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListDocumentSchemasResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.DocumentSchema document_schemas = 1;</code>
    */
   com.google.cloud.contentwarehouse.v1.DocumentSchema getDocumentSchemas(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListDocumentSchemasResponseOrBuilder
    * <code>repeated .google.cloud.contentwarehouse.v1.DocumentSchema document_schemas = 1;</code>
    */
   int getDocumentSchemasCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListDocumentSchemasResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.contentwarehouse.v1.DocumentSchemaOrBuilder>
       getDocumentSchemasOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListDocumentSchemasResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

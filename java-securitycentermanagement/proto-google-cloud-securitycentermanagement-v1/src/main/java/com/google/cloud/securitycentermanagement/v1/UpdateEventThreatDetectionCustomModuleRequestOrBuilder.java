@@ -37,7 +37,6 @@ public interface UpdateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface UpdateEventThreatDetectionCustomModuleRequestOrBuilder
    * @return Whether the eventThreatDetectionCustomModule field is set.
    */
   boolean hasEventThreatDetectionCustomModule();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface UpdateEventThreatDetectionCustomModuleRequestOrBuilder
    */
   com.google.cloud.securitycentermanagement.v1.EventThreatDetectionCustomModule
       getEventThreatDetectionCustomModule();
-
   /**
    *
    *

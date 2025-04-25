@@ -34,7 +34,6 @@ public final class DeleteGlobalOrganizationOperationRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest)
     DeleteGlobalOrganizationOperationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteGlobalOrganizationOperationRequest.newBuilder() to construct.
   private DeleteGlobalOrganizationOperationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class DeleteGlobalOrganizationOperationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object operation_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DeleteGlobalOrganizationOperationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class DeleteGlobalOrganizationOperationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentId_ = "";
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class DeleteGlobalOrganizationOperationRequest
   public boolean hasParentId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class DeleteGlobalOrganizationOperationRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -365,7 +359,6 @@ public final class DeleteGlobalOrganizationOperationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class DeleteGlobalOrganizationOperationRequest
     private int bitField0_;
 
     private java.lang.Object operation_ = "";
-
     /**
      *
      *
@@ -598,7 +590,6 @@ public final class DeleteGlobalOrganizationOperationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class DeleteGlobalOrganizationOperationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -643,7 +633,6 @@ public final class DeleteGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class DeleteGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +674,6 @@ public final class DeleteGlobalOrganizationOperationRequest
     }
 
     private java.lang.Object parentId_ = "";
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class DeleteGlobalOrganizationOperationRequest
     public boolean hasParentId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class DeleteGlobalOrganizationOperationRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -747,7 +732,6 @@ public final class DeleteGlobalOrganizationOperationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class DeleteGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class DeleteGlobalOrganizationOperationRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

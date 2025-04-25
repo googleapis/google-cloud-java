@@ -60,7 +60,6 @@ public interface CreateTimeSeriesSummaryOrBuilder
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
   java.util.List<com.google.monitoring.v3.CreateTimeSeriesSummary.Error> getErrorsList();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateTimeSeriesSummaryOrBuilder
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
   com.google.monitoring.v3.CreateTimeSeriesSummary.Error getErrors(int index);
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface CreateTimeSeriesSummaryOrBuilder
    * <code>repeated .google.monitoring.v3.CreateTimeSeriesSummary.Error errors = 3;</code>
    */
   int getErrorsCount();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface CreateTimeSeriesSummaryOrBuilder
    */
   java.util.List<? extends com.google.monitoring.v3.CreateTimeSeriesSummary.ErrorOrBuilder>
       getErrorsOrBuilderList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface PostgresqlTableOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PostgresqlTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.PostgresqlColumn> getPostgresqlColumnsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PostgresqlTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   com.google.cloud.datastream.v1.PostgresqlColumn getPostgresqlColumns(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PostgresqlTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1.PostgresqlColumn postgresql_columns = 2;</code>
    */
   int getPostgresqlColumnsCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface PostgresqlTableOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.PostgresqlColumnOrBuilder>
       getPostgresqlColumnsOrBuilderList();
-
   /**
    *
    *

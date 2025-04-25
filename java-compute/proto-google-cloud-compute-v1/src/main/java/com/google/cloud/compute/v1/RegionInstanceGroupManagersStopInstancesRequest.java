@@ -33,7 +33,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest)
     RegionInstanceGroupManagersStopInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegionInstanceGroupManagersStopInstancesRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersStopInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
   private int bitField0_;
   public static final int FORCE_STOP_FIELD_NUMBER = 134762710;
   private boolean forceStop_ = false;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
   public boolean hasForceStop() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -358,7 +351,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +568,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     private int bitField0_;
 
     private boolean forceStop_;
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     public boolean hasForceStop() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     public boolean getForceStop() {
       return forceStop_;
     }
-
     /**
      *
      *
@@ -628,7 +617,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +644,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -672,7 +659,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
-
     /**
      *
      *
@@ -687,7 +673,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -703,7 +688,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -719,7 +703,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
-
     /**
      *
      *
@@ -743,7 +726,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +748,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +767,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +785,6 @@ public final class RegionInstanceGroupManagersStopInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface EnvelopeSignatureOrBuilder
    * @return The keyid.
    */
   java.lang.String getKeyid();
-
   /**
    * <code>string keyid = 2;</code>
    *

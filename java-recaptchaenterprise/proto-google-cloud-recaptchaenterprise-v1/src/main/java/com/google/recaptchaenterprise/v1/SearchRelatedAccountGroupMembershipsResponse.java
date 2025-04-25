@@ -35,7 +35,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse)
     SearchRelatedAccountGroupMembershipsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchRelatedAccountGroupMembershipsResponse.newBuilder() to construct.
   private SearchRelatedAccountGroupMembershipsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership>
       relatedAccountGroupMemberships_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       getRelatedAccountGroupMembershipsList() {
     return relatedAccountGroupMemberships_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       getRelatedAccountGroupMembershipsOrBuilderList() {
     return relatedAccountGroupMemberships_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
   public int getRelatedAccountGroupMembershipsCount() {
     return relatedAccountGroupMemberships_.size();
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       getRelatedAccountGroupMemberships(int index) {
     return relatedAccountGroupMemberships_.get(index);
   }
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -397,7 +389,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -696,7 +687,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return relatedAccountGroupMembershipsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -715,7 +705,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return relatedAccountGroupMembershipsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -735,7 +724,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return relatedAccountGroupMembershipsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -761,7 +749,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +772,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +844,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +867,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +934,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +949,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         getRelatedAccountGroupMembershipsBuilder(int index) {
       return getRelatedAccountGroupMembershipsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -990,7 +968,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return relatedAccountGroupMembershipsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1011,7 +988,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return java.util.Collections.unmodifiableList(relatedAccountGroupMemberships_);
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1005,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
           .addBuilder(
               com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1048,7 +1023,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
               index,
               com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1110,7 +1083,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1106,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1157,7 +1128,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1176,7 +1146,6 @@ public final class SearchRelatedAccountGroupMembershipsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

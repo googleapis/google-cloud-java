@@ -37,7 +37,6 @@ public interface LaunchFlexTemplateResponseOrBuilder
    * @return Whether the job field is set.
    */
   boolean hasJob();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface LaunchFlexTemplateResponseOrBuilder
    * @return The job.
    */
   com.google.dataflow.v1beta3.Job getJob();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.EntityId)
     EntityIdOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EntityId.newBuilder() to construct.
   private EntityId(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int FIELD_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.FieldId field_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
   public boolean hasField() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
-
   /**
    *
    *
@@ -278,7 +274,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -484,7 +479,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         fieldBuilder_;
-
     /**
      *
      *
@@ -499,7 +493,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
     public boolean hasField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -518,7 +511,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
         return fieldBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -541,7 +533,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -561,7 +552,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -589,7 +579,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -609,7 +598,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +612,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -641,7 +628,6 @@ public final class EntityId extends com.google.protobuf.GeneratedMessageV3
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
     }
-
     /**
      *
      *

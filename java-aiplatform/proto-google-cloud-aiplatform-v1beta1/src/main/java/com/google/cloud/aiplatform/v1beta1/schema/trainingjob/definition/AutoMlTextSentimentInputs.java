@@ -28,7 +28,6 @@ public final class AutoMlTextSentimentInputs extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextSentimentInputs)
     AutoMlTextSentimentInputsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlTextSentimentInputs.newBuilder() to construct.
   private AutoMlTextSentimentInputs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,7 +62,6 @@ public final class AutoMlTextSentimentInputs extends com.google.protobuf.Generat
 
   public static final int SENTIMENT_MAX_FIELD_NUMBER = 1;
   private int sentimentMax_ = 0;
-
   /**
    *
    *
@@ -271,7 +269,6 @@ public final class AutoMlTextSentimentInputs extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextSentimentInputs}
@@ -477,7 +474,6 @@ public final class AutoMlTextSentimentInputs extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int sentimentMax_;
-
     /**
      *
      *
@@ -499,7 +495,6 @@ public final class AutoMlTextSentimentInputs extends com.google.protobuf.Generat
     public int getSentimentMax() {
       return sentimentMax_;
     }
-
     /**
      *
      *
@@ -525,7 +520,6 @@ public final class AutoMlTextSentimentInputs extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

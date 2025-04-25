@@ -34,7 +34,6 @@ public final class RemoveDatapointsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RemoveDatapointsResponse)
     RemoveDatapointsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveDatapointsResponse.newBuilder() to construct.
   private RemoveDatapointsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class RemoveDatapointsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

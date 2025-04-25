@@ -36,7 +36,6 @@ public interface ToolNameMatchInstanceOrBuilder
    * @return Whether the prediction field is set.
    */
   boolean hasPrediction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ToolNameMatchInstanceOrBuilder
    * @return The prediction.
    */
   java.lang.String getPrediction();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ToolNameMatchInstanceOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ToolNameMatchInstanceOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
-
   /**
    *
    *

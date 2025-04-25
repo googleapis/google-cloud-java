@@ -49,7 +49,6 @@ public interface KmsWrappedCryptoKeyOrBuilder
    * @return The cryptoKeyName.
    */
   java.lang.String getCryptoKeyName();
-
   /**
    *
    *

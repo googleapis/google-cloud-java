@@ -33,7 +33,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest)
     SetDiskAutoDeleteInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetDiskAutoDeleteInstanceRequest.newBuilder() to construct.
   private SetDiskAutoDeleteInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
   private boolean autoDelete_ = false;
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceName_ = "";
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -351,7 +339,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -588,7 +575,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -852,7 +838,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     private int bitField0_;
 
     private boolean autoDelete_;
-
     /**
      *
      *
@@ -868,7 +853,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     public boolean getAutoDelete() {
       return autoDelete_;
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +891,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object deviceName_ = "";
-
     /**
      *
      *
@@ -931,7 +913,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -954,7 +935,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +956,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +973,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +997,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -1042,7 +1019,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1041,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1062,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1155,7 +1127,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1151,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1193,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1251,7 +1219,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1266,7 +1233,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1289,7 +1255,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1312,7 +1277,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1334,7 +1298,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1315,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1339,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1402,7 +1363,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1427,7 +1387,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1451,7 +1410,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1429,6 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

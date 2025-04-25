@@ -36,7 +36,6 @@ public interface ContactOrBuilder
    * @return The givenName.
    */
   java.lang.String getGivenName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ContactOrBuilder
    * @return The familyName.
    */
   java.lang.String getFamilyName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ContactOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ContactOrBuilder
    * @return The phone.
    */
   java.lang.String getPhone();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface ContactOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface ContactOrBuilder
    * @return The timeZone.
    */
   com.google.type.TimeZone getTimeZone();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface ContactOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod> getReachableTimesList();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface ContactOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriod getReachableTimes(int index);
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public interface ContactOrBuilder
    * </code>
    */
   int getReachableTimesCount();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface ContactOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.TimePeriodOrBuilder>
       getReachableTimesOrBuilderList();
-
   /**
    *
    *

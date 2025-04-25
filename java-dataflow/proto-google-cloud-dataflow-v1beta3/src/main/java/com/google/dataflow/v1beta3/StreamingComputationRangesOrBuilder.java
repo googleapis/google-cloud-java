@@ -36,7 +36,6 @@ public interface StreamingComputationRangesOrBuilder
    * @return The computationId.
    */
   java.lang.String getComputationId();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface StreamingComputationRangesOrBuilder
    * </code>
    */
   java.util.List<com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment> getRangeAssignmentsList();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface StreamingComputationRangesOrBuilder
    * </code>
    */
   com.google.dataflow.v1beta3.KeyRangeDataDiskAssignment getRangeAssignments(int index);
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface StreamingComputationRangesOrBuilder
    * </code>
    */
   int getRangeAssignmentsCount();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface StreamingComputationRangesOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.KeyRangeDataDiskAssignmentOrBuilder>
       getRangeAssignmentsOrBuilderList();
-
   /**
    *
    *

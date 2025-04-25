@@ -34,7 +34,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.GetDataTaxonomyRequest)
     GetDataTaxonomyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetDataTaxonomyRequest.newBuilder() to construct.
   private GetDataTaxonomyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -89,7 +87,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    * <code>
    * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -269,7 +266,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -454,7 +450,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -473,7 +468,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -492,7 +486,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -510,7 +503,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
@@ -524,7 +516,6 @@ public final class GetDataTaxonomyRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      * <code>
      * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }

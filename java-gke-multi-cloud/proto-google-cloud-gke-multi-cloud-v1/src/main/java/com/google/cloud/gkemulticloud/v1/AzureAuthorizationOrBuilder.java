@@ -41,7 +41,6 @@ public interface AzureAuthorizationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterUser> getAdminUsersList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface AzureAuthorizationOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AzureClusterUser getAdminUsers(int index);
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface AzureAuthorizationOrBuilder
    * </code>
    */
   int getAdminUsersCount();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface AzureAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterUserOrBuilder>
       getAdminUsersOrBuilderList();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface AzureAuthorizationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterGroup> getAdminGroupsList();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface AzureAuthorizationOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AzureClusterGroup getAdminGroups(int index);
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface AzureAuthorizationOrBuilder
    * </code>
    */
   int getAdminGroupsCount();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface AzureAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AzureClusterGroupOrBuilder>
       getAdminGroupsOrBuilderList();
-
   /**
    *
    *

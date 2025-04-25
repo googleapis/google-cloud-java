@@ -37,7 +37,6 @@ public interface ComplianceOrBuilder
    * @return The standard.
    */
   java.lang.String getStandard();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ComplianceOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ComplianceOrBuilder
    * @return A list containing the ids.
    */
   java.util.List<java.lang.String> getIdsList();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface ComplianceOrBuilder
    * @return The count of ids.
    */
   int getIdsCount();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ComplianceOrBuilder
    * @return The ids at the given index.
    */
   java.lang.String getIds(int index);
-
   /**
    *
    *

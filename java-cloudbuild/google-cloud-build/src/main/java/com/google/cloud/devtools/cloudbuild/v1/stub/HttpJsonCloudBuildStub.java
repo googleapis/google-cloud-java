@@ -246,7 +246,8 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                           ProtoRestSerializer.create()
                               .toBody(
                                   "*",
-                                  request.toBuilder()
+                                  request
+                                      .toBuilder()
                                       .clearId()
                                       .clearName()
                                       .clearProjectId()
@@ -293,7 +294,8 @@ public class HttpJsonCloudBuildStub extends CloudBuildStub {
                               ProtoRestSerializer.create()
                                   .toBody(
                                       "*",
-                                      request.toBuilder()
+                                      request
+                                          .toBuilder()
                                           .clearId()
                                           .clearName()
                                           .clearProjectId()

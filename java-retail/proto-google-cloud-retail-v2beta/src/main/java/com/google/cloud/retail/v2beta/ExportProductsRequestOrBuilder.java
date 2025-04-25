@@ -40,7 +40,6 @@ public interface ExportProductsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ExportProductsRequestOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ExportProductsRequestOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.retail.v2beta.OutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public interface ExportProductsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

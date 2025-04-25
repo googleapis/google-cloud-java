@@ -38,7 +38,6 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.language.v1.Document getDocument();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AnalyzeEntitiesRequestOrBuilder
    * @return The enum numeric value on the wire for encodingType.
    */
   int getEncodingTypeValue();
-
   /**
    *
    *

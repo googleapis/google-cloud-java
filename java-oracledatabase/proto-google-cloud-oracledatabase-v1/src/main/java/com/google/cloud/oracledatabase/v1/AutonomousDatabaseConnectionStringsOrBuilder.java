@@ -39,7 +39,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * @return Whether the allConnectionStrings field is set.
    */
   boolean hasAllConnectionStrings();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * @return The allConnectionStrings.
    */
   com.google.cloud.oracledatabase.v1.AllConnectionStrings getAllConnectionStrings();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * @return The dedicated.
    */
   java.lang.String getDedicated();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * @return The high.
    */
   java.lang.String getHigh();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * @return The low.
    */
   java.lang.String getLow();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * @return The medium.
    */
   java.lang.String getMedium();
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    */
   java.util.List<com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile>
       getProfilesList();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * </code>
    */
   com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfile getProfiles(int index);
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
    * </code>
    */
   int getProfilesCount();
-
   /**
    *
    *
@@ -243,7 +234,6 @@ public interface AutonomousDatabaseConnectionStringsOrBuilder
   java.util.List<
           ? extends com.google.cloud.oracledatabase.v1.DatabaseConnectionStringProfileOrBuilder>
       getProfilesOrBuilderList();
-
   /**
    *
    *

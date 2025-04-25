@@ -96,19 +96,6 @@ public final class LlmUtilityServiceGrpc {
     return LlmUtilityServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static LlmUtilityServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<LlmUtilityServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<LlmUtilityServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public LlmUtilityServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new LlmUtilityServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return LlmUtilityServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -217,40 +204,6 @@ public final class LlmUtilityServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LlmUtilityService.
-   *
-   * <pre>
-   * Service for LLM related utility functions.
-   * </pre>
-   */
-  public static final class LlmUtilityServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<LlmUtilityServiceBlockingV2Stub> {
-    private LlmUtilityServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected LlmUtilityServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new LlmUtilityServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Return a list of tokens based on the input text.
-     * </pre>
-     */
-    public com.google.cloud.aiplatform.v1beta1.ComputeTokensResponse computeTokens(
-        com.google.cloud.aiplatform.v1beta1.ComputeTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getComputeTokensMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service LlmUtilityService.
    *
    * <pre>
    * Service for LLM related utility functions.

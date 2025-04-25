@@ -32,7 +32,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceWithNamedPorts)
     InstanceWithNamedPortsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceWithNamedPorts.newBuilder() to construct.
   private InstanceWithNamedPorts(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -198,7 +197,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-
     /**
      *
      *
@@ -209,7 +207,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>DEPROVISIONING = 428935662;</code>
      */
     public static final int DEPROVISIONING_VALUE = 428935662;
-
     /**
      *
      *
@@ -220,7 +217,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>PROVISIONING = 290896621;</code>
      */
     public static final int PROVISIONING_VALUE = 290896621;
-
     /**
      *
      *
@@ -231,7 +227,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>REPAIRING = 413483285;</code>
      */
     public static final int REPAIRING_VALUE = 413483285;
-
     /**
      *
      *
@@ -242,7 +237,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>RUNNING = 121282975;</code>
      */
     public static final int RUNNING_VALUE = 121282975;
-
     /**
      *
      *
@@ -253,7 +247,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>STAGING = 431072283;</code>
      */
     public static final int STAGING_VALUE = 431072283;
-
     /**
      *
      *
@@ -264,7 +257,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>STOPPED = 444276141;</code>
      */
     public static final int STOPPED_VALUE = 444276141;
-
     /**
      *
      *
@@ -275,7 +267,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>STOPPING = 350791796;</code>
      */
     public static final int STOPPING_VALUE = 350791796;
-
     /**
      *
      *
@@ -286,7 +277,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>SUSPENDED = 51223995;</code>
      */
     public static final int SUSPENDED_VALUE = 51223995;
-
     /**
      *
      *
@@ -297,7 +287,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>SUSPENDING = 514206246;</code>
      */
     public static final int SUSPENDING_VALUE = 514206246;
-
     /**
      *
      *
@@ -415,7 +404,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -431,7 +419,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -455,7 +442,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -484,7 +470,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
-
   /**
    *
    *
@@ -498,7 +483,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
     return namedPorts_;
   }
-
   /**
    *
    *
@@ -513,7 +497,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       getNamedPortsOrBuilderList() {
     return namedPorts_;
   }
-
   /**
    *
    *
@@ -527,7 +510,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   public int getNamedPortsCount() {
     return namedPorts_.size();
   }
-
   /**
    *
    *
@@ -541,7 +523,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
     return namedPorts_.get(index);
   }
-
   /**
    *
    *
@@ -560,7 +541,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
-
   /**
    *
    *
@@ -577,7 +557,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -602,7 +581,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -818,7 +796,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1082,7 +1059,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -1097,7 +1073,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1120,7 +1095,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1117,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1138,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1155,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1210,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return namedPortsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1226,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return namedPortsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1242,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return namedPortsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1264,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1284,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1306,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1363,7 +1328,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1347,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1367,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1387,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1406,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1425,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1437,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1495,7 +1453,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return namedPortsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1513,7 +1470,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(namedPorts_);
       }
     }
-
     /**
      *
      *
@@ -1527,7 +1483,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       return getNamedPortsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1541,7 +1496,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       return getNamedPortsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NamedPort.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1574,7 +1528,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object status_ = "";
-
     /**
      *
      *
@@ -1590,7 +1543,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1614,7 +1566,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1638,7 +1589,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1661,7 +1611,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1680,7 +1629,6 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

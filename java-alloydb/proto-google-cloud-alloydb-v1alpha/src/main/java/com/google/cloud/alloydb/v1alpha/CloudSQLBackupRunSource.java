@@ -33,7 +33,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.CloudSQLBackupRunSource)
     CloudSQLBackupRunSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudSQLBackupRunSource.newBuilder() to construct.
   private CloudSQLBackupRunSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
 
   public static final int BACKUP_RUN_ID_FIELD_NUMBER = 3;
   private long backupRunId_ = 0L;
-
   /**
    *
    *
@@ -370,7 +364,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +576,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -654,7 +644,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
     }
 
     private long backupRunId_;
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
     public long getBackupRunId() {
       return backupRunId_;
     }
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class CloudSQLBackupRunSource extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

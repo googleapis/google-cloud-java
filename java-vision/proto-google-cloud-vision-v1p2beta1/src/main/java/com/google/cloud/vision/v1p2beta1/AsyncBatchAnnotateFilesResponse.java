@@ -33,7 +33,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesResponse)
     AsyncBatchAnnotateFilesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AsyncBatchAnnotateFilesResponse.newBuilder() to construct.
   private AsyncBatchAnnotateFilesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse> responses_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       getResponsesList() {
     return responses_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       getResponsesOrBuilderList() {
     return responses_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
   public int getResponsesCount() {
     return responses_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
   public com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse getResponses(int index) {
     return responses_.get(index);
   }
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -584,7 +577,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
         return responsesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
         return responsesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
         return responsesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +747,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +769,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +823,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
         int index) {
       return getResponsesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -861,7 +841,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -881,7 +860,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(responses_);
       }
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
           .addBuilder(
               com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -916,7 +893,6 @@ public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.G
               index,
               com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse.getDefaultInstance());
     }
-
     /**
      *
      *

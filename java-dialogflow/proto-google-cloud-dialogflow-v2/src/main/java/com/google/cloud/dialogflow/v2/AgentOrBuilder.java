@@ -39,7 +39,6 @@ public interface AgentOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AgentOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface AgentOrBuilder
    * @return The defaultLanguageCode.
    */
   java.lang.String getDefaultLanguageCode();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface AgentOrBuilder
    * @return A list containing the supportedLanguageCodes.
    */
   java.util.List<java.lang.String> getSupportedLanguageCodesList();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface AgentOrBuilder
    * @return The count of supportedLanguageCodes.
    */
   int getSupportedLanguageCodesCount();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface AgentOrBuilder
    * @return The supportedLanguageCodes at the given index.
    */
   java.lang.String getSupportedLanguageCodes(int index);
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface AgentOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface AgentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public interface AgentOrBuilder
    * @return The avatarUri.
    */
   java.lang.String getAvatarUri();
-
   /**
    *
    *
@@ -300,7 +291,6 @@ public interface AgentOrBuilder
    */
   @java.lang.Deprecated
   int getMatchModeValue();
-
   /**
    *
    *
@@ -355,7 +345,6 @@ public interface AgentOrBuilder
    * @return The enum numeric value on the wire for apiVersion.
    */
   int getApiVersionValue();
-
   /**
    *
    *
@@ -388,7 +377,6 @@ public interface AgentOrBuilder
    * @return The enum numeric value on the wire for tier.
    */
   int getTierValue();
-
   /**
    *
    *

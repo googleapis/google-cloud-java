@@ -32,7 +32,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek)
     ResourcePolicyWeeklyCycleDayOfWeekOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePolicyWeeklyCycleDayOfWeek.newBuilder() to construct.
   private ResourcePolicyWeeklyCycleDayOfWeek(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -115,28 +114,20 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * <code>UNDEFINED_DAY = 0;</code>
      */
     public static final int UNDEFINED_DAY_VALUE = 0;
-
     /** <code>FRIDAY = 471398751;</code> */
     public static final int FRIDAY_VALUE = 471398751;
-
     /** <code>INVALID = 530283991;</code> */
     public static final int INVALID_VALUE = 530283991;
-
     /** <code>MONDAY = 132310288;</code> */
     public static final int MONDAY_VALUE = 132310288;
-
     /** <code>SATURDAY = 279037881;</code> */
     public static final int SATURDAY_VALUE = 279037881;
-
     /** <code>SUNDAY = 309626320;</code> */
     public static final int SUNDAY_VALUE = 309626320;
-
     /** <code>THURSDAY = 207198682;</code> */
     public static final int THURSDAY_VALUE = 207198682;
-
     /** <code>TUESDAY = 277509677;</code> */
     public static final int TUESDAY_VALUE = 277509677;
-
     /** <code>WEDNESDAY = 422029110;</code> */
     public static final int WEDNESDAY_VALUE = 422029110;
 
@@ -242,7 +233,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object day_ = "";
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   public boolean hasDay() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object duration_ = "";
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -354,7 +340,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +368,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object startTime_ = "";
-
   /**
    *
    *
@@ -399,7 +383,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -423,7 +406,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -641,7 +623,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -863,7 +844,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object day_ = "";
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     public boolean hasDay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +945,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -995,7 +970,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     }
 
     private java.lang.Object duration_ = "";
-
     /**
      *
      *
@@ -1010,7 +984,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1033,7 +1006,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1028,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1049,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1090,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     }
 
     private java.lang.Object startTime_ = "";
-
     /**
      *
      *
@@ -1136,7 +1104,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1159,7 +1126,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1148,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1169,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1186,6 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

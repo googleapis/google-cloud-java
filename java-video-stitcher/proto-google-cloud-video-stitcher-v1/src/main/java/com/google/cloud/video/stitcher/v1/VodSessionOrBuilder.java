@@ -37,7 +37,6 @@ public interface VodSessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface VodSessionOrBuilder
    * @return Whether the interstitials field is set.
    */
   boolean hasInterstitials();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface VodSessionOrBuilder
    * @return The interstitials.
    */
   com.google.cloud.video.stitcher.v1.Interstitials getInterstitials();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface VodSessionOrBuilder
    * @return The playUri.
    */
   java.lang.String getPlayUri();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface VodSessionOrBuilder
    * @return The sourceUri.
    */
   java.lang.String getSourceUri();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface VodSessionOrBuilder
    * @return The adTagUri.
    */
   java.lang.String getAdTagUri();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface VodSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
    */
   int getAdTagMacroMapCount();
-
   /**
    *
    *
@@ -226,11 +219,9 @@ public interface VodSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
    */
   boolean containsAdTagMacroMap(java.lang.String key);
-
   /** Use {@link #getAdTagMacroMapMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdTagMacroMap();
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public interface VodSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macro_map = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdTagMacroMapMap();
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public interface VodSessionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public interface VodSessionOrBuilder
    * @return Whether the manifestOptions field is set.
    */
   boolean hasManifestOptions();
-
   /**
    *
    *
@@ -329,7 +317,6 @@ public interface VodSessionOrBuilder
    * @return The manifestOptions.
    */
   com.google.cloud.video.stitcher.v1.ManifestOptions getManifestOptions();
-
   /**
    *
    *
@@ -353,7 +340,6 @@ public interface VodSessionOrBuilder
    * @return The assetId.
    */
   java.lang.String getAssetId();
-
   /**
    *
    *
@@ -381,7 +367,6 @@ public interface VodSessionOrBuilder
    * @return The enum numeric value on the wire for adTracking.
    */
   int getAdTrackingValue();
-
   /**
    *
    *
@@ -410,7 +395,6 @@ public interface VodSessionOrBuilder
    * @return Whether the gamSettings field is set.
    */
   boolean hasGamSettings();
-
   /**
    *
    *
@@ -424,7 +408,6 @@ public interface VodSessionOrBuilder
    * @return The gamSettings.
    */
   com.google.cloud.video.stitcher.v1.VodSession.GamSettings getGamSettings();
-
   /**
    *
    *
@@ -450,7 +433,6 @@ public interface VodSessionOrBuilder
    * @return The vodConfig.
    */
   java.lang.String getVodConfig();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface JobMetricsOrBuilder
    * @return Whether the metricTime field is set.
    */
   boolean hasMetricTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface JobMetricsOrBuilder
    * @return The metricTime.
    */
   com.google.protobuf.Timestamp getMetricTime();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface JobMetricsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 2;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.MetricUpdate> getMetricsList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface JobMetricsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 2;</code>
    */
   com.google.dataflow.v1beta3.MetricUpdate getMetrics(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface JobMetricsOrBuilder
    * <code>repeated .google.dataflow.v1beta3.MetricUpdate metrics = 2;</code>
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface JobMetricsOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.MetricUpdateOrBuilder>
       getMetricsOrBuilderList();
-
   /**
    *
    *

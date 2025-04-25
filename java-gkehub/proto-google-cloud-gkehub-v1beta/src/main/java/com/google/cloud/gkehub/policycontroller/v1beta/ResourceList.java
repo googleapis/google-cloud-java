@@ -33,7 +33,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.policycontroller.v1beta.ResourceList)
     ResourceListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourceList.newBuilder() to construct.
   private ResourceList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object memory_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMemory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpu_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCpu() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +376,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -590,7 +582,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object memory_ = "";
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMemory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -628,7 +618,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +702,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cpu_ = "";
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCpu() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +781,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +798,6 @@ public final class ResourceList extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

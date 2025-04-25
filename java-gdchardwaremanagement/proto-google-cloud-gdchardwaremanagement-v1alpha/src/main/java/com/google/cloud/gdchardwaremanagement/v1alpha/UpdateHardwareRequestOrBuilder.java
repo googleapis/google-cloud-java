@@ -40,7 +40,6 @@ public interface UpdateHardwareRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateHardwareRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateHardwareRequestOrBuilder
    * @return Whether the hardware field is set.
    */
   boolean hasHardware();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface UpdateHardwareRequestOrBuilder
    * @return The hardware.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Hardware getHardware();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface UpdateHardwareRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

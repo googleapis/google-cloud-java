@@ -40,7 +40,6 @@ public interface UserInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface UserInfoOrBuilder
    * @return A list containing the groupIds.
    */
   java.util.List<java.lang.String> getGroupIdsList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UserInfoOrBuilder
    * @return The count of groupIds.
    */
   int getGroupIdsCount();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface UserInfoOrBuilder
    * @return The groupIds at the given index.
    */
   java.lang.String getGroupIds(int index);
-
   /**
    *
    *

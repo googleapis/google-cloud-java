@@ -38,7 +38,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return A list containing the phases.
    */
   java.util.List<java.lang.String> getPhasesList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return The count of phases.
    */
   int getPhasesCount();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return The phases at the given index.
    */
   java.lang.String getPhases(int index);
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return A list containing the jobs.
    */
   java.util.List<java.lang.String> getJobsList();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return The count of jobs.
    */
   int getJobsCount();
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return The jobs at the given index.
    */
   java.lang.String getJobs(int index);
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -235,7 +227,6 @@ public interface RepairRolloutRuleOrBuilder
    * @return The condition.
    */
   com.google.cloud.deploy.v1.AutomationRuleCondition getCondition();
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public interface RepairRolloutRuleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.RepairPhaseConfig> getRepairPhasesList();
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public interface RepairRolloutRuleOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.RepairPhaseConfig getRepairPhases(int index);
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public interface RepairRolloutRuleOrBuilder
    * </code>
    */
   int getRepairPhasesCount();
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public interface RepairRolloutRuleOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.RepairPhaseConfigOrBuilder>
       getRepairPhasesOrBuilderList();
-
   /**
    *
    *

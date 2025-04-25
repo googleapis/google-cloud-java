@@ -37,7 +37,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The source.
    */
   com.google.cloud.clouddms.v1.DatabaseEngineInfo getSource();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The destination.
    */
   com.google.cloud.clouddms.v1.DatabaseEngineInfo getDestination();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface ConversionWorkspaceOrBuilder
    * </code>
    */
   int getGlobalSettingsCount();
-
   /**
    *
    *
@@ -169,11 +163,9 @@ public interface ConversionWorkspaceOrBuilder
    * </code>
    */
   boolean containsGlobalSettings(java.lang.String key);
-
   /** Use {@link #getGlobalSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getGlobalSettings();
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public interface ConversionWorkspaceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getGlobalSettingsMap();
-
   /**
    *
    *
@@ -209,7 +200,6 @@ public interface ConversionWorkspaceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The latestCommitId.
    */
   java.lang.String getLatestCommitId();
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return Whether the latestCommitTime field is set.
    */
   boolean hasLatestCommitTime();
-
   /**
    *
    *
@@ -295,7 +283,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The latestCommitTime.
    */
   com.google.protobuf.Timestamp getLatestCommitTime();
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -336,7 +322,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -362,7 +347,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -376,7 +360,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -401,7 +384,6 @@ public interface ConversionWorkspaceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

@@ -55,7 +55,6 @@ public interface BinaryAuthorizationOrBuilder
    * @return The enum numeric value on the wire for evaluationMode.
    */
   int getEvaluationModeValue();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface BinaryAuthorizationOrBuilder
    */
   java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
       getPolicyBindingsList();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface BinaryAuthorizationOrBuilder
    * </code>
    */
   com.google.container.v1beta1.BinaryAuthorization.PolicyBinding getPolicyBindings(int index);
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface BinaryAuthorizationOrBuilder
    * </code>
    */
   int getPolicyBindingsCount();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface BinaryAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>
       getPolicyBindingsOrBuilderList();
-
   /**
    *
    *

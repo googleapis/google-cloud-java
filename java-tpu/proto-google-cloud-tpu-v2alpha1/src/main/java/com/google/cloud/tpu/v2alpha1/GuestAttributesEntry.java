@@ -33,7 +33,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.GuestAttributesEntry)
     GuestAttributesEntryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GuestAttributesEntry.newBuilder() to construct.
   private GuestAttributesEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object namespace_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -402,7 +395,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -617,7 +609,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object namespace_ = "";
-
     /**
      *
      *
@@ -640,7 +631,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -774,7 +759,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +903,6 @@ public final class GuestAttributesEntry extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

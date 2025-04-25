@@ -38,7 +38,6 @@ public interface IssueModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface IssueModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface IssueModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface IssueModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface IssueModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface IssueModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface IssueModelOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface IssueModelOrBuilder
    * @return Whether the inputDataConfig field is set.
    */
   boolean hasInputDataConfig();
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public interface IssueModelOrBuilder
    * @return The inputDataConfig.
    */
   com.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig getInputDataConfig();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public interface IssueModelOrBuilder
    * @return Whether the trainingStats field is set.
    */
   boolean hasTrainingStats();
-
   /**
    *
    *
@@ -275,7 +265,6 @@ public interface IssueModelOrBuilder
    * @return The trainingStats.
    */
   com.google.cloud.contactcenterinsights.v1.IssueModelLabelStats getTrainingStats();
-
   /**
    *
    *
@@ -303,7 +292,6 @@ public interface IssueModelOrBuilder
    * @return The enum numeric value on the wire for modelType.
    */
   int getModelTypeValue();
-
   /**
    *
    *
@@ -329,7 +317,6 @@ public interface IssueModelOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

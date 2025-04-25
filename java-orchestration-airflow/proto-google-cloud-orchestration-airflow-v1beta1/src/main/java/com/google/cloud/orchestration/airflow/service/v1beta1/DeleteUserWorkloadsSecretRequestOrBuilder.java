@@ -39,7 +39,6 @@ public interface DeleteUserWorkloadsSecretRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

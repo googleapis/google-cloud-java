@@ -34,7 +34,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig)
     ModelDeploymentMonitoringScheduleConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelDeploymentMonitoringScheduleConfig.newBuilder() to construct.
   private ModelDeploymentMonitoringScheduleConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
   private int bitField0_;
   public static final int MONITOR_INTERVAL_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration monitorInterval_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
   public boolean hasMonitorInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
         ? com.google.protobuf.Duration.getDefaultInstance()
         : monitorInterval_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
 
   public static final int MONITOR_WINDOW_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration monitorWindow_;
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
   public boolean hasMonitorWindow() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
         ? com.google.protobuf.Duration.getDefaultInstance()
         : monitorWindow_;
   }
-
   /**
    *
    *
@@ -388,7 +381,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -624,7 +616,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         monitorIntervalBuilder_;
-
     /**
      *
      *
@@ -643,7 +634,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
     public boolean hasMonitorInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
         return monitorIntervalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -695,7 +684,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +779,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return getMonitorIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
             : monitorInterval_;
       }
     }
-
     /**
      *
      *
@@ -854,7 +837,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         monitorWindowBuilder_;
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
     public boolean hasMonitorWindow() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -904,7 +885,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
         return monitorWindowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -934,7 +914,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +940,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +974,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       }
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1000,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
       onChanged();
       return getMonitorWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1071,7 +1046,6 @@ public final class ModelDeploymentMonitoringScheduleConfig
             : monitorWindow_;
       }
     }
-
     /**
      *
      *

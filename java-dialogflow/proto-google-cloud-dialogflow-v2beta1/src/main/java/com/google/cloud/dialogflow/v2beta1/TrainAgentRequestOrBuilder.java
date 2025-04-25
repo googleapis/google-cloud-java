@@ -40,7 +40,6 @@ public interface TrainAgentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

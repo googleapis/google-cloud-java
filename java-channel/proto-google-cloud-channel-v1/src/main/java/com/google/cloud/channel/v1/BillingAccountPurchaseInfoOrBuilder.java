@@ -36,7 +36,6 @@ public interface BillingAccountPurchaseInfoOrBuilder
    * @return Whether the billingAccount field is set.
    */
   boolean hasBillingAccount();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BillingAccountPurchaseInfoOrBuilder
    * @return The billingAccount.
    */
   com.google.cloud.channel.v1.BillingAccount getBillingAccount();
-
   /**
    *
    *

@@ -53,7 +53,6 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -97,7 +96,6 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -151,7 +149,6 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -190,7 +187,6 @@ public interface ListStoredInfoTypesRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

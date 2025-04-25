@@ -36,7 +36,6 @@ public interface FeatureStatsAndAnomalyOrBuilder
    * @return The featureId.
    */
   java.lang.String getFeatureId();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface FeatureStatsAndAnomalyOrBuilder
    * @return Whether the featureStats field is set.
    */
   boolean hasFeatureStats();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface FeatureStatsAndAnomalyOrBuilder
    * @return The featureStats.
    */
   com.google.protobuf.Value getFeatureStats();
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public interface FeatureStatsAndAnomalyOrBuilder
    * @return Whether the statsTime field is set.
    */
   boolean hasStatsTime();
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public interface FeatureStatsAndAnomalyOrBuilder
    * @return The statsTime.
    */
   com.google.protobuf.Timestamp getStatsTime();
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public interface FeatureStatsAndAnomalyOrBuilder
    * @return The featureMonitorId.
    */
   java.lang.String getFeatureMonitorId();
-
   /**
    *
    *

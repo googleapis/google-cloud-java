@@ -49,7 +49,6 @@ public interface StreamStatusOrBuilder
    * @return Whether the okay field is set.
    */
   boolean hasOkay();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StreamStatusOrBuilder
    * @return The okay.
    */
   com.google.cloud.devicestreaming.v1.Okay getOkay();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface StreamStatusOrBuilder
    * @return Whether the fail field is set.
    */
   boolean hasFail();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface StreamStatusOrBuilder
    * @return The fail.
    */
   com.google.cloud.devicestreaming.v1.Fail getFail();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ColumnSchemaOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ColumnSchemaOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ColumnSchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface ColumnSchemaOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1beta1.ColumnSchema> getSubcolumnsList();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1beta1.ColumnSchema getSubcolumns(int index);
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   int getSubcolumnsCount();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface ColumnSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1beta1.ColumnSchemaOrBuilder>
       getSubcolumnsOrBuilderList();
-
   /**
    *
    *

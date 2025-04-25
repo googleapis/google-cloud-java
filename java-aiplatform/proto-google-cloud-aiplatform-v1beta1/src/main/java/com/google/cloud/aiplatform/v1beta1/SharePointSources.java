@@ -33,7 +33,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SharePointSources)
     SharePointSourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SharePointSources.newBuilder() to construct.
   private SharePointSources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return Whether the sharepointFolderPath field is set.
      */
     boolean hasSharepointFolderPath();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The sharepointFolderPath.
      */
     java.lang.String getSharepointFolderPath();
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return Whether the sharepointFolderId field is set.
      */
     boolean hasSharepointFolderId();
-
     /**
      *
      *
@@ -133,7 +129,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The sharepointFolderId.
      */
     java.lang.String getSharepointFolderId();
-
     /**
      *
      *
@@ -159,7 +154,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return Whether the driveName field is set.
      */
     boolean hasDriveName();
-
     /**
      *
      *
@@ -172,7 +166,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The driveName.
      */
     java.lang.String getDriveName();
-
     /**
      *
      *
@@ -198,7 +191,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return Whether the driveId field is set.
      */
     boolean hasDriveId();
-
     /**
      *
      *
@@ -211,7 +203,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The driveId.
      */
     java.lang.String getDriveId();
-
     /**
      *
      *
@@ -239,7 +230,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The clientId.
      */
     java.lang.String getClientId();
-
     /**
      *
      *
@@ -267,7 +257,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return Whether the clientSecret field is set.
      */
     boolean hasClientSecret();
-
     /**
      *
      *
@@ -280,7 +269,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The clientSecret.
      */
     com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig getClientSecret();
-
     /**
      *
      *
@@ -304,7 +292,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The tenantId.
      */
     java.lang.String getTenantId();
-
     /**
      *
      *
@@ -331,7 +318,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The sharepointSiteName.
      */
     java.lang.String getSharepointSiteName();
-
     /**
      *
      *
@@ -358,7 +344,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
      * @return The fileId.
      */
     java.lang.String getFileId();
-
     /**
      *
      *
@@ -378,7 +363,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     com.google.cloud.aiplatform.v1beta1.SharePointSources.SharePointSource.DriveSourceCase
         getDriveSourceCase();
   }
-
   /**
    *
    *
@@ -393,7 +377,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SharePointSources.SharePointSource)
       SharePointSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SharePointSource.newBuilder() to construct.
     private SharePointSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -445,7 +428,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       private FolderSourceCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -495,7 +477,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       private DriveSourceCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -529,7 +510,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int SHAREPOINT_FOLDER_PATH_FIELD_NUMBER = 5;
-
     /**
      *
      *
@@ -544,7 +524,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     public boolean hasSharepointFolderPath() {
       return folderSourceCase_ == 5;
     }
-
     /**
      *
      *
@@ -572,7 +551,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -602,7 +580,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int SHAREPOINT_FOLDER_ID_FIELD_NUMBER = 6;
-
     /**
      *
      *
@@ -617,7 +594,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     public boolean hasSharepointFolderId() {
       return folderSourceCase_ == 6;
     }
-
     /**
      *
      *
@@ -645,7 +621,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -675,7 +650,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int DRIVE_NAME_FIELD_NUMBER = 7;
-
     /**
      *
      *
@@ -690,7 +664,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     public boolean hasDriveName() {
       return driveSourceCase_ == 7;
     }
-
     /**
      *
      *
@@ -718,7 +691,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -748,7 +720,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int DRIVE_ID_FIELD_NUMBER = 8;
-
     /**
      *
      *
@@ -763,7 +734,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     public boolean hasDriveId() {
       return driveSourceCase_ == 8;
     }
-
     /**
      *
      *
@@ -791,7 +761,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -824,7 +793,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clientId_ = "";
-
     /**
      *
      *
@@ -850,7 +818,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -879,7 +846,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
 
     public static final int CLIENT_SECRET_FIELD_NUMBER = 2;
     private com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig clientSecret_;
-
     /**
      *
      *
@@ -895,7 +861,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     public boolean hasClientSecret() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -913,7 +878,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.getDefaultInstance()
           : clientSecret_;
     }
-
     /**
      *
      *
@@ -935,7 +899,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tenantId_ = "";
-
     /**
      *
      *
@@ -959,7 +922,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -988,7 +950,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sharepointSiteName_ = "";
-
     /**
      *
      *
@@ -1013,7 +974,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1003,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fileId_ = "";
-
     /**
      *
      *
@@ -1067,7 +1026,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1366,7 +1324,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1762,7 +1719,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       public boolean hasSharepointFolderPath() {
         return folderSourceCase_ == 5;
       }
-
       /**
        *
        *
@@ -1791,7 +1747,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1820,7 +1775,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1842,7 +1796,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1862,7 +1815,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1901,7 +1853,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       public boolean hasSharepointFolderId() {
         return folderSourceCase_ == 6;
       }
-
       /**
        *
        *
@@ -1930,7 +1881,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1959,7 +1909,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1981,7 +1930,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2001,7 +1949,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2040,7 +1987,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       public boolean hasDriveName() {
         return driveSourceCase_ == 7;
       }
-
       /**
        *
        *
@@ -2069,7 +2015,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2098,7 +2043,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2120,7 +2064,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2140,7 +2083,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2179,7 +2121,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       public boolean hasDriveId() {
         return driveSourceCase_ == 8;
       }
-
       /**
        *
        *
@@ -2208,7 +2149,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2237,7 +2177,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2259,7 +2198,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2279,7 +2217,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2304,7 +2241,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object clientId_ = "";
-
       /**
        *
        *
@@ -2329,7 +2265,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2354,7 +2289,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2378,7 +2312,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2398,7 +2331,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2430,7 +2362,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
               com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfig.Builder,
               com.google.cloud.aiplatform.v1beta1.ApiAuth.ApiKeyConfigOrBuilder>
           clientSecretBuilder_;
-
       /**
        *
        *
@@ -2445,7 +2376,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       public boolean hasClientSecret() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -2466,7 +2396,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return clientSecretBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2490,7 +2419,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2511,7 +2439,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2542,7 +2469,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -2562,7 +2488,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2578,7 +2503,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getClientSecretFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2598,7 +2522,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
               : clientSecret_;
         }
       }
-
       /**
        *
        *
@@ -2626,7 +2549,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object tenantId_ = "";
-
       /**
        *
        *
@@ -2649,7 +2571,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2672,7 +2593,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2694,7 +2614,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2712,7 +2631,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2737,7 +2655,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object sharepointSiteName_ = "";
-
       /**
        *
        *
@@ -2761,7 +2678,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2785,7 +2701,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2808,7 +2723,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2827,7 +2741,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2853,7 +2766,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object fileId_ = "";
-
       /**
        *
        *
@@ -2876,7 +2788,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2899,7 +2810,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2921,7 +2831,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2939,7 +2848,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3036,7 +2944,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.SharePointSources.SharePointSource>
       sharePointSources_;
-
   /**
    *
    *
@@ -3053,7 +2960,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       getSharePointSourcesList() {
     return sharePointSources_;
   }
-
   /**
    *
    *
@@ -3071,7 +2977,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       getSharePointSourcesOrBuilderList() {
     return sharePointSources_;
   }
-
   /**
    *
    *
@@ -3087,7 +2992,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
   public int getSharePointSourcesCount() {
     return sharePointSources_.size();
   }
-
   /**
    *
    *
@@ -3104,7 +3008,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       getSharePointSources(int index) {
     return sharePointSources_.get(index);
   }
-
   /**
    *
    *
@@ -3285,7 +3188,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3555,7 +3457,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return sharePointSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3574,7 +3475,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return sharePointSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3594,7 +3494,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return sharePointSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3620,7 +3519,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3645,7 +3543,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3671,7 +3568,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3697,7 +3593,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3721,7 +3616,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3746,7 +3640,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3771,7 +3664,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3793,7 +3685,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3815,7 +3706,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3831,7 +3721,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         getSharePointSourcesBuilder(int index) {
       return getSharePointSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3851,7 +3740,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return sharePointSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3873,7 +3761,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(sharePointSources_);
       }
     }
-
     /**
      *
      *
@@ -3892,7 +3779,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
               com.google.cloud.aiplatform.v1beta1.SharePointSources.SharePointSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3912,7 +3798,6 @@ public final class SharePointSources extends com.google.protobuf.GeneratedMessag
               com.google.cloud.aiplatform.v1beta1.SharePointSources.SharePointSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *

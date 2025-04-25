@@ -36,7 +36,6 @@ public interface DatabaseTableSpecOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DatabaseTableSpecOrBuilder
    * @return Whether the dataplexTable field is set.
    */
   boolean hasDataplexTable();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface DatabaseTableSpecOrBuilder
    * @return The dataplexTable.
    */
   com.google.cloud.datacatalog.v1.DataplexTableSpec getDataplexTable();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface DatabaseTableSpecOrBuilder
    * @return Whether the databaseViewSpec field is set.
    */
   boolean hasDatabaseViewSpec();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface DatabaseTableSpecOrBuilder
    * @return The databaseViewSpec.
    */
   com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec getDatabaseViewSpec();
-
   /**
    *
    *

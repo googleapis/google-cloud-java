@@ -42,7 +42,6 @@ public interface CompareVersionsRequestOrBuilder
    * @return The baseVersion.
    */
   java.lang.String getBaseVersion();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface CompareVersionsRequestOrBuilder
    * @return The targetVersion.
    */
   java.lang.String getTargetVersion();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface CompareVersionsRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

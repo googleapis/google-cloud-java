@@ -33,7 +33,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.MaintenanceUpdatePolicy)
     MaintenanceUpdatePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaintenanceUpdatePolicy.newBuilder() to construct.
   private MaintenanceUpdatePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
      * @return The enum numeric value on the wire for day.
      */
     int getDayValue();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
      * @return The startTime.
      */
     com.google.type.TimeOfDay getStartTime();
-
     /**
      *
      *
@@ -135,7 +131,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
      */
     com.google.type.TimeOfDayOrBuilder getStartTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindow)
       MaintenanceWindowOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MaintenanceWindow.newBuilder() to construct.
     private MaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -184,7 +178,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
     private int bitField0_;
     public static final int DAY_FIELD_NUMBER = 1;
     private int day_ = 0;
-
     /**
      *
      *
@@ -200,7 +193,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
     public int getDayValue() {
       return day_;
     }
-
     /**
      *
      *
@@ -220,7 +212,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
 
     public static final int START_TIME_FIELD_NUMBER = 2;
     private com.google.type.TimeOfDay startTime_;
-
     /**
      *
      *
@@ -237,7 +228,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -254,7 +244,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
     public com.google.type.TimeOfDay getStartTime() {
       return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
     }
-
     /**
      *
      *
@@ -446,7 +435,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       private int bitField0_;
 
       private int day_ = 0;
-
       /**
        *
        *
@@ -687,7 +674,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       public int getDayValue() {
         return day_;
       }
-
       /**
        *
        *
@@ -706,7 +692,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -723,7 +708,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(day_);
         return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -745,7 +729,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -770,7 +753,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
               com.google.type.TimeOfDay.Builder,
               com.google.type.TimeOfDayOrBuilder>
           startTimeBuilder_;
-
       /**
        *
        *
@@ -786,7 +768,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -806,7 +787,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
           return startTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -830,7 +810,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -851,7 +830,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -880,7 +858,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -901,7 +878,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -917,7 +893,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -935,7 +910,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
           return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
         }
       }
-
       /**
        *
        *
@@ -1036,7 +1010,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindow>
       maintenanceWindows_;
-
   /**
    *
    *
@@ -1053,7 +1026,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       getMaintenanceWindowsList() {
     return maintenanceWindows_;
   }
-
   /**
    *
    *
@@ -1071,7 +1043,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       getMaintenanceWindowsOrBuilderList() {
     return maintenanceWindows_;
   }
-
   /**
    *
    *
@@ -1087,7 +1058,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
   public int getMaintenanceWindowsCount() {
     return maintenanceWindows_.size();
   }
-
   /**
    *
    *
@@ -1104,7 +1074,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       getMaintenanceWindows(int index) {
     return maintenanceWindows_.get(index);
   }
-
   /**
    *
    *
@@ -1284,7 +1253,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1554,7 +1522,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         return maintenanceWindowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1573,7 +1540,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         return maintenanceWindowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1593,7 +1559,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         return maintenanceWindowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1619,7 +1584,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1608,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1633,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1696,7 +1658,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1720,7 +1681,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1745,7 +1705,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1729,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1792,7 +1750,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1814,7 +1771,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1830,7 +1786,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         getMaintenanceWindowsBuilder(int index) {
       return getMaintenanceWindowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1850,7 +1805,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         return maintenanceWindowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1872,7 +1826,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(maintenanceWindows_);
       }
     }
-
     /**
      *
      *
@@ -1891,7 +1844,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
               com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindow
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1911,7 +1863,6 @@ public final class MaintenanceUpdatePolicy extends com.google.protobuf.Generated
               com.google.cloud.alloydb.v1.MaintenanceUpdatePolicy.MaintenanceWindow
                   .getDefaultInstance());
     }
-
     /**
      *
      *

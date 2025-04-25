@@ -36,7 +36,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return Whether the natName field is set.
    */
   boolean hasNatName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The natName.
    */
   java.lang.String getNatName();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -218,7 +209,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *
@@ -296,7 +284,6 @@ public interface GetNatMappingInfoRoutersRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
-
   /**
    *
    *

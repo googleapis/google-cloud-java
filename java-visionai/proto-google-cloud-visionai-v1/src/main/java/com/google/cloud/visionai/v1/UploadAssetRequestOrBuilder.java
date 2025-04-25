@@ -40,7 +40,6 @@ public interface UploadAssetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface UploadAssetRequestOrBuilder
    * @return Whether the assetSource field is set.
    */
   boolean hasAssetSource();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UploadAssetRequestOrBuilder
    * @return The assetSource.
    */
   com.google.cloud.visionai.v1.AssetSource getAssetSource();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public interface AutoMlVideoClassificationInputsOrBuilder
    * @return The enum numeric value on the wire for modelType.
    */
   int getModelTypeValue();
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoClassificationInputs.ModelType model_type = 1;

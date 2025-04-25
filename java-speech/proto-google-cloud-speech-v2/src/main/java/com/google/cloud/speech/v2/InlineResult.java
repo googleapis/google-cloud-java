@@ -33,7 +33,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.InlineResult)
     InlineResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InlineResult.newBuilder() to construct.
   private InlineResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TRANSCRIPT_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v2.BatchRecognizeResults transcript_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTranscript() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.speech.v2.BatchRecognizeResults.getDefaultInstance()
         : transcript_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vttCaptions_ = "";
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object srtCaptions_ = "";
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -410,7 +402,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.speech.v2.BatchRecognizeResults.Builder,
             com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder>
         transcriptBuilder_;
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTranscript() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
         return transcriptBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +738,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTranscriptFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
             : transcript_;
       }
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vttCaptions_ = "";
-
     /**
      *
      *
@@ -858,7 +839,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object srtCaptions_ = "";
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -998,7 +973,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +995,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1013,6 @@ public final class InlineResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * @return Whether the instanceReferenceResource field is set.
    */
   boolean hasInstanceReferenceResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * @return The instanceReferenceResource.
    */
   com.google.cloud.compute.v1.InstanceReference getInstanceReferenceResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface GetHealthTargetPoolRequestOrBuilder
    * @return The targetPool.
    */
   java.lang.String getTargetPool();
-
   /**
    *
    *

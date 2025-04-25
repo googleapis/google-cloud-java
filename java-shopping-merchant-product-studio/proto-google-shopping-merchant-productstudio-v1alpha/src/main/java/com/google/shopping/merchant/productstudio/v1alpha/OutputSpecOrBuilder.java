@@ -38,7 +38,6 @@ public interface OutputSpecOrBuilder
    * @return Whether the workflowId field is set.
    */
   boolean hasWorkflowId();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface OutputSpecOrBuilder
    * @return The workflowId.
    */
   java.lang.String getWorkflowId();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface OutputSpecOrBuilder
    * @return Whether the tone field is set.
    */
   boolean hasTone();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface OutputSpecOrBuilder
    * @return The tone.
    */
   java.lang.String getTone();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface OutputSpecOrBuilder
    * @return Whether the editorialChanges field is set.
    */
   boolean hasEditorialChanges();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface OutputSpecOrBuilder
    * @return The editorialChanges.
    */
   java.lang.String getEditorialChanges();
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public interface OutputSpecOrBuilder
    * @return Whether the targetLanguage field is set.
    */
   boolean hasTargetLanguage();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface OutputSpecOrBuilder
    * @return The targetLanguage.
    */
   java.lang.String getTargetLanguage();
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public interface OutputSpecOrBuilder
    * @return A list containing the attributeOrder.
    */
   java.util.List<java.lang.String> getAttributeOrderList();
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public interface OutputSpecOrBuilder
    * @return The count of attributeOrder.
    */
   int getAttributeOrderCount();
-
   /**
    *
    *
@@ -243,7 +233,6 @@ public interface OutputSpecOrBuilder
    * @return The attributeOrder at the given index.
    */
   java.lang.String getAttributeOrder(int index);
-
   /**
    *
    *
@@ -274,7 +263,6 @@ public interface OutputSpecOrBuilder
    * @return Whether the attributeSeparator field is set.
    */
   boolean hasAttributeSeparator();
-
   /**
    *
    *
@@ -288,7 +276,6 @@ public interface OutputSpecOrBuilder
    * @return The attributeSeparator.
    */
   java.lang.String getAttributeSeparator();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ProcessorTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ProcessorTypeOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ProcessorTypeOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface ProcessorTypeOrBuilder
    */
   java.util.List<com.google.cloud.documentai.v1beta3.ProcessorType.LocationInfo>
       getAvailableLocationsList();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface ProcessorTypeOrBuilder
    * </code>
    */
   com.google.cloud.documentai.v1beta3.ProcessorType.LocationInfo getAvailableLocations(int index);
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface ProcessorTypeOrBuilder
    * </code>
    */
   int getAvailableLocationsCount();
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public interface ProcessorTypeOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.ProcessorType.LocationInfoOrBuilder>
       getAvailableLocationsOrBuilderList();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface ProcessorTypeOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public interface ProcessorTypeOrBuilder
    * @return A list containing the sampleDocumentUris.
    */
   java.util.List<java.lang.String> getSampleDocumentUrisList();
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public interface ProcessorTypeOrBuilder
    * @return The count of sampleDocumentUris.
    */
   int getSampleDocumentUrisCount();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface ProcessorTypeOrBuilder
    * @return The sampleDocumentUris at the given index.
    */
   java.lang.String getSampleDocumentUris(int index);
-
   /**
    *
    *

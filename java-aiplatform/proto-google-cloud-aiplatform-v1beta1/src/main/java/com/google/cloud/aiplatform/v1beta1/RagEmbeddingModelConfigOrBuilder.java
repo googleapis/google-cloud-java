@@ -42,7 +42,6 @@ public interface RagEmbeddingModelConfigOrBuilder
    * @return Whether the vertexPredictionEndpoint field is set.
    */
   boolean hasVertexPredictionEndpoint();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RagEmbeddingModelConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.VertexPredictionEndpoint
       getVertexPredictionEndpoint();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface RagEmbeddingModelConfigOrBuilder
    * @return Whether the hybridSearchConfig field is set.
    */
   boolean hasHybridSearchConfig();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface RagEmbeddingModelConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RagEmbeddingModelConfig.HybridSearchConfig
       getHybridSearchConfig();
-
   /**
    *
    *

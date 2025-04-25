@@ -47,7 +47,6 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * @return The template.
    */
   com.google.cloud.dataproc.v1.WorkflowTemplate getTemplate();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

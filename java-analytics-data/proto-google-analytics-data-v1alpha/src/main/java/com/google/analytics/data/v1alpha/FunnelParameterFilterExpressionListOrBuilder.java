@@ -36,7 +36,6 @@ public interface FunnelParameterFilterExpressionListOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.FunnelParameterFilterExpression>
       getExpressionsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface FunnelParameterFilterExpressionListOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.FunnelParameterFilterExpression getExpressions(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface FunnelParameterFilterExpressionListOrBuilder
    * </code>
    */
   int getExpressionsCount();
-
   /**
    *
    *
@@ -74,7 +71,6 @@ public interface FunnelParameterFilterExpressionListOrBuilder
   java.util.List<
           ? extends com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionOrBuilder>
       getExpressionsOrBuilderList();
-
   /**
    *
    *

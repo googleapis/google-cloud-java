@@ -37,7 +37,6 @@ public interface TrackingIssueOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

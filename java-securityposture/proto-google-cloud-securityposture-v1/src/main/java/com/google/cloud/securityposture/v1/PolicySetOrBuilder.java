@@ -36,7 +36,6 @@ public interface PolicySetOrBuilder
    * @return The policySetId.
    */
   java.lang.String getPolicySetId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PolicySetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface PolicySetOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.securityposture.v1.Policy> getPoliciesList();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface PolicySetOrBuilder
    * </code>
    */
   com.google.cloud.securityposture.v1.Policy getPolicies(int index);
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface PolicySetOrBuilder
    * </code>
    */
   int getPoliciesCount();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface PolicySetOrBuilder
    */
   java.util.List<? extends com.google.cloud.securityposture.v1.PolicyOrBuilder>
       getPoliciesOrBuilderList();
-
   /**
    *
    *

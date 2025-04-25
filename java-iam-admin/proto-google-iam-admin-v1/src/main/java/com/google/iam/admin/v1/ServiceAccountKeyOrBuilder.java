@@ -37,7 +37,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The enum numeric value on the wire for privateKeyType.
    */
   int getPrivateKeyTypeValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The enum numeric value on the wire for keyAlgorithm.
    */
   int getKeyAlgorithmValue();
-
   /**
    *
    *
@@ -158,7 +155,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return Whether the validAfterTime field is set.
    */
   boolean hasValidAfterTime();
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The validAfterTime.
    */
   com.google.protobuf.Timestamp getValidAfterTime();
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return Whether the validBeforeTime field is set.
    */
   boolean hasValidBeforeTime();
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The validBeforeTime.
    */
   com.google.protobuf.Timestamp getValidBeforeTime();
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The enum numeric value on the wire for keyOrigin.
    */
   int getKeyOriginValue();
-
   /**
    *
    *
@@ -267,7 +259,6 @@ public interface ServiceAccountKeyOrBuilder
    * @return The enum numeric value on the wire for keyType.
    */
   int getKeyTypeValue();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ImportUserEventsResponse)
     ImportUserEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportUserEventsResponse.newBuilder() to construct.
   private ImportUserEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> errorSamples_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public java.util.List<com.google.rpc.Status> getErrorSamplesList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList() {
     return errorSamples_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public int getErrorSamplesCount() {
     return errorSamples_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public com.google.rpc.Status getErrorSamples(int index) {
     return errorSamples_.get(index);
   }
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   public static final int ERRORS_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig errorsConfig_;
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public boolean hasErrorsConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +172,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         ? com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.getDefaultInstance()
         : errorsConfig_;
   }
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
 
   public static final int IMPORT_SUMMARY_FIELD_NUMBER = 3;
   private com.google.cloud.recommendationengine.v1beta1.UserEventImportSummary importSummary_;
-
   /**
    *
    *
@@ -218,7 +208,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
   public boolean hasImportSummary() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -237,7 +226,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         ? com.google.cloud.recommendationengine.v1beta1.UserEventImportSummary.getDefaultInstance()
         : importSummary_;
   }
-
   /**
    *
    *
@@ -447,7 +435,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -766,7 +753,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -783,7 +769,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -800,7 +785,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +870,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +946,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +965,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public com.google.rpc.Status.Builder getErrorSamplesBuilder(int index) {
       return getErrorSamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1019,7 +993,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorSamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1009,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(errorSamples_);
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public com.google.rpc.Status.Builder addErrorSamplesBuilder() {
       return getErrorSamplesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1063,7 +1034,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       return getErrorSamplesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1098,7 +1068,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfig.Builder,
             com.google.cloud.recommendationengine.v1beta1.ImportErrorsConfigOrBuilder>
         errorsConfigBuilder_;
-
     /**
      *
      *
@@ -1114,7 +1083,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public boolean hasErrorsConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1136,7 +1104,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return errorsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1128,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1183,7 +1149,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1215,7 +1180,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1200,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1216,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1274,7 +1236,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             : errorsConfig_;
       }
     }
-
     /**
      *
      *
@@ -1308,7 +1269,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             com.google.cloud.recommendationengine.v1beta1.UserEventImportSummary.Builder,
             com.google.cloud.recommendationengine.v1beta1.UserEventImportSummaryOrBuilder>
         importSummaryBuilder_;
-
     /**
      *
      *
@@ -1324,7 +1284,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
     public boolean hasImportSummary() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1347,7 +1306,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
         return importSummaryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1372,7 +1330,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1352,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1383,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1403,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1419,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
       onChanged();
       return getImportSummaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1487,7 +1440,6 @@ public final class ImportUserEventsResponse extends com.google.protobuf.Generate
             : importSummary_;
       }
     }
-
     /**
      *
      *

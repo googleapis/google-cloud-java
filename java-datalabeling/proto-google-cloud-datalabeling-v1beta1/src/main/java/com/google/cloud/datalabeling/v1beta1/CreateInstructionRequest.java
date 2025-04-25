@@ -33,7 +33,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.CreateInstructionRequest)
     CreateInstructionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateInstructionRequest.newBuilder() to construct.
   private CreateInstructionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
 
   public static final int INSTRUCTION_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.Instruction instruction_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         ? com.google.cloud.datalabeling.v1beta1.Instruction.getDefaultInstance()
         : instruction_;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -575,7 +568,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -601,7 +593,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -627,7 +618,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -652,7 +642,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
             com.google.cloud.datalabeling.v1beta1.Instruction.Builder,
             com.google.cloud.datalabeling.v1beta1.InstructionOrBuilder>
         instructionBuilder_;
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
         return instructionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +829,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
       onChanged();
       return getInstructionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class CreateInstructionRequest extends com.google.protobuf.Generate
             : instruction_;
       }
     }
-
     /**
      *
      *

@@ -44,7 +44,6 @@ public interface GetAclConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

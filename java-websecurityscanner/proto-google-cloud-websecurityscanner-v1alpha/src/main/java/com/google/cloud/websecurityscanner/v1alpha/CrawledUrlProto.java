@@ -41,15 +41,14 @@ public final class CrawledUrlProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "9google/cloud/websecurityscanner/v1alph"
-          + "a/crawled_url.proto\022\'google.cloud.websecurityscanner.v1alpha\"<\n\n"
-          + "CrawledUrl\022\023\n"
-          + "\013http_method\030\001 \001(\t\022\013\n"
-          + "\003url\030\002 \001(\t\022\014\n"
-          + "\004body\030\003 \001(\tB\235\001\n"
-          + "+com.google.cloud.websecurityscanner.v1alphaB\017CrawledUrlProtoP\001Z[cloud.goo"
-          + "gle.com/go/websecurityscanner/apiv1alpha/websecurityscannerpb;websecurityscanner"
+      "\n9google/cloud/websecurityscanner/v1alph"
+          + "a/crawled_url.proto\022\'google.cloud.websec"
+          + "urityscanner.v1alpha\"<\n\nCrawledUrl\022\023\n\013ht"
+          + "tp_method\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\022\014\n\004body\030\003 \001"
+          + "(\tB\235\001\n+com.google.cloud.websecurityscann"
+          + "er.v1alphaB\017CrawledUrlProtoP\001Z[cloud.goo"
+          + "gle.com/go/websecurityscanner/apiv1alpha"
+          + "/websecurityscannerpb;websecurityscanner"
           + "pbb\006proto3"
     };
     descriptor =

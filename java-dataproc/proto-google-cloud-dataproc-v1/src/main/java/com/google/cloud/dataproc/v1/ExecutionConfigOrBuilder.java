@@ -36,7 +36,6 @@ public interface ExecutionConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the networkUri field is set.
    */
   boolean hasNetworkUri();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ExecutionConfigOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the subnetworkUri field is set.
    */
   boolean hasSubnetworkUri();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ExecutionConfigOrBuilder
    * @return The subnetworkUri.
    */
   java.lang.String getSubnetworkUri();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface ExecutionConfigOrBuilder
    * @return A list containing the networkTags.
    */
   java.util.List<java.lang.String> getNetworkTagsList();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface ExecutionConfigOrBuilder
    * @return The count of networkTags.
    */
   int getNetworkTagsCount();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface ExecutionConfigOrBuilder
    * @return The networkTags at the given index.
    */
   java.lang.String getNetworkTags(int index);
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public interface ExecutionConfigOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the idleTtl field is set.
    */
   boolean hasIdleTtl();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface ExecutionConfigOrBuilder
    * @return The idleTtl.
    */
   com.google.protobuf.Duration getIdleTtl();
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public interface ExecutionConfigOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
-
   /**
    *
    *
@@ -367,7 +354,6 @@ public interface ExecutionConfigOrBuilder
    * @return The stagingBucket.
    */
   java.lang.String getStagingBucket();
-
   /**
    *
    *
@@ -405,7 +391,6 @@ public interface ExecutionConfigOrBuilder
    * @return Whether the authenticationConfig field is set.
    */
   boolean hasAuthenticationConfig();
-
   /**
    *
    *
@@ -423,7 +408,6 @@ public interface ExecutionConfigOrBuilder
    * @return The authenticationConfig.
    */
   com.google.cloud.dataproc.v1.AuthenticationConfig getAuthenticationConfig();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SecretManagerConfigOrBuilder
    * @return Whether the enabled field is set.
    */
   boolean hasEnabled();
-
   /**
    *
    *

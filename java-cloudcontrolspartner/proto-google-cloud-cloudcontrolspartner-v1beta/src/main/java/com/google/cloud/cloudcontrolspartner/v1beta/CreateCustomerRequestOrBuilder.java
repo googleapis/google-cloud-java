@@ -39,7 +39,6 @@ public interface CreateCustomerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateCustomerRequestOrBuilder
    * @return Whether the customer field is set.
    */
   boolean hasCustomer();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateCustomerRequestOrBuilder
    * @return The customer.
    */
   com.google.cloud.cloudcontrolspartner.v1beta.Customer getCustomer();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateCustomerRequestOrBuilder
    * @return The customerId.
    */
   java.lang.String getCustomerId();
-
   /**
    *
    *

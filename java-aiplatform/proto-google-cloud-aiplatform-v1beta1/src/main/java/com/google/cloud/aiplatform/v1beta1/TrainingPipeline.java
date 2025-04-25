@@ -37,7 +37,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrainingPipeline)
     TrainingPipelineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrainingPipeline.newBuilder() to construct.
   private TrainingPipeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int INPUT_DATA_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.InputDataConfig inputDataConfig_;
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasInputDataConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1beta1.InputDataConfig.getDefaultInstance()
         : inputDataConfig_;
   }
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trainingTaskDefinition_ = "";
-
   /**
    *
    *
@@ -305,7 +296,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -339,7 +329,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int TRAINING_TASK_INPUTS_FIELD_NUMBER = 5;
   private com.google.protobuf.Value trainingTaskInputs_;
-
   /**
    *
    *
@@ -359,7 +348,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasTrainingTaskInputs() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -381,7 +369,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Value.getDefaultInstance()
         : trainingTaskInputs_;
   }
-
   /**
    *
    *
@@ -404,7 +391,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int TRAINING_TASK_METADATA_FIELD_NUMBER = 6;
   private com.google.protobuf.Value trainingTaskMetadata_;
-
   /**
    *
    *
@@ -429,7 +415,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasTrainingTaskMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -456,7 +441,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Value.getDefaultInstance()
         : trainingTaskMetadata_;
   }
-
   /**
    *
    *
@@ -484,7 +468,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int MODEL_TO_UPLOAD_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.Model modelToUpload_;
-
   /**
    *
    *
@@ -516,7 +499,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasModelToUpload() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -550,7 +532,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1beta1.Model.getDefaultInstance()
         : modelToUpload_;
   }
-
   /**
    *
    *
@@ -587,7 +568,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object modelId_ = "";
-
   /**
    *
    *
@@ -615,7 +595,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -648,7 +627,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentModel_ = "";
-
   /**
    *
    *
@@ -674,7 +652,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -703,7 +680,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
-
   /**
    *
    *
@@ -721,7 +697,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -744,7 +719,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int ERROR_FIELD_NUMBER = 10;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -761,7 +735,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasError() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -778,7 +751,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -796,7 +768,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -813,7 +784,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -830,7 +800,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -848,7 +817,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int START_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -866,7 +834,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -884,7 +851,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -903,7 +869,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int END_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -922,7 +887,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -941,7 +905,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -961,7 +924,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -978,7 +940,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -995,7 +956,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1037,7 +997,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1060,14 +1019,12 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1087,7 +1044,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1114,7 +1070,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1144,7 +1099,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 18;
   private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
-
   /**
    *
    *
@@ -1165,7 +1119,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1188,7 +1141,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
-
   /**
    *
    *
@@ -1576,7 +1528,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2090,7 +2041,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2113,7 +2063,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2136,7 +2085,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2158,7 +2106,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2176,7 +2123,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2201,7 +2147,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2224,7 +2169,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2247,7 +2191,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2269,7 +2212,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2287,7 +2229,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2317,7 +2258,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.InputDataConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.InputDataConfigOrBuilder>
         inputDataConfigBuilder_;
-
     /**
      *
      *
@@ -2340,7 +2280,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasInputDataConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2369,7 +2308,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return inputDataConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2400,7 +2338,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2429,7 +2366,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2466,7 +2402,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2494,7 +2429,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2517,7 +2451,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getInputDataConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2545,7 +2478,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : inputDataConfig_;
       }
     }
-
     /**
      *
      *
@@ -2581,7 +2513,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object trainingTaskDefinition_ = "";
-
     /**
      *
      *
@@ -2611,7 +2542,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2641,7 +2571,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2670,7 +2599,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2695,7 +2623,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2732,7 +2659,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         trainingTaskInputsBuilder_;
-
     /**
      *
      *
@@ -2751,7 +2677,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasTrainingTaskInputs() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2776,7 +2701,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return trainingTaskInputsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2803,7 +2727,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2827,7 +2750,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2859,7 +2781,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2883,7 +2804,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2902,7 +2822,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTrainingTaskInputsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2925,7 +2844,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : trainingTaskInputs_;
       }
     }
-
     /**
      *
      *
@@ -2962,7 +2880,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         trainingTaskMetadataBuilder_;
-
     /**
      *
      *
@@ -2986,7 +2903,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasTrainingTaskMetadata() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3016,7 +2932,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return trainingTaskMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3048,7 +2963,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3077,7 +2991,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3114,7 +3027,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3143,7 +3055,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3167,7 +3078,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTrainingTaskMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3195,7 +3105,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : trainingTaskMetadata_;
       }
     }
-
     /**
      *
      *
@@ -3237,7 +3146,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.Model.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelOrBuilder>
         modelToUploadBuilder_;
-
     /**
      *
      *
@@ -3268,7 +3176,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasModelToUpload() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3305,7 +3212,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return modelToUploadBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3344,7 +3250,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3381,7 +3286,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3425,7 +3329,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3461,7 +3364,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3492,7 +3394,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getModelToUploadFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3527,7 +3428,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : modelToUpload_;
       }
     }
-
     /**
      *
      *
@@ -3571,7 +3471,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object modelId_ = "";
-
     /**
      *
      *
@@ -3598,7 +3497,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3625,7 +3523,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3651,7 +3548,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3673,7 +3569,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3702,7 +3597,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object parentModel_ = "";
-
     /**
      *
      *
@@ -3727,7 +3621,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3752,7 +3645,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3776,7 +3668,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3796,7 +3687,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3823,7 +3713,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3841,7 +3730,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3862,7 +3750,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3884,7 +3771,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.aiplatform.v1beta1.PipelineState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3908,7 +3794,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3933,7 +3818,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -3949,7 +3833,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasError() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3969,7 +3852,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3993,7 +3875,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4014,7 +3895,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4043,7 +3923,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4064,7 +3943,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4080,7 +3958,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4098,7 +3975,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -4129,7 +4005,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4146,7 +4021,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4169,7 +4043,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4194,7 +4067,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4216,7 +4088,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4246,7 +4117,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4268,7 +4138,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4285,7 +4154,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4306,7 +4174,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4341,7 +4208,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -4359,7 +4225,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4381,7 +4246,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4407,7 +4271,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4430,7 +4293,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4461,7 +4323,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4484,7 +4345,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4502,7 +4362,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4522,7 +4381,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -4558,7 +4416,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -4576,7 +4433,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4598,7 +4454,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4624,7 +4479,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4647,7 +4501,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4678,7 +4531,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4701,7 +4553,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4719,7 +4570,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4739,7 +4589,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -4775,7 +4624,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4792,7 +4640,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -4815,7 +4662,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4840,7 +4686,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4862,7 +4707,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4892,7 +4736,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4914,7 +4757,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4931,7 +4773,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4952,7 +4793,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -5006,7 +4846,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -5029,14 +4868,12 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -5056,7 +4893,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -5083,7 +4919,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -5116,7 +4951,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5139,14 +4973,12 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00008000;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -5173,7 +5005,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00008000;
       return this;
     }
-
     /**
      *
      *
@@ -5201,7 +5032,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
-
     /**
      *
      *
@@ -5221,7 +5051,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -5247,7 +5076,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         return encryptionSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5275,7 +5103,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5301,7 +5128,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5335,7 +5161,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5360,7 +5185,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5380,7 +5204,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5405,7 +5228,6 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
             : encryptionSpec_;
       }
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface InsertRegionCommitmentRequestOrBuilder
    * @return Whether the commitmentResource field is set.
    */
   boolean hasCommitmentResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertRegionCommitmentRequestOrBuilder
    * @return The commitmentResource.
    */
   com.google.cloud.compute.v1.Commitment getCommitmentResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertRegionCommitmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InsertRegionCommitmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InsertRegionCommitmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface InsertRegionCommitmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -122,7 +122,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_FEATURE_UNSPECIFIED = 0;</code>
    */
   public static final int STREAMING_FEATURE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -133,7 +132,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_LABEL_DETECTION = 1;</code>
    */
   public static final int STREAMING_LABEL_DETECTION_VALUE = 1;
-
   /**
    *
    *
@@ -144,7 +142,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_SHOT_CHANGE_DETECTION = 2;</code>
    */
   public static final int STREAMING_SHOT_CHANGE_DETECTION_VALUE = 2;
-
   /**
    *
    *
@@ -155,7 +152,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_EXPLICIT_CONTENT_DETECTION = 3;</code>
    */
   public static final int STREAMING_EXPLICIT_CONTENT_DETECTION_VALUE = 3;
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_OBJECT_TRACKING = 4;</code>
    */
   public static final int STREAMING_OBJECT_TRACKING_VALUE = 4;
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_AUTOML_ACTION_RECOGNITION = 23;</code>
    */
   public static final int STREAMING_AUTOML_ACTION_RECOGNITION_VALUE = 23;
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public enum StreamingFeature implements com.google.protobuf.ProtocolMessageEnum 
    * <code>STREAMING_AUTOML_CLASSIFICATION = 21;</code>
    */
   public static final int STREAMING_AUTOML_CLASSIFICATION_VALUE = 21;
-
   /**
    *
    *

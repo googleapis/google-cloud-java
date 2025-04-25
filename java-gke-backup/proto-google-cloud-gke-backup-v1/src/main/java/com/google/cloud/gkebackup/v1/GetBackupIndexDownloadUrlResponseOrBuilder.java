@@ -25,25 +25,12 @@ public interface GetBackupIndexDownloadUrlResponseOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
-   * <pre>
-   * Required. The signed URL for downloading the backup index.
-   * </pre>
-   *
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The signedUrl.
    */
   java.lang.String getSignedUrl();
-
   /**
-   *
-   *
-   * <pre>
-   * Required. The signed URL for downloading the backup index.
-   * </pre>
-   *
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for signedUrl.

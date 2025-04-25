@@ -33,7 +33,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta3.Attempt)
     AttemptOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Attempt.newBuilder() to construct.
   private Attempt(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp scheduleTime_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScheduleTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : scheduleTime_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISPATCH_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp dispatchTime_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDispatchTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : dispatchTime_;
   }
-
   /**
    *
    *
@@ -183,7 +176,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESPONSE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp responseTime_;
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResponseTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : responseTime_;
   }
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESPONSE_STATUS_FIELD_NUMBER = 4;
   private com.google.rpc.Status responseStatus_;
-
   /**
    *
    *
@@ -261,7 +250,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResponseStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +268,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getResponseStatus() {
     return responseStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : responseStatus_;
   }
-
   /**
    *
    *
@@ -503,7 +490,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -767,7 +753,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scheduleTimeBuilder_;
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScheduleTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return scheduleTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +865,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +902,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             : scheduleTime_;
       }
     }
-
     /**
      *
      *
@@ -979,7 +956,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         dispatchTimeBuilder_;
-
     /**
      *
      *
@@ -996,7 +972,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDispatchTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return dispatchTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1039,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1068,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1089,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1105,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDispatchTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1156,7 +1125,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             : dispatchTime_;
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1159,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         responseTimeBuilder_;
-
     /**
      *
      *
@@ -1208,7 +1175,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResponseTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1231,7 +1197,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return responseTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1221,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1278,7 +1242,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1271,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1292,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1308,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResponseTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1368,7 +1328,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             : responseTime_;
       }
     }
-
     /**
      *
      *
@@ -1401,7 +1360,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         responseStatusBuilder_;
-
     /**
      *
      *
@@ -1419,7 +1377,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResponseStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1443,7 +1400,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
         return responseStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1469,7 +1425,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1492,7 +1447,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1477,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1499,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1516,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResponseStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1586,7 +1537,6 @@ public final class Attempt extends com.google.protobuf.GeneratedMessageV3
             : responseStatus_;
       }
     }
-
     /**
      *
      *

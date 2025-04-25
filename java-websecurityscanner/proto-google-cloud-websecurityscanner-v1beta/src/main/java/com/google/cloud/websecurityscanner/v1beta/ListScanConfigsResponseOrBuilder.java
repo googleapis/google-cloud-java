@@ -34,7 +34,6 @@ public interface ListScanConfigsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1beta.ScanConfig scan_configs = 1;</code>
    */
   java.util.List<com.google.cloud.websecurityscanner.v1beta.ScanConfig> getScanConfigsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListScanConfigsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1beta.ScanConfig scan_configs = 1;</code>
    */
   com.google.cloud.websecurityscanner.v1beta.ScanConfig getScanConfigs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListScanConfigsResponseOrBuilder
    * <code>repeated .google.cloud.websecurityscanner.v1beta.ScanConfig scan_configs = 1;</code>
    */
   int getScanConfigsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListScanConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.websecurityscanner.v1beta.ScanConfigOrBuilder>
       getScanConfigsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListScanConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

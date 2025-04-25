@@ -33,7 +33,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.UploadRagFileConfig)
     UploadRagFileConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadRagFileConfig.newBuilder() to construct.
   private UploadRagFileConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int RAG_FILE_CHUNKING_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig ragFileChunkingConfig_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
   public boolean hasRagFileChunkingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.getDefaultInstance()
         : ragFileChunkingConfig_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
   public static final int RAG_FILE_TRANSFORMATION_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig
       ragFileTransformationConfig_;
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
   public boolean hasRagFileTransformationConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.getDefaultInstance()
         : ragFileTransformationConfig_;
   }
-
   /**
    *
    *
@@ -375,7 +368,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -606,7 +598,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileChunkingConfigOrBuilder>
         ragFileChunkingConfigBuilder_;
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     public boolean hasRagFileChunkingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -652,7 +642,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         return ragFileChunkingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +745,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +763,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRagFileChunkingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
             : ragFileChunkingConfig_;
       }
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagFileTransformationConfigOrBuilder>
         ragFileTransformationConfigBuilder_;
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
     public boolean hasRagFileTransformationConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
         return ragFileTransformationConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -904,7 +884,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getRagFileTransformationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1022,7 +997,6 @@ public final class UploadRagFileConfig extends com.google.protobuf.GeneratedMess
             : ragFileTransformationConfig_;
       }
     }
-
     /**
      *
      *

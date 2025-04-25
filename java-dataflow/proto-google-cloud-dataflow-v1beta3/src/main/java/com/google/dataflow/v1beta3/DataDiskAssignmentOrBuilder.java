@@ -37,7 +37,6 @@ public interface DataDiskAssignmentOrBuilder
    * @return The vmInstance.
    */
   java.lang.String getVmInstance();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface DataDiskAssignmentOrBuilder
    * @return A list containing the dataDisks.
    */
   java.util.List<java.lang.String> getDataDisksList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface DataDiskAssignmentOrBuilder
    * @return The count of dataDisks.
    */
   int getDataDisksCount();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface DataDiskAssignmentOrBuilder
    * @return The dataDisks at the given index.
    */
   java.lang.String getDataDisks(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.ListGatewaysResponse)
     ListGatewaysResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListGatewaysResponse.newBuilder() to construct.
   private ListGatewaysResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkservices.v1.Gateway> gateways_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.networkservices.v1.Gateway> getGatewaysList() {
     return gateways_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       getGatewaysOrBuilderList() {
     return gateways_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
   public int getGatewaysCount() {
     return gateways_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.networkservices.v1.Gateway getGateways(int index) {
     return gateways_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -369,7 +361,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return gatewaysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return gatewaysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return gatewaysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +795,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +834,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.networkservices.v1.Gateway.Builder getGatewaysBuilder(int index) {
       return getGatewaysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -903,7 +881,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return gatewaysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +898,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(gateways_);
       }
     }
-
     /**
      *
      *
@@ -935,7 +911,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       return getGatewaysFieldBuilder()
           .addBuilder(com.google.cloud.networkservices.v1.Gateway.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -949,7 +924,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       return getGatewaysFieldBuilder()
           .addBuilder(index, com.google.cloud.networkservices.v1.Gateway.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -982,7 +956,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1007,7 +980,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1004,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1056,7 +1027,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1046,6 @@ public final class ListGatewaysResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

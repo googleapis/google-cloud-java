@@ -37,7 +37,6 @@ public interface NetworkAddressReservationOrBuilder
    * @return The startAddress.
    */
   java.lang.String getStartAddress();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface NetworkAddressReservationOrBuilder
    * @return The endAddress.
    */
   java.lang.String getEndAddress();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface NetworkAddressReservationOrBuilder
    * @return The note.
    */
   java.lang.String getNote();
-
   /**
    *
    *

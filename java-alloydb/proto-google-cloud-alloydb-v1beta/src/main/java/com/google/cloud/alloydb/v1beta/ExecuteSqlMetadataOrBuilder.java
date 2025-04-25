@@ -39,7 +39,6 @@ public interface ExecuteSqlMetadataOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -82,7 +81,6 @@ public interface ExecuteSqlMetadataOrBuilder
    * @return Whether the sqlStatementExecutionDuration field is set.
    */
   boolean hasSqlStatementExecutionDuration();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ExecuteSqlMetadataOrBuilder
    * @return The sqlStatementExecutionDuration.
    */
   com.google.protobuf.Duration getSqlStatementExecutionDuration();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface ExecuteSqlMetadataOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
-
   /**
    *
    *

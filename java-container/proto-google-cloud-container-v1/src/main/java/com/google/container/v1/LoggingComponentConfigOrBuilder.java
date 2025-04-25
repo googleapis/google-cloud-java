@@ -38,7 +38,6 @@ public interface LoggingComponentConfigOrBuilder
    */
   java.util.List<com.google.container.v1.LoggingComponentConfig.Component>
       getEnableComponentsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface LoggingComponentConfigOrBuilder
    * @return The count of enableComponents.
    */
   int getEnableComponentsCount();
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface LoggingComponentConfigOrBuilder
    * @return The enableComponents at the given index.
    */
   com.google.container.v1.LoggingComponentConfig.Component getEnableComponents(int index);
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface LoggingComponentConfigOrBuilder
    * @return A list containing the enum numeric values on the wire for enableComponents.
    */
   java.util.List<java.lang.Integer> getEnableComponentsValueList();
-
   /**
    *
    *

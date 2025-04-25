@@ -29,7 +29,7 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -37,13 +37,12 @@ public interface InstanceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
    * Output only. The full path to the Instance resource in this API.
-   * format: `projects/{project}/locations/{location}/instances/{instance}`
+   * format: "projects/{project}/locations/{location}/instances/{instance}"
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -66,7 +65,6 @@ public interface InstanceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InstanceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface InstanceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface InstanceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public interface InstanceOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -191,11 +184,9 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public interface InstanceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -239,7 +228,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Required. The KMS key name used for CMEK (encryption-at-rest).
    * format:
-   * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}`
+   * "projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}"
    * VPC-SC restrictions apply.
    * </pre>
    *
@@ -248,14 +237,13 @@ public interface InstanceOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *
    * <pre>
    * Required. The KMS key name used for CMEK (encryption-at-rest).
    * format:
-   * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}`
+   * "projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}"
    * VPC-SC restrictions apply.
    * </pre>
    *

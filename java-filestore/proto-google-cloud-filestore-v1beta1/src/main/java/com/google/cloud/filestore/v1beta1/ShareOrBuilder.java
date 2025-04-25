@@ -37,7 +37,6 @@ public interface ShareOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ShareOrBuilder
    * @return The mountName.
    */
   java.lang.String getMountName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ShareOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public interface ShareOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.NfsExportOptions nfs_export_options = 5;</code>
    */
   java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions> getNfsExportOptionsList();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface ShareOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.NfsExportOptions nfs_export_options = 5;</code>
    */
   com.google.cloud.filestore.v1beta1.NfsExportOptions getNfsExportOptions(int index);
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface ShareOrBuilder
    * <code>repeated .google.cloud.filestore.v1beta1.NfsExportOptions nfs_export_options = 5;</code>
    */
   int getNfsExportOptionsCount();
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public interface ShareOrBuilder
    */
   java.util.List<? extends com.google.cloud.filestore.v1beta1.NfsExportOptionsOrBuilder>
       getNfsExportOptionsOrBuilderList();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface ShareOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface ShareOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -241,7 +232,6 @@ public interface ShareOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public interface ShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -275,11 +264,9 @@ public interface ShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -290,7 +277,6 @@ public interface ShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -305,7 +291,6 @@ public interface ShareOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public interface ShareOrBuilder
    * @return Whether the backup field is set.
    */
   boolean hasBackup();
-
   /**
    *
    *
@@ -354,7 +338,6 @@ public interface ShareOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
-
   /**
    *
    *

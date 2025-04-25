@@ -33,7 +33,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ExportUserEventsRequest)
     ExportUserEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportUserEventsRequest.newBuilder() to construct.
   private ExportUserEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.OutputConfig outputConfig_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
         ? com.google.cloud.retail.v2alpha.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -249,7 +242,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -492,7 +484,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -722,7 +713,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -749,7 +739,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -776,7 +765,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -802,7 +790,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +811,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +844,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
             com.google.cloud.retail.v2alpha.OutputConfig.Builder,
             com.google.cloud.retail.v2alpha.OutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -898,7 +882,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -946,7 +928,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +957,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +978,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +994,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1036,7 +1014,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
             : outputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1124,7 +1100,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1182,7 +1157,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1239,7 +1213,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1292,7 +1265,6 @@ public final class ExportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

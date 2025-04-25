@@ -31,7 +31,6 @@ public interface BuilderConfigOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    * <code>string id = 1;</code>
    *

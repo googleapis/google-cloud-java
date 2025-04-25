@@ -33,7 +33,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.PersonVehicleDetectionConfig)
     PersonVehicleDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PersonVehicleDetectionConfig.newBuilder() to construct.
   private PersonVehicleDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
 
   public static final int ENABLE_PEOPLE_COUNTING_FIELD_NUMBER = 1;
   private boolean enablePeopleCounting_ = false;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
 
   public static final int ENABLE_VEHICLE_COUNTING_FIELD_NUMBER = 2;
   private boolean enableVehicleCounting_ = false;
-
   /**
    *
    *
@@ -273,7 +270,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -469,7 +465,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
     private int bitField0_;
 
     private boolean enablePeopleCounting_;
-
     /**
      *
      *
@@ -488,7 +483,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
     public boolean getEnablePeopleCounting() {
       return enablePeopleCounting_;
     }
-
     /**
      *
      *
@@ -511,7 +505,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -534,7 +527,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
     }
 
     private boolean enableVehicleCounting_;
-
     /**
      *
      *
@@ -551,7 +543,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
     public boolean getEnableVehicleCounting() {
       return enableVehicleCounting_;
     }
-
     /**
      *
      *
@@ -572,7 +563,6 @@ public final class PersonVehicleDetectionConfig extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

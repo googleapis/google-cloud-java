@@ -33,7 +33,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.ListJobsRequest)
     ListJobsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListJobsRequest.newBuilder() to construct.
   private ListJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -138,7 +137,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>UNKNOWN = 0;</code>
      */
     public static final int UNKNOWN_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
-
     /**
      *
      *
@@ -163,7 +160,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
      * <code>TERMINATED = 2;</code>
      */
     public static final int TERMINATED_VALUE = 2;
-
     /**
      *
      *
@@ -262,7 +258,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int FILTER_FIELD_NUMBER = 5;
   private int filter_ = 0;
-
   /**
    *
    *
@@ -278,7 +273,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   public int getFilterValue() {
     return filter_;
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -327,7 +320,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -354,7 +346,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
-
   /**
    *
    *
@@ -374,7 +365,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
   public int getViewValue() {
     return view_;
   }
-
   /**
    *
    *
@@ -399,7 +389,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -422,7 +411,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -447,7 +435,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -477,7 +464,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -503,7 +489,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -734,7 +719,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -987,7 +971,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int filter_ = 0;
-
     /**
      *
      *
@@ -1003,7 +986,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public int getFilterValue() {
       return filter_;
     }
-
     /**
      *
      *
@@ -1022,7 +1004,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1023,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
           ? com.google.dataflow.v1beta3.ListJobsRequest.Filter.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1064,7 +1044,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1063,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1107,7 +1085,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1130,7 +1107,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1152,7 +1128,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1145,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1169,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private int view_ = 0;
-
     /**
      *
      *
@@ -1215,7 +1188,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public int getViewValue() {
       return view_;
     }
-
     /**
      *
      *
@@ -1238,7 +1210,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1260,7 +1231,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
           com.google.dataflow.v1beta3.JobView.forNumber(view_);
       return result == null ? com.google.dataflow.v1beta3.JobView.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1286,7 +1256,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1279,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1328,7 +1296,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1350,7 +1317,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1338,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1396,7 +1361,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1384,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1443,7 +1406,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1462,7 +1424,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1488,7 +1449,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -1513,7 +1473,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1497,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1562,7 +1520,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1539,6 @@ public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

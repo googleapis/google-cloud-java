@@ -34,7 +34,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest)
     InstanceGroupManagersCreateInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersCreateInstancesRequest.newBuilder() to construct.
   private InstanceGroupManagersCreateInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> instances_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
   public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       getInstancesOrBuilderList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
   public com.google.cloud.compute.v1.PerInstanceConfig getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -578,7 +571,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
         return instancesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
         return instancesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -612,7 +603,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
         return instancesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
     public com.google.cloud.compute.v1.PerInstanceConfig.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -835,7 +815,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -853,7 +832,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
         return java.util.Collections.unmodifiableList(instances_);
       }
     }
-
     /**
      *
      *
@@ -867,7 +845,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       return getInstancesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -881,7 +858,6 @@ public final class InstanceGroupManagersCreateInstancesRequest
       return getInstancesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.PerInstanceConfig.getDefaultInstance());
     }
-
     /**
      *
      *

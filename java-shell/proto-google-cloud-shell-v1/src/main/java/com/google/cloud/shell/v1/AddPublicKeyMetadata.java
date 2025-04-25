@@ -34,7 +34,6 @@ public final class AddPublicKeyMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.AddPublicKeyMetadata)
     AddPublicKeyMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddPublicKeyMetadata.newBuilder() to construct.
   private AddPublicKeyMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class AddPublicKeyMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

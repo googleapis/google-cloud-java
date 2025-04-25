@@ -38,7 +38,6 @@ public interface CreateEventCreateRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateEventCreateRuleRequestOrBuilder
    * @return Whether the eventCreateRule field is set.
    */
   boolean hasEventCreateRule();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateEventCreateRuleRequestOrBuilder
    * @return The eventCreateRule.
    */
   com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule();
-
   /**
    *
    *

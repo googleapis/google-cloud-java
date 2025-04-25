@@ -37,7 +37,6 @@ public interface ListPredictionApiKeyRegistrationsResponseOrBuilder
    */
   java.util.List<com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>
       getPredictionApiKeyRegistrationsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListPredictionApiKeyRegistrationsResponseOrBuilder
    */
   com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration
       getPredictionApiKeyRegistrations(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListPredictionApiKeyRegistrationsResponseOrBuilder
    * </code>
    */
   int getPredictionApiKeyRegistrationsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListPredictionApiKeyRegistrationsResponseOrBuilder
           ? extends
               com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistrationOrBuilder>
       getPredictionApiKeyRegistrationsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListPredictionApiKeyRegistrationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

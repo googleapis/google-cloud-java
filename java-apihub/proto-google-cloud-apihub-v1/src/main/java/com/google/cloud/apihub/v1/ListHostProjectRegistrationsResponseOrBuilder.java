@@ -36,7 +36,6 @@ public interface ListHostProjectRegistrationsResponseOrBuilder
    */
   java.util.List<com.google.cloud.apihub.v1.HostProjectRegistration>
       getHostProjectRegistrationsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListHostProjectRegistrationsResponseOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.HostProjectRegistration getHostProjectRegistrations(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListHostProjectRegistrationsResponseOrBuilder
    * </code>
    */
   int getHostProjectRegistrationsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListHostProjectRegistrationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.apihub.v1.HostProjectRegistrationOrBuilder>
       getHostProjectRegistrationsOrBuilderList();
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface ListHostProjectRegistrationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

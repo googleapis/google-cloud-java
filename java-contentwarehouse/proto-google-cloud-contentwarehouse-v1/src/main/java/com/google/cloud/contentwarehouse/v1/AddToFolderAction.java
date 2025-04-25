@@ -33,7 +33,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.AddToFolderAction)
     AddToFolderActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddToFolderAction.newBuilder() to construct.
   private AddToFolderAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList folders_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getFoldersList() {
     return folders_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   public int getFoldersCount() {
     return folders_.size();
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
   public java.lang.String getFolders(int index) {
     return folders_.get(index);
   }
-
   /**
    *
    *
@@ -307,7 +302,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -507,7 +501,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       folders_.makeImmutable();
       return folders_;
     }
-
     /**
      *
      *
@@ -542,7 +534,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public int getFoldersCount() {
       return folders_.size();
     }
-
     /**
      *
      *
@@ -560,7 +551,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public java.lang.String getFolders(int index) {
       return folders_.get(index);
     }
-
     /**
      *
      *
@@ -578,7 +568,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getFoldersBytes(int index) {
       return folders_.getByteString(index);
     }
-
     /**
      *
      *
@@ -604,7 +593,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +617,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +638,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +658,6 @@ public final class AddToFolderAction extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

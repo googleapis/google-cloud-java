@@ -33,7 +33,6 @@ public final class VerifyJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.VerifyJob)
     VerifyJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VerifyJob.newBuilder() to construct.
   private VerifyJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -210,7 +209,6 @@ public final class VerifyJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

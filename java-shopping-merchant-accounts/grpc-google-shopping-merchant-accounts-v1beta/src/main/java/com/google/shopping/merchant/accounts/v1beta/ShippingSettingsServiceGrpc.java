@@ -156,19 +156,6 @@ public final class ShippingSettingsServiceGrpc {
     return ShippingSettingsServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static ShippingSettingsServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<ShippingSettingsServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<ShippingSettingsServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public ShippingSettingsServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new ShippingSettingsServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return ShippingSettingsServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -314,55 +301,6 @@ public final class ShippingSettingsServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ShippingSettingsService.
-   *
-   * <pre>
-   * Service to get method call shipping setting information per Merchant API
-   * method.
-   * </pre>
-   */
-  public static final class ShippingSettingsServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<ShippingSettingsServiceBlockingV2Stub> {
-    private ShippingSettingsServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected ShippingSettingsServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new ShippingSettingsServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieve shipping setting information.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.ShippingSettings getShippingSettings(
-        com.google.shopping.merchant.accounts.v1beta.GetShippingSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetShippingSettingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Replace the shipping setting of a merchant with the request shipping
-     * setting. Executing this method requires admin access.
-     * </pre>
-     */
-    public com.google.shopping.merchant.accounts.v1beta.ShippingSettings insertShippingSettings(
-        com.google.shopping.merchant.accounts.v1beta.InsertShippingSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getInsertShippingSettingsMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service ShippingSettingsService.
    *
    * <pre>
    * Service to get method call shipping setting information per Merchant API

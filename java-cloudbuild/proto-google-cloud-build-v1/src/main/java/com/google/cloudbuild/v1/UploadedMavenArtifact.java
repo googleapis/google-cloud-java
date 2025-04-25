@@ -33,7 +33,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.UploadedMavenArtifact)
     UploadedMavenArtifactOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadedMavenArtifact.newBuilder() to construct.
   private UploadedMavenArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
 
   public static final int FILE_HASHES_FIELD_NUMBER = 2;
   private com.google.cloudbuild.v1.FileHashes fileHashes_;
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
   public boolean hasFileHashes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
         ? com.google.cloudbuild.v1.FileHashes.getDefaultInstance()
         : fileHashes_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
 
   public static final int PUSH_TIMING_FIELD_NUMBER = 3;
   private com.google.cloudbuild.v1.TimeSpan pushTiming_;
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
   public boolean hasPushTiming() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
         ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
         : pushTiming_;
   }
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +639,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -695,7 +683,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +750,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
             com.google.cloudbuild.v1.FileHashes.Builder,
             com.google.cloudbuild.v1.FileHashesOrBuilder>
         fileHashesBuilder_;
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
     public boolean hasFileHashes() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -801,7 +784,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
         return fileHashesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +825,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +885,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFileHashesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
             : fileHashes_;
       }
     }
-
     /**
      *
      *
@@ -959,7 +935,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
             com.google.cloudbuild.v1.TimeSpan.Builder,
             com.google.cloudbuild.v1.TimeSpanOrBuilder>
         pushTimingBuilder_;
-
     /**
      *
      *
@@ -976,7 +951,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
     public boolean hasPushTiming() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -999,7 +973,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
         return pushTimingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1018,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1068,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1084,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPushTimingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1136,7 +1104,6 @@ public final class UploadedMavenArtifact extends com.google.protobuf.GeneratedMe
             : pushTiming_;
       }
     }
-
     /**
      *
      *

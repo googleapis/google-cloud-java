@@ -37,7 +37,6 @@ public interface RagManagedDbConfigOrBuilder
    * @return Whether the enterprise field is set.
    */
   boolean hasEnterprise();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface RagManagedDbConfigOrBuilder
    * @return The enterprise.
    */
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise getEnterprise();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RagManagedDbConfigOrBuilder
    * @return Whether the basic field is set.
    */
   boolean hasBasic();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface RagManagedDbConfigOrBuilder
    * @return The basic.
    */
   com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic getBasic();
-
   /**
    *
    *

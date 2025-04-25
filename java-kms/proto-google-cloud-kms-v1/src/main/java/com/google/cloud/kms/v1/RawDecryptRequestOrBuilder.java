@@ -38,7 +38,6 @@ public interface RawDecryptRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -139,7 +138,6 @@ public interface RawDecryptRequestOrBuilder
    * @return Whether the ciphertextCrc32c field is set.
    */
   boolean hasCiphertextCrc32C();
-
   /**
    *
    *
@@ -167,7 +165,6 @@ public interface RawDecryptRequestOrBuilder
    * @return The ciphertextCrc32c.
    */
   com.google.protobuf.Int64Value getCiphertextCrc32C();
-
   /**
    *
    *
@@ -224,7 +221,6 @@ public interface RawDecryptRequestOrBuilder
    * @return Whether the additionalAuthenticatedDataCrc32c field is set.
    */
   boolean hasAdditionalAuthenticatedDataCrc32C();
-
   /**
    *
    *
@@ -255,7 +251,6 @@ public interface RawDecryptRequestOrBuilder
    * @return The additionalAuthenticatedDataCrc32c.
    */
   com.google.protobuf.Int64Value getAdditionalAuthenticatedDataCrc32C();
-
   /**
    *
    *
@@ -313,7 +308,6 @@ public interface RawDecryptRequestOrBuilder
    * @return Whether the initializationVectorCrc32c field is set.
    */
   boolean hasInitializationVectorCrc32C();
-
   /**
    *
    *
@@ -342,7 +336,6 @@ public interface RawDecryptRequestOrBuilder
    * @return The initializationVectorCrc32c.
    */
   com.google.protobuf.Int64Value getInitializationVectorCrc32C();
-
   /**
    *
    *

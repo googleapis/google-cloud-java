@@ -38,7 +38,6 @@ public interface SecurityConfigOrBuilder
    * @return Whether the kerberosConfig field is set.
    */
   boolean hasKerberosConfig();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SecurityConfigOrBuilder
    * @return The kerberosConfig.
    */
   com.google.cloud.dataproc.v1.KerberosConfig getKerberosConfig();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SecurityConfigOrBuilder
    * @return Whether the identityConfig field is set.
    */
   boolean hasIdentityConfig();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface SecurityConfigOrBuilder
    * @return The identityConfig.
    */
   com.google.cloud.dataproc.v1.IdentityConfig getIdentityConfig();
-
   /**
    *
    *

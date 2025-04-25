@@ -33,7 +33,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkEdgeSecurityService)
     NetworkEdgeSecurityServiceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkEdgeSecurityService.newBuilder() to construct.
   private NetworkEdgeSecurityService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -282,7 +272,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -298,7 +287,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -319,7 +307,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -335,7 +322,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -359,7 +345,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -388,7 +373,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -404,7 +388,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -428,7 +411,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -457,7 +439,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -473,7 +454,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -497,7 +477,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -526,7 +505,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object securityPolicy_ = "";
-
   /**
    *
    *
@@ -542,7 +520,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasSecurityPolicy() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -566,7 +543,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -595,7 +571,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -611,7 +586,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -635,7 +609,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -664,7 +637,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
-
   /**
    *
    *
@@ -680,7 +652,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -704,7 +675,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -1021,7 +991,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1351,7 +1320,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -1366,7 +1334,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1389,7 +1356,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1412,7 +1378,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1399,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1416,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1440,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1492,7 +1454,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1515,7 +1476,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1538,7 +1498,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1560,7 +1519,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1578,7 +1536,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1560,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -1618,7 +1574,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1641,7 +1596,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1664,7 +1618,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1686,7 +1639,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1656,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1680,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private long id_;
-
     /**
      *
      *
@@ -1745,7 +1695,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1761,7 +1710,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -1781,7 +1729,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1801,7 +1748,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1816,7 +1762,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1839,7 +1784,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1862,7 +1806,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1884,7 +1827,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1902,7 +1844,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1927,7 +1868,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1942,7 +1882,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1965,7 +1904,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1988,7 +1926,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2010,7 +1947,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2028,7 +1964,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2053,7 +1988,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -2068,7 +2002,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2091,7 +2024,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2114,7 +2046,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2136,7 +2067,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2154,7 +2084,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2179,7 +2108,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object securityPolicy_ = "";
-
     /**
      *
      *
@@ -2194,7 +2122,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasSecurityPolicy() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2217,7 +2144,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2240,7 +2166,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2187,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2280,7 +2204,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2228,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -2320,7 +2242,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2343,7 +2264,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2366,7 +2286,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2388,7 +2307,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2324,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2431,7 +2348,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     }
 
     private java.lang.Object selfLinkWithId_ = "";
-
     /**
      *
      *
@@ -2446,7 +2362,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2469,7 +2384,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2492,7 +2406,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2514,7 +2427,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2532,7 +2444,6 @@ public final class NetworkEdgeSecurityService extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

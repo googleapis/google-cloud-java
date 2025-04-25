@@ -85,7 +85,6 @@ public enum TeardownPolicy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEARDOWN_POLICY_UNKNOWN = 0;</code>
    */
   public static final int TEARDOWN_POLICY_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public enum TeardownPolicy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEARDOWN_ALWAYS = 1;</code>
    */
   public static final int TEARDOWN_ALWAYS_VALUE = 1;
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public enum TeardownPolicy implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEARDOWN_ON_SUCCESS = 2;</code>
    */
   public static final int TEARDOWN_ON_SUCCESS_VALUE = 2;
-
   /**
    *
    *

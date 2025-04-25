@@ -35,7 +35,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.SevSnpAttestation)
     SevSnpAttestationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SevSnpAttestation.newBuilder() to construct.
   private SevSnpAttestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
 
   public static final int REPORT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString report_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
 
   public static final int AUX_BLOB_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString auxBlob_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -280,7 +277,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -478,7 +474,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private com.google.protobuf.ByteString report_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -497,7 +492,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getReport() {
       return report_;
     }
-
     /**
      *
      *
@@ -522,7 +516,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -545,7 +538,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
     }
 
     private com.google.protobuf.ByteString auxBlob_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -564,7 +556,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getAuxBlob() {
       return auxBlob_;
     }
-
     /**
      *
      *
@@ -589,7 +580,6 @@ public final class SevSnpAttestation extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

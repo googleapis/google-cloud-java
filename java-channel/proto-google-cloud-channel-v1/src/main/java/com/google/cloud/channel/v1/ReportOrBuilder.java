@@ -42,7 +42,6 @@ public interface ReportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface ReportOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface ReportOrBuilder
    * <code>repeated .google.cloud.channel.v1.Column columns = 3;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Column> getColumnsList();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ReportOrBuilder
    * <code>repeated .google.cloud.channel.v1.Column columns = 3;</code>
    */
   com.google.cloud.channel.v1.Column getColumns(int index);
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public interface ReportOrBuilder
    * <code>repeated .google.cloud.channel.v1.Column columns = 3;</code>
    */
   int getColumnsCount();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface ReportOrBuilder
    * <code>repeated .google.cloud.channel.v1.Column columns = 3;</code>
    */
   java.util.List<? extends com.google.cloud.channel.v1.ColumnOrBuilder> getColumnsOrBuilderList();
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface ReportOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

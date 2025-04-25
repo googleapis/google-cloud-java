@@ -36,7 +36,6 @@ public interface TestIamPermissionsFirewallPolicyRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface TestIamPermissionsFirewallPolicyRequestOrBuilder
    * @return Whether the testPermissionsRequestResource field is set.
    */
   boolean hasTestPermissionsRequestResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface TestIamPermissionsFirewallPolicyRequestOrBuilder
    * @return The testPermissionsRequestResource.
    */
   com.google.cloud.compute.v1.TestPermissionsRequest getTestPermissionsRequestResource();
-
   /**
    *
    *

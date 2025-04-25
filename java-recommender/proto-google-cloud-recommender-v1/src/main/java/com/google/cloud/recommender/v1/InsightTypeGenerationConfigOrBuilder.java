@@ -37,7 +37,6 @@ public interface InsightTypeGenerationConfigOrBuilder
    * @return Whether the params field is set.
    */
   boolean hasParams();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InsightTypeGenerationConfigOrBuilder
    * @return The params.
    */
   com.google.protobuf.Struct getParams();
-
   /**
    *
    *

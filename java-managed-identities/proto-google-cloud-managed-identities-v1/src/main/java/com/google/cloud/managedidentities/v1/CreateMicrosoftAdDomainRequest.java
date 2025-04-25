@@ -34,7 +34,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest)
     CreateMicrosoftAdDomainRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateMicrosoftAdDomainRequest.newBuilder() to construct.
   private CreateMicrosoftAdDomainRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domainName_ = "";
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
 
   public static final int DOMAIN_FIELD_NUMBER = 3;
   private com.google.cloud.managedidentities.v1.Domain domain_;
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
   public boolean hasDomain() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -242,7 +235,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         ? com.google.cloud.managedidentities.v1.Domain.getDefaultInstance()
         : domain_;
   }
-
   /**
    *
    *
@@ -445,7 +437,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,7 +673,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -708,7 +698,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +747,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +794,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object domainName_ = "";
-
     /**
      *
      *
@@ -842,7 +827,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +860,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +920,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +960,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
             com.google.cloud.managedidentities.v1.Domain.Builder,
             com.google.cloud.managedidentities.v1.DomainOrBuilder>
         domainBuilder_;
-
     /**
      *
      *
@@ -996,7 +976,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     public boolean hasDomain() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         return domainBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1022,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1072,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1118,7 +1093,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1109,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       onChanged();
       return getDomainFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
             : domain_;
       }
     }
-
     /**
      *
      *

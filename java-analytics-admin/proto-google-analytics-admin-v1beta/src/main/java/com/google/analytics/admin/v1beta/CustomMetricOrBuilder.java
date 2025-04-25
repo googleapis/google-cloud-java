@@ -37,7 +37,6 @@ public interface CustomMetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CustomMetricOrBuilder
    * @return The parameterName.
    */
   java.lang.String getParameterName();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CustomMetricOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public interface CustomMetricOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public interface CustomMetricOrBuilder
    * @return The enum numeric value on the wire for measurementUnit.
    */
   int getMeasurementUnitValue();
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public interface CustomMetricOrBuilder
    * @return The enum numeric value on the wire for scope.
    */
   int getScopeValue();
-
   /**
    *
    *
@@ -233,7 +227,6 @@ public interface CustomMetricOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType>
       getRestrictedMetricTypeList();
-
   /**
    *
    *
@@ -250,7 +243,6 @@ public interface CustomMetricOrBuilder
    * @return The count of restrictedMetricType.
    */
   int getRestrictedMetricTypeCount();
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public interface CustomMetricOrBuilder
    */
   com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType getRestrictedMetricType(
       int index);
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public interface CustomMetricOrBuilder
    * @return A list containing the enum numeric values on the wire for restrictedMetricType.
    */
   java.util.List<java.lang.Integer> getRestrictedMetricTypeValueList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface EventUpdateOrBuilder
    * @return The stream.
    */
   java.lang.String getStream();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EventUpdateOrBuilder
    * @return The event.
    */
   java.lang.String getEvent();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface EventUpdateOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface EventUpdateOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface EventUpdateOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface CelebrityRecognitionAnnotationOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack>
       getCelebrityTracksList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface CelebrityRecognitionAnnotationOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p3beta1.CelebrityTrack getCelebrityTracks(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface CelebrityRecognitionAnnotationOrBuilder
    * </code>
    */
   int getCelebrityTracksCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface CelebrityRecognitionAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.CelebrityTrackOrBuilder>
       getCelebrityTracksOrBuilderList();
-
   /**
    *
    *

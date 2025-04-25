@@ -33,7 +33,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ListRuleSetsResponse)
     ListRuleSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRuleSetsResponse.newBuilder() to construct.
   private ListRuleSetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.RuleSet> ruleSets_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.contentwarehouse.v1.RuleSet> getRuleSetsList() {
     return ruleSets_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       getRuleSetsOrBuilderList() {
     return ruleSets_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
   public int getRuleSetsCount() {
     return ruleSets_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
   public com.google.cloud.contentwarehouse.v1.RuleSet getRuleSets(int index) {
     return ruleSets_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return ruleSetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return ruleSetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return ruleSetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.contentwarehouse.v1.RuleSet.Builder getRuleSetsBuilder(int index) {
       return getRuleSetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return ruleSetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(ruleSets_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       return getRuleSetsFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.RuleSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       return getRuleSetsFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.RuleSet.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1041,6 @@ public final class ListRuleSetsResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

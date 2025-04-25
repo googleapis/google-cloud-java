@@ -36,7 +36,6 @@ public interface RagQueryOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RagQueryOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface RagQueryOrBuilder
    * @return Whether the ragRetrievalConfig field is set.
    */
   boolean hasRagRetrievalConfig();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface RagQueryOrBuilder
    * @return The ragRetrievalConfig.
    */
   com.google.cloud.aiplatform.v1.RagRetrievalConfig getRagRetrievalConfig();
-
   /**
    *
    *

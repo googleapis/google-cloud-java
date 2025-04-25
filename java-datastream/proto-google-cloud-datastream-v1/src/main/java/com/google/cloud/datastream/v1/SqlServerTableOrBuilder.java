@@ -36,7 +36,6 @@ public interface SqlServerTableOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SqlServerTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerColumn columns = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1.SqlServerColumn> getColumnsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SqlServerTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerColumn columns = 2;</code>
    */
   com.google.cloud.datastream.v1.SqlServerColumn getColumns(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SqlServerTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1.SqlServerColumn columns = 2;</code>
    */
   int getColumnsCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface SqlServerTableOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1.SqlServerColumnOrBuilder>
       getColumnsOrBuilderList();
-
   /**
    *
    *

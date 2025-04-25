@@ -33,7 +33,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.apps.script.type.CommonAddOnManifest)
     CommonAddOnManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommonAddOnManifest.newBuilder() to construct.
   private CommonAddOnManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logoUrl_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   public static final int LAYOUT_PROPERTIES_FIELD_NUMBER = 3;
   private com.google.apps.script.type.LayoutProperties layoutProperties_;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public boolean hasLayoutProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         ? com.google.apps.script.type.LayoutProperties.getDefaultInstance()
         : layoutProperties_;
   }
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   public static final int ADD_ON_WIDGET_SET_FIELD_NUMBER = 4;
   private com.google.apps.script.type.AddOnWidgetSet addOnWidgetSet_;
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public boolean hasAddOnWidgetSet() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +254,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         ? com.google.apps.script.type.AddOnWidgetSet.getDefaultInstance()
         : addOnWidgetSet_;
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   public static final int USE_LOCALE_FROM_APP_FIELD_NUMBER = 5;
   private boolean useLocaleFromApp_ = false;
-
   /**
    *
    *
@@ -303,7 +291,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   public static final int HOMEPAGE_TRIGGER_FIELD_NUMBER = 6;
   private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
-
   /**
    *
    *
@@ -322,7 +309,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public boolean hasHomepageTrigger() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -343,7 +329,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
         : homepageTrigger_;
   }
-
   /**
    *
    *
@@ -368,7 +353,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.UniversalActionExtensionPoint>
       universalActions_;
-
   /**
    *
    *
@@ -387,7 +371,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       getUniversalActionsList() {
     return universalActions_;
   }
-
   /**
    *
    *
@@ -407,7 +390,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       getUniversalActionsOrBuilderList() {
     return universalActions_;
   }
-
   /**
    *
    *
@@ -425,7 +407,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public int getUniversalActionsCount() {
     return universalActions_.size();
   }
-
   /**
    *
    *
@@ -443,7 +424,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public com.google.apps.script.type.UniversalActionExtensionPoint getUniversalActions(int index) {
     return universalActions_.get(index);
   }
-
   /**
    *
    *
@@ -465,7 +445,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
 
   public static final int OPEN_LINK_URL_PREFIXES_FIELD_NUMBER = 8;
   private com.google.protobuf.ListValue openLinkUrlPrefixes_;
-
   /**
    *
    *
@@ -487,7 +466,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   public boolean hasOpenLinkUrlPrefixes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -511,7 +489,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.ListValue.getDefaultInstance()
         : openLinkUrlPrefixes_;
   }
-
   /**
    *
    *
@@ -778,7 +755,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1148,7 +1124,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1171,7 +1146,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1194,7 +1168,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1189,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1206,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1230,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object logoUrl_ = "";
-
     /**
      *
      *
@@ -1282,7 +1252,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1274,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1327,7 +1295,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1312,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1341,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             com.google.apps.script.type.LayoutProperties.Builder,
             com.google.apps.script.type.LayoutPropertiesOrBuilder>
         layoutPropertiesBuilder_;
-
     /**
      *
      *
@@ -1390,7 +1355,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean hasLayoutProperties() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1411,7 +1375,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return layoutPropertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1397,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1417,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1484,7 +1445,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1464,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1478,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getLayoutPropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1538,7 +1496,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             : layoutProperties_;
       }
     }
-
     /**
      *
      *
@@ -1571,7 +1528,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             com.google.apps.script.type.AddOnWidgetSet.Builder,
             com.google.apps.script.type.AddOnWidgetSetOrBuilder>
         addOnWidgetSetBuilder_;
-
     /**
      *
      *
@@ -1587,7 +1543,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean hasAddOnWidgetSet() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1609,7 +1564,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return addOnWidgetSetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1633,7 +1587,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1655,7 +1608,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1684,7 +1636,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1705,7 +1656,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1721,7 +1671,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAddOnWidgetSetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1741,7 +1690,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             : addOnWidgetSet_;
       }
     }
-
     /**
      *
      *
@@ -1770,7 +1718,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean useLocaleFromApp_;
-
     /**
      *
      *
@@ -1786,7 +1733,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean getUseLocaleFromApp() {
       return useLocaleFromApp_;
     }
-
     /**
      *
      *
@@ -1806,7 +1752,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1831,7 +1776,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             com.google.apps.script.type.HomepageExtensionPoint.Builder,
             com.google.apps.script.type.HomepageExtensionPointOrBuilder>
         homepageTriggerBuilder_;
-
     /**
      *
      *
@@ -1849,7 +1793,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean hasHomepageTrigger() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1873,7 +1816,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return homepageTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1899,7 +1841,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1923,7 +1864,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1955,7 +1895,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1978,7 +1917,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1996,7 +1934,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2019,7 +1956,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             : homepageTrigger_;
       }
     }
-
     /**
      *
      *
@@ -2088,7 +2024,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return universalActionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2109,7 +2044,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return universalActionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2131,7 +2065,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return universalActionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2159,7 +2092,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2185,7 +2117,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2213,7 +2144,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2241,7 +2171,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2266,7 +2195,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2292,7 +2220,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2318,7 +2245,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2268,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2366,7 +2291,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2384,7 +2308,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         getUniversalActionsBuilder(int index) {
       return getUniversalActionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2406,7 +2329,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return universalActionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2429,7 +2351,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(universalActions_);
       }
     }
-
     /**
      *
      *
@@ -2449,7 +2370,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.apps.script.type.UniversalActionExtensionPoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2470,7 +2390,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
               index,
               com.google.apps.script.type.UniversalActionExtensionPoint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2515,7 +2434,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.ListValue.Builder,
             com.google.protobuf.ListValueOrBuilder>
         openLinkUrlPrefixesBuilder_;
-
     /**
      *
      *
@@ -2536,7 +2454,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public boolean hasOpenLinkUrlPrefixes() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2563,7 +2480,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return openLinkUrlPrefixesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2592,7 +2508,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2618,7 +2533,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2652,7 +2566,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2678,7 +2591,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2611,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getOpenLinkUrlPrefixesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2724,7 +2635,6 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             : openLinkUrlPrefixes_;
       }
     }
-
     /**
      *
      *

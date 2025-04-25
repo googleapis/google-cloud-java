@@ -40,7 +40,6 @@ public interface ActiveConferenceOrBuilder
    * @return The conferenceRecord.
    */
   java.lang.String getConferenceRecord();
-
   /**
    *
    *

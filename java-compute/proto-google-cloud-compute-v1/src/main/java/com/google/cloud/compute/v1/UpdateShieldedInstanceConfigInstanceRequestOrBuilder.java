@@ -36,7 +36,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return Whether the shieldedInstanceConfigResource field is set.
    */
   boolean hasShieldedInstanceConfigResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return The shieldedInstanceConfigResource.
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfigResource();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

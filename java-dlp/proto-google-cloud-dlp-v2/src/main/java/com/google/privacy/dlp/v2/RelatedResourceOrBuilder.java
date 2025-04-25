@@ -36,7 +36,6 @@ public interface RelatedResourceOrBuilder
    * @return The fullResource.
    */
   java.lang.String getFullResource();
-
   /**
    *
    *

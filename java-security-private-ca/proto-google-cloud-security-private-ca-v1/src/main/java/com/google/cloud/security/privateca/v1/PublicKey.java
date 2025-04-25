@@ -34,7 +34,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.PublicKey)
     PublicKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublicKey.newBuilder() to construct.
   private PublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>KEY_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int KEY_FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -229,7 +227,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -249,7 +246,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORMAT_FIELD_NUMBER = 2;
   private int format_ = 0;
-
   /**
    *
    *
@@ -267,7 +263,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -462,7 +457,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +653,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -676,7 +669,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getKey() {
       return key_;
     }
-
     /**
      *
      *
@@ -699,7 +691,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +711,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -738,7 +728,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -759,7 +748,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +769,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.security.privateca.v1.PublicKey.KeyFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -805,7 +792,6 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

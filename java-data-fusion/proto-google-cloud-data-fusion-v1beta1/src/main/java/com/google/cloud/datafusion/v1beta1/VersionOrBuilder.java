@@ -36,7 +36,6 @@ public interface VersionOrBuilder
    * @return The versionNumber.
    */
   java.lang.String getVersionNumber();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface VersionOrBuilder
    * @return A list containing the availableFeatures.
    */
   java.util.List<java.lang.String> getAvailableFeaturesList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface VersionOrBuilder
    * @return The count of availableFeatures.
    */
   int getAvailableFeaturesCount();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface VersionOrBuilder
    * @return The availableFeatures at the given index.
    */
   java.lang.String getAvailableFeatures(int index);
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface VersionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *

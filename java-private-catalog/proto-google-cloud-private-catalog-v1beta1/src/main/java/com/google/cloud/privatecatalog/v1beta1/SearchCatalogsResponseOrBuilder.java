@@ -34,7 +34,6 @@ public interface SearchCatalogsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Catalog catalogs = 1;</code>
    */
   java.util.List<com.google.cloud.privatecatalog.v1beta1.Catalog> getCatalogsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchCatalogsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Catalog catalogs = 1;</code>
    */
   com.google.cloud.privatecatalog.v1beta1.Catalog getCatalogs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchCatalogsResponseOrBuilder
    * <code>repeated .google.cloud.privatecatalog.v1beta1.Catalog catalogs = 1;</code>
    */
   int getCatalogsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchCatalogsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.privatecatalog.v1beta1.CatalogOrBuilder>
       getCatalogsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface SearchCatalogsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

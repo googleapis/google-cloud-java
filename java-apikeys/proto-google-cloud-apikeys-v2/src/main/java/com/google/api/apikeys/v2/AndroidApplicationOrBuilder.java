@@ -39,7 +39,6 @@ public interface AndroidApplicationOrBuilder
    * @return The sha1Fingerprint.
    */
   java.lang.String getSha1Fingerprint();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AndroidApplicationOrBuilder
    * @return The packageName.
    */
   java.lang.String getPackageName();
-
   /**
    *
    *

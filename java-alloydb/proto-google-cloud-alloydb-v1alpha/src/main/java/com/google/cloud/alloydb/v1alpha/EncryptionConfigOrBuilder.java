@@ -38,7 +38,6 @@ public interface EncryptionConfigOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *

@@ -174,8 +174,6 @@ public class RegionBackendServicesClientTest {
             .setDescription("description-1724546052")
             .setEdgeSecurityPolicy("edgeSecurityPolicy-630226001")
             .setEnableCDN(true)
-            .setExternalManagedMigrationState("externalManagedMigrationState252654551")
-            .setExternalManagedMigrationTestingPercentage(1044103374)
             .setFailoverPolicy(BackendServiceFailoverPolicy.newBuilder().build())
             .setFingerprint("fingerprint-1375934236")
             .setHaPolicy(BackendServiceHAPolicy.newBuilder().build())

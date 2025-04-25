@@ -123,7 +123,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int STATUS_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -134,7 +133,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_IN_PROGRESS = 1;</code>
    */
   public static final int STATUS_IN_PROGRESS_VALUE = 1;
-
   /**
    *
    *
@@ -145,7 +143,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_ACTIVE = 2;</code>
    */
   public static final int STATUS_ACTIVE_VALUE = 2;
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_FAILED = 3;</code>
    */
   public static final int STATUS_FAILED_VALUE = 3;
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_DELETING = 4;</code>
    */
   public static final int STATUS_DELETING_VALUE = 4;
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_DELETED = 5;</code>
    */
   public static final int STATUS_DELETED_VALUE = 5;
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public enum Status implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATUS_PEERING = 10;</code>
    */
   public static final int STATUS_PEERING_VALUE = 10;
-
   /**
    *
    *

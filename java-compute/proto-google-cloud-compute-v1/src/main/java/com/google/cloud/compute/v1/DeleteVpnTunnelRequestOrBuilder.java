@@ -38,7 +38,6 @@ public interface DeleteVpnTunnelRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface DeleteVpnTunnelRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface DeleteVpnTunnelRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface DeleteVpnTunnelRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface DeleteVpnTunnelRequestOrBuilder
    * @return The vpnTunnel.
    */
   java.lang.String getVpnTunnel();
-
   /**
    *
    *

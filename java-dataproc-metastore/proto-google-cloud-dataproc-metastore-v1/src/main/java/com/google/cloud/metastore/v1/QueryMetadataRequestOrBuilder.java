@@ -41,7 +41,6 @@ public interface QueryMetadataRequestOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface QueryMetadataRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *

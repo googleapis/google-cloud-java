@@ -41,7 +41,6 @@ public interface ListTunnelDestGroupsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface ListTunnelDestGroupsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QuestionAnsweringRelevanceInstance)
     QuestionAnsweringRelevanceInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuestionAnsweringRelevanceInstance.newBuilder() to construct.
   private QuestionAnsweringRelevanceInstance(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object prediction_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
   public boolean hasPrediction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reference_ = "";
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
   public boolean hasReference() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
   public boolean hasContext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -280,7 +270,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instruction_ = "";
-
   /**
    *
    *
@@ -296,7 +285,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
   public boolean hasInstruction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -320,7 +308,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -553,7 +540,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -794,7 +780,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object prediction_ = "";
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     public boolean hasPrediction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -855,7 +838,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -877,7 +859,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +876,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     }
 
     private java.lang.Object reference_ = "";
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     public boolean hasReference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1003,7 +979,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1021,7 +996,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1020,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     }
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1107,7 +1078,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1099,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1147,7 +1116,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1140,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     }
 
     private java.lang.Object instruction_ = "";
-
     /**
      *
      *
@@ -1187,7 +1154,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
     public boolean hasInstruction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1210,7 +1176,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1198,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1255,7 +1219,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1236,6 @@ public final class QuestionAnsweringRelevanceInstance extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

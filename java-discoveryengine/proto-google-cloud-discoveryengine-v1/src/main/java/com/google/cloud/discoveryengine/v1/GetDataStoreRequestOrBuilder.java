@@ -47,7 +47,6 @@ public interface GetDataStoreRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

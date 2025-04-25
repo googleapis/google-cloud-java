@@ -38,7 +38,6 @@ public interface UpdateRegionRequestOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateRegionRequestOrBuilder
    * @return The region.
    */
   com.google.shopping.merchant.accounts.v1beta.Region getRegion();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface UpdateRegionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface UpdateRegionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

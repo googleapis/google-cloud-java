@@ -35,7 +35,6 @@ public final class AccessContextManagerOperationMetadata
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata)
     AccessContextManagerOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessContextManagerOperationMetadata.newBuilder() to construct.
   private AccessContextManagerOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -225,7 +224,6 @@ public final class AccessContextManagerOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

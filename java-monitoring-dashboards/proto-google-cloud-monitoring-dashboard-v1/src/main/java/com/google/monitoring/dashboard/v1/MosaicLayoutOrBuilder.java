@@ -48,7 +48,6 @@ public interface MosaicLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.MosaicLayout.Tile tiles = 3;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.MosaicLayout.Tile> getTilesList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface MosaicLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.MosaicLayout.Tile tiles = 3;</code>
    */
   com.google.monitoring.dashboard.v1.MosaicLayout.Tile getTiles(int index);
-
   /**
    *
    *
@@ -70,7 +68,6 @@ public interface MosaicLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.MosaicLayout.Tile tiles = 3;</code>
    */
   int getTilesCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface MosaicLayoutOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.MosaicLayout.TileOrBuilder>
       getTilesOrBuilderList();
-
   /**
    *
    *

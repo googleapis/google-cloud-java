@@ -34,7 +34,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.UserSegmentConditionGroup)
     UserSegmentConditionGroupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserSegmentConditionGroup.newBuilder() to construct.
   private UserSegmentConditionGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int CONDITION_SCOPING_FIELD_NUMBER = 1;
   private int conditionScoping_ = 0;
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
   public int getConditionScopingValue() {
     return conditionScoping_;
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
 
   public static final int SEGMENT_FILTER_EXPRESSION_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.SegmentFilterExpression segmentFilterExpression_;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
   public boolean hasSegmentFilterExpression() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
         ? com.google.analytics.data.v1alpha.SegmentFilterExpression.getDefaultInstance()
         : segmentFilterExpression_;
   }
-
   /**
    *
    *
@@ -371,7 +365,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int conditionScoping_ = 0;
-
     /**
      *
      *
@@ -616,7 +608,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
     public int getConditionScopingValue() {
       return conditionScoping_;
     }
-
     /**
      *
      *
@@ -647,7 +638,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -679,7 +669,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
           ? com.google.analytics.data.v1alpha.UserCriteriaScoping.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -714,7 +703,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +739,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
             com.google.analytics.data.v1alpha.SegmentFilterExpression.Builder,
             com.google.analytics.data.v1alpha.SegmentFilterExpressionOrBuilder>
         segmentFilterExpressionBuilder_;
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
     public boolean hasSegmentFilterExpression() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
         return segmentFilterExpressionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -820,7 +805,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +828,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +882,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +900,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
       onChanged();
       return getSegmentFilterExpressionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class UserSegmentConditionGroup extends com.google.protobuf.Generat
             : segmentFilterExpression_;
       }
     }
-
     /**
      *
      *

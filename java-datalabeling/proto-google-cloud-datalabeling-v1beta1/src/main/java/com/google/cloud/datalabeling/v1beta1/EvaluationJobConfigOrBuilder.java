@@ -44,7 +44,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the imageClassificationConfig field is set.
    */
   boolean hasImageClassificationConfig();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The imageClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.ImageClassificationConfig getImageClassificationConfig();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the boundingPolyConfig field is set.
    */
   boolean hasBoundingPolyConfig();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The boundingPolyConfig.
    */
   com.google.cloud.datalabeling.v1beta1.BoundingPolyConfig getBoundingPolyConfig();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the textClassificationConfig field is set.
    */
   boolean hasTextClassificationConfig();
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The textClassificationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.TextClassificationConfig getTextClassificationConfig();
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -238,7 +231,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig();
-
   /**
    *
    *
@@ -275,7 +267,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the evaluationConfig field is set.
    */
   boolean hasEvaluationConfig();
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The evaluationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationConfig getEvaluationConfig();
-
   /**
    *
    *
@@ -328,7 +318,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the humanAnnotationConfig field is set.
    */
   boolean hasHumanAnnotationConfig();
-
   /**
    *
    *
@@ -349,7 +338,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The humanAnnotationConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getHumanAnnotationConfig();
-
   /**
    *
    *
@@ -398,7 +386,6 @@ public interface EvaluationJobConfigOrBuilder
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
   int getBigqueryImportKeysCount();
-
   /**
    *
    *
@@ -427,11 +414,9 @@ public interface EvaluationJobConfigOrBuilder
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
   boolean containsBigqueryImportKeys(java.lang.String key);
-
   /** Use {@link #getBigqueryImportKeysMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getBigqueryImportKeys();
-
   /**
    *
    *
@@ -460,7 +445,6 @@ public interface EvaluationJobConfigOrBuilder
    * <code>map&lt;string, string&gt; bigquery_import_keys = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getBigqueryImportKeysMap();
-
   /**
    *
    *
@@ -493,7 +477,6 @@ public interface EvaluationJobConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -571,7 +554,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return Whether the evaluationJobAlertConfig field is set.
    */
   boolean hasEvaluationJobAlertConfig();
-
   /**
    *
    *
@@ -588,7 +570,6 @@ public interface EvaluationJobConfigOrBuilder
    * @return The evaluationJobAlertConfig.
    */
   com.google.cloud.datalabeling.v1beta1.EvaluationJobAlertConfig getEvaluationJobAlertConfig();
-
   /**
    *
    *

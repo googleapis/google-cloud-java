@@ -63,7 +63,6 @@ public interface RenewalSettingsOrBuilder
    * @return The enum numeric value on the wire for paymentPlan.
    */
   int getPaymentPlanValue();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface RenewalSettingsOrBuilder
    * @return Whether the paymentCycle field is set.
    */
   boolean hasPaymentCycle();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface RenewalSettingsOrBuilder
    * @return The paymentCycle.
    */
   com.google.cloud.channel.v1.Period getPaymentCycle();
-
   /**
    *
    *

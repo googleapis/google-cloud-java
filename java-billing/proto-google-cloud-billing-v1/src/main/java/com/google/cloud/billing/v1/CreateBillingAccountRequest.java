@@ -33,7 +33,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.CreateBillingAccountRequest)
     CreateBillingAccountRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBillingAccountRequest.newBuilder() to construct.
   private CreateBillingAccountRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int BILLING_ACCOUNT_FIELD_NUMBER = 1;
   private com.google.cloud.billing.v1.BillingAccount billingAccount_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
   public boolean hasBillingAccount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
         ? com.google.cloud.billing.v1.BillingAccount.getDefaultInstance()
         : billingAccount_;
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +360,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +579,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
             com.google.cloud.billing.v1.BillingAccount.Builder,
             com.google.cloud.billing.v1.BillingAccountOrBuilder>
         billingAccountBuilder_;
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
     public boolean hasBillingAccount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -632,7 +623,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
         return billingAccountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +707,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +731,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return getBillingAccountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
             : billingAccount_;
       }
     }
-
     /**
      *
      *
@@ -821,7 +805,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -873,7 +855,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +899,6 @@ public final class CreateBillingAccountRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

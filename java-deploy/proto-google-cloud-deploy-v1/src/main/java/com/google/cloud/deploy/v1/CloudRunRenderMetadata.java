@@ -34,7 +34,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CloudRunRenderMetadata)
     CloudRunRenderMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudRunRenderMetadata.newBuilder() to construct.
   private CloudRunRenderMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -283,7 +280,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -469,7 +465,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -495,7 +490,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -521,7 +515,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +559,6 @@ public final class CloudRunRenderMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

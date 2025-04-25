@@ -76,7 +76,6 @@ public enum SearchUseCase implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEARCH_USE_CASE_UNSPECIFIED = 0;</code>
    */
   public static final int SEARCH_USE_CASE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public enum SearchUseCase implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SEARCH_USE_CASE_SEARCH = 1;</code>
    */
   public static final int SEARCH_USE_CASE_SEARCH_VALUE = 1;
-
   /**
    *
    *

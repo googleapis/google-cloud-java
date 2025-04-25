@@ -36,7 +36,6 @@ public interface HealthCheckRequestOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
-
   /**
    *
    *

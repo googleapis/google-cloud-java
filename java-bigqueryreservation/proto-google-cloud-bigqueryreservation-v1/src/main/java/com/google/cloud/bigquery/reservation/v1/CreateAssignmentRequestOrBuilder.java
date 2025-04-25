@@ -39,7 +39,6 @@ public interface CreateAssignmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateAssignmentRequestOrBuilder
    * @return Whether the assignment field is set.
    */
   boolean hasAssignment();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CreateAssignmentRequestOrBuilder
    * @return The assignment.
    */
   com.google.cloud.bigquery.reservation.v1.Assignment getAssignment();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface CreateAssignmentRequestOrBuilder
    * @return The assignmentId.
    */
   java.lang.String getAssignmentId();
-
   /**
    *
    *

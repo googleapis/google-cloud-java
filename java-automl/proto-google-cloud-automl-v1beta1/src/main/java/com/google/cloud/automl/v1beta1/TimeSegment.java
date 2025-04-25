@@ -33,7 +33,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TimeSegment)
     TimeSegmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TimeSegment.newBuilder() to construct.
   private TimeSegment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int START_TIME_OFFSET_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration startTimeOffset_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : startTimeOffset_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration endTimeOffset_;
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTimeOffset() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : endTimeOffset_;
   }
-
   /**
    *
    *
@@ -353,7 +346,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +569,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         startTimeOffsetBuilder_;
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTimeOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
         return startTimeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +676,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +711,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
             : startTimeOffset_;
       }
     }
-
     /**
      *
      *
@@ -780,7 +763,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         endTimeOffsetBuilder_;
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
         return endTimeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -842,7 +822,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +842,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +870,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +890,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +905,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -949,7 +924,6 @@ public final class TimeSegment extends com.google.protobuf.GeneratedMessageV3
             : endTimeOffset_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.api.apikeys.v2.IosKeyRestrictions)
     IosKeyRestrictionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IosKeyRestrictions.newBuilder() to construct.
   private IosKeyRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedBundleIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getAllowedBundleIdsList() {
     return allowedBundleIds_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   public int getAllowedBundleIdsCount() {
     return allowedBundleIds_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
   public java.lang.String getAllowedBundleIds(int index) {
     return allowedBundleIds_.get(index);
   }
-
   /**
    *
    *
@@ -298,7 +293,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +491,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       allowedBundleIds_.makeImmutable();
       return allowedBundleIds_;
     }
-
     /**
      *
      *
@@ -528,7 +520,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public int getAllowedBundleIdsCount() {
       return allowedBundleIds_.size();
     }
-
     /**
      *
      *
@@ -544,7 +535,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public java.lang.String getAllowedBundleIds(int index) {
       return allowedBundleIds_.get(index);
     }
-
     /**
      *
      *
@@ -560,7 +550,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getAllowedBundleIdsBytes(int index) {
       return allowedBundleIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -584,7 +573,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +595,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +614,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +632,6 @@ public final class IosKeyRestrictions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

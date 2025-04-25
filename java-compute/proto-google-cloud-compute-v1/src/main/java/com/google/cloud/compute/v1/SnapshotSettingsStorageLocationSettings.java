@@ -33,7 +33,6 @@ public final class SnapshotSettingsStorageLocationSettings
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SnapshotSettingsStorageLocationSettings)
     SnapshotSettingsStorageLocationSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SnapshotSettingsStorageLocationSettings.newBuilder() to construct.
   private SnapshotSettingsStorageLocationSettings(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -142,7 +141,6 @@ public final class SnapshotSettingsStorageLocationSettings
      * <code>UNDEFINED_POLICY = 0;</code>
      */
     public static final int UNDEFINED_POLICY_VALUE = 0;
-
     /**
      *
      *
@@ -153,7 +151,6 @@ public final class SnapshotSettingsStorageLocationSettings
      * <code>LOCAL_REGION = 403535464;</code>
      */
     public static final int LOCAL_REGION_VALUE = 403535464;
-
     /**
      *
      *
@@ -164,7 +161,6 @@ public final class SnapshotSettingsStorageLocationSettings
      * <code>NEAREST_MULTI_REGION = 212467515;</code>
      */
     public static final int NEAREST_MULTI_REGION_VALUE = 212467515;
-
     /**
      *
      *
@@ -175,7 +171,6 @@ public final class SnapshotSettingsStorageLocationSettings
      * <code>SPECIFIC_LOCATIONS = 280093809;</code>
      */
     public static final int SPECIFIC_LOCATIONS_VALUE = 280093809;
-
     /** <code>STORAGE_LOCATION_POLICY_UNSPECIFIED = 250644592;</code> */
     public static final int STORAGE_LOCATION_POLICY_UNSPECIFIED_VALUE = 250644592;
 
@@ -313,7 +308,6 @@ public final class SnapshotSettingsStorageLocationSettings
   public int getLocationsCount() {
     return internalGetLocations().getMap().size();
   }
-
   /**
    *
    *
@@ -332,7 +326,6 @@ public final class SnapshotSettingsStorageLocationSettings
     }
     return internalGetLocations().getMap().containsKey(key);
   }
-
   /** Use {@link #getLocationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -343,7 +336,6 @@ public final class SnapshotSettingsStorageLocationSettings
       getLocations() {
     return getLocationsMap();
   }
-
   /**
    *
    *
@@ -363,7 +355,6 @@ public final class SnapshotSettingsStorageLocationSettings
       getLocationsMap() {
     return internalGetLocations().getMap();
   }
-
   /**
    *
    *
@@ -394,7 +385,6 @@ public final class SnapshotSettingsStorageLocationSettings
         map = internalGetLocations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -428,7 +418,6 @@ public final class SnapshotSettingsStorageLocationSettings
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object policy_ = "";
-
   /**
    *
    *
@@ -445,7 +434,6 @@ public final class SnapshotSettingsStorageLocationSettings
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -470,7 +458,6 @@ public final class SnapshotSettingsStorageLocationSettings
       return s;
     }
   }
-
   /**
    *
    *
@@ -686,7 +673,6 @@ public final class SnapshotSettingsStorageLocationSettings
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -959,8 +945,7 @@ public final class SnapshotSettingsStorageLocationSettings
           defaultEntry() {
         return LocationsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LocationsConverter locationsConverter = new LocationsConverter();
 
@@ -1009,7 +994,6 @@ public final class SnapshotSettingsStorageLocationSettings
     public int getLocationsCount() {
       return internalGetLocations().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1028,7 +1012,6 @@ public final class SnapshotSettingsStorageLocationSettings
       }
       return internalGetLocations().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getLocationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1039,7 +1022,6 @@ public final class SnapshotSettingsStorageLocationSettings
         getLocations() {
       return getLocationsMap();
     }
-
     /**
      *
      *
@@ -1059,7 +1041,6 @@ public final class SnapshotSettingsStorageLocationSettings
         getLocationsMap() {
       return internalGetLocations().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1090,7 +1071,6 @@ public final class SnapshotSettingsStorageLocationSettings
           map = internalGetMutableLocations().ensureBuilderMap();
       return map.containsKey(key) ? locationsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1125,7 +1105,6 @@ public final class SnapshotSettingsStorageLocationSettings
       internalGetMutableLocations().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1123,6 @@ public final class SnapshotSettingsStorageLocationSettings
       internalGetMutableLocations().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -1155,7 +1133,6 @@ public final class SnapshotSettingsStorageLocationSettings
       bitField0_ |= 0x00000001;
       return internalGetMutableLocations().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1181,7 +1158,6 @@ public final class SnapshotSettingsStorageLocationSettings
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1212,7 +1188,6 @@ public final class SnapshotSettingsStorageLocationSettings
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1233,6 @@ public final class SnapshotSettingsStorageLocationSettings
     }
 
     private java.lang.Object policy_ = "";
-
     /**
      *
      *
@@ -1274,7 +1248,6 @@ public final class SnapshotSettingsStorageLocationSettings
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1298,7 +1271,6 @@ public final class SnapshotSettingsStorageLocationSettings
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1322,7 +1294,6 @@ public final class SnapshotSettingsStorageLocationSettings
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1345,7 +1316,6 @@ public final class SnapshotSettingsStorageLocationSettings
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1334,6 @@ public final class SnapshotSettingsStorageLocationSettings
       onChanged();
       return this;
     }
-
     /**
      *
      *

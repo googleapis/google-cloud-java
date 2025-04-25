@@ -40,7 +40,6 @@ public interface DeleteScheduleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

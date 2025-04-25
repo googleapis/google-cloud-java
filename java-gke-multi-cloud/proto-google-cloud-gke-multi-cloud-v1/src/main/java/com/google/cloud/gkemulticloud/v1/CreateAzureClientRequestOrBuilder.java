@@ -45,7 +45,6 @@ public interface CreateAzureClientRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CreateAzureClientRequestOrBuilder
    * @return Whether the azureClient field is set.
    */
   boolean hasAzureClient();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CreateAzureClientRequestOrBuilder
    * @return The azureClient.
    */
   com.google.cloud.gkemulticloud.v1.AzureClient getAzureClient();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface CreateAzureClientRequestOrBuilder
    * @return The azureClientId.
    */
   java.lang.String getAzureClientId();
-
   /**
    *
    *

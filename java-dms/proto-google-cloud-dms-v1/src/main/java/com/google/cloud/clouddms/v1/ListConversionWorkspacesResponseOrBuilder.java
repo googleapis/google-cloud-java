@@ -34,7 +34,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConversionWorkspace conversion_workspaces = 1;</code>
    */
   java.util.List<com.google.cloud.clouddms.v1.ConversionWorkspace> getConversionWorkspacesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConversionWorkspace conversion_workspaces = 1;</code>
    */
   com.google.cloud.clouddms.v1.ConversionWorkspace getConversionWorkspaces(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * <code>repeated .google.cloud.clouddms.v1.ConversionWorkspace conversion_workspaces = 1;</code>
    */
   int getConversionWorkspacesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.clouddms.v1.ConversionWorkspaceOrBuilder>
       getConversionWorkspacesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface ListConversionWorkspacesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

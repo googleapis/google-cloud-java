@@ -39,7 +39,6 @@ public interface AssetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AssetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface AssetOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface AssetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface AssetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface AssetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface AssetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -213,11 +205,9 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -228,7 +218,6 @@ public interface AssetOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -243,7 +232,6 @@ public interface AssetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -267,7 +255,6 @@ public interface AssetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -294,7 +281,6 @@ public interface AssetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -323,7 +309,6 @@ public interface AssetOrBuilder
    * @return Whether the resourceSpec field is set.
    */
   boolean hasResourceSpec();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface AssetOrBuilder
    * @return The resourceSpec.
    */
   com.google.cloud.dataplex.v1.Asset.ResourceSpec getResourceSpec();
-
   /**
    *
    *
@@ -366,7 +350,6 @@ public interface AssetOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
-
   /**
    *
    *
@@ -381,7 +364,6 @@ public interface AssetOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.dataplex.v1.Asset.ResourceStatus getResourceStatus();
-
   /**
    *
    *
@@ -410,7 +392,6 @@ public interface AssetOrBuilder
    * @return Whether the securityStatus field is set.
    */
   boolean hasSecurityStatus();
-
   /**
    *
    *
@@ -426,7 +407,6 @@ public interface AssetOrBuilder
    * @return The securityStatus.
    */
   com.google.cloud.dataplex.v1.Asset.SecurityStatus getSecurityStatus();
-
   /**
    *
    *
@@ -457,7 +437,6 @@ public interface AssetOrBuilder
    * @return Whether the discoverySpec field is set.
    */
   boolean hasDiscoverySpec();
-
   /**
    *
    *
@@ -474,7 +453,6 @@ public interface AssetOrBuilder
    * @return The discoverySpec.
    */
   com.google.cloud.dataplex.v1.Asset.DiscoverySpec getDiscoverySpec();
-
   /**
    *
    *
@@ -505,7 +483,6 @@ public interface AssetOrBuilder
    * @return Whether the discoveryStatus field is set.
    */
   boolean hasDiscoveryStatus();
-
   /**
    *
    *
@@ -521,7 +498,6 @@ public interface AssetOrBuilder
    * @return The discoveryStatus.
    */
   com.google.cloud.dataplex.v1.Asset.DiscoveryStatus getDiscoveryStatus();
-
   /**
    *
    *

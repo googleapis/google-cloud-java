@@ -36,7 +36,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.fleetengine.v1.VehicleAttribute> getAttributesList();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    * </code>
    */
   com.google.maps.fleetengine.v1.VehicleAttribute getAttributes(int index);
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface UpdateVehicleAttributesRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.fleetengine.v1.VehicleAttributeOrBuilder>
       getAttributesOrBuilderList();
-
   /**
    *
    *

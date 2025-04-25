@@ -34,7 +34,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.PrivateConnection)
     PrivateConnectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrivateConnection.newBuilder() to construct.
   private PrivateConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -169,7 +168,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -180,7 +178,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
-
     /**
      *
      *
@@ -191,7 +188,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
-
     /**
      *
      *
@@ -202,7 +198,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
-
     /**
      *
      *
@@ -213,7 +208,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
-
     /**
      *
      *
@@ -225,7 +219,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>UNPROVISIONED = 5;</code>
      */
     public static final int UNPROVISIONED_VALUE = 5;
-
     /**
      *
      *
@@ -404,7 +397,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -416,7 +408,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>PRIVATE_SERVICE_ACCESS = 1;</code>
      */
     public static final int PRIVATE_SERVICE_ACCESS_VALUE = 1;
-
     /**
      *
      *
@@ -427,7 +418,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>NETAPP_CLOUD_VOLUMES = 2;</code>
      */
     public static final int NETAPP_CLOUD_VOLUMES_VALUE = 2;
-
     /**
      *
      *
@@ -438,7 +428,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>DELL_POWERSCALE = 3;</code>
      */
     public static final int DELL_POWERSCALE_VALUE = 3;
-
     /**
      *
      *
@@ -592,7 +581,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>ROUTING_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int ROUTING_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -603,7 +591,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>GLOBAL = 1;</code>
      */
     public static final int GLOBAL_VALUE = 1;
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>PEERING_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int PEERING_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
      * <code>PEERING_ACTIVE = 1;</code>
      */
     public static final int PEERING_ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -869,7 +854,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -897,7 +881,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -928,7 +911,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -945,7 +927,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -962,7 +943,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -980,7 +960,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -997,7 +976,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1014,7 +992,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1034,7 +1011,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1058,7 +1034,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1085,7 +1060,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1103,7 +1077,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1130,7 +1103,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmwareEngineNetwork_ = "";
-
   /**
    *
    *
@@ -1162,7 +1134,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1199,7 +1170,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmwareEngineNetworkCanonical_ = "";
-
   /**
    *
    *
@@ -1226,7 +1196,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1256,7 +1225,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 10;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1274,7 +1242,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1301,7 +1268,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peeringId_ = "";
-
   /**
    *
    *
@@ -1326,7 +1292,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1354,7 +1319,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int ROUTING_MODE_FIELD_NUMBER = 13;
   private int routingMode_ = 0;
-
   /**
    *
    *
@@ -1375,7 +1339,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public int getRoutingModeValue() {
     return routingMode_;
   }
-
   /**
    *
    *
@@ -1405,7 +1368,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -1429,7 +1391,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1458,7 +1419,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceNetwork_ = "";
-
   /**
    *
    *
@@ -1495,7 +1455,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1535,7 +1494,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
 
   public static final int PEERING_STATE_FIELD_NUMBER = 17;
   private int peeringState_ = 0;
-
   /**
    *
    *
@@ -1554,7 +1512,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
   public int getPeeringStateValue() {
     return peeringState_;
   }
-
   /**
    *
    *
@@ -1870,7 +1827,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2246,7 +2202,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2273,7 +2228,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2300,7 +2254,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2326,7 +2279,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2348,7 +2300,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2382,7 +2333,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2399,7 +2349,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2422,7 +2371,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2447,7 +2395,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2469,7 +2416,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2499,7 +2445,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2521,7 +2466,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2482,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2559,7 +2502,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2594,7 +2536,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2611,7 +2552,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2634,7 +2574,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2659,7 +2598,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2681,7 +2619,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2711,7 +2648,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2733,7 +2669,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2750,7 +2685,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2771,7 +2705,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2801,7 +2734,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2824,7 +2756,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2847,7 +2778,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2869,7 +2799,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2887,7 +2816,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2912,7 +2840,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -2930,7 +2857,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -2951,7 +2877,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2973,7 +2898,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.vmwareengine.v1.PrivateConnection.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2997,7 +2921,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3019,7 +2942,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object vmwareEngineNetwork_ = "";
-
     /**
      *
      *
@@ -3050,7 +2972,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3081,7 +3002,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3111,7 +3031,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3137,7 +3056,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3170,7 +3088,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object vmwareEngineNetworkCanonical_ = "";
-
     /**
      *
      *
@@ -3196,7 +3113,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3222,7 +3138,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3247,7 +3162,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3268,7 +3182,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3296,7 +3209,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -3314,7 +3226,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -3335,7 +3246,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3357,7 +3267,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.vmwareengine.v1.PrivateConnection.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3381,7 +3290,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3403,7 +3311,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object peeringId_ = "";
-
     /**
      *
      *
@@ -3427,7 +3334,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3451,7 +3357,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3474,7 +3379,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3493,7 +3397,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3519,7 +3422,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int routingMode_ = 0;
-
     /**
      *
      *
@@ -3540,7 +3442,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public int getRoutingModeValue() {
       return routingMode_;
     }
-
     /**
      *
      *
@@ -3564,7 +3465,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3589,7 +3489,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.vmwareengine.v1.PrivateConnection.RoutingMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3617,7 +3516,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3642,7 +3540,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -3665,7 +3562,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3688,7 +3584,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3710,7 +3605,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3728,7 +3622,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3753,7 +3646,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object serviceNetwork_ = "";
-
     /**
      *
      *
@@ -3789,7 +3681,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3825,7 +3716,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3860,7 +3750,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3891,7 +3780,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3929,7 +3817,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     }
 
     private int peeringState_ = 0;
-
     /**
      *
      *
@@ -3948,7 +3835,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
     public int getPeeringStateValue() {
       return peeringState_;
     }
-
     /**
      *
      *
@@ -3970,7 +3856,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3993,7 +3878,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.vmwareengine.v1.PrivateConnection.PeeringState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4019,7 +3903,6 @@ public final class PrivateConnection extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Instance)
     InstanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Instance.newBuilder() to construct.
   private Instance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -150,7 +149,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTANCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INSTANCE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -161,7 +159,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAMING_PREDICTION = 1;</code>
      */
     public static final int STREAMING_PREDICTION_VALUE = 1;
-
     /**
      *
      *
@@ -172,7 +169,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>BATCH_PREDICTION = 2;</code>
      */
     public static final int BATCH_PREDICTION_VALUE = 2;
-
     /**
      *
      *
@@ -412,7 +408,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -423,7 +418,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
-
     /**
      *
      *
@@ -434,7 +428,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATED = 2;</code>
      */
     public static final int CREATED_VALUE = 2;
-
     /**
      *
      *
@@ -445,7 +438,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPLOYING = 3;</code>
      */
     public static final int DEPLOYING_VALUE = 3;
-
     /**
      *
      *
@@ -456,7 +448,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPLOYED = 4;</code>
      */
     public static final int DEPLOYED_VALUE = 4;
-
     /**
      *
      *
@@ -467,7 +458,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEPLOYING = 5;</code>
      */
     public static final int UNDEPLOYING_VALUE = 5;
-
     /**
      *
      *
@@ -478,7 +468,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 6;</code>
      */
     public static final int DELETED_VALUE = 6;
-
     /**
      *
      *
@@ -489,7 +478,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 7;</code>
      */
     public static final int ERROR_VALUE = 7;
-
     /**
      *
      *
@@ -500,7 +488,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 8;</code>
      */
     public static final int UPDATING_VALUE = 8;
-
     /**
      *
      *
@@ -511,7 +498,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 9;</code>
      */
     public static final int DELETING_VALUE = 9;
-
     /**
      *
      *
@@ -522,7 +508,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>FIXING = 10;</code>
      */
     public static final int FIXING_VALUE = 10;
-
     /**
      *
      *
@@ -657,7 +642,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputResource field is set.
      */
     boolean hasInputResource();
-
     /**
      *
      *
@@ -675,7 +659,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The inputResource.
      */
     java.lang.String getInputResource();
-
     /**
      *
      *
@@ -712,7 +695,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     boolean hasAnnotatedStream();
-
     /**
      *
      *
@@ -731,7 +713,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     com.google.cloud.visionai.v1.StreamWithAnnotation getAnnotatedStream();
-
     /**
      *
      *
@@ -759,7 +740,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for dataType.
      */
     int getDataTypeValue();
-
     /**
      *
      *
@@ -789,7 +769,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The consumerNode.
      */
     java.lang.String getConsumerNode();
-
     /**
      *
      *
@@ -820,7 +799,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The inputResourceBinding.
      */
     java.lang.String getInputResourceBinding();
-
     /**
      *
      *
@@ -847,7 +825,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the annotations field is set.
      */
     boolean hasAnnotations();
-
     /**
      *
      *
@@ -860,7 +837,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The annotations.
      */
     com.google.cloud.visionai.v1.ResourceAnnotations getAnnotations();
-
     /**
      *
      *
@@ -875,7 +851,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.visionai.v1.Instance.InputResource.InputResourceInformationCase
         getInputResourceInformationCase();
   }
-
   /**
    *
    *
@@ -890,7 +865,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Instance.InputResource)
       InputResourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InputResource.newBuilder() to construct.
     private InputResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -942,7 +916,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       private InputResourceInformationCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -976,7 +949,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INPUT_RESOURCE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -996,7 +968,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputResource() {
       return inputResourceInformationCase_ == 1;
     }
-
     /**
      *
      *
@@ -1029,7 +1000,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1034,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ANNOTATED_STREAM_FIELD_NUMBER = 4;
-
     /**
      *
      *
@@ -1086,7 +1055,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotatedStream() {
       return inputResourceInformationCase_ == 4;
     }
-
     /**
      *
      *
@@ -1111,7 +1079,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.visionai.v1.StreamWithAnnotation.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1136,7 +1103,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DATA_TYPE_FIELD_NUMBER = 6;
     private int dataType_ = 0;
-
     /**
      *
      *
@@ -1152,7 +1118,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getDataTypeValue() {
       return dataType_;
     }
-
     /**
      *
      *
@@ -1175,7 +1140,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object consumerNode_ = "";
-
     /**
      *
      *
@@ -1203,7 +1167,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1199,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputResourceBinding_ = "";
-
     /**
      *
      *
@@ -1261,7 +1223,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1250,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ANNOTATIONS_FIELD_NUMBER = 5;
     private com.google.cloud.visionai.v1.ResourceAnnotations annotations_;
-
     /**
      *
      *
@@ -1305,7 +1265,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnotations() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1323,7 +1282,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.ResourceAnnotations.getDefaultInstance()
           : annotations_;
     }
-
     /**
      *
      *
@@ -1573,7 +1531,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1898,7 +1855,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInputResource() {
         return inputResourceInformationCase_ == 1;
       }
-
       /**
        *
        *
@@ -1932,7 +1888,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1966,7 +1921,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1993,7 +1947,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2018,7 +1971,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2052,7 +2004,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.visionai.v1.StreamWithAnnotation.Builder,
               com.google.cloud.visionai.v1.StreamWithAnnotationOrBuilder>
           annotatedStreamBuilder_;
-
       /**
        *
        *
@@ -2074,7 +2025,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnnotatedStream() {
         return inputResourceInformationCase_ == 4;
       }
-
       /**
        *
        *
@@ -2106,7 +2056,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.visionai.v1.StreamWithAnnotation.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2133,7 +2082,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         inputResourceInformationCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -2158,7 +2106,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         inputResourceInformationCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -2197,7 +2144,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         inputResourceInformationCase_ = 4;
         return this;
       }
-
       /**
        *
        *
@@ -2227,7 +2173,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2244,7 +2189,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.visionai.v1.StreamWithAnnotation.Builder getAnnotatedStreamBuilder() {
         return getAnnotatedStreamFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2270,7 +2214,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.visionai.v1.StreamWithAnnotation.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2309,7 +2252,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int dataType_ = 0;
-
       /**
        *
        *
@@ -2325,7 +2267,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public int getDataTypeValue() {
         return dataType_;
       }
-
       /**
        *
        *
@@ -2344,7 +2285,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2362,7 +2302,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.DataType.forNumber(dataType_);
         return result == null ? com.google.cloud.visionai.v1.DataType.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -2384,7 +2323,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2404,7 +2342,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object consumerNode_ = "";
-
       /**
        *
        *
@@ -2431,7 +2368,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2458,7 +2394,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2484,7 +2419,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2506,7 +2440,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2535,7 +2468,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object inputResourceBinding_ = "";
-
       /**
        *
        *
@@ -2559,7 +2491,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2583,7 +2514,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2606,7 +2536,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2625,7 +2554,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2656,7 +2584,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.visionai.v1.ResourceAnnotations.Builder,
               com.google.cloud.visionai.v1.ResourceAnnotationsOrBuilder>
           annotationsBuilder_;
-
       /**
        *
        *
@@ -2671,7 +2598,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAnnotations() {
         return ((bitField0_ & 0x00000020) != 0);
       }
-
       /**
        *
        *
@@ -2692,7 +2618,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return annotationsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2715,7 +2640,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2736,7 +2660,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2765,7 +2688,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2785,7 +2707,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2800,7 +2721,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAnnotationsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2819,7 +2739,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
               : annotations_;
         }
       }
-
       /**
        *
        *
@@ -2927,7 +2846,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The outputResource.
      */
     java.lang.String getOutputResource();
-
     /**
      *
      *
@@ -2957,7 +2875,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The producerNode.
      */
     java.lang.String getProducerNode();
-
     /**
      *
      *
@@ -2988,7 +2905,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return The outputResourceBinding.
      */
     java.lang.String getOutputResourceBinding();
-
     /**
      *
      *
@@ -3032,7 +2948,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getAutogen();
   }
-
   /**
    *
    *
@@ -3047,7 +2962,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Instance.OutputResource)
       OutputResourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OutputResource.newBuilder() to construct.
     private OutputResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3084,7 +2998,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputResource_ = "";
-
     /**
      *
      *
@@ -3108,7 +3021,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3137,7 +3049,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object producerNode_ = "";
-
     /**
      *
      *
@@ -3165,7 +3076,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3198,7 +3108,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputResourceBinding_ = "";
-
     /**
      *
      *
@@ -3223,7 +3132,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3251,7 +3159,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int IS_TEMPORARY_FIELD_NUMBER = 3;
     private boolean isTemporary_ = false;
-
     /**
      *
      *
@@ -3272,7 +3179,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AUTOGEN_FIELD_NUMBER = 5;
     private boolean autogen_ = false;
-
     /**
      *
      *
@@ -3487,7 +3393,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3731,7 +3636,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object outputResource_ = "";
-
       /**
        *
        *
@@ -3754,7 +3658,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3777,7 +3680,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3799,7 +3701,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3817,7 +3718,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3842,7 +3742,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object producerNode_ = "";
-
       /**
        *
        *
@@ -3869,7 +3768,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3896,7 +3794,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3922,7 +3819,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3944,7 +3840,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3973,7 +3868,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object outputResourceBinding_ = "";
-
       /**
        *
        *
@@ -3997,7 +3891,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4021,7 +3914,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4044,7 +3936,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4063,7 +3954,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4089,7 +3979,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean isTemporary_;
-
       /**
        *
        *
@@ -4107,7 +3996,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public boolean getIsTemporary() {
         return isTemporary_;
       }
-
       /**
        *
        *
@@ -4129,7 +4017,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4151,7 +4038,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean autogen_;
-
       /**
        *
        *
@@ -4168,7 +4054,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       public boolean getAutogen() {
         return autogen_;
       }
-
       /**
        *
        *
@@ -4189,7 +4074,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4278,7 +4162,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -4302,7 +4185,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4329,7 +4211,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -4346,7 +4227,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4363,7 +4243,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -4381,7 +4260,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -4398,7 +4276,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4415,7 +4292,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -4457,7 +4333,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -4474,14 +4349,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -4495,7 +4368,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -4516,7 +4388,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -4542,7 +4413,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -4566,7 +4436,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4595,7 +4464,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -4619,7 +4487,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4646,7 +4513,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTANCE_TYPE_FIELD_NUMBER = 10;
   private int instanceType_ = 0;
-
   /**
    *
    *
@@ -4662,7 +4528,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getInstanceTypeValue() {
     return instanceType_;
   }
-
   /**
    *
    *
@@ -4687,7 +4552,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Instance.InputResource> inputResources_;
-
   /**
    *
    *
@@ -4705,7 +4569,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       getInputResourcesList() {
     return inputResources_;
   }
-
   /**
    *
    *
@@ -4723,7 +4586,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       getInputResourcesOrBuilderList() {
     return inputResources_;
   }
-
   /**
    *
    *
@@ -4740,7 +4602,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getInputResourcesCount() {
     return inputResources_.size();
   }
-
   /**
    *
    *
@@ -4757,7 +4618,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.Instance.InputResource getInputResources(int index) {
     return inputResources_.get(index);
   }
-
   /**
    *
    *
@@ -4780,7 +4640,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.Instance.OutputResource> outputResources_;
-
   /**
    *
    *
@@ -4795,7 +4654,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       getOutputResourcesList() {
     return outputResources_;
   }
-
   /**
    *
    *
@@ -4810,7 +4668,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       getOutputResourcesOrBuilderList() {
     return outputResources_;
   }
-
   /**
    *
    *
@@ -4824,7 +4681,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getOutputResourcesCount() {
     return outputResources_.size();
   }
-
   /**
    *
    *
@@ -4838,7 +4694,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.visionai.v1.Instance.OutputResource getOutputResources(int index) {
     return outputResources_.get(index);
   }
-
   /**
    *
    *
@@ -4856,7 +4711,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 9;
   private int state_ = 0;
-
   /**
    *
    *
@@ -4872,7 +4726,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -5155,7 +5008,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5605,7 +5457,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -5628,7 +5479,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5651,7 +5501,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5673,7 +5522,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5691,7 +5539,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5721,7 +5568,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -5738,7 +5584,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -5761,7 +5606,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5786,7 +5630,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5808,7 +5651,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5838,7 +5680,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5860,7 +5701,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5877,7 +5717,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5898,7 +5737,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -5933,7 +5771,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -5950,7 +5787,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5973,7 +5809,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5998,7 +5833,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6020,7 +5854,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6050,7 +5883,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6072,7 +5904,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6089,7 +5920,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6110,7 +5940,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -6164,7 +5993,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -6181,14 +6009,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -6202,7 +6028,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -6223,7 +6048,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -6250,7 +6074,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -6267,14 +6090,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -6295,7 +6116,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -6312,7 +6132,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -6335,7 +6154,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6358,7 +6176,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6380,7 +6197,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6398,7 +6214,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6423,7 +6238,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -6446,7 +6260,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6469,7 +6282,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6491,7 +6303,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6509,7 +6320,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6534,7 +6344,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int instanceType_ = 0;
-
     /**
      *
      *
@@ -6550,7 +6359,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getInstanceTypeValue() {
       return instanceType_;
     }
-
     /**
      *
      *
@@ -6569,7 +6377,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6589,7 +6396,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.Instance.InstanceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6611,7 +6417,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6668,7 +6473,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return inputResourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6688,7 +6492,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return inputResourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6708,7 +6511,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return inputResourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6735,7 +6537,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6759,7 +6560,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6785,7 +6585,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6812,7 +6611,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6836,7 +6634,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6860,7 +6657,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6884,7 +6680,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6907,7 +6702,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6930,7 +6724,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6947,7 +6740,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getInputResourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6968,7 +6760,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return inputResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6989,7 +6780,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(inputResources_);
       }
     }
-
     /**
      *
      *
@@ -7006,7 +6796,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return getInputResourcesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Instance.InputResource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7025,7 +6814,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.visionai.v1.Instance.InputResource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7098,7 +6886,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return outputResourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7115,7 +6902,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return outputResourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7132,7 +6918,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return outputResourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7156,7 +6941,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7177,7 +6961,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7200,7 +6983,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7224,7 +7006,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7245,7 +7026,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7266,7 +7046,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7287,7 +7066,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7307,7 +7085,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7327,7 +7104,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7341,7 +7117,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getOutputResourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7359,7 +7134,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return outputResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7377,7 +7151,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(outputResources_);
       }
     }
-
     /**
      *
      *
@@ -7392,7 +7165,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return getOutputResourcesFieldBuilder()
           .addBuilder(com.google.cloud.visionai.v1.Instance.OutputResource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7408,7 +7180,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.visionai.v1.Instance.OutputResource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7444,7 +7215,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -7460,7 +7230,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -7479,7 +7248,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7497,7 +7265,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.visionai.v1.Instance.State.forNumber(state_);
       return result == null ? com.google.cloud.visionai.v1.Instance.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -7519,7 +7286,6 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface CreateAudienceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateAudienceRequestOrBuilder
    * @return Whether the audience field is set.
    */
   boolean hasAudience();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateAudienceRequestOrBuilder
    * @return The audience.
    */
   com.google.analytics.admin.v1alpha.Audience getAudience();
-
   /**
    *
    *

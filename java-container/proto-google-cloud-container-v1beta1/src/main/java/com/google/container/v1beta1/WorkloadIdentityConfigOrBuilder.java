@@ -39,7 +39,6 @@ public interface WorkloadIdentityConfigOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getIdentityNamespace();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The workloadPool.
    */
   java.lang.String getWorkloadPool();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The identityProvider.
    */
   java.lang.String getIdentityProvider();
-
   /**
    *
    *

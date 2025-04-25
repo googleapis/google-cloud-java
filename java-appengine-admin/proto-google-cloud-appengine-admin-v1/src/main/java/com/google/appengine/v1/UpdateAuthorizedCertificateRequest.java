@@ -33,7 +33,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.appengine.v1.UpdateAuthorizedCertificateRequest)
     UpdateAuthorizedCertificateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAuthorizedCertificateRequest.newBuilder() to construct.
   private UpdateAuthorizedCertificateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
 
   public static final int CERTIFICATE_FIELD_NUMBER = 2;
   private com.google.appengine.v1.AuthorizedCertificate certificate_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
   public boolean hasCertificate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
         ? com.google.appengine.v1.AuthorizedCertificate.getDefaultInstance()
         : certificate_;
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -651,7 +641,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
             com.google.appengine.v1.AuthorizedCertificate.Builder,
             com.google.appengine.v1.AuthorizedCertificateOrBuilder>
         certificateBuilder_;
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
     public boolean hasCertificate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
         return certificateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -834,7 +816,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +885,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return getCertificateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -942,7 +919,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
             : certificate_;
       }
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -992,7 +967,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1014,7 +988,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1031,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1088,7 +1059,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1079,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1094,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1145,7 +1113,6 @@ public final class UpdateAuthorizedCertificateRequest extends com.google.protobu
             : updateMask_;
       }
     }
-
     /**
      *
      *

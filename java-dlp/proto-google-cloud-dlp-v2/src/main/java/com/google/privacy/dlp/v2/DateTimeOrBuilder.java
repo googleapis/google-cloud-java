@@ -37,7 +37,6 @@ public interface DateTimeOrBuilder
    * @return Whether the date field is set.
    */
   boolean hasDate();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DateTimeOrBuilder
    * @return The date.
    */
   com.google.type.Date getDate();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface DateTimeOrBuilder
    * @return The enum numeric value on the wire for dayOfWeek.
    */
   int getDayOfWeekValue();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface DateTimeOrBuilder
    * @return Whether the time field is set.
    */
   boolean hasTime();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface DateTimeOrBuilder
    * @return The time.
    */
   com.google.type.TimeOfDay getTime();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface DateTimeOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface DateTimeOrBuilder
    * @return The timeZone.
    */
   com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone();
-
   /**
    *
    *

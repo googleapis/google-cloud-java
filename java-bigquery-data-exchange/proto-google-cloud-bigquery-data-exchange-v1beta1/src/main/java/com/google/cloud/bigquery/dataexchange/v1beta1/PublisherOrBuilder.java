@@ -36,7 +36,6 @@ public interface PublisherOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface PublisherOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
-
   /**
    *
    *

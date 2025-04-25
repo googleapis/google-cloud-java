@@ -33,7 +33,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest)
     RegionInstanceGroupManagersDeleteInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersDeleteInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
 
   public static final int SKIP_INSTANCES_ON_VALIDATION_ERROR_FIELD_NUMBER = 40631073;
   private boolean skipInstancesOnValidationError_ = false;
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
   public boolean hasSkipInstancesOnValidationError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -364,7 +357,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +583,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
-
     /**
      *
      *
@@ -622,7 +612,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -654,7 +642,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
-
     /**
      *
      *
@@ -678,7 +665,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +687,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +706,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +724,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +749,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     }
 
     private boolean skipInstancesOnValidationError_;
-
     /**
      *
      *
@@ -782,7 +764,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     public boolean hasSkipInstancesOnValidationError() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -798,7 +779,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
     public boolean getSkipInstancesOnValidationError() {
       return skipInstancesOnValidationError_;
     }
-
     /**
      *
      *
@@ -818,7 +798,6 @@ public final class RegionInstanceGroupManagersDeleteInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface QueryMetricsResponseOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface QueryMetricsResponseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface QueryMetricsResponseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface QueryMetricsResponseOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice>
       getSlicesList();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface QueryMetricsResponseOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice getSlices(int index);
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface QueryMetricsResponseOrBuilder
    * </code>
    */
   int getSlicesCount();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface QueryMetricsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.SliceOrBuilder>
       getSlicesOrBuilderList();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface QueryMetricsResponseOrBuilder
    * @return Whether the macroAverageSlice field is set.
    */
   boolean hasMacroAverageSlice();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface QueryMetricsResponseOrBuilder
    * @return The macroAverageSlice.
    */
   com.google.cloud.contactcenterinsights.v1.QueryMetricsResponse.Slice getMacroAverageSlice();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.area120.tables.v1alpha1.ColumnDescription)
     ColumnDescriptionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ColumnDescription.newBuilder() to construct.
   private ColumnDescription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataType_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> labels_;
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.area120.tables.v1alpha1.LabeledItem> getLabelsList() {
     return labels_;
   }
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       getLabelsOrBuilderList() {
     return labels_;
   }
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return labels_.size();
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   public com.google.area120.tables.v1alpha1.LabeledItem getLabels(int index) {
     return labels_.get(index);
   }
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
   public static final int RELATIONSHIP_DETAILS_FIELD_NUMBER = 5;
   private com.google.area120.tables.v1alpha1.RelationshipDetails relationshipDetails_;
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   public boolean hasRelationshipDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -382,7 +368,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         ? com.google.area120.tables.v1alpha1.RelationshipDetails.getDefaultInstance()
         : relationshipDetails_;
   }
-
   /**
    *
    *
@@ -405,7 +390,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
 
   public static final int LOOKUP_DETAILS_FIELD_NUMBER = 6;
   private com.google.area120.tables.v1alpha1.LookupDetails lookupDetails_;
-
   /**
    *
    *
@@ -426,7 +410,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
   public boolean hasLookupDetails() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -449,7 +432,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         ? com.google.area120.tables.v1alpha1.LookupDetails.getDefaultInstance()
         : lookupDetails_;
   }
-
   /**
    *
    *
@@ -687,7 +669,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1017,7 +998,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1040,7 +1020,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1042,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1085,7 +1063,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1080,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1104,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object dataType_ = "";
-
     /**
      *
      *
@@ -1157,7 +1132,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1160,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1214,7 +1187,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1238,7 +1210,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1240,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1292,7 +1262,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1284,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1337,7 +1305,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1322,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1416,7 +1382,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return labelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1403,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return labelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1424,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return labelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1488,7 +1451,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1476,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1542,7 +1503,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1570,7 +1530,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1555,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1580,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1605,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1629,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1698,7 +1653,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1716,7 +1670,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public com.google.area120.tables.v1alpha1.LabeledItem.Builder getLabelsBuilder(int index) {
       return getLabelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1738,7 +1691,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return labelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1761,7 +1713,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(labels_);
       }
     }
-
     /**
      *
      *
@@ -1780,7 +1731,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       return getLabelsFieldBuilder()
           .addBuilder(com.google.area120.tables.v1alpha1.LabeledItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1799,7 +1749,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       return getLabelsFieldBuilder()
           .addBuilder(index, com.google.area120.tables.v1alpha1.LabeledItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1842,7 +1791,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
             com.google.area120.tables.v1alpha1.RelationshipDetails.Builder,
             com.google.area120.tables.v1alpha1.RelationshipDetailsOrBuilder>
         relationshipDetailsBuilder_;
-
     /**
      *
      *
@@ -1860,7 +1808,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public boolean hasRelationshipDetails() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1884,7 +1831,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return relationshipDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1911,7 +1857,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1935,7 +1880,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1968,7 +1912,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1991,7 +1934,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2010,7 +1952,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRelationshipDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2033,7 +1974,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
             : relationshipDetails_;
       }
     }
-
     /**
      *
      *
@@ -2069,7 +2009,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
             com.google.area120.tables.v1alpha1.LookupDetails.Builder,
             com.google.area120.tables.v1alpha1.LookupDetailsOrBuilder>
         lookupDetailsBuilder_;
-
     /**
      *
      *
@@ -2089,7 +2028,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
     public boolean hasLookupDetails() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2115,7 +2053,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
         return lookupDetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2143,7 +2080,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2169,7 +2105,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2138,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2162,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2181,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLookupDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2272,7 +2204,6 @@ public final class ColumnDescription extends com.google.protobuf.GeneratedMessag
             : lookupDetails_;
       }
     }
-
     /**
      *
      *

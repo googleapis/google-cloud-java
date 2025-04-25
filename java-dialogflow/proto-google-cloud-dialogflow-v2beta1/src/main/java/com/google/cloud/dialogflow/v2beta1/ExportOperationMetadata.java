@@ -33,7 +33,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ExportOperationMetadata)
     ExportOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportOperationMetadata.newBuilder() to construct.
   private ExportOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int EXPORTED_GCS_DESTINATION_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.GcsDestination exportedGcsDestination_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
   public boolean hasExportedGcsDestination() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
         ? com.google.cloud.dialogflow.v2beta1.GcsDestination.getDefaultInstance()
         : exportedGcsDestination_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -491,7 +486,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
             com.google.cloud.dialogflow.v2beta1.GcsDestination.Builder,
             com.google.cloud.dialogflow.v2beta1.GcsDestinationOrBuilder>
         exportedGcsDestinationBuilder_;
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
     public boolean hasExportedGcsDestination() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -527,7 +520,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
         return exportedGcsDestinationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -551,7 +543,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -572,7 +563,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +611,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +626,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
       onChanged();
       return getExportedGcsDestinationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -658,7 +645,6 @@ public final class ExportOperationMetadata extends com.google.protobuf.Generated
             : exportedGcsDestination_;
       }
     }
-
     /**
      *
      *

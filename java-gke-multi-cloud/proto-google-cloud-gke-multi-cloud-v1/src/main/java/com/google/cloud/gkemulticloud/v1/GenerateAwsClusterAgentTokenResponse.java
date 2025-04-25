@@ -26,7 +26,6 @@ public final class GenerateAwsClusterAgentTokenResponse
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse)
     GenerateAwsClusterAgentTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateAwsClusterAgentTokenResponse.newBuilder() to construct.
   private GenerateAwsClusterAgentTokenResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -63,7 +62,6 @@ public final class GenerateAwsClusterAgentTokenResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object accessToken_ = "";
-
   /**
    * <code>string access_token = 1;</code>
    *
@@ -81,7 +79,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       return s;
     }
   }
-
   /**
    * <code>string access_token = 1;</code>
    *
@@ -102,7 +99,6 @@ public final class GenerateAwsClusterAgentTokenResponse
 
   public static final int EXPIRES_IN_FIELD_NUMBER = 2;
   private int expiresIn_ = 0;
-
   /**
    * <code>int32 expires_in = 2;</code>
    *
@@ -117,7 +113,6 @@ public final class GenerateAwsClusterAgentTokenResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tokenType_ = "";
-
   /**
    * <code>string token_type = 3;</code>
    *
@@ -135,7 +130,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       return s;
     }
   }
-
   /**
    * <code>string token_type = 3;</code>
    *
@@ -333,7 +327,6 @@ public final class GenerateAwsClusterAgentTokenResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -546,7 +539,6 @@ public final class GenerateAwsClusterAgentTokenResponse
     private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -563,7 +555,6 @@ public final class GenerateAwsClusterAgentTokenResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -580,7 +571,6 @@ public final class GenerateAwsClusterAgentTokenResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -596,7 +586,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -608,7 +597,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string access_token = 1;</code>
      *
@@ -627,7 +615,6 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     private int expiresIn_;
-
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -637,7 +624,6 @@ public final class GenerateAwsClusterAgentTokenResponse
     public int getExpiresIn() {
       return expiresIn_;
     }
-
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -651,7 +637,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>int32 expires_in = 2;</code>
      *
@@ -665,7 +650,6 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     private java.lang.Object tokenType_ = "";
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -682,7 +666,6 @@ public final class GenerateAwsClusterAgentTokenResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -699,7 +682,6 @@ public final class GenerateAwsClusterAgentTokenResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -715,7 +697,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string token_type = 3;</code>
      *
@@ -727,7 +708,6 @@ public final class GenerateAwsClusterAgentTokenResponse
       onChanged();
       return this;
     }
-
     /**
      * <code>string token_type = 3;</code>
      *

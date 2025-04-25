@@ -36,7 +36,6 @@ public interface TranslationDatasetMetadataOrBuilder
    * @return The sourceLanguageCode.
    */
   java.lang.String getSourceLanguageCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TranslationDatasetMetadataOrBuilder
    * @return The targetLanguageCode.
    */
   java.lang.String getTargetLanguageCode();
-
   /**
    *
    *

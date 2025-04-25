@@ -33,7 +33,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.UploadAssetRequest)
     UploadAssetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadAssetRequest.newBuilder() to construct.
   private UploadAssetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int ASSET_SOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.AssetSource assetSource_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasAssetSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.visionai.v1.AssetSource.getDefaultInstance()
         : assetSource_;
   }
-
   /**
    *
    *
@@ -352,7 +346,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -594,7 +586,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +612,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -647,7 +637,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.visionai.v1.AssetSource.Builder,
             com.google.cloud.visionai.v1.AssetSourceOrBuilder>
         assetSourceBuilder_;
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasAssetSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
         return assetSourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -762,7 +747,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +827,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAssetSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -865,7 +845,6 @@ public final class UploadAssetRequest extends com.google.protobuf.GeneratedMessa
             : assetSource_;
       }
     }
-
     /**
      *
      *

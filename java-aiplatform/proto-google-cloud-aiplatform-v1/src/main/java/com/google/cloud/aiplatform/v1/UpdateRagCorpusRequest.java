@@ -34,7 +34,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UpdateRagCorpusRequest)
     UpdateRagCorpusRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateRagCorpusRequest.newBuilder() to construct.
   private UpdateRagCorpusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int RAG_CORPUS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.RagCorpus ragCorpus_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
   public boolean hasRagCorpus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.aiplatform.v1.RagCorpus.getDefaultInstance()
         : ragCorpus_;
   }
-
   /**
    *
    *
@@ -288,7 +284,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -493,7 +488,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.aiplatform.v1.RagCorpus.Builder,
             com.google.cloud.aiplatform.v1.RagCorpusOrBuilder>
         ragCorpusBuilder_;
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
     public boolean hasRagCorpus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -533,7 +526,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
         return ragCorpusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -558,7 +550,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -580,7 +571,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -632,7 +621,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +637,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getRagCorpusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -670,7 +657,6 @@ public final class UpdateRagCorpusRequest extends com.google.protobuf.GeneratedM
             : ragCorpus_;
       }
     }
-
     /**
      *
      *

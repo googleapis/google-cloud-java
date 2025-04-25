@@ -36,7 +36,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * @return The request.
    */
   com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest getRequest();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * </code>
    */
   java.util.List<com.google.rpc.Status> getPartialErrorsList();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * </code>
    */
   com.google.rpc.Status getPartialErrors(int index);
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * </code>
    */
   int getPartialErrorsCount();
-
   /**
    *
    *
@@ -234,7 +225,6 @@ public interface BulkAnalyzeConversationsMetadataOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialErrorsOrBuilderList();
-
   /**
    *
    *

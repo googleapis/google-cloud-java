@@ -34,7 +34,6 @@ public final class GeminiClusterConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.GeminiClusterConfig)
     GeminiClusterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GeminiClusterConfig.newBuilder() to construct.
   private GeminiClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class GeminiClusterConfig extends com.google.protobuf.GeneratedMess
 
   public static final int ENTITLED_FIELD_NUMBER = 1;
   private boolean entitled_ = false;
-
   /**
    *
    *
@@ -244,7 +242,6 @@ public final class GeminiClusterConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -428,7 +425,6 @@ public final class GeminiClusterConfig extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean entitled_;
-
     /**
      *
      *
@@ -447,7 +443,6 @@ public final class GeminiClusterConfig extends com.google.protobuf.GeneratedMess
     public boolean getEntitled() {
       return entitled_;
     }
-
     /**
      *
      *
@@ -470,7 +465,6 @@ public final class GeminiClusterConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -44,7 +44,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return The product.
    */
   java.lang.String getProduct();
-
   /**
    *
    *
@@ -97,7 +96,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -151,7 +149,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return A list containing the placeIds.
    */
   java.util.List<java.lang.String> getPlaceIdsList();
-
   /**
    *
    *
@@ -173,7 +170,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return The count of placeIds.
    */
   int getPlaceIdsCount();
-
   /**
    *
    *
@@ -196,7 +192,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return The placeIds at the given index.
    */
   java.lang.String getPlaceIds(int index);
-
   /**
    *
    *
@@ -234,7 +229,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return Whether the removeTime field is set.
    */
   boolean hasRemoveTime();
-
   /**
    *
    *
@@ -249,7 +243,6 @@ public interface RemoveFulfillmentPlacesRequestOrBuilder
    * @return The removeTime.
    */
   com.google.protobuf.Timestamp getRemoveTime();
-
   /**
    *
    *

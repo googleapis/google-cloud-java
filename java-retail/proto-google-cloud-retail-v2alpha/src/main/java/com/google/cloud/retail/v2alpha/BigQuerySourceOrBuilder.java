@@ -29,6 +29,9 @@ public interface BigQuerySourceOrBuilder
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
+   * Only supported in
+   * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -36,12 +39,14 @@ public interface BigQuerySourceOrBuilder
    * @return Whether the partitionDate field is set.
    */
   boolean hasPartitionDate();
-
   /**
    *
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
+   * Only supported in
+   * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -49,12 +54,14 @@ public interface BigQuerySourceOrBuilder
    * @return The partitionDate.
    */
   com.google.type.Date getPartitionDate();
-
   /**
    *
    *
    * <pre>
    * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   *
+   * Only supported in
+   * [ImportProductsRequest][google.cloud.retail.v2alpha.ImportProductsRequest].
    * </pre>
    *
    * <code>.google.type.Date partition_date = 6;</code>
@@ -75,7 +82,6 @@ public interface BigQuerySourceOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -104,7 +110,6 @@ public interface BigQuerySourceOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
-
   /**
    *
    *
@@ -132,7 +137,6 @@ public interface BigQuerySourceOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
-
   /**
    *
    *
@@ -161,7 +165,6 @@ public interface BigQuerySourceOrBuilder
    * @return The gcsStagingDir.
    */
   java.lang.String getGcsStagingDir();
-
   /**
    *
    *
@@ -214,7 +217,6 @@ public interface BigQuerySourceOrBuilder
    * @return The dataSchema.
    */
   java.lang.String getDataSchema();
-
   /**
    *
    *

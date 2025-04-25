@@ -38,7 +38,6 @@ public interface SipTrunkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface SipTrunkOrBuilder
    * @return A list containing the expectedHostname.
    */
   java.util.List<java.lang.String> getExpectedHostnameList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface SipTrunkOrBuilder
    * @return The count of expectedHostname.
    */
   int getExpectedHostnameCount();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface SipTrunkOrBuilder
    * @return The expectedHostname at the given index.
    */
   java.lang.String getExpectedHostname(int index);
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface SipTrunkOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Connection> getConnectionsList();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface SipTrunkOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.Connection getConnections(int index);
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface SipTrunkOrBuilder
    * </code>
    */
   int getConnectionsCount();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface SipTrunkOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ConnectionOrBuilder>
       getConnectionsOrBuilderList();
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public interface SipTrunkOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *

@@ -42,7 +42,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return A list containing the includedTypes.
    */
   java.util.List<java.lang.String> getIncludedTypesList();
-
   /**
    *
    *
@@ -161,7 +158,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The count of includedTypes.
    */
   int getIncludedTypesCount();
-
   /**
    *
    *
@@ -190,7 +186,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The includedTypes at the given index.
    */
   java.lang.String getIncludedTypes(int index);
-
   /**
    *
    *
@@ -251,7 +246,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return A list containing the excludedTypes.
    */
   java.util.List<java.lang.String> getExcludedTypesList();
-
   /**
    *
    *
@@ -283,7 +277,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The count of excludedTypes.
    */
   int getExcludedTypesCount();
-
   /**
    *
    *
@@ -316,7 +309,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The excludedTypes at the given index.
    */
   java.lang.String getExcludedTypes(int index);
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return A list containing the includedPrimaryTypes.
    */
   java.util.List<java.lang.String> getIncludedPrimaryTypesList();
-
   /**
    *
    *
@@ -409,7 +400,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The count of includedPrimaryTypes.
    */
   int getIncludedPrimaryTypesCount();
-
   /**
    *
    *
@@ -440,7 +430,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The includedPrimaryTypes at the given index.
    */
   java.lang.String getIncludedPrimaryTypes(int index);
-
   /**
    *
    *
@@ -499,7 +488,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return A list containing the excludedPrimaryTypes.
    */
   java.util.List<java.lang.String> getExcludedPrimaryTypesList();
-
   /**
    *
    *
@@ -527,7 +515,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The count of excludedPrimaryTypes.
    */
   int getExcludedPrimaryTypesCount();
-
   /**
    *
    *
@@ -556,7 +543,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The excludedPrimaryTypes at the given index.
    */
   java.lang.String getExcludedPrimaryTypes(int index);
-
   /**
    *
    *
@@ -616,7 +602,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return Whether the locationRestriction field is set.
    */
   boolean hasLocationRestriction();
-
   /**
    *
    *
@@ -631,7 +616,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The locationRestriction.
    */
   com.google.maps.places.v1.SearchNearbyRequest.LocationRestriction getLocationRestriction();
-
   /**
    *
    *
@@ -658,7 +642,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The enum numeric value on the wire for rankPreference.
    */
   int getRankPreferenceValue();
-
   /**
    *
    *
@@ -686,7 +669,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return Whether the routingParameters field is set.
    */
   boolean hasRoutingParameters();
-
   /**
    *
    *
@@ -701,7 +683,6 @@ public interface SearchNearbyRequestOrBuilder
    * @return The routingParameters.
    */
   com.google.maps.places.v1.RoutingParameters getRoutingParameters();
-
   /**
    *
    *

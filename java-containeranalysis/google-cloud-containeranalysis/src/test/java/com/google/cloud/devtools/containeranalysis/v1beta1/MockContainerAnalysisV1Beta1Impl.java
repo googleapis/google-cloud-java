@@ -144,8 +144,7 @@ public class MockContainerAnalysisV1Beta1Impl extends ContainerAnalysisV1Beta1Im
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GeneratePackagesSummary, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GeneratePackagesSummary, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PackagesSummaryResponse.class.getName(),
                   Exception.class.getName())));

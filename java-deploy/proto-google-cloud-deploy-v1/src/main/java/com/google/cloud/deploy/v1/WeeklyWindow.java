@@ -34,7 +34,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.WeeklyWindow)
     WeeklyWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WeeklyWindow.newBuilder() to construct.
   private WeeklyWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public int getDaysOfWeekCount() {
     return daysOfWeek_.size();
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.DayOfWeek getDaysOfWeek(int index) {
     return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
     return daysOfWeek_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.type.TimeOfDay startTime_;
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeOfDay getStartTime() {
     return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.type.TimeOfDay endTime_;
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.TimeOfDay getEndTime() {
     return endTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -494,7 +482,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +746,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -778,7 +764,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
     }
-
     /**
      *
      *
@@ -796,7 +781,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     public int getDaysOfWeekCount() {
       return daysOfWeek_.size();
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.DayOfWeek getDaysOfWeek(int index) {
       return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
     }
-
     /**
      *
      *
@@ -841,7 +824,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +909,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
       return java.util.Collections.unmodifiableList(daysOfWeek_);
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     public int getDaysOfWeekValue(int index) {
       return daysOfWeek_.get(index);
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -994,7 +970,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1042,7 +1016,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1063,7 +1036,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1060,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1081,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1110,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1131,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1147,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1198,7 +1165,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1199,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1250,7 +1215,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1271,7 +1235,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1259,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1280,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1348,7 +1309,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1370,7 +1330,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1346,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1406,7 +1364,6 @@ public final class WeeklyWindow extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *

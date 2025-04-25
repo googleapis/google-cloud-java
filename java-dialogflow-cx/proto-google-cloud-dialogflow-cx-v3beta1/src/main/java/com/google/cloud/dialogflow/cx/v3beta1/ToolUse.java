@@ -33,7 +33,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ToolUse)
     ToolUseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ToolUse.newBuilder() to construct.
   private ToolUse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tool_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -236,7 +229,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_ACTION_PARAMETERS_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct inputActionParameters_;
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInputActionParameters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : inputActionParameters_;
   }
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OUTPUT_ACTION_PARAMETERS_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct outputActionParameters_;
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOutputActionParameters() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : outputActionParameters_;
   }
-
   /**
    *
    *
@@ -559,7 +546,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -829,7 +815,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object tool_ = "";
-
     /**
      *
      *
@@ -856,7 +841,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -883,7 +867,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -909,7 +892,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +913,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +941,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1023,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object action_ = "";
-
     /**
      *
      *
@@ -1094,7 +1069,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1091,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1112,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         inputActionParametersBuilder_;
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputActionParameters() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1227,7 +1196,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return inputActionParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1220,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1241,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1270,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1326,7 +1291,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1307,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInputActionParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1364,7 +1327,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
             : inputActionParameters_;
       }
     }
-
     /**
      *
      *
@@ -1399,7 +1361,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         outputActionParametersBuilder_;
-
     /**
      *
      *
@@ -1416,7 +1377,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOutputActionParameters() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1439,7 +1399,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
         return outputActionParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1423,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1486,7 +1444,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1473,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1538,7 +1494,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1555,7 +1510,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOutputActionParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1576,7 +1530,6 @@ public final class ToolUse extends com.google.protobuf.GeneratedMessageV3
             : outputActionParameters_;
       }
     }
-
     /**
      *
      *

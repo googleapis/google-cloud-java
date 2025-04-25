@@ -300,19 +300,6 @@ public final class DocumentSchemaServiceGrpc {
     return DocumentSchemaServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static DocumentSchemaServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<DocumentSchemaServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<DocumentSchemaServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public DocumentSchemaServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new DocumentSchemaServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return DocumentSchemaServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -567,101 +554,6 @@ public final class DocumentSchemaServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DocumentSchemaService.
-   *
-   * <pre>
-   * This service lets you manage document schema.
-   * </pre>
-   */
-  public static final class DocumentSchemaServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<DocumentSchemaServiceBlockingV2Stub> {
-    private DocumentSchemaServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected DocumentSchemaServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new DocumentSchemaServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a document schema.
-     * </pre>
-     */
-    public com.google.cloud.contentwarehouse.v1.DocumentSchema createDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateDocumentSchemaMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the
-     * Document Schema is non-empty and does not equal the existing name.
-     * Supports only appending new properties, adding new ENUM possible values,
-     * and updating the
-     * [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled]
-     * flag for ENUM possible values. Updating existing properties will result
-     * into INVALID_ARGUMENT.
-     * </pre>
-     */
-    public com.google.cloud.contentwarehouse.v1.DocumentSchema updateDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateDocumentSchemaMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a document schema. Returns NOT_FOUND if the document schema does not
-     * exist.
-     * </pre>
-     */
-    public com.google.cloud.contentwarehouse.v1.DocumentSchema getDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.GetDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetDocumentSchemaMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a document schema. Returns NOT_FOUND if the document schema does
-     * not exist. Returns BAD_REQUEST if the document schema has documents
-     * depending on it.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteDocumentSchemaMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists document schemas.
-     * </pre>
-     */
-    public com.google.cloud.contentwarehouse.v1.ListDocumentSchemasResponse listDocumentSchemas(
-        com.google.cloud.contentwarehouse.v1.ListDocumentSchemasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListDocumentSchemasMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service DocumentSchemaService.
    *
    * <pre>
    * This service lets you manage document schema.

@@ -33,7 +33,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1beta1.UpdateShareRequest)
     UpdateShareRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateShareRequest.newBuilder() to construct.
   private UpdateShareRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SHARE_FIELD_NUMBER = 1;
   private com.google.cloud.filestore.v1beta1.Share share_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasShare() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.filestore.v1beta1.Share getShare() {
     return share_ == null ? com.google.cloud.filestore.v1beta1.Share.getDefaultInstance() : share_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -373,7 +366,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -596,7 +588,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.filestore.v1beta1.Share.Builder,
             com.google.cloud.filestore.v1beta1.ShareOrBuilder>
         shareBuilder_;
-
     /**
      *
      *
@@ -614,7 +605,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasShare() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -638,7 +628,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
         return shareBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getShareFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
             : share_;
       }
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -900,7 +880,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +942,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +969,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1042,7 +1017,6 @@ public final class UpdateShareRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface JobPlacementOrBuilder
    * @return The clusterName.
    */
   java.lang.String getClusterName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface JobPlacementOrBuilder
    * @return The clusterUuid.
    */
   java.lang.String getClusterUuid();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface JobPlacementOrBuilder
    * </code>
    */
   int getClusterLabelsCount();
-
   /**
    *
    *
@@ -103,11 +100,9 @@ public interface JobPlacementOrBuilder
    * </code>
    */
   boolean containsClusterLabels(java.lang.String key);
-
   /** Use {@link #getClusterLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getClusterLabels();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface JobPlacementOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap();
-
   /**
    *
    *
@@ -137,7 +131,6 @@ public interface JobPlacementOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

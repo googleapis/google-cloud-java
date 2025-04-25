@@ -53,7 +53,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return Whether the inspectJob field is set.
    */
   boolean hasInspectJob();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return The inspectJob.
    */
   com.google.privacy.dlp.v2.InspectJobConfig getInspectJob();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return Whether the riskJob field is set.
    */
   boolean hasRiskJob();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return The riskJob.
    */
   com.google.privacy.dlp.v2.RiskAnalysisJobConfig getRiskJob();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return The jobId.
    */
   java.lang.String getJobId();
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public interface CreateDlpJobRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

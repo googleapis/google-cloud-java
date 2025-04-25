@@ -34,7 +34,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Warehouse)
     WarehouseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Warehouse.newBuilder() to construct.
   private Warehouse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHIPPING_ADDRESS_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.accounts.v1beta.Address shippingAddress_;
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShippingAddress() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.Address.getDefaultInstance()
         : shippingAddress_;
   }
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUTOFF_TIME_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.accounts.v1beta.WarehouseCutoffTime cutoffTime_;
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCutoffTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.WarehouseCutoffTime.getDefaultInstance()
         : cutoffTime_;
   }
-
   /**
    *
    *
@@ -263,7 +253,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HANDLING_DAYS_FIELD_NUMBER = 4;
   private long handlingDays_ = 0L;
-
   /**
    *
    *
@@ -281,7 +270,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHandlingDays() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -302,7 +290,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BUSINESS_DAY_CONFIG_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig businessDayConfig_;
-
   /**
    *
    *
@@ -321,7 +308,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBusinessDayConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.getDefaultInstance()
         : businessDayConfig_;
   }
-
   /**
    *
    *
@@ -584,7 +569,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -857,7 +841,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -872,7 +855,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -895,7 +877,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -918,7 +899,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -940,7 +920,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +966,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.Address.Builder,
             com.google.shopping.merchant.accounts.v1beta.AddressOrBuilder>
         shippingAddressBuilder_;
-
     /**
      *
      *
@@ -1005,7 +982,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShippingAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         return shippingAddressBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1028,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1081,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1102,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getShippingAddressFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1170,7 +1140,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
             : shippingAddress_;
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1174,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.WarehouseCutoffTime.Builder,
             com.google.shopping.merchant.accounts.v1beta.WarehouseCutoffTimeOrBuilder>
         cutoffTimeBuilder_;
-
     /**
      *
      *
@@ -1224,7 +1192,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCutoffTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         return cutoffTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1277,7 +1243,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1302,7 +1267,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1301,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1324,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1381,7 +1343,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCutoffTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1405,7 +1366,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
             : cutoffTime_;
       }
     }
-
     /**
      *
      *
@@ -1437,7 +1397,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long handlingDays_;
-
     /**
      *
      *
@@ -1455,7 +1414,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHandlingDays() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1473,7 +1431,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     public long getHandlingDays() {
       return handlingDays_;
     }
-
     /**
      *
      *
@@ -1495,7 +1452,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1478,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.BusinessDayConfig.Builder,
             com.google.shopping.merchant.accounts.v1beta.BusinessDayConfigOrBuilder>
         businessDayConfigBuilder_;
-
     /**
      *
      *
@@ -1540,7 +1495,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBusinessDayConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1564,7 +1518,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
         return businessDayConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1591,7 +1544,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1615,7 +1567,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1600,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1622,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1640,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBusinessDayConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1714,7 +1662,6 @@ public final class Warehouse extends com.google.protobuf.GeneratedMessageV3
             : businessDayConfig_;
       }
     }
-
     /**
      *
      *

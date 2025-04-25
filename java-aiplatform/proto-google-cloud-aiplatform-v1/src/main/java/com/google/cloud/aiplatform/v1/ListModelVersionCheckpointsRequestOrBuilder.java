@@ -44,7 +44,6 @@ public interface ListModelVersionCheckpointsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public interface ListModelVersionCheckpointsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

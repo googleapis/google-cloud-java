@@ -82,7 +82,6 @@ public enum FileStripeLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_STRIPE_LEVEL_UNSPECIFIED = 0;</code>
    */
   public static final int FILE_STRIPE_LEVEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum FileStripeLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_STRIPE_LEVEL_MIN = 1;</code>
    */
   public static final int FILE_STRIPE_LEVEL_MIN_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum FileStripeLevel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILE_STRIPE_LEVEL_BALANCED = 2;</code>
    */
   public static final int FILE_STRIPE_LEVEL_BALANCED_VALUE = 2;
-
   /**
    *
    *

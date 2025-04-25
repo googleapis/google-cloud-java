@@ -38,7 +38,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The instanceUri.
    */
   java.lang.String getInstanceUri();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The backendServiceUri.
    */
   java.lang.String getBackendServiceUri();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The instanceGroupUri.
    */
   java.lang.String getInstanceGroupUri();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The networkEndpointGroupUri.
    */
   java.lang.String getNetworkEndpointGroupUri();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The backendBucketUri.
    */
   java.lang.String getBackendBucketUri();
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The pscServiceAttachmentUri.
    */
   java.lang.String getPscServiceAttachmentUri();
-
   /**
    *
    *
@@ -226,7 +219,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The pscGoogleApiTarget.
    */
   java.lang.String getPscGoogleApiTarget();
-
   /**
    *
    *
@@ -252,7 +244,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The healthCheckUri.
    */
   java.lang.String getHealthCheckUri();
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public interface LoadBalancerBackendInfoOrBuilder
    * @return The enum numeric value on the wire for healthCheckFirewallsConfigState.
    */
   int getHealthCheckFirewallsConfigStateValue();
-
   /**
    *
    *

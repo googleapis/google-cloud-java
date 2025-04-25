@@ -33,7 +33,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.OpenFileList)
     OpenFileListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OpenFileList.newBuilder() to construct.
   private OpenFileList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.OpenFileDetails> entries_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.migrationcenter.v1.OpenFileDetails> getEntriesList() {
     return entries_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       getEntriesOrBuilderList() {
     return entries_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
   public int getEntriesCount() {
     return entries_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.migrationcenter.v1.OpenFileDetails getEntries(int index) {
     return entries_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -566,7 +559,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -583,7 +575,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +656,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +758,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +777,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +790,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -827,7 +807,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -845,7 +824,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
-
     /**
      *
      *
@@ -859,7 +837,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
       return getEntriesFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.OpenFileDetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -875,7 +852,6 @@ public final class OpenFileList extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.OpenFileDetails.getDefaultInstance());
     }
-
     /**
      *
      *

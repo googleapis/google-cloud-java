@@ -73,8 +73,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateMigrationWorkflow, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateMigrationWorkflow, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MigrationWorkflow.class.getName(),
                   Exception.class.getName())));
@@ -95,8 +94,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetMigrationWorkflow, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetMigrationWorkflow, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   MigrationWorkflow.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMigrationWorkflows, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListMigrationWorkflows, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMigrationWorkflowsResponse.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteMigrationWorkflow, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteMigrationWorkflow, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +158,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method StartMigrationWorkflow, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method StartMigrationWorkflow, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -206,8 +201,7 @@ public class MockMigrationServiceImpl extends MigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMigrationSubtasks, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListMigrationSubtasks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMigrationSubtasksResponse.class.getName(),
                   Exception.class.getName())));

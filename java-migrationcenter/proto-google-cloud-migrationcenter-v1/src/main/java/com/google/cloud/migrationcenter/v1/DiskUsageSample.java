@@ -33,7 +33,6 @@ public final class DiskUsageSample extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.DiskUsageSample)
     DiskUsageSampleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskUsageSample.newBuilder() to construct.
   private DiskUsageSample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class DiskUsageSample extends com.google.protobuf.GeneratedMessageV
 
   public static final int AVERAGE_IOPS_FIELD_NUMBER = 1;
   private float averageIops_ = 0F;
-
   /**
    *
    *
@@ -241,7 +239,6 @@ public final class DiskUsageSample extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -424,7 +421,6 @@ public final class DiskUsageSample extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private float averageIops_;
-
     /**
      *
      *
@@ -440,7 +436,6 @@ public final class DiskUsageSample extends com.google.protobuf.GeneratedMessageV
     public float getAverageIops() {
       return averageIops_;
     }
-
     /**
      *
      *
@@ -460,7 +455,6 @@ public final class DiskUsageSample extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

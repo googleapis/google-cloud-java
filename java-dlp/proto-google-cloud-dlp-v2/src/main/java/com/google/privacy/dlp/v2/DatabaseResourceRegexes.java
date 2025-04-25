@@ -34,7 +34,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DatabaseResourceRegexes)
     DatabaseResourceRegexesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatabaseResourceRegexes.newBuilder() to construct.
   private DatabaseResourceRegexes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.DatabaseResourceRegex> patterns_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
   public java.util.List<com.google.privacy.dlp.v2.DatabaseResourceRegex> getPatternsList() {
     return patterns_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       getPatternsOrBuilderList() {
     return patterns_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
   public int getPatternsCount() {
     return patterns_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
   public com.google.privacy.dlp.v2.DatabaseResourceRegex getPatterns(int index) {
     return patterns_.get(index);
   }
-
   /**
    *
    *
@@ -317,7 +311,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
         return patternsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
         return patternsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -625,7 +616,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
         return patternsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +737,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +783,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +827,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
     public com.google.privacy.dlp.v2.DatabaseResourceRegex.Builder getPatternsBuilder(int index) {
       return getPatternsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -882,7 +862,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
         return patternsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(patterns_);
       }
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       return getPatternsFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.DatabaseResourceRegex.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class DatabaseResourceRegexes extends com.google.protobuf.Generated
       return getPatternsFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.DatabaseResourceRegex.getDefaultInstance());
     }
-
     /**
      *
      *

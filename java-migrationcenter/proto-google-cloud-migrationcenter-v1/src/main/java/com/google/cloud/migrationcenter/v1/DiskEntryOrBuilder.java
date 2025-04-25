@@ -62,7 +62,6 @@ public interface DiskEntryOrBuilder
    * @return The diskLabel.
    */
   java.lang.String getDiskLabel();
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public interface DiskEntryOrBuilder
    * @return The diskLabelType.
    */
   java.lang.String getDiskLabelType();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface DiskEntryOrBuilder
    * @return The enum numeric value on the wire for interfaceType.
    */
   int getInterfaceTypeValue();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface DiskEntryOrBuilder
    * @return Whether the partitions field is set.
    */
   boolean hasPartitions();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface DiskEntryOrBuilder
    * @return The partitions.
    */
   com.google.cloud.migrationcenter.v1.DiskPartitionList getPartitions();
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public interface DiskEntryOrBuilder
    * @return The hwAddress.
    */
   java.lang.String getHwAddress();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface DiskEntryOrBuilder
    * @return Whether the vmware field is set.
    */
   boolean hasVmware();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface DiskEntryOrBuilder
    * @return The vmware.
    */
   com.google.cloud.migrationcenter.v1.VmwareDiskConfig getVmware();
-
   /**
    *
    *

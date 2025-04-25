@@ -38,7 +38,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return Whether the keyUsage field is set.
    */
   boolean hasKeyUsage();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return The keyUsage.
    */
   com.google.cloud.security.privateca.v1beta1.KeyUsage getKeyUsage();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return Whether the caOptions field is set.
    */
   boolean hasCaOptions();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return The caOptions.
    */
   com.google.cloud.security.privateca.v1beta1.ReusableConfigValues.CaOptions getCaOptions();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ReusableConfigValuesOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.security.privateca.v1beta1.ObjectId> getPolicyIdsList();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ReusableConfigValuesOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1beta1.ObjectId getPolicyIds(int index);
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ReusableConfigValuesOrBuilder
    * </code>
    */
   int getPolicyIdsCount();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface ReusableConfigValuesOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1beta1.ObjectIdOrBuilder>
       getPolicyIdsOrBuilderList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return A list containing the aiaOcspServers.
    */
   java.util.List<java.lang.String> getAiaOcspServersList();
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return The count of aiaOcspServers.
    */
   int getAiaOcspServersCount();
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public interface ReusableConfigValuesOrBuilder
    * @return The aiaOcspServers at the given index.
    */
   java.lang.String getAiaOcspServers(int index);
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface ReusableConfigValuesOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1beta1.X509Extension>
       getAdditionalExtensionsList();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface ReusableConfigValuesOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1beta1.X509Extension getAdditionalExtensions(int index);
-
   /**
    *
    *
@@ -286,7 +273,6 @@ public interface ReusableConfigValuesOrBuilder
    * </code>
    */
   int getAdditionalExtensionsCount();
-
   /**
    *
    *
@@ -300,7 +286,6 @@ public interface ReusableConfigValuesOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1beta1.X509ExtensionOrBuilder>
       getAdditionalExtensionsOrBuilderList();
-
   /**
    *
    *

@@ -32,7 +32,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RoutersGetRoutePolicyResponse)
     RoutersGetRoutePolicyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RoutersGetRoutePolicyResponse.newBuilder() to construct.
   private RoutersGetRoutePolicyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
   private com.google.cloud.compute.v1.RoutePolicy resource_;
-
   /**
    * <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code>
    *
@@ -74,7 +72,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    * <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code>
    *
@@ -86,7 +83,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.RoutePolicy.getDefaultInstance()
         : resource_;
   }
-
   /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.RoutePolicyOrBuilder getResourceOrBuilder() {
@@ -260,7 +256,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -463,7 +458,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.RoutePolicy.Builder,
             com.google.cloud.compute.v1.RoutePolicyOrBuilder>
         resourceBuilder_;
-
     /**
      * <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code>
      *
@@ -472,7 +466,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
     public boolean hasResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      * <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code>
      *
@@ -487,7 +480,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
         return resourceBuilder_.getMessage();
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     public Builder setResource(com.google.cloud.compute.v1.RoutePolicy value) {
       if (resourceBuilder_ == null) {
@@ -502,7 +494,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     public Builder setResource(com.google.cloud.compute.v1.RoutePolicy.Builder builderForValue) {
       if (resourceBuilder_ == null) {
@@ -514,7 +505,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     public Builder mergeResource(com.google.cloud.compute.v1.RoutePolicy value) {
       if (resourceBuilder_ == null) {
@@ -534,7 +524,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     public Builder clearResource() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -546,14 +535,12 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     public com.google.cloud.compute.v1.RoutePolicy.Builder getResourceBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     public com.google.cloud.compute.v1.RoutePolicyOrBuilder getResourceOrBuilder() {
       if (resourceBuilder_ != null) {
@@ -564,7 +551,6 @@ public final class RoutersGetRoutePolicyResponse extends com.google.protobuf.Gen
             : resource_;
       }
     }
-
     /** <code>optional .google.cloud.compute.v1.RoutePolicy resource = 195806222;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.RoutePolicy,

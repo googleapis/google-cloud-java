@@ -36,7 +36,6 @@ public interface NotebookOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NotebookOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface NotebookOrBuilder
    * @return The lastAuthor.
    */
   java.lang.String getLastAuthor();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface NotebookOrBuilder
    * @return Whether the notebookUpdateTime field is set.
    */
   boolean hasNotebookUpdateTime();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface NotebookOrBuilder
    * @return The notebookUpdateTime.
    */
   com.google.protobuf.Timestamp getNotebookUpdateTime();
-
   /**
    *
    *

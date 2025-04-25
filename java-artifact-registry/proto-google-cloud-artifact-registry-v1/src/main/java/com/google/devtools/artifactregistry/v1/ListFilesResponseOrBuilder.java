@@ -34,7 +34,6 @@ public interface ListFilesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.File files = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.File> getFilesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListFilesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.File files = 1;</code>
    */
   com.google.devtools.artifactregistry.v1.File getFiles(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListFilesResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1.File files = 1;</code>
    */
   int getFilesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.FileOrBuilder>
       getFilesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListFilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

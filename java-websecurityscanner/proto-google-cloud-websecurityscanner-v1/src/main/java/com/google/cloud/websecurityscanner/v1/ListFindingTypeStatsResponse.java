@@ -33,7 +33,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.ListFindingTypeStatsResponse)
     ListFindingTypeStatsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListFindingTypeStatsResponse.newBuilder() to construct.
   private ListFindingTypeStatsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.websecurityscanner.v1.FindingTypeStats> findingTypeStats_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       getFindingTypeStatsList() {
     return findingTypeStats_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       getFindingTypeStatsOrBuilderList() {
     return findingTypeStats_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
   public int getFindingTypeStatsCount() {
     return findingTypeStats_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
   public com.google.cloud.websecurityscanner.v1.FindingTypeStats getFindingTypeStats(int index) {
     return findingTypeStats_.get(index);
   }
-
   /**
    *
    *
@@ -310,7 +304,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -584,7 +577,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
         return findingTypeStatsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
         return findingTypeStatsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
         return findingTypeStatsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +770,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +810,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
         getFindingTypeStatsBuilder(int index) {
       return getFindingTypeStatsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -862,7 +842,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
         return findingTypeStatsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(findingTypeStats_);
       }
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
       return getFindingTypeStatsFieldBuilder()
           .addBuilder(com.google.cloud.websecurityscanner.v1.FindingTypeStats.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class ListFindingTypeStatsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.websecurityscanner.v1.FindingTypeStats.getDefaultInstance());
     }
-
     /**
      *
      *

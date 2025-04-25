@@ -36,7 +36,6 @@ public interface GitConfigOrBuilder
    * @return Whether the http field is set.
    */
   boolean hasHttp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GitConfigOrBuilder
    * @return The http.
    */
   com.google.cloudbuild.v1.GitConfig.HttpConfig getHttp();
-
   /**
    *
    *

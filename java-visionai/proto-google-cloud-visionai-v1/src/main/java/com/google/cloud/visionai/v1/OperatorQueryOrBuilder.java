@@ -36,7 +36,6 @@ public interface OperatorQueryOrBuilder
    * @return The operator.
    */
   java.lang.String getOperator();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface OperatorQueryOrBuilder
    * @return The tag.
    */
   java.lang.String getTag();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface OperatorQueryOrBuilder
    * @return The enum numeric value on the wire for registry.
    */
   int getRegistryValue();
-
   /**
    *
    *

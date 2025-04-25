@@ -34,7 +34,6 @@ public interface ListAnalysesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Analysis analyses = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Analysis> getAnalysesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAnalysesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Analysis analyses = 1;</code>
    */
   com.google.cloud.visionai.v1.Analysis getAnalyses(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAnalysesResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Analysis analyses = 1;</code>
    */
   int getAnalysesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAnalysesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.AnalysisOrBuilder>
       getAnalysesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListAnalysesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListAnalysesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListAnalysesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListAnalysesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

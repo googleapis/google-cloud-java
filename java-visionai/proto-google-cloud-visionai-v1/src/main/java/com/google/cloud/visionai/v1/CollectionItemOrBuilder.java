@@ -39,7 +39,6 @@ public interface CollectionItemOrBuilder
    * @return The collection.
    */
   java.lang.String getCollection();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CollectionItemOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface CollectionItemOrBuilder
    * @return The itemResource.
    */
   java.lang.String getItemResource();
-
   /**
    *
    *

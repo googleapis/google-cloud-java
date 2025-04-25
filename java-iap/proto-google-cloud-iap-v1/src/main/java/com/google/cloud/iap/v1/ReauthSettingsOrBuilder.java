@@ -38,7 +38,6 @@ public interface ReauthSettingsOrBuilder
    * @return The enum numeric value on the wire for method.
    */
   int getMethodValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ReauthSettingsOrBuilder
    * @return Whether the maxAge field is set.
    */
   boolean hasMaxAge();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ReauthSettingsOrBuilder
    * @return The maxAge.
    */
   com.google.protobuf.Duration getMaxAge();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ReauthSettingsOrBuilder
    * @return The enum numeric value on the wire for policyType.
    */
   int getPolicyTypeValue();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ServiceOrBuilder
    * @return Whether the serviceName field is set.
    */
   boolean hasServiceName();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ServiceOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ServiceOrBuilder
    * @return Whether the active field is set.
    */
   boolean hasActive();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ServiceOrBuilder
    * @return A list containing the deliveryCountries.
    */
   java.util.List<java.lang.String> getDeliveryCountriesList();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ServiceOrBuilder
    * @return The count of deliveryCountries.
    */
   int getDeliveryCountriesCount();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface ServiceOrBuilder
    * @return The deliveryCountries at the given index.
    */
   java.lang.String getDeliveryCountries(int index);
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface ServiceOrBuilder
    * @return Whether the currencyCode field is set.
    */
   boolean hasCurrencyCode();
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public interface ServiceOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface ServiceOrBuilder
    * @return Whether the deliveryTime field is set.
    */
   boolean hasDeliveryTime();
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public interface ServiceOrBuilder
    * @return The deliveryTime.
    */
   com.google.shopping.merchant.accounts.v1beta.DeliveryTime getDeliveryTime();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.RateGroup> getRateGroupsList();
-
   /**
    *
    *
@@ -267,7 +256,6 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.RateGroup getRateGroups(int index);
-
   /**
    *
    *
@@ -282,7 +270,6 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getRateGroupsCount();
-
   /**
    *
    *
@@ -298,7 +285,6 @@ public interface ServiceOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.RateGroupOrBuilder>
       getRateGroupsOrBuilderList();
-
   /**
    *
    *
@@ -328,7 +314,6 @@ public interface ServiceOrBuilder
    * @return Whether the shipmentType field is set.
    */
   boolean hasShipmentType();
-
   /**
    *
    *
@@ -343,7 +328,6 @@ public interface ServiceOrBuilder
    * @return The enum numeric value on the wire for shipmentType.
    */
   int getShipmentTypeValue();
-
   /**
    *
    *
@@ -374,7 +358,6 @@ public interface ServiceOrBuilder
    * @return Whether the minimumOrderValue field is set.
    */
   boolean hasMinimumOrderValue();
-
   /**
    *
    *
@@ -390,7 +373,6 @@ public interface ServiceOrBuilder
    * @return The minimumOrderValue.
    */
   com.google.shopping.type.Price getMinimumOrderValue();
-
   /**
    *
    *
@@ -420,7 +402,6 @@ public interface ServiceOrBuilder
    * @return Whether the minimumOrderValueTable field is set.
    */
   boolean hasMinimumOrderValueTable();
-
   /**
    *
    *
@@ -436,7 +417,6 @@ public interface ServiceOrBuilder
    * @return The minimumOrderValueTable.
    */
   com.google.shopping.merchant.accounts.v1beta.MinimumOrderValueTable getMinimumOrderValueTable();
-
   /**
    *
    *
@@ -466,7 +446,6 @@ public interface ServiceOrBuilder
    * @return Whether the storeConfig field is set.
    */
   boolean hasStoreConfig();
-
   /**
    *
    *
@@ -481,7 +460,6 @@ public interface ServiceOrBuilder
    * @return The storeConfig.
    */
   com.google.shopping.merchant.accounts.v1beta.Service.StoreConfig getStoreConfig();
-
   /**
    *
    *
@@ -509,7 +487,6 @@ public interface ServiceOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram>
       getLoyaltyProgramsList();
-
   /**
    *
    *
@@ -522,7 +499,6 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgram getLoyaltyPrograms(int index);
-
   /**
    *
    *
@@ -535,7 +511,6 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getLoyaltyProgramsCount();
-
   /**
    *
    *
@@ -550,7 +525,6 @@ public interface ServiceOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.accounts.v1beta.Service.LoyaltyProgramOrBuilder>
       getLoyaltyProgramsOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.Widget)
     WidgetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Widget.newBuilder() to construct.
   private Widget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -94,7 +93,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     private ContentCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -153,7 +151,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -177,7 +174,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +199,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int XY_CHART_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -219,7 +214,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasXyChart() {
     return contentCase_ == 2;
   }
-
   /**
    *
    *
@@ -238,7 +232,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.XyChart.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCORECARD_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScorecard() {
     return contentCase_ == 3;
   }
-
   /**
    *
    *
@@ -292,7 +283,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.Scorecard.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TEXT_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -327,7 +316,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasText() {
     return contentCase_ == 4;
   }
-
   /**
    *
    *
@@ -346,7 +334,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.Text.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -365,7 +352,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BLANK_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -381,7 +367,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBlank() {
     return contentCase_ == 5;
   }
-
   /**
    *
    *
@@ -400,7 +385,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Empty.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -419,7 +403,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALERT_CHART_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -435,7 +418,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAlertChart() {
     return contentCase_ == 7;
   }
-
   /**
    *
    *
@@ -454,7 +436,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -473,7 +454,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIME_SERIES_TABLE_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -489,7 +469,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeSeriesTable() {
     return contentCase_ == 8;
   }
-
   /**
    *
    *
@@ -508,7 +487,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -527,7 +505,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLLAPSIBLE_GROUP_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -544,7 +521,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCollapsibleGroup() {
     return contentCase_ == 9;
   }
-
   /**
    *
    *
@@ -564,7 +540,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -585,7 +560,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOGS_PANEL_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -601,7 +575,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLogsPanel() {
     return contentCase_ == 10;
   }
-
   /**
    *
    *
@@ -620,7 +593,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -639,7 +611,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCIDENT_LIST_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -655,7 +626,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIncidentList() {
     return contentCase_ == 12;
   }
-
   /**
    *
    *
@@ -674,7 +644,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.IncidentList.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -693,7 +662,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PIE_CHART_FIELD_NUMBER = 14;
-
   /**
    *
    *
@@ -709,7 +677,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPieChart() {
     return contentCase_ == 14;
   }
-
   /**
    *
    *
@@ -728,7 +695,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.PieChart.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -747,7 +713,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_REPORTING_PANEL_FIELD_NUMBER = 19;
-
   /**
    *
    *
@@ -763,7 +728,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasErrorReportingPanel() {
     return contentCase_ == 19;
   }
-
   /**
    *
    *
@@ -782,7 +746,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.ErrorReportingPanel.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -802,7 +765,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECTION_HEADER_FIELD_NUMBER = 21;
-
   /**
    *
    *
@@ -819,7 +781,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSectionHeader() {
     return contentCase_ == 21;
   }
-
   /**
    *
    *
@@ -839,7 +800,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.SectionHeader.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -859,7 +819,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SINGLE_VIEW_GROUP_FIELD_NUMBER = 22;
-
   /**
    *
    *
@@ -875,7 +834,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSingleViewGroup() {
     return contentCase_ == 22;
   }
-
   /**
    *
    *
@@ -894,7 +852,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.monitoring.dashboard.v1.SingleViewGroup.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -916,7 +873,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -941,7 +897,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1339,7 +1294,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1790,7 +1744,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -1813,7 +1766,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1836,7 +1788,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1858,7 +1809,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1876,7 +1826,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1905,7 +1854,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.XyChart.Builder,
             com.google.monitoring.dashboard.v1.XyChartOrBuilder>
         xyChartBuilder_;
-
     /**
      *
      *
@@ -1921,7 +1869,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasXyChart() {
       return contentCase_ == 2;
     }
-
     /**
      *
      *
@@ -1947,7 +1894,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.XyChart.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1970,7 +1916,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1990,7 +1935,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2023,7 +1967,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2049,7 +1992,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2062,7 +2004,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.XyChart.Builder getXyChartBuilder() {
       return getXyChartFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2083,7 +2024,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.XyChart.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2122,7 +2062,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.Scorecard.Builder,
             com.google.monitoring.dashboard.v1.ScorecardOrBuilder>
         scorecardBuilder_;
-
     /**
      *
      *
@@ -2138,7 +2077,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScorecard() {
       return contentCase_ == 3;
     }
-
     /**
      *
      *
@@ -2164,7 +2102,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Scorecard.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2187,7 +2124,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2208,7 +2144,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2241,7 +2176,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2267,7 +2201,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2280,7 +2213,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Scorecard.Builder getScorecardBuilder() {
       return getScorecardFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2301,7 +2233,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Scorecard.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2340,7 +2271,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.Text.Builder,
             com.google.monitoring.dashboard.v1.TextOrBuilder>
         textBuilder_;
-
     /**
      *
      *
@@ -2356,7 +2286,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasText() {
       return contentCase_ == 4;
     }
-
     /**
      *
      *
@@ -2382,7 +2311,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Text.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2405,7 +2333,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2425,7 +2352,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2458,7 +2384,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -2484,7 +2409,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2497,7 +2421,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Text.Builder getTextBuilder() {
       return getTextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2518,7 +2441,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.Text.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2557,7 +2479,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Empty.Builder,
             com.google.protobuf.EmptyOrBuilder>
         blankBuilder_;
-
     /**
      *
      *
@@ -2573,7 +2494,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBlank() {
       return contentCase_ == 5;
     }
-
     /**
      *
      *
@@ -2599,7 +2519,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2622,7 +2541,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2642,7 +2560,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2673,7 +2590,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2615,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2712,7 +2627,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Empty.Builder getBlankBuilder() {
       return getBlankFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2733,7 +2647,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Empty.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2770,7 +2683,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.AlertChart.Builder,
             com.google.monitoring.dashboard.v1.AlertChartOrBuilder>
         alertChartBuilder_;
-
     /**
      *
      *
@@ -2786,7 +2698,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAlertChart() {
       return contentCase_ == 7;
     }
-
     /**
      *
      *
@@ -2812,7 +2723,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2835,7 +2745,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2856,7 +2765,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2889,7 +2797,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2915,7 +2822,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2928,7 +2834,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.AlertChart.Builder getAlertChartBuilder() {
       return getAlertChartFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2949,7 +2854,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.AlertChart.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2988,7 +2892,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder,
             com.google.monitoring.dashboard.v1.TimeSeriesTableOrBuilder>
         timeSeriesTableBuilder_;
-
     /**
      *
      *
@@ -3004,7 +2907,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeSeriesTable() {
       return contentCase_ == 8;
     }
-
     /**
      *
      *
@@ -3030,7 +2932,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3053,7 +2954,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -3074,7 +2974,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -3108,7 +3007,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -3134,7 +3032,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3147,7 +3044,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.TimeSeriesTable.Builder getTimeSeriesTableBuilder() {
       return getTimeSeriesTableFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3169,7 +3065,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.TimeSeriesTable.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3208,7 +3103,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.CollapsibleGroup.Builder,
             com.google.monitoring.dashboard.v1.CollapsibleGroupOrBuilder>
         collapsibleGroupBuilder_;
-
     /**
      *
      *
@@ -3225,7 +3119,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCollapsibleGroup() {
       return contentCase_ == 9;
     }
-
     /**
      *
      *
@@ -3252,7 +3145,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3276,7 +3168,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3298,7 +3189,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3334,7 +3224,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3361,7 +3250,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3376,7 +3264,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         getCollapsibleGroupBuilder() {
       return getCollapsibleGroupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3399,7 +3286,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.CollapsibleGroup.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3439,7 +3325,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.LogsPanel.Builder,
             com.google.monitoring.dashboard.v1.LogsPanelOrBuilder>
         logsPanelBuilder_;
-
     /**
      *
      *
@@ -3455,7 +3340,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLogsPanel() {
       return contentCase_ == 10;
     }
-
     /**
      *
      *
@@ -3481,7 +3365,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3504,7 +3387,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -3525,7 +3407,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -3558,7 +3439,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -3584,7 +3464,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3597,7 +3476,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.LogsPanel.Builder getLogsPanelBuilder() {
       return getLogsPanelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3618,7 +3496,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.LogsPanel.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3657,7 +3534,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.IncidentList.Builder,
             com.google.monitoring.dashboard.v1.IncidentListOrBuilder>
         incidentListBuilder_;
-
     /**
      *
      *
@@ -3673,7 +3549,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIncidentList() {
       return contentCase_ == 12;
     }
-
     /**
      *
      *
@@ -3699,7 +3574,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.IncidentList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3722,7 +3596,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3743,7 +3616,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3776,7 +3648,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -3802,7 +3673,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3815,7 +3685,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.IncidentList.Builder getIncidentListBuilder() {
       return getIncidentListFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3836,7 +3705,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.IncidentList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3875,7 +3743,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.PieChart.Builder,
             com.google.monitoring.dashboard.v1.PieChartOrBuilder>
         pieChartBuilder_;
-
     /**
      *
      *
@@ -3891,7 +3758,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPieChart() {
       return contentCase_ == 14;
     }
-
     /**
      *
      *
@@ -3917,7 +3783,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.PieChart.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3940,7 +3805,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -3961,7 +3825,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -3994,7 +3857,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -4020,7 +3882,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4033,7 +3894,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.PieChart.Builder getPieChartBuilder() {
       return getPieChartFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4054,7 +3914,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.PieChart.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4093,7 +3952,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.ErrorReportingPanel.Builder,
             com.google.monitoring.dashboard.v1.ErrorReportingPanelOrBuilder>
         errorReportingPanelBuilder_;
-
     /**
      *
      *
@@ -4109,7 +3967,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasErrorReportingPanel() {
       return contentCase_ == 19;
     }
-
     /**
      *
      *
@@ -4135,7 +3992,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.ErrorReportingPanel.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4159,7 +4015,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 19;
       return this;
     }
-
     /**
      *
      *
@@ -4180,7 +4035,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 19;
       return this;
     }
-
     /**
      *
      *
@@ -4215,7 +4069,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 19;
       return this;
     }
-
     /**
      *
      *
@@ -4241,7 +4094,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4255,7 +4107,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         getErrorReportingPanelBuilder() {
       return getErrorReportingPanelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4277,7 +4128,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.ErrorReportingPanel.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4316,7 +4166,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.SectionHeader.Builder,
             com.google.monitoring.dashboard.v1.SectionHeaderOrBuilder>
         sectionHeaderBuilder_;
-
     /**
      *
      *
@@ -4333,7 +4182,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSectionHeader() {
       return contentCase_ == 21;
     }
-
     /**
      *
      *
@@ -4360,7 +4208,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.SectionHeader.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4384,7 +4231,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -4406,7 +4252,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -4440,7 +4285,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -4467,7 +4311,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4481,7 +4324,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.SectionHeader.Builder getSectionHeaderBuilder() {
       return getSectionHeaderFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4503,7 +4345,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.SectionHeader.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4543,7 +4384,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             com.google.monitoring.dashboard.v1.SingleViewGroup.Builder,
             com.google.monitoring.dashboard.v1.SingleViewGroupOrBuilder>
         singleViewGroupBuilder_;
-
     /**
      *
      *
@@ -4559,7 +4399,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSingleViewGroup() {
       return contentCase_ == 22;
     }
-
     /**
      *
      *
@@ -4585,7 +4424,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.SingleViewGroup.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4608,7 +4446,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -4629,7 +4466,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -4663,7 +4499,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -4689,7 +4524,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4702,7 +4536,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.SingleViewGroup.Builder getSingleViewGroupBuilder() {
       return getSingleViewGroupFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4724,7 +4557,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return com.google.monitoring.dashboard.v1.SingleViewGroup.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4759,7 +4591,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -4783,7 +4614,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4807,7 +4637,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4830,7 +4659,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4849,7 +4677,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

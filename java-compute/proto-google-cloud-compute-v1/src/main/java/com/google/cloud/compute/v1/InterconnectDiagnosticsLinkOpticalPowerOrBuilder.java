@@ -37,7 +37,6 @@ public interface InterconnectDiagnosticsLinkOpticalPowerOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface InterconnectDiagnosticsLinkOpticalPowerOrBuilder
    * @return The state.
    */
   java.lang.String getState();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface InterconnectDiagnosticsLinkOpticalPowerOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *

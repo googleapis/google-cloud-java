@@ -54,7 +54,6 @@ public interface GitHubEventsConfigOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface GitHubEventsConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface GitHubEventsConfigOrBuilder
    * @return Whether the pullRequest field is set.
    */
   boolean hasPullRequest();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface GitHubEventsConfigOrBuilder
    * @return The pullRequest.
    */
   com.google.cloudbuild.v1.PullRequestFilter getPullRequest();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface GitHubEventsConfigOrBuilder
    * @return Whether the push field is set.
    */
   boolean hasPush();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface GitHubEventsConfigOrBuilder
    * @return The push.
    */
   com.google.cloudbuild.v1.PushFilter getPush();
-
   /**
    *
    *

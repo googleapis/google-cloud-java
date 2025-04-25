@@ -36,7 +36,6 @@ public interface RemoveFromFolderActionOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RemoveFromFolderActionOrBuilder
    * @return The folder.
    */
   java.lang.String getFolder();
-
   /**
    *
    *

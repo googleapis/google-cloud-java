@@ -34,7 +34,6 @@ public interface ListExamplesResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Example examples = 1;</code>
    */
   java.util.List<com.google.cloud.translate.v3.Example> getExamplesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListExamplesResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Example examples = 1;</code>
    */
   com.google.cloud.translate.v3.Example getExamples(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListExamplesResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Example examples = 1;</code>
    */
   int getExamplesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListExamplesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.ExampleOrBuilder>
       getExamplesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListExamplesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

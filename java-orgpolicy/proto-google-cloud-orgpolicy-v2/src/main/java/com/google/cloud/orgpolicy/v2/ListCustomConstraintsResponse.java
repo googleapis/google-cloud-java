@@ -25,8 +25,7 @@ package com.google.cloud.orgpolicy.v2;
  * <pre>
  * The response returned from the [ListCustomConstraints]
  * [google.cloud.orgpolicy.v2.OrgPolicy.ListCustomConstraints] method. It will
- * be empty if no custom or managed constraints are set on the organization
- * resource.
+ * be empty if no custom constraints are set on the organization resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.orgpolicy.v2.ListCustomConstraintsResponse}
@@ -36,7 +35,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.ListCustomConstraintsResponse)
     ListCustomConstraintsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCustomConstraintsResponse.newBuilder() to construct.
   private ListCustomConstraintsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,13 +70,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.orgpolicy.v2.CustomConstraint> customConstraints_;
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -87,13 +84,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.orgpolicy.v2.CustomConstraint> getCustomConstraintsList() {
     return customConstraints_;
   }
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -103,13 +99,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       getCustomConstraintsOrBuilderList() {
     return customConstraints_;
   }
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -118,13 +113,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
   public int getCustomConstraintsCount() {
     return customConstraints_.size();
   }
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -133,13 +127,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
   public com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraints(int index) {
     return customConstraints_.get(index);
   }
-
   /**
    *
    *
    * <pre>
-   * All custom and managed constraints that exist on the organization resource.
-   * It will be empty if no custom constraints are set.
+   * All custom constraints that exist on the organization resource. It will be
+   * empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -154,7 +147,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -377,15 +368,13 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
    * The response returned from the [ListCustomConstraints]
    * [google.cloud.orgpolicy.v2.OrgPolicy.ListCustomConstraints] method. It will
-   * be empty if no custom or managed constraints are set on the organization
-   * resource.
+   * be empty if no custom constraints are set on the organization resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.orgpolicy.v2.ListCustomConstraintsResponse}
@@ -647,8 +636,8 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -661,13 +650,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return customConstraintsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -679,13 +667,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return customConstraintsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -697,13 +684,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return customConstraintsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -722,13 +708,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -744,13 +729,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -768,13 +752,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -793,13 +776,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -815,13 +797,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -837,13 +818,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -859,13 +839,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -880,13 +859,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -901,13 +879,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -916,13 +893,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         int index) {
       return getCustomConstraintsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -935,13 +911,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return customConstraintsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -954,13 +929,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(customConstraints_);
       }
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -969,13 +943,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       return getCustomConstraintsFieldBuilder()
           .addBuilder(com.google.cloud.orgpolicy.v2.CustomConstraint.getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -985,13 +958,12 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       return getCustomConstraintsFieldBuilder()
           .addBuilder(index, com.google.cloud.orgpolicy.v2.CustomConstraint.getDefaultInstance());
     }
-
     /**
      *
      *
      * <pre>
-     * All custom and managed constraints that exist on the organization resource.
-     * It will be empty if no custom constraints are set.
+     * All custom constraints that exist on the organization resource. It will be
+     * empty if no custom constraints are set.
      * </pre>
      *
      * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -1022,7 +994,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1046,7 +1017,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1040,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1062,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1080,6 @@ public final class ListCustomConstraintsResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

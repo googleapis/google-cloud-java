@@ -34,7 +34,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest)
     UnenrollDataSourcesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UnenrollDataSourcesRequest.newBuilder() to construct.
   private UnenrollDataSourcesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dataSourceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getDataSourceIdsList() {
     return dataSourceIds_;
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
   public int getDataSourceIdsCount() {
     return dataSourceIds_.size();
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
   public java.lang.String getDataSourceIds(int index) {
     return dataSourceIds_.get(index);
   }
-
   /**
    *
    *
@@ -370,7 +363,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +577,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -633,7 +623,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       dataSourceIds_.makeImmutable();
       return dataSourceIds_;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
     public int getDataSourceIdsCount() {
       return dataSourceIds_.size();
     }
-
     /**
      *
      *
@@ -759,7 +743,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
     public java.lang.String getDataSourceIds(int index) {
       return dataSourceIds_.get(index);
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getDataSourceIdsBytes(int index) {
       return dataSourceIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -801,7 +783,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +806,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +826,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +845,6 @@ public final class UnenrollDataSourcesRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

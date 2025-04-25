@@ -33,7 +33,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CsvSource)
     CsvSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CsvSource.newBuilder() to construct.
   private CsvSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.GcsSource gcsSource_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()
         : gcsSource_;
   }
-
   /**
    *
    *
@@ -286,7 +282,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +484,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -506,7 +500,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
         return gcsSourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -577,7 +568,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +597,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +618,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +634,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -667,7 +654,6 @@ public final class CsvSource extends com.google.protobuf.GeneratedMessageV3
             : gcsSource_;
       }
     }
-
     /**
      *
      *

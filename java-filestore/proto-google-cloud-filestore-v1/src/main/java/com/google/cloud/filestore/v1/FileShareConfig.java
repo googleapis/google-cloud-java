@@ -33,7 +33,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.filestore.v1.FileShareConfig)
     FileShareConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileShareConfig.newBuilder() to construct.
   private FileShareConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CAPACITY_GB_FIELD_NUMBER = 2;
   private long capacityGb_ = 0L;
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SOURCE_BACKUP_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasSourceBackup() {
     return sourceCase_ == 8;
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -274,7 +266,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.filestore.v1.NfsExportOptions> nfsExportOptions_;
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.filestore.v1.NfsExportOptions> getNfsExportOptionsList() {
     return nfsExportOptions_;
   }
-
   /**
    *
    *
@@ -305,7 +295,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       getNfsExportOptionsOrBuilderList() {
     return nfsExportOptions_;
   }
-
   /**
    *
    *
@@ -320,7 +309,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   public int getNfsExportOptionsCount() {
     return nfsExportOptions_.size();
   }
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.filestore.v1.NfsExportOptions getNfsExportOptions(int index) {
     return nfsExportOptions_.get(index);
   }
-
   /**
    *
    *
@@ -553,7 +540,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -852,7 +838,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -878,7 +863,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -904,7 +888,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +912,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -978,7 +959,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private long capacityGb_;
-
     /**
      *
      *
@@ -995,7 +975,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     public long getCapacityGb() {
       return capacityGb_;
     }
-
     /**
      *
      *
@@ -1016,7 +995,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1031,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasSourceBackup() {
       return sourceCase_ == 8;
     }
-
     /**
      *
      *
@@ -1084,7 +1061,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1091,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1161,7 +1135,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1223,7 +1196,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return nfsExportOptionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1241,7 +1213,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return nfsExportOptionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1259,7 +1230,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return nfsExportOptionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1284,7 +1254,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1306,7 +1275,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1298,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1355,7 +1322,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1343,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1399,7 +1364,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1421,7 +1385,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1405,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1425,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1439,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getNfsExportOptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1497,7 +1457,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return nfsExportOptionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1516,7 +1475,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(nfsExportOptions_);
       }
     }
-
     /**
      *
      *
@@ -1531,7 +1489,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       return getNfsExportOptionsFieldBuilder()
           .addBuilder(com.google.cloud.filestore.v1.NfsExportOptions.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1547,7 +1504,6 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
       return getNfsExportOptionsFieldBuilder()
           .addBuilder(index, com.google.cloud.filestore.v1.NfsExportOptions.getDefaultInstance());
     }
-
     /**
      *
      *

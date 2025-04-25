@@ -41,7 +41,6 @@ public interface UpdateConnectClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateConnectClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateConnectClusterRequestOrBuilder
    * @return Whether the connectCluster field is set.
    */
   boolean hasConnectCluster();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateConnectClusterRequestOrBuilder
    * @return The connectCluster.
    */
   com.google.cloud.managedkafka.v1.ConnectCluster getConnectCluster();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public interface UpdateConnectClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

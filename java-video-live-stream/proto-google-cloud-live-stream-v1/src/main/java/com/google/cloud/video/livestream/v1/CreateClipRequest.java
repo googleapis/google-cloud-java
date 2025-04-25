@@ -33,7 +33,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.CreateClipRequest)
     CreateClipRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateClipRequest.newBuilder() to construct.
   private CreateClipRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clipId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int CLIP_FIELD_NUMBER = 3;
   private com.google.cloud.video.livestream.v1.Clip clip_;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasClip() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.video.livestream.v1.Clip getClip() {
     return clip_ == null ? com.google.cloud.video.livestream.v1.Clip.getDefaultInstance() : clip_;
   }
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -280,7 +271,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -509,7 +499,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -753,7 +742,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -779,7 +767,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +792,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -830,7 +816,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +836,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -879,7 +863,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object clipId_ = "";
-
     /**
      *
      *
@@ -905,7 +888,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -931,7 +913,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +937,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.video.livestream.v1.Clip.Builder,
             com.google.cloud.video.livestream.v1.ClipOrBuilder>
         clipBuilder_;
-
     /**
      *
      *
@@ -1027,7 +1005,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasClip() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1050,7 +1027,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return clipBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1051,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1072,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1101,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1122,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1138,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getClipFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
             : clip_;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1187,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1252,7 +1221,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1287,7 +1255,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1321,7 +1288,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1317,6 @@ public final class CreateClipRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

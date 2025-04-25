@@ -33,7 +33,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.SearchDocumentsResponse)
     SearchDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchDocumentsResponse.newBuilder() to construct.
   private SearchDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return Whether the document field is set.
      */
     boolean hasDocument();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return The document.
      */
     com.google.cloud.contentwarehouse.v1.Document getDocument();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return The searchTextSnippet.
      */
     java.lang.String getSearchTextSnippet();
-
     /**
      *
      *
@@ -172,7 +168,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return Whether the qaResult field is set.
      */
     boolean hasQaResult();
-
     /**
      *
      *
@@ -186,7 +181,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return The qaResult.
      */
     com.google.cloud.contentwarehouse.v1.QAResult getQaResult();
-
     /**
      *
      *
@@ -212,7 +206,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return A list containing the matchedTokenPageIndices.
      */
     java.util.List<java.lang.Long> getMatchedTokenPageIndicesList();
-
     /**
      *
      *
@@ -226,7 +219,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      * @return The count of matchedTokenPageIndices.
      */
     int getMatchedTokenPageIndicesCount();
-
     /**
      *
      *
@@ -242,7 +234,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
      */
     long getMatchedTokenPageIndices(int index);
   }
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument)
       MatchingDocumentOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MatchingDocument.newBuilder() to construct.
     private MatchingDocument(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -294,7 +284,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     private int bitField0_;
     public static final int DOCUMENT_FIELD_NUMBER = 1;
     private com.google.cloud.contentwarehouse.v1.Document document_;
-
     /**
      *
      *
@@ -312,7 +301,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -332,7 +320,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           ? com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()
           : document_;
     }
-
     /**
      *
      *
@@ -355,7 +342,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object searchTextSnippet_ = "";
-
     /**
      *
      *
@@ -388,7 +374,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return s;
       }
     }
-
     /**
      *
      *
@@ -424,7 +409,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
     public static final int QA_RESULT_FIELD_NUMBER = 3;
     private com.google.cloud.contentwarehouse.v1.QAResult qaResult_;
-
     /**
      *
      *
@@ -441,7 +425,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     public boolean hasQaResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -460,7 +443,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           ? com.google.cloud.contentwarehouse.v1.QAResult.getDefaultInstance()
           : qaResult_;
     }
-
     /**
      *
      *
@@ -482,7 +464,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList matchedTokenPageIndices_ = emptyLongList();
-
     /**
      *
      *
@@ -499,7 +480,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     public java.util.List<java.lang.Long> getMatchedTokenPageIndicesList() {
       return matchedTokenPageIndices_;
     }
-
     /**
      *
      *
@@ -515,7 +495,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     public int getMatchedTokenPageIndicesCount() {
       return matchedTokenPageIndices_.size();
     }
-
     /**
      *
      *
@@ -760,7 +739,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1050,7 +1028,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               com.google.cloud.contentwarehouse.v1.Document.Builder,
               com.google.cloud.contentwarehouse.v1.DocumentOrBuilder>
           documentBuilder_;
-
       /**
        *
        *
@@ -1067,7 +1044,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       public boolean hasDocument() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1090,7 +1066,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           return documentBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1115,7 +1090,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1138,7 +1112,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1168,7 +1141,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1190,7 +1162,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1207,7 +1178,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return getDocumentFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1228,7 +1198,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               : document_;
         }
       }
-
       /**
        *
        *
@@ -1258,7 +1227,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
 
       private java.lang.Object searchTextSnippet_ = "";
-
       /**
        *
        *
@@ -1290,7 +1258,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1322,7 +1289,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1353,7 +1319,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1380,7 +1345,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1419,7 +1383,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               com.google.cloud.contentwarehouse.v1.QAResult.Builder,
               com.google.cloud.contentwarehouse.v1.QAResultOrBuilder>
           qaResultBuilder_;
-
       /**
        *
        *
@@ -1435,7 +1398,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       public boolean hasQaResult() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1457,7 +1419,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           return qaResultBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1481,7 +1442,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1503,7 +1463,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1532,7 +1491,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -1553,7 +1511,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1569,7 +1526,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return getQaResultFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1589,7 +1545,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               : qaResult_;
         }
       }
-
       /**
        *
        *
@@ -1625,7 +1580,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -1642,7 +1596,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         matchedTokenPageIndices_.makeImmutable();
         return matchedTokenPageIndices_;
       }
-
       /**
        *
        *
@@ -1658,7 +1611,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       public int getMatchedTokenPageIndicesCount() {
         return matchedTokenPageIndices_.size();
       }
-
       /**
        *
        *
@@ -1675,7 +1627,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       public long getMatchedTokenPageIndices(int index) {
         return matchedTokenPageIndices_.getLong(index);
       }
-
       /**
        *
        *
@@ -1698,7 +1649,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1720,7 +1670,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1742,7 +1691,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1838,7 +1786,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
   private java.util.List<
           com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument>
       matchingDocuments_;
-
   /**
    *
    *
@@ -1857,7 +1804,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       getMatchingDocumentsList() {
     return matchingDocuments_;
   }
-
   /**
    *
    *
@@ -1878,7 +1824,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       getMatchingDocumentsOrBuilderList() {
     return matchingDocuments_;
   }
-
   /**
    *
    *
@@ -1895,7 +1840,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
   public int getMatchingDocumentsCount() {
     return matchingDocuments_.size();
   }
-
   /**
    *
    *
@@ -1913,7 +1857,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       getMatchingDocuments(int index) {
     return matchingDocuments_.get(index);
   }
-
   /**
    *
    *
@@ -1936,7 +1879,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -1961,7 +1903,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -1989,7 +1930,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -2015,7 +1955,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
   public static final int METADATA_FIELD_NUMBER = 4;
   private com.google.cloud.contentwarehouse.v1.ResponseMetadata metadata_;
-
   /**
    *
    *
@@ -2032,7 +1971,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2051,7 +1989,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         ? com.google.cloud.contentwarehouse.v1.ResponseMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -2074,7 +2011,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.HistogramQueryResult>
       histogramQueryResults_;
-
   /**
    *
    *
@@ -2092,7 +2028,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       getHistogramQueryResultsList() {
     return histogramQueryResults_;
   }
-
   /**
    *
    *
@@ -2111,7 +2046,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       getHistogramQueryResultsOrBuilderList() {
     return histogramQueryResults_;
   }
-
   /**
    *
    *
@@ -2128,7 +2062,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
   public int getHistogramQueryResultsCount() {
     return histogramQueryResults_.size();
   }
-
   /**
    *
    *
@@ -2146,7 +2079,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       int index) {
     return histogramQueryResults_.get(index);
   }
-
   /**
    *
    *
@@ -2169,7 +2101,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object questionAnswer_ = "";
-
   /**
    *
    *
@@ -2194,7 +2125,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -2437,7 +2367,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2844,7 +2773,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return matchingDocumentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2864,7 +2792,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return matchingDocumentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2885,7 +2812,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return matchingDocumentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2913,7 +2839,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2939,7 +2864,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2966,7 +2890,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2994,7 +2917,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3019,7 +2941,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3045,7 +2966,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3072,7 +2992,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3095,7 +3014,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3118,7 +3036,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3135,7 +3052,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         getMatchingDocumentsBuilder(int index) {
       return getMatchingDocumentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3156,7 +3072,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return matchingDocumentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3180,7 +3095,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(matchingDocuments_);
       }
     }
-
     /**
      *
      *
@@ -3200,7 +3114,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3221,7 +3134,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse.MatchingDocument
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3263,7 +3175,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -3287,7 +3198,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3311,7 +3221,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3334,7 +3243,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3353,7 +3261,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3379,7 +3286,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -3402,7 +3308,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -3429,7 +3334,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3461,7 +3365,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
             com.google.cloud.contentwarehouse.v1.ResponseMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.ResponseMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -3477,7 +3380,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3499,7 +3401,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3523,7 +3424,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3545,7 +3445,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3575,7 +3474,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3596,7 +3494,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3612,7 +3509,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3632,7 +3528,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
             : metadata_;
       }
     }
-
     /**
      *
      *
@@ -3698,7 +3593,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return histogramQueryResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3718,7 +3612,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return histogramQueryResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3739,7 +3632,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return histogramQueryResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3766,7 +3658,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3791,7 +3682,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3818,7 +3708,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3845,7 +3734,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3869,7 +3757,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3894,7 +3781,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3919,7 +3805,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3942,7 +3827,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3965,7 +3849,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3982,7 +3865,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         getHistogramQueryResultsBuilder(int index) {
       return getHistogramQueryResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4003,7 +3885,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return histogramQueryResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4025,7 +3906,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(histogramQueryResults_);
       }
     }
-
     /**
      *
      *
@@ -4044,7 +3924,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           .addBuilder(
               com.google.cloud.contentwarehouse.v1.HistogramQueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4064,7 +3943,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
               index,
               com.google.cloud.contentwarehouse.v1.HistogramQueryResult.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4103,7 +3981,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object questionAnswer_ = "";
-
     /**
      *
      *
@@ -4127,7 +4004,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4151,7 +4027,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4174,7 +4049,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4193,7 +4067,6 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

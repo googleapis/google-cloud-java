@@ -38,7 +38,6 @@ public interface ManagedServiceOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ManagedServiceOrBuilder
    * @return The producerProjectId.
    */
   java.lang.String getProducerProjectId();
-
   /**
    *
    *

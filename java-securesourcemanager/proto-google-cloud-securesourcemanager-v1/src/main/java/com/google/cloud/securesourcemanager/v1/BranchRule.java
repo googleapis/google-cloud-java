@@ -34,7 +34,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.BranchRule)
     BranchRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BranchRule.newBuilder() to construct.
   private BranchRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
      * @return The context.
      */
     java.lang.String getContext();
-
     /**
      *
      *
@@ -112,7 +110,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getContextBytes();
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.BranchRule.Check)
       CheckOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Check.newBuilder() to construct.
     private Check(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -162,7 +158,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -186,7 +181,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -372,7 +366,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -560,7 +553,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object context_ = "";
-
       /**
        *
        *
@@ -583,7 +575,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -606,7 +597,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -628,7 +618,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -646,7 +635,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -739,7 +727,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -765,7 +752,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -796,7 +782,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -820,7 +805,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -847,7 +831,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -864,7 +847,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -881,7 +863,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -899,7 +880,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -916,7 +896,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -933,7 +912,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -976,7 +954,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
-
   /**
    *
    *
@@ -996,14 +973,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
-
   /**
    *
    *
@@ -1020,7 +995,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
-
   /**
    *
    *
@@ -1044,7 +1018,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1073,7 +1046,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1099,7 +1071,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1130,7 +1101,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object includePattern_ = "";
-
   /**
    *
    *
@@ -1157,7 +1127,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1187,7 +1156,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 8;
   private boolean disabled_ = false;
-
   /**
    *
    *
@@ -1206,7 +1174,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_PULL_REQUEST_FIELD_NUMBER = 9;
   private boolean requirePullRequest_ = false;
-
   /**
    *
    *
@@ -1225,7 +1192,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINIMUM_REVIEWS_COUNT_FIELD_NUMBER = 10;
   private int minimumReviewsCount_ = 0;
-
   /**
    *
    *
@@ -1245,7 +1211,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MINIMUM_APPROVALS_COUNT_FIELD_NUMBER = 11;
   private int minimumApprovalsCount_ = 0;
-
   /**
    *
    *
@@ -1265,7 +1230,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_COMMENTS_RESOLVED_FIELD_NUMBER = 12;
   private boolean requireCommentsResolved_ = false;
-
   /**
    *
    *
@@ -1285,7 +1249,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOW_STALE_REVIEWS_FIELD_NUMBER = 15;
   private boolean allowStaleReviews_ = false;
-
   /**
    *
    *
@@ -1305,7 +1268,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_LINEAR_HISTORY_FIELD_NUMBER = 13;
   private boolean requireLinearHistory_ = false;
-
   /**
    *
    *
@@ -1328,7 +1290,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securesourcemanager.v1.BranchRule.Check>
       requiredStatusChecks_;
-
   /**
    *
    *
@@ -1345,7 +1306,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       getRequiredStatusChecksList() {
     return requiredStatusChecks_;
   }
-
   /**
    *
    *
@@ -1362,7 +1322,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       getRequiredStatusChecksOrBuilderList() {
     return requiredStatusChecks_;
   }
-
   /**
    *
    *
@@ -1378,7 +1337,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
   public int getRequiredStatusChecksCount() {
     return requiredStatusChecks_.size();
   }
-
   /**
    *
    *
@@ -1395,7 +1353,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return requiredStatusChecks_.get(index);
   }
-
   /**
    *
    *
@@ -1720,7 +1677,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2194,7 +2150,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2219,7 +2174,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2244,7 +2198,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2268,7 +2221,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2288,7 +2240,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2315,7 +2266,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -2338,7 +2288,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2361,7 +2310,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2383,7 +2331,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2401,7 +2348,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2431,7 +2377,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2448,7 +2393,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2471,7 +2415,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2496,7 +2439,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2518,7 +2460,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2548,7 +2489,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2570,7 +2510,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2587,7 +2526,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2608,7 +2546,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2643,7 +2580,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2660,7 +2596,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2683,7 +2618,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2708,7 +2642,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2730,7 +2663,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2760,7 +2692,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2782,7 +2713,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2799,7 +2729,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2820,7 +2749,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2877,7 +2805,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
-
     /**
      *
      *
@@ -2897,14 +2824,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
-
     /**
      *
      *
@@ -2921,7 +2846,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
-
     /**
      *
      *
@@ -2945,7 +2869,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2975,7 +2898,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2995,14 +2917,12 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00000010;
       return internalGetMutableAnnotations().getMutableMap();
     }
-
     /**
      *
      *
@@ -3026,7 +2946,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -3046,7 +2965,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -3071,7 +2989,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3096,7 +3013,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3120,7 +3036,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3140,7 +3055,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3167,7 +3081,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object includePattern_ = "";
-
     /**
      *
      *
@@ -3193,7 +3106,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3219,7 +3131,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3244,7 +3155,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3265,7 +3175,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3293,7 +3202,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disabled_;
-
     /**
      *
      *
@@ -3309,7 +3217,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
-
     /**
      *
      *
@@ -3329,7 +3236,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3349,7 +3255,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requirePullRequest_;
-
     /**
      *
      *
@@ -3365,7 +3270,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequirePullRequest() {
       return requirePullRequest_;
     }
-
     /**
      *
      *
@@ -3385,7 +3289,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3405,7 +3308,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minimumReviewsCount_;
-
     /**
      *
      *
@@ -3422,7 +3324,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public int getMinimumReviewsCount() {
       return minimumReviewsCount_;
     }
-
     /**
      *
      *
@@ -3443,7 +3344,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3464,7 +3364,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int minimumApprovalsCount_;
-
     /**
      *
      *
@@ -3481,7 +3380,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public int getMinimumApprovalsCount() {
       return minimumApprovalsCount_;
     }
-
     /**
      *
      *
@@ -3502,7 +3400,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3523,7 +3420,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requireCommentsResolved_;
-
     /**
      *
      *
@@ -3540,7 +3436,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireCommentsResolved() {
       return requireCommentsResolved_;
     }
-
     /**
      *
      *
@@ -3561,7 +3456,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3582,7 +3476,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean allowStaleReviews_;
-
     /**
      *
      *
@@ -3599,7 +3492,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowStaleReviews() {
       return allowStaleReviews_;
     }
-
     /**
      *
      *
@@ -3620,7 +3512,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3641,7 +3532,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requireLinearHistory_;
-
     /**
      *
      *
@@ -3658,7 +3548,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireLinearHistory() {
       return requireLinearHistory_;
     }
-
     /**
      *
      *
@@ -3679,7 +3568,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3736,7 +3624,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return requiredStatusChecksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3755,7 +3642,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return requiredStatusChecksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3775,7 +3661,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return requiredStatusChecksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3801,7 +3686,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3825,7 +3709,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3851,7 +3734,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3877,7 +3759,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3900,7 +3781,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3924,7 +3804,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3948,7 +3827,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3970,7 +3848,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3992,7 +3869,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4008,7 +3884,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         getRequiredStatusChecksBuilder(int index) {
       return getRequiredStatusChecksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4028,7 +3903,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return requiredStatusChecksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4049,7 +3923,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(requiredStatusChecks_);
       }
     }
-
     /**
      *
      *
@@ -4067,7 +3940,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.securesourcemanager.v1.BranchRule.Check.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4085,7 +3957,6 @@ public final class BranchRule extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.securesourcemanager.v1.BranchRule.Check.getDefaultInstance());
     }
-
     /**
      *
      *

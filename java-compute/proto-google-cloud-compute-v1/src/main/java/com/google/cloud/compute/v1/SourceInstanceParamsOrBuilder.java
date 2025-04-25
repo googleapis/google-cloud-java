@@ -35,7 +35,6 @@ public interface SourceInstanceParamsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.DiskInstantiationConfig> getDiskConfigsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SourceInstanceParamsOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.DiskInstantiationConfig getDiskConfigs(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SourceInstanceParamsOrBuilder
    * </code>
    */
   int getDiskConfigsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SourceInstanceParamsOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.DiskInstantiationConfigOrBuilder>
       getDiskConfigsOrBuilderList();
-
   /**
    *
    *

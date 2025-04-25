@@ -37,7 +37,6 @@ public interface HiveDatabaseOptionsOrBuilder
    * @return The locationUri.
    */
   java.lang.String getLocationUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HiveDatabaseOptionsOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   int getParametersCount();
-
   /**
    *
    *
@@ -73,11 +71,9 @@ public interface HiveDatabaseOptionsOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   boolean containsParameters(java.lang.String key);
-
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
-
   /**
    *
    *
@@ -88,7 +84,6 @@ public interface HiveDatabaseOptionsOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
-
   /**
    *
    *
@@ -103,7 +98,6 @@ public interface HiveDatabaseOptionsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

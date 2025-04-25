@@ -37,7 +37,6 @@ public interface ChannelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ChannelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ChannelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ChannelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface ChannelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ChannelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -153,11 +147,9 @@ public interface ChannelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -168,7 +160,6 @@ public interface ChannelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -183,7 +174,6 @@ public interface ChannelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.InputAttachment input_attachments = 16;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.InputAttachment> getInputAttachmentsList();
-
   /**
    *
    *
@@ -220,7 +209,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.InputAttachment input_attachments = 16;</code>
    */
   com.google.cloud.video.livestream.v1.InputAttachment getInputAttachments(int index);
-
   /**
    *
    *
@@ -233,7 +221,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.InputAttachment input_attachments = 16;</code>
    */
   int getInputAttachmentsCount();
-
   /**
    *
    *
@@ -247,7 +234,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.InputAttachmentOrBuilder>
       getInputAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -278,7 +264,6 @@ public interface ChannelOrBuilder
    * @return The activeInput.
    */
   java.lang.String getActiveInput();
-
   /**
    *
    *
@@ -311,7 +296,6 @@ public interface ChannelOrBuilder
    * @return Whether the output field is set.
    */
   boolean hasOutput();
-
   /**
    *
    *
@@ -327,7 +311,6 @@ public interface ChannelOrBuilder
    * @return The output.
    */
   com.google.cloud.video.livestream.v1.Channel.Output getOutput();
-
   /**
    *
    *
@@ -353,7 +336,6 @@ public interface ChannelOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.ElementaryStream> getElementaryStreamsList();
-
   /**
    *
    *
@@ -365,7 +347,6 @@ public interface ChannelOrBuilder
    * </code>
    */
   com.google.cloud.video.livestream.v1.ElementaryStream getElementaryStreams(int index);
-
   /**
    *
    *
@@ -377,7 +358,6 @@ public interface ChannelOrBuilder
    * </code>
    */
   int getElementaryStreamsCount();
-
   /**
    *
    *
@@ -390,7 +370,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.ElementaryStreamOrBuilder>
       getElementaryStreamsOrBuilderList();
-
   /**
    *
    *
@@ -414,7 +393,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.MuxStream mux_streams = 11;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.MuxStream> getMuxStreamsList();
-
   /**
    *
    *
@@ -425,7 +403,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.MuxStream mux_streams = 11;</code>
    */
   com.google.cloud.video.livestream.v1.MuxStream getMuxStreams(int index);
-
   /**
    *
    *
@@ -436,7 +413,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.MuxStream mux_streams = 11;</code>
    */
   int getMuxStreamsCount();
-
   /**
    *
    *
@@ -448,7 +424,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.MuxStreamOrBuilder>
       getMuxStreamsOrBuilderList();
-
   /**
    *
    *
@@ -470,7 +445,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Manifest manifests = 12;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Manifest> getManifestsList();
-
   /**
    *
    *
@@ -481,7 +455,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Manifest manifests = 12;</code>
    */
   com.google.cloud.video.livestream.v1.Manifest getManifests(int index);
-
   /**
    *
    *
@@ -492,7 +465,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Manifest manifests = 12;</code>
    */
   int getManifestsCount();
-
   /**
    *
    *
@@ -504,7 +476,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.ManifestOrBuilder>
       getManifestsOrBuilderList();
-
   /**
    *
    *
@@ -526,7 +497,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.SpriteSheet sprite_sheets = 13;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.SpriteSheet> getSpriteSheetsList();
-
   /**
    *
    *
@@ -537,7 +507,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.SpriteSheet sprite_sheets = 13;</code>
    */
   com.google.cloud.video.livestream.v1.SpriteSheet getSpriteSheets(int index);
-
   /**
    *
    *
@@ -548,7 +517,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.SpriteSheet sprite_sheets = 13;</code>
    */
   int getSpriteSheetsCount();
-
   /**
    *
    *
@@ -560,7 +528,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.SpriteSheetOrBuilder>
       getSpriteSheetsOrBuilderList();
-
   /**
    *
    *
@@ -586,7 +553,6 @@ public interface ChannelOrBuilder
    * @return The enum numeric value on the wire for streamingState.
    */
   int getStreamingStateValue();
-
   /**
    *
    *
@@ -619,7 +585,6 @@ public interface ChannelOrBuilder
    * @return Whether the streamingError field is set.
    */
   boolean hasStreamingError();
-
   /**
    *
    *
@@ -637,7 +602,6 @@ public interface ChannelOrBuilder
    * @return The streamingError.
    */
   com.google.rpc.Status getStreamingError();
-
   /**
    *
    *
@@ -666,7 +630,6 @@ public interface ChannelOrBuilder
    * @return Whether the logConfig field is set.
    */
   boolean hasLogConfig();
-
   /**
    *
    *
@@ -679,7 +642,6 @@ public interface ChannelOrBuilder
    * @return The logConfig.
    */
   com.google.cloud.video.livestream.v1.LogConfig getLogConfig();
-
   /**
    *
    *
@@ -703,7 +665,6 @@ public interface ChannelOrBuilder
    * @return Whether the timecodeConfig field is set.
    */
   boolean hasTimecodeConfig();
-
   /**
    *
    *
@@ -716,7 +677,6 @@ public interface ChannelOrBuilder
    * @return The timecodeConfig.
    */
   com.google.cloud.video.livestream.v1.TimecodeConfig getTimecodeConfig();
-
   /**
    *
    *
@@ -740,7 +700,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList();
-
   /**
    *
    *
@@ -753,7 +712,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
    */
   com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index);
-
   /**
    *
    *
@@ -766,7 +724,6 @@ public interface ChannelOrBuilder
    * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
    */
   int getEncryptionsCount();
-
   /**
    *
    *
@@ -780,7 +737,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
       getEncryptionsOrBuilderList();
-
   /**
    *
    *
@@ -807,7 +763,6 @@ public interface ChannelOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
-
   /**
    *
    *
@@ -821,7 +776,6 @@ public interface ChannelOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.video.livestream.v1.InputConfig getInputConfig();
-
   /**
    *
    *
@@ -848,7 +802,6 @@ public interface ChannelOrBuilder
    * @return Whether the retentionConfig field is set.
    */
   boolean hasRetentionConfig();
-
   /**
    *
    *
@@ -863,7 +816,6 @@ public interface ChannelOrBuilder
    * @return The retentionConfig.
    */
   com.google.cloud.video.livestream.v1.RetentionConfig getRetentionConfig();
-
   /**
    *
    *
@@ -890,7 +842,6 @@ public interface ChannelOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.StaticOverlay> getStaticOverlaysList();
-
   /**
    *
    *
@@ -904,7 +855,6 @@ public interface ChannelOrBuilder
    * </code>
    */
   com.google.cloud.video.livestream.v1.StaticOverlay getStaticOverlays(int index);
-
   /**
    *
    *
@@ -918,7 +868,6 @@ public interface ChannelOrBuilder
    * </code>
    */
   int getStaticOverlaysCount();
-
   /**
    *
    *
@@ -933,7 +882,6 @@ public interface ChannelOrBuilder
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>
       getStaticOverlaysOrBuilderList();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface GetOccurrenceNoteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

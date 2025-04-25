@@ -33,7 +33,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1beta1.CreateConnectivityTestRequest)
     CreateConnectivityTestRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateConnectivityTestRequest.newBuilder() to construct.
   private CreateConnectivityTestRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object testId_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
 
   public static final int RESOURCE_FIELD_NUMBER = 3;
   private com.google.cloud.networkmanagement.v1beta1.ConnectivityTest resource_;
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
         ? com.google.cloud.networkmanagement.v1beta1.ConnectivityTest.getDefaultInstance()
         : resource_;
   }
-
   /**
    *
    *
@@ -437,7 +429,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -676,7 +667,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -702,7 +692,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +788,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object testId_ = "";
-
     /**
      *
      *
@@ -832,7 +817,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -862,7 +846,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -891,7 +874,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +898,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +934,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
             com.google.cloud.networkmanagement.v1beta1.ConnectivityTest.Builder,
             com.google.cloud.networkmanagement.v1beta1.ConnectivityTestOrBuilder>
         resourceBuilder_;
-
     /**
      *
      *
@@ -970,7 +950,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
     public boolean hasResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
         return resourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1018,7 +996,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1050,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1088,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1136,7 +1109,6 @@ public final class CreateConnectivityTestRequest extends com.google.protobuf.Gen
             : resource_;
       }
     }
-
     /**
      *
      *

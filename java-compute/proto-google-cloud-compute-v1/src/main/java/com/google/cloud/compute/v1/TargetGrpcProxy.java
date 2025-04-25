@@ -33,7 +33,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetGrpcProxy)
     TargetGrpcProxyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetGrpcProxy.newBuilder() to construct.
   private TargetGrpcProxy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasId() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -334,7 +321,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +372,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -403,7 +387,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -456,7 +438,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -472,7 +453,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -496,7 +476,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -525,7 +504,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
-
   /**
    *
    *
@@ -541,7 +519,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -565,7 +542,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -594,7 +570,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMap_ = "";
-
   /**
    *
    *
@@ -610,7 +585,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasUrlMap() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -634,7 +608,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -661,7 +634,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
 
   public static final int VALIDATE_FOR_PROXYLESS_FIELD_NUMBER = 101822888;
   private boolean validateForProxyless_ = false;
-
   /**
    *
    *
@@ -677,7 +649,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasValidateForProxyless() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -986,7 +957,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1313,7 +1283,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -1328,7 +1297,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1351,7 +1319,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1374,7 +1341,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1396,7 +1362,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1414,7 +1379,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1439,7 +1403,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1454,7 +1417,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1477,7 +1439,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1461,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1522,7 +1482,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1540,7 +1499,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1523,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -1580,7 +1537,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1603,7 +1559,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1626,7 +1581,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1648,7 +1602,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1666,7 +1619,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1643,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private long id_;
-
     /**
      *
      *
@@ -1707,7 +1658,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1723,7 +1673,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -1743,7 +1692,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1763,7 +1711,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1778,7 +1725,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1801,7 +1747,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1824,7 +1769,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1846,7 +1790,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1807,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1889,7 +1831,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1904,7 +1845,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1927,7 +1867,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1950,7 +1889,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1910,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1990,7 +1927,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2015,7 +1951,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -2030,7 +1965,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2053,7 +1987,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2076,7 +2009,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2098,7 +2030,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2116,7 +2047,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2141,7 +2071,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object selfLinkWithId_ = "";
-
     /**
      *
      *
@@ -2156,7 +2085,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2179,7 +2107,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2202,7 +2129,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2224,7 +2150,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2242,7 +2167,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2267,7 +2191,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object urlMap_ = "";
-
     /**
      *
      *
@@ -2282,7 +2205,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasUrlMap() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2305,7 +2227,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2328,7 +2249,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2350,7 +2270,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2368,7 +2287,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2393,7 +2311,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean validateForProxyless_;
-
     /**
      *
      *
@@ -2409,7 +2326,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasValidateForProxyless() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2425,7 +2341,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     public boolean getValidateForProxyless() {
       return validateForProxyless_;
     }
-
     /**
      *
      *
@@ -2445,7 +2360,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -45,7 +45,6 @@ public interface CreateAwsClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface CreateAwsClusterRequestOrBuilder
    * @return Whether the awsCluster field is set.
    */
   boolean hasAwsCluster();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CreateAwsClusterRequestOrBuilder
    * @return The awsCluster.
    */
   com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster();
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public interface CreateAwsClusterRequestOrBuilder
    * @return The awsClusterId.
    */
   java.lang.String getAwsClusterId();
-
   /**
    *
    *

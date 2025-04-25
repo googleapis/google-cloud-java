@@ -38,7 +38,6 @@ public interface GetDockerImageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

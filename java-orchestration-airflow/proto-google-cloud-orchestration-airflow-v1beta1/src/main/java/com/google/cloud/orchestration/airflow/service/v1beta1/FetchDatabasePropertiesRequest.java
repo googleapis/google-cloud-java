@@ -34,7 +34,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.FetchDatabasePropertiesRequest)
     FetchDatabasePropertiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchDatabasePropertiesRequest.newBuilder() to construct.
   private FetchDatabasePropertiesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object environment_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -308,7 +305,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -513,7 +509,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object environment_ = "";
-
     /**
      *
      *
@@ -539,7 +534,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -565,7 +559,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -590,7 +583,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -611,7 +603,6 @@ public final class FetchDatabasePropertiesRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

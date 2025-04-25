@@ -33,7 +33,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.conversions.v1beta.ListConversionSourcesResponse)
     ListConversionSourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListConversionSourcesResponse.newBuilder() to construct.
   private ListConversionSourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.conversions.v1beta.ConversionSource>
       conversionSources_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       getConversionSourcesList() {
     return conversionSources_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       getConversionSourcesOrBuilderList() {
     return conversionSources_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
   public int getConversionSourcesCount() {
     return conversionSources_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       int index) {
     return conversionSources_.get(index);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -185,7 +178,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -389,7 +381,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -685,7 +676,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return conversionSourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -704,7 +694,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return conversionSourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return conversionSourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -750,7 +738,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +761,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +786,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +811,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +833,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +856,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +880,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +937,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         getConversionSourcesBuilder(int index) {
       return getConversionSourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return conversionSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -999,7 +976,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(conversionSources_);
       }
     }
-
     /**
      *
      *
@@ -1018,7 +994,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
               com.google.shopping.merchant.conversions.v1beta.ConversionSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1038,7 +1013,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
               com.google.shopping.merchant.conversions.v1beta.ConversionSource
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1115,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1132,6 @@ public final class ListConversionSourcesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

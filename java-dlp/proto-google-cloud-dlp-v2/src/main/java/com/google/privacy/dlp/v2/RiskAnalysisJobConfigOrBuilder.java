@@ -36,7 +36,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * @return Whether the privacyMetric field is set.
    */
   boolean hasPrivacyMetric();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * @return The privacyMetric.
    */
   com.google.privacy.dlp.v2.PrivacyMetric getPrivacyMetric();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * @return Whether the sourceTable field is set.
    */
   boolean hasSourceTable();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * @return The sourceTable.
    */
   com.google.privacy.dlp.v2.BigQueryTable getSourceTable();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Action> getActionsList();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
   com.google.privacy.dlp.v2.Action getActions(int index);
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
   int getActionsCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface RiskAnalysisJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder> getActionsOrBuilderList();
-
   /**
    *
    *

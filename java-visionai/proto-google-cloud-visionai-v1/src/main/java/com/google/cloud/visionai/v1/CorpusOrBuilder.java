@@ -38,7 +38,6 @@ public interface CorpusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CorpusOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CorpusOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface CorpusOrBuilder
    * @return Whether the defaultTtl field is set.
    */
   boolean hasDefaultTtl();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface CorpusOrBuilder
    * @return The defaultTtl.
    */
   com.google.protobuf.Duration getDefaultTtl();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface CorpusOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface CorpusOrBuilder
    * @return Whether the searchCapabilitySetting field is set.
    */
   boolean hasSearchCapabilitySetting();
-
   /**
    *
    *
@@ -210,7 +203,6 @@ public interface CorpusOrBuilder
    * @return The searchCapabilitySetting.
    */
   com.google.cloud.visionai.v1.SearchCapabilitySetting getSearchCapabilitySetting();
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public interface CorpusOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public interface CorpusOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
-
   /**
    *
    *

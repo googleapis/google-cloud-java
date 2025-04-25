@@ -33,7 +33,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ListTopicsResponse)
     ListTopicsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTopicsResponse.newBuilder() to construct.
   private ListTopicsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.managedkafka.v1.Topic> topics_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.managedkafka.v1.Topic> getTopicsList() {
     return topics_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       getTopicsOrBuilderList() {
     return topics_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
   public int getTopicsCount() {
     return topics_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.managedkafka.v1.Topic getTopics(int index) {
     return topics_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return topicsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return topicsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return topicsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +846,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +866,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +879,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.managedkafka.v1.Topic.Builder getTopicsBuilder(int index) {
       return getTopicsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -918,7 +896,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return topicsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -937,7 +914,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(topics_);
       }
     }
-
     /**
      *
      *
@@ -952,7 +928,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       return getTopicsFieldBuilder()
           .addBuilder(com.google.cloud.managedkafka.v1.Topic.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -967,7 +942,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       return getTopicsFieldBuilder()
           .addBuilder(index, com.google.cloud.managedkafka.v1.Topic.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1000,7 +974,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1060,6 @@ public final class ListTopicsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

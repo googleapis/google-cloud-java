@@ -36,7 +36,6 @@ public interface PathOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface PathOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

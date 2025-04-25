@@ -33,7 +33,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringConfig)
     ModelMonitoringConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringConfig.newBuilder() to construct.
   private ModelMonitoringConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig>
       objectiveConfigs_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       getObjectiveConfigsList() {
     return objectiveConfigs_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       getObjectiveConfigsOrBuilderList() {
     return objectiveConfigs_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   public int getObjectiveConfigsCount() {
     return objectiveConfigs_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       int index) {
     return objectiveConfigs_.get(index);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
 
   public static final int ALERT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig alertConfig_;
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   public boolean hasAlertConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.getDefaultInstance()
         : alertConfig_;
   }
-
   /**
    *
    *
@@ -215,7 +206,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object analysisInstanceSchemaUri_ = "";
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -278,7 +267,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
 
   public static final int STATS_ANOMALIES_BASE_DIRECTORY_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.GcsDestination statsAnomaliesBaseDirectory_;
-
   /**
    *
    *
@@ -298,7 +286,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
   public boolean hasStatsAnomaliesBaseDirectory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -320,7 +307,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()
         : statsAnomaliesBaseDirectory_;
   }
-
   /**
    *
    *
@@ -545,7 +531,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -883,7 +868,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return objectiveConfigsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -902,7 +886,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return objectiveConfigsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -922,7 +905,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return objectiveConfigsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -948,7 +930,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -973,7 +954,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +979,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1004,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1027,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1051,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1075,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1096,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1117,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1132,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         getObjectiveConfigsBuilder(int index) {
       return getObjectiveConfigsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return objectiveConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1171,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(objectiveConfigs_);
       }
     }
-
     /**
      *
      *
@@ -1219,7 +1189,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1239,7 +1208,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
               com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1283,7 +1251,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfigOrBuilder>
         alertConfigBuilder_;
-
     /**
      *
      *
@@ -1298,7 +1265,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     public boolean hasAlertConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1319,7 +1285,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return alertConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1308,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1328,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1358,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1377,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1392,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getAlertConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1451,7 +1411,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
             : alertConfig_;
       }
     }
-
     /**
      *
      *
@@ -1479,7 +1438,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object analysisInstanceSchemaUri_ = "";
-
     /**
      *
      *
@@ -1508,7 +1466,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1537,7 +1494,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1565,7 +1521,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1589,7 +1544,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1625,7 +1579,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder,
             com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>
         statsAnomaliesBaseDirectoryBuilder_;
-
     /**
      *
      *
@@ -1644,7 +1597,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
     public boolean hasStatsAnomaliesBaseDirectory() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1669,7 +1621,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
         return statsAnomaliesBaseDirectoryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1697,7 +1648,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1722,7 +1672,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1756,7 +1705,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1780,7 +1728,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1747,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getStatsAnomaliesBaseDirectoryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1824,7 +1770,6 @@ public final class ModelMonitoringConfig extends com.google.protobuf.GeneratedMe
             : statsAnomaliesBaseDirectory_;
       }
     }
-
     /**
      *
      *

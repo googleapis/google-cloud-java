@@ -33,7 +33,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.ChallengeMetrics)
     ChallengeMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ChallengeMetrics.newBuilder() to construct.
   private ChallengeMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
 
   public static final int PAGELOAD_COUNT_FIELD_NUMBER = 1;
   private long pageloadCount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
 
   public static final int NOCAPTCHA_COUNT_FIELD_NUMBER = 2;
   private long nocaptchaCount_ = 0L;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
 
   public static final int FAILED_COUNT_FIELD_NUMBER = 3;
   private long failedCount_ = 0L;
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
 
   public static final int PASSED_COUNT_FIELD_NUMBER = 4;
   private long passedCount_ = 0L;
-
   /**
    *
    *
@@ -328,7 +323,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -550,7 +544,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long pageloadCount_;
-
     /**
      *
      *
@@ -567,7 +560,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public long getPageloadCount() {
       return pageloadCount_;
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     }
 
     private long nocaptchaCount_;
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public long getNocaptchaCount() {
       return nocaptchaCount_;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     }
 
     private long failedCount_;
-
     /**
      *
      *
@@ -682,7 +669,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public long getFailedCount() {
       return failedCount_;
     }
-
     /**
      *
      *
@@ -703,7 +689,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     }
 
     private long passedCount_;
-
     /**
      *
      *
@@ -742,7 +726,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
     public long getPassedCount() {
       return passedCount_;
     }
-
     /**
      *
      *
@@ -764,7 +747,6 @@ public final class ChallengeMetrics extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

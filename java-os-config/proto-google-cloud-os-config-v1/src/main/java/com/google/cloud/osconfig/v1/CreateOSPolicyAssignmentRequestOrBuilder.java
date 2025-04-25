@@ -39,7 +39,6 @@ public interface CreateOSPolicyAssignmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateOSPolicyAssignmentRequestOrBuilder
    * @return Whether the osPolicyAssignment field is set.
    */
   boolean hasOsPolicyAssignment();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateOSPolicyAssignmentRequestOrBuilder
    * @return The osPolicyAssignment.
    */
   com.google.cloud.osconfig.v1.OSPolicyAssignment getOsPolicyAssignment();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface CreateOSPolicyAssignmentRequestOrBuilder
    * @return The osPolicyAssignmentId.
    */
   java.lang.String getOsPolicyAssignmentId();
-
   /**
    *
    *

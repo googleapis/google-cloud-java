@@ -38,7 +38,6 @@ public interface CommuteFilterOrBuilder
    * @return The enum numeric value on the wire for commuteMethod.
    */
   int getCommuteMethodValue();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CommuteFilterOrBuilder
    * @return Whether the startCoordinates field is set.
    */
   boolean hasStartCoordinates();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CommuteFilterOrBuilder
    * @return The startCoordinates.
    */
   com.google.type.LatLng getStartCoordinates();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CommuteFilterOrBuilder
    * @return Whether the travelDuration field is set.
    */
   boolean hasTravelDuration();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface CommuteFilterOrBuilder
    * @return The travelDuration.
    */
   com.google.protobuf.Duration getTravelDuration();
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public interface CommuteFilterOrBuilder
    * @return Whether the roadTraffic field is set.
    */
   boolean hasRoadTraffic();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface CommuteFilterOrBuilder
    * @return The enum numeric value on the wire for roadTraffic.
    */
   int getRoadTrafficValue();
-
   /**
    *
    *
@@ -211,7 +204,6 @@ public interface CommuteFilterOrBuilder
    * @return Whether the departureTime field is set.
    */
   boolean hasDepartureTime();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface CommuteFilterOrBuilder
    * @return The departureTime.
    */
   com.google.type.TimeOfDay getDepartureTime();
-
   /**
    *
    *

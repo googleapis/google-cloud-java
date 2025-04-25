@@ -39,7 +39,6 @@ public interface GetConversionSourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

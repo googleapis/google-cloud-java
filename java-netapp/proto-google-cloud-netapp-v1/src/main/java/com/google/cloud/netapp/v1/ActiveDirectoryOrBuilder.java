@@ -38,7 +38,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ActiveDirectoryOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The site.
    */
   java.lang.String getSite();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The dns.
    */
   java.lang.String getDns();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The netBiosPrefix.
    */
   java.lang.String getNetBiosPrefix();
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The organizationalUnit.
    */
   java.lang.String getOrganizationalUnit();
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public interface ActiveDirectoryOrBuilder
    * @return A list containing the backupOperators.
    */
   java.util.List<java.lang.String> getBackupOperatorsList();
-
   /**
    *
    *
@@ -352,7 +340,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The count of backupOperators.
    */
   int getBackupOperatorsCount();
-
   /**
    *
    *
@@ -367,7 +354,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The backupOperators at the given index.
    */
   java.lang.String getBackupOperators(int index);
-
   /**
    *
    *
@@ -395,7 +381,6 @@ public interface ActiveDirectoryOrBuilder
    * @return A list containing the administrators.
    */
   java.util.List<java.lang.String> getAdministratorsList();
-
   /**
    *
    *
@@ -408,7 +393,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The count of administrators.
    */
   int getAdministratorsCount();
-
   /**
    *
    *
@@ -422,7 +406,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The administrators at the given index.
    */
   java.lang.String getAdministrators(int index);
-
   /**
    *
    *
@@ -449,7 +432,6 @@ public interface ActiveDirectoryOrBuilder
    * @return A list containing the securityOperators.
    */
   java.util.List<java.lang.String> getSecurityOperatorsList();
-
   /**
    *
    *
@@ -462,7 +444,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The count of securityOperators.
    */
   int getSecurityOperatorsCount();
-
   /**
    *
    *
@@ -476,7 +457,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The securityOperators at the given index.
    */
   java.lang.String getSecurityOperators(int index);
-
   /**
    *
    *
@@ -504,7 +484,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The kdcHostname.
    */
   java.lang.String getKdcHostname();
-
   /**
    *
    *
@@ -531,7 +510,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The kdcIp.
    */
   java.lang.String getKdcIp();
-
   /**
    *
    *
@@ -571,7 +549,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -622,7 +599,6 @@ public interface ActiveDirectoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 20;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -633,11 +609,9 @@ public interface ActiveDirectoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 20;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -648,7 +622,6 @@ public interface ActiveDirectoryOrBuilder
    * <code>map&lt;string, string&gt; labels = 20;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -663,7 +636,6 @@ public interface ActiveDirectoryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -687,7 +659,6 @@ public interface ActiveDirectoryOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *

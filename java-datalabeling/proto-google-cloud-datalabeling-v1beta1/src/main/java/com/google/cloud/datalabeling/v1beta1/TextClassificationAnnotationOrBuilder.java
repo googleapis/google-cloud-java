@@ -36,7 +36,6 @@ public interface TextClassificationAnnotationOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TextClassificationAnnotationOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
-
   /**
    *
    *

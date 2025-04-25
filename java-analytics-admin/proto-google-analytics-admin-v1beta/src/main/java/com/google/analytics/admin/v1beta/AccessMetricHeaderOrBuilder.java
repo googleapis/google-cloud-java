@@ -36,7 +36,6 @@ public interface AccessMetricHeaderOrBuilder
    * @return The metricName.
    */
   java.lang.String getMetricName();
-
   /**
    *
    *

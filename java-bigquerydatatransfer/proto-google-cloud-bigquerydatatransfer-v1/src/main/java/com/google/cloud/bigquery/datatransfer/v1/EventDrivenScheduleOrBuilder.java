@@ -38,7 +38,6 @@ public interface EventDrivenScheduleOrBuilder
    * @return The pubsubSubscription.
    */
   java.lang.String getPubsubSubscription();
-
   /**
    *
    *

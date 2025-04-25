@@ -33,7 +33,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.LabelFrame)
     LabelFrameOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelFrame.newBuilder() to construct.
   private LabelFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TIME_OFFSET_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration timeOffset_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -308,7 +303,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -525,7 +519,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
-
     /**
      *
      *
@@ -541,7 +534,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -563,7 +555,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
         return timeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -587,7 +578,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +598,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -658,7 +646,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +661,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -694,7 +680,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
             : timeOffset_;
       }
     }
-
     /**
      *
      *
@@ -723,7 +708,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -739,7 +723,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -759,7 +742,6 @@ public final class LabelFrame extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

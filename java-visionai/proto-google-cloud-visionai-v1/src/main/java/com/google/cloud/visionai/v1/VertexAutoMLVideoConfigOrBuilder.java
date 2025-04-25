@@ -50,7 +50,6 @@ public interface VertexAutoMLVideoConfigOrBuilder
    * @return A list containing the blockedLabels.
    */
   java.util.List<java.lang.String> getBlockedLabelsList();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface VertexAutoMLVideoConfigOrBuilder
    * @return The count of blockedLabels.
    */
   int getBlockedLabelsCount();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface VertexAutoMLVideoConfigOrBuilder
    * @return The blockedLabels at the given index.
    */
   java.lang.String getBlockedLabels(int index);
-
   /**
    *
    *

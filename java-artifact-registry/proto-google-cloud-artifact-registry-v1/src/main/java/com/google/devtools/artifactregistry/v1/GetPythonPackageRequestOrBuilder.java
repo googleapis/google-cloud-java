@@ -38,7 +38,6 @@ public interface GetPythonPackageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

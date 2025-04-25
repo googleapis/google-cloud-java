@@ -50,7 +50,6 @@ public interface CreateAlertPolicyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface CreateAlertPolicyRequestOrBuilder
    * @return Whether the alertPolicy field is set.
    */
   boolean hasAlertPolicy();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface CreateAlertPolicyRequestOrBuilder
    * @return The alertPolicy.
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicy();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return Whether the storedContentsExampleFilter field is set.
    */
   boolean hasStoredContentsExampleFilter();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return The storedContentsExampleFilter.
    */
   com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter getStoredContentsExampleFilter();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return The exampleStore.
    */
   java.lang.String getExampleStore();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return A list containing the exampleIds.
    */
   java.util.List<java.lang.String> getExampleIdsList();
-
   /**
    *
    *
@@ -176,7 +171,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return The count of exampleIds.
    */
   int getExampleIdsCount();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface FetchExamplesRequestOrBuilder
    * @return The exampleIds at the given index.
    */
   java.lang.String getExampleIds(int index);
-
   /**
    *
    *

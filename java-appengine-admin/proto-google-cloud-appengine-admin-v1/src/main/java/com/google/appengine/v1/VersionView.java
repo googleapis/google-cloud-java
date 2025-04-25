@@ -67,7 +67,6 @@ public enum VersionView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BASIC = 0;</code>
    */
   public static final int BASIC_VALUE = 0;
-
   /**
    *
    *

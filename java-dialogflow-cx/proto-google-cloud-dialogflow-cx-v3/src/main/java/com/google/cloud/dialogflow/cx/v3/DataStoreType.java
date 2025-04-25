@@ -85,7 +85,6 @@ public enum DataStoreType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_STORE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DATA_STORE_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public enum DataStoreType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PUBLIC_WEB = 1;</code>
    */
   public static final int PUBLIC_WEB_VALUE = 1;
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public enum DataStoreType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNSTRUCTURED = 2;</code>
    */
   public static final int UNSTRUCTURED_VALUE = 2;
-
   /**
    *
    *

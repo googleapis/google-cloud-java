@@ -34,7 +34,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModelGardenSource)
     ModelGardenSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelGardenSource.newBuilder() to construct.
   private ModelGardenSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicModelName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object versionId_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
 
   public static final int SKIP_HF_MODEL_CACHE_FIELD_NUMBER = 4;
   private boolean skipHfModelCache_ = false;
-
   /**
    *
    *
@@ -368,7 +362,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +575,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object publicModelName_ = "";
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -628,7 +619,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object versionId_ = "";
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean skipHfModelCache_;
-
     /**
      *
      *
@@ -820,7 +802,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
     public boolean getSkipHfModelCache() {
       return skipHfModelCache_;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class ModelGardenSource extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

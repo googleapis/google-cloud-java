@@ -33,7 +33,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v2.AttributeValue)
     AttributeValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttributeValue.newBuilder() to construct.
   private AttributeValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     private ValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return valueCase_ == 1;
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT_VALUE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntValue() {
     return valueCase_ == 2;
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolValue() {
     return valueCase_ == 3;
   }
-
   /**
    *
    *
@@ -447,7 +438,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.cloudtrace.v2.TruncatableString.Builder,
             com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder>
         stringValueBuilder_;
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return valueCase_ == 1;
     }
-
     /**
      *
      *
@@ -730,7 +718,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -753,7 +740,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +760,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       valueCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +829,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.cloudtrace.v2.TruncatableString.Builder getStringValueBuilder() {
       return getStringValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.cloudtrace.v2.TruncatableString.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntValue() {
       return valueCase_ == 2;
     }
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +966,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolValue() {
       return valueCase_ == 3;
     }
-
     /**
      *
      *
@@ -1006,7 +983,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class AttributeValue extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

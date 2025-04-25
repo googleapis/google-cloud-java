@@ -41,7 +41,6 @@ public interface LicenseOrBuilder
    * @return The expression.
    */
   java.lang.String getExpression();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface LicenseOrBuilder
    * @return The comments.
    */
   java.lang.String getComments();
-
   /**
    *
    *

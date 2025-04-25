@@ -28,9 +28,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @deprecated v3 GAPIC client of ResourceManager is now available
- */
+/** @deprecated v3 GAPIC client of ResourceManager is now available */
 @Deprecated
 public interface ResourceManagerRpc extends ServiceRpc {
 
@@ -86,7 +84,6 @@ public interface ResourceManagerRpc extends ServiceRpc {
       return pageToken;
     }
   }
-
   /**
    * Creates a new project.
    *

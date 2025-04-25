@@ -46,7 +46,6 @@ public interface CreateProjectRequestOrBuilder
    * @return Whether the project field is set.
    */
   boolean hasProject();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateProjectRequestOrBuilder
    * @return The project.
    */
   com.google.cloud.resourcemanager.v3.Project getProject();
-
   /**
    *
    *

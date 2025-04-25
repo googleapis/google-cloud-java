@@ -36,7 +36,6 @@ public interface EntityIssueOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface EntityIssueOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface EntityIssueOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface EntityIssueOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface EntityIssueOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface EntityIssueOrBuilder
    * @return Whether the ddl field is set.
    */
   boolean hasDdl();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface EntityIssueOrBuilder
    * @return The ddl.
    */
   java.lang.String getDdl();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface EntityIssueOrBuilder
    * @return Whether the position field is set.
    */
   boolean hasPosition();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface EntityIssueOrBuilder
    * @return The position.
    */
   com.google.cloud.clouddms.v1.EntityIssue.Position getPosition();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface EntityIssueOrBuilder
    * @return The enum numeric value on the wire for entityType.
    */
   int getEntityTypeValue();
-
   /**
    *
    *

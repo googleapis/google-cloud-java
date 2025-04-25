@@ -36,7 +36,6 @@ public interface ImageContextOrBuilder
    * @return Whether the latLongRect field is set.
    */
   boolean hasLatLongRect();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ImageContextOrBuilder
    * @return The latLongRect.
    */
   com.google.cloud.vision.v1p3beta1.LatLongRect getLatLongRect();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface ImageContextOrBuilder
    * @return A list containing the languageHints.
    */
   java.util.List<java.lang.String> getLanguageHintsList();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface ImageContextOrBuilder
    * @return The count of languageHints.
    */
   int getLanguageHintsCount();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface ImageContextOrBuilder
    * @return The languageHints at the given index.
    */
   java.lang.String getLanguageHints(int index);
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public interface ImageContextOrBuilder
    * @return Whether the cropHintsParams field is set.
    */
   boolean hasCropHintsParams();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ImageContextOrBuilder
    * @return The cropHintsParams.
    */
   com.google.cloud.vision.v1p3beta1.CropHintsParams getCropHintsParams();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface ImageContextOrBuilder
    * @return Whether the productSearchParams field is set.
    */
   boolean hasProductSearchParams();
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public interface ImageContextOrBuilder
    * @return The productSearchParams.
    */
   com.google.cloud.vision.v1p3beta1.ProductSearchParams getProductSearchParams();
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface ImageContextOrBuilder
    * @return Whether the webDetectionParams field is set.
    */
   boolean hasWebDetectionParams();
-
   /**
    *
    *
@@ -242,7 +232,6 @@ public interface ImageContextOrBuilder
    * @return The webDetectionParams.
    */
   com.google.cloud.vision.v1p3beta1.WebDetectionParams getWebDetectionParams();
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface ImageContextOrBuilder
    * @return Whether the textDetectionParams field is set.
    */
   boolean hasTextDetectionParams();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface ImageContextOrBuilder
    * @return The textDetectionParams.
    */
   com.google.cloud.vision.v1p3beta1.TextDetectionParams getTextDetectionParams();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SampleQuery)
     SampleQueryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SampleQuery.newBuilder() to construct.
   private SampleQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
      * @return The query.
      */
     java.lang.String getQuery();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Target>
         getTargetsList();
-
     /**
      *
      *
@@ -121,7 +118,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Target getTargets(int index);
-
     /**
      *
      *
@@ -134,7 +130,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getTargetsCount();
-
     /**
      *
      *
@@ -150,7 +145,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.TargetOrBuilder>
         getTargetsOrBuilderList();
-
     /**
      *
      *
@@ -165,7 +159,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.TargetOrBuilder
         getTargetsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry)
       QueryEntryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use QueryEntry.newBuilder() to construct.
     private QueryEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -235,7 +227,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
        * @return The uri.
        */
       java.lang.String getUri();
-
       /**
        *
        *
@@ -269,7 +260,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the pageNumbers.
        */
       java.util.List<java.lang.Integer> getPageNumbersList();
-
       /**
        *
        *
@@ -284,7 +274,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
        * @return The count of pageNumbers.
        */
       int getPageNumbersCount();
-
       /**
        *
        *
@@ -313,7 +302,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the score field is set.
        */
       boolean hasScore();
-
       /**
        *
        *
@@ -327,7 +315,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
        */
       double getScore();
     }
-
     /**
      *
      *
@@ -342,7 +329,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Target)
         TargetOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Target.newBuilder() to construct.
       private Target(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -380,7 +366,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -410,7 +395,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -445,7 +429,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private com.google.protobuf.Internal.IntList pageNumbers_ = emptyIntList();
-
       /**
        *
        *
@@ -463,7 +446,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Integer> getPageNumbersList() {
         return pageNumbers_;
       }
-
       /**
        *
        *
@@ -480,7 +462,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       public int getPageNumbersCount() {
         return pageNumbers_.size();
       }
-
       /**
        *
        *
@@ -503,7 +484,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
 
       public static final int SCORE_FIELD_NUMBER = 3;
       private double score_ = 0D;
-
       /**
        *
        *
@@ -519,7 +499,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       public boolean hasScore() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -744,7 +723,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -993,7 +971,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object uri_ = "";
-
         /**
          *
          *
@@ -1022,7 +999,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1051,7 +1027,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1079,7 +1054,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1103,7 +1077,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1141,7 +1114,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000002;
         }
-
         /**
          *
          *
@@ -1159,7 +1131,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           pageNumbers_.makeImmutable();
           return pageNumbers_;
         }
-
         /**
          *
          *
@@ -1176,7 +1147,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         public int getPageNumbersCount() {
           return pageNumbers_.size();
         }
-
         /**
          *
          *
@@ -1194,7 +1164,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         public int getPageNumbers(int index) {
           return pageNumbers_.getInt(index);
         }
-
         /**
          *
          *
@@ -1218,7 +1187,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1241,7 +1209,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1263,7 +1230,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1285,7 +1251,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
 
         private double score_;
-
         /**
          *
          *
@@ -1301,7 +1266,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         public boolean hasScore() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -1317,7 +1281,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         public double getScore() {
           return score_;
         }
-
         /**
          *
          *
@@ -1337,7 +1300,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1428,7 +1390,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object query_ = "";
-
     /**
      *
      *
@@ -1452,7 +1413,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1442,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Target>
         targets_;
-
     /**
      *
      *
@@ -1499,7 +1458,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         getTargetsList() {
       return targets_;
     }
-
     /**
      *
      *
@@ -1518,7 +1476,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         getTargetsOrBuilderList() {
       return targets_;
     }
-
     /**
      *
      *
@@ -1534,7 +1491,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     public int getTargetsCount() {
       return targets_.size();
     }
-
     /**
      *
      *
@@ -1551,7 +1507,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return targets_.get(index);
     }
-
     /**
      *
      *
@@ -1741,7 +1696,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1996,7 +1950,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object query_ = "";
-
       /**
        *
        *
@@ -2019,7 +1972,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2042,7 +1994,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2064,7 +2015,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2082,7 +2032,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2143,7 +2092,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return targetsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2162,7 +2110,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return targetsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2182,7 +2129,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return targetsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2208,7 +2154,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2233,7 +2178,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2259,7 +2203,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2285,7 +2228,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2309,7 +2251,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2334,7 +2275,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2359,7 +2299,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2381,7 +2320,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2403,7 +2341,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2419,7 +2356,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           getTargetsBuilder(int index) {
         return getTargetsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2439,7 +2375,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return targetsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2461,7 +2396,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(targets_);
         }
       }
-
       /**
        *
        *
@@ -2480,7 +2414,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Target
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2500,7 +2433,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Target
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2619,7 +2551,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     private ContentCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2651,7 +2582,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_ENTRY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2667,7 +2597,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryEntry() {
     return contentCase_ == 2;
   }
-
   /**
    *
    *
@@ -2686,7 +2615,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2709,7 +2637,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2737,7 +2664,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2768,7 +2694,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -2787,7 +2712,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2806,7 +2730,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -3022,7 +2945,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3285,7 +3207,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.Builder,
             com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntryOrBuilder>
         queryEntryBuilder_;
-
     /**
      *
      *
@@ -3301,7 +3222,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryEntry() {
       return contentCase_ == 2;
     }
-
     /**
      *
      *
@@ -3327,7 +3247,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3351,7 +3270,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3372,7 +3290,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3408,7 +3325,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3434,7 +3350,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3448,7 +3363,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         getQueryEntryBuilder() {
       return getQueryEntryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3470,7 +3384,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.discoveryengine.v1beta.SampleQuery.QueryEntry.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3506,7 +3419,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3533,7 +3445,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3560,7 +3471,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3586,7 +3496,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3608,7 +3517,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3642,7 +3550,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3661,7 +3568,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3686,7 +3592,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3713,7 +3618,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3737,7 +3641,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3769,7 +3672,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3793,7 +3695,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3812,7 +3713,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3835,7 +3735,6 @@ public final class SampleQuery extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *

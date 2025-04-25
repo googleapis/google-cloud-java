@@ -39,7 +39,6 @@ public interface SecretOrBuilder
    * @return Whether the cloudSecret field is set.
    */
   boolean hasCloudSecret();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface SecretOrBuilder
    * @return The cloudSecret.
    */
   java.lang.String getCloudSecret();
-
   /**
    *
    *

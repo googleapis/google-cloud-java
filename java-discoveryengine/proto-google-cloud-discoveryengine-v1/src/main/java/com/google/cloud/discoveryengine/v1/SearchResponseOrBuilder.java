@@ -34,7 +34,6 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult results = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult> getResultsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult results = 1;</code>
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult getResults(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult results = 1;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchResponse.SearchResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1.SearchResponse.Facet> getFacetsList();
-
   /**
    *
    *
@@ -102,7 +97,6 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.Facet getFacets(int index);
-
   /**
    *
    *
@@ -113,7 +107,6 @@ public interface SearchResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
    */
   int getFacetsCount();
-
   /**
    *
    *
@@ -125,7 +118,6 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchResponse.FacetOrBuilder>
       getFacetsOrBuilderList();
-
   /**
    *
    *
@@ -170,7 +162,6 @@ public interface SearchResponseOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface SearchResponseOrBuilder
    * @return The redirectUri.
    */
   java.lang.String getRedirectUri();
-
   /**
    *
    *
@@ -239,7 +229,6 @@ public interface SearchResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public interface SearchResponseOrBuilder
    * @return The correctedQuery.
    */
   java.lang.String getCorrectedQuery();
-
   /**
    *
    *
@@ -301,7 +289,6 @@ public interface SearchResponseOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
-
   /**
    *
    *
@@ -317,7 +304,6 @@ public interface SearchResponseOrBuilder
    * @return The summary.
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.Summary getSummary();
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public interface SearchResponseOrBuilder
    * @return Whether the queryExpansionInfo field is set.
    */
   boolean hasQueryExpansionInfo();
-
   /**
    *
    *
@@ -361,7 +346,6 @@ public interface SearchResponseOrBuilder
    * @return The queryExpansionInfo.
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo getQueryExpansionInfo();
-
   /**
    *
    *
@@ -392,7 +376,6 @@ public interface SearchResponseOrBuilder
    * @return Whether the sessionInfo field is set.
    */
   boolean hasSessionInfo();
-
   /**
    *
    *
@@ -409,7 +392,6 @@ public interface SearchResponseOrBuilder
    * @return The sessionInfo.
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo getSessionInfo();
-
   /**
    *
    *
@@ -438,7 +420,6 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>
       getSearchLinkPromotionsList();
-
   /**
    *
    *
@@ -451,7 +432,6 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1.SearchLinkPromotion getSearchLinkPromotions(int index);
-
   /**
    *
    *
@@ -464,7 +444,6 @@ public interface SearchResponseOrBuilder
    * </code>
    */
   int getSearchLinkPromotionsCount();
-
   /**
    *
    *
@@ -478,7 +457,6 @@ public interface SearchResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>
       getSearchLinkPromotionsOrBuilderList();
-
   /**
    *
    *

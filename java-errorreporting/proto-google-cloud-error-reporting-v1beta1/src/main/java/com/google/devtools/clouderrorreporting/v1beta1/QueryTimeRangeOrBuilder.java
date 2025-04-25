@@ -36,7 +36,6 @@ public interface QueryTimeRangeOrBuilder
    * @return The enum numeric value on the wire for period.
    */
   int getPeriodValue();
-
   /**
    *
    *

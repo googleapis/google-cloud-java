@@ -41,17 +41,16 @@ public final class GeometryProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "$google/maps/places/v1/geometry.proto\022\025"
+      "\n$google/maps/places/v1/geometry.proto\022\025"
           + "google.maps.places.v1\032\037google/api/field_"
-          + "behavior.proto\032\030google/type/latlng.proto\"G\n"
-          + "\006Circle\022(\n"
-          + "\006center\030\001 \001(\0132\023.google.type.LatLngB\003\340A\002\022\023\n"
-          + "\006radius\030\002 \001(\001B\003\340A\002B\236\001\n"
-          + "\031com.google.maps.places.v1B\r"
-          + "GeometryProtoP\001Z7cloud.google.com/go/maps/places/apiv1/"
+          + "behavior.proto\032\030google/type/latlng.proto"
+          + "\"G\n\006Circle\022(\n\006center\030\001 \001(\0132\023.google.type"
+          + ".LatLngB\003\340A\002\022\023\n\006radius\030\002 \001(\001B\003\340A\002B\236\001\n\031co"
+          + "m.google.maps.places.v1B\rGeometryProtoP\001"
+          + "Z7cloud.google.com/go/maps/places/apiv1/"
           + "placespb;placespb\242\002\006GMPSV1\252\002\025Google.Maps"
-          + ".Places.V1\312\002\025Google\\Maps\\Places\\V1b\006proto3"
+          + ".Places.V1\312\002\025Google\\Maps\\Places\\V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

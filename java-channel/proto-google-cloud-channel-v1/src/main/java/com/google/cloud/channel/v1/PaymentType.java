@@ -72,7 +72,6 @@ public enum PaymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PAYMENT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int PAYMENT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum PaymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PREPAY = 1;</code>
    */
   public static final int PREPAY_VALUE = 1;
-
   /**
    *
    *

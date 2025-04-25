@@ -42,7 +42,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.cloud.contentwarehouse.v1.Document getDocument();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the cloudAiDocumentOption field is set.
    */
   boolean hasCloudAiDocumentOption();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The cloudAiDocumentOption.
    */
   com.google.cloud.contentwarehouse.v1.CloudAIDocumentOption getCloudAiDocumentOption();
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the updateOptions field is set.
    */
   boolean hasUpdateOptions();
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The updateOptions.
    */
   com.google.cloud.contentwarehouse.v1.UpdateOptions getUpdateOptions();
-
   /**
    *
    *

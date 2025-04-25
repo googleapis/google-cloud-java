@@ -39,7 +39,6 @@ public interface CreateRecurringAudienceListRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateRecurringAudienceListRequestOrBuilder
    * @return Whether the recurringAudienceList field is set.
    */
   boolean hasRecurringAudienceList();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateRecurringAudienceListRequestOrBuilder
    * @return The recurringAudienceList.
    */
   com.google.analytics.data.v1alpha.RecurringAudienceList getRecurringAudienceList();
-
   /**
    *
    *

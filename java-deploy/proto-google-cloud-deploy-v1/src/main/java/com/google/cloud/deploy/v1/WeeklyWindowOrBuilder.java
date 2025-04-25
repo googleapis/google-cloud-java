@@ -39,7 +39,6 @@ public interface WeeklyWindowOrBuilder
    * @return A list containing the daysOfWeek.
    */
   java.util.List<com.google.type.DayOfWeek> getDaysOfWeekList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface WeeklyWindowOrBuilder
    * @return The count of daysOfWeek.
    */
   int getDaysOfWeekCount();
-
   /**
    *
    *
@@ -72,7 +70,6 @@ public interface WeeklyWindowOrBuilder
    * @return The daysOfWeek at the given index.
    */
   com.google.type.DayOfWeek getDaysOfWeek(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface WeeklyWindowOrBuilder
    * @return A list containing the enum numeric values on the wire for daysOfWeek.
    */
   java.util.List<java.lang.Integer> getDaysOfWeekValueList();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface WeeklyWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public interface WeeklyWindowOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public interface WeeklyWindowOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface WeeklyWindowOrBuilder
    * @return The endTime.
    */
   com.google.type.TimeOfDay getEndTime();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public interface ModerateTextResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.language.v1.ClassificationCategory> getModerationCategoriesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ModerateTextResponseOrBuilder
    * </code>
    */
   com.google.cloud.language.v1.ClassificationCategory getModerationCategories(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ModerateTextResponseOrBuilder
    * </code>
    */
   int getModerationCategoriesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ModerateTextResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v1.ClassificationCategoryOrBuilder>
       getModerationCategoriesOrBuilderList();
-
   /**
    *
    *

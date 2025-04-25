@@ -83,7 +83,6 @@ public enum InvocationResult implements com.google.protobuf.ProtocolMessageEnum 
    * <code>INVOCATION_RESULT_UNSPECIFIED = 0;</code>
    */
   public static final int INVOCATION_RESULT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public enum InvocationResult implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SUCCESS = 1;</code>
    */
   public static final int SUCCESS_VALUE = 1;
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public enum InvocationResult implements com.google.protobuf.ProtocolMessageEnum 
    * <code>PARTIAL = 2;</code>
    */
   public static final int PARTIAL_VALUE = 2;
-
   /**
    *
    *

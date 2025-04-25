@@ -142,7 +142,6 @@ public interface SupervisedTuningDatasetDistributionOrBuilder
   java.util.List<
           com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution.DatasetBucket>
       getBucketsList();
-
   /**
    *
    *
@@ -156,7 +155,6 @@ public interface SupervisedTuningDatasetDistributionOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution.DatasetBucket getBuckets(
       int index);
-
   /**
    *
    *
@@ -169,7 +167,6 @@ public interface SupervisedTuningDatasetDistributionOrBuilder
    * </code>
    */
   int getBucketsCount();
-
   /**
    *
    *
@@ -186,7 +183,6 @@ public interface SupervisedTuningDatasetDistributionOrBuilder
               com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
                   .DatasetBucketOrBuilder>
       getBucketsOrBuilderList();
-
   /**
    *
    *

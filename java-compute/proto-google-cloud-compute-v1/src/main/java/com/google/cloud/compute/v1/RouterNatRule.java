@@ -32,7 +32,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterNatRule)
     RouterNatRuleOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterNatRule.newBuilder() to construct.
   private RouterNatRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
   private com.google.cloud.compute.v1.RouterNatRuleAction action_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.RouterNatRuleAction.getDefaultInstance()
         : action_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object match_ = "";
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMatch() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -258,7 +248,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RULE_NUMBER_FIELD_NUMBER = 535211500;
   private int ruleNumber_ = 0;
-
   /**
    *
    *
@@ -274,7 +263,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRuleNumber() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -497,7 +485,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -745,7 +732,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.RouterNatRuleAction.Builder,
             com.google.cloud.compute.v1.RouterNatRuleActionOrBuilder>
         actionBuilder_;
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         return actionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +835,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +854,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +868,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getActionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
             : action_;
       }
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -950,7 +927,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -973,7 +949,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -996,7 +971,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1018,7 +992,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1009,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object match_ = "";
-
     /**
      *
      *
@@ -1076,7 +1047,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMatch() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1099,7 +1069,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1122,7 +1091,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1112,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1129,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1153,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int ruleNumber_;
-
     /**
      *
      *
@@ -1203,7 +1168,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRuleNumber() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1219,7 +1183,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
     public int getRuleNumber() {
       return ruleNumber_;
     }
-
     /**
      *
      *
@@ -1239,7 +1202,6 @@ public final class RouterNatRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

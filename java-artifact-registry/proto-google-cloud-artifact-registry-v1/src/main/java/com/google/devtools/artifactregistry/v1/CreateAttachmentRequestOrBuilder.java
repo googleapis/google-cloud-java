@@ -39,7 +39,6 @@ public interface CreateAttachmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateAttachmentRequestOrBuilder
    * @return The attachmentId.
    */
   java.lang.String getAttachmentId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateAttachmentRequestOrBuilder
    * @return Whether the attachment field is set.
    */
   boolean hasAttachment();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateAttachmentRequestOrBuilder
    * @return The attachment.
    */
   com.google.devtools.artifactregistry.v1.Attachment getAttachment();
-
   /**
    *
    *

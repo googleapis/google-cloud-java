@@ -42,7 +42,6 @@ public interface UpdateAttributeRequestOrBuilder
    * @return Whether the attribute field is set.
    */
   boolean hasAttribute();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface UpdateAttributeRequestOrBuilder
    * @return The attribute.
    */
   com.google.cloud.apihub.v1.Attribute getAttribute();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface UpdateAttributeRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateAttributeRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface CryptoHashConfigOrBuilder
    * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CryptoHashConfigOrBuilder
    * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
-
   /**
    *
    *

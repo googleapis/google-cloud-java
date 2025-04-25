@@ -36,7 +36,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return Whether the autoCreateRoutes field is set.
    */
   boolean hasAutoCreateRoutes();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return Whether the networkPeering field is set.
    */
   boolean hasNetworkPeering();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return The networkPeering.
    */
   com.google.cloud.compute.v1.NetworkPeering getNetworkPeering();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return Whether the peerNetwork field is set.
    */
   boolean hasPeerNetwork();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface NetworksAddPeeringRequestOrBuilder
    * @return The peerNetwork.
    */
   java.lang.String getPeerNetwork();
-
   /**
    *
    *

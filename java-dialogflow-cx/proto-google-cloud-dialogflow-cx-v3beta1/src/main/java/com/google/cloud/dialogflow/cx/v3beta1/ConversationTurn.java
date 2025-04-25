@@ -34,7 +34,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ConversationTurn)
     ConversationTurnOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConversationTurn.newBuilder() to construct.
   private ConversationTurn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the input field is set.
      */
     boolean hasInput();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The input.
      */
     com.google.cloud.dialogflow.cx.v3beta1.QueryInput getInput();
-
     /**
      *
      *
@@ -130,7 +127,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the injectedParameters field is set.
      */
     boolean hasInjectedParameters();
-
     /**
      *
      *
@@ -144,7 +140,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The injectedParameters.
      */
     com.google.protobuf.Struct getInjectedParameters();
-
     /**
      *
      *
@@ -185,7 +180,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     boolean getEnableSentimentAnalysis();
   }
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput)
       UserInputOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UserInput.newBuilder() to construct.
     private UserInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -232,7 +225,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
     public static final int INPUT_FIELD_NUMBER = 5;
     private com.google.cloud.dialogflow.cx.v3beta1.QueryInput input_;
-
     /**
      *
      *
@@ -252,7 +244,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasInput() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -274,7 +265,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dialogflow.cx.v3beta1.QueryInput.getDefaultInstance()
           : input_;
     }
-
     /**
      *
      *
@@ -297,7 +287,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int INJECTED_PARAMETERS_FIELD_NUMBER = 2;
     private com.google.protobuf.Struct injectedParameters_;
-
     /**
      *
      *
@@ -314,7 +303,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasInjectedParameters() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -333,7 +321,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           ? com.google.protobuf.Struct.getDefaultInstance()
           : injectedParameters_;
     }
-
     /**
      *
      *
@@ -353,7 +340,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int IS_WEBHOOK_ENABLED_FIELD_NUMBER = 3;
     private boolean isWebhookEnabled_ = false;
-
     /**
      *
      *
@@ -374,7 +360,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int ENABLE_SENTIMENT_ANALYSIS_FIELD_NUMBER = 7;
     private boolean enableSentimentAnalysis_ = false;
-
     /**
      *
      *
@@ -591,7 +576,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -854,7 +838,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               com.google.cloud.dialogflow.cx.v3beta1.QueryInput.Builder,
               com.google.cloud.dialogflow.cx.v3beta1.QueryInputOrBuilder>
           inputBuilder_;
-
       /**
        *
        *
@@ -873,7 +856,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasInput() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -898,7 +880,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return inputBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -925,7 +906,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -950,7 +930,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -982,7 +961,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -1006,7 +984,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1025,7 +1002,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getInputFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1048,7 +1024,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               : input_;
         }
       }
-
       /**
        *
        *
@@ -1085,7 +1060,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           injectedParametersBuilder_;
-
       /**
        *
        *
@@ -1101,7 +1075,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasInjectedParameters() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1123,7 +1096,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return injectedParametersBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1147,7 +1119,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1168,7 +1139,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1197,7 +1167,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -1218,7 +1187,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1234,7 +1202,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getInjectedParametersFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1254,7 +1221,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               : injectedParameters_;
         }
       }
-
       /**
        *
        *
@@ -1283,7 +1249,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean isWebhookEnabled_;
-
       /**
        *
        *
@@ -1301,7 +1266,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean getIsWebhookEnabled() {
         return isWebhookEnabled_;
       }
-
       /**
        *
        *
@@ -1323,7 +1287,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1345,7 +1308,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean enableSentimentAnalysis_;
-
       /**
        *
        *
@@ -1361,7 +1323,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean getEnableSentimentAnalysis() {
         return enableSentimentAnalysis_;
       }
-
       /**
        *
        *
@@ -1381,7 +1342,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1484,7 +1444,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the sessionParameters field is set.
      */
     boolean hasSessionParameters();
-
     /**
      *
      *
@@ -1497,7 +1456,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The sessionParameters.
      */
     com.google.protobuf.Struct getSessionParameters();
-
     /**
      *
      *
@@ -1523,7 +1481,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference> getDifferencesList();
-
     /**
      *
      *
@@ -1538,7 +1495,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference getDifferences(int index);
-
     /**
      *
      *
@@ -1553,7 +1509,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     int getDifferencesCount();
-
     /**
      *
      *
@@ -1569,7 +1524,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TestRunDifferenceOrBuilder>
         getDifferencesOrBuilderList();
-
     /**
      *
      *
@@ -1602,7 +1556,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the diagnosticInfo field is set.
      */
     boolean hasDiagnosticInfo();
-
     /**
      *
      *
@@ -1619,7 +1572,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The diagnosticInfo.
      */
     com.google.protobuf.Struct getDiagnosticInfo();
-
     /**
      *
      *
@@ -1648,7 +1600,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the triggeredIntent field is set.
      */
     boolean hasTriggeredIntent();
-
     /**
      *
      *
@@ -1662,7 +1613,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The triggeredIntent.
      */
     com.google.cloud.dialogflow.cx.v3beta1.Intent getTriggeredIntent();
-
     /**
      *
      *
@@ -1688,7 +1638,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the currentPage field is set.
      */
     boolean hasCurrentPage();
-
     /**
      *
      *
@@ -1702,7 +1651,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The currentPage.
      */
     com.google.cloud.dialogflow.cx.v3beta1.Page getCurrentPage();
-
     /**
      *
      *
@@ -1728,7 +1676,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text>
         getTextResponsesList();
-
     /**
      *
      *
@@ -1741,7 +1688,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text getTextResponses(int index);
-
     /**
      *
      *
@@ -1754,7 +1700,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     int getTextResponsesCount();
-
     /**
      *
      *
@@ -1768,7 +1713,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.TextOrBuilder>
         getTextResponsesOrBuilderList();
-
     /**
      *
      *
@@ -1796,7 +1740,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     boolean hasStatus();
-
     /**
      *
      *
@@ -1810,7 +1753,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      * @return The status.
      */
     com.google.rpc.Status getStatus();
-
     /**
      *
      *
@@ -1823,7 +1765,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
-
   /**
    *
    *
@@ -1838,7 +1779,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput)
       VirtualAgentOutputOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VirtualAgentOutput.newBuilder() to construct.
     private VirtualAgentOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1874,7 +1814,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
     public static final int SESSION_PARAMETERS_FIELD_NUMBER = 4;
     private com.google.protobuf.Struct sessionParameters_;
-
     /**
      *
      *
@@ -1890,7 +1829,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasSessionParameters() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1908,7 +1846,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           ? com.google.protobuf.Struct.getDefaultInstance()
           : sessionParameters_;
     }
-
     /**
      *
      *
@@ -1929,7 +1866,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference> differences_;
-
     /**
      *
      *
@@ -1948,7 +1884,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         getDifferencesList() {
       return differences_;
     }
-
     /**
      *
      *
@@ -1968,7 +1903,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         getDifferencesOrBuilderList() {
       return differences_;
     }
-
     /**
      *
      *
@@ -1986,7 +1920,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public int getDifferencesCount() {
       return differences_.size();
     }
-
     /**
      *
      *
@@ -2004,7 +1937,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference getDifferences(int index) {
       return differences_.get(index);
     }
-
     /**
      *
      *
@@ -2026,7 +1958,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int DIAGNOSTIC_INFO_FIELD_NUMBER = 6;
     private com.google.protobuf.Struct diagnosticInfo_;
-
     /**
      *
      *
@@ -2046,7 +1977,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasDiagnosticInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2068,7 +1998,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           ? com.google.protobuf.Struct.getDefaultInstance()
           : diagnosticInfo_;
     }
-
     /**
      *
      *
@@ -2091,7 +2020,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int TRIGGERED_INTENT_FIELD_NUMBER = 7;
     private com.google.cloud.dialogflow.cx.v3beta1.Intent triggeredIntent_;
-
     /**
      *
      *
@@ -2108,7 +2036,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasTriggeredIntent() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2127,7 +2054,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dialogflow.cx.v3beta1.Intent.getDefaultInstance()
           : triggeredIntent_;
     }
-
     /**
      *
      *
@@ -2147,7 +2073,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int CURRENT_PAGE_FIELD_NUMBER = 8;
     private com.google.cloud.dialogflow.cx.v3beta1.Page currentPage_;
-
     /**
      *
      *
@@ -2164,7 +2089,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasCurrentPage() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2183,7 +2107,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.dialogflow.cx.v3beta1.Page.getDefaultInstance()
           : currentPage_;
     }
-
     /**
      *
      *
@@ -2206,7 +2129,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text>
         textResponses_;
-
     /**
      *
      *
@@ -2223,7 +2145,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         getTextResponsesList() {
       return textResponses_;
     }
-
     /**
      *
      *
@@ -2241,7 +2162,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         getTextResponsesOrBuilderList() {
       return textResponses_;
     }
-
     /**
      *
      *
@@ -2257,7 +2177,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public int getTextResponsesCount() {
       return textResponses_.size();
     }
-
     /**
      *
      *
@@ -2273,7 +2192,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text getTextResponses(int index) {
       return textResponses_.get(index);
     }
-
     /**
      *
      *
@@ -2293,7 +2211,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
 
     public static final int STATUS_FIELD_NUMBER = 10;
     private com.google.rpc.Status status_;
-
     /**
      *
      *
@@ -2310,7 +2227,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2327,7 +2243,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
-
     /**
      *
      *
@@ -2594,7 +2509,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3018,7 +2932,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           sessionParametersBuilder_;
-
       /**
        *
        *
@@ -3033,7 +2946,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasSessionParameters() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3054,7 +2966,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return sessionParametersBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3077,7 +2988,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3097,7 +3007,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3125,7 +3034,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3145,7 +3053,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3160,7 +3067,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getSessionParametersFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3179,7 +3085,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               : sessionParameters_;
         }
       }
-
       /**
        *
        *
@@ -3245,7 +3150,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return differencesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3266,7 +3170,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return differencesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3287,7 +3190,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return differencesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3315,7 +3217,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3341,7 +3242,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3369,7 +3269,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3397,7 +3296,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3422,7 +3320,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3448,7 +3345,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3474,7 +3370,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3498,7 +3393,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3522,7 +3416,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3540,7 +3433,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           int index) {
         return getDifferencesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3562,7 +3454,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return differencesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3585,7 +3476,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(differences_);
         }
       }
-
       /**
        *
        *
@@ -3605,7 +3495,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             .addBuilder(
                 com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3626,7 +3515,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                 index,
                 com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3671,7 +3559,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.Struct.Builder,
               com.google.protobuf.StructOrBuilder>
           diagnosticInfoBuilder_;
-
       /**
        *
        *
@@ -3690,7 +3577,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasDiagnosticInfo() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -3715,7 +3601,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return diagnosticInfoBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3742,7 +3627,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3766,7 +3650,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3798,7 +3681,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -3822,7 +3704,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3841,7 +3722,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getDiagnosticInfoFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3864,7 +3744,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               : diagnosticInfo_;
         }
       }
-
       /**
        *
        *
@@ -3901,7 +3780,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder,
               com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder>
           triggeredIntentBuilder_;
-
       /**
        *
        *
@@ -3917,7 +3795,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasTriggeredIntent() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -3939,7 +3816,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return triggeredIntentBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3963,7 +3839,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3985,7 +3860,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4015,7 +3889,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4036,7 +3909,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4052,7 +3924,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getTriggeredIntentFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4072,7 +3943,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               : triggeredIntent_;
         }
       }
-
       /**
        *
        *
@@ -4106,7 +3976,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               com.google.cloud.dialogflow.cx.v3beta1.Page.Builder,
               com.google.cloud.dialogflow.cx.v3beta1.PageOrBuilder>
           currentPageBuilder_;
-
       /**
        *
        *
@@ -4122,7 +3991,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasCurrentPage() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -4144,7 +4012,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return currentPageBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4168,7 +4035,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4190,7 +4056,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4219,7 +4084,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4240,7 +4104,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4256,7 +4119,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getCurrentPageFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4276,7 +4138,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
               : currentPage_;
         }
       }
-
       /**
        *
        *
@@ -4341,7 +4202,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return textResponsesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -4360,7 +4220,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return textResponsesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -4380,7 +4239,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return textResponsesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -4406,7 +4264,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4430,7 +4287,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4456,7 +4312,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4482,7 +4337,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4505,7 +4359,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4529,7 +4382,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4553,7 +4405,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4575,7 +4426,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4597,7 +4447,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4613,7 +4462,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           getTextResponsesBuilder(int index) {
         return getTextResponsesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -4633,7 +4481,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return textResponsesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -4654,7 +4501,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return java.util.Collections.unmodifiableList(textResponses_);
         }
       }
-
       /**
        *
        *
@@ -4672,7 +4518,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             .addBuilder(
                 com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4691,7 +4536,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
                 index,
                 com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4732,7 +4576,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
-
       /**
        *
        *
@@ -4748,7 +4591,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000040) != 0);
       }
-
       /**
        *
        *
@@ -4768,7 +4610,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return statusBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4792,7 +4633,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4813,7 +4653,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4842,7 +4681,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
-
       /**
        *
        *
@@ -4863,7 +4701,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4879,7 +4716,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4897,7 +4733,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
-
       /**
        *
        *
@@ -4993,7 +4828,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int USER_INPUT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput userInput_;
-
   /**
    *
    *
@@ -5009,7 +4843,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
   public boolean hasUserInput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5027,7 +4860,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput.getDefaultInstance()
         : userInput_;
   }
-
   /**
    *
    *
@@ -5048,7 +4880,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
   public static final int VIRTUAL_AGENT_OUTPUT_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput
       virtualAgentOutput_;
-
   /**
    *
    *
@@ -5066,7 +4897,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
   public boolean hasVirtualAgentOutput() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -5088,7 +4918,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             .getDefaultInstance()
         : virtualAgentOutput_;
   }
-
   /**
    *
    *
@@ -5288,7 +5117,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -5516,7 +5344,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInput.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.UserInputOrBuilder>
         userInputBuilder_;
-
     /**
      *
      *
@@ -5531,7 +5358,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasUserInput() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -5552,7 +5378,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         return userInputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5576,7 +5401,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5597,7 +5421,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5628,7 +5451,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5648,7 +5470,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5664,7 +5485,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUserInputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5684,7 +5504,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             : userInput_;
       }
     }
-
     /**
      *
      *
@@ -5718,7 +5537,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutput.Builder,
             com.google.cloud.dialogflow.cx.v3beta1.ConversationTurn.VirtualAgentOutputOrBuilder>
         virtualAgentOutputBuilder_;
-
     /**
      *
      *
@@ -5735,7 +5553,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
     public boolean hasVirtualAgentOutput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -5760,7 +5577,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
         return virtualAgentOutputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5786,7 +5602,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5810,7 +5625,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5843,7 +5657,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5865,7 +5678,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5883,7 +5695,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getVirtualAgentOutputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5906,7 +5717,6 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
             : virtualAgentOutput_;
       }
     }
-
     /**
      *
      *

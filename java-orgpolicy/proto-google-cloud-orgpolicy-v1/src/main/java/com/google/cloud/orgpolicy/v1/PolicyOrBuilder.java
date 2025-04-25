@@ -52,7 +52,6 @@ public interface PolicyOrBuilder
    * @return The constraint.
    */
   java.lang.String getConstraint();
-
   /**
    *
    *
@@ -111,7 +110,6 @@ public interface PolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -127,7 +125,6 @@ public interface PolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public interface PolicyOrBuilder
    * @return Whether the listPolicy field is set.
    */
   boolean hasListPolicy();
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface PolicyOrBuilder
    * @return The listPolicy.
    */
   com.google.cloud.orgpolicy.v1.Policy.ListPolicy getListPolicy();
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public interface PolicyOrBuilder
    * @return Whether the booleanPolicy field is set.
    */
   boolean hasBooleanPolicy();
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public interface PolicyOrBuilder
    * @return The booleanPolicy.
    */
   com.google.cloud.orgpolicy.v1.Policy.BooleanPolicy getBooleanPolicy();
-
   /**
    *
    *
@@ -229,7 +222,6 @@ public interface PolicyOrBuilder
    * @return Whether the restoreDefault field is set.
    */
   boolean hasRestoreDefault();
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public interface PolicyOrBuilder
    * @return The restoreDefault.
    */
   com.google.cloud.orgpolicy.v1.Policy.RestoreDefault getRestoreDefault();
-
   /**
    *
    *

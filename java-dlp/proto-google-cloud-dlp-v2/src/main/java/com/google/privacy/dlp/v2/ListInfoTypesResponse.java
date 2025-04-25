@@ -33,7 +33,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListInfoTypesResponse)
     ListInfoTypesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListInfoTypesResponse.newBuilder() to construct.
   private ListInfoTypesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> infoTypes_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> getInfoTypesList() {
     return infoTypes_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       getInfoTypesOrBuilderList() {
     return infoTypes_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
   public com.google.privacy.dlp.v2.InfoTypeDescription getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
         return infoTypesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -581,7 +573,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
         return infoTypesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -598,7 +589,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
         return infoTypesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +773,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
     public com.google.privacy.dlp.v2.InfoTypeDescription.Builder getInfoTypesBuilder(int index) {
       return getInfoTypesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
         return infoTypesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -839,7 +818,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(infoTypes_);
       }
     }
-
     /**
      *
      *
@@ -853,7 +831,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       return getInfoTypesFieldBuilder()
           .addBuilder(com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -867,7 +844,6 @@ public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMe
       return getInfoTypesFieldBuilder()
           .addBuilder(index, com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -238,8 +238,7 @@ public class MockAgentsImpl extends AgentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetAgentValidationResult, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method GetAgentValidationResult, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   AgentValidationResult.class.getName(),
                   Exception.class.getName())));
@@ -260,8 +259,7 @@ public class MockAgentsImpl extends AgentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGenerativeSettings, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetGenerativeSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerativeSettings.class.getName(),
                   Exception.class.getName())));
@@ -283,8 +281,7 @@ public class MockAgentsImpl extends AgentsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateGenerativeSettings, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateGenerativeSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerativeSettings.class.getName(),
                   Exception.class.getName())));

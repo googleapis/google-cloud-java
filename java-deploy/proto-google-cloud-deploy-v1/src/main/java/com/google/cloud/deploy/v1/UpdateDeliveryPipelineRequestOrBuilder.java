@@ -41,7 +41,6 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    * @return Whether the deliveryPipeline field is set.
    */
   boolean hasDeliveryPipeline();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    * @return The deliveryPipeline.
    */
   com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipeline();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

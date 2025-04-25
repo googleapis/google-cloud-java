@@ -38,7 +38,6 @@ public interface HardwareGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface HardwareGroupOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface HardwareGroupOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface HardwareGroupOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface HardwareGroupOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface HardwareGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -159,11 +153,9 @@ public interface HardwareGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -176,7 +168,6 @@ public interface HardwareGroupOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -193,7 +184,6 @@ public interface HardwareGroupOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface HardwareGroupOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface HardwareGroupOrBuilder
    * @return The config.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareConfig getConfig();
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public interface HardwareGroupOrBuilder
    * @return The site.
    */
   java.lang.String getSite();
-
   /**
    *
    *
@@ -311,7 +298,6 @@ public interface HardwareGroupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -342,7 +328,6 @@ public interface HardwareGroupOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *
@@ -374,7 +359,6 @@ public interface HardwareGroupOrBuilder
    * @return Whether the requestedInstallationDate field is set.
    */
   boolean hasRequestedInstallationDate();
-
   /**
    *
    *
@@ -390,7 +374,6 @@ public interface HardwareGroupOrBuilder
    * @return The requestedInstallationDate.
    */
   com.google.type.Date getRequestedInstallationDate();
-
   /**
    *
    *

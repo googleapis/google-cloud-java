@@ -36,7 +36,6 @@ public interface ReplicationCycleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface ReplicationCycleOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ReplicationCycleOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface ReplicationCycleOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ReplicationCycleOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface ReplicationCycleOrBuilder
    * @return Whether the totalPauseDuration field is set.
    */
   boolean hasTotalPauseDuration();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface ReplicationCycleOrBuilder
    * @return The totalPauseDuration.
    */
   com.google.protobuf.Duration getTotalPauseDuration();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface ReplicationCycleOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.CycleStep steps = 9;</code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.CycleStep> getStepsList();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface ReplicationCycleOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.CycleStep steps = 9;</code>
    */
   com.google.cloud.vmmigration.v1.CycleStep getSteps(int index);
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface ReplicationCycleOrBuilder
    * <code>repeated .google.cloud.vmmigration.v1.CycleStep steps = 9;</code>
    */
   int getStepsCount();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface ReplicationCycleOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.CycleStepOrBuilder>
       getStepsOrBuilderList();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface ReplicationCycleOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public interface ReplicationCycleOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface ReplicationCycleOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateWorkstationRequestOrBuilder
    * @return Whether the workstation field is set.
    */
   boolean hasWorkstation();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateWorkstationRequestOrBuilder
    * @return The workstation.
    */
   com.google.cloud.workstations.v1.Workstation getWorkstation();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UpdateWorkstationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpdateWorkstationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

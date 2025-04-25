@@ -34,7 +34,6 @@ public interface ListActionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Action actions = 1;</code>
    */
   java.util.List<com.google.cloud.dataplex.v1.Action> getActionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListActionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Action actions = 1;</code>
    */
   com.google.cloud.dataplex.v1.Action getActions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListActionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Action actions = 1;</code>
    */
   int getActionsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListActionsResponseOrBuilder
    * <code>repeated .google.cloud.dataplex.v1.Action actions = 1;</code>
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.ActionOrBuilder> getActionsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListActionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

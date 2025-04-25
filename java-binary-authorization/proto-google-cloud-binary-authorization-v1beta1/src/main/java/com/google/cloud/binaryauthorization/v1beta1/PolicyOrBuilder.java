@@ -37,7 +37,6 @@ public interface PolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface PolicyOrBuilder
    * @return The enum numeric value on the wire for globalPolicyEvaluationMode.
    */
   int getGlobalPolicyEvaluationModeValue();
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public interface PolicyOrBuilder
    */
   java.util.List<com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern>
       getAdmissionWhitelistPatternsList();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface PolicyOrBuilder
    */
   com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern
       getAdmissionWhitelistPatterns(int index);
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   int getAdmissionWhitelistPatternsCount();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface PolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPatternOrBuilder>
       getAdmissionWhitelistPatternsOrBuilderList();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   int getClusterAdmissionRulesCount();
-
   /**
    *
    *
@@ -232,12 +224,10 @@ public interface PolicyOrBuilder
    * </code>
    */
   boolean containsClusterAdmissionRules(java.lang.String key);
-
   /** Use {@link #getClusterAdmissionRulesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getClusterAdmissionRules();
-
   /**
    *
    *
@@ -257,7 +247,6 @@ public interface PolicyOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getClusterAdmissionRulesMap();
-
   /**
    *
    *
@@ -280,7 +269,6 @@ public interface PolicyOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   int getKubernetesNamespaceAdmissionRulesCount();
-
   /**
    *
    *
@@ -328,12 +315,10 @@ public interface PolicyOrBuilder
    * </code>
    */
   boolean containsKubernetesNamespaceAdmissionRules(java.lang.String key);
-
   /** Use {@link #getKubernetesNamespaceAdmissionRulesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getKubernetesNamespaceAdmissionRules();
-
   /**
    *
    *
@@ -348,7 +333,6 @@ public interface PolicyOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getKubernetesNamespaceAdmissionRulesMap();
-
   /**
    *
    *
@@ -367,7 +351,6 @@ public interface PolicyOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
-
   /**
    *
    *
@@ -396,7 +379,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   int getKubernetesServiceAccountAdmissionRulesCount();
-
   /**
    *
    *
@@ -410,12 +392,10 @@ public interface PolicyOrBuilder
    * </code>
    */
   boolean containsKubernetesServiceAccountAdmissionRules(java.lang.String key);
-
   /** Use {@link #getKubernetesServiceAccountAdmissionRulesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getKubernetesServiceAccountAdmissionRules();
-
   /**
    *
    *
@@ -430,7 +410,6 @@ public interface PolicyOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getKubernetesServiceAccountAdmissionRulesMap();
-
   /**
    *
    *
@@ -449,7 +428,6 @@ public interface PolicyOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
-
   /**
    *
    *
@@ -481,7 +459,6 @@ public interface PolicyOrBuilder
    * </code>
    */
   int getIstioServiceIdentityAdmissionRulesCount();
-
   /**
    *
    *
@@ -498,12 +475,10 @@ public interface PolicyOrBuilder
    * </code>
    */
   boolean containsIstioServiceIdentityAdmissionRules(java.lang.String key);
-
   /** Use {@link #getIstioServiceIdentityAdmissionRulesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getIstioServiceIdentityAdmissionRules();
-
   /**
    *
    *
@@ -521,7 +496,6 @@ public interface PolicyOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.binaryauthorization.v1beta1.AdmissionRule>
       getIstioServiceIdentityAdmissionRulesMap();
-
   /**
    *
    *
@@ -543,7 +517,6 @@ public interface PolicyOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.binaryauthorization.v1beta1.AdmissionRule defaultValue);
-
   /**
    *
    *
@@ -577,7 +550,6 @@ public interface PolicyOrBuilder
    * @return Whether the defaultAdmissionRule field is set.
    */
   boolean hasDefaultAdmissionRule();
-
   /**
    *
    *
@@ -593,7 +565,6 @@ public interface PolicyOrBuilder
    * @return The defaultAdmissionRule.
    */
   com.google.cloud.binaryauthorization.v1beta1.AdmissionRule getDefaultAdmissionRule();
-
   /**
    *
    *
@@ -622,7 +593,6 @@ public interface PolicyOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -636,7 +606,6 @@ public interface PolicyOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

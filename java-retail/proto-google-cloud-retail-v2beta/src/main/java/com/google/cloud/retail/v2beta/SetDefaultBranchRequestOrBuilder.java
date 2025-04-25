@@ -37,7 +37,6 @@ public interface SetDefaultBranchRequestOrBuilder
    * @return The catalog.
    */
   java.lang.String getCatalog();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface SetDefaultBranchRequestOrBuilder
    * @return The branchId.
    */
   java.lang.String getBranchId();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface SetDefaultBranchRequestOrBuilder
    * @return The note.
    */
   java.lang.String getNote();
-
   /**
    *
    *

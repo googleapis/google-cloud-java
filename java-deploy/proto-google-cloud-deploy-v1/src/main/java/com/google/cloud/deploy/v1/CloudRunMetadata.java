@@ -33,7 +33,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.CloudRunMetadata)
     CloudRunMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudRunMetadata.newBuilder() to construct.
   private CloudRunMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceUrls_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getServiceUrlsList() {
     return serviceUrls_;
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
   public int getServiceUrlsCount() {
     return serviceUrls_.size();
   }
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
   public java.lang.String getServiceUrls(int index) {
     return serviceUrls_.get(index);
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revision_ = "";
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object job_ = "";
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -507,7 +496,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -743,7 +731,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +829,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -899,7 +881,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       serviceUrls_.makeImmutable();
       return serviceUrls_;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     public int getServiceUrlsCount() {
       return serviceUrls_.size();
     }
-
     /**
      *
      *
@@ -932,7 +912,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     public java.lang.String getServiceUrls(int index) {
       return serviceUrls_.get(index);
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getServiceUrlsBytes(int index) {
       return serviceUrls_.getByteString(index);
     }
-
     /**
      *
      *
@@ -974,7 +952,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +975,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +995,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1014,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1040,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object revision_ = "";
-
     /**
      *
      *
@@ -1089,7 +1062,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1084,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1105,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1122,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1146,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object job_ = "";
-
     /**
      *
      *
@@ -1204,7 +1172,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1198,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1223,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1279,7 +1244,6 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class FirewallPoliciesListAssociationsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FirewallPoliciesListAssociationsResponse)
     FirewallPoliciesListAssociationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FirewallPoliciesListAssociationsResponse.newBuilder() to construct.
   private FirewallPoliciesListAssociationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class FirewallPoliciesListAssociationsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.FirewallPolicyAssociation> associations_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class FirewallPoliciesListAssociationsResponse
       getAssociationsList() {
     return associations_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class FirewallPoliciesListAssociationsResponse
       getAssociationsOrBuilderList() {
     return associations_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class FirewallPoliciesListAssociationsResponse
   public int getAssociationsCount() {
     return associations_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class FirewallPoliciesListAssociationsResponse
   public com.google.cloud.compute.v1.FirewallPolicyAssociation getAssociations(int index) {
     return associations_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class FirewallPoliciesListAssociationsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class FirewallPoliciesListAssociationsResponse
   public boolean hasKind() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -194,7 +186,6 @@ public final class FirewallPoliciesListAssociationsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -397,7 +388,6 @@ public final class FirewallPoliciesListAssociationsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -688,7 +678,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return associationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -706,7 +695,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return associationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return associationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -749,7 +736,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +780,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +888,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +908,6 @@ public final class FirewallPoliciesListAssociationsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class FirewallPoliciesListAssociationsResponse
         int index) {
       return getAssociationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -963,7 +940,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return associationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return java.util.Collections.unmodifiableList(associations_);
       }
     }
-
     /**
      *
      *
@@ -997,7 +972,6 @@ public final class FirewallPoliciesListAssociationsResponse
       return getAssociationsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1014,7 +988,6 @@ public final class FirewallPoliciesListAssociationsResponse
           .addBuilder(
               index, com.google.cloud.compute.v1.FirewallPolicyAssociation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1048,7 +1021,6 @@ public final class FirewallPoliciesListAssociationsResponse
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1063,7 +1035,6 @@ public final class FirewallPoliciesListAssociationsResponse
     public boolean hasKind() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1086,7 +1057,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1079,6 @@ public final class FirewallPoliciesListAssociationsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1131,7 +1100,6 @@ public final class FirewallPoliciesListAssociationsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1117,6 @@ public final class FirewallPoliciesListAssociationsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

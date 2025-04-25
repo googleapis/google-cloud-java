@@ -33,7 +33,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RawOutput)
     RawOutputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RawOutput.newBuilder() to construct.
   private RawOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList rawOutput_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRawOutputList() {
     return rawOutput_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
   public int getRawOutputCount() {
     return rawOutput_.size();
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRawOutput(int index) {
     return rawOutput_.get(index);
   }
-
   /**
    *
    *
@@ -298,7 +293,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +491,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
       rawOutput_.makeImmutable();
       return rawOutput_;
     }
-
     /**
      *
      *
@@ -528,7 +520,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
     public int getRawOutputCount() {
       return rawOutput_.size();
     }
-
     /**
      *
      *
@@ -544,7 +535,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRawOutput(int index) {
       return rawOutput_.get(index);
     }
-
     /**
      *
      *
@@ -560,7 +550,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRawOutputBytes(int index) {
       return rawOutput_.getByteString(index);
     }
-
     /**
      *
      *
@@ -584,7 +573,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +595,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -627,7 +614,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +632,6 @@ public final class RawOutput extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface GetAutomationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

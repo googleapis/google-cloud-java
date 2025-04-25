@@ -37,7 +37,6 @@ public interface BigQueryRegexOrBuilder
    * @return The projectIdRegex.
    */
   java.lang.String getProjectIdRegex();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface BigQueryRegexOrBuilder
    * @return The datasetIdRegex.
    */
   java.lang.String getDatasetIdRegex();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface BigQueryRegexOrBuilder
    * @return The tableIdRegex.
    */
   java.lang.String getTableIdRegex();
-
   /**
    *
    *

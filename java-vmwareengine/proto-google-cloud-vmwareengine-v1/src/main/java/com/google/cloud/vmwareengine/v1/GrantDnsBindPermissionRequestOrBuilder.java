@@ -43,7 +43,6 @@ public interface GrantDnsBindPermissionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface GrantDnsBindPermissionRequestOrBuilder
    * @return Whether the principal field is set.
    */
   boolean hasPrincipal();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface GrantDnsBindPermissionRequestOrBuilder
    * @return The principal.
    */
   com.google.cloud.vmwareengine.v1.Principal getPrincipal();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface GrantDnsBindPermissionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

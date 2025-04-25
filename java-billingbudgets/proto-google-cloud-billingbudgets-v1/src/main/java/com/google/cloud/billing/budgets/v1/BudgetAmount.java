@@ -33,7 +33,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1.BudgetAmount)
     BudgetAmountOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BudgetAmount.newBuilder() to construct.
   private BudgetAmount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     private BudgetAmountCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPECIFIED_AMOUNT_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpecifiedAmount() {
     return budgetAmountCase_ == 1;
   }
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.Money.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_PERIOD_AMOUNT_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLastPeriodAmount() {
     return budgetAmountCase_ == 2;
   }
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.billing.budgets.v1.LastPeriodAmount.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -434,7 +426,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +660,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         specifiedAmountBuilder_;
-
     /**
      *
      *
@@ -689,7 +679,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpecifiedAmount() {
       return budgetAmountCase_ == 1;
     }
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Money.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -746,7 +734,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       budgetAmountCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       budgetAmountCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       budgetAmountCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +820,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +836,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.Money.Builder getSpecifiedAmountBuilder() {
       return getSpecifiedAmountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.Money.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -916,7 +898,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.billing.budgets.v1.LastPeriodAmount.Builder,
             com.google.cloud.billing.budgets.v1.LastPeriodAmountOrBuilder>
         lastPeriodAmountBuilder_;
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastPeriodAmount() {
       return budgetAmountCase_ == 2;
     }
-
     /**
      *
      *
@@ -966,7 +946,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.billing.budgets.v1.LastPeriodAmount.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -993,7 +972,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       budgetAmountCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1018,7 +996,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       budgetAmountCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       budgetAmountCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1063,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1080,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
         getLastPeriodAmountBuilder() {
       return getLastPeriodAmountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class BudgetAmount extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.billing.budgets.v1.LastPeriodAmount.getDefaultInstance();
       }
     }
-
     /**
      *
      *

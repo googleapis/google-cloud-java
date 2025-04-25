@@ -36,7 +36,6 @@ public interface DeliveryVehicleAttributeOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeliveryVehicleAttributeOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface DeliveryVehicleAttributeOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface DeliveryVehicleAttributeOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface DeliveryVehicleAttributeOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface DeliveryVehicleAttributeOrBuilder
    * @return Whether the numberValue field is set.
    */
   boolean hasNumberValue();
-
   /**
    *
    *

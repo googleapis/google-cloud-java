@@ -36,7 +36,6 @@ public interface ExampleOrBuilder
    * @return Whether the imagePayload field is set.
    */
   boolean hasImagePayload();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ExampleOrBuilder
    * @return The imagePayload.
    */
   com.google.cloud.datalabeling.v1beta1.ImagePayload getImagePayload();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ExampleOrBuilder
    * @return Whether the textPayload field is set.
    */
   boolean hasTextPayload();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ExampleOrBuilder
    * @return The textPayload.
    */
   com.google.cloud.datalabeling.v1beta1.TextPayload getTextPayload();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ExampleOrBuilder
    * @return Whether the videoPayload field is set.
    */
   boolean hasVideoPayload();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ExampleOrBuilder
    * @return The videoPayload.
    */
   com.google.cloud.datalabeling.v1beta1.VideoPayload getVideoPayload();
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public interface ExampleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public interface ExampleOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Annotation> getAnnotationsList();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface ExampleOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Annotation getAnnotations(int index);
-
   /**
    *
    *
@@ -200,7 +191,6 @@ public interface ExampleOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Annotation annotations = 5;</code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -213,7 +203,6 @@ public interface ExampleOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotationOrBuilder>
       getAnnotationsOrBuilderList();
-
   /**
    *
    *

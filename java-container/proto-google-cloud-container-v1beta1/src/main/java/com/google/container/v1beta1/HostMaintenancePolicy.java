@@ -34,7 +34,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.HostMaintenancePolicy)
     HostMaintenancePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HostMaintenancePolicy.newBuilder() to construct.
   private HostMaintenancePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,7 +125,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * <code>MAINTENANCE_INTERVAL_UNSPECIFIED = 0;</code>
      */
     public static final int MAINTENANCE_INTERVAL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -139,7 +137,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * <code>AS_NEEDED = 1;</code>
      */
     public static final int AS_NEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -262,7 +259,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * @return Whether the nodeIdleTimeWindow field is set.
      */
     boolean hasNodeIdleTimeWindow();
-
     /**
      *
      *
@@ -276,7 +272,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * @return The nodeIdleTimeWindow.
      */
     com.google.protobuf.Duration getNodeIdleTimeWindow();
-
     /**
      *
      *
@@ -306,7 +301,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * @return Whether the maintenanceAvailabilityWindow field is set.
      */
     boolean hasMaintenanceAvailabilityWindow();
-
     /**
      *
      *
@@ -324,7 +318,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * @return The maintenanceAvailabilityWindow.
      */
     com.google.protobuf.Duration getMaintenanceAvailabilityWindow();
-
     /**
      *
      *
@@ -354,7 +347,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      * @return Whether the minNodesPerPool field is set.
      */
     boolean hasMinNodesPerPool();
-
     /**
      *
      *
@@ -369,7 +361,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
      */
     long getMinNodesPerPool();
   }
-
   /**
    *
    *
@@ -386,7 +377,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy)
       OpportunisticMaintenanceStrategyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OpportunisticMaintenanceStrategy.newBuilder() to construct.
     private OpportunisticMaintenanceStrategy(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -421,7 +411,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int NODE_IDLE_TIME_WINDOW_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration nodeIdleTimeWindow_;
-
     /**
      *
      *
@@ -438,7 +427,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     public boolean hasNodeIdleTimeWindow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -457,7 +445,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Duration.getDefaultInstance()
           : nodeIdleTimeWindow_;
     }
-
     /**
      *
      *
@@ -477,7 +464,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
 
     public static final int MAINTENANCE_AVAILABILITY_WINDOW_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration maintenanceAvailabilityWindow_;
-
     /**
      *
      *
@@ -498,7 +484,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     public boolean hasMaintenanceAvailabilityWindow() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -521,7 +506,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
           ? com.google.protobuf.Duration.getDefaultInstance()
           : maintenanceAvailabilityWindow_;
     }
-
     /**
      *
      *
@@ -545,7 +529,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
 
     public static final int MIN_NODES_PER_POOL_FIELD_NUMBER = 3;
     private long minNodesPerPool_ = 0L;
-
     /**
      *
      *
@@ -562,7 +545,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     public boolean hasMinNodesPerPool() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -800,7 +782,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1069,7 +1050,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           nodeIdleTimeWindowBuilder_;
-
       /**
        *
        *
@@ -1085,7 +1065,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       public boolean hasNodeIdleTimeWindow() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1107,7 +1086,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
           return nodeIdleTimeWindowBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1131,7 +1109,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1152,7 +1129,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1181,7 +1157,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1202,7 +1177,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1218,7 +1192,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return getNodeIdleTimeWindowFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1238,7 +1211,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
               : nodeIdleTimeWindow_;
         }
       }
-
       /**
        *
        *
@@ -1272,7 +1244,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           maintenanceAvailabilityWindowBuilder_;
-
       /**
        *
        *
@@ -1292,7 +1263,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       public boolean hasMaintenanceAvailabilityWindow() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1318,7 +1288,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
           return maintenanceAvailabilityWindowBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1346,7 +1315,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1372,7 +1340,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1406,7 +1373,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
-
       /**
        *
        *
@@ -1431,7 +1397,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1451,7 +1416,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return getMaintenanceAvailabilityWindowFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1475,7 +1439,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
               : maintenanceAvailabilityWindow_;
         }
       }
-
       /**
        *
        *
@@ -1508,7 +1471,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       }
 
       private long minNodesPerPool_;
-
       /**
        *
        *
@@ -1525,7 +1487,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       public boolean hasMinNodesPerPool() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1542,7 +1503,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       public long getMinNodesPerPool() {
         return minNodesPerPool_;
       }
-
       /**
        *
        *
@@ -1563,7 +1523,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1670,7 +1629,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     private MaintenanceStrategyCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1703,7 +1661,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
 
   public static final int MAINTENANCE_INTERVAL_FIELD_NUMBER = 1;
   private int maintenanceInterval_ = 0;
-
   /**
    *
    *
@@ -1721,7 +1678,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
   public boolean hasMaintenanceInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1739,7 +1695,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
   public int getMaintenanceIntervalValue() {
     return maintenanceInterval_;
   }
-
   /**
    *
    *
@@ -1765,7 +1720,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
   }
 
   public static final int OPPORTUNISTIC_MAINTENANCE_STRATEGY_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1783,7 +1737,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
   public boolean hasOpportunisticMaintenanceStrategy() {
     return maintenanceStrategyCase_ == 2;
   }
-
   /**
    *
    *
@@ -1807,7 +1760,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     return com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2025,7 +1977,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2259,7 +2210,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int maintenanceInterval_ = 0;
-
     /**
      *
      *
@@ -2277,7 +2227,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     public boolean hasMaintenanceInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2295,7 +2244,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     public int getMaintenanceIntervalValue() {
       return maintenanceInterval_;
     }
-
     /**
      *
      *
@@ -2316,7 +2264,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2340,7 +2287,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
           ? com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2365,7 +2311,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2393,7 +2338,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
             com.google.container.v1beta1.HostMaintenancePolicy
                 .OpportunisticMaintenanceStrategyOrBuilder>
         opportunisticMaintenanceStrategyBuilder_;
-
     /**
      *
      *
@@ -2411,7 +2355,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
     public boolean hasOpportunisticMaintenanceStrategy() {
       return maintenanceStrategyCase_ == 2;
     }
-
     /**
      *
      *
@@ -2444,7 +2387,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2470,7 +2412,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       maintenanceStrategyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2494,7 +2435,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       maintenanceStrategyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2535,7 +2475,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       maintenanceStrategyCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2563,7 +2502,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2580,7 +2518,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
         getOpportunisticMaintenanceStrategyBuilder() {
       return getOpportunisticMaintenanceStrategyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2608,7 +2545,6 @@ public final class HostMaintenancePolicy extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

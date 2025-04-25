@@ -33,7 +33,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.GetNodePoolRequest)
     GetNodePoolRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetNodePoolRequest.newBuilder() to construct.
   private GetNodePoolRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -231,7 +225,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodePoolId_ = "";
-
   /**
    *
    *
@@ -294,7 +286,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -328,7 +319,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -354,7 +344,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -576,7 +565,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -821,7 +809,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -850,7 +837,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +865,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +892,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +915,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +945,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -991,7 +973,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1020,7 +1001,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1028,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1051,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1081,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1131,7 +1108,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1135,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1161,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1183,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1212,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nodePoolId_ = "";
-
     /**
      *
      *
@@ -1267,7 +1239,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1266,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1322,7 +1292,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1345,7 +1314,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1343,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1400,7 +1367,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1425,7 +1391,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1449,7 +1414,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1433,6 @@ public final class GetNodePoolRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

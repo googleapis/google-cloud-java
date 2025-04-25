@@ -39,7 +39,6 @@ public interface CreateWorkspaceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateWorkspaceRequestOrBuilder
    * @return Whether the workspace field is set.
    */
   boolean hasWorkspace();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateWorkspaceRequestOrBuilder
    * @return The workspace.
    */
   com.google.cloud.dataform.v1beta1.Workspace getWorkspace();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface CreateWorkspaceRequestOrBuilder
    * @return The workspaceId.
    */
   java.lang.String getWorkspaceId();
-
   /**
    *
    *

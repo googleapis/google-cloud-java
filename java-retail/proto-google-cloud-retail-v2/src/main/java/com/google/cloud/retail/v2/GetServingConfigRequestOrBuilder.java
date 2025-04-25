@@ -39,7 +39,6 @@ public interface GetServingConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

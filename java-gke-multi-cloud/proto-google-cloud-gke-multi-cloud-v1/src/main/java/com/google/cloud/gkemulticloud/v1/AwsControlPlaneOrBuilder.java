@@ -41,7 +41,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The instanceType.
    */
   java.lang.String getInstanceType();
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the sshConfig field is set.
    */
   boolean hasSshConfig();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The sshConfig.
    */
   com.google.cloud.gkemulticloud.v1.AwsSshConfig getSshConfig();
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public interface AwsControlPlaneOrBuilder
    * @return A list containing the subnetIds.
    */
   java.util.List<java.lang.String> getSubnetIdsList();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The count of subnetIds.
    */
   int getSubnetIdsCount();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The subnetIds at the given index.
    */
   java.lang.String getSubnetIds(int index);
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface AwsControlPlaneOrBuilder
    * @return A list containing the securityGroupIds.
    */
   java.util.List<java.lang.String> getSecurityGroupIdsList();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The count of securityGroupIds.
    */
   int getSecurityGroupIdsCount();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The securityGroupIds at the given index.
    */
   java.lang.String getSecurityGroupIds(int index);
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The iamInstanceProfile.
    */
   java.lang.String getIamInstanceProfile();
-
   /**
    *
    *
@@ -312,7 +301,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the rootVolume field is set.
    */
   boolean hasRootVolume();
-
   /**
    *
    *
@@ -333,7 +321,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The rootVolume.
    */
   com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate getRootVolume();
-
   /**
    *
    *
@@ -374,7 +361,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the mainVolume field is set.
    */
   boolean hasMainVolume();
-
   /**
    *
    *
@@ -396,7 +382,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The mainVolume.
    */
   com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate getMainVolume();
-
   /**
    *
    *
@@ -431,7 +416,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the databaseEncryption field is set.
    */
   boolean hasDatabaseEncryption();
-
   /**
    *
    *
@@ -446,7 +430,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The databaseEncryption.
    */
   com.google.cloud.gkemulticloud.v1.AwsDatabaseEncryption getDatabaseEncryption();
-
   /**
    *
    *
@@ -475,7 +458,6 @@ public interface AwsControlPlaneOrBuilder
    * <code>map&lt;string, string&gt; tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -491,11 +473,9 @@ public interface AwsControlPlaneOrBuilder
    * <code>map&lt;string, string&gt; tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsTags(java.lang.String key);
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTags();
-
   /**
    *
    *
@@ -511,7 +491,6 @@ public interface AwsControlPlaneOrBuilder
    * <code>map&lt;string, string&gt; tags = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTagsMap();
-
   /**
    *
    *
@@ -531,7 +510,6 @@ public interface AwsControlPlaneOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -562,7 +540,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the awsServicesAuthentication field is set.
    */
   boolean hasAwsServicesAuthentication();
-
   /**
    *
    *
@@ -577,7 +554,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The awsServicesAuthentication.
    */
   com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication getAwsServicesAuthentication();
-
   /**
    *
    *
@@ -606,7 +582,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
-
   /**
    *
    *
@@ -621,7 +596,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AwsProxyConfig getProxyConfig();
-
   /**
    *
    *
@@ -649,7 +623,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the configEncryption field is set.
    */
   boolean hasConfigEncryption();
-
   /**
    *
    *
@@ -664,7 +637,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The configEncryption.
    */
   com.google.cloud.gkemulticloud.v1.AwsConfigEncryption getConfigEncryption();
-
   /**
    *
    *
@@ -693,7 +665,6 @@ public interface AwsControlPlaneOrBuilder
    * @return Whether the instancePlacement field is set.
    */
   boolean hasInstancePlacement();
-
   /**
    *
    *
@@ -709,7 +680,6 @@ public interface AwsControlPlaneOrBuilder
    * @return The instancePlacement.
    */
   com.google.cloud.gkemulticloud.v1.AwsInstancePlacement getInstancePlacement();
-
   /**
    *
    *

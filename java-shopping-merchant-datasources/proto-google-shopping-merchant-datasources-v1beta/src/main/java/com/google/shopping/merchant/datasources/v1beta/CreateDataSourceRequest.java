@@ -33,7 +33,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.datasources.v1beta.CreateDataSourceRequest)
     CreateDataSourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDataSourceRequest.newBuilder() to construct.
   private CreateDataSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
 
   public static final int DATA_SOURCE_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.datasources.v1beta.DataSource dataSource_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
   public boolean hasDataSource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
         ? com.google.shopping.merchant.datasources.v1beta.DataSource.getDefaultInstance()
         : dataSource_;
   }
-
   /**
    *
    *
@@ -359,7 +353,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +576,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
             com.google.shopping.merchant.datasources.v1beta.DataSource.Builder,
             com.google.shopping.merchant.datasources.v1beta.DataSourceOrBuilder>
         dataSourceBuilder_;
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
     public boolean hasDataSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
         return dataSourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
       onChanged();
       return getDataSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class CreateDataSourceRequest extends com.google.protobuf.Generated
             : dataSource_;
       }
     }
-
     /**
      *
      *

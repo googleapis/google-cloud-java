@@ -36,7 +36,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.OrganizationConfig)
     OrganizationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OrganizationConfig.newBuilder() to construct.
   private OrganizationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -111,7 +110,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
   public int getConfigCount() {
     return internalGetConfig().getMap().size();
   }
-
   /**
    *
    *
@@ -130,7 +128,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
     }
     return internalGetConfig().getMap().containsKey(key);
   }
-
   /** Use {@link #getConfigMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -138,7 +135,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       getConfig() {
     return getConfigMap();
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       getConfigMap() {
     return internalGetConfig().getMap();
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
         internalGetConfig().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -373,7 +367,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -607,8 +600,7 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
           defaultEntry() {
         return ConfigDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final ConfigConverter configConverter = new ConfigConverter();
 
@@ -648,7 +640,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
     public int getConfigCount() {
       return internalGetConfig().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -667,7 +658,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       }
       return internalGetConfig().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getConfigMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -675,7 +665,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
         getConfig() {
       return getConfigMap();
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
         getConfigMap() {
       return internalGetConfig().getImmutableMap();
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
           map = internalGetMutableConfig().ensureBuilderMap();
       return map.containsKey(key) ? configConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       internalGetMutableConfig().clear();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       internalGetMutableConfig().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.datacatalog.v1.MigrationConfig>
@@ -773,7 +758,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000001;
       return internalGetMutableConfig().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -797,7 +781,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class OrganizationConfig extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

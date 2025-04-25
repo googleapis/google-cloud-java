@@ -37,7 +37,6 @@ public interface AutoscalingPolicyScaleInControlOrBuilder
    * @return Whether the maxScaledInReplicas field is set.
    */
   boolean hasMaxScaledInReplicas();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AutoscalingPolicyScaleInControlOrBuilder
    * @return The maxScaledInReplicas.
    */
   com.google.cloud.compute.v1.FixedOrPercent getMaxScaledInReplicas();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface AutoscalingPolicyScaleInControlOrBuilder
    * @return Whether the timeWindowSec field is set.
    */
   boolean hasTimeWindowSec();
-
   /**
    *
    *

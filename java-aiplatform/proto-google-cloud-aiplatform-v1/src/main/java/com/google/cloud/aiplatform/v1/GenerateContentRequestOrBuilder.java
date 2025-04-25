@@ -43,7 +43,6 @@ public interface GenerateContentRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Content> getContentsList();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Content getContents(int index);
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   int getContentsCount();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface GenerateContentRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ContentOrBuilder>
       getContentsOrBuilderList();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface GenerateContentRequestOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface GenerateContentRequestOrBuilder
    * @return The systemInstruction.
    */
   com.google.cloud.aiplatform.v1.Content getSystemInstruction();
-
   /**
    *
    *
@@ -217,7 +210,6 @@ public interface GenerateContentRequestOrBuilder
    * @return The cachedContent.
    */
   java.lang.String getCachedContent();
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Tool> getToolsList();
-
   /**
    *
    *
@@ -272,7 +263,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Tool getTools(int index);
-
   /**
    *
    *
@@ -290,7 +280,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   int getToolsCount();
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolOrBuilder> getToolsOrBuilderList();
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public interface GenerateContentRequestOrBuilder
    * @return Whether the toolConfig field is set.
    */
   boolean hasToolConfig();
-
   /**
    *
    *
@@ -358,7 +345,6 @@ public interface GenerateContentRequestOrBuilder
    * @return The toolConfig.
    */
   com.google.cloud.aiplatform.v1.ToolConfig getToolConfig();
-
   /**
    *
    *
@@ -389,7 +375,6 @@ public interface GenerateContentRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -406,11 +391,9 @@ public interface GenerateContentRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -427,7 +410,6 @@ public interface GenerateContentRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -448,7 +430,6 @@ public interface GenerateContentRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -479,7 +460,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.SafetySetting> getSafetySettingsList();
-
   /**
    *
    *
@@ -493,7 +473,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SafetySetting getSafetySettings(int index);
-
   /**
    *
    *
@@ -507,7 +486,6 @@ public interface GenerateContentRequestOrBuilder
    * </code>
    */
   int getSafetySettingsCount();
-
   /**
    *
    *
@@ -522,7 +500,6 @@ public interface GenerateContentRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.SafetySettingOrBuilder>
       getSafetySettingsOrBuilderList();
-
   /**
    *
    *
@@ -551,7 +528,6 @@ public interface GenerateContentRequestOrBuilder
    * @return Whether the generationConfig field is set.
    */
   boolean hasGenerationConfig();
-
   /**
    *
    *
@@ -566,7 +542,6 @@ public interface GenerateContentRequestOrBuilder
    * @return The generationConfig.
    */
   com.google.cloud.aiplatform.v1.GenerationConfig getGenerationConfig();
-
   /**
    *
    *

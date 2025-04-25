@@ -34,7 +34,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.monitoring.dashboard.v1.GridLayout)
     GridLayoutOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GridLayout.newBuilder() to construct.
   private GridLayout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COLUMNS_FIELD_NUMBER = 1;
   private long columns_ = 0L;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.Widget> widgets_;
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList() {
     return widgets_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       getWidgetsOrBuilderList() {
     return widgets_;
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
   public int getWidgetsCount() {
     return widgets_.size();
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
   public com.google.monitoring.dashboard.v1.Widget getWidgets(int index) {
     return widgets_.get(index);
   }
-
   /**
    *
    *
@@ -331,7 +324,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +566,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long columns_;
-
     /**
      *
      *
@@ -591,7 +582,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
     public long getColumns() {
       return columns_;
     }
-
     /**
      *
      *
@@ -612,7 +602,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
         return widgetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
         return widgetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
         return widgetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +790,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +810,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +830,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +849,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +868,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +880,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Widget.Builder getWidgetsBuilder(int index) {
       return getWidgetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -920,7 +896,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
         return widgetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -938,7 +913,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(widgets_);
       }
     }
-
     /**
      *
      *
@@ -952,7 +926,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       return getWidgetsFieldBuilder()
           .addBuilder(com.google.monitoring.dashboard.v1.Widget.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -966,7 +939,6 @@ public final class GridLayout extends com.google.protobuf.GeneratedMessageV3
       return getWidgetsFieldBuilder()
           .addBuilder(index, com.google.monitoring.dashboard.v1.Widget.getDefaultInstance());
     }
-
     /**
      *
      *

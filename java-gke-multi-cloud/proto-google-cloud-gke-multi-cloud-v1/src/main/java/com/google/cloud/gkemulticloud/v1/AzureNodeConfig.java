@@ -34,7 +34,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AzureNodeConfig)
     AzureNodeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureNodeConfig.newBuilder() to construct.
   private AzureNodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmSize_ = "";
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int ROOT_VOLUME_FIELD_NUMBER = 2;
   private com.google.cloud.gkemulticloud.v1.AzureDiskTemplate rootVolume_;
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasRootVolume() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.getDefaultInstance()
         : rootVolume_;
   }
-
   /**
    *
    *
@@ -239,7 +233,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public int getTagsCount() {
     return internalGetTags().getMap().size();
   }
-
   /**
    *
    *
@@ -261,14 +254,12 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetTags().getMap().containsKey(key);
   }
-
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTags() {
     return getTagsMap();
   }
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
   }
-
   /**
    *
    *
@@ -313,7 +303,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -344,7 +333,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object imageType_ = "";
-
   /**
    *
    *
@@ -371,7 +359,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -401,7 +388,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int SSH_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.gkemulticloud.v1.AzureSshConfig sshConfig_;
-
   /**
    *
    *
@@ -419,7 +405,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasSshConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -439,7 +424,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AzureSshConfig.getDefaultInstance()
         : sshConfig_;
   }
-
   /**
    *
    *
@@ -460,7 +444,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROXY_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.gkemulticloud.v1.AzureProxyConfig proxyConfig_;
-
   /**
    *
    *
@@ -478,7 +461,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasProxyConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -498,7 +480,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AzureProxyConfig.getDefaultInstance()
         : proxyConfig_;
   }
-
   /**
    *
    *
@@ -519,7 +500,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CONFIG_ENCRYPTION_FIELD_NUMBER = 12;
   private com.google.cloud.gkemulticloud.v1.AzureConfigEncryption configEncryption_;
-
   /**
    *
    *
@@ -537,7 +517,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasConfigEncryption() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -557,7 +536,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AzureConfigEncryption.getDefaultInstance()
         : configEncryption_;
   }
-
   /**
    *
    *
@@ -581,7 +559,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.NodeTaint> taints_;
-
   /**
    *
    *
@@ -597,7 +574,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.gkemulticloud.v1.NodeTaint> getTaintsList() {
     return taints_;
   }
-
   /**
    *
    *
@@ -614,7 +590,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       getTaintsOrBuilderList() {
     return taints_;
   }
-
   /**
    *
    *
@@ -630,7 +605,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public int getTaintsCount() {
     return taints_.size();
   }
-
   /**
    *
    *
@@ -646,7 +620,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.gkemulticloud.v1.NodeTaint getTaints(int index) {
     return taints_.get(index);
   }
-
   /**
    *
    *
@@ -689,7 +662,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -708,14 +680,12 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -731,7 +701,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -754,7 +723,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1047,7 +1015,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1460,7 +1427,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object vmSize_ = "";
-
     /**
      *
      *
@@ -1488,7 +1454,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1516,7 +1481,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1543,7 +1507,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1529,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1563,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AzureDiskTemplate.Builder,
             com.google.cloud.gkemulticloud.v1.AzureDiskTemplateOrBuilder>
         rootVolumeBuilder_;
-
     /**
      *
      *
@@ -1621,7 +1582,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasRootVolume() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1647,7 +1607,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return rootVolumeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1675,7 +1634,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1701,7 +1659,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1692,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1716,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1780,7 +1735,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRootVolumeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1804,7 +1758,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             : rootVolume_;
       }
     }
-
     /**
      *
      *
@@ -1861,7 +1814,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public int getTagsCount() {
       return internalGetTags().getMap().size();
     }
-
     /**
      *
      *
@@ -1883,14 +1835,12 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetTags().getMap().containsKey(key);
     }
-
     /** Use {@link #getTagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTags() {
       return getTagsMap();
     }
-
     /**
      *
      *
@@ -1909,7 +1859,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
     }
-
     /**
      *
      *
@@ -1935,7 +1884,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1967,7 +1915,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1989,14 +1936,12 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
       bitField0_ |= 0x00000004;
       return internalGetMutableTags().getMutableMap();
     }
-
     /**
      *
      *
@@ -2022,7 +1967,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -2044,7 +1988,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object imageType_ = "";
-
     /**
      *
      *
@@ -2070,7 +2013,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2096,7 +2038,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2121,7 +2062,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2142,7 +2082,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2175,7 +2114,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AzureSshConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AzureSshConfigOrBuilder>
         sshConfigBuilder_;
-
     /**
      *
      *
@@ -2192,7 +2130,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasSshConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2215,7 +2152,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return sshConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2240,7 +2176,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2263,7 +2198,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2294,7 +2228,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2316,7 +2249,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2333,7 +2265,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSshConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2354,7 +2285,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             : sshConfig_;
       }
     }
-
     /**
      *
      *
@@ -2389,7 +2319,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AzureProxyConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AzureProxyConfigOrBuilder>
         proxyConfigBuilder_;
-
     /**
      *
      *
@@ -2406,7 +2335,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasProxyConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2429,7 +2357,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return proxyConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2454,7 +2381,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2477,7 +2403,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2508,7 +2433,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2530,7 +2454,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2547,7 +2470,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getProxyConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2568,7 +2490,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             : proxyConfig_;
       }
     }
-
     /**
      *
      *
@@ -2603,7 +2524,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AzureConfigEncryption.Builder,
             com.google.cloud.gkemulticloud.v1.AzureConfigEncryptionOrBuilder>
         configEncryptionBuilder_;
-
     /**
      *
      *
@@ -2620,7 +2540,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasConfigEncryption() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2643,7 +2562,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return configEncryptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2669,7 +2587,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2692,7 +2609,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2724,7 +2640,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2746,7 +2661,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2764,7 +2678,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getConfigEncryptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2786,7 +2699,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
             : configEncryption_;
       }
     }
-
     /**
      *
      *
@@ -2849,7 +2761,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return taintsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2868,7 +2779,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return taintsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2887,7 +2797,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return taintsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2912,7 +2821,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2935,7 +2843,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2960,7 +2867,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2985,7 +2891,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3007,7 +2912,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3030,7 +2934,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3053,7 +2956,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3075,7 +2977,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3097,7 +2998,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3112,7 +3012,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkemulticloud.v1.NodeTaint.Builder getTaintsBuilder(int index) {
       return getTaintsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3131,7 +3030,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return taintsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3151,7 +3049,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(taints_);
       }
     }
-
     /**
      *
      *
@@ -3167,7 +3064,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       return getTaintsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.NodeTaint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3183,7 +3079,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       return getTaintsFieldBuilder()
           .addBuilder(index, com.google.cloud.gkemulticloud.v1.NodeTaint.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3242,7 +3137,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -3261,14 +3155,12 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3284,7 +3176,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -3307,7 +3198,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3336,7 +3226,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3355,14 +3244,12 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -3385,7 +3272,6 @@ public final class AzureNodeConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *

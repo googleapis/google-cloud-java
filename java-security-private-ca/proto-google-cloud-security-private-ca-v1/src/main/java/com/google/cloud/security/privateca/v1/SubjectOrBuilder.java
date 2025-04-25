@@ -36,7 +36,6 @@ public interface SubjectOrBuilder
    * @return The commonName.
    */
   java.lang.String getCommonName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SubjectOrBuilder
    * @return The countryCode.
    */
   java.lang.String getCountryCode();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SubjectOrBuilder
    * @return The organization.
    */
   java.lang.String getOrganization();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface SubjectOrBuilder
    * @return The organizationalUnit.
    */
   java.lang.String getOrganizationalUnit();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface SubjectOrBuilder
    * @return The locality.
    */
   java.lang.String getLocality();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface SubjectOrBuilder
    * @return The province.
    */
   java.lang.String getProvince();
-
   /**
    *
    *
@@ -192,7 +186,6 @@ public interface SubjectOrBuilder
    * @return The streetAddress.
    */
   java.lang.String getStreetAddress();
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public interface SubjectOrBuilder
    * @return The postalCode.
    */
   java.lang.String getPostalCode();
-
   /**
    *
    *

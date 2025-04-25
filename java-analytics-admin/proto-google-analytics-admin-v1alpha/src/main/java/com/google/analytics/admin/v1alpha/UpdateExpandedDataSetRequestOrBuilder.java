@@ -40,7 +40,6 @@ public interface UpdateExpandedDataSetRequestOrBuilder
    * @return Whether the expandedDataSet field is set.
    */
   boolean hasExpandedDataSet();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateExpandedDataSetRequestOrBuilder
    * @return The expandedDataSet.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateExpandedDataSetRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public interface UpdateExpandedDataSetRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

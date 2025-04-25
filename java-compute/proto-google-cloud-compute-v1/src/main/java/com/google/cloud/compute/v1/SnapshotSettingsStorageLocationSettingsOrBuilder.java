@@ -36,7 +36,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    * </code>
    */
   int getLocationsCount();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    * </code>
    */
   boolean containsLocations(java.lang.String key);
-
   /** Use {@link #getLocationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
@@ -57,7 +55,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
           com.google.cloud.compute.v1
               .SnapshotSettingsStorageLocationSettingsStorageLocationPreference>
       getLocations();
-
   /**
    *
    *
@@ -74,7 +71,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
           com.google.cloud.compute.v1
               .SnapshotSettingsStorageLocationSettingsStorageLocationPreference>
       getLocationsMap();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
           com.google.cloud.compute.v1
                   .SnapshotSettingsStorageLocationSettingsStorageLocationPreference
               defaultValue);
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -136,7 +130,6 @@ public interface SnapshotSettingsStorageLocationSettingsOrBuilder
    * @return The policy.
    */
   java.lang.String getPolicy();
-
   /**
    *
    *

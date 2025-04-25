@@ -36,7 +36,6 @@ public interface TaskStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface TaskStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1.StatusEvent status_events = 2;</code>
    */
   java.util.List<com.google.cloud.batch.v1.StatusEvent> getStatusEventsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface TaskStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1.StatusEvent status_events = 2;</code>
    */
   com.google.cloud.batch.v1.StatusEvent getStatusEvents(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface TaskStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1.StatusEvent status_events = 2;</code>
    */
   int getStatusEventsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface TaskStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1.StatusEventOrBuilder>
       getStatusEventsOrBuilderList();
-
   /**
    *
    *

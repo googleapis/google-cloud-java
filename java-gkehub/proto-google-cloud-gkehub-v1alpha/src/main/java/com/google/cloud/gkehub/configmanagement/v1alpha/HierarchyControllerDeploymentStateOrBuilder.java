@@ -36,7 +36,6 @@ public interface HierarchyControllerDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for hnc.
    */
   int getHncValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface HierarchyControllerDeploymentStateOrBuilder
    * @return The enum numeric value on the wire for extension.
    */
   int getExtensionValue();
-
   /**
    *
    *

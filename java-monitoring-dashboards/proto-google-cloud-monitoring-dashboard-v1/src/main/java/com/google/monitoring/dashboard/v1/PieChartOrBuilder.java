@@ -36,7 +36,6 @@ public interface PieChartOrBuilder
    * </code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.PieChart.PieChartDataSet> getDataSetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PieChartOrBuilder
    * </code>
    */
   com.google.monitoring.dashboard.v1.PieChart.PieChartDataSet getDataSets(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface PieChartOrBuilder
    * </code>
    */
   int getDataSetsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface PieChartOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.PieChart.PieChartDataSetOrBuilder>
       getDataSetsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface PieChartOrBuilder
    * @return The enum numeric value on the wire for chartType.
    */
   int getChartTypeValue();
-
   /**
    *
    *

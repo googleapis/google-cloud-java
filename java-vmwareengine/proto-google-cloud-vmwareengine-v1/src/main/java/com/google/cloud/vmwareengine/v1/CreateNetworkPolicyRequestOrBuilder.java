@@ -43,7 +43,6 @@ public interface CreateNetworkPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface CreateNetworkPolicyRequestOrBuilder
    * @return The networkPolicyId.
    */
   java.lang.String getNetworkPolicyId();
-
   /**
    *
    *
@@ -126,7 +124,6 @@ public interface CreateNetworkPolicyRequestOrBuilder
    * @return Whether the networkPolicy field is set.
    */
   boolean hasNetworkPolicy();
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public interface CreateNetworkPolicyRequestOrBuilder
    * @return The networkPolicy.
    */
   com.google.cloud.vmwareengine.v1.NetworkPolicy getNetworkPolicy();
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public interface CreateNetworkPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

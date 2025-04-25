@@ -38,7 +38,6 @@ public interface EventMetadataOrBuilder
    * @return Whether the groundingMetadata field is set.
    */
   boolean hasGroundingMetadata();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface EventMetadataOrBuilder
    * @return The groundingMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.GroundingMetadata getGroundingMetadata();
-
   /**
    *
    *
@@ -124,7 +122,6 @@ public interface EventMetadataOrBuilder
    * @return A list containing the longRunningToolIds.
    */
   java.util.List<java.lang.String> getLongRunningToolIdsList();
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public interface EventMetadataOrBuilder
    * @return The count of longRunningToolIds.
    */
   int getLongRunningToolIdsCount();
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public interface EventMetadataOrBuilder
    * @return The longRunningToolIds at the given index.
    */
   java.lang.String getLongRunningToolIds(int index);
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public interface EventMetadataOrBuilder
    * @return The branch.
    */
   java.lang.String getBranch();
-
   /**
    *
    *

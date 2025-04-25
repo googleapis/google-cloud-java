@@ -40,7 +40,6 @@ public interface LoadVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

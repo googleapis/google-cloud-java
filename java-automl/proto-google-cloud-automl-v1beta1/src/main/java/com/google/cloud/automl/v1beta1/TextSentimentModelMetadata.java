@@ -33,7 +33,6 @@ public final class TextSentimentModelMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TextSentimentModelMetadata)
     TextSentimentModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextSentimentModelMetadata.newBuilder() to construct.
   private TextSentimentModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class TextSentimentModelMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

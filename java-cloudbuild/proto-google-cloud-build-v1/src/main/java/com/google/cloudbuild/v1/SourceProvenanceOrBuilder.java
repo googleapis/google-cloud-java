@@ -37,7 +37,6 @@ public interface SourceProvenanceOrBuilder
    * @return Whether the resolvedStorageSource field is set.
    */
   boolean hasResolvedStorageSource();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SourceProvenanceOrBuilder
    * @return The resolvedStorageSource.
    */
   com.google.cloudbuild.v1.StorageSource getResolvedStorageSource();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface SourceProvenanceOrBuilder
    * @return Whether the resolvedRepoSource field is set.
    */
   boolean hasResolvedRepoSource();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface SourceProvenanceOrBuilder
    * @return The resolvedRepoSource.
    */
   com.google.cloudbuild.v1.RepoSource getResolvedRepoSource();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface SourceProvenanceOrBuilder
    * @return Whether the resolvedStorageSourceManifest field is set.
    */
   boolean hasResolvedStorageSourceManifest();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface SourceProvenanceOrBuilder
    * @return The resolvedStorageSourceManifest.
    */
   com.google.cloudbuild.v1.StorageSourceManifest getResolvedStorageSourceManifest();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface SourceProvenanceOrBuilder
    * </code>
    */
   int getFileHashesCount();
-
   /**
    *
    *
@@ -197,11 +190,9 @@ public interface SourceProvenanceOrBuilder
    * </code>
    */
   boolean containsFileHashes(java.lang.String key);
-
   /** Use {@link #getFileHashesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashes();
-
   /**
    *
    *
@@ -223,7 +214,6 @@ public interface SourceProvenanceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloudbuild.v1.FileHashes> getFileHashesMap();
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public interface SourceProvenanceOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloudbuild.v1.FileHashes defaultValue);
-
   /**
    *
    *

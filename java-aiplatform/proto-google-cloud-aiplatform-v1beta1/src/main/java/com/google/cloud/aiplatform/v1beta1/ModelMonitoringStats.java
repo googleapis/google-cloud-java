@@ -33,7 +33,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringStats)
     ModelMonitoringStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ModelMonitoringStats.newBuilder() to construct.
   private ModelMonitoringStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
     private StatsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TABULAR_STATS_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
   public boolean hasTabularStats() {
     return statsCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStats.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -340,7 +335,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -560,7 +554,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStats.Builder,
             com.google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStatsOrBuilder>
         tabularStatsBuilder_;
-
     /**
      *
      *
@@ -576,7 +569,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
     public boolean hasTabularStats() {
       return statsCase_ == 1;
     }
-
     /**
      *
      *
@@ -602,7 +594,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStats.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
       statsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +637,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
       statsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
       statsCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
         getTabularStatsBuilder() {
       return getTabularStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class ModelMonitoringStats extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.ModelMonitoringTabularStats.getDefaultInstance();
       }
     }
-
     /**
      *
      *

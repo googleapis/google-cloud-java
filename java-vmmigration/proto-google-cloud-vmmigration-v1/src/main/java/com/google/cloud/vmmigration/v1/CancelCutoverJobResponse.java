@@ -33,7 +33,6 @@ public final class CancelCutoverJobResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.CancelCutoverJobResponse)
     CancelCutoverJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CancelCutoverJobResponse.newBuilder() to construct.
   private CancelCutoverJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class CancelCutoverJobResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

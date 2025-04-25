@@ -33,7 +33,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.oslogin.v1.ImportSshPublicKeyRequest)
     ImportSshPublicKeyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportSshPublicKeyRequest.newBuilder() to construct.
   private ImportSshPublicKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
 
   public static final int SSH_PUBLIC_KEY_FIELD_NUMBER = 2;
   private com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey sshPublicKey_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   public boolean hasSshPublicKey() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         ? com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance()
         : sshPublicKey_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList regions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getRegionsList() {
     return regions_;
   }
-
   /**
    *
    *
@@ -276,7 +266,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   public int getRegionsCount() {
     return regions_.size();
   }
-
   /**
    *
    *
@@ -294,7 +283,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
   public java.lang.String getRegions(int index) {
     return regions_.get(index);
   }
-
   /**
    *
    *
@@ -512,7 +500,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -764,7 +751,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -838,7 +822,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder,
             com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder>
         sshPublicKeyBuilder_;
-
     /**
      *
      *
@@ -907,7 +888,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     public boolean hasSshPublicKey() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -930,7 +910,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         return sshPublicKeyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +988,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1009,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return getSshPublicKeyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1073,7 +1047,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
             : sshPublicKey_;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1076,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -1126,7 +1098,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1149,7 +1120,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1158,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1190,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1240,7 +1207,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       regions_.makeImmutable();
       return regions_;
     }
-
     /**
      *
      *
@@ -1257,7 +1223,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     public int getRegionsCount() {
       return regions_.size();
     }
-
     /**
      *
      *
@@ -1275,7 +1240,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     public java.lang.String getRegions(int index) {
       return regions_.get(index);
     }
-
     /**
      *
      *
@@ -1293,7 +1257,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getRegionsBytes(int index) {
       return regions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1319,7 +1282,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1306,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1366,7 +1327,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1387,7 +1347,6 @@ public final class ImportSshPublicKeyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

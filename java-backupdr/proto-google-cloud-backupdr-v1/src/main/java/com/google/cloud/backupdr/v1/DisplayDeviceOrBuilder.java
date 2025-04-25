@@ -36,7 +36,6 @@ public interface DisplayDeviceOrBuilder
    * @return Whether the enableDisplay field is set.
    */
   boolean hasEnableDisplay();
-
   /**
    *
    *

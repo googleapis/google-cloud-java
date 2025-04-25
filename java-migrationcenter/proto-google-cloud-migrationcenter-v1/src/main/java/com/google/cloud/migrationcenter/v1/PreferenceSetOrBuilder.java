@@ -36,7 +36,6 @@ public interface PreferenceSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface PreferenceSetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PreferenceSetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface PreferenceSetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface PreferenceSetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface PreferenceSetOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface PreferenceSetOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface PreferenceSetOrBuilder
    * @return Whether the virtualMachinePreferences field is set.
    */
   boolean hasVirtualMachinePreferences();
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public interface PreferenceSetOrBuilder
    * @return The virtualMachinePreferences.
    */
   com.google.cloud.migrationcenter.v1.VirtualMachinePreferences getVirtualMachinePreferences();
-
   /**
    *
    *

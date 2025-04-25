@@ -36,7 +36,6 @@ public interface InstancesSetSecurityPolicyRequestOrBuilder
    * @return A list containing the networkInterfaces.
    */
   java.util.List<java.lang.String> getNetworkInterfacesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstancesSetSecurityPolicyRequestOrBuilder
    * @return The count of networkInterfaces.
    */
   int getNetworkInterfacesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface InstancesSetSecurityPolicyRequestOrBuilder
    * @return The networkInterfaces at the given index.
    */
   java.lang.String getNetworkInterfaces(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface InstancesSetSecurityPolicyRequestOrBuilder
    * @return Whether the securityPolicy field is set.
    */
   boolean hasSecurityPolicy();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface InstancesSetSecurityPolicyRequestOrBuilder
    * @return The securityPolicy.
    */
   java.lang.String getSecurityPolicy();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ColumnSchema)
     ColumnSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ColumnSchema.newBuilder() to construct.
   private ColumnSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,7 +144,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <code>INDEXING_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INDEXING_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -156,7 +154,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <code>INDEXING_TYPE_NONE = 1;</code>
      */
     public static final int INDEXING_TYPE_NONE_VALUE = 1;
-
     /**
      *
      *
@@ -167,7 +164,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <code>INDEXING_TYPE_NON_UNIQUE = 2;</code>
      */
     public static final int INDEXING_TYPE_NON_UNIQUE_VALUE = 2;
-
     /**
      *
      *
@@ -178,7 +174,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * <code>INDEXING_TYPE_UNIQUE = 3;</code>
      */
     public static final int INDEXING_TYPE_UNIQUE_VALUE = 3;
-
     /**
      *
      *
@@ -295,7 +290,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
-
     /**
      *
      *
@@ -310,7 +304,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec.LookerColumnType getType();
   }
-
   /**
    *
    *
@@ -325,7 +318,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec)
       LookerColumnSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LookerColumnSpec.newBuilder() to construct.
     private LookerColumnSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -440,7 +432,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
        * <code>LOOKER_COLUMN_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int LOOKER_COLUMN_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -451,7 +442,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
        * <code>DIMENSION = 1;</code>
        */
       public static final int DIMENSION_VALUE = 1;
-
       /**
        *
        *
@@ -462,7 +452,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
        * <code>DIMENSION_GROUP = 2;</code>
        */
       public static final int DIMENSION_GROUP_VALUE = 2;
-
       /**
        *
        *
@@ -473,7 +462,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
        * <code>FILTER = 3;</code>
        */
       public static final int FILTER_VALUE = 3;
-
       /**
        *
        *
@@ -484,7 +472,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
        * <code>MEASURE = 4;</code>
        */
       public static final int MEASURE_VALUE = 4;
-
       /**
        *
        *
@@ -592,7 +579,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
-
     /**
      *
      *
@@ -609,7 +595,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -801,7 +786,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -991,7 +975,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int type_ = 0;
-
       /**
        *
        *
@@ -1008,7 +991,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       public int getTypeValue() {
         return type_;
       }
-
       /**
        *
        *
@@ -1028,7 +1010,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1052,7 +1033,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1076,7 +1056,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1181,7 +1160,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     java.lang.String getType();
-
     /**
      *
      *
@@ -1196,7 +1174,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTypeBytes();
   }
-
   /**
    *
    *
@@ -1211,7 +1188,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)
       FieldElementTypeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FieldElementType.newBuilder() to construct.
     private FieldElementType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1246,7 +1222,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1271,7 +1246,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1458,7 +1432,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1650,7 +1623,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object type_ = "";
-
       /**
        *
        *
@@ -1674,7 +1646,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1698,7 +1669,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1721,7 +1691,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1740,7 +1709,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1849,7 +1817,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     private SystemSpecCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1884,7 +1851,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object column_ = "";
-
   /**
    *
    *
@@ -1911,7 +1877,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1943,7 +1908,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -1969,7 +1933,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2000,7 +1963,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -2027,7 +1989,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2059,7 +2020,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
-
   /**
    *
    *
@@ -2087,7 +2047,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2120,7 +2079,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultValue_ = "";
-
   /**
    *
    *
@@ -2144,7 +2102,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2171,7 +2128,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORDINAL_POSITION_FIELD_NUMBER = 9;
   private int ordinalPosition_ = 0;
-
   /**
    *
    *
@@ -2190,7 +2146,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HIGHEST_INDEXING_TYPE_FIELD_NUMBER = 10;
   private int highestIndexingType_ = 0;
-
   /**
    *
    *
@@ -2208,7 +2163,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   public int getHighestIndexingTypeValue() {
     return highestIndexingType_;
   }
-
   /**
    *
    *
@@ -2235,7 +2189,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> subcolumns_;
-
   /**
    *
    *
@@ -2252,7 +2205,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getSubcolumnsList() {
     return subcolumns_;
   }
-
   /**
    *
    *
@@ -2270,7 +2222,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       getSubcolumnsOrBuilderList() {
     return subcolumns_;
   }
-
   /**
    *
    *
@@ -2287,7 +2238,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   public int getSubcolumnsCount() {
     return subcolumns_.size();
   }
-
   /**
    *
    *
@@ -2304,7 +2254,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1.ColumnSchema getSubcolumns(int index) {
     return subcolumns_.get(index);
   }
-
   /**
    *
    *
@@ -2323,7 +2272,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOOKER_COLUMN_SPEC_FIELD_NUMBER = 18;
-
   /**
    *
    *
@@ -2340,7 +2288,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLookerColumnSpec() {
     return systemSpecCase_ == 18;
   }
-
   /**
    *
    *
@@ -2360,7 +2307,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2382,7 +2328,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RANGE_ELEMENT_TYPE_FIELD_NUMBER = 19;
   private com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType rangeElementType_;
-
   /**
    *
    *
@@ -2405,7 +2350,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRangeElementType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2430,7 +2374,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance()
         : rangeElementType_;
   }
-
   /**
    *
    *
@@ -2459,7 +2402,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcRule_ = "";
-
   /**
    *
    *
@@ -2484,7 +2426,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2786,7 +2727,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3210,7 +3150,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object column_ = "";
-
     /**
      *
      *
@@ -3236,7 +3175,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3262,7 +3200,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3287,7 +3224,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3308,7 +3244,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3336,7 +3271,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -3361,7 +3295,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3386,7 +3319,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3410,7 +3342,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3430,7 +3361,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3457,7 +3387,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -3483,7 +3412,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3509,7 +3437,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3534,7 +3461,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3555,7 +3481,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3583,7 +3508,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object mode_ = "";
-
     /**
      *
      *
@@ -3610,7 +3534,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3637,7 +3560,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3663,7 +3585,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3685,7 +3606,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3714,7 +3634,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultValue_ = "";
-
     /**
      *
      *
@@ -3737,7 +3656,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3760,7 +3678,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3782,7 +3699,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3800,7 +3716,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3825,7 +3740,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int ordinalPosition_;
-
     /**
      *
      *
@@ -3841,7 +3755,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public int getOrdinalPosition() {
       return ordinalPosition_;
     }
-
     /**
      *
      *
@@ -3861,7 +3774,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3881,7 +3793,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int highestIndexingType_ = 0;
-
     /**
      *
      *
@@ -3899,7 +3810,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public int getHighestIndexingTypeValue() {
       return highestIndexingType_;
     }
-
     /**
      *
      *
@@ -3920,7 +3830,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3942,7 +3851,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datacatalog.v1.ColumnSchema.IndexingType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3967,7 +3875,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4024,7 +3931,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return subcolumnsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4044,7 +3950,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return subcolumnsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4064,7 +3969,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return subcolumnsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4090,7 +3994,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4114,7 +4017,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4140,7 +4042,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4166,7 +4067,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4190,7 +4090,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4214,7 +4113,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4238,7 +4136,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4261,7 +4158,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4284,7 +4180,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4300,7 +4195,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1.ColumnSchema.Builder getSubcolumnsBuilder(int index) {
       return getSubcolumnsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4320,7 +4214,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return subcolumnsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4341,7 +4234,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(subcolumns_);
       }
     }
-
     /**
      *
      *
@@ -4358,7 +4250,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return getSubcolumnsFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1.ColumnSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4375,7 +4266,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return getSubcolumnsFieldBuilder()
           .addBuilder(index, com.google.cloud.datacatalog.v1.ColumnSchema.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4415,7 +4305,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec.Builder,
             com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpecOrBuilder>
         lookerColumnSpecBuilder_;
-
     /**
      *
      *
@@ -4432,7 +4321,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLookerColumnSpec() {
       return systemSpecCase_ == 18;
     }
-
     /**
      *
      *
@@ -4459,7 +4347,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4484,7 +4371,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -4506,7 +4392,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -4543,7 +4428,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       systemSpecCase_ = 18;
       return this;
     }
-
     /**
      *
      *
@@ -4570,7 +4454,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4585,7 +4468,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         getLookerColumnSpecBuilder() {
       return getLookerColumnSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4608,7 +4490,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -4650,7 +4531,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder,
             com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder>
         rangeElementTypeBuilder_;
-
     /**
      *
      *
@@ -4672,7 +4552,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRangeElementType() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4700,7 +4579,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return rangeElementTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4731,7 +4609,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4759,7 +4636,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4797,7 +4673,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4824,7 +4699,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4847,7 +4721,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRangeElementTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4874,7 +4747,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             : rangeElementType_;
       }
     }
-
     /**
      *
      *
@@ -4909,7 +4781,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gcRule_ = "";
-
     /**
      *
      *
@@ -4933,7 +4804,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4957,7 +4827,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4980,7 +4849,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4999,7 +4867,6 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

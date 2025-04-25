@@ -33,7 +33,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeploymentJobs)
     DeploymentJobsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeploymentJobs.newBuilder() to construct.
   private DeploymentJobs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PREDEPLOY_JOB_FIELD_NUMBER = 3;
   private com.google.cloud.deploy.v1.Job predeployJob_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPredeployJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
         : predeployJob_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEPLOY_JOB_FIELD_NUMBER = 1;
   private com.google.cloud.deploy.v1.Job deployJob_;
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeployJob() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.Job getDeployJob() {
     return deployJob_ == null ? com.google.cloud.deploy.v1.Job.getDefaultInstance() : deployJob_;
   }
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERIFY_JOB_FIELD_NUMBER = 2;
   private com.google.cloud.deploy.v1.Job verifyJob_;
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVerifyJob() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.Job getVerifyJob() {
     return verifyJob_ == null ? com.google.cloud.deploy.v1.Job.getDefaultInstance() : verifyJob_;
   }
-
   /**
    *
    *
@@ -228,7 +218,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POSTDEPLOY_JOB_FIELD_NUMBER = 4;
   private com.google.cloud.deploy.v1.Job postdeployJob_;
-
   /**
    *
    *
@@ -246,7 +235,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPostdeployJob() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -266,7 +254,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.deploy.v1.Job.getDefaultInstance()
         : postdeployJob_;
   }
-
   /**
    *
    *
@@ -491,7 +478,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -753,7 +739,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Job.Builder,
             com.google.cloud.deploy.v1.JobOrBuilder>
         predeployJobBuilder_;
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPredeployJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         return predeployJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +822,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +872,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +888,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPredeployJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -930,7 +908,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             : predeployJob_;
       }
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Job.Builder,
             com.google.cloud.deploy.v1.JobOrBuilder>
         deployJobBuilder_;
-
     /**
      *
      *
@@ -982,7 +958,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeployJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1005,7 +980,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         return deployJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1004,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1025,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1054,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1075,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeployJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1142,7 +1111,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             : deployJob_;
       }
     }
-
     /**
      *
      *
@@ -1177,7 +1145,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Job.Builder,
             com.google.cloud.deploy.v1.JobOrBuilder>
         verifyJobBuilder_;
-
     /**
      *
      *
@@ -1194,7 +1161,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVerifyJob() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1217,7 +1183,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         return verifyJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1242,7 +1207,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1228,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1257,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1278,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1294,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVerifyJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1354,7 +1314,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             : verifyJob_;
       }
     }
-
     /**
      *
      *
@@ -1389,7 +1348,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.deploy.v1.Job.Builder,
             com.google.cloud.deploy.v1.JobOrBuilder>
         postdeployJobBuilder_;
-
     /**
      *
      *
@@ -1406,7 +1364,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPostdeployJob() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1429,7 +1386,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
         return postdeployJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1454,7 +1410,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1476,7 +1431,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1460,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1528,7 +1481,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1545,7 +1497,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPostdeployJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1566,7 +1517,6 @@ public final class DeploymentJobs extends com.google.protobuf.GeneratedMessageV3
             : postdeployJob_;
       }
     }
-
     /**
      *
      *

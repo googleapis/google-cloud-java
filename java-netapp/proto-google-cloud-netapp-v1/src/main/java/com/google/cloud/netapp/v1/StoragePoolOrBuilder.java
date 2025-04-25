@@ -36,7 +36,6 @@ public interface StoragePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface StoragePoolOrBuilder
    * @return The enum numeric value on the wire for serviceLevel.
    */
   int getServiceLevelValue();
-
   /**
    *
    *
@@ -133,7 +131,6 @@ public interface StoragePoolOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -161,7 +158,6 @@ public interface StoragePoolOrBuilder
    * @return The stateDetails.
    */
   java.lang.String getStateDetails();
-
   /**
    *
    *
@@ -188,7 +184,6 @@ public interface StoragePoolOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public interface StoragePoolOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public interface StoragePoolOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -251,7 +244,6 @@ public interface StoragePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -262,11 +254,9 @@ public interface StoragePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface StoragePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface StoragePoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -319,7 +307,6 @@ public interface StoragePoolOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public interface StoragePoolOrBuilder
    * @return The activeDirectory.
    */
   java.lang.String getActiveDirectory();
-
   /**
    *
    *
@@ -382,7 +368,6 @@ public interface StoragePoolOrBuilder
    * @return The kmsConfig.
    */
   java.lang.String getKmsConfig();
-
   /**
    *
    *
@@ -424,7 +409,6 @@ public interface StoragePoolOrBuilder
    * @return The psaRange.
    */
   java.lang.String getPsaRange();
-
   /**
    *
    *
@@ -453,7 +437,6 @@ public interface StoragePoolOrBuilder
    * @return The enum numeric value on the wire for encryptionType.
    */
   int getEncryptionTypeValue();
-
   /**
    *
    *
@@ -485,7 +468,6 @@ public interface StoragePoolOrBuilder
    */
   @java.lang.Deprecated
   boolean hasGlobalAccessAllowed();
-
   /**
    *
    *
@@ -530,7 +512,6 @@ public interface StoragePoolOrBuilder
    * @return The replicaZone.
    */
   java.lang.String getReplicaZone();
-
   /**
    *
    *
@@ -556,7 +537,6 @@ public interface StoragePoolOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration)
     PredictionApiKeyRegistrationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PredictionApiKeyRegistration.newBuilder() to construct.
   private PredictionApiKeyRegistration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object apiKey_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -285,7 +282,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +477,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object apiKey_ = "";
-
     /**
      *
      *
@@ -504,7 +499,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -527,7 +521,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -549,7 +542,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +559,6 @@ public final class PredictionApiKeyRegistration extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

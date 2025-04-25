@@ -39,7 +39,6 @@ public interface DeleteStudyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

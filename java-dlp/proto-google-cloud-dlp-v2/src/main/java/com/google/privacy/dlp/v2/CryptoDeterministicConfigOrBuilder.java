@@ -38,7 +38,6 @@ public interface CryptoDeterministicConfigOrBuilder
    * @return Whether the cryptoKey field is set.
    */
   boolean hasCryptoKey();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CryptoDeterministicConfigOrBuilder
    * @return The cryptoKey.
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface CryptoDeterministicConfigOrBuilder
    * @return Whether the surrogateInfoType field is set.
    */
   boolean hasSurrogateInfoType();
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public interface CryptoDeterministicConfigOrBuilder
    * @return The surrogateInfoType.
    */
   com.google.privacy.dlp.v2.InfoType getSurrogateInfoType();
-
   /**
    *
    *
@@ -226,7 +222,6 @@ public interface CryptoDeterministicConfigOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
-
   /**
    *
    *
@@ -256,7 +251,6 @@ public interface CryptoDeterministicConfigOrBuilder
    * @return The context.
    */
   com.google.privacy.dlp.v2.FieldId getContext();
-
   /**
    *
    *

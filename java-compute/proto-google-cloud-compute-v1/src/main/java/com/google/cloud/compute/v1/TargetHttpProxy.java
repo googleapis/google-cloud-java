@@ -33,7 +33,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TargetHttpProxy)
     TargetHttpProxyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetHttpProxy.newBuilder() to construct.
   private TargetHttpProxy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -254,7 +245,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -281,7 +271,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   public static final int HTTP_KEEP_ALIVE_TIMEOUT_SEC_FIELD_NUMBER = 447326046;
   private int httpKeepAliveTimeoutSec_ = 0;
-
   /**
    *
    *
@@ -297,7 +286,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasHttpKeepAliveTimeoutSec() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -353,7 +339,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -369,7 +354,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasKind() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -393,7 +377,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -422,7 +405,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -438,7 +420,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -462,7 +443,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -489,7 +469,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROXY_BIND_FIELD_NUMBER = 286025582;
   private boolean proxyBind_ = false;
-
   /**
    *
    *
@@ -505,7 +484,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasProxyBind() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -526,7 +504,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -542,7 +519,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -566,7 +542,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -595,7 +570,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -611,7 +585,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -635,7 +608,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -664,7 +636,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object urlMap_ = "";
-
   /**
    *
    *
@@ -680,7 +651,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
   public boolean hasUrlMap() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -704,7 +674,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -1036,7 +1005,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1377,7 +1345,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -1392,7 +1359,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1415,7 +1381,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1438,7 +1403,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1460,7 +1424,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1441,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1503,7 +1465,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1518,7 +1479,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1541,7 +1501,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1564,7 +1523,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1544,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1561,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1629,7 +1585,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -1644,7 +1599,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1667,7 +1621,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1690,7 +1643,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1712,7 +1664,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1681,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1755,7 +1705,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private int httpKeepAliveTimeoutSec_;
-
     /**
      *
      *
@@ -1771,7 +1720,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasHttpKeepAliveTimeoutSec() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1787,7 +1735,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public int getHttpKeepAliveTimeoutSec() {
       return httpKeepAliveTimeoutSec_;
     }
-
     /**
      *
      *
@@ -1807,7 +1754,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1773,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private long id_;
-
     /**
      *
      *
@@ -1843,7 +1788,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1859,7 +1803,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -1879,7 +1822,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1841,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -1914,7 +1855,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasKind() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1937,7 +1877,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1960,7 +1899,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1982,7 +1920,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2000,7 +1937,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2025,7 +1961,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2040,7 +1975,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasName() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2063,7 +1997,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2086,7 +2019,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2108,7 +2040,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2126,7 +2057,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2151,7 +2081,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean proxyBind_;
-
     /**
      *
      *
@@ -2167,7 +2096,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasProxyBind() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2183,7 +2111,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean getProxyBind() {
       return proxyBind_;
     }
-
     /**
      *
      *
@@ -2203,7 +2130,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2223,7 +2149,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -2238,7 +2163,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2261,7 +2185,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2284,7 +2207,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2306,7 +2228,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2324,7 +2245,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2269,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -2364,7 +2283,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2387,7 +2305,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2410,7 +2327,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2432,7 +2348,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2450,7 +2365,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2475,7 +2389,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object urlMap_ = "";
-
     /**
      *
      *
@@ -2490,7 +2403,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     public boolean hasUrlMap() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -2513,7 +2425,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2536,7 +2447,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2558,7 +2468,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2576,7 +2485,6 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

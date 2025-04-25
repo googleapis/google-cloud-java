@@ -37,7 +37,6 @@ public interface AccountIssueOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface AccountIssueOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface AccountIssueOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface AccountIssueOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination>
       getImpactedDestinationsList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface AccountIssueOrBuilder
    */
   com.google.shopping.merchant.accounts.v1beta.AccountIssue.ImpactedDestination
       getImpactedDestinations(int index);
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface AccountIssueOrBuilder
    * </code>
    */
   int getImpactedDestinationsCount();
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public interface AccountIssueOrBuilder
               com.google.shopping.merchant.accounts.v1beta.AccountIssue
                   .ImpactedDestinationOrBuilder>
       getImpactedDestinationsOrBuilderList();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface AccountIssueOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface AccountIssueOrBuilder
    * @return The documentationUri.
    */
   java.lang.String getDocumentationUri();
-
   /**
    *
    *

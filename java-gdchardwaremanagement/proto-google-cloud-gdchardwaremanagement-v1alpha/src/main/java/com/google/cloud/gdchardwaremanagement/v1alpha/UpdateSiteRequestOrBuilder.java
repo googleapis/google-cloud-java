@@ -40,7 +40,6 @@ public interface UpdateSiteRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateSiteRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateSiteRequestOrBuilder
    * @return Whether the site field is set.
    */
   boolean hasSite();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface UpdateSiteRequestOrBuilder
    * @return The site.
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Site getSite();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface UpdateSiteRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

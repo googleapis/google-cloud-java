@@ -33,7 +33,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportAssetFramesRequest)
     ReportAssetFramesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportAssetFramesRequest.newBuilder() to construct.
   private ReportAssetFramesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
 
   public static final int FRAMES_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.Frames frames_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
   public boolean hasFrames() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
         ? com.google.cloud.migrationcenter.v1.Frames.getDefaultInstance()
         : frames_;
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object source_ = "";
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -412,7 +404,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -644,7 +635,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -667,7 +657,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
             com.google.cloud.migrationcenter.v1.Frames.Builder,
             com.google.cloud.migrationcenter.v1.FramesOrBuilder>
         framesBuilder_;
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
     public boolean hasFrames() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
         return framesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +821,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +848,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +867,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +881,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return getFramesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -921,7 +899,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
             : frames_;
       }
     }
-
     /**
      *
      *
@@ -949,7 +926,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object source_ = "";
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1023,7 +997,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1043,7 +1016,6 @@ public final class ReportAssetFramesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

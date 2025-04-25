@@ -40,7 +40,6 @@ public interface CanaryDeploymentOrBuilder
    * @return A list containing the percentages.
    */
   java.util.List<java.lang.Integer> getPercentagesList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface CanaryDeploymentOrBuilder
    * @return The count of percentages.
    */
   int getPercentagesCount();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CanaryDeploymentOrBuilder
    * @return Whether the predeploy field is set.
    */
   boolean hasPredeploy();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface CanaryDeploymentOrBuilder
    * @return The predeploy.
    */
   com.google.cloud.deploy.v1.Predeploy getPredeploy();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface CanaryDeploymentOrBuilder
    * @return Whether the postdeploy field is set.
    */
   boolean hasPostdeploy();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface CanaryDeploymentOrBuilder
    * @return The postdeploy.
    */
   com.google.cloud.deploy.v1.Postdeploy getPostdeploy();
-
   /**
    *
    *

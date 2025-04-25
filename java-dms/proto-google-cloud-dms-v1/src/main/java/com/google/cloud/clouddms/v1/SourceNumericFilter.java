@@ -33,7 +33,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SourceNumericFilter)
     SourceNumericFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceNumericFilter.newBuilder() to construct.
   private SourceNumericFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_MIN_SCALE_FILTER_FIELD_NUMBER = 1;
   private int sourceMinScaleFilter_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_MAX_SCALE_FILTER_FIELD_NUMBER = 2;
   private int sourceMaxScaleFilter_ = 0;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_MIN_PRECISION_FILTER_FIELD_NUMBER = 3;
   private int sourceMinPrecisionFilter_ = 0;
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_MAX_PRECISION_FILTER_FIELD_NUMBER = 4;
   private int sourceMaxPrecisionFilter_ = 0;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
 
   public static final int NUMERIC_FILTER_OPTION_FIELD_NUMBER = 5;
   private int numericFilterOption_ = 0;
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
   public int getNumericFilterOptionValue() {
     return numericFilterOption_;
   }
-
   /**
    *
    *
@@ -386,7 +379,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +613,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int sourceMinScaleFilter_;
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     public int getSourceMinScaleFilter() {
       return sourceMinScaleFilter_;
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     }
 
     private int sourceMaxScaleFilter_;
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     public int getSourceMaxScaleFilter() {
       return sourceMaxScaleFilter_;
     }
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     }
 
     private int sourceMinPrecisionFilter_;
-
     /**
      *
      *
@@ -756,7 +741,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     public int getSourceMinPrecisionFilter() {
       return sourceMinPrecisionFilter_;
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +781,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     }
 
     private int sourceMaxPrecisionFilter_;
-
     /**
      *
      *
@@ -815,7 +797,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     public int getSourceMaxPrecisionFilter() {
       return sourceMaxPrecisionFilter_;
     }
-
     /**
      *
      *
@@ -836,7 +817,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +837,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     }
 
     private int numericFilterOption_ = 0;
-
     /**
      *
      *
@@ -876,7 +855,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
     public int getNumericFilterOptionValue() {
       return numericFilterOption_;
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -921,7 +898,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.clouddms.v1.NumericFilterOption.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -946,7 +922,6 @@ public final class SourceNumericFilter extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

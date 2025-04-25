@@ -64,7 +64,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The taskName.
    */
   java.lang.String getTaskName();
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return Whether the executorDetail field is set.
    */
   boolean hasExecutorDetail();
-
   /**
    *
    *
@@ -228,7 +220,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The executorDetail.
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTaskExecutorDetail getExecutorDetail();
-
   /**
    *
    *
@@ -257,7 +248,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return Whether the execution field is set.
    */
   boolean hasExecution();
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The execution.
    */
   com.google.cloud.aiplatform.v1beta1.Execution getExecution();
-
   /**
    *
    *
@@ -329,7 +317,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -343,7 +330,6 @@ public interface PipelineTaskDetailOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -370,7 +356,6 @@ public interface PipelineTaskDetailOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus>
       getPipelineTaskStatusList();
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public interface PipelineTaskDetailOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatus getPipelineTaskStatus(
       int index);
-
   /**
    *
    *
@@ -399,7 +383,6 @@ public interface PipelineTaskDetailOrBuilder
    * </code>
    */
   int getPipelineTaskStatusCount();
-
   /**
    *
    *
@@ -416,7 +399,6 @@ public interface PipelineTaskDetailOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.PipelineTaskStatusOrBuilder>
       getPipelineTaskStatusOrBuilderList();
-
   /**
    *
    *
@@ -444,7 +426,6 @@ public interface PipelineTaskDetailOrBuilder
    * </code>
    */
   int getInputsCount();
-
   /**
    *
    *
@@ -457,13 +438,11 @@ public interface PipelineTaskDetailOrBuilder
    * </code>
    */
   boolean containsInputs(java.lang.String key);
-
   /** Use {@link #getInputsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList>
       getInputs();
-
   /**
    *
    *
@@ -478,7 +457,6 @@ public interface PipelineTaskDetailOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList>
       getInputsMap();
-
   /**
    *
    *
@@ -495,7 +473,6 @@ public interface PipelineTaskDetailOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList defaultValue);
-
   /**
    *
    *
@@ -522,7 +499,6 @@ public interface PipelineTaskDetailOrBuilder
    * </code>
    */
   int getOutputsCount();
-
   /**
    *
    *
@@ -535,13 +511,11 @@ public interface PipelineTaskDetailOrBuilder
    * </code>
    */
   boolean containsOutputs(java.lang.String key);
-
   /** Use {@link #getOutputsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList>
       getOutputs();
-
   /**
    *
    *
@@ -556,7 +530,6 @@ public interface PipelineTaskDetailOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList>
       getOutputsMap();
-
   /**
    *
    *
@@ -573,7 +546,6 @@ public interface PipelineTaskDetailOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.ArtifactList defaultValue);
-
   /**
    *
    *

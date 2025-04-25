@@ -36,7 +36,6 @@ public interface RestoreBackupResponseOrBuilder
    * @return Whether the targetResource field is set.
    */
   boolean hasTargetResource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RestoreBackupResponseOrBuilder
    * @return The targetResource.
    */
   com.google.cloud.backupdr.v1.TargetResource getTargetResource();
-
   /**
    *
    *

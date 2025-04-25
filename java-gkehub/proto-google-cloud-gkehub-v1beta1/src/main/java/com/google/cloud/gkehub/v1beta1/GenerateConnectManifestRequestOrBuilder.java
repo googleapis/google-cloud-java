@@ -39,7 +39,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return Whether the connectAgent field is set.
    */
   boolean hasConnectAgent();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The connectAgent.
    */
   com.google.cloud.gkehub.v1beta1.ConnectAgent getConnectAgent();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface GenerateConnectManifestRequestOrBuilder
    * @return The registry.
    */
   java.lang.String getRegistry();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.ExclusionWindow)
     ExclusionWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExclusionWindow.newBuilder() to construct.
   private ExclusionWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the daysOfWeek.
      */
     java.util.List<com.google.type.DayOfWeek> getDaysOfWeekList();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      * @return The count of daysOfWeek.
      */
     int getDaysOfWeekCount();
-
     /**
      *
      *
@@ -113,7 +110,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      * @return The daysOfWeek at the given index.
      */
     com.google.type.DayOfWeek getDaysOfWeek(int index);
-
     /**
      *
      *
@@ -128,7 +124,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the enum numeric values on the wire for daysOfWeek.
      */
     java.util.List<java.lang.Integer> getDaysOfWeekValueList();
-
     /**
      *
      *
@@ -145,7 +140,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
      */
     int getDaysOfWeekValue(int index);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekList)
       DayOfWeekListOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DayOfWeekList.newBuilder() to construct.
     private DayOfWeekList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -206,7 +199,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
                 return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
               }
             };
-
     /**
      *
      *
@@ -225,7 +217,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
     }
-
     /**
      *
      *
@@ -243,7 +234,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public int getDaysOfWeekCount() {
       return daysOfWeek_.size();
     }
-
     /**
      *
      *
@@ -262,7 +252,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public com.google.type.DayOfWeek getDaysOfWeek(int index) {
       return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
     }
-
     /**
      *
      *
@@ -280,7 +269,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
       return daysOfWeek_;
     }
-
     /**
      *
      *
@@ -480,7 +468,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
           bitField0_ |= 0x00000001;
         }
       }
-
       /**
        *
        *
@@ -722,7 +708,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return new com.google.protobuf.Internal.ListAdapter<
             java.lang.Integer, com.google.type.DayOfWeek>(daysOfWeek_, daysOfWeek_converter_);
       }
-
       /**
        *
        *
@@ -739,7 +724,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       public int getDaysOfWeekCount() {
         return daysOfWeek_.size();
       }
-
       /**
        *
        *
@@ -757,7 +741,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       public com.google.type.DayOfWeek getDaysOfWeek(int index) {
         return daysOfWeek_converter_.convert(daysOfWeek_.get(index));
       }
-
       /**
        *
        *
@@ -782,7 +765,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -806,7 +788,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -830,7 +811,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -850,7 +830,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -867,7 +846,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       public java.util.List<java.lang.Integer> getDaysOfWeekValueList() {
         return java.util.Collections.unmodifiableList(daysOfWeek_);
       }
-
       /**
        *
        *
@@ -885,7 +863,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       public int getDaysOfWeekValue(int index) {
         return daysOfWeek_.get(index);
       }
-
       /**
        *
        *
@@ -907,7 +884,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +904,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1036,7 +1011,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     private RecurrenceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1073,7 +1047,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
 
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.type.TimeOfDay startTime_;
-
   /**
    *
    *
@@ -1090,7 +1063,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1107,7 +1079,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public com.google.type.TimeOfDay getStartTime() {
     return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -1125,7 +1096,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
 
   public static final int DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration duration_;
-
   /**
    *
    *
@@ -1150,7 +1120,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public boolean hasDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1175,7 +1144,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Duration getDuration() {
     return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
   }
-
   /**
    *
    *
@@ -1200,7 +1168,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SINGLE_OCCURRENCE_DATE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1217,7 +1184,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public boolean hasSingleOccurrenceDate() {
     return recurrenceCase_ == 3;
   }
-
   /**
    *
    *
@@ -1237,7 +1203,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.type.Date.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1257,7 +1222,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DAILY_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1274,7 +1238,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public boolean hasDaily() {
     return recurrenceCase_ == 4;
   }
-
   /**
    *
    *
@@ -1296,7 +1259,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DAYS_OF_WEEK_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -1312,7 +1274,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
   public boolean hasDaysOfWeek() {
     return recurrenceCase_ == 5;
   }
-
   /**
    *
    *
@@ -1331,7 +1292,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekList.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1583,7 +1543,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1880,7 +1839,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1896,7 +1854,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1916,7 +1873,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1940,7 +1896,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1961,7 +1916,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1990,7 +1944,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2011,7 +1964,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1979,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2045,7 +1996,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -2079,7 +2029,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         durationBuilder_;
-
     /**
      *
      *
@@ -2104,7 +2053,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public boolean hasDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2133,7 +2081,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return durationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2166,7 +2113,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2196,7 +2142,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2179,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2208,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2289,7 +2232,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2316,7 +2258,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
       }
     }
-
     /**
      *
      *
@@ -2356,7 +2297,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         singleOccurrenceDateBuilder_;
-
     /**
      *
      *
@@ -2373,7 +2313,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public boolean hasSingleOccurrenceDate() {
       return recurrenceCase_ == 3;
     }
-
     /**
      *
      *
@@ -2400,7 +2339,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return com.google.type.Date.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2424,7 +2362,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       recurrenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2445,7 +2382,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       recurrenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2477,7 +2413,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       recurrenceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -2504,7 +2439,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2518,7 +2452,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public com.google.type.Date.Builder getSingleOccurrenceDateBuilder() {
       return getSingleOccurrenceDateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2540,7 +2473,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return com.google.type.Date.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2584,7 +2516,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public boolean hasDaily() {
       return recurrenceCase_ == 4;
     }
-
     /**
      *
      *
@@ -2603,7 +2534,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       }
       return false;
     }
-
     /**
      *
      *
@@ -2624,7 +2554,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2651,7 +2580,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekList.Builder,
             com.google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekListOrBuilder>
         daysOfWeekBuilder_;
-
     /**
      *
      *
@@ -2667,7 +2595,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
     public boolean hasDaysOfWeek() {
       return recurrenceCase_ == 5;
     }
-
     /**
      *
      *
@@ -2693,7 +2620,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2717,7 +2643,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       recurrenceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2738,7 +2663,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       recurrenceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2774,7 +2698,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       recurrenceCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2800,7 +2723,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2814,7 +2736,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         getDaysOfWeekBuilder() {
       return getDaysOfWeekFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2836,7 +2757,6 @@ public final class ExclusionWindow extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.gkebackup.v1.ExclusionWindow.DayOfWeekList.getDefaultInstance();
       }
     }
-
     /**
      *
      *

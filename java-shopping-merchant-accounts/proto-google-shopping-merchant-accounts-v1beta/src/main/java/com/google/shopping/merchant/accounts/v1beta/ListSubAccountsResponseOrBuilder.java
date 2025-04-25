@@ -34,7 +34,6 @@ public interface ListSubAccountsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Account accounts = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.Account> getAccountsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSubAccountsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Account accounts = 1;</code>
    */
   com.google.shopping.merchant.accounts.v1beta.Account getAccounts(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSubAccountsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.accounts.v1beta.Account accounts = 1;</code>
    */
   int getAccountsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSubAccountsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.accounts.v1beta.AccountOrBuilder>
       getAccountsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSubAccountsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

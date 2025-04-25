@@ -36,7 +36,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VpnGatewayOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface VpnGatewayOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the gatewayIpVersion field is set.
    */
   boolean hasGatewayIpVersion();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface VpnGatewayOrBuilder
    * @return The gatewayIpVersion.
    */
   java.lang.String getGatewayIpVersion();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface VpnGatewayOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface VpnGatewayOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
-
   /**
    *
    *
@@ -258,7 +247,6 @@ public interface VpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -269,11 +257,9 @@ public interface VpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -284,7 +270,6 @@ public interface VpnGatewayOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -299,7 +284,6 @@ public interface VpnGatewayOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -323,7 +307,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -336,7 +319,6 @@ public interface VpnGatewayOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -362,7 +344,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -375,7 +356,6 @@ public interface VpnGatewayOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -401,7 +381,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -414,7 +393,6 @@ public interface VpnGatewayOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -440,7 +418,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -453,7 +430,6 @@ public interface VpnGatewayOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -480,7 +456,6 @@ public interface VpnGatewayOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
-
   /**
    *
    *
@@ -494,7 +469,6 @@ public interface VpnGatewayOrBuilder
    * @return The stackType.
    */
   java.lang.String getStackType();
-
   /**
    *
    *
@@ -521,7 +495,6 @@ public interface VpnGatewayOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface> getVpnInterfacesList();
-
   /**
    *
    *
@@ -534,7 +507,6 @@ public interface VpnGatewayOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterface getVpnInterfaces(int index);
-
   /**
    *
    *
@@ -547,7 +519,6 @@ public interface VpnGatewayOrBuilder
    * </code>
    */
   int getVpnInterfacesCount();
-
   /**
    *
    *
@@ -561,7 +532,6 @@ public interface VpnGatewayOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.VpnGatewayVpnGatewayInterfaceOrBuilder>
       getVpnInterfacesOrBuilderList();
-
   /**
    *
    *

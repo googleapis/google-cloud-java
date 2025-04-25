@@ -34,7 +34,6 @@ public interface ListNotesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
   java.util.List<io.grafeas.v1beta1.Note> getNotesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNotesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
   io.grafeas.v1beta1.Note getNotes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNotesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
   int getNotesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListNotesResponseOrBuilder
    * <code>repeated .grafeas.v1beta1.Note notes = 1;</code>
    */
   java.util.List<? extends io.grafeas.v1beta1.NoteOrBuilder> getNotesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListNotesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

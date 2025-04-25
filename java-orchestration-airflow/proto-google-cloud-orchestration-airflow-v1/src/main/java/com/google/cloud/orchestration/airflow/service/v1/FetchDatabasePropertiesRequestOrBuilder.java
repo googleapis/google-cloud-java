@@ -39,7 +39,6 @@ public interface FetchDatabasePropertiesRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *

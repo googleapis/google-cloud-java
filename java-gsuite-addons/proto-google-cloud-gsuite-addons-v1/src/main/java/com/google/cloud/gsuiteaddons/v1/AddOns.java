@@ -33,7 +33,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gsuiteaddons.v1.AddOns)
     AddOnsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddOns.newBuilder() to construct.
   private AddOns(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int COMMON_FIELD_NUMBER = 1;
   private com.google.apps.script.type.CommonAddOnManifest common_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCommon() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.CommonAddOnManifest.getDefaultInstance()
         : common_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GMAIL_FIELD_NUMBER = 2;
   private com.google.apps.script.type.gmail.GmailAddOnManifest gmail_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGmail() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.gmail.GmailAddOnManifest.getDefaultInstance()
         : gmail_;
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DRIVE_FIELD_NUMBER = 5;
   private com.google.apps.script.type.drive.DriveAddOnManifest drive_;
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDrive() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.drive.DriveAddOnManifest.getDefaultInstance()
         : drive_;
   }
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CALENDAR_FIELD_NUMBER = 6;
   private com.google.apps.script.type.calendar.CalendarAddOnManifest calendar_;
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCalendar() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -258,7 +246,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.calendar.CalendarAddOnManifest.getDefaultInstance()
         : calendar_;
   }
-
   /**
    *
    *
@@ -278,7 +265,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOCS_FIELD_NUMBER = 7;
   private com.google.apps.script.type.docs.DocsAddOnManifest docs_;
-
   /**
    *
    *
@@ -294,7 +280,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocs() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -312,7 +297,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.docs.DocsAddOnManifest.getDefaultInstance()
         : docs_;
   }
-
   /**
    *
    *
@@ -331,7 +315,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SHEETS_FIELD_NUMBER = 8;
   private com.google.apps.script.type.sheets.SheetsAddOnManifest sheets_;
-
   /**
    *
    *
@@ -347,7 +330,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSheets() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -365,7 +347,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.sheets.SheetsAddOnManifest.getDefaultInstance()
         : sheets_;
   }
-
   /**
    *
    *
@@ -384,7 +365,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SLIDES_FIELD_NUMBER = 10;
   private com.google.apps.script.type.slides.SlidesAddOnManifest slides_;
-
   /**
    *
    *
@@ -400,7 +380,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSlides() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -418,7 +397,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.slides.SlidesAddOnManifest.getDefaultInstance()
         : slides_;
   }
-
   /**
    *
    *
@@ -437,7 +415,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HTTP_OPTIONS_FIELD_NUMBER = 15;
   private com.google.apps.script.type.HttpOptions httpOptions_;
-
   /**
    *
    *
@@ -453,7 +430,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpOptions() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -471,7 +447,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.script.type.HttpOptions.getDefaultInstance()
         : httpOptions_;
   }
-
   /**
    *
    *
@@ -749,7 +724,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1086,7 +1060,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.CommonAddOnManifest.Builder,
             com.google.apps.script.type.CommonAddOnManifestOrBuilder>
         commonBuilder_;
-
     /**
      *
      *
@@ -1101,7 +1074,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCommon() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1122,7 +1094,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return commonBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1116,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1136,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1163,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1182,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1229,7 +1196,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCommonFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1248,7 +1214,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : common_;
       }
     }
-
     /**
      *
      *
@@ -1281,7 +1246,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.gmail.GmailAddOnManifest.Builder,
             com.google.apps.script.type.gmail.GmailAddOnManifestOrBuilder>
         gmailBuilder_;
-
     /**
      *
      *
@@ -1296,7 +1260,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGmail() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1317,7 +1280,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return gmailBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1340,7 +1302,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1322,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1350,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1369,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1383,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGmailFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1444,7 +1401,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : gmail_;
       }
     }
-
     /**
      *
      *
@@ -1477,7 +1433,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.drive.DriveAddOnManifest.Builder,
             com.google.apps.script.type.drive.DriveAddOnManifestOrBuilder>
         driveBuilder_;
-
     /**
      *
      *
@@ -1492,7 +1447,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDrive() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1513,7 +1467,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return driveBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1536,7 +1489,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1557,7 +1509,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1586,7 +1537,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1606,7 +1556,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1570,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDriveFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1640,7 +1588,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : drive_;
       }
     }
-
     /**
      *
      *
@@ -1673,7 +1620,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.calendar.CalendarAddOnManifest.Builder,
             com.google.apps.script.type.calendar.CalendarAddOnManifestOrBuilder>
         calendarBuilder_;
-
     /**
      *
      *
@@ -1688,7 +1634,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCalendar() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1709,7 +1654,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return calendarBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1732,7 +1676,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1753,7 +1696,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1725,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1803,7 +1744,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1758,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCalendarFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1838,7 +1777,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : calendar_;
       }
     }
-
     /**
      *
      *
@@ -1871,7 +1809,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.docs.DocsAddOnManifest.Builder,
             com.google.apps.script.type.docs.DocsAddOnManifestOrBuilder>
         docsBuilder_;
-
     /**
      *
      *
@@ -1886,7 +1823,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocs() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1907,7 +1843,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return docsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1930,7 +1865,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1951,7 +1885,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1979,7 +1912,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1999,7 +1931,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1945,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDocsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2033,7 +1963,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : docs_;
       }
     }
-
     /**
      *
      *
@@ -2066,7 +1995,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.sheets.SheetsAddOnManifest.Builder,
             com.google.apps.script.type.sheets.SheetsAddOnManifestOrBuilder>
         sheetsBuilder_;
-
     /**
      *
      *
@@ -2081,7 +2009,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSheets() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2102,7 +2029,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return sheetsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2125,7 +2051,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2146,7 +2071,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2175,7 +2099,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2195,7 +2118,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2210,7 +2132,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSheetsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2229,7 +2150,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : sheets_;
       }
     }
-
     /**
      *
      *
@@ -2262,7 +2182,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.slides.SlidesAddOnManifest.Builder,
             com.google.apps.script.type.slides.SlidesAddOnManifestOrBuilder>
         slidesBuilder_;
-
     /**
      *
      *
@@ -2277,7 +2196,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSlides() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2298,7 +2216,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return slidesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2321,7 +2238,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2342,7 +2258,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2371,7 +2286,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2391,7 +2305,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2319,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSlidesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2425,7 +2337,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : slides_;
       }
     }
-
     /**
      *
      *
@@ -2458,7 +2369,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.script.type.HttpOptions.Builder,
             com.google.apps.script.type.HttpOptionsOrBuilder>
         httpOptionsBuilder_;
-
     /**
      *
      *
@@ -2473,7 +2383,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpOptions() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2494,7 +2403,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
         return httpOptionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2517,7 +2425,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2537,7 +2444,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2565,7 +2471,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2585,7 +2490,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2504,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHttpOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2619,7 +2522,6 @@ public final class AddOns extends com.google.protobuf.GeneratedMessageV3
             : httpOptions_;
       }
     }
-
     /**
      *
      *

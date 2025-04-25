@@ -35,7 +35,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
     // @@protoc_insertion_point(message_implements:google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest)
     ListMetricsScopesByMonitoredProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMetricsScopesByMonitoredProjectRequest.newBuilder() to construct.
   private ListMetricsScopesByMonitoredProjectRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object monitoredResourceContainer_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -295,7 +292,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -497,7 +493,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
     private int bitField0_;
 
     private java.lang.Object monitoredResourceContainer_ = "";
-
     /**
      *
      *
@@ -523,7 +518,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -549,7 +543,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -574,7 +567,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +587,6 @@ public final class ListMetricsScopesByMonitoredProjectRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

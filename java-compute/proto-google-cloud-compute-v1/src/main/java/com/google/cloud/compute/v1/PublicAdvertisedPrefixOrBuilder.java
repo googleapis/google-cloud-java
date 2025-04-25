@@ -37,7 +37,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the byoipApiVersion field is set.
    */
   boolean hasByoipApiVersion();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The byoipApiVersion.
    */
   java.lang.String getByoipApiVersion();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the dnsVerificationIp field is set.
    */
   boolean hasDnsVerificationIp();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The dnsVerificationIp.
    */
   java.lang.String getDnsVerificationIp();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -208,7 +199,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -312,7 +298,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -338,7 +323,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -351,7 +335,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -378,7 +361,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the pdpScope field is set.
    */
   boolean hasPdpScope();
-
   /**
    *
    *
@@ -392,7 +374,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The pdpScope.
    */
   java.lang.String getPdpScope();
-
   /**
    *
    *
@@ -420,7 +401,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix>
       getPublicDelegatedPrefixsList();
-
   /**
    *
    *
@@ -434,7 +414,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    */
   com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefix getPublicDelegatedPrefixs(
       int index);
-
   /**
    *
    *
@@ -447,7 +426,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * </code>
    */
   int getPublicDelegatedPrefixsCount();
-
   /**
    *
    *
@@ -463,7 +441,6 @@ public interface PublicAdvertisedPrefixOrBuilder
           ? extends
               com.google.cloud.compute.v1.PublicAdvertisedPrefixPublicDelegatedPrefixOrBuilder>
       getPublicDelegatedPrefixsOrBuilderList();
-
   /**
    *
    *
@@ -490,7 +467,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -503,7 +479,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -529,7 +504,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the sharedSecret field is set.
    */
   boolean hasSharedSecret();
-
   /**
    *
    *
@@ -542,7 +516,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The sharedSecret.
    */
   java.lang.String getSharedSecret();
-
   /**
    *
    *
@@ -569,7 +542,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -583,7 +555,6 @@ public interface PublicAdvertisedPrefixOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *

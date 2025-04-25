@@ -33,7 +33,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.budgets.v1.Filter)
     FilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Filter.newBuilder() to construct.
   private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -137,7 +136,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>CREDIT_TYPES_TREATMENT_UNSPECIFIED = 0;</code> */
     public static final int CREDIT_TYPES_TREATMENT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -149,7 +147,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>INCLUDE_ALL_CREDITS = 1;</code>
      */
     public static final int INCLUDE_ALL_CREDITS_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
      * <code>EXCLUDE_ALL_CREDITS = 2;</code>
      */
     public static final int EXCLUDE_ALL_CREDITS_VALUE = 2;
-
     /**
      *
      *
@@ -281,7 +277,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     private UsagePeriodCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -319,7 +314,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList projects_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -337,7 +331,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getProjectsList() {
     return projects_;
   }
-
   /**
    *
    *
@@ -355,7 +348,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getProjectsCount() {
     return projects_.size();
   }
-
   /**
    *
    *
@@ -374,7 +366,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getProjects(int index) {
     return projects_.get(index);
   }
-
   /**
    *
    *
@@ -399,7 +390,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceAncestors_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -420,7 +410,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getResourceAncestorsList() {
     return resourceAncestors_;
   }
-
   /**
    *
    *
@@ -441,7 +430,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getResourceAncestorsCount() {
     return resourceAncestors_.size();
   }
-
   /**
    *
    *
@@ -463,7 +451,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getResourceAncestors(int index) {
     return resourceAncestors_.get(index);
   }
-
   /**
    *
    *
@@ -491,7 +478,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList creditTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -515,7 +501,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getCreditTypesList() {
     return creditTypes_;
   }
-
   /**
    *
    *
@@ -539,7 +524,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getCreditTypesCount() {
     return creditTypes_.size();
   }
-
   /**
    *
    *
@@ -564,7 +548,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getCreditTypes(int index) {
     return creditTypes_.get(index);
   }
-
   /**
    *
    *
@@ -592,7 +575,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREDIT_TYPES_TREATMENT_FIELD_NUMBER = 4;
   private int creditTypesTreatment_ = 0;
-
   /**
    *
    *
@@ -610,7 +592,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getCreditTypesTreatmentValue() {
     return creditTypesTreatment_;
   }
-
   /**
    *
    *
@@ -639,7 +620,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList services_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -659,7 +639,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getServicesList() {
     return services_;
   }
-
   /**
    *
    *
@@ -679,7 +658,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getServicesCount() {
     return services_.size();
   }
-
   /**
    *
    *
@@ -700,7 +678,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getServices(int index) {
     return services_.get(index);
   }
-
   /**
    *
    *
@@ -727,7 +704,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subaccounts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -747,7 +723,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSubaccountsList() {
     return subaccounts_;
   }
-
   /**
    *
    *
@@ -767,7 +742,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getSubaccountsCount() {
     return subaccounts_.size();
   }
-
   /**
    *
    *
@@ -788,7 +762,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSubaccounts(int index) {
     return subaccounts_.get(index);
   }
-
   /**
    *
    *
@@ -839,7 +812,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -866,14 +838,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -897,7 +867,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -929,7 +898,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -963,7 +931,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CALENDAR_PERIOD_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -985,7 +952,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCalendarPeriod() {
     return usagePeriodCase_ == 8;
   }
-
   /**
    *
    *
@@ -1010,7 +976,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
-
   /**
    *
    *
@@ -1042,7 +1007,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_PERIOD_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -1061,7 +1025,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomPeriod() {
     return usagePeriodCase_ == 9;
   }
-
   /**
    *
    *
@@ -1083,7 +1046,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.billing.budgets.v1.CustomPeriod.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1405,7 +1367,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1803,7 +1764,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -1822,7 +1782,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       projects_.makeImmutable();
       return projects_;
     }
-
     /**
      *
      *
@@ -1840,7 +1799,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getProjectsCount() {
       return projects_.size();
     }
-
     /**
      *
      *
@@ -1859,7 +1817,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getProjects(int index) {
       return projects_.get(index);
     }
-
     /**
      *
      *
@@ -1878,7 +1835,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getProjectsBytes(int index) {
       return projects_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1905,7 +1861,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1931,7 +1886,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1954,7 +1908,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1976,7 +1929,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2013,7 +1965,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -2036,7 +1987,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       resourceAncestors_.makeImmutable();
       return resourceAncestors_;
     }
-
     /**
      *
      *
@@ -2058,7 +2008,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getResourceAncestorsCount() {
       return resourceAncestors_.size();
     }
-
     /**
      *
      *
@@ -2081,7 +2030,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getResourceAncestors(int index) {
       return resourceAncestors_.get(index);
     }
-
     /**
      *
      *
@@ -2104,7 +2052,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getResourceAncestorsBytes(int index) {
       return resourceAncestors_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2135,7 +2082,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2165,7 +2111,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2192,7 +2137,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2218,7 +2162,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2259,7 +2202,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2284,7 +2226,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       creditTypes_.makeImmutable();
       return creditTypes_;
     }
-
     /**
      *
      *
@@ -2308,7 +2249,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getCreditTypesCount() {
       return creditTypes_.size();
     }
-
     /**
      *
      *
@@ -2333,7 +2273,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getCreditTypes(int index) {
       return creditTypes_.get(index);
     }
-
     /**
      *
      *
@@ -2358,7 +2297,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getCreditTypesBytes(int index) {
       return creditTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2391,7 +2329,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2423,7 +2360,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2452,7 +2388,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2480,7 +2415,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2515,7 +2449,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int creditTypesTreatment_ = 0;
-
     /**
      *
      *
@@ -2533,7 +2466,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getCreditTypesTreatmentValue() {
       return creditTypesTreatment_;
     }
-
     /**
      *
      *
@@ -2554,7 +2486,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2578,7 +2509,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.billing.budgets.v1.Filter.CreditTypesTreatment.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2603,7 +2533,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2633,7 +2562,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2654,7 +2582,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       services_.makeImmutable();
       return services_;
     }
-
     /**
      *
      *
@@ -2674,7 +2601,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getServicesCount() {
       return services_.size();
     }
-
     /**
      *
      *
@@ -2695,7 +2621,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getServices(int index) {
       return services_.get(index);
     }
-
     /**
      *
      *
@@ -2716,7 +2641,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getServicesBytes(int index) {
       return services_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2745,7 +2669,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2773,7 +2696,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2798,7 +2720,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2822,7 +2743,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2861,7 +2781,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -2882,7 +2801,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       subaccounts_.makeImmutable();
       return subaccounts_;
     }
-
     /**
      *
      *
@@ -2902,7 +2820,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getSubaccountsCount() {
       return subaccounts_.size();
     }
-
     /**
      *
      *
@@ -2923,7 +2840,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSubaccounts(int index) {
       return subaccounts_.get(index);
     }
-
     /**
      *
      *
@@ -2944,7 +2860,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSubaccountsBytes(int index) {
       return subaccounts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2973,7 +2888,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3001,7 +2915,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3026,7 +2939,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3050,7 +2962,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3098,8 +3009,7 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return LabelsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final LabelsConverter labelsConverter = new LabelsConverter();
 
@@ -3139,7 +3049,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -3166,14 +3075,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -3197,7 +3104,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getLabelsMap() {
       return internalGetLabels().getImmutableMap();
     }
-
     /**
      *
      *
@@ -3229,7 +3135,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableLabels().ensureBuilderMap();
       return map.containsKey(key) ? labelsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -3267,7 +3172,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3294,14 +3198,12 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.ListValue> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -3332,7 +3234,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -3364,7 +3265,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -3421,7 +3321,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCalendarPeriod() {
       return usagePeriodCase_ == 8;
     }
-
     /**
      *
      *
@@ -3447,7 +3346,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -3473,7 +3371,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3504,7 +3401,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.billing.budgets.v1.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
     }
-
     /**
      *
      *
@@ -3533,7 +3429,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3566,7 +3461,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.billing.budgets.v1.CustomPeriod.Builder,
             com.google.cloud.billing.budgets.v1.CustomPeriodOrBuilder>
         customPeriodBuilder_;
-
     /**
      *
      *
@@ -3585,7 +3479,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomPeriod() {
       return usagePeriodCase_ == 9;
     }
-
     /**
      *
      *
@@ -3614,7 +3507,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.billing.budgets.v1.CustomPeriod.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3640,7 +3532,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       usagePeriodCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3664,7 +3555,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       usagePeriodCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3701,7 +3591,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       usagePeriodCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3730,7 +3619,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3746,7 +3634,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.billing.budgets.v1.CustomPeriod.Builder getCustomPeriodBuilder() {
       return getCustomPeriodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3770,7 +3657,6 @@ public final class Filter extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.billing.budgets.v1.CustomPeriod.getDefaultInstance();
       }
     }
-
     /**
      *
      *

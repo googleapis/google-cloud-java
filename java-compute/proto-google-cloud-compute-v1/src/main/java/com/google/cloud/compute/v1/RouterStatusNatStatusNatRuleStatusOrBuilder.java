@@ -36,7 +36,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return A list containing the activeNatIps.
    */
   java.util.List<java.lang.String> getActiveNatIpsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return The count of activeNatIps.
    */
   int getActiveNatIpsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return The activeNatIps at the given index.
    */
   java.lang.String getActiveNatIps(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return A list containing the drainNatIps.
    */
   java.util.List<java.lang.String> getDrainNatIpsList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return The count of drainNatIps.
    */
   int getDrainNatIpsCount();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return The drainNatIps at the given index.
    */
   java.lang.String getDrainNatIps(int index);
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return Whether the minExtraIpsNeeded field is set.
    */
   boolean hasMinExtraIpsNeeded();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return Whether the numVmEndpointsWithNatMappings field is set.
    */
   boolean hasNumVmEndpointsWithNatMappings();
-
   /**
    *
    *
@@ -196,7 +188,6 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    * @return Whether the ruleNumber field is set.
    */
   boolean hasRuleNumber();
-
   /**
    *
    *

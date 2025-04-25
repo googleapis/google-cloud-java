@@ -37,7 +37,6 @@ public interface LocationsMetadataOrBuilder
    * @return Whether the languages field is set.
    */
   boolean hasLanguages();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface LocationsMetadataOrBuilder
    * @return The languages.
    */
   com.google.cloud.speech.v2.LanguageMetadata getLanguages();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface LocationsMetadataOrBuilder
    * @return Whether the accessMetadata field is set.
    */
   boolean hasAccessMetadata();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface LocationsMetadataOrBuilder
    * @return The accessMetadata.
    */
   com.google.cloud.speech.v2.AccessMetadata getAccessMetadata();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface RepairApplicationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

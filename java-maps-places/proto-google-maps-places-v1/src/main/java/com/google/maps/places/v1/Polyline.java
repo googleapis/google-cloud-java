@@ -36,7 +36,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.Polyline)
     PolylineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Polyline.newBuilder() to construct.
   private Polyline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     private PolylineTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENCODED_POLYLINE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEncodedPolyline() {
     return polylineTypeCase_ == 1;
   }
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +374,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -614,7 +608,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncodedPolyline() {
       return polylineTypeCase_ == 1;
     }
-
     /**
      *
      *
@@ -651,7 +644,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -688,7 +680,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -718,7 +709,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +736,6 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.DeleteTargetProjectRequest)
     DeleteTargetProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteTargetProjectRequest.newBuilder() to construct.
   private DeleteTargetProjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +363,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +562,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -593,7 +586,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -618,7 +610,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -642,7 +633,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class DeleteTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

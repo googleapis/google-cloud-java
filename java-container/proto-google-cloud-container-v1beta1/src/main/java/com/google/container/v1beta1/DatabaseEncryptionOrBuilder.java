@@ -37,7 +37,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return The keyName.
    */
   java.lang.String getKeyName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return Whether the currentState field is set.
    */
   boolean hasCurrentState();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return The enum numeric value on the wire for currentState.
    */
   int getCurrentStateValue();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return A list containing the decryptionKeys.
    */
   java.util.List<java.lang.String> getDecryptionKeysList();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return The count of decryptionKeys.
    */
   int getDecryptionKeysCount();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface DatabaseEncryptionOrBuilder
    * @return The decryptionKeys at the given index.
    */
   java.lang.String getDecryptionKeys(int index);
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface DatabaseEncryptionOrBuilder
    */
   java.util.List<com.google.container.v1beta1.DatabaseEncryption.OperationError>
       getLastOperationErrorsList();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface DatabaseEncryptionOrBuilder
    * </code>
    */
   com.google.container.v1beta1.DatabaseEncryption.OperationError getLastOperationErrors(int index);
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public interface DatabaseEncryptionOrBuilder
    * </code>
    */
   int getLastOperationErrorsCount();
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public interface DatabaseEncryptionOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.DatabaseEncryption.OperationErrorOrBuilder>
       getLastOperationErrorsOrBuilderList();
-
   /**
    *
    *

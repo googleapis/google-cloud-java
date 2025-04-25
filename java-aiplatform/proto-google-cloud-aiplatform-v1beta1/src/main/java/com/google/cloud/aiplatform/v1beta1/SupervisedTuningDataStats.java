@@ -33,7 +33,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SupervisedTuningDataStats)
     SupervisedTuningDataStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SupervisedTuningDataStats.newBuilder() to construct.
   private SupervisedTuningDataStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int TUNING_DATASET_EXAMPLE_COUNT_FIELD_NUMBER = 1;
   private long tuningDatasetExampleCount_ = 0L;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   public static final int TOTAL_TUNING_CHARACTER_COUNT_FIELD_NUMBER = 2;
   private long totalTuningCharacterCount_ = 0L;
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   public static final int TOTAL_BILLABLE_CHARACTER_COUNT_FIELD_NUMBER = 3;
   private long totalBillableCharacterCount_ = 0L;
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   public static final int TOTAL_BILLABLE_TOKEN_COUNT_FIELD_NUMBER = 9;
   private long totalBillableTokenCount_ = 0L;
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   public static final int TUNING_STEP_COUNT_FIELD_NUMBER = 4;
   private long tuningStepCount_ = 0L;
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public static final int USER_INPUT_TOKEN_DISTRIBUTION_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
       userInputTokenDistribution_;
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public boolean hasUserInputTokenDistribution() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             .getDefaultInstance()
         : userInputTokenDistribution_;
   }
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public static final int USER_OUTPUT_TOKEN_DISTRIBUTION_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
       userOutputTokenDistribution_;
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public boolean hasUserOutputTokenDistribution() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             .getDefaultInstance()
         : userOutputTokenDistribution_;
   }
-
   /**
    *
    *
@@ -300,7 +288,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public static final int USER_MESSAGE_PER_EXAMPLE_DISTRIBUTION_FIELD_NUMBER = 7;
   private com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
       userMessagePerExampleDistribution_;
-
   /**
    *
    *
@@ -318,7 +305,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public boolean hasUserMessagePerExampleDistribution() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -340,7 +326,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             .getDefaultInstance()
         : userMessagePerExampleDistribution_;
   }
-
   /**
    *
    *
@@ -365,7 +350,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> userDatasetExamples_;
-
   /**
    *
    *
@@ -381,7 +365,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getUserDatasetExamplesList() {
     return userDatasetExamples_;
   }
-
   /**
    *
    *
@@ -398,7 +381,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       getUserDatasetExamplesOrBuilderList() {
     return userDatasetExamples_;
   }
-
   /**
    *
    *
@@ -414,7 +396,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public int getUserDatasetExamplesCount() {
     return userDatasetExamples_.size();
   }
-
   /**
    *
    *
@@ -430,7 +411,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public com.google.cloud.aiplatform.v1beta1.Content getUserDatasetExamples(int index) {
     return userDatasetExamples_.get(index);
   }
-
   /**
    *
    *
@@ -450,7 +430,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   public static final int TOTAL_TRUNCATED_EXAMPLE_COUNT_FIELD_NUMBER = 10;
   private long totalTruncatedExampleCount_ = 0L;
-
   /**
    *
    *
@@ -472,7 +451,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.LongList truncatedExampleIndices_ = emptyLongList();
-
   /**
    *
    *
@@ -489,7 +467,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public java.util.List<java.lang.Long> getTruncatedExampleIndicesList() {
     return truncatedExampleIndices_;
   }
-
   /**
    *
    *
@@ -505,7 +482,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
   public int getTruncatedExampleIndicesCount() {
     return truncatedExampleIndices_.size();
   }
-
   /**
    *
    *
@@ -824,7 +800,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1251,7 +1226,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     private int bitField0_;
 
     private long tuningDatasetExampleCount_;
-
     /**
      *
      *
@@ -1268,7 +1242,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTuningDatasetExampleCount() {
       return tuningDatasetExampleCount_;
     }
-
     /**
      *
      *
@@ -1289,7 +1262,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1310,7 +1282,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     }
 
     private long totalTuningCharacterCount_;
-
     /**
      *
      *
@@ -1327,7 +1298,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTotalTuningCharacterCount() {
       return totalTuningCharacterCount_;
     }
-
     /**
      *
      *
@@ -1348,7 +1318,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1369,7 +1338,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     }
 
     private long totalBillableCharacterCount_;
-
     /**
      *
      *
@@ -1391,7 +1359,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTotalBillableCharacterCount() {
       return totalBillableCharacterCount_;
     }
-
     /**
      *
      *
@@ -1417,7 +1384,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1443,7 +1409,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     }
 
     private long totalBillableTokenCount_;
-
     /**
      *
      *
@@ -1460,7 +1425,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTotalBillableTokenCount() {
       return totalBillableTokenCount_;
     }
-
     /**
      *
      *
@@ -1481,7 +1445,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1502,7 +1465,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     }
 
     private long tuningStepCount_;
-
     /**
      *
      *
@@ -1518,7 +1480,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTuningStepCount() {
       return tuningStepCount_;
     }
-
     /**
      *
      *
@@ -1538,7 +1499,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1524,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution.Builder,
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionOrBuilder>
         userInputTokenDistributionBuilder_;
-
     /**
      *
      *
@@ -1581,7 +1540,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public boolean hasUserInputTokenDistribution() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1606,7 +1564,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userInputTokenDistributionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1632,7 +1589,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1656,7 +1612,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1644,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1665,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1729,7 +1682,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return getUserInputTokenDistributionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1752,7 +1704,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             : userInputTokenDistribution_;
       }
     }
-
     /**
      *
      *
@@ -1788,7 +1739,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution.Builder,
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionOrBuilder>
         userOutputTokenDistributionBuilder_;
-
     /**
      *
      *
@@ -1805,7 +1755,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public boolean hasUserOutputTokenDistribution() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1830,7 +1779,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userOutputTokenDistributionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1856,7 +1804,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1880,7 +1827,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1913,7 +1859,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1935,7 +1880,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1953,7 +1897,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return getUserOutputTokenDistributionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1976,7 +1919,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             : userOutputTokenDistribution_;
       }
     }
-
     /**
      *
      *
@@ -2012,7 +1954,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution.Builder,
             com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistributionOrBuilder>
         userMessagePerExampleDistributionBuilder_;
-
     /**
      *
      *
@@ -2029,7 +1970,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public boolean hasUserMessagePerExampleDistribution() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2054,7 +1994,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userMessagePerExampleDistributionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2080,7 +2019,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2104,7 +2042,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2137,7 +2074,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2159,7 +2095,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2177,7 +2112,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return getUserMessagePerExampleDistributionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2200,7 +2134,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
             : userMessagePerExampleDistribution_;
       }
     }
-
     /**
      *
      *
@@ -2266,7 +2199,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userDatasetExamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2285,7 +2217,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userDatasetExamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2304,7 +2235,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userDatasetExamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2330,7 +2260,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2353,7 +2282,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2306,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2404,7 +2331,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2427,7 +2353,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2450,7 +2375,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2473,7 +2397,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2495,7 +2418,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2517,7 +2439,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -2533,7 +2454,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         int index) {
       return getUserDatasetExamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2553,7 +2473,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return userDatasetExamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2573,7 +2492,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(userDatasetExamples_);
       }
     }
-
     /**
      *
      *
@@ -2589,7 +2507,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       return getUserDatasetExamplesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2606,7 +2523,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       return getUserDatasetExamplesFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2644,7 +2560,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     }
 
     private long totalTruncatedExampleCount_;
-
     /**
      *
      *
@@ -2661,7 +2576,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTotalTruncatedExampleCount() {
       return totalTruncatedExampleCount_;
     }
-
     /**
      *
      *
@@ -2682,7 +2596,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2710,7 +2623,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000400;
     }
-
     /**
      *
      *
@@ -2727,7 +2639,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       truncatedExampleIndices_.makeImmutable();
       return truncatedExampleIndices_;
     }
-
     /**
      *
      *
@@ -2743,7 +2654,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public int getTruncatedExampleIndicesCount() {
       return truncatedExampleIndices_.size();
     }
-
     /**
      *
      *
@@ -2760,7 +2670,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
     public long getTruncatedExampleIndices(int index) {
       return truncatedExampleIndices_.getLong(index);
     }
-
     /**
      *
      *
@@ -2783,7 +2692,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2805,7 +2713,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2827,7 +2734,6 @@ public final class SupervisedTuningDataStats extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

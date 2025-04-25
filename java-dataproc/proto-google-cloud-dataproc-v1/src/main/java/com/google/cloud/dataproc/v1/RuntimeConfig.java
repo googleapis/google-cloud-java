@@ -33,7 +33,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.RuntimeConfig)
     RuntimeConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RuntimeConfig.newBuilder() to construct.
   private RuntimeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object containerImage_ = "";
-
   /**
    *
    *
@@ -161,7 +157,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +208,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -232,14 +226,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
-
   /**
    *
    *
@@ -278,7 +269,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REPOSITORY_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dataproc.v1.RepositoryConfig repositoryConfig_;
-
   /**
    *
    *
@@ -322,7 +311,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRepositoryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.RepositoryConfig.getDefaultInstance()
         : repositoryConfig_;
   }
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOTUNING_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.dataproc.v1.AutotuningConfig autotuningConfig_;
-
   /**
    *
    *
@@ -381,7 +367,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutotuningConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -401,7 +386,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.AutotuningConfig.getDefaultInstance()
         : autotuningConfig_;
   }
-
   /**
    *
    *
@@ -424,7 +408,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cohort_ = "";
-
   /**
    *
    *
@@ -449,7 +432,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -697,7 +679,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1004,7 +985,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1027,7 +1007,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1029,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1050,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1091,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object containerImage_ = "";
-
     /**
      *
      *
@@ -1139,7 +1114,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1137,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1159,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1177,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1258,7 +1229,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
-
     /**
      *
      *
@@ -1277,14 +1247,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().getMap().containsKey(key);
     }
-
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
-
     /**
      *
      *
@@ -1300,7 +1268,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
-
     /**
      *
      *
@@ -1323,7 +1290,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1352,7 +1318,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1371,14 +1336,12 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000004;
       return internalGetMutableProperties().getMutableMap();
     }
-
     /**
      *
      *
@@ -1401,7 +1364,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1387,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.RepositoryConfig.Builder,
             com.google.cloud.dataproc.v1.RepositoryConfigOrBuilder>
         repositoryConfigBuilder_;
-
     /**
      *
      *
@@ -1442,7 +1403,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRepositoryConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1465,7 +1425,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return repositoryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1490,7 +1449,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1471,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1501,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1566,7 +1522,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1583,7 +1538,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRepositoryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1604,7 +1558,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             : repositoryConfig_;
       }
     }
-
     /**
      *
      *
@@ -1639,7 +1592,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.AutotuningConfig.Builder,
             com.google.cloud.dataproc.v1.AutotuningConfigOrBuilder>
         autotuningConfigBuilder_;
-
     /**
      *
      *
@@ -1656,7 +1608,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutotuningConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1679,7 +1630,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return autotuningConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1704,7 +1654,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1676,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1706,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1780,7 +1727,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1743,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAutotuningConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1818,7 +1763,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
             : autotuningConfig_;
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1792,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cohort_ = "";
-
     /**
      *
      *
@@ -1872,7 +1815,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1896,7 +1838,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1919,7 +1860,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1938,7 +1878,6 @@ public final class RuntimeConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

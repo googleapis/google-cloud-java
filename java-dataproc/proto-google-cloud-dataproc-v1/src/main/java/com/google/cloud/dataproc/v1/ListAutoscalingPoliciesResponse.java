@@ -33,7 +33,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse)
     ListAutoscalingPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAutoscalingPoliciesResponse.newBuilder() to construct.
   private ListAutoscalingPoliciesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.AutoscalingPolicy> policies_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloud.dataproc.v1.AutoscalingPolicy> getPoliciesList() {
     return policies_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       getPoliciesOrBuilderList() {
     return policies_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
   public int getPoliciesCount() {
     return policies_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
   public com.google.cloud.dataproc.v1.AutoscalingPolicy getPolicies(int index) {
     return policies_.get(index);
   }
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -378,7 +370,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return policiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return policiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return policiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +758,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +826,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +848,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +904,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
     public com.google.cloud.dataproc.v1.AutoscalingPolicy.Builder getPoliciesBuilder(int index) {
       return getPoliciesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return policiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(policies_);
       }
     }
-
     /**
      *
      *
@@ -980,7 +956,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       return getPoliciesFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.AutoscalingPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -996,7 +971,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       return getPoliciesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.AutoscalingPolicy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1031,7 +1005,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1055,7 +1028,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1051,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1073,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1091,6 @@ public final class ListAutoscalingPoliciesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

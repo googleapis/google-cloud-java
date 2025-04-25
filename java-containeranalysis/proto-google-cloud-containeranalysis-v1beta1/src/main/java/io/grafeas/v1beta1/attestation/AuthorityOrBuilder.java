@@ -36,7 +36,6 @@ public interface AuthorityOrBuilder
    * @return Whether the hint field is set.
    */
   boolean hasHint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AuthorityOrBuilder
    * @return The hint.
    */
   io.grafeas.v1beta1.attestation.Authority.Hint getHint();
-
   /**
    *
    *

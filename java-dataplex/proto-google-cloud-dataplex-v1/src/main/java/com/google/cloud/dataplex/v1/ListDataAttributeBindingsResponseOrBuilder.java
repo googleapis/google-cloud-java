@@ -35,7 +35,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataplex.v1.DataAttributeBinding> getDataAttributeBindingsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataAttributeBinding getDataAttributeBindings(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * </code>
    */
   int getDataAttributeBindingsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataplex.v1.DataAttributeBindingOrBuilder>
       getDataAttributeBindingsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * @return A list containing the unreachableLocations.
    */
   java.util.List<java.lang.String> getUnreachableLocationsList();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * @return The count of unreachableLocations.
    */
   int getUnreachableLocationsCount();
-
   /**
    *
    *
@@ -153,7 +146,6 @@ public interface ListDataAttributeBindingsResponseOrBuilder
    * @return The unreachableLocations at the given index.
    */
   java.lang.String getUnreachableLocations(int index);
-
   /**
    *
    *

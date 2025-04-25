@@ -34,7 +34,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo)
     ConfidentialSpaceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConfidentialSpaceInfo.newBuilder() to construct.
   private ConfidentialSpaceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.confidentialcomputing.v1.SignedEntity> signedEntities_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       getSignedEntitiesList() {
     return signedEntities_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       getSignedEntitiesOrBuilderList() {
     return signedEntities_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
   public int getSignedEntitiesCount() {
     return signedEntities_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
   public com.google.cloud.confidentialcomputing.v1.SignedEntity getSignedEntities(int index) {
     return signedEntities_.get(index);
   }
-
   /**
    *
    *
@@ -320,7 +314,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +587,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
         return signedEntitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -614,7 +606,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
         return signedEntitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
         return signedEntitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +795,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +817,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
         int index) {
       return getSignedEntitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -895,7 +875,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
         return signedEntitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -916,7 +895,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(signedEntities_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +912,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
       return getSignedEntitiesFieldBuilder()
           .addBuilder(com.google.cloud.confidentialcomputing.v1.SignedEntity.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class ConfidentialSpaceInfo extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.cloud.confidentialcomputing.v1.SignedEntity.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface PhraseSetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v1.PhraseSet.Phrase phrases = 2;</code>
    */
   java.util.List<com.google.cloud.speech.v1.PhraseSet.Phrase> getPhrasesList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v1.PhraseSet.Phrase phrases = 2;</code>
    */
   com.google.cloud.speech.v1.PhraseSet.Phrase getPhrases(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface PhraseSetOrBuilder
    * <code>repeated .google.cloud.speech.v1.PhraseSet.Phrase phrases = 2;</code>
    */
   int getPhrasesCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface PhraseSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1.PhraseSet.PhraseOrBuilder>
       getPhrasesOrBuilderList();
-
   /**
    *
    *

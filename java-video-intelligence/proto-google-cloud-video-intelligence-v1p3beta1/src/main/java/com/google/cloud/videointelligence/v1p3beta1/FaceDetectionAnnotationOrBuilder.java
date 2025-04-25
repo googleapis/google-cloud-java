@@ -34,7 +34,6 @@ public interface FaceDetectionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.Track> getTracksList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FaceDetectionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.Track getTracks(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FaceDetectionAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.Track tracks = 3;</code>
    */
   int getTracksCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FaceDetectionAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TrackOrBuilder>
       getTracksOrBuilderList();
-
   /**
    *
    *

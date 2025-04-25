@@ -37,7 +37,6 @@ public interface PacketTypeOrBuilder
    * @return The typeClass.
    */
   java.lang.String getTypeClass();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PacketTypeOrBuilder
    * @return Whether the typeDescriptor field is set.
    */
   boolean hasTypeDescriptor();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PacketTypeOrBuilder
    * @return The typeDescriptor.
    */
   com.google.cloud.visionai.v1.PacketType.TypeDescriptor getTypeDescriptor();
-
   /**
    *
    *

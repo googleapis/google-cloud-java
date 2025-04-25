@@ -33,7 +33,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SummarizationHelpfulnessSpec)
     SummarizationHelpfulnessSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SummarizationHelpfulnessSpec.newBuilder() to construct.
   private SummarizationHelpfulnessSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
 
   public static final int USE_REFERENCE_FIELD_NUMBER = 1;
   private boolean useReference_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
 
   public static final int VERSION_FIELD_NUMBER = 2;
   private int version_ = 0;
-
   /**
    *
    *
@@ -270,7 +267,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -466,7 +462,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
     private int bitField0_;
 
     private boolean useReference_;
-
     /**
      *
      *
@@ -483,7 +478,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
     public boolean getUseReference() {
       return useReference_;
     }
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
     }
 
     private int version_;
-
     /**
      *
      *
@@ -541,7 +533,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
     public int getVersion() {
       return version_;
     }
-
     /**
      *
      *
@@ -561,7 +552,6 @@ public final class SummarizationHelpfulnessSpec extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

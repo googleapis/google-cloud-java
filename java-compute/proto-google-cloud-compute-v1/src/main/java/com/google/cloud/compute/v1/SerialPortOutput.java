@@ -33,7 +33,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SerialPortOutput)
     SerialPortOutputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SerialPortOutput.newBuilder() to construct.
   private SerialPortOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object contents_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   public boolean hasContents() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   public static final int NEXT_FIELD_NUMBER = 3377907;
   private long next_ = 0L;
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   public boolean hasNext() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -244,7 +235,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -284,7 +273,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -311,7 +299,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
 
   public static final int START_FIELD_NUMBER = 109757538;
   private long start_ = 0L;
-
   /**
    *
    *
@@ -327,7 +314,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
   public boolean hasStart() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -564,7 +550,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -811,7 +796,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object contents_ = "";
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public boolean hasContents() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +916,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public boolean hasKind() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -975,7 +952,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1020,7 +995,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1063,7 +1036,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
 
     private long next_;
-
     /**
      *
      *
@@ -1079,7 +1051,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public boolean hasNext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1095,7 +1066,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public long getNext() {
       return next_;
     }
-
     /**
      *
      *
@@ -1115,7 +1085,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1104,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -1150,7 +1118,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1173,7 +1140,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1196,7 +1162,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1218,7 +1183,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1200,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1224,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
 
     private long start_;
-
     /**
      *
      *
@@ -1277,7 +1239,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public boolean hasStart() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1293,7 +1254,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     public long getStart() {
       return start_;
     }
-
     /**
      *
      *
@@ -1313,7 +1273,6 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

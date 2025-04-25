@@ -34,7 +34,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.kms.inventory.v1.ListCryptoKeysResponse)
     ListCryptoKeysResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCryptoKeysResponse.newBuilder() to construct.
   private ListCryptoKeysResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.kms.v1.CryptoKey> cryptoKeys_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.kms.v1.CryptoKey> getCryptoKeysList() {
     return cryptoKeys_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       getCryptoKeysOrBuilderList() {
     return cryptoKeys_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
   public int getCryptoKeysCount() {
     return cryptoKeys_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.kms.v1.CryptoKey getCryptoKeys(int index) {
     return cryptoKeys_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -646,7 +637,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return cryptoKeysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return cryptoKeysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -680,7 +669,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return cryptoKeysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -703,7 +691,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +711,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +733,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.kms.v1.CryptoKey.Builder getCryptoKeysBuilder(int index) {
       return getCryptoKeysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return cryptoKeysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(cryptoKeys_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       return getCryptoKeysFieldBuilder()
           .addBuilder(com.google.cloud.kms.v1.CryptoKey.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       return getCryptoKeysFieldBuilder()
           .addBuilder(index, com.google.cloud.kms.v1.CryptoKey.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -980,7 +954,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1004,7 +977,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1000,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1022,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1040,6 @@ public final class ListCryptoKeysResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

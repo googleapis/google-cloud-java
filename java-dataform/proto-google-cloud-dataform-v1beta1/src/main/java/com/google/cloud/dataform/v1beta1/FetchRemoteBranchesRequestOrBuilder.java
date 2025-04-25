@@ -38,7 +38,6 @@ public interface FetchRemoteBranchesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

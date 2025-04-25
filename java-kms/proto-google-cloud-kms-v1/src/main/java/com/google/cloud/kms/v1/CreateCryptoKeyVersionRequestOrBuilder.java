@@ -40,7 +40,6 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * @return Whether the cryptoKeyVersion field is set.
    */
   boolean hasCryptoKeyVersion();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CreateCryptoKeyVersionRequestOrBuilder
    * @return The cryptoKeyVersion.
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion();
-
   /**
    *
    *

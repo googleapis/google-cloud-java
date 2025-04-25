@@ -49,7 +49,6 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return Whether the kmsKeyName field is set.
    */
   boolean hasKmsKeyName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CustomerEncryptionKeyOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *

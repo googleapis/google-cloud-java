@@ -41,7 +41,6 @@ public interface ListMembershipsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface ListMembershipsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -165,7 +163,6 @@ public interface ListMembershipsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

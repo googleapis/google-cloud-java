@@ -34,7 +34,6 @@ public interface CropHintsAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.CropHint crop_hints = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p2beta1.CropHint> getCropHintsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface CropHintsAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.CropHint crop_hints = 1;</code>
    */
   com.google.cloud.vision.v1p2beta1.CropHint getCropHints(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface CropHintsAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p2beta1.CropHint crop_hints = 1;</code>
    */
   int getCropHintsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface CropHintsAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p2beta1.CropHintOrBuilder>
       getCropHintsOrBuilderList();
-
   /**
    *
    *

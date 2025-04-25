@@ -44,7 +44,6 @@ public interface HttpRequestOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface HttpRequestOrBuilder
    * @return The enum numeric value on the wire for httpMethod.
    */
   int getHttpMethodValue();
-
   /**
    *
    *
@@ -132,7 +130,6 @@ public interface HttpRequestOrBuilder
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   int getHeadersCount();
-
   /**
    *
    *
@@ -173,11 +170,9 @@ public interface HttpRequestOrBuilder
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   boolean containsHeaders(java.lang.String key);
-
   /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getHeaders();
-
   /**
    *
    *
@@ -218,7 +213,6 @@ public interface HttpRequestOrBuilder
    * <code>map&lt;string, string&gt; headers = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
-
   /**
    *
    *
@@ -263,7 +257,6 @@ public interface HttpRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -341,7 +334,6 @@ public interface HttpRequestOrBuilder
    * @return Whether the oauthToken field is set.
    */
   boolean hasOauthToken();
-
   /**
    *
    *
@@ -360,7 +352,6 @@ public interface HttpRequestOrBuilder
    * @return The oauthToken.
    */
   com.google.cloud.tasks.v2beta3.OAuthToken getOauthToken();
-
   /**
    *
    *
@@ -397,7 +388,6 @@ public interface HttpRequestOrBuilder
    * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
-
   /**
    *
    *
@@ -417,7 +407,6 @@ public interface HttpRequestOrBuilder
    * @return The oidcToken.
    */
   com.google.cloud.tasks.v2beta3.OidcToken getOidcToken();
-
   /**
    *
    *

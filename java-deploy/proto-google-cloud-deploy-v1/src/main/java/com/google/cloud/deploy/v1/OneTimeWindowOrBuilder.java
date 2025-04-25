@@ -36,7 +36,6 @@ public interface OneTimeWindowOrBuilder
    * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface OneTimeWindowOrBuilder
    * @return The startDate.
    */
   com.google.type.Date getStartDate();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface OneTimeWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface OneTimeWindowOrBuilder
    * @return The startTime.
    */
   com.google.type.TimeOfDay getStartTime();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface OneTimeWindowOrBuilder
    * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface OneTimeWindowOrBuilder
    * @return The endDate.
    */
   com.google.type.Date getEndDate();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface OneTimeWindowOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface OneTimeWindowOrBuilder
    * @return The endTime.
    */
   com.google.type.TimeOfDay getEndTime();
-
   /**
    *
    *

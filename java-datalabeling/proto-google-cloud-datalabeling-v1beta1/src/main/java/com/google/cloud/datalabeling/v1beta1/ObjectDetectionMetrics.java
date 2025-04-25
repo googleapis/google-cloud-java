@@ -33,7 +33,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics)
     ObjectDetectionMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ObjectDetectionMetrics.newBuilder() to construct.
   private ObjectDetectionMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int PR_CURVE_FIELD_NUMBER = 1;
   private com.google.cloud.datalabeling.v1beta1.PrCurve prCurve_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
   public boolean hasPrCurve() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
         ? com.google.cloud.datalabeling.v1beta1.PrCurve.getDefaultInstance()
         : prCurve_;
   }
-
   /**
    *
    *
@@ -281,7 +277,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -488,7 +483,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
             com.google.cloud.datalabeling.v1beta1.PrCurve.Builder,
             com.google.cloud.datalabeling.v1beta1.PrCurveOrBuilder>
         prCurveBuilder_;
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
     public boolean hasPrCurve() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
         return prCurveBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +559,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +605,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +619,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
       onChanged();
       return getPrCurveFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -650,7 +637,6 @@ public final class ObjectDetectionMetrics extends com.google.protobuf.GeneratedM
             : prCurve_;
       }
     }
-
     /**
      *
      *

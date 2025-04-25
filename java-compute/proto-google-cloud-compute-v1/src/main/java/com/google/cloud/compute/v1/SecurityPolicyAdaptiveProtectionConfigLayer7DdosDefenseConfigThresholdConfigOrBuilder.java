@@ -31,7 +31,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the autoDeployConfidenceThreshold field is set.
    */
   boolean hasAutoDeployConfidenceThreshold();
-
   /**
    * <code>optional float auto_deploy_confidence_threshold = 84309694;</code>
    *
@@ -45,7 +44,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the autoDeployExpirationSec field is set.
    */
   boolean hasAutoDeployExpirationSec();
-
   /**
    * <code>optional int32 auto_deploy_expiration_sec = 69638793;</code>
    *
@@ -59,7 +57,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the autoDeployImpactedBaselineThreshold field is set.
    */
   boolean hasAutoDeployImpactedBaselineThreshold();
-
   /**
    * <code>optional float auto_deploy_impacted_baseline_threshold = 292441667;</code>
    *
@@ -73,7 +70,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the autoDeployLoadThreshold field is set.
    */
   boolean hasAutoDeployLoadThreshold();
-
   /**
    * <code>optional float auto_deploy_load_threshold = 522227738;</code>
    *
@@ -87,7 +83,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the detectionAbsoluteQps field is set.
    */
   boolean hasDetectionAbsoluteQps();
-
   /**
    * <code>optional float detection_absolute_qps = 383123174;</code>
    *
@@ -101,7 +96,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the detectionLoadThreshold field is set.
    */
   boolean hasDetectionLoadThreshold();
-
   /**
    * <code>optional float detection_load_threshold = 430499148;</code>
    *
@@ -115,7 +109,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the detectionRelativeToBaselineQps field is set.
    */
   boolean hasDetectionRelativeToBaselineQps();
-
   /**
    * <code>optional float detection_relative_to_baseline_qps = 291343749;</code>
    *
@@ -135,7 +128,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -148,7 +140,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -177,7 +168,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
           com.google.cloud.compute.v1
               .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig>
       getTrafficGranularityConfigsList();
-
   /**
    *
    *
@@ -192,7 +182,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
   com.google.cloud.compute.v1
           .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig
       getTrafficGranularityConfigs(int index);
-
   /**
    *
    *
@@ -205,7 +194,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
    * </code>
    */
   int getTrafficGranularityConfigsCount();
-
   /**
    *
    *
@@ -222,7 +210,6 @@ interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThreshold
               com.google.cloud.compute.v1
                   .SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfigOrBuilder>
       getTrafficGranularityConfigsOrBuilderList();
-
   /**
    *
    *

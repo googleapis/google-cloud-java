@@ -33,7 +33,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.PreprocessingConfig)
     PreprocessingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PreprocessingConfig.newBuilder() to construct.
   private PreprocessingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     double getLufs();
   }
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.PreprocessingConfig.Audio)
       AudioOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Audio.newBuilder() to construct.
     private Audio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -136,7 +133,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int LUFS_FIELD_NUMBER = 1;
     private double lufs_ = 0D;
-
     /**
      *
      *
@@ -327,7 +323,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -517,7 +512,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private double lufs_;
-
       /**
        *
        *
@@ -543,7 +537,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public double getLufs() {
         return lufs_;
       }
-
       /**
        *
        *
@@ -573,7 +566,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -726,7 +718,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     int getRightPixels();
   }
-
   /**
    *
    *
@@ -742,7 +733,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.PreprocessingConfig.Crop)
       CropOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Crop.newBuilder() to construct.
     private Crop(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -773,7 +763,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int TOP_PIXELS_FIELD_NUMBER = 1;
     private int topPixels_ = 0;
-
     /**
      *
      *
@@ -792,7 +781,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int BOTTOM_PIXELS_FIELD_NUMBER = 2;
     private int bottomPixels_ = 0;
-
     /**
      *
      *
@@ -811,7 +799,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int LEFT_PIXELS_FIELD_NUMBER = 3;
     private int leftPixels_ = 0;
-
     /**
      *
      *
@@ -830,7 +817,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int RIGHT_PIXELS_FIELD_NUMBER = 4;
     private int rightPixels_ = 0;
-
     /**
      *
      *
@@ -1035,7 +1021,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1265,7 +1250,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int topPixels_;
-
       /**
        *
        *
@@ -1281,7 +1265,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getTopPixels() {
         return topPixels_;
       }
-
       /**
        *
        *
@@ -1301,7 +1284,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1321,7 +1303,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int bottomPixels_;
-
       /**
        *
        *
@@ -1337,7 +1318,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getBottomPixels() {
         return bottomPixels_;
       }
-
       /**
        *
        *
@@ -1357,7 +1337,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1377,7 +1356,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int leftPixels_;
-
       /**
        *
        *
@@ -1393,7 +1371,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getLeftPixels() {
         return leftPixels_;
       }
-
       /**
        *
        *
@@ -1413,7 +1390,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1433,7 +1409,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int rightPixels_;
-
       /**
        *
        *
@@ -1449,7 +1424,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getRightPixels() {
         return rightPixels_;
       }
-
       /**
        *
        *
@@ -1469,7 +1443,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1612,7 +1585,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     int getRightPixels();
   }
-
   /**
    *
    *
@@ -1628,7 +1600,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.PreprocessingConfig.Pad)
       PadOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Pad.newBuilder() to construct.
     private Pad(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1659,7 +1630,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int TOP_PIXELS_FIELD_NUMBER = 1;
     private int topPixels_ = 0;
-
     /**
      *
      *
@@ -1678,7 +1648,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int BOTTOM_PIXELS_FIELD_NUMBER = 2;
     private int bottomPixels_ = 0;
-
     /**
      *
      *
@@ -1697,7 +1666,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int LEFT_PIXELS_FIELD_NUMBER = 3;
     private int leftPixels_ = 0;
-
     /**
      *
      *
@@ -1716,7 +1684,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     public static final int RIGHT_PIXELS_FIELD_NUMBER = 4;
     private int rightPixels_ = 0;
-
     /**
      *
      *
@@ -1921,7 +1888,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2150,7 +2116,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int topPixels_;
-
       /**
        *
        *
@@ -2166,7 +2131,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getTopPixels() {
         return topPixels_;
       }
-
       /**
        *
        *
@@ -2186,7 +2150,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2206,7 +2169,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int bottomPixels_;
-
       /**
        *
        *
@@ -2222,7 +2184,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getBottomPixels() {
         return bottomPixels_;
       }
-
       /**
        *
        *
@@ -2242,7 +2203,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2262,7 +2222,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int leftPixels_;
-
       /**
        *
        *
@@ -2278,7 +2237,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getLeftPixels() {
         return leftPixels_;
       }
-
       /**
        *
        *
@@ -2298,7 +2256,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2318,7 +2275,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
 
       private int rightPixels_;
-
       /**
        *
        *
@@ -2334,7 +2290,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       public int getRightPixels() {
         return rightPixels_;
       }
-
       /**
        *
        *
@@ -2354,7 +2309,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2443,7 +2397,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int AUDIO_FIELD_NUMBER = 1;
   private com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio_;
-
   /**
    *
    *
@@ -2459,7 +2412,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   public boolean hasAudio() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2477,7 +2429,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance()
         : audio_;
   }
-
   /**
    *
    *
@@ -2497,7 +2448,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
   public static final int CROP_FIELD_NUMBER = 2;
   private com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop crop_;
-
   /**
    *
    *
@@ -2513,7 +2463,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   public boolean hasCrop() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2531,7 +2480,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop.getDefaultInstance()
         : crop_;
   }
-
   /**
    *
    *
@@ -2550,7 +2498,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
   public static final int PAD_FIELD_NUMBER = 3;
   private com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad pad_;
-
   /**
    *
    *
@@ -2566,7 +2513,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
   public boolean hasPad() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2584,7 +2530,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad.getDefaultInstance()
         : pad_;
   }
-
   /**
    *
    *
@@ -2794,7 +2739,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3036,7 +2980,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder,
             com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder>
         audioBuilder_;
-
     /**
      *
      *
@@ -3051,7 +2994,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public boolean hasAudio() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3072,7 +3014,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         return audioBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3095,7 +3036,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3116,7 +3056,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3147,7 +3086,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3167,7 +3105,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3183,7 +3120,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getAudioFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3203,7 +3139,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             : audio_;
       }
     }
-
     /**
      *
      *
@@ -3236,7 +3171,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop.Builder,
             com.google.cloud.video.livestream.v1.PreprocessingConfig.CropOrBuilder>
         cropBuilder_;
-
     /**
      *
      *
@@ -3251,7 +3185,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public boolean hasCrop() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3272,7 +3205,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         return cropBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3295,7 +3227,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3316,7 +3247,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3346,7 +3276,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3366,7 +3295,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3381,7 +3309,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getCropFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3401,7 +3328,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             : crop_;
       }
     }
-
     /**
      *
      *
@@ -3434,7 +3360,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad.Builder,
             com.google.cloud.video.livestream.v1.PreprocessingConfig.PadOrBuilder>
         padBuilder_;
-
     /**
      *
      *
@@ -3449,7 +3374,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public boolean hasPad() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3470,7 +3394,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
         return padBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3493,7 +3416,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3514,7 +3436,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3544,7 +3465,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3564,7 +3484,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3579,7 +3498,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       onChanged();
       return getPadFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3598,7 +3516,6 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             : pad_;
       }
     }
-
     /**
      *
      *

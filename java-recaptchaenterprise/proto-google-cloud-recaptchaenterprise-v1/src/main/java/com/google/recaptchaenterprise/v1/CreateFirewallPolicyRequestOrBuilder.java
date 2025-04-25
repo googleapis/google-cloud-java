@@ -39,7 +39,6 @@ public interface CreateFirewallPolicyRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicy field is set.
    */
   boolean hasFirewallPolicy();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicy();
-
   /**
    *
    *

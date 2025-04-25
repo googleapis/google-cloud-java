@@ -33,7 +33,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.IssueMatchData)
     IssueMatchDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IssueMatchData.newBuilder() to construct.
   private IssueMatchData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ISSUE_ASSIGNMENT_FIELD_NUMBER = 1;
   private com.google.cloud.contactcenterinsights.v1.IssueAssignment issueAssignment_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIssueAssignment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.contactcenterinsights.v1.IssueAssignment.getDefaultInstance()
         : issueAssignment_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +482,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contactcenterinsights.v1.IssueAssignment.Builder,
             com.google.cloud.contactcenterinsights.v1.IssueAssignmentOrBuilder>
         issueAssignmentBuilder_;
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIssueAssignment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
         return issueAssignmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +559,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +607,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -634,7 +622,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIssueAssignmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -654,7 +641,6 @@ public final class IssueMatchData extends com.google.protobuf.GeneratedMessageV3
             : issueAssignment_;
       }
     }
-
     /**
      *
      *

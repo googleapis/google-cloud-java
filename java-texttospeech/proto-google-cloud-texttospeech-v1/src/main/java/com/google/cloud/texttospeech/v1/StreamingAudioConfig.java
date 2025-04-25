@@ -33,7 +33,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.StreamingAudioConfig)
     StreamingAudioConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingAudioConfig.newBuilder() to construct.
   private StreamingAudioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
 
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
   public int getAudioEncodingValue() {
     return audioEncoding_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
   private int sampleRateHertz_ = 0;
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
 
   public static final int SPEAKING_RATE_FIELD_NUMBER = 3;
   private double speakingRate_ = 0D;
-
   /**
    *
    *
@@ -336,7 +331,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -545,7 +539,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int audioEncoding_ = 0;
-
     /**
      *
      *
@@ -565,7 +558,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     public int getAudioEncodingValue() {
       return audioEncoding_;
     }
-
     /**
      *
      *
@@ -588,7 +580,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
           com.google.cloud.texttospeech.v1.AudioEncoding.forNumber(audioEncoding_);
       return result == null ? com.google.cloud.texttospeech.v1.AudioEncoding.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +649,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     }
 
     private int sampleRateHertz_;
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +702,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     }
 
     private double speakingRate_;
-
     /**
      *
      *
@@ -737,7 +722,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
     public double getSpeakingRate() {
       return speakingRate_;
     }
-
     /**
      *
      *
@@ -762,7 +746,6 @@ public final class StreamingAudioConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

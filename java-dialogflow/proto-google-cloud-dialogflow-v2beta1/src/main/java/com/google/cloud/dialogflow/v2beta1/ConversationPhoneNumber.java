@@ -34,7 +34,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.ConversationPhoneNumber)
     ConversationPhoneNumberOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConversationPhoneNumber.newBuilder() to construct.
   private ConversationPhoneNumber(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
 
   public static final int COUNTRY_CODE_FIELD_NUMBER = 2;
   private int countryCode_ = 0;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phoneNumber_ = "";
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -306,7 +302,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -505,7 +500,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int countryCode_;
-
     /**
      *
      *
@@ -521,7 +515,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     public int getCountryCode() {
       return countryCode_;
     }
-
     /**
      *
      *
@@ -541,7 +534,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -561,7 +553,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
     }
 
     private java.lang.Object phoneNumber_ = "";
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +597,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -629,7 +618,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +635,6 @@ public final class ConversationPhoneNumber extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

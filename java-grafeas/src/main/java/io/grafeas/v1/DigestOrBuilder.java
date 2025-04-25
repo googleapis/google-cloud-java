@@ -37,7 +37,6 @@ public interface DigestOrBuilder
    * @return The algo.
    */
   java.lang.String getAlgo();
-
   /**
    *
    *

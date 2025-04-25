@@ -37,7 +37,6 @@ public interface UpdateTaxonomyRequestOrBuilder
    * @return Whether the taxonomy field is set.
    */
   boolean hasTaxonomy();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateTaxonomyRequestOrBuilder
    * @return The taxonomy.
    */
   com.google.cloud.datacatalog.v1.Taxonomy getTaxonomy();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdateTaxonomyRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateTaxonomyRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

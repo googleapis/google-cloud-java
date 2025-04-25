@@ -35,7 +35,6 @@ public interface ListSearchAds360LinksResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.admin.v1alpha.SearchAds360Link> getSearchAds360LinksList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListSearchAds360LinksResponseOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Links(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListSearchAds360LinksResponseOrBuilder
    * </code>
    */
   int getSearchAds360LinksCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListSearchAds360LinksResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder>
       getSearchAds360LinksOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListSearchAds360LinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

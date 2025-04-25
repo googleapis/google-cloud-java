@@ -37,7 +37,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.PrestoJob)
     PrestoJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrestoJob.newBuilder() to construct.
   private PrestoJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,7 +98,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     private QueriesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -133,7 +131,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_FILE_URI_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryFileUri() {
     return queriesCase_ == 1;
   }
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +201,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_LIST_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQueryList() {
     return queriesCase_ == 2;
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTINUE_ON_FAILURE_FIELD_NUMBER = 3;
   private boolean continueOnFailure_ = false;
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputFormat_ = "";
-
   /**
    *
    *
@@ -309,7 +299,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList clientTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -355,7 +343,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getClientTagsList() {
     return clientTags_;
   }
-
   /**
    *
    *
@@ -370,7 +357,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public int getClientTagsCount() {
     return clientTags_.size();
   }
-
   /**
    *
    *
@@ -386,7 +372,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getClientTags(int index) {
     return clientTags_.get(index);
   }
-
   /**
    *
    *
@@ -429,7 +414,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -449,14 +433,12 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
-
   /**
    *
    *
@@ -473,7 +455,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
-
   /**
    *
    *
@@ -497,7 +478,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -524,7 +504,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_;
-
   /**
    *
    *
@@ -542,7 +521,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoggingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -562,7 +540,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
         : loggingConfig_;
   }
-
   /**
    *
    *
@@ -832,7 +809,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1199,7 +1175,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryFileUri() {
       return queriesCase_ == 1;
     }
-
     /**
      *
      *
@@ -1228,7 +1203,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1231,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1279,7 +1252,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1271,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1299,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.QueryList.Builder,
             com.google.cloud.dataproc.v1.QueryListOrBuilder>
         queryListBuilder_;
-
     /**
      *
      *
@@ -1344,7 +1314,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQueryList() {
       return queriesCase_ == 2;
     }
-
     /**
      *
      *
@@ -1370,7 +1339,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1393,7 +1361,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       queriesCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1413,7 +1380,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       queriesCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1412,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       queriesCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1437,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1485,7 +1449,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.QueryList.Builder getQueryListBuilder() {
       return getQueryListFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1506,7 +1469,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1541,7 +1503,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean continueOnFailure_;
-
     /**
      *
      *
@@ -1559,7 +1520,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public boolean getContinueOnFailure() {
       return continueOnFailure_;
     }
-
     /**
      *
      *
@@ -1581,7 +1541,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1603,7 +1562,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object outputFormat_ = "";
-
     /**
      *
      *
@@ -1627,7 +1585,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1651,7 +1608,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1674,7 +1630,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1648,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1681,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1743,7 +1696,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       clientTags_.makeImmutable();
       return clientTags_;
     }
-
     /**
      *
      *
@@ -1758,7 +1710,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public int getClientTagsCount() {
       return clientTags_.size();
     }
-
     /**
      *
      *
@@ -1774,7 +1725,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getClientTags(int index) {
       return clientTags_.get(index);
     }
-
     /**
      *
      *
@@ -1790,7 +1740,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getClientTagsBytes(int index) {
       return clientTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1814,7 +1763,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1837,7 +1785,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1804,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1876,7 +1822,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1874,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
-
     /**
      *
      *
@@ -1949,14 +1893,12 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().getMap().containsKey(key);
     }
-
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
-
     /**
      *
      *
@@ -1973,7 +1915,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
-
     /**
      *
      *
@@ -1997,7 +1938,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2027,7 +1967,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2047,14 +1986,12 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000020;
       return internalGetMutableProperties().getMutableMap();
     }
-
     /**
      *
      *
@@ -2078,7 +2015,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2039,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.LoggingConfig.Builder,
             com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
         loggingConfigBuilder_;
-
     /**
      *
      *
@@ -2120,7 +2055,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoggingConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2143,7 +2077,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
         return loggingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2168,7 +2101,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2191,7 +2123,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2221,7 +2152,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2243,7 +2173,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2260,7 +2189,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2281,7 +2209,6 @@ public final class PrestoJob extends com.google.protobuf.GeneratedMessageV3
             : loggingConfig_;
       }
     }
-
     /**
      *
      *

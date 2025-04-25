@@ -34,7 +34,6 @@ public interface ListTenantsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
   java.util.List<com.google.cloud.talent.v4beta1.Tenant> getTenantsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTenantsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
   com.google.cloud.talent.v4beta1.Tenant getTenants(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTenantsResponseOrBuilder
    * <code>repeated .google.cloud.talent.v4beta1.Tenant tenants = 1;</code>
    */
   int getTenantsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTenantsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.talent.v4beta1.TenantOrBuilder>
       getTenantsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListTenantsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ListTenantsResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListTenantsResponseOrBuilder
    * @return The metadata.
    */
   com.google.cloud.talent.v4beta1.ResponseMetadata getMetadata();
-
   /**
    *
    *

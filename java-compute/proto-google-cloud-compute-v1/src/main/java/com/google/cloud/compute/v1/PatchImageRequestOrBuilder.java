@@ -36,7 +36,6 @@ public interface PatchImageRequestOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PatchImageRequestOrBuilder
    * @return Whether the imageResource field is set.
    */
   boolean hasImageResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchImageRequestOrBuilder
    * @return The imageResource.
    */
   com.google.cloud.compute.v1.Image getImageResource();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface PatchImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface PatchImageRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchImageRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

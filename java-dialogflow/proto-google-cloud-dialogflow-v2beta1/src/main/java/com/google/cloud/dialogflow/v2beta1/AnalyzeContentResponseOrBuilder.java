@@ -38,7 +38,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return The replyText.
    */
   java.lang.String getReplyText();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return Whether the replyAudio field is set.
    */
   boolean hasReplyAudio();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return The replyAudio.
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudio getReplyAudio();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return Whether the automatedAgentReply field is set.
    */
   boolean hasAutomatedAgentReply();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return The automatedAgentReply.
    */
   com.google.cloud.dialogflow.v2beta1.AutomatedAgentReply getAutomatedAgentReply();
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return The message.
    */
   com.google.cloud.dialogflow.v2beta1.Message getMessage();
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public interface AnalyzeContentResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SuggestionResult>
       getHumanAgentSuggestionResultsList();
-
   /**
    *
    *
@@ -253,7 +245,6 @@ public interface AnalyzeContentResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SuggestionResult getHumanAgentSuggestionResults(int index);
-
   /**
    *
    *
@@ -274,7 +265,6 @@ public interface AnalyzeContentResponseOrBuilder
    * </code>
    */
   int getHumanAgentSuggestionResultsCount();
-
   /**
    *
    *
@@ -296,7 +286,6 @@ public interface AnalyzeContentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SuggestionResultOrBuilder>
       getHumanAgentSuggestionResultsOrBuilderList();
-
   /**
    *
    *
@@ -340,7 +329,6 @@ public interface AnalyzeContentResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SuggestionResult>
       getEndUserSuggestionResultsList();
-
   /**
    *
    *
@@ -361,7 +349,6 @@ public interface AnalyzeContentResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SuggestionResult getEndUserSuggestionResults(int index);
-
   /**
    *
    *
@@ -382,7 +369,6 @@ public interface AnalyzeContentResponseOrBuilder
    * </code>
    */
   int getEndUserSuggestionResultsCount();
-
   /**
    *
    *
@@ -404,7 +390,6 @@ public interface AnalyzeContentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SuggestionResultOrBuilder>
       getEndUserSuggestionResultsOrBuilderList();
-
   /**
    *
    *
@@ -439,7 +424,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return Whether the dtmfParameters field is set.
    */
   boolean hasDtmfParameters();
-
   /**
    *
    *
@@ -452,7 +436,6 @@ public interface AnalyzeContentResponseOrBuilder
    * @return The dtmfParameters.
    */
   com.google.cloud.dialogflow.v2beta1.DtmfParameters getDtmfParameters();
-
   /**
    *
    *

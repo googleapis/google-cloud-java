@@ -41,7 +41,6 @@ public interface UpdateContextRequestOrBuilder
    * @return Whether the context field is set.
    */
   boolean hasContext();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateContextRequestOrBuilder
    * @return The context.
    */
   com.google.cloud.aiplatform.v1.Context getContext();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateContextRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateContextRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

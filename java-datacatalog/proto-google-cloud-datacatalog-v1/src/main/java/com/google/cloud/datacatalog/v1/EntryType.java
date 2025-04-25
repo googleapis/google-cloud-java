@@ -255,7 +255,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENTRY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ENTRY_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -267,7 +266,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TABLE = 2;</code>
    */
   public static final int TABLE_VALUE = 2;
-
   /**
    *
    *
@@ -281,7 +279,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MODEL = 5;</code>
    */
   public static final int MODEL_VALUE = 5;
-
   /**
    *
    *
@@ -292,7 +289,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_STREAM = 3;</code>
    */
   public static final int DATA_STREAM_VALUE = 3;
-
   /**
    *
    *
@@ -304,7 +300,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FILESET = 4;</code>
    */
   public static final int FILESET_VALUE = 4;
-
   /**
    *
    *
@@ -315,7 +310,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLUSTER = 6;</code>
    */
   public static final int CLUSTER_VALUE = 6;
-
   /**
    *
    *
@@ -326,7 +320,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATABASE = 7;</code>
    */
   public static final int DATABASE_VALUE = 7;
-
   /**
    *
    *
@@ -338,7 +331,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATA_SOURCE_CONNECTION = 8;</code>
    */
   public static final int DATA_SOURCE_CONNECTION_VALUE = 8;
-
   /**
    *
    *
@@ -349,7 +341,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUTINE = 9;</code>
    */
   public static final int ROUTINE_VALUE = 9;
-
   /**
    *
    *
@@ -360,7 +351,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LAKE = 10;</code>
    */
   public static final int LAKE_VALUE = 10;
-
   /**
    *
    *
@@ -371,7 +361,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ZONE = 11;</code>
    */
   public static final int ZONE_VALUE = 11;
-
   /**
    *
    *
@@ -382,7 +371,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SERVICE = 14;</code>
    */
   public static final int SERVICE_VALUE = 14;
-
   /**
    *
    *
@@ -393,7 +381,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DATABASE_SCHEMA = 15;</code>
    */
   public static final int DATABASE_SCHEMA_VALUE = 15;
-
   /**
    *
    *
@@ -404,7 +391,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DASHBOARD = 16;</code>
    */
   public static final int DASHBOARD_VALUE = 16;
-
   /**
    *
    *
@@ -418,7 +404,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXPLORE = 17;</code>
    */
   public static final int EXPLORE_VALUE = 17;
-
   /**
    *
    *
@@ -432,7 +417,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LOOK = 18;</code>
    */
   public static final int LOOK_VALUE = 18;
-
   /**
    *
    *
@@ -443,7 +427,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FEATURE_ONLINE_STORE = 19;</code>
    */
   public static final int FEATURE_ONLINE_STORE_VALUE = 19;
-
   /**
    *
    *
@@ -454,7 +437,6 @@ public enum EntryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FEATURE_VIEW = 20;</code>
    */
   public static final int FEATURE_VIEW_VALUE = 20;
-
   /**
    *
    *

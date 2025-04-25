@@ -33,7 +33,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthCheckService)
     HealthCheckServiceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HealthCheckService.newBuilder() to construct.
   private HealthCheckService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -127,7 +126,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY_VALUE = 0;
-
     /**
      *
      *
@@ -138,7 +136,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * <code>AND = 64951;</code>
      */
     public static final int AND_VALUE = 64951;
-
     /**
      *
      *
@@ -241,7 +238,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
-
   /**
    *
    *
@@ -257,7 +253,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -281,7 +276,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +304,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -326,7 +319,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -350,7 +342,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +370,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fingerprint_ = "";
-
   /**
    *
    *
@@ -395,7 +385,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasFingerprint() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -419,7 +408,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -449,7 +437,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList healthChecks_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -464,7 +451,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getHealthChecksList() {
     return healthChecks_;
   }
-
   /**
    *
    *
@@ -479,7 +465,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public int getHealthChecksCount() {
     return healthChecks_.size();
   }
-
   /**
    *
    *
@@ -495,7 +480,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public java.lang.String getHealthChecks(int index) {
     return healthChecks_.get(index);
   }
-
   /**
    *
    *
@@ -516,7 +500,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthStatusAggregationPolicy_ = "";
-
   /**
    *
    *
@@ -533,7 +516,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasHealthStatusAggregationPolicy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -558,7 +540,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -586,7 +567,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
-
   /**
    *
    *
@@ -602,7 +582,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -623,7 +602,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
-
   /**
    *
    *
@@ -639,7 +617,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasKind() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -663,7 +640,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -692,7 +668,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -708,7 +683,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasName() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -732,7 +706,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -762,7 +735,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkEndpointGroups_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -777,7 +749,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getNetworkEndpointGroupsList() {
     return networkEndpointGroups_;
   }
-
   /**
    *
    *
@@ -792,7 +763,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public int getNetworkEndpointGroupsCount() {
     return networkEndpointGroups_.size();
   }
-
   /**
    *
    *
@@ -808,7 +778,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public java.lang.String getNetworkEndpointGroups(int index) {
     return networkEndpointGroups_.get(index);
   }
-
   /**
    *
    *
@@ -830,7 +799,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList notificationEndpoints_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -845,7 +813,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getNotificationEndpointsList() {
     return notificationEndpoints_;
   }
-
   /**
    *
    *
@@ -860,7 +827,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public int getNotificationEndpointsCount() {
     return notificationEndpoints_.size();
   }
-
   /**
    *
    *
@@ -876,7 +842,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public java.lang.String getNotificationEndpoints(int index) {
     return notificationEndpoints_.get(index);
   }
-
   /**
    *
    *
@@ -897,7 +862,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -913,7 +877,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasRegion() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -937,7 +900,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -966,7 +928,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
-
   /**
    *
    *
@@ -982,7 +943,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1006,7 +966,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -1364,7 +1323,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1743,7 +1701,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object creationTimestamp_ = "";
-
     /**
      *
      *
@@ -1758,7 +1715,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1781,7 +1737,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1804,7 +1759,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1826,7 +1780,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1844,7 +1797,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1869,7 +1821,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1884,7 +1835,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1907,7 +1857,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1930,7 +1879,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1952,7 +1900,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1970,7 +1917,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1941,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object fingerprint_ = "";
-
     /**
      *
      *
@@ -2010,7 +1955,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasFingerprint() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2033,7 +1977,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2056,7 +1999,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2078,7 +2020,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2037,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2129,7 +2069,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -2145,7 +2084,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       healthChecks_.makeImmutable();
       return healthChecks_;
     }
-
     /**
      *
      *
@@ -2160,7 +2098,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public int getHealthChecksCount() {
       return healthChecks_.size();
     }
-
     /**
      *
      *
@@ -2176,7 +2113,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public java.lang.String getHealthChecks(int index) {
       return healthChecks_.get(index);
     }
-
     /**
      *
      *
@@ -2192,7 +2128,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getHealthChecksBytes(int index) {
       return healthChecks_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2216,7 +2151,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2239,7 +2173,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2259,7 +2192,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2278,7 +2210,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2304,7 +2235,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object healthStatusAggregationPolicy_ = "";
-
     /**
      *
      *
@@ -2320,7 +2250,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasHealthStatusAggregationPolicy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2344,7 +2273,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2368,7 +2296,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2391,7 +2318,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2410,7 +2336,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2436,7 +2361,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private long id_;
-
     /**
      *
      *
@@ -2452,7 +2376,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasId() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2468,7 +2391,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public long getId() {
       return id_;
     }
-
     /**
      *
      *
@@ -2488,7 +2410,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2508,7 +2429,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object kind_ = "";
-
     /**
      *
      *
@@ -2523,7 +2443,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasKind() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2546,7 +2465,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2569,7 +2487,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2591,7 +2508,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2609,7 +2525,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2634,7 +2549,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2649,7 +2563,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasName() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2672,7 +2585,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2695,7 +2607,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2717,7 +2628,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2735,7 +2645,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2769,7 +2678,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -2785,7 +2693,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       networkEndpointGroups_.makeImmutable();
       return networkEndpointGroups_;
     }
-
     /**
      *
      *
@@ -2800,7 +2707,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public int getNetworkEndpointGroupsCount() {
       return networkEndpointGroups_.size();
     }
-
     /**
      *
      *
@@ -2816,7 +2722,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public java.lang.String getNetworkEndpointGroups(int index) {
       return networkEndpointGroups_.get(index);
     }
-
     /**
      *
      *
@@ -2832,7 +2737,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getNetworkEndpointGroupsBytes(int index) {
       return networkEndpointGroups_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2856,7 +2760,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2879,7 +2782,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2899,7 +2801,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2918,7 +2819,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2953,7 +2853,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000200;
     }
-
     /**
      *
      *
@@ -2969,7 +2868,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       notificationEndpoints_.makeImmutable();
       return notificationEndpoints_;
     }
-
     /**
      *
      *
@@ -2984,7 +2882,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public int getNotificationEndpointsCount() {
       return notificationEndpoints_.size();
     }
-
     /**
      *
      *
@@ -3000,7 +2897,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public java.lang.String getNotificationEndpoints(int index) {
       return notificationEndpoints_.get(index);
     }
-
     /**
      *
      *
@@ -3016,7 +2912,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getNotificationEndpointsBytes(int index) {
       return notificationEndpoints_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3040,7 +2935,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3063,7 +2957,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3083,7 +2976,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3102,7 +2994,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3128,7 +3019,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -3143,7 +3033,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasRegion() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3166,7 +3055,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3189,7 +3077,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3211,7 +3098,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3229,7 +3115,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3254,7 +3139,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object selfLink_ = "";
-
     /**
      *
      *
@@ -3269,7 +3153,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3292,7 +3175,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3315,7 +3197,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3337,7 +3218,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3355,7 +3235,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

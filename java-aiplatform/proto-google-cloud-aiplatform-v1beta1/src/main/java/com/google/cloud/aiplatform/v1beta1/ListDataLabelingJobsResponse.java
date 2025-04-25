@@ -34,7 +34,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse)
     ListDataLabelingJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListDataLabelingJobsResponse.newBuilder() to construct.
   private ListDataLabelingJobsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.DataLabelingJob> dataLabelingJobs_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       getDataLabelingJobsList() {
     return dataLabelingJobs_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       getDataLabelingJobsOrBuilderList() {
     return dataLabelingJobs_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
   public int getDataLabelingJobsCount() {
     return dataLabelingJobs_.size();
   }
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
   public com.google.cloud.aiplatform.v1beta1.DataLabelingJob getDataLabelingJobs(int index) {
     return dataLabelingJobs_.get(index);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -177,7 +170,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return dataLabelingJobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -680,7 +670,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return dataLabelingJobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return dataLabelingJobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +759,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +806,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +828,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         int index) {
       return getDataLabelingJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return dataLabelingJobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -968,7 +945,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(dataLabelingJobs_);
       }
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       return getDataLabelingJobsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.DataLabelingJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.DataLabelingJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1041,7 +1015,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1059,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1080,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class ListDataLabelingJobsResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

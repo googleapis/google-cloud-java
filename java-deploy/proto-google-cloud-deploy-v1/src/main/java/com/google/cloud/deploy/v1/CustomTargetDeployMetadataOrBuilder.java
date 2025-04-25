@@ -37,7 +37,6 @@ public interface CustomTargetDeployMetadataOrBuilder
    * @return The skipMessage.
    */
   java.lang.String getSkipMessage();
-
   /**
    *
    *

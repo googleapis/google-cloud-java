@@ -33,7 +33,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TextSentimentDatasetMetadata)
     TextSentimentDatasetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextSentimentDatasetMetadata.newBuilder() to construct.
   private TextSentimentDatasetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
 
   public static final int SENTIMENT_MAX_FIELD_NUMBER = 1;
   private int sentimentMax_ = 0;
-
   /**
    *
    *
@@ -246,7 +244,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -432,7 +429,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     private int bitField0_;
 
     private int sentimentMax_;
-
     /**
      *
      *
@@ -453,7 +449,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     public int getSentimentMax() {
       return sentimentMax_;
     }
-
     /**
      *
      *
@@ -478,7 +473,6 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ConfigFileOrBuilder
    * @return The filePath.
    */
   java.lang.String getFilePath();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface ConfigFileOrBuilder
    * @return The enum numeric value on the wire for fileType.
    */
   int getFileTypeValue();
-
   /**
    *
    *

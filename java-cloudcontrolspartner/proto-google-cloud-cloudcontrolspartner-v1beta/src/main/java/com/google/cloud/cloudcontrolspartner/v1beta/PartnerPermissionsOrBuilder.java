@@ -37,7 +37,6 @@ public interface PartnerPermissionsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface PartnerPermissionsOrBuilder
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1beta.PartnerPermissions.Permission>
       getPartnerPermissionsList();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface PartnerPermissionsOrBuilder
    * @return The count of partnerPermissions.
    */
   int getPartnerPermissionsCount();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface PartnerPermissionsOrBuilder
    */
   com.google.cloud.cloudcontrolspartner.v1beta.PartnerPermissions.Permission getPartnerPermissions(
       int index);
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface PartnerPermissionsOrBuilder
    * @return A list containing the enum numeric values on the wire for partnerPermissions.
    */
   java.util.List<java.lang.Integer> getPartnerPermissionsValueList();
-
   /**
    *
    *

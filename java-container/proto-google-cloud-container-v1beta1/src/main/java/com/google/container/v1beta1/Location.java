@@ -34,7 +34,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.Location)
     LocationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Location.newBuilder() to construct.
   private Location(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int LOCATION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * <code>ZONE = 1;</code>
      */
     public static final int ZONE_VALUE = 1;
-
     /**
      *
      *
@@ -227,7 +224,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -270,7 +265,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -295,7 +289,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -323,7 +316,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RECOMMENDED_FIELD_NUMBER = 3;
   private boolean recommended_ = false;
-
   /**
    *
    *
@@ -519,7 +511,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -730,7 +721,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -747,7 +737,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -767,7 +756,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +776,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.Location.LocationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -811,7 +798,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -856,7 +841,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -880,7 +864,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -922,7 +904,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean recommended_;
-
     /**
      *
      *
@@ -964,7 +944,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
     public boolean getRecommended() {
       return recommended_;
     }
-
     /**
      *
      *
@@ -984,7 +963,6 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

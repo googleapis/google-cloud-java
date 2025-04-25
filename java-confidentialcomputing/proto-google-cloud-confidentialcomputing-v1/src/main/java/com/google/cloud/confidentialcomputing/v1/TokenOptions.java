@@ -33,7 +33,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions)
     TokenOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TokenOptions.newBuilder() to construct.
   private TokenOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the allowedPrincipalTags field is set.
      */
     boolean hasAllowedPrincipalTags();
-
     /**
      *
      *
@@ -102,7 +100,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
             .AllowedPrincipalTags
         getAllowedPrincipalTags();
-
     /**
      *
      *
@@ -118,7 +115,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             .AllowedPrincipalTagsOrBuilder
         getAllowedPrincipalTagsOrBuilder();
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions)
       AwsPrincipalTagsOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AwsPrincipalTagsOptions.newBuilder() to construct.
     private AwsPrincipalTagsOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -183,7 +178,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the containerImageSignatures field is set.
        */
       boolean hasContainerImageSignatures();
-
       /**
        *
        *
@@ -200,7 +194,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
               .AllowedPrincipalTags.ContainerImageSignatures
           getContainerImageSignatures();
-
       /**
        *
        *
@@ -216,7 +209,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
               .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder
           getContainerImageSignaturesOrBuilder();
     }
-
     /**
      *
      *
@@ -233,7 +225,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags)
         AllowedPrincipalTagsOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use AllowedPrincipalTags.newBuilder() to construct.
       private AllowedPrincipalTags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -283,7 +274,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
          * @return A list containing the keyIds.
          */
         java.util.List<java.lang.String> getKeyIdsList();
-
         /**
          *
          *
@@ -298,7 +288,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
          * @return The count of keyIds.
          */
         int getKeyIdsCount();
-
         /**
          *
          *
@@ -314,7 +303,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
          * @return The keyIds at the given index.
          */
         java.lang.String getKeyIds(int index);
-
         /**
          *
          *
@@ -331,7 +319,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getKeyIdsBytes(int index);
       }
-
       /**
        *
        *
@@ -349,7 +336,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.AllowedPrincipalTags.ContainerImageSignatures)
           ContainerImageSignaturesOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use ContainerImageSignatures.newBuilder() to construct.
         private ContainerImageSignatures(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -388,7 +374,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringArrayList keyIds_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-
         /**
          *
          *
@@ -405,7 +390,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ProtocolStringList getKeyIdsList() {
           return keyIds_;
         }
-
         /**
          *
          *
@@ -422,7 +406,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         public int getKeyIdsCount() {
           return keyIds_.size();
         }
-
         /**
          *
          *
@@ -440,7 +423,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         public java.lang.String getKeyIds(int index) {
           return keyIds_.get(index);
         }
-
         /**
          *
          *
@@ -659,7 +641,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -895,7 +876,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             }
             bitField0_ |= 0x00000001;
           }
-
           /**
            *
            *
@@ -913,7 +893,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             keyIds_.makeImmutable();
             return keyIds_;
           }
-
           /**
            *
            *
@@ -930,7 +909,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           public int getKeyIdsCount() {
             return keyIds_.size();
           }
-
           /**
            *
            *
@@ -948,7 +926,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           public java.lang.String getKeyIds(int index) {
             return keyIds_.get(index);
           }
-
           /**
            *
            *
@@ -966,7 +943,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getKeyIdsBytes(int index) {
             return keyIds_.getByteString(index);
           }
-
           /**
            *
            *
@@ -992,7 +968,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1017,7 +992,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1039,7 +1013,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1060,7 +1033,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1164,7 +1136,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       private com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
               .AllowedPrincipalTags.ContainerImageSignatures
           containerImageSignatures_;
-
       /**
        *
        *
@@ -1182,7 +1153,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean hasContainerImageSignatures() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1205,7 +1175,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
                 .AllowedPrincipalTags.ContainerImageSignatures.getDefaultInstance()
             : containerImageSignatures_;
       }
-
       /**
        *
        *
@@ -1425,7 +1394,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1672,7 +1640,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
                     .AllowedPrincipalTags.ContainerImageSignaturesOrBuilder>
             containerImageSignaturesBuilder_;
-
         /**
          *
          *
@@ -1689,7 +1656,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         public boolean hasContainerImageSignatures() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -1715,7 +1681,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             return containerImageSignaturesBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -1743,7 +1708,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1768,7 +1732,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1804,7 +1767,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1826,7 +1788,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1845,7 +1806,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getContainerImageSignaturesFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1869,7 +1829,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
                 : containerImageSignatures_;
           }
         }
-
         /**
          *
          *
@@ -1981,7 +1940,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
             .AllowedPrincipalTags
         allowedPrincipalTags_;
-
     /**
      *
      *
@@ -1999,7 +1957,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllowedPrincipalTags() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2022,7 +1979,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
               .AllowedPrincipalTags.getDefaultInstance()
           : allowedPrincipalTags_;
     }
-
     /**
      *
      *
@@ -2219,7 +2175,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2452,7 +2407,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
                   .AllowedPrincipalTagsOrBuilder>
           allowedPrincipalTagsBuilder_;
-
       /**
        *
        *
@@ -2469,7 +2423,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAllowedPrincipalTags() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2495,7 +2448,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           return allowedPrincipalTagsBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2523,7 +2475,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2548,7 +2499,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2583,7 +2533,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2605,7 +2554,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2624,7 +2572,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAllowedPrincipalTagsFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2648,7 +2595,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
               : allowedPrincipalTags_;
         }
       }
-
       /**
        *
        *
@@ -2768,7 +2714,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     private TokenTypeOptionsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2800,7 +2745,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AWS_PRINCIPAL_TAGS_OPTIONS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -2818,7 +2762,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAwsPrincipalTagsOptions() {
     return tokenTypeOptionsCase_ == 4;
   }
-
   /**
    *
    *
@@ -2842,7 +2785,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2869,7 +2811,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object audience_ = "";
-
   /**
    *
    *
@@ -2894,7 +2835,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2925,7 +2865,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nonce_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2942,7 +2881,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNonceList() {
     return nonce_;
   }
-
   /**
    *
    *
@@ -2959,7 +2897,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public int getNonceCount() {
     return nonce_.size();
   }
-
   /**
    *
    *
@@ -2977,7 +2914,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNonce(int index) {
     return nonce_.get(index);
   }
-
   /**
    *
    *
@@ -2998,7 +2934,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOKEN_TYPE_FIELD_NUMBER = 3;
   private int tokenType_ = 0;
-
   /**
    *
    *
@@ -3016,7 +2951,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
   public int getTokenTypeValue() {
     return tokenType_;
   }
-
   /**
    *
    *
@@ -3255,7 +3189,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3525,7 +3458,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions.Builder,
             com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder>
         awsPrincipalTagsOptionsBuilder_;
-
     /**
      *
      *
@@ -3543,7 +3475,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAwsPrincipalTagsOptions() {
       return tokenTypeOptionsCase_ == 4;
     }
-
     /**
      *
      *
@@ -3575,7 +3506,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3601,7 +3531,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       tokenTypeOptionsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3625,7 +3554,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       tokenTypeOptionsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3594,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       tokenTypeOptionsCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3694,7 +3621,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3710,7 +3636,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         getAwsPrincipalTagsOptionsBuilder() {
       return getAwsPrincipalTagsOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3736,7 +3661,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3778,7 +3702,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object audience_ = "";
-
     /**
      *
      *
@@ -3802,7 +3725,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3826,7 +3748,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3849,7 +3770,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3868,7 +3788,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3902,7 +3821,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -3920,7 +3838,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       nonce_.makeImmutable();
       return nonce_;
     }
-
     /**
      *
      *
@@ -3937,7 +3854,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public int getNonceCount() {
       return nonce_.size();
     }
-
     /**
      *
      *
@@ -3955,7 +3871,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNonce(int index) {
       return nonce_.get(index);
     }
-
     /**
      *
      *
@@ -3973,7 +3888,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNonceBytes(int index) {
       return nonce_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3999,7 +3913,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4024,7 +3937,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4046,7 +3958,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4067,7 +3978,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4095,7 +4005,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int tokenType_ = 0;
-
     /**
      *
      *
@@ -4113,7 +4022,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
     public int getTokenTypeValue() {
       return tokenType_;
     }
-
     /**
      *
      *
@@ -4134,7 +4042,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4156,7 +4063,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.confidentialcomputing.v1.TokenType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4180,7 +4086,6 @@ public final class TokenOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

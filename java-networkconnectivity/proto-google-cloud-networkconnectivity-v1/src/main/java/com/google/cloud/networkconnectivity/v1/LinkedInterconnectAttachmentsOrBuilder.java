@@ -36,7 +36,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return A list containing the includeImportRanges.
    */
   java.util.List<java.lang.String> getIncludeImportRangesList();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return The count of includeImportRanges.
    */
   int getIncludeImportRangesCount();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return The includeImportRanges at the given index.
    */
   java.lang.String getIncludeImportRanges(int index);
-
   /**
    *
    *

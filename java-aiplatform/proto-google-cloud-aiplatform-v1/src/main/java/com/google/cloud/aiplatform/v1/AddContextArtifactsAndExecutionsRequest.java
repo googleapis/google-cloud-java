@@ -35,7 +35,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest)
     AddContextArtifactsAndExecutionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddContextArtifactsAndExecutionsRequest.newBuilder() to construct.
   private AddContextArtifactsAndExecutionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class AddContextArtifactsAndExecutionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object context_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList artifacts_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   public com.google.protobuf.ProtocolStringList getArtifactsList() {
     return artifacts_;
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   public int getArtifactsCount() {
     return artifacts_.size();
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   public java.lang.String getArtifacts(int index) {
     return artifacts_.get(index);
   }
-
   /**
    *
    *
@@ -215,7 +208,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList executions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -234,7 +226,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   public com.google.protobuf.ProtocolStringList getExecutionsList() {
     return executions_;
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   public int getExecutionsCount() {
     return executions_.size();
   }
-
   /**
    *
    *
@@ -273,7 +263,6 @@ public final class AddContextArtifactsAndExecutionsRequest
   public java.lang.String getExecutions(int index) {
     return executions_.get(index);
   }
-
   /**
    *
    *
@@ -487,7 +476,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -725,7 +713,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     private int bitField0_;
 
     private java.lang.Object context_ = "";
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class AddContextArtifactsAndExecutionsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class AddContextArtifactsAndExecutionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +847,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       artifacts_.makeImmutable();
       return artifacts_;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public int getArtifactsCount() {
       return artifacts_.size();
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public java.lang.String getArtifacts(int index) {
       return artifacts_.get(index);
     }
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public com.google.protobuf.ByteString getArtifactsBytes(int index) {
       return artifacts_.getByteString(index);
     }
-
     /**
      *
      *
@@ -966,7 +944,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +969,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1037,7 +1012,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1094,7 +1067,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       executions_.makeImmutable();
       return executions_;
     }
-
     /**
      *
      *
@@ -1113,7 +1085,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public int getExecutionsCount() {
       return executions_.size();
     }
-
     /**
      *
      *
@@ -1133,7 +1104,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public java.lang.String getExecutions(int index) {
       return executions_.get(index);
     }
-
     /**
      *
      *
@@ -1153,7 +1123,6 @@ public final class AddContextArtifactsAndExecutionsRequest
     public com.google.protobuf.ByteString getExecutionsBytes(int index) {
       return executions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1181,7 +1150,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1176,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1221,6 @@ public final class AddContextArtifactsAndExecutionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

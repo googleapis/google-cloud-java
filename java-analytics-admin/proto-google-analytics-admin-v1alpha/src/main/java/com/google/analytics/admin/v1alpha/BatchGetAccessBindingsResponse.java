@@ -33,7 +33,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse)
     BatchGetAccessBindingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchGetAccessBindingsResponse.newBuilder() to construct.
   private BatchGetAccessBindingsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessBinding> accessBindings_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
   public java.util.List<com.google.analytics.admin.v1alpha.AccessBinding> getAccessBindingsList() {
     return accessBindings_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       getAccessBindingsOrBuilderList() {
     return accessBindings_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
   public int getAccessBindingsCount() {
     return accessBindings_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
   public com.google.analytics.admin.v1alpha.AccessBinding getAccessBindings(int index) {
     return accessBindings_.get(index);
   }
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -576,7 +569,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
         return accessBindingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
         return accessBindingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -610,7 +601,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
         return accessBindingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -655,7 +644,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +729,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +768,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +787,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +800,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
         int index) {
       return getAccessBindingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -837,7 +817,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
         return accessBindingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -855,7 +834,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(accessBindings_);
       }
     }
-
     /**
      *
      *
@@ -869,7 +847,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       return getAccessBindingsFieldBuilder()
           .addBuilder(com.google.analytics.admin.v1alpha.AccessBinding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -884,7 +861,6 @@ public final class BatchGetAccessBindingsResponse extends com.google.protobuf.Ge
       return getAccessBindingsFieldBuilder()
           .addBuilder(index, com.google.analytics.admin.v1alpha.AccessBinding.getDefaultInstance());
     }
-
     /**
      *
      *

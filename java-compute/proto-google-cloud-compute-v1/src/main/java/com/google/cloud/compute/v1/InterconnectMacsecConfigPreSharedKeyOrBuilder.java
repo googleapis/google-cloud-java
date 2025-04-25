@@ -36,7 +36,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return Whether the cak field is set.
    */
   boolean hasCak();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return The cak.
    */
   java.lang.String getCak();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return Whether the ckn field is set.
    */
   boolean hasCkn();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return The ckn.
    */
   java.lang.String getCkn();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface InterconnectMacsecConfigPreSharedKeyOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
-
   /**
    *
    *

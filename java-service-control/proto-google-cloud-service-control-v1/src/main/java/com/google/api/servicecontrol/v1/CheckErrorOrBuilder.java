@@ -36,7 +36,6 @@ public interface CheckErrorOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CheckErrorOrBuilder
    * @return The subject.
    */
   java.lang.String getSubject();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CheckErrorOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public interface CheckErrorOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface CheckErrorOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
-
   /**
    *
    *

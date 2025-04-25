@@ -34,7 +34,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.metastore.v1.MaintenanceWindow)
     MaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MaintenanceWindow.newBuilder() to construct.
   private MaintenanceWindow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int HOUR_OF_DAY_FIELD_NUMBER = 1;
   private com.google.protobuf.Int32Value hourOfDay_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public boolean hasHourOfDay() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Int32Value getHourOfDay() {
     return hourOfDay_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : hourOfDay_;
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
 
   public static final int DAY_OF_WEEK_FIELD_NUMBER = 2;
   private int dayOfWeek_ = 0;
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
   public int getDayOfWeekValue() {
     return dayOfWeek_;
   }
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -542,7 +535,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         hourOfDayBuilder_;
-
     /**
      *
      *
@@ -557,7 +549,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public boolean hasHourOfDay() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -578,7 +569,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
         return hourOfDayBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -601,7 +591,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +610,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +637,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +656,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +670,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getHourOfDayFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -703,7 +688,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
             : hourOfDay_;
       }
     }
-
     /**
      *
      *
@@ -731,7 +715,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     }
 
     private int dayOfWeek_ = 0;
-
     /**
      *
      *
@@ -747,7 +730,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
     public int getDayOfWeekValue() {
       return dayOfWeek_;
     }
-
     /**
      *
      *
@@ -766,7 +748,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +764,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(dayOfWeek_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -805,7 +785,6 @@ public final class MaintenanceWindow extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

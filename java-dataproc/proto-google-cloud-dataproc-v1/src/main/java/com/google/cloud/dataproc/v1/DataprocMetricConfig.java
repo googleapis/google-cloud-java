@@ -33,7 +33,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.DataprocMetricConfig)
     DataprocMetricConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataprocMetricConfig.newBuilder() to construct.
   private DataprocMetricConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -182,7 +181,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>METRIC_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int METRIC_SOURCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -196,7 +194,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>MONITORING_AGENT_DEFAULTS = 1;</code>
      */
     public static final int MONITORING_AGENT_DEFAULTS_VALUE = 1;
-
     /**
      *
      *
@@ -207,7 +204,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HDFS = 2;</code>
      */
     public static final int HDFS_VALUE = 2;
-
     /**
      *
      *
@@ -218,7 +214,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>SPARK = 3;</code>
      */
     public static final int SPARK_VALUE = 3;
-
     /**
      *
      *
@@ -229,7 +224,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>YARN = 4;</code>
      */
     public static final int YARN_VALUE = 4;
-
     /**
      *
      *
@@ -240,7 +234,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>SPARK_HISTORY_SERVER = 5;</code>
      */
     public static final int SPARK_HISTORY_SERVER_VALUE = 5;
-
     /**
      *
      *
@@ -251,7 +244,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HIVESERVER2 = 6;</code>
      */
     public static final int HIVESERVER2_VALUE = 6;
-
     /**
      *
      *
@@ -262,7 +254,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * <code>HIVEMETASTORE = 7;</code>
      */
     public static final int HIVEMETASTORE_VALUE = 7;
-
     /**
      *
      *
@@ -393,7 +384,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for metricSource.
      */
     int getMetricSourceValue();
-
     /**
      *
      *
@@ -452,7 +442,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * @return A list containing the metricOverrides.
      */
     java.util.List<java.lang.String> getMetricOverridesList();
-
     /**
      *
      *
@@ -493,7 +482,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * @return The count of metricOverrides.
      */
     int getMetricOverridesCount();
-
     /**
      *
      *
@@ -535,7 +523,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      * @return The metricOverrides at the given index.
      */
     java.lang.String getMetricOverrides(int index);
-
     /**
      *
      *
@@ -578,7 +565,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getMetricOverridesBytes(int index);
   }
-
   /**
    *
    *
@@ -593,7 +579,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.DataprocMetricConfig.Metric)
       MetricOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Metric.newBuilder() to construct.
     private Metric(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -627,7 +612,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
 
     public static final int METRIC_SOURCE_FIELD_NUMBER = 1;
     private int metricSource_ = 0;
-
     /**
      *
      *
@@ -648,7 +632,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     public int getMetricSourceValue() {
       return metricSource_;
     }
-
     /**
      *
      *
@@ -679,7 +662,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList metricOverrides_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -722,7 +704,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getMetricOverridesList() {
       return metricOverrides_;
     }
-
     /**
      *
      *
@@ -765,7 +746,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     public int getMetricOverridesCount() {
       return metricOverrides_.size();
     }
-
     /**
      *
      *
@@ -809,7 +789,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     public java.lang.String getMetricOverrides(int index) {
       return metricOverrides_.get(index);
     }
-
     /**
      *
      *
@@ -1037,7 +1016,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1245,7 +1223,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private int metricSource_ = 0;
-
       /**
        *
        *
@@ -1266,7 +1243,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public int getMetricSourceValue() {
         return metricSource_;
       }
-
       /**
        *
        *
@@ -1290,7 +1266,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1315,7 +1290,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricSource.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1343,7 +1317,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1376,7 +1349,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1421,7 +1393,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         metricOverrides_.makeImmutable();
         return metricOverrides_;
       }
-
       /**
        *
        *
@@ -1465,7 +1436,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public int getMetricOverridesCount() {
         return metricOverrides_.size();
       }
-
       /**
        *
        *
@@ -1510,7 +1480,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public java.lang.String getMetricOverrides(int index) {
         return metricOverrides_.get(index);
       }
-
       /**
        *
        *
@@ -1555,7 +1524,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getMetricOverridesBytes(int index) {
         return metricOverrides_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1608,7 +1576,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1660,7 +1627,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1709,7 +1675,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1757,7 +1722,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1879,7 +1843,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric> metrics_;
-
   /**
    *
    *
@@ -1895,7 +1858,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric> getMetricsList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -1912,7 +1874,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       getMetricsOrBuilderList() {
     return metrics_;
   }
-
   /**
    *
    *
@@ -1928,7 +1889,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
   public int getMetricsCount() {
     return metrics_.size();
   }
-
   /**
    *
    *
@@ -1944,7 +1904,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
   public com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric getMetrics(int index) {
     return metrics_.get(index);
   }
-
   /**
    *
    *
@@ -2123,7 +2082,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2391,7 +2349,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return metricsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2410,7 +2367,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return metricsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2429,7 +2385,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return metricsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2455,7 +2410,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2479,7 +2433,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2504,7 +2457,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2530,7 +2482,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2553,7 +2504,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2577,7 +2527,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2601,7 +2550,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2623,7 +2571,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2645,7 +2592,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2661,7 +2607,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2681,7 +2626,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return metricsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2702,7 +2646,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(metrics_);
       }
     }
-
     /**
      *
      *
@@ -2719,7 +2662,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2737,7 +2679,6 @@ public final class DataprocMetricConfig extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric.getDefaultInstance());
     }
-
     /**
      *
      *

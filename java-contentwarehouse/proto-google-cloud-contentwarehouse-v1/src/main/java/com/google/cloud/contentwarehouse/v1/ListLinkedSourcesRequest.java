@@ -33,7 +33,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest)
     ListLinkedSourcesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListLinkedSourcesRequest.newBuilder() to construct.
   private ListLinkedSourcesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
 
   public static final int REQUEST_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.contentwarehouse.v1.RequestMetadata requestMetadata_;
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
   public boolean hasRequestMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
         ? com.google.cloud.contentwarehouse.v1.RequestMetadata.getDefaultInstance()
         : requestMetadata_;
   }
-
   /**
    *
    *
@@ -460,7 +451,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -706,7 +696,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -733,7 +722,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -760,7 +748,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +794,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -857,7 +841,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +887,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -959,7 +939,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +985,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
             com.google.cloud.contentwarehouse.v1.RequestMetadata.Builder,
             com.google.cloud.contentwarehouse.v1.RequestMetadataOrBuilder>
         requestMetadataBuilder_;
-
     /**
      *
      *
@@ -1057,7 +1033,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
     public boolean hasRequestMetadata() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1079,7 +1054,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
         return requestMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1098,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1128,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1148,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1164,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
       onChanged();
       return getRequestMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1215,7 +1184,6 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
             : requestMetadata_;
       }
     }
-
     /**
      *
      *

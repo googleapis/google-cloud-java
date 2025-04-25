@@ -54,7 +54,6 @@ public interface TrialSettingsOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface TrialSettingsOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

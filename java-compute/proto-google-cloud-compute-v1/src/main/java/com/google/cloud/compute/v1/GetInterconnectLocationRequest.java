@@ -33,7 +33,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetInterconnectLocationRequest)
     GetInterconnectLocationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetInterconnectLocationRequest.newBuilder() to construct.
   private GetInterconnectLocationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectLocation_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -345,7 +340,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -545,7 +539,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object interconnectLocation_ = "";
-
     /**
      *
      *
@@ -569,7 +562,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -593,7 +585,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +625,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -684,7 +672,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -707,7 +694,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -747,7 +732,6 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

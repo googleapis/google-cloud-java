@@ -35,7 +35,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.run.v2.SecretVolumeSource)
     SecretVolumeSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecretVolumeSource.newBuilder() to construct.
   private SecretVolumeSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secret_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.run.v2.VersionToPath> items_;
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.run.v2.VersionToPath> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -185,7 +179,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.run.v2.VersionToPath getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
 
   public static final int DEFAULT_MODE_FIELD_NUMBER = 3;
   private int defaultMode_ = 0;
-
   /**
    *
    *
@@ -436,7 +427,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -695,7 +685,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object secret_ = "";
-
     /**
      *
      *
@@ -721,7 +710,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -747,7 +735,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +779,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +841,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -877,7 +861,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -925,7 +907,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +957,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1054,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1077,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1116,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.run.v2.VersionToPath.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1174,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.run.v2.VersionToPath.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1222,7 +1191,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.run.v2.VersionToPath.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1258,7 +1226,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     }
 
     private int defaultMode_;
-
     /**
      *
      *
@@ -1290,7 +1257,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
     public int getDefaultMode() {
       return defaultMode_;
     }
-
     /**
      *
      *
@@ -1326,7 +1292,6 @@ public final class SecretVolumeSource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

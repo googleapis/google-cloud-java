@@ -38,7 +38,6 @@ public interface AnalysisRuleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface AnalysisRuleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AnalysisRuleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface AnalysisRuleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface AnalysisRuleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface AnalysisRuleOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface AnalysisRuleOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface AnalysisRuleOrBuilder
    * @return The conversationFilter.
    */
   java.lang.String getConversationFilter();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface AnalysisRuleOrBuilder
    * @return Whether the annotatorSelector field is set.
    */
   boolean hasAnnotatorSelector();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public interface AnalysisRuleOrBuilder
    * @return The annotatorSelector.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotatorSelector getAnnotatorSelector();
-
   /**
    *
    *

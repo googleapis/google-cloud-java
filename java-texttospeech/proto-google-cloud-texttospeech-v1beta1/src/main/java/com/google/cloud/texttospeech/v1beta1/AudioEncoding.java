@@ -133,7 +133,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AUDIO_ENCODING_UNSPECIFIED = 0;</code>
    */
   public static final int AUDIO_ENCODING_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -145,7 +144,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LINEAR16 = 1;</code>
    */
   public static final int LINEAR16_VALUE = 1;
-
   /**
    *
    *
@@ -156,7 +154,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MP3 = 2;</code>
    */
   public static final int MP3_VALUE = 2;
-
   /**
    *
    *
@@ -167,7 +164,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MP3_64_KBPS = 4;</code>
    */
   public static final int MP3_64_KBPS_VALUE = 4;
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OGG_OPUS = 3;</code>
    */
   public static final int OGG_OPUS_VALUE = 3;
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MULAW = 5;</code>
    */
   public static final int MULAW_VALUE = 5;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ALAW = 6;</code>
    */
   public static final int ALAW_VALUE = 6;
-
   /**
    *
    *

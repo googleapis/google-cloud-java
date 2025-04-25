@@ -40,7 +40,6 @@ public interface DeployFlowRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface DeployFlowRequestOrBuilder
    * @return The flowVersion.
    */
   java.lang.String getFlowVersion();
-
   /**
    *
    *

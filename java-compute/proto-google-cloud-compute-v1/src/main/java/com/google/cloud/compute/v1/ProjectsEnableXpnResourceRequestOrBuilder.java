@@ -36,7 +36,6 @@ public interface ProjectsEnableXpnResourceRequestOrBuilder
    * @return Whether the xpnResource field is set.
    */
   boolean hasXpnResource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ProjectsEnableXpnResourceRequestOrBuilder
    * @return The xpnResource.
    */
   com.google.cloud.compute.v1.XpnResourceId getXpnResource();
-
   /**
    *
    *

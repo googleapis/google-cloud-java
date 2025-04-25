@@ -35,7 +35,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> getArpCachesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   int getArpCachesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface InterconnectDiagnosticsOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder>
       getArpCachesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return Whether the bundleAggregationType field is set.
    */
   boolean hasBundleAggregationType();
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return The bundleAggregationType.
    */
   java.lang.String getBundleAggregationType();
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return Whether the bundleOperationalStatus field is set.
    */
   boolean hasBundleOperationalStatus();
-
   /**
    *
    *
@@ -155,7 +148,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return The bundleOperationalStatus.
    */
   java.lang.String getBundleOperationalStatus();
-
   /**
    *
    *
@@ -181,7 +173,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus> getLinksList();
-
   /**
    *
    *
@@ -193,7 +184,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus getLinks(int index);
-
   /**
    *
    *
@@ -205,7 +195,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * </code>
    */
   int getLinksCount();
-
   /**
    *
    *
@@ -218,7 +207,6 @@ public interface InterconnectDiagnosticsOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectDiagnosticsLinkStatusOrBuilder>
       getLinksOrBuilderList();
-
   /**
    *
    *
@@ -244,7 +232,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return Whether the macAddress field is set.
    */
   boolean hasMacAddress();
-
   /**
    *
    *
@@ -257,7 +244,6 @@ public interface InterconnectDiagnosticsOrBuilder
    * @return The macAddress.
    */
   java.lang.String getMacAddress();
-
   /**
    *
    *

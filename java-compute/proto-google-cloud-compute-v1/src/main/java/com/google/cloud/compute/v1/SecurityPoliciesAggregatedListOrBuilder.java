@@ -30,14 +30,12 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -57,7 +55,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -70,7 +67,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -107,12 +102,10 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.SecurityPoliciesScopedList>
       getItems();
-
   /**
    *
    *
@@ -125,7 +118,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.SecurityPoliciesScopedList>
       getItemsMap();
-
   /**
    *
    *
@@ -141,7 +133,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.SecurityPoliciesScopedList defaultValue);
-
   /**
    *
    *
@@ -166,7 +157,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -179,7 +169,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -205,7 +194,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -218,7 +206,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -244,7 +231,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -257,7 +243,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -283,7 +268,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -296,7 +280,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -310,7 +293,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -337,7 +319,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -350,7 +331,6 @@ public interface SecurityPoliciesAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

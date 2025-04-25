@@ -35,7 +35,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.DnsForwarding)
     DnsForwardingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DnsForwarding.newBuilder() to construct.
   private DnsForwarding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
      * @return The domain.
      */
     java.lang.String getDomain();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the nameServers.
      */
     java.util.List<java.lang.String> getNameServersList();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
      * @return The count of nameServers.
      */
     int getNameServersCount();
-
     /**
      *
      *
@@ -137,7 +133,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
      * @return The nameServers at the given index.
      */
     java.lang.String getNameServers(int index);
-
     /**
      *
      *
@@ -152,7 +147,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNameServersBytes(int index);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRule)
       ForwardingRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ForwardingRule.newBuilder() to construct.
     private ForwardingRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -206,7 +199,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object domain_ = "";
-
     /**
      *
      *
@@ -230,7 +222,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -260,7 +251,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList nameServers_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -275,7 +265,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getNameServersList() {
       return nameServers_;
     }
-
     /**
      *
      *
@@ -290,7 +279,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     public int getNameServersCount() {
       return nameServers_.size();
     }
-
     /**
      *
      *
@@ -306,7 +294,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNameServers(int index) {
       return nameServers_.get(index);
     }
-
     /**
      *
      *
@@ -500,7 +487,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -717,7 +703,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object domain_ = "";
-
       /**
        *
        *
@@ -740,7 +725,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -763,7 +747,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -785,7 +768,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -803,7 +785,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -836,7 +817,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -852,7 +832,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         nameServers_.makeImmutable();
         return nameServers_;
       }
-
       /**
        *
        *
@@ -867,7 +846,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       public int getNameServersCount() {
         return nameServers_.size();
       }
-
       /**
        *
        *
@@ -883,7 +861,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getNameServers(int index) {
         return nameServers_.get(index);
       }
-
       /**
        *
        *
@@ -899,7 +876,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getNameServersBytes(int index) {
         return nameServers_.getByteString(index);
       }
-
       /**
        *
        *
@@ -923,7 +899,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -946,7 +921,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -966,7 +940,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -985,7 +958,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1082,7 +1054,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1110,7 +1081,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1141,7 +1111,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1158,7 +1127,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1175,7 +1143,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1193,7 +1160,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1210,7 +1176,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1227,7 +1192,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1248,7 +1212,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRule>
       forwardingRules_;
-
   /**
    *
    *
@@ -1265,7 +1228,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       getForwardingRulesList() {
     return forwardingRules_;
   }
-
   /**
    *
    *
@@ -1283,7 +1245,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       getForwardingRulesOrBuilderList() {
     return forwardingRules_;
   }
-
   /**
    *
    *
@@ -1299,7 +1260,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
   public int getForwardingRulesCount() {
     return forwardingRules_.size();
   }
-
   /**
    *
    *
@@ -1316,7 +1276,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return forwardingRules_.get(index);
   }
-
   /**
    *
    *
@@ -1532,7 +1491,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1828,7 +1786,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1855,7 +1812,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1882,7 +1838,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1908,7 +1863,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1930,7 +1884,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1964,7 +1917,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1981,7 +1933,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2004,7 +1955,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2029,7 +1979,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2051,7 +2000,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2029,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2050,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2120,7 +2066,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2141,7 +2086,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2176,7 +2120,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -2193,7 +2136,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2216,7 +2158,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2241,7 +2182,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2263,7 +2203,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2293,7 +2232,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2315,7 +2253,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2332,7 +2269,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2353,7 +2289,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -2419,7 +2354,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return forwardingRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2438,7 +2372,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return forwardingRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2458,7 +2391,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return forwardingRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2484,7 +2416,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2508,7 +2439,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2534,7 +2464,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2560,7 +2489,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2583,7 +2511,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2607,7 +2534,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2557,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2653,7 +2578,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2675,7 +2599,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2691,7 +2614,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         getForwardingRulesBuilder(int index) {
       return getForwardingRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2711,7 +2633,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return forwardingRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2732,7 +2653,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(forwardingRules_);
       }
     }
-
     /**
      *
      *
@@ -2750,7 +2670,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRule.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2769,7 +2688,6 @@ public final class DnsForwarding extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.vmwareengine.v1.DnsForwarding.ForwardingRule.getDefaultInstance());
     }
-
     /**
      *
      *

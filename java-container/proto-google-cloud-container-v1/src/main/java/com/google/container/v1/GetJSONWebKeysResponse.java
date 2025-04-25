@@ -33,7 +33,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1.GetJSONWebKeysResponse)
     GetJSONWebKeysResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetJSONWebKeysResponse.newBuilder() to construct.
   private GetJSONWebKeysResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.Jwk> keys_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.container.v1.Jwk> getKeysList() {
     return keys_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
   public java.util.List<? extends com.google.container.v1.JwkOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
   public int getKeysCount() {
     return keys_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
   public com.google.container.v1.Jwk getKeys(int index) {
     return keys_.get(index);
   }
-
   /**
    *
    *
@@ -305,7 +299,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
         return keysBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
         return keysBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -600,7 +591,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
         return keysBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +760,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +780,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -812,7 +793,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
     public com.google.container.v1.Jwk.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -830,7 +810,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -848,7 +827,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(keys_);
       }
     }
-
     /**
      *
      *
@@ -862,7 +840,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
     public com.google.container.v1.Jwk.Builder addKeysBuilder() {
       return getKeysFieldBuilder().addBuilder(com.google.container.v1.Jwk.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -877,7 +854,6 @@ public final class GetJSONWebKeysResponse extends com.google.protobuf.GeneratedM
       return getKeysFieldBuilder()
           .addBuilder(index, com.google.container.v1.Jwk.getDefaultInstance());
     }
-
     /**
      *
      *

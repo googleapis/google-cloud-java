@@ -33,7 +33,6 @@ public final class ApproveRolloutResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.ApproveRolloutResponse)
     ApproveRolloutResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ApproveRolloutResponse.newBuilder() to construct.
   private ApproveRolloutResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class ApproveRolloutResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

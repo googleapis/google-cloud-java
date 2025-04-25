@@ -37,7 +37,6 @@ public interface TrajectoryRecallResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryRecallMetricValue>
       getTrajectoryRecallMetricValuesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TrajectoryRecallResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryRecallMetricValue getTrajectoryRecallMetricValues(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface TrajectoryRecallResultsOrBuilder
    * </code>
    */
   int getTrajectoryRecallMetricValuesCount();
-
   /**
    *
    *
@@ -78,7 +75,6 @@ public interface TrajectoryRecallResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.TrajectoryRecallMetricValueOrBuilder>
       getTrajectoryRecallMetricValuesOrBuilderList();
-
   /**
    *
    *

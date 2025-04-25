@@ -120,7 +120,6 @@ public enum LinkProposalState implements com.google.protobuf.ProtocolMessageEnum
    * <code>LINK_PROPOSAL_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int LINK_PROPOSAL_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -132,7 +131,6 @@ public enum LinkProposalState implements com.google.protobuf.ProtocolMessageEnum
    * <code>AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS = 1;</code>
    */
   public static final int AWAITING_REVIEW_FROM_GOOGLE_ANALYTICS_VALUE = 1;
-
   /**
    *
    *
@@ -144,7 +142,6 @@ public enum LinkProposalState implements com.google.protobuf.ProtocolMessageEnum
    * <code>AWAITING_REVIEW_FROM_LINKED_PRODUCT = 2;</code>
    */
   public static final int AWAITING_REVIEW_FROM_LINKED_PRODUCT_VALUE = 2;
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public enum LinkProposalState implements com.google.protobuf.ProtocolMessageEnum
    * <code>WITHDRAWN = 3;</code>
    */
   public static final int WITHDRAWN_VALUE = 3;
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public enum LinkProposalState implements com.google.protobuf.ProtocolMessageEnum
    * <code>DECLINED = 4;</code>
    */
   public static final int DECLINED_VALUE = 4;
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public enum LinkProposalState implements com.google.protobuf.ProtocolMessageEnum
    * <code>EXPIRED = 5;</code>
    */
   public static final int EXPIRED_VALUE = 5;
-
   /**
    *
    *

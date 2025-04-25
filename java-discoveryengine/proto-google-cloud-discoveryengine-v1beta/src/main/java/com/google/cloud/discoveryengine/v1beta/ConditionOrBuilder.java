@@ -40,7 +40,6 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Condition.QueryTerm query_terms = 2;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Condition.QueryTerm> getQueryTermsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Condition.QueryTerm query_terms = 2;</code>
    */
   com.google.cloud.discoveryengine.v1beta.Condition.QueryTerm getQueryTerms(int index);
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ConditionOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1beta.Condition.QueryTerm query_terms = 2;</code>
    */
   int getQueryTermsCount();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface ConditionOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Condition.QueryTermOrBuilder>
       getQueryTermsOrBuilderList();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ConditionOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.Condition.TimeRange>
       getActiveTimeRangeList();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface ConditionOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1beta.Condition.TimeRange getActiveTimeRange(int index);
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface ConditionOrBuilder
    * </code>
    */
   int getActiveTimeRangeCount();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface ConditionOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Condition.TimeRangeOrBuilder>
       getActiveTimeRangeOrBuilderList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface ConditionOrBuilder
    * @return The queryRegex.
    */
   java.lang.String getQueryRegex();
-
   /**
    *
    *

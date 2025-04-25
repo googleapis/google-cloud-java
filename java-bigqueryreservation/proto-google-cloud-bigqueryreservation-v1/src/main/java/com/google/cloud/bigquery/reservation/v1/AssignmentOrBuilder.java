@@ -39,7 +39,6 @@ public interface AssignmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface AssignmentOrBuilder
    * @return The assignee.
    */
   java.lang.String getAssignee();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface AssignmentOrBuilder
    * @return The enum numeric value on the wire for jobType.
    */
   int getJobTypeValue();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface AssignmentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

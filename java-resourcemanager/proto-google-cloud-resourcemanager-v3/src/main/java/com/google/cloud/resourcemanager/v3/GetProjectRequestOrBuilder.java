@@ -38,7 +38,6 @@ public interface GetProjectRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

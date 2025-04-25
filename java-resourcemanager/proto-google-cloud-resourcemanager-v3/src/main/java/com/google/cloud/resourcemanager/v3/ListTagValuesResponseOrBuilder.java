@@ -35,7 +35,6 @@ public interface ListTagValuesResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagValue tag_values = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.TagValue> getTagValuesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListTagValuesResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagValue tag_values = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.TagValue getTagValues(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListTagValuesResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.TagValue tag_values = 1;</code>
    */
   int getTagValuesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListTagValuesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.TagValueOrBuilder>
       getTagValuesOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListTagValuesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

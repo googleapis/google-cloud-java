@@ -38,7 +38,6 @@ public interface RemoveDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.DataSourceGcpResource)
     DataSourceGcpResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataSourceGcpResource.newBuilder() to construct.
   private DataSourceGcpResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     private GcpResourcePropertiesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,7 +117,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcpResourcename_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -252,7 +245,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMPUTE_INSTANCE_DATASOURCE_PROPERTIES_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -298,7 +289,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
   public boolean hasComputeInstanceDatasourceProperties() {
     return gcpResourcePropertiesCase_ == 4;
   }
-
   /**
    *
    *
@@ -322,7 +312,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -552,7 +541,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -817,7 +805,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object gcpResourcename_ = "";
-
     /**
      *
      *
@@ -841,7 +828,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -865,7 +851,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -888,7 +873,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +891,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +916,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object location_ = "";
-
     /**
      *
      *
@@ -956,7 +938,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -979,7 +960,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1001,7 +981,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +998,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1022,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1092,7 +1068,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1090,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1134,7 +1108,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1137,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
             com.google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties.Builder,
             com.google.cloud.backupdr.v1.ComputeInstanceDataSourcePropertiesOrBuilder>
         computeInstanceDatasourcePropertiesBuilder_;
-
     /**
      *
      *
@@ -1183,7 +1155,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     public boolean hasComputeInstanceDatasourceProperties() {
       return gcpResourcePropertiesCase_ == 4;
     }
-
     /**
      *
      *
@@ -1216,7 +1187,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1243,7 +1213,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       gcpResourcePropertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1267,7 +1236,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       gcpResourcePropertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1307,7 +1275,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       gcpResourcePropertiesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1303,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1319,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         getComputeInstanceDatasourcePropertiesBuilder() {
       return getComputeInstanceDatasourcePropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1381,7 +1346,6 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public final class InsertRegionHealthCheckServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest)
     InsertRegionHealthCheckServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertRegionHealthCheckServiceRequest.newBuilder() to construct.
   private InsertRegionHealthCheckServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class InsertRegionHealthCheckServiceRequest
   private int bitField0_;
   public static final int HEALTH_CHECK_SERVICE_RESOURCE_FIELD_NUMBER = 477367794;
   private com.google.cloud.compute.v1.HealthCheckService healthCheckServiceResource_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class InsertRegionHealthCheckServiceRequest
   public boolean hasHealthCheckServiceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class InsertRegionHealthCheckServiceRequest
         ? com.google.cloud.compute.v1.HealthCheckService.getDefaultInstance()
         : healthCheckServiceResource_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class InsertRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class InsertRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public final class InsertRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class InsertRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -247,7 +239,6 @@ public final class InsertRegionHealthCheckServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class InsertRegionHealthCheckServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -287,7 +277,6 @@ public final class InsertRegionHealthCheckServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -513,7 +502,6 @@ public final class InsertRegionHealthCheckServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -772,7 +760,6 @@ public final class InsertRegionHealthCheckServiceRequest
             com.google.cloud.compute.v1.HealthCheckService.Builder,
             com.google.cloud.compute.v1.HealthCheckServiceOrBuilder>
         healthCheckServiceResourceBuilder_;
-
     /**
      *
      *
@@ -789,7 +776,6 @@ public final class InsertRegionHealthCheckServiceRequest
     public boolean hasHealthCheckServiceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -812,7 +798,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return healthCheckServiceResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +845,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +876,6 @@ public final class InsertRegionHealthCheckServiceRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return getHealthCheckServiceResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class InsertRegionHealthCheckServiceRequest
             : healthCheckServiceResource_;
       }
     }
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class InsertRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1010,7 +988,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1012,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1054,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1080,6 @@ public final class InsertRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1131,7 +1104,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1156,7 +1128,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1180,7 +1151,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1170,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1196,6 @@ public final class InsertRegionHealthCheckServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1242,7 +1210,6 @@ public final class InsertRegionHealthCheckServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1265,7 +1232,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1288,7 +1254,6 @@ public final class InsertRegionHealthCheckServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1310,7 +1275,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1292,6 @@ public final class InsertRegionHealthCheckServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

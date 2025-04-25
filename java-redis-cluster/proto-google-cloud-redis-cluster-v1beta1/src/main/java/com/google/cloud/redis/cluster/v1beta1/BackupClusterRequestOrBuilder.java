@@ -40,7 +40,6 @@ public interface BackupClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BackupClusterRequestOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface BackupClusterRequestOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface BackupClusterRequestOrBuilder
    * @return Whether the backupId field is set.
    */
   boolean hasBackupId();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface BackupClusterRequestOrBuilder
    * @return The backupId.
    */
   java.lang.String getBackupId();
-
   /**
    *
    *

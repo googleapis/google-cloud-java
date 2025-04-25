@@ -40,7 +40,6 @@ public interface PrivateConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface PrivateConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface PrivateConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface PrivateConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface PrivateConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface PrivateConnectionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface PrivateConnectionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public interface PrivateConnectionOrBuilder
    * @return The vmwareEngineNetwork.
    */
   java.lang.String getVmwareEngineNetwork();
-
   /**
    *
    *
@@ -251,7 +243,6 @@ public interface PrivateConnectionOrBuilder
    * @return The vmwareEngineNetworkCanonical.
    */
   java.lang.String getVmwareEngineNetworkCanonical();
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public interface PrivateConnectionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public interface PrivateConnectionOrBuilder
    * @return The peeringId.
    */
   java.lang.String getPeeringId();
-
   /**
    *
    *
@@ -343,7 +332,6 @@ public interface PrivateConnectionOrBuilder
    * @return The enum numeric value on the wire for routingMode.
    */
   int getRoutingModeValue();
-
   /**
    *
    *
@@ -374,7 +362,6 @@ public interface PrivateConnectionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -413,7 +400,6 @@ public interface PrivateConnectionOrBuilder
    * @return The serviceNetwork.
    */
   java.lang.String getServiceNetwork();
-
   /**
    *
    *
@@ -455,7 +441,6 @@ public interface PrivateConnectionOrBuilder
    * @return The enum numeric value on the wire for peeringState.
    */
   int getPeeringStateValue();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface DiscoveryCloudSqlFilterOrBuilder
    * @return Whether the collection field is set.
    */
   boolean hasCollection();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DiscoveryCloudSqlFilterOrBuilder
    * @return The collection.
    */
   com.google.privacy.dlp.v2.DatabaseResourceCollection getCollection();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface DiscoveryCloudSqlFilterOrBuilder
    * @return Whether the others field is set.
    */
   boolean hasOthers();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface DiscoveryCloudSqlFilterOrBuilder
    * @return The others.
    */
   com.google.privacy.dlp.v2.AllOtherDatabaseResources getOthers();
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public interface DiscoveryCloudSqlFilterOrBuilder
    * @return Whether the databaseResourceReference field is set.
    */
   boolean hasDatabaseResourceReference();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface DiscoveryCloudSqlFilterOrBuilder
    * @return The databaseResourceReference.
    */
   com.google.privacy.dlp.v2.DatabaseResourceReference getDatabaseResourceReference();
-
   /**
    *
    *

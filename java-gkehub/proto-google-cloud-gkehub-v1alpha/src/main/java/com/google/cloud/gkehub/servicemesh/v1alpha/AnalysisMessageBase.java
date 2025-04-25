@@ -34,7 +34,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase)
     AnalysisMessageBaseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnalysisMessageBase.newBuilder() to construct.
   private AnalysisMessageBase(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * <code>LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * <code>ERROR = 3;</code>
      */
     public static final int ERROR_VALUE = 3;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * <code>WARNING = 8;</code>
      */
     public static final int WARNING_VALUE = 8;
-
     /**
      *
      *
@@ -271,7 +267,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -301,7 +296,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * @return The code.
      */
     java.lang.String getCode();
-
     /**
      *
      *
@@ -317,7 +311,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getCodeBytes();
   }
-
   /**
    *
    *
@@ -336,7 +329,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type)
       TypeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Type.newBuilder() to construct.
     private Type(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -372,7 +364,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -398,7 +389,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -429,7 +419,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object code_ = "";
-
     /**
      *
      *
@@ -455,7 +444,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -653,7 +641,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -868,7 +855,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -893,7 +879,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -918,7 +903,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -942,7 +926,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -962,7 +945,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -989,7 +971,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object code_ = "";
-
       /**
        *
        *
@@ -1014,7 +995,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1039,7 +1019,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1063,7 +1042,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1083,7 +1061,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1179,7 +1156,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type type_;
-
   /**
    *
    *
@@ -1195,7 +1171,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
   public boolean hasType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1213,7 +1188,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type.getDefaultInstance()
         : type_;
   }
-
   /**
    *
    *
@@ -1233,7 +1207,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
 
   public static final int LEVEL_FIELD_NUMBER = 2;
   private int level_ = 0;
-
   /**
    *
    *
@@ -1249,7 +1222,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
   public int getLevelValue() {
     return level_;
   }
-
   /**
    *
    *
@@ -1274,7 +1246,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object documentationUrl_ = "";
-
   /**
    *
    *
@@ -1299,7 +1270,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -1512,7 +1482,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1749,7 +1718,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
             com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type.Builder,
             com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.TypeOrBuilder>
         typeBuilder_;
-
     /**
      *
      *
@@ -1764,7 +1732,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     public boolean hasType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1786,7 +1753,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         return typeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1810,7 +1776,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1832,7 +1797,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1863,7 +1827,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1883,7 +1846,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1861,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1920,7 +1881,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
             : type_;
       }
     }
-
     /**
      *
      *
@@ -1948,7 +1908,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     }
 
     private int level_ = 0;
-
     /**
      *
      *
@@ -1964,7 +1923,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     public int getLevelValue() {
       return level_;
     }
-
     /**
      *
      *
@@ -1983,7 +1941,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1960,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2026,7 +1982,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2046,7 +2001,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object documentationUrl_ = "";
-
     /**
      *
      *
@@ -2070,7 +2024,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2094,7 +2047,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2117,7 +2069,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2136,7 +2087,6 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

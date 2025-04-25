@@ -35,7 +35,6 @@ public final class GenerateProductTextSuggestionsRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.productstudio.v1alpha.GenerateProductTextSuggestionsRequest)
     GenerateProductTextSuggestionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateProductTextSuggestionsRequest.newBuilder() to construct.
   private GenerateProductTextSuggestionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class GenerateProductTextSuggestionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class GenerateProductTextSuggestionsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class GenerateProductTextSuggestionsRequest
 
   public static final int PRODUCT_INFO_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.productstudio.v1alpha.ProductInfo productInfo_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class GenerateProductTextSuggestionsRequest
   public boolean hasProductInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class GenerateProductTextSuggestionsRequest
         ? com.google.shopping.merchant.productstudio.v1alpha.ProductInfo.getDefaultInstance()
         : productInfo_;
   }
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class GenerateProductTextSuggestionsRequest
 
   public static final int OUTPUT_SPEC_FIELD_NUMBER = 3;
   private com.google.shopping.merchant.productstudio.v1alpha.OutputSpec outputSpec_;
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class GenerateProductTextSuggestionsRequest
   public boolean hasOutputSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class GenerateProductTextSuggestionsRequest
         ? com.google.shopping.merchant.productstudio.v1alpha.OutputSpec.getDefaultInstance()
         : outputSpec_;
   }
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class GenerateProductTextSuggestionsRequest
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.productstudio.v1alpha.TitleExample>
       titleExamples_;
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class GenerateProductTextSuggestionsRequest
       getTitleExamplesList() {
     return titleExamples_;
   }
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public final class GenerateProductTextSuggestionsRequest
       getTitleExamplesOrBuilderList() {
     return titleExamples_;
   }
-
   /**
    *
    *
@@ -319,7 +307,6 @@ public final class GenerateProductTextSuggestionsRequest
   public int getTitleExamplesCount() {
     return titleExamples_.size();
   }
-
   /**
    *
    *
@@ -339,7 +326,6 @@ public final class GenerateProductTextSuggestionsRequest
       int index) {
     return titleExamples_.get(index);
   }
-
   /**
    *
    *
@@ -581,7 +567,6 @@ public final class GenerateProductTextSuggestionsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -902,7 +887,6 @@ public final class GenerateProductTextSuggestionsRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -927,7 +911,6 @@ public final class GenerateProductTextSuggestionsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -952,7 +935,6 @@ public final class GenerateProductTextSuggestionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -976,7 +958,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +977,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1008,6 @@ public final class GenerateProductTextSuggestionsRequest
             com.google.shopping.merchant.productstudio.v1alpha.ProductInfo.Builder,
             com.google.shopping.merchant.productstudio.v1alpha.ProductInfoOrBuilder>
         productInfoBuilder_;
-
     /**
      *
      *
@@ -1046,7 +1025,6 @@ public final class GenerateProductTextSuggestionsRequest
     public boolean hasProductInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1070,7 +1048,6 @@ public final class GenerateProductTextSuggestionsRequest
         return productInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1074,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1121,7 +1097,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1130,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1178,7 +1152,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1170,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return getProductInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1220,7 +1192,6 @@ public final class GenerateProductTextSuggestionsRequest
             : productInfo_;
       }
     }
-
     /**
      *
      *
@@ -1256,7 +1227,6 @@ public final class GenerateProductTextSuggestionsRequest
             com.google.shopping.merchant.productstudio.v1alpha.OutputSpec.Builder,
             com.google.shopping.merchant.productstudio.v1alpha.OutputSpecOrBuilder>
         outputSpecBuilder_;
-
     /**
      *
      *
@@ -1274,7 +1244,6 @@ public final class GenerateProductTextSuggestionsRequest
     public boolean hasOutputSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1298,7 +1267,6 @@ public final class GenerateProductTextSuggestionsRequest
         return outputSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1325,7 +1293,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1316,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1349,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1406,7 +1371,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1389,6 @@ public final class GenerateProductTextSuggestionsRequest
       onChanged();
       return getOutputSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1448,7 +1411,6 @@ public final class GenerateProductTextSuggestionsRequest
             : outputSpec_;
       }
     }
-
     /**
      *
      *
@@ -1518,7 +1480,6 @@ public final class GenerateProductTextSuggestionsRequest
         return titleExamplesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1540,7 +1501,6 @@ public final class GenerateProductTextSuggestionsRequest
         return titleExamplesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1563,7 +1523,6 @@ public final class GenerateProductTextSuggestionsRequest
         return titleExamplesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1592,7 +1551,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1577,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1648,7 +1605,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1677,7 +1633,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1703,7 +1658,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1684,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1758,7 +1711,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1735,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1808,7 +1759,6 @@ public final class GenerateProductTextSuggestionsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1777,6 @@ public final class GenerateProductTextSuggestionsRequest
         getTitleExamplesBuilder(int index) {
       return getTitleExamplesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1850,7 +1799,6 @@ public final class GenerateProductTextSuggestionsRequest
         return titleExamplesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1874,7 +1822,6 @@ public final class GenerateProductTextSuggestionsRequest
         return java.util.Collections.unmodifiableList(titleExamples_);
       }
     }
-
     /**
      *
      *
@@ -1895,7 +1842,6 @@ public final class GenerateProductTextSuggestionsRequest
           .addBuilder(
               com.google.shopping.merchant.productstudio.v1alpha.TitleExample.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1917,7 +1863,6 @@ public final class GenerateProductTextSuggestionsRequest
               index,
               com.google.shopping.merchant.productstudio.v1alpha.TitleExample.getDefaultInstance());
     }
-
     /**
      *
      *

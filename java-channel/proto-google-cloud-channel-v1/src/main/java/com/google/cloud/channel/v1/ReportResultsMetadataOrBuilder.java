@@ -37,7 +37,6 @@ public interface ReportResultsMetadataOrBuilder
    * @return Whether the report field is set.
    */
   boolean hasReport();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ReportResultsMetadataOrBuilder
    * @return The report.
    */
   com.google.cloud.channel.v1.Report getReport();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface ReportResultsMetadataOrBuilder
    * @return Whether the dateRange field is set.
    */
   boolean hasDateRange();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface ReportResultsMetadataOrBuilder
    * @return The dateRange.
    */
   com.google.cloud.channel.v1.DateRange getDateRange();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface ReportResultsMetadataOrBuilder
    * @return Whether the precedingDateRange field is set.
    */
   boolean hasPrecedingDateRange();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface ReportResultsMetadataOrBuilder
    * @return The precedingDateRange.
    */
   com.google.cloud.channel.v1.DateRange getPrecedingDateRange();
-
   /**
    *
    *

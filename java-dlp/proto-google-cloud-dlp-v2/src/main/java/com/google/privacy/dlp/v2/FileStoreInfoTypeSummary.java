@@ -33,7 +33,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileStoreInfoTypeSummary)
     FileStoreInfoTypeSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileStoreInfoTypeSummary.newBuilder() to construct.
   private FileStoreInfoTypeSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int INFO_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InfoType infoType_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
   public boolean hasInfoType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
-
   /**
    *
    *
@@ -276,7 +272,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -480,7 +475,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
-
     /**
      *
      *
@@ -495,7 +489,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
     public boolean hasInfoType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -516,7 +509,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
         return infoTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -539,7 +531,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -559,7 +550,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -587,7 +577,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +596,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -622,7 +610,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -641,7 +628,6 @@ public final class FileStoreInfoTypeSummary extends com.google.protobuf.Generate
             : infoType_;
       }
     }
-
     /**
      *
      *

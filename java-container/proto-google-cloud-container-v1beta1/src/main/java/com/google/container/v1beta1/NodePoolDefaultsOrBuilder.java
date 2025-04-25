@@ -36,7 +36,6 @@ public interface NodePoolDefaultsOrBuilder
    * @return Whether the nodeConfigDefaults field is set.
    */
   boolean hasNodeConfigDefaults();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NodePoolDefaultsOrBuilder
    * @return The nodeConfigDefaults.
    */
   com.google.container.v1beta1.NodeConfigDefaults getNodeConfigDefaults();
-
   /**
    *
    *

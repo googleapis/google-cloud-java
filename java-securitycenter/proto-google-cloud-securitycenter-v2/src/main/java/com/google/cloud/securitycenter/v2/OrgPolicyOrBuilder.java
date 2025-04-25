@@ -38,7 +38,6 @@ public interface OrgPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ReplicaPlacementOrBuilder
    * @return The subnetId.
    */
   java.lang.String getSubnetId();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ReplicaPlacementOrBuilder
    * @return The azureAvailabilityZone.
    */
   java.lang.String getAzureAvailabilityZone();
-
   /**
    *
    *

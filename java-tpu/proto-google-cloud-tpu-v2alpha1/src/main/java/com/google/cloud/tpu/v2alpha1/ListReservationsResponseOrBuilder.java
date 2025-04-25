@@ -34,7 +34,6 @@ public interface ListReservationsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.Reservation reservations = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.Reservation> getReservationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListReservationsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.Reservation reservations = 1;</code>
    */
   com.google.cloud.tpu.v2alpha1.Reservation getReservations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListReservationsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.Reservation reservations = 1;</code>
    */
   int getReservationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListReservationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.ReservationOrBuilder>
       getReservationsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListReservationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

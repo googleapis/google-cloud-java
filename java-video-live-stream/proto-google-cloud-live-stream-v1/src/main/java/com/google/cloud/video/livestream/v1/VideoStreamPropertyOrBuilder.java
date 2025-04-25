@@ -49,7 +49,6 @@ public interface VideoStreamPropertyOrBuilder
    * @return Whether the videoFormat field is set.
    */
   boolean hasVideoFormat();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface VideoStreamPropertyOrBuilder
    * @return The videoFormat.
    */
   com.google.cloud.video.livestream.v1.VideoFormat getVideoFormat();
-
   /**
    *
    *

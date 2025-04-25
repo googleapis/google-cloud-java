@@ -39,7 +39,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.ShipmentModel)
     ShipmentModelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShipmentModel.newBuilder() to construct.
   private ShipmentModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -98,7 +97,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Row>
         getRowsList();
-
     /**
      *
      *
@@ -114,7 +112,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Row getRows(
         int index);
-
     /**
      *
      *
@@ -129,7 +126,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getRowsCount();
-
     /**
      *
      *
@@ -148,7 +144,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix
                     .RowOrBuilder>
         getRowsOrBuilderList();
-
     /**
      *
      *
@@ -185,7 +180,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return The vehicleStartTag.
      */
     java.lang.String getVehicleStartTag();
-
     /**
      *
      *
@@ -207,7 +201,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getVehicleStartTagBytes();
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix)
       DurationDistanceMatrixOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DurationDistanceMatrix.newBuilder() to construct.
     private DurationDistanceMatrix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -272,7 +264,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.protobuf.Duration durations = 1;</code>
        */
       java.util.List<com.google.protobuf.Duration> getDurationsList();
-
       /**
        *
        *
@@ -284,7 +275,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.protobuf.Duration durations = 1;</code>
        */
       com.google.protobuf.Duration getDurations(int index);
-
       /**
        *
        *
@@ -296,7 +286,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.protobuf.Duration durations = 1;</code>
        */
       int getDurationsCount();
-
       /**
        *
        *
@@ -308,7 +297,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated .google.protobuf.Duration durations = 1;</code>
        */
       java.util.List<? extends com.google.protobuf.DurationOrBuilder> getDurationsOrBuilderList();
-
       /**
        *
        *
@@ -335,7 +323,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * @return A list containing the meters.
        */
       java.util.List<java.lang.Double> getMetersList();
-
       /**
        *
        *
@@ -350,7 +337,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        * @return The count of meters.
        */
       int getMetersCount();
-
       /**
        *
        *
@@ -367,7 +353,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
        */
       double getMeters(int index);
     }
-
     /**
      *
      *
@@ -383,7 +368,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Row)
         RowOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use Row.newBuilder() to construct.
       private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -420,7 +404,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.protobuf.Duration> durations_;
-
       /**
        *
        *
@@ -435,7 +418,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<com.google.protobuf.Duration> getDurationsList() {
         return durations_;
       }
-
       /**
        *
        *
@@ -451,7 +433,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           getDurationsOrBuilderList() {
         return durations_;
       }
-
       /**
        *
        *
@@ -466,7 +447,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public int getDurationsCount() {
         return durations_.size();
       }
-
       /**
        *
        *
@@ -481,7 +461,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Duration getDurations(int index) {
         return durations_.get(index);
       }
-
       /**
        *
        *
@@ -501,7 +480,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private com.google.protobuf.Internal.DoubleList meters_ = emptyDoubleList();
-
       /**
        *
        *
@@ -519,7 +497,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public java.util.List<java.lang.Double> getMetersList() {
         return meters_;
       }
-
       /**
        *
        *
@@ -536,7 +513,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public int getMetersCount() {
         return meters_.size();
       }
-
       /**
        *
        *
@@ -753,7 +729,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1070,7 +1045,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             return durationsBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -1088,7 +1062,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             return durationsBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -1106,7 +1079,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             return durationsBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -1130,7 +1102,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1152,7 +1123,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1176,7 +1146,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1200,7 +1169,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1221,7 +1189,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1243,7 +1210,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1265,7 +1231,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1286,7 +1251,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1307,7 +1271,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1321,7 +1284,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.Duration.Builder getDurationsBuilder(int index) {
           return getDurationsFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -1339,7 +1301,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             return durationsBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -1358,7 +1319,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             return java.util.Collections.unmodifiableList(durations_);
           }
         }
-
         /**
          *
          *
@@ -1373,7 +1333,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return getDurationsFieldBuilder()
               .addBuilder(com.google.protobuf.Duration.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -1388,7 +1347,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return getDurationsFieldBuilder()
               .addBuilder(index, com.google.protobuf.Duration.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -1438,7 +1396,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           }
           bitField0_ |= 0x00000002;
         }
-
         /**
          *
          *
@@ -1456,7 +1413,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           meters_.makeImmutable();
           return meters_;
         }
-
         /**
          *
          *
@@ -1473,7 +1429,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         public int getMetersCount() {
           return meters_.size();
         }
-
         /**
          *
          *
@@ -1491,7 +1446,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         public double getMeters(int index) {
           return meters_.getDouble(index);
         }
-
         /**
          *
          *
@@ -1515,7 +1469,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1538,7 +1491,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1560,7 +1512,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1656,7 +1607,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Row>
         rows_;
-
     /**
      *
      *
@@ -1676,7 +1626,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getRowsList() {
       return rows_;
     }
-
     /**
      *
      *
@@ -1698,7 +1647,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getRowsOrBuilderList() {
       return rows_;
     }
-
     /**
      *
      *
@@ -1716,7 +1664,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public int getRowsCount() {
       return rows_.size();
     }
-
     /**
      *
      *
@@ -1735,7 +1682,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return rows_.get(index);
     }
-
     /**
      *
      *
@@ -1759,7 +1705,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object vehicleStartTag_ = "";
-
     /**
      *
      *
@@ -1791,7 +1736,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2003,7 +1947,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2308,7 +2251,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return rowsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2329,7 +2271,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return rowsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2351,7 +2292,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return rowsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2380,7 +2320,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2407,7 +2346,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2435,7 +2373,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2464,7 +2401,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2490,7 +2426,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2517,7 +2452,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2545,7 +2479,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2569,7 +2502,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2593,7 +2525,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2611,7 +2542,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           getRowsBuilder(int index) {
         return getRowsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2633,7 +2563,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return rowsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2658,7 +2587,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(rows_);
         }
       }
-
       /**
        *
        *
@@ -2679,7 +2607,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Row
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2701,7 +2628,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix.Row
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2742,7 +2668,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object vehicleStartTag_ = "";
-
       /**
        *
        *
@@ -2773,7 +2698,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2804,7 +2728,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2834,7 +2757,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2860,7 +2782,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2977,7 +2898,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the firstIndex field is set.
      */
     boolean hasFirstIndex();
-
     /**
      *
      *
@@ -3016,7 +2936,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the secondIndex field is set.
      */
     boolean hasSecondIndex();
-
     /**
      *
      *
@@ -3055,7 +2974,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the offsetDuration field is set.
      */
     boolean hasOffsetDuration();
-
     /**
      *
      *
@@ -3068,7 +2986,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      * @return The offsetDuration.
      */
     com.google.protobuf.Duration getOffsetDuration();
-
     /**
      *
      *
@@ -3080,7 +2997,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getOffsetDurationOrBuilder();
   }
-
   /**
    *
    *
@@ -3104,7 +3020,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule)
       PrecedenceRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use PrecedenceRule.newBuilder() to construct.
     private PrecedenceRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3136,7 +3051,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int FIRST_INDEX_FIELD_NUMBER = 1;
     private int firstIndex_ = 0;
-
     /**
      *
      *
@@ -3152,7 +3066,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFirstIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3171,7 +3084,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FIRST_IS_DELIVERY_FIELD_NUMBER = 3;
     private boolean firstIsDelivery_ = false;
-
     /**
      *
      *
@@ -3190,7 +3102,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SECOND_INDEX_FIELD_NUMBER = 2;
     private int secondIndex_ = 0;
-
     /**
      *
      *
@@ -3206,7 +3117,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSecondIndex() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3225,7 +3135,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SECOND_IS_DELIVERY_FIELD_NUMBER = 4;
     private boolean secondIsDelivery_ = false;
-
     /**
      *
      *
@@ -3244,7 +3153,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
     public static final int OFFSET_DURATION_FIELD_NUMBER = 5;
     private com.google.protobuf.Duration offsetDuration_;
-
     /**
      *
      *
@@ -3260,7 +3168,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOffsetDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3278,7 +3185,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : offsetDuration_;
     }
-
     /**
      *
      *
@@ -3508,7 +3414,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3782,7 +3687,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int firstIndex_;
-
       /**
        *
        *
@@ -3798,7 +3702,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFirstIndex() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -3814,7 +3717,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public int getFirstIndex() {
         return firstIndex_;
       }
-
       /**
        *
        *
@@ -3834,7 +3736,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3854,7 +3755,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean firstIsDelivery_;
-
       /**
        *
        *
@@ -3870,7 +3770,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public boolean getFirstIsDelivery() {
         return firstIsDelivery_;
       }
-
       /**
        *
        *
@@ -3890,7 +3789,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3910,7 +3808,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int secondIndex_;
-
       /**
        *
        *
@@ -3926,7 +3823,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSecondIndex() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -3942,7 +3838,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public int getSecondIndex() {
         return secondIndex_;
       }
-
       /**
        *
        *
@@ -3962,7 +3857,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3982,7 +3876,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean secondIsDelivery_;
-
       /**
        *
        *
@@ -3998,7 +3891,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public boolean getSecondIsDelivery() {
         return secondIsDelivery_;
       }
-
       /**
        *
        *
@@ -4018,7 +3910,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4043,7 +3934,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           offsetDurationBuilder_;
-
       /**
        *
        *
@@ -4058,7 +3948,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOffsetDuration() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -4079,7 +3968,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           return offsetDurationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -4102,7 +3990,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4122,7 +4009,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4150,7 +4036,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4170,7 +4055,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4185,7 +4069,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getOffsetDurationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -4204,7 +4087,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               : offsetDuration_;
         }
       }
-
       /**
        *
        *
@@ -4303,7 +4185,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.Shipment> shipments_;
-
   /**
    *
    *
@@ -4317,7 +4198,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.routeoptimization.v1.Shipment> getShipmentsList() {
     return shipments_;
   }
-
   /**
    *
    *
@@ -4332,7 +4212,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getShipmentsOrBuilderList() {
     return shipments_;
   }
-
   /**
    *
    *
@@ -4346,7 +4225,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getShipmentsCount() {
     return shipments_.size();
   }
-
   /**
    *
    *
@@ -4360,7 +4238,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routeoptimization.v1.Shipment getShipments(int index) {
     return shipments_.get(index);
   }
-
   /**
    *
    *
@@ -4379,7 +4256,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.Vehicle> vehicles_;
-
   /**
    *
    *
@@ -4393,7 +4269,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.routeoptimization.v1.Vehicle> getVehiclesList() {
     return vehicles_;
   }
-
   /**
    *
    *
@@ -4408,7 +4283,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getVehiclesOrBuilderList() {
     return vehicles_;
   }
-
   /**
    *
    *
@@ -4422,7 +4296,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getVehiclesCount() {
     return vehicles_.size();
   }
-
   /**
    *
    *
@@ -4436,7 +4309,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.routeoptimization.v1.Vehicle getVehicles(int index) {
     return vehicles_.get(index);
   }
-
   /**
    *
    *
@@ -4453,7 +4325,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_ACTIVE_VEHICLES_FIELD_NUMBER = 4;
   private int maxActiveVehicles_ = 0;
-
   /**
    *
    *
@@ -4474,7 +4345,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMaxActiveVehicles() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4498,7 +4368,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GLOBAL_START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp globalStartTime_;
-
   /**
    *
    *
@@ -4524,7 +4393,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGlobalStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4552,7 +4420,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : globalStartTime_;
   }
-
   /**
    *
    *
@@ -4581,7 +4448,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GLOBAL_END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp globalEndTime_;
-
   /**
    *
    *
@@ -4598,7 +4464,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGlobalEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -4617,7 +4482,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : globalEndTime_;
   }
-
   /**
    *
    *
@@ -4637,7 +4501,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GLOBAL_DURATION_COST_PER_HOUR_FIELD_NUMBER = 7;
   private double globalDurationCostPerHour_ = 0D;
-
   /**
    *
    *
@@ -4664,7 +4527,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix>
       durationDistanceMatrices_;
-
   /**
    *
    *
@@ -4767,7 +4629,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getDurationDistanceMatricesList() {
     return durationDistanceMatrices_;
   }
-
   /**
    *
    *
@@ -4872,7 +4733,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getDurationDistanceMatricesOrBuilderList() {
     return durationDistanceMatrices_;
   }
-
   /**
    *
    *
@@ -4974,7 +4834,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getDurationDistanceMatricesCount() {
     return durationDistanceMatrices_.size();
   }
-
   /**
    *
    *
@@ -5077,7 +4936,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getDurationDistanceMatrices(int index) {
     return durationDistanceMatrices_.get(index);
   }
-
   /**
    *
    *
@@ -5186,7 +5044,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList durationDistanceMatrixSrcTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -5214,7 +5071,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDurationDistanceMatrixSrcTagsList() {
     return durationDistanceMatrixSrcTags_;
   }
-
   /**
    *
    *
@@ -5242,7 +5098,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getDurationDistanceMatrixSrcTagsCount() {
     return durationDistanceMatrixSrcTags_.size();
   }
-
   /**
    *
    *
@@ -5271,7 +5126,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDurationDistanceMatrixSrcTags(int index) {
     return durationDistanceMatrixSrcTags_.get(index);
   }
-
   /**
    *
    *
@@ -5306,7 +5160,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList durationDistanceMatrixDstTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -5336,7 +5189,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDurationDistanceMatrixDstTagsList() {
     return durationDistanceMatrixDstTags_;
   }
-
   /**
    *
    *
@@ -5366,7 +5218,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getDurationDistanceMatrixDstTagsCount() {
     return durationDistanceMatrixDstTags_.size();
   }
-
   /**
    *
    *
@@ -5397,7 +5248,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDurationDistanceMatrixDstTags(int index) {
     return durationDistanceMatrixDstTags_.get(index);
   }
-
   /**
    *
    *
@@ -5434,7 +5284,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.TransitionAttributes>
       transitionAttributes_;
-
   /**
    *
    *
@@ -5451,7 +5300,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getTransitionAttributesList() {
     return transitionAttributes_;
   }
-
   /**
    *
    *
@@ -5469,7 +5317,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getTransitionAttributesOrBuilderList() {
     return transitionAttributes_;
   }
-
   /**
    *
    *
@@ -5485,7 +5332,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getTransitionAttributesCount() {
     return transitionAttributes_.size();
   }
-
   /**
    *
    *
@@ -5502,7 +5348,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return transitionAttributes_.get(index);
   }
-
   /**
    *
    *
@@ -5525,7 +5370,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility>
       shipmentTypeIncompatibilities_;
-
   /**
    *
    *
@@ -5542,7 +5386,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getShipmentTypeIncompatibilitiesList() {
     return shipmentTypeIncompatibilities_;
   }
-
   /**
    *
    *
@@ -5560,7 +5403,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getShipmentTypeIncompatibilitiesOrBuilderList() {
     return shipmentTypeIncompatibilities_;
   }
-
   /**
    *
    *
@@ -5576,7 +5418,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getShipmentTypeIncompatibilitiesCount() {
     return shipmentTypeIncompatibilities_.size();
   }
-
   /**
    *
    *
@@ -5593,7 +5434,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getShipmentTypeIncompatibilities(int index) {
     return shipmentTypeIncompatibilities_.get(index);
   }
-
   /**
    *
    *
@@ -5616,7 +5456,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.ShipmentTypeRequirement>
       shipmentTypeRequirements_;
-
   /**
    *
    *
@@ -5633,7 +5472,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getShipmentTypeRequirementsList() {
     return shipmentTypeRequirements_;
   }
-
   /**
    *
    *
@@ -5651,7 +5489,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getShipmentTypeRequirementsOrBuilderList() {
     return shipmentTypeRequirements_;
   }
-
   /**
    *
    *
@@ -5667,7 +5504,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getShipmentTypeRequirementsCount() {
     return shipmentTypeRequirements_.size();
   }
-
   /**
    *
    *
@@ -5684,7 +5520,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return shipmentTypeRequirements_.get(index);
   }
-
   /**
    *
    *
@@ -5707,7 +5542,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule>
       precedenceRules_;
-
   /**
    *
    *
@@ -5724,7 +5558,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getPrecedenceRulesList() {
     return precedenceRules_;
   }
-
   /**
    *
    *
@@ -5742,7 +5575,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       getPrecedenceRulesOrBuilderList() {
     return precedenceRules_;
   }
-
   /**
    *
    *
@@ -5758,7 +5590,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
   public int getPrecedenceRulesCount() {
     return precedenceRules_.size();
   }
-
   /**
    *
    *
@@ -5775,7 +5606,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return precedenceRules_.get(index);
   }
-
   /**
    *
    *
@@ -6123,7 +5953,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6866,7 +6695,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6883,7 +6711,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6900,7 +6727,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6923,7 +6749,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6944,7 +6769,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6967,7 +6791,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6990,7 +6813,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7011,7 +6833,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7032,7 +6853,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7053,7 +6873,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7073,7 +6892,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7093,7 +6911,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7106,7 +6923,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routeoptimization.v1.Shipment.Builder getShipmentsBuilder(int index) {
       return getShipmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7123,7 +6939,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7141,7 +6956,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(shipments_);
       }
     }
-
     /**
      *
      *
@@ -7155,7 +6969,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       return getShipmentsFieldBuilder()
           .addBuilder(com.google.maps.routeoptimization.v1.Shipment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7169,7 +6982,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       return getShipmentsFieldBuilder()
           .addBuilder(index, com.google.maps.routeoptimization.v1.Shipment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7234,7 +7046,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return vehiclesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -7251,7 +7062,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return vehiclesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -7268,7 +7078,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return vehiclesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -7291,7 +7100,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7312,7 +7120,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7335,7 +7142,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7358,7 +7164,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7379,7 +7184,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7400,7 +7204,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7421,7 +7224,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7441,7 +7243,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7461,7 +7262,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7474,7 +7274,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.routeoptimization.v1.Vehicle.Builder getVehiclesBuilder(int index) {
       return getVehiclesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7491,7 +7290,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return vehiclesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7509,7 +7307,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vehicles_);
       }
     }
-
     /**
      *
      *
@@ -7523,7 +7320,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       return getVehiclesFieldBuilder()
           .addBuilder(com.google.maps.routeoptimization.v1.Vehicle.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7537,7 +7333,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       return getVehiclesFieldBuilder()
           .addBuilder(index, com.google.maps.routeoptimization.v1.Vehicle.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7570,7 +7365,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int maxActiveVehicles_;
-
     /**
      *
      *
@@ -7591,7 +7385,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMaxActiveVehicles() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -7612,7 +7405,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public int getMaxActiveVehicles() {
       return maxActiveVehicles_;
     }
-
     /**
      *
      *
@@ -7637,7 +7429,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7667,7 +7458,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         globalStartTimeBuilder_;
-
     /**
      *
      *
@@ -7692,7 +7482,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGlobalStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -7723,7 +7512,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return globalStartTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7756,7 +7544,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7786,7 +7573,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7824,7 +7610,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7854,7 +7639,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7879,7 +7663,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGlobalStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7908,7 +7691,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             : globalStartTime_;
       }
     }
-
     /**
      *
      *
@@ -7951,7 +7733,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         globalEndTimeBuilder_;
-
     /**
      *
      *
@@ -7967,7 +7748,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGlobalEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -7989,7 +7769,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return globalEndTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8013,7 +7792,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8034,7 +7812,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8063,7 +7840,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8084,7 +7860,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8100,7 +7875,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGlobalEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8120,7 +7894,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
             : globalEndTime_;
       }
     }
-
     /**
      *
      *
@@ -8149,7 +7922,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double globalDurationCostPerHour_;
-
     /**
      *
      *
@@ -8170,7 +7942,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public double getGlobalDurationCostPerHour() {
       return globalDurationCostPerHour_;
     }
-
     /**
      *
      *
@@ -8195,7 +7966,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8344,7 +8114,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return durationDistanceMatricesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8449,7 +8218,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return durationDistanceMatricesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8555,7 +8323,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return durationDistanceMatricesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8668,7 +8435,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8779,7 +8545,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8891,7 +8656,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9004,7 +8768,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9114,7 +8877,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9225,7 +8987,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9336,7 +9097,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9444,7 +9204,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9552,7 +9311,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9654,7 +9412,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getDurationDistanceMatricesBuilder(int index) {
       return getDurationDistanceMatricesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9760,7 +9517,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return durationDistanceMatricesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -9868,7 +9624,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(durationDistanceMatrices_);
       }
     }
-
     /**
      *
      *
@@ -9973,7 +9728,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10079,7 +9833,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.ShipmentModel.DurationDistanceMatrix
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -10213,7 +9966,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -10242,7 +9994,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       durationDistanceMatrixSrcTags_.makeImmutable();
       return durationDistanceMatrixSrcTags_;
     }
-
     /**
      *
      *
@@ -10270,7 +10021,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public int getDurationDistanceMatrixSrcTagsCount() {
       return durationDistanceMatrixSrcTags_.size();
     }
-
     /**
      *
      *
@@ -10299,7 +10049,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDurationDistanceMatrixSrcTags(int index) {
       return durationDistanceMatrixSrcTags_.get(index);
     }
-
     /**
      *
      *
@@ -10328,7 +10077,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDurationDistanceMatrixSrcTagsBytes(int index) {
       return durationDistanceMatrixSrcTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -10365,7 +10113,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10401,7 +10148,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10436,7 +10182,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10468,7 +10213,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10516,7 +10260,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -10547,7 +10290,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       durationDistanceMatrixDstTags_.makeImmutable();
       return durationDistanceMatrixDstTags_;
     }
-
     /**
      *
      *
@@ -10577,7 +10319,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public int getDurationDistanceMatrixDstTagsCount() {
       return durationDistanceMatrixDstTags_.size();
     }
-
     /**
      *
      *
@@ -10608,7 +10349,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDurationDistanceMatrixDstTags(int index) {
       return durationDistanceMatrixDstTags_.get(index);
     }
-
     /**
      *
      *
@@ -10639,7 +10379,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDurationDistanceMatrixDstTagsBytes(int index) {
       return durationDistanceMatrixDstTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -10678,7 +10417,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10716,7 +10454,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10753,7 +10490,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10787,7 +10523,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10864,7 +10599,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return transitionAttributesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -10883,7 +10617,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return transitionAttributesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -10903,7 +10636,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return transitionAttributesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -10929,7 +10661,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10953,7 +10684,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10979,7 +10709,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11005,7 +10734,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11028,7 +10756,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11052,7 +10779,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11076,7 +10802,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11098,7 +10823,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11120,7 +10844,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11136,7 +10859,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getTransitionAttributesBuilder(int index) {
       return getTransitionAttributesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -11156,7 +10878,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return transitionAttributesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -11177,7 +10898,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(transitionAttributes_);
       }
     }
-
     /**
      *
      *
@@ -11195,7 +10915,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.maps.routeoptimization.v1.TransitionAttributes.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -11214,7 +10933,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.maps.routeoptimization.v1.TransitionAttributes.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -11289,7 +11007,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeIncompatibilitiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -11308,7 +11025,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeIncompatibilitiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -11328,7 +11044,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeIncompatibilitiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -11354,7 +11069,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11378,7 +11092,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11404,7 +11117,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11430,7 +11142,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11453,7 +11164,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11477,7 +11187,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11503,7 +11212,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11525,7 +11233,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11547,7 +11254,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11563,7 +11269,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getShipmentTypeIncompatibilitiesBuilder(int index) {
       return getShipmentTypeIncompatibilitiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -11583,7 +11288,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeIncompatibilitiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -11604,7 +11308,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(shipmentTypeIncompatibilities_);
       }
     }
-
     /**
      *
      *
@@ -11623,7 +11326,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -11643,7 +11345,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.ShipmentTypeIncompatibility
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -11717,7 +11418,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeRequirementsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -11736,7 +11436,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeRequirementsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -11756,7 +11455,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeRequirementsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -11782,7 +11480,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11806,7 +11503,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11832,7 +11528,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11858,7 +11553,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11881,7 +11575,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11905,7 +11598,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11929,7 +11621,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11951,7 +11642,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11973,7 +11663,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11989,7 +11678,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getShipmentTypeRequirementsBuilder(int index) {
       return getShipmentTypeRequirementsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -12009,7 +11697,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return shipmentTypeRequirementsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -12030,7 +11717,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(shipmentTypeRequirements_);
       }
     }
-
     /**
      *
      *
@@ -12048,7 +11734,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.maps.routeoptimization.v1.ShipmentTypeRequirement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -12067,7 +11752,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.maps.routeoptimization.v1.ShipmentTypeRequirement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -12142,7 +11826,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return precedenceRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -12161,7 +11844,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return precedenceRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -12181,7 +11863,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return precedenceRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -12207,7 +11888,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12231,7 +11911,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12257,7 +11936,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12283,7 +11961,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12306,7 +11983,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12330,7 +12006,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12355,7 +12030,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12377,7 +12051,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12399,7 +12072,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -12415,7 +12087,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         getPrecedenceRulesBuilder(int index) {
       return getPrecedenceRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -12435,7 +12106,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return precedenceRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -12456,7 +12126,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(precedenceRules_);
       }
     }
-
     /**
      *
      *
@@ -12475,7 +12144,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -12495,7 +12163,6 @@ public final class ShipmentModel extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.routeoptimization.v1.ShipmentModel.PrecedenceRule
                   .getDefaultInstance());
     }
-
     /**
      *
      *

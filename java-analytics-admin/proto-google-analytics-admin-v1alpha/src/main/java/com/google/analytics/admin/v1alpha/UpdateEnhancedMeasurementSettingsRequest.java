@@ -34,7 +34,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest)
     UpdateEnhancedMeasurementSettingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateEnhancedMeasurementSettingsRequest.newBuilder() to construct.
   private UpdateEnhancedMeasurementSettingsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
   public static final int ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
       enhancedMeasurementSettings_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
   public boolean hasEnhancedMeasurementSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
         ? com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance()
         : enhancedMeasurementSettings_;
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -381,7 +374,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -620,7 +612,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
             com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder,
             com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder>
         enhancedMeasurementSettingsBuilder_;
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
     public boolean hasEnhancedMeasurementSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -663,7 +653,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
         return enhancedMeasurementSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -690,7 +679,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +757,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return getEnhancedMeasurementSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -813,7 +797,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
             : enhancedMeasurementSettings_;
       }
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -868,7 +850,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +923,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +977,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +995,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1042,7 +1017,6 @@ public final class UpdateEnhancedMeasurementSettingsRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

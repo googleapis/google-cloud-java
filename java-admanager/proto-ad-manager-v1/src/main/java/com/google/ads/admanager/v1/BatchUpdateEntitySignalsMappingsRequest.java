@@ -34,7 +34,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.BatchUpdateEntitySignalsMappingsRequest)
     BatchUpdateEntitySignalsMappingsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchUpdateEntitySignalsMappingsRequest.newBuilder() to construct.
   private BatchUpdateEntitySignalsMappingsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest> requests_;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       getRequestsList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       getRequestsOrBuilderList() {
     return requests_;
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
   public int getRequestsCount() {
     return requests_.size();
   }
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
   public com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest getRequests(int index) {
     return requests_.get(index);
   }
-
   /**
    *
    *
@@ -394,7 +386,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -816,7 +802,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return requestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -836,7 +821,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return requestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return requestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -883,7 +866,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +890,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +916,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1057,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1073,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1120,7 +1093,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1114,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
           .addBuilder(
               com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class BatchUpdateEntitySignalsMappingsRequest
               index,
               com.google.ads.admanager.v1.UpdateEntitySignalsMappingRequest.getDefaultInstance());
     }
-
     /**
      *
      *

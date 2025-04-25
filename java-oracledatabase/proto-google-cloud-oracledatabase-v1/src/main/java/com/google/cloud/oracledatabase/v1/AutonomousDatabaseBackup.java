@@ -34,7 +34,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.AutonomousDatabaseBackup)
     AutonomousDatabaseBackupOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutonomousDatabaseBackup.newBuilder() to construct.
   private AutonomousDatabaseBackup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -141,7 +138,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object autonomousDatabase_ = "";
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -227,7 +221,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -255,7 +248,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
 
   public static final int PROPERTIES_FIELD_NUMBER = 4;
   private com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties properties_;
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
   public boolean hasProperties() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -293,7 +284,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         ? com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties.getDefaultInstance()
         : properties_;
   }
-
   /**
    *
    *
@@ -339,7 +329,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -356,14 +345,12 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -377,7 +364,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -398,7 +384,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -629,7 +614,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -915,7 +899,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -965,7 +947,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -989,7 +970,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1009,7 +989,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1015,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     }
 
     private java.lang.Object autonomousDatabase_ = "";
-
     /**
      *
      *
@@ -1063,7 +1041,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1090,7 +1067,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1116,7 +1092,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1113,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1141,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1191,7 +1164,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1215,7 +1187,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1238,7 +1209,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1227,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1288,7 +1257,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupProperties.Builder,
             com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackupPropertiesOrBuilder>
         propertiesBuilder_;
-
     /**
      *
      *
@@ -1305,7 +1273,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     public boolean hasProperties() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1329,7 +1296,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
         return propertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1355,7 +1321,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1379,7 +1344,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1412,7 +1376,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1397,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1452,7 +1414,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       onChanged();
       return getPropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1475,7 +1436,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
             : properties_;
       }
     }
-
     /**
      *
      *
@@ -1529,7 +1489,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -1546,14 +1505,12 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -1567,7 +1524,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -1588,7 +1544,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1615,7 +1570,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1632,14 +1586,12 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -1660,7 +1612,6 @@ public final class AutonomousDatabaseBackup extends com.google.protobuf.Generate
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *

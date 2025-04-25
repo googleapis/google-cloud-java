@@ -39,7 +39,6 @@ public interface CreateSampleQuerySetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateSampleQuerySetRequestOrBuilder
    * @return Whether the sampleQuerySet field is set.
    */
   boolean hasSampleQuerySet();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CreateSampleQuerySetRequestOrBuilder
    * @return The sampleQuerySet.
    */
   com.google.cloud.discoveryengine.v1alpha.SampleQuerySet getSampleQuerySet();
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public interface CreateSampleQuerySetRequestOrBuilder
    * @return The sampleQuerySetId.
    */
   java.lang.String getSampleQuerySetId();
-
   /**
    *
    *

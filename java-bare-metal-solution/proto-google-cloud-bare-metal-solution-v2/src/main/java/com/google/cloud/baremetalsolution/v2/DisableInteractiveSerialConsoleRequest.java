@@ -34,7 +34,6 @@ public final class DisableInteractiveSerialConsoleRequest
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.DisableInteractiveSerialConsoleRequest)
     DisableInteractiveSerialConsoleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DisableInteractiveSerialConsoleRequest.newBuilder() to construct.
   private DisableInteractiveSerialConsoleRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class DisableInteractiveSerialConsoleRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DisableInteractiveSerialConsoleRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -291,7 +288,6 @@ public final class DisableInteractiveSerialConsoleRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +483,6 @@ public final class DisableInteractiveSerialConsoleRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -512,7 +507,6 @@ public final class DisableInteractiveSerialConsoleRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -537,7 +531,6 @@ public final class DisableInteractiveSerialConsoleRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -561,7 +554,6 @@ public final class DisableInteractiveSerialConsoleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -581,7 +573,6 @@ public final class DisableInteractiveSerialConsoleRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

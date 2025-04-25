@@ -39,7 +39,6 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    * @return Whether the capacityCommitment field is set.
    */
   boolean hasCapacityCommitment();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    * @return The capacityCommitment.
    */
   com.google.cloud.bigquery.reservation.v1.CapacityCommitment getCapacityCommitment();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface CreateCapacityCommitmentRequestOrBuilder
    * @return The capacityCommitmentId.
    */
   java.lang.String getCapacityCommitmentId();
-
   /**
    *
    *

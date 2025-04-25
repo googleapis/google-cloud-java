@@ -315,8 +315,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
       Preconditions.checkArgument(
           Objects.equals(
               notificationChannelDescriptorName.pathTemplate, PROJECT_CHANNEL_DESCRIPTOR),
-          "toBuilder is only supported when NotificationChannelDescriptorName has the pattern of"
-              + " projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
+          "toBuilder is only supported when NotificationChannelDescriptorName has the pattern of projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
       this.project = notificationChannelDescriptorName.project;
       this.channelDescriptor = notificationChannelDescriptorName.channelDescriptor;
     }

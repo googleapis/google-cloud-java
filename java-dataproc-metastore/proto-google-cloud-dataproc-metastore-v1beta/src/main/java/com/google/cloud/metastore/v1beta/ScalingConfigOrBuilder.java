@@ -37,7 +37,6 @@ public interface ScalingConfigOrBuilder
    * @return Whether the instanceSize field is set.
    */
   boolean hasInstanceSize();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ScalingConfigOrBuilder
    * @return The enum numeric value on the wire for instanceSize.
    */
   int getInstanceSizeValue();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface ScalingConfigOrBuilder
    * @return Whether the scalingFactor field is set.
    */
   boolean hasScalingFactor();
-
   /**
    *
    *

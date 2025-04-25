@@ -33,7 +33,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListNotificationChannelsResponse)
     ListNotificationChannelsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotificationChannelsResponse.newBuilder() to construct.
   private ListNotificationChannelsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.NotificationChannel> notificationChannels_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       getNotificationChannelsList() {
     return notificationChannels_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       getNotificationChannelsOrBuilderList() {
     return notificationChannels_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
   public int getNotificationChannelsCount() {
     return notificationChannels_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
   public com.google.monitoring.v3.NotificationChannel getNotificationChannels(int index) {
     return notificationChannels_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -404,7 +395,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -697,7 +687,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return notificationChannelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -714,7 +703,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return notificationChannelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -731,7 +719,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return notificationChannelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +784,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +807,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +827,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +847,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +867,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +905,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         int index) {
       return getNotificationChannelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return notificationChannelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -976,7 +952,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(notificationChannels_);
       }
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       return getNotificationChannelsFieldBuilder()
           .addBuilder(com.google.monitoring.v3.NotificationChannel.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1005,7 +979,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       return getNotificationChannelsFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.NotificationChannel.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1041,7 +1014,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1067,7 +1039,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1093,7 +1064,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1118,7 +1088,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1139,7 +1108,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1135,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1184,7 +1151,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1205,7 +1171,6 @@ public final class ListNotificationChannelsResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

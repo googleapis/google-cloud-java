@@ -34,7 +34,6 @@ public interface SearchDeploymentRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1alpha1.Deployment deployments = 1;</code>
    */
   java.util.List<com.google.cloud.telcoautomation.v1alpha1.Deployment> getDeploymentsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchDeploymentRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1alpha1.Deployment deployments = 1;</code>
    */
   com.google.cloud.telcoautomation.v1alpha1.Deployment getDeployments(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchDeploymentRevisionsResponseOrBuilder
    * <code>repeated .google.cloud.telcoautomation.v1alpha1.Deployment deployments = 1;</code>
    */
   int getDeploymentsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchDeploymentRevisionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.telcoautomation.v1alpha1.DeploymentOrBuilder>
       getDeploymentsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface SearchDeploymentRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

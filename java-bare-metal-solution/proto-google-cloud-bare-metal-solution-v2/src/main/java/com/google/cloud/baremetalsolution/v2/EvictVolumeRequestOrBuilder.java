@@ -38,7 +38,6 @@ public interface EvictVolumeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

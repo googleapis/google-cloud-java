@@ -34,7 +34,6 @@ public interface ListSavedQueriesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SavedQuery saved_queries = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SavedQuery> getSavedQueriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSavedQueriesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SavedQuery saved_queries = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.SavedQuery getSavedQueries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSavedQueriesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SavedQuery saved_queries = 1;</code>
    */
   int getSavedQueriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSavedQueriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SavedQueryOrBuilder>
       getSavedQueriesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListSavedQueriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

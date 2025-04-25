@@ -36,7 +36,6 @@ public interface SearchUrisResponseOrBuilder
    * @return Whether the threat field is set.
    */
   boolean hasThreat();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SearchUrisResponseOrBuilder
    * @return The threat.
    */
   com.google.webrisk.v1.SearchUrisResponse.ThreatUri getThreat();
-
   /**
    *
    *

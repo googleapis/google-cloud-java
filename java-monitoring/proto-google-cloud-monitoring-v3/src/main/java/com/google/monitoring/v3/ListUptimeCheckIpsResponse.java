@@ -33,7 +33,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListUptimeCheckIpsResponse)
     ListUptimeCheckIpsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListUptimeCheckIpsResponse.newBuilder() to construct.
   private ListUptimeCheckIpsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.UptimeCheckIp> uptimeCheckIps_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.monitoring.v3.UptimeCheckIp> getUptimeCheckIpsList() {
     return uptimeCheckIps_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       getUptimeCheckIpsOrBuilderList() {
     return uptimeCheckIps_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
   public int getUptimeCheckIpsCount() {
     return uptimeCheckIps_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
   public com.google.monitoring.v3.UptimeCheckIp getUptimeCheckIps(int index) {
     return uptimeCheckIps_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return uptimeCheckIpsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return uptimeCheckIpsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -694,7 +683,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return uptimeCheckIpsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -718,7 +706,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +750,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +794,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +815,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +876,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +889,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
     public com.google.monitoring.v3.UptimeCheckIp.Builder getUptimeCheckIpsBuilder(int index) {
       return getUptimeCheckIpsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -928,7 +906,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return uptimeCheckIpsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(uptimeCheckIps_);
       }
     }
-
     /**
      *
      *
@@ -962,7 +938,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       return getUptimeCheckIpsFieldBuilder()
           .addBuilder(com.google.monitoring.v3.UptimeCheckIp.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       return getUptimeCheckIpsFieldBuilder()
           .addBuilder(index, com.google.monitoring.v3.UptimeCheckIp.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1014,7 +988,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1042,7 +1015,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1070,7 +1042,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1068,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1090,6 @@ public final class ListUptimeCheckIpsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

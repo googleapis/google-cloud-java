@@ -34,7 +34,6 @@ public interface ListSSHKeysResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.SSHKey ssh_keys = 1;</code>
    */
   java.util.List<com.google.cloud.baremetalsolution.v2.SSHKey> getSshKeysList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSSHKeysResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.SSHKey ssh_keys = 1;</code>
    */
   com.google.cloud.baremetalsolution.v2.SSHKey getSshKeys(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSSHKeysResponseOrBuilder
    * <code>repeated .google.cloud.baremetalsolution.v2.SSHKey ssh_keys = 1;</code>
    */
   int getSshKeysCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSSHKeysResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.baremetalsolution.v2.SSHKeyOrBuilder>
       getSshKeysOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListSSHKeysResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

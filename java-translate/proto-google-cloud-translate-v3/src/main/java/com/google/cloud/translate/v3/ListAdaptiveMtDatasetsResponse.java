@@ -33,7 +33,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.ListAdaptiveMtDatasetsResponse)
     ListAdaptiveMtDatasetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAdaptiveMtDatasetsResponse.newBuilder() to construct.
   private ListAdaptiveMtDatasetsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.AdaptiveMtDataset> adaptiveMtDatasets_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       getAdaptiveMtDatasetsList() {
     return adaptiveMtDatasets_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       getAdaptiveMtDatasetsOrBuilderList() {
     return adaptiveMtDatasets_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
   public int getAdaptiveMtDatasetsCount() {
     return adaptiveMtDatasets_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
   public com.google.cloud.translate.v3.AdaptiveMtDataset getAdaptiveMtDatasets(int index) {
     return adaptiveMtDatasets_.get(index);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -383,7 +375,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -669,7 +660,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return adaptiveMtDatasetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -688,7 +678,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return adaptiveMtDatasetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return adaptiveMtDatasetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +900,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +915,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         int index) {
       return getAdaptiveMtDatasetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return adaptiveMtDatasetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(adaptiveMtDatasets_);
       }
     }
-
     /**
      *
      *
@@ -992,7 +968,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       return getAdaptiveMtDatasetsFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.AdaptiveMtDataset.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1009,7 +984,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       return getAdaptiveMtDatasetsFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.AdaptiveMtDataset.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1097,7 +1069,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1092,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1111,6 @@ public final class ListAdaptiveMtDatasetsResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

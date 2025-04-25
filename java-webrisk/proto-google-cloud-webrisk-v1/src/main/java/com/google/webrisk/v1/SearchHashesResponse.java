@@ -25,7 +25,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.SearchHashesResponse)
     SearchHashesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchHashesResponse.newBuilder() to construct.
   private SearchHashesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return A list containing the threatTypes.
      */
     java.util.List<com.google.webrisk.v1.ThreatType> getThreatTypesList();
-
     /**
      *
      *
@@ -88,7 +86,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return The count of threatTypes.
      */
     int getThreatTypesCount();
-
     /**
      *
      *
@@ -103,7 +100,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return The threatTypes at the given index.
      */
     com.google.webrisk.v1.ThreatType getThreatTypes(int index);
-
     /**
      *
      *
@@ -117,7 +113,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return A list containing the enum numeric values on the wire for threatTypes.
      */
     java.util.List<java.lang.Integer> getThreatTypesValueList();
-
     /**
      *
      *
@@ -160,7 +155,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the expireTime field is set.
      */
     boolean hasExpireTime();
-
     /**
      *
      *
@@ -174,7 +168,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      * @return The expireTime.
      */
     com.google.protobuf.Timestamp getExpireTime();
-
     /**
      *
      *
@@ -187,7 +180,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.SearchHashesResponse.ThreatHash)
       ThreatHashOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ThreatHash.newBuilder() to construct.
     private ThreatHash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -251,7 +242,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
                 return result == null ? com.google.webrisk.v1.ThreatType.UNRECOGNIZED : result;
               }
             };
-
     /**
      *
      *
@@ -270,7 +260,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
           java.lang.Integer, com.google.webrisk.v1.ThreatType>(
           threatTypes_, threatTypes_converter_);
     }
-
     /**
      *
      *
@@ -287,7 +276,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public int getThreatTypesCount() {
       return threatTypes_.size();
     }
-
     /**
      *
      *
@@ -305,7 +293,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
     }
-
     /**
      *
      *
@@ -322,7 +309,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return threatTypes_;
     }
-
     /**
      *
      *
@@ -345,7 +331,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
 
     public static final int HASH_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -365,7 +350,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
 
     public static final int EXPIRE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp expireTime_;
-
     /**
      *
      *
@@ -382,7 +366,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -399,7 +382,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.Timestamp getExpireTime() {
       return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
     }
-
     /**
      *
      *
@@ -616,7 +598,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
           bitField0_ |= 0x00000001;
         }
       }
-
       /**
        *
        *
@@ -898,7 +878,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
             java.lang.Integer, com.google.webrisk.v1.ThreatType>(
             threatTypes_, threatTypes_converter_);
       }
-
       /**
        *
        *
@@ -914,7 +893,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public int getThreatTypesCount() {
         return threatTypes_.size();
       }
-
       /**
        *
        *
@@ -931,7 +909,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
         return threatTypes_converter_.convert(threatTypes_.get(index));
       }
-
       /**
        *
        *
@@ -955,7 +932,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -978,7 +954,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1001,7 +976,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1020,7 +994,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1036,7 +1009,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public java.util.List<java.lang.Integer> getThreatTypesValueList() {
         return java.util.Collections.unmodifiableList(threatTypes_);
       }
-
       /**
        *
        *
@@ -1053,7 +1025,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public int getThreatTypesValue(int index) {
         return threatTypes_.get(index);
       }
-
       /**
        *
        *
@@ -1074,7 +1045,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1094,7 +1064,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1118,7 +1087,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
 
       private com.google.protobuf.ByteString hash_ = com.google.protobuf.ByteString.EMPTY;
-
       /**
        *
        *
@@ -1135,7 +1103,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getHash() {
         return hash_;
       }
-
       /**
        *
        *
@@ -1158,7 +1125,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1184,7 +1150,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           expireTimeBuilder_;
-
       /**
        *
        *
@@ -1200,7 +1165,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       public boolean hasExpireTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1222,7 +1186,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
           return expireTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1246,7 +1209,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1267,7 +1229,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1296,7 +1257,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
-
       /**
        *
        *
@@ -1317,7 +1277,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1333,7 +1292,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         onChanged();
         return getExpireTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1353,7 +1311,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
               : expireTime_;
         }
       }
-
       /**
        *
        *
@@ -1450,7 +1407,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.webrisk.v1.SearchHashesResponse.ThreatHash> threats_;
-
   /**
    *
    *
@@ -1465,7 +1421,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.webrisk.v1.SearchHashesResponse.ThreatHash> getThreatsList() {
     return threats_;
   }
-
   /**
    *
    *
@@ -1481,7 +1436,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       getThreatsOrBuilderList() {
     return threats_;
   }
-
   /**
    *
    *
@@ -1496,7 +1450,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
   public int getThreatsCount() {
     return threats_.size();
   }
-
   /**
    *
    *
@@ -1511,7 +1464,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
   public com.google.webrisk.v1.SearchHashesResponse.ThreatHash getThreats(int index) {
     return threats_.get(index);
   }
-
   /**
    *
    *
@@ -1530,7 +1482,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
 
   public static final int NEGATIVE_EXPIRE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp negativeExpireTime_;
-
   /**
    *
    *
@@ -1547,7 +1498,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
   public boolean hasNegativeExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1566,7 +1516,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : negativeExpireTime_;
   }
-
   /**
    *
    *
@@ -1759,7 +1708,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.webrisk.v1.SearchHashesResponse} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -2049,7 +1997,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         return threatsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2067,7 +2014,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         return threatsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2085,7 +2031,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         return threatsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2110,7 +2055,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2132,7 +2076,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2156,7 +2099,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2181,7 +2123,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2144,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2165,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2187,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2269,7 +2207,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2290,7 +2227,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2305,7 +2241,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         int index) {
       return getThreatsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2324,7 +2259,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         return threatsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2343,7 +2277,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(threats_);
       }
     }
-
     /**
      *
      *
@@ -2358,7 +2291,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       return getThreatsFieldBuilder()
           .addBuilder(com.google.webrisk.v1.SearchHashesResponse.ThreatHash.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2375,7 +2307,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.webrisk.v1.SearchHashesResponse.ThreatHash.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2414,7 +2345,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         negativeExpireTimeBuilder_;
-
     /**
      *
      *
@@ -2430,7 +2360,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
     public boolean hasNegativeExpireTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2452,7 +2381,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
         return negativeExpireTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2476,7 +2404,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2497,7 +2424,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2526,7 +2452,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -2547,7 +2472,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2563,7 +2487,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getNegativeExpireTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2583,7 +2506,6 @@ public final class SearchHashesResponse extends com.google.protobuf.GeneratedMes
             : negativeExpireTime_;
       }
     }
-
     /**
      *
      *

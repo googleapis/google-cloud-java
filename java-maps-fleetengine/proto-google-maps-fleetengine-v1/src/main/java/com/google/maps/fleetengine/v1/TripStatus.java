@@ -136,7 +136,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_TRIP_STATUS = 0;</code>
    */
   public static final int UNKNOWN_TRIP_STATUS_VALUE = 0;
-
   /**
    *
    *
@@ -147,7 +146,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NEW = 1;</code>
    */
   public static final int NEW_VALUE = 1;
-
   /**
    *
    *
@@ -158,7 +156,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENROUTE_TO_PICKUP = 2;</code>
    */
   public static final int ENROUTE_TO_PICKUP_VALUE = 2;
-
   /**
    *
    *
@@ -169,7 +166,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ARRIVED_AT_PICKUP = 3;</code>
    */
   public static final int ARRIVED_AT_PICKUP_VALUE = 3;
-
   /**
    *
    *
@@ -181,7 +177,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ARRIVED_AT_INTERMEDIATE_DESTINATION = 7;</code>
    */
   public static final int ARRIVED_AT_INTERMEDIATE_DESTINATION_VALUE = 7;
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENROUTE_TO_INTERMEDIATE_DESTINATION = 8;</code>
    */
   public static final int ENROUTE_TO_INTERMEDIATE_DESTINATION_VALUE = 8;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENROUTE_TO_DROPOFF = 4;</code>
    */
   public static final int ENROUTE_TO_DROPOFF_VALUE = 4;
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public enum TripStatus implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMPLETE = 5;</code>
    */
   public static final int COMPLETE_VALUE = 5;
-
   /**
    *
    *

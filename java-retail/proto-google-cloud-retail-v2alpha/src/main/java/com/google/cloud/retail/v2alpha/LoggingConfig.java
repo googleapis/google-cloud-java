@@ -34,7 +34,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.LoggingConfig)
     LoggingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LoggingConfig.newBuilder() to construct.
   private LoggingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,7 +139,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOGGING_LEVEL_UNSPECIFIED = 0;</code>
      */
     public static final int LOGGING_LEVEL_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -151,7 +149,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOGGING_DISABLED = 1;</code>
      */
     public static final int LOGGING_DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -162,7 +159,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOG_ERRORS_AND_ABOVE = 2;</code>
      */
     public static final int LOG_ERRORS_AND_ABOVE_VALUE = 2;
-
     /**
      *
      *
@@ -174,7 +170,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>LOG_WARNINGS_AND_ABOVE = 3;</code>
      */
     public static final int LOG_WARNINGS_AND_ABOVE_VALUE = 3;
-
     /**
      *
      *
@@ -292,7 +287,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for loggingLevel.
      */
     int getLoggingLevelValue();
-
     /**
      *
      *
@@ -331,7 +325,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the infoLogSampleRate field is set.
      */
     boolean hasInfoLogSampleRate();
-
     /**
      *
      *
@@ -356,7 +349,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      */
     float getInfoLogSampleRate();
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule)
       LogGenerationRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LogGenerationRule.newBuilder() to construct.
     private LogGenerationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -405,7 +396,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int LOGGING_LEVEL_FIELD_NUMBER = 1;
     private int loggingLevel_ = 0;
-
     /**
      *
      *
@@ -423,7 +413,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public int getLoggingLevelValue() {
       return loggingLevel_;
     }
-
     /**
      *
      *
@@ -448,7 +437,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INFO_LOG_SAMPLE_RATE_FIELD_NUMBER = 2;
     private float infoLogSampleRate_ = 0F;
-
     /**
      *
      *
@@ -475,7 +463,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInfoLogSampleRate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -891,7 +877,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int loggingLevel_ = 0;
-
       /**
        *
        *
@@ -909,7 +894,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       public int getLoggingLevelValue() {
         return loggingLevel_;
       }
-
       /**
        *
        *
@@ -930,7 +914,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -952,7 +935,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.retail.v2alpha.LoggingConfig.LoggingLevel.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -977,7 +959,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -999,7 +980,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private float infoLogSampleRate_;
-
       /**
        *
        *
@@ -1026,7 +1006,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInfoLogSampleRate() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1053,7 +1032,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       public float getInfoLogSampleRate() {
         return infoLogSampleRate_;
       }
-
       /**
        *
        *
@@ -1084,7 +1062,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1207,7 +1184,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The serviceName.
      */
     java.lang.String getServiceName();
-
     /**
      *
      *
@@ -1243,7 +1219,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logGenerationRule field is set.
      */
     boolean hasLogGenerationRule();
-
     /**
      *
      *
@@ -1257,7 +1232,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The logGenerationRule.
      */
     com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule getLogGenerationRule();
-
     /**
      *
      *
@@ -1271,7 +1245,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRuleOrBuilder
         getLogGenerationRuleOrBuilder();
   }
-
   /**
    *
    *
@@ -1286,7 +1259,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRule)
       ServiceLogGenerationRuleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ServiceLogGenerationRule.newBuilder() to construct.
     private ServiceLogGenerationRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1322,7 +1294,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceName_ = "";
-
     /**
      *
      *
@@ -1355,7 +1326,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1391,7 +1361,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LOG_GENERATION_RULE_FIELD_NUMBER = 3;
     private com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule logGenerationRule_;
-
     /**
      *
      *
@@ -1408,7 +1377,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLogGenerationRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1427,7 +1395,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule.getDefaultInstance()
           : logGenerationRule_;
     }
-
     /**
      *
      *
@@ -1623,7 +1590,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1854,7 +1820,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object serviceName_ = "";
-
       /**
        *
        *
@@ -1886,7 +1851,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1918,7 +1882,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1949,7 +1912,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1976,7 +1938,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2015,7 +1976,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule.Builder,
               com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRuleOrBuilder>
           logGenerationRuleBuilder_;
-
       /**
        *
        *
@@ -2031,7 +1991,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLogGenerationRule() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2054,7 +2013,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
           return logGenerationRuleBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2079,7 +2037,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2101,7 +2058,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2133,7 +2089,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2154,7 +2109,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2171,7 +2125,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLogGenerationRuleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2192,7 +2145,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
               : logGenerationRule_;
         }
       }
-
       /**
        *
        *
@@ -2293,7 +2245,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2320,7 +2271,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2350,7 +2300,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_LOG_GENERATION_RULE_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule defaultLogGenerationRule_;
-
   /**
    *
    *
@@ -2371,7 +2320,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultLogGenerationRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2395,7 +2343,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule.getDefaultInstance()
         : defaultLogGenerationRule_;
   }
-
   /**
    *
    *
@@ -2423,7 +2370,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRule>
       serviceLogGenerationRules_;
-
   /**
    *
    *
@@ -2446,7 +2392,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       getServiceLogGenerationRulesList() {
     return serviceLogGenerationRules_;
   }
-
   /**
    *
    *
@@ -2470,7 +2415,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       getServiceLogGenerationRulesOrBuilderList() {
     return serviceLogGenerationRules_;
   }
-
   /**
    *
    *
@@ -2492,7 +2436,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
   public int getServiceLogGenerationRulesCount() {
     return serviceLogGenerationRules_.size();
   }
-
   /**
    *
    *
@@ -2515,7 +2458,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       getServiceLogGenerationRules(int index) {
     return serviceLogGenerationRules_.get(index);
   }
-
   /**
    *
    *
@@ -2728,7 +2670,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3010,7 +2951,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3036,7 +2976,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3062,7 +3001,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3087,7 +3025,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3108,7 +3045,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3142,7 +3078,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRule.Builder,
             com.google.cloud.retail.v2alpha.LoggingConfig.LogGenerationRuleOrBuilder>
         defaultLogGenerationRuleBuilder_;
-
     /**
      *
      *
@@ -3162,7 +3097,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultLogGenerationRule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -3189,7 +3123,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return defaultLogGenerationRuleBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3218,7 +3151,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3244,7 +3176,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3280,7 +3211,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3305,7 +3235,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3326,7 +3255,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultLogGenerationRuleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3351,7 +3279,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             : defaultLogGenerationRule_;
       }
     }
-
     /**
      *
      *
@@ -3427,7 +3354,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return serviceLogGenerationRulesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3452,7 +3378,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return serviceLogGenerationRulesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3478,7 +3403,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return serviceLogGenerationRulesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3510,7 +3434,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3541,7 +3464,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3573,7 +3495,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3605,7 +3526,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3635,7 +3555,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3666,7 +3585,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3697,7 +3615,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3725,7 +3642,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3753,7 +3669,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3775,7 +3690,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         getServiceLogGenerationRulesBuilder(int index) {
       return getServiceLogGenerationRulesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3801,7 +3715,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return serviceLogGenerationRulesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3829,7 +3742,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(serviceLogGenerationRules_);
       }
     }
-
     /**
      *
      *
@@ -3854,7 +3766,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRule
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3880,7 +3791,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.retail.v2alpha.LoggingConfig.ServiceLogGenerationRule
                   .getDefaultInstance());
     }
-
     /**
      *
      *

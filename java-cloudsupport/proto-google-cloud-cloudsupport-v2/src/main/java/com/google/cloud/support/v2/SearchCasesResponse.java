@@ -33,7 +33,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.support.v2.SearchCasesResponse)
     SearchCasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchCasesResponse.newBuilder() to construct.
   private SearchCasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.support.v2.Case> cases_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.support.v2.Case> getCasesList() {
     return cases_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       getCasesOrBuilderList() {
     return cases_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
   public int getCasesCount() {
     return cases_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
   public com.google.cloud.support.v2.Case getCases(int index) {
     return cases_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -650,7 +641,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return casesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -668,7 +658,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return casesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -686,7 +675,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return casesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -800,7 +784,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -821,7 +804,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +845,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +878,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
     public com.google.cloud.support.v2.Case.Builder getCasesBuilder(int index) {
       return getCasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return casesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -936,7 +913,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(cases_);
       }
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       return getCasesFieldBuilder()
           .addBuilder(com.google.cloud.support.v2.Case.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -966,7 +941,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       return getCasesFieldBuilder()
           .addBuilder(index, com.google.cloud.support.v2.Case.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -999,7 +973,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1049,7 +1021,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1044,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1093,7 +1063,6 @@ public final class SearchCasesResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

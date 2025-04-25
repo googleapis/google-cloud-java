@@ -34,7 +34,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ResumeScheduleRequest)
     ResumeScheduleRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResumeScheduleRequest.newBuilder() to construct.
   private ResumeScheduleRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CATCH_UP_FIELD_NUMBER = 2;
   private boolean catchUp_ = false;
-
   /**
    *
    *
@@ -318,7 +314,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -517,7 +512,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -544,7 +538,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -571,7 +564,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -597,7 +589,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -648,7 +638,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean catchUp_;
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
     public boolean getCatchUp() {
       return catchUp_;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class ResumeScheduleRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

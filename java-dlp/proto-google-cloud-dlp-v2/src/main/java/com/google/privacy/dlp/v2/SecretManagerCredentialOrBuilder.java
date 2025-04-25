@@ -36,7 +36,6 @@ public interface SecretManagerCredentialOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SecretManagerCredentialOrBuilder
    * @return The passwordSecretVersionName.
    */
   java.lang.String getPasswordSecretVersionName();
-
   /**
    *
    *

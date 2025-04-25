@@ -34,7 +34,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest)
     WriteTensorboardRunDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use WriteTensorboardRunDataRequest.newBuilder() to construct.
   private WriteTensorboardRunDataRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tensorboardRun_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.TimeSeriesData> timeSeriesData_;
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       getTimeSeriesDataList() {
     return timeSeriesData_;
   }
-
   /**
    *
    *
@@ -174,7 +169,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       getTimeSeriesDataOrBuilderList() {
     return timeSeriesData_;
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
   public int getTimeSeriesDataCount() {
     return timeSeriesData_.size();
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
   public com.google.cloud.aiplatform.v1beta1.TimeSeriesData getTimeSeriesData(int index) {
     return timeSeriesData_.get(index);
   }
-
   /**
    *
    *
@@ -408,7 +400,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +654,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object tensorboardRun_ = "";
-
     /**
      *
      *
@@ -690,7 +680,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -717,7 +706,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -743,7 +731,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +752,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +820,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return timeSeriesDataBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -857,7 +842,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return timeSeriesDataBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -880,7 +864,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return timeSeriesDataBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -910,7 +893,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +919,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +976,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1002,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1028,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1054,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1079,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1104,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1123,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         int index) {
       return getTimeSeriesDataFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1173,7 +1146,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return timeSeriesDataBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1169,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
         return java.util.Collections.unmodifiableList(timeSeriesData_);
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1188,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
       return getTimeSeriesDataFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.TimeSeriesData.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1239,7 +1209,6 @@ public final class WriteTensorboardRunDataRequest extends com.google.protobuf.Ge
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.TimeSeriesData.getDefaultInstance());
     }
-
     /**
      *
      *

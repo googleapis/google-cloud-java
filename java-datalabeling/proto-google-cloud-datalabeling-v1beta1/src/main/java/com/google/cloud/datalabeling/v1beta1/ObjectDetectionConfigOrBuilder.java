@@ -36,7 +36,6 @@ public interface ObjectDetectionConfigOrBuilder
    * @return The annotationSpecSet.
    */
   java.lang.String getAnnotationSpecSet();
-
   /**
    *
    *

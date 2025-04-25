@@ -33,7 +33,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.KeyEvent)
     KeyEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KeyEvent.newBuilder() to construct.
   private KeyEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,7 +120,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>COUNTING_METHOD_UNSPECIFIED = 0;</code>
      */
     public static final int COUNTING_METHOD_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -132,7 +130,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>ONCE_PER_EVENT = 1;</code>
      */
     public static final int ONCE_PER_EVENT_VALUE = 1;
-
     /**
      *
      *
@@ -264,7 +261,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
      * @return The currencyCode.
      */
     java.lang.String getCurrencyCode();
-
     /**
      *
      *
@@ -282,7 +278,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCurrencyCodeBytes();
   }
-
   /**
    *
    *
@@ -297,7 +292,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.KeyEvent.DefaultValue)
       DefaultValueOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DefaultValue.newBuilder() to construct.
     private DefaultValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -330,7 +324,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NUMERIC_VALUE_FIELD_NUMBER = 1;
     private double numericValue_ = 0D;
-
     /**
      *
      *
@@ -353,7 +346,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object currencyCode_ = "";
-
     /**
      *
      *
@@ -381,7 +373,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -785,7 +775,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double numericValue_;
-
       /**
        *
        *
@@ -803,7 +792,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       public double getNumericValue() {
         return numericValue_;
       }
-
       /**
        *
        *
@@ -825,7 +813,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -847,7 +834,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object currencyCode_ = "";
-
       /**
        *
        *
@@ -874,7 +860,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -901,7 +886,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -927,7 +911,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -949,7 +932,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1028,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1071,7 +1052,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1101,7 +1081,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object eventName_ = "";
-
   /**
    *
    *
@@ -1126,7 +1105,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1154,7 +1132,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1171,7 +1148,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1188,7 +1164,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1206,7 +1181,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETABLE_FIELD_NUMBER = 4;
   private boolean deletable_ = false;
-
   /**
    *
    *
@@ -1225,7 +1199,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FIELD_NUMBER = 5;
   private boolean custom_ = false;
-
   /**
    *
    *
@@ -1249,7 +1222,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COUNTING_METHOD_FIELD_NUMBER = 6;
   private int countingMethod_ = 0;
-
   /**
    *
    *
@@ -1268,7 +1240,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
   public int getCountingMethodValue() {
     return countingMethod_;
   }
-
   /**
    *
    *
@@ -1294,7 +1265,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_VALUE_FIELD_NUMBER = 7;
   private com.google.analytics.admin.v1alpha.KeyEvent.DefaultValue defaultValue_;
-
   /**
    *
    *
@@ -1312,7 +1282,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDefaultValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1332,7 +1301,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.analytics.admin.v1alpha.KeyEvent.DefaultValue.getDefaultInstance()
         : defaultValue_;
   }
-
   /**
    *
    *
@@ -1579,7 +1547,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1866,7 +1833,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1890,7 +1856,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1914,7 +1879,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1937,7 +1901,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1956,7 +1919,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1944,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object eventName_ = "";
-
     /**
      *
      *
@@ -2006,7 +1967,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2030,7 +1990,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2053,7 +2012,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2072,7 +2030,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2060,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2120,7 +2076,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2143,7 +2098,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2168,7 +2122,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2190,7 +2143,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2172,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2242,7 +2193,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2259,7 +2209,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2280,7 +2229,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2310,7 +2258,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean deletable_;
-
     /**
      *
      *
@@ -2326,7 +2273,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean getDeletable() {
       return deletable_;
     }
-
     /**
      *
      *
@@ -2346,7 +2292,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2366,7 +2311,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean custom_;
-
     /**
      *
      *
@@ -2387,7 +2331,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean getCustom() {
       return custom_;
     }
-
     /**
      *
      *
@@ -2412,7 +2355,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2437,7 +2379,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int countingMethod_ = 0;
-
     /**
      *
      *
@@ -2456,7 +2397,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     public int getCountingMethodValue() {
       return countingMethod_;
     }
-
     /**
      *
      *
@@ -2478,7 +2418,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2501,7 +2440,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
           ? com.google.analytics.admin.v1alpha.KeyEvent.CountingMethod.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2527,7 +2465,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2555,7 +2492,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.analytics.admin.v1alpha.KeyEvent.DefaultValue.Builder,
             com.google.analytics.admin.v1alpha.KeyEvent.DefaultValueOrBuilder>
         defaultValueBuilder_;
-
     /**
      *
      *
@@ -2572,7 +2508,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDefaultValue() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2595,7 +2530,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
         return defaultValueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2620,7 +2554,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2576,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2675,7 +2607,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2697,7 +2628,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2715,7 +2645,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDefaultValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2737,7 +2666,6 @@ public final class KeyEvent extends com.google.protobuf.GeneratedMessageV3
             : defaultValue_;
       }
     }
-
     /**
      *
      *

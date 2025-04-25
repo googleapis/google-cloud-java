@@ -33,7 +33,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig)
     SynthesizeSpeechConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SynthesizeSpeechConfig.newBuilder() to construct.
   private SynthesizeSpeechConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int SPEAKING_RATE_FIELD_NUMBER = 1;
   private double speakingRate_ = 0D;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
 
   public static final int PITCH_FIELD_NUMBER = 2;
   private double pitch_ = 0D;
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
 
   public static final int VOLUME_GAIN_DB_FIELD_NUMBER = 3;
   private double volumeGainDb_ = 0D;
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList effectsProfileId_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
     return effectsProfileId_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   public int getEffectsProfileIdCount() {
     return effectsProfileId_.size();
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   public java.lang.String getEffectsProfileId(int index) {
     return effectsProfileId_.get(index);
   }
-
   /**
    *
    *
@@ -212,7 +204,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
 
   public static final int VOICE_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.cx.v3.VoiceSelectionParams voice_;
-
   /**
    *
    *
@@ -228,7 +219,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
   public boolean hasVoice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -246,7 +236,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dialogflow.cx.v3.VoiceSelectionParams.getDefaultInstance()
         : voice_;
   }
-
   /**
    *
    *
@@ -482,7 +471,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -742,7 +730,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private double speakingRate_;
-
     /**
      *
      *
@@ -761,7 +748,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public double getSpeakingRate() {
       return speakingRate_;
     }
-
     /**
      *
      *
@@ -784,7 +770,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     }
 
     private double pitch_;
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public double getPitch() {
       return pitch_;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     }
 
     private double volumeGainDb_;
-
     /**
      *
      *
@@ -892,7 +873,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public double getVolumeGainDb() {
       return volumeGainDb_;
     }
-
     /**
      *
      *
@@ -919,7 +899,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -972,7 +950,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       effectsProfileId_.makeImmutable();
       return effectsProfileId_;
     }
-
     /**
      *
      *
@@ -989,7 +966,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public int getEffectsProfileIdCount() {
       return effectsProfileId_.size();
     }
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public java.lang.String getEffectsProfileId(int index) {
       return effectsProfileId_.get(index);
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
       return effectsProfileId_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1051,7 +1025,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1049,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1070,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1090,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1122,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.dialogflow.cx.v3.VoiceSelectionParams.Builder,
             com.google.cloud.dialogflow.cx.v3.VoiceSelectionParamsOrBuilder>
         voiceBuilder_;
-
     /**
      *
      *
@@ -1167,7 +1136,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public boolean hasVoice() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1188,7 +1156,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         return voiceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1211,7 +1178,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1198,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1226,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1245,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1259,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1315,7 +1277,6 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
             : voice_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PrivateConnection private_connections = 1;</code>
    */
   java.util.List<com.google.cloud.vmwareengine.v1.PrivateConnection> getPrivateConnectionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PrivateConnection private_connections = 1;</code>
    */
   com.google.cloud.vmwareengine.v1.PrivateConnection getPrivateConnections(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * <code>repeated .google.cloud.vmwareengine.v1.PrivateConnection private_connections = 1;</code>
    */
   int getPrivateConnectionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmwareengine.v1.PrivateConnectionOrBuilder>
       getPrivateConnectionsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -121,7 +116,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface ListPrivateConnectionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateJobTriggerRequest)
     CreateJobTriggerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateJobTriggerRequest.newBuilder() to construct.
   private CreateJobTriggerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
   public static final int JOB_TRIGGER_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.JobTrigger jobTrigger_;
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
   public boolean hasJobTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -194,7 +189,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         ? com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance()
         : jobTrigger_;
   }
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object triggerId_ = "";
-
   /**
    *
    *
@@ -244,7 +237,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -276,7 +268,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
-
   /**
    *
    *
@@ -300,7 +291,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -516,7 +506,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -760,7 +749,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -800,7 +788,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -840,7 +827,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -879,7 +865,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +899,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +945,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
             com.google.privacy.dlp.v2.JobTrigger.Builder,
             com.google.privacy.dlp.v2.JobTriggerOrBuilder>
         jobTriggerBuilder_;
-
     /**
      *
      *
@@ -978,7 +961,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     public boolean hasJobTrigger() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1001,7 +983,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return jobTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1007,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1028,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1057,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1100,7 +1078,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1117,7 +1094,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return getJobTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1138,7 +1114,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
             : jobTrigger_;
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object triggerId_ = "";
-
     /**
      *
      *
@@ -1194,7 +1168,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1220,7 +1193,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1217,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1237,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1294,7 +1264,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -1317,7 +1286,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1340,7 +1308,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1362,7 +1329,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1380,7 +1346,6 @@ public final class CreateJobTriggerRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

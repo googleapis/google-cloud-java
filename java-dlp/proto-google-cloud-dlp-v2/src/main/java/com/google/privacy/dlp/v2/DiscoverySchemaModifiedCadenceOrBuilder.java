@@ -38,7 +38,6 @@ public interface DiscoverySchemaModifiedCadenceOrBuilder
    * @return A list containing the types.
    */
   java.util.List<com.google.privacy.dlp.v2.BigQuerySchemaModification> getTypesList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DiscoverySchemaModifiedCadenceOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface DiscoverySchemaModifiedCadenceOrBuilder
    * @return The types at the given index.
    */
   com.google.privacy.dlp.v2.BigQuerySchemaModification getTypes(int index);
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface DiscoverySchemaModifiedCadenceOrBuilder
    * @return A list containing the enum numeric values on the wire for types.
    */
   java.util.List<java.lang.Integer> getTypesValueList();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface DiscoverySchemaModifiedCadenceOrBuilder
    * @return The enum numeric value on the wire for frequency.
    */
   int getFrequencyValue();
-
   /**
    *
    *

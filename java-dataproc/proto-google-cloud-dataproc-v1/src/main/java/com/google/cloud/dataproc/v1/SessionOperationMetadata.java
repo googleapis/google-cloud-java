@@ -33,7 +33,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SessionOperationMetadata)
     SessionOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SessionOperationMetadata.newBuilder() to construct.
   private SessionOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,7 +142,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
      * <code>SESSION_OPERATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SESSION_OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -154,7 +152,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
      * <code>CREATE = 1;</code>
      */
     public static final int CREATE_VALUE = 1;
-
     /**
      *
      *
@@ -165,7 +162,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
      * <code>TERMINATE = 2;</code>
      */
     public static final int TERMINATE_VALUE = 2;
-
     /**
      *
      *
@@ -272,7 +268,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object session_ = "";
-
   /**
    *
    *
@@ -296,7 +291,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -325,7 +319,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionUuid_ = "";
-
   /**
    *
    *
@@ -349,7 +342,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -376,7 +368,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -392,7 +383,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -408,7 +398,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -425,7 +414,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
 
   public static final int DONE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp doneTime_;
-
   /**
    *
    *
@@ -441,7 +429,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public boolean hasDoneTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -457,7 +444,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.Timestamp getDoneTime() {
     return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
   }
-
   /**
    *
    *
@@ -474,7 +460,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 6;
   private int operationType_ = 0;
-
   /**
    *
    *
@@ -492,7 +477,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public int getOperationTypeValue() {
     return operationType_;
   }
-
   /**
    *
    *
@@ -521,7 +505,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -545,7 +528,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -596,7 +578,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -613,14 +594,12 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -634,7 +613,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -655,7 +633,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -682,7 +659,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList warnings_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -697,7 +673,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getWarningsList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -712,7 +687,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public int getWarningsCount() {
     return warnings_.size();
   }
-
   /**
    *
    *
@@ -728,7 +702,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
   public java.lang.String getWarnings(int index) {
     return warnings_.get(index);
   }
-
   /**
    *
    *
@@ -999,7 +972,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1338,7 +1310,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object session_ = "";
-
     /**
      *
      *
@@ -1361,7 +1332,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1384,7 +1354,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1375,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1392,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1416,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object sessionUuid_ = "";
-
     /**
      *
      *
@@ -1472,7 +1438,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1495,7 +1460,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1481,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1535,7 +1498,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1527,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1580,7 +1541,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1601,7 +1561,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1624,7 +1583,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1602,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1629,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1648,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1662,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1726,7 +1680,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1759,7 +1712,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         doneTimeBuilder_;
-
     /**
      *
      *
@@ -1774,7 +1726,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public boolean hasDoneTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1793,7 +1744,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return doneTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1816,7 +1766,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1836,7 +1785,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1812,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1884,7 +1831,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1845,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return getDoneTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1916,7 +1861,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return doneTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : doneTime_;
       }
     }
-
     /**
      *
      *
@@ -1944,7 +1888,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     }
 
     private int operationType_ = 0;
-
     /**
      *
      *
@@ -1962,7 +1905,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public int getOperationTypeValue() {
       return operationType_;
     }
-
     /**
      *
      *
@@ -1983,7 +1925,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2007,7 +1948,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
           ? com.google.cloud.dataproc.v1.SessionOperationMetadata.SessionOperationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2032,7 +1972,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2054,7 +1993,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2077,7 +2015,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2100,7 +2037,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2122,7 +2058,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2140,7 +2075,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2189,7 +2123,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2206,14 +2139,12 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2227,7 +2158,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2248,7 +2178,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2275,7 +2204,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2292,14 +2220,12 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2320,7 +2246,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -2345,7 +2270,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2361,7 +2285,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       warnings_.makeImmutable();
       return warnings_;
     }
-
     /**
      *
      *
@@ -2376,7 +2299,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public int getWarningsCount() {
       return warnings_.size();
     }
-
     /**
      *
      *
@@ -2392,7 +2314,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public java.lang.String getWarnings(int index) {
       return warnings_.get(index);
     }
-
     /**
      *
      *
@@ -2408,7 +2329,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getWarningsBytes(int index) {
       return warnings_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2432,7 +2352,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2455,7 +2374,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2475,7 +2393,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2494,7 +2411,6 @@ public final class SessionOperationMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

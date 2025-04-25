@@ -39,7 +39,6 @@ public interface BatchWriteSpansRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface BatchWriteSpansRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface BatchWriteSpansRequestOrBuilder
    * </code>
    */
   com.google.devtools.cloudtrace.v2.Span getSpans(int index);
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface BatchWriteSpansRequestOrBuilder
    * </code>
    */
   int getSpansCount();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface BatchWriteSpansRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder> getSpansOrBuilderList();
-
   /**
    *
    *

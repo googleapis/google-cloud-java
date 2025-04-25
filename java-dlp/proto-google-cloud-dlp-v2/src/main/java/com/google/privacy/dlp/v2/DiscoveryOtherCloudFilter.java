@@ -34,7 +34,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryOtherCloudFilter)
     DiscoveryOtherCloudFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryOtherCloudFilter.newBuilder() to construct.
   private DiscoveryOtherCloudFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     private FilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,7 +115,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
   }
 
   public static final int COLLECTION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
   public boolean hasCollection() {
     return filterCase_ == 1;
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     }
     return com.google.privacy.dlp.v2.OtherCloudResourceCollection.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
   }
 
   public static final int SINGLE_RESOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
   public boolean hasSingleResource() {
     return filterCase_ == 2;
   }
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     }
     return com.google.privacy.dlp.v2.OtherCloudSingleResourceReference.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -229,7 +221,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
   }
 
   public static final int OTHERS_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -250,7 +241,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
   public boolean hasOthers() {
     return filterCase_ == 100;
   }
-
   /**
    *
    *
@@ -274,7 +264,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     }
     return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -501,7 +490,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +743,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.OtherCloudResourceCollection.Builder,
             com.google.privacy.dlp.v2.OtherCloudResourceCollectionOrBuilder>
         collectionBuilder_;
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     public boolean hasCollection() {
       return filterCase_ == 1;
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.OtherCloudResourceCollection.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -820,7 +805,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +825,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +858,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.OtherCloudResourceCollection.Builder getCollectionBuilder() {
       return getCollectionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.OtherCloudResourceCollection.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.OtherCloudSingleResourceReference.Builder,
             com.google.privacy.dlp.v2.OtherCloudSingleResourceReferenceOrBuilder>
         singleResourceBuilder_;
-
     /**
      *
      *
@@ -992,7 +970,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     public boolean hasSingleResource() {
       return filterCase_ == 2;
     }
-
     /**
      *
      *
@@ -1019,7 +996,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.OtherCloudSingleResourceReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1077,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1103,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1117,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         getSingleResourceBuilder() {
       return getSingleResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1168,7 +1139,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.OtherCloudSingleResourceReference.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.AllOtherResources.Builder,
             com.google.privacy.dlp.v2.AllOtherResourcesOrBuilder>
         othersBuilder_;
-
     /**
      *
      *
@@ -1230,7 +1199,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     public boolean hasOthers() {
       return filterCase_ == 100;
     }
-
     /**
      *
      *
@@ -1261,7 +1229,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1256,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1280,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1317,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       filterCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1347,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1364,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
     public com.google.privacy.dlp.v2.AllOtherResources.Builder getOthersBuilder() {
       return getOthersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1427,7 +1389,6 @@ public final class DiscoveryOtherCloudFilter extends com.google.protobuf.Generat
         return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
       }
     }
-
     /**
      *
      *

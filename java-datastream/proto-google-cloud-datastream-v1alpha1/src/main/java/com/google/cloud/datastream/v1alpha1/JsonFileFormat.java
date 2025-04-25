@@ -33,7 +33,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.JsonFileFormat)
     JsonFileFormatOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JsonFileFormat.newBuilder() to construct.
   private JsonFileFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>JSON_COMPRESSION_UNSPECIFIED = 0;</code>
      */
     public static final int JSON_COMPRESSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
      * <code>NO_COMPRESSION = 1;</code>
      */
     public static final int NO_COMPRESSION_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCHEMA_FILE_FORMAT_FIELD_NUMBER = 1;
   private int schemaFileFormat_ = 0;
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
   public int getSchemaFileFormatValue() {
     return schemaFileFormat_;
   }
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPRESSION_FIELD_NUMBER = 2;
   private int compression_ = 0;
-
   /**
    *
    *
@@ -285,7 +279,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
   public int getCompressionValue() {
     return compression_;
   }
-
   /**
    *
    *
@@ -484,7 +477,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -680,7 +672,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int schemaFileFormat_ = 0;
-
     /**
      *
      *
@@ -696,7 +687,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
     public int getSchemaFileFormatValue() {
       return schemaFileFormat_;
     }
-
     /**
      *
      *
@@ -715,7 +705,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +724,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datastream.v1alpha1.SchemaFileFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -758,7 +746,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int compression_ = 0;
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
     public int getCompressionValue() {
       return compression_;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.datastream.v1alpha1.JsonFileFormat.JsonCompression.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -861,7 +844,6 @@ public final class JsonFileFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

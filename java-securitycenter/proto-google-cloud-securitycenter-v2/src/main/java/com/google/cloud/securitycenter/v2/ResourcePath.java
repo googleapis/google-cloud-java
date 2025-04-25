@@ -34,7 +34,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ResourcePath)
     ResourcePathOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResourcePath.newBuilder() to construct.
   private ResourcePath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -188,7 +187,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_PATH_NODE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RESOURCE_PATH_NODE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -199,7 +197,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>GCP_ORGANIZATION = 1;</code>
      */
     public static final int GCP_ORGANIZATION_VALUE = 1;
-
     /**
      *
      *
@@ -210,7 +207,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>GCP_FOLDER = 2;</code>
      */
     public static final int GCP_FOLDER_VALUE = 2;
-
     /**
      *
      *
@@ -221,7 +217,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>GCP_PROJECT = 3;</code>
      */
     public static final int GCP_PROJECT_VALUE = 3;
-
     /**
      *
      *
@@ -232,7 +227,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>AWS_ORGANIZATION = 4;</code>
      */
     public static final int AWS_ORGANIZATION_VALUE = 4;
-
     /**
      *
      *
@@ -243,7 +237,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>AWS_ORGANIZATIONAL_UNIT = 5;</code>
      */
     public static final int AWS_ORGANIZATIONAL_UNIT_VALUE = 5;
-
     /**
      *
      *
@@ -254,7 +247,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>AWS_ACCOUNT = 6;</code>
      */
     public static final int AWS_ACCOUNT_VALUE = 6;
-
     /**
      *
      *
@@ -265,7 +257,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>AZURE_MANAGEMENT_GROUP = 7;</code>
      */
     public static final int AZURE_MANAGEMENT_GROUP_VALUE = 7;
-
     /**
      *
      *
@@ -276,7 +267,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * <code>AZURE_SUBSCRIPTION = 8;</code>
      */
     public static final int AZURE_SUBSCRIPTION_VALUE = 8;
-
     /**
      *
      *
@@ -405,7 +395,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for nodeType.
      */
     int getNodeTypeValue();
-
     /**
      *
      *
@@ -431,7 +420,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -457,7 +445,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      * @return The displayName.
      */
     java.lang.String getDisplayName();
-
     /**
      *
      *
@@ -471,7 +458,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -487,7 +473,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.ResourcePath.ResourcePathNode)
       ResourcePathNodeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ResourcePathNode.newBuilder() to construct.
     private ResourcePathNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -522,7 +507,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
 
     public static final int NODE_TYPE_FIELD_NUMBER = 1;
     private int nodeType_ = 0;
-
     /**
      *
      *
@@ -538,7 +522,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
     public int getNodeTypeValue() {
       return nodeType_;
     }
-
     /**
      *
      *
@@ -563,7 +546,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -587,7 +569,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -616,7 +597,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -640,7 +620,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -851,7 +830,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1075,7 +1053,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int nodeType_ = 0;
-
       /**
        *
        *
@@ -1092,7 +1069,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       public int getNodeTypeValue() {
         return nodeType_;
       }
-
       /**
        *
        *
@@ -1112,7 +1088,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1134,7 +1109,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.securitycenter.v2.ResourcePath.ResourcePathNodeType.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1158,7 +1132,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1179,7 +1152,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -1202,7 +1174,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1225,7 +1196,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1247,7 +1217,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1265,7 +1234,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1290,7 +1258,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -1313,7 +1280,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1336,7 +1302,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1358,7 +1323,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1376,7 +1340,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1471,7 +1434,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.v2.ResourcePath.ResourcePathNode> nodes_;
-
   /**
    *
    *
@@ -1487,7 +1449,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       getNodesList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -1504,7 +1465,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       getNodesOrBuilderList() {
     return nodes_;
   }
-
   /**
    *
    *
@@ -1519,7 +1479,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
   public int getNodesCount() {
     return nodes_.size();
   }
-
   /**
    *
    *
@@ -1534,7 +1493,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.ResourcePath.ResourcePathNode getNodes(int index) {
     return nodes_.get(index);
   }
-
   /**
    *
    *
@@ -1712,7 +1670,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1981,7 +1938,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2000,7 +1956,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2019,7 +1974,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2045,7 +1999,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2069,7 +2022,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2095,7 +2047,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2121,7 +2072,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2144,7 +2094,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2168,7 +2117,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2193,7 +2141,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2162,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2237,7 +2183,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2253,7 +2198,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getNodesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2273,7 +2217,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return nodesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2294,7 +2237,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(nodes_);
       }
     }
-
     /**
      *
      *
@@ -2313,7 +2255,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.ResourcePath.ResourcePathNode
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2333,7 +2274,6 @@ public final class ResourcePath extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.securitycenter.v2.ResourcePath.ResourcePathNode
                   .getDefaultInstance());
     }
-
     /**
      *
      *

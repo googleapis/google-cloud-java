@@ -36,7 +36,6 @@ public interface DiscoveryEndpointOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface DiscoveryEndpointOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface CreateManagementServerRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateManagementServerRequestOrBuilder
    * @return The managementServerId.
    */
   java.lang.String getManagementServerId();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface CreateManagementServerRequestOrBuilder
    * @return Whether the managementServer field is set.
    */
   boolean hasManagementServer();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateManagementServerRequestOrBuilder
    * @return The managementServer.
    */
   com.google.cloud.backupdr.v1.ManagementServer getManagementServer();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface CreateManagementServerRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.SetNodePoolAutoscalingRequest)
     SetNodePoolAutoscalingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetNodePoolAutoscalingRequest.newBuilder() to construct.
   private SetNodePoolAutoscalingRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
-
   /**
    *
    *
@@ -232,7 +226,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -266,7 +259,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodePoolId_ = "";
-
   /**
    *
    *
@@ -295,7 +287,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -327,7 +318,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
 
   public static final int AUTOSCALING_FIELD_NUMBER = 5;
   private com.google.container.v1beta1.NodePoolAutoscaling autoscaling_;
-
   /**
    *
    *
@@ -345,7 +335,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
   public boolean hasAutoscaling() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -365,7 +354,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         ? com.google.container.v1beta1.NodePoolAutoscaling.getDefaultInstance()
         : autoscaling_;
   }
-
   /**
    *
    *
@@ -388,7 +376,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -414,7 +401,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -651,7 +637,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -926,7 +911,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -955,7 +939,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +967,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1012,7 +994,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1017,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1047,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1096,7 +1075,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1103,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1130,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1153,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1183,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object clusterId_ = "";
-
     /**
      *
      *
@@ -1236,7 +1210,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1237,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1291,7 +1263,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1285,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1314,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nodePoolId_ = "";
-
     /**
      *
      *
@@ -1372,7 +1341,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1400,7 +1368,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1427,7 +1394,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1450,7 +1416,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1485,7 +1450,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
             com.google.container.v1beta1.NodePoolAutoscaling.Builder,
             com.google.container.v1beta1.NodePoolAutoscalingOrBuilder>
         autoscalingBuilder_;
-
     /**
      *
      *
@@ -1502,7 +1466,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     public boolean hasAutoscaling() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1525,7 +1488,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return autoscalingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1550,7 +1512,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1534,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1564,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1626,7 +1585,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1643,7 +1601,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return getAutoscalingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1664,7 +1621,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
             : autoscaling_;
       }
     }
-
     /**
      *
      *
@@ -1694,7 +1650,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1719,7 +1674,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1744,7 +1698,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1768,7 +1721,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1740,6 @@ public final class SetNodePoolAutoscalingRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

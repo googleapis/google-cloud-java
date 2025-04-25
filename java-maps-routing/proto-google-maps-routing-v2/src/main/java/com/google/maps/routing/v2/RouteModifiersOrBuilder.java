@@ -96,7 +96,6 @@ public interface RouteModifiersOrBuilder
    * @return Whether the vehicleInfo field is set.
    */
   boolean hasVehicleInfo();
-
   /**
    *
    *
@@ -109,7 +108,6 @@ public interface RouteModifiersOrBuilder
    * @return The vehicleInfo.
    */
   com.google.maps.routing.v2.VehicleInfo getVehicleInfo();
-
   /**
    *
    *
@@ -138,7 +136,6 @@ public interface RouteModifiersOrBuilder
    * @return A list containing the tollPasses.
    */
   java.util.List<com.google.maps.routing.v2.TollPass> getTollPassesList();
-
   /**
    *
    *
@@ -156,7 +153,6 @@ public interface RouteModifiersOrBuilder
    * @return The count of tollPasses.
    */
   int getTollPassesCount();
-
   /**
    *
    *
@@ -175,7 +171,6 @@ public interface RouteModifiersOrBuilder
    * @return The tollPasses at the given index.
    */
   com.google.maps.routing.v2.TollPass getTollPasses(int index);
-
   /**
    *
    *
@@ -193,7 +188,6 @@ public interface RouteModifiersOrBuilder
    * @return A list containing the enum numeric values on the wire for tollPasses.
    */
   java.util.List<java.lang.Integer> getTollPassesValueList();
-
   /**
    *
    *

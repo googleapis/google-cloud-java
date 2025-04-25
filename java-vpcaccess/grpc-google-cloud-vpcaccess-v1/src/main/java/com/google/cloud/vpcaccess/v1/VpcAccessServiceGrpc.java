@@ -229,19 +229,6 @@ public final class VpcAccessServiceGrpc {
     return VpcAccessServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static VpcAccessServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<VpcAccessServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<VpcAccessServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public VpcAccessServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new VpcAccessServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return VpcAccessServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -449,83 +436,6 @@ public final class VpcAccessServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VpcAccessService.
-   *
-   * <pre>
-   * Serverless VPC Access API allows users to create and manage connectors for
-   * App Engine, Cloud Functions and Cloud Run to have internal connections to
-   * Virtual Private Cloud networks.
-   * </pre>
-   */
-  public static final class VpcAccessServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<VpcAccessServiceBlockingV2Stub> {
-    private VpcAccessServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected VpcAccessServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new VpcAccessServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a Serverless VPC Access connector, returns an operation.
-     * </pre>
-     */
-    public com.google.longrunning.Operation createConnector(
-        com.google.cloud.vpcaccess.v1.CreateConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateConnectorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Gets a Serverless VPC Access connector. Returns NOT_FOUND if the resource
-     * does not exist.
-     * </pre>
-     */
-    public com.google.cloud.vpcaccess.v1.Connector getConnector(
-        com.google.cloud.vpcaccess.v1.GetConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetConnectorMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists Serverless VPC Access connectors.
-     * </pre>
-     */
-    public com.google.cloud.vpcaccess.v1.ListConnectorsResponse listConnectors(
-        com.google.cloud.vpcaccess.v1.ListConnectorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListConnectorsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a Serverless VPC Access connector. Returns NOT_FOUND if the
-     * resource does not exist.
-     * </pre>
-     */
-    public com.google.longrunning.Operation deleteConnector(
-        com.google.cloud.vpcaccess.v1.DeleteConnectorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteConnectorMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service VpcAccessService.
    *
    * <pre>
    * Serverless VPC Access API allows users to create and manage connectors for

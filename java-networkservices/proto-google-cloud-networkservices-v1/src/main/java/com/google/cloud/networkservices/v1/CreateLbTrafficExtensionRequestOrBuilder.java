@@ -39,7 +39,6 @@ public interface CreateLbTrafficExtensionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface CreateLbTrafficExtensionRequestOrBuilder
    * @return The lbTrafficExtensionId.
    */
   java.lang.String getLbTrafficExtensionId();
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public interface CreateLbTrafficExtensionRequestOrBuilder
    * @return Whether the lbTrafficExtension field is set.
    */
   boolean hasLbTrafficExtension();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateLbTrafficExtensionRequestOrBuilder
    * @return The lbTrafficExtension.
    */
   com.google.cloud.networkservices.v1.LbTrafficExtension getLbTrafficExtension();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateLbTrafficExtensionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface ProtectConfigOrBuilder
    * @return Whether the workloadConfig field is set.
    */
   boolean hasWorkloadConfig();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ProtectConfigOrBuilder
    * @return The workloadConfig.
    */
   com.google.container.v1beta1.WorkloadConfig getWorkloadConfig();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ProtectConfigOrBuilder
    * @return Whether the workloadVulnerabilityMode field is set.
    */
   boolean hasWorkloadVulnerabilityMode();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface ProtectConfigOrBuilder
    * @return The enum numeric value on the wire for workloadVulnerabilityMode.
    */
   int getWorkloadVulnerabilityModeValue();
-
   /**
    *
    *

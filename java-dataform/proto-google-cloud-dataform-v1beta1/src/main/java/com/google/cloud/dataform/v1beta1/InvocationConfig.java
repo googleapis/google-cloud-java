@@ -35,7 +35,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.InvocationConfig)
     InvocationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InvocationConfig.newBuilder() to construct.
   private InvocationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataform.v1beta1.Target> includedTargets_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.dataform.v1beta1.Target> getIncludedTargetsList() {
     return includedTargets_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       getIncludedTargetsOrBuilderList() {
     return includedTargets_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   public int getIncludedTargetsCount() {
     return includedTargets_.size();
   }
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.dataform.v1beta1.Target getIncludedTargets(int index) {
     return includedTargets_.get(index);
   }
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getIncludedTagsList() {
     return includedTags_;
   }
-
   /**
    *
    *
@@ -189,7 +181,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   public int getIncludedTagsCount() {
     return includedTags_.size();
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
   public java.lang.String getIncludedTags(int index) {
     return includedTags_.get(index);
   }
-
   /**
    *
    *
@@ -224,7 +214,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int TRANSITIVE_DEPENDENCIES_INCLUDED_FIELD_NUMBER = 3;
   private boolean transitiveDependenciesIncluded_ = false;
-
   /**
    *
    *
@@ -245,7 +234,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int TRANSITIVE_DEPENDENTS_INCLUDED_FIELD_NUMBER = 4;
   private boolean transitiveDependentsIncluded_ = false;
-
   /**
    *
    *
@@ -265,7 +253,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int FULLY_REFRESH_INCREMENTAL_TABLES_ENABLED_FIELD_NUMBER = 5;
   private boolean fullyRefreshIncrementalTablesEnabled_ = false;
-
   /**
    *
    *
@@ -288,7 +275,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -312,7 +298,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -560,7 +545,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -903,7 +887,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return includedTargetsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -922,7 +905,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return includedTargetsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -941,7 +923,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return includedTargetsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +969,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1014,7 +993,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1017,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1039,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1061,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1104,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1125,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataform.v1beta1.Target.Builder getIncludedTargetsBuilder(int index) {
       return getIncludedTargetsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return includedTargetsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1207,7 +1177,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(includedTargets_);
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1192,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       return getIncludedTargetsFieldBuilder()
           .addBuilder(com.google.cloud.dataform.v1beta1.Target.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1239,7 +1207,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       return getIncludedTargetsFieldBuilder()
           .addBuilder(index, com.google.cloud.dataform.v1beta1.Target.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1285,7 +1252,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1301,7 +1267,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       includedTags_.makeImmutable();
       return includedTags_;
     }
-
     /**
      *
      *
@@ -1316,7 +1281,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public int getIncludedTagsCount() {
       return includedTags_.size();
     }
-
     /**
      *
      *
@@ -1332,7 +1296,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public java.lang.String getIncludedTags(int index) {
       return includedTags_.get(index);
     }
-
     /**
      *
      *
@@ -1348,7 +1311,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getIncludedTagsBytes(int index) {
       return includedTags_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1372,7 +1334,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1356,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1375,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1393,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1418,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean transitiveDependenciesIncluded_;
-
     /**
      *
      *
@@ -1478,7 +1435,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public boolean getTransitiveDependenciesIncluded() {
       return transitiveDependenciesIncluded_;
     }
-
     /**
      *
      *
@@ -1500,7 +1456,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1477,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean transitiveDependentsIncluded_;
-
     /**
      *
      *
@@ -1540,7 +1494,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public boolean getTransitiveDependentsIncluded() {
       return transitiveDependentsIncluded_;
     }
-
     /**
      *
      *
@@ -1562,7 +1515,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1536,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean fullyRefreshIncrementalTablesEnabled_;
-
     /**
      *
      *
@@ -1602,7 +1553,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     public boolean getFullyRefreshIncrementalTablesEnabled() {
       return fullyRefreshIncrementalTablesEnabled_;
     }
-
     /**
      *
      *
@@ -1624,7 +1574,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1595,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -1669,7 +1617,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1639,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1660,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1732,7 +1677,6 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

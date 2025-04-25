@@ -36,7 +36,6 @@ public interface UpdatePeeringNetworkRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdatePeeringNetworkRequestOrBuilder
    * @return Whether the networksUpdatePeeringRequestResource field is set.
    */
   boolean hasNetworksUpdatePeeringRequestResource();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface UpdatePeeringNetworkRequestOrBuilder
    */
   com.google.cloud.compute.v1.NetworksUpdatePeeringRequest
       getNetworksUpdatePeeringRequestResource();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface UpdatePeeringNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface UpdatePeeringNetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface UpdatePeeringNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    * @return Whether the withExtendedNotifications field is set.
    */
   boolean hasWithExtendedNotifications();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface SimulateMaintenanceEventInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

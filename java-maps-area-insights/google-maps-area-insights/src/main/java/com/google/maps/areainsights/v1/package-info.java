@@ -15,13 +15,13 @@
  */
 
 /**
- * A client to Places Aggregate API
+ * A client to Places Insights API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= AreaInsightsClient =======================
  *
- * <p>Service Description: Service definition for the Places Aggregate RPC.
+ * <p>Service Description: Service definition for the Places Insights API.
  *
  * <p>Sample for AreaInsightsClient:
  *

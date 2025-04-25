@@ -38,7 +38,6 @@ public interface ImportAdaptiveMtFileResponseOrBuilder
    * @return Whether the adaptiveMtFile field is set.
    */
   boolean hasAdaptiveMtFile();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ImportAdaptiveMtFileResponseOrBuilder
    * @return The adaptiveMtFile.
    */
   com.google.cloud.translate.v3.AdaptiveMtFile getAdaptiveMtFile();
-
   /**
    *
    *

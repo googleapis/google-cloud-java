@@ -34,7 +34,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.appengine.v1.AutomaticScaling)
     AutomaticScalingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutomaticScaling.newBuilder() to construct.
   private AutomaticScaling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int COOL_DOWN_PERIOD_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration coolDownPeriod_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasCoolDownPeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Duration.getDefaultInstance()
         : coolDownPeriod_;
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int CPU_UTILIZATION_FIELD_NUMBER = 2;
   private com.google.appengine.v1.CpuUtilization cpuUtilization_;
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasCpuUtilization() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.appengine.v1.CpuUtilization.getDefaultInstance()
         : cpuUtilization_;
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_CONCURRENT_REQUESTS_FIELD_NUMBER = 3;
   private int maxConcurrentRequests_ = 0;
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_IDLE_INSTANCES_FIELD_NUMBER = 4;
   private int maxIdleInstances_ = 0;
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_TOTAL_INSTANCES_FIELD_NUMBER = 5;
   private int maxTotalInstances_ = 0;
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_PENDING_LATENCY_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration maxPendingLatency_;
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasMaxPendingLatency() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +273,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Duration.getDefaultInstance()
         : maxPendingLatency_;
   }
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MIN_IDLE_INSTANCES_FIELD_NUMBER = 7;
   private int minIdleInstances_ = 0;
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MIN_TOTAL_INSTANCES_FIELD_NUMBER = 8;
   private int minTotalInstances_ = 0;
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int MIN_PENDING_LATENCY_FIELD_NUMBER = 9;
   private com.google.protobuf.Duration minPendingLatency_;
-
   /**
    *
    *
@@ -362,7 +346,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasMinPendingLatency() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -381,7 +364,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.Duration.getDefaultInstance()
         : minPendingLatency_;
   }
-
   /**
    *
    *
@@ -401,7 +383,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int REQUEST_UTILIZATION_FIELD_NUMBER = 10;
   private com.google.appengine.v1.RequestUtilization requestUtilization_;
-
   /**
    *
    *
@@ -417,7 +398,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasRequestUtilization() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -435,7 +415,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.appengine.v1.RequestUtilization.getDefaultInstance()
         : requestUtilization_;
   }
-
   /**
    *
    *
@@ -454,7 +433,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int DISK_UTILIZATION_FIELD_NUMBER = 11;
   private com.google.appengine.v1.DiskUtilization diskUtilization_;
-
   /**
    *
    *
@@ -470,7 +448,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasDiskUtilization() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -488,7 +465,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.appengine.v1.DiskUtilization.getDefaultInstance()
         : diskUtilization_;
   }
-
   /**
    *
    *
@@ -507,7 +483,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int NETWORK_UTILIZATION_FIELD_NUMBER = 12;
   private com.google.appengine.v1.NetworkUtilization networkUtilization_;
-
   /**
    *
    *
@@ -523,7 +498,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasNetworkUtilization() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -541,7 +515,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.appengine.v1.NetworkUtilization.getDefaultInstance()
         : networkUtilization_;
   }
-
   /**
    *
    *
@@ -560,7 +533,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
 
   public static final int STANDARD_SCHEDULER_SETTINGS_FIELD_NUMBER = 20;
   private com.google.appengine.v1.StandardSchedulerSettings standardSchedulerSettings_;
-
   /**
    *
    *
@@ -576,7 +548,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
   public boolean hasStandardSchedulerSettings() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -594,7 +565,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         ? com.google.appengine.v1.StandardSchedulerSettings.getDefaultInstance()
         : standardSchedulerSettings_;
   }
-
   /**
    *
    *
@@ -921,7 +891,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1346,7 +1315,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         coolDownPeriodBuilder_;
-
     /**
      *
      *
@@ -1366,7 +1334,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasCoolDownPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1392,7 +1359,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return coolDownPeriodBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1386,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1410,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1442,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1503,7 +1466,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1485,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCoolDownPeriodFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1547,7 +1508,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : coolDownPeriod_;
       }
     }
-
     /**
      *
      *
@@ -1585,7 +1545,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.appengine.v1.CpuUtilization.Builder,
             com.google.appengine.v1.CpuUtilizationOrBuilder>
         cpuUtilizationBuilder_;
-
     /**
      *
      *
@@ -1600,7 +1559,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasCpuUtilization() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1621,7 +1579,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return cpuUtilizationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1644,7 +1601,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1621,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1693,7 +1648,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1713,7 +1667,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1728,7 +1681,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCpuUtilizationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1747,7 +1699,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : cpuUtilization_;
       }
     }
-
     /**
      *
      *
@@ -1775,7 +1726,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxConcurrentRequests_;
-
     /**
      *
      *
@@ -1794,7 +1744,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public int getMaxConcurrentRequests() {
       return maxConcurrentRequests_;
     }
-
     /**
      *
      *
@@ -1817,7 +1766,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1840,7 +1788,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxIdleInstances_;
-
     /**
      *
      *
@@ -1857,7 +1804,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public int getMaxIdleInstances() {
       return maxIdleInstances_;
     }
-
     /**
      *
      *
@@ -1878,7 +1824,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1844,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxTotalInstances_;
-
     /**
      *
      *
@@ -1916,7 +1860,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public int getMaxTotalInstances() {
       return maxTotalInstances_;
     }
-
     /**
      *
      *
@@ -1937,7 +1880,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1963,7 +1905,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxPendingLatencyBuilder_;
-
     /**
      *
      *
@@ -1979,7 +1920,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasMaxPendingLatency() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2001,7 +1941,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return maxPendingLatencyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2025,7 +1964,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2046,7 +1984,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2012,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2032,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2112,7 +2047,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getMaxPendingLatencyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2132,7 +2066,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : maxPendingLatency_;
       }
     }
-
     /**
      *
      *
@@ -2161,7 +2094,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     }
 
     private int minIdleInstances_;
-
     /**
      *
      *
@@ -2178,7 +2110,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public int getMinIdleInstances() {
       return minIdleInstances_;
     }
-
     /**
      *
      *
@@ -2199,7 +2130,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2150,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     }
 
     private int minTotalInstances_;
-
     /**
      *
      *
@@ -2237,7 +2166,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public int getMinTotalInstances() {
       return minTotalInstances_;
     }
-
     /**
      *
      *
@@ -2258,7 +2186,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2284,7 +2211,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         minPendingLatencyBuilder_;
-
     /**
      *
      *
@@ -2300,7 +2226,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasMinPendingLatency() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2322,7 +2247,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return minPendingLatencyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2346,7 +2270,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2367,7 +2290,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2396,7 +2318,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2417,7 +2338,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2433,7 +2353,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getMinPendingLatencyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2453,7 +2372,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : minPendingLatency_;
       }
     }
-
     /**
      *
      *
@@ -2487,7 +2405,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.appengine.v1.RequestUtilization.Builder,
             com.google.appengine.v1.RequestUtilizationOrBuilder>
         requestUtilizationBuilder_;
-
     /**
      *
      *
@@ -2502,7 +2419,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasRequestUtilization() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -2523,7 +2439,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return requestUtilizationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2546,7 +2461,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2567,7 +2481,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2596,7 +2509,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2616,7 +2528,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2631,7 +2542,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getRequestUtilizationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2650,7 +2560,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : requestUtilization_;
       }
     }
-
     /**
      *
      *
@@ -2683,7 +2592,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.appengine.v1.DiskUtilization.Builder,
             com.google.appengine.v1.DiskUtilizationOrBuilder>
         diskUtilizationBuilder_;
-
     /**
      *
      *
@@ -2698,7 +2606,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasDiskUtilization() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -2719,7 +2626,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return diskUtilizationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2742,7 +2648,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2668,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2695,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2811,7 +2714,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2826,7 +2728,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDiskUtilizationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2845,7 +2746,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : diskUtilization_;
       }
     }
-
     /**
      *
      *
@@ -2878,7 +2778,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.appengine.v1.NetworkUtilization.Builder,
             com.google.appengine.v1.NetworkUtilizationOrBuilder>
         networkUtilizationBuilder_;
-
     /**
      *
      *
@@ -2893,7 +2792,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasNetworkUtilization() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -2914,7 +2812,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return networkUtilizationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2937,7 +2834,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2958,7 +2854,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2987,7 +2882,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3007,7 +2901,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3022,7 +2915,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getNetworkUtilizationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3041,7 +2933,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : networkUtilization_;
       }
     }
-
     /**
      *
      *
@@ -3074,7 +2965,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             com.google.appengine.v1.StandardSchedulerSettings.Builder,
             com.google.appengine.v1.StandardSchedulerSettingsOrBuilder>
         standardSchedulerSettingsBuilder_;
-
     /**
      *
      *
@@ -3089,7 +2979,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
     public boolean hasStandardSchedulerSettings() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -3110,7 +2999,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
         return standardSchedulerSettingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3134,7 +3022,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3155,7 +3042,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3185,7 +3071,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3205,7 +3090,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3221,7 +3105,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStandardSchedulerSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3241,7 +3124,6 @@ public final class AutomaticScaling extends com.google.protobuf.GeneratedMessage
             : standardSchedulerSettings_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface FetchExamplesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Example examples = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Example> getExamplesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface FetchExamplesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Example examples = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Example getExamples(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface FetchExamplesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Example examples = 1;</code>
    */
   int getExamplesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface FetchExamplesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExampleOrBuilder>
       getExamplesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface FetchExamplesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

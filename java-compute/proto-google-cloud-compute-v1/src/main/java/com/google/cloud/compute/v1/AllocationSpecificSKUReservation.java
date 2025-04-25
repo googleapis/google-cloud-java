@@ -33,7 +33,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationSpecificSKUReservation)
     AllocationSpecificSKUReservationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AllocationSpecificSKUReservation.newBuilder() to construct.
   private AllocationSpecificSKUReservation(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   private int bitField0_;
   public static final int ASSURED_COUNT_FIELD_NUMBER = 281197645;
   private long assuredCount_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   public boolean hasAssuredCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
   public static final int COUNT_FIELD_NUMBER = 94851343;
   private long count_ = 0L;
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   public boolean hasCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
   public static final int IN_USE_COUNT_FIELD_NUMBER = 493458877;
   private long inUseCount_ = 0L;
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   public boolean hasInUseCount() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +167,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   public static final int INSTANCE_PROPERTIES_FIELD_NUMBER = 215355165;
   private com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
       instanceProperties_;
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   public boolean hasInstanceProperties() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -214,7 +205,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
             .getDefaultInstance()
         : instanceProperties_;
   }
-
   /**
    *
    *
@@ -240,7 +230,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceInstanceTemplate_ = "";
-
   /**
    *
    *
@@ -256,7 +245,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
   public boolean hasSourceInstanceTemplate() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -280,7 +268,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -531,7 +518,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -795,7 +781,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     private int bitField0_;
 
     private long assuredCount_;
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public boolean hasAssuredCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public long getAssuredCount() {
       return assuredCount_;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +849,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     }
 
     private long count_;
-
     /**
      *
      *
@@ -883,7 +864,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public boolean hasCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public long getCount() {
       return count_;
     }
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +917,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     }
 
     private long inUseCount_;
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public boolean hasInUseCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public long getInUseCount() {
       return inUseCount_;
     }
-
     /**
      *
      *
@@ -991,7 +966,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +993,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
             com.google.cloud.compute.v1
                 .AllocationSpecificSKUAllocationReservedInstancePropertiesOrBuilder>
         instancePropertiesBuilder_;
-
     /**
      *
      *
@@ -1036,7 +1009,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public boolean hasInstanceProperties() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1061,7 +1033,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         return instancePropertiesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1059,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1083,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1117,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1170,7 +1138,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1189,7 +1156,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return getInstancePropertiesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1213,7 +1179,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
             : instanceProperties_;
       }
     }
-
     /**
      *
      *
@@ -1248,7 +1213,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     }
 
     private java.lang.Object sourceInstanceTemplate_ = "";
-
     /**
      *
      *
@@ -1263,7 +1227,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     public boolean hasSourceInstanceTemplate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1286,7 +1249,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1271,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1331,7 +1292,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1309,6 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

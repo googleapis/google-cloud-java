@@ -38,7 +38,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The targetVersion.
    */
   java.lang.String getTargetVersion();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The enum numeric value on the wire for schedule.
    */
   int getScheduleValue();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ResetAdminPasswordResponseOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
-
   /**
    *
    *

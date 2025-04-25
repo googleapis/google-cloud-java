@@ -51,7 +51,6 @@ public interface ShipmentRouteOrBuilder
    * @return The vehicleLabel.
    */
   java.lang.String getVehicleLabel();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface ShipmentRouteOrBuilder
    * @return Whether the vehicleStartTime field is set.
    */
   boolean hasVehicleStartTime();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ShipmentRouteOrBuilder
    * @return The vehicleStartTime.
    */
   com.google.protobuf.Timestamp getVehicleStartTime();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface ShipmentRouteOrBuilder
    * @return Whether the vehicleEndTime field is set.
    */
   boolean hasVehicleEndTime();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ShipmentRouteOrBuilder
    * @return The vehicleEndTime.
    */
   com.google.protobuf.Timestamp getVehicleEndTime();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Visit visits = 7;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute.Visit> getVisitsList();
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Visit visits = 7;</code>
    */
   com.google.cloud.optimization.v1.ShipmentRoute.Visit getVisits(int index);
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Visit visits = 7;</code>
    */
   int getVisitsCount();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface ShipmentRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRoute.VisitOrBuilder>
       getVisitsOrBuilderList();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Transition transitions = 8;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute.Transition> getTransitionsList();
-
   /**
    *
    *
@@ -227,7 +217,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Transition transitions = 8;</code>
    */
   com.google.cloud.optimization.v1.ShipmentRoute.Transition getTransitions(int index);
-
   /**
    *
    *
@@ -238,7 +227,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Transition transitions = 8;</code>
    */
   int getTransitionsCount();
-
   /**
    *
    *
@@ -250,7 +238,6 @@ public interface ShipmentRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRoute.TransitionOrBuilder>
       getTransitionsOrBuilderList();
-
   /**
    *
    *
@@ -308,7 +295,6 @@ public interface ShipmentRouteOrBuilder
    * @return Whether the routePolyline field is set.
    */
   boolean hasRoutePolyline();
-
   /**
    *
    *
@@ -324,7 +310,6 @@ public interface ShipmentRouteOrBuilder
    * @return The routePolyline.
    */
   com.google.cloud.optimization.v1.ShipmentRoute.EncodedPolyline getRoutePolyline();
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Break breaks = 11;</code>
    */
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute.Break> getBreaksList();
-
   /**
    *
    *
@@ -365,7 +349,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Break breaks = 11;</code>
    */
   com.google.cloud.optimization.v1.ShipmentRoute.Break getBreaks(int index);
-
   /**
    *
    *
@@ -378,7 +361,6 @@ public interface ShipmentRouteOrBuilder
    * <code>repeated .google.cloud.optimization.v1.ShipmentRoute.Break breaks = 11;</code>
    */
   int getBreaksCount();
-
   /**
    *
    *
@@ -392,7 +374,6 @@ public interface ShipmentRouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRoute.BreakOrBuilder>
       getBreaksOrBuilderList();
-
   /**
    *
    *
@@ -424,7 +405,6 @@ public interface ShipmentRouteOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -443,7 +423,6 @@ public interface ShipmentRouteOrBuilder
    * @return The metrics.
    */
   com.google.cloud.optimization.v1.AggregatedMetrics getMetrics();
-
   /**
    *
    *
@@ -478,7 +457,6 @@ public interface ShipmentRouteOrBuilder
    * <code>map&lt;string, double&gt; route_costs = 17;</code>
    */
   int getRouteCostsCount();
-
   /**
    *
    *
@@ -496,11 +474,9 @@ public interface ShipmentRouteOrBuilder
    * <code>map&lt;string, double&gt; route_costs = 17;</code>
    */
   boolean containsRouteCosts(java.lang.String key);
-
   /** Use {@link #getRouteCostsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Double> getRouteCosts();
-
   /**
    *
    *
@@ -518,7 +494,6 @@ public interface ShipmentRouteOrBuilder
    * <code>map&lt;string, double&gt; route_costs = 17;</code>
    */
   java.util.Map<java.lang.String, java.lang.Double> getRouteCostsMap();
-
   /**
    *
    *
@@ -536,7 +511,6 @@ public interface ShipmentRouteOrBuilder
    * <code>map&lt;string, double&gt; route_costs = 17;</code>
    */
   double getRouteCostsOrDefault(java.lang.String key, double defaultValue);
-
   /**
    *
    *
@@ -588,7 +562,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.optimization.v1.CapacityQuantity> getEndLoadsList();
-
   /**
    *
    *
@@ -609,7 +582,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.CapacityQuantity getEndLoads(int index);
-
   /**
    *
    *
@@ -630,7 +602,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   int getEndLoadsCount();
-
   /**
    *
    *
@@ -652,7 +623,6 @@ public interface ShipmentRouteOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.optimization.v1.CapacityQuantityOrBuilder>
       getEndLoadsOrBuilderList();
-
   /**
    *
    *
@@ -689,7 +659,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.optimization.v1.ShipmentRoute.TravelStep> getTravelStepsList();
-
   /**
    *
    *
@@ -705,7 +674,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.ShipmentRoute.TravelStep getTravelSteps(int index);
-
   /**
    *
    *
@@ -721,7 +689,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   int getTravelStepsCount();
-
   /**
    *
    *
@@ -738,7 +705,6 @@ public interface ShipmentRouteOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.optimization.v1.ShipmentRoute.TravelStepOrBuilder>
       getTravelStepsOrBuilderList();
-
   /**
    *
    *
@@ -780,7 +746,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   boolean hasVehicleDetour();
-
   /**
    *
    *
@@ -805,7 +770,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Duration getVehicleDetour();
-
   /**
    *
    *
@@ -845,7 +809,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   boolean hasDelayBeforeVehicleEnd();
-
   /**
    *
    *
@@ -864,7 +827,6 @@ public interface ShipmentRouteOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.optimization.v1.ShipmentRoute.Delay getDelayBeforeVehicleEnd();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface RepositoryEventConfigOrBuilder
    * @return The repository.
    */
   java.lang.String getRepository();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RepositoryEventConfigOrBuilder
    * @return The enum numeric value on the wire for repositoryType.
    */
   int getRepositoryTypeValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface RepositoryEventConfigOrBuilder
    * @return Whether the pullRequest field is set.
    */
   boolean hasPullRequest();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface RepositoryEventConfigOrBuilder
    * @return The pullRequest.
    */
   com.google.cloudbuild.v1.PullRequestFilter getPullRequest();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface RepositoryEventConfigOrBuilder
    * @return Whether the push field is set.
    */
   boolean hasPush();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface RepositoryEventConfigOrBuilder
    * @return The push.
    */
   com.google.cloudbuild.v1.PushFilter getPush();
-
   /**
    *
    *

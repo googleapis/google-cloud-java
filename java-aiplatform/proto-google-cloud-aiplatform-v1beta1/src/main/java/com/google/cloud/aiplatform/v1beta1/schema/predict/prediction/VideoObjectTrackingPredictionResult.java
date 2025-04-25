@@ -35,7 +35,6 @@ public final class VideoObjectTrackingPredictionResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoObjectTrackingPredictionResult)
     VideoObjectTrackingPredictionResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoObjectTrackingPredictionResult.newBuilder() to construct.
   private VideoObjectTrackingPredictionResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -93,7 +92,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return Whether the timeOffset field is set.
      */
     boolean hasTimeOffset();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return The timeOffset.
      */
     com.google.protobuf.Duration getTimeOffset();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return Whether the xMin field is set.
      */
     boolean hasXMin();
-
     /**
      *
      *
@@ -149,7 +145,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return The xMin.
      */
     com.google.protobuf.FloatValue getXMin();
-
     /**
      *
      *
@@ -173,7 +168,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return Whether the xMax field is set.
      */
     boolean hasXMax();
-
     /**
      *
      *
@@ -186,7 +180,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return The xMax.
      */
     com.google.protobuf.FloatValue getXMax();
-
     /**
      *
      *
@@ -210,7 +203,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return Whether the yMin field is set.
      */
     boolean hasYMin();
-
     /**
      *
      *
@@ -223,7 +215,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return The yMin.
      */
     com.google.protobuf.FloatValue getYMin();
-
     /**
      *
      *
@@ -247,7 +238,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return Whether the yMax field is set.
      */
     boolean hasYMax();
-
     /**
      *
      *
@@ -260,7 +250,6 @@ public final class VideoObjectTrackingPredictionResult
      * @return The yMax.
      */
     com.google.protobuf.FloatValue getYMax();
-
     /**
      *
      *
@@ -272,7 +261,6 @@ public final class VideoObjectTrackingPredictionResult
      */
     com.google.protobuf.FloatValueOrBuilder getYMaxOrBuilder();
   }
-
   /**
    *
    *
@@ -291,7 +279,6 @@ public final class VideoObjectTrackingPredictionResult
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.predict.prediction.VideoObjectTrackingPredictionResult.Frame)
       FrameOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Frame.newBuilder() to construct.
     private Frame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -327,7 +314,6 @@ public final class VideoObjectTrackingPredictionResult
     private int bitField0_;
     public static final int TIME_OFFSET_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration timeOffset_;
-
     /**
      *
      *
@@ -346,7 +332,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -365,7 +350,6 @@ public final class VideoObjectTrackingPredictionResult
     public com.google.protobuf.Duration getTimeOffset() {
       return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
     }
-
     /**
      *
      *
@@ -385,7 +369,6 @@ public final class VideoObjectTrackingPredictionResult
 
     public static final int X_MIN_FIELD_NUMBER = 2;
     private com.google.protobuf.FloatValue xMin_;
-
     /**
      *
      *
@@ -401,7 +384,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasXMin() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -417,7 +399,6 @@ public final class VideoObjectTrackingPredictionResult
     public com.google.protobuf.FloatValue getXMin() {
       return xMin_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : xMin_;
     }
-
     /**
      *
      *
@@ -434,7 +415,6 @@ public final class VideoObjectTrackingPredictionResult
 
     public static final int X_MAX_FIELD_NUMBER = 3;
     private com.google.protobuf.FloatValue xMax_;
-
     /**
      *
      *
@@ -450,7 +430,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasXMax() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -466,7 +445,6 @@ public final class VideoObjectTrackingPredictionResult
     public com.google.protobuf.FloatValue getXMax() {
       return xMax_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : xMax_;
     }
-
     /**
      *
      *
@@ -483,7 +461,6 @@ public final class VideoObjectTrackingPredictionResult
 
     public static final int Y_MIN_FIELD_NUMBER = 4;
     private com.google.protobuf.FloatValue yMin_;
-
     /**
      *
      *
@@ -499,7 +476,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasYMin() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -515,7 +491,6 @@ public final class VideoObjectTrackingPredictionResult
     public com.google.protobuf.FloatValue getYMin() {
       return yMin_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : yMin_;
     }
-
     /**
      *
      *
@@ -532,7 +507,6 @@ public final class VideoObjectTrackingPredictionResult
 
     public static final int Y_MAX_FIELD_NUMBER = 5;
     private com.google.protobuf.FloatValue yMax_;
-
     /**
      *
      *
@@ -548,7 +522,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasYMax() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -564,7 +537,6 @@ public final class VideoObjectTrackingPredictionResult
     public com.google.protobuf.FloatValue getYMax() {
       return yMax_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : yMax_;
     }
-
     /**
      *
      *
@@ -828,7 +800,6 @@ public final class VideoObjectTrackingPredictionResult
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           timeOffsetBuilder_;
-
       /**
        *
        *
@@ -1166,7 +1136,6 @@ public final class VideoObjectTrackingPredictionResult
       public boolean hasTimeOffset() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1190,7 +1159,6 @@ public final class VideoObjectTrackingPredictionResult
           return timeOffsetBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1216,7 +1184,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1239,7 +1206,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1270,7 +1236,6 @@ public final class VideoObjectTrackingPredictionResult
         }
         return this;
       }
-
       /**
        *
        *
@@ -1293,7 +1258,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1311,7 +1275,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return getTimeOffsetFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1333,7 +1296,6 @@ public final class VideoObjectTrackingPredictionResult
               : timeOffset_;
         }
       }
-
       /**
        *
        *
@@ -1369,7 +1331,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.protobuf.FloatValue.Builder,
               com.google.protobuf.FloatValueOrBuilder>
           xMinBuilder_;
-
       /**
        *
        *
@@ -1384,7 +1345,6 @@ public final class VideoObjectTrackingPredictionResult
       public boolean hasXMin() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1403,7 +1363,6 @@ public final class VideoObjectTrackingPredictionResult
           return xMinBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1426,7 +1385,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1446,7 +1404,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1474,7 +1431,6 @@ public final class VideoObjectTrackingPredictionResult
         }
         return this;
       }
-
       /**
        *
        *
@@ -1494,7 +1450,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1509,7 +1464,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return getXMinFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1526,7 +1480,6 @@ public final class VideoObjectTrackingPredictionResult
           return xMin_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : xMin_;
         }
       }
-
       /**
        *
        *
@@ -1559,7 +1512,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.protobuf.FloatValue.Builder,
               com.google.protobuf.FloatValueOrBuilder>
           xMaxBuilder_;
-
       /**
        *
        *
@@ -1574,7 +1526,6 @@ public final class VideoObjectTrackingPredictionResult
       public boolean hasXMax() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1593,7 +1544,6 @@ public final class VideoObjectTrackingPredictionResult
           return xMaxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1616,7 +1566,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1636,7 +1585,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1664,7 +1612,6 @@ public final class VideoObjectTrackingPredictionResult
         }
         return this;
       }
-
       /**
        *
        *
@@ -1684,7 +1631,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1699,7 +1645,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return getXMaxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1716,7 +1661,6 @@ public final class VideoObjectTrackingPredictionResult
           return xMax_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : xMax_;
         }
       }
-
       /**
        *
        *
@@ -1749,7 +1693,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.protobuf.FloatValue.Builder,
               com.google.protobuf.FloatValueOrBuilder>
           yMinBuilder_;
-
       /**
        *
        *
@@ -1764,7 +1707,6 @@ public final class VideoObjectTrackingPredictionResult
       public boolean hasYMin() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -1783,7 +1725,6 @@ public final class VideoObjectTrackingPredictionResult
           return yMinBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1806,7 +1747,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1826,7 +1766,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1854,7 +1793,6 @@ public final class VideoObjectTrackingPredictionResult
         }
         return this;
       }
-
       /**
        *
        *
@@ -1874,7 +1812,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1889,7 +1826,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return getYMinFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1906,7 +1842,6 @@ public final class VideoObjectTrackingPredictionResult
           return yMin_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : yMin_;
         }
       }
-
       /**
        *
        *
@@ -1939,7 +1874,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.protobuf.FloatValue.Builder,
               com.google.protobuf.FloatValueOrBuilder>
           yMaxBuilder_;
-
       /**
        *
        *
@@ -1954,7 +1888,6 @@ public final class VideoObjectTrackingPredictionResult
       public boolean hasYMax() {
         return ((bitField0_ & 0x00000010) != 0);
       }
-
       /**
        *
        *
@@ -1973,7 +1906,6 @@ public final class VideoObjectTrackingPredictionResult
           return yMaxBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1996,7 +1928,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2016,7 +1947,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2044,7 +1974,6 @@ public final class VideoObjectTrackingPredictionResult
         }
         return this;
       }
-
       /**
        *
        *
@@ -2064,7 +1993,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2079,7 +2007,6 @@ public final class VideoObjectTrackingPredictionResult
         onChanged();
         return getYMaxFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2096,7 +2023,6 @@ public final class VideoObjectTrackingPredictionResult
           return yMax_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : yMax_;
         }
       }
-
       /**
        *
        *
@@ -2200,7 +2126,6 @@ public final class VideoObjectTrackingPredictionResult
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -2224,7 +2149,6 @@ public final class VideoObjectTrackingPredictionResult
       return s;
     }
   }
-
   /**
    *
    *
@@ -2253,7 +2177,6 @@ public final class VideoObjectTrackingPredictionResult
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -2277,7 +2200,6 @@ public final class VideoObjectTrackingPredictionResult
       return s;
     }
   }
-
   /**
    *
    *
@@ -2304,7 +2226,6 @@ public final class VideoObjectTrackingPredictionResult
 
   public static final int TIME_SEGMENT_START_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration timeSegmentStart_;
-
   /**
    *
    *
@@ -2323,7 +2244,6 @@ public final class VideoObjectTrackingPredictionResult
   public boolean hasTimeSegmentStart() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2344,7 +2264,6 @@ public final class VideoObjectTrackingPredictionResult
         ? com.google.protobuf.Duration.getDefaultInstance()
         : timeSegmentStart_;
   }
-
   /**
    *
    *
@@ -2366,7 +2285,6 @@ public final class VideoObjectTrackingPredictionResult
 
   public static final int TIME_SEGMENT_END_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration timeSegmentEnd_;
-
   /**
    *
    *
@@ -2385,7 +2303,6 @@ public final class VideoObjectTrackingPredictionResult
   public boolean hasTimeSegmentEnd() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2406,7 +2323,6 @@ public final class VideoObjectTrackingPredictionResult
         ? com.google.protobuf.Duration.getDefaultInstance()
         : timeSegmentEnd_;
   }
-
   /**
    *
    *
@@ -2428,7 +2344,6 @@ public final class VideoObjectTrackingPredictionResult
 
   public static final int CONFIDENCE_FIELD_NUMBER = 5;
   private com.google.protobuf.FloatValue confidence_;
-
   /**
    *
    *
@@ -2445,7 +2360,6 @@ public final class VideoObjectTrackingPredictionResult
   public boolean hasConfidence() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2462,7 +2376,6 @@ public final class VideoObjectTrackingPredictionResult
   public com.google.protobuf.FloatValue getConfidence() {
     return confidence_ == null ? com.google.protobuf.FloatValue.getDefaultInstance() : confidence_;
   }
-
   /**
    *
    *
@@ -2485,7 +2398,6 @@ public final class VideoObjectTrackingPredictionResult
           com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
               .VideoObjectTrackingPredictionResult.Frame>
       frames_;
-
   /**
    *
    *
@@ -2505,7 +2417,6 @@ public final class VideoObjectTrackingPredictionResult
       getFramesList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -2526,7 +2437,6 @@ public final class VideoObjectTrackingPredictionResult
       getFramesOrBuilderList() {
     return frames_;
   }
-
   /**
    *
    *
@@ -2543,7 +2453,6 @@ public final class VideoObjectTrackingPredictionResult
   public int getFramesCount() {
     return frames_.size();
   }
-
   /**
    *
    *
@@ -2562,7 +2471,6 @@ public final class VideoObjectTrackingPredictionResult
       getFrames(int index) {
     return frames_.get(index);
   }
-
   /**
    *
    *
@@ -2831,7 +2739,6 @@ public final class VideoObjectTrackingPredictionResult
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3202,7 +3109,6 @@ public final class VideoObjectTrackingPredictionResult
     private int bitField0_;
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -3225,7 +3131,6 @@ public final class VideoObjectTrackingPredictionResult
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3248,7 +3153,6 @@ public final class VideoObjectTrackingPredictionResult
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3270,7 +3174,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3288,7 +3191,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3215,6 @@ public final class VideoObjectTrackingPredictionResult
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3336,7 +3237,6 @@ public final class VideoObjectTrackingPredictionResult
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3359,7 +3259,6 @@ public final class VideoObjectTrackingPredictionResult
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3381,7 +3280,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3399,7 +3297,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3429,7 +3326,6 @@ public final class VideoObjectTrackingPredictionResult
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeSegmentStartBuilder_;
-
     /**
      *
      *
@@ -3447,7 +3343,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasTimeSegmentStart() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -3471,7 +3366,6 @@ public final class VideoObjectTrackingPredictionResult
         return timeSegmentStartBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3497,7 +3391,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3520,7 +3413,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3551,7 +3443,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -3574,7 +3465,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3592,7 +3482,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return getTimeSegmentStartFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3614,7 +3503,6 @@ public final class VideoObjectTrackingPredictionResult
             : timeSegmentStart_;
       }
     }
-
     /**
      *
      *
@@ -3650,7 +3538,6 @@ public final class VideoObjectTrackingPredictionResult
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeSegmentEndBuilder_;
-
     /**
      *
      *
@@ -3668,7 +3555,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasTimeSegmentEnd() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3692,7 +3578,6 @@ public final class VideoObjectTrackingPredictionResult
         return timeSegmentEndBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3718,7 +3603,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3741,7 +3625,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3772,7 +3655,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -3795,7 +3677,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3813,7 +3694,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return getTimeSegmentEndFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3835,7 +3715,6 @@ public final class VideoObjectTrackingPredictionResult
             : timeSegmentEnd_;
       }
     }
-
     /**
      *
      *
@@ -3871,7 +3750,6 @@ public final class VideoObjectTrackingPredictionResult
             com.google.protobuf.FloatValue.Builder,
             com.google.protobuf.FloatValueOrBuilder>
         confidenceBuilder_;
-
     /**
      *
      *
@@ -3887,7 +3765,6 @@ public final class VideoObjectTrackingPredictionResult
     public boolean hasConfidence() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3909,7 +3786,6 @@ public final class VideoObjectTrackingPredictionResult
         return confidenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3933,7 +3809,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3954,7 +3829,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3983,7 +3857,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4004,7 +3877,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4020,7 +3892,6 @@ public final class VideoObjectTrackingPredictionResult
       onChanged();
       return getConfidenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4040,7 +3911,6 @@ public final class VideoObjectTrackingPredictionResult
             : confidence_;
       }
     }
-
     /**
      *
      *
@@ -4114,7 +3984,6 @@ public final class VideoObjectTrackingPredictionResult
         return framesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4134,7 +4003,6 @@ public final class VideoObjectTrackingPredictionResult
         return framesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4156,7 +4024,6 @@ public final class VideoObjectTrackingPredictionResult
         return framesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4186,7 +4053,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4213,7 +4079,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4242,7 +4107,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4272,7 +4136,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4298,7 +4161,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4325,7 +4187,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4353,7 +4214,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4376,7 +4236,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4399,7 +4258,6 @@ public final class VideoObjectTrackingPredictionResult
       }
       return this;
     }
-
     /**
      *
      *
@@ -4417,7 +4275,6 @@ public final class VideoObjectTrackingPredictionResult
         getFramesBuilder(int index) {
       return getFramesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4439,7 +4296,6 @@ public final class VideoObjectTrackingPredictionResult
         return framesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4463,7 +4319,6 @@ public final class VideoObjectTrackingPredictionResult
         return java.util.Collections.unmodifiableList(frames_);
       }
     }
-
     /**
      *
      *
@@ -4484,7 +4339,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .VideoObjectTrackingPredictionResult.Frame.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4506,7 +4360,6 @@ public final class VideoObjectTrackingPredictionResult
               com.google.cloud.aiplatform.v1beta1.schema.predict.prediction
                   .VideoObjectTrackingPredictionResult.Frame.getDefaultInstance());
     }
-
     /**
      *
      *

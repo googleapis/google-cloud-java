@@ -33,7 +33,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.Error)
     ErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Error.newBuilder() to construct.
   private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Errors> errors_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.compute.v1.Errors> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.compute.v1.Errors getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -299,7 +293,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -558,7 +551,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -592,7 +583,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -659,7 +647,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +669,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +688,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +708,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +728,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -764,7 +747,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -784,7 +766,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +778,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.Errors.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -814,7 +794,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -832,7 +811,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -846,7 +824,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Errors.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -860,7 +837,6 @@ public final class Error extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Errors.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface CloudEventOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface CloudEventOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CloudEventOrBuilder
    * @return The specVersion.
    */
   java.lang.String getSpecVersion();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CloudEventOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public interface CloudEventOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -161,14 +156,12 @@ public interface CloudEventOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue>
       getAttributes();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface CloudEventOrBuilder
           java.lang.String,
           com.google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue>
       getAttributesMap();
-
   /**
    *
    *
@@ -202,7 +194,6 @@ public interface CloudEventOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.eventarc.publishing.v1.CloudEvent.CloudEventAttributeValue defaultValue);
-
   /**
    *
    *
@@ -229,7 +220,6 @@ public interface CloudEventOrBuilder
    * @return Whether the binaryData field is set.
    */
   boolean hasBinaryData();
-
   /**
    *
    *
@@ -255,7 +245,6 @@ public interface CloudEventOrBuilder
    * @return Whether the textData field is set.
    */
   boolean hasTextData();
-
   /**
    *
    *
@@ -268,7 +257,6 @@ public interface CloudEventOrBuilder
    * @return The textData.
    */
   java.lang.String getTextData();
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public interface CloudEventOrBuilder
    * @return Whether the protoData field is set.
    */
   boolean hasProtoData();
-
   /**
    *
    *
@@ -307,7 +294,6 @@ public interface CloudEventOrBuilder
    * @return The protoData.
    */
   com.google.protobuf.Any getProtoData();
-
   /**
    *
    *

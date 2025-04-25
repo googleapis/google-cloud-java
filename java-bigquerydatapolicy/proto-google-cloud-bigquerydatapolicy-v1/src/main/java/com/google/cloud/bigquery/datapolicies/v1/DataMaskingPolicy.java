@@ -33,7 +33,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy)
     DataMaskingPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataMaskingPolicy.newBuilder() to construct.
   private DataMaskingPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -216,7 +215,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>PREDEFINED_EXPRESSION_UNSPECIFIED = 0;</code>
      */
     public static final int PREDEFINED_EXPRESSION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -227,7 +225,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>SHA256 = 3;</code>
      */
     public static final int SHA256_VALUE = 3;
-
     /**
      *
      *
@@ -238,7 +235,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>ALWAYS_NULL = 5;</code>
      */
     public static final int ALWAYS_NULL_VALUE = 5;
-
     /**
      *
      *
@@ -266,7 +262,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>DEFAULT_MASKING_VALUE = 7;</code>
      */
     public static final int DEFAULT_MASKING_VALUE_VALUE = 7;
-
     /**
      *
      *
@@ -282,7 +277,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>LAST_FOUR_CHARACTERS = 9;</code>
      */
     public static final int LAST_FOUR_CHARACTERS_VALUE = 9;
-
     /**
      *
      *
@@ -298,7 +292,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>FIRST_FOUR_CHARACTERS = 10;</code>
      */
     public static final int FIRST_FOUR_CHARACTERS_VALUE = 10;
-
     /**
      *
      *
@@ -317,7 +310,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>EMAIL_MASK = 12;</code>
      */
     public static final int EMAIL_MASK_VALUE = 12;
-
     /**
      *
      *
@@ -456,7 +448,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     private MaskingExpressionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -490,7 +481,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PREDEFINED_EXPRESSION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasPredefinedExpression() {
     return maskingExpressionCase_ == 1;
   }
-
   /**
    *
    *
@@ -527,7 +516,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     }
     return 0;
   }
-
   /**
    *
    *
@@ -557,7 +545,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROUTINE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
   public boolean hasRoutine() {
     return maskingExpressionCase_ == 3;
   }
-
   /**
    *
    *
@@ -604,7 +590,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -823,7 +808,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1064,7 +1048,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasPredefinedExpression() {
       return maskingExpressionCase_ == 1;
     }
-
     /**
      *
      *
@@ -1085,7 +1068,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
-
     /**
      *
      *
@@ -1106,7 +1088,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1116,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       return com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.PredefinedExpression
           .PREDEFINED_EXPRESSION_UNSPECIFIED;
     }
-
     /**
      *
      *
@@ -1160,7 +1140,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1200,7 +1179,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     public boolean hasRoutine() {
       return maskingExpressionCase_ == 3;
     }
-
     /**
      *
      *
@@ -1231,7 +1209,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1262,7 +1239,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1262,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1308,7 +1283,6 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *

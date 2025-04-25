@@ -38,7 +38,6 @@ public interface PatchSslPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PatchSslPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface PatchSslPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface PatchSslPolicyRequestOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface PatchSslPolicyRequestOrBuilder
    * @return Whether the sslPolicyResource field is set.
    */
   boolean hasSslPolicyResource();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface PatchSslPolicyRequestOrBuilder
    * @return The sslPolicyResource.
    */
   com.google.cloud.compute.v1.SslPolicy getSslPolicyResource();
-
   /**
    *
    *

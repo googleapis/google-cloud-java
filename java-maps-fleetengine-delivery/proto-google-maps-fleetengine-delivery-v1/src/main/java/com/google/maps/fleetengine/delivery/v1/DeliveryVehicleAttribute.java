@@ -34,7 +34,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.DeliveryVehicleAttribute)
     DeliveryVehicleAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeliveryVehicleAttribute.newBuilder() to construct.
   private DeliveryVehicleAttribute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     private DeliveryVehicleAttributeValueCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -123,7 +121,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object value_ = "";
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -247,7 +240,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
   public boolean hasStringValue() {
     return deliveryVehicleAttributeValueCase_ == 3;
   }
-
   /**
    *
    *
@@ -281,7 +273,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -317,7 +308,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
   }
 
   public static final int BOOL_VALUE_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -333,7 +323,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
   public boolean hasBoolValue() {
     return deliveryVehicleAttributeValueCase_ == 4;
   }
-
   /**
    *
    *
@@ -354,7 +343,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
   }
 
   public static final int NUMBER_VALUE_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -370,7 +358,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
   public boolean hasNumberValue() {
     return deliveryVehicleAttributeValueCase_ == 5;
   }
-
   /**
    *
    *
@@ -618,7 +605,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -888,7 +874,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -911,7 +896,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -934,7 +918,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -956,7 +939,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -974,7 +956,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -999,7 +980,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     }
 
     private java.lang.Object value_ = "";
-
     /**
      *
      *
@@ -1022,7 +1002,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1024,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1045,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1062,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1106,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     public boolean hasStringValue() {
       return deliveryVehicleAttributeValueCase_ == 3;
     }
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1174,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1201,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1254,7 +1226,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1269,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     public boolean hasBoolValue() {
       return deliveryVehicleAttributeValueCase_ == 4;
     }
-
     /**
      *
      *
@@ -1316,7 +1286,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       }
       return false;
     }
-
     /**
      *
      *
@@ -1336,7 +1305,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1339,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
     public boolean hasNumberValue() {
       return deliveryVehicleAttributeValueCase_ == 5;
     }
-
     /**
      *
      *
@@ -1389,7 +1356,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       }
       return 0D;
     }
-
     /**
      *
      *
@@ -1409,7 +1375,6 @@ public final class DeliveryVehicleAttribute extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

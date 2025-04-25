@@ -37,7 +37,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.HadoopJob)
     HadoopJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HadoopJob.newBuilder() to construct.
   private HadoopJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,7 +100,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     private DriverCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -135,7 +133,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAIN_JAR_FILE_URI_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMainJarFileUri() {
     return driverCase_ == 1;
   }
-
   /**
    *
    *
@@ -186,7 +182,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -220,7 +215,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAIN_CLASS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -236,7 +230,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMainClass() {
     return driverCase_ == 2;
   }
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -300,7 +292,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList args_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -318,7 +309,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
   }
-
   /**
    *
    *
@@ -336,7 +326,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public int getArgsCount() {
     return args_.size();
   }
-
   /**
    *
    *
@@ -355,7 +344,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getArgs(int index) {
     return args_.get(index);
   }
-
   /**
    *
    *
@@ -380,7 +368,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList jarFileUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -396,7 +383,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
   }
-
   /**
    *
    *
@@ -412,7 +398,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public int getJarFileUrisCount() {
     return jarFileUris_.size();
   }
-
   /**
    *
    *
@@ -429,7 +414,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getJarFileUris(int index) {
     return jarFileUris_.get(index);
   }
-
   /**
    *
    *
@@ -452,7 +436,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList fileUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -469,7 +452,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getFileUrisList() {
     return fileUris_;
   }
-
   /**
    *
    *
@@ -486,7 +468,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public int getFileUrisCount() {
     return fileUris_.size();
   }
-
   /**
    *
    *
@@ -504,7 +485,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getFileUris(int index) {
     return fileUris_.get(index);
   }
-
   /**
    *
    *
@@ -528,7 +508,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList archiveUris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -545,7 +524,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
     return archiveUris_;
   }
-
   /**
    *
    *
@@ -562,7 +540,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public int getArchiveUrisCount() {
     return archiveUris_.size();
   }
-
   /**
    *
    *
@@ -580,7 +557,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getArchiveUris(int index) {
     return archiveUris_.get(index);
   }
-
   /**
    *
    *
@@ -625,7 +601,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -646,14 +621,12 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
-
   /**
    *
    *
@@ -671,7 +644,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
-
   /**
    *
    *
@@ -696,7 +668,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -724,7 +695,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_;
-
   /**
    *
    *
@@ -742,7 +712,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoggingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -762,7 +731,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
         : loggingConfig_;
   }
-
   /**
    *
    *
@@ -1060,7 +1028,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1466,7 +1433,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMainJarFileUri() {
       return driverCase_ == 1;
     }
-
     /**
      *
      *
@@ -1499,7 +1465,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1532,7 +1497,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1558,7 +1522,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1582,7 +1545,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1626,7 +1588,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMainClass() {
       return driverCase_ == 2;
     }
-
     /**
      *
      *
@@ -1656,7 +1617,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1686,7 +1646,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1709,7 +1668,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1688,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1764,7 +1721,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1783,7 +1739,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       args_.makeImmutable();
       return args_;
     }
-
     /**
      *
      *
@@ -1801,7 +1756,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public int getArgsCount() {
       return args_.size();
     }
-
     /**
      *
      *
@@ -1820,7 +1774,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getArgs(int index) {
       return args_.get(index);
     }
-
     /**
      *
      *
@@ -1839,7 +1792,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1866,7 +1818,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1843,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1915,7 +1865,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1937,7 +1886,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1974,7 +1922,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1991,7 +1938,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       jarFileUris_.makeImmutable();
       return jarFileUris_;
     }
-
     /**
      *
      *
@@ -2007,7 +1953,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public int getJarFileUrisCount() {
       return jarFileUris_.size();
     }
-
     /**
      *
      *
@@ -2024,7 +1969,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getJarFileUris(int index) {
       return jarFileUris_.get(index);
     }
-
     /**
      *
      *
@@ -2041,7 +1985,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2066,7 +2009,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2090,7 +2032,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2111,7 +2052,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2131,7 +2071,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2105,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -2184,7 +2122,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       fileUris_.makeImmutable();
       return fileUris_;
     }
-
     /**
      *
      *
@@ -2201,7 +2138,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public int getFileUrisCount() {
       return fileUris_.size();
     }
-
     /**
      *
      *
@@ -2219,7 +2155,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getFileUris(int index) {
       return fileUris_.get(index);
     }
-
     /**
      *
      *
@@ -2237,7 +2172,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getFileUrisBytes(int index) {
       return fileUris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2263,7 +2197,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2288,7 +2221,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2310,7 +2242,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2331,7 +2262,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2367,7 +2297,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -2385,7 +2314,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       archiveUris_.makeImmutable();
       return archiveUris_;
     }
-
     /**
      *
      *
@@ -2402,7 +2330,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public int getArchiveUrisCount() {
       return archiveUris_.size();
     }
-
     /**
      *
      *
@@ -2420,7 +2347,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getArchiveUris(int index) {
       return archiveUris_.get(index);
     }
-
     /**
      *
      *
@@ -2438,7 +2364,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
       return archiveUris_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2464,7 +2389,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2489,7 +2413,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2511,7 +2434,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2532,7 +2454,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2587,7 +2508,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
-
     /**
      *
      *
@@ -2608,14 +2528,12 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().getMap().containsKey(key);
     }
-
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
-
     /**
      *
      *
@@ -2633,7 +2551,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
-
     /**
      *
      *
@@ -2658,7 +2575,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2689,7 +2605,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2710,14 +2625,12 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000040;
       return internalGetMutableProperties().getMutableMap();
     }
-
     /**
      *
      *
@@ -2742,7 +2655,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-
     /**
      *
      *
@@ -2768,7 +2680,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.LoggingConfig.Builder,
             com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
         loggingConfigBuilder_;
-
     /**
      *
      *
@@ -2785,7 +2696,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoggingConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2808,7 +2718,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
         return loggingConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2833,7 +2742,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2856,7 +2764,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2886,7 +2793,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2908,7 +2814,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2925,7 +2830,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2946,7 +2850,6 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
             : loggingConfig_;
       }
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface ListPromotionsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.promotions.v1beta.Promotion promotions = 1;</code>
    */
   java.util.List<com.google.shopping.merchant.promotions.v1beta.Promotion> getPromotionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPromotionsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.promotions.v1beta.Promotion promotions = 1;</code>
    */
   com.google.shopping.merchant.promotions.v1beta.Promotion getPromotions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPromotionsResponseOrBuilder
    * <code>repeated .google.shopping.merchant.promotions.v1beta.Promotion promotions = 1;</code>
    */
   int getPromotionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPromotionsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.merchant.promotions.v1beta.PromotionOrBuilder>
       getPromotionsOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListPromotionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

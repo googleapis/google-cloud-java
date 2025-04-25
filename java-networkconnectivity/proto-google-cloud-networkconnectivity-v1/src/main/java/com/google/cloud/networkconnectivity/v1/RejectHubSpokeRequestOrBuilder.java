@@ -38,7 +38,6 @@ public interface RejectHubSpokeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface RejectHubSpokeRequestOrBuilder
    * @return The spokeUri.
    */
   java.lang.String getSpokeUri();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface RejectHubSpokeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface RejectHubSpokeRequestOrBuilder
    * @return The details.
    */
   java.lang.String getDetails();
-
   /**
    *
    *

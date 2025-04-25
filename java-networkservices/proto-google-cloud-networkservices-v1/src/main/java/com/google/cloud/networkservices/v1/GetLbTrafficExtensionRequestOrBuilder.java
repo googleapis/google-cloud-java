@@ -40,7 +40,6 @@ public interface GetLbTrafficExtensionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

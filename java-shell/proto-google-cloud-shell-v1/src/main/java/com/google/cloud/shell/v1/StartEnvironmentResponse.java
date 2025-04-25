@@ -35,7 +35,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.StartEnvironmentResponse)
     StartEnvironmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StartEnvironmentResponse.newBuilder() to construct.
   private StartEnvironmentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ENVIRONMENT_FIELD_NUMBER = 1;
   private com.google.cloud.shell.v1.Environment environment_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
   public boolean hasEnvironment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
         ? com.google.cloud.shell.v1.Environment.getDefaultInstance()
         : environment_;
   }
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +484,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
             com.google.cloud.shell.v1.Environment.Builder,
             com.google.cloud.shell.v1.EnvironmentOrBuilder>
         environmentBuilder_;
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
     public boolean hasEnvironment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
         return environmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -548,7 +540,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -568,7 +559,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -596,7 +586,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +605,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +619,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -650,7 +637,6 @@ public final class StartEnvironmentResponse extends com.google.protobuf.Generate
             : environment_;
       }
     }
-
     /**
      *
      *

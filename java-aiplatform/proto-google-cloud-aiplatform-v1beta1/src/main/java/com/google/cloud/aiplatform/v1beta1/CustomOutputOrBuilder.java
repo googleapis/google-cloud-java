@@ -38,7 +38,6 @@ public interface CustomOutputOrBuilder
    * @return Whether the rawOutputs field is set.
    */
   boolean hasRawOutputs();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CustomOutputOrBuilder
    * @return The rawOutputs.
    */
   com.google.cloud.aiplatform.v1beta1.RawOutput getRawOutputs();
-
   /**
    *
    *

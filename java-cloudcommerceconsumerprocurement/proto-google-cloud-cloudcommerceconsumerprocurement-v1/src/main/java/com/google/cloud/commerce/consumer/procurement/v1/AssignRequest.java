@@ -34,7 +34,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.commerce.consumer.procurement.v1.AssignRequest)
     AssignRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AssignRequest.newBuilder() to construct.
   private AssignRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList usernames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getUsernamesList() {
     return usernames_;
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
   public int getUsernamesCount() {
     return usernames_.size();
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getUsernames(int index) {
     return usernames_.get(index);
   }
-
   /**
    *
    *
@@ -367,7 +360,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +571,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -715,7 +701,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       usernames_.makeImmutable();
       return usernames_;
     }
-
     /**
      *
      *
@@ -731,7 +716,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
     public int getUsernamesCount() {
       return usernames_.size();
     }
-
     /**
      *
      *
@@ -748,7 +732,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getUsernames(int index) {
       return usernames_.get(index);
     }
-
     /**
      *
      *
@@ -765,7 +748,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getUsernamesBytes(int index) {
       return usernames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +795,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +815,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +834,6 @@ public final class AssignRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

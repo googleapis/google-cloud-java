@@ -34,7 +34,6 @@ public final class ExportBacktestResultMetadataResponse
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportBacktestResultMetadataResponse)
     ExportBacktestResultMetadataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportBacktestResultMetadataResponse.newBuilder() to construct.
   private ExportBacktestResultMetadataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -223,7 +222,6 @@ public final class ExportBacktestResultMetadataResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

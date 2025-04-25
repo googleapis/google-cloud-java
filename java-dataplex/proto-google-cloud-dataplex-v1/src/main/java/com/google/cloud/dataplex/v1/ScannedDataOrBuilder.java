@@ -36,7 +36,6 @@ public interface ScannedDataOrBuilder
    * @return Whether the incrementalField field is set.
    */
   boolean hasIncrementalField();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ScannedDataOrBuilder
    * @return The incrementalField.
    */
   com.google.cloud.dataplex.v1.ScannedData.IncrementalField getIncrementalField();
-
   /**
    *
    *

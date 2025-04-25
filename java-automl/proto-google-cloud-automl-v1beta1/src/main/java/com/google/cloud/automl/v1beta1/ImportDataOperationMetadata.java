@@ -33,7 +33,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ImportDataOperationMetadata)
     ImportDataOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportDataOperationMetadata.newBuilder() to construct.
   private ImportDataOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class ImportDataOperationMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

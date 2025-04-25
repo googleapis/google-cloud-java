@@ -261,8 +261,7 @@ public class MockConfigImpl extends ConfigImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportDeploymentStatefile, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ExportDeploymentStatefile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Statefile.class.getName(),
                   Exception.class.getName())));
@@ -283,8 +282,7 @@ public class MockConfigImpl extends ConfigImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportRevisionStatefile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ExportRevisionStatefile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Statefile.class.getName(),
                   Exception.class.getName())));
@@ -516,8 +514,7 @@ public class MockConfigImpl extends ConfigImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTerraformVersions, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListTerraformVersions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTerraformVersionsResponse.class.getName(),
                   Exception.class.getName())));

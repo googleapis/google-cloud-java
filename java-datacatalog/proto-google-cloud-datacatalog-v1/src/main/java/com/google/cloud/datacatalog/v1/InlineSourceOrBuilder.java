@@ -36,7 +36,6 @@ public interface InlineSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.SerializedTaxonomy> getTaxonomiesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InlineSourceOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.SerializedTaxonomy getTaxonomies(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface InlineSourceOrBuilder
    * </code>
    */
   int getTaxonomiesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface InlineSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.SerializedTaxonomyOrBuilder>
       getTaxonomiesOrBuilderList();
-
   /**
    *
    *

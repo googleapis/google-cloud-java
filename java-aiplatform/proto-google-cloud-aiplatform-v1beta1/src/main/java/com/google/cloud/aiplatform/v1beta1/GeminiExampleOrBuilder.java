@@ -45,7 +45,6 @@ public interface GeminiExampleOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   int getContentsCount();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface GeminiExampleOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getContentsOrBuilderList();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface GeminiExampleOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface GeminiExampleOrBuilder
    * @return The systemInstruction.
    */
   com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction();
-
   /**
    *
    *
@@ -221,7 +214,6 @@ public interface GeminiExampleOrBuilder
    * @return The cachedContent.
    */
   java.lang.String getCachedContent();
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Tool> getToolsList();
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Tool getTools(int index);
-
   /**
    *
    *
@@ -294,7 +284,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   int getToolsCount();
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public interface GeminiExampleOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ToolOrBuilder>
       getToolsOrBuilderList();
-
   /**
    *
    *
@@ -347,7 +335,6 @@ public interface GeminiExampleOrBuilder
    * @return Whether the toolConfig field is set.
    */
   boolean hasToolConfig();
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public interface GeminiExampleOrBuilder
    * @return The toolConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ToolConfig getToolConfig();
-
   /**
    *
    *
@@ -394,7 +380,6 @@ public interface GeminiExampleOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -411,11 +396,9 @@ public interface GeminiExampleOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -432,7 +415,6 @@ public interface GeminiExampleOrBuilder
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -453,7 +435,6 @@ public interface GeminiExampleOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -484,7 +465,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SafetySetting> getSafetySettingsList();
-
   /**
    *
    *
@@ -498,7 +478,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SafetySetting getSafetySettings(int index);
-
   /**
    *
    *
@@ -512,7 +491,6 @@ public interface GeminiExampleOrBuilder
    * </code>
    */
   int getSafetySettingsCount();
-
   /**
    *
    *
@@ -527,7 +505,6 @@ public interface GeminiExampleOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SafetySettingOrBuilder>
       getSafetySettingsOrBuilderList();
-
   /**
    *
    *
@@ -556,7 +533,6 @@ public interface GeminiExampleOrBuilder
    * @return Whether the generationConfig field is set.
    */
   boolean hasGenerationConfig();
-
   /**
    *
    *
@@ -571,7 +547,6 @@ public interface GeminiExampleOrBuilder
    * @return The generationConfig.
    */
   com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig();
-
   /**
    *
    *

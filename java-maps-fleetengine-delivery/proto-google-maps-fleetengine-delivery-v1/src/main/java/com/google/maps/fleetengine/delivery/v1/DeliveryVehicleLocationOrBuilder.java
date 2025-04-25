@@ -40,7 +40,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The location.
    */
   com.google.type.LatLng getLocation();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasHorizontalAccuracy();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.DoubleValue getHorizontalAccuracy();
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the latlngAccuracy field is set.
    */
   boolean hasLatlngAccuracy();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The latlngAccuracy.
    */
   com.google.protobuf.DoubleValue getLatlngAccuracy();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the heading field is set.
    */
   boolean hasHeading();
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The heading.
    */
   com.google.protobuf.Int32Value getHeading();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasBearingAccuracy();
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.DoubleValue getBearingAccuracy();
-
   /**
    *
    *
@@ -250,7 +240,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the headingAccuracy field is set.
    */
   boolean hasHeadingAccuracy();
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The headingAccuracy.
    */
   com.google.protobuf.DoubleValue getHeadingAccuracy();
-
   /**
    *
    *
@@ -287,7 +275,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the altitude field is set.
    */
   boolean hasAltitude();
-
   /**
    *
    *
@@ -300,7 +287,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The altitude.
    */
   com.google.protobuf.DoubleValue getAltitude();
-
   /**
    *
    *
@@ -327,7 +313,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasVerticalAccuracy();
-
   /**
    *
    *
@@ -343,7 +328,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.DoubleValue getVerticalAccuracy();
-
   /**
    *
    *
@@ -368,7 +352,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the altitudeAccuracy field is set.
    */
   boolean hasAltitudeAccuracy();
-
   /**
    *
    *
@@ -381,7 +364,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The altitudeAccuracy.
    */
   com.google.protobuf.DoubleValue getAltitudeAccuracy();
-
   /**
    *
    *
@@ -409,7 +391,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasSpeedKmph();
-
   /**
    *
    *
@@ -426,7 +407,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Int32Value getSpeedKmph();
-
   /**
    *
    *
@@ -452,7 +432,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the speed field is set.
    */
   boolean hasSpeed();
-
   /**
    *
    *
@@ -465,7 +444,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The speed.
    */
   com.google.protobuf.DoubleValue getSpeed();
-
   /**
    *
    *
@@ -489,7 +467,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the speedAccuracy field is set.
    */
   boolean hasSpeedAccuracy();
-
   /**
    *
    *
@@ -502,7 +479,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The speedAccuracy.
    */
   com.google.protobuf.DoubleValue getSpeedAccuracy();
-
   /**
    *
    *
@@ -527,7 +503,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -541,7 +516,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -567,7 +541,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the serverTime field is set.
    */
   boolean hasServerTime();
-
   /**
    *
    *
@@ -581,7 +554,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The serverTime.
    */
   com.google.protobuf.Timestamp getServerTime();
-
   /**
    *
    *
@@ -606,7 +578,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The enum numeric value on the wire for locationSensor.
    */
   int getLocationSensorValue();
-
   /**
    *
    *
@@ -632,7 +603,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the isRoadSnapped field is set.
    */
   boolean hasIsRoadSnapped();
-
   /**
    *
    *
@@ -645,7 +615,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The isRoadSnapped.
    */
   com.google.protobuf.BoolValue getIsRoadSnapped();
-
   /**
    *
    *
@@ -672,7 +641,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the isGpsSensorEnabled field is set.
    */
   boolean hasIsGpsSensorEnabled();
-
   /**
    *
    *
@@ -688,7 +656,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The isGpsSensorEnabled.
    */
   com.google.protobuf.BoolValue getIsGpsSensorEnabled();
-
   /**
    *
    *
@@ -719,7 +686,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the timeSinceUpdate field is set.
    */
   boolean hasTimeSinceUpdate();
-
   /**
    *
    *
@@ -736,7 +702,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The timeSinceUpdate.
    */
   com.google.protobuf.Int32Value getTimeSinceUpdate();
-
   /**
    *
    *
@@ -770,7 +735,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   boolean hasNumStaleUpdates();
-
   /**
    *
    *
@@ -789,7 +753,6 @@ public interface DeliveryVehicleLocationOrBuilder
    */
   @java.lang.Deprecated
   com.google.protobuf.Int32Value getNumStaleUpdates();
-
   /**
    *
    *
@@ -817,7 +780,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the rawLocation field is set.
    */
   boolean hasRawLocation();
-
   /**
    *
    *
@@ -830,7 +792,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The rawLocation.
    */
   com.google.type.LatLng getRawLocation();
-
   /**
    *
    *
@@ -854,7 +815,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the rawLocationTime field is set.
    */
   boolean hasRawLocationTime();
-
   /**
    *
    *
@@ -867,7 +827,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The rawLocationTime.
    */
   com.google.protobuf.Timestamp getRawLocationTime();
-
   /**
    *
    *
@@ -892,7 +851,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The enum numeric value on the wire for rawLocationSensor.
    */
   int getRawLocationSensorValue();
-
   /**
    *
    *
@@ -919,7 +877,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the rawLocationAccuracy field is set.
    */
   boolean hasRawLocationAccuracy();
-
   /**
    *
    *
@@ -932,7 +889,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The rawLocationAccuracy.
    */
   com.google.protobuf.DoubleValue getRawLocationAccuracy();
-
   /**
    *
    *
@@ -956,7 +912,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the supplementalLocation field is set.
    */
   boolean hasSupplementalLocation();
-
   /**
    *
    *
@@ -969,7 +924,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The supplementalLocation.
    */
   com.google.type.LatLng getSupplementalLocation();
-
   /**
    *
    *
@@ -993,7 +947,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the supplementalLocationTime field is set.
    */
   boolean hasSupplementalLocationTime();
-
   /**
    *
    *
@@ -1006,7 +959,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The supplementalLocationTime.
    */
   com.google.protobuf.Timestamp getSupplementalLocationTime();
-
   /**
    *
    *
@@ -1033,7 +985,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The enum numeric value on the wire for supplementalLocationSensor.
    */
   int getSupplementalLocationSensorValue();
-
   /**
    *
    *
@@ -1063,7 +1014,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return Whether the supplementalLocationAccuracy field is set.
    */
   boolean hasSupplementalLocationAccuracy();
-
   /**
    *
    *
@@ -1076,7 +1026,6 @@ public interface DeliveryVehicleLocationOrBuilder
    * @return The supplementalLocationAccuracy.
    */
   com.google.protobuf.DoubleValue getSupplementalLocationAccuracy();
-
   /**
    *
    *

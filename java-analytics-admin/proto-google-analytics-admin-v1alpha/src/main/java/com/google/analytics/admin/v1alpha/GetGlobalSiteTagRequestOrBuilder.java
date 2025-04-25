@@ -42,7 +42,6 @@ public interface GetGlobalSiteTagRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

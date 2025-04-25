@@ -38,7 +38,6 @@ public interface WriteFileRequestOrBuilder
    * @return The workspace.
    */
   java.lang.String getWorkspace();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface WriteFileRequestOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

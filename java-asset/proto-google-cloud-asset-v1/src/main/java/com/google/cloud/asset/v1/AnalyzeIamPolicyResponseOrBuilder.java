@@ -37,7 +37,6 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    * @return Whether the mainAnalysis field is set.
    */
   boolean hasMainAnalysis();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    * @return The mainAnalysis.
    */
   com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis getMainAnalysis();
-
   /**
    *
    *
@@ -70,8 +68,8 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -80,14 +78,13 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    */
   java.util.List<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis>
       getServiceAccountImpersonationAnalysisList();
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -96,14 +93,13 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    */
   com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
       getServiceAccountImpersonationAnalysis(int index);
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -111,14 +107,13 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    * </code>
    */
   int getServiceAccountImpersonationAnalysisCount();
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -128,14 +123,13 @@ public interface AnalyzeIamPolicyResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder>
       getServiceAccountImpersonationAnalysisOrBuilderList();
-
   /**
    *
    *
    * <pre>
    * The service account impersonation analysis if
-   * [IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation][google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation]
-   * is enabled.
+   * [AnalyzeIamPolicyRequest.analyze_service_account_impersonation][] is
+   * enabled.
    * </pre>
    *
    * <code>

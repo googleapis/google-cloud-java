@@ -36,7 +36,6 @@ public interface AnnotationSpecOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface AnnotationSpecOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

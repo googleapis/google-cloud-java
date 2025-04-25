@@ -33,7 +33,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse)
     GenerateGroundedContentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateGroundedContentResponse.newBuilder() to construct.
   private GenerateGroundedContentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -95,7 +94,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return Whether the content field is set.
      */
     boolean hasContent();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return The content.
      */
     com.google.cloud.discoveryengine.v1.GroundedGenerationContent getContent();
-
     /**
      *
      *
@@ -132,7 +129,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return Whether the groundingScore field is set.
      */
     boolean hasGroundingScore();
-
     /**
      *
      *
@@ -160,7 +156,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      * @return Whether the groundingMetadata field is set.
      */
     boolean hasGroundingMetadata();
-
     /**
      *
      *
@@ -176,7 +171,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
      */
     com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata
         getGroundingMetadata();
-
     /**
      *
      *
@@ -192,7 +186,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             .GroundingMetadataOrBuilder
         getGroundingMetadataOrBuilder();
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate)
       CandidateOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Candidate.newBuilder() to construct.
     private Candidate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -260,7 +252,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.RetrievalMetadata>
           getRetrievalMetadataList();
-
       /**
        *
        *
@@ -278,7 +269,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.RetrievalMetadata
           getRetrievalMetadata(int index);
-
       /**
        *
        *
@@ -294,7 +284,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * </code>
        */
       int getRetrievalMetadataCount();
-
       /**
        *
        *
@@ -314,7 +303,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.RetrievalMetadataOrBuilder>
           getRetrievalMetadataOrBuilderList();
-
       /**
        *
        *
@@ -344,7 +332,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * <code>repeated .google.cloud.discoveryengine.v1.FactChunk support_chunks = 1;</code>
        */
       java.util.List<com.google.cloud.discoveryengine.v1.FactChunk> getSupportChunksList();
-
       /**
        *
        *
@@ -356,7 +343,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * <code>repeated .google.cloud.discoveryengine.v1.FactChunk support_chunks = 1;</code>
        */
       com.google.cloud.discoveryengine.v1.FactChunk getSupportChunks(int index);
-
       /**
        *
        *
@@ -368,7 +354,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * <code>repeated .google.cloud.discoveryengine.v1.FactChunk support_chunks = 1;</code>
        */
       int getSupportChunksCount();
-
       /**
        *
        *
@@ -381,7 +366,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        */
       java.util.List<? extends com.google.cloud.discoveryengine.v1.FactChunkOrBuilder>
           getSupportChunksOrBuilderList();
-
       /**
        *
        *
@@ -406,7 +390,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return A list containing the webSearchQueries.
        */
       java.util.List<java.lang.String> getWebSearchQueriesList();
-
       /**
        *
        *
@@ -419,7 +402,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return The count of webSearchQueries.
        */
       int getWebSearchQueriesCount();
-
       /**
        *
        *
@@ -433,7 +415,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return The webSearchQueries at the given index.
        */
       java.lang.String getWebSearchQueries(int index);
-
       /**
        *
        *
@@ -462,7 +443,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * @return Whether the searchEntryPoint field is set.
        */
       boolean hasSearchEntryPoint();
-
       /**
        *
        *
@@ -479,7 +459,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.SearchEntryPoint
           getSearchEntryPoint();
-
       /**
        *
        *
@@ -512,7 +491,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.GroundingSupport>
           getGroundingSupportList();
-
       /**
        *
        *
@@ -529,7 +507,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.GroundingSupport
           getGroundingSupport(int index);
-
       /**
        *
        *
@@ -544,7 +521,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * </code>
        */
       int getGroundingSupportCount();
-
       /**
        *
        *
@@ -563,7 +539,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.GroundingSupportOrBuilder>
           getGroundingSupportOrBuilderList();
-
       /**
        *
        *
@@ -596,7 +571,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.ImageMetadata>
           getImagesList();
-
       /**
        *
        *
@@ -611,7 +585,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.ImageMetadata
           getImages(int index);
-
       /**
        *
        *
@@ -624,7 +597,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
        * </code>
        */
       int getImagesCount();
-
       /**
        *
        *
@@ -641,7 +613,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.ImageMetadataOrBuilder>
           getImagesOrBuilderList();
-
       /**
        *
        *
@@ -657,7 +628,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               .GroundingMetadata.ImageMetadataOrBuilder
           getImagesOrBuilder(int index);
     }
-
     /**
      *
      *
@@ -673,7 +643,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata)
         GroundingMetadataOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use GroundingMetadata.newBuilder() to construct.
       private GroundingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -729,7 +698,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The enum numeric value on the wire for source.
          */
         int getSourceValue();
-
         /**
          *
          *
@@ -761,7 +729,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the dynamicRetrievalMetadata field is set.
          */
         boolean hasDynamicRetrievalMetadata();
-
         /**
          *
          *
@@ -778,7 +745,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalMetadata
             getDynamicRetrievalMetadata();
-
         /**
          *
          *
@@ -794,7 +760,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.DynamicRetrievalMetadataOrBuilder
             getDynamicRetrievalMetadataOrBuilder();
       }
-
       /**
        *
        *
@@ -810,7 +775,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.RetrievalMetadata)
           RetrievalMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use RetrievalMetadata.newBuilder() to construct.
         private RetrievalMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -917,7 +881,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>SOURCE_UNSPECIFIED = 0;</code>
            */
           public static final int SOURCE_UNSPECIFIED_VALUE = 0;
-
           /**
            *
            *
@@ -928,7 +891,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>VERTEX_AI_SEARCH = 1;</code>
            */
           public static final int VERTEX_AI_SEARCH_VALUE = 1;
-
           /**
            *
            *
@@ -939,7 +901,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>GOOGLE_SEARCH = 3;</code>
            */
           public static final int GOOGLE_SEARCH_VALUE = 3;
-
           /**
            *
            *
@@ -950,7 +911,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>INLINE_CONTENT = 2;</code>
            */
           public static final int INLINE_CONTENT_VALUE = 2;
-
           /**
            *
            *
@@ -1056,7 +1016,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private int bitField0_;
         public static final int SOURCE_FIELD_NUMBER = 1;
         private int source_ = 0;
-
         /**
          *
          *
@@ -1074,7 +1033,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getSourceValue() {
           return source_;
         }
-
         /**
          *
          *
@@ -1107,7 +1065,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalMetadata
             dynamicRetrievalMetadata_;
-
         /**
          *
          *
@@ -1125,7 +1082,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasDynamicRetrievalMetadata() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -1148,7 +1104,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.DynamicRetrievalMetadata.getDefaultInstance()
               : dynamicRetrievalMetadata_;
         }
-
         /**
          *
          *
@@ -1386,7 +1341,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -1636,7 +1590,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private int source_ = 0;
-
           /**
            *
            *
@@ -1654,7 +1607,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getSourceValue() {
             return source_;
           }
-
           /**
            *
            *
@@ -1675,7 +1627,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1703,7 +1654,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                     .GroundingMetadata.RetrievalMetadata.Source.UNRECOGNIZED
                 : result;
           }
-
           /**
            *
            *
@@ -1730,7 +1680,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1762,7 +1711,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.DynamicRetrievalMetadataOrBuilder>
               dynamicRetrievalMetadataBuilder_;
-
           /**
            *
            *
@@ -1779,7 +1727,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasDynamicRetrievalMetadata() {
             return ((bitField0_ & 0x00000002) != 0);
           }
-
           /**
            *
            *
@@ -1805,7 +1752,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return dynamicRetrievalMetadataBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -1833,7 +1779,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1858,7 +1803,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1894,7 +1838,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
-
           /**
            *
            *
@@ -1916,7 +1859,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -1935,7 +1877,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getDynamicRetrievalMetadataFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -1959,7 +1900,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : dynamicRetrievalMetadata_;
             }
           }
-
           /**
            *
            *
@@ -2085,7 +2025,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the predictorMetadata field is set.
          */
         boolean hasPredictorMetadata();
-
         /**
          *
          *
@@ -2102,7 +2041,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalPredictorMetadata
             getPredictorMetadata();
-
         /**
          *
          *
@@ -2118,7 +2056,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.DynamicRetrievalPredictorMetadataOrBuilder
             getPredictorMetadataOrBuilder();
       }
-
       /**
        *
        *
@@ -2135,7 +2072,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.DynamicRetrievalMetadata)
           DynamicRetrievalMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use DynamicRetrievalMetadata.newBuilder() to construct.
         private DynamicRetrievalMetadata(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2172,7 +2108,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.DynamicRetrievalPredictorMetadata
             predictorMetadata_;
-
         /**
          *
          *
@@ -2190,7 +2125,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasPredictorMetadata() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -2213,7 +2147,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.DynamicRetrievalPredictorMetadata.getDefaultInstance()
               : predictorMetadata_;
         }
-
         /**
          *
          *
@@ -2434,7 +2367,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -2680,7 +2612,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.DynamicRetrievalPredictorMetadataOrBuilder>
               predictorMetadataBuilder_;
-
           /**
            *
            *
@@ -2697,7 +2628,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasPredictorMetadata() {
             return ((bitField0_ & 0x00000001) != 0);
           }
-
           /**
            *
            *
@@ -2723,7 +2653,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return predictorMetadataBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -2751,7 +2680,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2776,7 +2704,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2812,7 +2739,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
-
           /**
            *
            *
@@ -2834,7 +2760,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -2853,7 +2778,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getPredictorMetadataFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -2877,7 +2801,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : predictorMetadata_;
             }
           }
-
           /**
            *
            *
@@ -3003,7 +2926,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The enum numeric value on the wire for version.
          */
         int getVersionValue();
-
         /**
          *
          *
@@ -3037,7 +2959,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the prediction field is set.
          */
         boolean hasPrediction();
-
         /**
          *
          *
@@ -3055,7 +2976,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          */
         float getPrediction();
       }
-
       /**
        *
        *
@@ -3072,7 +2992,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.DynamicRetrievalPredictorMetadata)
           DynamicRetrievalPredictorMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use DynamicRetrievalPredictorMetadata.newBuilder() to construct.
         private DynamicRetrievalPredictorMetadata(
             com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3150,7 +3069,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * <code>VERSION_UNSPECIFIED = 0;</code>
            */
           public static final int VERSION_UNSPECIFIED_VALUE = 0;
-
           /**
            *
            *
@@ -3250,7 +3168,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private int bitField0_;
         public static final int VERSION_FIELD_NUMBER = 1;
         private int version_ = 0;
-
         /**
          *
          *
@@ -3268,7 +3185,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getVersionValue() {
           return version_;
         }
-
         /**
          *
          *
@@ -3300,7 +3216,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         public static final int PREDICTION_FIELD_NUMBER = 2;
         private float prediction_ = 0F;
-
         /**
          *
          *
@@ -3320,7 +3235,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasPrediction() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -3555,7 +3469,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -3788,7 +3701,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private int version_ = 0;
-
           /**
            *
            *
@@ -3806,7 +3718,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getVersionValue() {
             return version_;
           }
-
           /**
            *
            *
@@ -3827,7 +3738,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3856,7 +3766,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                     .GroundingMetadata.DynamicRetrievalPredictorMetadata.Version.UNRECOGNIZED
                 : result;
           }
-
           /**
            *
            *
@@ -3883,7 +3792,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -3905,7 +3813,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
 
           private float prediction_;
-
           /**
            *
            *
@@ -3925,7 +3832,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasPrediction() {
             return ((bitField0_ & 0x00000002) != 0);
           }
-
           /**
            *
            *
@@ -3945,7 +3851,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public float getPrediction() {
             return prediction_;
           }
-
           /**
            *
            *
@@ -3969,7 +3874,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -4082,7 +3986,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The renderedContent.
          */
         java.lang.String getRenderedContent();
-
         /**
          *
          *
@@ -4111,7 +4014,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          */
         com.google.protobuf.ByteString getSdkBlob();
       }
-
       /**
        *
        *
@@ -4127,7 +4029,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.SearchEntryPoint)
           SearchEntryPointOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use SearchEntryPoint.newBuilder() to construct.
         private SearchEntryPoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -4165,7 +4066,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object renderedContent_ = "";
-
         /**
          *
          *
@@ -4190,7 +4090,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return s;
           }
         }
-
         /**
          *
          *
@@ -4218,7 +4117,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         public static final int SDK_BLOB_FIELD_NUMBER = 2;
         private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
-
         /**
          *
          *
@@ -4438,7 +4336,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -4669,7 +4566,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private java.lang.Object renderedContent_ = "";
-
           /**
            *
            *
@@ -4693,7 +4589,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -4717,7 +4612,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -4740,7 +4634,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -4759,7 +4652,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -4785,7 +4677,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
 
           private com.google.protobuf.ByteString sdkBlob_ = com.google.protobuf.ByteString.EMPTY;
-
           /**
            *
            *
@@ -4802,7 +4693,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public com.google.protobuf.ByteString getSdkBlob() {
             return sdkBlob_;
           }
-
           /**
            *
            *
@@ -4825,7 +4715,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -4935,7 +4824,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The claimText.
          */
         java.lang.String getClaimText();
-
         /**
          *
          *
@@ -4965,7 +4853,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return A list containing the supportChunkIndices.
          */
         java.util.List<java.lang.Integer> getSupportChunkIndicesList();
-
         /**
          *
          *
@@ -4981,7 +4868,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return The count of supportChunkIndices.
          */
         int getSupportChunkIndicesCount();
-
         /**
          *
          *
@@ -5013,7 +4899,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the supportScore field is set.
          */
         boolean hasSupportScore();
-
         /**
          *
          *
@@ -5029,7 +4914,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          */
         float getSupportScore();
       }
-
       /**
        *
        *
@@ -5045,7 +4929,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.GroundingSupport)
           GroundingSupportOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use GroundingSupport.newBuilder() to construct.
         private GroundingSupport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -5084,7 +4967,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         @SuppressWarnings("serial")
         private volatile java.lang.Object claimText_ = "";
-
         /**
          *
          *
@@ -5109,7 +4991,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return s;
           }
         }
-
         /**
          *
          *
@@ -5139,7 +5020,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         @SuppressWarnings("serial")
         private com.google.protobuf.Internal.IntList supportChunkIndices_ = emptyIntList();
-
         /**
          *
          *
@@ -5158,7 +5038,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public java.util.List<java.lang.Integer> getSupportChunkIndicesList() {
           return supportChunkIndices_;
         }
-
         /**
          *
          *
@@ -5176,7 +5055,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getSupportChunkIndicesCount() {
           return supportChunkIndices_.size();
         }
-
         /**
          *
          *
@@ -5200,7 +5078,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
         public static final int SUPPORT_SCORE_FIELD_NUMBER = 2;
         private float supportScore_ = 0F;
-
         /**
          *
          *
@@ -5218,7 +5095,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasSupportScore() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -5473,7 +5349,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -5741,7 +5616,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private int bitField0_;
 
           private java.lang.Object claimText_ = "";
-
           /**
            *
            *
@@ -5765,7 +5639,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (java.lang.String) ref;
             }
           }
-
           /**
            *
            *
@@ -5789,7 +5662,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return (com.google.protobuf.ByteString) ref;
             }
           }
-
           /**
            *
            *
@@ -5812,7 +5684,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -5831,7 +5702,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -5864,7 +5734,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             bitField0_ |= 0x00000002;
           }
-
           /**
            *
            *
@@ -5883,7 +5752,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             supportChunkIndices_.makeImmutable();
             return supportChunkIndices_;
           }
-
           /**
            *
            *
@@ -5901,7 +5769,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getSupportChunkIndicesCount() {
             return supportChunkIndices_.size();
           }
-
           /**
            *
            *
@@ -5920,7 +5787,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public int getSupportChunkIndices(int index) {
             return supportChunkIndices_.getInt(index);
           }
-
           /**
            *
            *
@@ -5945,7 +5811,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -5969,7 +5834,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -5993,7 +5857,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -6016,7 +5879,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
 
           private float supportScore_;
-
           /**
            *
            *
@@ -6034,7 +5896,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasSupportScore() {
             return ((bitField0_ & 0x00000004) != 0);
           }
-
           /**
            *
            *
@@ -6052,7 +5913,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public float getSupportScore() {
             return supportScore_;
           }
-
           /**
            *
            *
@@ -6074,7 +5934,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -6186,7 +6045,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the image field is set.
          */
         boolean hasImage();
-
         /**
          *
          *
@@ -6203,7 +6061,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.ImageMetadata.Image
             getImage();
-
         /**
          *
          *
@@ -6233,7 +6090,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the thumbnail field is set.
          */
         boolean hasThumbnail();
-
         /**
          *
          *
@@ -6250,7 +6106,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.ImageMetadata.Image
             getThumbnail();
-
         /**
          *
          *
@@ -6280,7 +6135,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
          * @return Whether the source field is set.
          */
         boolean hasSource();
-
         /**
          *
          *
@@ -6297,7 +6151,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.ImageMetadata.WebsiteInfo
             getSource();
-
         /**
          *
          *
@@ -6313,7 +6166,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder
             getSourceOrBuilder();
       }
-
       /**
        *
        *
@@ -6329,7 +6181,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata)
           ImageMetadataOrBuilder {
         private static final long serialVersionUID = 0L;
-
         // Use ImageMetadata.newBuilder() to construct.
         private ImageMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -6377,7 +6228,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * @return The uri.
            */
           java.lang.String getUri();
-
           /**
            *
            *
@@ -6403,7 +6253,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * @return The title.
            */
           java.lang.String getTitle();
-
           /**
            *
            *
@@ -6417,7 +6266,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            */
           com.google.protobuf.ByteString getTitleBytes();
         }
-
         /**
          *
          *
@@ -6433,7 +6281,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo)
             WebsiteInfoOrBuilder {
           private static final long serialVersionUID = 0L;
-
           // Use WebsiteInfo.newBuilder() to construct.
           private WebsiteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
@@ -6471,7 +6318,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object uri_ = "";
-
           /**
            *
            *
@@ -6495,7 +6341,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return s;
             }
           }
-
           /**
            *
            *
@@ -6524,7 +6369,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object title_ = "";
-
           /**
            *
            *
@@ -6548,7 +6392,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return s;
             }
           }
-
           /**
            *
            *
@@ -6775,7 +6618,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             Builder builder = new Builder(parent);
             return builder;
           }
-
           /**
            *
            *
@@ -7009,7 +6851,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             private int bitField0_;
 
             private java.lang.Object uri_ = "";
-
             /**
              *
              *
@@ -7032,7 +6873,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -7055,7 +6895,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -7077,7 +6916,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -7095,7 +6933,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -7120,7 +6957,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
 
             private java.lang.Object title_ = "";
-
             /**
              *
              *
@@ -7143,7 +6979,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -7166,7 +7001,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -7188,7 +7022,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -7206,7 +7039,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -7319,7 +7151,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * @return The uri.
            */
           java.lang.String getUri();
-
           /**
            *
            *
@@ -7359,7 +7190,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            */
           int getHeight();
         }
-
         /**
          *
          *
@@ -7375,7 +7205,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image)
             ImageOrBuilder {
           private static final long serialVersionUID = 0L;
-
           // Use Image.newBuilder() to construct.
           private Image(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
             super(builder);
@@ -7412,7 +7241,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
           @SuppressWarnings("serial")
           private volatile java.lang.Object uri_ = "";
-
           /**
            *
            *
@@ -7436,7 +7264,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return s;
             }
           }
-
           /**
            *
            *
@@ -7463,7 +7290,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
           public static final int WIDTH_FIELD_NUMBER = 2;
           private int width_ = 0;
-
           /**
            *
            *
@@ -7482,7 +7308,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
           public static final int HEIGHT_FIELD_NUMBER = 3;
           private int height_ = 0;
-
           /**
            *
            *
@@ -7710,7 +7535,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             Builder builder = new Builder(parent);
             return builder;
           }
-
           /**
            *
            *
@@ -7954,7 +7778,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             private int bitField0_;
 
             private java.lang.Object uri_ = "";
-
             /**
              *
              *
@@ -7977,7 +7800,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 return (java.lang.String) ref;
               }
             }
-
             /**
              *
              *
@@ -8000,7 +7822,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 return (com.google.protobuf.ByteString) ref;
               }
             }
-
             /**
              *
              *
@@ -8022,7 +7843,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -8040,7 +7860,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -8065,7 +7884,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
 
             private int width_;
-
             /**
              *
              *
@@ -8081,7 +7899,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             public int getWidth() {
               return width_;
             }
-
             /**
              *
              *
@@ -8101,7 +7918,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -8121,7 +7937,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
 
             private int height_;
-
             /**
              *
              *
@@ -8137,7 +7952,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             public int getHeight() {
               return height_;
             }
-
             /**
              *
              *
@@ -8157,7 +7971,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               onChanged();
               return this;
             }
-
             /**
              *
              *
@@ -8253,7 +8066,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.ImageMetadata.Image
             image_;
-
         /**
          *
          *
@@ -8271,7 +8083,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasImage() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -8294,7 +8105,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
               : image_;
         }
-
         /**
          *
          *
@@ -8320,7 +8130,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.ImageMetadata.Image
             thumbnail_;
-
         /**
          *
          *
@@ -8338,7 +8147,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasThumbnail() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -8361,7 +8169,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.ImageMetadata.Image.getDefaultInstance()
               : thumbnail_;
         }
-
         /**
          *
          *
@@ -8387,7 +8194,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                 .GroundingMetadata.ImageMetadata.WebsiteInfo
             source_;
-
         /**
          *
          *
@@ -8405,7 +8211,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasSource() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -8428,7 +8233,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   .GroundingMetadata.ImageMetadata.WebsiteInfo.getDefaultInstance()
               : source_;
         }
-
         /**
          *
          *
@@ -8676,7 +8480,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           Builder builder = new Builder(parent);
           return builder;
         }
-
         /**
          *
          *
@@ -8957,7 +8760,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.ImageMetadata.ImageOrBuilder>
               imageBuilder_;
-
           /**
            *
            *
@@ -8974,7 +8776,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasImage() {
             return ((bitField0_ & 0x00000001) != 0);
           }
-
           /**
            *
            *
@@ -9000,7 +8801,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return imageBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -9028,7 +8828,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9053,7 +8852,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9088,7 +8886,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
-
           /**
            *
            *
@@ -9110,7 +8907,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9129,7 +8925,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getImageFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -9153,7 +8948,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : image_;
             }
           }
-
           /**
            *
            *
@@ -9199,7 +8993,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.ImageMetadata.ImageOrBuilder>
               thumbnailBuilder_;
-
           /**
            *
            *
@@ -9216,7 +9009,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasThumbnail() {
             return ((bitField0_ & 0x00000002) != 0);
           }
-
           /**
            *
            *
@@ -9242,7 +9034,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return thumbnailBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -9270,7 +9061,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9295,7 +9085,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9330,7 +9119,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
-
           /**
            *
            *
@@ -9352,7 +9140,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9371,7 +9158,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getThumbnailFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -9395,7 +9181,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : thumbnail_;
             }
           }
-
           /**
            *
            *
@@ -9441,7 +9226,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.ImageMetadata.WebsiteInfoOrBuilder>
               sourceBuilder_;
-
           /**
            *
            *
@@ -9458,7 +9242,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           public boolean hasSource() {
             return ((bitField0_ & 0x00000004) != 0);
           }
-
           /**
            *
            *
@@ -9484,7 +9267,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               return sourceBuilder_.getMessage();
             }
           }
-
           /**
            *
            *
@@ -9512,7 +9294,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9537,7 +9318,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9573,7 +9353,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             return this;
           }
-
           /**
            *
            *
@@ -9595,7 +9374,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return this;
           }
-
           /**
            *
            *
@@ -9614,7 +9392,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             onChanged();
             return getSourceFieldBuilder().getBuilder();
           }
-
           /**
            *
            *
@@ -9638,7 +9415,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   : source_;
             }
           }
-
           /**
            *
            *
@@ -9753,7 +9529,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.RetrievalMetadata>
           retrievalMetadata_;
-
       /**
        *
        *
@@ -9775,7 +9550,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getRetrievalMetadataList() {
         return retrievalMetadata_;
       }
-
       /**
        *
        *
@@ -9798,7 +9572,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getRetrievalMetadataOrBuilderList() {
         return retrievalMetadata_;
       }
-
       /**
        *
        *
@@ -9817,7 +9590,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getRetrievalMetadataCount() {
         return retrievalMetadata_.size();
       }
-
       /**
        *
        *
@@ -9838,7 +9610,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getRetrievalMetadata(int index) {
         return retrievalMetadata_.get(index);
       }
-
       /**
        *
        *
@@ -9864,7 +9635,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
       @SuppressWarnings("serial")
       private java.util.List<com.google.cloud.discoveryengine.v1.FactChunk> supportChunks_;
-
       /**
        *
        *
@@ -9879,7 +9649,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public java.util.List<com.google.cloud.discoveryengine.v1.FactChunk> getSupportChunksList() {
         return supportChunks_;
       }
-
       /**
        *
        *
@@ -9895,7 +9664,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getSupportChunksOrBuilderList() {
         return supportChunks_;
       }
-
       /**
        *
        *
@@ -9910,7 +9678,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getSupportChunksCount() {
         return supportChunks_.size();
       }
-
       /**
        *
        *
@@ -9925,7 +9692,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public com.google.cloud.discoveryengine.v1.FactChunk getSupportChunks(int index) {
         return supportChunks_.get(index);
       }
-
       /**
        *
        *
@@ -9947,7 +9713,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList webSearchQueries_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-
       /**
        *
        *
@@ -9962,7 +9727,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public com.google.protobuf.ProtocolStringList getWebSearchQueriesList() {
         return webSearchQueries_;
       }
-
       /**
        *
        *
@@ -9977,7 +9741,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getWebSearchQueriesCount() {
         return webSearchQueries_.size();
       }
-
       /**
        *
        *
@@ -9993,7 +9756,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public java.lang.String getWebSearchQueries(int index) {
         return webSearchQueries_.get(index);
       }
-
       /**
        *
        *
@@ -10014,7 +9776,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.SearchEntryPoint
           searchEntryPoint_;
-
       /**
        *
        *
@@ -10032,7 +9793,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasSearchEntryPoint() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -10055,7 +9815,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 .GroundingMetadata.SearchEntryPoint.getDefaultInstance()
             : searchEntryPoint_;
       }
-
       /**
        *
        *
@@ -10084,7 +9843,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.GroundingSupport>
           groundingSupport_;
-
       /**
        *
        *
@@ -10105,7 +9863,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getGroundingSupportList() {
         return groundingSupport_;
       }
-
       /**
        *
        *
@@ -10127,7 +9884,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getGroundingSupportOrBuilderList() {
         return groundingSupport_;
       }
-
       /**
        *
        *
@@ -10145,7 +9901,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getGroundingSupportCount() {
         return groundingSupport_.size();
       }
-
       /**
        *
        *
@@ -10165,7 +9920,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getGroundingSupport(int index) {
         return groundingSupport_.get(index);
       }
-
       /**
        *
        *
@@ -10193,7 +9947,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadata.ImageMetadata>
           images_;
-
       /**
        *
        *
@@ -10212,7 +9965,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getImagesList() {
         return images_;
       }
-
       /**
        *
        *
@@ -10232,7 +9984,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getImagesOrBuilderList() {
         return images_;
       }
-
       /**
        *
        *
@@ -10248,7 +9999,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getImagesCount() {
         return images_.size();
       }
-
       /**
        *
        *
@@ -10266,7 +10016,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           getImages(int index) {
         return images_.get(index);
       }
-
       /**
        *
        *
@@ -10546,7 +10295,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -11099,7 +10847,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -11121,7 +10868,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -11145,7 +10891,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -11177,7 +10922,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11206,7 +10950,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11237,7 +10980,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11269,7 +11011,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11297,7 +11038,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11326,7 +11066,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11356,7 +11095,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11381,7 +11119,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11406,7 +11143,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11426,7 +11162,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             getRetrievalMetadataBuilder(int index) {
           return getRetrievalMetadataFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -11450,7 +11185,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return retrievalMetadataBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -11476,7 +11210,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(retrievalMetadata_);
           }
         }
-
         /**
          *
          *
@@ -11499,7 +11232,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.RetrievalMetadata.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -11523,7 +11255,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.RetrievalMetadata.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -11607,7 +11338,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -11625,7 +11355,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -11643,7 +11372,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -11668,7 +11396,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11690,7 +11417,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11714,7 +11440,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11739,7 +11464,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11761,7 +11485,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11783,7 +11506,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11805,7 +11527,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11826,7 +11547,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11847,7 +11567,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -11862,7 +11581,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             int index) {
           return getSupportChunksFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -11881,7 +11599,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return supportChunksBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -11900,7 +11617,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(supportChunks_);
           }
         }
-
         /**
          *
          *
@@ -11915,7 +11631,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           return getSupportChunksFieldBuilder()
               .addBuilder(com.google.cloud.discoveryengine.v1.FactChunk.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -11932,7 +11647,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               .addBuilder(
                   index, com.google.cloud.discoveryengine.v1.FactChunk.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -11977,7 +11691,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           bitField0_ |= 0x00000004;
         }
-
         /**
          *
          *
@@ -11993,7 +11706,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           webSearchQueries_.makeImmutable();
           return webSearchQueries_;
         }
-
         /**
          *
          *
@@ -12008,7 +11720,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public int getWebSearchQueriesCount() {
           return webSearchQueries_.size();
         }
-
         /**
          *
          *
@@ -12024,7 +11735,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public java.lang.String getWebSearchQueries(int index) {
           return webSearchQueries_.get(index);
         }
-
         /**
          *
          *
@@ -12040,7 +11750,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public com.google.protobuf.ByteString getWebSearchQueriesBytes(int index) {
           return webSearchQueries_.getByteString(index);
         }
-
         /**
          *
          *
@@ -12064,7 +11773,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12087,7 +11795,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12107,7 +11814,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12126,7 +11832,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12162,7 +11867,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                     .GroundingMetadata.SearchEntryPointOrBuilder>
             searchEntryPointBuilder_;
-
         /**
          *
          *
@@ -12179,7 +11883,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         public boolean hasSearchEntryPoint() {
           return ((bitField0_ & 0x00000008) != 0);
         }
-
         /**
          *
          *
@@ -12205,7 +11908,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return searchEntryPointBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -12233,7 +11935,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12258,7 +11959,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12293,7 +11993,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12315,7 +12014,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -12334,7 +12032,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           onChanged();
           return getSearchEntryPointFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -12358,7 +12055,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                 : searchEntryPoint_;
           }
         }
-
         /**
          *
          *
@@ -12440,7 +12136,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -12461,7 +12156,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -12484,7 +12178,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -12515,7 +12208,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12543,7 +12235,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12573,7 +12264,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12604,7 +12294,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12631,7 +12320,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12659,7 +12347,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12688,7 +12375,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12712,7 +12398,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12736,7 +12421,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -12755,7 +12439,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             getGroundingSupportBuilder(int index) {
           return getGroundingSupportFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -12778,7 +12461,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return groundingSupportBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -12803,7 +12485,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(groundingSupport_);
           }
         }
-
         /**
          *
          *
@@ -12825,7 +12506,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.GroundingSupport.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -12848,7 +12528,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.GroundingSupport.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -12940,7 +12619,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return imagesBuilder_.getMessageList();
           }
         }
-
         /**
          *
          *
@@ -12959,7 +12637,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return imagesBuilder_.getCount();
           }
         }
-
         /**
          *
          *
@@ -12980,7 +12657,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return imagesBuilder_.getMessage(index);
           }
         }
-
         /**
          *
          *
@@ -13009,7 +12685,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13035,7 +12710,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13063,7 +12737,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13092,7 +12765,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13117,7 +12789,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13143,7 +12814,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13170,7 +12840,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13192,7 +12861,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13214,7 +12882,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           }
           return this;
         }
-
         /**
          *
          *
@@ -13231,7 +12898,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             getImagesBuilder(int index) {
           return getImagesFieldBuilder().getBuilder(index);
         }
-
         /**
          *
          *
@@ -13252,7 +12918,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return imagesBuilder_.getMessageOrBuilder(index);
           }
         }
-
         /**
          *
          *
@@ -13275,7 +12940,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             return java.util.Collections.unmodifiableList(images_);
           }
         }
-
         /**
          *
          *
@@ -13295,7 +12959,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.ImageMetadata.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -13316,7 +12979,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                   com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                       .GroundingMetadata.ImageMetadata.getDefaultInstance());
         }
-
         /**
          *
          *
@@ -13433,7 +13095,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     private int bitField0_;
     public static final int INDEX_FIELD_NUMBER = 1;
     private int index_ = 0;
-
     /**
      *
      *
@@ -13452,7 +13113,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
     public static final int CONTENT_FIELD_NUMBER = 2;
     private com.google.cloud.discoveryengine.v1.GroundedGenerationContent content_;
-
     /**
      *
      *
@@ -13468,7 +13128,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     public boolean hasContent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -13486,7 +13145,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           ? com.google.cloud.discoveryengine.v1.GroundedGenerationContent.getDefaultInstance()
           : content_;
     }
-
     /**
      *
      *
@@ -13506,7 +13164,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
     public static final int GROUNDING_SCORE_FIELD_NUMBER = 3;
     private float groundingScore_ = 0F;
-
     /**
      *
      *
@@ -13522,7 +13179,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     public boolean hasGroundingScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -13543,7 +13199,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     private com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
             .GroundingMetadata
         groundingMetadata_;
-
     /**
      *
      *
@@ -13561,7 +13216,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     public boolean hasGroundingMetadata() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -13584,7 +13238,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               .GroundingMetadata.getDefaultInstance()
           : groundingMetadata_;
     }
-
     /**
      *
      *
@@ -13818,7 +13471,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -14084,7 +13736,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       private int bitField0_;
 
       private int index_;
-
       /**
        *
        *
@@ -14100,7 +13751,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public int getIndex() {
         return index_;
       }
-
       /**
        *
        *
@@ -14120,7 +13770,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14145,7 +13794,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GroundedGenerationContent.Builder,
               com.google.cloud.discoveryengine.v1.GroundedGenerationContentOrBuilder>
           contentBuilder_;
-
       /**
        *
        *
@@ -14160,7 +13808,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasContent() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -14181,7 +13828,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           return contentBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14205,7 +13851,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14226,7 +13871,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14257,7 +13901,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         return this;
       }
-
       /**
        *
        *
@@ -14277,7 +13920,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14293,7 +13935,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return getContentFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14313,7 +13954,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               : content_;
         }
       }
-
       /**
        *
        *
@@ -14341,7 +13981,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
 
       private float groundingScore_;
-
       /**
        *
        *
@@ -14357,7 +13996,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasGroundingScore() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -14373,7 +14011,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public float getGroundingScore() {
         return groundingScore_;
       }
-
       /**
        *
        *
@@ -14393,7 +14030,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14423,7 +14059,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .GroundingMetadataOrBuilder>
           groundingMetadataBuilder_;
-
       /**
        *
        *
@@ -14440,7 +14075,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       public boolean hasGroundingMetadata() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -14466,7 +14100,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           return groundingMetadataBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -14494,7 +14127,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14519,7 +14151,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14554,7 +14185,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         return this;
       }
-
       /**
        *
        *
@@ -14576,7 +14206,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -14595,7 +14224,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         onChanged();
         return getGroundingMetadataFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -14619,7 +14247,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               : groundingMetadata_;
         }
       }
-
       /**
        *
        *
@@ -14729,7 +14356,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
   private java.util.List<
           com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate>
       candidates_;
-
   /**
    *
    *
@@ -14747,7 +14373,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       getCandidatesList() {
     return candidates_;
   }
-
   /**
    *
    *
@@ -14767,7 +14392,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       getCandidatesOrBuilderList() {
     return candidates_;
   }
-
   /**
    *
    *
@@ -14783,7 +14407,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
   public int getCandidatesCount() {
     return candidates_.size();
   }
-
   /**
    *
    *
@@ -14800,7 +14423,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       getCandidates(int index) {
     return candidates_.get(index);
   }
-
   /**
    *
    *
@@ -14981,7 +14603,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -15260,7 +14881,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -15279,7 +14899,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -15299,7 +14918,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -15326,7 +14944,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15351,7 +14968,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15377,7 +14993,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15404,7 +15019,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15428,7 +15042,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15453,7 +15066,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15479,7 +15091,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15501,7 +15112,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15523,7 +15133,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -15539,7 +15148,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         getCandidatesBuilder(int index) {
       return getCandidatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -15559,7 +15167,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return candidatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -15582,7 +15189,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(candidates_);
       }
     }
-
     /**
      *
      *
@@ -15601,7 +15207,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -15621,7 +15226,6 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
                   .getDefaultInstance());
     }
-
     /**
      *
      *

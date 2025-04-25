@@ -36,7 +36,6 @@ public interface DeleteGlobalOrganizationOperationRequestOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DeleteGlobalOrganizationOperationRequestOrBuilder
    * @return Whether the parentId field is set.
    */
   boolean hasParentId();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DeleteGlobalOrganizationOperationRequestOrBuilder
    * @return The parentId.
    */
   java.lang.String getParentId();
-
   /**
    *
    *

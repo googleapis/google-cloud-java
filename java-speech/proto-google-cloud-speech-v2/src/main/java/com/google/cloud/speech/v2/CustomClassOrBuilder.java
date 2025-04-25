@@ -40,7 +40,6 @@ public interface CustomClassOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CustomClassOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public interface CustomClassOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface CustomClassOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass.ClassItem items = 5;</code>
    */
   java.util.List<com.google.cloud.speech.v2.CustomClass.ClassItem> getItemsList();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface CustomClassOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass.ClassItem items = 5;</code>
    */
   com.google.cloud.speech.v2.CustomClass.ClassItem getItems(int index);
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface CustomClassOrBuilder
    * <code>repeated .google.cloud.speech.v2.CustomClass.ClassItem items = 5;</code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface CustomClassOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v2.CustomClass.ClassItemOrBuilder>
       getItemsOrBuilderList();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface CustomClassOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -211,7 +203,6 @@ public interface CustomClassOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public interface CustomClassOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -251,7 +241,6 @@ public interface CustomClassOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface CustomClassOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -291,7 +279,6 @@ public interface CustomClassOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
-
   /**
    *
    *
@@ -305,7 +292,6 @@ public interface CustomClassOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
-
   /**
    *
    *
@@ -331,7 +317,6 @@ public interface CustomClassOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface CustomClassOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -371,7 +355,6 @@ public interface CustomClassOrBuilder
    * </code>
    */
   int getAnnotationsCount();
-
   /**
    *
    *
@@ -385,11 +368,9 @@ public interface CustomClassOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
-
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
-
   /**
    *
    *
@@ -403,7 +384,6 @@ public interface CustomClassOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
-
   /**
    *
    *
@@ -421,7 +401,6 @@ public interface CustomClassOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -450,7 +429,6 @@ public interface CustomClassOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *
@@ -497,7 +475,6 @@ public interface CustomClassOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
-
   /**
    *
    *
@@ -533,7 +510,6 @@ public interface CustomClassOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
-
   /**
    *
    *

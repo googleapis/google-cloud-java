@@ -39,7 +39,6 @@ public interface CreateAnalyticsAccountLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateAnalyticsAccountLinkRequestOrBuilder
    * @return Whether the analyticsAccountLink field is set.
    */
   boolean hasAnalyticsAccountLink();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateAnalyticsAccountLinkRequestOrBuilder
    * @return The analyticsAccountLink.
    */
   com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink getAnalyticsAccountLink();
-
   /**
    *
    *

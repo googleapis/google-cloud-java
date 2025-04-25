@@ -34,7 +34,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.LongRunningRecognizeRequest)
     LongRunningRecognizeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LongRunningRecognizeRequest.newBuilder() to construct.
   private LongRunningRecognizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.speech.v1.RecognitionConfig config_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
   public boolean hasConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
         ? com.google.cloud.speech.v1.RecognitionConfig.getDefaultInstance()
         : config_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
 
   public static final int AUDIO_FIELD_NUMBER = 2;
   private com.google.cloud.speech.v1.RecognitionAudio audio_;
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
   public boolean hasAudio() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
         ? com.google.cloud.speech.v1.RecognitionAudio.getDefaultInstance()
         : audio_;
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.speech.v1.TranscriptOutputConfig outputConfig_;
-
   /**
    *
    *
@@ -205,7 +197,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
         ? com.google.cloud.speech.v1.TranscriptOutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -437,7 +427,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +670,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
             com.google.cloud.speech.v1.RecognitionConfig.Builder,
             com.google.cloud.speech.v1.RecognitionConfigOrBuilder>
         configBuilder_;
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
     public boolean hasConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
         return configBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +757,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -866,7 +847,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
             : config_;
       }
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
             com.google.cloud.speech.v1.RecognitionAudio.Builder,
             com.google.cloud.speech.v1.RecognitionAudioOrBuilder>
         audioBuilder_;
-
     /**
      *
      *
@@ -919,7 +898,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
     public boolean hasAudio() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -942,7 +920,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
         return audioBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -967,7 +944,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +965,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1015,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1058,7 +1031,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return getAudioFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1079,7 +1051,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
             : audio_;
       }
     }
-
     /**
      *
      *
@@ -1114,7 +1085,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
             com.google.cloud.speech.v1.TranscriptOutputConfig.Builder,
             com.google.cloud.speech.v1.TranscriptOutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -1131,7 +1101,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1154,7 +1123,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1147,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1202,7 +1169,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1233,7 +1199,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1255,7 +1220,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1236,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1293,7 +1256,6 @@ public final class LongRunningRecognizeRequest extends com.google.protobuf.Gener
             : outputConfig_;
       }
     }
-
     /**
      *
      *

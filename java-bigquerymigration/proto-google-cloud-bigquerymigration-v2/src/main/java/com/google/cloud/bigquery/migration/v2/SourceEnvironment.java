@@ -33,7 +33,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2.SourceEnvironment)
     SourceEnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceEnvironment.newBuilder() to construct.
   private SourceEnvironment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultDatabase_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList schemaSearchPath_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getSchemaSearchPathList() {
     return schemaSearchPath_;
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
   public int getSchemaSearchPathCount() {
     return schemaSearchPath_.size();
   }
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
   public java.lang.String getSchemaSearchPath(int index) {
     return schemaSearchPath_.get(index);
   }
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metadataStoreDataset_ = "";
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -441,7 +432,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -663,7 +653,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object defaultDatabase_ = "";
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +772,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       schemaSearchPath_.makeImmutable();
       return schemaSearchPath_;
     }
-
     /**
      *
      *
@@ -820,7 +803,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     public int getSchemaSearchPathCount() {
       return schemaSearchPath_.size();
     }
-
     /**
      *
      *
@@ -837,7 +819,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     public java.lang.String getSchemaSearchPath(int index) {
       return schemaSearchPath_.get(index);
     }
-
     /**
      *
      *
@@ -854,7 +835,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getSchemaSearchPathBytes(int index) {
       return schemaSearchPath_.getByteString(index);
     }
-
     /**
      *
      *
@@ -879,7 +859,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +882,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +902,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object metadataStoreDataset_ = "";
-
     /**
      *
      *
@@ -999,7 +974,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1001,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1054,7 +1027,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1049,6 @@ public final class SourceEnvironment extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

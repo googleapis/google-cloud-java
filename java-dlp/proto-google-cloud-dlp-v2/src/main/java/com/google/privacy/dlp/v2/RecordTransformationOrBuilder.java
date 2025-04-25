@@ -36,7 +36,6 @@ public interface RecordTransformationOrBuilder
    * @return Whether the fieldId field is set.
    */
   boolean hasFieldId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RecordTransformationOrBuilder
    * @return The fieldId.
    */
   com.google.privacy.dlp.v2.FieldId getFieldId();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RecordTransformationOrBuilder
    * @return Whether the containerTimestamp field is set.
    */
   boolean hasContainerTimestamp();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RecordTransformationOrBuilder
    * @return The containerTimestamp.
    */
   com.google.protobuf.Timestamp getContainerTimestamp();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface RecordTransformationOrBuilder
    * @return The containerVersion.
    */
   java.lang.String getContainerVersion();
-
   /**
    *
    *

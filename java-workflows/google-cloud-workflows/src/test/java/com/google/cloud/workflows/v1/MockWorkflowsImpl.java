@@ -178,8 +178,7 @@ public class MockWorkflowsImpl extends WorkflowsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListWorkflowRevisions, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListWorkflowRevisions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkflowRevisionsResponse.class.getName(),
                   Exception.class.getName())));

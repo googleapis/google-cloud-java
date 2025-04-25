@@ -41,7 +41,6 @@ public interface UpdateOperatorRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateOperatorRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateOperatorRequestOrBuilder
    * @return Whether the operator field is set.
    */
   boolean hasOperator();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateOperatorRequestOrBuilder
    * @return The operator.
    */
   com.google.cloud.visionai.v1.Operator getOperator();
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public interface UpdateOperatorRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface BatchDeleteDocumentsRequestOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface BatchDeleteDocumentsRequestOrBuilder
    * @return Whether the datasetDocuments field is set.
    */
   boolean hasDatasetDocuments();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface BatchDeleteDocumentsRequestOrBuilder
    * @return The datasetDocuments.
    */
   com.google.cloud.documentai.v1beta3.BatchDatasetDocuments getDatasetDocuments();
-
   /**
    *
    *

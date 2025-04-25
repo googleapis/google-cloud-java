@@ -36,7 +36,6 @@ public interface LineItemOrBuilder
    * @return The lineItemId.
    */
   java.lang.String getLineItemId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface LineItemOrBuilder
    * @return Whether the lineItemInfo field is set.
    */
   boolean hasLineItemInfo();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface LineItemOrBuilder
    * @return The lineItemInfo.
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemInfo getLineItemInfo();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface LineItemOrBuilder
    * @return Whether the pendingChange field is set.
    */
   boolean hasPendingChange();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface LineItemOrBuilder
    * @return The pendingChange.
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChange getPendingChange();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface LineItemOrBuilder
    */
   java.util.List<com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChange>
       getChangeHistoryList();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface LineItemOrBuilder
    */
   com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChange getChangeHistory(
       int index);
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface LineItemOrBuilder
    * </code>
    */
   int getChangeHistoryCount();
-
   /**
    *
    *
@@ -214,7 +206,6 @@ public interface LineItemOrBuilder
   java.util.List<
           ? extends com.google.cloud.commerce.consumer.procurement.v1alpha1.LineItemChangeOrBuilder>
       getChangeHistoryOrBuilderList();
-
   /**
    *
    *

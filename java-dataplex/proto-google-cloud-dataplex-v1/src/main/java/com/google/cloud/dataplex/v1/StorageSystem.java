@@ -72,7 +72,6 @@ public enum StorageSystem implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STORAGE_SYSTEM_UNSPECIFIED = 0;</code>
    */
   public static final int STORAGE_SYSTEM_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum StorageSystem implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLOUD_STORAGE = 1;</code>
    */
   public static final int CLOUD_STORAGE_VALUE = 1;
-
   /**
    *
    *

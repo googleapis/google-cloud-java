@@ -36,7 +36,6 @@ public interface TestIamPermissionsLicenseCodeRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface TestIamPermissionsLicenseCodeRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface TestIamPermissionsLicenseCodeRequestOrBuilder
    * @return Whether the testPermissionsRequestResource field is set.
    */
   boolean hasTestPermissionsRequestResource();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface TestIamPermissionsLicenseCodeRequestOrBuilder
    * @return The testPermissionsRequestResource.
    */
   com.google.cloud.compute.v1.TestPermissionsRequest getTestPermissionsRequestResource();
-
   /**
    *
    *

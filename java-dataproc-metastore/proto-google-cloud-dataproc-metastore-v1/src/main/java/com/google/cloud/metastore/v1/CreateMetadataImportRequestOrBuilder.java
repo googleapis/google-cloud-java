@@ -41,7 +41,6 @@ public interface CreateMetadataImportRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface CreateMetadataImportRequestOrBuilder
    * @return The metadataImportId.
    */
   java.lang.String getMetadataImportId();
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public interface CreateMetadataImportRequestOrBuilder
    * @return Whether the metadataImport field is set.
    */
   boolean hasMetadataImport();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface CreateMetadataImportRequestOrBuilder
    * @return The metadataImport.
    */
   com.google.cloud.metastore.v1.MetadataImport getMetadataImport();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface CreateMetadataImportRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

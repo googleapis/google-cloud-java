@@ -35,7 +35,6 @@ public final class TrainingConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.TrainingConfig)
     TrainingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TrainingConfig.newBuilder() to construct.
   private TrainingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class TrainingConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_TRAINING_MILLI_HOURS_FIELD_NUMBER = 1;
   private long timeoutTrainingMilliHours_ = 0L;
-
   /**
    *
    *
@@ -243,7 +241,6 @@ public final class TrainingConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -427,7 +424,6 @@ public final class TrainingConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long timeoutTrainingMilliHours_;
-
     /**
      *
      *
@@ -444,7 +440,6 @@ public final class TrainingConfig extends com.google.protobuf.GeneratedMessageV3
     public long getTimeoutTrainingMilliHours() {
       return timeoutTrainingMilliHours_;
     }
-
     /**
      *
      *
@@ -465,7 +460,6 @@ public final class TrainingConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

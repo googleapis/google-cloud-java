@@ -1153,12 +1153,6 @@
         "grpc": {
           "libraryClient": "ModelGardenServiceClient",
           "rpcs": {
-            "AcceptPublisherModelEula": {
-              "methods": ["acceptPublisherModelEula", "acceptPublisherModelEula", "acceptPublisherModelEula", "acceptPublisherModelEula", "acceptPublisherModelEula", "acceptPublisherModelEulaCallable"]
-            },
-            "CheckPublisherModelEulaAcceptance": {
-              "methods": ["checkPublisherModelEulaAcceptance", "checkPublisherModelEulaAcceptance", "checkPublisherModelEulaAcceptance", "checkPublisherModelEulaAcceptance", "checkPublisherModelEulaAcceptance", "checkPublisherModelEulaAcceptanceCallable"]
-            },
             "Deploy": {
               "methods": ["deployAsync", "deployOperationCallable", "deployCallable"]
             },
@@ -1697,7 +1691,7 @@
               "methods": ["appendEvent", "appendEvent", "appendEvent", "appendEventCallable"]
             },
             "CreateSession": {
-              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
+              "methods": ["createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionAsync", "createSessionOperationCallable", "createSessionCallable"]
             },
             "DeleteSession": {
               "methods": ["deleteSessionAsync", "deleteSessionAsync", "deleteSessionAsync", "deleteSessionOperationCallable", "deleteSessionCallable"]
@@ -1718,7 +1712,7 @@
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListSessions": {
-              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

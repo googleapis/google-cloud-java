@@ -38,7 +38,6 @@ public interface GetCaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

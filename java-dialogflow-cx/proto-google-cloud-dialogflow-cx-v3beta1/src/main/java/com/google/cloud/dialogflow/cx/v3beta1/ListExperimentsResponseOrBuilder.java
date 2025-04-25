@@ -37,7 +37,6 @@ public interface ListExperimentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Experiment experiments = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Experiment> getExperimentsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListExperimentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Experiment experiments = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.Experiment getExperiments(int index);
-
   /**
    *
    *
@@ -65,7 +63,6 @@ public interface ListExperimentsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.Experiment experiments = 1;</code>
    */
   int getExperimentsCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface ListExperimentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ExperimentOrBuilder>
       getExperimentsOrBuilderList();
-
   /**
    *
    *
@@ -108,7 +104,6 @@ public interface ListExperimentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

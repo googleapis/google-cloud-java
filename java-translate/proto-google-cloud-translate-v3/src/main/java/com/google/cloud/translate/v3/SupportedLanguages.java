@@ -33,7 +33,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.SupportedLanguages)
     SupportedLanguagesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SupportedLanguages.newBuilder() to construct.
   private SupportedLanguages(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.SupportedLanguage> languages_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.translate.v3.SupportedLanguage> getLanguagesList() {
     return languages_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       getLanguagesOrBuilderList() {
     return languages_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
   public int getLanguagesCount() {
     return languages_.size();
   }
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.translate.v3.SupportedLanguage getLanguages(int index) {
     return languages_.get(index);
   }
-
   /**
    *
    *
@@ -306,7 +300,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -571,7 +564,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
         return languagesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -589,7 +581,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
         return languagesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
         return languagesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -631,7 +621,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +665,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +688,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +730,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +751,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +771,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +791,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +804,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.translate.v3.SupportedLanguage.Builder getLanguagesBuilder(int index) {
       return getLanguagesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -842,7 +822,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
         return languagesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -861,7 +840,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(languages_);
       }
     }
-
     /**
      *
      *
@@ -876,7 +854,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       return getLanguagesFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.SupportedLanguage.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -891,7 +868,6 @@ public final class SupportedLanguages extends com.google.protobuf.GeneratedMessa
       return getLanguagesFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.SupportedLanguage.getDefaultInstance());
     }
-
     /**
      *
      *

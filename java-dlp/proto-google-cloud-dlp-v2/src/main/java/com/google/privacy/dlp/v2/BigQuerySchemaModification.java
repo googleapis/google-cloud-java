@@ -74,7 +74,6 @@ public enum BigQuerySchemaModification implements com.google.protobuf.ProtocolMe
    * <code>SCHEMA_MODIFICATION_UNSPECIFIED = 0;</code>
    */
   public static final int SCHEMA_MODIFICATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -86,7 +85,6 @@ public enum BigQuerySchemaModification implements com.google.protobuf.ProtocolMe
    * <code>SCHEMA_NEW_COLUMNS = 1;</code>
    */
   public static final int SCHEMA_NEW_COLUMNS_VALUE = 1;
-
   /**
    *
    *

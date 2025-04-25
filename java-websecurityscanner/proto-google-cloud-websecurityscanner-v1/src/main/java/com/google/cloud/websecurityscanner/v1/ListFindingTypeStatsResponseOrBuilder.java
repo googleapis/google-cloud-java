@@ -35,7 +35,6 @@ public interface ListFindingTypeStatsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.websecurityscanner.v1.FindingTypeStats> getFindingTypeStatsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListFindingTypeStatsResponseOrBuilder
    * </code>
    */
   com.google.cloud.websecurityscanner.v1.FindingTypeStats getFindingTypeStats(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListFindingTypeStatsResponseOrBuilder
    * </code>
    */
   int getFindingTypeStatsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListFindingTypeStatsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.websecurityscanner.v1.FindingTypeStatsOrBuilder>
       getFindingTypeStatsOrBuilderList();
-
   /**
    *
    *

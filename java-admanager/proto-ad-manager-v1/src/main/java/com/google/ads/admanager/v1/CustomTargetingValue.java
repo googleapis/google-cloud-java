@@ -33,7 +33,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.CustomTargetingValue)
     CustomTargetingValueOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CustomTargetingValue.newBuilder() to construct.
   private CustomTargetingValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adTagName_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
 
   public static final int MATCH_TYPE_FIELD_NUMBER = 6;
   private int matchType_ = 0;
-
   /**
    *
    *
@@ -260,7 +252,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
   public int getMatchTypeValue() {
     return matchType_;
   }
-
   /**
    *
    *
@@ -290,7 +281,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
 
   public static final int STATUS_FIELD_NUMBER = 7;
   private int status_ = 0;
-
   /**
    *
    *
@@ -308,7 +298,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -541,7 +530,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -782,7 +770,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +841,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +860,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object adTagName_ = "";
-
     /**
      *
      *
@@ -930,7 +912,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -957,7 +938,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +984,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1034,7 +1012,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1056,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1077,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1094,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     }
 
     private int matchType_ = 0;
-
     /**
      *
      *
@@ -1164,7 +1136,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     public int getMatchTypeValue() {
       return matchType_;
     }
-
     /**
      *
      *
@@ -1186,7 +1157,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
               .CustomTargetingValueMatchType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1241,7 +1210,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1232,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -1282,7 +1249,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -1303,7 +1269,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1328,7 +1293,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1354,7 +1318,6 @@ public final class CustomTargetingValue extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

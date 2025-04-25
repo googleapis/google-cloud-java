@@ -33,7 +33,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.InlineSource)
     InlineSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InlineSource.newBuilder() to construct.
   private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy> taxonomies_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       getTaxonomiesList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       getTaxonomiesOrBuilderList() {
     return taxonomies_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
   public int getTaxonomiesCount() {
     return taxonomies_.size();
   }
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy getTaxonomies(int index) {
     return taxonomies_.get(index);
   }
-
   /**
    *
    *
@@ -313,7 +307,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -581,7 +574,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
         return taxonomiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
         return taxonomiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
         return taxonomiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -720,7 +707,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +796,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getTaxonomiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
         return taxonomiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -892,7 +871,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(taxonomies_);
       }
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       return getTaxonomiesFieldBuilder()
           .addBuilder(com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.datacatalog.v1beta1.SerializedTaxonomy.getDefaultInstance());
     }
-
     /**
      *
      *

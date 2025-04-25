@@ -33,7 +33,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateTimeSeriesSummary)
     CreateTimeSeriesSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTimeSeriesSummary.newBuilder() to construct.
   private CreateTimeSeriesSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * @return Whether the status field is set.
      */
     boolean hasStatus();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      * @return The status.
      */
     com.google.rpc.Status getStatus();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
      */
     int getPointCount();
   }
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateTimeSeriesSummary.Error)
       ErrorOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Error.newBuilder() to construct.
     private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,7 +161,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     private int bitField0_;
     public static final int STATUS_FIELD_NUMBER = 1;
     private com.google.rpc.Status status_;
-
     /**
      *
      *
@@ -182,7 +176,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -198,7 +191,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
-
     /**
      *
      *
@@ -215,7 +207,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
 
     public static final int POINT_COUNT_FIELD_NUMBER = 2;
     private int pointCount_ = 0;
-
     /**
      *
      *
@@ -407,7 +398,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
-
       /**
        *
        *
@@ -640,7 +629,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -659,7 +647,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
           return statusBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -682,7 +669,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -702,7 +688,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -730,7 +715,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         }
         return this;
       }
-
       /**
        *
        *
@@ -750,7 +734,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -765,7 +748,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -782,7 +764,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
-
       /**
        *
        *
@@ -807,7 +788,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
 
       private int pointCount_;
-
       /**
        *
        *
@@ -823,7 +803,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       public int getPointCount() {
         return pointCount_;
       }
-
       /**
        *
        *
@@ -843,7 +822,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -928,7 +906,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
 
   public static final int TOTAL_POINT_COUNT_FIELD_NUMBER = 1;
   private int totalPointCount_ = 0;
-
   /**
    *
    *
@@ -947,7 +924,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
 
   public static final int SUCCESS_POINT_COUNT_FIELD_NUMBER = 2;
   private int successPointCount_ = 0;
-
   /**
    *
    *
@@ -968,7 +944,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.CreateTimeSeriesSummary.Error> errors_;
-
   /**
    *
    *
@@ -982,7 +957,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
   public java.util.List<com.google.monitoring.v3.CreateTimeSeriesSummary.Error> getErrorsList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -997,7 +971,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       getErrorsOrBuilderList() {
     return errors_;
   }
-
   /**
    *
    *
@@ -1011,7 +984,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
   public int getErrorsCount() {
     return errors_.size();
   }
-
   /**
    *
    *
@@ -1025,7 +997,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
   public com.google.monitoring.v3.CreateTimeSeriesSummary.Error getErrors(int index) {
     return errors_.get(index);
   }
-
   /**
    *
    *
@@ -1220,7 +1191,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1478,7 +1448,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     private int bitField0_;
 
     private int totalPointCount_;
-
     /**
      *
      *
@@ -1494,7 +1463,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     public int getTotalPointCount() {
       return totalPointCount_;
     }
-
     /**
      *
      *
@@ -1514,7 +1482,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1534,7 +1501,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     }
 
     private int successPointCount_;
-
     /**
      *
      *
@@ -1550,7 +1516,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
     public int getSuccessPointCount() {
       return successPointCount_;
     }
-
     /**
      *
      *
@@ -1570,7 +1535,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1587,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         return errorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1640,7 +1603,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         return errorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1657,7 +1619,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         return errorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1681,7 +1642,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1662,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1684,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1749,7 +1707,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1727,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1791,7 +1747,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1813,7 +1768,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1787,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1853,7 +1806,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1867,7 +1819,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1885,7 +1836,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1903,7 +1853,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
-
     /**
      *
      *
@@ -1917,7 +1866,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
       return getErrorsFieldBuilder()
           .addBuilder(com.google.monitoring.v3.CreateTimeSeriesSummary.Error.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1933,7 +1881,6 @@ public final class CreateTimeSeriesSummary extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.monitoring.v3.CreateTimeSeriesSummary.Error.getDefaultInstance());
     }
-
     /**
      *
      *

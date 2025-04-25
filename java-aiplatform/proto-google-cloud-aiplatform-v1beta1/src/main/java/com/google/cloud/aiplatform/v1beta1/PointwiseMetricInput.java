@@ -33,7 +33,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PointwiseMetricInput)
     PointwiseMetricInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PointwiseMetricInput.newBuilder() to construct.
   private PointwiseMetricInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpec metricSpec_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpec.getDefaultInstance()
         : metricSpec_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.PointwiseMetricInstance instance_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1beta1.PointwiseMetricInstance.getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -584,7 +576,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.PointwiseMetricSpecOrBuilder>
         metricSpecBuilder_;
-
     /**
      *
      *
@@ -601,7 +592,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
         return metricSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -649,7 +638,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +660,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -764,7 +748,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
             : metricSpec_;
       }
     }
-
     /**
      *
      *
@@ -799,7 +782,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.PointwiseMetricInstance.Builder,
             com.google.cloud.aiplatform.v1beta1.PointwiseMetricInstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -816,7 +798,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -864,7 +844,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +866,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +919,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +936,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -982,7 +957,6 @@ public final class PointwiseMetricInput extends com.google.protobuf.GeneratedMes
             : instance_;
       }
     }
-
     /**
      *
      *

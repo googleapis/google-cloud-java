@@ -35,7 +35,6 @@ public final class ListNotebookRuntimeTemplatesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListNotebookRuntimeTemplatesResponse)
     ListNotebookRuntimeTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotebookRuntimeTemplatesResponse.newBuilder() to construct.
   private ListNotebookRuntimeTemplatesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListNotebookRuntimeTemplatesResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate>
       notebookRuntimeTemplates_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       getNotebookRuntimeTemplatesList() {
     return notebookRuntimeTemplates_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       getNotebookRuntimeTemplatesOrBuilderList() {
     return notebookRuntimeTemplates_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ListNotebookRuntimeTemplatesResponse
   public int getNotebookRuntimeTemplatesCount() {
     return notebookRuntimeTemplates_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       int index) {
     return notebookRuntimeTemplates_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ListNotebookRuntimeTemplatesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -394,7 +386,6 @@ public final class ListNotebookRuntimeTemplatesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -689,7 +680,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return notebookRuntimeTemplatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -708,7 +698,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return notebookRuntimeTemplatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return notebookRuntimeTemplatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -754,7 +742,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +765,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +790,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -853,7 +837,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +860,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +883,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +925,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +940,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         getNotebookRuntimeTemplatesBuilder(int index) {
       return getNotebookRuntimeTemplatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -981,7 +959,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return notebookRuntimeTemplatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return java.util.Collections.unmodifiableList(notebookRuntimeTemplates_);
       }
     }
-
     /**
      *
      *
@@ -1020,7 +996,6 @@ public final class ListNotebookRuntimeTemplatesResponse
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1039,7 +1014,6 @@ public final class ListNotebookRuntimeTemplatesResponse
               index,
               com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1077,7 +1051,6 @@ public final class ListNotebookRuntimeTemplatesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1103,7 +1076,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class ListNotebookRuntimeTemplatesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1125,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1145,6 @@ public final class ListNotebookRuntimeTemplatesResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

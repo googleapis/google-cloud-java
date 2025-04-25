@@ -36,7 +36,6 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    * @return Whether the tableProfile field is set.
    */
   boolean hasTableProfile();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    * @return The tableProfile.
    */
   com.google.privacy.dlp.v2.TableDataProfile getTableProfile();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    * @return Whether the columnProfile field is set.
    */
   boolean hasColumnProfile();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    * @return The columnProfile.
    */
   com.google.privacy.dlp.v2.ColumnDataProfile getColumnProfile();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    * @return Whether the fileStoreProfile field is set.
    */
   boolean hasFileStoreProfile();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface DataProfileBigQueryRowSchemaOrBuilder
    * @return The fileStoreProfile.
    */
   com.google.privacy.dlp.v2.FileStoreDataProfile getFileStoreProfile();
-
   /**
    *
    *

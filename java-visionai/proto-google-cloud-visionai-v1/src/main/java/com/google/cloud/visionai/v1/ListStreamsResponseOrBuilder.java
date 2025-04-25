@@ -34,7 +34,6 @@ public interface ListStreamsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Stream streams = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.Stream> getStreamsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListStreamsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Stream streams = 1;</code>
    */
   com.google.cloud.visionai.v1.Stream getStreams(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListStreamsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Stream streams = 1;</code>
    */
   int getStreamsCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListStreamsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.Stream streams = 1;</code>
    */
   java.util.List<? extends com.google.cloud.visionai.v1.StreamOrBuilder> getStreamsOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListStreamsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface ListStreamsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface ListStreamsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface ListStreamsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

@@ -48,7 +48,6 @@ public interface SignJwtRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getName();
-
   /**
    *
    *
@@ -101,7 +100,6 @@ public interface SignJwtRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getPayload();
-
   /**
    *
    *

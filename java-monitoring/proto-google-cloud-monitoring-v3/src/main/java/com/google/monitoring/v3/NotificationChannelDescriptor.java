@@ -35,7 +35,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.NotificationChannelDescriptor)
     NotificationChannelDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationChannelDescriptor.newBuilder() to construct.
   private NotificationChannelDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,7 +75,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -223,7 +217,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -279,7 +271,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -310,7 +301,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.LabelDescriptor> labels_;
-
   /**
    *
    *
@@ -326,7 +316,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public java.util.List<com.google.api.LabelDescriptor> getLabelsList() {
     return labels_;
   }
-
   /**
    *
    *
@@ -343,7 +332,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       getLabelsOrBuilderList() {
     return labels_;
   }
-
   /**
    *
    *
@@ -359,7 +347,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public int getLabelsCount() {
     return labels_.size();
   }
-
   /**
    *
    *
@@ -375,7 +362,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public com.google.api.LabelDescriptor getLabels(int index) {
     return labels_.get(index);
   }
-
   /**
    *
    *
@@ -408,7 +394,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
               return result == null ? com.google.monitoring.v3.ServiceTier.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -431,7 +416,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         java.lang.Integer, com.google.monitoring.v3.ServiceTier>(
         supportedTiers_, supportedTiers_converter_);
   }
-
   /**
    *
    *
@@ -452,7 +436,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public int getSupportedTiersCount() {
     return supportedTiers_.size();
   }
-
   /**
    *
    *
@@ -474,7 +457,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
     return supportedTiers_converter_.convert(supportedTiers_.get(index));
   }
-
   /**
    *
    *
@@ -495,7 +477,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
     return supportedTiers_;
   }
-
   /**
    *
    *
@@ -522,7 +503,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 7;
   private int launchStage_ = 0;
-
   /**
    *
    *
@@ -538,7 +518,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   public int getLaunchStageValue() {
     return launchStage_;
   }
-
   /**
    *
    *
@@ -789,7 +768,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1130,7 +1108,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1157,7 +1134,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1160,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1185,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1206,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1261,7 +1234,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -1288,7 +1260,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1315,7 +1286,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1341,7 +1311,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1363,7 +1332,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1392,7 +1360,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1416,7 +1383,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1440,7 +1406,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1463,7 +1428,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1482,7 +1446,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1508,7 +1471,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1533,7 +1495,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1558,7 +1519,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1582,7 +1542,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1561,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1662,7 +1620,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return labelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1681,7 +1638,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return labelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1700,7 +1656,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return labelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1725,7 +1680,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1747,7 +1701,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1772,7 +1725,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1797,7 +1749,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1819,7 +1770,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1791,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1864,7 +1813,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1834,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1855,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1923,7 +1869,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public com.google.api.LabelDescriptor.Builder getLabelsBuilder(int index) {
       return getLabelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1942,7 +1887,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return labelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1962,7 +1906,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(labels_);
       }
     }
-
     /**
      *
      *
@@ -1978,7 +1921,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       return getLabelsFieldBuilder()
           .addBuilder(com.google.api.LabelDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1994,7 +1936,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       return getLabelsFieldBuilder()
           .addBuilder(index, com.google.api.LabelDescriptor.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2035,7 +1976,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         bitField0_ |= 0x00000020;
       }
     }
-
     /**
      *
      *
@@ -2057,7 +1997,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
           java.lang.Integer, com.google.monitoring.v3.ServiceTier>(
           supportedTiers_, supportedTiers_converter_);
     }
-
     /**
      *
      *
@@ -2077,7 +2016,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public int getSupportedTiersCount() {
       return supportedTiers_.size();
     }
-
     /**
      *
      *
@@ -2098,7 +2036,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public com.google.monitoring.v3.ServiceTier getSupportedTiers(int index) {
       return supportedTiers_converter_.convert(supportedTiers_.get(index));
     }
-
     /**
      *
      *
@@ -2126,7 +2063,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2153,7 +2089,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2180,7 +2115,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2203,7 +2137,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2223,7 +2156,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public java.util.List<java.lang.Integer> getSupportedTiersValueList() {
       return java.util.Collections.unmodifiableList(supportedTiers_);
     }
-
     /**
      *
      *
@@ -2244,7 +2176,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public int getSupportedTiersValue(int index) {
       return supportedTiers_.get(index);
     }
-
     /**
      *
      *
@@ -2269,7 +2200,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2293,7 +2223,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2321,7 +2250,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     }
 
     private int launchStage_ = 0;
-
     /**
      *
      *
@@ -2337,7 +2265,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public int getLaunchStageValue() {
       return launchStage_;
     }
-
     /**
      *
      *
@@ -2356,7 +2283,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2373,7 +2299,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
       return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2395,7 +2320,6 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

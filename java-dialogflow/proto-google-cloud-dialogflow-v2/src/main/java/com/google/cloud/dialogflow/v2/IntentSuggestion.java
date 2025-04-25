@@ -33,7 +33,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.IntentSuggestion)
     IntentSuggestionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IntentSuggestion.newBuilder() to construct.
   private IntentSuggestion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
     private IntentCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INTENT_V2_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
   public boolean hasIntentV2() {
     return intentCase_ == 2;
   }
-
   /**
    *
    *
@@ -213,7 +207,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +241,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -489,7 +480,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -731,7 +721,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -754,7 +743,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -777,7 +765,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -799,7 +786,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +843,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
     public boolean hasIntentV2() {
       return intentCase_ == 2;
     }
-
     /**
      *
      *
@@ -889,7 +873,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -920,7 +903,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -944,7 +926,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1017,7 +996,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1019,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1041,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class IntentSuggestion extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

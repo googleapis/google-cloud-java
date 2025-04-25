@@ -38,7 +38,6 @@ public interface UnstarEntryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

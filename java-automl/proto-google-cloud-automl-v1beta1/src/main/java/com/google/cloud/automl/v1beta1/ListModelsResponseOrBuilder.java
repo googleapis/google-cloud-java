@@ -34,7 +34,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.Model> getModelList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
   com.google.cloud.automl.v1beta1.Model getModel(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
   int getModelCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListModelsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.ModelOrBuilder> getModelOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListModelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

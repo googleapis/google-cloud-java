@@ -36,7 +36,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.Sentiment)
     SentimentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Sentiment.newBuilder() to construct.
   private Sentiment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAGNITUDE_FIELD_NUMBER = 2;
   private float magnitude_ = 0F;
-
   /**
    *
    *
@@ -274,7 +271,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -472,7 +468,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -489,7 +484,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -510,7 +504,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -531,7 +524,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float magnitude_;
-
     /**
      *
      *
@@ -548,7 +540,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
     public float getMagnitude() {
       return magnitude_;
     }
-
     /**
      *
      *
@@ -569,7 +560,6 @@ public final class Sentiment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

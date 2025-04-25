@@ -33,7 +33,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.MarkRecommendationClaimedRequest)
     MarkRecommendationClaimedRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MarkRecommendationClaimedRequest.newBuilder() to construct.
   private MarkRecommendationClaimedRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -82,7 +81,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -163,7 +160,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
   public int getStateMetadataCount() {
     return internalGetStateMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -183,14 +179,12 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     }
     return internalGetStateMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getStateMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
     return getStateMetadataMap();
   }
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
   public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
     return internalGetStateMetadata().getMap();
   }
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     java.util.Map<java.lang.String, java.lang.String> map = internalGetStateMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -260,7 +252,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -495,7 +485,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -740,7 +729,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -814,7 +800,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +819,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +872,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     public int getStateMetadataCount() {
       return internalGetStateMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -908,14 +891,12 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       }
       return internalGetStateMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getStateMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadata() {
       return getStateMetadataMap();
     }
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     public java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap() {
       return internalGetStateMetadata().getMap();
     }
-
     /**
      *
      *
@@ -956,7 +936,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       java.util.Map<java.lang.String, java.lang.String> map = internalGetStateMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -986,7 +965,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       internalGetMutableStateMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1006,14 +984,12 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       internalGetMutableStateMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableStateMetadata() {
       bitField0_ |= 0x00000002;
       return internalGetMutableStateMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1032,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1080,7 +1054,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1076,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1125,7 +1097,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1114,6 @@ public final class MarkRecommendationClaimedRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

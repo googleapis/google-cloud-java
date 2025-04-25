@@ -37,7 +37,6 @@ public interface LoadSnapshotRequestOrBuilder
    * @return The environment.
    */
   java.lang.String getEnvironment();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface LoadSnapshotRequestOrBuilder
    * @return The snapshotPath.
    */
   java.lang.String getSnapshotPath();
-
   /**
    *
    *

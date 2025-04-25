@@ -44,7 +44,6 @@ public interface ReplayOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface ReplayOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface ReplayOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface ReplayOrBuilder
    * @return The config.
    */
   com.google.cloud.policysimulator.v1.ReplayConfig getConfig();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface ReplayOrBuilder
    * @return Whether the resultsSummary field is set.
    */
   boolean hasResultsSummary();
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ReplayOrBuilder
    * @return The resultsSummary.
    */
   com.google.cloud.policysimulator.v1.Replay.ResultsSummary getResultsSummary();
-
   /**
    *
    *

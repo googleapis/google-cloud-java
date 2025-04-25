@@ -36,7 +36,6 @@ public interface StopInstanceRequestOrBuilder
    * @return Whether the discardLocalSsd field is set.
    */
   boolean hasDiscardLocalSsd();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface StopInstanceRequestOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface StopInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface StopInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface StopInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface StopInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

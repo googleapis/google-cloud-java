@@ -48,7 +48,6 @@ public interface GridLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
   java.util.List<com.google.monitoring.dashboard.v1.Widget> getWidgetsList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface GridLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
   com.google.monitoring.dashboard.v1.Widget getWidgets(int index);
-
   /**
    *
    *
@@ -70,7 +68,6 @@ public interface GridLayoutOrBuilder
    * <code>repeated .google.monitoring.dashboard.v1.Widget widgets = 2;</code>
    */
   int getWidgetsCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface GridLayoutOrBuilder
    */
   java.util.List<? extends com.google.monitoring.dashboard.v1.WidgetOrBuilder>
       getWidgetsOrBuilderList();
-
   /**
    *
    *

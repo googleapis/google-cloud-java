@@ -34,7 +34,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.CreateExternalApiRequest)
     CreateExternalApiRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateExternalApiRequest.newBuilder() to construct.
   private CreateExternalApiRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalApiId_ = "";
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +196,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
 
   public static final int EXTERNAL_API_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.ExternalApi externalApi_;
-
   /**
    *
    *
@@ -219,7 +213,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
   public boolean hasExternalApi() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
         ? com.google.cloud.apihub.v1.ExternalApi.getDefaultInstance()
         : externalApi_;
   }
-
   /**
    *
    *
@@ -440,7 +432,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -671,7 +662,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -697,7 +687,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -723,7 +712,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -748,7 +736,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +756,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +783,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object externalApiId_ = "";
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +847,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -895,7 +878,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -923,7 +905,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +944,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
             com.google.cloud.apihub.v1.ExternalApi.Builder,
             com.google.cloud.apihub.v1.ExternalApiOrBuilder>
         externalApiBuilder_;
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
     public boolean hasExternalApi() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1003,7 +982,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
         return externalApiBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1050,7 +1027,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1056,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1077,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
       onChanged();
       return getExternalApiFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1140,7 +1113,6 @@ public final class CreateExternalApiRequest extends com.google.protobuf.Generate
             : externalApi_;
       }
     }
-
     /**
      *
      *

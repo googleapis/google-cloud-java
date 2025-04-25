@@ -35,7 +35,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ImportEntriesRequest)
     ImportEntriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportEntriesRequest.newBuilder() to construct.
   private ImportEntriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -144,7 +141,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -172,7 +168,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int GCS_BUCKET_PATH_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
   public boolean hasGcsBucketPath() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -215,7 +209,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +241,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -489,7 +480,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -733,7 +723,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -758,7 +747,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -783,7 +771,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +813,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +853,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     public boolean hasGcsBucketPath() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -897,7 +881,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -926,7 +909,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -948,7 +930,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +949,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -993,7 +973,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -1017,7 +996,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1019,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1041,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class ImportEntriesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

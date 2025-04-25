@@ -244,7 +244,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.BatchPredictInputConfig)
     BatchPredictInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchPredictInputConfig.newBuilder() to construct.
   private BatchPredictInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -290,7 +289,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -324,7 +322,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -340,7 +337,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -359,7 +355,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     }
     return com.google.cloud.automl.v1beta1.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -378,7 +373,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   }
 
   public static final int BIGQUERY_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -394,7 +388,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
   public boolean hasBigquerySource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -413,7 +406,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     }
     return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -621,7 +613,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1069,7 +1060,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
             com.google.cloud.automl.v1beta1.GcsSource.Builder,
             com.google.cloud.automl.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -1085,7 +1075,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -1111,7 +1100,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
         return com.google.cloud.automl.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1134,7 +1122,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1141,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1173,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1198,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1210,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1247,7 +1230,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
         return com.google.cloud.automl.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1286,7 +1268,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
             com.google.cloud.automl.v1beta1.BigQuerySource.Builder,
             com.google.cloud.automl.v1beta1.BigQuerySourceOrBuilder>
         bigquerySourceBuilder_;
-
     /**
      *
      *
@@ -1302,7 +1283,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     public boolean hasBigquerySource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1328,7 +1308,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
         return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1330,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1350,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1382,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1407,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1444,7 +1419,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1beta1.BigQuerySource.Builder getBigquerySourceBuilder() {
       return getBigquerySourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1465,7 +1439,6 @@ public final class BatchPredictInputConfig extends com.google.protobuf.Generated
         return com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance();
       }
     }
-
     /**
      *
      *

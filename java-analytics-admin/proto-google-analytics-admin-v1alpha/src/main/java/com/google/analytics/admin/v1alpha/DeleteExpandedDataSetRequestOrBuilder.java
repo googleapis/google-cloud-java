@@ -38,7 +38,6 @@ public interface DeleteExpandedDataSetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

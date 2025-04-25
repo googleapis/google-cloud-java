@@ -36,7 +36,6 @@ public interface ColumnEntityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ColumnEntityOrBuilder
    * @return The dataType.
    */
   java.lang.String getDataType();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ColumnEntityOrBuilder
    * @return The charset.
    */
   java.lang.String getCharset();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ColumnEntityOrBuilder
    * @return The collation.
    */
   java.lang.String getCollation();
-
   /**
    *
    *
@@ -257,7 +253,6 @@ public interface ColumnEntityOrBuilder
    * @return Whether the customFeatures field is set.
    */
   boolean hasCustomFeatures();
-
   /**
    *
    *
@@ -270,7 +265,6 @@ public interface ColumnEntityOrBuilder
    * @return The customFeatures.
    */
   com.google.protobuf.Struct getCustomFeatures();
-
   /**
    *
    *
@@ -295,7 +289,6 @@ public interface ColumnEntityOrBuilder
    * @return A list containing the setValues.
    */
   java.util.List<java.lang.String> getSetValuesList();
-
   /**
    *
    *
@@ -309,7 +302,6 @@ public interface ColumnEntityOrBuilder
    * @return The count of setValues.
    */
   int getSetValuesCount();
-
   /**
    *
    *
@@ -324,7 +316,6 @@ public interface ColumnEntityOrBuilder
    * @return The setValues at the given index.
    */
   java.lang.String getSetValues(int index);
-
   /**
    *
    *
@@ -352,7 +343,6 @@ public interface ColumnEntityOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
-
   /**
    *
    *
@@ -391,7 +381,6 @@ public interface ColumnEntityOrBuilder
    * @return The defaultValue.
    */
   java.lang.String getDefaultValue();
-
   /**
    *
    *

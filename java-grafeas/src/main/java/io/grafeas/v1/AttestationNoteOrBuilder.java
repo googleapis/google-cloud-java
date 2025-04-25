@@ -37,7 +37,6 @@ public interface AttestationNoteOrBuilder
    * @return Whether the hint field is set.
    */
   boolean hasHint();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface AttestationNoteOrBuilder
    * @return The hint.
    */
   io.grafeas.v1.AttestationNote.Hint getHint();
-
   /**
    *
    *

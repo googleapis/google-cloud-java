@@ -38,7 +38,6 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    * @return A list containing the paths.
    */
   java.util.List<java.lang.String> getPathsList();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    * @return The count of paths.
    */
   int getPathsCount();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface ResetWorkspaceChangesRequestOrBuilder
    * @return The paths at the given index.
    */
   java.lang.String getPaths(int index);
-
   /**
    *
    *

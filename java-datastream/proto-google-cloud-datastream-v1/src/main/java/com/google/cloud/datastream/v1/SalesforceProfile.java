@@ -33,7 +33,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceProfile)
     SalesforceProfileOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SalesforceProfile.newBuilder() to construct.
   private SalesforceProfile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The username.
      */
     java.lang.String getUsername();
-
     /**
      *
      *
@@ -108,7 +106,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The password.
      */
     java.lang.String getPassword();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The securityToken.
      */
     java.lang.String getSecurityToken();
-
     /**
      *
      *
@@ -166,7 +162,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The secretManagerStoredPassword.
      */
     java.lang.String getSecretManagerStoredPassword();
-
     /**
      *
      *
@@ -199,7 +194,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The secretManagerStoredSecurityToken.
      */
     java.lang.String getSecretManagerStoredSecurityToken();
-
     /**
      *
      *
@@ -217,7 +211,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getSecretManagerStoredSecurityTokenBytes();
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceProfile.UserCredentials)
       UserCredentialsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UserCredentials.newBuilder() to construct.
     private UserCredentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -271,7 +263,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -295,7 +286,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -324,7 +314,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -349,7 +338,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -379,7 +367,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object securityToken_ = "";
-
     /**
      *
      *
@@ -404,7 +391,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -434,7 +420,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object secretManagerStoredPassword_ = "";
-
     /**
      *
      *
@@ -461,7 +446,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -493,7 +477,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object secretManagerStoredSecurityToken_ = "";
-
     /**
      *
      *
@@ -521,7 +504,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -757,7 +739,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1012,7 +993,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object username_ = "";
-
       /**
        *
        *
@@ -1035,7 +1015,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1058,7 +1037,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1080,7 +1058,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1098,7 +1075,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1123,7 +1099,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object password_ = "";
-
       /**
        *
        *
@@ -1147,7 +1122,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1171,7 +1145,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1194,7 +1167,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1213,7 +1185,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1239,7 +1210,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object securityToken_ = "";
-
       /**
        *
        *
@@ -1263,7 +1233,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1287,7 +1256,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1310,7 +1278,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1329,7 +1296,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1355,7 +1321,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object secretManagerStoredPassword_ = "";
-
       /**
        *
        *
@@ -1381,7 +1346,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1407,7 +1371,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1432,7 +1395,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1453,7 +1415,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1481,7 +1442,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object secretManagerStoredSecurityToken_ = "";
-
       /**
        *
        *
@@ -1508,7 +1468,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1535,7 +1494,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1561,7 +1519,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1584,7 +1541,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1697,7 +1653,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The clientId.
      */
     java.lang.String getClientId();
-
     /**
      *
      *
@@ -1724,7 +1679,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The clientSecret.
      */
     java.lang.String getClientSecret();
-
     /**
      *
      *
@@ -1755,7 +1709,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      * @return The secretManagerStoredClientSecret.
      */
     java.lang.String getSecretManagerStoredClientSecret();
-
     /**
      *
      *
@@ -1773,7 +1726,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getSecretManagerStoredClientSecretBytes();
   }
-
   /**
    *
    *
@@ -1788,7 +1740,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceProfile.Oauth2ClientCredentials)
       Oauth2ClientCredentialsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Oauth2ClientCredentials.newBuilder() to construct.
     private Oauth2ClientCredentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1826,7 +1777,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clientId_ = "";
-
     /**
      *
      *
@@ -1850,7 +1800,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1879,7 +1828,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clientSecret_ = "";
-
     /**
      *
      *
@@ -1904,7 +1852,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -1934,7 +1881,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object secretManagerStoredClientSecret_ = "";
-
     /**
      *
      *
@@ -1962,7 +1908,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -2181,7 +2126,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2410,7 +2354,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object clientId_ = "";
-
       /**
        *
        *
@@ -2433,7 +2376,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2456,7 +2398,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2478,7 +2419,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2496,7 +2436,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2521,7 +2460,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object clientSecret_ = "";
-
       /**
        *
        *
@@ -2545,7 +2483,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2569,7 +2506,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2592,7 +2528,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2611,7 +2546,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2637,7 +2571,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object secretManagerStoredClientSecret_ = "";
-
       /**
        *
        *
@@ -2664,7 +2597,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2691,7 +2623,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2717,7 +2648,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2740,7 +2670,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2853,7 +2782,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     private CredentialsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2890,7 +2818,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object domain_ = "";
-
   /**
    *
    *
@@ -2914,7 +2841,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -2940,7 +2866,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int USER_CREDENTIALS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2957,7 +2882,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasUserCredentials() {
     return credentialsCase_ == 2;
   }
-
   /**
    *
    *
@@ -2977,7 +2901,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2998,7 +2921,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OAUTH2_CLIENT_CREDENTIALS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -3016,7 +2938,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
   public boolean hasOauth2ClientCredentials() {
     return credentialsCase_ == 3;
   }
-
   /**
    *
    *
@@ -3040,7 +2961,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.datastream.v1.SalesforceProfile.Oauth2ClientCredentials
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -3266,7 +3186,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3514,7 +3433,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object domain_ = "";
-
     /**
      *
      *
@@ -3537,7 +3455,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3560,7 +3477,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3582,7 +3498,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3600,7 +3515,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3629,7 +3543,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials.Builder,
             com.google.cloud.datastream.v1.SalesforceProfile.UserCredentialsOrBuilder>
         userCredentialsBuilder_;
-
     /**
      *
      *
@@ -3646,7 +3559,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasUserCredentials() {
       return credentialsCase_ == 2;
     }
-
     /**
      *
      *
@@ -3675,7 +3587,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3700,7 +3611,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       credentialsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3722,7 +3632,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       credentialsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3760,7 +3669,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       credentialsCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3787,7 +3695,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3802,7 +3709,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         getUserCredentialsBuilder() {
       return getUserCredentialsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3826,7 +3732,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3867,7 +3772,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.SalesforceProfile.Oauth2ClientCredentials.Builder,
             com.google.cloud.datastream.v1.SalesforceProfile.Oauth2ClientCredentialsOrBuilder>
         oauth2ClientCredentialsBuilder_;
-
     /**
      *
      *
@@ -3885,7 +3789,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
     public boolean hasOauth2ClientCredentials() {
       return credentialsCase_ == 3;
     }
-
     /**
      *
      *
@@ -3917,7 +3820,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3943,7 +3845,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       credentialsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3967,7 +3868,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       credentialsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4006,7 +3906,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       credentialsCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -4034,7 +3933,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4050,7 +3948,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
         getOauth2ClientCredentialsBuilder() {
       return getOauth2ClientCredentialsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4076,7 +3973,6 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

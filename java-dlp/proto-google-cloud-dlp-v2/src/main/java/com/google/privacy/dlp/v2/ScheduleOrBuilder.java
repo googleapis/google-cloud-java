@@ -43,7 +43,6 @@ public interface ScheduleOrBuilder
    * @return Whether the recurrencePeriodDuration field is set.
    */
   boolean hasRecurrencePeriodDuration();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ScheduleOrBuilder
    * @return The recurrencePeriodDuration.
    */
   com.google.protobuf.Duration getRecurrencePeriodDuration();
-
   /**
    *
    *

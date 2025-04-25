@@ -42,7 +42,6 @@ public interface ListAccessLevelsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface ListAccessLevelsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface ListAccessLevelsRequestOrBuilder
    * @return The enum numeric value on the wire for accessLevelFormat.
    */
   int getAccessLevelFormatValue();
-
   /**
    *
    *

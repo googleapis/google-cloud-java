@@ -37,7 +37,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ReportResultsMetadata)
     ReportResultsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReportResultsMetadata.newBuilder() to construct.
   private ReportResultsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int REPORT_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.Report report_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasReport() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
   public com.google.cloud.channel.v1.Report getReport() {
     return report_ == null ? com.google.cloud.channel.v1.Report.getDefaultInstance() : report_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
   private long rowCount_ = 0L;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int DATE_RANGE_FIELD_NUMBER = 3;
   private com.google.cloud.channel.v1.DateRange dateRange_;
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasDateRange() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.channel.v1.DateRange.getDefaultInstance()
         : dateRange_;
   }
-
   /**
    *
    *
@@ -190,7 +182,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int PRECEDING_DATE_RANGE_FIELD_NUMBER = 4;
   private com.google.cloud.channel.v1.DateRange precedingDateRange_;
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasPrecedingDateRange() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.channel.v1.DateRange.getDefaultInstance()
         : precedingDateRange_;
   }
-
   /**
    *
    *
@@ -457,7 +446,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -719,7 +707,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.channel.v1.Report.Builder,
             com.google.cloud.channel.v1.ReportOrBuilder>
         reportBuilder_;
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasReport() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         return reportBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -776,7 +761,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +780,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +840,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getReportFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         return report_ == null ? com.google.cloud.channel.v1.Report.getDefaultInstance() : report_;
       }
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     }
 
     private long rowCount_;
-
     /**
      *
      *
@@ -920,7 +898,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public long getRowCount() {
       return rowCount_;
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.channel.v1.DateRange.Builder,
             com.google.cloud.channel.v1.DateRangeOrBuilder>
         dateRangeBuilder_;
-
     /**
      *
      *
@@ -980,7 +955,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasDateRange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1001,7 +975,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         return dateRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1016,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1043,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1062,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1076,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getDateRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1126,7 +1094,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
             : dateRange_;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1126,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.channel.v1.DateRange.Builder,
             com.google.cloud.channel.v1.DateRangeOrBuilder>
         precedingDateRangeBuilder_;
-
     /**
      *
      *
@@ -1179,7 +1145,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasPrecedingDateRange() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1205,7 +1170,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
         return precedingDateRangeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1197,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1259,7 +1222,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1292,7 +1254,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1317,7 +1278,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1297,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getPrecedingDateRangeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1361,7 +1320,6 @@ public final class ReportResultsMetadata extends com.google.protobuf.GeneratedMe
             : precedingDateRange_;
       }
     }
-
     /**
      *
      *

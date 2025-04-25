@@ -33,7 +33,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.FloatArray)
     FloatArrayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FloatArray.newBuilder() to construct.
   private FloatArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.FloatList values_ = emptyFloatList();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Float> getValuesList() {
     return values_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    *
    *
@@ -291,7 +287,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -510,7 +505,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -526,7 +520,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
       values_.makeImmutable();
       return values_;
     }
-
     /**
      *
      *
@@ -541,7 +534,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -557,7 +549,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
     public float getValues(int index) {
       return values_.getFloat(index);
     }
-
     /**
      *
      *
@@ -579,7 +570,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -600,7 +590,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -620,7 +609,6 @@ public final class FloatArray extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

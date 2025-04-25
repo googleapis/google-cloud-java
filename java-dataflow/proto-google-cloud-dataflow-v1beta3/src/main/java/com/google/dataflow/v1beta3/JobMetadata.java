@@ -34,7 +34,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.dataflow.v1beta3.JobMetadata)
     JobMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use JobMetadata.newBuilder() to construct.
   private JobMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SDK_VERSION_FIELD_NUMBER = 1;
   private com.google.dataflow.v1beta3.SdkVersion sdkVersion_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSdkVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.dataflow.v1beta3.SdkVersion.getDefaultInstance()
         : sdkVersion_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.SpannerIODetails> spannerDetails_;
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.SpannerIODetails> getSpannerDetailsList() {
     return spannerDetails_;
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getSpannerDetailsOrBuilderList() {
     return spannerDetails_;
   }
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getSpannerDetailsCount() {
     return spannerDetails_.size();
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.SpannerIODetails getSpannerDetails(int index) {
     return spannerDetails_.get(index);
   }
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.BigQueryIODetails> bigqueryDetails_;
-
   /**
    *
    *
@@ -219,7 +209,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.BigQueryIODetails> getBigqueryDetailsList() {
     return bigqueryDetails_;
   }
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getBigqueryDetailsOrBuilderList() {
     return bigqueryDetails_;
   }
-
   /**
    *
    *
@@ -248,7 +236,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getBigqueryDetailsCount() {
     return bigqueryDetails_.size();
   }
-
   /**
    *
    *
@@ -262,7 +249,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.BigQueryIODetails getBigqueryDetails(int index) {
     return bigqueryDetails_.get(index);
   }
-
   /**
    *
    *
@@ -282,7 +268,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.BigTableIODetails> bigTableDetails_;
-
   /**
    *
    *
@@ -296,7 +281,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.BigTableIODetails> getBigTableDetailsList() {
     return bigTableDetails_;
   }
-
   /**
    *
    *
@@ -311,7 +295,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getBigTableDetailsOrBuilderList() {
     return bigTableDetails_;
   }
-
   /**
    *
    *
@@ -325,7 +308,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getBigTableDetailsCount() {
     return bigTableDetails_.size();
   }
-
   /**
    *
    *
@@ -339,7 +321,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.BigTableIODetails getBigTableDetails(int index) {
     return bigTableDetails_.get(index);
   }
-
   /**
    *
    *
@@ -359,7 +340,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.PubSubIODetails> pubsubDetails_;
-
   /**
    *
    *
@@ -373,7 +353,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.PubSubIODetails> getPubsubDetailsList() {
     return pubsubDetails_;
   }
-
   /**
    *
    *
@@ -388,7 +367,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getPubsubDetailsOrBuilderList() {
     return pubsubDetails_;
   }
-
   /**
    *
    *
@@ -402,7 +380,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getPubsubDetailsCount() {
     return pubsubDetails_.size();
   }
-
   /**
    *
    *
@@ -416,7 +393,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.PubSubIODetails getPubsubDetails(int index) {
     return pubsubDetails_.get(index);
   }
-
   /**
    *
    *
@@ -435,7 +411,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.FileIODetails> fileDetails_;
-
   /**
    *
    *
@@ -449,7 +424,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.FileIODetails> getFileDetailsList() {
     return fileDetails_;
   }
-
   /**
    *
    *
@@ -464,7 +438,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getFileDetailsOrBuilderList() {
     return fileDetails_;
   }
-
   /**
    *
    *
@@ -478,7 +451,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getFileDetailsCount() {
     return fileDetails_.size();
   }
-
   /**
    *
    *
@@ -492,7 +464,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.FileIODetails getFileDetails(int index) {
     return fileDetails_.get(index);
   }
-
   /**
    *
    *
@@ -511,7 +482,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.dataflow.v1beta3.DatastoreIODetails> datastoreDetails_;
-
   /**
    *
    *
@@ -525,7 +495,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.dataflow.v1beta3.DatastoreIODetails> getDatastoreDetailsList() {
     return datastoreDetails_;
   }
-
   /**
    *
    *
@@ -540,7 +509,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       getDatastoreDetailsOrBuilderList() {
     return datastoreDetails_;
   }
-
   /**
    *
    *
@@ -554,7 +522,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getDatastoreDetailsCount() {
     return datastoreDetails_.size();
   }
-
   /**
    *
    *
@@ -568,7 +535,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.dataflow.v1beta3.DatastoreIODetails getDatastoreDetails(int index) {
     return datastoreDetails_.get(index);
   }
-
   /**
    *
    *
@@ -813,7 +779,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1363,7 +1328,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.dataflow.v1beta3.SdkVersion.Builder,
             com.google.dataflow.v1beta3.SdkVersionOrBuilder>
         sdkVersionBuilder_;
-
     /**
      *
      *
@@ -1378,7 +1342,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSdkVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1399,7 +1362,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return sdkVersionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1422,7 +1384,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1442,7 +1403,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1470,7 +1430,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1449,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1463,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSdkVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1524,7 +1481,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
             : sdkVersion_;
       }
     }
-
     /**
      *
      *
@@ -1584,7 +1540,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1601,7 +1556,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1618,7 +1572,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1642,7 +1595,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1615,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1686,7 +1637,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1710,7 +1660,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1731,7 +1680,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1752,7 +1700,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1773,7 +1720,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1793,7 +1739,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1813,7 +1758,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1827,7 +1771,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSpannerDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1845,7 +1788,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return spannerDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1863,7 +1805,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(spannerDetails_);
       }
     }
-
     /**
      *
      *
@@ -1877,7 +1818,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getSpannerDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.SpannerIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1892,7 +1832,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getSpannerDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.SpannerIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1961,7 +1900,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1978,7 +1916,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1995,7 +1932,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2019,7 +1955,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1975,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2063,7 +1997,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2087,7 +2020,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2108,7 +2040,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2129,7 +2060,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2150,7 +2080,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2170,7 +2099,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2190,7 +2118,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2204,7 +2131,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBigqueryDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2222,7 +2148,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigqueryDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2240,7 +2165,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bigqueryDetails_);
       }
     }
-
     /**
      *
      *
@@ -2254,7 +2178,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigqueryDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.BigQueryIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2269,7 +2192,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigqueryDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.BigQueryIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2338,7 +2260,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2355,7 +2276,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2372,7 +2292,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2396,7 +2315,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2417,7 +2335,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2440,7 +2357,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2464,7 +2380,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2485,7 +2400,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2506,7 +2420,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2527,7 +2440,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2547,7 +2459,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2567,7 +2478,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2581,7 +2491,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getBigTableDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2599,7 +2508,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return bigTableDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2617,7 +2525,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(bigTableDetails_);
       }
     }
-
     /**
      *
      *
@@ -2631,7 +2538,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigTableDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.BigTableIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2646,7 +2552,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getBigTableDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.BigTableIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2714,7 +2619,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2731,7 +2635,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2748,7 +2651,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2771,7 +2673,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2792,7 +2693,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2815,7 +2715,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2838,7 +2737,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2859,7 +2757,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2880,7 +2777,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2901,7 +2797,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2921,7 +2816,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2941,7 +2835,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2954,7 +2847,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.PubSubIODetails.Builder getPubsubDetailsBuilder(int index) {
       return getPubsubDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2972,7 +2864,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return pubsubDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2990,7 +2881,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(pubsubDetails_);
       }
     }
-
     /**
      *
      *
@@ -3004,7 +2894,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getPubsubDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.PubSubIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3018,7 +2907,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getPubsubDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.PubSubIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3086,7 +2974,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3103,7 +2990,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3120,7 +3006,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3143,7 +3028,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3164,7 +3048,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3187,7 +3070,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3210,7 +3092,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3231,7 +3112,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3252,7 +3132,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3273,7 +3152,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3293,7 +3171,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3313,7 +3190,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3326,7 +3202,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.dataflow.v1beta3.FileIODetails.Builder getFileDetailsBuilder(int index) {
       return getFileDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3343,7 +3218,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return fileDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3361,7 +3235,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fileDetails_);
       }
     }
-
     /**
      *
      *
@@ -3375,7 +3248,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getFileDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.FileIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3389,7 +3261,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getFileDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.FileIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3456,7 +3327,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3473,7 +3343,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3490,7 +3359,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3514,7 +3382,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3535,7 +3402,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3558,7 +3424,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3582,7 +3447,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3603,7 +3467,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3624,7 +3487,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3645,7 +3507,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3665,7 +3526,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3685,7 +3545,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3699,7 +3558,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getDatastoreDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3717,7 +3575,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return datastoreDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3735,7 +3592,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(datastoreDetails_);
       }
     }
-
     /**
      *
      *
@@ -3749,7 +3605,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getDatastoreDetailsFieldBuilder()
           .addBuilder(com.google.dataflow.v1beta3.DatastoreIODetails.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3764,7 +3619,6 @@ public final class JobMetadata extends com.google.protobuf.GeneratedMessageV3
       return getDatastoreDetailsFieldBuilder()
           .addBuilder(index, com.google.dataflow.v1beta3.DatastoreIODetails.getDefaultInstance());
     }
-
     /**
      *
      *

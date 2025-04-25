@@ -36,7 +36,6 @@ public interface DataStatsOrBuilder
    * @return Whether the float64Stats field is set.
    */
   boolean hasFloat64Stats();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataStatsOrBuilder
    * @return The float64Stats.
    */
   com.google.cloud.automl.v1beta1.Float64Stats getFloat64Stats();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DataStatsOrBuilder
    * @return Whether the stringStats field is set.
    */
   boolean hasStringStats();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DataStatsOrBuilder
    * @return The stringStats.
    */
   com.google.cloud.automl.v1beta1.StringStats getStringStats();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface DataStatsOrBuilder
    * @return Whether the timestampStats field is set.
    */
   boolean hasTimestampStats();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface DataStatsOrBuilder
    * @return The timestampStats.
    */
   com.google.cloud.automl.v1beta1.TimestampStats getTimestampStats();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface DataStatsOrBuilder
    * @return Whether the arrayStats field is set.
    */
   boolean hasArrayStats();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface DataStatsOrBuilder
    * @return The arrayStats.
    */
   com.google.cloud.automl.v1beta1.ArrayStats getArrayStats();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface DataStatsOrBuilder
    * @return Whether the structStats field is set.
    */
   boolean hasStructStats();
-
   /**
    *
    *
@@ -197,7 +188,6 @@ public interface DataStatsOrBuilder
    * @return The structStats.
    */
   com.google.cloud.automl.v1beta1.StructStats getStructStats();
-
   /**
    *
    *
@@ -221,7 +211,6 @@ public interface DataStatsOrBuilder
    * @return Whether the categoryStats field is set.
    */
   boolean hasCategoryStats();
-
   /**
    *
    *
@@ -234,7 +223,6 @@ public interface DataStatsOrBuilder
    * @return The categoryStats.
    */
   com.google.cloud.automl.v1beta1.CategoryStats getCategoryStats();
-
   /**
    *
    *

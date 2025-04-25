@@ -37,7 +37,6 @@ public interface ComponentNameOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ComponentNameOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

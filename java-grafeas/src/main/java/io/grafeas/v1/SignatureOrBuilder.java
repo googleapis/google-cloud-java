@@ -71,7 +71,6 @@ public interface SignatureOrBuilder
    * @return The publicKeyId.
    */
   java.lang.String getPublicKeyId();
-
   /**
    *
    *

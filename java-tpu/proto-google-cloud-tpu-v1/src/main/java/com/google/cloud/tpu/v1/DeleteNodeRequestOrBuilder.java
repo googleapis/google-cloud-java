@@ -38,7 +38,6 @@ public interface DeleteNodeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

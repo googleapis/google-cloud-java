@@ -38,7 +38,6 @@ public interface AgentAssistantRecordOrBuilder
    * @return Whether the articleSuggestionAnswer field is set.
    */
   boolean hasArticleSuggestionAnswer();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AgentAssistantRecordOrBuilder
    * @return The articleSuggestionAnswer.
    */
   com.google.cloud.dialogflow.v2beta1.ArticleAnswer getArticleSuggestionAnswer();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface AgentAssistantRecordOrBuilder
    * @return Whether the faqAnswer field is set.
    */
   boolean hasFaqAnswer();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface AgentAssistantRecordOrBuilder
    * @return The faqAnswer.
    */
   com.google.cloud.dialogflow.v2beta1.FaqAnswer getFaqAnswer();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface AgentAssistantRecordOrBuilder
    * @return Whether the dialogflowAssistAnswer field is set.
    */
   boolean hasDialogflowAssistAnswer();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface AgentAssistantRecordOrBuilder
    * @return The dialogflowAssistAnswer.
    */
   com.google.cloud.dialogflow.v2beta1.DialogflowAssistAnswer getDialogflowAssistAnswer();
-
   /**
    *
    *

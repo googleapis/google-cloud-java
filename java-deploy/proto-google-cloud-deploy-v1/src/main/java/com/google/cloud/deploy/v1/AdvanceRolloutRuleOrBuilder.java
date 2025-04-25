@@ -38,7 +38,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return A list containing the sourcePhases.
    */
   java.util.List<java.lang.String> getSourcePhasesList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return The count of sourcePhases.
    */
   int getSourcePhasesCount();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return The sourcePhases at the given index.
    */
   java.lang.String getSourcePhases(int index);
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return Whether the wait field is set.
    */
   boolean hasWait();
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return The wait.
    */
   com.google.protobuf.Duration getWait();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -190,7 +183,6 @@ public interface AdvanceRolloutRuleOrBuilder
    * @return The condition.
    */
   com.google.cloud.deploy.v1.AutomationRuleCondition getCondition();
-
   /**
    *
    *

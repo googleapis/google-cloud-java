@@ -36,7 +36,6 @@ public interface JobStatusOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface JobStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1.StatusEvent status_events = 2;</code>
    */
   java.util.List<com.google.cloud.batch.v1.StatusEvent> getStatusEventsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface JobStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1.StatusEvent status_events = 2;</code>
    */
   com.google.cloud.batch.v1.StatusEvent getStatusEvents(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface JobStatusOrBuilder
    * <code>repeated .google.cloud.batch.v1.StatusEvent status_events = 2;</code>
    */
   int getStatusEventsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface JobStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1.StatusEventOrBuilder>
       getStatusEventsOrBuilderList();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface JobStatusOrBuilder
    * </code>
    */
   int getTaskGroupsCount();
-
   /**
    *
    *
@@ -131,12 +125,10 @@ public interface JobStatusOrBuilder
    * </code>
    */
   boolean containsTaskGroups(java.lang.String key);
-
   /** Use {@link #getTaskGroupsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus>
       getTaskGroups();
-
   /**
    *
    *
@@ -150,7 +142,6 @@ public interface JobStatusOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.batch.v1.JobStatus.TaskGroupStatus>
       getTaskGroupsMap();
-
   /**
    *
    *
@@ -167,7 +158,6 @@ public interface JobStatusOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.batch.v1.JobStatus.TaskGroupStatus defaultValue);
-
   /**
    *
    *
@@ -193,7 +183,6 @@ public interface JobStatusOrBuilder
    * @return Whether the runDuration field is set.
    */
   boolean hasRunDuration();
-
   /**
    *
    *
@@ -206,7 +195,6 @@ public interface JobStatusOrBuilder
    * @return The runDuration.
    */
   com.google.protobuf.Duration getRunDuration();
-
   /**
    *
    *

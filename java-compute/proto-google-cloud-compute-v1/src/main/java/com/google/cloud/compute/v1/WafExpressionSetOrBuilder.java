@@ -36,7 +36,6 @@ public interface WafExpressionSetOrBuilder
    * @return A list containing the aliases.
    */
   java.util.List<java.lang.String> getAliasesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WafExpressionSetOrBuilder
    * @return The count of aliases.
    */
   int getAliasesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface WafExpressionSetOrBuilder
    * @return The aliases at the given index.
    */
   java.lang.String getAliases(int index);
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface WafExpressionSetOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.WafExpressionSetExpression> getExpressionsList();
-
   /**
    *
    *
@@ -101,7 +97,6 @@ public interface WafExpressionSetOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.WafExpressionSetExpression getExpressions(int index);
-
   /**
    *
    *
@@ -113,7 +108,6 @@ public interface WafExpressionSetOrBuilder
    * </code>
    */
   int getExpressionsCount();
-
   /**
    *
    *
@@ -126,7 +120,6 @@ public interface WafExpressionSetOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.WafExpressionSetExpressionOrBuilder>
       getExpressionsOrBuilderList();
-
   /**
    *
    *
@@ -152,7 +145,6 @@ public interface WafExpressionSetOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -165,7 +157,6 @@ public interface WafExpressionSetOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListRecommendersResponseOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.RecommenderType recommenders = 1;</code>
    */
   java.util.List<com.google.cloud.recommender.v1beta1.RecommenderType> getRecommendersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRecommendersResponseOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.RecommenderType recommenders = 1;</code>
    */
   com.google.cloud.recommender.v1beta1.RecommenderType getRecommenders(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRecommendersResponseOrBuilder
    * <code>repeated .google.cloud.recommender.v1beta1.RecommenderType recommenders = 1;</code>
    */
   int getRecommendersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRecommendersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.recommender.v1beta1.RecommenderTypeOrBuilder>
       getRecommendersOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListRecommendersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

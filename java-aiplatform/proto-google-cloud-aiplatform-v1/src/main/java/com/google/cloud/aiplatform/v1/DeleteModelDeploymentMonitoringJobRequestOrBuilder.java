@@ -40,7 +40,6 @@ public interface DeleteModelDeploymentMonitoringJobRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

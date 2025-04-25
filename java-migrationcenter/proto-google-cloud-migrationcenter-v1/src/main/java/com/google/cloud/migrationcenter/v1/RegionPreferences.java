@@ -33,7 +33,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.RegionPreferences)
     RegionPreferencesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegionPreferences.newBuilder() to construct.
   private RegionPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList preferredRegions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.ProtocolStringList getPreferredRegionsList() {
     return preferredRegions_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
   public int getPreferredRegionsCount() {
     return preferredRegions_.size();
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
   public java.lang.String getPreferredRegions(int index) {
     return preferredRegions_.get(index);
   }
-
   /**
    *
    *
@@ -315,7 +310,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -515,7 +509,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -535,7 +528,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
       preferredRegions_.makeImmutable();
       return preferredRegions_;
     }
-
     /**
      *
      *
@@ -554,7 +546,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
     public int getPreferredRegionsCount() {
       return preferredRegions_.size();
     }
-
     /**
      *
      *
@@ -574,7 +565,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
     public java.lang.String getPreferredRegions(int index) {
       return preferredRegions_.get(index);
     }
-
     /**
      *
      *
@@ -594,7 +584,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getPreferredRegionsBytes(int index) {
       return preferredRegions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -622,7 +611,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +637,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +660,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +682,6 @@ public final class RegionPreferences extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

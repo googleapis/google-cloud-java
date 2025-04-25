@@ -106,7 +106,6 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_UNKNOWN = 0;</code>
    */
   public static final int STATE_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -117,7 +116,6 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_PENDING = 1;</code>
    */
   public static final int STATE_PENDING_VALUE = 1;
-
   /**
    *
    *
@@ -128,7 +126,6 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_PROVISIONING = 2;</code>
    */
   public static final int STATE_PROVISIONING_VALUE = 2;
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_RUNNING = 3;</code>
    */
   public static final int STATE_RUNNING_VALUE = 3;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public enum ResourceState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_SUSPENDED = 4;</code>
    */
   public static final int STATE_SUSPENDED_VALUE = 4;
-
   /**
    *
    *

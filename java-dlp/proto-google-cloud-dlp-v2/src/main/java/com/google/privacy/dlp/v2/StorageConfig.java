@@ -33,7 +33,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StorageConfig)
     StorageConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StorageConfig.newBuilder() to construct.
   private StorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
-
     /**
      *
      *
@@ -120,7 +117,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
-
     /**
      *
      *
@@ -134,7 +130,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timestampField field is set.
      */
     boolean hasTimestampField();
-
     /**
      *
      *
@@ -236,7 +230,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The timestampField.
      */
     com.google.privacy.dlp.v2.FieldId getTimestampField();
-
     /**
      *
      *
@@ -308,7 +301,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getEnableAutoPopulationOfTimespanConfig();
   }
-
   /**
    *
    *
@@ -324,7 +316,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StorageConfig.TimespanConfig)
       TimespanConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimespanConfig.newBuilder() to construct.
     private TimespanConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -356,7 +347,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTime_;
-
     /**
      *
      *
@@ -373,7 +363,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -390,7 +379,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
-
     /**
      *
      *
@@ -408,7 +396,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp endTime_;
-
     /**
      *
      *
@@ -425,7 +412,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -442,7 +428,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
-
     /**
      *
      *
@@ -460,7 +445,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TIMESTAMP_FIELD_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.FieldId timestampField_;
-
     /**
      *
      *
@@ -508,7 +492,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampField() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -558,7 +541,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance()
           : timestampField_;
     }
-
     /**
      *
      *
@@ -609,7 +591,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_AUTO_POPULATION_OF_TIMESPAN_CONFIG_FIELD_NUMBER = 4;
     private boolean enableAutoPopulationOfTimespanConfig_ = false;
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1110,7 +1090,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimeBuilder_;
-
       /**
        *
        *
@@ -1126,7 +1105,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -1148,7 +1126,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           return startTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1172,7 +1149,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1193,7 +1169,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1222,7 +1197,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1243,7 +1217,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1259,7 +1232,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1279,7 +1251,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               : startTime_;
         }
       }
-
       /**
        *
        *
@@ -1313,7 +1284,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           endTimeBuilder_;
-
       /**
        *
        *
@@ -1329,7 +1299,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1349,7 +1318,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           return endTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1373,7 +1341,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1394,7 +1361,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1423,7 +1389,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1444,7 +1409,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1460,7 +1424,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1478,7 +1441,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
         }
       }
-
       /**
        *
        *
@@ -1512,7 +1474,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.FieldId.Builder,
               com.google.privacy.dlp.v2.FieldIdOrBuilder>
           timestampFieldBuilder_;
-
       /**
        *
        *
@@ -1559,7 +1520,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimestampField() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1612,7 +1572,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
           return timestampFieldBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1667,7 +1626,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1719,7 +1677,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1779,7 +1736,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1831,7 +1787,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1878,7 +1833,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTimestampFieldFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1929,7 +1883,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
               : timestampField_;
         }
       }
-
       /**
        *
        *
@@ -1989,7 +1942,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean enableAutoPopulationOfTimespanConfig_;
-
       /**
        *
        *
@@ -2020,7 +1972,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableAutoPopulationOfTimespanConfig() {
         return enableAutoPopulationOfTimespanConfig_;
       }
-
       /**
        *
        *
@@ -2055,7 +2006,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2173,7 +2123,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     private TypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2211,7 +2160,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATASTORE_OPTIONS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2227,7 +2175,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDatastoreOptions() {
     return typeCase_ == 2;
   }
-
   /**
    *
    *
@@ -2246,7 +2193,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2265,7 +2211,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_STORAGE_OPTIONS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -2281,7 +2226,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudStorageOptions() {
     return typeCase_ == 3;
   }
-
   /**
    *
    *
@@ -2300,7 +2244,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2319,7 +2262,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIG_QUERY_OPTIONS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -2335,7 +2277,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigQueryOptions() {
     return typeCase_ == 4;
   }
-
   /**
    *
    *
@@ -2354,7 +2295,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2373,7 +2313,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HYBRID_OPTIONS_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -2389,7 +2328,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHybridOptions() {
     return typeCase_ == 9;
   }
-
   /**
    *
    *
@@ -2408,7 +2346,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2428,7 +2365,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESPAN_CONFIG_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;
-
   /**
    *
    *
@@ -2444,7 +2380,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimespanConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2462,7 +2397,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
         : timespanConfig_;
   }
-
   /**
    *
    *
@@ -2712,7 +2646,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3013,7 +2946,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.DatastoreOptions.Builder,
             com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder>
         datastoreOptionsBuilder_;
-
     /**
      *
      *
@@ -3029,7 +2961,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDatastoreOptions() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -3055,7 +2986,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3078,7 +3008,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3099,7 +3028,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3132,7 +3060,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3158,7 +3085,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3171,7 +3097,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.DatastoreOptions.Builder getDatastoreOptionsBuilder() {
       return getDatastoreOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3192,7 +3117,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.DatastoreOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3231,7 +3155,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CloudStorageOptions.Builder,
             com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder>
         cloudStorageOptionsBuilder_;
-
     /**
      *
      *
@@ -3247,7 +3170,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudStorageOptions() {
       return typeCase_ == 3;
     }
-
     /**
      *
      *
@@ -3273,7 +3195,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3296,7 +3217,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3317,7 +3237,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3350,7 +3269,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3376,7 +3294,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3389,7 +3306,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.CloudStorageOptions.Builder getCloudStorageOptionsBuilder() {
       return getCloudStorageOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3411,7 +3327,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.CloudStorageOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3450,7 +3365,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.BigQueryOptions.Builder,
             com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder>
         bigQueryOptionsBuilder_;
-
     /**
      *
      *
@@ -3466,7 +3380,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigQueryOptions() {
       return typeCase_ == 4;
     }
-
     /**
      *
      *
@@ -3492,7 +3405,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3515,7 +3427,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3536,7 +3447,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3569,7 +3479,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3595,7 +3504,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3608,7 +3516,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.BigQueryOptions.Builder getBigQueryOptionsBuilder() {
       return getBigQueryOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3629,7 +3536,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.BigQueryOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3668,7 +3574,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.HybridOptions.Builder,
             com.google.privacy.dlp.v2.HybridOptionsOrBuilder>
         hybridOptionsBuilder_;
-
     /**
      *
      *
@@ -3684,7 +3589,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHybridOptions() {
       return typeCase_ == 9;
     }
-
     /**
      *
      *
@@ -3710,7 +3614,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3733,7 +3636,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3754,7 +3656,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3787,7 +3688,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       typeCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -3813,7 +3713,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3826,7 +3725,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.privacy.dlp.v2.HybridOptions.Builder getHybridOptionsBuilder() {
       return getHybridOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3847,7 +3745,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.privacy.dlp.v2.HybridOptions.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3885,7 +3782,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>
         timespanConfigBuilder_;
-
     /**
      *
      *
@@ -3900,7 +3796,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimespanConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3921,7 +3816,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return timespanConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3944,7 +3838,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3965,7 +3858,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3995,7 +3887,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4015,7 +3906,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4031,7 +3921,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimespanConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4051,7 +3940,6 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             : timespanConfig_;
       }
     }
-
     /**
      *
      *

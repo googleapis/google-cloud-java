@@ -398,8 +398,7 @@ public class GrantName implements ResourceName {
     private Builder(GrantName grantName) {
       Preconditions.checkArgument(
           Objects.equals(grantName.pathTemplate, PROJECT_LOCATION_ENTITLEMENT_GRANT),
-          "toBuilder is only supported when GrantName has the pattern of"
-              + " projects/{project}/locations/{location}/entitlements/{entitlement}/grants/{grant}");
+          "toBuilder is only supported when GrantName has the pattern of projects/{project}/locations/{location}/entitlements/{entitlement}/grants/{grant}");
       this.project = grantName.project;
       this.location = grantName.location;
       this.entitlement = grantName.entitlement;

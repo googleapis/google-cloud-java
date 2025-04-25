@@ -33,7 +33,6 @@ public final class RemoveFileResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.RemoveFileResponse)
     RemoveFileResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RemoveFileResponse.newBuilder() to construct.
   private RemoveFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class RemoveFileResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

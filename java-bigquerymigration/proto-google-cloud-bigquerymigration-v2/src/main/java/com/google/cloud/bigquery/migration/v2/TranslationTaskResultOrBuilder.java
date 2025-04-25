@@ -34,7 +34,6 @@ public interface TranslationTaskResultOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.Literal translated_literals = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.Literal> getTranslatedLiteralsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TranslationTaskResultOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.Literal translated_literals = 1;</code>
    */
   com.google.cloud.bigquery.migration.v2.Literal getTranslatedLiterals(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TranslationTaskResultOrBuilder
    * <code>repeated .google.cloud.bigquery.migration.v2.Literal translated_literals = 1;</code>
    */
   int getTranslatedLiteralsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface TranslationTaskResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.LiteralOrBuilder>
       getTranslatedLiteralsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface TranslationTaskResultOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.migration.v2.GcsReportLogMessage>
       getReportLogMessagesList();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface TranslationTaskResultOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.migration.v2.GcsReportLogMessage getReportLogMessages(int index);
-
   /**
    *
    *
@@ -116,7 +110,6 @@ public interface TranslationTaskResultOrBuilder
    * </code>
    */
   int getReportLogMessagesCount();
-
   /**
    *
    *
@@ -129,7 +122,6 @@ public interface TranslationTaskResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.migration.v2.GcsReportLogMessageOrBuilder>
       getReportLogMessagesOrBuilderList();
-
   /**
    *
    *

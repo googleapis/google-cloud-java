@@ -33,7 +33,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.MergeFieldsOptions)
     MergeFieldsOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MergeFieldsOptions.newBuilder() to construct.
   private MergeFieldsOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int REPLACE_MESSAGE_FIELDS_FIELD_NUMBER = 1;
   private boolean replaceMessageFields_ = false;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
   public boolean hasReplaceMessageFields() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
 
   public static final int REPLACE_REPEATED_FIELDS_FIELD_NUMBER = 2;
   private boolean replaceRepeatedFields_ = false;
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
   public boolean hasReplaceRepeatedFields() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -338,7 +333,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -538,7 +532,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean replaceMessageFields_;
-
     /**
      *
      *
@@ -559,7 +552,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     public boolean hasReplaceMessageFields() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     public boolean getReplaceMessageFields() {
       return replaceMessageFields_;
     }
-
     /**
      *
      *
@@ -605,7 +596,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean replaceRepeatedFields_;
-
     /**
      *
      *
@@ -654,7 +643,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     public boolean hasReplaceRepeatedFields() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -678,7 +666,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
     public boolean getReplaceRepeatedFields() {
       return replaceRepeatedFields_;
     }
-
     /**
      *
      *
@@ -706,7 +693,6 @@ public final class MergeFieldsOptions extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

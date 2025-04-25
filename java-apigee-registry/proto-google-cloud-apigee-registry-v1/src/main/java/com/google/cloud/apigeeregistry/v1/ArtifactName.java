@@ -496,8 +496,7 @@ public class ArtifactName implements ResourceName {
     private Builder(ArtifactName artifactName) {
       Preconditions.checkArgument(
           Objects.equals(artifactName.pathTemplate, PROJECT_LOCATION_ARTIFACT),
-          "toBuilder is only supported when ArtifactName has the pattern of"
-              + " projects/{project}/locations/{location}/artifacts/{artifact}");
+          "toBuilder is only supported when ArtifactName has the pattern of projects/{project}/locations/{location}/artifacts/{artifact}");
       this.project = artifactName.project;
       this.location = artifactName.location;
       this.artifact = artifactName.artifact;

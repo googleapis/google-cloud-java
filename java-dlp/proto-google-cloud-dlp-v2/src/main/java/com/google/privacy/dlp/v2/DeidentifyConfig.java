@@ -33,7 +33,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyConfig)
     DeidentifyConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeidentifyConfig.newBuilder() to construct.
   private DeidentifyConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     private TransformationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,7 +115,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INFO_TYPE_TRANSFORMATIONS_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasInfoTypeTransformations() {
     return transformationCase_ == 1;
   }
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RECORD_TRANSFORMATIONS_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasRecordTransformations() {
     return transformationCase_ == 2;
   }
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.privacy.dlp.v2.RecordTransformations.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -236,7 +228,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IMAGE_TRANSFORMATIONS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -252,7 +243,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasImageTransformations() {
     return transformationCase_ == 4;
   }
-
   /**
    *
    *
@@ -271,7 +261,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
 
   public static final int TRANSFORMATION_ERROR_HANDLING_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.TransformationErrorHandling transformationErrorHandling_;
-
   /**
    *
    *
@@ -310,7 +298,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasTransformationErrorHandling() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.privacy.dlp.v2.TransformationErrorHandling.getDefaultInstance()
         : transformationErrorHandling_;
   }
-
   /**
    *
    *
@@ -571,7 +557,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -859,7 +844,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.InfoTypeTransformations.Builder,
             com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder>
         infoTypeTransformationsBuilder_;
-
     /**
      *
      *
@@ -876,7 +860,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasInfoTypeTransformations() {
       return transformationCase_ == 1;
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -928,7 +910,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +966,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +992,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1006,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         getInfoTypeTransformationsBuilder() {
       return getInfoTypeTransformationsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1051,7 +1028,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.InfoTypeTransformations.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1091,7 +1067,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.RecordTransformations.Builder,
             com.google.privacy.dlp.v2.RecordTransformationsOrBuilder>
         recordTransformationsBuilder_;
-
     /**
      *
      *
@@ -1109,7 +1084,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasRecordTransformations() {
       return transformationCase_ == 2;
     }
-
     /**
      *
      *
@@ -1137,7 +1111,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.RecordTransformations.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1162,7 +1135,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1157,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1222,7 +1193,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1220,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1266,7 +1235,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         getRecordTransformationsBuilder() {
       return getRecordTransformationsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1290,7 +1258,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.RecordTransformations.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1331,7 +1298,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.ImageTransformations.Builder,
             com.google.privacy.dlp.v2.ImageTransformationsOrBuilder>
         imageTransformationsBuilder_;
-
     /**
      *
      *
@@ -1347,7 +1313,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasImageTransformations() {
       return transformationCase_ == 4;
     }
-
     /**
      *
      *
@@ -1373,7 +1338,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1396,7 +1360,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1380,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1451,7 +1413,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       transformationCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1438,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1490,7 +1450,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public com.google.privacy.dlp.v2.ImageTransformations.Builder getImageTransformationsBuilder() {
       return getImageTransformationsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1512,7 +1471,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return com.google.privacy.dlp.v2.ImageTransformations.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1552,7 +1510,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.TransformationErrorHandling.Builder,
             com.google.privacy.dlp.v2.TransformationErrorHandlingOrBuilder>
         transformationErrorHandlingBuilder_;
-
     /**
      *
      *
@@ -1569,7 +1526,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasTransformationErrorHandling() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1592,7 +1548,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
         return transformationErrorHandlingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1618,7 +1573,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1641,7 +1595,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1626,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1695,7 +1647,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1713,7 +1664,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTransformationErrorHandlingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1735,7 +1685,6 @@ public final class DeidentifyConfig extends com.google.protobuf.GeneratedMessage
             : transformationErrorHandling_;
       }
     }
-
     /**
      *
      *

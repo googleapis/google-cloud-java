@@ -45,7 +45,6 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -134,7 +133,6 @@ public interface DeleteAwsNodePoolRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

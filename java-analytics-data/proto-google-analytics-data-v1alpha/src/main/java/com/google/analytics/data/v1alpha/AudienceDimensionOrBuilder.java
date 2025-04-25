@@ -38,7 +38,6 @@ public interface AudienceDimensionOrBuilder
    * @return The dimensionName.
    */
   java.lang.String getDimensionName();
-
   /**
    *
    *

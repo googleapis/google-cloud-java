@@ -39,7 +39,6 @@ public interface UpdateListingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateListingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateListingRequestOrBuilder
    * @return Whether the listing field is set.
    */
   boolean hasListing();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface UpdateListingRequestOrBuilder
    * @return The listing.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing getListing();
-
   /**
    *
    *

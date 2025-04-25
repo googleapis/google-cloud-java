@@ -34,7 +34,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1.SpeechContext)
     SpeechContextOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpeechContext.newBuilder() to construct.
   private SpeechContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList phrases_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPhrasesList() {
     return phrases_;
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   public int getPhrasesCount() {
     return phrases_.size();
   }
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPhrases(int index) {
     return phrases_.get(index);
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BOOST_FIELD_NUMBER = 4;
   private float boost_ = 0F;
-
   /**
    *
    *
@@ -378,7 +372,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +584,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -618,7 +610,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       phrases_.makeImmutable();
       return phrases_;
     }
-
     /**
      *
      *
@@ -644,7 +635,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public int getPhrasesCount() {
       return phrases_.size();
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPhrases(int index) {
       return phrases_.get(index);
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPhrasesBytes(int index) {
       return phrases_.getByteString(index);
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +813,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +849,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float boost_;
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
     public float getBoost() {
       return boost_;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

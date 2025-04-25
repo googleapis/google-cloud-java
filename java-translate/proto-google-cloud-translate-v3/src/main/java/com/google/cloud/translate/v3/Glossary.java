@@ -33,7 +33,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.Glossary)
     GlossaryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Glossary.newBuilder() to construct.
   private Glossary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return The sourceLanguageCode.
      */
     java.lang.String getSourceLanguageCode();
-
     /**
      *
      *
@@ -111,7 +109,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return The targetLanguageCode.
      */
     java.lang.String getTargetLanguageCode();
-
     /**
      *
      *
@@ -126,7 +123,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getTargetLanguageCodeBytes();
   }
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.Glossary.LanguageCodePair)
       LanguageCodePairOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LanguageCodePair.newBuilder() to construct.
     private LanguageCodePair(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -177,7 +172,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceLanguageCode_ = "";
-
     /**
      *
      *
@@ -202,7 +196,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -232,7 +225,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object targetLanguageCode_ = "";
-
     /**
      *
      *
@@ -257,7 +249,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -453,7 +444,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object sourceLanguageCode_ = "";
-
       /**
        *
        *
@@ -680,7 +669,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -704,7 +692,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -727,7 +714,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -746,7 +732,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -772,7 +757,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object targetLanguageCode_ = "";
-
       /**
        *
        *
@@ -796,7 +780,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -820,7 +803,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -843,7 +825,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -862,7 +843,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -970,7 +950,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the languageCodes.
      */
     java.util.List<java.lang.String> getLanguageCodesList();
-
     /**
      *
      *
@@ -985,7 +964,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return The count of languageCodes.
      */
     int getLanguageCodesCount();
-
     /**
      *
      *
@@ -1001,7 +979,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      * @return The languageCodes at the given index.
      */
     java.lang.String getLanguageCodes(int index);
-
     /**
      *
      *
@@ -1018,7 +995,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getLanguageCodesBytes(int index);
   }
-
   /**
    *
    *
@@ -1033,7 +1009,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.Glossary.LanguageCodesSet)
       LanguageCodesSetOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LanguageCodesSet.newBuilder() to construct.
     private LanguageCodesSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1069,7 +1044,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList languageCodes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
       return languageCodes_;
     }
-
     /**
      *
      *
@@ -1103,7 +1076,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public int getLanguageCodesCount() {
       return languageCodes_.size();
     }
-
     /**
      *
      *
@@ -1121,7 +1093,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLanguageCodes(int index) {
       return languageCodes_.get(index);
     }
-
     /**
      *
      *
@@ -1308,7 +1279,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1511,7 +1481,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -1529,7 +1498,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         languageCodes_.makeImmutable();
         return languageCodes_;
       }
-
       /**
        *
        *
@@ -1546,7 +1514,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       public int getLanguageCodesCount() {
         return languageCodes_.size();
       }
-
       /**
        *
        *
@@ -1564,7 +1531,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getLanguageCodes(int index) {
         return languageCodes_.get(index);
       }
-
       /**
        *
        *
@@ -1582,7 +1548,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
         return languageCodes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1608,7 +1573,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1633,7 +1597,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1655,7 +1618,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1676,7 +1638,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1785,7 +1746,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     private LanguagesCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1822,7 +1782,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1847,7 +1806,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1874,7 +1832,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_PAIR_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -1890,7 +1847,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLanguagePair() {
     return languagesCase_ == 3;
   }
-
   /**
    *
    *
@@ -1909,7 +1865,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.translate.v3.Glossary.LanguageCodePair.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1929,7 +1884,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_CODES_SET_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -1945,7 +1899,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLanguageCodesSet() {
     return languagesCase_ == 4;
   }
-
   /**
    *
    *
@@ -1964,7 +1917,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.translate.v3.Glossary.LanguageCodesSet.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1985,7 +1937,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.translate.v3.GlossaryInputConfig inputConfig_;
-
   /**
    *
    *
@@ -2002,7 +1953,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2021,7 +1971,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.translate.v3.GlossaryInputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -2041,7 +1990,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTRY_COUNT_FIELD_NUMBER = 6;
   private int entryCount_ = 0;
-
   /**
    *
    *
@@ -2060,7 +2008,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SUBMIT_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp submitTime_;
-
   /**
    *
    *
@@ -2077,7 +2024,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubmitTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2094,7 +2040,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getSubmitTime() {
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
-
   /**
    *
    *
@@ -2112,7 +2057,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -2129,7 +2073,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2146,7 +2089,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -2166,7 +2108,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -2190,7 +2131,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2472,7 +2412,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2815,7 +2754,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2839,7 +2777,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2863,7 +2800,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2886,7 +2822,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2905,7 +2840,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2935,7 +2869,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.translate.v3.Glossary.LanguageCodePair.Builder,
             com.google.cloud.translate.v3.Glossary.LanguageCodePairOrBuilder>
         languagePairBuilder_;
-
     /**
      *
      *
@@ -2951,7 +2884,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLanguagePair() {
       return languagesCase_ == 3;
     }
-
     /**
      *
      *
@@ -2977,7 +2909,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.Glossary.LanguageCodePair.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3000,7 +2931,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       languagesCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3021,7 +2951,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       languagesCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3056,7 +2985,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       languagesCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -3082,7 +3010,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3096,7 +3023,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         getLanguagePairBuilder() {
       return getLanguagePairFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3118,7 +3044,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.Glossary.LanguageCodePair.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3157,7 +3082,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.translate.v3.Glossary.LanguageCodesSet.Builder,
             com.google.cloud.translate.v3.Glossary.LanguageCodesSetOrBuilder>
         languageCodesSetBuilder_;
-
     /**
      *
      *
@@ -3173,7 +3097,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLanguageCodesSet() {
       return languagesCase_ == 4;
     }
-
     /**
      *
      *
@@ -3199,7 +3122,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.Glossary.LanguageCodesSet.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3223,7 +3145,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       languagesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3244,7 +3165,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       languagesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3279,7 +3199,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       languagesCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -3305,7 +3224,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3319,7 +3237,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         getLanguageCodesSetBuilder() {
       return getLanguageCodesSetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3341,7 +3258,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.translate.v3.Glossary.LanguageCodesSet.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -3381,7 +3297,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.translate.v3.GlossaryInputConfig.Builder,
             com.google.cloud.translate.v3.GlossaryInputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -3397,7 +3312,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3419,7 +3333,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3443,7 +3356,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3465,7 +3377,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3495,7 +3406,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3516,7 +3426,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3532,7 +3441,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3552,7 +3460,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             : inputConfig_;
       }
     }
-
     /**
      *
      *
@@ -3581,7 +3488,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int entryCount_;
-
     /**
      *
      *
@@ -3597,7 +3503,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public int getEntryCount() {
       return entryCount_;
     }
-
     /**
      *
      *
@@ -3617,7 +3522,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3642,7 +3546,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         submitTimeBuilder_;
-
     /**
      *
      *
@@ -3659,7 +3562,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubmitTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3682,7 +3584,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return submitTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3707,7 +3608,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3729,7 +3629,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3759,7 +3658,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3781,7 +3679,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3798,7 +3695,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3819,7 +3715,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             : submitTime_;
       }
     }
-
     /**
      *
      *
@@ -3854,7 +3749,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -3870,7 +3764,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3890,7 +3783,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3914,7 +3806,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3935,7 +3826,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3964,7 +3854,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3985,7 +3874,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4001,7 +3889,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4019,7 +3906,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -4048,7 +3934,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -4071,7 +3956,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4094,7 +3978,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4116,7 +3999,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4134,7 +4016,6 @@ public final class Glossary extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

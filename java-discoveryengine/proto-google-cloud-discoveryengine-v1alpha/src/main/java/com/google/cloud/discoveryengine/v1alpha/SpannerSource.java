@@ -33,7 +33,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SpannerSource)
     SpannerSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpannerSource.newBuilder() to construct.
   private SpannerSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -234,7 +227,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableId_ = "";
-
   /**
    *
    *
@@ -258,7 +250,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_DATA_BOOST_FIELD_NUMBER = 5;
   private boolean enableDataBoost_ = false;
-
   /**
    *
    *
@@ -500,7 +490,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -743,7 +732,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
-
     /**
      *
      *
@@ -768,7 +756,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -793,7 +780,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +848,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -887,7 +870,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -932,7 +913,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +954,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object databaseId_ = "";
-
     /**
      *
      *
@@ -998,7 +976,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +998,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1060,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tableId_ = "";
-
     /**
      *
      *
@@ -1109,7 +1082,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1104,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1125,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1142,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1166,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableDataBoost_;
-
     /**
      *
      *
@@ -1215,7 +1183,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnableDataBoost() {
       return enableDataBoost_;
     }
-
     /**
      *
      *
@@ -1237,7 +1204,6 @@ public final class SpannerSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

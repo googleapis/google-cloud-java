@@ -36,7 +36,6 @@ public interface SlidesExtensionPointOrBuilder
    * @return The runFunction.
    */
   java.lang.String getRunFunction();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface UpdateTenantRequestOrBuilder
    * @return Whether the tenant field is set.
    */
   boolean hasTenant();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateTenantRequestOrBuilder
    * @return The tenant.
    */
   com.google.cloud.talent.v4.Tenant getTenant();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateTenantRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdateTenantRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest)
     CreateDataLabelingJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateDataLabelingJobRequest.newBuilder() to construct.
   private CreateDataLabelingJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
 
   public static final int DATA_LABELING_JOB_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.DataLabelingJob dataLabelingJob_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
   public boolean hasDataLabelingJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1beta1.DataLabelingJob.getDefaultInstance()
         : dataLabelingJob_;
   }
-
   /**
    *
    *
@@ -359,7 +353,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +572,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -605,7 +597,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1beta1.DataLabelingJob.Builder,
             com.google.cloud.aiplatform.v1beta1.DataLabelingJobOrBuilder>
         dataLabelingJobBuilder_;
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
     public boolean hasDataLabelingJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
         return dataLabelingJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -775,7 +760,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
       onChanged();
       return getDataLabelingJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class CreateDataLabelingJobRequest extends com.google.protobuf.Gene
             : dataLabelingJob_;
       }
     }
-
     /**
      *
      *

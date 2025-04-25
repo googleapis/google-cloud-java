@@ -35,7 +35,6 @@ public final class EnableAdvancedSiteSearchResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.EnableAdvancedSiteSearchResponse)
     EnableAdvancedSiteSearchResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnableAdvancedSiteSearchResponse.newBuilder() to construct.
   private EnableAdvancedSiteSearchResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -219,7 +218,6 @@ public final class EnableAdvancedSiteSearchResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

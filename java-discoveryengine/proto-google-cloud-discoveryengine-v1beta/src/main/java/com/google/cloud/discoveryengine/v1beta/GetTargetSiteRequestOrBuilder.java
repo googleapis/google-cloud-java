@@ -48,7 +48,6 @@ public interface GetTargetSiteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

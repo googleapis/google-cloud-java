@@ -34,7 +34,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.v1beta1.KubernetesMetadata)
     KubernetesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use KubernetesMetadata.newBuilder() to construct.
   private KubernetesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kubernetesApiServerVersion_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeProviderId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -185,7 +180,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int NODE_COUNT_FIELD_NUMBER = 3;
   private int nodeCount_ = 0;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int VCPU_COUNT_FIELD_NUMBER = 4;
   private int vcpuCount_ = 0;
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int MEMORY_MB_FIELD_NUMBER = 5;
   private int memoryMb_ = 0;
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 100;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -513,7 +502,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -782,7 +770,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object kubernetesApiServerVersion_ = "";
-
     /**
      *
      *
@@ -807,7 +794,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -832,7 +818,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +841,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +860,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +886,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nodeProviderId_ = "";
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -955,7 +936,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1001,7 +980,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1007,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private int nodeCount_;
-
     /**
      *
      *
@@ -1045,7 +1022,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public int getNodeCount() {
       return nodeCount_;
     }
-
     /**
      *
      *
@@ -1065,7 +1041,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1060,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private int vcpuCount_;
-
     /**
      *
      *
@@ -1101,7 +1075,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public int getVcpuCount() {
       return vcpuCount_;
     }
-
     /**
      *
      *
@@ -1121,7 +1094,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1113,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     }
 
     private int memoryMb_;
-
     /**
      *
      *
@@ -1158,7 +1129,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public int getMemoryMb() {
       return memoryMb_;
     }
-
     /**
      *
      *
@@ -1179,7 +1149,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1174,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1224,7 +1192,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1242,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1265,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1332,7 +1296,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1356,7 +1319,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1375,7 +1337,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1398,7 +1359,6 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *

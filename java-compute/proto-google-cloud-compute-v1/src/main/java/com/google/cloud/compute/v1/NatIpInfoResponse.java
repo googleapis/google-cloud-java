@@ -32,7 +32,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NatIpInfoResponse)
     NatIpInfoResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NatIpInfoResponse.newBuilder() to construct.
   private NatIpInfoResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.NatIpInfo> result_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.compute.v1.NatIpInfo> getResultList() {
     return result_;
   }
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       getResultOrBuilderList() {
     return result_;
   }
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
   public int getResultCount() {
     return result_.size();
   }
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.compute.v1.NatIpInfo getResult(int index) {
     return result_.get(index);
   }
-
   /**
    *
    *
@@ -300,7 +294,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -559,7 +552,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
         return resultBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -576,7 +568,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
         return resultBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -593,7 +584,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
         return resultBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -616,7 +606,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +626,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +670,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +689,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -724,7 +709,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -745,7 +729,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +748,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +767,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +779,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.compute.v1.NatIpInfo.Builder getResultBuilder(int index) {
       return getResultFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -815,7 +795,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
         return resultBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -833,7 +812,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(result_);
       }
     }
-
     /**
      *
      *
@@ -847,7 +825,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       return getResultFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.NatIpInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -861,7 +838,6 @@ public final class NatIpInfoResponse extends com.google.protobuf.GeneratedMessag
       return getResultFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.NatIpInfo.getDefaultInstance());
     }
-
     /**
      *
      *

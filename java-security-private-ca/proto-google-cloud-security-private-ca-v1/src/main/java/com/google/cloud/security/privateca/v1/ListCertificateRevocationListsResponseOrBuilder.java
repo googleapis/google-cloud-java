@@ -38,7 +38,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1.CertificateRevocationList>
       getCertificateRevocationListsList();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    */
   com.google.cloud.security.privateca.v1.CertificateRevocationList getCertificateRevocationLists(
       int index);
-
   /**
    *
    *
@@ -67,7 +65,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    * </code>
    */
   int getCertificateRevocationListsCount();
-
   /**
    *
    *
@@ -83,7 +80,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.security.privateca.v1.CertificateRevocationListOrBuilder>
       getCertificateRevocationListsOrBuilderList();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public interface ListCertificateRevocationListsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

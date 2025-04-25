@@ -39,7 +39,6 @@ public interface AssetPerformanceDataOrBuilder
    */
   java.util.List<com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation>
       getDailyResourceUsageAggregationsList();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface AssetPerformanceDataOrBuilder
    */
   com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregation
       getDailyResourceUsageAggregations(int index);
-
   /**
    *
    *
@@ -70,7 +68,6 @@ public interface AssetPerformanceDataOrBuilder
    * </code>
    */
   int getDailyResourceUsageAggregationsCount();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface AssetPerformanceDataOrBuilder
   java.util.List<
           ? extends com.google.cloud.migrationcenter.v1.DailyResourceUsageAggregationOrBuilder>
       getDailyResourceUsageAggregationsOrBuilderList();
-
   /**
    *
    *

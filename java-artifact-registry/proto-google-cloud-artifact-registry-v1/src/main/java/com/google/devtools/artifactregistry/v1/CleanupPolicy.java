@@ -33,7 +33,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.CleanupPolicy)
     CleanupPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CleanupPolicy.newBuilder() to construct.
   private CleanupPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTION_UNSPECIFIED = 0;</code>
      */
     public static final int ACTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETE = 1;</code>
      */
     public static final int DELETE_VALUE = 1;
-
     /**
      *
      *
@@ -243,7 +240,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     private ConditionTypeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -277,7 +273,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONDITION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -293,7 +288,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCondition() {
     return conditionTypeCase_ == 2;
   }
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.artifactregistry.v1.CleanupPolicyCondition.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -332,7 +325,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MOST_RECENT_VERSIONS_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -351,7 +343,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMostRecentVersions() {
     return conditionTypeCase_ == 4;
   }
-
   /**
    *
    *
@@ -376,7 +367,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     return com.google.devtools.artifactregistry.v1.CleanupPolicyMostRecentVersions
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -404,7 +394,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -428,7 +417,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -455,7 +443,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ACTION_FIELD_NUMBER = 3;
   private int action_ = 0;
-
   /**
    *
    *
@@ -471,7 +458,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getActionValue() {
     return action_;
   }
-
   /**
    *
    *
@@ -709,7 +695,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -974,7 +959,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.CleanupPolicyCondition.Builder,
             com.google.devtools.artifactregistry.v1.CleanupPolicyConditionOrBuilder>
         conditionBuilder_;
-
     /**
      *
      *
@@ -990,7 +974,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCondition() {
       return conditionTypeCase_ == 2;
     }
-
     /**
      *
      *
@@ -1016,7 +999,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.artifactregistry.v1.CleanupPolicyCondition.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1022,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1042,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1078,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1103,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1116,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
         getConditionBuilder() {
       return getConditionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1160,7 +1137,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.artifactregistry.v1.CleanupPolicyCondition.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1176,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.CleanupPolicyMostRecentVersions.Builder,
             com.google.devtools.artifactregistry.v1.CleanupPolicyMostRecentVersionsOrBuilder>
         mostRecentVersionsBuilder_;
-
     /**
      *
      *
@@ -1219,7 +1194,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMostRecentVersions() {
       return conditionTypeCase_ == 4;
     }
-
     /**
      *
      *
@@ -1252,7 +1226,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1279,7 +1252,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1304,7 +1276,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1344,7 +1315,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1373,7 +1343,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1390,7 +1359,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
         getMostRecentVersionsBuilder() {
       return getMostRecentVersionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1417,7 +1385,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1458,7 +1425,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1481,7 +1447,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1504,7 +1469,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1526,7 +1490,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1544,7 +1507,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1569,7 +1531,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int action_ = 0;
-
     /**
      *
      *
@@ -1585,7 +1546,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getActionValue() {
       return action_;
     }
-
     /**
      *
      *
@@ -1604,7 +1564,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1624,7 +1583,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.artifactregistry.v1.CleanupPolicy.Action.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1646,7 +1604,6 @@ public final class CleanupPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface EvaluationConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.InputDataset> getDatasetsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EvaluationConfigOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.InputDataset getDatasets(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface EvaluationConfigOrBuilder
    * </code>
    */
   int getDatasetsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface EvaluationConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.InputDatasetOrBuilder>
       getDatasetsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface EvaluationConfigOrBuilder
    * @return Whether the smartReplyConfig field is set.
    */
   boolean hasSmartReplyConfig();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface EvaluationConfigOrBuilder
    * @return The smartReplyConfig.
    */
   com.google.cloud.dialogflow.v2.EvaluationConfig.SmartReplyConfig getSmartReplyConfig();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface EvaluationConfigOrBuilder
    * @return Whether the smartComposeConfig field is set.
    */
   boolean hasSmartComposeConfig();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface EvaluationConfigOrBuilder
    * @return The smartComposeConfig.
    */
   com.google.cloud.dialogflow.v2.EvaluationConfig.SmartComposeConfig getSmartComposeConfig();
-
   /**
    *
    *

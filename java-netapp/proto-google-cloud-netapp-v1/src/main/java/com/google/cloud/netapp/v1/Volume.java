@@ -33,7 +33,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.Volume)
     VolumeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Volume.newBuilder() to construct.
   private Volume(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -220,7 +219,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -231,7 +229,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 1;</code>
      */
     public static final int READY_VALUE = 1;
-
     /**
      *
      *
@@ -242,7 +239,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
-
     /**
      *
      *
@@ -253,7 +249,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
-
     /**
      *
      *
@@ -264,7 +259,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATING = 4;</code>
      */
     public static final int UPDATING_VALUE = 4;
-
     /**
      *
      *
@@ -275,7 +269,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTORING = 5;</code>
      */
     public static final int RESTORING_VALUE = 5;
-
     /**
      *
      *
@@ -286,7 +279,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 6;</code>
      */
     public static final int DISABLED_VALUE = 6;
-
     /**
      *
      *
@@ -297,7 +289,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 7;</code>
      */
     public static final int ERROR_VALUE = 7;
-
     /**
      *
      *
@@ -310,7 +301,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>PREPARING = 8;</code>
      */
     public static final int PREPARING_VALUE = 8;
-
     /**
      *
      *
@@ -424,7 +414,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -448,7 +437,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -475,7 +463,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
-
   /**
    *
    *
@@ -493,7 +480,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -518,7 +504,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDetails_ = "";
-
   /**
    *
    *
@@ -542,7 +527,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -569,7 +553,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -586,7 +569,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -603,7 +585,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -623,7 +604,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shareName_ = "";
-
   /**
    *
    *
@@ -647,7 +627,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -676,7 +655,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object psaRange_ = "";
-
   /**
    *
    *
@@ -701,7 +679,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -731,7 +708,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storagePool_ = "";
-
   /**
    *
    *
@@ -757,7 +733,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -788,7 +763,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object network_ = "";
-
   /**
    *
    *
@@ -815,7 +789,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -845,7 +818,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_LEVEL_FIELD_NUMBER = 9;
   private int serviceLevel_ = 0;
-
   /**
    *
    *
@@ -863,7 +835,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getServiceLevelValue() {
     return serviceLevel_;
   }
-
   /**
    *
    *
@@ -886,7 +857,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CAPACITY_GIB_FIELD_NUMBER = 10;
   private long capacityGib_ = 0L;
-
   /**
    *
    *
@@ -905,7 +875,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPORT_POLICY_FIELD_NUMBER = 11;
   private com.google.cloud.netapp.v1.ExportPolicy exportPolicy_;
-
   /**
    *
    *
@@ -923,7 +892,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExportPolicy() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -943,7 +911,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.ExportPolicy.getDefaultInstance()
         : exportPolicy_;
   }
-
   /**
    *
    *
@@ -978,7 +945,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.cloud.netapp.v1.Protocols.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -997,7 +963,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.cloud.netapp.v1.Protocols>(protocols_, protocols_converter_);
   }
-
   /**
    *
    *
@@ -1015,7 +980,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getProtocolsCount() {
     return protocols_.size();
   }
-
   /**
    *
    *
@@ -1034,7 +998,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.netapp.v1.Protocols getProtocols(int index) {
     return protocols_converter_.convert(protocols_.get(index));
   }
-
   /**
    *
    *
@@ -1052,7 +1015,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getProtocolsValueList() {
     return protocols_;
   }
-
   /**
    *
    *
@@ -1090,7 +1052,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
               return result == null ? com.google.cloud.netapp.v1.SMBSettings.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -1110,7 +1071,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.netapp.v1.SMBSettings>(
         smbSettings_, smbSettings_converter_);
   }
-
   /**
    *
    *
@@ -1128,7 +1088,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getSmbSettingsCount() {
     return smbSettings_.size();
   }
-
   /**
    *
    *
@@ -1147,7 +1106,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.netapp.v1.SMBSettings getSmbSettings(int index) {
     return smbSettings_converter_.convert(smbSettings_.get(index));
   }
-
   /**
    *
    *
@@ -1165,7 +1123,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getSmbSettingsValueList() {
     return smbSettings_;
   }
-
   /**
    *
    *
@@ -1191,7 +1148,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.netapp.v1.MountOption> mountOptions_;
-
   /**
    *
    *
@@ -1207,7 +1163,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.netapp.v1.MountOption> getMountOptionsList() {
     return mountOptions_;
   }
-
   /**
    *
    *
@@ -1224,7 +1179,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       getMountOptionsOrBuilderList() {
     return mountOptions_;
   }
-
   /**
    *
    *
@@ -1240,7 +1194,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getMountOptionsCount() {
     return mountOptions_.size();
   }
-
   /**
    *
    *
@@ -1256,7 +1209,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.netapp.v1.MountOption getMountOptions(int index) {
     return mountOptions_.get(index);
   }
-
   /**
    *
    *
@@ -1277,7 +1229,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unixPermissions_ = "";
-
   /**
    *
    *
@@ -1302,7 +1253,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1354,7 +1304,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -1371,14 +1320,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -1392,7 +1339,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -1413,7 +1359,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1439,7 +1384,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -1463,7 +1407,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1490,7 +1433,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SNAPSHOT_POLICY_FIELD_NUMBER = 18;
   private com.google.cloud.netapp.v1.SnapshotPolicy snapshotPolicy_;
-
   /**
    *
    *
@@ -1508,7 +1450,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSnapshotPolicy() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1528,7 +1469,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.SnapshotPolicy.getDefaultInstance()
         : snapshotPolicy_;
   }
-
   /**
    *
    *
@@ -1549,7 +1489,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SNAP_RESERVE_FIELD_NUMBER = 19;
   private double snapReserve_ = 0D;
-
   /**
    *
    *
@@ -1569,7 +1508,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SNAPSHOT_DIRECTORY_FIELD_NUMBER = 20;
   private boolean snapshotDirectory_ = false;
-
   /**
    *
    *
@@ -1590,7 +1528,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USED_GIB_FIELD_NUMBER = 21;
   private long usedGib_ = 0L;
-
   /**
    *
    *
@@ -1610,7 +1547,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SECURITY_STYLE_FIELD_NUMBER = 22;
   private int securityStyle_ = 0;
-
   /**
    *
    *
@@ -1628,7 +1564,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getSecurityStyleValue() {
     return securityStyle_;
   }
-
   /**
    *
    *
@@ -1651,7 +1586,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KERBEROS_ENABLED_FIELD_NUMBER = 23;
   private boolean kerberosEnabled_ = false;
-
   /**
    *
    *
@@ -1671,7 +1605,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LDAP_ENABLED_FIELD_NUMBER = 24;
   private boolean ldapEnabled_ = false;
-
   /**
    *
    *
@@ -1692,7 +1625,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object activeDirectory_ = "";
-
   /**
    *
    *
@@ -1718,7 +1650,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1747,7 +1678,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESTORE_PARAMETERS_FIELD_NUMBER = 26;
   private com.google.cloud.netapp.v1.RestoreParameters restoreParameters_;
-
   /**
    *
    *
@@ -1765,7 +1695,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRestoreParameters() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1785,7 +1714,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.RestoreParameters.getDefaultInstance()
         : restoreParameters_;
   }
-
   /**
    *
    *
@@ -1808,7 +1736,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsConfig_ = "";
-
   /**
    *
    *
@@ -1834,7 +1761,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1863,7 +1789,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENCRYPTION_TYPE_FIELD_NUMBER = 28;
   private int encryptionType_ = 0;
-
   /**
    *
    *
@@ -1881,7 +1806,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getEncryptionTypeValue() {
     return encryptionType_;
   }
-
   /**
    *
    *
@@ -1904,7 +1828,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_REPLICATION_FIELD_NUMBER = 29;
   private boolean hasReplication_ = false;
-
   /**
    *
    *
@@ -1924,7 +1847,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BACKUP_CONFIG_FIELD_NUMBER = 30;
   private com.google.cloud.netapp.v1.BackupConfig backupConfig_;
-
   /**
    *
    *
@@ -1940,7 +1862,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackupConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1958,7 +1879,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.BackupConfig.getDefaultInstance()
         : backupConfig_;
   }
-
   /**
    *
    *
@@ -1993,7 +1913,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
-
   /**
    *
    *
@@ -2013,7 +1932,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.netapp.v1.RestrictedAction>(
         restrictedActions_, restrictedActions_converter_);
   }
-
   /**
    *
    *
@@ -2031,7 +1949,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public int getRestrictedActionsCount() {
     return restrictedActions_.size();
   }
-
   /**
    *
    *
@@ -2050,7 +1967,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.netapp.v1.RestrictedAction getRestrictedActions(int index) {
     return restrictedActions_converter_.convert(restrictedActions_.get(index));
   }
-
   /**
    *
    *
@@ -2068,7 +1984,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getRestrictedActionsValueList() {
     return restrictedActions_;
   }
-
   /**
    *
    *
@@ -2092,7 +2007,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LARGE_CAPACITY_FIELD_NUMBER = 32;
   private boolean largeCapacity_ = false;
-
   /**
    *
    *
@@ -2112,7 +2026,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MULTIPLE_ENDPOINTS_FIELD_NUMBER = 33;
   private boolean multipleEndpoints_ = false;
-
   /**
    *
    *
@@ -2133,7 +2046,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIERING_POLICY_FIELD_NUMBER = 34;
   private com.google.cloud.netapp.v1.TieringPolicy tieringPolicy_;
-
   /**
    *
    *
@@ -2149,7 +2061,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTieringPolicy() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -2167,7 +2078,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.TieringPolicy.getDefaultInstance()
         : tieringPolicy_;
   }
-
   /**
    *
    *
@@ -2188,7 +2098,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object replicaZone_ = "";
-
   /**
    *
    *
@@ -2212,7 +2121,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2241,7 +2149,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -2265,7 +2172,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2292,7 +2198,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COLD_TIER_SIZE_GIB_FIELD_NUMBER = 39;
   private long coldTierSizeGib_ = 0L;
-
   /**
    *
    *
@@ -2311,7 +2216,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HYBRID_REPLICATION_PARAMETERS_FIELD_NUMBER = 40;
   private com.google.cloud.netapp.v1.HybridReplicationParameters hybridReplicationParameters_;
-
   /**
    *
    *
@@ -2329,7 +2233,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHybridReplicationParameters() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -2349,7 +2252,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()
         : hybridReplicationParameters_;
   }
-
   /**
    *
    *
@@ -2964,7 +2866,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3870,7 +3771,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     private int bitField1_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3893,7 +3793,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3916,7 +3815,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3938,7 +3836,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3956,7 +3853,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3981,7 +3877,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3999,7 +3894,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -4020,7 +3914,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4040,7 +3933,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.netapp.v1.Volume.State.forNumber(state_);
       return result == null ? com.google.cloud.netapp.v1.Volume.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4064,7 +3956,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4086,7 +3977,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stateDetails_ = "";
-
     /**
      *
      *
@@ -4109,7 +3999,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4132,7 +4021,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4154,7 +4042,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4172,7 +4059,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4202,7 +4088,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4219,7 +4104,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4242,7 +4126,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4267,7 +4150,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4289,7 +4171,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4319,7 +4200,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4341,7 +4221,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4358,7 +4237,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4379,7 +4257,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4409,7 +4286,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object shareName_ = "";
-
     /**
      *
      *
@@ -4432,7 +4308,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4455,7 +4330,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4477,7 +4351,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4495,7 +4368,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4520,7 +4392,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object psaRange_ = "";
-
     /**
      *
      *
@@ -4544,7 +4415,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4568,7 +4438,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4591,7 +4460,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4610,7 +4478,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4636,7 +4503,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storagePool_ = "";
-
     /**
      *
      *
@@ -4661,7 +4527,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4686,7 +4551,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4710,7 +4574,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4730,7 +4593,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4757,7 +4619,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object network_ = "";
-
     /**
      *
      *
@@ -4783,7 +4644,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4809,7 +4669,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4834,7 +4693,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4855,7 +4713,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4883,7 +4740,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int serviceLevel_ = 0;
-
     /**
      *
      *
@@ -4901,7 +4757,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getServiceLevelValue() {
       return serviceLevel_;
     }
-
     /**
      *
      *
@@ -4922,7 +4777,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4942,7 +4796,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.netapp.v1.ServiceLevel.forNumber(serviceLevel_);
       return result == null ? com.google.cloud.netapp.v1.ServiceLevel.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4966,7 +4819,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4988,7 +4840,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long capacityGib_;
-
     /**
      *
      *
@@ -5004,7 +4855,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public long getCapacityGib() {
       return capacityGib_;
     }
-
     /**
      *
      *
@@ -5024,7 +4874,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5049,7 +4898,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.ExportPolicy.Builder,
             com.google.cloud.netapp.v1.ExportPolicyOrBuilder>
         exportPolicyBuilder_;
-
     /**
      *
      *
@@ -5066,7 +4914,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExportPolicy() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -5089,7 +4936,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return exportPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5114,7 +4960,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5137,7 +4982,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5167,7 +5011,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5189,7 +5032,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5206,7 +5048,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExportPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5227,7 +5068,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : exportPolicy_;
       }
     }
-
     /**
      *
      *
@@ -5264,7 +5104,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000800;
       }
     }
-
     /**
      *
      *
@@ -5283,7 +5122,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.netapp.v1.Protocols>(
           protocols_, protocols_converter_);
     }
-
     /**
      *
      *
@@ -5300,7 +5138,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getProtocolsCount() {
       return protocols_.size();
     }
-
     /**
      *
      *
@@ -5318,7 +5155,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.netapp.v1.Protocols getProtocols(int index) {
       return protocols_converter_.convert(protocols_.get(index));
     }
-
     /**
      *
      *
@@ -5343,7 +5179,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5367,7 +5202,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5391,7 +5225,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5411,7 +5244,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5428,7 +5260,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getProtocolsValueList() {
       return java.util.Collections.unmodifiableList(protocols_);
     }
-
     /**
      *
      *
@@ -5446,7 +5277,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getProtocolsValue(int index) {
       return protocols_.get(index);
     }
-
     /**
      *
      *
@@ -5468,7 +5298,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5489,7 +5318,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5521,7 +5349,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00001000;
       }
     }
-
     /**
      *
      *
@@ -5540,7 +5367,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.netapp.v1.SMBSettings>(
           smbSettings_, smbSettings_converter_);
     }
-
     /**
      *
      *
@@ -5557,7 +5383,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getSmbSettingsCount() {
       return smbSettings_.size();
     }
-
     /**
      *
      *
@@ -5575,7 +5400,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.netapp.v1.SMBSettings getSmbSettings(int index) {
       return smbSettings_converter_.convert(smbSettings_.get(index));
     }
-
     /**
      *
      *
@@ -5600,7 +5424,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5624,7 +5447,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5648,7 +5470,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5668,7 +5489,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5685,7 +5505,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getSmbSettingsValueList() {
       return java.util.Collections.unmodifiableList(smbSettings_);
     }
-
     /**
      *
      *
@@ -5703,7 +5522,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getSmbSettingsValue(int index) {
       return smbSettings_.get(index);
     }
-
     /**
      *
      *
@@ -5725,7 +5543,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5746,7 +5563,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5805,7 +5621,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return mountOptionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5824,7 +5639,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return mountOptionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -5843,7 +5657,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return mountOptionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -5868,7 +5681,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5891,7 +5703,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5916,7 +5727,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5941,7 +5751,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5963,7 +5772,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5986,7 +5794,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6009,7 +5816,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6031,7 +5837,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6053,7 +5858,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6068,7 +5872,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.netapp.v1.MountOption.Builder getMountOptionsBuilder(int index) {
       return getMountOptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6087,7 +5890,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return mountOptionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6107,7 +5909,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mountOptions_);
       }
     }
-
     /**
      *
      *
@@ -6123,7 +5924,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return getMountOptionsFieldBuilder()
           .addBuilder(com.google.cloud.netapp.v1.MountOption.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6139,7 +5939,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return getMountOptionsFieldBuilder()
           .addBuilder(index, com.google.cloud.netapp.v1.MountOption.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6174,7 +5973,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object unixPermissions_ = "";
-
     /**
      *
      *
@@ -6198,7 +5996,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6222,7 +6019,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6245,7 +6041,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6264,7 +6059,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6314,7 +6108,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -6331,14 +6124,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -6352,7 +6143,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -6373,7 +6163,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -6400,7 +6189,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -6417,14 +6205,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00008000;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -6445,7 +6231,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00008000;
       return this;
     }
-
     /**
      *
      *
@@ -6462,7 +6247,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -6485,7 +6269,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -6508,7 +6291,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -6530,7 +6312,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6548,7 +6329,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6578,7 +6358,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.SnapshotPolicy.Builder,
             com.google.cloud.netapp.v1.SnapshotPolicyOrBuilder>
         snapshotPolicyBuilder_;
-
     /**
      *
      *
@@ -6595,7 +6374,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSnapshotPolicy() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -6618,7 +6396,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return snapshotPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6643,7 +6420,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6666,7 +6442,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6696,7 +6471,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6718,7 +6492,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6735,7 +6508,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSnapshotPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6756,7 +6528,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : snapshotPolicy_;
       }
     }
-
     /**
      *
      *
@@ -6786,7 +6557,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double snapReserve_;
-
     /**
      *
      *
@@ -6803,7 +6573,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public double getSnapReserve() {
       return snapReserve_;
     }
-
     /**
      *
      *
@@ -6824,7 +6593,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6845,7 +6613,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean snapshotDirectory_;
-
     /**
      *
      *
@@ -6863,7 +6630,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean getSnapshotDirectory() {
       return snapshotDirectory_;
     }
-
     /**
      *
      *
@@ -6885,7 +6651,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6907,7 +6672,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long usedGib_;
-
     /**
      *
      *
@@ -6924,7 +6688,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public long getUsedGib() {
       return usedGib_;
     }
-
     /**
      *
      *
@@ -6945,7 +6708,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6966,7 +6728,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int securityStyle_ = 0;
-
     /**
      *
      *
@@ -6984,7 +6745,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getSecurityStyleValue() {
       return securityStyle_;
     }
-
     /**
      *
      *
@@ -7005,7 +6765,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7025,7 +6784,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.netapp.v1.SecurityStyle.forNumber(securityStyle_);
       return result == null ? com.google.cloud.netapp.v1.SecurityStyle.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -7049,7 +6807,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7071,7 +6828,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean kerberosEnabled_;
-
     /**
      *
      *
@@ -7088,7 +6844,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean getKerberosEnabled() {
       return kerberosEnabled_;
     }
-
     /**
      *
      *
@@ -7109,7 +6864,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7130,7 +6884,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean ldapEnabled_;
-
     /**
      *
      *
@@ -7146,7 +6899,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean getLdapEnabled() {
       return ldapEnabled_;
     }
-
     /**
      *
      *
@@ -7166,7 +6918,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7186,7 +6937,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object activeDirectory_ = "";
-
     /**
      *
      *
@@ -7211,7 +6961,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7236,7 +6985,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7260,7 +7008,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7280,7 +7027,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7312,7 +7058,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.RestoreParameters.Builder,
             com.google.cloud.netapp.v1.RestoreParametersOrBuilder>
         restoreParametersBuilder_;
-
     /**
      *
      *
@@ -7329,7 +7074,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRestoreParameters() {
       return ((bitField0_ & 0x02000000) != 0);
     }
-
     /**
      *
      *
@@ -7352,7 +7096,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return restoreParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7377,7 +7120,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7400,7 +7142,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7431,7 +7172,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7453,7 +7193,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7470,7 +7209,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRestoreParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7491,7 +7229,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : restoreParameters_;
       }
     }
-
     /**
      *
      *
@@ -7521,7 +7258,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsConfig_ = "";
-
     /**
      *
      *
@@ -7546,7 +7282,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7571,7 +7306,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7595,7 +7329,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7615,7 +7348,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7642,7 +7374,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int encryptionType_ = 0;
-
     /**
      *
      *
@@ -7660,7 +7391,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getEncryptionTypeValue() {
       return encryptionType_;
     }
-
     /**
      *
      *
@@ -7681,7 +7411,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7701,7 +7430,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.netapp.v1.EncryptionType.forNumber(encryptionType_);
       return result == null ? com.google.cloud.netapp.v1.EncryptionType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -7725,7 +7453,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7747,7 +7474,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasReplication_;
-
     /**
      *
      *
@@ -7764,7 +7490,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasReplication() {
       return hasReplication_;
     }
-
     /**
      *
      *
@@ -7785,7 +7510,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7811,7 +7535,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.BackupConfig.Builder,
             com.google.cloud.netapp.v1.BackupConfigOrBuilder>
         backupConfigBuilder_;
-
     /**
      *
      *
@@ -7826,7 +7549,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackupConfig() {
       return ((bitField0_ & 0x20000000) != 0);
     }
-
     /**
      *
      *
@@ -7847,7 +7569,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return backupConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7870,7 +7591,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7891,7 +7611,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7919,7 +7638,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7939,7 +7657,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7954,7 +7671,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBackupConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7973,7 +7689,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : backupConfig_;
       }
     }
-
     /**
      *
      *
@@ -8009,7 +7724,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x40000000;
       }
     }
-
     /**
      *
      *
@@ -8028,7 +7742,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.netapp.v1.RestrictedAction>(
           restrictedActions_, restrictedActions_converter_);
     }
-
     /**
      *
      *
@@ -8045,7 +7758,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getRestrictedActionsCount() {
       return restrictedActions_.size();
     }
-
     /**
      *
      *
@@ -8063,7 +7775,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.netapp.v1.RestrictedAction getRestrictedActions(int index) {
       return restrictedActions_converter_.convert(restrictedActions_.get(index));
     }
-
     /**
      *
      *
@@ -8089,7 +7800,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8113,7 +7823,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8137,7 +7846,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8157,7 +7865,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8174,7 +7881,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getRestrictedActionsValueList() {
       return java.util.Collections.unmodifiableList(restrictedActions_);
     }
-
     /**
      *
      *
@@ -8192,7 +7898,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public int getRestrictedActionsValue(int index) {
       return restrictedActions_.get(index);
     }
-
     /**
      *
      *
@@ -8214,7 +7919,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8235,7 +7939,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8260,7 +7963,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean largeCapacity_;
-
     /**
      *
      *
@@ -8277,7 +7979,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean getLargeCapacity() {
       return largeCapacity_;
     }
-
     /**
      *
      *
@@ -8298,7 +7999,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8319,7 +8019,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean multipleEndpoints_;
-
     /**
      *
      *
@@ -8337,7 +8036,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean getMultipleEndpoints() {
       return multipleEndpoints_;
     }
-
     /**
      *
      *
@@ -8359,7 +8057,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8386,7 +8083,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.TieringPolicy.Builder,
             com.google.cloud.netapp.v1.TieringPolicyOrBuilder>
         tieringPolicyBuilder_;
-
     /**
      *
      *
@@ -8401,7 +8097,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTieringPolicy() {
       return ((bitField1_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -8422,7 +8117,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return tieringPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8445,7 +8139,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8466,7 +8159,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8494,7 +8186,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8514,7 +8205,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8529,7 +8219,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTieringPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8548,7 +8237,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : tieringPolicy_;
       }
     }
-
     /**
      *
      *
@@ -8576,7 +8264,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object replicaZone_ = "";
-
     /**
      *
      *
@@ -8599,7 +8286,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8622,7 +8308,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8644,7 +8329,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8662,7 +8346,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8687,7 +8370,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -8710,7 +8392,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8733,7 +8414,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8755,7 +8435,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8773,7 +8452,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8798,7 +8476,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long coldTierSizeGib_;
-
     /**
      *
      *
@@ -8814,7 +8491,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public long getColdTierSizeGib() {
       return coldTierSizeGib_;
     }
-
     /**
      *
      *
@@ -8834,7 +8510,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8859,7 +8534,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.HybridReplicationParameters.Builder,
             com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder>
         hybridReplicationParametersBuilder_;
-
     /**
      *
      *
@@ -8876,7 +8550,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHybridReplicationParameters() {
       return ((bitField1_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -8899,7 +8572,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         return hybridReplicationParametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8925,7 +8597,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8948,7 +8619,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8980,7 +8650,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9002,7 +8671,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9020,7 +8688,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHybridReplicationParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9042,7 +8709,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             : hybridReplicationParameters_;
       }
     }
-
     /**
      *
      *

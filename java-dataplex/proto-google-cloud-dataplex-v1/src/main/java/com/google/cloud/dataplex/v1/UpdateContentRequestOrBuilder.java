@@ -37,7 +37,6 @@ public interface UpdateContentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface UpdateContentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface UpdateContentRequestOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface UpdateContentRequestOrBuilder
    * @return The content.
    */
   com.google.cloud.dataplex.v1.Content getContent();
-
   /**
    *
    *

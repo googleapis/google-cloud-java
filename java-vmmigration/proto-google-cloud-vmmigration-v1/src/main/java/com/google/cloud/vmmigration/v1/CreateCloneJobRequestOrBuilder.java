@@ -38,7 +38,6 @@ public interface CreateCloneJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateCloneJobRequestOrBuilder
    * @return The cloneJobId.
    */
   java.lang.String getCloneJobId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateCloneJobRequestOrBuilder
    * @return Whether the cloneJob field is set.
    */
   boolean hasCloneJob();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateCloneJobRequestOrBuilder
    * @return The cloneJob.
    */
   com.google.cloud.vmmigration.v1.CloneJob getCloneJob();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateCloneJobRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

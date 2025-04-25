@@ -37,7 +37,6 @@ public interface UpdateDomainMappingRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface UpdateDomainMappingRequestOrBuilder
    * @return Whether the domainMapping field is set.
    */
   boolean hasDomainMapping();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateDomainMappingRequestOrBuilder
    * @return The domainMapping.
    */
   com.google.appengine.v1.DomainMapping getDomainMapping();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateDomainMappingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface UpdateDomainMappingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

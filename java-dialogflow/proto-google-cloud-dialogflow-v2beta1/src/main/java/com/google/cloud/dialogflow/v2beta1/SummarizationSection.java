@@ -33,7 +33,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SummarizationSection)
     SummarizationSectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SummarizationSection.newBuilder() to construct.
   private SummarizationSection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -201,7 +200,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -213,7 +211,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>SITUATION = 1;</code>
      */
     public static final int SITUATION_VALUE = 1;
-
     /**
      *
      *
@@ -225,7 +222,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>ACTION = 2;</code>
      */
     public static final int ACTION_VALUE = 2;
-
     /**
      *
      *
@@ -238,7 +234,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>RESOLUTION = 3;</code>
      */
     public static final int RESOLUTION_VALUE = 3;
-
     /**
      *
      *
@@ -251,7 +246,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>REASON_FOR_CANCELLATION = 4;</code>
      */
     public static final int REASON_FOR_CANCELLATION_VALUE = 4;
-
     /**
      *
      *
@@ -264,7 +258,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>CUSTOMER_SATISFACTION = 5;</code>
      */
     public static final int CUSTOMER_SATISFACTION_VALUE = 5;
-
     /**
      *
      *
@@ -277,7 +270,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>ENTITIES = 6;</code>
      */
     public static final int ENTITIES_VALUE = 6;
-
     /**
      *
      *
@@ -288,7 +280,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>CUSTOMER_DEFINED = 7;</code>
      */
     public static final int CUSTOMER_DEFINED_VALUE = 7;
-
     /**
      *
      *
@@ -300,7 +291,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
      * <code>SITUATION_CONCISE = 9;</code>
      */
     public static final int SITUATION_CONCISE_VALUE = 9;
-
     /**
      *
      *
@@ -416,7 +406,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
-
   /**
    *
    *
@@ -440,7 +429,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -469,7 +457,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object definition_ = "";
-
   /**
    *
    *
@@ -494,7 +481,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -522,7 +508,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
-
   /**
    *
    *
@@ -540,7 +525,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -745,7 +729,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -958,7 +941,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object key_ = "";
-
     /**
      *
      *
@@ -981,7 +963,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1004,7 +985,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1006,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1023,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1047,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object definition_ = "";
-
     /**
      *
      *
@@ -1093,7 +1070,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1093,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1115,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1133,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1158,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1203,7 +1175,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1224,7 +1195,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1246,7 +1216,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.dialogflow.v2beta1.SummarizationSection.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1270,7 +1239,6 @@ public final class SummarizationSection extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

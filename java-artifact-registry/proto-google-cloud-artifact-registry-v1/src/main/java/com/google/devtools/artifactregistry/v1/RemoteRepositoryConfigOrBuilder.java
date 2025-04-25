@@ -38,7 +38,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the dockerRepository field is set.
    */
   boolean hasDockerRepository();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface RemoteRepositoryConfigOrBuilder
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.DockerRepository
       getDockerRepository();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the mavenRepository field is set.
    */
   boolean hasMavenRepository();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface RemoteRepositoryConfigOrBuilder
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.MavenRepository
       getMavenRepository();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the npmRepository field is set.
    */
   boolean hasNpmRepository();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return The npmRepository.
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.NpmRepository getNpmRepository();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the pythonRepository field is set.
    */
   boolean hasPythonRepository();
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public interface RemoteRepositoryConfigOrBuilder
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.PythonRepository
       getPythonRepository();
-
   /**
    *
    *
@@ -217,7 +209,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the aptRepository field is set.
    */
   boolean hasAptRepository();
-
   /**
    *
    *
@@ -232,7 +223,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return The aptRepository.
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.AptRepository getAptRepository();
-
   /**
    *
    *
@@ -261,7 +251,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the yumRepository field is set.
    */
   boolean hasYumRepository();
-
   /**
    *
    *
@@ -276,7 +265,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return The yumRepository.
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.YumRepository getYumRepository();
-
   /**
    *
    *
@@ -306,7 +294,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the commonRepository field is set.
    */
   boolean hasCommonRepository();
-
   /**
    *
    *
@@ -323,7 +310,6 @@ public interface RemoteRepositoryConfigOrBuilder
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.CommonRemoteRepository
       getCommonRepository();
-
   /**
    *
    *
@@ -351,7 +337,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -379,7 +364,6 @@ public interface RemoteRepositoryConfigOrBuilder
    * @return Whether the upstreamCredentials field is set.
    */
   boolean hasUpstreamCredentials();
-
   /**
    *
    *
@@ -395,7 +379,6 @@ public interface RemoteRepositoryConfigOrBuilder
    */
   com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.UpstreamCredentials
       getUpstreamCredentials();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface FetchFileGitStatusesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

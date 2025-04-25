@@ -33,7 +33,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.provenance.Source)
     SourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Source.newBuilder() to construct.
   private Source(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifactStorageSourceUri_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   public int getFileHashesCount() {
     return internalGetFileHashes().getMap().size();
   }
-
   /**
    *
    *
@@ -188,14 +184,12 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetFileHashes().getMap().containsKey(key);
   }
-
   /** Use {@link #getFileHashesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> getFileHashes() {
     return getFileHashesMap();
   }
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       getFileHashesMap() {
     return internalGetFileHashes().getMap();
   }
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         internalGetFileHashes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -278,7 +270,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTEXT_FIELD_NUMBER = 3;
   private io.grafeas.v1beta1.source.SourceContext context_;
-
   /**
    *
    *
@@ -294,7 +285,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -312,7 +302,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         ? io.grafeas.v1beta1.source.SourceContext.getDefaultInstance()
         : context_;
   }
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.source.SourceContext> additionalContexts_;
-
   /**
    *
    *
@@ -350,7 +338,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1beta1.source.SourceContext> getAdditionalContextsList() {
     return additionalContexts_;
   }
-
   /**
    *
    *
@@ -368,7 +355,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       getAdditionalContextsOrBuilderList() {
     return additionalContexts_;
   }
-
   /**
    *
    *
@@ -385,7 +371,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   public int getAdditionalContextsCount() {
     return additionalContexts_.size();
   }
-
   /**
    *
    *
@@ -402,7 +387,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1beta1.source.SourceContext getAdditionalContexts(int index) {
     return additionalContexts_.get(index);
   }
-
   /**
    *
    *
@@ -623,7 +607,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -939,7 +922,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object artifactStorageSourceUri_ = "";
-
     /**
      *
      *
@@ -963,7 +945,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +968,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1010,7 +990,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1029,7 +1008,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1074,8 +1052,7 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return FileHashesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final FileHashesConverter fileHashesConverter = new FileHashesConverter();
 
@@ -1115,7 +1092,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public int getFileHashesCount() {
       return internalGetFileHashes().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1139,7 +1115,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetFileHashes().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getFileHashesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1147,7 +1122,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         getFileHashes() {
       return getFileHashesMap();
     }
-
     /**
      *
      *
@@ -1169,7 +1143,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         getFileHashesMap() {
       return internalGetFileHashes().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1198,7 +1171,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableFileHashes().ensureBuilderMap();
       return map.containsKey(key) ? fileHashesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1233,7 +1205,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFileHashes().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1257,7 +1228,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableFileHashes().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
@@ -1265,7 +1235,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetMutableFileHashes().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1294,7 +1263,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1291,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1362,7 +1329,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             io.grafeas.v1beta1.source.SourceContext.Builder,
             io.grafeas.v1beta1.source.SourceContextOrBuilder>
         contextBuilder_;
-
     /**
      *
      *
@@ -1377,7 +1343,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1398,7 +1363,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return contextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1421,7 +1385,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1404,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1469,7 +1431,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1489,7 +1450,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1464,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1523,7 +1482,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
             : context_;
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1544,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return additionalContextsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1606,7 +1563,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return additionalContextsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1626,7 +1582,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return additionalContextsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1652,7 +1607,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1676,7 +1630,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1655,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1728,7 +1680,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1752,7 +1703,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1776,7 +1726,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1800,7 +1749,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1823,7 +1771,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1793,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1862,7 +1808,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.source.SourceContext.Builder getAdditionalContextsBuilder(int index) {
       return getAdditionalContextsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1883,7 +1828,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return additionalContextsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1904,7 +1848,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(additionalContexts_);
       }
     }
-
     /**
      *
      *
@@ -1921,7 +1864,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return getAdditionalContextsFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.source.SourceContext.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1938,7 +1880,6 @@ public final class Source extends com.google.protobuf.GeneratedMessageV3
       return getAdditionalContextsFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.source.SourceContext.getDefaultInstance());
     }
-
     /**
      *
      *

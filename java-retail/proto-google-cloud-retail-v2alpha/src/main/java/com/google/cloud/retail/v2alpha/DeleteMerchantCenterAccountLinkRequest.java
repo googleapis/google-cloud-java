@@ -36,7 +36,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.DeleteMerchantCenterAccountLinkRequest)
     DeleteMerchantCenterAccountLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteMerchantCenterAccountLinkRequest.newBuilder() to construct.
   private DeleteMerchantCenterAccountLinkRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -288,7 +285,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +479,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -509,7 +504,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -535,7 +529,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -560,7 +553,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -581,7 +573,6 @@ public final class DeleteMerchantCenterAccountLinkRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

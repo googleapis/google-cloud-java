@@ -33,7 +33,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanRun)
     ScanRunOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ScanRun.newBuilder() to construct.
   private ScanRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * <code>EXECUTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int EXECUTION_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * <code>QUEUED = 1;</code>
      */
     public static final int QUEUED_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * <code>SCANNING = 2;</code>
      */
     public static final int SCANNING_VALUE = 2;
-
     /**
      *
      *
@@ -317,7 +313,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * <code>RESULT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int RESULT_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -328,7 +323,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCESS = 1;</code>
      */
     public static final int SUCCESS_VALUE = 1;
-
     /**
      *
      *
@@ -339,7 +333,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 2;</code>
      */
     public static final int ERROR_VALUE = 2;
-
     /**
      *
      *
@@ -443,7 +436,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -469,7 +461,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -498,7 +489,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 2;
   private int executionState_ = 0;
-
   /**
    *
    *
@@ -515,7 +505,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   public int getExecutionStateValue() {
     return executionState_;
   }
-
   /**
    *
    *
@@ -540,7 +529,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESULT_STATE_FIELD_NUMBER = 3;
   private int resultState_ = 0;
-
   /**
    *
    *
@@ -557,7 +545,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   public int getResultStateValue() {
     return resultState_;
   }
-
   /**
    *
    *
@@ -581,7 +568,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -597,7 +583,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -613,7 +598,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -630,7 +614,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -647,7 +630,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -664,7 +646,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -682,7 +663,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URLS_CRAWLED_COUNT_FIELD_NUMBER = 6;
   private long urlsCrawledCount_ = 0L;
-
   /**
    *
    *
@@ -702,7 +682,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int URLS_TESTED_COUNT_FIELD_NUMBER = 7;
   private long urlsTestedCount_ = 0L;
-
   /**
    *
    *
@@ -724,7 +703,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HAS_VULNERABILITIES_FIELD_NUMBER = 8;
   private boolean hasVulnerabilities_ = false;
-
   /**
    *
    *
@@ -743,7 +721,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 9;
   private int progressPercent_ = 0;
-
   /**
    *
    *
@@ -1014,7 +991,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1325,7 +1301,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1350,7 +1325,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1349,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1399,7 +1372,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1419,7 +1391,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1446,7 +1417,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int executionState_ = 0;
-
     /**
      *
      *
@@ -1463,7 +1433,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public int getExecutionStateValue() {
       return executionState_;
     }
-
     /**
      *
      *
@@ -1483,7 +1452,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1473,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1529,7 +1496,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1550,7 +1516,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int resultState_ = 0;
-
     /**
      *
      *
@@ -1567,7 +1532,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public int getResultStateValue() {
       return resultState_;
     }
-
     /**
      *
      *
@@ -1587,7 +1551,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1608,7 +1571,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1632,7 +1594,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1658,7 +1619,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -1673,7 +1633,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1692,7 +1651,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1715,7 +1673,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1735,7 +1692,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1763,7 +1719,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1738,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1752,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1815,7 +1768,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -1848,7 +1800,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -1864,7 +1815,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1884,7 +1834,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1908,7 +1857,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1929,7 +1877,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1905,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1979,7 +1925,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1940,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2013,7 +1957,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -2042,7 +1985,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long urlsCrawledCount_;
-
     /**
      *
      *
@@ -2059,7 +2001,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public long getUrlsCrawledCount() {
       return urlsCrawledCount_;
     }
-
     /**
      *
      *
@@ -2080,7 +2021,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2101,7 +2041,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long urlsTestedCount_;
-
     /**
      *
      *
@@ -2120,7 +2059,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public long getUrlsTestedCount() {
       return urlsTestedCount_;
     }
-
     /**
      *
      *
@@ -2143,7 +2081,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2166,7 +2103,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean hasVulnerabilities_;
-
     /**
      *
      *
@@ -2182,7 +2118,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public boolean getHasVulnerabilities() {
       return hasVulnerabilities_;
     }
-
     /**
      *
      *
@@ -2202,7 +2137,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2222,7 +2156,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int progressPercent_;
-
     /**
      *
      *
@@ -2241,7 +2174,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     public int getProgressPercent() {
       return progressPercent_;
     }
-
     /**
      *
      *
@@ -2264,7 +2196,6 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

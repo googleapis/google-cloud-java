@@ -82,7 +82,6 @@ public enum AccessRight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCESS_RIGHT_UNSPECIFIED = 0;</code>
    */
   public static final int ACCESS_RIGHT_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public enum AccessRight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STANDARD = 1;</code>
    */
   public static final int STANDARD_VALUE = 1;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public enum AccessRight implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ADMIN = 2;</code>
    */
   public static final int ADMIN_VALUE = 2;
-
   /**
    *
    *

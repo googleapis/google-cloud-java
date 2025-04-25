@@ -33,7 +33,6 @@ public final class DeleteRegionOperationResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteRegionOperationResponse)
     DeleteRegionOperationResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteRegionOperationResponse.newBuilder() to construct.
   private DeleteRegionOperationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DeleteRegionOperationResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

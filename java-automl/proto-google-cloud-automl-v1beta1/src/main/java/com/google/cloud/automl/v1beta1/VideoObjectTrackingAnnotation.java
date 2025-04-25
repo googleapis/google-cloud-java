@@ -33,7 +33,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation)
     VideoObjectTrackingAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoObjectTrackingAnnotation.newBuilder() to construct.
   private VideoObjectTrackingAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration timeOffset_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 3;
   private com.google.cloud.automl.v1beta1.BoundingPoly boundingBox_;
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         ? com.google.cloud.automl.v1beta1.BoundingPoly.getDefaultInstance()
         : boundingBox_;
   }
-
   /**
    *
    *
@@ -240,7 +231,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
 
   public static final int SCORE_FIELD_NUMBER = 4;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -459,7 +449,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -709,7 +698,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
-
     /**
      *
      *
@@ -871,7 +854,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         return timeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -917,7 +898,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +918,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +946,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +966,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1024,7 +1000,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
             : timeOffset_;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1033,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
             com.google.cloud.automl.v1beta1.BoundingPoly.Builder,
             com.google.cloud.automl.v1beta1.BoundingPolyOrBuilder>
         boundingBoxBuilder_;
-
     /**
      *
      *
@@ -1074,7 +1048,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1096,7 +1069,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         return boundingBoxBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1120,7 +1092,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1113,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -1192,7 +1161,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1208,7 +1176,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1228,7 +1195,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
             : boundingBox_;
       }
     }
-
     /**
      *
      *
@@ -1257,7 +1223,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     }
 
     private float score_;
-
     /**
      *
      *
@@ -1277,7 +1242,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -1301,7 +1265,6 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

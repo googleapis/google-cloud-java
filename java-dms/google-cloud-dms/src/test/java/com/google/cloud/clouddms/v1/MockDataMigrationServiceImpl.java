@@ -327,8 +327,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateTcpProxyScript, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GenerateTcpProxyScript, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TcpProxyScript.class.getName(),
                   Exception.class.getName())));
@@ -350,8 +349,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConnectionProfiles, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListConnectionProfiles, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConnectionProfilesResponse.class.getName(),
                   Exception.class.getName())));
@@ -372,8 +370,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConnectionProfile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetConnectionProfile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConnectionProfile.class.getName(),
                   Exception.class.getName())));
@@ -394,8 +391,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConnectionProfile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateConnectionProfile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -416,8 +412,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConnectionProfile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateConnectionProfile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -438,8 +433,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConnectionProfile, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteConnectionProfile, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -460,8 +454,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -482,8 +475,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PrivateConnection.class.getName(),
                   Exception.class.getName())));
@@ -505,8 +497,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPrivateConnectionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -527,8 +518,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -549,8 +539,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConversionWorkspace, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionWorkspace.class.getName(),
                   Exception.class.getName())));
@@ -572,8 +561,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversionWorkspaces, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListConversionWorkspaces, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversionWorkspacesResponse.class.getName(),
                   Exception.class.getName())));
@@ -594,8 +582,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversionWorkspace, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -616,8 +603,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConversionWorkspace, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -638,8 +624,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConversionWorkspace, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -744,8 +729,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SeedConversionWorkspace, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SeedConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -787,8 +771,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ConvertConversionWorkspace, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ConvertConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -809,8 +792,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CommitConversionWorkspace, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CommitConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -831,8 +813,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RollbackConversionWorkspace, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method RollbackConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -853,8 +834,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ApplyConversionWorkspace, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ApplyConversionWorkspace, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -876,8 +856,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DescribeDatabaseEntities, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DescribeDatabaseEntities, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DescribeDatabaseEntitiesResponse.class.getName(),
                   Exception.class.getName())));
@@ -899,8 +878,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchBackgroundJobs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SearchBackgroundJobs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchBackgroundJobsResponse.class.getName(),
                   Exception.class.getName())));
@@ -922,8 +900,7 @@ public class MockDataMigrationServiceImpl extends DataMigrationServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DescribeConversionWorkspaceRevisions,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method DescribeConversionWorkspaceRevisions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DescribeConversionWorkspaceRevisionsResponse.class.getName(),
                   Exception.class.getName())));

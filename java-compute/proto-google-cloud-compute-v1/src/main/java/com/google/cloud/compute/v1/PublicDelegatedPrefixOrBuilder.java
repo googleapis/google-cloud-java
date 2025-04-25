@@ -36,7 +36,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the allocatablePrefixLength field is set.
    */
   boolean hasAllocatablePrefixLength();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the byoipApiVersion field is set.
    */
   boolean hasByoipApiVersion();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The byoipApiVersion.
    */
   java.lang.String getByoipApiVersion();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -247,7 +237,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the ipCidrRange field is set.
    */
   boolean hasIpCidrRange();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The ipCidrRange.
    */
   java.lang.String getIpCidrRange();
-
   /**
    *
    *
@@ -286,7 +274,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the isLiveMigration field is set.
    */
   boolean hasIsLiveMigration();
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -352,7 +337,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the mode field is set.
    */
   boolean hasMode();
-
   /**
    *
    *
@@ -366,7 +350,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *
@@ -393,7 +376,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -406,7 +388,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -432,7 +413,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the parentPrefix field is set.
    */
   boolean hasParentPrefix();
-
   /**
    *
    *
@@ -445,7 +425,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The parentPrefix.
    */
   java.lang.String getParentPrefix();
-
   /**
    *
    *
@@ -472,7 +451,6 @@ public interface PublicDelegatedPrefixOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix>
       getPublicDelegatedSubPrefixsList();
-
   /**
    *
    *
@@ -486,7 +464,6 @@ public interface PublicDelegatedPrefixOrBuilder
    */
   com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix
       getPublicDelegatedSubPrefixs(int index);
-
   /**
    *
    *
@@ -499,7 +476,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * </code>
    */
   int getPublicDelegatedSubPrefixsCount();
-
   /**
    *
    *
@@ -515,7 +491,6 @@ public interface PublicDelegatedPrefixOrBuilder
           ? extends
               com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder>
       getPublicDelegatedSubPrefixsOrBuilderList();
-
   /**
    *
    *
@@ -542,7 +517,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -555,7 +529,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -581,7 +554,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -594,7 +566,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -621,7 +592,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -635,7 +605,6 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1.ListNodePoolsResponse)
     ListNodePoolsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNodePoolsResponse.newBuilder() to construct.
   private ListNodePoolsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.container.v1.NodePool> nodePools_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.container.v1.NodePool> getNodePoolsList() {
     return nodePools_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       getNodePoolsOrBuilderList() {
     return nodePools_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public int getNodePoolsCount() {
     return nodePools_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
   public com.google.container.v1.NodePool getNodePools(int index) {
     return nodePools_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -560,7 +553,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -577,7 +569,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -617,7 +607,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +649,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +710,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +730,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +749,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +768,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +780,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
     public com.google.container.v1.NodePool.Builder getNodePoolsBuilder(int index) {
       return getNodePoolsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -816,7 +796,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return nodePoolsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -834,7 +813,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(nodePools_);
       }
     }
-
     /**
      *
      *
@@ -848,7 +826,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       return getNodePoolsFieldBuilder()
           .addBuilder(com.google.container.v1.NodePool.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -862,7 +839,6 @@ public final class ListNodePoolsResponse extends com.google.protobuf.GeneratedMe
       return getNodePoolsFieldBuilder()
           .addBuilder(index, com.google.container.v1.NodePool.getDefaultInstance());
     }
-
     /**
      *
      *

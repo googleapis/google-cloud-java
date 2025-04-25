@@ -38,7 +38,6 @@ public interface ConferenceRecordOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface ConferenceRecordOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface ConferenceRecordOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface ConferenceRecordOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface ConferenceRecordOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface ConferenceRecordOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public interface ConferenceRecordOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public interface ConferenceRecordOrBuilder
    * @return The space.
    */
   java.lang.String getSpace();
-
   /**
    *
    *

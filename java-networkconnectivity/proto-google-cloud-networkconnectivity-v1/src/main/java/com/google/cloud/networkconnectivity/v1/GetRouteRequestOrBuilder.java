@@ -38,7 +38,6 @@ public interface GetRouteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

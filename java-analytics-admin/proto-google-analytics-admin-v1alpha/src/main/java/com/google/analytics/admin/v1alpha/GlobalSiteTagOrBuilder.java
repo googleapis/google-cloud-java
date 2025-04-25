@@ -38,7 +38,6 @@ public interface GlobalSiteTagOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface GlobalSiteTagOrBuilder
    * @return The snippet.
    */
   java.lang.String getSnippet();
-
   /**
    *
    *

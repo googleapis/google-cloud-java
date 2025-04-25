@@ -35,7 +35,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoObjectTracking)
     AutoMlVideoObjectTrackingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlVideoObjectTracking.newBuilder() to construct.
   private AutoMlVideoObjectTracking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
   private com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlVideoObjectTrackingInputs
       inputs_;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
             .AutoMlVideoObjectTrackingInputs.getDefaultInstance()
         : inputs_;
   }
-
   /**
    *
    *
@@ -323,7 +319,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +551,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
             com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlVideoObjectTrackingInputsOrBuilder>
         inputsBuilder_;
-
     /**
      *
      *
@@ -573,7 +567,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -599,7 +592,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
         return inputsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -626,7 +618,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +642,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +714,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -750,7 +737,6 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
             : inputs_;
       }
     }
-
     /**
      *
      *

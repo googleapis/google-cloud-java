@@ -38,7 +38,6 @@ public interface UpdateBillingAccountRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UpdateBillingAccountRequestOrBuilder
    * @return Whether the account field is set.
    */
   boolean hasAccount();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateBillingAccountRequestOrBuilder
    * @return The account.
    */
   com.google.cloud.billing.v1.BillingAccount getAccount();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface UpdateBillingAccountRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface UpdateBillingAccountRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

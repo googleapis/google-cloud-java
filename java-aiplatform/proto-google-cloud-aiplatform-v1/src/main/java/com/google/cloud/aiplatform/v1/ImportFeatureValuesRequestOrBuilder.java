@@ -30,14 +30,12 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return Whether the avroSource field is set.
    */
   boolean hasAvroSource();
-
   /**
    * <code>.google.cloud.aiplatform.v1.AvroSource avro_source = 2;</code>
    *
    * @return The avroSource.
    */
   com.google.cloud.aiplatform.v1.AvroSource getAvroSource();
-
   /** <code>.google.cloud.aiplatform.v1.AvroSource avro_source = 2;</code> */
   com.google.cloud.aiplatform.v1.AvroSourceOrBuilder getAvroSourceOrBuilder();
 
@@ -47,14 +45,12 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
-
   /**
    * <code>.google.cloud.aiplatform.v1.BigQuerySource bigquery_source = 3;</code>
    *
    * @return The bigquerySource.
    */
   com.google.cloud.aiplatform.v1.BigQuerySource getBigquerySource();
-
   /** <code>.google.cloud.aiplatform.v1.BigQuerySource bigquery_source = 3;</code> */
   com.google.cloud.aiplatform.v1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder();
 
@@ -64,14 +60,12 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return Whether the csvSource field is set.
    */
   boolean hasCsvSource();
-
   /**
    * <code>.google.cloud.aiplatform.v1.CsvSource csv_source = 4;</code>
    *
    * @return The csvSource.
    */
   com.google.cloud.aiplatform.v1.CsvSource getCsvSource();
-
   /** <code>.google.cloud.aiplatform.v1.CsvSource csv_source = 4;</code> */
   com.google.cloud.aiplatform.v1.CsvSourceOrBuilder getCsvSourceOrBuilder();
 
@@ -88,7 +82,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return Whether the featureTimeField field is set.
    */
   boolean hasFeatureTimeField();
-
   /**
    *
    *
@@ -102,7 +95,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return The featureTimeField.
    */
   java.lang.String getFeatureTimeField();
-
   /**
    *
    *
@@ -130,7 +122,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return Whether the featureTime field is set.
    */
   boolean hasFeatureTime();
-
   /**
    *
    *
@@ -144,7 +135,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return The featureTime.
    */
   com.google.protobuf.Timestamp getFeatureTime();
-
   /**
    *
    *
@@ -173,7 +163,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
-
   /**
    *
    *
@@ -204,7 +193,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * @return The entityIdField.
    */
   java.lang.String getEntityIdField();
-
   /**
    *
    *
@@ -234,7 +222,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest.FeatureSpec>
       getFeatureSpecsList();
-
   /**
    *
    *
@@ -249,7 +236,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest.FeatureSpec getFeatureSpecs(int index);
-
   /**
    *
    *
@@ -264,7 +250,6 @@ public interface ImportFeatureValuesRequestOrBuilder
    * </code>
    */
   int getFeatureSpecsCount();
-
   /**
    *
    *
@@ -281,7 +266,6 @@ public interface ImportFeatureValuesRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest.FeatureSpecOrBuilder>
       getFeatureSpecsOrBuilderList();
-
   /**
    *
    *

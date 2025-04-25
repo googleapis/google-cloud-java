@@ -43,7 +43,6 @@ public interface CreateEntryGroupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CreateEntryGroupRequestOrBuilder
    * @return The entryGroupId.
    */
   java.lang.String getEntryGroupId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface CreateEntryGroupRequestOrBuilder
    * @return Whether the entryGroup field is set.
    */
   boolean hasEntryGroup();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateEntryGroupRequestOrBuilder
    * @return The entryGroup.
    */
   com.google.cloud.datacatalog.v1beta1.EntryGroup getEntryGroup();
-
   /**
    *
    *

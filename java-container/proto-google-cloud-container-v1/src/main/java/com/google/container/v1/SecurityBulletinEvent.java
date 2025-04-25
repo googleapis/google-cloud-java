@@ -34,7 +34,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.container.v1.SecurityBulletinEvent)
     SecurityBulletinEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityBulletinEvent.newBuilder() to construct.
   private SecurityBulletinEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,7 +76,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceTypeAffected_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bulletinId_ = "";
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList cveIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getCveIdsList() {
     return cveIds_;
   }
-
   /**
    *
    *
@@ -218,7 +211,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public int getCveIdsCount() {
     return cveIds_.size();
   }
-
   /**
    *
    *
@@ -234,7 +226,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public java.lang.String getCveIds(int index) {
     return cveIds_.get(index);
   }
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object severity_ = "";
-
   /**
    *
    *
@@ -279,7 +269,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -308,7 +297,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bulletinUri_ = "";
-
   /**
    *
    *
@@ -332,7 +320,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object briefDescription_ = "";
-
   /**
    *
    *
@@ -386,7 +372,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -417,7 +402,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList affectedSupportedMinors_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -432,7 +416,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getAffectedSupportedMinorsList() {
     return affectedSupportedMinors_;
   }
-
   /**
    *
    *
@@ -447,7 +430,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public int getAffectedSupportedMinorsCount() {
     return affectedSupportedMinors_.size();
   }
-
   /**
    *
    *
@@ -463,7 +445,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public java.lang.String getAffectedSupportedMinors(int index) {
     return affectedSupportedMinors_.get(index);
   }
-
   /**
    *
    *
@@ -485,7 +466,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList patchedVersions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -500,7 +480,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getPatchedVersionsList() {
     return patchedVersions_;
   }
-
   /**
    *
    *
@@ -515,7 +494,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public int getPatchedVersionsCount() {
     return patchedVersions_.size();
   }
-
   /**
    *
    *
@@ -531,7 +509,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
   public java.lang.String getPatchedVersions(int index) {
     return patchedVersions_.get(index);
   }
-
   /**
    *
    *
@@ -552,7 +529,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object suggestedUpgradeTarget_ = "";
-
   /**
    *
    *
@@ -580,7 +556,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -611,7 +586,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
 
   public static final int MANUAL_STEPS_REQUIRED_FIELD_NUMBER = 10;
   private boolean manualStepsRequired_ = false;
-
   /**
    *
    *
@@ -892,7 +866,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1231,7 +1204,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object resourceTypeAffected_ = "";
-
     /**
      *
      *
@@ -1256,7 +1228,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1281,7 +1252,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1305,7 +1275,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1294,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1352,7 +1320,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object bulletinId_ = "";
-
     /**
      *
      *
@@ -1375,7 +1342,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1398,7 +1364,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1420,7 +1385,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1438,7 +1402,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1471,7 +1434,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1487,7 +1449,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       cveIds_.makeImmutable();
       return cveIds_;
     }
-
     /**
      *
      *
@@ -1502,7 +1463,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public int getCveIdsCount() {
       return cveIds_.size();
     }
-
     /**
      *
      *
@@ -1518,7 +1478,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public java.lang.String getCveIds(int index) {
       return cveIds_.get(index);
     }
-
     /**
      *
      *
@@ -1534,7 +1493,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getCveIdsBytes(int index) {
       return cveIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1558,7 +1516,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1581,7 +1538,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1557,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1575,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1600,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object severity_ = "";
-
     /**
      *
      *
@@ -1669,7 +1622,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1692,7 +1644,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1714,7 +1665,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1732,7 +1682,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1706,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object bulletinUri_ = "";
-
     /**
      *
      *
@@ -1780,7 +1728,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1803,7 +1750,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1825,7 +1771,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1843,7 +1788,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1868,7 +1812,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object briefDescription_ = "";
-
     /**
      *
      *
@@ -1892,7 +1835,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1916,7 +1858,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1939,7 +1880,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1898,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1993,7 +1932,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000040;
     }
-
     /**
      *
      *
@@ -2009,7 +1947,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       affectedSupportedMinors_.makeImmutable();
       return affectedSupportedMinors_;
     }
-
     /**
      *
      *
@@ -2024,7 +1961,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public int getAffectedSupportedMinorsCount() {
       return affectedSupportedMinors_.size();
     }
-
     /**
      *
      *
@@ -2040,7 +1976,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public java.lang.String getAffectedSupportedMinors(int index) {
       return affectedSupportedMinors_.get(index);
     }
-
     /**
      *
      *
@@ -2056,7 +1991,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getAffectedSupportedMinorsBytes(int index) {
       return affectedSupportedMinors_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2080,7 +2014,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2103,7 +2036,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2123,7 +2055,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2142,7 +2073,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2176,7 +2106,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -2192,7 +2121,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       patchedVersions_.makeImmutable();
       return patchedVersions_;
     }
-
     /**
      *
      *
@@ -2207,7 +2135,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public int getPatchedVersionsCount() {
       return patchedVersions_.size();
     }
-
     /**
      *
      *
@@ -2223,7 +2150,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public java.lang.String getPatchedVersions(int index) {
       return patchedVersions_.get(index);
     }
-
     /**
      *
      *
@@ -2239,7 +2165,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getPatchedVersionsBytes(int index) {
       return patchedVersions_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2263,7 +2188,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2286,7 +2210,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2306,7 +2229,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2325,7 +2247,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2351,7 +2272,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object suggestedUpgradeTarget_ = "";
-
     /**
      *
      *
@@ -2378,7 +2298,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2405,7 +2324,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2431,7 +2349,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2453,7 +2370,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2482,7 +2398,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     }
 
     private boolean manualStepsRequired_;
-
     /**
      *
      *
@@ -2499,7 +2414,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
     public boolean getManualStepsRequired() {
       return manualStepsRequired_;
     }
-
     /**
      *
      *
@@ -2520,7 +2434,6 @@ public final class SecurityBulletinEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

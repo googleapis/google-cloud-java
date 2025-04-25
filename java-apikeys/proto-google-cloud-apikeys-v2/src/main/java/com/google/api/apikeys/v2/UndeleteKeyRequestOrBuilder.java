@@ -38,7 +38,6 @@ public interface UndeleteKeyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface ServiceSpecOrBuilder
    * @return Whether the cloudBigtableInstanceSpec field is set.
    */
   boolean hasCloudBigtableInstanceSpec();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ServiceSpecOrBuilder
    * @return The cloudBigtableInstanceSpec.
    */
   com.google.cloud.datacatalog.v1.CloudBigtableInstanceSpec getCloudBigtableInstanceSpec();
-
   /**
    *
    *

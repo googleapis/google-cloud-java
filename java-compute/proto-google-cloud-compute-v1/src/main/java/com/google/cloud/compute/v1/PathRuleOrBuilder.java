@@ -38,7 +38,6 @@ public interface PathRuleOrBuilder
    * @return Whether the customErrorResponsePolicy field is set.
    */
   boolean hasCustomErrorResponsePolicy();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PathRuleOrBuilder
    * @return The customErrorResponsePolicy.
    */
   com.google.cloud.compute.v1.CustomErrorResponsePolicy getCustomErrorResponsePolicy();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface PathRuleOrBuilder
    * @return A list containing the paths.
    */
   java.util.List<java.lang.String> getPathsList();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface PathRuleOrBuilder
    * @return The count of paths.
    */
   int getPathsCount();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface PathRuleOrBuilder
    * @return The paths at the given index.
    */
   java.lang.String getPaths(int index);
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface PathRuleOrBuilder
    * @return Whether the routeAction field is set.
    */
   boolean hasRouteAction();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface PathRuleOrBuilder
    * @return The routeAction.
    */
   com.google.cloud.compute.v1.HttpRouteAction getRouteAction();
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public interface PathRuleOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface PathRuleOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface PathRuleOrBuilder
    * @return Whether the urlRedirect field is set.
    */
   boolean hasUrlRedirect();
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface PathRuleOrBuilder
    * @return The urlRedirect.
    */
   com.google.cloud.compute.v1.HttpRedirectAction getUrlRedirect();
-
   /**
    *
    *

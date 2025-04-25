@@ -34,7 +34,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.DeleteSessionEntityTypeRequest)
     DeleteSessionEntityTypeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteSessionEntityTypeRequest.newBuilder() to construct.
   private DeleteSessionEntityTypeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -296,7 +293,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +485,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -520,7 +515,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -551,7 +545,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -581,7 +574,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class DeleteSessionEntityTypeRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface MacSignRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -101,7 +100,6 @@ public interface MacSignRequestOrBuilder
    * @return Whether the dataCrc32c field is set.
    */
   boolean hasDataCrc32C();
-
   /**
    *
    *
@@ -131,7 +129,6 @@ public interface MacSignRequestOrBuilder
    * @return The dataCrc32c.
    */
   com.google.protobuf.Int64Value getDataCrc32C();
-
   /**
    *
    *

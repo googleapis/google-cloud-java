@@ -47,7 +47,6 @@ public interface UpdateComponentSettingsRequestOrBuilder
    * @return Whether the componentSettings field is set.
    */
   boolean hasComponentSettings();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface UpdateComponentSettingsRequestOrBuilder
    * @return The componentSettings.
    */
   com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings getComponentSettings();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface UpdateComponentSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface UpdateComponentSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

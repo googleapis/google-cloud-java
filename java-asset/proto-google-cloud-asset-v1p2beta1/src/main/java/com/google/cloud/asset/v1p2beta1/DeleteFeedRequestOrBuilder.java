@@ -41,7 +41,6 @@ public interface DeleteFeedRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

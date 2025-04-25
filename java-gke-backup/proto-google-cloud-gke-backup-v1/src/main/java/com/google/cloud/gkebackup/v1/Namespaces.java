@@ -23,7 +23,7 @@ package com.google.cloud.gkebackup.v1;
  *
  *
  * <pre>
- * A list of Kubernetes Namespaces.
+ * A list of Kubernetes Namespaces
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.Namespaces}
@@ -33,7 +33,6 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.Namespaces)
     NamespacesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Namespaces.newBuilder() to construct.
   private Namespaces(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,12 +68,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList namespaces_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces.
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -84,12 +82,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNamespacesList() {
     return namespaces_;
   }
-
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces.
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -99,12 +96,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
   public int getNamespacesCount() {
     return namespaces_.size();
   }
-
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces.
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -115,12 +111,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNamespaces(int index) {
     return namespaces_.get(index);
   }
-
   /**
    *
    *
    * <pre>
-   * Optional. A list of Kubernetes Namespaces.
+   * Optional. A list of Kubernetes Namespaces
    * </pre>
    *
    * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -297,12 +292,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
    * <pre>
-   * A list of Kubernetes Namespaces.
+   * A list of Kubernetes Namespaces
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.Namespaces}
@@ -496,12 +490,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -512,12 +505,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       namespaces_.makeImmutable();
       return namespaces_;
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -527,12 +519,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     public int getNamespacesCount() {
       return namespaces_.size();
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -543,12 +534,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNamespaces(int index) {
       return namespaces_.get(index);
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -559,12 +549,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNamespacesBytes(int index) {
       return namespaces_.getByteString(index);
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -583,12 +572,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -606,12 +594,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -626,12 +613,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -645,12 +631,11 @@ public final class Namespaces extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
      * <pre>
-     * Optional. A list of Kubernetes Namespaces.
+     * Optional. A list of Kubernetes Namespaces
      * </pre>
      *
      * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

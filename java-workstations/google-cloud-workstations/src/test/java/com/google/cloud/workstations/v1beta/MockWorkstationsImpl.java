@@ -73,8 +73,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetWorkstationCluster, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetWorkstationCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkstationCluster.class.getName(),
                   Exception.class.getName())));
@@ -96,8 +95,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListWorkstationClusters, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListWorkstationClusters, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkstationClustersResponse.class.getName(),
                   Exception.class.getName())));
@@ -118,8 +116,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateWorkstationCluster, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateWorkstationCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -140,8 +137,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateWorkstationCluster, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateWorkstationCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -162,8 +158,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteWorkstationCluster, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteWorkstationCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -184,8 +179,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetWorkstationConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetWorkstationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkstationConfig.class.getName(),
                   Exception.class.getName())));
@@ -207,8 +201,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListWorkstationConfigs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListWorkstationConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkstationConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -230,8 +223,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUsableWorkstationConfigs, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method ListUsableWorkstationConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUsableWorkstationConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -252,8 +244,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateWorkstationConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateWorkstationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -274,8 +265,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateWorkstationConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateWorkstationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -296,8 +286,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteWorkstationConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteWorkstationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -361,8 +350,7 @@ public class MockWorkstationsImpl extends WorkstationsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUsableWorkstations, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListUsableWorkstations, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUsableWorkstationsResponse.class.getName(),
                   Exception.class.getName())));

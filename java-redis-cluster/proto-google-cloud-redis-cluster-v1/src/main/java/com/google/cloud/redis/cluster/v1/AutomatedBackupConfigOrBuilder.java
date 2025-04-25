@@ -38,7 +38,6 @@ public interface AutomatedBackupConfigOrBuilder
    * @return Whether the fixedFrequencySchedule field is set.
    */
   boolean hasFixedFrequencySchedule();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface AutomatedBackupConfigOrBuilder
    */
   com.google.cloud.redis.cluster.v1.AutomatedBackupConfig.FixedFrequencySchedule
       getFixedFrequencySchedule();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface AutomatedBackupConfigOrBuilder
    * @return The enum numeric value on the wire for automatedBackupMode.
    */
   int getAutomatedBackupModeValue();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface AutomatedBackupConfigOrBuilder
    * @return Whether the retention field is set.
    */
   boolean hasRetention();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface AutomatedBackupConfigOrBuilder
    * @return The retention.
    */
   com.google.protobuf.Duration getRetention();
-
   /**
    *
    *

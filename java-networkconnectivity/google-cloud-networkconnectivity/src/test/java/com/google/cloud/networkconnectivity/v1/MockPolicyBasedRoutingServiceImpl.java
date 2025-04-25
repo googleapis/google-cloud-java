@@ -74,8 +74,7 @@ public class MockPolicyBasedRoutingServiceImpl extends PolicyBasedRoutingService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPolicyBasedRoutes, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListPolicyBasedRoutes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPolicyBasedRoutesResponse.class.getName(),
                   Exception.class.getName())));
@@ -117,8 +116,7 @@ public class MockPolicyBasedRoutingServiceImpl extends PolicyBasedRoutingService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePolicyBasedRoute, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreatePolicyBasedRoute, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -139,8 +137,7 @@ public class MockPolicyBasedRoutingServiceImpl extends PolicyBasedRoutingService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePolicyBasedRoute, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeletePolicyBasedRoute, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

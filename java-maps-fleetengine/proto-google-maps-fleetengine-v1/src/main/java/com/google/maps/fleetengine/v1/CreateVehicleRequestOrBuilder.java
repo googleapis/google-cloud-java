@@ -36,7 +36,6 @@ public interface CreateVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CreateVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.v1.RequestHeader getHeader();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface CreateVehicleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateVehicleRequestOrBuilder
    * @return The vehicleId.
    */
   java.lang.String getVehicleId();
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public interface CreateVehicleRequestOrBuilder
    * @return Whether the vehicle field is set.
    */
   boolean hasVehicle();
-
   /**
    *
    *
@@ -212,7 +207,6 @@ public interface CreateVehicleRequestOrBuilder
    * @return The vehicle.
    */
   com.google.maps.fleetengine.v1.Vehicle getVehicle();
-
   /**
    *
    *

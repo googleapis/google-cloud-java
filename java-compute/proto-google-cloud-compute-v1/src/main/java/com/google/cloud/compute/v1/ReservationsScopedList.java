@@ -32,7 +32,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationsScopedList)
     ReservationsScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReservationsScopedList.newBuilder() to construct.
   private ReservationsScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Reservation> reservations_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList() {
     return reservations_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       getReservationsOrBuilderList() {
     return reservations_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
   public int getReservationsCount() {
     return reservations_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Reservation getReservations(int index) {
     return reservations_.get(index);
   }
-
   /**
    *
    *
@@ -142,7 +136,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +647,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         return reservationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         return reservationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -691,7 +679,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         return reservationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +765,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +825,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +844,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     public com.google.cloud.compute.v1.Reservation.Builder getReservationsBuilder(int index) {
       return getReservationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -914,7 +891,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         return reservationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -932,7 +908,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(reservations_);
       }
     }
-
     /**
      *
      *
@@ -946,7 +921,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       return getReservationsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Reservation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +934,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       return getReservationsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Reservation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -998,7 +971,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
-
     /**
      *
      *
@@ -1013,7 +985,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1034,7 +1005,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
         return warningBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1057,7 +1027,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1046,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1073,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1092,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1106,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1159,7 +1124,6 @@ public final class ReservationsScopedList extends com.google.protobuf.GeneratedM
             : warning_;
       }
     }
-
     /**
      *
      *

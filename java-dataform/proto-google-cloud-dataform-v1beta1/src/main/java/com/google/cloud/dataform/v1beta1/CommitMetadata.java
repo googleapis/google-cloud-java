@@ -33,7 +33,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.CommitMetadata)
     CommitMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CommitMetadata.newBuilder() to construct.
   private CommitMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int AUTHOR_FIELD_NUMBER = 1;
   private com.google.cloud.dataform.v1beta1.CommitAuthor author_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAuthor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataform.v1beta1.CommitAuthor.getDefaultInstance()
         : author_;
   }
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object commitMessage_ = "";
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataform.v1beta1.CommitAuthor.Builder,
             com.google.cloud.dataform.v1beta1.CommitAuthorOrBuilder>
         authorBuilder_;
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAuthor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
         return authorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -634,7 +624,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +646,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +696,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +712,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAuthorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -747,7 +732,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
             : author_;
       }
     }
-
     /**
      *
      *
@@ -777,7 +761,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object commitMessage_ = "";
-
     /**
      *
      *
@@ -800,7 +783,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class CommitMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

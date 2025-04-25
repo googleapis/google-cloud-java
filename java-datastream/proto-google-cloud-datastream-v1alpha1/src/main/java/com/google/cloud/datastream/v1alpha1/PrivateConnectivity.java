@@ -33,7 +33,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.PrivateConnectivity)
     PrivateConnectivityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PrivateConnectivity.newBuilder() to construct.
   private PrivateConnectivity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateConnectionName_ = "";
-
   /**
    * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -86,7 +84,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -265,7 +262,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -450,7 +446,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object privateConnectionName_ = "";
-
     /**
      * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -467,7 +462,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -484,7 +478,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -500,7 +493,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -512,7 +504,6 @@ public final class PrivateConnectivity extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      * <code>string private_connection_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *

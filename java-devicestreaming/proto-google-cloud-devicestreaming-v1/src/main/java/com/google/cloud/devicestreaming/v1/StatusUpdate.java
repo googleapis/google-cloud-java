@@ -33,7 +33,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.StatusUpdate)
     StatusUpdateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StatusUpdate.newBuilder() to construct.
   private StatusUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -200,7 +199,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>DEVICE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int DEVICE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -211,7 +209,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>DEVICE = 1;</code>
      */
     public static final int DEVICE_VALUE = 1;
-
     /**
      *
      *
@@ -222,7 +219,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>RECOVERY = 2;</code>
      */
     public static final int RECOVERY_VALUE = 2;
-
     /**
      *
      *
@@ -233,7 +229,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>RESCUE = 3;</code>
      */
     public static final int RESCUE_VALUE = 3;
-
     /**
      *
      *
@@ -244,7 +239,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>SIDELOAD = 4;</code>
      */
     public static final int SIDELOAD_VALUE = 4;
-
     /**
      *
      *
@@ -255,7 +249,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>MISSING = 10;</code>
      */
     public static final int MISSING_VALUE = 10;
-
     /**
      *
      *
@@ -266,7 +259,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>OFFLINE = 11;</code>
      */
     public static final int OFFLINE_VALUE = 11;
-
     /**
      *
      *
@@ -277,7 +269,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNAUTHORIZED = 12;</code>
      */
     public static final int UNAUTHORIZED_VALUE = 12;
-
     /**
      *
      *
@@ -288,7 +279,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTHORIZING = 13;</code>
      */
     public static final int AUTHORIZING_VALUE = 13;
-
     /**
      *
      *
@@ -399,7 +389,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -415,7 +404,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -462,7 +450,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return internalGetProperties().getMap().size();
   }
-
   /**
    *
    *
@@ -479,14 +466,12 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetProperties().getMap().containsKey(key);
   }
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
-
   /**
    *
    *
@@ -500,7 +485,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
-
   /**
    *
    *
@@ -521,7 +505,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -547,7 +530,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object features_ = "";
-
   /**
    *
    *
@@ -571,7 +553,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -785,7 +766,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1024,7 +1004,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1040,7 +1019,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1059,7 +1037,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1079,7 +1056,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.devicestreaming.v1.StatusUpdate.DeviceState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1101,7 +1077,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1148,7 +1123,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     public int getPropertiesCount() {
       return internalGetProperties().getMap().size();
     }
-
     /**
      *
      *
@@ -1165,14 +1139,12 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetProperties().getMap().containsKey(key);
     }
-
     /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
-
     /**
      *
      *
@@ -1186,7 +1158,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
-
     /**
      *
      *
@@ -1207,7 +1178,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1234,7 +1204,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1251,14 +1220,12 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       bitField0_ |= 0x00000002;
       return internalGetMutableProperties().getMutableMap();
     }
-
     /**
      *
      *
@@ -1279,7 +1246,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1296,7 +1262,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object features_ = "";
-
     /**
      *
      *
@@ -1319,7 +1284,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1306,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1364,7 +1327,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1344,6 @@ public final class StatusUpdate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

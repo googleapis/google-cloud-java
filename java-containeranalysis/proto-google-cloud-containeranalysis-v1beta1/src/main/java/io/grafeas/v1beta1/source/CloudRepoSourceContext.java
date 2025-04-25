@@ -34,7 +34,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.source.CloudRepoSourceContext)
     CloudRepoSourceContextOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CloudRepoSourceContext.newBuilder() to construct.
   private CloudRepoSourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     private RevisionCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,7 +114,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
 
   public static final int REPO_ID_FIELD_NUMBER = 1;
   private io.grafeas.v1beta1.source.RepoId repoId_;
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   public boolean hasRepoId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   public io.grafeas.v1beta1.source.RepoId getRepoId() {
     return repoId_ == null ? io.grafeas.v1beta1.source.RepoId.getDefaultInstance() : repoId_;
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   public boolean hasRevisionId() {
     return revisionCase_ == 2;
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   }
 
   public static final int ALIAS_CONTEXT_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
   public boolean hasAliasContext() {
     return revisionCase_ == 3;
   }
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     }
     return io.grafeas.v1beta1.source.AliasContext.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -491,7 +480,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -755,7 +743,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
             io.grafeas.v1beta1.source.RepoId.Builder,
             io.grafeas.v1beta1.source.RepoIdOrBuilder>
         repoIdBuilder_;
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     public boolean hasRepoId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
         return repoIdBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -812,7 +797,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +862,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -895,7 +876,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       onChanged();
       return getRepoIdFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
         return repoId_ == null ? io.grafeas.v1beta1.source.RepoId.getDefaultInstance() : repoId_;
       }
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     public boolean hasRevisionId() {
       return revisionCase_ == 2;
     }
-
     /**
      *
      *
@@ -983,7 +961,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1012,7 +989,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1034,7 +1010,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1029,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1057,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
             io.grafeas.v1beta1.source.AliasContext.Builder,
             io.grafeas.v1beta1.source.AliasContextOrBuilder>
         aliasContextBuilder_;
-
     /**
      *
      *
@@ -1099,7 +1072,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     public boolean hasAliasContext() {
       return revisionCase_ == 3;
     }
-
     /**
      *
      *
@@ -1125,7 +1097,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
         return io.grafeas.v1beta1.source.AliasContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1119,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       revisionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1138,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       revisionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1170,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       revisionCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1195,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1240,7 +1207,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
     public io.grafeas.v1beta1.source.AliasContext.Builder getAliasContextBuilder() {
       return getAliasContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1261,7 +1227,6 @@ public final class CloudRepoSourceContext extends com.google.protobuf.GeneratedM
         return io.grafeas.v1beta1.source.AliasContext.getDefaultInstance();
       }
     }
-
     /**
      *
      *

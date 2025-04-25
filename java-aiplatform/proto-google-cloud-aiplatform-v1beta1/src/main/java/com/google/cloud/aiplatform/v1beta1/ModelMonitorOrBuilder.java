@@ -38,7 +38,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the tabularObjective field is set.
    */
   boolean hasTabularObjective();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ModelMonitorOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveSpec.TabularObjective
       getTabularObjective();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ModelMonitorOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface ModelMonitorOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the modelMonitoringTarget field is set.
    */
   boolean hasModelMonitoringTarget();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface ModelMonitorOrBuilder
    * @return The modelMonitoringTarget.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitor.ModelMonitoringTarget getModelMonitoringTarget();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the trainingDataset field is set.
    */
   boolean hasTrainingDataset();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface ModelMonitorOrBuilder
    * @return The trainingDataset.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringInput getTrainingDataset();
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the notificationSpec field is set.
    */
   boolean hasNotificationSpec();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface ModelMonitorOrBuilder
    * @return The notificationSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringNotificationSpec getNotificationSpec();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the outputSpec field is set.
    */
   boolean hasOutputSpec();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface ModelMonitorOrBuilder
    * @return The outputSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringOutputSpec getOutputSpec();
-
   /**
    *
    *
@@ -321,7 +309,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the explanationSpec field is set.
    */
   boolean hasExplanationSpec();
-
   /**
    *
    *
@@ -335,7 +322,6 @@ public interface ModelMonitorOrBuilder
    * @return The explanationSpec.
    */
   com.google.cloud.aiplatform.v1beta1.ExplanationSpec getExplanationSpec();
-
   /**
    *
    *
@@ -367,7 +353,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the modelMonitoringSchema field is set.
    */
   boolean hasModelMonitoringSchema();
-
   /**
    *
    *
@@ -387,7 +372,6 @@ public interface ModelMonitorOrBuilder
    * @return The modelMonitoringSchema.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringSchema getModelMonitoringSchema();
-
   /**
    *
    *
@@ -420,7 +404,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -434,7 +417,6 @@ public interface ModelMonitorOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -460,7 +442,6 @@ public interface ModelMonitorOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -474,7 +455,6 @@ public interface ModelMonitorOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.ImportErrorConfig)
     ImportErrorConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportErrorConfig.newBuilder() to construct.
   private ImportErrorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
     private DestinationCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GCS_PREFIX_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasGcsPrefix() {
     return destinationCase_ == 1;
   }
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -364,7 +359,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +588,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasGcsPrefix() {
       return destinationCase_ == 1;
     }
-
     /**
      *
      *
@@ -626,7 +619,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -658,7 +650,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -683,7 +674,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -706,7 +696,6 @@ public final class ImportErrorConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *

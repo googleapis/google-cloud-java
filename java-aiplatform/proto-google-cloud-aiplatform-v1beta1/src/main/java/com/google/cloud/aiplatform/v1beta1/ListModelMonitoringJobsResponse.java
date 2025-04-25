@@ -34,7 +34,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ListModelMonitoringJobsResponse)
     ListModelMonitoringJobsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListModelMonitoringJobsResponse.newBuilder() to construct.
   private ListModelMonitoringJobsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob>
       modelMonitoringJobs_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       getModelMonitoringJobsList() {
     return modelMonitoringJobs_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       getModelMonitoringJobsOrBuilderList() {
     return modelMonitoringJobs_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
   public int getModelMonitoringJobsCount() {
     return modelMonitoringJobs_.size();
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob getModelMonitoringJobs(int index) {
     return modelMonitoringJobs_.get(index);
   }
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -382,7 +374,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -673,7 +664,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return modelMonitoringJobsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -692,7 +682,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return modelMonitoringJobsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -712,7 +701,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return modelMonitoringJobsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +748,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +773,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +798,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +820,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +842,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +865,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +886,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +907,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         getModelMonitoringJobsBuilder(int index) {
       return getModelMonitoringJobsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -963,7 +941,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return modelMonitoringJobsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(modelMonitoringJobs_);
       }
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       return getModelMonitoringJobsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1018,7 +993,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.ModelMonitoringJob.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1056,7 +1030,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1079,7 +1052,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1102,7 +1074,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1095,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1142,7 +1112,6 @@ public final class ListModelMonitoringJobsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

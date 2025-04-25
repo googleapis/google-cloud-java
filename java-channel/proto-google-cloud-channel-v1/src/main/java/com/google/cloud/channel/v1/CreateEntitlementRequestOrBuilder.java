@@ -40,7 +40,6 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateEntitlementRequestOrBuilder
    * @return Whether the entitlement field is set.
    */
   boolean hasEntitlement();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The entitlement.
    */
   com.google.cloud.channel.v1.Entitlement getEntitlement();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface CreateEntitlementRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

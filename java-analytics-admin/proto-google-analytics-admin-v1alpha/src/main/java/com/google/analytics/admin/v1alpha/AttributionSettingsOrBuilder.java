@@ -38,7 +38,6 @@ public interface AttributionSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface AttributionSettingsOrBuilder
    * @return The enum numeric value on the wire for acquisitionConversionEventLookbackWindow.
    */
   int getAcquisitionConversionEventLookbackWindowValue();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface AttributionSettingsOrBuilder
    * @return The enum numeric value on the wire for otherConversionEventLookbackWindow.
    */
   int getOtherConversionEventLookbackWindowValue();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface AttributionSettingsOrBuilder
    * @return The enum numeric value on the wire for reportingAttributionModel.
    */
   int getReportingAttributionModelValue();
-
   /**
    *
    *
@@ -176,7 +172,6 @@ public interface AttributionSettingsOrBuilder
    * @return The enum numeric value on the wire for adsWebConversionDataExportScope.
    */
   int getAdsWebConversionDataExportScopeValue();
-
   /**
    *
    *

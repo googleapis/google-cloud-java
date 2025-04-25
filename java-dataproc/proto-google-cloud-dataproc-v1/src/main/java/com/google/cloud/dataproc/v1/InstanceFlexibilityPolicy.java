@@ -34,7 +34,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceFlexibilityPolicy)
     InstanceFlexibilityPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceFlexibilityPolicy.newBuilder() to construct.
   private InstanceFlexibilityPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return Whether the standardCapacityBase field is set.
      */
     boolean hasStandardCapacityBase();
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return Whether the standardCapacityPercentAboveBase field is set.
      */
     boolean hasStandardCapacityPercentAboveBase();
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      */
     int getStandardCapacityPercentAboveBase();
   }
-
   /**
    *
    *
@@ -169,7 +165,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix)
       ProvisioningModelMixOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ProvisioningModelMix.newBuilder() to construct.
     private ProvisioningModelMix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -202,7 +197,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     private int bitField0_;
     public static final int STANDARD_CAPACITY_BASE_FIELD_NUMBER = 1;
     private int standardCapacityBase_ = 0;
-
     /**
      *
      *
@@ -225,7 +219,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public boolean hasStandardCapacityBase() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -251,7 +244,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
     public static final int STANDARD_CAPACITY_PERCENT_ABOVE_BASE_FIELD_NUMBER = 2;
     private int standardCapacityPercentAboveBase_ = 0;
-
     /**
      *
      *
@@ -275,7 +267,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public boolean hasStandardCapacityPercentAboveBase() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -491,7 +482,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -707,7 +697,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       private int bitField0_;
 
       private int standardCapacityBase_;
-
       /**
        *
        *
@@ -730,7 +719,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public boolean hasStandardCapacityBase() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -753,7 +741,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public int getStandardCapacityBase() {
         return standardCapacityBase_;
       }
-
       /**
        *
        *
@@ -780,7 +767,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -807,7 +793,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
 
       private int standardCapacityPercentAboveBase_;
-
       /**
        *
        *
@@ -831,7 +816,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public boolean hasStandardCapacityPercentAboveBase() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -855,7 +839,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public int getStandardCapacityPercentAboveBase() {
         return standardCapacityPercentAboveBase_;
       }
-
       /**
        *
        *
@@ -883,7 +866,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -995,7 +977,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return A list containing the machineTypes.
      */
     java.util.List<java.lang.String> getMachineTypesList();
-
     /**
      *
      *
@@ -1008,7 +989,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return The count of machineTypes.
      */
     int getMachineTypesCount();
-
     /**
      *
      *
@@ -1022,7 +1002,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return The machineTypes at the given index.
      */
     java.lang.String getMachineTypes(int index);
-
     /**
      *
      *
@@ -1054,7 +1033,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      */
     int getRank();
   }
-
   /**
    *
    *
@@ -1069,7 +1047,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection)
       InstanceSelectionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InstanceSelection.newBuilder() to construct.
     private InstanceSelection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1106,7 +1083,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList machineTypes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1121,7 +1097,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public com.google.protobuf.ProtocolStringList getMachineTypesList() {
       return machineTypes_;
     }
-
     /**
      *
      *
@@ -1136,7 +1111,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public int getMachineTypesCount() {
       return machineTypes_.size();
     }
-
     /**
      *
      *
@@ -1152,7 +1126,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public java.lang.String getMachineTypes(int index) {
       return machineTypes_.get(index);
     }
-
     /**
      *
      *
@@ -1171,7 +1144,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
     public static final int RANK_FIELD_NUMBER = 2;
     private int rank_ = 0;
-
     /**
      *
      *
@@ -1376,7 +1348,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1603,7 +1574,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -1619,7 +1589,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         machineTypes_.makeImmutable();
         return machineTypes_;
       }
-
       /**
        *
        *
@@ -1634,7 +1603,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public int getMachineTypesCount() {
         return machineTypes_.size();
       }
-
       /**
        *
        *
@@ -1650,7 +1618,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public java.lang.String getMachineTypes(int index) {
         return machineTypes_.get(index);
       }
-
       /**
        *
        *
@@ -1666,7 +1633,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public com.google.protobuf.ByteString getMachineTypesBytes(int index) {
         return machineTypes_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1690,7 +1656,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1713,7 +1678,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1733,7 +1697,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1752,7 +1715,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1778,7 +1740,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
 
       private int rank_;
-
       /**
        *
        *
@@ -1798,7 +1759,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public int getRank() {
         return rank_;
       }
-
       /**
        *
        *
@@ -1822,7 +1782,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1930,7 +1889,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return Whether the machineType field is set.
      */
     boolean hasMachineType();
-
     /**
      *
      *
@@ -1943,7 +1901,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return The machineType.
      */
     java.lang.String getMachineType();
-
     /**
      *
      *
@@ -1969,7 +1926,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      * @return Whether the vmCount field is set.
      */
     boolean hasVmCount();
-
     /**
      *
      *
@@ -1983,7 +1939,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      */
     int getVmCount();
   }
-
   /**
    *
    *
@@ -2000,7 +1955,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult)
       InstanceSelectionResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InstanceSelectionResult.newBuilder() to construct.
     private InstanceSelectionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2037,7 +1991,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object machineType_ = "";
-
     /**
      *
      *
@@ -2053,7 +2006,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public boolean hasMachineType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2077,7 +2029,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return s;
       }
     }
-
     /**
      *
      *
@@ -2104,7 +2055,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
 
     public static final int VM_COUNT_FIELD_NUMBER = 2;
     private int vmCount_ = 0;
-
     /**
      *
      *
@@ -2120,7 +2070,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public boolean hasVmCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2325,7 +2274,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2548,7 +2496,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object machineType_ = "";
-
       /**
        *
        *
@@ -2563,7 +2510,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public boolean hasMachineType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -2586,7 +2532,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2609,7 +2554,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2631,7 +2575,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2649,7 +2592,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2674,7 +2616,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
 
       private int vmCount_;
-
       /**
        *
        *
@@ -2690,7 +2631,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public boolean hasVmCount() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2706,7 +2646,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       public int getVmCount() {
         return vmCount_;
       }
-
       /**
        *
        *
@@ -2726,7 +2665,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2818,7 +2756,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
   public static final int PROVISIONING_MODEL_MIX_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix
       provisioningModelMix_;
-
   /**
    *
    *
@@ -2837,7 +2774,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
   public boolean hasProvisioningModelMix() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2860,7 +2796,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             .getDefaultInstance()
         : provisioningModelMix_;
   }
-
   /**
    *
    *
@@ -2887,7 +2822,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection>
       instanceSelectionList_;
-
   /**
    *
    *
@@ -2905,7 +2839,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       getInstanceSelectionListList() {
     return instanceSelectionList_;
   }
-
   /**
    *
    *
@@ -2925,7 +2858,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       getInstanceSelectionListOrBuilderList() {
     return instanceSelectionList_;
   }
-
   /**
    *
    *
@@ -2942,7 +2874,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
   public int getInstanceSelectionListCount() {
     return instanceSelectionList_.size();
   }
-
   /**
    *
    *
@@ -2960,7 +2891,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       getInstanceSelectionList(int index) {
     return instanceSelectionList_.get(index);
   }
-
   /**
    *
    *
@@ -2985,7 +2915,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
   private java.util.List<
           com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult>
       instanceSelectionResults_;
-
   /**
    *
    *
@@ -3003,7 +2932,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       getInstanceSelectionResultsList() {
     return instanceSelectionResults_;
   }
-
   /**
    *
    *
@@ -3023,7 +2951,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       getInstanceSelectionResultsOrBuilderList() {
     return instanceSelectionResults_;
   }
-
   /**
    *
    *
@@ -3039,7 +2966,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
   public int getInstanceSelectionResultsCount() {
     return instanceSelectionResults_.size();
   }
-
   /**
    *
    *
@@ -3056,7 +2982,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       getInstanceSelectionResults(int index) {
     return instanceSelectionResults_.get(index);
   }
-
   /**
    *
    *
@@ -3267,7 +3192,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3601,7 +3525,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMix.Builder,
             com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.ProvisioningModelMixOrBuilder>
         provisioningModelMixBuilder_;
-
     /**
      *
      *
@@ -3619,7 +3542,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
     public boolean hasProvisioningModelMix() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -3645,7 +3567,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return provisioningModelMixBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3672,7 +3593,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3697,7 +3617,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3731,7 +3650,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -3754,7 +3672,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3773,7 +3690,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       onChanged();
       return getProvisioningModelMixFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3797,7 +3713,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
             : provisioningModelMix_;
       }
     }
-
     /**
      *
      *
@@ -3867,7 +3782,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionListBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3887,7 +3801,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionListBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3908,7 +3821,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionListBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3935,7 +3847,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -3961,7 +3872,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -3988,7 +3898,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4015,7 +3924,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4040,7 +3948,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4066,7 +3973,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4092,7 +3998,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4115,7 +4020,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4138,7 +4042,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4155,7 +4058,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         getInstanceSelectionListBuilder(int index) {
       return getInstanceSelectionListFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4176,7 +4078,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionListBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4199,7 +4100,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(instanceSelectionList_);
       }
     }
-
     /**
      *
      *
@@ -4219,7 +4119,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
               com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4240,7 +4139,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
               com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelection
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4319,7 +4217,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -4338,7 +4235,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -4358,7 +4254,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -4385,7 +4280,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4410,7 +4304,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4436,7 +4329,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4463,7 +4355,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4487,7 +4378,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4512,7 +4402,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4538,7 +4427,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4560,7 +4448,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4582,7 +4469,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4598,7 +4484,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         getInstanceSelectionResultsBuilder(int index) {
       return getInstanceSelectionResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4618,7 +4503,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return instanceSelectionResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4641,7 +4525,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(instanceSelectionResults_);
       }
     }
-
     /**
      *
      *
@@ -4660,7 +4543,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
               com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4680,7 +4562,6 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
               com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.InstanceSelectionResult
                   .getDefaultInstance());
     }
-
     /**
      *
      *

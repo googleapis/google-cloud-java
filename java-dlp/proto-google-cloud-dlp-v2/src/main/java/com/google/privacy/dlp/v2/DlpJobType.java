@@ -72,7 +72,6 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DLP_JOB_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSPECT_JOB = 1;</code>
    */
   public static final int INSPECT_JOB_VALUE = 1;
-
   /**
    *
    *

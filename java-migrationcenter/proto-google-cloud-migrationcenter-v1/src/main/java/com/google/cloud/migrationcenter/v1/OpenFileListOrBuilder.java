@@ -34,7 +34,6 @@ public interface OpenFileListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.OpenFileDetails entries = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.OpenFileDetails> getEntriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface OpenFileListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.OpenFileDetails entries = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.OpenFileDetails getEntries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface OpenFileListOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.OpenFileDetails entries = 1;</code>
    */
   int getEntriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface OpenFileListOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.OpenFileDetailsOrBuilder>
       getEntriesOrBuilderList();
-
   /**
    *
    *

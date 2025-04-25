@@ -36,7 +36,6 @@ public interface ReleaseLeaseRequestOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ReleaseLeaseRequestOrBuilder
    * @return The series.
    */
   java.lang.String getSeries();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ReleaseLeaseRequestOrBuilder
    * @return The owner.
    */
   java.lang.String getOwner();
-
   /**
    *
    *

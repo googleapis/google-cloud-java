@@ -34,7 +34,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteNetworkEdgeSecurityServiceRequest)
     DeleteNetworkEdgeSecurityServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteNetworkEdgeSecurityServiceRequest.newBuilder() to construct.
   private DeleteNetworkEdgeSecurityServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkEdgeSecurityService_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -214,7 +208,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +238,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +276,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -507,7 +497,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -747,7 +736,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     private int bitField0_;
 
     private java.lang.Object networkEdgeSecurityService_ = "";
-
     /**
      *
      *
@@ -772,7 +760,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -797,7 +784,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -821,7 +807,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +826,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +852,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -893,7 +876,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -918,7 +900,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -962,7 +942,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -989,7 +968,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1014,7 +992,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1016,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1063,7 +1039,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1058,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1125,7 +1098,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1148,7 +1120,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1171,7 +1142,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1163,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1211,7 +1180,6 @@ public final class DeleteNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

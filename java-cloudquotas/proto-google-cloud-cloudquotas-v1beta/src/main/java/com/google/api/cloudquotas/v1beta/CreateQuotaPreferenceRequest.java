@@ -33,7 +33,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1beta.CreateQuotaPreferenceRequest)
     CreateQuotaPreferenceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateQuotaPreferenceRequest.newBuilder() to construct.
   private CreateQuotaPreferenceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object quotaPreferenceId_ = "";
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
 
   public static final int QUOTA_PREFERENCE_FIELD_NUMBER = 3;
   private com.google.api.cloudquotas.v1beta.QuotaPreference quotaPreference_;
-
   /**
    *
    *
@@ -205,7 +199,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
   public boolean hasQuotaPreference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -225,7 +218,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         ? com.google.api.cloudquotas.v1beta.QuotaPreference.getDefaultInstance()
         : quotaPreference_;
   }
-
   /**
    *
    *
@@ -263,7 +255,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
                   : result;
             }
           };
-
   /**
    *
    *
@@ -282,7 +273,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         java.lang.Integer, com.google.api.cloudquotas.v1beta.QuotaSafetyCheck>(
         ignoreSafetyChecks_, ignoreSafetyChecks_converter_);
   }
-
   /**
    *
    *
@@ -298,7 +288,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
   public int getIgnoreSafetyChecksCount() {
     return ignoreSafetyChecks_.size();
   }
-
   /**
    *
    *
@@ -315,7 +304,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
   public com.google.api.cloudquotas.v1beta.QuotaSafetyCheck getIgnoreSafetyChecks(int index) {
     return ignoreSafetyChecks_converter_.convert(ignoreSafetyChecks_.get(index));
   }
-
   /**
    *
    *
@@ -331,7 +319,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
   public java.util.List<java.lang.Integer> getIgnoreSafetyChecksValueList() {
     return ignoreSafetyChecks_;
   }
-
   /**
    *
    *
@@ -560,7 +547,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -834,7 +820,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -862,7 +847,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -940,7 +922,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object quotaPreferenceId_ = "";
-
     /**
      *
      *
@@ -994,7 +974,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1018,7 +997,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1019,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1060,7 +1037,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1067,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
             com.google.api.cloudquotas.v1beta.QuotaPreference.Builder,
             com.google.api.cloudquotas.v1beta.QuotaPreferenceOrBuilder>
         quotaPreferenceBuilder_;
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     public boolean hasQuotaPreference() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         return quotaPreferenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1156,7 +1129,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1181,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -1232,7 +1202,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1218,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return getQuotaPreferenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1271,7 +1239,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
             : quotaPreference_;
       }
     }
-
     /**
      *
      *
@@ -1309,7 +1276,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
         bitField0_ |= 0x00000008;
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1294,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
           java.lang.Integer, com.google.api.cloudquotas.v1beta.QuotaSafetyCheck>(
           ignoreSafetyChecks_, ignoreSafetyChecks_converter_);
     }
-
     /**
      *
      *
@@ -1344,7 +1309,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     public int getIgnoreSafetyChecksCount() {
       return ignoreSafetyChecks_.size();
     }
-
     /**
      *
      *
@@ -1361,7 +1325,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     public com.google.api.cloudquotas.v1beta.QuotaSafetyCheck getIgnoreSafetyChecks(int index) {
       return ignoreSafetyChecks_converter_.convert(ignoreSafetyChecks_.get(index));
     }
-
     /**
      *
      *
@@ -1386,7 +1349,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1409,7 +1371,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1432,7 +1393,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1451,7 +1411,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1467,7 +1426,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     public java.util.List<java.lang.Integer> getIgnoreSafetyChecksValueList() {
       return java.util.Collections.unmodifiableList(ignoreSafetyChecks_);
     }
-
     /**
      *
      *
@@ -1484,7 +1442,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
     public int getIgnoreSafetyChecksValue(int index) {
       return ignoreSafetyChecks_.get(index);
     }
-
     /**
      *
      *
@@ -1505,7 +1462,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1525,7 +1481,6 @@ public final class CreateQuotaPreferenceRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.ListAdaptiveMtSentencesResponse)
     ListAdaptiveMtSentencesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListAdaptiveMtSentencesResponse.newBuilder() to construct.
   private ListAdaptiveMtSentencesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.AdaptiveMtSentence> adaptiveMtSentences_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       getAdaptiveMtSentencesList() {
     return adaptiveMtSentences_;
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       getAdaptiveMtSentencesOrBuilderList() {
     return adaptiveMtSentences_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
   public int getAdaptiveMtSentencesCount() {
     return adaptiveMtSentences_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
   public com.google.cloud.translate.v3.AdaptiveMtSentence getAdaptiveMtSentences(int index) {
     return adaptiveMtSentences_.get(index);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -665,7 +656,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return adaptiveMtSentencesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return adaptiveMtSentencesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -703,7 +692,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return adaptiveMtSentencesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +875,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +896,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         int index) {
       return getAdaptiveMtSentencesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -952,7 +930,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return adaptiveMtSentencesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -972,7 +949,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(adaptiveMtSentences_);
       }
     }
-
     /**
      *
      *
@@ -989,7 +965,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       return getAdaptiveMtSentencesFieldBuilder()
           .addBuilder(com.google.cloud.translate.v3.AdaptiveMtSentence.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1006,7 +981,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       return getAdaptiveMtSentencesFieldBuilder()
           .addBuilder(index, com.google.cloud.translate.v3.AdaptiveMtSentence.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1044,7 +1018,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1067,7 +1040,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1090,7 +1062,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1112,7 +1083,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1100,6 @@ public final class ListAdaptiveMtSentencesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface AwsAutoscalingGroupMetricsCollectionOrBuilder
    * @return The granularity.
    */
   java.lang.String getGranularity();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface AwsAutoscalingGroupMetricsCollectionOrBuilder
    * @return A list containing the metrics.
    */
   java.util.List<java.lang.String> getMetricsList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface AwsAutoscalingGroupMetricsCollectionOrBuilder
    * @return The count of metrics.
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface AwsAutoscalingGroupMetricsCollectionOrBuilder
    * @return The metrics at the given index.
    */
   java.lang.String getMetrics(int index);
-
   /**
    *
    *

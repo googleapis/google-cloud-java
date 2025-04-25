@@ -34,7 +34,6 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
   java.util.List<com.google.cloud.servicedirectory.v1beta1.Endpoint> getEndpointsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
   com.google.cloud.servicedirectory.v1beta1.Endpoint getEndpoints(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEndpointsResponseOrBuilder
    * <code>repeated .google.cloud.servicedirectory.v1beta1.Endpoint endpoints = 1;</code>
    */
   int getEndpointsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEndpointsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.servicedirectory.v1beta1.EndpointOrBuilder>
       getEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListEndpointsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

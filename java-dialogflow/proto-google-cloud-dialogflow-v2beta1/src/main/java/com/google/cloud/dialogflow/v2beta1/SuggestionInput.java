@@ -33,7 +33,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestionInput)
     SuggestionInputOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestionInput.newBuilder() to construct.
   private SuggestionInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
 
   public static final int TEXT_OVERRIDE_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.TextInput textOverride_;
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
   public boolean hasTextOverride() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dialogflow.v2beta1.TextInput.getDefaultInstance()
         : textOverride_;
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
 
   public static final int PARAMETERS_FIELD_NUMBER = 4;
   private com.google.protobuf.Struct parameters_;
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
   public boolean hasParameters() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Struct getParameters() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
   }
-
   /**
    *
    *
@@ -301,7 +292,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
 
   public static final int INTENT_INPUT_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.v2beta1.IntentInput intentInput_;
-
   /**
    *
    *
@@ -317,7 +307,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
   public boolean hasIntentInput() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -335,7 +324,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance()
         : intentInput_;
   }
-
   /**
    *
    *
@@ -553,7 +541,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -807,7 +794,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object answerRecord_ = "";
-
     /**
      *
      *
@@ -835,7 +821,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -863,7 +848,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -890,7 +874,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +896,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +930,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2beta1.TextInput.Builder,
             com.google.cloud.dialogflow.v2beta1.TextInputOrBuilder>
         textOverrideBuilder_;
-
     /**
      *
      *
@@ -964,7 +945,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     public boolean hasTextOverride() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -986,7 +966,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return textOverrideBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1010,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1062,7 +1039,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1099,7 +1074,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getTextOverrideFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1119,7 +1093,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
             : textOverride_;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1126,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         parametersBuilder_;
-
     /**
      *
      *
@@ -1190,7 +1162,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     public boolean hasParameters() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1231,7 +1202,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return parametersBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1246,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1287,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1336,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1410,7 +1377,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1447,7 +1413,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1486,7 +1451,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
       }
     }
-
     /**
      *
      *
@@ -1541,7 +1505,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2beta1.IntentInput.Builder,
             com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder>
         intentInputBuilder_;
-
     /**
      *
      *
@@ -1556,7 +1519,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     public boolean hasIntentInput() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1577,7 +1539,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         return intentInputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1600,7 +1561,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1581,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1650,7 +1609,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1670,7 +1628,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1685,7 +1642,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getIntentInputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1704,7 +1660,6 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
             : intentInput_;
       }
     }
-
     /**
      *
      *

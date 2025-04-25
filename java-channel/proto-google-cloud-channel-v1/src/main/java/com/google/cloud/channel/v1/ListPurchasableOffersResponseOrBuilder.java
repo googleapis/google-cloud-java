@@ -34,7 +34,6 @@ public interface ListPurchasableOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PurchasableOffer purchasable_offers = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.PurchasableOffer> getPurchasableOffersList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPurchasableOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PurchasableOffer purchasable_offers = 1;</code>
    */
   com.google.cloud.channel.v1.PurchasableOffer getPurchasableOffers(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPurchasableOffersResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.PurchasableOffer purchasable_offers = 1;</code>
    */
   int getPurchasableOffersCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPurchasableOffersResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.PurchasableOfferOrBuilder>
       getPurchasableOffersOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListPurchasableOffersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface SearchAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchResultItem search_result_items = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.SearchResultItem> getSearchResultItemsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchResultItem search_result_items = 1;</code>
    */
   com.google.cloud.visionai.v1.SearchResultItem getSearchResultItems(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.SearchResultItem search_result_items = 1;</code>
    */
   int getSearchResultItemsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.SearchResultItemOrBuilder>
       getSearchResultItemsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface SearchAssetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface SearchAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetGroup facet_results = 3;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.FacetGroup> getFacetResultsList();
-
   /**
    *
    *
@@ -129,7 +123,6 @@ public interface SearchAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetGroup facet_results = 3;</code>
    */
   com.google.cloud.visionai.v1.FacetGroup getFacetResults(int index);
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public interface SearchAssetsResponseOrBuilder
    * <code>repeated .google.cloud.visionai.v1.FacetGroup facet_results = 3;</code>
    */
   int getFacetResultsCount();
-
   /**
    *
    *
@@ -154,7 +146,6 @@ public interface SearchAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.FacetGroupOrBuilder>
       getFacetResultsOrBuilderList();
-
   /**
    *
    *

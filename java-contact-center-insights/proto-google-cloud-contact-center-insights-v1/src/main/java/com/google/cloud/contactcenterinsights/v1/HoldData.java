@@ -33,7 +33,6 @@ public final class HoldData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.HoldData)
     HoldDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HoldData.newBuilder() to construct.
   private HoldData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class HoldData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface NetworkPerformanceConfigOrBuilder
    * @return Whether the totalEgressBandwidthTier field is set.
    */
   boolean hasTotalEgressBandwidthTier();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface NetworkPerformanceConfigOrBuilder
    * @return The totalEgressBandwidthTier.
    */
   java.lang.String getTotalEgressBandwidthTier();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.Reply)
     ReplyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Reply.newBuilder() to construct.
   private Reply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SUMMARY_FIELD_NUMBER = 3;
   private com.google.cloud.discoveryengine.v1.SearchResponse.Summary summary_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSummary() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.SearchResponse.Summary.getDefaultInstance()
         : summary_;
   }
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +478,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.SearchResponse.Summary.Builder,
             com.google.cloud.discoveryengine.v1.SearchResponse.SummaryOrBuilder>
         summaryBuilder_;
-
     /**
      *
      *
@@ -498,7 +492,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSummary() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -519,7 +512,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
         return summaryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -542,7 +534,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -563,7 +554,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -593,7 +583,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -613,7 +602,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -628,7 +616,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSummaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -648,7 +635,6 @@ public final class Reply extends com.google.protobuf.GeneratedMessageV3
             : summary_;
       }
     }
-
     /**
      *
      *

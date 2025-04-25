@@ -35,7 +35,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.BatchPredictResult)
     BatchPredictResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchPredictResult.newBuilder() to construct.
   private BatchPredictResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,7 +101,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -129,14 +127,12 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -191,7 +186,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -390,7 +384,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -627,7 +620,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -654,14 +646,12 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -716,7 +705,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -780,14 +767,12 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000001;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class BatchPredictResult extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

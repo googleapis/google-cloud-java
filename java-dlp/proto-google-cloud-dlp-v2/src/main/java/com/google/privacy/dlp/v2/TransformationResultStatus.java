@@ -33,7 +33,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationResultStatus)
     TransformationResultStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransformationResultStatus.newBuilder() to construct.
   private TransformationResultStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int RESULT_STATUS_TYPE_FIELD_NUMBER = 1;
   private int resultStatusType_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
   public int getResultStatusTypeValue() {
     return resultStatusType_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
 
   public static final int DETAILS_FIELD_NUMBER = 2;
   private com.google.rpc.Status details_;
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
   public boolean hasDetails() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
   public com.google.rpc.Status getDetails() {
     return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
   }
-
   /**
    *
    *
@@ -332,7 +326,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -544,7 +537,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     private int bitField0_;
 
     private int resultStatusType_ = 0;
-
     /**
      *
      *
@@ -561,7 +553,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     public int getResultStatusTypeValue() {
       return resultStatusType_;
     }
-
     /**
      *
      *
@@ -581,7 +572,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
           ? com.google.privacy.dlp.v2.TransformationResultStatusType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -626,7 +615,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +638,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         detailsBuilder_;
-
     /**
      *
      *
@@ -665,7 +652,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     public boolean hasDetails() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -684,7 +670,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
         return detailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -707,7 +692,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +711,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +738,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +757,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +771,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -807,7 +787,6 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
         return details_ == null ? com.google.rpc.Status.getDefaultInstance() : details_;
       }
     }
-
     /**
      *
      *

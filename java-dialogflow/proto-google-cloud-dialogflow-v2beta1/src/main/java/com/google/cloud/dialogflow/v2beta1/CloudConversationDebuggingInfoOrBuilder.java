@@ -50,7 +50,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the resultEndTimeOffset field is set.
    */
   boolean hasResultEndTimeOffset();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The resultEndTimeOffset.
    */
   com.google.protobuf.Duration getResultEndTimeOffset();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the firstAudioDuration field is set.
    */
   boolean hasFirstAudioDuration();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The firstAudioDuration.
    */
   com.google.protobuf.Duration getFirstAudioDuration();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration speech_partial_results_end_times = 6;</code>
    */
   java.util.List<com.google.protobuf.Duration> getSpeechPartialResultsEndTimesList();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration speech_partial_results_end_times = 6;</code>
    */
   com.google.protobuf.Duration getSpeechPartialResultsEndTimes(int index);
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration speech_partial_results_end_times = 6;</code>
    */
   int getSpeechPartialResultsEndTimesCount();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    */
   java.util.List<? extends com.google.protobuf.DurationOrBuilder>
       getSpeechPartialResultsEndTimesOrBuilderList();
-
   /**
    *
    *
@@ -199,7 +191,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration speech_final_results_end_times = 7;</code>
    */
   java.util.List<com.google.protobuf.Duration> getSpeechFinalResultsEndTimesList();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration speech_final_results_end_times = 7;</code>
    */
   com.google.protobuf.Duration getSpeechFinalResultsEndTimes(int index);
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration speech_final_results_end_times = 7;</code>
    */
   int getSpeechFinalResultsEndTimesCount();
-
   /**
    *
    *
@@ -236,7 +225,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    */
   java.util.List<? extends com.google.protobuf.DurationOrBuilder>
       getSpeechFinalResultsEndTimesOrBuilderList();
-
   /**
    *
    *
@@ -314,7 +302,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration dtmf_partial_results_times = 12;</code>
    */
   java.util.List<com.google.protobuf.Duration> getDtmfPartialResultsTimesList();
-
   /**
    *
    *
@@ -326,7 +313,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration dtmf_partial_results_times = 12;</code>
    */
   com.google.protobuf.Duration getDtmfPartialResultsTimes(int index);
-
   /**
    *
    *
@@ -338,7 +324,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration dtmf_partial_results_times = 12;</code>
    */
   int getDtmfPartialResultsTimesCount();
-
   /**
    *
    *
@@ -351,7 +336,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    */
   java.util.List<? extends com.google.protobuf.DurationOrBuilder>
       getDtmfPartialResultsTimesOrBuilderList();
-
   /**
    *
    *
@@ -375,7 +359,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration dtmf_final_results_times = 13;</code>
    */
   java.util.List<com.google.protobuf.Duration> getDtmfFinalResultsTimesList();
-
   /**
    *
    *
@@ -387,7 +370,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration dtmf_final_results_times = 13;</code>
    */
   com.google.protobuf.Duration getDtmfFinalResultsTimes(int index);
-
   /**
    *
    *
@@ -399,7 +381,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * <code>repeated .google.protobuf.Duration dtmf_final_results_times = 13;</code>
    */
   int getDtmfFinalResultsTimesCount();
-
   /**
    *
    *
@@ -412,7 +393,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    */
   java.util.List<? extends com.google.protobuf.DurationOrBuilder>
       getDtmfFinalResultsTimesOrBuilderList();
-
   /**
    *
    *
@@ -438,7 +418,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the singleUtteranceEndTimeOffset field is set.
    */
   boolean hasSingleUtteranceEndTimeOffset();
-
   /**
    *
    *
@@ -452,7 +431,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The singleUtteranceEndTimeOffset.
    */
   com.google.protobuf.Duration getSingleUtteranceEndTimeOffset();
-
   /**
    *
    *
@@ -477,7 +455,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the noSpeechTimeout field is set.
    */
   boolean hasNoSpeechTimeout();
-
   /**
    *
    *
@@ -490,7 +467,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The noSpeechTimeout.
    */
   com.google.protobuf.Duration getNoSpeechTimeout();
-
   /**
    *
    *
@@ -514,7 +490,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the endpointingTimeout field is set.
    */
   boolean hasEndpointingTimeout();
-
   /**
    *
    *
@@ -527,7 +502,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The endpointingTimeout.
    */
   com.google.protobuf.Duration getEndpointingTimeout();
-
   /**
    *
    *
@@ -564,7 +538,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the clientHalfCloseTimeOffset field is set.
    */
   boolean hasClientHalfCloseTimeOffset();
-
   /**
    *
    *
@@ -577,7 +550,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The clientHalfCloseTimeOffset.
    */
   com.google.protobuf.Duration getClientHalfCloseTimeOffset();
-
   /**
    *
    *
@@ -601,7 +573,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return Whether the clientHalfCloseStreamingTimeOffset field is set.
    */
   boolean hasClientHalfCloseStreamingTimeOffset();
-
   /**
    *
    *
@@ -614,7 +585,6 @@ public interface CloudConversationDebuggingInfoOrBuilder
    * @return The clientHalfCloseStreamingTimeOffset.
    */
   com.google.protobuf.Duration getClientHalfCloseStreamingTimeOffset();
-
   /**
    *
    *

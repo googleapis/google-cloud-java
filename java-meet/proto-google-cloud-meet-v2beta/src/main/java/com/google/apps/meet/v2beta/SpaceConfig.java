@@ -33,7 +33,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig)
     SpaceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SpaceConfig.newBuilder() to construct.
   private SpaceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,7 +135,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCESS_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACCESS_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -148,7 +146,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>OPEN = 1;</code>
      */
     public static final int OPEN_VALUE = 1;
-
     /**
      *
      *
@@ -160,7 +157,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TRUSTED = 2;</code>
      */
     public static final int TRUSTED_VALUE = 2;
-
     /**
      *
      *
@@ -313,7 +309,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTRY_POINT_ACCESS_UNSPECIFIED = 0;</code>
      */
     public static final int ENTRY_POINT_ACCESS_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -324,7 +319,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ALL = 1;</code>
      */
     public static final int ALL_VALUE = 1;
-
     /**
      *
      *
@@ -483,7 +477,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>MODERATION_UNSPECIFIED = 0;</code>
      */
     public static final int MODERATION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -494,7 +487,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>OFF = 1;</code>
      */
     public static final int OFF_VALUE = 1;
-
     /**
      *
      *
@@ -645,7 +637,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ATTENDANCE_REPORT_GENERATION_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -656,7 +647,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>GENERATE_REPORT = 1;</code>
      */
     public static final int GENERATE_REPORT_VALUE = 1;
-
     /**
      *
      *
@@ -773,7 +763,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for chatRestriction.
      */
     int getChatRestrictionValue();
-
     /**
      *
      *
@@ -804,7 +793,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for reactionRestriction.
      */
     int getReactionRestrictionValue();
-
     /**
      *
      *
@@ -835,7 +823,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for presentRestriction.
      */
     int getPresentRestrictionValue();
-
     /**
      *
      *
@@ -866,7 +853,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for defaultJoinAsViewerType.
      */
     int getDefaultJoinAsViewerTypeValue();
-
     /**
      *
      *
@@ -883,7 +869,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType
         getDefaultJoinAsViewerType();
   }
-
   /**
    *
    *
@@ -898,7 +883,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions)
       ModerationRestrictionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ModerationRestrictions.newBuilder() to construct.
     private ModerationRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -988,7 +972,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>RESTRICTION_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int RESTRICTION_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -999,7 +982,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>HOSTS_ONLY = 1;</code>
        */
       public static final int HOSTS_ONLY_VALUE = 1;
-
       /**
        *
        *
@@ -1158,7 +1140,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int DEFAULT_JOIN_AS_VIEWER_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1169,7 +1150,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>ON = 1;</code>
        */
       public static final int ON_VALUE = 1;
-
       /**
        *
        *
@@ -1271,7 +1251,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CHAT_RESTRICTION_FIELD_NUMBER = 1;
     private int chatRestriction_ = 0;
-
     /**
      *
      *
@@ -1289,7 +1268,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getChatRestrictionValue() {
       return chatRestriction_;
     }
-
     /**
      *
      *
@@ -1317,7 +1295,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REACTION_RESTRICTION_FIELD_NUMBER = 2;
     private int reactionRestriction_ = 0;
-
     /**
      *
      *
@@ -1335,7 +1312,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getReactionRestrictionValue() {
       return reactionRestriction_;
     }
-
     /**
      *
      *
@@ -1363,7 +1339,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int PRESENT_RESTRICTION_FIELD_NUMBER = 3;
     private int presentRestriction_ = 0;
-
     /**
      *
      *
@@ -1381,7 +1356,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getPresentRestrictionValue() {
       return presentRestriction_;
     }
-
     /**
      *
      *
@@ -1409,7 +1383,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int DEFAULT_JOIN_AS_VIEWER_TYPE_FIELD_NUMBER = 4;
     private int defaultJoinAsViewerType_ = 0;
-
     /**
      *
      *
@@ -1427,7 +1400,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getDefaultJoinAsViewerTypeValue() {
       return defaultJoinAsViewerType_;
     }
-
     /**
      *
      *
@@ -1666,7 +1638,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1895,7 +1866,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int chatRestriction_ = 0;
-
       /**
        *
        *
@@ -1913,7 +1883,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getChatRestrictionValue() {
         return chatRestriction_;
       }
-
       /**
        *
        *
@@ -1934,7 +1903,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1959,7 +1927,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1984,7 +1951,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2006,7 +1972,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int reactionRestriction_ = 0;
-
       /**
        *
        *
@@ -2024,7 +1989,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getReactionRestrictionValue() {
         return reactionRestriction_;
       }
-
       /**
        *
        *
@@ -2045,7 +2009,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2070,7 +2033,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2095,7 +2057,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2117,7 +2078,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int presentRestriction_ = 0;
-
       /**
        *
        *
@@ -2135,7 +2095,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getPresentRestrictionValue() {
         return presentRestriction_;
       }
-
       /**
        *
        *
@@ -2156,7 +2115,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2181,7 +2139,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2206,7 +2163,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2228,7 +2184,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int defaultJoinAsViewerType_ = 0;
-
       /**
        *
        *
@@ -2246,7 +2201,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getDefaultJoinAsViewerTypeValue() {
         return defaultJoinAsViewerType_;
       }
-
       /**
        *
        *
@@ -2267,7 +2221,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2293,7 +2246,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -2319,7 +2271,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2426,7 +2377,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the recordingConfig field is set.
      */
     boolean hasRecordingConfig();
-
     /**
      *
      *
@@ -2441,7 +2391,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The recordingConfig.
      */
     com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig getRecordingConfig();
-
     /**
      *
      *
@@ -2470,7 +2419,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transcriptionConfig field is set.
      */
     boolean hasTranscriptionConfig();
-
     /**
      *
      *
@@ -2486,7 +2434,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
         getTranscriptionConfig();
-
     /**
      *
      *
@@ -2515,7 +2462,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the smartNotesConfig field is set.
      */
     boolean hasSmartNotesConfig();
-
     /**
      *
      *
@@ -2530,7 +2476,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The smartNotesConfig.
      */
     com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig getSmartNotesConfig();
-
     /**
      *
      *
@@ -2545,7 +2490,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder
         getSmartNotesConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -2561,7 +2505,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig)
       ArtifactConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ArtifactConfig.newBuilder() to construct.
     private ArtifactConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2646,7 +2589,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>AUTO_GENERATION_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int AUTO_GENERATION_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2657,7 +2599,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * <code>ON = 1;</code>
        */
       public static final int ON_VALUE = 1;
-
       /**
        *
        *
@@ -2777,7 +2718,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for autoRecordingGeneration.
        */
       int getAutoRecordingGenerationValue();
-
       /**
        *
        *
@@ -2795,7 +2735,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
           getAutoRecordingGeneration();
     }
-
     /**
      *
      *
@@ -2810,7 +2749,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig)
         RecordingConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use RecordingConfig.newBuilder() to construct.
       private RecordingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2844,7 +2782,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
       public static final int AUTO_RECORDING_GENERATION_FIELD_NUMBER = 2;
       private int autoRecordingGeneration_ = 0;
-
       /**
        *
        *
@@ -2863,7 +2800,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getAutoRecordingGenerationValue() {
         return autoRecordingGeneration_;
       }
-
       /**
        *
        *
@@ -3066,7 +3002,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3263,7 +3198,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int autoRecordingGeneration_ = 0;
-
         /**
          *
          *
@@ -3282,7 +3216,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         public int getAutoRecordingGenerationValue() {
           return autoRecordingGeneration_;
         }
-
         /**
          *
          *
@@ -3304,7 +3237,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3330,7 +3262,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                   .UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -3356,7 +3287,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3466,7 +3396,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for autoTranscriptionGeneration.
        */
       int getAutoTranscriptionGenerationValue();
-
       /**
        *
        *
@@ -3484,7 +3413,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
           getAutoTranscriptionGeneration();
     }
-
     /**
      *
      *
@@ -3499,7 +3427,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig)
         TranscriptionConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use TranscriptionConfig.newBuilder() to construct.
       private TranscriptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3533,7 +3460,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
       public static final int AUTO_TRANSCRIPTION_GENERATION_FIELD_NUMBER = 2;
       private int autoTranscriptionGeneration_ = 0;
-
       /**
        *
        *
@@ -3552,7 +3478,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getAutoTranscriptionGenerationValue() {
         return autoTranscriptionGeneration_;
       }
-
       /**
        *
        *
@@ -3757,7 +3682,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3956,7 +3880,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int autoTranscriptionGeneration_ = 0;
-
         /**
          *
          *
@@ -3975,7 +3898,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         public int getAutoTranscriptionGenerationValue() {
           return autoTranscriptionGeneration_;
         }
-
         /**
          *
          *
@@ -3997,7 +3919,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4023,7 +3944,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                   .UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -4049,7 +3969,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4161,7 +4080,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for autoSmartNotesGeneration.
        */
       int getAutoSmartNotesGenerationValue();
-
       /**
        *
        *
@@ -4180,7 +4098,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType
           getAutoSmartNotesGeneration();
     }
-
     /**
      *
      *
@@ -4197,7 +4114,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig)
         SmartNotesConfigOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use SmartNotesConfig.newBuilder() to construct.
       private SmartNotesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4231,7 +4147,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
       public static final int AUTO_SMART_NOTES_GENERATION_FIELD_NUMBER = 2;
       private int autoSmartNotesGeneration_ = 0;
-
       /**
        *
        *
@@ -4251,7 +4166,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public int getAutoSmartNotesGenerationValue() {
         return autoSmartNotesGeneration_;
       }
-
       /**
        *
        *
@@ -4455,7 +4369,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -4654,7 +4567,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int autoSmartNotesGeneration_ = 0;
-
         /**
          *
          *
@@ -4674,7 +4586,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         public int getAutoSmartNotesGenerationValue() {
           return autoSmartNotesGeneration_;
         }
-
         /**
          *
          *
@@ -4697,7 +4608,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4724,7 +4634,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
                   .UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -4751,7 +4660,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -4845,7 +4753,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int RECORDING_CONFIG_FIELD_NUMBER = 1;
     private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig recordingConfig_;
-
     /**
      *
      *
@@ -4863,7 +4770,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRecordingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -4885,7 +4791,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : recordingConfig_;
     }
-
     /**
      *
      *
@@ -4909,7 +4814,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int TRANSCRIPTION_CONFIG_FIELD_NUMBER = 2;
     private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig
         transcriptionConfig_;
-
     /**
      *
      *
@@ -4927,7 +4831,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTranscriptionConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4949,7 +4852,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : transcriptionConfig_;
     }
-
     /**
      *
      *
@@ -4973,7 +4875,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int SMART_NOTES_CONFIG_FIELD_NUMBER = 3;
     private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig
         smartNotesConfig_;
-
     /**
      *
      *
@@ -4991,7 +4892,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSmartNotesConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -5013,7 +4913,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance()
           : smartNotesConfig_;
     }
-
     /**
      *
      *
@@ -5229,7 +5128,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5486,7 +5384,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig.Builder,
               com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfigOrBuilder>
           recordingConfigBuilder_;
-
       /**
        *
        *
@@ -5503,7 +5400,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRecordingConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -5528,7 +5424,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           return recordingConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5554,7 +5449,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5578,7 +5472,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5611,7 +5504,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5633,7 +5525,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5651,7 +5542,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRecordingConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5674,7 +5564,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               : recordingConfig_;
         }
       }
-
       /**
        *
        *
@@ -5710,7 +5599,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig.Builder,
               com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfigOrBuilder>
           transcriptionConfigBuilder_;
-
       /**
        *
        *
@@ -5727,7 +5615,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTranscriptionConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -5752,7 +5639,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           return transcriptionConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -5778,7 +5664,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5802,7 +5687,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5835,7 +5719,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -5857,7 +5740,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5875,7 +5757,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getTranscriptionConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -5898,7 +5779,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               : transcriptionConfig_;
         }
       }
-
       /**
        *
        *
@@ -5936,7 +5816,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig.Builder,
               com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfigOrBuilder>
           smartNotesConfigBuilder_;
-
       /**
        *
        *
@@ -5953,7 +5832,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSmartNotesConfig() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -5978,7 +5856,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           return smartNotesConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -6004,7 +5881,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6028,7 +5904,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6061,7 +5936,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -6083,7 +5957,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -6101,7 +5974,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSmartNotesConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -6124,7 +5996,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
               : smartNotesConfig_;
         }
       }
-
       /**
        *
        *
@@ -6220,7 +6091,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ACCESS_TYPE_FIELD_NUMBER = 1;
   private int accessType_ = 0;
-
   /**
    *
    *
@@ -6238,7 +6108,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAccessTypeValue() {
     return accessType_;
   }
-
   /**
    *
    *
@@ -6263,7 +6132,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENTRY_POINT_ACCESS_FIELD_NUMBER = 2;
   private int entryPointAccess_ = 0;
-
   /**
    *
    *
@@ -6281,7 +6149,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public int getEntryPointAccessValue() {
     return entryPointAccess_;
   }
-
   /**
    *
    *
@@ -6306,7 +6173,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODERATION_FIELD_NUMBER = 3;
   private int moderation_ = 0;
-
   /**
    *
    *
@@ -6324,7 +6190,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public int getModerationValue() {
     return moderation_;
   }
-
   /**
    *
    *
@@ -6349,7 +6214,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODERATION_RESTRICTIONS_FIELD_NUMBER = 4;
   private com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions moderationRestrictions_;
-
   /**
    *
    *
@@ -6368,7 +6232,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasModerationRestrictions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -6390,7 +6253,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.getDefaultInstance()
         : moderationRestrictions_;
   }
-
   /**
    *
    *
@@ -6413,7 +6275,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTENDANCE_REPORT_GENERATION_TYPE_FIELD_NUMBER = 6;
   private int attendanceReportGenerationType_ = 0;
-
   /**
    *
    *
@@ -6432,7 +6293,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAttendanceReportGenerationTypeValue() {
     return attendanceReportGenerationType_;
   }
-
   /**
    *
    *
@@ -6460,7 +6320,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ARTIFACT_CONFIG_FIELD_NUMBER = 7;
   private com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig artifactConfig_;
-
   /**
    *
    *
@@ -6478,7 +6337,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArtifactConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -6498,7 +6356,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.getDefaultInstance()
         : artifactConfig_;
   }
-
   /**
    *
    *
@@ -6747,7 +6604,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7021,7 +6877,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int accessType_ = 0;
-
     /**
      *
      *
@@ -7039,7 +6894,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAccessTypeValue() {
       return accessType_;
     }
-
     /**
      *
      *
@@ -7060,7 +6914,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7082,7 +6935,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.meet.v2beta.SpaceConfig.AccessType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7106,7 +6958,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7128,7 +6979,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int entryPointAccess_ = 0;
-
     /**
      *
      *
@@ -7146,7 +6996,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getEntryPointAccessValue() {
       return entryPointAccess_;
     }
-
     /**
      *
      *
@@ -7167,7 +7016,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7189,7 +7037,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.meet.v2beta.SpaceConfig.EntryPointAccess.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7214,7 +7061,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7236,7 +7082,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int moderation_ = 0;
-
     /**
      *
      *
@@ -7254,7 +7099,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getModerationValue() {
       return moderation_;
     }
-
     /**
      *
      *
@@ -7275,7 +7119,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7297,7 +7140,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.meet.v2beta.SpaceConfig.Moderation.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7321,7 +7163,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7348,7 +7189,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.Builder,
             com.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictionsOrBuilder>
         moderationRestrictionsBuilder_;
-
     /**
      *
      *
@@ -7367,7 +7207,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasModerationRestrictions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -7393,7 +7232,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         return moderationRestrictionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7421,7 +7259,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7446,7 +7283,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7481,7 +7317,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7505,7 +7340,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7525,7 +7359,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getModerationRestrictionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7549,7 +7382,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
             : moderationRestrictions_;
       }
     }
-
     /**
      *
      *
@@ -7581,7 +7413,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attendanceReportGenerationType_ = 0;
-
     /**
      *
      *
@@ -7600,7 +7431,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAttendanceReportGenerationTypeValue() {
       return attendanceReportGenerationType_;
     }
-
     /**
      *
      *
@@ -7622,7 +7452,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7647,7 +7476,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7673,7 +7501,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7701,7 +7528,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.Builder,
             com.google.apps.meet.v2beta.SpaceConfig.ArtifactConfigOrBuilder>
         artifactConfigBuilder_;
-
     /**
      *
      *
@@ -7718,7 +7544,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArtifactConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -7741,7 +7566,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
         return artifactConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7766,7 +7590,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7789,7 +7612,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7821,7 +7643,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7843,7 +7664,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7861,7 +7681,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getArtifactConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7883,7 +7702,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessageV3
             : artifactConfig_;
       }
     }
-
     /**
      *
      *

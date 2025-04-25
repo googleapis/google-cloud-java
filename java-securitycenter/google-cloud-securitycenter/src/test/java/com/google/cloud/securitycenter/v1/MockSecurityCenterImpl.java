@@ -101,8 +101,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " CreateSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method CreateSecurityHealthAnalyticsCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecurityHealthAnalyticsCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -186,8 +185,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateNotificationConfig, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method CreateNotificationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
                   Exception.class.getName())));
@@ -229,8 +227,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteNotificationConfig, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteNotificationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -252,8 +249,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " DeleteSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteSecurityHealthAnalyticsCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -378,8 +374,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetNotificationConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetNotificationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
                   Exception.class.getName())));
@@ -401,8 +396,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetOrganizationSettings, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetOrganizationSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
                   Exception.class.getName())));
@@ -424,8 +418,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " GetEffectiveSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method GetEffectiveSecurityHealthAnalyticsCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EffectiveSecurityHealthAnalyticsCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -447,8 +440,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetSecurityHealthAnalyticsCustomModule,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetSecurityHealthAnalyticsCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecurityHealthAnalyticsCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -554,8 +546,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " ListDescendantSecurityHealthAnalyticsCustomModules, expected %s or %s",
+                  "Unrecognized response type %s for method ListDescendantSecurityHealthAnalyticsCustomModules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDescendantSecurityHealthAnalyticsCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -619,8 +610,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListNotificationConfigs, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListNotificationConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotificationConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -643,8 +633,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " ListEffectiveSecurityHealthAnalyticsCustomModules, expected %s or %s",
+                  "Unrecognized response type %s for method ListEffectiveSecurityHealthAnalyticsCustomModules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEffectiveSecurityHealthAnalyticsCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -666,8 +655,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " ListSecurityHealthAnalyticsCustomModules, expected %s or %s",
+                  "Unrecognized response type %s for method ListSecurityHealthAnalyticsCustomModules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListSecurityHealthAnalyticsCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -814,8 +802,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " SimulateSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method SimulateSecurityHealthAnalyticsCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SimulateSecurityHealthAnalyticsCustomModuleResponse.class.getName(),
                   Exception.class.getName())));
@@ -836,8 +823,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateExternalSystem, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateExternalSystem, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExternalSystem.class.getName(),
                   Exception.class.getName())));
@@ -901,8 +887,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateNotificationConfig, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateNotificationConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NotificationConfig.class.getName(),
                   Exception.class.getName())));
@@ -924,8 +909,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
                   Exception.class.getName())));
@@ -947,8 +931,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " UpdateSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateSecurityHealthAnalyticsCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SecurityHealthAnalyticsCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -1010,8 +993,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateBigQueryExport, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateBigQueryExport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BigQueryExport.class.getName(),
                   Exception.class.getName())));
@@ -1032,8 +1014,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteBigQueryExport, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteBigQueryExport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1054,8 +1035,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateBigQueryExport, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method UpdateBigQueryExport, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BigQueryExport.class.getName(),
                   Exception.class.getName())));
@@ -1099,8 +1079,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateEventThreatDetectionCustomModule,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method CreateEventThreatDetectionCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EventThreatDetectionCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -1122,8 +1101,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteEventThreatDetectionCustomModule,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method DeleteEventThreatDetectionCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1145,8 +1123,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetEventThreatDetectionCustomModule,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method GetEventThreatDetectionCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EventThreatDetectionCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -1168,8 +1145,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " ListDescendantEventThreatDetectionCustomModules, expected %s or %s",
+                  "Unrecognized response type %s for method ListDescendantEventThreatDetectionCustomModules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListDescendantEventThreatDetectionCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -1191,8 +1167,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListEventThreatDetectionCustomModules,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method ListEventThreatDetectionCustomModules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEventThreatDetectionCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -1214,8 +1189,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateEventThreatDetectionCustomModule,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method UpdateEventThreatDetectionCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EventThreatDetectionCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -1237,8 +1211,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " ValidateEventThreatDetectionCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method ValidateEventThreatDetectionCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ValidateEventThreatDetectionCustomModuleResponse.class.getName(),
                   Exception.class.getName())));
@@ -1260,8 +1233,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " GetEffectiveEventThreatDetectionCustomModule, expected %s or %s",
+                  "Unrecognized response type %s for method GetEffectiveEventThreatDetectionCustomModule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EffectiveEventThreatDetectionCustomModule.class.getName(),
                   Exception.class.getName())));
@@ -1283,8 +1255,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method"
-                      + " ListEffectiveEventThreatDetectionCustomModules, expected %s or %s",
+                  "Unrecognized response type %s for method ListEffectiveEventThreatDetectionCustomModules, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListEffectiveEventThreatDetectionCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
@@ -1306,8 +1277,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method BatchCreateResourceValueConfigs,"
-                      + " expected %s or %s",
+                  "Unrecognized response type %s for method BatchCreateResourceValueConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BatchCreateResourceValueConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1328,8 +1298,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteResourceValueConfig, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method DeleteResourceValueConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1350,8 +1319,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetResourceValueConfig, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetResourceValueConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceValueConfig.class.getName(),
                   Exception.class.getName())));
@@ -1373,8 +1341,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListResourceValueConfigs, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method ListResourceValueConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListResourceValueConfigsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1396,8 +1363,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateResourceValueConfig, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method UpdateResourceValueConfig, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResourceValueConfig.class.getName(),
                   Exception.class.getName())));

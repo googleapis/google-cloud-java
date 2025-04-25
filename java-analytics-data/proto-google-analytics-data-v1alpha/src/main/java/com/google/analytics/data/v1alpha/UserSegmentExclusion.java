@@ -33,7 +33,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.UserSegmentExclusion)
     UserSegmentExclusionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserSegmentExclusion.newBuilder() to construct.
   private UserSegmentExclusion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int USER_EXCLUSION_DURATION_FIELD_NUMBER = 1;
   private int userExclusionDuration_ = 0;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
   public int getUserExclusionDurationValue() {
     return userExclusionDuration_;
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
 
   public static final int USER_EXCLUSION_CRITERIA_FIELD_NUMBER = 2;
   private com.google.analytics.data.v1alpha.UserSegmentCriteria userExclusionCriteria_;
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
   public boolean hasUserExclusionCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
         ? com.google.analytics.data.v1alpha.UserSegmentCriteria.getDefaultInstance()
         : userExclusionCriteria_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -566,7 +559,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int userExclusionDuration_ = 0;
-
     /**
      *
      *
@@ -587,7 +579,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
     public int getUserExclusionDurationValue() {
       return userExclusionDuration_;
     }
-
     /**
      *
      *
@@ -611,7 +602,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
           ? com.google.analytics.data.v1alpha.UserExclusionDuration.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
             com.google.analytics.data.v1alpha.UserSegmentCriteria.Builder,
             com.google.analytics.data.v1alpha.UserSegmentCriteriaOrBuilder>
         userExclusionCriteriaBuilder_;
-
     /**
      *
      *
@@ -710,7 +697,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
     public boolean hasUserExclusionCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -732,7 +718,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
         return userExclusionCriteriaBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +763,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +829,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUserExclusionCriteriaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class UserSegmentExclusion extends com.google.protobuf.GeneratedMes
             : userExclusionCriteria_;
       }
     }
-
     /**
      *
      *

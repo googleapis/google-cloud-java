@@ -36,7 +36,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.ReplicationCycle> getReplicationCyclesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.ReplicationCycle getReplicationCycles(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * </code>
    */
   int getReplicationCyclesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder>
       getReplicationCyclesOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -158,7 +151,6 @@ public interface ListReplicationCyclesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

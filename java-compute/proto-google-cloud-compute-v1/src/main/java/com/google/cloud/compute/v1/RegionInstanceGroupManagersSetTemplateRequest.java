@@ -33,7 +33,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest)
     RegionInstanceGroupManagersSetTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RegionInstanceGroupManagersSetTemplateRequest.newBuilder() to construct.
   private RegionInstanceGroupManagersSetTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceTemplate_ = "";
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
   public boolean hasInstanceTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -304,7 +300,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -502,7 +497,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     private int bitField0_;
 
     private java.lang.Object instanceTemplate_ = "";
-
     /**
      *
      *
@@ -517,7 +511,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
     public boolean hasInstanceTemplate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -540,7 +533,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -563,7 +555,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -585,7 +576,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -603,7 +593,6 @@ public final class RegionInstanceGroupManagersSetTemplateRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

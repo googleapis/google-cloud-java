@@ -36,7 +36,6 @@ public interface RegistryCredentialOrBuilder
    * @return Whether the publicKeyCertificate field is set.
    */
   boolean hasPublicKeyCertificate();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RegistryCredentialOrBuilder
    * @return The publicKeyCertificate.
    */
   com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate();
-
   /**
    *
    *

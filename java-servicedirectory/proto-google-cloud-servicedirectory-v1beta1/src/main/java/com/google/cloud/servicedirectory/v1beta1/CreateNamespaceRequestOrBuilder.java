@@ -39,7 +39,6 @@ public interface CreateNamespaceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface CreateNamespaceRequestOrBuilder
    * @return The namespaceId.
    */
   java.lang.String getNamespaceId();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface CreateNamespaceRequestOrBuilder
    * @return Whether the namespace field is set.
    */
   boolean hasNamespace();
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public interface CreateNamespaceRequestOrBuilder
    * @return The namespace.
    */
   com.google.cloud.servicedirectory.v1beta1.Namespace getNamespace();
-
   /**
    *
    *

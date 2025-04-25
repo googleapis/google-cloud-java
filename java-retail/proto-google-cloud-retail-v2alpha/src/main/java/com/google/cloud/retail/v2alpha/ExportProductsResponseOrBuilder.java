@@ -34,7 +34,6 @@ public interface ExportProductsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ExportProductsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   com.google.rpc.Status getErrorSamples(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ExportProductsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   int getErrorSamplesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ExportProductsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ExportProductsResponseOrBuilder
    * @return Whether the errorsConfig field is set.
    */
   boolean hasErrorsConfig();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface ExportProductsResponseOrBuilder
    * @return The errorsConfig.
    */
   com.google.cloud.retail.v2alpha.ExportErrorsConfig getErrorsConfig();
-
   /**
    *
    *
@@ -128,7 +122,6 @@ public interface ExportProductsResponseOrBuilder
    * @return Whether the outputResult field is set.
    */
   boolean hasOutputResult();
-
   /**
    *
    *
@@ -141,7 +134,6 @@ public interface ExportProductsResponseOrBuilder
    * @return The outputResult.
    */
   com.google.cloud.retail.v2alpha.OutputResult getOutputResult();
-
   /**
    *
    *

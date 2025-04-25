@@ -36,7 +36,6 @@ public interface WorkspaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface WorkspaceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface WorkspaceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface WorkspaceOrBuilder
    * @return Whether the dataEncryptionState field is set.
    */
   boolean hasDataEncryptionState();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public interface WorkspaceOrBuilder
    * @return The dataEncryptionState.
    */
   com.google.cloud.dataform.v1beta1.DataEncryptionState getDataEncryptionState();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface WorkspaceOrBuilder
    * @return Whether the internalMetadata field is set.
    */
   boolean hasInternalMetadata();
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public interface WorkspaceOrBuilder
    * @return The internalMetadata.
    */
   java.lang.String getInternalMetadata();
-
   /**
    *
    *

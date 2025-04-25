@@ -38,7 +38,6 @@ public interface GetServiceConnectionMapRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

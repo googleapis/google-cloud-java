@@ -32,7 +32,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.RouterNatRuleAction)
     RouterNatRuleActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RouterNatRuleAction.newBuilder() to construct.
   private RouterNatRuleAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceNatActiveIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getSourceNatActiveIpsList() {
     return sourceNatActiveIps_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public int getSourceNatActiveIpsCount() {
     return sourceNatActiveIps_.size();
   }
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public java.lang.String getSourceNatActiveIps(int index) {
     return sourceNatActiveIps_.get(index);
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceNatActiveRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getSourceNatActiveRangesList() {
     return sourceNatActiveRanges_;
   }
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public int getSourceNatActiveRangesCount() {
     return sourceNatActiveRanges_.size();
   }
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public java.lang.String getSourceNatActiveRanges(int index) {
     return sourceNatActiveRanges_.get(index);
   }
-
   /**
    *
    *
@@ -207,7 +198,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceNatDrainIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -222,7 +212,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getSourceNatDrainIpsList() {
     return sourceNatDrainIps_;
   }
-
   /**
    *
    *
@@ -237,7 +226,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public int getSourceNatDrainIpsCount() {
     return sourceNatDrainIps_.size();
   }
-
   /**
    *
    *
@@ -253,7 +241,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public java.lang.String getSourceNatDrainIps(int index) {
     return sourceNatDrainIps_.get(index);
   }
-
   /**
    *
    *
@@ -275,7 +262,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList sourceNatDrainRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -290,7 +276,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getSourceNatDrainRangesList() {
     return sourceNatDrainRanges_;
   }
-
   /**
    *
    *
@@ -305,7 +290,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public int getSourceNatDrainRangesCount() {
     return sourceNatDrainRanges_.size();
   }
-
   /**
    *
    *
@@ -321,7 +305,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
   public java.lang.String getSourceNatDrainRanges(int index) {
     return sourceNatDrainRanges_.get(index);
   }
-
   /**
    *
    *
@@ -556,7 +539,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -821,7 +803,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -837,7 +818,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       sourceNatActiveIps_.makeImmutable();
       return sourceNatActiveIps_;
     }
-
     /**
      *
      *
@@ -852,7 +832,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public int getSourceNatActiveIpsCount() {
       return sourceNatActiveIps_.size();
     }
-
     /**
      *
      *
@@ -868,7 +847,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public java.lang.String getSourceNatActiveIps(int index) {
       return sourceNatActiveIps_.get(index);
     }
-
     /**
      *
      *
@@ -884,7 +862,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getSourceNatActiveIpsBytes(int index) {
       return sourceNatActiveIps_.getByteString(index);
     }
-
     /**
      *
      *
@@ -908,7 +885,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +944,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -1021,7 +993,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       sourceNatActiveRanges_.makeImmutable();
       return sourceNatActiveRanges_;
     }
-
     /**
      *
      *
@@ -1036,7 +1007,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public int getSourceNatActiveRangesCount() {
       return sourceNatActiveRanges_.size();
     }
-
     /**
      *
      *
@@ -1052,7 +1022,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public java.lang.String getSourceNatActiveRanges(int index) {
       return sourceNatActiveRanges_.get(index);
     }
-
     /**
      *
      *
@@ -1068,7 +1037,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getSourceNatActiveRangesBytes(int index) {
       return sourceNatActiveRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1092,7 +1060,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1082,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1101,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1119,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1152,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1204,7 +1167,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       sourceNatDrainIps_.makeImmutable();
       return sourceNatDrainIps_;
     }
-
     /**
      *
      *
@@ -1219,7 +1181,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public int getSourceNatDrainIpsCount() {
       return sourceNatDrainIps_.size();
     }
-
     /**
      *
      *
@@ -1235,7 +1196,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public java.lang.String getSourceNatDrainIps(int index) {
       return sourceNatDrainIps_.get(index);
     }
-
     /**
      *
      *
@@ -1251,7 +1211,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getSourceNatDrainIpsBytes(int index) {
       return sourceNatDrainIps_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1275,7 +1234,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1256,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1318,7 +1275,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1293,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1326,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1387,7 +1341,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       sourceNatDrainRanges_.makeImmutable();
       return sourceNatDrainRanges_;
     }
-
     /**
      *
      *
@@ -1402,7 +1355,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public int getSourceNatDrainRangesCount() {
       return sourceNatDrainRanges_.size();
     }
-
     /**
      *
      *
@@ -1418,7 +1370,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public java.lang.String getSourceNatDrainRanges(int index) {
       return sourceNatDrainRanges_.get(index);
     }
-
     /**
      *
      *
@@ -1434,7 +1385,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getSourceNatDrainRangesBytes(int index) {
       return sourceNatDrainRanges_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1458,7 +1408,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1481,7 +1430,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1501,7 +1449,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1467,6 @@ public final class RouterNatRuleAction extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

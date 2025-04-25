@@ -34,7 +34,6 @@ public interface BatchCreateFeaturesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Feature features = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Feature> getFeaturesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchCreateFeaturesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Feature features = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Feature getFeatures(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchCreateFeaturesResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Feature features = 1;</code>
    */
   int getFeaturesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchCreateFeaturesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.FeatureOrBuilder>
       getFeaturesOrBuilderList();
-
   /**
    *
    *

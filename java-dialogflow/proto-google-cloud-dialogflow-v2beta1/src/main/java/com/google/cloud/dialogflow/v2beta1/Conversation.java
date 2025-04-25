@@ -36,7 +36,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation)
     ConversationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Conversation.newBuilder() to construct.
   private Conversation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -135,7 +134,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <code>LIFECYCLE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int LIFECYCLE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -146,7 +144,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <code>IN_PROGRESS = 1;</code>
      */
     public static final int IN_PROGRESS_VALUE = 1;
-
     /**
      *
      *
@@ -300,7 +297,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <code>CONVERSATION_STAGE_UNSPECIFIED = 0;</code>
      */
     public static final int CONVERSATION_STAGE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -312,7 +308,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * <code>VIRTUAL_AGENT_STAGE = 1;</code>
      */
     public static final int VIRTUAL_AGENT_STAGE_VALUE = 1;
-
     /**
      *
      *
@@ -428,7 +423,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * @return The dialedNumber.
      */
     java.lang.String getDialedNumber();
-
     /**
      *
      *
@@ -455,7 +449,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * @return The sdp.
      */
     java.lang.String getSdp();
-
     /**
      *
      *
@@ -484,7 +477,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.SipHeader>
         getSipHeadersList();
-
     /**
      *
      *
@@ -498,7 +490,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.SipHeader
         getSipHeaders(int index);
-
     /**
      *
      *
@@ -511,7 +502,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getSipHeadersCount();
-
     /**
      *
      *
@@ -528,7 +518,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo
                     .SipHeaderOrBuilder>
         getSipHeadersOrBuilderList();
-
     /**
      *
      *
@@ -557,7 +546,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContent>
         getExtraMimeContentsList();
-
     /**
      *
      *
@@ -571,7 +559,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContent
         getExtraMimeContents(int index);
-
     /**
      *
      *
@@ -584,7 +571,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getExtraMimeContentsCount();
-
     /**
      *
      *
@@ -601,7 +587,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo
                     .MimeContentOrBuilder>
         getExtraMimeContentsOrBuilderList();
-
     /**
      *
      *
@@ -616,7 +601,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContentOrBuilder
         getExtraMimeContentsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -632,7 +616,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo)
       TelephonyConnectionInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TelephonyConnectionInfo.newBuilder() to construct.
     private TelephonyConnectionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -684,7 +667,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The name.
        */
       java.lang.String getName();
-
       /**
        *
        *
@@ -710,7 +692,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The value.
        */
       java.lang.String getValue();
-
       /**
        *
        *
@@ -724,7 +705,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getValueBytes();
     }
-
     /**
      *
      *
@@ -740,7 +720,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.SipHeader)
         SipHeaderOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use SipHeader.newBuilder() to construct.
       private SipHeader(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -778,7 +757,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -802,7 +780,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -831,7 +808,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object value_ = "";
-
       /**
        *
        *
@@ -855,7 +831,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1074,7 +1049,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1298,7 +1272,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object name_ = "";
-
         /**
          *
          *
@@ -1321,7 +1294,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1344,7 +1316,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1366,7 +1337,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1384,7 +1354,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1409,7 +1378,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
 
         private java.lang.Object value_ = "";
-
         /**
          *
          *
@@ -1432,7 +1400,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1455,7 +1422,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1477,7 +1443,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1495,7 +1460,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1607,7 +1571,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The mimeType.
        */
       java.lang.String getMimeType();
-
       /**
        *
        *
@@ -1634,7 +1597,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getContent();
     }
-
     /**
      *
      *
@@ -1650,7 +1612,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContent)
         MimeContentOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use MimeContent.newBuilder() to construct.
       private MimeContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1688,7 +1649,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object mimeType_ = "";
-
       /**
        *
        *
@@ -1712,7 +1672,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -1739,7 +1698,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       public static final int CONTENT_FIELD_NUMBER = 2;
       private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
       /**
        *
        *
@@ -1950,7 +1908,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -2174,7 +2131,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object mimeType_ = "";
-
         /**
          *
          *
@@ -2197,7 +2153,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -2220,7 +2175,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -2242,7 +2196,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2260,7 +2213,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2285,7 +2237,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
 
         private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
         /**
          *
          *
@@ -2301,7 +2252,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         public com.google.protobuf.ByteString getContent() {
           return content_;
         }
-
         /**
          *
          *
@@ -2323,7 +2273,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -2417,7 +2366,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dialedNumber_ = "";
-
     /**
      *
      *
@@ -2441,7 +2389,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2470,7 +2417,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sdp_ = "";
-
     /**
      *
      *
@@ -2495,7 +2441,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2527,7 +2472,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.SipHeader>
         sipHeaders_;
-
     /**
      *
      *
@@ -2545,7 +2489,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getSipHeadersList() {
       return sipHeaders_;
     }
-
     /**
      *
      *
@@ -2565,7 +2508,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getSipHeadersOrBuilderList() {
       return sipHeaders_;
     }
-
     /**
      *
      *
@@ -2581,7 +2523,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getSipHeadersCount() {
       return sipHeaders_.size();
     }
-
     /**
      *
      *
@@ -2598,7 +2539,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getSipHeaders(int index) {
       return sipHeaders_.get(index);
     }
-
     /**
      *
      *
@@ -2623,7 +2563,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContent>
         extraMimeContents_;
-
     /**
      *
      *
@@ -2641,7 +2580,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getExtraMimeContentsList() {
       return extraMimeContents_;
     }
-
     /**
      *
      *
@@ -2661,7 +2599,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getExtraMimeContentsOrBuilderList() {
       return extraMimeContents_;
     }
-
     /**
      *
      *
@@ -2677,7 +2614,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getExtraMimeContentsCount() {
       return extraMimeContents_.size();
     }
-
     /**
      *
      *
@@ -2694,7 +2630,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getExtraMimeContents(int index) {
       return extraMimeContents_.get(index);
     }
-
     /**
      *
      *
@@ -2913,7 +2848,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3252,7 +3186,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object dialedNumber_ = "";
-
       /**
        *
        *
@@ -3275,7 +3208,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3298,7 +3230,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3320,7 +3251,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3338,7 +3268,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3363,7 +3292,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object sdp_ = "";
-
       /**
        *
        *
@@ -3387,7 +3315,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3411,7 +3338,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3434,7 +3360,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3453,7 +3378,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3520,7 +3444,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return sipHeadersBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3539,7 +3462,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return sipHeadersBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -3559,7 +3481,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return sipHeadersBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -3587,7 +3508,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3612,7 +3532,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3639,7 +3558,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3667,7 +3585,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3691,7 +3608,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3716,7 +3632,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3743,7 +3658,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3765,7 +3679,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3787,7 +3700,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3804,7 +3716,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           getSipHeadersBuilder(int index) {
         return getSipHeadersFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -3825,7 +3736,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return sipHeadersBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -3848,7 +3758,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(sipHeaders_);
         }
       }
-
       /**
        *
        *
@@ -3868,7 +3777,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.SipHeader
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3889,7 +3797,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.SipHeader
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3972,7 +3879,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return extraMimeContentsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -3991,7 +3897,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return extraMimeContentsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -4011,7 +3916,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return extraMimeContentsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -4039,7 +3943,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4065,7 +3968,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4092,7 +3994,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4120,7 +4021,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4145,7 +4045,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4171,7 +4070,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4198,7 +4096,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4220,7 +4117,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4242,7 +4138,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -4259,7 +4154,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           getExtraMimeContentsBuilder(int index) {
         return getExtraMimeContentsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -4280,7 +4174,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return extraMimeContentsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -4303,7 +4196,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(extraMimeContents_);
         }
       }
-
       /**
        *
        *
@@ -4323,7 +4215,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContent
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4344,7 +4235,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.MimeContent
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -4474,7 +4364,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.ContextContent>
         getContextContentsList();
-
     /**
      *
      *
@@ -4488,7 +4377,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.ContextContent
         getContextContents(int index);
-
     /**
      *
      *
@@ -4501,7 +4389,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getContextContentsCount();
-
     /**
      *
      *
@@ -4518,7 +4405,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference
                     .ContextContentOrBuilder>
         getContextContentsOrBuilderList();
-
     /**
      *
      *
@@ -4547,7 +4433,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for updateMode.
      */
     int getUpdateModeValue();
-
     /**
      *
      *
@@ -4576,7 +4461,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * @return The languageCode.
      */
     java.lang.String getLanguageCode();
-
     /**
      *
      *
@@ -4605,7 +4489,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     boolean hasCreateTime();
-
     /**
      *
      *
@@ -4620,7 +4503,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      * @return The createTime.
      */
     com.google.protobuf.Timestamp getCreateTime();
-
     /**
      *
      *
@@ -4634,7 +4516,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -4649,7 +4530,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation.ContextReference)
       ContextReferenceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ContextReference.newBuilder() to construct.
     private ContextReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4736,7 +4616,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * <code>UPDATE_MODE_UNSPECIFIED = 0;</code>
        */
       public static final int UPDATE_MODE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -4747,7 +4626,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * <code>APPEND = 1;</code>
        */
       public static final int APPEND_VALUE = 1;
-
       /**
        *
        *
@@ -4861,7 +4739,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The content.
        */
       java.lang.String getContent();
-
       /**
        *
        *
@@ -4889,7 +4766,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The enum numeric value on the wire for contentFormat.
        */
       int getContentFormatValue();
-
       /**
        *
        *
@@ -4921,7 +4797,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the ingestionTime field is set.
        */
       boolean hasIngestionTime();
-
       /**
        *
        *
@@ -4937,7 +4812,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        * @return The ingestionTime.
        */
       com.google.protobuf.Timestamp getIngestionTime();
-
       /**
        *
        *
@@ -4952,7 +4826,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.TimestampOrBuilder getIngestionTimeOrBuilder();
     }
-
     /**
      *
      *
@@ -4968,7 +4841,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Conversation.ContextReference.ContextContent)
         ContextContentOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use ContextContent.newBuilder() to construct.
       private ContextContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -5056,7 +4928,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * <code>CONTENT_FORMAT_UNSPECIFIED = 0;</code>
          */
         public static final int CONTENT_FORMAT_UNSPECIFIED_VALUE = 0;
-
         /**
          *
          *
@@ -5067,7 +4938,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
          * <code>JSON = 1;</code>
          */
         public static final int JSON_VALUE = 1;
-
         /**
          *
          *
@@ -5174,7 +5044,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object content_ = "";
-
       /**
        *
        *
@@ -5198,7 +5067,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -5225,7 +5093,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       public static final int CONTENT_FORMAT_FIELD_NUMBER = 2;
       private int contentFormat_ = 0;
-
       /**
        *
        *
@@ -5243,7 +5110,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       public int getContentFormatValue() {
         return contentFormat_;
       }
-
       /**
        *
        *
@@ -5274,7 +5140,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
       public static final int INGESTION_TIME_FIELD_NUMBER = 3;
       private com.google.protobuf.Timestamp ingestionTime_;
-
       /**
        *
        *
@@ -5293,7 +5158,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasIngestionTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -5314,7 +5178,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             ? com.google.protobuf.Timestamp.getDefaultInstance()
             : ingestionTime_;
       }
-
       /**
        *
        *
@@ -5535,7 +5398,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -5787,7 +5649,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object content_ = "";
-
         /**
          *
          *
@@ -5810,7 +5671,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -5833,7 +5693,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -5855,7 +5714,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5873,7 +5731,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5898,7 +5755,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int contentFormat_ = 0;
-
         /**
          *
          *
@@ -5916,7 +5772,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         public int getContentFormatValue() {
           return contentFormat_;
         }
-
         /**
          *
          *
@@ -5937,7 +5792,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -5965,7 +5819,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   .ContentFormat.UNRECOGNIZED
               : result;
         }
-
         /**
          *
          *
@@ -5992,7 +5845,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6019,7 +5871,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             ingestionTimeBuilder_;
-
         /**
          *
          *
@@ -6037,7 +5888,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         public boolean hasIngestionTime() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -6061,7 +5911,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             return ingestionTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -6087,7 +5936,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6110,7 +5958,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6141,7 +5988,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -6164,7 +6010,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -6182,7 +6027,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getIngestionTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -6204,7 +6048,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 : ingestionTime_;
           }
         }
-
         /**
          *
          *
@@ -6310,7 +6153,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<
             com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.ContextContent>
         contextContents_;
-
     /**
      *
      *
@@ -6328,7 +6170,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getContextContentsList() {
       return contextContents_;
     }
-
     /**
      *
      *
@@ -6348,7 +6189,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getContextContentsOrBuilderList() {
       return contextContents_;
     }
-
     /**
      *
      *
@@ -6364,7 +6204,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getContextContentsCount() {
       return contextContents_.size();
     }
-
     /**
      *
      *
@@ -6381,7 +6220,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getContextContents(int index) {
       return contextContents_.get(index);
     }
-
     /**
      *
      *
@@ -6401,7 +6239,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_MODE_FIELD_NUMBER = 2;
     private int updateMode_ = 0;
-
     /**
      *
      *
@@ -6419,7 +6256,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getUpdateModeValue() {
       return updateMode_;
     }
-
     /**
      *
      *
@@ -6449,7 +6285,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -6474,7 +6309,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -6502,7 +6336,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CREATE_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp createTime_;
-
     /**
      *
      *
@@ -6520,7 +6353,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -6538,7 +6370,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getCreateTime() {
       return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
     }
-
     /**
      *
      *
@@ -6758,7 +6589,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -7102,7 +6932,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return contextContentsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -7121,7 +6950,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return contextContentsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -7141,7 +6969,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return contextContentsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -7168,7 +6995,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7193,7 +7019,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7219,7 +7044,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7246,7 +7070,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7270,7 +7093,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7295,7 +7117,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7322,7 +7143,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7344,7 +7164,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7366,7 +7185,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7383,7 +7201,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           getContextContentsBuilder(int index) {
         return getContextContentsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -7404,7 +7221,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return contextContentsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -7427,7 +7243,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(contextContents_);
         }
       }
-
       /**
        *
        *
@@ -7447,7 +7262,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.ContextContent
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7468,7 +7282,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dialogflow.v2beta1.Conversation.ContextReference.ContextContent
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -7512,7 +7325,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int updateMode_ = 0;
-
       /**
        *
        *
@@ -7530,7 +7342,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       public int getUpdateModeValue() {
         return updateMode_;
       }
-
       /**
        *
        *
@@ -7551,7 +7362,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7576,7 +7386,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -7601,7 +7410,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7623,7 +7431,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object languageCode_ = "";
-
       /**
        *
        *
@@ -7647,7 +7454,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -7671,7 +7477,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -7694,7 +7499,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7713,7 +7517,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7744,7 +7547,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           createTimeBuilder_;
-
       /**
        *
        *
@@ -7761,7 +7563,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCreateTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
-
       /**
        *
        *
@@ -7784,7 +7585,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           return createTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -7809,7 +7609,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7831,7 +7630,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7861,7 +7659,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -7883,7 +7680,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -7900,7 +7696,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getCreateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -7921,7 +7716,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
               : createTime_;
         }
       }
-
       /**
        *
        *
@@ -8022,7 +7816,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -8050,7 +7843,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -8081,7 +7873,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIFECYCLE_STATE_FIELD_NUMBER = 2;
   private int lifecycleState_ = 0;
-
   /**
    *
    *
@@ -8099,7 +7890,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public int getLifecycleStateValue() {
     return lifecycleState_;
   }
-
   /**
    *
    *
@@ -8126,7 +7916,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationProfile_ = "";
-
   /**
    *
    *
@@ -8155,7 +7944,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -8187,7 +7975,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PHONE_NUMBER_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.ConversationPhoneNumber phoneNumber_;
-
   /**
    *
    *
@@ -8206,7 +7993,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhoneNumber() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -8227,7 +8013,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dialogflow.v2beta1.ConversationPhoneNumber.getDefaultInstance()
         : phoneNumber_;
   }
-
   /**
    *
    *
@@ -8250,7 +8035,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONVERSATION_STAGE_FIELD_NUMBER = 7;
   private int conversationStage_ = 0;
-
   /**
    *
    *
@@ -8283,7 +8067,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public int getConversationStageValue() {
     return conversationStage_;
   }
-
   /**
    *
    *
@@ -8324,7 +8107,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -8341,7 +8123,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -8358,7 +8139,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -8376,7 +8156,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -8393,7 +8172,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -8410,7 +8188,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -8429,7 +8206,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public static final int TELEPHONY_CONNECTION_INFO_FIELD_NUMBER = 10;
   private com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo
       telephonyConnectionInfo_;
-
   /**
    *
    *
@@ -8447,7 +8223,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTelephonyConnectionInfo() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -8469,7 +8244,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : telephonyConnectionInfo_;
   }
-
   /**
    *
    *
@@ -8527,7 +8301,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
   public int getIngestedContextReferencesCount() {
     return internalGetIngestedContextReferences().getMap().size();
   }
-
   /**
    *
    *
@@ -8546,7 +8319,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetIngestedContextReferences().getMap().containsKey(key);
   }
-
   /** Use {@link #getIngestedContextReferencesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -8555,7 +8327,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       getIngestedContextReferences() {
     return getIngestedContextReferencesMap();
   }
-
   /**
    *
    *
@@ -8573,7 +8344,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       getIngestedContextReferencesMap() {
     return internalGetIngestedContextReferences().getMap();
   }
-
   /**
    *
    *
@@ -8599,7 +8369,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         map = internalGetIngestedContextReferences().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -8907,7 +8676,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -9276,7 +9044,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -9303,7 +9070,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9330,7 +9096,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9356,7 +9121,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9378,7 +9142,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9407,7 +9170,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int lifecycleState_ = 0;
-
     /**
      *
      *
@@ -9425,7 +9187,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getLifecycleStateValue() {
       return lifecycleState_;
     }
-
     /**
      *
      *
@@ -9446,7 +9207,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9469,7 +9229,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.v2beta1.Conversation.LifecycleState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -9494,7 +9253,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9516,7 +9274,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object conversationProfile_ = "";
-
     /**
      *
      *
@@ -9544,7 +9301,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9572,7 +9328,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9599,7 +9354,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9622,7 +9376,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9657,7 +9410,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.ConversationPhoneNumber.Builder,
             com.google.cloud.dialogflow.v2beta1.ConversationPhoneNumberOrBuilder>
         phoneNumberBuilder_;
-
     /**
      *
      *
@@ -9675,7 +9427,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhoneNumber() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -9699,7 +9450,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return phoneNumberBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9726,7 +9476,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9750,7 +9499,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9784,7 +9532,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9807,7 +9554,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9826,7 +9572,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPhoneNumberFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9849,7 +9594,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             : phoneNumber_;
       }
     }
-
     /**
      *
      *
@@ -9880,7 +9624,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int conversationStage_ = 0;
-
     /**
      *
      *
@@ -9913,7 +9656,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getConversationStageValue() {
       return conversationStage_;
     }
-
     /**
      *
      *
@@ -9949,7 +9691,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9988,7 +9729,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.dialogflow.v2beta1.Conversation.ConversationStage.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -10028,7 +9768,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10070,7 +9809,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -10086,7 +9824,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -10106,7 +9843,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10130,7 +9866,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10151,7 +9886,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10180,7 +9914,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10201,7 +9934,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10217,7 +9949,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10235,7 +9966,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -10269,7 +9999,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -10285,7 +10014,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -10305,7 +10033,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10329,7 +10056,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10350,7 +10076,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10379,7 +10104,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10400,7 +10124,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10416,7 +10139,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10434,7 +10156,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -10469,7 +10190,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfo.Builder,
             com.google.cloud.dialogflow.v2beta1.Conversation.TelephonyConnectionInfoOrBuilder>
         telephonyConnectionInfoBuilder_;
-
     /**
      *
      *
@@ -10486,7 +10206,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTelephonyConnectionInfo() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -10511,7 +10230,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         return telephonyConnectionInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -10537,7 +10255,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10561,7 +10278,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10594,7 +10310,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10616,7 +10331,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -10634,7 +10348,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTelephonyConnectionInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10657,7 +10370,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             : telephonyConnectionInfo_;
       }
     }
-
     /**
      *
      *
@@ -10707,8 +10419,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return IngestedContextReferencesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final IngestedContextReferencesConverter ingestedContextReferencesConverter =
         new IngestedContextReferencesConverter();
@@ -10750,7 +10461,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public int getIngestedContextReferencesCount() {
       return internalGetIngestedContextReferences().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -10769,7 +10479,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetIngestedContextReferences().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getIngestedContextReferencesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -10778,7 +10487,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getIngestedContextReferences() {
       return getIngestedContextReferencesMap();
     }
-
     /**
      *
      *
@@ -10796,7 +10504,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         getIngestedContextReferencesMap() {
       return internalGetIngestedContextReferences().getImmutableMap();
     }
-
     /**
      *
      *
@@ -10825,7 +10532,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
           ? ingestedContextReferencesConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -10858,7 +10564,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableIngestedContextReferences().clear();
       return this;
     }
-
     /**
      *
      *
@@ -10877,7 +10582,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableIngestedContextReferences().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -10886,7 +10590,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return internalGetMutableIngestedContextReferences().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -10911,7 +10614,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -10938,7 +10640,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *

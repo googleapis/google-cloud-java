@@ -33,7 +33,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.ManagementServer)
     ManagementServerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ManagementServer.newBuilder() to construct.
   private ManagementServer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,7 +125,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>INSTANCE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INSTANCE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -325,7 +323,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>INSTANCE_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int INSTANCE_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -336,7 +333,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
-
     /**
      *
      *
@@ -347,7 +343,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
-
     /**
      *
      *
@@ -360,7 +355,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>UPDATING = 3;</code>
      */
     public static final int UPDATING_VALUE = 3;
-
     /**
      *
      *
@@ -371,7 +365,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>DELETING = 4;</code>
      */
     public static final int DELETING_VALUE = 4;
-
     /**
      *
      *
@@ -382,7 +375,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>REPAIRING = 5;</code>
      */
     public static final int REPAIRING_VALUE = 5;
-
     /**
      *
      *
@@ -393,7 +385,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
      * <code>MAINTENANCE = 6;</code>
      */
     public static final int MAINTENANCE_VALUE = 6;
-
     /**
      *
      *
@@ -504,7 +495,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -530,7 +520,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -561,7 +550,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -586,7 +574,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -638,7 +625,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -658,14 +644,12 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -682,7 +666,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -706,7 +689,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -733,7 +715,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -750,7 +731,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -767,7 +747,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -785,7 +764,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -802,7 +780,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -819,7 +796,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -837,7 +813,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int TYPE_FIELD_NUMBER = 14;
   private int type_ = 0;
-
   /**
    *
    *
@@ -855,7 +830,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -880,7 +854,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int MANAGEMENT_URI_FIELD_NUMBER = 11;
   private com.google.cloud.backupdr.v1.ManagementURI managementUri_;
-
   /**
    *
    *
@@ -899,7 +872,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public boolean hasManagementUri() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -920,7 +892,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.backupdr.v1.ManagementURI.getDefaultInstance()
         : managementUri_;
   }
-
   /**
    *
    *
@@ -943,7 +914,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public static final int WORKFORCE_IDENTITY_BASED_MANAGEMENT_URI_FIELD_NUMBER = 16;
   private com.google.cloud.backupdr.v1.WorkforceIdentityBasedManagementURI
       workforceIdentityBasedManagementUri_;
-
   /**
    *
    *
@@ -962,7 +932,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public boolean hasWorkforceIdentityBasedManagementUri() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -984,7 +953,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.backupdr.v1.WorkforceIdentityBasedManagementURI.getDefaultInstance()
         : workforceIdentityBasedManagementUri_;
   }
-
   /**
    *
    *
@@ -1007,7 +975,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1025,7 +992,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1052,7 +1018,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.backupdr.v1.NetworkConfig> networks_;
-
   /**
    *
    *
@@ -1070,7 +1035,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.backupdr.v1.NetworkConfig> getNetworksList() {
     return networks_;
   }
-
   /**
    *
    *
@@ -1089,7 +1053,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       getNetworksOrBuilderList() {
     return networks_;
   }
-
   /**
    *
    *
@@ -1107,7 +1070,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public int getNetworksCount() {
     return networks_.size();
   }
-
   /**
    *
    *
@@ -1125,7 +1087,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.backupdr.v1.NetworkConfig getNetworks(int index) {
     return networks_.get(index);
   }
-
   /**
    *
    *
@@ -1148,7 +1109,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -1173,7 +1133,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1203,7 +1162,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object oauth2ClientId_ = "";
-
   /**
    *
    *
@@ -1231,7 +1189,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -1263,7 +1220,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public static final int WORKFORCE_IDENTITY_BASED_OAUTH2_CLIENT_ID_FIELD_NUMBER = 17;
   private com.google.cloud.backupdr.v1.WorkforceIdentityBasedOAuth2ClientID
       workforceIdentityBasedOauth2ClientId_;
-
   /**
    *
    *
@@ -1281,7 +1237,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public boolean hasWorkforceIdentityBasedOauth2ClientId() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1302,7 +1257,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.backupdr.v1.WorkforceIdentityBasedOAuth2ClientID.getDefaultInstance()
         : workforceIdentityBasedOauth2ClientId_;
   }
-
   /**
    *
    *
@@ -1327,7 +1281,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList baProxyUri_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1343,7 +1296,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getBaProxyUriList() {
     return baProxyUri_;
   }
-
   /**
    *
    *
@@ -1359,7 +1311,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public int getBaProxyUriCount() {
     return baProxyUri_.size();
   }
-
   /**
    *
    *
@@ -1376,7 +1327,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public java.lang.String getBaProxyUri(int index) {
     return baProxyUri_.get(index);
   }
-
   /**
    *
    *
@@ -1396,7 +1346,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 19;
   private com.google.protobuf.BoolValue satisfiesPzs_;
-
   /**
    *
    *
@@ -1414,7 +1363,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
   public boolean hasSatisfiesPzs() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1434,7 +1382,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         ? com.google.protobuf.BoolValue.getDefaultInstance()
         : satisfiesPzs_;
   }
-
   /**
    *
    *
@@ -1455,7 +1402,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 20;
   private boolean satisfiesPzi_ = false;
-
   /**
    *
    *
@@ -1829,7 +1775,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2357,7 +2302,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2382,7 +2326,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2407,7 +2350,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2431,7 +2373,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2392,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2478,7 +2418,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2502,7 +2441,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2526,7 +2464,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2549,7 +2486,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2568,7 +2504,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2618,7 +2553,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2638,14 +2572,12 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2662,7 +2594,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2686,7 +2617,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2716,7 +2646,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2736,14 +2665,12 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2767,7 +2694,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       return this;
     }
-
     /**
      *
      *
@@ -2792,7 +2718,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2809,7 +2734,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2832,7 +2756,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2857,7 +2780,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2879,7 +2801,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2909,7 +2830,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -2931,7 +2851,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2948,7 +2867,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2969,7 +2887,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3004,7 +2921,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3021,7 +2937,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3044,7 +2959,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3069,7 +2983,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3091,7 +3004,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3121,7 +3033,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3143,7 +3054,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3160,7 +3070,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3181,7 +3090,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -3211,7 +3119,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -3229,7 +3136,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -3250,7 +3156,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3272,7 +3177,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.backupdr.v1.ManagementServer.InstanceType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3296,7 +3200,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3323,7 +3226,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             com.google.cloud.backupdr.v1.ManagementURI.Builder,
             com.google.cloud.backupdr.v1.ManagementURIOrBuilder>
         managementUriBuilder_;
-
     /**
      *
      *
@@ -3341,7 +3243,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean hasManagementUri() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3365,7 +3266,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return managementUriBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3391,7 +3291,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3415,7 +3314,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3446,7 +3344,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3469,7 +3366,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3487,7 +3383,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getManagementUriFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3509,7 +3404,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             : managementUri_;
       }
     }
-
     /**
      *
      *
@@ -3546,7 +3440,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             com.google.cloud.backupdr.v1.WorkforceIdentityBasedManagementURI.Builder,
             com.google.cloud.backupdr.v1.WorkforceIdentityBasedManagementURIOrBuilder>
         workforceIdentityBasedManagementUriBuilder_;
-
     /**
      *
      *
@@ -3564,7 +3457,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean hasWorkforceIdentityBasedManagementUri() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3589,7 +3481,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return workforceIdentityBasedManagementUriBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3616,7 +3507,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3640,7 +3530,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3674,7 +3563,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -3697,7 +3585,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3716,7 +3603,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getWorkforceIdentityBasedManagementUriFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3739,7 +3625,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             : workforceIdentityBasedManagementUri_;
       }
     }
-
     /**
      *
      *
@@ -3770,7 +3655,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3788,7 +3672,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3809,7 +3692,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3831,7 +3713,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.backupdr.v1.ManagementServer.InstanceState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3855,7 +3736,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3912,7 +3792,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return networksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3933,7 +3812,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return networksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3954,7 +3832,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return networksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3981,7 +3858,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4006,7 +3882,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4033,7 +3908,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4060,7 +3934,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4084,7 +3957,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4109,7 +3981,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4134,7 +4005,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4158,7 +4028,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4182,7 +4051,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4199,7 +4067,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.backupdr.v1.NetworkConfig.Builder getNetworksBuilder(int index) {
       return getNetworksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4220,7 +4087,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return networksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4242,7 +4108,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(networks_);
       }
     }
-
     /**
      *
      *
@@ -4260,7 +4125,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       return getNetworksFieldBuilder()
           .addBuilder(com.google.cloud.backupdr.v1.NetworkConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4278,7 +4142,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       return getNetworksFieldBuilder()
           .addBuilder(index, com.google.cloud.backupdr.v1.NetworkConfig.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4315,7 +4178,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -4339,7 +4201,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4363,7 +4224,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4386,7 +4246,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4405,7 +4264,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4431,7 +4289,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object oauth2ClientId_ = "";
-
     /**
      *
      *
@@ -4458,7 +4315,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4485,7 +4341,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4511,7 +4366,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4533,7 +4387,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4568,7 +4421,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             com.google.cloud.backupdr.v1.WorkforceIdentityBasedOAuth2ClientID.Builder,
             com.google.cloud.backupdr.v1.WorkforceIdentityBasedOAuth2ClientIDOrBuilder>
         workforceIdentityBasedOauth2ClientIdBuilder_;
-
     /**
      *
      *
@@ -4585,7 +4437,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean hasWorkforceIdentityBasedOauth2ClientId() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4609,7 +4460,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return workforceIdentityBasedOauth2ClientIdBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4635,7 +4485,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4658,7 +4507,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4691,7 +4539,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -4713,7 +4560,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4731,7 +4577,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getWorkforceIdentityBasedOauth2ClientIdFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4753,7 +4598,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             : workforceIdentityBasedOauth2ClientId_;
       }
     }
-
     /**
      *
      *
@@ -4791,7 +4635,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00002000;
     }
-
     /**
      *
      *
@@ -4808,7 +4651,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       baProxyUri_.makeImmutable();
       return baProxyUri_;
     }
-
     /**
      *
      *
@@ -4824,7 +4666,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public int getBaProxyUriCount() {
       return baProxyUri_.size();
     }
-
     /**
      *
      *
@@ -4841,7 +4682,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public java.lang.String getBaProxyUri(int index) {
       return baProxyUri_.get(index);
     }
-
     /**
      *
      *
@@ -4858,7 +4698,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getBaProxyUriBytes(int index) {
       return baProxyUri_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4883,7 +4722,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4907,7 +4745,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4928,7 +4765,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4948,7 +4784,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4980,7 +4815,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.BoolValue.Builder,
             com.google.protobuf.BoolValueOrBuilder>
         satisfiesPzsBuilder_;
-
     /**
      *
      *
@@ -4997,7 +4831,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean hasSatisfiesPzs() {
       return ((bitField0_ & 0x00004000) != 0);
     }
-
     /**
      *
      *
@@ -5020,7 +4853,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
         return satisfiesPzsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5045,7 +4877,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5067,7 +4898,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5097,7 +4927,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -5119,7 +4948,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5136,7 +4964,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSatisfiesPzsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5157,7 +4984,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
             : satisfiesPzs_;
       }
     }
-
     /**
      *
      *
@@ -5187,7 +5013,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean satisfiesPzi_;
-
     /**
      *
      *
@@ -5203,7 +5028,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
-
     /**
      *
      *
@@ -5223,7 +5047,6 @@ public final class ManagementServer extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

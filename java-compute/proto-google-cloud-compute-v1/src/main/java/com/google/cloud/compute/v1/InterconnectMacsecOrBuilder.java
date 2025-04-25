@@ -36,7 +36,6 @@ public interface InterconnectMacsecOrBuilder
    * @return Whether the failOpen field is set.
    */
   boolean hasFailOpen();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface InterconnectMacsecOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectMacsecPreSharedKey> getPreSharedKeysList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface InterconnectMacsecOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectMacsecPreSharedKey getPreSharedKeys(int index);
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface InterconnectMacsecOrBuilder
    * </code>
    */
   int getPreSharedKeysCount();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface InterconnectMacsecOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectMacsecPreSharedKeyOrBuilder>
       getPreSharedKeysOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public interface AutoMlImageObjectDetectionInputsOrBuilder
    * @return The enum numeric value on the wire for modelType.
    */
   int getModelTypeValue();
-
   /**
    * <code>
    * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType model_type = 1;

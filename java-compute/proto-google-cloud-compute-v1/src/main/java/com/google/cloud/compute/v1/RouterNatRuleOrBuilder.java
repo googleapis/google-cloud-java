@@ -36,7 +36,6 @@ public interface RouterNatRuleOrBuilder
    * @return Whether the action field is set.
    */
   boolean hasAction();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RouterNatRuleOrBuilder
    * @return The action.
    */
   com.google.cloud.compute.v1.RouterNatRuleAction getAction();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface RouterNatRuleOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface RouterNatRuleOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface RouterNatRuleOrBuilder
    * @return Whether the match field is set.
    */
   boolean hasMatch();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface RouterNatRuleOrBuilder
    * @return The match.
    */
   java.lang.String getMatch();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface RouterNatRuleOrBuilder
    * @return Whether the ruleNumber field is set.
    */
   boolean hasRuleNumber();
-
   /**
    *
    *

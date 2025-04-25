@@ -34,7 +34,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SessionSegmentCriteria)
     SessionSegmentCriteriaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SessionSegmentCriteria.newBuilder() to construct.
   private SessionSegmentCriteria(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.SessionSegmentConditionGroup>
       andConditionGroups_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       getAndConditionGroupsList() {
     return andConditionGroups_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       getAndConditionGroupsOrBuilderList() {
     return andConditionGroups_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
   public int getAndConditionGroupsCount() {
     return andConditionGroups_.size();
   }
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       int index) {
     return andConditionGroups_.get(index);
   }
-
   /**
    *
    *
@@ -324,7 +318,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -594,7 +587,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
         return andConditionGroupsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -614,7 +606,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
         return andConditionGroupsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
         return andConditionGroupsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
         getAndConditionGroupsBuilder(int index) {
       return getAndConditionGroupsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
         return andConditionGroupsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(andConditionGroups_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.analytics.data.v1alpha.SessionSegmentConditionGroup.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class SessionSegmentCriteria extends com.google.protobuf.GeneratedM
               index,
               com.google.analytics.data.v1alpha.SessionSegmentConditionGroup.getDefaultInstance());
     }
-
     /**
      *
      *

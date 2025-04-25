@@ -33,7 +33,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.DiscoveryEndpoint)
     DiscoveryEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiscoveryEndpoint.newBuilder() to construct.
   private DiscoveryEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
 
   public static final int PSC_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.redis.cluster.v1beta1.PscConfig pscConfig_;
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
   public boolean hasPscConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.redis.cluster.v1beta1.PscConfig.getDefaultInstance()
         : pscConfig_;
   }
-
   /**
    *
    *
@@ -384,7 +377,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -611,7 +603,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object address_ = "";
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -659,7 +649,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
     }
 
     private int port_;
-
     /**
      *
      *
@@ -743,7 +729,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +772,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
             com.google.cloud.redis.cluster.v1beta1.PscConfig.Builder,
             com.google.cloud.redis.cluster.v1beta1.PscConfigOrBuilder>
         pscConfigBuilder_;
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
     public boolean hasPscConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -830,7 +812,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
         return pscConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +860,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +913,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +930,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPscConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -975,7 +951,6 @@ public final class DiscoveryEndpoint extends com.google.protobuf.GeneratedMessag
             : pscConfig_;
       }
     }
-
     /**
      *
      *

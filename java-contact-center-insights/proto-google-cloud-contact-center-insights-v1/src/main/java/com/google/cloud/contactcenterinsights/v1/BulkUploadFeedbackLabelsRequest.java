@@ -33,7 +33,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest)
     BulkUploadFeedbackLabelsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BulkUploadFeedbackLabelsRequest.newBuilder() to construct.
   private BulkUploadFeedbackLabelsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -85,7 +84,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
      * @return The enum numeric value on the wire for format.
      */
     int getFormatValue();
-
     /**
      *
      *
@@ -115,7 +113,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
      * @return The objectUri.
      */
     java.lang.String getObjectUri();
-
     /**
      *
      *
@@ -130,7 +127,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
      */
     com.google.protobuf.ByteString getObjectUriBytes();
   }
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest.GcsSource)
       GcsSourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GcsSource.newBuilder() to construct.
     private GcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -234,7 +229,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
        * <code>FORMAT_UNSPECIFIED = 0;</code>
        */
       public static final int FORMAT_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -245,7 +239,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
        * <code>CSV = 1;</code>
        */
       public static final int CSV_VALUE = 1;
-
       /**
        *
        *
@@ -345,7 +338,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
 
     public static final int FORMAT_FIELD_NUMBER = 1;
     private int format_ = 0;
-
     /**
      *
      *
@@ -363,7 +355,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -395,7 +386,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object objectUri_ = "";
-
     /**
      *
      *
@@ -420,7 +410,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         return s;
       }
     }
-
     /**
      *
      *
@@ -643,7 +632,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -864,7 +852,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       private int bitField0_;
 
       private int format_ = 0;
-
       /**
        *
        *
@@ -882,7 +869,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       public int getFormatValue() {
         return format_;
       }
-
       /**
        *
        *
@@ -903,7 +889,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -930,7 +915,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
                 .Format.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -956,7 +940,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -978,7 +961,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       }
 
       private java.lang.Object objectUri_ = "";
-
       /**
        *
        *
@@ -1002,7 +984,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1026,7 +1007,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1049,7 +1029,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1068,7 +1047,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1179,7 +1157,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1211,7 +1188,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1229,7 +1205,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
   public boolean hasGcsSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -1253,7 +1228,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     return com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest.GcsSource
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1281,7 +1255,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -1307,7 +1280,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -1336,7 +1308,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -1555,7 +1526,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1816,7 +1786,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
             com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest
                 .GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -1834,7 +1803,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     public boolean hasGcsSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -1867,7 +1835,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1893,7 +1860,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1917,7 +1883,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1923,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1986,7 +1950,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1966,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2031,7 +1993,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2076,7 +2037,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2101,7 +2061,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2126,7 +2085,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2150,7 +2108,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2170,7 +2127,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2197,7 +2153,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -2215,7 +2170,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -2237,7 +2191,6 @@ public final class BulkUploadFeedbackLabelsRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

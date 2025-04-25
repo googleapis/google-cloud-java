@@ -37,7 +37,6 @@ public interface CreateBrandRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CreateBrandRequestOrBuilder
    * @return Whether the brand field is set.
    */
   boolean hasBrand();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CreateBrandRequestOrBuilder
    * @return The brand.
    */
   com.google.cloud.iap.v1.Brand getBrand();
-
   /**
    *
    *

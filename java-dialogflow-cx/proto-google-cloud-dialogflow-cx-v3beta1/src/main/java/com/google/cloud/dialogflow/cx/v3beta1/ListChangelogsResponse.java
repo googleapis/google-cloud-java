@@ -34,7 +34,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ListChangelogsResponse)
     ListChangelogsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListChangelogsResponse.newBuilder() to construct.
   private ListChangelogsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Changelog> changelogs_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.cloud.dialogflow.cx.v3beta1.Changelog> getChangelogsList() {
     return changelogs_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       getChangelogsOrBuilderList() {
     return changelogs_;
   }
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
   public int getChangelogsCount() {
     return changelogs_.size();
   }
-
   /**
    *
    *
@@ -135,7 +130,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.dialogflow.cx.v3beta1.Changelog getChangelogs(int index) {
     return changelogs_.get(index);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return changelogsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return changelogsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return changelogsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -728,7 +716,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +738,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +809,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +831,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +895,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getChangelogsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -951,7 +929,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return changelogsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -971,7 +948,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(changelogs_);
       }
     }
-
     /**
      *
      *
@@ -987,7 +963,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       return getChangelogsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3beta1.Changelog.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1004,7 +979,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       return getChangelogsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3beta1.Changelog.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1039,7 +1013,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1063,7 +1036,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1059,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1110,7 +1081,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1099,6 @@ public final class ListChangelogsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

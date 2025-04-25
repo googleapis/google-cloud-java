@@ -33,7 +33,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.support.v2.ListCasesResponse)
     ListCasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCasesResponse.newBuilder() to construct.
   private ListCasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.support.v2.Case> cases_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.support.v2.Case> getCasesList() {
     return cases_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       getCasesOrBuilderList() {
     return cases_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
   public int getCasesCount() {
     return cases_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.support.v2.Case getCases(int index) {
     return cases_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +365,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -648,7 +639,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return casesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return casesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return casesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -708,7 +696,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -753,7 +739,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +762,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +823,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -883,7 +863,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.support.v2.Case.Builder getCasesBuilder(int index) {
       return getCasesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -915,7 +893,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return casesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -934,7 +911,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(cases_);
       }
     }
-
     /**
      *
      *
@@ -949,7 +925,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       return getCasesFieldBuilder()
           .addBuilder(com.google.cloud.support.v2.Case.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -964,7 +939,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       return getCasesFieldBuilder()
           .addBuilder(index, com.google.cloud.support.v2.Case.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1022,7 +995,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1019,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1061,6 @@ public final class ListCasesResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

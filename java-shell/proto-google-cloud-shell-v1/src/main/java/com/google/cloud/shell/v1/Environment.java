@@ -36,7 +36,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.shell.v1.Environment)
     EnvironmentOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Environment.newBuilder() to construct.
   private Environment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -151,7 +150,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -163,7 +161,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>SUSPENDED = 1;</code>
      */
     public static final int SUSPENDED_VALUE = 1;
-
     /**
      *
      *
@@ -175,7 +172,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 2;</code>
      */
     public static final int PENDING_VALUE = 2;
-
     /**
      *
      *
@@ -188,7 +184,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      * <code>RUNNING = 3;</code>
      */
     public static final int RUNNING_VALUE = 3;
-
     /**
      *
      *
@@ -291,7 +286,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -319,7 +313,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -377,7 +369,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -407,7 +398,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dockerImage_ = "";
-
   /**
    *
    *
@@ -434,7 +424,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -464,7 +453,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
-
   /**
    *
    *
@@ -482,7 +470,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -507,7 +494,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webHost_ = "";
-
   /**
    *
    *
@@ -532,7 +518,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -562,7 +547,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sshUsername_ = "";
-
   /**
    *
    *
@@ -587,7 +571,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -617,7 +600,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sshHost_ = "";
-
   /**
    *
    *
@@ -642,7 +624,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -670,7 +651,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SSH_PORT_FIELD_NUMBER = 7;
   private int sshPort_ = 0;
-
   /**
    *
    *
@@ -693,7 +673,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList publicKeys_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -712,7 +691,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPublicKeysList() {
     return publicKeys_;
   }
-
   /**
    *
    *
@@ -731,7 +709,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public int getPublicKeysCount() {
     return publicKeys_.size();
   }
-
   /**
    *
    *
@@ -751,7 +728,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPublicKeys(int index) {
     return publicKeys_.get(index);
   }
-
   /**
    *
    *
@@ -1008,7 +984,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1318,7 +1293,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1345,7 +1319,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1372,7 +1345,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1398,7 +1370,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1420,7 +1391,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1419,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -1473,7 +1442,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1497,7 +1465,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1520,7 +1487,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1539,7 +1505,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1565,7 +1530,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dockerImage_ = "";
-
     /**
      *
      *
@@ -1591,7 +1555,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1617,7 +1580,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1642,7 +1604,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1624,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1691,7 +1651,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -1709,7 +1668,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1730,7 +1688,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1750,7 +1707,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.shell.v1.Environment.State.forNumber(state_);
       return result == null ? com.google.cloud.shell.v1.Environment.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1774,7 +1730,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1751,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object webHost_ = "";
-
     /**
      *
      *
@@ -1820,7 +1774,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1844,7 +1797,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1867,7 +1819,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1886,7 +1837,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1912,7 +1862,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sshUsername_ = "";
-
     /**
      *
      *
@@ -1936,7 +1885,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1960,7 +1908,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1983,7 +1930,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2002,7 +1948,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2028,7 +1973,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object sshHost_ = "";
-
     /**
      *
      *
@@ -2052,7 +1996,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2076,7 +2019,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2099,7 +2041,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2118,7 +2059,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2144,7 +2084,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int sshPort_;
-
     /**
      *
      *
@@ -2161,7 +2100,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getSshPort() {
       return sshPort_;
     }
-
     /**
      *
      *
@@ -2182,7 +2120,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2211,7 +2148,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
-
     /**
      *
      *
@@ -2231,7 +2167,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       publicKeys_.makeImmutable();
       return publicKeys_;
     }
-
     /**
      *
      *
@@ -2250,7 +2185,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public int getPublicKeysCount() {
       return publicKeys_.size();
     }
-
     /**
      *
      *
@@ -2270,7 +2204,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPublicKeys(int index) {
       return publicKeys_.get(index);
     }
-
     /**
      *
      *
@@ -2290,7 +2223,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPublicKeysBytes(int index) {
       return publicKeys_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2318,7 +2250,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2345,7 +2276,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2369,7 +2299,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2392,7 +2321,6 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

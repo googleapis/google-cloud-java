@@ -34,7 +34,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SuggestFaqAnswersRequest)
     SuggestFaqAnswersRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestFaqAnswersRequest.newBuilder() to construct.
   private SuggestFaqAnswersRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -162,7 +158,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -195,7 +190,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
-
   /**
    *
    *
@@ -216,7 +210,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
 
   public static final int ASSIST_QUERY_PARAMS_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2.AssistQueryParameters assistQueryParams_;
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
   public boolean hasAssistQueryParams() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -250,7 +242,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
         ? com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()
         : assistQueryParams_;
   }
-
   /**
    *
    *
@@ -460,7 +451,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -707,7 +697,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -761,7 +749,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +774,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +795,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -867,7 +851,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +879,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -924,7 +906,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +929,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +959,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     }
 
     private int contextSize_;
-
     /**
      *
      *
@@ -997,7 +976,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     public int getContextSize() {
       return contextSize_;
     }
-
     /**
      *
      *
@@ -1019,7 +997,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1023,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
             com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder,
             com.google.cloud.dialogflow.v2.AssistQueryParametersOrBuilder>
         assistQueryParamsBuilder_;
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
     public boolean hasAssistQueryParams() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1082,7 +1057,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
         return assistQueryParamsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1080,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1100,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1177,7 +1148,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1163,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1213,7 +1182,6 @@ public final class SuggestFaqAnswersRequest extends com.google.protobuf.Generate
             : assistQueryParams_;
       }
     }
-
     /**
      *
      *

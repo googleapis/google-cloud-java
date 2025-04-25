@@ -41,7 +41,6 @@ public interface BigQueryDateShardedSpecOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface BigQueryDateShardedSpecOrBuilder
    * @return The tablePrefix.
    */
   java.lang.String getTablePrefix();
-
   /**
    *
    *
@@ -119,7 +117,6 @@ public interface BigQueryDateShardedSpecOrBuilder
    * @return The latestShardResource.
    */
   java.lang.String getLatestShardResource();
-
   /**
    *
    *

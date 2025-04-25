@@ -51,7 +51,6 @@ public interface InspectContentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface InspectContentRequestOrBuilder
    * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface InspectContentRequestOrBuilder
    * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface InspectContentRequestOrBuilder
    * @return Whether the item field is set.
    */
   boolean hasItem();
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public interface InspectContentRequestOrBuilder
    * @return The item.
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface InspectContentRequestOrBuilder
    * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public interface InspectContentRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface YarnApplicationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface YarnApplicationOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface YarnApplicationOrBuilder
    * @return The trackingUrl.
    */
   java.lang.String getTrackingUrl();
-
   /**
    *
    *

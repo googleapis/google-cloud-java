@@ -34,7 +34,6 @@ public interface ListSkuGroupBillableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.BillableSku billable_skus = 1;</code>
    */
   java.util.List<com.google.cloud.channel.v1.BillableSku> getBillableSkusList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListSkuGroupBillableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.BillableSku billable_skus = 1;</code>
    */
   com.google.cloud.channel.v1.BillableSku getBillableSkus(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListSkuGroupBillableSkusResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.BillableSku billable_skus = 1;</code>
    */
   int getBillableSkusCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListSkuGroupBillableSkusResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.channel.v1.BillableSkuOrBuilder>
       getBillableSkusOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListSkuGroupBillableSkusResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

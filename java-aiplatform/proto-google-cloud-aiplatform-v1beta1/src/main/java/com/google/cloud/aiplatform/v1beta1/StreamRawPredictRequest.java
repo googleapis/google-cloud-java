@@ -34,7 +34,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamRawPredictRequest)
     StreamRawPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamRawPredictRequest.newBuilder() to construct.
   private StreamRawPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
 
   public static final int HTTP_BODY_FIELD_NUMBER = 2;
   private com.google.api.HttpBody httpBody_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
   public boolean hasHttpBody() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
   public com.google.api.HttpBody getHttpBody() {
     return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
   }
-
   /**
    *
    *
@@ -350,7 +344,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -565,7 +558,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -619,7 +610,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -645,7 +635,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -667,7 +656,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
             com.google.api.HttpBody.Builder,
             com.google.api.HttpBodyOrBuilder>
         httpBodyBuilder_;
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
     public boolean hasHttpBody() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
         return httpBodyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -758,7 +743,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -778,7 +762,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +822,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
       onChanged();
       return getHttpBodyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -858,7 +838,6 @@ public final class StreamRawPredictRequest extends com.google.protobuf.Generated
         return httpBody_ == null ? com.google.api.HttpBody.getDefaultInstance() : httpBody_;
       }
     }
-
     /**
      *
      *

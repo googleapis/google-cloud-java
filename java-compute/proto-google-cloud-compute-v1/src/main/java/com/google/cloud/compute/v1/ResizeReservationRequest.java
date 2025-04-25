@@ -33,7 +33,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResizeReservationRequest)
     ResizeReservationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResizeReservationRequest.newBuilder() to construct.
   private ResizeReservationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -198,7 +192,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservation_ = "";
-
   /**
    *
    *
@@ -222,7 +215,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +241,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
 
   public static final int RESERVATIONS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 389262801;
   private com.google.cloud.compute.v1.ReservationsResizeRequest reservationsResizeRequestResource_;
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
   public boolean hasReservationsResizeRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.ReservationsResizeRequest.getDefaultInstance()
         : reservationsResizeRequestResource_;
   }
-
   /**
    *
    *
@@ -312,7 +301,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -338,7 +326,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -839,7 +825,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -864,7 +849,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +873,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -913,7 +896,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +915,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +941,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -998,7 +977,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1021,7 +999,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1043,7 +1020,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1037,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1061,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object reservation_ = "";
-
     /**
      *
      *
@@ -1109,7 +1083,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1105,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1154,7 +1126,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1172,7 +1143,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1173,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.ReservationsResizeRequest.Builder,
             com.google.cloud.compute.v1.ReservationsResizeRequestOrBuilder>
         reservationsResizeRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1220,7 +1189,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     public boolean hasReservationsResizeRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1244,7 +1212,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return reservationsResizeRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1237,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1259,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1290,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1311,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1328,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return getReservationsResizeRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1387,7 +1349,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
             : reservationsResizeRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1417,7 +1378,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1442,7 +1402,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1467,7 +1426,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1491,7 +1449,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1468,6 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

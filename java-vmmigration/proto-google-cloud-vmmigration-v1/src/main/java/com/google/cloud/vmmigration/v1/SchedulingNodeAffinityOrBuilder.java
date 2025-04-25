@@ -36,7 +36,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The enum numeric value on the wire for operator.
    */
   int getOperatorValue();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
-
   /**
    *
    *

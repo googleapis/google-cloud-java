@@ -35,7 +35,6 @@ public interface BatchUpdateAssetsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Asset assets = 1;</code>
    */
   java.util.List<com.google.cloud.migrationcenter.v1.Asset> getAssetsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface BatchUpdateAssetsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Asset assets = 1;</code>
    */
   com.google.cloud.migrationcenter.v1.Asset getAssets(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface BatchUpdateAssetsResponseOrBuilder
    * <code>repeated .google.cloud.migrationcenter.v1.Asset assets = 1;</code>
    */
   int getAssetsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface BatchUpdateAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.migrationcenter.v1.AssetOrBuilder>
       getAssetsOrBuilderList();
-
   /**
    *
    *

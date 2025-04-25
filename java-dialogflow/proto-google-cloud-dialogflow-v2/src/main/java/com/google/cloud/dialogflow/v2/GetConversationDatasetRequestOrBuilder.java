@@ -40,7 +40,6 @@ public interface GetConversationDatasetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

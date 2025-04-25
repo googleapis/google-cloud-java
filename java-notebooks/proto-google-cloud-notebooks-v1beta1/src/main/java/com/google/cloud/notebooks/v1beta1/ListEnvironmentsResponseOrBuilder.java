@@ -34,7 +34,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1beta1.Environment environments = 1;</code>
    */
   java.util.List<com.google.cloud.notebooks.v1beta1.Environment> getEnvironmentsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1beta1.Environment environments = 1;</code>
    */
   com.google.cloud.notebooks.v1beta1.Environment getEnvironments(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * <code>repeated .google.cloud.notebooks.v1beta1.Environment environments = 1;</code>
    */
   int getEnvironmentsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEnvironmentsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.notebooks.v1beta1.EnvironmentOrBuilder>
       getEnvironmentsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListEnvironmentsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

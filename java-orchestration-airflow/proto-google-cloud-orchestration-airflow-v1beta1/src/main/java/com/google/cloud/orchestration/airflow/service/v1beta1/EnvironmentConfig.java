@@ -33,7 +33,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.EnvironmentConfig)
     EnvironmentConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnvironmentConfig.newBuilder() to construct.
   private EnvironmentConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <code>ENVIRONMENT_SIZE_UNSPECIFIED = 0;</code>
      */
     public static final int ENVIRONMENT_SIZE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <code>ENVIRONMENT_SIZE_SMALL = 1;</code>
      */
     public static final int ENVIRONMENT_SIZE_SMALL_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <code>ENVIRONMENT_SIZE_MEDIUM = 2;</code>
      */
     public static final int ENVIRONMENT_SIZE_MEDIUM_VALUE = 2;
-
     /**
      *
      *
@@ -301,7 +297,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
      * <code>RESILIENCE_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int RESILIENCE_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -402,7 +397,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gkeCluster_ = "";
-
   /**
    *
    *
@@ -426,7 +420,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -455,7 +448,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dagGcsPrefix_ = "";
-
   /**
    *
    *
@@ -483,7 +475,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -514,7 +505,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int NODE_COUNT_FIELD_NUMBER = 3;
   private int nodeCount_ = 0;
-
   /**
    *
    *
@@ -537,7 +527,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig softwareConfig_;
-
   /**
    *
    *
@@ -555,7 +544,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasSoftwareConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -575,7 +563,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.getDefaultInstance()
         : softwareConfig_;
   }
-
   /**
    *
    *
@@ -597,7 +584,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int NODE_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig nodeConfig_;
-
   /**
    *
    *
@@ -615,7 +601,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasNodeConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -635,7 +620,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.getDefaultInstance()
         : nodeConfig_;
   }
-
   /**
    *
    *
@@ -658,7 +642,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public static final int PRIVATE_ENVIRONMENT_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.orchestration.airflow.service.v1beta1.PrivateEnvironmentConfig
       privateEnvironmentConfig_;
-
   /**
    *
    *
@@ -677,7 +660,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPrivateEnvironmentConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -700,7 +682,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : privateEnvironmentConfig_;
   }
-
   /**
    *
    *
@@ -725,7 +706,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public static final int WEB_SERVER_NETWORK_ACCESS_CONTROL_FIELD_NUMBER = 9;
   private com.google.cloud.orchestration.airflow.service.v1beta1.WebServerNetworkAccessControl
       webServerNetworkAccessControl_;
-
   /**
    *
    *
@@ -745,7 +725,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasWebServerNetworkAccessControl() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -769,7 +748,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : webServerNetworkAccessControl_;
   }
-
   /**
    *
    *
@@ -795,7 +773,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int DATABASE_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig databaseConfig_;
-
   /**
    *
    *
@@ -814,7 +791,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasDatabaseConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -835,7 +811,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig.getDefaultInstance()
         : databaseConfig_;
   }
-
   /**
    *
    *
@@ -858,7 +833,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int WEB_SERVER_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig webServerConfig_;
-
   /**
    *
    *
@@ -880,7 +854,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasWebServerConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -906,7 +879,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : webServerConfig_;
   }
-
   /**
    *
    *
@@ -935,7 +907,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object airflowUri_ = "";
-
   /**
    *
    *
@@ -961,7 +932,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -992,7 +962,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object airflowByoidUri_ = "";
-
   /**
    *
    *
@@ -1020,7 +989,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1051,7 +1019,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 12;
   private com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig encryptionConfig_;
-
   /**
    *
    *
@@ -1070,7 +1037,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1093,7 +1059,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : encryptionConfig_;
   }
-
   /**
    *
    *
@@ -1118,7 +1083,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 13;
   private com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow
       maintenanceWindow_;
-
   /**
    *
    *
@@ -1150,7 +1114,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasMaintenanceWindow() {
     return ((bitField0_ & 0x00000080) != 0);
   }
-
   /**
    *
    *
@@ -1186,7 +1149,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : maintenanceWindow_;
   }
-
   /**
    *
    *
@@ -1223,7 +1185,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int WORKLOADS_CONFIG_FIELD_NUMBER = 15;
   private com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig workloadsConfig_;
-
   /**
    *
    *
@@ -1246,7 +1207,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasWorkloadsConfig() {
     return ((bitField0_ & 0x00000100) != 0);
   }
-
   /**
    *
    *
@@ -1273,7 +1233,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : workloadsConfig_;
   }
-
   /**
    *
    *
@@ -1301,7 +1260,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int ENVIRONMENT_SIZE_FIELD_NUMBER = 16;
   private int environmentSize_ = 0;
-
   /**
    *
    *
@@ -1322,7 +1280,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public int getEnvironmentSizeValue() {
     return environmentSize_;
   }
-
   /**
    *
    *
@@ -1355,7 +1312,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public static final int MASTER_AUTHORIZED_NETWORKS_CONFIG_FIELD_NUMBER = 17;
   private com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
       masterAuthorizedNetworksConfig_;
-
   /**
    *
    *
@@ -1377,7 +1333,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasMasterAuthorizedNetworksConfig() {
     return ((bitField0_ & 0x00000200) != 0);
   }
-
   /**
    *
    *
@@ -1403,7 +1358,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : masterAuthorizedNetworksConfig_;
   }
-
   /**
    *
    *
@@ -1431,7 +1385,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RECOVERY_CONFIG_FIELD_NUMBER = 18;
   private com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig recoveryConfig_;
-
   /**
    *
    *
@@ -1452,7 +1405,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasRecoveryConfig() {
     return ((bitField0_ & 0x00000400) != 0);
   }
-
   /**
    *
    *
@@ -1475,7 +1427,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.getDefaultInstance()
         : recoveryConfig_;
   }
-
   /**
    *
    *
@@ -1501,7 +1452,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public static final int DATA_RETENTION_CONFIG_FIELD_NUMBER = 19;
   private com.google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig
       dataRetentionConfig_;
-
   /**
    *
    *
@@ -1520,7 +1470,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasDataRetentionConfig() {
     return ((bitField0_ & 0x00000800) != 0);
   }
-
   /**
    *
    *
@@ -1543,7 +1492,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : dataRetentionConfig_;
   }
-
   /**
    *
    *
@@ -1567,7 +1515,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
 
   public static final int RESILIENCE_MODE_FIELD_NUMBER = 20;
   private int resilienceMode_ = 0;
-
   /**
    *
    *
@@ -1588,7 +1535,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
   public int getResilienceModeValue() {
     return resilienceMode_;
   }
-
   /**
    *
    *
@@ -2024,7 +1970,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2569,7 +2514,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object gkeCluster_ = "";
-
     /**
      *
      *
@@ -2592,7 +2536,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2615,7 +2558,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2637,7 +2579,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2655,7 +2596,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2680,7 +2620,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object dagGcsPrefix_ = "";
-
     /**
      *
      *
@@ -2707,7 +2646,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2734,7 +2672,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2760,7 +2697,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2782,7 +2718,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2811,7 +2746,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int nodeCount_;
-
     /**
      *
      *
@@ -2831,7 +2765,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public int getNodeCount() {
       return nodeCount_;
     }
-
     /**
      *
      *
@@ -2855,7 +2788,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2884,7 +2816,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.SoftwareConfigOrBuilder>
         softwareConfigBuilder_;
-
     /**
      *
      *
@@ -2901,7 +2832,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasSoftwareConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2926,7 +2856,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return softwareConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2952,7 +2881,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2976,7 +2904,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3009,7 +2936,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3031,7 +2957,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3049,7 +2974,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSoftwareConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3072,7 +2996,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : softwareConfig_;
       }
     }
-
     /**
      *
      *
@@ -3107,7 +3030,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.NodeConfigOrBuilder>
         nodeConfigBuilder_;
-
     /**
      *
      *
@@ -3124,7 +3046,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasNodeConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -3147,7 +3068,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return nodeConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3173,7 +3093,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3196,7 +3115,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3229,7 +3147,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3251,7 +3168,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3269,7 +3185,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNodeConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3291,7 +3206,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : nodeConfig_;
       }
     }
-
     /**
      *
      *
@@ -3328,7 +3242,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1
                 .PrivateEnvironmentConfigOrBuilder>
         privateEnvironmentConfigBuilder_;
-
     /**
      *
      *
@@ -3346,7 +3259,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPrivateEnvironmentConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -3372,7 +3284,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return privateEnvironmentConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3399,7 +3310,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3424,7 +3334,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3458,7 +3367,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3481,7 +3389,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3500,7 +3407,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPrivateEnvironmentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3524,7 +3430,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : privateEnvironmentConfig_;
       }
     }
-
     /**
      *
      *
@@ -3566,7 +3471,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1
                 .WebServerNetworkAccessControlOrBuilder>
         webServerNetworkAccessControlBuilder_;
-
     /**
      *
      *
@@ -3585,7 +3489,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasWebServerNetworkAccessControl() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -3612,7 +3515,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return webServerNetworkAccessControlBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3641,7 +3543,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3667,7 +3568,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3703,7 +3603,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3727,7 +3626,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3748,7 +3646,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWebServerNetworkAccessControlFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3774,7 +3671,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : webServerNetworkAccessControl_;
       }
     }
-
     /**
      *
      *
@@ -3816,7 +3712,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.DatabaseConfigOrBuilder>
         databaseConfigBuilder_;
-
     /**
      *
      *
@@ -3834,7 +3729,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasDatabaseConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3860,7 +3754,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return databaseConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3887,7 +3780,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3912,7 +3804,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3946,7 +3837,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3969,7 +3859,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3988,7 +3877,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDatabaseConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4012,7 +3900,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : databaseConfig_;
       }
     }
-
     /**
      *
      *
@@ -4048,7 +3935,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.WebServerConfigOrBuilder>
         webServerConfigBuilder_;
-
     /**
      *
      *
@@ -4069,7 +3955,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasWebServerConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -4098,7 +3983,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return webServerConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4128,7 +4012,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4156,7 +4039,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4193,7 +4075,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4219,7 +4100,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4241,7 +4121,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWebServerConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4268,7 +4147,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : webServerConfig_;
       }
     }
-
     /**
      *
      *
@@ -4302,7 +4180,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object airflowUri_ = "";
-
     /**
      *
      *
@@ -4327,7 +4204,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4352,7 +4228,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4376,7 +4251,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4396,7 +4270,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4423,7 +4296,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object airflowByoidUri_ = "";
-
     /**
      *
      *
@@ -4450,7 +4322,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4477,7 +4348,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4503,7 +4373,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4525,7 +4394,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4560,7 +4428,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
-
     /**
      *
      *
@@ -4578,7 +4445,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4604,7 +4470,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return encryptionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4631,7 +4496,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4656,7 +4520,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4690,7 +4553,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4713,7 +4575,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4732,7 +4593,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4756,7 +4616,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : encryptionConfig_;
       }
     }
-
     /**
      *
      *
@@ -4793,7 +4652,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindow.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.MaintenanceWindowOrBuilder>
         maintenanceWindowBuilder_;
-
     /**
      *
      *
@@ -4824,7 +4682,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasMaintenanceWindow() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4863,7 +4720,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return maintenanceWindowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4903,7 +4759,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4941,7 +4796,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4988,7 +4842,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5024,7 +4877,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5056,7 +4908,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMaintenanceWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5093,7 +4944,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : maintenanceWindow_;
       }
     }
-
     /**
      *
      *
@@ -5142,7 +4992,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.WorkloadsConfigOrBuilder>
         workloadsConfigBuilder_;
-
     /**
      *
      *
@@ -5164,7 +5013,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasWorkloadsConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -5194,7 +5042,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return workloadsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5225,7 +5072,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5254,7 +5100,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5292,7 +5137,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5319,7 +5163,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5342,7 +5185,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWorkloadsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5370,7 +5212,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : workloadsConfig_;
       }
     }
-
     /**
      *
      *
@@ -5405,7 +5246,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int environmentSize_ = 0;
-
     /**
      *
      *
@@ -5426,7 +5266,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public int getEnvironmentSizeValue() {
       return environmentSize_;
     }
-
     /**
      *
      *
@@ -5450,7 +5289,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5479,7 +5317,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5508,7 +5345,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5541,7 +5377,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1
                 .MasterAuthorizedNetworksConfigOrBuilder>
         masterAuthorizedNetworksConfigBuilder_;
-
     /**
      *
      *
@@ -5562,7 +5397,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasMasterAuthorizedNetworksConfig() {
       return ((bitField0_ & 0x00008000) != 0);
     }
-
     /**
      *
      *
@@ -5591,7 +5425,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return masterAuthorizedNetworksConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5622,7 +5455,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5651,7 +5483,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5689,7 +5520,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5715,7 +5545,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5738,7 +5567,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMasterAuthorizedNetworksConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5766,7 +5594,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : masterAuthorizedNetworksConfig_;
       }
     }
-
     /**
      *
      *
@@ -5810,7 +5637,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.RecoveryConfigOrBuilder>
         recoveryConfigBuilder_;
-
     /**
      *
      *
@@ -5830,7 +5656,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasRecoveryConfig() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -5858,7 +5683,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return recoveryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5887,7 +5711,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5914,7 +5737,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5950,7 +5772,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -5975,7 +5796,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5996,7 +5816,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRecoveryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6022,7 +5841,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : recoveryConfig_;
       }
     }
-
     /**
      *
      *
@@ -6061,7 +5879,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfig.Builder,
             com.google.cloud.orchestration.airflow.service.v1beta1.DataRetentionConfigOrBuilder>
         dataRetentionConfigBuilder_;
-
     /**
      *
      *
@@ -6079,7 +5896,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasDataRetentionConfig() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -6105,7 +5921,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
         return dataRetentionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6132,7 +5947,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6157,7 +5971,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6191,7 +6004,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -6214,7 +6026,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6233,7 +6044,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDataRetentionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6257,7 +6067,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
             : dataRetentionConfig_;
       }
     }
-
     /**
      *
      *
@@ -6289,7 +6098,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     }
 
     private int resilienceMode_ = 0;
-
     /**
      *
      *
@@ -6310,7 +6118,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
     public int getResilienceModeValue() {
       return resilienceMode_;
     }
-
     /**
      *
      *
@@ -6334,7 +6141,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6363,7 +6169,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -6392,7 +6197,6 @@ public final class EnvironmentConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

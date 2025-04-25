@@ -36,7 +36,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The instruction.
    */
   java.lang.String getInstruction();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The annotatedDatasetDisplayName.
    */
   java.lang.String getAnnotatedDatasetDisplayName();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The annotatedDatasetDescription.
    */
   java.lang.String getAnnotatedDatasetDescription();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The labelGroup.
    */
   java.lang.String getLabelGroup();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -205,7 +200,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return Whether the questionDuration field is set.
    */
   boolean hasQuestionDuration();
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The questionDuration.
    */
   com.google.protobuf.Duration getQuestionDuration();
-
   /**
    *
    *
@@ -252,7 +245,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return A list containing the contributorEmails.
    */
   java.util.List<java.lang.String> getContributorEmailsList();
-
   /**
    *
    *
@@ -269,7 +261,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The count of contributorEmails.
    */
   int getContributorEmailsCount();
-
   /**
    *
    *
@@ -287,7 +278,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The contributorEmails at the given index.
    */
   java.lang.String getContributorEmails(int index);
-
   /**
    *
    *
@@ -319,7 +309,6 @@ public interface HumanAnnotationConfigOrBuilder
    * @return The userEmailAddress.
    */
   java.lang.String getUserEmailAddress();
-
   /**
    *
    *

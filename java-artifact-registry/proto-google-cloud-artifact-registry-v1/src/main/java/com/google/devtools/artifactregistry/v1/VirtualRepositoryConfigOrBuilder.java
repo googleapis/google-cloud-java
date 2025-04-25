@@ -36,7 +36,6 @@ public interface VirtualRepositoryConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1.UpstreamPolicy> getUpstreamPoliciesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VirtualRepositoryConfigOrBuilder
    * </code>
    */
   com.google.devtools.artifactregistry.v1.UpstreamPolicy getUpstreamPolicies(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface VirtualRepositoryConfigOrBuilder
    * </code>
    */
   int getUpstreamPoliciesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface VirtualRepositoryConfigOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1.UpstreamPolicyOrBuilder>
       getUpstreamPoliciesOrBuilderList();
-
   /**
    *
    *

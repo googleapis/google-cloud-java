@@ -34,7 +34,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datafusion.v1beta1.IAMPolicy)
     IAMPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IAMPolicy.newBuilder() to construct.
   private IAMPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int POLICY_FIELD_NUMBER = 1;
   private com.google.iam.v1.Policy policy_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.iam.v1.Policy getPolicy() {
     return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -343,7 +336,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -566,7 +558,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.iam.v1.Policy.Builder,
             com.google.iam.v1.PolicyOrBuilder>
         policyBuilder_;
-
     /**
      *
      *
@@ -582,7 +573,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -602,7 +592,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
         return policyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -626,7 +615,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +635,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +663,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +683,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +698,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -731,7 +715,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
     }
-
     /**
      *
      *
@@ -762,7 +745,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -777,7 +759,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -796,7 +777,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -819,7 +799,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +818,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +845,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +864,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +878,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -919,7 +894,6 @@ public final class IAMPolicy extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *

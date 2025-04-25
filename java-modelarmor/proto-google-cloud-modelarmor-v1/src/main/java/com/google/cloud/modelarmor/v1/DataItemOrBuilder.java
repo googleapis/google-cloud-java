@@ -36,7 +36,6 @@ public interface DataItemOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataItemOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface DataItemOrBuilder
    * @return Whether the byteItem field is set.
    */
   boolean hasByteItem();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface DataItemOrBuilder
    * @return The byteItem.
    */
   com.google.cloud.modelarmor.v1.ByteDataItem getByteItem();
-
   /**
    *
    *

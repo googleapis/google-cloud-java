@@ -42,7 +42,6 @@ public interface DeletePartitionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface DeletePartitionRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getEtag();
-
   /**
    *
    *

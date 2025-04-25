@@ -35,7 +35,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.CreateSampleQuerySetRequest)
     CreateSampleQuerySetRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSampleQuerySetRequest.newBuilder() to construct.
   private CreateSampleQuerySetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
 
   public static final int SAMPLE_QUERY_SET_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.SampleQuerySet sampleQuerySet_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
   public boolean hasSampleQuerySet() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
         ? com.google.cloud.discoveryengine.v1beta.SampleQuerySet.getDefaultInstance()
         : sampleQuerySet_;
   }
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sampleQuerySetId_ = "";
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -466,7 +458,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -705,7 +696,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -731,7 +721,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -757,7 +746,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -782,7 +770,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +790,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +822,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
             com.google.cloud.discoveryengine.v1beta.SampleQuerySet.Builder,
             com.google.cloud.discoveryengine.v1beta.SampleQuerySetOrBuilder>
         sampleQuerySetBuilder_;
-
     /**
      *
      *
@@ -855,7 +840,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
     public boolean hasSampleQuerySet() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -880,7 +864,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
         return sampleQuerySetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +970,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return getSampleQuerySetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1034,7 +1012,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
             : sampleQuerySet_;
       }
     }
-
     /**
      *
      *
@@ -1066,7 +1043,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
     }
 
     private java.lang.Object sampleQuerySetId_ = "";
-
     /**
      *
      *
@@ -1107,7 +1083,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1148,7 +1123,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1188,7 +1162,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1197,6 @@ public final class CreateSampleQuerySetRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

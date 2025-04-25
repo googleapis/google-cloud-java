@@ -37,7 +37,6 @@ public interface FeatureSpecOrBuilder
    * @return The configMembership.
    */
   java.lang.String getConfigMembership();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface FeatureSpecOrBuilder
    * @return The enum numeric value on the wire for billing.
    */
   int getBillingValue();
-
   /**
    *
    *

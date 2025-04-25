@@ -42,7 +42,6 @@ public interface CloudRunOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CloudRunOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface CloudRunOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface TranscriptOrBuilder
    * @return Whether the docsDestination field is set.
    */
   boolean hasDocsDestination();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface TranscriptOrBuilder
    * @return The docsDestination.
    */
   com.google.apps.meet.v2.DocsDestination getDocsDestination();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface TranscriptOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface TranscriptOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface TranscriptOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface TranscriptOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -182,7 +176,6 @@ public interface TranscriptOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public interface TranscriptOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *

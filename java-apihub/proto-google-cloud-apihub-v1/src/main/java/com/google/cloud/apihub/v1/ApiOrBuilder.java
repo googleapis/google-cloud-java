@@ -39,7 +39,6 @@ public interface ApiOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface ApiOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ApiOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ApiOrBuilder
    * @return Whether the documentation field is set.
    */
   boolean hasDocumentation();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface ApiOrBuilder
    * @return The documentation.
    */
   com.google.cloud.apihub.v1.Documentation getDocumentation();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface ApiOrBuilder
    * @return Whether the owner field is set.
    */
   boolean hasOwner();
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public interface ApiOrBuilder
    * @return The owner.
    */
   com.google.cloud.apihub.v1.Owner getOwner();
-
   /**
    *
    *
@@ -205,7 +198,6 @@ public interface ApiOrBuilder
    * @return A list containing the versions.
    */
   java.util.List<java.lang.String> getVersionsList();
-
   /**
    *
    *
@@ -223,7 +215,6 @@ public interface ApiOrBuilder
    * @return The count of versions.
    */
   int getVersionsCount();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface ApiOrBuilder
    * @return The versions at the given index.
    */
   java.lang.String getVersions(int index);
-
   /**
    *
    *
@@ -275,7 +265,6 @@ public interface ApiOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public interface ApiOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -315,7 +303,6 @@ public interface ApiOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -329,7 +316,6 @@ public interface ApiOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -363,7 +349,6 @@ public interface ApiOrBuilder
    * @return Whether the targetUser field is set.
    */
   boolean hasTargetUser();
-
   /**
    *
    *
@@ -385,7 +370,6 @@ public interface ApiOrBuilder
    * @return The targetUser.
    */
   com.google.cloud.apihub.v1.AttributeValues getTargetUser();
-
   /**
    *
    *
@@ -427,7 +411,6 @@ public interface ApiOrBuilder
    * @return Whether the team field is set.
    */
   boolean hasTeam();
-
   /**
    *
    *
@@ -449,7 +432,6 @@ public interface ApiOrBuilder
    * @return The team.
    */
   com.google.cloud.apihub.v1.AttributeValues getTeam();
-
   /**
    *
    *
@@ -491,7 +473,6 @@ public interface ApiOrBuilder
    * @return Whether the businessUnit field is set.
    */
   boolean hasBusinessUnit();
-
   /**
    *
    *
@@ -513,7 +494,6 @@ public interface ApiOrBuilder
    * @return The businessUnit.
    */
   com.google.cloud.apihub.v1.AttributeValues getBusinessUnit();
-
   /**
    *
    *
@@ -555,7 +535,6 @@ public interface ApiOrBuilder
    * @return Whether the maturityLevel field is set.
    */
   boolean hasMaturityLevel();
-
   /**
    *
    *
@@ -577,7 +556,6 @@ public interface ApiOrBuilder
    * @return The maturityLevel.
    */
   com.google.cloud.apihub.v1.AttributeValues getMaturityLevel();
-
   /**
    *
    *
@@ -613,7 +591,6 @@ public interface ApiOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -629,11 +606,9 @@ public interface ApiOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
-
   /**
    *
    *
@@ -649,7 +624,6 @@ public interface ApiOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
-
   /**
    *
    *
@@ -669,7 +643,6 @@ public interface ApiOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
-
   /**
    *
    *
@@ -707,7 +680,6 @@ public interface ApiOrBuilder
    * @return Whether the apiStyle field is set.
    */
   boolean hasApiStyle();
-
   /**
    *
    *
@@ -729,7 +701,6 @@ public interface ApiOrBuilder
    * @return The apiStyle.
    */
   com.google.cloud.apihub.v1.AttributeValues getApiStyle();
-
   /**
    *
    *
@@ -767,7 +738,6 @@ public interface ApiOrBuilder
    * @return The selectedVersion.
    */
   java.lang.String getSelectedVersion();
-
   /**
    *
    *

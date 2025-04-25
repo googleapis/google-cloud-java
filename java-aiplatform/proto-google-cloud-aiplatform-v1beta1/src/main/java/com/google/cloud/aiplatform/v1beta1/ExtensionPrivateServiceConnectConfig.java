@@ -34,7 +34,6 @@ public final class ExtensionPrivateServiceConnectConfig
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ExtensionPrivateServiceConnectConfig)
     ExtensionPrivateServiceConnectConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExtensionPrivateServiceConnectConfig.newBuilder() to construct.
   private ExtensionPrivateServiceConnectConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ExtensionPrivateServiceConnectConfig
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceDirectory_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class ExtensionPrivateServiceConnectConfig
       return s;
     }
   }
-
   /**
    *
    *
@@ -299,7 +296,6 @@ public final class ExtensionPrivateServiceConnectConfig
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -494,7 +490,6 @@ public final class ExtensionPrivateServiceConnectConfig
     private int bitField0_;
 
     private java.lang.Object serviceDirectory_ = "";
-
     /**
      *
      *
@@ -526,7 +521,6 @@ public final class ExtensionPrivateServiceConnectConfig
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -558,7 +552,6 @@ public final class ExtensionPrivateServiceConnectConfig
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -589,7 +582,6 @@ public final class ExtensionPrivateServiceConnectConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -616,7 +608,6 @@ public final class ExtensionPrivateServiceConnectConfig
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -34,7 +34,6 @@ public interface BatchUpdateEntityTypesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType> getEntityTypesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BatchUpdateEntityTypesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.EntityType getEntityTypes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BatchUpdateEntityTypesResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType entity_types = 1;</code>
    */
   int getEntityTypesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BatchUpdateEntityTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder>
       getEntityTypesOrBuilderList();
-
   /**
    *
    *

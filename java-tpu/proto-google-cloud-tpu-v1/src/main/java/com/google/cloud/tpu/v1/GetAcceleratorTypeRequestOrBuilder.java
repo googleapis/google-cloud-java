@@ -38,7 +38,6 @@ public interface GetAcceleratorTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

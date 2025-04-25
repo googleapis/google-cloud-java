@@ -33,7 +33,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.IstioConfig)
     IstioConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IstioConfig.newBuilder() to construct.
   private IstioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -107,7 +106,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>AUTH_NONE = 0;</code>
      */
     public static final int AUTH_NONE_VALUE = 0;
-
     /**
      *
      *
@@ -202,7 +200,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 1;
   private boolean disabled_ = false;
-
   /**
    *
    *
@@ -224,7 +221,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTH_FIELD_NUMBER = 2;
   private int auth_ = 0;
-
   /**
    *
    *
@@ -243,7 +239,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
   public int getAuthValue() {
     return auth_;
   }
-
   /**
    *
    *
@@ -434,7 +429,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -629,7 +623,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean disabled_;
-
     /**
      *
      *
@@ -648,7 +641,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
-
     /**
      *
      *
@@ -671,7 +663,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +685,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int auth_ = 0;
-
     /**
      *
      *
@@ -714,7 +704,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     public int getAuthValue() {
       return auth_;
     }
-
     /**
      *
      *
@@ -737,7 +726,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +749,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -787,7 +774,6 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface RollbackAttemptOrBuilder
    * @return The destinationPhase.
    */
   java.lang.String getDestinationPhase();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RollbackAttemptOrBuilder
    * @return The rolloutId.
    */
   java.lang.String getRolloutId();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface RollbackAttemptOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface RollbackAttemptOrBuilder
    * @return The stateDesc.
    */
   java.lang.String getStateDesc();
-
   /**
    *
    *

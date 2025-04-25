@@ -39,7 +39,6 @@ public interface CreateCloudVmClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateCloudVmClusterRequestOrBuilder
    * @return The cloudVmClusterId.
    */
   java.lang.String getCloudVmClusterId();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface CreateCloudVmClusterRequestOrBuilder
    * @return Whether the cloudVmCluster field is set.
    */
   boolean hasCloudVmCluster();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateCloudVmClusterRequestOrBuilder
    * @return The cloudVmCluster.
    */
   com.google.cloud.oracledatabase.v1.CloudVmCluster getCloudVmCluster();
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public interface CreateCloudVmClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

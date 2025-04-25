@@ -38,7 +38,6 @@ public interface UpdateEntryGroupRequestOrBuilder
    * @return Whether the entryGroup field is set.
    */
   boolean hasEntryGroup();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateEntryGroupRequestOrBuilder
    * @return The entryGroup.
    */
   com.google.cloud.datacatalog.v1.EntryGroup getEntryGroup();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpdateEntryGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface UpdateEntryGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

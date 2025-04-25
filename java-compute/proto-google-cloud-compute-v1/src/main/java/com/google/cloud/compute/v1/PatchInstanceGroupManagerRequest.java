@@ -33,7 +33,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PatchInstanceGroupManagerRequest)
     PatchInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PatchInstanceGroupManagerRequest.newBuilder() to construct.
   private PatchInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
 
   public static final int INSTANCE_GROUP_MANAGER_RESOURCE_FIELD_NUMBER = 261063946;
   private com.google.cloud.compute.v1.InstanceGroupManager instanceGroupManagerResource_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
   public boolean hasInstanceGroupManagerResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         ? com.google.cloud.compute.v1.InstanceGroupManager.getDefaultInstance()
         : instanceGroupManagerResource_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -578,7 +565,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -845,7 +831,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
-
     /**
      *
      *
@@ -869,7 +854,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -893,7 +877,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -916,7 +899,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -966,7 +947,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.InstanceGroupManager.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagerOrBuilder>
         instanceGroupManagerResourceBuilder_;
-
     /**
      *
      *
@@ -983,7 +963,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     public boolean hasInstanceGroupManagerResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1006,7 +985,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return instanceGroupManagerResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1032,7 +1010,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1032,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1063,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1084,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1101,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return getInstanceGroupManagerResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1149,7 +1122,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
             : instanceGroupManagerResource_;
       }
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1204,7 +1175,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1229,7 +1199,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1253,7 +1222,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1273,7 +1241,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1300,7 +1267,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1315,7 +1281,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1338,7 +1303,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1361,7 +1325,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1383,7 +1346,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1401,7 +1363,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1426,7 +1387,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1451,7 +1411,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1500,7 +1458,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1520,7 +1477,6 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

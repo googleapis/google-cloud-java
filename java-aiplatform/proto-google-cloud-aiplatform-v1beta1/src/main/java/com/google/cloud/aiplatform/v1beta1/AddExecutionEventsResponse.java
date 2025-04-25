@@ -34,7 +34,6 @@ public final class AddExecutionEventsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AddExecutionEventsResponse)
     AddExecutionEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AddExecutionEventsResponse.newBuilder() to construct.
   private AddExecutionEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class AddExecutionEventsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

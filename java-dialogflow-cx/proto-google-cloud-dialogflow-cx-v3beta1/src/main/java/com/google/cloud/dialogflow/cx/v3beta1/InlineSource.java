@@ -34,7 +34,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.InlineSource)
     InlineSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InlineSource.newBuilder() to construct.
   private InlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -243,7 +241,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -427,7 +424,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -443,7 +439,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
-
     /**
      *
      *
@@ -465,7 +460,6 @@ public final class InlineSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

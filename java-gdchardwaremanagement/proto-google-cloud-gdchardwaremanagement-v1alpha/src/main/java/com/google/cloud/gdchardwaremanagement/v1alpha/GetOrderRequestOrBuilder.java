@@ -38,7 +38,6 @@ public interface GetOrderRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

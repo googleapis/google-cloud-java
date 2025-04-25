@@ -35,7 +35,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult> getResultsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
   com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getResults(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionResult results = 2;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return Whether the totalBilledTime field is set.
    */
   boolean hasTotalBilledTime();
-
   /**
    *
    *
@@ -110,7 +105,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return The totalBilledTime.
    */
   com.google.protobuf.Duration getTotalBilledTime();
-
   /**
    *
    *
@@ -134,7 +128,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return Whether the outputConfig field is set.
    */
   boolean hasOutputConfig();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return The outputConfig.
    */
   com.google.cloud.speech.v1p1beta1.TranscriptOutputConfig getOutputConfig();
-
   /**
    *
    *
@@ -171,7 +163,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return Whether the outputError field is set.
    */
   boolean hasOutputError();
-
   /**
    *
    *
@@ -184,7 +175,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return The outputError.
    */
   com.google.rpc.Status getOutputError();
-
   /**
    *
    *
@@ -208,7 +198,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return Whether the speechAdaptationInfo field is set.
    */
   boolean hasSpeechAdaptationInfo();
-
   /**
    *
    *
@@ -221,7 +210,6 @@ public interface LongRunningRecognizeResponseOrBuilder
    * @return The speechAdaptationInfo.
    */
   com.google.cloud.speech.v1p1beta1.SpeechAdaptationInfo getSpeechAdaptationInfo();
-
   /**
    *
    *

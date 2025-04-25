@@ -33,7 +33,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AsyncAnnotateFileRequest)
     AsyncAnnotateFileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AsyncAnnotateFileRequest.newBuilder() to construct.
   private AsyncAnnotateFileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1.InputConfig inputConfig_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         ? com.google.cloud.vision.v1.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1.Feature> features_;
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   public java.util.List<com.google.cloud.vision.v1.Feature> getFeaturesList() {
     return features_;
   }
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       getFeaturesOrBuilderList() {
     return features_;
   }
-
   /**
    *
    *
@@ -165,7 +158,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   public int getFeaturesCount() {
     return features_.size();
   }
-
   /**
    *
    *
@@ -179,7 +171,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   public com.google.cloud.vision.v1.Feature getFeatures(int index) {
     return features_.get(index);
   }
-
   /**
    *
    *
@@ -196,7 +187,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
 
   public static final int IMAGE_CONTEXT_FIELD_NUMBER = 3;
   private com.google.cloud.vision.v1.ImageContext imageContext_;
-
   /**
    *
    *
@@ -212,7 +202,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   public boolean hasImageContext() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -230,7 +219,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         ? com.google.cloud.vision.v1.ImageContext.getDefaultInstance()
         : imageContext_;
   }
-
   /**
    *
    *
@@ -249,7 +237,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.vision.v1.OutputConfig outputConfig_;
-
   /**
    *
    *
@@ -265,7 +252,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +269,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         ? com.google.cloud.vision.v1.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -503,7 +488,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -810,7 +794,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             com.google.cloud.vision.v1.InputConfig.Builder,
             com.google.cloud.vision.v1.InputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -869,7 +850,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +869,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -952,7 +929,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -971,7 +947,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             : inputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return featuresBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1021,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return featuresBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return featuresBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1059,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1079,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1101,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1154,7 +1123,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1142,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1162,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1182,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1236,7 +1201,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1256,7 +1220,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1269,7 +1232,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public com.google.cloud.vision.v1.Feature.Builder getFeaturesBuilder(int index) {
       return getFeaturesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1286,7 +1248,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return featuresBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1304,7 +1265,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(features_);
       }
     }
-
     /**
      *
      *
@@ -1318,7 +1278,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       return getFeaturesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1.Feature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1332,7 +1291,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       return getFeaturesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1.Feature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1369,7 +1327,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             com.google.cloud.vision.v1.ImageContext.Builder,
             com.google.cloud.vision.v1.ImageContextOrBuilder>
         imageContextBuilder_;
-
     /**
      *
      *
@@ -1384,7 +1341,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public boolean hasImageContext() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1405,7 +1361,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return imageContextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1428,7 +1383,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1403,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1477,7 +1430,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1449,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1463,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return getImageContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1531,7 +1481,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             : imageContext_;
       }
     }
-
     /**
      *
      *
@@ -1564,7 +1513,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             com.google.cloud.vision.v1.OutputConfig.Builder,
             com.google.cloud.vision.v1.OutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -1579,7 +1527,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1600,7 +1547,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1623,7 +1569,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1589,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1672,7 +1616,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1692,7 +1635,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1707,7 +1649,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1726,7 +1667,6 @@ public final class AsyncAnnotateFileRequest extends com.google.protobuf.Generate
             : outputConfig_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.VirusDetail)
     VirusDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VirusDetail.newBuilder() to construct.
   private VirusDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,7 +148,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>THREAT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int THREAT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -160,7 +158,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>UNKNOWN = 1;</code>
      */
     public static final int UNKNOWN_VALUE = 1;
-
     /**
      *
      *
@@ -171,7 +168,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>VIRUS_OR_WORM = 2;</code>
      */
     public static final int VIRUS_OR_WORM_VALUE = 2;
-
     /**
      *
      *
@@ -182,7 +178,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>MALICIOUS_PROGRAM = 3;</code>
      */
     public static final int MALICIOUS_PROGRAM_VALUE = 3;
-
     /**
      *
      *
@@ -193,7 +188,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
      * <code>POTENTIALLY_HARMFUL_CONTENT = 4;</code>
      */
     public static final int POTENTIALLY_HARMFUL_CONTENT_VALUE = 4;
-
     /**
      *
      *
@@ -298,7 +292,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vendor_ = "";
-
   /**
    *
    *
@@ -322,7 +315,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +344,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList names_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -367,7 +358,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNamesList() {
     return names_;
   }
-
   /**
    *
    *
@@ -382,7 +372,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
   public int getNamesCount() {
     return names_.size();
   }
-
   /**
    *
    *
@@ -398,7 +387,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNames(int index) {
     return names_.get(index);
   }
-
   /**
    *
    *
@@ -417,7 +405,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int THREAT_TYPE_FIELD_NUMBER = 3;
   private int threatType_ = 0;
-
   /**
    *
    *
@@ -433,7 +420,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
   public int getThreatTypeValue() {
     return threatType_;
   }
-
   /**
    *
    *
@@ -642,7 +628,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -861,7 +846,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object vendor_ = "";
-
     /**
      *
      *
@@ -884,7 +868,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +928,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -996,7 +975,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       names_.makeImmutable();
       return names_;
     }
-
     /**
      *
      *
@@ -1011,7 +989,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     public int getNamesCount() {
       return names_.size();
     }
-
     /**
      *
      *
@@ -1027,7 +1004,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNames(int index) {
       return names_.get(index);
     }
-
     /**
      *
      *
@@ -1043,7 +1019,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNamesBytes(int index) {
       return names_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1067,7 +1042,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1110,7 +1083,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1129,7 +1101,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1126,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int threatType_ = 0;
-
     /**
      *
      *
@@ -1171,7 +1141,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
     public int getThreatTypeValue() {
       return threatType_;
     }
-
     /**
      *
      *
@@ -1190,7 +1159,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1210,7 +1178,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.VirusDetail.ThreatType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1232,7 +1199,6 @@ public final class VirusDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

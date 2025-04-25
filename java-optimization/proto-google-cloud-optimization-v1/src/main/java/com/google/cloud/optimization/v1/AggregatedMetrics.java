@@ -38,7 +38,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.optimization.v1.AggregatedMetrics)
     AggregatedMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AggregatedMetrics.newBuilder() to construct.
   private AggregatedMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,7 +83,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int PERFORMED_SHIPMENT_COUNT_FIELD_NUMBER = 1;
   private int performedShipmentCount_ = 0;
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int TRAVEL_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration travelDuration_;
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasTravelDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : travelDuration_;
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int WAIT_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration waitDuration_;
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasWaitDuration() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : waitDuration_;
   }
-
   /**
    *
    *
@@ -210,7 +202,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int DELAY_DURATION_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration delayDuration_;
-
   /**
    *
    *
@@ -226,7 +217,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasDelayDuration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -244,7 +234,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : delayDuration_;
   }
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int BREAK_DURATION_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration breakDuration_;
-
   /**
    *
    *
@@ -279,7 +267,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasBreakDuration() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -297,7 +284,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : breakDuration_;
   }
-
   /**
    *
    *
@@ -316,7 +302,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int VISIT_DURATION_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration visitDuration_;
-
   /**
    *
    *
@@ -332,7 +317,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasVisitDuration() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -350,7 +334,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : visitDuration_;
   }
-
   /**
    *
    *
@@ -369,7 +352,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int TOTAL_DURATION_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration totalDuration_;
-
   /**
    *
    *
@@ -389,7 +371,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public boolean hasTotalDuration() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -411,7 +392,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : totalDuration_;
   }
-
   /**
    *
    *
@@ -434,7 +414,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int TRAVEL_DISTANCE_METERS_FIELD_NUMBER = 8;
   private double travelDistanceMeters_ = 0D;
-
   /**
    *
    *
@@ -486,7 +465,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public int getMaxLoadsCount() {
     return internalGetMaxLoads().getMap().size();
   }
-
   /**
    *
    *
@@ -509,7 +487,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     }
     return internalGetMaxLoads().getMap().containsKey(key);
   }
-
   /** Use {@link #getMaxLoadsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -517,7 +494,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       getMaxLoads() {
     return getMaxLoadsMap();
   }
-
   /**
    *
    *
@@ -538,7 +514,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       getMaxLoadsMap() {
     return internalGetMaxLoads().getMap();
   }
-
   /**
    *
    *
@@ -567,7 +542,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         map = internalGetMaxLoads().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -624,7 +598,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public int getCostsCount() {
     return internalGetCosts().getMap().size();
   }
-
   /**
    *
    *
@@ -646,14 +619,12 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     }
     return internalGetCosts().getMap().containsKey(key);
   }
-
   /** Use {@link #getCostsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Double> getCosts() {
     return getCostsMap();
   }
-
   /**
    *
    *
@@ -672,7 +643,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.Double> getCostsMap() {
     return internalGetCosts().getMap();
   }
-
   /**
    *
    *
@@ -695,7 +665,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -724,7 +693,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
 
   public static final int TOTAL_COST_FIELD_NUMBER = 11;
   private double totalCost_ = 0D;
-
   /**
    *
    *
@@ -1054,7 +1022,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1461,7 +1428,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int performedShipmentCount_;
-
     /**
      *
      *
@@ -1478,7 +1444,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public int getPerformedShipmentCount() {
       return performedShipmentCount_;
     }
-
     /**
      *
      *
@@ -1499,7 +1464,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1525,7 +1489,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         travelDurationBuilder_;
-
     /**
      *
      *
@@ -1540,7 +1503,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasTravelDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1561,7 +1523,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         return travelDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1584,7 +1545,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1564,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1591,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1610,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1624,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTravelDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1686,7 +1642,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             : travelDuration_;
       }
     }
-
     /**
      *
      *
@@ -1719,7 +1674,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         waitDurationBuilder_;
-
     /**
      *
      *
@@ -1734,7 +1688,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasWaitDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1755,7 +1708,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         return waitDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1778,7 +1730,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1798,7 +1749,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1826,7 +1776,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1795,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1861,7 +1809,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getWaitDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1880,7 +1827,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             : waitDuration_;
       }
     }
-
     /**
      *
      *
@@ -1913,7 +1859,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         delayDurationBuilder_;
-
     /**
      *
      *
@@ -1928,7 +1873,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasDelayDuration() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1949,7 +1893,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         return delayDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1915,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1992,7 +1934,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2020,7 +1961,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1980,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2055,7 +1994,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDelayDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2074,7 +2012,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             : delayDuration_;
       }
     }
-
     /**
      *
      *
@@ -2107,7 +2044,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         breakDurationBuilder_;
-
     /**
      *
      *
@@ -2122,7 +2058,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasBreakDuration() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2143,7 +2078,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         return breakDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2166,7 +2100,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2186,7 +2119,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2214,7 +2146,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2165,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2249,7 +2179,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getBreakDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2268,7 +2197,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             : breakDuration_;
       }
     }
-
     /**
      *
      *
@@ -2301,7 +2229,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         visitDurationBuilder_;
-
     /**
      *
      *
@@ -2316,7 +2243,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasVisitDuration() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2337,7 +2263,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         return visitDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2360,7 +2285,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2380,7 +2304,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2408,7 +2331,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2428,7 +2350,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2443,7 +2364,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getVisitDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2462,7 +2382,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             : visitDuration_;
       }
     }
-
     /**
      *
      *
@@ -2495,7 +2414,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         totalDurationBuilder_;
-
     /**
      *
      *
@@ -2514,7 +2432,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public boolean hasTotalDuration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2539,7 +2456,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         return totalDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2566,7 +2482,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2590,7 +2505,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2622,7 +2536,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2646,7 +2559,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2665,7 +2577,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getTotalDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2688,7 +2599,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
             : totalDuration_;
       }
     }
-
     /**
      *
      *
@@ -2720,7 +2630,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     }
 
     private double travelDistanceMeters_;
-
     /**
      *
      *
@@ -2736,7 +2645,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public double getTravelDistanceMeters() {
       return travelDistanceMeters_;
     }
-
     /**
      *
      *
@@ -2756,7 +2664,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2795,8 +2702,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return MaxLoadsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MaxLoadsConverter maxLoadsConverter = new MaxLoadsConverter();
 
@@ -2836,7 +2742,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public int getMaxLoadsCount() {
       return internalGetMaxLoads().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -2860,7 +2765,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return internalGetMaxLoads().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getMaxLoadsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2869,7 +2773,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         getMaxLoads() {
       return getMaxLoadsMap();
     }
-
     /**
      *
      *
@@ -2892,7 +2795,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
         getMaxLoadsMap() {
       return internalGetMaxLoads().getImmutableMap();
     }
-
     /**
      *
      *
@@ -2923,7 +2825,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
           map = internalGetMutableMaxLoads().ensureBuilderMap();
       return map.containsKey(key) ? maxLoadsConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -2960,7 +2861,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       internalGetMutableMaxLoads().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2984,7 +2884,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       internalGetMutableMaxLoads().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2993,7 +2892,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000100;
       return internalGetMutableMaxLoads().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -3022,7 +2920,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -3053,7 +2950,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000100;
       return this;
     }
-
     /**
      *
      *
@@ -3116,7 +3012,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public int getCostsCount() {
       return internalGetCosts().getMap().size();
     }
-
     /**
      *
      *
@@ -3138,14 +3033,12 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       }
       return internalGetCosts().getMap().containsKey(key);
     }
-
     /** Use {@link #getCostsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getCosts() {
       return getCostsMap();
     }
-
     /**
      *
      *
@@ -3164,7 +3057,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.Double> getCostsMap() {
       return internalGetCosts().getMap();
     }
-
     /**
      *
      *
@@ -3187,7 +3079,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.Double> map = internalGetCosts().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -3220,7 +3111,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       internalGetMutableCosts().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -3242,14 +3132,12 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       internalGetMutableCosts().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Double> getMutableCosts() {
       bitField0_ |= 0x00000200;
       return internalGetMutableCosts().getMutableMap();
     }
-
     /**
      *
      *
@@ -3273,7 +3161,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000200;
       return this;
     }
-
     /**
      *
      *
@@ -3295,7 +3182,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     }
 
     private double totalCost_;
-
     /**
      *
      *
@@ -3318,7 +3204,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
     public double getTotalCost() {
       return totalCost_;
     }
-
     /**
      *
      *
@@ -3345,7 +3230,6 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

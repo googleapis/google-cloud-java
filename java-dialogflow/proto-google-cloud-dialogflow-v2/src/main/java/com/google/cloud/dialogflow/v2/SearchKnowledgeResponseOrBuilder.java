@@ -35,7 +35,6 @@ public interface SearchKnowledgeResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SearchKnowledgeAnswer answers = 2;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer> getAnswersList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface SearchKnowledgeResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SearchKnowledgeAnswer answers = 2;</code>
    */
   com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer getAnswers(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface SearchKnowledgeResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2.SearchKnowledgeAnswer answers = 2;</code>
    */
   int getAnswersCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface SearchKnowledgeResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SearchKnowledgeAnswerOrBuilder>
       getAnswersOrBuilderList();
-
   /**
    *
    *
@@ -97,7 +93,6 @@ public interface SearchKnowledgeResponseOrBuilder
    * @return The rewrittenQuery.
    */
   java.lang.String getRewrittenQuery();
-
   /**
    *
    *

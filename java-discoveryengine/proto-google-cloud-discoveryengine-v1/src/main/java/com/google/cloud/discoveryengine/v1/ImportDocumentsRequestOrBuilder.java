@@ -37,7 +37,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the inlineSource field is set.
    */
   boolean hasInlineSource();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The inlineSource.
    */
   com.google.cloud.discoveryengine.v1.ImportDocumentsRequest.InlineSource getInlineSource();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.discoveryengine.v1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.discoveryengine.v1.BigQuerySource getBigquerySource();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the fhirStoreSource field is set.
    */
   boolean hasFhirStoreSource();
-
   /**
    *
    *
@@ -164,7 +157,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The fhirStoreSource.
    */
   com.google.cloud.discoveryengine.v1.FhirStoreSource getFhirStoreSource();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the spannerSource field is set.
    */
   boolean hasSpannerSource();
-
   /**
    *
    *
@@ -201,7 +192,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The spannerSource.
    */
   com.google.cloud.discoveryengine.v1.SpannerSource getSpannerSource();
-
   /**
    *
    *
@@ -225,7 +215,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the cloudSqlSource field is set.
    */
   boolean hasCloudSqlSource();
-
   /**
    *
    *
@@ -238,7 +227,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The cloudSqlSource.
    */
   com.google.cloud.discoveryengine.v1.CloudSqlSource getCloudSqlSource();
-
   /**
    *
    *
@@ -262,7 +250,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the firestoreSource field is set.
    */
   boolean hasFirestoreSource();
-
   /**
    *
    *
@@ -275,7 +262,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The firestoreSource.
    */
   com.google.cloud.discoveryengine.v1.FirestoreSource getFirestoreSource();
-
   /**
    *
    *
@@ -299,7 +285,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the alloyDbSource field is set.
    */
   boolean hasAlloyDbSource();
-
   /**
    *
    *
@@ -312,7 +297,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The alloyDbSource.
    */
   com.google.cloud.discoveryengine.v1.AlloyDbSource getAlloyDbSource();
-
   /**
    *
    *
@@ -336,7 +320,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the bigtableSource field is set.
    */
   boolean hasBigtableSource();
-
   /**
    *
    *
@@ -349,7 +332,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The bigtableSource.
    */
   com.google.cloud.discoveryengine.v1.BigtableSource getBigtableSource();
-
   /**
    *
    *
@@ -377,7 +359,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -407,7 +388,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the errorConfig field is set.
    */
   boolean hasErrorConfig();
-
   /**
    *
    *
@@ -420,7 +400,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The errorConfig.
    */
   com.google.cloud.discoveryengine.v1.ImportErrorConfig getErrorConfig();
-
   /**
    *
    *
@@ -448,7 +427,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The enum numeric value on the wire for reconciliationMode.
    */
   int getReconciliationModeValue();
-
   /**
    *
    *
@@ -480,7 +458,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -494,7 +471,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -589,7 +565,6 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The idField.
    */
   java.lang.String getIdField();
-
   /**
    *
    *

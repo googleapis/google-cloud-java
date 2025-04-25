@@ -37,7 +37,6 @@ public interface DefinitionOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DefinitionOrBuilder
    * @return The schema.
    */
   com.google.cloud.apihub.v1.Schema getSchema();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DefinitionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public interface DefinitionOrBuilder
    * @return The spec.
    */
   java.lang.String getSpec();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface DefinitionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface DefinitionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface DefinitionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface DefinitionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public interface DefinitionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -255,7 +246,6 @@ public interface DefinitionOrBuilder
    * </code>
    */
   int getAttributesCount();
-
   /**
    *
    *
@@ -271,11 +261,9 @@ public interface DefinitionOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
-
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributes();
-
   /**
    *
    *
@@ -291,7 +279,6 @@ public interface DefinitionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.cloud.apihub.v1.AttributeValues> getAttributesMap();
-
   /**
    *
    *
@@ -311,7 +298,6 @@ public interface DefinitionOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.apihub.v1.AttributeValues defaultValue);
-
   /**
    *
    *

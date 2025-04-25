@@ -38,7 +38,6 @@ public interface LocationOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface LocationOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface LocationOrBuilder
    * @return The version.
    */
   io.grafeas.v1.Version getVersion();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface LocationOrBuilder
    * @return The path.
    */
   java.lang.String getPath();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyMachineImageRequest)
     SetIamPolicyMachineImageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetIamPolicyMachineImageRequest.newBuilder() to construct.
   private SetIamPolicyMachineImageRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
   private int bitField0_;
   public static final int GLOBAL_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 337048498;
   private com.google.cloud.compute.v1.GlobalSetPolicyRequest globalSetPolicyRequestResource_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
   public boolean hasGlobalSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.GlobalSetPolicyRequest.getDefaultInstance()
         : globalSetPolicyRequestResource_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -208,7 +201,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -420,7 +412,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -659,7 +650,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder>
         globalSetPolicyRequestResourceBuilder_;
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
     public boolean hasGlobalSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -699,7 +688,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
         return globalSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -748,7 +735,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +766,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -820,7 +804,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return getGlobalSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -842,7 +825,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
             : globalSetPolicyRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -872,7 +854,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -895,7 +876,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -918,7 +898,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -940,7 +919,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +936,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1004,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1025,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1069,7 +1042,6 @@ public final class SetIamPolicyMachineImageRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -42,7 +42,6 @@ public interface TransitTableOrBuilder
    * @return A list containing the postalCodeGroupNames.
    */
   java.util.List<java.lang.String> getPostalCodeGroupNamesList();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface TransitTableOrBuilder
    * @return The count of postalCodeGroupNames.
    */
   int getPostalCodeGroupNamesCount();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface TransitTableOrBuilder
    * @return The postalCodeGroupNames at the given index.
    */
   java.lang.String getPostalCodeGroupNames(int index);
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface TransitTableOrBuilder
    * @return A list containing the transitTimeLabels.
    */
   java.util.List<java.lang.String> getTransitTimeLabelsList();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface TransitTableOrBuilder
    * @return The count of transitTimeLabels.
    */
   int getTransitTimeLabelsCount();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface TransitTableOrBuilder
    * @return The transitTimeLabels at the given index.
    */
   java.lang.String getTransitTimeLabels(int index);
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface TransitTableOrBuilder
    */
   java.util.List<com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow>
       getRowsList();
-
   /**
    *
    *
@@ -198,7 +191,6 @@ public interface TransitTableOrBuilder
    * </code>
    */
   com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow getRows(int index);
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface TransitTableOrBuilder
    * </code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -235,7 +226,6 @@ public interface TransitTableOrBuilder
           ? extends
               com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRowOrBuilder>
       getRowsOrBuilderList();
-
   /**
    *
    *

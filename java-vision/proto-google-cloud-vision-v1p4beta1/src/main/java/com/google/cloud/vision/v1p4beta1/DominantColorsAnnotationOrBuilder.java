@@ -34,7 +34,6 @@ public interface DominantColorsAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.ColorInfo colors = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p4beta1.ColorInfo> getColorsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface DominantColorsAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.ColorInfo colors = 1;</code>
    */
   com.google.cloud.vision.v1p4beta1.ColorInfo getColors(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface DominantColorsAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p4beta1.ColorInfo colors = 1;</code>
    */
   int getColorsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface DominantColorsAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p4beta1.ColorInfoOrBuilder>
       getColorsOrBuilderList();
-
   /**
    *
    *

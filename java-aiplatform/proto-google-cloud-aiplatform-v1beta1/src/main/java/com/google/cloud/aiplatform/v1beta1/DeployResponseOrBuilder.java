@@ -41,7 +41,6 @@ public interface DeployResponseOrBuilder
    * @return The publisherModel.
    */
   java.lang.String getPublisherModel();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface DeployResponseOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface DeployResponseOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *

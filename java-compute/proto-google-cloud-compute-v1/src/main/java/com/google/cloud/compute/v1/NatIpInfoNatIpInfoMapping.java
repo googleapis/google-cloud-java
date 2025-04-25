@@ -33,7 +33,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NatIpInfoNatIpInfoMapping)
     NatIpInfoNatIpInfoMappingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NatIpInfoNatIpInfoMapping.newBuilder() to construct.
   private NatIpInfoNatIpInfoMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,10 +102,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
-
     /** <code>AUTO = 2020783;</code> */
     public static final int AUTO_VALUE = 2020783;
-
     /** <code>MANUAL = 119397318;</code> */
     public static final int MANUAL_VALUE = 119397318;
 
@@ -232,10 +229,8 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      * <code>UNDEFINED_USAGE = 0;</code>
      */
     public static final int UNDEFINED_USAGE_VALUE = 0;
-
     /** <code>IN_USE = 17393485;</code> */
     public static final int IN_USE_VALUE = 17393485;
-
     /** <code>UNUSED = 360643030;</code> */
     public static final int UNUSED_VALUE = 360643030;
 
@@ -329,7 +324,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mode_ = "";
-
   /**
    *
    *
@@ -346,7 +340,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
   public boolean hasMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -371,7 +364,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -401,7 +393,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object natIp_ = "";
-
   /**
    *
    *
@@ -417,7 +408,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
   public boolean hasNatIp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -441,7 +431,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -470,7 +459,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object usage_ = "";
-
   /**
    *
    *
@@ -487,7 +475,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
   public boolean hasUsage() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -512,7 +499,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -731,7 +717,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -951,7 +936,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object mode_ = "";
-
     /**
      *
      *
@@ -967,7 +951,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     public boolean hasMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -991,7 +974,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1015,7 +997,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1019,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1057,7 +1037,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1083,7 +1062,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     }
 
     private java.lang.Object natIp_ = "";
-
     /**
      *
      *
@@ -1098,7 +1076,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     public boolean hasNatIp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1121,7 +1098,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1144,7 +1120,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1166,7 +1141,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1184,7 +1158,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1182,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     }
 
     private java.lang.Object usage_ = "";
-
     /**
      *
      *
@@ -1225,7 +1197,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
     public boolean hasUsage() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1249,7 +1220,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1273,7 +1243,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1296,7 +1265,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1315,7 +1283,6 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

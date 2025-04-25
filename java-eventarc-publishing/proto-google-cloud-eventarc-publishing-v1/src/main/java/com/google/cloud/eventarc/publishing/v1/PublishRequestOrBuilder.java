@@ -37,7 +37,6 @@ public interface PublishRequestOrBuilder
    * @return The messageBus.
    */
   java.lang.String getMessageBus();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PublishRequestOrBuilder
    * @return Whether the protoMessage field is set.
    */
   boolean hasProtoMessage();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface PublishRequestOrBuilder
    * @return The protoMessage.
    */
   com.google.cloud.eventarc.publishing.v1.CloudEvent getProtoMessage();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface PublishRequestOrBuilder
    * @return Whether the jsonMessage field is set.
    */
   boolean hasJsonMessage();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface PublishRequestOrBuilder
    * @return The jsonMessage.
    */
   java.lang.String getJsonMessage();
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public interface PublishRequestOrBuilder
    * @return Whether the avroMessage field is set.
    */
   boolean hasAvroMessage();
-
   /**
    *
    *

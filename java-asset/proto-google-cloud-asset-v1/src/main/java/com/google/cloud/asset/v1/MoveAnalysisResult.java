@@ -33,7 +33,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.MoveAnalysisResult)
     MoveAnalysisResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MoveAnalysisResult.newBuilder() to construct.
   private MoveAnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.MoveImpact> blockers_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.asset.v1.MoveImpact> getBlockersList() {
     return blockers_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       getBlockersOrBuilderList() {
     return blockers_;
   }
-
   /**
    *
    *
@@ -115,7 +111,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   public int getBlockersCount() {
     return blockers_.size();
   }
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.asset.v1.MoveImpact getBlockers(int index) {
     return blockers_.get(index);
   }
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.MoveImpact> warnings_;
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.asset.v1.MoveImpact> getWarningsList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -183,7 +175,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       getWarningsOrBuilderList() {
     return warnings_;
   }
-
   /**
    *
    *
@@ -199,7 +190,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   public int getWarningsCount() {
     return warnings_.size();
   }
-
   /**
    *
    *
@@ -215,7 +205,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.asset.v1.MoveImpact getWarnings(int index) {
     return warnings_.get(index);
   }
-
   /**
    *
    *
@@ -404,7 +393,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -721,7 +709,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return blockersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -739,7 +726,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return blockersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return blockersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +810,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -916,7 +895,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +915,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -958,7 +935,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -972,7 +948,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.MoveImpact.Builder getBlockersBuilder(int index) {
       return getBlockersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -990,7 +965,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return blockersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1009,7 +983,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(blockers_);
       }
     }
-
     /**
      *
      *
@@ -1024,7 +997,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       return getBlockersFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.MoveImpact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1039,7 +1011,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       return getBlockersFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.MoveImpact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1105,7 +1076,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return warningsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return warningsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1143,7 +1112,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return warningsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1168,7 +1136,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1158,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1216,7 +1182,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1241,7 +1206,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1263,7 +1227,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1249,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1309,7 +1271,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1331,7 +1292,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1353,7 +1313,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1368,7 +1327,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.MoveImpact.Builder getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1387,7 +1345,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return warningsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1364,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(warnings_);
       }
     }
-
     /**
      *
      *
@@ -1423,7 +1379,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       return getWarningsFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.MoveImpact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1439,7 +1394,6 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       return getWarningsFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.MoveImpact.getDefaultInstance());
     }
-
     /**
      *
      *

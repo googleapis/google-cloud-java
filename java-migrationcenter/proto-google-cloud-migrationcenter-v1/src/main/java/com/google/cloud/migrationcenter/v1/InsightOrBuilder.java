@@ -38,7 +38,6 @@ public interface InsightOrBuilder
    * @return Whether the migrationInsight field is set.
    */
   boolean hasMigrationInsight();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsightOrBuilder
    * @return The migrationInsight.
    */
   com.google.cloud.migrationcenter.v1.MigrationInsight getMigrationInsight();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsightOrBuilder
    * @return Whether the genericInsight field is set.
    */
   boolean hasGenericInsight();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface InsightOrBuilder
    * @return The genericInsight.
    */
   com.google.cloud.migrationcenter.v1.GenericInsight getGenericInsight();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.HealthCheckResponse)
     HealthCheckResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HealthCheckResponse.newBuilder() to construct.
   private HealthCheckResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int HEALTHY_FIELD_NUMBER = 1;
   private boolean healthy_ = false;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
-
   /**
    *
    *
@@ -112,7 +109,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
 
   public static final int CLUSTER_INFO_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.ClusterInfo clusterInfo_;
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
   public boolean hasClusterInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.visionai.v1.ClusterInfo.getDefaultInstance()
         : clusterInfo_;
   }
-
   /**
    *
    *
@@ -372,7 +365,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -600,7 +592,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private boolean healthy_;
-
     /**
      *
      *
@@ -616,7 +607,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
     public boolean getHealthy() {
       return healthy_;
     }
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +645,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object reason_ = "";
-
     /**
      *
      *
@@ -679,7 +667,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -702,7 +689,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -724,7 +710,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +756,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.visionai.v1.ClusterInfo.Builder,
             com.google.cloud.visionai.v1.ClusterInfoOrBuilder>
         clusterInfoBuilder_;
-
     /**
      *
      *
@@ -787,7 +770,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
     public boolean hasClusterInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -808,7 +790,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
         return clusterInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -831,7 +812,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +832,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +859,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +878,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +892,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getClusterInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class HealthCheckResponse extends com.google.protobuf.GeneratedMess
             : clusterInfo_;
       }
     }
-
     /**
      *
      *

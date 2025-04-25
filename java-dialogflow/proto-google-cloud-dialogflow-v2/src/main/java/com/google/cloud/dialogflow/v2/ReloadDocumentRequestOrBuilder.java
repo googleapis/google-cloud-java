@@ -40,7 +40,6 @@ public interface ReloadDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -74,7 +73,6 @@ public interface ReloadDocumentRequestOrBuilder
    * @return Whether the contentUri field is set.
    */
   boolean hasContentUri();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ReloadDocumentRequestOrBuilder
    * @return The contentUri.
    */
   java.lang.String getContentUri();
-
   /**
    *
    *

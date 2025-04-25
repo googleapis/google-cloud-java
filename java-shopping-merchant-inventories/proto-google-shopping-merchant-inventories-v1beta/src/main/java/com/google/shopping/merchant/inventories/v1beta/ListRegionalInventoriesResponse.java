@@ -33,7 +33,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.inventories.v1beta.ListRegionalInventoriesResponse)
     ListRegionalInventoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRegionalInventoriesResponse.newBuilder() to construct.
   private ListRegionalInventoriesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.inventories.v1beta.RegionalInventory>
       regionalInventories_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       getRegionalInventoriesList() {
     return regionalInventories_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       getRegionalInventoriesOrBuilderList() {
     return regionalInventories_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
   public int getRegionalInventoriesCount() {
     return regionalInventories_.size();
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       int index) {
     return regionalInventories_.get(index);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -398,7 +390,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -697,7 +688,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return regionalInventoriesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -717,7 +707,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return regionalInventoriesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -738,7 +727,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return regionalInventoriesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -765,7 +753,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +777,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -817,7 +803,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +829,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +852,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +876,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +901,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +923,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +945,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +961,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         getRegionalInventoriesBuilder(int index) {
       return getRegionalInventoriesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return regionalInventoriesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(regionalInventories_);
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1021,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
               com.google.shopping.merchant.inventories.v1beta.RegionalInventory
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1066,7 +1041,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
               com.google.shopping.merchant.inventories.v1beta.RegionalInventory
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1129,7 +1102,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1153,7 +1125,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1176,7 +1147,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1165,6 @@ public final class ListRegionalInventoriesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

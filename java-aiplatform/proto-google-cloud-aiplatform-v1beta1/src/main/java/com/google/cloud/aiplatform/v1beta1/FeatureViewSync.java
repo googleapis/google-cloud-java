@@ -34,7 +34,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewSync)
     FeatureViewSyncOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureViewSync.newBuilder() to construct.
   private FeatureViewSync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,7 +108,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      * @return Whether the systemWatermarkTime field is set.
      */
     boolean hasSystemWatermarkTime();
-
     /**
      *
      *
@@ -123,7 +121,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      * @return The systemWatermarkTime.
      */
     com.google.protobuf.Timestamp getSystemWatermarkTime();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.TimestampOrBuilder getSystemWatermarkTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -152,7 +148,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)
       SyncSummaryOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SyncSummary.newBuilder() to construct.
     private SyncSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -184,7 +179,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int ROW_SYNCED_FIELD_NUMBER = 1;
     private long rowSynced_ = 0L;
-
     /**
      *
      *
@@ -203,7 +197,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
     public static final int TOTAL_SLOT_FIELD_NUMBER = 2;
     private long totalSlot_ = 0L;
-
     /**
      *
      *
@@ -222,7 +215,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
     public static final int SYSTEM_WATERMARK_TIME_FIELD_NUMBER = 5;
     private com.google.protobuf.Timestamp systemWatermarkTime_;
-
     /**
      *
      *
@@ -239,7 +231,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean hasSystemWatermarkTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -258,7 +249,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : systemWatermarkTime_;
     }
-
     /**
      *
      *
@@ -462,7 +452,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -700,7 +689,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private long rowSynced_;
-
       /**
        *
        *
@@ -716,7 +704,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       public long getRowSynced() {
         return rowSynced_;
       }
-
       /**
        *
        *
@@ -736,7 +723,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -756,7 +742,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
 
       private long totalSlot_;
-
       /**
        *
        *
@@ -772,7 +757,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       public long getTotalSlot() {
         return totalSlot_;
       }
-
       /**
        *
        *
@@ -792,7 +776,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -817,7 +800,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           systemWatermarkTimeBuilder_;
-
       /**
        *
        *
@@ -833,7 +815,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       public boolean hasSystemWatermarkTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -855,7 +836,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
           return systemWatermarkTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -879,7 +859,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -900,7 +879,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -929,7 +907,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -950,7 +927,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -966,7 +942,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getSystemWatermarkTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -986,7 +961,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
               : systemWatermarkTime_;
         }
       }
-
       /**
        *
        *
@@ -1086,7 +1060,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1111,7 +1084,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -1139,7 +1111,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -1158,7 +1129,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1177,7 +1147,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -1197,7 +1166,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   public static final int RUN_TIME_FIELD_NUMBER = 5;
   private com.google.type.Interval runTime_;
-
   /**
    *
    *
@@ -1213,7 +1181,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public boolean hasRunTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1229,7 +1196,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public com.google.type.Interval getRunTime() {
     return runTime_ == null ? com.google.type.Interval.getDefaultInstance() : runTime_;
   }
-
   /**
    *
    *
@@ -1246,7 +1212,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   public static final int FINAL_STATUS_FIELD_NUMBER = 4;
   private com.google.rpc.Status finalStatus_;
-
   /**
    *
    *
@@ -1262,7 +1227,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public boolean hasFinalStatus() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1278,7 +1242,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public com.google.rpc.Status getFinalStatus() {
     return finalStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : finalStatus_;
   }
-
   /**
    *
    *
@@ -1295,7 +1258,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   public static final int SYNC_SUMMARY_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary syncSummary_;
-
   /**
    *
    *
@@ -1313,7 +1275,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
   public boolean hasSyncSummary() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1333,7 +1294,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance()
         : syncSummary_;
   }
-
   /**
    *
    *
@@ -1355,7 +1315,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 7;
   private boolean satisfiesPzs_ = false;
-
   /**
    *
    *
@@ -1374,7 +1333,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 8;
   private boolean satisfiesPzi_ = false;
-
   /**
    *
    *
@@ -1624,7 +1582,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1924,7 +1881,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1948,7 +1904,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1972,7 +1927,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1995,7 +1949,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1967,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2045,7 +1997,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -2064,7 +2015,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2089,7 +2039,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2116,7 +2065,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2140,7 +2088,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2172,7 +2119,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2196,7 +2142,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2215,7 +2160,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2238,7 +2182,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -2275,7 +2218,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         runTimeBuilder_;
-
     /**
      *
      *
@@ -2290,7 +2232,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean hasRunTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2309,7 +2250,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return runTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2332,7 +2272,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2352,7 +2291,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2380,7 +2318,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2400,7 +2337,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2415,7 +2351,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRunTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2432,7 +2367,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return runTime_ == null ? com.google.type.Interval.getDefaultInstance() : runTime_;
       }
     }
-
     /**
      *
      *
@@ -2462,7 +2396,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         finalStatusBuilder_;
-
     /**
      *
      *
@@ -2478,7 +2411,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean hasFinalStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2498,7 +2430,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return finalStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2522,7 +2453,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2543,7 +2473,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2501,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2593,7 +2521,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2609,7 +2536,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getFinalStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2627,7 +2553,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return finalStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : finalStatus_;
       }
     }
-
     /**
      *
      *
@@ -2659,7 +2584,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder,
             com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder>
         syncSummaryBuilder_;
-
     /**
      *
      *
@@ -2676,7 +2600,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean hasSyncSummary() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2699,7 +2622,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         return syncSummaryBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2725,7 +2647,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2748,7 +2669,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2781,7 +2701,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2803,7 +2722,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2821,7 +2739,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSyncSummaryFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2843,7 +2760,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
             : syncSummary_;
       }
     }
-
     /**
      *
      *
@@ -2873,7 +2789,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean satisfiesPzs_;
-
     /**
      *
      *
@@ -2889,7 +2804,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
-
     /**
      *
      *
@@ -2909,7 +2823,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2929,7 +2842,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean satisfiesPzi_;
-
     /**
      *
      *
@@ -2945,7 +2857,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
-
     /**
      *
      *
@@ -2965,7 +2876,6 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

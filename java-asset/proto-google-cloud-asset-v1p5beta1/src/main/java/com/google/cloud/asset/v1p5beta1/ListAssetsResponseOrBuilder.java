@@ -36,7 +36,6 @@ public interface ListAssetsResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListAssetsResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface ListAssetsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p5beta1.Asset assets = 2;</code>
    */
   java.util.List<com.google.cloud.asset.v1p5beta1.Asset> getAssetsList();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface ListAssetsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p5beta1.Asset assets = 2;</code>
    */
   com.google.cloud.asset.v1p5beta1.Asset getAssets(int index);
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAssetsResponseOrBuilder
    * <code>repeated .google.cloud.asset.v1p5beta1.Asset assets = 2;</code>
    */
   int getAssetsCount();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface ListAssetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1p5beta1.AssetOrBuilder>
       getAssetsOrBuilderList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListAssetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.SyntheticMonitorTarget)
     SyntheticMonitorTargetOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SyntheticMonitorTarget.newBuilder() to construct.
   private SyntheticMonitorTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -118,7 +116,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
      * @return Whether the cloudRunRevision field is set.
      */
     boolean hasCloudRunRevision();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
      * @return The cloudRunRevision.
      */
     com.google.api.MonitoredResource getCloudRunRevision();
-
     /**
      *
      *
@@ -153,7 +149,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
      */
     com.google.api.MonitoredResourceOrBuilder getCloudRunRevisionOrBuilder();
   }
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.SyntheticMonitorTarget.CloudFunctionV2Target)
       CloudFunctionV2TargetOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use CloudFunctionV2Target.newBuilder() to construct.
     private CloudFunctionV2Target(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -204,7 +198,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -232,7 +225,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         return s;
       }
     }
-
     /**
      *
      *
@@ -263,7 +255,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
 
     public static final int CLOUD_RUN_REVISION_FIELD_NUMBER = 2;
     private com.google.api.MonitoredResource cloudRunRevision_;
-
     /**
      *
      *
@@ -284,7 +275,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
     public boolean hasCloudRunRevision() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -307,7 +297,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
           ? com.google.api.MonitoredResource.getDefaultInstance()
           : cloudRunRevision_;
     }
-
     /**
      *
      *
@@ -505,7 +494,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -736,7 +724,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -763,7 +750,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -790,7 +776,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -816,7 +801,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -838,7 +822,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -872,7 +855,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
               com.google.api.MonitoredResource.Builder,
               com.google.api.MonitoredResourceOrBuilder>
           cloudRunRevisionBuilder_;
-
       /**
        *
        *
@@ -892,7 +874,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       public boolean hasCloudRunRevision() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -918,7 +899,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
           return cloudRunRevisionBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -946,7 +926,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -971,7 +950,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1004,7 +982,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         }
         return this;
       }
-
       /**
        *
        *
@@ -1029,7 +1006,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1049,7 +1025,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         onChanged();
         return getCloudRunRevisionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1073,7 +1048,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
               : cloudRunRevision_;
         }
       }
-
       /**
        *
        *
@@ -1189,7 +1163,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
     private TargetCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1221,7 +1194,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
   }
 
   public static final int CLOUD_FUNCTION_V2_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -1238,7 +1210,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
   public boolean hasCloudFunctionV2() {
     return targetCase_ == 1;
   }
-
   /**
    *
    *
@@ -1260,7 +1231,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
     return com.google.monitoring.v3.SyntheticMonitorTarget.CloudFunctionV2Target
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1456,7 +1426,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1675,7 +1644,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
             com.google.monitoring.v3.SyntheticMonitorTarget.CloudFunctionV2Target.Builder,
             com.google.monitoring.v3.SyntheticMonitorTarget.CloudFunctionV2TargetOrBuilder>
         cloudFunctionV2Builder_;
-
     /**
      *
      *
@@ -1693,7 +1661,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
     public boolean hasCloudFunctionV2() {
       return targetCase_ == 1;
     }
-
     /**
      *
      *
@@ -1724,7 +1691,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1750,7 +1716,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       targetCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1774,7 +1739,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       targetCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1813,7 +1777,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       targetCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -1841,7 +1804,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1857,7 +1819,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
         getCloudFunctionV2Builder() {
       return getCloudFunctionV2FieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1882,7 +1843,6 @@ public final class SyntheticMonitorTarget extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

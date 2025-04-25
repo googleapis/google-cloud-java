@@ -36,7 +36,6 @@ public interface RemovePeeringNetworkRequestOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface RemovePeeringNetworkRequestOrBuilder
    * @return Whether the networksRemovePeeringRequestResource field is set.
    */
   boolean hasNetworksRemovePeeringRequestResource();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface RemovePeeringNetworkRequestOrBuilder
    */
   com.google.cloud.compute.v1.NetworksRemovePeeringRequest
       getNetworksRemovePeeringRequestResource();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface RemovePeeringNetworkRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface RemovePeeringNetworkRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface RemovePeeringNetworkRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

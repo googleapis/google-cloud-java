@@ -37,7 +37,6 @@ public interface ListAutonomousDatabaseCharacterSetsResponseOrBuilder
    */
   java.util.List<com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet>
       getAutonomousDatabaseCharacterSetsList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListAutonomousDatabaseCharacterSetsResponseOrBuilder
    */
   com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet
       getAutonomousDatabaseCharacterSets(int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface ListAutonomousDatabaseCharacterSetsResponseOrBuilder
    * </code>
    */
   int getAutonomousDatabaseCharacterSetsCount();
-
   /**
    *
    *
@@ -79,7 +76,6 @@ public interface ListAutonomousDatabaseCharacterSetsResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSetOrBuilder>
       getAutonomousDatabaseCharacterSetsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface ListAutonomousDatabaseCharacterSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class ConversationSummarizationSuggestionData
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData)
     ConversationSummarizationSuggestionDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConversationSummarizationSuggestionData.newBuilder() to construct.
   private ConversationSummarizationSuggestionData(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -88,7 +87,6 @@ public final class ConversationSummarizationSuggestionData
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
-
   /**
    *
    *
@@ -112,7 +110,6 @@ public final class ConversationSummarizationSuggestionData
       return s;
     }
   }
-
   /**
    *
    *
@@ -165,7 +162,6 @@ public final class ConversationSummarizationSuggestionData
   public int getTextSectionsCount() {
     return internalGetTextSections().getMap().size();
   }
-
   /**
    *
    *
@@ -184,14 +180,12 @@ public final class ConversationSummarizationSuggestionData
     }
     return internalGetTextSections().getMap().containsKey(key);
   }
-
   /** Use {@link #getTextSectionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
     return getTextSectionsMap();
   }
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class ConversationSummarizationSuggestionData
   public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
     return internalGetTextSections().getMap();
   }
-
   /**
    *
    *
@@ -230,7 +223,6 @@ public final class ConversationSummarizationSuggestionData
     java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class ConversationSummarizationSuggestionData
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -299,7 +290,6 @@ public final class ConversationSummarizationSuggestionData
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -317,14 +307,12 @@ public final class ConversationSummarizationSuggestionData
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -339,7 +327,6 @@ public final class ConversationSummarizationSuggestionData
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -361,7 +348,6 @@ public final class ConversationSummarizationSuggestionData
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -388,7 +374,6 @@ public final class ConversationSummarizationSuggestionData
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object answerRecord_ = "";
-
   /**
    *
    *
@@ -414,7 +399,6 @@ public final class ConversationSummarizationSuggestionData
       return s;
     }
   }
-
   /**
    *
    *
@@ -445,7 +429,6 @@ public final class ConversationSummarizationSuggestionData
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationModel_ = "";
-
   /**
    *
    *
@@ -471,7 +454,6 @@ public final class ConversationSummarizationSuggestionData
       return s;
     }
   }
-
   /**
    *
    *
@@ -728,7 +710,6 @@ public final class ConversationSummarizationSuggestionData
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1037,7 +1018,6 @@ public final class ConversationSummarizationSuggestionData
     private int bitField0_;
 
     private java.lang.Object text_ = "";
-
     /**
      *
      *
@@ -1060,7 +1040,6 @@ public final class ConversationSummarizationSuggestionData
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1062,6 @@ public final class ConversationSummarizationSuggestionData
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1083,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1100,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1175,7 +1151,6 @@ public final class ConversationSummarizationSuggestionData
     public int getTextSectionsCount() {
       return internalGetTextSections().getMap().size();
     }
-
     /**
      *
      *
@@ -1194,14 +1169,12 @@ public final class ConversationSummarizationSuggestionData
       }
       return internalGetTextSections().getMap().containsKey(key);
     }
-
     /** Use {@link #getTextSectionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTextSections() {
       return getTextSectionsMap();
     }
-
     /**
      *
      *
@@ -1217,7 +1190,6 @@ public final class ConversationSummarizationSuggestionData
     public java.util.Map<java.lang.String, java.lang.String> getTextSectionsMap() {
       return internalGetTextSections().getMap();
     }
-
     /**
      *
      *
@@ -1240,7 +1212,6 @@ public final class ConversationSummarizationSuggestionData
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTextSections().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1269,7 +1240,6 @@ public final class ConversationSummarizationSuggestionData
       internalGetMutableTextSections().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1288,14 +1258,12 @@ public final class ConversationSummarizationSuggestionData
       internalGetMutableTextSections().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTextSections() {
       bitField0_ |= 0x00000002;
       return internalGetMutableTextSections().getMutableMap();
     }
-
     /**
      *
      *
@@ -1318,7 +1286,6 @@ public final class ConversationSummarizationSuggestionData
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1304,6 @@ public final class ConversationSummarizationSuggestionData
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -1353,7 +1319,6 @@ public final class ConversationSummarizationSuggestionData
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -1373,7 +1338,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1382,6 @@ public final class ConversationSummarizationSuggestionData
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -1436,14 +1399,12 @@ public final class ConversationSummarizationSuggestionData
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -1458,7 +1419,6 @@ public final class ConversationSummarizationSuggestionData
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -1480,7 +1440,6 @@ public final class ConversationSummarizationSuggestionData
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1508,7 +1467,6 @@ public final class ConversationSummarizationSuggestionData
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1526,14 +1484,12 @@ public final class ConversationSummarizationSuggestionData
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000008;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1555,7 +1511,6 @@ public final class ConversationSummarizationSuggestionData
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1528,6 @@ public final class ConversationSummarizationSuggestionData
     }
 
     private java.lang.Object answerRecord_ = "";
-
     /**
      *
      *
@@ -1598,7 +1552,6 @@ public final class ConversationSummarizationSuggestionData
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1623,7 +1576,6 @@ public final class ConversationSummarizationSuggestionData
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1647,7 +1599,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1618,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1694,7 +1644,6 @@ public final class ConversationSummarizationSuggestionData
     }
 
     private java.lang.Object conversationModel_ = "";
-
     /**
      *
      *
@@ -1719,7 +1668,6 @@ public final class ConversationSummarizationSuggestionData
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1744,7 +1692,6 @@ public final class ConversationSummarizationSuggestionData
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1768,7 +1715,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1788,7 +1734,6 @@ public final class ConversationSummarizationSuggestionData
       onChanged();
       return this;
     }
-
     /**
      *
      *

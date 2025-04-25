@@ -37,7 +37,6 @@ public interface ClassificationMetricsOrBuilder
    * @return Whether the prCurve field is set.
    */
   boolean hasPrCurve();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ClassificationMetricsOrBuilder
    * @return The prCurve.
    */
   com.google.cloud.datalabeling.v1beta1.PrCurve getPrCurve();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface ClassificationMetricsOrBuilder
    * @return Whether the confusionMatrix field is set.
    */
   boolean hasConfusionMatrix();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface ClassificationMetricsOrBuilder
    * @return The confusionMatrix.
    */
   com.google.cloud.datalabeling.v1beta1.ConfusionMatrix getConfusionMatrix();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TransactionData)
     TransactionDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransactionData.newBuilder() to construct.
   private TransactionData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The recipient.
      */
     java.lang.String getRecipient();
-
     /**
      *
      *
@@ -117,7 +115,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return A list containing the address.
      */
     java.util.List<java.lang.String> getAddressList();
-
     /**
      *
      *
@@ -132,7 +129,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The count of address.
      */
     int getAddressCount();
-
     /**
      *
      *
@@ -148,7 +144,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The address at the given index.
      */
     java.lang.String getAddress(int index);
-
     /**
      *
      *
@@ -177,7 +172,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The locality.
      */
     java.lang.String getLocality();
-
     /**
      *
      *
@@ -204,7 +198,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The administrativeArea.
      */
     java.lang.String getAdministrativeArea();
-
     /**
      *
      *
@@ -231,7 +224,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The regionCode.
      */
     java.lang.String getRegionCode();
-
     /**
      *
      *
@@ -257,7 +249,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The postalCode.
      */
     java.lang.String getPostalCode();
-
     /**
      *
      *
@@ -271,7 +262,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getPostalCodeBytes();
   }
-
   /**
    *
    *
@@ -286,7 +276,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TransactionData.Address)
       AddressOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Address.newBuilder() to construct.
     private Address(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -326,7 +315,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object recipient_ = "";
-
     /**
      *
      *
@@ -351,7 +339,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -382,7 +369,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList address_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -399,7 +385,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ProtocolStringList getAddressList() {
       return address_;
     }
-
     /**
      *
      *
@@ -416,7 +401,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public int getAddressCount() {
       return address_.size();
     }
-
     /**
      *
      *
@@ -434,7 +418,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getAddress(int index) {
       return address_.get(index);
     }
-
     /**
      *
      *
@@ -457,7 +440,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object locality_ = "";
-
     /**
      *
      *
@@ -481,7 +463,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -510,7 +491,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object administrativeArea_ = "";
-
     /**
      *
      *
@@ -535,7 +515,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -565,7 +544,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -589,7 +567,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -618,7 +595,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object postalCode_ = "";
-
     /**
      *
      *
@@ -642,7 +618,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -880,7 +855,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1150,7 +1124,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object recipient_ = "";
-
       /**
        *
        *
@@ -1174,7 +1147,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1198,7 +1170,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1221,7 +1192,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1240,7 +1210,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1274,7 +1243,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         }
         bitField0_ |= 0x00000002;
       }
-
       /**
        *
        *
@@ -1292,7 +1260,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         address_.makeImmutable();
         return address_;
       }
-
       /**
        *
        *
@@ -1309,7 +1276,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public int getAddressCount() {
         return address_.size();
       }
-
       /**
        *
        *
@@ -1327,7 +1293,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public java.lang.String getAddress(int index) {
         return address_.get(index);
       }
-
       /**
        *
        *
@@ -1345,7 +1310,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public com.google.protobuf.ByteString getAddressBytes(int index) {
         return address_.getByteString(index);
       }
-
       /**
        *
        *
@@ -1371,7 +1335,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1396,7 +1359,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1418,7 +1380,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1439,7 +1400,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1467,7 +1427,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object locality_ = "";
-
       /**
        *
        *
@@ -1490,7 +1449,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1513,7 +1471,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1535,7 +1492,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1553,7 +1509,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1578,7 +1533,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object administrativeArea_ = "";
-
       /**
        *
        *
@@ -1602,7 +1556,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1626,7 +1579,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1649,7 +1601,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1668,7 +1619,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1694,7 +1644,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object regionCode_ = "";
-
       /**
        *
        *
@@ -1717,7 +1666,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1740,7 +1688,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1762,7 +1709,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1780,7 +1726,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1805,7 +1750,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object postalCode_ = "";
-
       /**
        *
        *
@@ -1828,7 +1772,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1851,7 +1794,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1873,7 +1815,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1891,7 +1832,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1998,7 +1938,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The accountId.
      */
     java.lang.String getAccountId();
-
     /**
      *
      *
@@ -2039,7 +1978,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The email.
      */
     java.lang.String getEmail();
-
     /**
      *
      *
@@ -2079,7 +2017,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The phoneNumber.
      */
     java.lang.String getPhoneNumber();
-
     /**
      *
      *
@@ -2107,7 +2044,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      */
     boolean getPhoneVerified();
   }
-
   /**
    *
    *
@@ -2122,7 +2058,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TransactionData.User)
       UserOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use User.newBuilder() to construct.
     private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2159,7 +2094,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object accountId_ = "";
-
     /**
      *
      *
@@ -2185,7 +2119,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2214,7 +2147,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     public static final int CREATION_MS_FIELD_NUMBER = 1;
     private long creationMs_ = 0L;
-
     /**
      *
      *
@@ -2235,7 +2167,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object email_ = "";
-
     /**
      *
      *
@@ -2259,7 +2190,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2286,7 +2216,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     public static final int EMAIL_VERIFIED_FIELD_NUMBER = 3;
     private boolean emailVerified_ = false;
-
     /**
      *
      *
@@ -2308,7 +2237,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object phoneNumber_ = "";
-
     /**
      *
      *
@@ -2332,7 +2260,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -2359,7 +2286,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     public static final int PHONE_VERIFIED_FIELD_NUMBER = 5;
     private boolean phoneVerified_ = false;
-
     /**
      *
      *
@@ -2583,7 +2509,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2840,7 +2765,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object accountId_ = "";
-
       /**
        *
        *
@@ -2865,7 +2789,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2890,7 +2813,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2914,7 +2836,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2934,7 +2855,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2961,7 +2881,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private long creationMs_;
-
       /**
        *
        *
@@ -2977,7 +2896,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public long getCreationMs() {
         return creationMs_;
       }
-
       /**
        *
        *
@@ -2997,7 +2915,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3017,7 +2934,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object email_ = "";
-
       /**
        *
        *
@@ -3040,7 +2956,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3063,7 +2978,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3085,7 +2999,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3103,7 +3016,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3128,7 +3040,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean emailVerified_;
-
       /**
        *
        *
@@ -3145,7 +3056,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public boolean getEmailVerified() {
         return emailVerified_;
       }
-
       /**
        *
        *
@@ -3166,7 +3076,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3187,7 +3096,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object phoneNumber_ = "";
-
       /**
        *
        *
@@ -3210,7 +3118,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3233,7 +3140,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3255,7 +3161,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3273,7 +3178,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3298,7 +3202,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean phoneVerified_;
-
       /**
        *
        *
@@ -3315,7 +3218,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public boolean getPhoneVerified() {
         return phoneVerified_;
       }
-
       /**
        *
        *
@@ -3336,7 +3238,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3437,7 +3338,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -3491,7 +3391,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The merchantAccountId.
      */
     java.lang.String getMerchantAccountId();
-
     /**
      *
      *
@@ -3506,7 +3405,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getMerchantAccountIdBytes();
   }
-
   /**
    *
    *
@@ -3521,7 +3419,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TransactionData.Item)
       ItemOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Item.newBuilder() to construct.
     private Item(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3557,7 +3454,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3581,7 +3477,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -3608,7 +3503,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     public static final int VALUE_FIELD_NUMBER = 2;
     private double value_ = 0D;
-
     /**
      *
      *
@@ -3628,7 +3522,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     public static final int QUANTITY_FIELD_NUMBER = 3;
     private long quantity_ = 0L;
-
     /**
      *
      *
@@ -3649,7 +3542,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object merchantAccountId_ = "";
-
     /**
      *
      *
@@ -3674,7 +3566,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -3892,7 +3783,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4121,7 +4011,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -4144,7 +4033,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4167,7 +4055,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4189,7 +4076,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4207,7 +4093,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4232,7 +4117,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private double value_;
-
       /**
        *
        *
@@ -4249,7 +4133,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public double getValue() {
         return value_;
       }
-
       /**
        *
        *
@@ -4270,7 +4153,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4291,7 +4173,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private long quantity_;
-
       /**
        *
        *
@@ -4307,7 +4188,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       public long getQuantity() {
         return quantity_;
       }
-
       /**
        *
        *
@@ -4327,7 +4207,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4347,7 +4226,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object merchantAccountId_ = "";
-
       /**
        *
        *
@@ -4371,7 +4249,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4395,7 +4272,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4418,7 +4294,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4437,7 +4312,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4544,7 +4418,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -4571,7 +4444,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The gatewayResponseCode.
      */
     java.lang.String getGatewayResponseCode();
-
     /**
      *
      *
@@ -4598,7 +4470,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The avsResponseCode.
      */
     java.lang.String getAvsResponseCode();
-
     /**
      *
      *
@@ -4626,7 +4497,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      * @return The cvvResponseCode.
      */
     java.lang.String getCvvResponseCode();
-
     /**
      *
      *
@@ -4641,7 +4511,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getCvvResponseCodeBytes();
   }
-
   /**
    *
    *
@@ -4656,7 +4525,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TransactionData.GatewayInfo)
       GatewayInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use GatewayInfo.newBuilder() to construct.
     private GatewayInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4694,7 +4562,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4719,7 +4586,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -4749,7 +4615,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gatewayResponseCode_ = "";
-
     /**
      *
      *
@@ -4773,7 +4638,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -4802,7 +4666,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object avsResponseCode_ = "";
-
     /**
      *
      *
@@ -4827,7 +4690,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -4857,7 +4719,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cvvResponseCode_ = "";
-
     /**
      *
      *
@@ -4882,7 +4743,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -5096,7 +4956,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5333,7 +5192,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -5357,7 +5215,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5381,7 +5238,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5404,7 +5260,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5423,7 +5278,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5449,7 +5303,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object gatewayResponseCode_ = "";
-
       /**
        *
        *
@@ -5472,7 +5325,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5495,7 +5347,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5517,7 +5368,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5535,7 +5385,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5560,7 +5409,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object avsResponseCode_ = "";
-
       /**
        *
        *
@@ -5584,7 +5432,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5608,7 +5455,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5631,7 +5477,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5650,7 +5495,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5676,7 +5520,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object cvvResponseCode_ = "";
-
       /**
        *
        *
@@ -5700,7 +5543,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -5724,7 +5566,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -5747,7 +5588,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5766,7 +5606,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5863,7 +5702,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object transactionId_ = "";
-
   /**
    *
    *
@@ -5882,7 +5720,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public boolean hasTransactionId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5909,7 +5746,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -5941,7 +5777,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object paymentMethod_ = "";
-
   /**
    *
    *
@@ -5973,7 +5808,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -6010,7 +5844,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cardBin_ = "";
-
   /**
    *
    *
@@ -6035,7 +5868,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -6065,7 +5897,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cardLastFour_ = "";
-
   /**
    *
    *
@@ -6089,7 +5920,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -6118,7 +5948,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object currencyCode_ = "";
-
   /**
    *
    *
@@ -6142,7 +5971,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -6169,7 +5997,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   public static final int VALUE_FIELD_NUMBER = 5;
   private double value_ = 0D;
-
   /**
    *
    *
@@ -6188,7 +6015,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   public static final int SHIPPING_VALUE_FIELD_NUMBER = 12;
   private double shippingValue_ = 0D;
-
   /**
    *
    *
@@ -6208,7 +6034,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   public static final int SHIPPING_ADDRESS_FIELD_NUMBER = 6;
   private com.google.recaptchaenterprise.v1.TransactionData.Address shippingAddress_;
-
   /**
    *
    *
@@ -6227,7 +6052,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public boolean hasShippingAddress() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -6248,7 +6072,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         ? com.google.recaptchaenterprise.v1.TransactionData.Address.getDefaultInstance()
         : shippingAddress_;
   }
-
   /**
    *
    *
@@ -6271,7 +6094,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   public static final int BILLING_ADDRESS_FIELD_NUMBER = 7;
   private com.google.recaptchaenterprise.v1.TransactionData.Address billingAddress_;
-
   /**
    *
    *
@@ -6289,7 +6111,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public boolean hasBillingAddress() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -6309,7 +6130,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         ? com.google.recaptchaenterprise.v1.TransactionData.Address.getDefaultInstance()
         : billingAddress_;
   }
-
   /**
    *
    *
@@ -6331,7 +6151,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   public static final int USER_FIELD_NUMBER = 8;
   private com.google.recaptchaenterprise.v1.TransactionData.User user_;
-
   /**
    *
    *
@@ -6349,7 +6168,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public boolean hasUser() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -6369,7 +6187,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         ? com.google.recaptchaenterprise.v1.TransactionData.User.getDefaultInstance()
         : user_;
   }
-
   /**
    *
    *
@@ -6392,7 +6209,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.TransactionData.User> merchants_;
-
   /**
    *
    *
@@ -6408,7 +6224,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.User> getMerchantsList() {
     return merchants_;
   }
-
   /**
    *
    *
@@ -6425,7 +6240,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       getMerchantsOrBuilderList() {
     return merchants_;
   }
-
   /**
    *
    *
@@ -6441,7 +6255,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public int getMerchantsCount() {
     return merchants_.size();
   }
-
   /**
    *
    *
@@ -6457,7 +6270,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public com.google.recaptchaenterprise.v1.TransactionData.User getMerchants(int index) {
     return merchants_.get(index);
   }
-
   /**
    *
    *
@@ -6479,7 +6291,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.recaptchaenterprise.v1.TransactionData.Item> items_;
-
   /**
    *
    *
@@ -6495,7 +6306,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.recaptchaenterprise.v1.TransactionData.Item> getItemsList() {
     return items_;
   }
-
   /**
    *
    *
@@ -6512,7 +6322,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       getItemsOrBuilderList() {
     return items_;
   }
-
   /**
    *
    *
@@ -6528,7 +6337,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public int getItemsCount() {
     return items_.size();
   }
-
   /**
    *
    *
@@ -6544,7 +6352,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public com.google.recaptchaenterprise.v1.TransactionData.Item getItems(int index) {
     return items_.get(index);
   }
-
   /**
    *
    *
@@ -6564,7 +6371,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
 
   public static final int GATEWAY_INFO_FIELD_NUMBER = 10;
   private com.google.recaptchaenterprise.v1.TransactionData.GatewayInfo gatewayInfo_;
-
   /**
    *
    *
@@ -6583,7 +6389,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
   public boolean hasGatewayInfo() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -6604,7 +6409,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         ? com.google.recaptchaenterprise.v1.TransactionData.GatewayInfo.getDefaultInstance()
         : gatewayInfo_;
   }
-
   /**
    *
    *
@@ -6928,7 +6732,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -7410,7 +7213,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object transactionId_ = "";
-
     /**
      *
      *
@@ -7428,7 +7230,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public boolean hasTransactionId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -7454,7 +7255,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7480,7 +7280,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7505,7 +7304,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7526,7 +7324,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7554,7 +7351,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object paymentMethod_ = "";
-
     /**
      *
      *
@@ -7585,7 +7381,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7616,7 +7411,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7646,7 +7440,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7672,7 +7465,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7705,7 +7497,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object cardBin_ = "";
-
     /**
      *
      *
@@ -7729,7 +7520,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7753,7 +7543,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7776,7 +7565,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7795,7 +7583,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7821,7 +7608,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object cardLastFour_ = "";
-
     /**
      *
      *
@@ -7844,7 +7630,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7867,7 +7652,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7889,7 +7673,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7907,7 +7690,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7932,7 +7714,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object currencyCode_ = "";
-
     /**
      *
      *
@@ -7955,7 +7736,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7978,7 +7758,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8000,7 +7779,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8018,7 +7796,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8043,7 +7820,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     }
 
     private double value_;
-
     /**
      *
      *
@@ -8059,7 +7835,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public double getValue() {
       return value_;
     }
-
     /**
      *
      *
@@ -8079,7 +7854,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8099,7 +7873,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     }
 
     private double shippingValue_;
-
     /**
      *
      *
@@ -8116,7 +7889,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public double getShippingValue() {
       return shippingValue_;
     }
-
     /**
      *
      *
@@ -8137,7 +7909,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8163,7 +7934,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             com.google.recaptchaenterprise.v1.TransactionData.Address.Builder,
             com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder>
         shippingAddressBuilder_;
-
     /**
      *
      *
@@ -8181,7 +7951,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public boolean hasShippingAddress() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -8205,7 +7974,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return shippingAddressBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8232,7 +8000,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8256,7 +8023,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8289,7 +8055,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -8312,7 +8077,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8331,7 +8095,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getShippingAddressFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8354,7 +8117,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             : shippingAddress_;
       }
     }
-
     /**
      *
      *
@@ -8390,7 +8152,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             com.google.recaptchaenterprise.v1.TransactionData.Address.Builder,
             com.google.recaptchaenterprise.v1.TransactionData.AddressOrBuilder>
         billingAddressBuilder_;
-
     /**
      *
      *
@@ -8407,7 +8168,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public boolean hasBillingAddress() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -8430,7 +8190,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return billingAddressBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8456,7 +8215,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8479,7 +8237,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8511,7 +8268,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -8533,7 +8289,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8551,7 +8306,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getBillingAddressFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8573,7 +8327,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             : billingAddress_;
       }
     }
-
     /**
      *
      *
@@ -8608,7 +8361,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             com.google.recaptchaenterprise.v1.TransactionData.User.Builder,
             com.google.recaptchaenterprise.v1.TransactionData.UserOrBuilder>
         userBuilder_;
-
     /**
      *
      *
@@ -8625,7 +8377,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public boolean hasUser() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -8648,7 +8399,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return userBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8673,7 +8423,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8696,7 +8445,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8727,7 +8475,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -8749,7 +8496,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8766,7 +8512,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8787,7 +8532,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             : user_;
       }
     }
-
     /**
      *
      *
@@ -8853,7 +8597,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return merchantsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -8872,7 +8615,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return merchantsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -8891,7 +8633,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return merchantsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -8917,7 +8658,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -8940,7 +8680,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -8965,7 +8704,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -8991,7 +8729,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9014,7 +8751,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9037,7 +8773,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9061,7 +8796,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9083,7 +8817,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9105,7 +8838,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9121,7 +8853,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getMerchantsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9141,7 +8872,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return merchantsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -9161,7 +8891,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(merchants_);
       }
     }
-
     /**
      *
      *
@@ -9177,7 +8906,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return getMerchantsFieldBuilder()
           .addBuilder(com.google.recaptchaenterprise.v1.TransactionData.User.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -9195,7 +8923,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.recaptchaenterprise.v1.TransactionData.User.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -9264,7 +8991,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return itemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -9283,7 +9009,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return itemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -9302,7 +9027,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return itemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -9328,7 +9052,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9351,7 +9074,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9376,7 +9098,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9402,7 +9123,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9425,7 +9145,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9448,7 +9167,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9472,7 +9190,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9494,7 +9211,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9516,7 +9232,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9532,7 +9247,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -9552,7 +9266,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -9572,7 +9285,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(items_);
       }
     }
-
     /**
      *
      *
@@ -9588,7 +9300,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       return getItemsFieldBuilder()
           .addBuilder(com.google.recaptchaenterprise.v1.TransactionData.Item.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -9606,7 +9317,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.recaptchaenterprise.v1.TransactionData.Item.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -9646,7 +9356,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             com.google.recaptchaenterprise.v1.TransactionData.GatewayInfo.Builder,
             com.google.recaptchaenterprise.v1.TransactionData.GatewayInfoOrBuilder>
         gatewayInfoBuilder_;
-
     /**
      *
      *
@@ -9664,7 +9373,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
     public boolean hasGatewayInfo() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -9688,7 +9396,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
         return gatewayInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -9715,7 +9422,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9739,7 +9445,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9773,7 +9478,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -9796,7 +9500,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9815,7 +9518,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getGatewayInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9838,7 +9540,6 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessageV
             : gatewayInfo_;
       }
     }
-
     /**
      *
      *

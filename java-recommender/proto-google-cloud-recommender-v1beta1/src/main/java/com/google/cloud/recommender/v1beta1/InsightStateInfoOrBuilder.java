@@ -36,7 +36,6 @@ public interface InsightStateInfoOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface InsightStateInfoOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   int getStateMetadataCount();
-
   /**
    *
    *
@@ -71,11 +69,9 @@ public interface InsightStateInfoOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   boolean containsStateMetadata(java.lang.String key);
-
   /** Use {@link #getStateMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getStateMetadata();
-
   /**
    *
    *
@@ -86,7 +82,6 @@ public interface InsightStateInfoOrBuilder
    * <code>map&lt;string, string&gt; state_metadata = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap();
-
   /**
    *
    *
@@ -101,7 +96,6 @@ public interface InsightStateInfoOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

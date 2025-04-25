@@ -33,7 +33,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ArrayStats)
     ArrayStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ArrayStats.newBuilder() to construct.
   private ArrayStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int MEMBER_STATS_FIELD_NUMBER = 2;
   private com.google.cloud.automl.v1beta1.DataStats memberStats_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMemberStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance()
         : memberStats_;
   }
-
   /**
    *
    *
@@ -283,7 +279,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +482,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.automl.v1beta1.DataStats.Builder,
             com.google.cloud.automl.v1beta1.DataStatsOrBuilder>
         memberStatsBuilder_;
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMemberStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
         return memberStatsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -549,7 +541,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -571,7 +562,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -600,7 +590,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +610,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -637,7 +625,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMemberStatsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -657,7 +644,6 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
             : memberStats_;
       }
     }
-
     /**
      *
      *

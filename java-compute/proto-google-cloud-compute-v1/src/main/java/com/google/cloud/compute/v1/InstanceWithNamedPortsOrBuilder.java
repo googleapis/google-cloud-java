@@ -36,7 +36,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * @return The instance.
    */
   java.lang.String getInstance();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
    */
   int getNamedPortsCount();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface InstanceWithNamedPortsOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
-
   /**
    *
    *
@@ -132,7 +126,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -146,7 +139,6 @@ public interface InstanceWithNamedPortsOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *

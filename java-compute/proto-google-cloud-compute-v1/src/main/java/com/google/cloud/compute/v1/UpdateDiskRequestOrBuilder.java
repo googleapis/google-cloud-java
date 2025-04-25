@@ -36,7 +36,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return Whether the diskResource field is set.
    */
   boolean hasDiskResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return The diskResource.
    */
   com.google.cloud.compute.v1.Disk getDiskResource();
-
   /**
    *
    *
@@ -99,14 +96,12 @@ public interface UpdateDiskRequestOrBuilder
    * @return Whether the paths field is set.
    */
   boolean hasPaths();
-
   /**
    * <code>optional string paths = 106438894;</code>
    *
    * @return The paths.
    */
   java.lang.String getPaths();
-
   /**
    * <code>optional string paths = 106438894;</code>
    *
@@ -128,7 +123,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -169,7 +162,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -208,7 +199,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return The updateMask.
    */
   java.lang.String getUpdateMask();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface UpdateDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

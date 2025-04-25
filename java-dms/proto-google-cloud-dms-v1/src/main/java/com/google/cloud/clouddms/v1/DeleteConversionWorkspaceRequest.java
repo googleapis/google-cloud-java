@@ -33,7 +33,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest)
     DeleteConversionWorkspaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteConversionWorkspaceRequest.newBuilder() to construct.
   private DeleteConversionWorkspaceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
 
   public static final int FORCE_FIELD_NUMBER = 3;
   private boolean force_ = false;
-
   /**
    *
    *
@@ -386,7 +380,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -602,7 +595,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -627,7 +619,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +711,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -781,7 +767,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +847,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
     }
 
     private boolean force_;
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
     public boolean getForce() {
       return force_;
     }
-
     /**
      *
      *
@@ -902,7 +883,6 @@ public final class DeleteConversionWorkspaceRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

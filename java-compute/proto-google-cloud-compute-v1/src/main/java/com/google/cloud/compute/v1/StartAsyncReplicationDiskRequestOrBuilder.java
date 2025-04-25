@@ -36,7 +36,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    * @return Whether the disksStartAsyncReplicationRequestResource field is set.
    */
   boolean hasDisksStartAsyncReplicationRequestResource();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    */
   com.google.cloud.compute.v1.DisksStartAsyncReplicationRequest
       getDisksStartAsyncReplicationRequestResource();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface StartAsyncReplicationDiskRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

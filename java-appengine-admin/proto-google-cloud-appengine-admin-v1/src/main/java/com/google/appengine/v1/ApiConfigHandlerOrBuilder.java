@@ -37,7 +37,6 @@ public interface ApiConfigHandlerOrBuilder
    * @return The enum numeric value on the wire for authFailAction.
    */
   int getAuthFailActionValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ApiConfigHandlerOrBuilder
    * @return The enum numeric value on the wire for login.
    */
   int getLoginValue();
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public interface ApiConfigHandlerOrBuilder
    * @return The script.
    */
   java.lang.String getScript();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface ApiConfigHandlerOrBuilder
    * @return The enum numeric value on the wire for securityLevel.
    */
   int getSecurityLevelValue();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface ApiConfigHandlerOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

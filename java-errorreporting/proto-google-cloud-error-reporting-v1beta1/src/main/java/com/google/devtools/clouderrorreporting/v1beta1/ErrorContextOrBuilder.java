@@ -37,7 +37,6 @@ public interface ErrorContextOrBuilder
    * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ErrorContextOrBuilder
    * @return The httpRequest.
    */
   com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext getHttpRequest();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface ErrorContextOrBuilder
    * @return The user.
    */
   java.lang.String getUser();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface ErrorContextOrBuilder
    * @return Whether the reportLocation field is set.
    */
   boolean hasReportLocation();
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public interface ErrorContextOrBuilder
    * @return The reportLocation.
    */
   com.google.devtools.clouderrorreporting.v1beta1.SourceLocation getReportLocation();
-
   /**
    *
    *

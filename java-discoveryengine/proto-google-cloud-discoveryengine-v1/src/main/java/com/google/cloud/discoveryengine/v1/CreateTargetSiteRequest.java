@@ -35,7 +35,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.CreateTargetSiteRequest)
     CreateTargetSiteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTargetSiteRequest.newBuilder() to construct.
   private CreateTargetSiteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
 
   public static final int TARGET_SITE_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1.TargetSite targetSite_;
-
   /**
    *
    *
@@ -149,7 +145,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
   public boolean hasTargetSite() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
         ? com.google.cloud.discoveryengine.v1.TargetSite.getDefaultInstance()
         : targetSite_;
   }
-
   /**
    *
    *
@@ -364,7 +358,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -580,7 +573,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -607,7 +599,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -682,7 +671,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
             com.google.cloud.discoveryengine.v1.TargetSite.Builder,
             com.google.cloud.discoveryengine.v1.TargetSiteOrBuilder>
         targetSiteBuilder_;
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
     public boolean hasTargetSite() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -758,7 +744,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
         return targetSiteBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -784,7 +769,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +844,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
       onChanged();
       return getTargetSiteFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -902,7 +882,6 @@ public final class CreateTargetSiteRequest extends com.google.protobuf.Generated
             : targetSite_;
       }
     }
-
     /**
      *
      *

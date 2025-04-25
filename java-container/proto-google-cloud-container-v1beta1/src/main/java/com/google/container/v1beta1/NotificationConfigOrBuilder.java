@@ -36,7 +36,6 @@ public interface NotificationConfigOrBuilder
    * @return Whether the pubsub field is set.
    */
   boolean hasPubsub();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NotificationConfigOrBuilder
    * @return The pubsub.
    */
   com.google.container.v1beta1.NotificationConfig.PubSub getPubsub();
-
   /**
    *
    *

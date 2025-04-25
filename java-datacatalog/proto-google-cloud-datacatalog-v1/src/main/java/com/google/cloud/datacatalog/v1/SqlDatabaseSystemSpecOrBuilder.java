@@ -43,7 +43,6 @@ public interface SqlDatabaseSystemSpecOrBuilder
    * @return The sqlEngine.
    */
   java.lang.String getSqlEngine();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface SqlDatabaseSystemSpecOrBuilder
    * @return The databaseVersion.
    */
   java.lang.String getDatabaseVersion();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface SqlDatabaseSystemSpecOrBuilder
    * @return The instanceHost.
    */
   java.lang.String getInstanceHost();
-
   /**
    *
    *

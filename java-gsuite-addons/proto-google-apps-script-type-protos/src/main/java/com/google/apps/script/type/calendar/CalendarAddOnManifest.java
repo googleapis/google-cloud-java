@@ -33,7 +33,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.apps.script.type.calendar.CalendarAddOnManifest)
     CalendarAddOnManifestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CalendarAddOnManifest.newBuilder() to construct.
   private CalendarAddOnManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -145,7 +144,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -157,7 +155,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * <code>METADATA = 1;</code>
      */
     public static final int METADATA_VALUE = 1;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * <code>READ = 3;</code>
      */
     public static final int READ_VALUE = 3;
-
     /**
      *
      *
@@ -182,7 +178,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * <code>WRITE = 4;</code>
      */
     public static final int WRITE_VALUE = 4;
-
     /**
      *
      *
@@ -288,7 +283,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int HOMEPAGE_TRIGGER_FIELD_NUMBER = 6;
   private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
-
   /**
    *
    *
@@ -310,7 +304,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   public boolean hasHomepageTrigger() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -334,7 +327,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
         : homepageTrigger_;
   }
-
   /**
    *
    *
@@ -362,7 +354,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.calendar.ConferenceSolution>
       conferenceSolution_;
-
   /**
    *
    *
@@ -378,7 +369,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       getConferenceSolutionList() {
     return conferenceSolution_;
   }
-
   /**
    *
    *
@@ -394,7 +384,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       getConferenceSolutionOrBuilderList() {
     return conferenceSolution_;
   }
-
   /**
    *
    *
@@ -409,7 +398,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   public int getConferenceSolutionCount() {
     return conferenceSolution_.size();
   }
-
   /**
    *
    *
@@ -424,7 +412,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   public com.google.apps.script.type.calendar.ConferenceSolution getConferenceSolution(int index) {
     return conferenceSolution_.get(index);
   }
-
   /**
    *
    *
@@ -445,7 +432,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object createSettingsUrlFunction_ = "";
-
   /**
    *
    *
@@ -469,7 +455,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -496,7 +481,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
 
   public static final int EVENT_OPEN_TRIGGER_FIELD_NUMBER = 10;
   private com.google.apps.script.type.calendar.CalendarExtensionPoint eventOpenTrigger_;
-
   /**
    *
    *
@@ -512,7 +496,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   public boolean hasEventOpenTrigger() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -530,7 +513,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         ? com.google.apps.script.type.calendar.CalendarExtensionPoint.getDefaultInstance()
         : eventOpenTrigger_;
   }
-
   /**
    *
    *
@@ -550,7 +532,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
 
   public static final int EVENT_UPDATE_TRIGGER_FIELD_NUMBER = 11;
   private com.google.apps.script.type.calendar.CalendarExtensionPoint eventUpdateTrigger_;
-
   /**
    *
    *
@@ -567,7 +548,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   public boolean hasEventUpdateTrigger() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -586,7 +566,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         ? com.google.apps.script.type.calendar.CalendarExtensionPoint.getDefaultInstance()
         : eventUpdateTrigger_;
   }
-
   /**
    *
    *
@@ -607,7 +586,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
 
   public static final int CURRENT_EVENT_ACCESS_FIELD_NUMBER = 12;
   private int currentEventAccess_ = 0;
-
   /**
    *
    *
@@ -625,7 +603,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   public int getCurrentEventAccessValue() {
     return currentEventAccess_;
   }
-
   /**
    *
    *
@@ -878,7 +855,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1218,7 +1194,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             com.google.apps.script.type.HomepageExtensionPoint.Builder,
             com.google.apps.script.type.HomepageExtensionPointOrBuilder>
         homepageTriggerBuilder_;
-
     /**
      *
      *
@@ -1239,7 +1214,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public boolean hasHomepageTrigger() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1266,7 +1240,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return homepageTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1295,7 +1268,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1294,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1328,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1383,7 +1353,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1373,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1430,7 +1398,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             : homepageTrigger_;
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1466,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return conferenceSolutionBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1517,7 +1483,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return conferenceSolutionBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1536,7 +1501,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return conferenceSolutionBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1561,7 +1525,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1547,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1609,7 +1571,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1634,7 +1595,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1656,7 +1616,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1679,7 +1638,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1702,7 +1660,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1723,7 +1680,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1744,7 +1700,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1759,7 +1714,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         getConferenceSolutionBuilder(int index) {
       return getConferenceSolutionFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1778,7 +1732,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return conferenceSolutionBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1798,7 +1751,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(conferenceSolution_);
       }
     }
-
     /**
      *
      *
@@ -1814,7 +1766,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       return getConferenceSolutionFieldBuilder()
           .addBuilder(com.google.apps.script.type.calendar.ConferenceSolution.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1831,7 +1782,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
           .addBuilder(
               index, com.google.apps.script.type.calendar.ConferenceSolution.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1868,7 +1818,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object createSettingsUrlFunction_ = "";
-
     /**
      *
      *
@@ -1891,7 +1840,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1914,7 +1862,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1936,7 +1883,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1954,7 +1900,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1984,7 +1929,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             com.google.apps.script.type.calendar.CalendarExtensionPoint.Builder,
             com.google.apps.script.type.calendar.CalendarExtensionPointOrBuilder>
         eventOpenTriggerBuilder_;
-
     /**
      *
      *
@@ -2000,7 +1944,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public boolean hasEventOpenTrigger() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2022,7 +1965,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return eventOpenTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2047,7 +1989,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2069,7 +2010,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2101,7 +2041,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2122,7 +2061,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2139,7 +2077,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getEventOpenTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2160,7 +2097,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             : eventOpenTrigger_;
       }
     }
-
     /**
      *
      *
@@ -2194,7 +2130,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             com.google.apps.script.type.calendar.CalendarExtensionPoint.Builder,
             com.google.apps.script.type.calendar.CalendarExtensionPointOrBuilder>
         eventUpdateTriggerBuilder_;
-
     /**
      *
      *
@@ -2210,7 +2145,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public boolean hasEventUpdateTrigger() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2232,7 +2166,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         return eventUpdateTriggerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2257,7 +2190,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2279,7 +2211,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2311,7 +2242,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2332,7 +2262,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2278,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getEventUpdateTriggerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2370,7 +2298,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             : eventUpdateTrigger_;
       }
     }
-
     /**
      *
      *
@@ -2399,7 +2326,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     }
 
     private int currentEventAccess_ = 0;
-
     /**
      *
      *
@@ -2417,7 +2343,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public int getCurrentEventAccessValue() {
       return currentEventAccess_;
     }
-
     /**
      *
      *
@@ -2438,7 +2363,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2462,7 +2386,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
           ? com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2487,7 +2410,6 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

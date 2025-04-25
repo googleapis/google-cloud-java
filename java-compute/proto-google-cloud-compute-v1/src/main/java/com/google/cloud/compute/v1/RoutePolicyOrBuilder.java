@@ -36,7 +36,6 @@ public interface RoutePolicyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RoutePolicyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface RoutePolicyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface RoutePolicyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface RoutePolicyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface RoutePolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface RoutePolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.RoutePolicyPolicyTerm terms = 110250375;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RoutePolicyPolicyTerm> getTermsList();
-
   /**
    *
    *
@@ -162,7 +155,6 @@ public interface RoutePolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.RoutePolicyPolicyTerm terms = 110250375;</code>
    */
   com.google.cloud.compute.v1.RoutePolicyPolicyTerm getTerms(int index);
-
   /**
    *
    *
@@ -173,7 +165,6 @@ public interface RoutePolicyOrBuilder
    * <code>repeated .google.cloud.compute.v1.RoutePolicyPolicyTerm terms = 110250375;</code>
    */
   int getTermsCount();
-
   /**
    *
    *
@@ -185,7 +176,6 @@ public interface RoutePolicyOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RoutePolicyPolicyTermOrBuilder>
       getTermsOrBuilderList();
-
   /**
    *
    *
@@ -210,7 +200,6 @@ public interface RoutePolicyOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -224,7 +213,6 @@ public interface RoutePolicyOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

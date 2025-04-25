@@ -36,7 +36,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return The enum numeric value on the wire for assetType.
    */
   int getAssetTypeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return The gcpService.
    */
   java.lang.String getGcpService();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return Whether the instanceQuota field is set.
    */
   boolean hasInstanceQuota();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return The instanceQuota.
    */
   com.google.cloud.baremetalsolution.v2.InstanceQuota getInstanceQuota();
-
   /**
    *
    *
@@ -190,7 +184,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return Whether the serverCount field is set.
    */
   boolean hasServerCount();
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return Whether the networkBandwidth field is set.
    */
   boolean hasNetworkBandwidth();
-
   /**
    *
    *
@@ -242,7 +234,6 @@ public interface ProvisioningQuotaOrBuilder
    * @return Whether the storageGib field is set.
    */
   boolean hasStorageGib();
-
   /**
    *
    *

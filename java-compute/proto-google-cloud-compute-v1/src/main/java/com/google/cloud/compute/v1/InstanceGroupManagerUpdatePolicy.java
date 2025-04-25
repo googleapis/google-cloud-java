@@ -32,7 +32,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy)
     InstanceGroupManagerUpdatePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagerUpdatePolicy.newBuilder() to construct.
   private InstanceGroupManagerUpdatePolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -488,7 +487,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * <code>UNDEFINED_REPLACEMENT_METHOD = 0;</code>
      */
     public static final int UNDEFINED_REPLACEMENT_METHOD_VALUE = 0;
-
     /**
      *
      *
@@ -499,7 +497,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * <code>RECREATE = 522644719;</code>
      */
     public static final int RECREATE_VALUE = 522644719;
-
     /**
      *
      *
@@ -644,7 +641,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-
     /**
      *
      *
@@ -744,7 +740,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceRedistributionType_ = "";
-
   /**
    *
    *
@@ -761,7 +756,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasInstanceRedistributionType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -786,7 +780,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -814,7 +807,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   public static final int MAX_SURGE_FIELD_NUMBER = 302572691;
   private com.google.cloud.compute.v1.FixedOrPercent maxSurge_;
-
   /**
    *
    *
@@ -830,7 +822,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasMaxSurge() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -848,7 +839,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         ? com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()
         : maxSurge_;
   }
-
   /**
    *
    *
@@ -867,7 +857,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   public static final int MAX_UNAVAILABLE_FIELD_NUMBER = 404940277;
   private com.google.cloud.compute.v1.FixedOrPercent maxUnavailable_;
-
   /**
    *
    *
@@ -883,7 +872,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasMaxUnavailable() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -901,7 +889,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         ? com.google.cloud.compute.v1.FixedOrPercent.getDefaultInstance()
         : maxUnavailable_;
   }
-
   /**
    *
    *
@@ -922,7 +909,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minimalAction_ = "";
-
   /**
    *
    *
@@ -939,7 +925,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasMinimalAction() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -964,7 +949,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -994,7 +978,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object mostDisruptiveAllowedAction_ = "";
-
   /**
    *
    *
@@ -1011,7 +994,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasMostDisruptiveAllowedAction() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -1036,7 +1018,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -1066,7 +1047,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object replacementMethod_ = "";
-
   /**
    *
    *
@@ -1083,7 +1063,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasReplacementMethod() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1108,7 +1087,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -1138,7 +1116,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -1155,7 +1132,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
   public boolean hasType() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1180,7 +1156,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -1465,7 +1440,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1766,7 +1740,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object instanceRedistributionType_ = "";
-
     /**
      *
      *
@@ -1782,7 +1755,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasInstanceRedistributionType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1806,7 +1778,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1830,7 +1801,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1853,7 +1823,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1872,7 +1841,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1903,7 +1871,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
             com.google.cloud.compute.v1.FixedOrPercent.Builder,
             com.google.cloud.compute.v1.FixedOrPercentOrBuilder>
         maxSurgeBuilder_;
-
     /**
      *
      *
@@ -1918,7 +1885,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasMaxSurge() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1939,7 +1905,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return maxSurgeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1962,7 +1927,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1982,7 +1946,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2010,7 +1973,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -2030,7 +1992,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2045,7 +2006,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return getMaxSurgeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2064,7 +2024,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
             : maxSurge_;
       }
     }
-
     /**
      *
      *
@@ -2097,7 +2056,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
             com.google.cloud.compute.v1.FixedOrPercent.Builder,
             com.google.cloud.compute.v1.FixedOrPercentOrBuilder>
         maxUnavailableBuilder_;
-
     /**
      *
      *
@@ -2112,7 +2070,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasMaxUnavailable() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2133,7 +2090,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return maxUnavailableBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2156,7 +2112,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2177,7 +2132,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2205,7 +2159,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -2225,7 +2178,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2240,7 +2192,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return getMaxUnavailableFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2259,7 +2210,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
             : maxUnavailable_;
       }
     }
-
     /**
      *
      *
@@ -2287,7 +2237,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
 
     private java.lang.Object minimalAction_ = "";
-
     /**
      *
      *
@@ -2303,7 +2252,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasMinimalAction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2327,7 +2275,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2351,7 +2298,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2374,7 +2320,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2393,7 +2338,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2419,7 +2363,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
 
     private java.lang.Object mostDisruptiveAllowedAction_ = "";
-
     /**
      *
      *
@@ -2435,7 +2378,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasMostDisruptiveAllowedAction() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -2459,7 +2401,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2483,7 +2424,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2506,7 +2446,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2525,7 +2464,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2551,7 +2489,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
 
     private java.lang.Object replacementMethod_ = "";
-
     /**
      *
      *
@@ -2567,7 +2504,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasReplacementMethod() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2591,7 +2527,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2615,7 +2550,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2638,7 +2572,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2657,7 +2590,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2683,7 +2615,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -2699,7 +2630,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     public boolean hasType() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2723,7 +2653,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2747,7 +2676,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2770,7 +2698,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2789,7 +2716,6 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

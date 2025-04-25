@@ -34,7 +34,6 @@ public interface ListGlossariesResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Glossary glossaries = 1;</code>
    */
   java.util.List<com.google.cloud.translate.v3.Glossary> getGlossariesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListGlossariesResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Glossary glossaries = 1;</code>
    */
   com.google.cloud.translate.v3.Glossary getGlossaries(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListGlossariesResponseOrBuilder
    * <code>repeated .google.cloud.translation.v3.Glossary glossaries = 1;</code>
    */
   int getGlossariesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListGlossariesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.GlossaryOrBuilder>
       getGlossariesOrBuilderList();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface ListGlossariesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

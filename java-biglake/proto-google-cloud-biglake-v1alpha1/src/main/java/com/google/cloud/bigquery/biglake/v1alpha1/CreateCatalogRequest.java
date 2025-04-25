@@ -33,7 +33,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.biglake.v1alpha1.CreateCatalogRequest)
     CreateCatalogRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCatalogRequest.newBuilder() to construct.
   private CreateCatalogRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
 
   public static final int CATALOG_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.biglake.v1alpha1.Catalog catalog_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
   public boolean hasCatalog() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.bigquery.biglake.v1alpha1.Catalog.getDefaultInstance()
         : catalog_;
   }
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalogId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -425,7 +417,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -684,7 +674,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +699,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -735,7 +723,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +743,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.bigquery.biglake.v1alpha1.Catalog.Builder,
             com.google.cloud.bigquery.biglake.v1alpha1.CatalogOrBuilder>
         catalogBuilder_;
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
     public boolean hasCatalog() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -831,7 +815,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
         return catalogBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -857,7 +840,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -881,7 +863,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -913,7 +894,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCatalogFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -976,7 +954,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
             : catalog_;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +984,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object catalogId_ = "";
-
     /**
      *
      *
@@ -1031,7 +1007,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1030,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class CreateCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

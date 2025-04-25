@@ -33,7 +33,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ClipAssetResponse)
     ClipAssetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ClipAssetResponse.newBuilder() to construct.
   private ClipAssetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
      * @return Whether the temporalPartition field is set.
      */
     boolean hasTemporalPartition();
-
     /**
      *
      *
@@ -94,7 +92,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
      * @return The temporalPartition.
      */
     com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartition();
-
     /**
      *
      *
@@ -119,7 +116,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
      * @return The uri.
      */
     java.lang.String getUri();
-
     /**
      *
      *
@@ -133,7 +129,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getUriBytes();
   }
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUri)
       TimeIndexedUriOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeIndexedUri.newBuilder() to construct.
     private TimeIndexedUri(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -182,7 +176,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int TEMPORAL_PARTITION_FIELD_NUMBER = 1;
     private com.google.cloud.visionai.v1.Partition.TemporalPartition temporalPartition_;
-
     /**
      *
      *
@@ -198,7 +191,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
     public boolean hasTemporalPartition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -216,7 +208,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance()
           : temporalPartition_;
     }
-
     /**
      *
      *
@@ -238,7 +229,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -262,7 +252,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -462,7 +451,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
               com.google.cloud.visionai.v1.Partition.TemporalPartition.Builder,
               com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
           temporalPartitionBuilder_;
-
       /**
        *
        *
@@ -707,7 +694,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       public boolean hasTemporalPartition() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -728,7 +714,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
           return temporalPartitionBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -752,7 +737,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -773,7 +757,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -804,7 +787,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -824,7 +806,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -840,7 +821,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getTemporalPartitionFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -860,7 +840,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
               : temporalPartition_;
         }
       }
-
       /**
        *
        *
@@ -888,7 +867,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
 
       private java.lang.Object uri_ = "";
-
       /**
        *
        *
@@ -911,7 +889,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -934,7 +911,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -956,7 +932,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -974,7 +949,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1070,7 +1044,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUri>
       timeIndexedUris_;
-
   /**
    *
    *
@@ -1088,7 +1061,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       getTimeIndexedUrisList() {
     return timeIndexedUris_;
   }
-
   /**
    *
    *
@@ -1107,7 +1079,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       getTimeIndexedUrisOrBuilderList() {
     return timeIndexedUris_;
   }
-
   /**
    *
    *
@@ -1124,7 +1095,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
   public int getTimeIndexedUrisCount() {
     return timeIndexedUris_.size();
   }
-
   /**
    *
    *
@@ -1142,7 +1112,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       int index) {
     return timeIndexedUris_.get(index);
   }
-
   /**
    *
    *
@@ -1322,7 +1291,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1589,7 +1557,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         return timeIndexedUrisBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1609,7 +1576,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         return timeIndexedUrisBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1630,7 +1596,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         return timeIndexedUrisBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1657,7 +1622,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1646,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1709,7 +1672,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1736,7 +1698,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1721,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1785,7 +1745,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1810,7 +1769,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1833,7 +1791,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1856,7 +1813,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1873,7 +1829,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         getTimeIndexedUrisBuilder(int index) {
       return getTimeIndexedUrisFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1894,7 +1849,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         return timeIndexedUrisBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1916,7 +1870,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(timeIndexedUris_);
       }
     }
-
     /**
      *
      *
@@ -1935,7 +1888,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUri.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1955,7 +1907,6 @@ public final class ClipAssetResponse extends com.google.protobuf.GeneratedMessag
               index,
               com.google.cloud.visionai.v1.ClipAssetResponse.TimeIndexedUri.getDefaultInstance());
     }
-
     /**
      *
      *

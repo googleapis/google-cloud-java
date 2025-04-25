@@ -34,7 +34,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.CreateQueueRequest)
     CreateQueueRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateQueueRequest.newBuilder() to construct.
   private CreateQueueRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -135,7 +132,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int QUEUE_FIELD_NUMBER = 2;
   private com.google.cloud.tasks.v2beta2.Queue queue_;
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasQueue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.tasks.v2beta2.Queue getQueue() {
     return queue_ == null ? com.google.cloud.tasks.v2beta2.Queue.getDefaultInstance() : queue_;
   }
-
   /**
    *
    *
@@ -367,7 +361,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -582,7 +575,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -612,7 +604,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -642,7 +633,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -696,7 +685,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.tasks.v2beta2.Queue.Builder,
             com.google.cloud.tasks.v2beta2.QueueOrBuilder>
         queueBuilder_;
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasQueue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
         return queueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +810,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +841,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -901,7 +882,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getQueueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
         return queue_ == null ? com.google.cloud.tasks.v2beta2.Queue.getDefaultInstance() : queue_;
       }
     }
-
     /**
      *
      *

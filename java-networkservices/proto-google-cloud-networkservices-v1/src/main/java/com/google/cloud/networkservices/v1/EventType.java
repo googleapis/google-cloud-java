@@ -118,7 +118,6 @@ public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -130,7 +129,6 @@ public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REQUEST_HEADERS = 1;</code>
    */
   public static final int REQUEST_HEADERS_VALUE = 1;
-
   /**
    *
    *
@@ -142,7 +140,6 @@ public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REQUEST_BODY = 2;</code>
    */
   public static final int REQUEST_BODY_VALUE = 2;
-
   /**
    *
    *
@@ -154,7 +151,6 @@ public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESPONSE_HEADERS = 3;</code>
    */
   public static final int RESPONSE_HEADERS_VALUE = 3;
-
   /**
    *
    *
@@ -166,7 +162,6 @@ public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>RESPONSE_BODY = 4;</code>
    */
   public static final int RESPONSE_BODY_VALUE = 4;
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public enum EventType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REQUEST_TRAILERS = 5;</code>
    */
   public static final int REQUEST_TRAILERS_VALUE = 5;
-
   /**
    *
    *

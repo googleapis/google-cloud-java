@@ -33,7 +33,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertSnapshotRequest)
     InsertSnapshotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InsertSnapshotRequest.newBuilder() to construct.
   private InsertSnapshotRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -194,7 +188,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
 
   public static final int SNAPSHOT_RESOURCE_FIELD_NUMBER = 481319977;
   private com.google.cloud.compute.v1.Snapshot snapshotResource_;
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSnapshotResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Snapshot.getDefaultInstance()
         : snapshotResource_;
   }
-
   /**
    *
    *
@@ -440,7 +431,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -672,7 +662,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -697,7 +686,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -722,7 +710,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -746,7 +733,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -766,7 +752,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -808,7 +792,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -831,7 +814,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -854,7 +836,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -876,7 +857,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -894,7 +874,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.Snapshot.Builder,
             com.google.cloud.compute.v1.SnapshotOrBuilder>
         snapshotResourceBuilder_;
-
     /**
      *
      *
@@ -941,7 +919,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSnapshotResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -964,7 +941,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
         return snapshotResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -989,7 +965,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +987,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1042,7 +1016,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1064,7 +1037,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1053,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSnapshotResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1102,7 +1073,6 @@ public final class InsertSnapshotRequest extends com.google.protobuf.GeneratedMe
             : snapshotResource_;
       }
     }
-
     /**
      *
      *

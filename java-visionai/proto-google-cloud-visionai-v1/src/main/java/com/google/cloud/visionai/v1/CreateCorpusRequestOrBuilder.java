@@ -36,7 +36,6 @@ public interface CreateCorpusRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface CreateCorpusRequestOrBuilder
    * @return Whether the corpus field is set.
    */
   boolean hasCorpus();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CreateCorpusRequestOrBuilder
    * @return The corpus.
    */
   com.google.cloud.visionai.v1.Corpus getCorpus();
-
   /**
    *
    *

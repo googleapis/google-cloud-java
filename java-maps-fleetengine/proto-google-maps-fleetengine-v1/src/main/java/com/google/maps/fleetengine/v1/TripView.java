@@ -80,7 +80,6 @@ public enum TripView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRIP_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int TRIP_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -92,7 +91,6 @@ public enum TripView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SDK = 1;</code>
    */
   public static final int SDK_VALUE = 1;
-
   /**
    *
    *

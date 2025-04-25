@@ -47,7 +47,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.routing.v2.RouteMatrixOrigin> getOriginsList();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   com.google.maps.routing.v2.RouteMatrixOrigin getOrigins(int index);
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   int getOriginsCount();
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.RouteMatrixOriginOrBuilder>
       getOriginsOrBuilderList();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.maps.routing.v2.RouteMatrixDestination> getDestinationsList();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   com.google.maps.routing.v2.RouteMatrixDestination getDestinations(int index);
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * </code>
    */
   int getDestinationsCount();
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.RouteMatrixDestinationOrBuilder>
       getDestinationsOrBuilderList();
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The enum numeric value on the wire for travelMode.
    */
   int getTravelModeValue();
-
   /**
    *
    *
@@ -264,7 +255,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The enum numeric value on the wire for routingPreference.
    */
   int getRoutingPreferenceValue();
-
   /**
    *
    *
@@ -301,7 +291,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return Whether the departureTime field is set.
    */
   boolean hasDepartureTime();
-
   /**
    *
    *
@@ -319,7 +308,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The departureTime.
    */
   com.google.protobuf.Timestamp getDepartureTime();
-
   /**
    *
    *
@@ -353,7 +341,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return Whether the arrivalTime field is set.
    */
   boolean hasArrivalTime();
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The arrivalTime.
    */
   com.google.protobuf.Timestamp getArrivalTime();
-
   /**
    *
    *
@@ -406,7 +392,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -440,7 +425,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -468,7 +452,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The enum numeric value on the wire for units.
    */
   int getUnitsValue();
-
   /**
    *
    *
@@ -500,7 +483,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    */
   java.util.List<com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation>
       getExtraComputationsList();
-
   /**
    *
    *
@@ -518,7 +500,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The count of extraComputations.
    */
   int getExtraComputationsCount();
-
   /**
    *
    *
@@ -538,7 +519,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    */
   com.google.maps.routing.v2.ComputeRouteMatrixRequest.ExtraComputation getExtraComputations(
       int index);
-
   /**
    *
    *
@@ -556,7 +536,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for extraComputations.
    */
   java.util.List<java.lang.Integer> getExtraComputationsValueList();
-
   /**
    *
    *
@@ -598,7 +577,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The enum numeric value on the wire for trafficModel.
    */
   int getTrafficModelValue();
-
   /**
    *
    *
@@ -639,7 +617,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return Whether the transitPreferences field is set.
    */
   boolean hasTransitPreferences();
-
   /**
    *
    *
@@ -657,7 +634,6 @@ public interface ComputeRouteMatrixRequestOrBuilder
    * @return The transitPreferences.
    */
   com.google.maps.routing.v2.TransitPreferences getTransitPreferences();
-
   /**
    *
    *

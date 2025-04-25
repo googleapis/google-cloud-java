@@ -40,7 +40,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Lake)
     LakeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Lake.newBuilder() to construct.
   private Lake(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,7 +107,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      * @return The service.
      */
     java.lang.String getService();
-
     /**
      *
      *
@@ -125,7 +123,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getServiceBytes();
   }
-
   /**
    *
    *
@@ -140,7 +137,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Lake.Metastore)
       MetastoreOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Metastore.newBuilder() to construct.
     private Metastore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -175,7 +171,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object service_ = "";
-
     /**
      *
      *
@@ -202,7 +197,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -390,7 +384,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -577,7 +570,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object service_ = "";
-
       /**
        *
        *
@@ -603,7 +595,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -629,7 +620,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -654,7 +644,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -675,7 +664,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -783,7 +771,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
-
     /**
      *
      *
@@ -809,7 +796,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      * @return The message.
      */
     java.lang.String getMessage();
-
     /**
      *
      *
@@ -835,7 +821,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     boolean hasUpdateTime();
-
     /**
      *
      *
@@ -848,7 +833,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      * @return The updateTime.
      */
     com.google.protobuf.Timestamp getUpdateTime();
-
     /**
      *
      *
@@ -872,7 +856,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      * @return The endpoint.
      */
     java.lang.String getEndpoint();
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEndpointBytes();
   }
-
   /**
    *
    *
@@ -901,7 +883,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Lake.MetastoreStatus)
       MetastoreStatusOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MetastoreStatus.newBuilder() to construct.
     private MetastoreStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1007,7 +988,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -1018,7 +998,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
        * <code>NONE = 1;</code>
        */
       public static final int NONE_VALUE = 1;
-
       /**
        *
        *
@@ -1029,7 +1008,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
        * <code>READY = 2;</code>
        */
       public static final int READY_VALUE = 2;
-
       /**
        *
        *
@@ -1040,7 +1018,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
        * <code>UPDATING = 3;</code>
        */
       public static final int UPDATING_VALUE = 3;
-
       /**
        *
        *
@@ -1144,7 +1121,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
-
     /**
      *
      *
@@ -1160,7 +1136,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -1185,7 +1160,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object message_ = "";
-
     /**
      *
      *
@@ -1209,7 +1183,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1236,7 +1209,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
     public static final int UPDATE_TIME_FIELD_NUMBER = 3;
     private com.google.protobuf.Timestamp updateTime_;
-
     /**
      *
      *
@@ -1252,7 +1224,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1268,7 +1239,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getUpdateTime() {
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
-
     /**
      *
      *
@@ -1287,7 +1257,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -1311,7 +1280,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1532,7 +1500,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1778,7 +1745,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int state_ = 0;
-
       /**
        *
        *
@@ -1794,7 +1760,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       public int getStateValue() {
         return state_;
       }
-
       /**
        *
        *
@@ -1813,7 +1778,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1833,7 +1797,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Lake.MetastoreStatus.State.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1855,7 +1818,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1875,7 +1837,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object message_ = "";
-
       /**
        *
        *
@@ -1898,7 +1859,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1921,7 +1881,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1943,7 +1902,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1961,7 +1919,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1991,7 +1948,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           updateTimeBuilder_;
-
       /**
        *
        *
@@ -2006,7 +1962,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUpdateTime() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -2027,7 +1982,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return updateTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2050,7 +2004,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2070,7 +2023,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2098,7 +2050,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2118,7 +2069,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2133,7 +2083,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getUpdateTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2152,7 +2101,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
               : updateTime_;
         }
       }
-
       /**
        *
        *
@@ -2180,7 +2128,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object endpoint_ = "";
-
       /**
        *
        *
@@ -2203,7 +2150,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2226,7 +2172,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2248,7 +2193,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2266,7 +2210,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2359,7 +2302,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2386,7 +2328,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2418,7 +2359,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -2442,7 +2382,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2471,7 +2410,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
-
   /**
    *
    *
@@ -2496,7 +2434,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2524,7 +2461,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -2541,7 +2477,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2558,7 +2493,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -2576,7 +2510,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -2593,7 +2526,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2610,7 +2542,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -2652,7 +2583,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -2669,14 +2599,12 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -2690,7 +2618,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -2711,7 +2638,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -2737,7 +2663,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -2761,7 +2686,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2788,7 +2712,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
-
   /**
    *
    *
@@ -2805,7 +2728,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -2829,7 +2751,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
-
   /**
    *
    *
@@ -2855,7 +2776,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2884,7 +2804,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METASTORE_FIELD_NUMBER = 102;
   private com.google.cloud.dataplex.v1.Lake.Metastore metastore_;
-
   /**
    *
    *
@@ -2903,7 +2822,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetastore() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -2924,7 +2842,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Lake.Metastore.getDefaultInstance()
         : metastore_;
   }
-
   /**
    *
    *
@@ -2946,7 +2863,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ASSET_STATUS_FIELD_NUMBER = 103;
   private com.google.cloud.dataplex.v1.AssetStatus assetStatus_;
-
   /**
    *
    *
@@ -2964,7 +2880,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAssetStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -2984,7 +2899,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.AssetStatus.getDefaultInstance()
         : assetStatus_;
   }
-
   /**
    *
    *
@@ -3005,7 +2919,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
 
   public static final int METASTORE_STATUS_FIELD_NUMBER = 104;
   private com.google.cloud.dataplex.v1.Lake.MetastoreStatus metastoreStatus_;
-
   /**
    *
    *
@@ -3023,7 +2936,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetastoreStatus() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -3043,7 +2955,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataplex.v1.Lake.MetastoreStatus.getDefaultInstance()
         : metastoreStatus_;
   }
-
   /**
    *
    *
@@ -3351,7 +3262,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3762,7 +3672,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -3788,7 +3697,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3814,7 +3722,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3839,7 +3746,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3860,7 +3766,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3888,7 +3793,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -3911,7 +3815,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3934,7 +3837,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3956,7 +3858,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3974,7 +3875,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3999,7 +3899,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
-
     /**
      *
      *
@@ -4023,7 +3922,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4047,7 +3945,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4070,7 +3967,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4089,7 +3985,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4120,7 +4015,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4137,7 +4031,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -4160,7 +4053,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4185,7 +4077,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4207,7 +4098,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4237,7 +4127,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4259,7 +4148,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4276,7 +4164,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4297,7 +4184,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4332,7 +4218,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4349,7 +4234,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4372,7 +4256,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4397,7 +4280,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4419,7 +4301,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4449,7 +4330,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4471,7 +4351,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4488,7 +4367,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4509,7 +4387,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4563,7 +4440,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -4580,14 +4456,12 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -4601,7 +4475,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -4622,7 +4495,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4649,7 +4521,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4666,14 +4537,12 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -4694,7 +4563,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -4711,7 +4579,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -4734,7 +4601,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4757,7 +4623,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4779,7 +4644,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4797,7 +4661,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4822,7 +4685,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -4839,7 +4701,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -4859,7 +4720,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4878,7 +4738,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.State.forNumber(state_);
       return result == null ? com.google.cloud.dataplex.v1.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4901,7 +4760,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4922,7 +4780,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccount_ = "";
-
     /**
      *
      *
@@ -4947,7 +4804,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4972,7 +4828,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4996,7 +4851,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5016,7 +4870,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5048,7 +4901,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Lake.Metastore.Builder,
             com.google.cloud.dataplex.v1.Lake.MetastoreOrBuilder>
         metastoreBuilder_;
-
     /**
      *
      *
@@ -5066,7 +4918,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetastore() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -5090,7 +4941,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return metastoreBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5116,7 +4966,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5140,7 +4989,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5171,7 +5019,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5194,7 +5041,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5212,7 +5058,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetastoreFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5234,7 +5079,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             : metastore_;
       }
     }
-
     /**
      *
      *
@@ -5270,7 +5114,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.AssetStatus.Builder,
             com.google.cloud.dataplex.v1.AssetStatusOrBuilder>
         assetStatusBuilder_;
-
     /**
      *
      *
@@ -5287,7 +5130,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAssetStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -5310,7 +5152,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return assetStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5335,7 +5176,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5358,7 +5198,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5388,7 +5227,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5410,7 +5248,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5427,7 +5264,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAssetStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5448,7 +5284,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             : assetStatus_;
       }
     }
-
     /**
      *
      *
@@ -5483,7 +5318,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Lake.MetastoreStatus.Builder,
             com.google.cloud.dataplex.v1.Lake.MetastoreStatusOrBuilder>
         metastoreStatusBuilder_;
-
     /**
      *
      *
@@ -5500,7 +5334,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetastoreStatus() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -5523,7 +5356,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
         return metastoreStatusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5548,7 +5380,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5571,7 +5402,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5602,7 +5432,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5624,7 +5453,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5641,7 +5469,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMetastoreStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5663,7 +5490,6 @@ public final class Lake extends com.google.protobuf.GeneratedMessageV3
             : metastoreStatus_;
       }
     }
-
     /**
      *
      *

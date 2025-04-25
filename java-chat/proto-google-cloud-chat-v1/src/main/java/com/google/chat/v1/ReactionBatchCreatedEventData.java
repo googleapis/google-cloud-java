@@ -35,7 +35,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.chat.v1.ReactionBatchCreatedEventData)
     ReactionBatchCreatedEventDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReactionBatchCreatedEventData.newBuilder() to construct.
   private ReactionBatchCreatedEventData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.chat.v1.ReactionCreatedEventData> reactions_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
   public java.util.List<com.google.chat.v1.ReactionCreatedEventData> getReactionsList() {
     return reactions_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       getReactionsOrBuilderList() {
     return reactions_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
   public int getReactionsCount() {
     return reactions_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
   public com.google.chat.v1.ReactionCreatedEventData getReactions(int index) {
     return reactions_.get(index);
   }
-
   /**
    *
    *
@@ -303,7 +297,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -568,7 +561,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
         return reactionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
         return reactionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -602,7 +593,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
         return reactionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -646,7 +635,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +657,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +679,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -713,7 +699,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -775,7 +758,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +777,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +789,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
     public com.google.chat.v1.ReactionCreatedEventData.Builder getReactionsBuilder(int index) {
       return getReactionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -825,7 +805,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
         return reactionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -843,7 +822,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(reactions_);
       }
     }
-
     /**
      *
      *
@@ -857,7 +835,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       return getReactionsFieldBuilder()
           .addBuilder(com.google.chat.v1.ReactionCreatedEventData.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -871,7 +848,6 @@ public final class ReactionBatchCreatedEventData extends com.google.protobuf.Gen
       return getReactionsFieldBuilder()
           .addBuilder(index, com.google.chat.v1.ReactionCreatedEventData.getDefaultInstance());
     }
-
     /**
      *
      *

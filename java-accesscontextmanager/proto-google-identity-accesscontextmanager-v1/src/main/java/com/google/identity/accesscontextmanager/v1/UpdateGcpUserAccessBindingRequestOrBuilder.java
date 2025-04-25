@@ -39,7 +39,6 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * @return Whether the gcpUserAccessBinding field is set.
    */
   boolean hasGcpUserAccessBinding();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * @return The gcpUserAccessBinding.
    */
   com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding getGcpUserAccessBinding();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public interface UpdateGcpUserAccessBindingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

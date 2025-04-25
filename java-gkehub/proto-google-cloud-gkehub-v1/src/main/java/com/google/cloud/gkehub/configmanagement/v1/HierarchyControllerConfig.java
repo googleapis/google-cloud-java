@@ -33,7 +33,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig)
     HierarchyControllerConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HierarchyControllerConfig.newBuilder() to construct.
   private HierarchyControllerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
 
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
 
   public static final int ENABLE_POD_TREE_LABELS_FIELD_NUMBER = 2;
   private boolean enablePodTreeLabels_ = false;
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
 
   public static final int ENABLE_HIERARCHICAL_RESOURCE_QUOTA_FIELD_NUMBER = 3;
   private boolean enableHierarchicalResourceQuota_ = false;
-
   /**
    *
    *
@@ -303,7 +299,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -519,7 +514,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     private int bitField0_;
 
     private boolean enabled_;
-
     /**
      *
      *
@@ -535,7 +529,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public boolean getEnabled() {
       return enabled_;
     }
-
     /**
      *
      *
@@ -555,7 +548,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -575,7 +567,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     }
 
     private boolean enablePodTreeLabels_;
-
     /**
      *
      *
@@ -591,7 +582,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public boolean getEnablePodTreeLabels() {
       return enablePodTreeLabels_;
     }
-
     /**
      *
      *
@@ -611,7 +601,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -631,7 +620,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     }
 
     private boolean enableHierarchicalResourceQuota_;
-
     /**
      *
      *
@@ -647,7 +635,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public boolean getEnableHierarchicalResourceQuota() {
       return enableHierarchicalResourceQuota_;
     }
-
     /**
      *
      *
@@ -667,7 +654,6 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

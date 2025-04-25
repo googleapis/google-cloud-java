@@ -33,7 +33,6 @@ public final class AbandonReleaseResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.AbandonReleaseResponse)
     AbandonReleaseResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AbandonReleaseResponse.newBuilder() to construct.
   private AbandonReleaseResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,7 +211,6 @@ public final class AbandonReleaseResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

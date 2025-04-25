@@ -34,7 +34,6 @@ public final class UpdateAccessApprovalSettingsMessage
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage)
     UpdateAccessApprovalSettingsMessageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateAccessApprovalSettingsMessage.newBuilder() to construct.
   private UpdateAccessApprovalSettingsMessage(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,7 +66,6 @@ public final class UpdateAccessApprovalSettingsMessage
   private int bitField0_;
   public static final int SETTINGS_FIELD_NUMBER = 1;
   private com.google.cloud.accessapproval.v1.AccessApprovalSettings settings_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class UpdateAccessApprovalSettingsMessage
   public boolean hasSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class UpdateAccessApprovalSettingsMessage
         ? com.google.cloud.accessapproval.v1.AccessApprovalSettings.getDefaultInstance()
         : settings_;
   }
-
   /**
    *
    *
@@ -120,7 +116,6 @@ public final class UpdateAccessApprovalSettingsMessage
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class UpdateAccessApprovalSettingsMessage
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -170,7 +164,6 @@ public final class UpdateAccessApprovalSettingsMessage
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -374,7 +367,6 @@ public final class UpdateAccessApprovalSettingsMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -605,7 +597,6 @@ public final class UpdateAccessApprovalSettingsMessage
             com.google.cloud.accessapproval.v1.AccessApprovalSettings.Builder,
             com.google.cloud.accessapproval.v1.AccessApprovalSettingsOrBuilder>
         settingsBuilder_;
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class UpdateAccessApprovalSettingsMessage
     public boolean hasSettings() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class UpdateAccessApprovalSettingsMessage
         return settingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +673,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class UpdateAccessApprovalSettingsMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +720,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +734,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return getSettingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class UpdateAccessApprovalSettingsMessage
             : settings_;
       }
     }
-
     /**
      *
      *
@@ -802,7 +785,6 @@ public final class UpdateAccessApprovalSettingsMessage
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class UpdateAccessApprovalSettingsMessage
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class UpdateAccessApprovalSettingsMessage
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -888,7 +868,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +932,6 @@ public final class UpdateAccessApprovalSettingsMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class UpdateAccessApprovalSettingsMessage
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1035,7 +1010,6 @@ public final class UpdateAccessApprovalSettingsMessage
             : updateMask_;
       }
     }
-
     /**
      *
      *

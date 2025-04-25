@@ -307,19 +307,6 @@ public final class AutoscalingPolicyServiceGrpc {
     return AutoscalingPolicyServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static AutoscalingPolicyServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<AutoscalingPolicyServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public AutoscalingPolicyServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new AutoscalingPolicyServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return AutoscalingPolicyServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -563,97 +550,6 @@ public final class AutoscalingPolicyServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AutoscalingPolicyService.
-   *
-   * <pre>
-   * The API interface for managing autoscaling policies in the
-   * Dataproc API.
-   * </pre>
-   */
-  public static final class AutoscalingPolicyServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<AutoscalingPolicyServiceBlockingV2Stub> {
-    private AutoscalingPolicyServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected AutoscalingPolicyServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new AutoscalingPolicyServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates new autoscaling policy.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.AutoscalingPolicy createAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateAutoscalingPolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates (replaces) autoscaling policy.
-     * Disabled check for update_mask, because all updates will be full
-     * replacements.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.AutoscalingPolicy updateAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateAutoscalingPolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves autoscaling policy.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.AutoscalingPolicy getAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetAutoscalingPolicyMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists autoscaling policies in the project.
-     * </pre>
-     */
-    public com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse listAutoscalingPolicies(
-        com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAutoscalingPoliciesMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes an autoscaling policy. It is an error to delete an autoscaling
-     * policy that is in use by one or more clusters.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteAutoscalingPolicy(
-        com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteAutoscalingPolicyMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * AutoscalingPolicyService.
    *
    * <pre>
    * The API interface for managing autoscaling policies in the

@@ -36,7 +36,6 @@ public interface SyncErrorOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface SyncErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface SyncErrorOrBuilder
    */
   java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource>
       getErrorResourcesList();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface SyncErrorOrBuilder
    * </code>
    */
   com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource getErrorResources(int index);
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SyncErrorOrBuilder
    * </code>
    */
   int getErrorResourcesCount();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface SyncErrorOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkehub.configmanagement.v1beta.ErrorResourceOrBuilder>
       getErrorResourcesOrBuilderList();
-
   /**
    *
    *

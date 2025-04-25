@@ -85,7 +85,6 @@ public enum LineItemChangeStateReasonType implements com.google.protobuf.Protoco
    * <code>LINE_ITEM_CHANGE_STATE_REASON_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_REASON_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -96,7 +95,6 @@ public enum LineItemChangeStateReasonType implements com.google.protobuf.Protoco
    * <code>LINE_ITEM_CHANGE_STATE_REASON_TYPE_EXPIRED = 1;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_REASON_TYPE_EXPIRED_VALUE = 1;
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public enum LineItemChangeStateReasonType implements com.google.protobuf.Protoco
    * <code>LINE_ITEM_CHANGE_STATE_REASON_TYPE_USER_CANCELLED = 2;</code>
    */
   public static final int LINE_ITEM_CHANGE_STATE_REASON_TYPE_USER_CANCELLED_VALUE = 2;
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The instanceGroupManager.
    */
   java.lang.String getInstanceGroupManager();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return Whether the instanceGroupManagersDeletePerInstanceConfigsReqResource field is set.
    */
   boolean hasInstanceGroupManagersDeletePerInstanceConfigsReqResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq
       getInstanceGroupManagersDeletePerInstanceConfigsReqResource();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

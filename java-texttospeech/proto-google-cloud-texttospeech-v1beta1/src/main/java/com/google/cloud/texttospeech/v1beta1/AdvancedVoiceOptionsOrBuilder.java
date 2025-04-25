@@ -37,7 +37,6 @@ public interface AdvancedVoiceOptionsOrBuilder
    * @return Whether the lowLatencyJourneySynthesis field is set.
    */
   boolean hasLowLatencyJourneySynthesis();
-
   /**
    *
    *

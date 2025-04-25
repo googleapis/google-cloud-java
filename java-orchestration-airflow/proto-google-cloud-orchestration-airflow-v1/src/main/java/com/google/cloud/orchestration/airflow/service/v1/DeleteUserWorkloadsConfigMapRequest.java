@@ -35,7 +35,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1.DeleteUserWorkloadsConfigMapRequest)
     DeleteUserWorkloadsConfigMapRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteUserWorkloadsConfigMapRequest.newBuilder() to construct.
   private DeleteUserWorkloadsConfigMapRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -309,7 +306,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -514,7 +510,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -540,7 +535,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -566,7 +560,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -591,7 +584,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -612,7 +604,6 @@ public final class DeleteUserWorkloadsConfigMapRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

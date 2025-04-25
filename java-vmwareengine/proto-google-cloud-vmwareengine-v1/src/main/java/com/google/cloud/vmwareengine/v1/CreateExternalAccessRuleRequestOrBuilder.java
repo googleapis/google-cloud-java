@@ -43,7 +43,6 @@ public interface CreateExternalAccessRuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface CreateExternalAccessRuleRequestOrBuilder
    * @return Whether the externalAccessRule field is set.
    */
   boolean hasExternalAccessRule();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface CreateExternalAccessRuleRequestOrBuilder
    * @return The externalAccessRule.
    */
   com.google.cloud.vmwareengine.v1.ExternalAccessRule getExternalAccessRule();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface CreateExternalAccessRuleRequestOrBuilder
    * @return The externalAccessRuleId.
    */
   java.lang.String getExternalAccessRuleId();
-
   /**
    *
    *
@@ -178,7 +174,6 @@ public interface CreateExternalAccessRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

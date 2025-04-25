@@ -33,7 +33,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.ListUserEventsResponse)
     ListUserEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListUserEventsResponse.newBuilder() to construct.
   private ListUserEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.UserEvent> userEvents_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       getUserEventsList() {
     return userEvents_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       getUserEventsOrBuilderList() {
     return userEvents_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
   public int getUserEventsCount() {
     return userEvents_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.recommendationengine.v1beta1.UserEvent getUserEvents(int index) {
     return userEvents_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -370,7 +362,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +649,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return userEventsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -675,7 +665,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return userEventsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -692,7 +681,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return userEventsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -716,7 +704,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -738,7 +725,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +747,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +790,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +811,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +832,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +870,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getUserEventsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return userEventsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -941,7 +918,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(userEvents_);
       }
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       return getUserEventsFieldBuilder()
           .addBuilder(com.google.cloud.recommendationengine.v1beta1.UserEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -971,7 +946,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.recommendationengine.v1beta1.UserEvent.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1004,7 +978,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1028,7 +1001,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1024,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1075,7 +1046,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1064,6 @@ public final class ListUserEventsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

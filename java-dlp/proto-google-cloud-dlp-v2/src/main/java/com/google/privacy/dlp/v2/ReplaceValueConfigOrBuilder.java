@@ -36,7 +36,6 @@ public interface ReplaceValueConfigOrBuilder
    * @return Whether the newValue field is set.
    */
   boolean hasNewValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ReplaceValueConfigOrBuilder
    * @return The newValue.
    */
   com.google.privacy.dlp.v2.Value getNewValue();
-
   /**
    *
    *

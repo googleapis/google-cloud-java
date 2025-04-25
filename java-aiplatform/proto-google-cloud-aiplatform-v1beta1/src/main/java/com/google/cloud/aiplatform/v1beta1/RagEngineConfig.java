@@ -33,7 +33,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagEngineConfig)
     RagEngineConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RagEngineConfig.newBuilder() to construct.
   private RagEngineConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int RAG_MANAGED_DB_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig ragManagedDbConfig_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasRagManagedDbConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.getDefaultInstance()
         : ragManagedDbConfig_;
   }
-
   /**
    *
    *
@@ -349,7 +343,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -567,7 +560,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -617,7 +608,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +681,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfigOrBuilder>
         ragManagedDbConfigBuilder_;
-
     /**
      *
      *
@@ -708,7 +695,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasRagManagedDbConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -729,7 +715,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
         return ragManagedDbConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -753,7 +738,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -774,7 +758,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +806,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +821,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRagManagedDbConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -860,7 +840,6 @@ public final class RagEngineConfig extends com.google.protobuf.GeneratedMessageV
             : ragManagedDbConfig_;
       }
     }
-
     /**
      *
      *

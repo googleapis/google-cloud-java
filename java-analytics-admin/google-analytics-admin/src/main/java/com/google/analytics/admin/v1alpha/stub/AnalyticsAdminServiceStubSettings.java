@@ -38,7 +38,6 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListKeyEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
-import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListReportingDataAnnotationsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListRollupPropertySourceLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
@@ -93,7 +92,6 @@ import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
-import com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse;
 import com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest;
@@ -125,7 +123,6 @@ import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteKeyEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
-import com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
@@ -167,7 +164,6 @@ import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetKeyEventRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
-import com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest;
 import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
@@ -222,8 +218,6 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
-import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest;
-import com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest;
 import com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse;
 import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
@@ -239,7 +233,6 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest;
 import com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse;
 import com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest;
-import com.google.analytics.admin.v1alpha.ReportingDataAnnotation;
 import com.google.analytics.admin.v1alpha.RollupPropertySourceLink;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
@@ -249,8 +242,6 @@ import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse;
-import com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest;
-import com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse;
 import com.google.analytics.admin.v1alpha.SubpropertyEventFilter;
 import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
@@ -275,7 +266,6 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateKeyEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
-import com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest;
 import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
@@ -719,21 +709,6 @@ public class AnalyticsAdminServiceStubSettings
       updateSubpropertyEventFilterSettings;
   private final UnaryCallSettings<DeleteSubpropertyEventFilterRequest, Empty>
       deleteSubpropertyEventFilterSettings;
-  private final UnaryCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      createReportingDataAnnotationSettings;
-  private final UnaryCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-      getReportingDataAnnotationSettings;
-  private final PagedCallSettings<
-          ListReportingDataAnnotationsRequest,
-          ListReportingDataAnnotationsResponse,
-          ListReportingDataAnnotationsPagedResponse>
-      listReportingDataAnnotationsSettings;
-  private final UnaryCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      updateReportingDataAnnotationSettings;
-  private final UnaryCallSettings<DeleteReportingDataAnnotationRequest, Empty>
-      deleteReportingDataAnnotationSettings;
-  private final UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-      submitUserDeletionSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1814,53 +1789,6 @@ public class AnalyticsAdminServiceStubSettings
             }
           };
 
-  private static final PagedListDescriptor<
-          ListReportingDataAnnotationsRequest,
-          ListReportingDataAnnotationsResponse,
-          ReportingDataAnnotation>
-      LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListReportingDataAnnotationsRequest,
-              ListReportingDataAnnotationsResponse,
-              ReportingDataAnnotation>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListReportingDataAnnotationsRequest injectToken(
-                ListReportingDataAnnotationsRequest payload, String token) {
-              return ListReportingDataAnnotationsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListReportingDataAnnotationsRequest injectPageSize(
-                ListReportingDataAnnotationsRequest payload, int pageSize) {
-              return ListReportingDataAnnotationsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListReportingDataAnnotationsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListReportingDataAnnotationsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ReportingDataAnnotation> extractResources(
-                ListReportingDataAnnotationsResponse payload) {
-              return payload.getReportingDataAnnotationsList();
-            }
-          };
-
   private static final PagedListResponseFactory<
           ListAccountsRequest, ListAccountsResponse, ListAccountsPagedResponse>
       LIST_ACCOUNTS_PAGE_STR_FACT =
@@ -2499,38 +2427,6 @@ public class AnalyticsAdminServiceStubSettings
                       PageContext.create(
                           callable, LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_DESC, request, context);
               return ListSubpropertyEventFiltersPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListReportingDataAnnotationsRequest,
-          ListReportingDataAnnotationsResponse,
-          ListReportingDataAnnotationsPagedResponse>
-      LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListReportingDataAnnotationsRequest,
-              ListReportingDataAnnotationsResponse,
-              ListReportingDataAnnotationsPagedResponse>() {
-            @Override
-            public ApiFuture<ListReportingDataAnnotationsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<
-                        ListReportingDataAnnotationsRequest, ListReportingDataAnnotationsResponse>
-                    callable,
-                ListReportingDataAnnotationsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListReportingDataAnnotationsResponse> futureResponse) {
-              PageContext<
-                      ListReportingDataAnnotationsRequest,
-                      ListReportingDataAnnotationsResponse,
-                      ReportingDataAnnotation>
-                  pageContext =
-                      PageContext.create(
-                          callable,
-                          LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_DESC,
-                          request,
-                          context);
-              return ListReportingDataAnnotationsPagedResponse.createAsync(
                   pageContext, futureResponse);
             }
           };
@@ -3503,45 +3399,6 @@ public class AnalyticsAdminServiceStubSettings
     return deleteSubpropertyEventFilterSettings;
   }
 
-  /** Returns the object with the settings used for calls to createReportingDataAnnotation. */
-  public UnaryCallSettings<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      createReportingDataAnnotationSettings() {
-    return createReportingDataAnnotationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to getReportingDataAnnotation. */
-  public UnaryCallSettings<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-      getReportingDataAnnotationSettings() {
-    return getReportingDataAnnotationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listReportingDataAnnotations. */
-  public PagedCallSettings<
-          ListReportingDataAnnotationsRequest,
-          ListReportingDataAnnotationsResponse,
-          ListReportingDataAnnotationsPagedResponse>
-      listReportingDataAnnotationsSettings() {
-    return listReportingDataAnnotationsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to updateReportingDataAnnotation. */
-  public UnaryCallSettings<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-      updateReportingDataAnnotationSettings() {
-    return updateReportingDataAnnotationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to deleteReportingDataAnnotation. */
-  public UnaryCallSettings<DeleteReportingDataAnnotationRequest, Empty>
-      deleteReportingDataAnnotationSettings() {
-    return deleteReportingDataAnnotationSettings;
-  }
-
-  /** Returns the object with the settings used for calls to submitUserDeletion. */
-  public UnaryCallSettings<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-      submitUserDeletionSettings() {
-    return submitUserDeletionSettings;
-  }
-
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -3840,17 +3697,6 @@ public class AnalyticsAdminServiceStubSettings
         settingsBuilder.updateSubpropertyEventFilterSettings().build();
     deleteSubpropertyEventFilterSettings =
         settingsBuilder.deleteSubpropertyEventFilterSettings().build();
-    createReportingDataAnnotationSettings =
-        settingsBuilder.createReportingDataAnnotationSettings().build();
-    getReportingDataAnnotationSettings =
-        settingsBuilder.getReportingDataAnnotationSettings().build();
-    listReportingDataAnnotationsSettings =
-        settingsBuilder.listReportingDataAnnotationsSettings().build();
-    updateReportingDataAnnotationSettings =
-        settingsBuilder.updateReportingDataAnnotationSettings().build();
-    deleteReportingDataAnnotationSettings =
-        settingsBuilder.deleteReportingDataAnnotationSettings().build();
-    submitUserDeletionSettings = settingsBuilder.submitUserDeletionSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -4236,24 +4082,6 @@ public class AnalyticsAdminServiceStubSettings
         updateSubpropertyEventFilterSettings;
     private final UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
         deleteSubpropertyEventFilterSettings;
-    private final UnaryCallSettings.Builder<
-            CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        createReportingDataAnnotationSettings;
-    private final UnaryCallSettings.Builder<
-            GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-        getReportingDataAnnotationSettings;
-    private final PagedCallSettings.Builder<
-            ListReportingDataAnnotationsRequest,
-            ListReportingDataAnnotationsResponse,
-            ListReportingDataAnnotationsPagedResponse>
-        listReportingDataAnnotationsSettings;
-    private final UnaryCallSettings.Builder<
-            UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        updateReportingDataAnnotationSettings;
-    private final UnaryCallSettings.Builder<DeleteReportingDataAnnotationRequest, Empty>
-        deleteReportingDataAnnotationSettings;
-    private final UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-        submitUserDeletionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -4480,13 +4308,6 @@ public class AnalyticsAdminServiceStubSettings
           PagedCallSettings.newBuilder(LIST_SUBPROPERTY_EVENT_FILTERS_PAGE_STR_FACT);
       updateSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSubpropertyEventFilterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      createReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      getReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listReportingDataAnnotationsSettings =
-          PagedCallSettings.newBuilder(LIST_REPORTING_DATA_ANNOTATIONS_PAGE_STR_FACT);
-      updateReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      deleteReportingDataAnnotationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      submitUserDeletionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -4639,13 +4460,7 @@ public class AnalyticsAdminServiceStubSettings
               getSubpropertyEventFilterSettings,
               listSubpropertyEventFiltersSettings,
               updateSubpropertyEventFilterSettings,
-              deleteSubpropertyEventFilterSettings,
-              createReportingDataAnnotationSettings,
-              getReportingDataAnnotationSettings,
-              listReportingDataAnnotationsSettings,
-              updateReportingDataAnnotationSettings,
-              deleteReportingDataAnnotationSettings,
-              submitUserDeletionSettings);
+              deleteSubpropertyEventFilterSettings);
       initDefaults(this);
     }
 
@@ -4839,16 +4654,6 @@ public class AnalyticsAdminServiceStubSettings
           settings.updateSubpropertyEventFilterSettings.toBuilder();
       deleteSubpropertyEventFilterSettings =
           settings.deleteSubpropertyEventFilterSettings.toBuilder();
-      createReportingDataAnnotationSettings =
-          settings.createReportingDataAnnotationSettings.toBuilder();
-      getReportingDataAnnotationSettings = settings.getReportingDataAnnotationSettings.toBuilder();
-      listReportingDataAnnotationsSettings =
-          settings.listReportingDataAnnotationsSettings.toBuilder();
-      updateReportingDataAnnotationSettings =
-          settings.updateReportingDataAnnotationSettings.toBuilder();
-      deleteReportingDataAnnotationSettings =
-          settings.deleteReportingDataAnnotationSettings.toBuilder();
-      submitUserDeletionSettings = settings.submitUserDeletionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -5001,13 +4806,7 @@ public class AnalyticsAdminServiceStubSettings
               getSubpropertyEventFilterSettings,
               listSubpropertyEventFiltersSettings,
               updateSubpropertyEventFilterSettings,
-              deleteSubpropertyEventFilterSettings,
-              createReportingDataAnnotationSettings,
-              getReportingDataAnnotationSettings,
-              listReportingDataAnnotationsSettings,
-              updateReportingDataAnnotationSettings,
-              deleteReportingDataAnnotationSettings,
-              submitUserDeletionSettings);
+              deleteSubpropertyEventFilterSettings);
     }
 
     private static Builder createDefault() {
@@ -5782,36 +5581,6 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .deleteSubpropertyEventFilterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .createReportingDataAnnotationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .getReportingDataAnnotationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .listReportingDataAnnotationsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .updateReportingDataAnnotationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .deleteReportingDataAnnotationSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
-
-      builder
-          .submitUserDeletionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -6860,45 +6629,6 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<DeleteSubpropertyEventFilterRequest, Empty>
         deleteSubpropertyEventFilterSettings() {
       return deleteSubpropertyEventFilterSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to createReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<CreateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        createReportingDataAnnotationSettings() {
-      return createReportingDataAnnotationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to getReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<GetReportingDataAnnotationRequest, ReportingDataAnnotation>
-        getReportingDataAnnotationSettings() {
-      return getReportingDataAnnotationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to listReportingDataAnnotations. */
-    public PagedCallSettings.Builder<
-            ListReportingDataAnnotationsRequest,
-            ListReportingDataAnnotationsResponse,
-            ListReportingDataAnnotationsPagedResponse>
-        listReportingDataAnnotationsSettings() {
-      return listReportingDataAnnotationsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to updateReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<UpdateReportingDataAnnotationRequest, ReportingDataAnnotation>
-        updateReportingDataAnnotationSettings() {
-      return updateReportingDataAnnotationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteReportingDataAnnotation. */
-    public UnaryCallSettings.Builder<DeleteReportingDataAnnotationRequest, Empty>
-        deleteReportingDataAnnotationSettings() {
-      return deleteReportingDataAnnotationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to submitUserDeletion. */
-    public UnaryCallSettings.Builder<SubmitUserDeletionRequest, SubmitUserDeletionResponse>
-        submitUserDeletionSettings() {
-      return submitUserDeletionSettings;
     }
 
     @Override

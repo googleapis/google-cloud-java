@@ -38,7 +38,6 @@ public interface AvroSourceOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AvroSourceOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1.GcsSource getGcsSource();
-
   /**
    *
    *

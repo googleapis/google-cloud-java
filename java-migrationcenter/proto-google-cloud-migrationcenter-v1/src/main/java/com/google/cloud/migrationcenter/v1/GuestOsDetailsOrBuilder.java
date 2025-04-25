@@ -36,7 +36,6 @@ public interface GuestOsDetailsOrBuilder
    * @return The osName.
    */
   java.lang.String getOsName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GuestOsDetailsOrBuilder
    * @return The enum numeric value on the wire for family.
    */
   int getFamilyValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GuestOsDetailsOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface GuestOsDetailsOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface GuestOsDetailsOrBuilder
    * @return The config.
    */
   com.google.cloud.migrationcenter.v1.GuestConfigDetails getConfig();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface GuestOsDetailsOrBuilder
    * @return Whether the runtime field is set.
    */
   boolean hasRuntime();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface GuestOsDetailsOrBuilder
    * @return The runtime.
    */
   com.google.cloud.migrationcenter.v1.GuestRuntimeDetails getRuntime();
-
   /**
    *
    *

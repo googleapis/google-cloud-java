@@ -38,7 +38,6 @@ public interface BulkInsertInstanceRequestOrBuilder
    * @return Whether the bulkInsertInstanceResourceResource field is set.
    */
   boolean hasBulkInsertInstanceResourceResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface BulkInsertInstanceRequestOrBuilder
    * @return The bulkInsertInstanceResourceResource.
    */
   com.google.cloud.compute.v1.BulkInsertInstanceResource getBulkInsertInstanceResourceResource();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface BulkInsertInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface BulkInsertInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public interface BulkInsertInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public interface BulkInsertInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

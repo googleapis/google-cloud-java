@@ -33,7 +33,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.QueryReasoningEngineResponse)
     QueryReasoningEngineResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryReasoningEngineResponse.newBuilder() to construct.
   private QueryReasoningEngineResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int OUTPUT_FIELD_NUMBER = 1;
   private com.google.protobuf.Value output_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
   public boolean hasOutput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
   public com.google.protobuf.Value getOutput() {
     return output_ == null ? com.google.protobuf.Value.getDefaultInstance() : output_;
   }
-
   /**
    *
    *
@@ -277,7 +273,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -481,7 +476,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         outputBuilder_;
-
     /**
      *
      *
@@ -496,7 +490,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
     public boolean hasOutput() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -515,7 +508,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
         return outputBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -538,7 +530,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -558,7 +549,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -586,7 +576,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -606,7 +595,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -621,7 +609,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
       onChanged();
       return getOutputFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -638,7 +625,6 @@ public final class QueryReasoningEngineResponse extends com.google.protobuf.Gene
         return output_ == null ? com.google.protobuf.Value.getDefaultInstance() : output_;
       }
     }
-
     /**
      *
      *

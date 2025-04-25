@@ -33,7 +33,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.TestRunDifference)
     TestRunDifferenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TestRunDifference.newBuilder() to construct.
   private TestRunDifference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -148,7 +147,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>DIFF_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DIFF_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -159,7 +157,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>INTENT = 1;</code>
      */
     public static final int INTENT_VALUE = 1;
-
     /**
      *
      *
@@ -170,7 +167,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>PAGE = 2;</code>
      */
     public static final int PAGE_VALUE = 2;
-
     /**
      *
      *
@@ -181,7 +177,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>PARAMETERS = 3;</code>
      */
     public static final int PARAMETERS_VALUE = 3;
-
     /**
      *
      *
@@ -192,7 +187,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
      * <code>UTTERANCE = 4;</code>
      */
     public static final int UTTERANCE_VALUE = 4;
-
     /**
      *
      *
@@ -297,7 +291,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -313,7 +306,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -338,7 +330,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -363,7 +354,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -562,7 +552,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -760,7 +749,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -776,7 +764,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -795,7 +782,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.dialogflow.cx.v3beta1.TestRunDifference.DiffType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -838,7 +823,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +842,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -882,7 +865,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -929,7 +910,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +928,6 @@ public final class TestRunDifference extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

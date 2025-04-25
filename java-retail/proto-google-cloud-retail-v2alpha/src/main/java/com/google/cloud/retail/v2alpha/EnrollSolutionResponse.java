@@ -33,7 +33,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.EnrollSolutionResponse)
     EnrollSolutionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnrollSolutionResponse.newBuilder() to construct.
   private EnrollSolutionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
 
   public static final int ENROLLED_SOLUTION_FIELD_NUMBER = 1;
   private int enrolledSolution_ = 0;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
   public int getEnrolledSolutionValue() {
     return enrolledSolution_;
   }
-
   /**
    *
    *
@@ -263,7 +260,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -446,7 +442,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int enrolledSolution_ = 0;
-
     /**
      *
      *
@@ -462,7 +457,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
     public int getEnrolledSolutionValue() {
       return enrolledSolution_;
     }
-
     /**
      *
      *
@@ -481,7 +475,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -499,7 +492,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
           com.google.cloud.retail.v2alpha.SolutionType.forNumber(enrolledSolution_);
       return result == null ? com.google.cloud.retail.v2alpha.SolutionType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -521,7 +513,6 @@ public final class EnrollSolutionResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

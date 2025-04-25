@@ -37,7 +37,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the exactMatchInput field is set.
    */
   boolean hasExactMatchInput();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The exactMatchInput.
    */
   com.google.cloud.aiplatform.v1beta1.ExactMatchInput getExactMatchInput();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the bleuInput field is set.
    */
   boolean hasBleuInput();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The bleuInput.
    */
   com.google.cloud.aiplatform.v1beta1.BleuInput getBleuInput();
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the rougeInput field is set.
    */
   boolean hasRougeInput();
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The rougeInput.
    */
   com.google.cloud.aiplatform.v1beta1.RougeInput getRougeInput();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the fluencyInput field is set.
    */
   boolean hasFluencyInput();
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The fluencyInput.
    */
   com.google.cloud.aiplatform.v1beta1.FluencyInput getFluencyInput();
-
   /**
    *
    *
@@ -193,7 +185,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the coherenceInput field is set.
    */
   boolean hasCoherenceInput();
-
   /**
    *
    *
@@ -206,7 +197,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The coherenceInput.
    */
   com.google.cloud.aiplatform.v1beta1.CoherenceInput getCoherenceInput();
-
   /**
    *
    *
@@ -230,7 +220,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the safetyInput field is set.
    */
   boolean hasSafetyInput();
-
   /**
    *
    *
@@ -243,7 +232,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The safetyInput.
    */
   com.google.cloud.aiplatform.v1beta1.SafetyInput getSafetyInput();
-
   /**
    *
    *
@@ -267,7 +255,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the groundednessInput field is set.
    */
   boolean hasGroundednessInput();
-
   /**
    *
    *
@@ -280,7 +267,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The groundednessInput.
    */
   com.google.cloud.aiplatform.v1beta1.GroundednessInput getGroundednessInput();
-
   /**
    *
    *
@@ -304,7 +290,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the fulfillmentInput field is set.
    */
   boolean hasFulfillmentInput();
-
   /**
    *
    *
@@ -317,7 +302,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The fulfillmentInput.
    */
   com.google.cloud.aiplatform.v1beta1.FulfillmentInput getFulfillmentInput();
-
   /**
    *
    *
@@ -343,7 +327,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the summarizationQualityInput field is set.
    */
   boolean hasSummarizationQualityInput();
-
   /**
    *
    *
@@ -358,7 +341,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The summarizationQualityInput.
    */
   com.google.cloud.aiplatform.v1beta1.SummarizationQualityInput getSummarizationQualityInput();
-
   /**
    *
    *
@@ -387,7 +369,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the pairwiseSummarizationQualityInput field is set.
    */
   boolean hasPairwiseSummarizationQualityInput();
-
   /**
    *
    *
@@ -403,7 +384,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PairwiseSummarizationQualityInput
       getPairwiseSummarizationQualityInput();
-
   /**
    *
    *
@@ -432,7 +412,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the summarizationHelpfulnessInput field is set.
    */
   boolean hasSummarizationHelpfulnessInput();
-
   /**
    *
    *
@@ -448,7 +427,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.SummarizationHelpfulnessInput
       getSummarizationHelpfulnessInput();
-
   /**
    *
    *
@@ -477,7 +455,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the summarizationVerbosityInput field is set.
    */
   boolean hasSummarizationVerbosityInput();
-
   /**
    *
    *
@@ -492,7 +469,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The summarizationVerbosityInput.
    */
   com.google.cloud.aiplatform.v1beta1.SummarizationVerbosityInput getSummarizationVerbosityInput();
-
   /**
    *
    *
@@ -521,7 +497,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the questionAnsweringQualityInput field is set.
    */
   boolean hasQuestionAnsweringQualityInput();
-
   /**
    *
    *
@@ -537,7 +512,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityInput
       getQuestionAnsweringQualityInput();
-
   /**
    *
    *
@@ -566,7 +540,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the pairwiseQuestionAnsweringQualityInput field is set.
    */
   boolean hasPairwiseQuestionAnsweringQualityInput();
-
   /**
    *
    *
@@ -582,7 +555,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PairwiseQuestionAnsweringQualityInput
       getPairwiseQuestionAnsweringQualityInput();
-
   /**
    *
    *
@@ -611,7 +583,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the questionAnsweringRelevanceInput field is set.
    */
   boolean hasQuestionAnsweringRelevanceInput();
-
   /**
    *
    *
@@ -627,7 +598,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringRelevanceInput
       getQuestionAnsweringRelevanceInput();
-
   /**
    *
    *
@@ -657,7 +627,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the questionAnsweringHelpfulnessInput field is set.
    */
   boolean hasQuestionAnsweringHelpfulnessInput();
-
   /**
    *
    *
@@ -674,7 +643,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringHelpfulnessInput
       getQuestionAnsweringHelpfulnessInput();
-
   /**
    *
    *
@@ -705,7 +673,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the questionAnsweringCorrectnessInput field is set.
    */
   boolean hasQuestionAnsweringCorrectnessInput();
-
   /**
    *
    *
@@ -722,7 +689,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringCorrectnessInput
       getQuestionAnsweringCorrectnessInput();
-
   /**
    *
    *
@@ -750,7 +716,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the pointwiseMetricInput field is set.
    */
   boolean hasPointwiseMetricInput();
-
   /**
    *
    *
@@ -763,7 +728,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The pointwiseMetricInput.
    */
   com.google.cloud.aiplatform.v1beta1.PointwiseMetricInput getPointwiseMetricInput();
-
   /**
    *
    *
@@ -788,7 +752,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the pairwiseMetricInput field is set.
    */
   boolean hasPairwiseMetricInput();
-
   /**
    *
    *
@@ -801,7 +764,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The pairwiseMetricInput.
    */
   com.google.cloud.aiplatform.v1beta1.PairwiseMetricInput getPairwiseMetricInput();
-
   /**
    *
    *
@@ -827,7 +789,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the toolCallValidInput field is set.
    */
   boolean hasToolCallValidInput();
-
   /**
    *
    *
@@ -841,7 +802,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The toolCallValidInput.
    */
   com.google.cloud.aiplatform.v1beta1.ToolCallValidInput getToolCallValidInput();
-
   /**
    *
    *
@@ -866,7 +826,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the toolNameMatchInput field is set.
    */
   boolean hasToolNameMatchInput();
-
   /**
    *
    *
@@ -879,7 +838,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The toolNameMatchInput.
    */
   com.google.cloud.aiplatform.v1beta1.ToolNameMatchInput getToolNameMatchInput();
-
   /**
    *
    *
@@ -905,7 +863,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the toolParameterKeyMatchInput field is set.
    */
   boolean hasToolParameterKeyMatchInput();
-
   /**
    *
    *
@@ -920,7 +877,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The toolParameterKeyMatchInput.
    */
   com.google.cloud.aiplatform.v1beta1.ToolParameterKeyMatchInput getToolParameterKeyMatchInput();
-
   /**
    *
    *
@@ -949,7 +905,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the toolParameterKvMatchInput field is set.
    */
   boolean hasToolParameterKvMatchInput();
-
   /**
    *
    *
@@ -964,7 +919,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The toolParameterKvMatchInput.
    */
   com.google.cloud.aiplatform.v1beta1.ToolParameterKVMatchInput getToolParameterKvMatchInput();
-
   /**
    *
    *
@@ -992,7 +946,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the cometInput field is set.
    */
   boolean hasCometInput();
-
   /**
    *
    *
@@ -1006,7 +959,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The cometInput.
    */
   com.google.cloud.aiplatform.v1beta1.CometInput getCometInput();
-
   /**
    *
    *
@@ -1031,7 +983,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the metricxInput field is set.
    */
   boolean hasMetricxInput();
-
   /**
    *
    *
@@ -1044,7 +995,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The metricxInput.
    */
   com.google.cloud.aiplatform.v1beta1.MetricxInput getMetricxInput();
-
   /**
    *
    *
@@ -1070,7 +1020,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the trajectoryExactMatchInput field is set.
    */
   boolean hasTrajectoryExactMatchInput();
-
   /**
    *
    *
@@ -1085,7 +1034,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The trajectoryExactMatchInput.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInput getTrajectoryExactMatchInput();
-
   /**
    *
    *
@@ -1114,7 +1062,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the trajectoryInOrderMatchInput field is set.
    */
   boolean hasTrajectoryInOrderMatchInput();
-
   /**
    *
    *
@@ -1129,7 +1076,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The trajectoryInOrderMatchInput.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryInOrderMatchInput getTrajectoryInOrderMatchInput();
-
   /**
    *
    *
@@ -1158,7 +1104,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the trajectoryAnyOrderMatchInput field is set.
    */
   boolean hasTrajectoryAnyOrderMatchInput();
-
   /**
    *
    *
@@ -1174,7 +1119,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchInput
       getTrajectoryAnyOrderMatchInput();
-
   /**
    *
    *
@@ -1203,7 +1147,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the trajectoryPrecisionInput field is set.
    */
   boolean hasTrajectoryPrecisionInput();
-
   /**
    *
    *
@@ -1218,7 +1161,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The trajectoryPrecisionInput.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionInput getTrajectoryPrecisionInput();
-
   /**
    *
    *
@@ -1246,7 +1188,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the trajectoryRecallInput field is set.
    */
   boolean hasTrajectoryRecallInput();
-
   /**
    *
    *
@@ -1260,7 +1201,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The trajectoryRecallInput.
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryRecallInput getTrajectoryRecallInput();
-
   /**
    *
    *
@@ -1288,7 +1228,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the trajectorySingleToolUseInput field is set.
    */
   boolean hasTrajectorySingleToolUseInput();
-
   /**
    *
    *
@@ -1304,7 +1243,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectorySingleToolUseInput
       getTrajectorySingleToolUseInput();
-
   /**
    *
    *
@@ -1333,7 +1271,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the rubricBasedInstructionFollowingInput field is set.
    */
   boolean hasRubricBasedInstructionFollowingInput();
-
   /**
    *
    *
@@ -1349,7 +1286,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingInput
       getRubricBasedInstructionFollowingInput();
-
   /**
    *
    *
@@ -1379,7 +1315,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
-
   /**
    *
    *
@@ -1410,7 +1345,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return Whether the autoraterConfig field is set.
    */
   boolean hasAutoraterConfig();
-
   /**
    *
    *
@@ -1425,7 +1359,6 @@ public interface EvaluateInstancesRequestOrBuilder
    * @return The autoraterConfig.
    */
   com.google.cloud.aiplatform.v1beta1.AutoraterConfig getAutoraterConfig();
-
   /**
    *
    *

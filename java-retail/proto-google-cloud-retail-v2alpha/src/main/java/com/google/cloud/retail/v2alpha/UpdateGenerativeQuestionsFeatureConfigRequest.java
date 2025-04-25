@@ -34,7 +34,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.UpdateGenerativeQuestionsFeatureConfigRequest)
     UpdateGenerativeQuestionsFeatureConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateGenerativeQuestionsFeatureConfigRequest.newBuilder() to construct.
   private UpdateGenerativeQuestionsFeatureConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
   public static final int GENERATIVE_QUESTIONS_FEATURE_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.GenerativeQuestionsFeatureConfig
       generativeQuestionsFeatureConfig_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
   public boolean hasGenerativeQuestionsFeatureConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
         ? com.google.cloud.retail.v2alpha.GenerativeQuestionsFeatureConfig.getDefaultInstance()
         : generativeQuestionsFeatureConfig_;
   }
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -149,7 +144,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +162,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -376,7 +369,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -617,7 +609,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
             com.google.cloud.retail.v2alpha.GenerativeQuestionsFeatureConfig.Builder,
             com.google.cloud.retail.v2alpha.GenerativeQuestionsFeatureConfigOrBuilder>
         generativeQuestionsFeatureConfigBuilder_;
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
     public boolean hasGenerativeQuestionsFeatureConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -658,7 +648,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
         return generativeQuestionsFeatureConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +727,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return getGenerativeQuestionsFeatureConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -802,7 +786,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
             : generativeQuestionsFeatureConfig_;
       }
     }
-
     /**
      *
      *
@@ -837,7 +820,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -855,7 +837,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -879,7 +860,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -905,7 +885,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +907,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +937,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -982,7 +959,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1022,7 +997,6 @@ public final class UpdateGenerativeQuestionsFeatureConfigRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

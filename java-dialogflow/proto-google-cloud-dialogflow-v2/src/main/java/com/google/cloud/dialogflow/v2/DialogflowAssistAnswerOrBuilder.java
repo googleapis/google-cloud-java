@@ -36,7 +36,6 @@ public interface DialogflowAssistAnswerOrBuilder
    * @return Whether the queryResult field is set.
    */
   boolean hasQueryResult();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DialogflowAssistAnswerOrBuilder
    * @return The queryResult.
    */
   com.google.cloud.dialogflow.v2.QueryResult getQueryResult();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface DialogflowAssistAnswerOrBuilder
    * @return Whether the intentSuggestion field is set.
    */
   boolean hasIntentSuggestion();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface DialogflowAssistAnswerOrBuilder
    * @return The intentSuggestion.
    */
   com.google.cloud.dialogflow.v2.IntentSuggestion getIntentSuggestion();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface DialogflowAssistAnswerOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
-
   /**
    *
    *

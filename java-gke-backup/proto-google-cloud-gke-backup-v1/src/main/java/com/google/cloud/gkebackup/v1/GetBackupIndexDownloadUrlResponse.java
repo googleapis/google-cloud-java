@@ -33,7 +33,6 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse)
     GetBackupIndexDownloadUrlResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetBackupIndexDownloadUrlResponse.newBuilder() to construct.
   private GetBackupIndexDownloadUrlResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,14 +68,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object signedUrl_ = "";
-
   /**
-   *
-   *
-   * <pre>
-   * Required. The signed URL for downloading the backup index.
-   * </pre>
-   *
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The signedUrl.
@@ -93,14 +85,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
-   *
-   *
-   * <pre>
-   * Required. The signed URL for downloading the backup index.
-   * </pre>
-   *
    * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for signedUrl.
@@ -278,7 +263,6 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -467,14 +451,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object signedUrl_ = "";
-
     /**
-     *
-     *
-     * <pre>
-     * Required. The signed URL for downloading the backup index.
-     * </pre>
-     *
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The signedUrl.
@@ -490,14 +467,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
-     *
-     *
-     * <pre>
-     * Required. The signed URL for downloading the backup index.
-     * </pre>
-     *
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for signedUrl.
@@ -513,14 +483,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
-     *
-     *
-     * <pre>
-     * Required. The signed URL for downloading the backup index.
-     * </pre>
-     *
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The signedUrl to set.
@@ -535,14 +498,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
-     *
-     *
-     * <pre>
-     * Required. The signed URL for downloading the backup index.
-     * </pre>
-     *
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
@@ -553,14 +509,7 @@ public final class GetBackupIndexDownloadUrlResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
-     *
-     *
-     * <pre>
-     * Required. The signed URL for downloading the backup index.
-     * </pre>
-     *
      * <code>string signed_url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for signedUrl to set.

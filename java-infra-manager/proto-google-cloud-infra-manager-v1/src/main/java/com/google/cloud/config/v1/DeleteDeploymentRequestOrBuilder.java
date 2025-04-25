@@ -39,7 +39,6 @@ public interface DeleteDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface DeleteDeploymentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -137,7 +135,6 @@ public interface DeleteDeploymentRequestOrBuilder
    * @return The enum numeric value on the wire for deletePolicy.
    */
   int getDeletePolicyValue();
-
   /**
    *
    *

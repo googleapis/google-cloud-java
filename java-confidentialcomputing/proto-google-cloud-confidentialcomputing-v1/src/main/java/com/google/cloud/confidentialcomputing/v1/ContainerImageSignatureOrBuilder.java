@@ -85,7 +85,6 @@ public interface ContainerImageSignatureOrBuilder
    * @return The enum numeric value on the wire for sigAlg.
    */
   int getSigAlgValue();
-
   /**
    *
    *

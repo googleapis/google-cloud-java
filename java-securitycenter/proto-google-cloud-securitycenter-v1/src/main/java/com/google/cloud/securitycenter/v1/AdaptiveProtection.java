@@ -34,7 +34,6 @@ public final class AdaptiveProtection extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.AdaptiveProtection)
     AdaptiveProtectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdaptiveProtection.newBuilder() to construct.
   private AdaptiveProtection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class AdaptiveProtection extends com.google.protobuf.GeneratedMessa
 
   public static final int CONFIDENCE_FIELD_NUMBER = 1;
   private double confidence_ = 0D;
-
   /**
    *
    *
@@ -250,7 +248,6 @@ public final class AdaptiveProtection extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -434,7 +431,6 @@ public final class AdaptiveProtection extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private double confidence_;
-
     /**
      *
      *
@@ -454,7 +450,6 @@ public final class AdaptiveProtection extends com.google.protobuf.GeneratedMessa
     public double getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -478,7 +473,6 @@ public final class AdaptiveProtection extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

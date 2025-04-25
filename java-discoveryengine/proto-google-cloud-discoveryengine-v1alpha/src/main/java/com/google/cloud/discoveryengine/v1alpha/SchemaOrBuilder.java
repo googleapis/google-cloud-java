@@ -36,7 +36,6 @@ public interface SchemaOrBuilder
    * @return Whether the structSchema field is set.
    */
   boolean hasStructSchema();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SchemaOrBuilder
    * @return The structSchema.
    */
   com.google.protobuf.Struct getStructSchema();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface SchemaOrBuilder
    * @return Whether the jsonSchema field is set.
    */
   boolean hasJsonSchema();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface SchemaOrBuilder
    * @return The jsonSchema.
    */
   java.lang.String getJsonSchema();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface SchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.FieldConfig> getFieldConfigsList();
-
   /**
    *
    *
@@ -159,7 +153,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.cloud.discoveryengine.v1alpha.FieldConfig getFieldConfigs(int index);
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   int getFieldConfigsCount();
-
   /**
    *
    *
@@ -186,7 +178,6 @@ public interface SchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.FieldConfigOrBuilder>
       getFieldConfigsOrBuilderList();
-
   /**
    *
    *

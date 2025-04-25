@@ -35,7 +35,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.VirtualClusterConfig)
     VirtualClusterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VirtualClusterConfig.newBuilder() to construct.
   private VirtualClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     private InfrastructureConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stagingBucket_ = "";
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -188,7 +184,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KUBERNETES_CLUSTER_CONFIG_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -207,7 +202,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
   public boolean hasKubernetesClusterConfig() {
     return infrastructureConfigCase_ == 6;
   }
-
   /**
    *
    *
@@ -229,7 +223,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.dataproc.v1.KubernetesClusterConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -253,7 +246,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
 
   public static final int AUXILIARY_SERVICES_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1.AuxiliaryServicesConfig auxiliaryServicesConfig_;
-
   /**
    *
    *
@@ -271,7 +263,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
   public boolean hasAuxiliaryServicesConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -291,7 +282,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.getDefaultInstance()
         : auxiliaryServicesConfig_;
   }
-
   /**
    *
    *
@@ -510,7 +500,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -776,7 +765,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object stagingBucket_ = "";
-
     /**
      *
      *
@@ -809,7 +797,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -842,7 +829,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +860,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -902,7 +887,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -941,7 +925,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.dataproc.v1.KubernetesClusterConfig.Builder,
             com.google.cloud.dataproc.v1.KubernetesClusterConfigOrBuilder>
         kubernetesClusterConfigBuilder_;
-
     /**
      *
      *
@@ -960,7 +943,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     public boolean hasKubernetesClusterConfig() {
       return infrastructureConfigCase_ == 6;
     }
-
     /**
      *
      *
@@ -989,7 +971,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dataproc.v1.KubernetesClusterConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1016,7 +997,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       infrastructureConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1020,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       infrastructureConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1057,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       infrastructureConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1085,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1101,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         getKubernetesClusterConfigBuilder() {
       return getKubernetesClusterConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1149,7 +1125,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return com.google.cloud.dataproc.v1.KubernetesClusterConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1168,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
             com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.Builder,
             com.google.cloud.dataproc.v1.AuxiliaryServicesConfigOrBuilder>
         auxiliaryServicesConfigBuilder_;
-
     /**
      *
      *
@@ -1210,7 +1184,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     public boolean hasAuxiliaryServicesConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1233,7 +1206,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return auxiliaryServicesConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1259,7 +1231,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1282,7 +1253,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1284,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1336,7 +1305,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1322,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return getAuxiliaryServicesConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1376,7 +1343,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
             : auxiliaryServicesConfig_;
       }
     }
-
     /**
      *
      *

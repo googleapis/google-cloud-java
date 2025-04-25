@@ -33,7 +33,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.RaiFilterResult)
     RaiFilterResultOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RaiFilterResult.newBuilder() to construct.
   private RaiFilterResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -95,7 +94,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for filterType.
      */
     int getFilterTypeValue();
-
     /**
      *
      *
@@ -121,7 +119,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for confidenceLevel.
      */
     int getConfidenceLevelValue();
-
     /**
      *
      *
@@ -149,7 +146,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for matchState.
      */
     int getMatchStateValue();
-
     /**
      *
      *
@@ -165,7 +161,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.modelarmor.v1.FilterMatchState getMatchState();
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.RaiFilterResult.RaiFilterTypeResult)
       RaiFilterTypeResultOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use RaiFilterTypeResult.newBuilder() to construct.
     private RaiFilterTypeResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -215,7 +209,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
 
     public static final int FILTER_TYPE_FIELD_NUMBER = 1;
     private int filterType_ = 0;
-
     /**
      *
      *
@@ -231,7 +224,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public int getFilterTypeValue() {
       return filterType_;
     }
-
     /**
      *
      *
@@ -252,7 +244,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
 
     public static final int CONFIDENCE_LEVEL_FIELD_NUMBER = 2;
     private int confidenceLevel_ = 0;
-
     /**
      *
      *
@@ -268,7 +259,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public int getConfidenceLevelValue() {
       return confidenceLevel_;
     }
-
     /**
      *
      *
@@ -291,7 +281,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
 
     public static final int MATCH_STATE_FIELD_NUMBER = 3;
     private int matchState_ = 0;
-
     /**
      *
      *
@@ -309,7 +298,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public int getMatchStateValue() {
       return matchState_;
     }
-
     /**
      *
      *
@@ -522,7 +510,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int filterType_ = 0;
-
       /**
        *
        *
@@ -757,7 +743,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       public int getFilterTypeValue() {
         return filterType_;
       }
-
       /**
        *
        *
@@ -776,7 +761,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -794,7 +778,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.modelarmor.v1.RaiFilterType.forNumber(filterType_);
         return result == null ? com.google.cloud.modelarmor.v1.RaiFilterType.UNRECOGNIZED : result;
       }
-
       /**
        *
        *
@@ -816,7 +799,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -836,7 +818,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
 
       private int confidenceLevel_ = 0;
-
       /**
        *
        *
@@ -852,7 +833,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       public int getConfidenceLevelValue() {
         return confidenceLevel_;
       }
-
       /**
        *
        *
@@ -871,7 +851,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -891,7 +870,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
             ? com.google.cloud.modelarmor.v1.DetectionConfidenceLevel.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -914,7 +892,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -934,7 +911,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
 
       private int matchState_ = 0;
-
       /**
        *
        *
@@ -952,7 +928,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       public int getMatchStateValue() {
         return matchState_;
       }
-
       /**
        *
        *
@@ -973,7 +948,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -995,7 +969,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
             ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1019,7 +992,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1109,7 +1081,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
 
   public static final int EXECUTION_STATE_FIELD_NUMBER = 1;
   private int executionState_ = 0;
-
   /**
    *
    *
@@ -1128,7 +1099,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
   public int getExecutionStateValue() {
     return executionState_;
   }
-
   /**
    *
    *
@@ -1156,7 +1126,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.MessageItem> messageItems_;
-
   /**
    *
    *
@@ -1173,7 +1142,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -1191,7 +1159,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       getMessageItemsOrBuilderList() {
     return messageItems_;
   }
-
   /**
    *
    *
@@ -1208,7 +1175,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
   public int getMessageItemsCount() {
     return messageItems_.size();
   }
-
   /**
    *
    *
@@ -1225,7 +1191,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index) {
     return messageItems_.get(index);
   }
-
   /**
    *
    *
@@ -1245,7 +1210,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
 
   public static final int MATCH_STATE_FIELD_NUMBER = 3;
   private int matchState_ = 0;
-
   /**
    *
    *
@@ -1265,7 +1229,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
   public int getMatchStateValue() {
     return matchState_;
   }
-
   /**
    *
    *
@@ -1325,7 +1288,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
   public int getRaiFilterTypeResultsCount() {
     return internalGetRaiFilterTypeResults().getMap().size();
   }
-
   /**
    *
    *
@@ -1345,7 +1307,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetRaiFilterTypeResults().getMap().containsKey(key);
   }
-
   /** Use {@link #getRaiFilterTypeResultsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1354,7 +1315,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       getRaiFilterTypeResults() {
     return getRaiFilterTypeResultsMap();
   }
-
   /**
    *
    *
@@ -1373,7 +1333,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       getRaiFilterTypeResultsMap() {
     return internalGetRaiFilterTypeResults().getMap();
   }
-
   /**
    *
    *
@@ -1400,7 +1359,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         map = internalGetRaiFilterTypeResults().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1639,7 +1597,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1939,7 +1896,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int executionState_ = 0;
-
     /**
      *
      *
@@ -1958,7 +1914,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public int getExecutionStateValue() {
       return executionState_;
     }
-
     /**
      *
      *
@@ -1980,7 +1935,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2003,7 +1957,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.modelarmor.v1.FilterExecutionState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2028,7 +1981,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2086,7 +2038,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         return messageItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2106,7 +2057,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         return messageItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2126,7 +2076,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         return messageItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2152,7 +2101,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2176,7 +2124,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2202,7 +2149,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2174,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2252,7 +2197,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2276,7 +2220,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2300,7 +2243,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2323,7 +2265,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2346,7 +2287,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2362,7 +2302,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.modelarmor.v1.MessageItem.Builder getMessageItemsBuilder(int index) {
       return getMessageItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2382,7 +2321,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         return messageItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2403,7 +2341,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(messageItems_);
       }
     }
-
     /**
      *
      *
@@ -2420,7 +2357,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       return getMessageItemsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2437,7 +2373,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       return getMessageItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2473,7 +2408,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     }
 
     private int matchState_ = 0;
-
     /**
      *
      *
@@ -2493,7 +2427,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public int getMatchStateValue() {
       return matchState_;
     }
-
     /**
      *
      *
@@ -2516,7 +2449,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2538,7 +2470,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(matchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -2564,7 +2495,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2608,8 +2538,7 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
           defaultEntry() {
         return RaiFilterTypeResultsDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final RaiFilterTypeResultsConverter raiFilterTypeResultsConverter =
         new RaiFilterTypeResultsConverter();
@@ -2651,7 +2580,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
     public int getRaiFilterTypeResultsCount() {
       return internalGetRaiFilterTypeResults().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -2671,7 +2599,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetRaiFilterTypeResults().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getRaiFilterTypeResultsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2680,7 +2607,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         getRaiFilterTypeResults() {
       return getRaiFilterTypeResultsMap();
     }
-
     /**
      *
      *
@@ -2699,7 +2625,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
         getRaiFilterTypeResultsMap() {
       return internalGetRaiFilterTypeResults().getImmutableMap();
     }
-
     /**
      *
      *
@@ -2729,7 +2654,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
           ? raiFilterTypeResultsConverter.build(map.get(key))
           : defaultValue;
     }
-
     /**
      *
      *
@@ -2763,7 +2687,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       internalGetMutableRaiFilterTypeResults().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2783,7 +2706,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       internalGetMutableRaiFilterTypeResults().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2792,7 +2714,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return internalGetMutableRaiFilterTypeResults().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -2818,7 +2739,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2847,7 +2767,6 @@ public final class RaiFilterResult extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *

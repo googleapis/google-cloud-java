@@ -38,7 +38,6 @@ public interface SearchModelMonitoringStatsFilterOrBuilder
    * @return Whether the tabularStatsFilter field is set.
    */
   boolean hasTabularStatsFilter();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface SearchModelMonitoringStatsFilterOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.SearchModelMonitoringStatsFilter.TabularStatsFilter
       getTabularStatsFilter();
-
   /**
    *
    *

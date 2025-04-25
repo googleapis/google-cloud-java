@@ -75,7 +75,6 @@ public enum SolarPanelOrientation implements com.google.protobuf.ProtocolMessage
    * <code>SOLAR_PANEL_ORIENTATION_UNSPECIFIED = 0;</code>
    */
   public static final int SOLAR_PANEL_ORIENTATION_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public enum SolarPanelOrientation implements com.google.protobuf.ProtocolMessage
    * <code>LANDSCAPE = 1;</code>
    */
   public static final int LANDSCAPE_VALUE = 1;
-
   /**
    *
    *

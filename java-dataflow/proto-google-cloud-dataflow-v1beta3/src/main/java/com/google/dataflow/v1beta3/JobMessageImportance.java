@@ -120,7 +120,6 @@ public enum JobMessageImportance implements com.google.protobuf.ProtocolMessageE
    * <code>JOB_MESSAGE_IMPORTANCE_UNKNOWN = 0;</code>
    */
   public static final int JOB_MESSAGE_IMPORTANCE_UNKNOWN_VALUE = 0;
-
   /**
    *
    *
@@ -134,7 +133,6 @@ public enum JobMessageImportance implements com.google.protobuf.ProtocolMessageE
    * <code>JOB_MESSAGE_DEBUG = 1;</code>
    */
   public static final int JOB_MESSAGE_DEBUG_VALUE = 1;
-
   /**
    *
    *
@@ -149,7 +147,6 @@ public enum JobMessageImportance implements com.google.protobuf.ProtocolMessageE
    * <code>JOB_MESSAGE_DETAILED = 2;</code>
    */
   public static final int JOB_MESSAGE_DETAILED_VALUE = 2;
-
   /**
    *
    *
@@ -164,7 +161,6 @@ public enum JobMessageImportance implements com.google.protobuf.ProtocolMessageE
    * <code>JOB_MESSAGE_BASIC = 5;</code>
    */
   public static final int JOB_MESSAGE_BASIC_VALUE = 5;
-
   /**
    *
    *
@@ -179,7 +175,6 @@ public enum JobMessageImportance implements com.google.protobuf.ProtocolMessageE
    * <code>JOB_MESSAGE_WARNING = 3;</code>
    */
   public static final int JOB_MESSAGE_WARNING_VALUE = 3;
-
   /**
    *
    *

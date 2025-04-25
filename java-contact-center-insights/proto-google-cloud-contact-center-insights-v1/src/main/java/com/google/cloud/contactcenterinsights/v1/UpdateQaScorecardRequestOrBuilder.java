@@ -38,7 +38,6 @@ public interface UpdateQaScorecardRequestOrBuilder
    * @return Whether the qaScorecard field is set.
    */
   boolean hasQaScorecard();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdateQaScorecardRequestOrBuilder
    * @return The qaScorecard.
    */
   com.google.cloud.contactcenterinsights.v1.QaScorecard getQaScorecard();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UpdateQaScorecardRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UpdateQaScorecardRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

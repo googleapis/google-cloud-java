@@ -98,19 +98,6 @@ public final class FlexTemplatesServiceGrpc {
     return FlexTemplatesServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static FlexTemplatesServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<FlexTemplatesServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<FlexTemplatesServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public FlexTemplatesServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new FlexTemplatesServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return FlexTemplatesServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -219,40 +206,6 @@ public final class FlexTemplatesServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FlexTemplatesService.
-   *
-   * <pre>
-   * Provides a service for Flex templates. This feature is not ready yet.
-   * </pre>
-   */
-  public static final class FlexTemplatesServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<FlexTemplatesServiceBlockingV2Stub> {
-    private FlexTemplatesServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected FlexTemplatesServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new FlexTemplatesServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Launch a job with a FlexTemplate.
-     * </pre>
-     */
-    public com.google.dataflow.v1beta3.LaunchFlexTemplateResponse launchFlexTemplate(
-        com.google.dataflow.v1beta3.LaunchFlexTemplateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getLaunchFlexTemplateMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service FlexTemplatesService.
    *
    * <pre>
    * Provides a service for Flex templates. This feature is not ready yet.

@@ -53,7 +53,6 @@ public interface UserEventOrBuilder
    * @return The eventType.
    */
   java.lang.String getEventType();
-
   /**
    *
    *
@@ -98,7 +97,6 @@ public interface UserEventOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
-
   /**
    *
    *
@@ -113,7 +111,6 @@ public interface UserEventOrBuilder
    * @return The userInfo.
    */
   com.google.cloud.recommendationengine.v1beta1.UserInfo getUserInfo();
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public interface UserEventOrBuilder
    * @return Whether the eventDetail field is set.
    */
   boolean hasEventDetail();
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public interface UserEventOrBuilder
    * @return The eventDetail.
    */
   com.google.cloud.recommendationengine.v1beta1.EventDetail getEventDetail();
-
   /**
    *
    *
@@ -210,7 +205,6 @@ public interface UserEventOrBuilder
    * @return Whether the productEventDetail field is set.
    */
   boolean hasProductEventDetail();
-
   /**
    *
    *
@@ -248,7 +242,6 @@ public interface UserEventOrBuilder
    * @return The productEventDetail.
    */
   com.google.cloud.recommendationengine.v1beta1.ProductEventDetail getProductEventDetail();
-
   /**
    *
    *
@@ -300,7 +293,6 @@ public interface UserEventOrBuilder
    * @return Whether the eventTime field is set.
    */
   boolean hasEventTime();
-
   /**
    *
    *
@@ -315,7 +307,6 @@ public interface UserEventOrBuilder
    * @return The eventTime.
    */
   com.google.protobuf.Timestamp getEventTime();
-
   /**
    *
    *
@@ -344,7 +335,6 @@ public interface UserEventOrBuilder
    * @return The enum numeric value on the wire for eventSource.
    */
   int getEventSourceValue();
-
   /**
    *
    *

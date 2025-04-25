@@ -44,7 +44,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -85,7 +84,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return Whether the interval field is set.
    */
   boolean hasInterval();
-
   /**
    *
    *
@@ -139,7 +136,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The interval.
    */
   com.google.monitoring.v3.TimeInterval getInterval();
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return Whether the aggregation field is set.
    */
   boolean hasAggregation();
-
   /**
    *
    *
@@ -188,7 +183,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The aggregation.
    */
   com.google.monitoring.v3.Aggregation getAggregation();
-
   /**
    *
    *
@@ -217,7 +211,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return Whether the secondaryAggregation field is set.
    */
   boolean hasSecondaryAggregation();
-
   /**
    *
    *
@@ -231,7 +224,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The secondaryAggregation.
    */
   com.google.monitoring.v3.Aggregation getSecondaryAggregation();
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The enum numeric value on the wire for view.
    */
   int getViewValue();
-
   /**
    *
    *
@@ -333,7 +323,6 @@ public interface ListTimeSeriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

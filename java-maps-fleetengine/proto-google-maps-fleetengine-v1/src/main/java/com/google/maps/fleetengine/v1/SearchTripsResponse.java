@@ -33,7 +33,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:maps.fleetengine.v1.SearchTripsResponse)
     SearchTripsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchTripsResponse.newBuilder() to construct.
   private SearchTripsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.v1.Trip> trips_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.maps.fleetengine.v1.Trip> getTripsList() {
     return trips_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       getTripsOrBuilderList() {
     return trips_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
   public int getTripsCount() {
     return trips_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
   public com.google.maps.fleetengine.v1.Trip getTrips(int index) {
     return trips_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return tripsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return tripsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return tripsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +773,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -810,7 +793,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -831,7 +813,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +832,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +851,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +863,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
     public com.google.maps.fleetengine.v1.Trip.Builder getTripsBuilder(int index) {
       return getTripsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -901,7 +879,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return tripsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(trips_);
       }
     }
-
     /**
      *
      *
@@ -933,7 +909,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       return getTripsFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.v1.Trip.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -947,7 +922,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       return getTripsFieldBuilder()
           .addBuilder(index, com.google.maps.fleetengine.v1.Trip.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -979,7 +953,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1004,7 +977,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1043,6 @@ public final class SearchTripsResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

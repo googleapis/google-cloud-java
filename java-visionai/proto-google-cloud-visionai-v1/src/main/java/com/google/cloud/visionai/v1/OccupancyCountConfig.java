@@ -33,7 +33,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.OccupancyCountConfig)
     OccupancyCountConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OccupancyCountConfig.newBuilder() to construct.
   private OccupancyCountConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_PEOPLE_COUNTING_FIELD_NUMBER = 1;
   private boolean enablePeopleCounting_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_VEHICLE_COUNTING_FIELD_NUMBER = 2;
   private boolean enableVehicleCounting_ = false;
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_DWELLING_TIME_TRACKING_FIELD_NUMBER = 3;
   private boolean enableDwellingTimeTracking_ = false;
-
   /**
    *
    *
@@ -299,7 +295,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -508,7 +503,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enablePeopleCounting_;
-
     /**
      *
      *
@@ -525,7 +519,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnablePeopleCounting() {
       return enablePeopleCounting_;
     }
-
     /**
      *
      *
@@ -546,7 +539,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +559,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     }
 
     private boolean enableVehicleCounting_;
-
     /**
      *
      *
@@ -584,7 +575,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnableVehicleCounting() {
       return enableVehicleCounting_;
     }
-
     /**
      *
      *
@@ -605,7 +595,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -626,7 +615,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     }
 
     private boolean enableDwellingTimeTracking_;
-
     /**
      *
      *
@@ -643,7 +631,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnableDwellingTimeTracking() {
       return enableDwellingTimeTracking_;
     }
-
     /**
      *
      *
@@ -664,7 +651,6 @@ public final class OccupancyCountConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface ScoreMetricsOrBuilder
    * @return Whether the overallMetrics field is set.
    */
   boolean hasOverallMetrics();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ScoreMetricsOrBuilder
    * @return The overallMetrics.
    */
   com.google.recaptchaenterprise.v1.ScoreDistribution getOverallMetrics();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ScoreMetricsOrBuilder
    * </code>
    */
   int getActionMetricsCount();
-
   /**
    *
    *
@@ -88,12 +85,10 @@ public interface ScoreMetricsOrBuilder
    * </code>
    */
   boolean containsActionMetrics(java.lang.String key);
-
   /** Use {@link #getActionMetricsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
       getActionMetrics();
-
   /**
    *
    *
@@ -108,7 +103,6 @@ public interface ScoreMetricsOrBuilder
    */
   java.util.Map<java.lang.String, com.google.recaptchaenterprise.v1.ScoreDistribution>
       getActionMetricsMap();
-
   /**
    *
    *
@@ -126,7 +120,6 @@ public interface ScoreMetricsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.recaptchaenterprise.v1.ScoreDistribution defaultValue);
-
   /**
    *
    *

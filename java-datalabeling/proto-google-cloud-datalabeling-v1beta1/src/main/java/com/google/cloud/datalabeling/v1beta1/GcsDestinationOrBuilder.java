@@ -36,7 +36,6 @@ public interface GcsDestinationOrBuilder
    * @return The outputUri.
    */
   java.lang.String getOutputUri();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface GcsDestinationOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface SearchKnowledgeAnswerOrBuilder
    * @return The answer.
    */
   java.lang.String getAnswer();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SearchKnowledgeAnswerOrBuilder
    * @return The enum numeric value on the wire for answerType.
    */
   int getAnswerTypeValue();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface SearchKnowledgeAnswerOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSource>
       getAnswerSourcesList();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface SearchKnowledgeAnswerOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSource getAnswerSources(
       int index);
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface SearchKnowledgeAnswerOrBuilder
    * </code>
    */
   int getAnswerSourcesCount();
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public interface SearchKnowledgeAnswerOrBuilder
   java.util.List<
           ? extends com.google.cloud.dialogflow.v2beta1.SearchKnowledgeAnswer.AnswerSourceOrBuilder>
       getAnswerSourcesOrBuilderList();
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public interface SearchKnowledgeAnswerOrBuilder
    * @return The answerRecord.
    */
   java.lang.String getAnswerRecord();
-
   /**
    *
    *

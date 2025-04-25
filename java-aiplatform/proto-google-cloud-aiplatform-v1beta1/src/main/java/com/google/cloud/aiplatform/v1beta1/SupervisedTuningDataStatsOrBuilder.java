@@ -111,7 +111,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * @return Whether the userInputTokenDistribution field is set.
    */
   boolean hasUserInputTokenDistribution();
-
   /**
    *
    *
@@ -127,7 +126,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
       getUserInputTokenDistribution();
-
   /**
    *
    *
@@ -156,7 +154,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * @return Whether the userOutputTokenDistribution field is set.
    */
   boolean hasUserOutputTokenDistribution();
-
   /**
    *
    *
@@ -172,7 +169,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
       getUserOutputTokenDistribution();
-
   /**
    *
    *
@@ -201,7 +197,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * @return Whether the userMessagePerExampleDistribution field is set.
    */
   boolean hasUserMessagePerExampleDistribution();
-
   /**
    *
    *
@@ -217,7 +212,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.SupervisedTuningDatasetDistribution
       getUserMessagePerExampleDistribution();
-
   /**
    *
    *
@@ -244,7 +238,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getUserDatasetExamplesList();
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getUserDatasetExamples(int index);
-
   /**
    *
    *
@@ -270,7 +262,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * </code>
    */
   int getUserDatasetExamplesCount();
-
   /**
    *
    *
@@ -284,7 +275,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getUserDatasetExamplesOrBuilderList();
-
   /**
    *
    *
@@ -325,7 +315,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * @return A list containing the truncatedExampleIndices.
    */
   java.util.List<java.lang.Long> getTruncatedExampleIndicesList();
-
   /**
    *
    *
@@ -339,7 +328,6 @@ public interface SupervisedTuningDataStatsOrBuilder
    * @return The count of truncatedExampleIndices.
    */
   int getTruncatedExampleIndicesCount();
-
   /**
    *
    *

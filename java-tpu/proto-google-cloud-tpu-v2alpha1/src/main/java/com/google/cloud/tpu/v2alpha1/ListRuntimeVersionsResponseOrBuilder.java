@@ -34,7 +34,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.RuntimeVersion runtime_versions = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.RuntimeVersion> getRuntimeVersionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.RuntimeVersion runtime_versions = 1;</code>
    */
   com.google.cloud.tpu.v2alpha1.RuntimeVersion getRuntimeVersions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.RuntimeVersion runtime_versions = 1;</code>
    */
   int getRuntimeVersionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.RuntimeVersionOrBuilder>
       getRuntimeVersionsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListRuntimeVersionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

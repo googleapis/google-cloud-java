@@ -43,7 +43,6 @@ public interface ReplicationStatusOrBuilder
    * @return Whether the automatic field is set.
    */
   boolean hasAutomatic();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface ReplicationStatusOrBuilder
    * @return The automatic.
    */
   com.google.cloud.secretmanager.v1beta2.ReplicationStatus.AutomaticStatus getAutomatic();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface ReplicationStatusOrBuilder
    * @return Whether the userManaged field is set.
    */
   boolean hasUserManaged();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ReplicationStatusOrBuilder
    * @return The userManaged.
    */
   com.google.cloud.secretmanager.v1beta2.ReplicationStatus.UserManagedStatus getUserManaged();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateIndexRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateIndexRequestOrBuilder
    * @return Whether the index field is set.
    */
   boolean hasIndex();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateIndexRequestOrBuilder
    * @return The index.
    */
   com.google.cloud.aiplatform.v1beta1.Index getIndex();
-
   /**
    *
    *

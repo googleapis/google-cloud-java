@@ -37,7 +37,6 @@ public interface OracleSslConfigOrBuilder
    * @return The caCertificate.
    */
   java.lang.String getCaCertificate();
-
   /**
    *
    *

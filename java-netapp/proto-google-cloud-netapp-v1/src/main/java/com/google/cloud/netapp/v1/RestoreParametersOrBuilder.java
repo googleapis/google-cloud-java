@@ -38,7 +38,6 @@ public interface RestoreParametersOrBuilder
    * @return Whether the sourceSnapshot field is set.
    */
   boolean hasSourceSnapshot();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface RestoreParametersOrBuilder
    * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface RestoreParametersOrBuilder
    * @return Whether the sourceBackup field is set.
    */
   boolean hasSourceBackup();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface RestoreParametersOrBuilder
    * @return The sourceBackup.
    */
   java.lang.String getSourceBackup();
-
   /**
    *
    *

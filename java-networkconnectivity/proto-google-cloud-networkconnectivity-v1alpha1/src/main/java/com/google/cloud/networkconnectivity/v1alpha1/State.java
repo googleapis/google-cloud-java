@@ -83,7 +83,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STATE_UNSPECIFIED = 0;</code>
    */
   public static final int STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATING = 1;</code>
    */
   public static final int CREATING_VALUE = 1;
-
   /**
    *
    *
@@ -105,7 +103,6 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTIVE = 2;</code>
    */
   public static final int ACTIVE_VALUE = 2;
-
   /**
    *
    *

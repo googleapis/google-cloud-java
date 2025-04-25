@@ -33,7 +33,6 @@ public final class MoveDirectoryResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.MoveDirectoryResponse)
     MoveDirectoryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MoveDirectoryResponse.newBuilder() to construct.
   private MoveDirectoryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class MoveDirectoryResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

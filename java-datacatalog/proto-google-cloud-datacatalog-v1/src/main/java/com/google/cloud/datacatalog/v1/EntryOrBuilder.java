@@ -41,7 +41,6 @@ public interface EntryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -89,7 +88,6 @@ public interface EntryOrBuilder
    * @return The linkedResource.
    */
   java.lang.String getLinkedResource();
-
   /**
    *
    *
@@ -136,7 +134,6 @@ public interface EntryOrBuilder
    * @return The fullyQualifiedName.
    */
   java.lang.String getFullyQualifiedName();
-
   /**
    *
    *
@@ -168,7 +165,6 @@ public interface EntryOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -183,7 +179,6 @@ public interface EntryOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -223,7 +218,6 @@ public interface EntryOrBuilder
    * @return Whether the userSpecifiedType field is set.
    */
   boolean hasUserSpecifiedType();
-
   /**
    *
    *
@@ -248,7 +242,6 @@ public interface EntryOrBuilder
    * @return The userSpecifiedType.
    */
   java.lang.String getUserSpecifiedType();
-
   /**
    *
    *
@@ -289,7 +282,6 @@ public interface EntryOrBuilder
    * @return Whether the integratedSystem field is set.
    */
   boolean hasIntegratedSystem();
-
   /**
    *
    *
@@ -305,7 +297,6 @@ public interface EntryOrBuilder
    * @return The enum numeric value on the wire for integratedSystem.
    */
   int getIntegratedSystemValue();
-
   /**
    *
    *
@@ -342,7 +333,6 @@ public interface EntryOrBuilder
    * @return Whether the userSpecifiedSystem field is set.
    */
   boolean hasUserSpecifiedSystem();
-
   /**
    *
    *
@@ -363,7 +353,6 @@ public interface EntryOrBuilder
    * @return The userSpecifiedSystem.
    */
   java.lang.String getUserSpecifiedSystem();
-
   /**
    *
    *
@@ -398,7 +387,6 @@ public interface EntryOrBuilder
    * @return Whether the sqlDatabaseSystemSpec field is set.
    */
   boolean hasSqlDatabaseSystemSpec();
-
   /**
    *
    *
@@ -412,7 +400,6 @@ public interface EntryOrBuilder
    * @return The sqlDatabaseSystemSpec.
    */
   com.google.cloud.datacatalog.v1.SqlDatabaseSystemSpec getSqlDatabaseSystemSpec();
-
   /**
    *
    *
@@ -439,7 +426,6 @@ public interface EntryOrBuilder
    * @return Whether the lookerSystemSpec field is set.
    */
   boolean hasLookerSystemSpec();
-
   /**
    *
    *
@@ -453,7 +439,6 @@ public interface EntryOrBuilder
    * @return The lookerSystemSpec.
    */
   com.google.cloud.datacatalog.v1.LookerSystemSpec getLookerSystemSpec();
-
   /**
    *
    *
@@ -480,7 +465,6 @@ public interface EntryOrBuilder
    * @return Whether the cloudBigtableSystemSpec field is set.
    */
   boolean hasCloudBigtableSystemSpec();
-
   /**
    *
    *
@@ -495,7 +479,6 @@ public interface EntryOrBuilder
    * @return The cloudBigtableSystemSpec.
    */
   com.google.cloud.datacatalog.v1.CloudBigtableSystemSpec getCloudBigtableSystemSpec();
-
   /**
    *
    *
@@ -523,7 +506,6 @@ public interface EntryOrBuilder
    * @return Whether the gcsFilesetSpec field is set.
    */
   boolean hasGcsFilesetSpec();
-
   /**
    *
    *
@@ -537,7 +519,6 @@ public interface EntryOrBuilder
    * @return The gcsFilesetSpec.
    */
   com.google.cloud.datacatalog.v1.GcsFilesetSpec getGcsFilesetSpec();
-
   /**
    *
    *
@@ -565,7 +546,6 @@ public interface EntryOrBuilder
    * @return Whether the bigqueryTableSpec field is set.
    */
   boolean hasBigqueryTableSpec();
-
   /**
    *
    *
@@ -581,7 +561,6 @@ public interface EntryOrBuilder
    * @return The bigqueryTableSpec.
    */
   com.google.cloud.datacatalog.v1.BigQueryTableSpec getBigqueryTableSpec();
-
   /**
    *
    *
@@ -614,7 +593,6 @@ public interface EntryOrBuilder
    * @return Whether the bigqueryDateShardedSpec field is set.
    */
   boolean hasBigqueryDateShardedSpec();
-
   /**
    *
    *
@@ -633,7 +611,6 @@ public interface EntryOrBuilder
    * @return The bigqueryDateShardedSpec.
    */
   com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec getBigqueryDateShardedSpec();
-
   /**
    *
    *
@@ -665,7 +642,6 @@ public interface EntryOrBuilder
    * @return Whether the databaseTableSpec field is set.
    */
   boolean hasDatabaseTableSpec();
-
   /**
    *
    *
@@ -679,7 +655,6 @@ public interface EntryOrBuilder
    * @return The databaseTableSpec.
    */
   com.google.cloud.datacatalog.v1.DatabaseTableSpec getDatabaseTableSpec();
-
   /**
    *
    *
@@ -706,7 +681,6 @@ public interface EntryOrBuilder
    * @return Whether the dataSourceConnectionSpec field is set.
    */
   boolean hasDataSourceConnectionSpec();
-
   /**
    *
    *
@@ -721,7 +695,6 @@ public interface EntryOrBuilder
    * @return The dataSourceConnectionSpec.
    */
   com.google.cloud.datacatalog.v1.DataSourceConnectionSpec getDataSourceConnectionSpec();
-
   /**
    *
    *
@@ -749,7 +722,6 @@ public interface EntryOrBuilder
    * @return Whether the routineSpec field is set.
    */
   boolean hasRoutineSpec();
-
   /**
    *
    *
@@ -763,7 +735,6 @@ public interface EntryOrBuilder
    * @return The routineSpec.
    */
   com.google.cloud.datacatalog.v1.RoutineSpec getRoutineSpec();
-
   /**
    *
    *
@@ -788,7 +759,6 @@ public interface EntryOrBuilder
    * @return Whether the datasetSpec field is set.
    */
   boolean hasDatasetSpec();
-
   /**
    *
    *
@@ -801,7 +771,6 @@ public interface EntryOrBuilder
    * @return The datasetSpec.
    */
   com.google.cloud.datacatalog.v1.DatasetSpec getDatasetSpec();
-
   /**
    *
    *
@@ -826,7 +795,6 @@ public interface EntryOrBuilder
    * @return Whether the filesetSpec field is set.
    */
   boolean hasFilesetSpec();
-
   /**
    *
    *
@@ -840,7 +808,6 @@ public interface EntryOrBuilder
    * @return The filesetSpec.
    */
   com.google.cloud.datacatalog.v1.FilesetSpec getFilesetSpec();
-
   /**
    *
    *
@@ -865,7 +832,6 @@ public interface EntryOrBuilder
    * @return Whether the serviceSpec field is set.
    */
   boolean hasServiceSpec();
-
   /**
    *
    *
@@ -878,7 +844,6 @@ public interface EntryOrBuilder
    * @return The serviceSpec.
    */
   com.google.cloud.datacatalog.v1.ServiceSpec getServiceSpec();
-
   /**
    *
    *
@@ -902,7 +867,6 @@ public interface EntryOrBuilder
    * @return Whether the modelSpec field is set.
    */
   boolean hasModelSpec();
-
   /**
    *
    *
@@ -915,7 +879,6 @@ public interface EntryOrBuilder
    * @return The modelSpec.
    */
   com.google.cloud.datacatalog.v1.ModelSpec getModelSpec();
-
   /**
    *
    *
@@ -940,7 +903,6 @@ public interface EntryOrBuilder
    * @return Whether the featureOnlineStoreSpec field is set.
    */
   boolean hasFeatureOnlineStoreSpec();
-
   /**
    *
    *
@@ -954,7 +916,6 @@ public interface EntryOrBuilder
    * @return The featureOnlineStoreSpec.
    */
   com.google.cloud.datacatalog.v1.FeatureOnlineStoreSpec getFeatureOnlineStoreSpec();
-
   /**
    *
    *
@@ -983,7 +944,6 @@ public interface EntryOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -1019,7 +979,6 @@ public interface EntryOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -1052,7 +1011,6 @@ public interface EntryOrBuilder
    * @return Whether the businessContext field is set.
    */
   boolean hasBusinessContext();
-
   /**
    *
    *
@@ -1065,7 +1023,6 @@ public interface EntryOrBuilder
    * @return The businessContext.
    */
   com.google.cloud.datacatalog.v1.BusinessContext getBusinessContext();
-
   /**
    *
    *
@@ -1089,7 +1046,6 @@ public interface EntryOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
-
   /**
    *
    *
@@ -1102,7 +1058,6 @@ public interface EntryOrBuilder
    * @return The schema.
    */
   com.google.cloud.datacatalog.v1.Schema getSchema();
-
   /**
    *
    *
@@ -1131,7 +1086,6 @@ public interface EntryOrBuilder
    * @return Whether the sourceSystemTimestamps field is set.
    */
   boolean hasSourceSystemTimestamps();
-
   /**
    *
    *
@@ -1149,7 +1103,6 @@ public interface EntryOrBuilder
    * @return The sourceSystemTimestamps.
    */
   com.google.cloud.datacatalog.v1.SystemTimestamps getSourceSystemTimestamps();
-
   /**
    *
    *
@@ -1178,7 +1131,6 @@ public interface EntryOrBuilder
    * @return Whether the usageSignal field is set.
    */
   boolean hasUsageSignal();
-
   /**
    *
    *
@@ -1191,7 +1143,6 @@ public interface EntryOrBuilder
    * @return The usageSignal.
    */
   com.google.cloud.datacatalog.v1.UsageSignal getUsageSignal();
-
   /**
    *
    *
@@ -1217,7 +1168,6 @@ public interface EntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -1232,11 +1182,9 @@ public interface EntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -1251,7 +1199,6 @@ public interface EntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -1270,7 +1217,6 @@ public interface EntryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -1300,7 +1246,6 @@ public interface EntryOrBuilder
    * @return Whether the dataSource field is set.
    */
   boolean hasDataSource();
-
   /**
    *
    *
@@ -1315,7 +1260,6 @@ public interface EntryOrBuilder
    * @return The dataSource.
    */
   com.google.cloud.datacatalog.v1.DataSource getDataSource();
-
   /**
    *
    *
@@ -1344,7 +1288,6 @@ public interface EntryOrBuilder
    * @return Whether the personalDetails field is set.
    */
   boolean hasPersonalDetails();
-
   /**
    *
    *
@@ -1360,7 +1303,6 @@ public interface EntryOrBuilder
    * @return The personalDetails.
    */
   com.google.cloud.datacatalog.v1.PersonalDetails getPersonalDetails();
-
   /**
    *
    *

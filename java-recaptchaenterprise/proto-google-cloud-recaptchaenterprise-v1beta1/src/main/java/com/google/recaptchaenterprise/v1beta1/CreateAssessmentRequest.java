@@ -33,7 +33,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.CreateAssessmentRequest)
     CreateAssessmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateAssessmentRequest.newBuilder() to construct.
   private CreateAssessmentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
 
   public static final int ASSESSMENT_FIELD_NUMBER = 2;
   private com.google.recaptchaenterprise.v1beta1.Assessment assessment_;
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
   public boolean hasAssessment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         ? com.google.recaptchaenterprise.v1beta1.Assessment.getDefaultInstance()
         : assessment_;
   }
-
   /**
    *
    *
@@ -357,7 +351,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -600,7 +592,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -626,7 +617,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -672,7 +661,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
             com.google.recaptchaenterprise.v1beta1.Assessment.Builder,
             com.google.recaptchaenterprise.v1beta1.AssessmentOrBuilder>
         assessmentBuilder_;
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
     public boolean hasAssessment() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -745,7 +731,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
         return assessmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +807,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -846,7 +828,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -863,7 +844,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
       onChanged();
       return getAssessmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class CreateAssessmentRequest extends com.google.protobuf.Generated
             : assessment_;
       }
     }
-
     /**
      *
      *

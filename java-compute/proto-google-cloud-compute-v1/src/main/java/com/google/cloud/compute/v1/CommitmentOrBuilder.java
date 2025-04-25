@@ -36,7 +36,6 @@ public interface CommitmentOrBuilder
    * @return Whether the autoRenew field is set.
    */
   boolean hasAutoRenew();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface CommitmentOrBuilder
    * @return Whether the category field is set.
    */
   boolean hasCategory();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface CommitmentOrBuilder
    * @return The category.
    */
   java.lang.String getCategory();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface CommitmentOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface CommitmentOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface CommitmentOrBuilder
    * @return Whether the customEndTimestamp field is set.
    */
   boolean hasCustomEndTimestamp();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface CommitmentOrBuilder
    * @return The customEndTimestamp.
    */
   java.lang.String getCustomEndTimestamp();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface CommitmentOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface CommitmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface CommitmentOrBuilder
    * @return Whether the endTimestamp field is set.
    */
   boolean hasEndTimestamp();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface CommitmentOrBuilder
    * @return The endTimestamp.
    */
   java.lang.String getEndTimestamp();
-
   /**
    *
    *
@@ -254,14 +243,12 @@ public interface CommitmentOrBuilder
    * @return A list containing the existingReservations.
    */
   java.util.List<java.lang.String> getExistingReservationsList();
-
   /**
    * <code>repeated string existing_reservations = 493028443;</code>
    *
    * @return The count of existingReservations.
    */
   int getExistingReservationsCount();
-
   /**
    * <code>repeated string existing_reservations = 493028443;</code>
    *
@@ -269,7 +256,6 @@ public interface CommitmentOrBuilder
    * @return The existingReservations at the given index.
    */
   java.lang.String getExistingReservations(int index);
-
   /**
    * <code>repeated string existing_reservations = 493028443;</code>
    *
@@ -290,7 +276,6 @@ public interface CommitmentOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -316,7 +301,6 @@ public interface CommitmentOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -329,7 +313,6 @@ public interface CommitmentOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -356,7 +339,6 @@ public interface CommitmentOrBuilder
    * @return Whether the licenseResource field is set.
    */
   boolean hasLicenseResource();
-
   /**
    *
    *
@@ -370,7 +352,6 @@ public interface CommitmentOrBuilder
    * @return The licenseResource.
    */
   com.google.cloud.compute.v1.LicenseResourceCommitment getLicenseResource();
-
   /**
    *
    *
@@ -395,7 +376,6 @@ public interface CommitmentOrBuilder
    * @return A list containing the mergeSourceCommitments.
    */
   java.util.List<java.lang.String> getMergeSourceCommitmentsList();
-
   /**
    *
    *
@@ -408,7 +388,6 @@ public interface CommitmentOrBuilder
    * @return The count of mergeSourceCommitments.
    */
   int getMergeSourceCommitmentsCount();
-
   /**
    *
    *
@@ -422,7 +401,6 @@ public interface CommitmentOrBuilder
    * @return The mergeSourceCommitments at the given index.
    */
   java.lang.String getMergeSourceCommitments(int index);
-
   /**
    *
    *
@@ -449,7 +427,6 @@ public interface CommitmentOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -462,7 +439,6 @@ public interface CommitmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -489,7 +465,6 @@ public interface CommitmentOrBuilder
    * @return Whether the plan field is set.
    */
   boolean hasPlan();
-
   /**
    *
    *
@@ -503,7 +478,6 @@ public interface CommitmentOrBuilder
    * @return The plan.
    */
   java.lang.String getPlan();
-
   /**
    *
    *
@@ -530,7 +504,6 @@ public interface CommitmentOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -543,7 +516,6 @@ public interface CommitmentOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -567,7 +539,6 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList();
-
   /**
    *
    *
@@ -578,7 +549,6 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   com.google.cloud.compute.v1.Reservation getReservations(int index);
-
   /**
    *
    *
@@ -589,7 +559,6 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
    */
   int getReservationsCount();
-
   /**
    *
    *
@@ -601,7 +570,6 @@ public interface CommitmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
       getReservationsOrBuilderList();
-
   /**
    *
    *
@@ -626,7 +594,6 @@ public interface CommitmentOrBuilder
    * @return Whether the resourceStatus field is set.
    */
   boolean hasResourceStatus();
-
   /**
    *
    *
@@ -640,7 +607,6 @@ public interface CommitmentOrBuilder
    * @return The resourceStatus.
    */
   com.google.cloud.compute.v1.CommitmentResourceStatus getResourceStatus();
-
   /**
    *
    *
@@ -663,7 +629,6 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ResourceCommitment> getResourcesList();
-
   /**
    *
    *
@@ -674,7 +639,6 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
    */
   com.google.cloud.compute.v1.ResourceCommitment getResources(int index);
-
   /**
    *
    *
@@ -685,7 +649,6 @@ public interface CommitmentOrBuilder
    * <code>repeated .google.cloud.compute.v1.ResourceCommitment resources = 164412965;</code>
    */
   int getResourcesCount();
-
   /**
    *
    *
@@ -697,7 +660,6 @@ public interface CommitmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ResourceCommitmentOrBuilder>
       getResourcesOrBuilderList();
-
   /**
    *
    *
@@ -721,7 +683,6 @@ public interface CommitmentOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -734,7 +695,6 @@ public interface CommitmentOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -760,7 +720,6 @@ public interface CommitmentOrBuilder
    * @return Whether the splitSourceCommitment field is set.
    */
   boolean hasSplitSourceCommitment();
-
   /**
    *
    *
@@ -773,7 +732,6 @@ public interface CommitmentOrBuilder
    * @return The splitSourceCommitment.
    */
   java.lang.String getSplitSourceCommitment();
-
   /**
    *
    *
@@ -799,7 +757,6 @@ public interface CommitmentOrBuilder
    * @return Whether the startTimestamp field is set.
    */
   boolean hasStartTimestamp();
-
   /**
    *
    *
@@ -812,7 +769,6 @@ public interface CommitmentOrBuilder
    * @return The startTimestamp.
    */
   java.lang.String getStartTimestamp();
-
   /**
    *
    *
@@ -839,7 +795,6 @@ public interface CommitmentOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -853,7 +808,6 @@ public interface CommitmentOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -880,7 +834,6 @@ public interface CommitmentOrBuilder
    * @return Whether the statusMessage field is set.
    */
   boolean hasStatusMessage();
-
   /**
    *
    *
@@ -893,7 +846,6 @@ public interface CommitmentOrBuilder
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
-
   /**
    *
    *
@@ -920,7 +872,6 @@ public interface CommitmentOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -934,7 +885,6 @@ public interface CommitmentOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

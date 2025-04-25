@@ -38,7 +38,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.BlurBaselineConfig)
     BlurBaselineConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BlurBaselineConfig.newBuilder() to construct.
   private BlurBaselineConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int MAX_BLUR_SIGMA_FIELD_NUMBER = 1;
   private float maxBlurSigma_ = 0F;
-
   /**
    *
    *
@@ -250,7 +248,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -438,7 +435,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private float maxBlurSigma_;
-
     /**
      *
      *
@@ -457,7 +453,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
     public float getMaxBlurSigma() {
       return maxBlurSigma_;
     }
-
     /**
      *
      *
@@ -480,7 +475,6 @@ public final class BlurBaselineConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

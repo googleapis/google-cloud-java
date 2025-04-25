@@ -33,7 +33,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.CreateOccurrenceRequest)
     CreateOccurrenceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateOccurrenceRequest.newBuilder() to construct.
   private CreateOccurrenceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
 
   public static final int OCCURRENCE_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.Occurrence occurrence_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
   public boolean hasOccurrence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
   public io.grafeas.v1beta1.Occurrence getOccurrence() {
     return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
   }
-
   /**
    *
    *
@@ -342,7 +336,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -555,7 +548,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -579,7 +571,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -676,7 +664,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
             io.grafeas.v1beta1.Occurrence.Builder,
             io.grafeas.v1beta1.OccurrenceOrBuilder>
         occurrenceBuilder_;
-
     /**
      *
      *
@@ -691,7 +678,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
     public boolean hasOccurrence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -712,7 +698,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
         return occurrenceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +739,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -783,7 +766,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +785,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
       onChanged();
       return getOccurrenceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -837,7 +817,6 @@ public final class CreateOccurrenceRequest extends com.google.protobuf.Generated
             : occurrence_;
       }
     }
-
     /**
      *
      *

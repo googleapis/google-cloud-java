@@ -37,7 +37,6 @@ public interface ListProductsRequestOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ListProductsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface ListProductsRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

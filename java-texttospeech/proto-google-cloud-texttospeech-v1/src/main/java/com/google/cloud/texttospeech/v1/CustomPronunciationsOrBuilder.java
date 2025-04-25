@@ -36,7 +36,6 @@ public interface CustomPronunciationsOrBuilder
    */
   java.util.List<com.google.cloud.texttospeech.v1.CustomPronunciationParams>
       getPronunciationsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface CustomPronunciationsOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1.CustomPronunciationParams getPronunciations(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface CustomPronunciationsOrBuilder
    * </code>
    */
   int getPronunciationsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface CustomPronunciationsOrBuilder
    */
   java.util.List<? extends com.google.cloud.texttospeech.v1.CustomPronunciationParamsOrBuilder>
       getPronunciationsOrBuilderList();
-
   /**
    *
    *

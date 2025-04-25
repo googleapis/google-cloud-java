@@ -34,7 +34,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SuggestKnowledgeAssistResponse)
     SuggestKnowledgeAssistResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SuggestKnowledgeAssistResponse.newBuilder() to construct.
   private SuggestKnowledgeAssistResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int KNOWLEDGE_ASSIST_ANSWER_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer knowledgeAssistAnswer_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
   public boolean hasKnowledgeAssistAnswer() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
         ? com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.getDefaultInstance()
         : knowledgeAssistAnswer_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +180,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
 
   public static final int CONTEXT_SIZE_FIELD_NUMBER = 3;
   private int contextSize_ = 0;
-
   /**
    *
    *
@@ -392,7 +385,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -636,7 +628,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
             com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer.Builder,
             com.google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswerOrBuilder>
         knowledgeAssistAnswerBuilder_;
-
     /**
      *
      *
@@ -653,7 +644,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     public boolean hasKnowledgeAssistAnswer() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -676,7 +666,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
         return knowledgeAssistAnswerBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -702,7 +691,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +713,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +744,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +765,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -797,7 +782,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return getKnowledgeAssistAnswerFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -819,7 +803,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
             : knowledgeAssistAnswer_;
       }
     }
-
     /**
      *
      *
@@ -849,7 +832,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     }
 
     private java.lang.Object latestMessage_ = "";
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +903,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +922,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +948,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     }
 
     private int contextSize_;
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
     public int getContextSize() {
       return contextSize_;
     }
-
     /**
      *
      *
@@ -1014,7 +990,6 @@ public final class SuggestKnowledgeAssistResponse extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

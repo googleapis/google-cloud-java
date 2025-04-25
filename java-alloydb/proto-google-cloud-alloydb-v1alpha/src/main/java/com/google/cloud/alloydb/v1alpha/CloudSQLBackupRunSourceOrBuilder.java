@@ -37,7 +37,6 @@ public interface CloudSQLBackupRunSourceOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface CloudSQLBackupRunSourceOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *

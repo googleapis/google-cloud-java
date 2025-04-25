@@ -36,7 +36,6 @@ public interface GetXpnHostProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

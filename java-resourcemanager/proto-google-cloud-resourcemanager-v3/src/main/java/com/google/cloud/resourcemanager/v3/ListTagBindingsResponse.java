@@ -33,7 +33,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.ListTagBindingsResponse)
     ListTagBindingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTagBindingsResponse.newBuilder() to construct.
   private ListTagBindingsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.resourcemanager.v3.TagBinding> tagBindings_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.resourcemanager.v3.TagBinding> getTagBindingsList() {
     return tagBindings_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       getTagBindingsOrBuilderList() {
     return tagBindings_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
   public int getTagBindingsCount() {
     return tagBindings_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
   public com.google.cloud.resourcemanager.v3.TagBinding getTagBindings(int index) {
     return tagBindings_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -386,7 +378,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -664,7 +655,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return tagBindingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return tagBindingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return tagBindingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -721,7 +709,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +729,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +793,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +813,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +852,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +883,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
     public com.google.cloud.resourcemanager.v3.TagBinding.Builder getTagBindingsBuilder(int index) {
       return getTagBindingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return tagBindingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -940,7 +917,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(tagBindings_);
       }
     }
-
     /**
      *
      *
@@ -954,7 +930,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       return getTagBindingsFieldBuilder()
           .addBuilder(com.google.cloud.resourcemanager.v3.TagBinding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -968,7 +943,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       return getTagBindingsFieldBuilder()
           .addBuilder(index, com.google.cloud.resourcemanager.v3.TagBinding.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1001,7 +975,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1034,7 +1007,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1067,7 +1039,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1070,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1097,6 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

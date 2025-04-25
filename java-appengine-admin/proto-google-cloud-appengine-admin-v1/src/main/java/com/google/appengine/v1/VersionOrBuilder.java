@@ -39,7 +39,6 @@ public interface VersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface VersionOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface VersionOrBuilder
    * @return Whether the automaticScaling field is set.
    */
   boolean hasAutomaticScaling();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface VersionOrBuilder
    * @return The automaticScaling.
    */
   com.google.appengine.v1.AutomaticScaling getAutomaticScaling();
-
   /**
    *
    *
@@ -144,7 +140,6 @@ public interface VersionOrBuilder
    * @return Whether the basicScaling field is set.
    */
   boolean hasBasicScaling();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface VersionOrBuilder
    * @return The basicScaling.
    */
   com.google.appengine.v1.BasicScaling getBasicScaling();
-
   /**
    *
    *
@@ -189,7 +183,6 @@ public interface VersionOrBuilder
    * @return Whether the manualScaling field is set.
    */
   boolean hasManualScaling();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface VersionOrBuilder
    * @return The manualScaling.
    */
   com.google.appengine.v1.ManualScaling getManualScaling();
-
   /**
    *
    *
@@ -231,7 +223,6 @@ public interface VersionOrBuilder
    * @return A list containing the inboundServices.
    */
   java.util.List<com.google.appengine.v1.InboundServiceType> getInboundServicesList();
-
   /**
    *
    *
@@ -245,7 +236,6 @@ public interface VersionOrBuilder
    * @return The count of inboundServices.
    */
   int getInboundServicesCount();
-
   /**
    *
    *
@@ -260,7 +250,6 @@ public interface VersionOrBuilder
    * @return The inboundServices at the given index.
    */
   com.google.appengine.v1.InboundServiceType getInboundServices(int index);
-
   /**
    *
    *
@@ -274,7 +263,6 @@ public interface VersionOrBuilder
    * @return A list containing the enum numeric values on the wire for inboundServices.
    */
   java.util.List<java.lang.Integer> getInboundServicesValueList();
-
   /**
    *
    *
@@ -308,7 +296,6 @@ public interface VersionOrBuilder
    * @return The instanceClass.
    */
   java.lang.String getInstanceClass();
-
   /**
    *
    *
@@ -341,7 +328,6 @@ public interface VersionOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -355,7 +341,6 @@ public interface VersionOrBuilder
    * @return The network.
    */
   com.google.appengine.v1.Network getNetwork();
-
   /**
    *
    *
@@ -381,7 +366,6 @@ public interface VersionOrBuilder
    * @return A list containing the zones.
    */
   java.util.List<java.lang.String> getZonesList();
-
   /**
    *
    *
@@ -395,7 +379,6 @@ public interface VersionOrBuilder
    * @return The count of zones.
    */
   int getZonesCount();
-
   /**
    *
    *
@@ -410,7 +393,6 @@ public interface VersionOrBuilder
    * @return The zones at the given index.
    */
   java.lang.String getZones(int index);
-
   /**
    *
    *
@@ -439,7 +421,6 @@ public interface VersionOrBuilder
    * @return Whether the resources field is set.
    */
   boolean hasResources();
-
   /**
    *
    *
@@ -453,7 +434,6 @@ public interface VersionOrBuilder
    * @return The resources.
    */
   com.google.appengine.v1.Resources getResources();
-
   /**
    *
    *
@@ -478,7 +458,6 @@ public interface VersionOrBuilder
    * @return The runtime.
    */
   java.lang.String getRuntime();
-
   /**
    *
    *
@@ -505,7 +484,6 @@ public interface VersionOrBuilder
    * @return The runtimeChannel.
    */
   java.lang.String getRuntimeChannel();
-
   /**
    *
    *
@@ -571,7 +549,6 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; beta_settings = 13;</code>
    */
   int getBetaSettingsCount();
-
   /**
    *
    *
@@ -583,11 +560,9 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; beta_settings = 13;</code>
    */
   boolean containsBetaSettings(java.lang.String key);
-
   /** Use {@link #getBetaSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getBetaSettings();
-
   /**
    *
    *
@@ -599,7 +574,6 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; beta_settings = 13;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getBetaSettingsMap();
-
   /**
    *
    *
@@ -615,7 +589,6 @@ public interface VersionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -642,7 +615,6 @@ public interface VersionOrBuilder
    * @return The env.
    */
   java.lang.String getEnv();
-
   /**
    *
    *
@@ -673,7 +645,6 @@ public interface VersionOrBuilder
    * @return The enum numeric value on the wire for servingStatus.
    */
   int getServingStatusValue();
-
   /**
    *
    *
@@ -704,7 +675,6 @@ public interface VersionOrBuilder
    * @return The createdBy.
    */
   java.lang.String getCreatedBy();
-
   /**
    *
    *
@@ -734,7 +704,6 @@ public interface VersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -749,7 +718,6 @@ public interface VersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -793,7 +761,6 @@ public interface VersionOrBuilder
    * @return The runtimeApiVersion.
    */
   java.lang.String getRuntimeApiVersion();
-
   /**
    *
    *
@@ -821,7 +788,6 @@ public interface VersionOrBuilder
    * @return The runtimeMainExecutablePath.
    */
   java.lang.String getRuntimeMainExecutablePath();
-
   /**
    *
    *
@@ -849,7 +815,6 @@ public interface VersionOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -879,7 +844,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.UrlMap handlers = 100;</code>
    */
   java.util.List<com.google.appengine.v1.UrlMap> getHandlersList();
-
   /**
    *
    *
@@ -894,7 +858,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.UrlMap handlers = 100;</code>
    */
   com.google.appengine.v1.UrlMap getHandlers(int index);
-
   /**
    *
    *
@@ -909,7 +872,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.UrlMap handlers = 100;</code>
    */
   int getHandlersCount();
-
   /**
    *
    *
@@ -924,7 +886,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.UrlMap handlers = 100;</code>
    */
   java.util.List<? extends com.google.appengine.v1.UrlMapOrBuilder> getHandlersOrBuilderList();
-
   /**
    *
    *
@@ -952,7 +913,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.ErrorHandler error_handlers = 101;</code>
    */
   java.util.List<com.google.appengine.v1.ErrorHandler> getErrorHandlersList();
-
   /**
    *
    *
@@ -965,7 +925,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.ErrorHandler error_handlers = 101;</code>
    */
   com.google.appengine.v1.ErrorHandler getErrorHandlers(int index);
-
   /**
    *
    *
@@ -978,7 +937,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.ErrorHandler error_handlers = 101;</code>
    */
   int getErrorHandlersCount();
-
   /**
    *
    *
@@ -992,7 +950,6 @@ public interface VersionOrBuilder
    */
   java.util.List<? extends com.google.appengine.v1.ErrorHandlerOrBuilder>
       getErrorHandlersOrBuilderList();
-
   /**
    *
    *
@@ -1019,7 +976,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.Library libraries = 102;</code>
    */
   java.util.List<com.google.appengine.v1.Library> getLibrariesList();
-
   /**
    *
    *
@@ -1033,7 +989,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.Library libraries = 102;</code>
    */
   com.google.appengine.v1.Library getLibraries(int index);
-
   /**
    *
    *
@@ -1047,7 +1002,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.Library libraries = 102;</code>
    */
   int getLibrariesCount();
-
   /**
    *
    *
@@ -1061,7 +1015,6 @@ public interface VersionOrBuilder
    * <code>repeated .google.appengine.v1.Library libraries = 102;</code>
    */
   java.util.List<? extends com.google.appengine.v1.LibraryOrBuilder> getLibrariesOrBuilderList();
-
   /**
    *
    *
@@ -1091,7 +1044,6 @@ public interface VersionOrBuilder
    * @return Whether the apiConfig field is set.
    */
   boolean hasApiConfig();
-
   /**
    *
    *
@@ -1107,7 +1059,6 @@ public interface VersionOrBuilder
    * @return The apiConfig.
    */
   com.google.appengine.v1.ApiConfigHandler getApiConfig();
-
   /**
    *
    *
@@ -1134,7 +1085,6 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 104;</code>
    */
   int getEnvVariablesCount();
-
   /**
    *
    *
@@ -1147,11 +1097,9 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 104;</code>
    */
   boolean containsEnvVariables(java.lang.String key);
-
   /** Use {@link #getEnvVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getEnvVariables();
-
   /**
    *
    *
@@ -1164,7 +1112,6 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; env_variables = 104;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getEnvVariablesMap();
-
   /**
    *
    *
@@ -1181,7 +1128,6 @@ public interface VersionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -1207,7 +1153,6 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; build_env_variables = 125;</code>
    */
   int getBuildEnvVariablesCount();
-
   /**
    *
    *
@@ -1220,11 +1165,9 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; build_env_variables = 125;</code>
    */
   boolean containsBuildEnvVariables(java.lang.String key);
-
   /** Use {@link #getBuildEnvVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getBuildEnvVariables();
-
   /**
    *
    *
@@ -1237,7 +1180,6 @@ public interface VersionOrBuilder
    * <code>map&lt;string, string&gt; build_env_variables = 125;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getBuildEnvVariablesMap();
-
   /**
    *
    *
@@ -1254,7 +1196,6 @@ public interface VersionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -1285,7 +1226,6 @@ public interface VersionOrBuilder
    * @return Whether the defaultExpiration field is set.
    */
   boolean hasDefaultExpiration();
-
   /**
    *
    *
@@ -1303,7 +1243,6 @@ public interface VersionOrBuilder
    * @return The defaultExpiration.
    */
   com.google.protobuf.Duration getDefaultExpiration();
-
   /**
    *
    *
@@ -1336,7 +1275,6 @@ public interface VersionOrBuilder
    * @return Whether the healthCheck field is set.
    */
   boolean hasHealthCheck();
-
   /**
    *
    *
@@ -1353,7 +1291,6 @@ public interface VersionOrBuilder
    * @return The healthCheck.
    */
   com.google.appengine.v1.HealthCheck getHealthCheck();
-
   /**
    *
    *
@@ -1384,7 +1321,6 @@ public interface VersionOrBuilder
    * @return Whether the readinessCheck field is set.
    */
   boolean hasReadinessCheck();
-
   /**
    *
    *
@@ -1400,7 +1336,6 @@ public interface VersionOrBuilder
    * @return The readinessCheck.
    */
   com.google.appengine.v1.ReadinessCheck getReadinessCheck();
-
   /**
    *
    *
@@ -1430,7 +1365,6 @@ public interface VersionOrBuilder
    * @return Whether the livenessCheck field is set.
    */
   boolean hasLivenessCheck();
-
   /**
    *
    *
@@ -1446,7 +1380,6 @@ public interface VersionOrBuilder
    * @return The livenessCheck.
    */
   com.google.appengine.v1.LivenessCheck getLivenessCheck();
-
   /**
    *
    *
@@ -1476,7 +1409,6 @@ public interface VersionOrBuilder
    * @return The nobuildFilesRegex.
    */
   java.lang.String getNobuildFilesRegex();
-
   /**
    *
    *
@@ -1507,7 +1439,6 @@ public interface VersionOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -1522,7 +1453,6 @@ public interface VersionOrBuilder
    * @return The deployment.
    */
   com.google.appengine.v1.Deployment getDeployment();
-
   /**
    *
    *
@@ -1551,7 +1481,6 @@ public interface VersionOrBuilder
    * @return The versionUrl.
    */
   java.lang.String getVersionUrl();
-
   /**
    *
    *
@@ -1583,7 +1512,6 @@ public interface VersionOrBuilder
    * @return Whether the endpointsApiService field is set.
    */
   boolean hasEndpointsApiService();
-
   /**
    *
    *
@@ -1599,7 +1527,6 @@ public interface VersionOrBuilder
    * @return The endpointsApiService.
    */
   com.google.appengine.v1.EndpointsApiService getEndpointsApiService();
-
   /**
    *
    *
@@ -1626,7 +1553,6 @@ public interface VersionOrBuilder
    * @return Whether the entrypoint field is set.
    */
   boolean hasEntrypoint();
-
   /**
    *
    *
@@ -1639,7 +1565,6 @@ public interface VersionOrBuilder
    * @return The entrypoint.
    */
   com.google.appengine.v1.Entrypoint getEntrypoint();
-
   /**
    *
    *
@@ -1663,7 +1588,6 @@ public interface VersionOrBuilder
    * @return Whether the vpcAccessConnector field is set.
    */
   boolean hasVpcAccessConnector();
-
   /**
    *
    *
@@ -1676,7 +1600,6 @@ public interface VersionOrBuilder
    * @return The vpcAccessConnector.
    */
   com.google.appengine.v1.VpcAccessConnector getVpcAccessConnector();
-
   /**
    *
    *

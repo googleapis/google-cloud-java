@@ -36,7 +36,6 @@ public interface PipelineJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PipelineJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface PipelineJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public interface PipelineJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public interface PipelineJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -227,7 +218,6 @@ public interface PipelineJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the pipelineSpec field is set.
    */
   boolean hasPipelineSpec();
-
   /**
    *
    *
@@ -265,7 +254,6 @@ public interface PipelineJobOrBuilder
    * @return The pipelineSpec.
    */
   com.google.protobuf.Struct getPipelineSpec();
-
   /**
    *
    *
@@ -291,7 +279,6 @@ public interface PipelineJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -321,7 +308,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the jobDetail field is set.
    */
   boolean hasJobDetail();
-
   /**
    *
    *
@@ -336,7 +322,6 @@ public interface PipelineJobOrBuilder
    * @return The jobDetail.
    */
   com.google.cloud.aiplatform.v1beta1.PipelineJobDetail getJobDetail();
-
   /**
    *
    *
@@ -363,7 +348,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -377,7 +361,6 @@ public interface PipelineJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *
@@ -409,7 +392,6 @@ public interface PipelineJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -429,11 +411,9 @@ public interface PipelineJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -453,7 +433,6 @@ public interface PipelineJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -477,7 +456,6 @@ public interface PipelineJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -510,7 +488,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the runtimeConfig field is set.
    */
   boolean hasRuntimeConfig();
-
   /**
    *
    *
@@ -523,7 +500,6 @@ public interface PipelineJobOrBuilder
    * @return The runtimeConfig.
    */
   com.google.cloud.aiplatform.v1beta1.PipelineJob.RuntimeConfig getRuntimeConfig();
-
   /**
    *
    *
@@ -549,7 +525,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
-
   /**
    *
    *
@@ -563,7 +538,6 @@ public interface PipelineJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
-
   /**
    *
    *
@@ -595,7 +569,6 @@ public interface PipelineJobOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -641,7 +614,6 @@ public interface PipelineJobOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
-
   /**
    *
    *
@@ -687,7 +659,6 @@ public interface PipelineJobOrBuilder
    * @return A list containing the reservedIpRanges.
    */
   java.util.List<java.lang.String> getReservedIpRangesList();
-
   /**
    *
    *
@@ -707,7 +678,6 @@ public interface PipelineJobOrBuilder
    * @return The count of reservedIpRanges.
    */
   int getReservedIpRangesCount();
-
   /**
    *
    *
@@ -728,7 +698,6 @@ public interface PipelineJobOrBuilder
    * @return The reservedIpRanges at the given index.
    */
   java.lang.String getReservedIpRanges(int index);
-
   /**
    *
    *
@@ -764,7 +733,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the pscInterfaceConfig field is set.
    */
   boolean hasPscInterfaceConfig();
-
   /**
    *
    *
@@ -779,7 +747,6 @@ public interface PipelineJobOrBuilder
    * @return The pscInterfaceConfig.
    */
   com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig();
-
   /**
    *
    *
@@ -809,7 +776,6 @@ public interface PipelineJobOrBuilder
    * @return The templateUri.
    */
   java.lang.String getTemplateUri();
-
   /**
    *
    *
@@ -843,7 +809,6 @@ public interface PipelineJobOrBuilder
    * @return Whether the templateMetadata field is set.
    */
   boolean hasTemplateMetadata();
-
   /**
    *
    *
@@ -860,7 +825,6 @@ public interface PipelineJobOrBuilder
    * @return The templateMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTemplateMetadata getTemplateMetadata();
-
   /**
    *
    *
@@ -890,7 +854,6 @@ public interface PipelineJobOrBuilder
    * @return The scheduleName.
    */
   java.lang.String getScheduleName();
-
   /**
    *
    *
@@ -978,7 +941,6 @@ public interface PipelineJobOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig>
       getPipelineTaskRerunConfigsList();
-
   /**
    *
    *
@@ -999,7 +961,6 @@ public interface PipelineJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfig getPipelineTaskRerunConfigs(
       int index);
-
   /**
    *
    *
@@ -1019,7 +980,6 @@ public interface PipelineJobOrBuilder
    * </code>
    */
   int getPipelineTaskRerunConfigsCount();
-
   /**
    *
    *
@@ -1040,7 +1000,6 @@ public interface PipelineJobOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.PipelineTaskRerunConfigOrBuilder>
       getPipelineTaskRerunConfigsOrBuilderList();
-
   /**
    *
    *

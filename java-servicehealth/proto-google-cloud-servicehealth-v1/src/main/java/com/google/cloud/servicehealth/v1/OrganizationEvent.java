@@ -35,7 +35,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.servicehealth.v1.OrganizationEvent)
     OrganizationEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OrganizationEvent.newBuilder() to construct.
   private OrganizationEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>EVENT_CATEGORY_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_CATEGORY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -270,7 +268,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>DETAILED_CATEGORY_UNSPECIFIED = 0;</code>
      */
     public static final int DETAILED_CATEGORY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -282,7 +279,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>CONFIRMED_INCIDENT = 1;</code>
      */
     public static final int CONFIRMED_INCIDENT_VALUE = 1;
-
     /**
      *
      *
@@ -438,7 +434,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -450,7 +445,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
-
     /**
      *
      *
@@ -655,7 +649,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>DETAILED_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int DETAILED_STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -667,7 +660,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>EMERGING = 1;</code>
      */
     public static final int EMERGING_VALUE = 1;
-
     /**
      *
      *
@@ -679,7 +671,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>CONFIRMED = 2;</code>
      */
     public static final int CONFIRMED_VALUE = 2;
-
     /**
      *
      *
@@ -691,7 +682,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>RESOLVED = 3;</code>
      */
     public static final int RESOLVED_VALUE = 3;
-
     /**
      *
      *
@@ -704,7 +694,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>MERGED = 4;</code>
      */
     public static final int MERGED_VALUE = 4;
-
     /**
      *
      *
@@ -721,7 +710,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
      * <code>AUTO_CLOSED = 9;</code>
      */
     public static final int AUTO_CLOSED_VALUE = 9;
-
     /**
      *
      *
@@ -833,7 +821,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -866,7 +853,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -904,7 +890,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
-
   /**
    *
    *
@@ -928,7 +913,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -957,7 +941,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -981,7 +964,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1008,7 +990,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int CATEGORY_FIELD_NUMBER = 4;
   private int category_ = 0;
-
   /**
    *
    *
@@ -1026,7 +1007,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public int getCategoryValue() {
     return category_;
   }
-
   /**
    *
    *
@@ -1051,7 +1031,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int DETAILED_CATEGORY_FIELD_NUMBER = 17;
   private int detailedCategory_ = 0;
-
   /**
    *
    *
@@ -1069,7 +1048,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public int getDetailedCategoryValue() {
     return detailedCategory_;
   }
-
   /**
    *
    *
@@ -1096,7 +1074,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
-
   /**
    *
    *
@@ -1114,7 +1091,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -1139,7 +1115,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int DETAILED_STATE_FIELD_NUMBER = 16;
   private int detailedState_ = 0;
-
   /**
    *
    *
@@ -1157,7 +1132,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public int getDetailedStateValue() {
     return detailedState_;
   }
-
   /**
    *
    *
@@ -1184,7 +1158,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.servicehealth.v1.EventImpact> eventImpacts_;
-
   /**
    *
    *
@@ -1201,7 +1174,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.servicehealth.v1.EventImpact> getEventImpactsList() {
     return eventImpacts_;
   }
-
   /**
    *
    *
@@ -1219,7 +1191,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       getEventImpactsOrBuilderList() {
     return eventImpacts_;
   }
-
   /**
    *
    *
@@ -1236,7 +1207,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public int getEventImpactsCount() {
     return eventImpacts_.size();
   }
-
   /**
    *
    *
@@ -1253,7 +1223,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.servicehealth.v1.EventImpact getEventImpacts(int index) {
     return eventImpacts_.get(index);
   }
-
   /**
    *
    *
@@ -1276,7 +1245,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.servicehealth.v1.EventUpdate> updates_;
-
   /**
    *
    *
@@ -1293,7 +1261,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.cloud.servicehealth.v1.EventUpdate> getUpdatesList() {
     return updates_;
   }
-
   /**
    *
    *
@@ -1311,7 +1278,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       getUpdatesOrBuilderList() {
     return updates_;
   }
-
   /**
    *
    *
@@ -1328,7 +1294,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public int getUpdatesCount() {
     return updates_.size();
   }
-
   /**
    *
    *
@@ -1345,7 +1310,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.servicehealth.v1.EventUpdate getUpdates(int index) {
     return updates_.get(index);
   }
-
   /**
    *
    *
@@ -1367,7 +1331,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parentEvent_ = "";
-
   /**
    *
    *
@@ -1393,7 +1356,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1422,7 +1384,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -1439,7 +1400,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1456,7 +1416,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -1474,7 +1433,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int START_TIME_FIELD_NUMBER = 12;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -1491,7 +1449,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1508,7 +1465,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -1526,7 +1482,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int END_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp endTime_;
-
   /**
    *
    *
@@ -1543,7 +1498,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1560,7 +1514,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
-
   /**
    *
    *
@@ -1578,7 +1531,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
 
   public static final int NEXT_UPDATE_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp nextUpdateTime_;
-
   /**
    *
    *
@@ -1597,7 +1549,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
   public boolean hasNextUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1618,7 +1569,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : nextUpdateTime_;
   }
-
   /**
    *
    *
@@ -1960,7 +1910,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2450,7 +2399,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2482,7 +2430,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2514,7 +2461,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2545,7 +2491,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2572,7 +2517,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2606,7 +2550,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object title_ = "";
-
     /**
      *
      *
@@ -2629,7 +2572,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2652,7 +2594,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2674,7 +2615,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2692,7 +2632,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2717,7 +2656,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -2740,7 +2678,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2763,7 +2700,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2785,7 +2721,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2803,7 +2738,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2828,7 +2762,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private int category_ = 0;
-
     /**
      *
      *
@@ -2846,7 +2779,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public int getCategoryValue() {
       return category_;
     }
-
     /**
      *
      *
@@ -2867,7 +2799,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2889,7 +2820,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.servicehealth.v1.OrganizationEvent.EventCategory.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2914,7 +2844,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2936,7 +2865,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private int detailedCategory_ = 0;
-
     /**
      *
      *
@@ -2954,7 +2882,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public int getDetailedCategoryValue() {
       return detailedCategory_;
     }
-
     /**
      *
      *
@@ -2975,7 +2902,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2999,7 +2925,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.servicehealth.v1.OrganizationEvent.DetailedCategory.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3024,7 +2949,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3046,7 +2970,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3064,7 +2987,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3085,7 +3007,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3107,7 +3028,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.servicehealth.v1.OrganizationEvent.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3131,7 +3051,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3153,7 +3072,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private int detailedState_ = 0;
-
     /**
      *
      *
@@ -3171,7 +3089,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public int getDetailedStateValue() {
       return detailedState_;
     }
-
     /**
      *
      *
@@ -3192,7 +3109,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3215,7 +3131,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.servicehealth.v1.OrganizationEvent.DetailedState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3240,7 +3155,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3297,7 +3211,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return eventImpactsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3317,7 +3230,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return eventImpactsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3337,7 +3249,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return eventImpactsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3363,7 +3274,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3387,7 +3297,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3413,7 +3322,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3439,7 +3347,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3463,7 +3370,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3487,7 +3393,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3511,7 +3416,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3534,7 +3438,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3557,7 +3460,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3573,7 +3475,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.servicehealth.v1.EventImpact.Builder getEventImpactsBuilder(int index) {
       return getEventImpactsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3594,7 +3495,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return eventImpactsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3615,7 +3515,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(eventImpacts_);
       }
     }
-
     /**
      *
      *
@@ -3632,7 +3531,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return getEventImpactsFieldBuilder()
           .addBuilder(com.google.cloud.servicehealth.v1.EventImpact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3649,7 +3547,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return getEventImpactsFieldBuilder()
           .addBuilder(index, com.google.cloud.servicehealth.v1.EventImpact.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3719,7 +3616,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return updatesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3739,7 +3635,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return updatesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3759,7 +3654,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return updatesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3785,7 +3679,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3809,7 +3702,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3835,7 +3727,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3861,7 +3752,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3885,7 +3775,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3909,7 +3798,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3933,7 +3821,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3956,7 +3843,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3979,7 +3865,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -3995,7 +3880,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.servicehealth.v1.EventUpdate.Builder getUpdatesBuilder(int index) {
       return getUpdatesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4015,7 +3899,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return updatesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4036,7 +3919,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(updates_);
       }
     }
-
     /**
      *
      *
@@ -4053,7 +3935,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return getUpdatesFieldBuilder()
           .addBuilder(com.google.cloud.servicehealth.v1.EventUpdate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4070,7 +3951,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       return getUpdatesFieldBuilder()
           .addBuilder(index, com.google.cloud.servicehealth.v1.EventUpdate.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4106,7 +3986,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object parentEvent_ = "";
-
     /**
      *
      *
@@ -4131,7 +4010,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4156,7 +4034,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4180,7 +4057,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4200,7 +4076,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4232,7 +4107,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -4249,7 +4123,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4272,7 +4145,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4297,7 +4169,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4319,7 +4190,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4349,7 +4219,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4371,7 +4240,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4388,7 +4256,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4409,7 +4276,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4444,7 +4310,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -4461,7 +4326,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4482,7 +4346,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4507,7 +4370,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4529,7 +4391,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4559,7 +4420,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4581,7 +4441,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4598,7 +4457,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4617,7 +4475,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -4652,7 +4509,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -4668,7 +4524,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -4688,7 +4543,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return endTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4712,7 +4566,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4733,7 +4586,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4762,7 +4614,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4783,7 +4634,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4799,7 +4649,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4817,7 +4666,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
-
     /**
      *
      *
@@ -4851,7 +4699,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         nextUpdateTimeBuilder_;
-
     /**
      *
      *
@@ -4869,7 +4716,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
     public boolean hasNextUpdateTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4893,7 +4739,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
         return nextUpdateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4919,7 +4764,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4942,7 +4786,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4973,7 +4816,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -4996,7 +4838,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5014,7 +4855,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getNextUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5036,7 +4876,6 @@ public final class OrganizationEvent extends com.google.protobuf.GeneratedMessag
             : nextUpdateTime_;
       }
     }
-
     /**
      *
      *

@@ -43,7 +43,6 @@ public interface PageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface PageOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -102,7 +100,6 @@ public interface PageOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface PageOrBuilder
    * @return Whether the entryFulfillment field is set.
    */
   boolean hasEntryFulfillment();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public interface PageOrBuilder
    * @return The entryFulfillment.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Fulfillment getEntryFulfillment();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface PageOrBuilder
    * @return Whether the form field is set.
    */
   boolean hasForm();
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public interface PageOrBuilder
    * @return The form.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Form getForm();
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public interface PageOrBuilder
    * @return A list containing the transitionRouteGroups.
    */
   java.util.List<java.lang.String> getTransitionRouteGroupsList();
-
   /**
    *
    *
@@ -254,7 +246,6 @@ public interface PageOrBuilder
    * @return The count of transitionRouteGroups.
    */
   int getTransitionRouteGroupsCount();
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public interface PageOrBuilder
    * @return The transitionRouteGroups at the given index.
    */
   java.lang.String getTransitionRouteGroups(int index);
-
   /**
    *
    *
@@ -351,7 +341,6 @@ public interface PageOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute> getTransitionRoutesList();
-
   /**
    *
    *
@@ -384,7 +373,6 @@ public interface PageOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute getTransitionRoutes(int index);
-
   /**
    *
    *
@@ -417,7 +405,6 @@ public interface PageOrBuilder
    * </code>
    */
   int getTransitionRoutesCount();
-
   /**
    *
    *
@@ -451,7 +438,6 @@ public interface PageOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteOrBuilder>
       getTransitionRoutesOrBuilderList();
-
   /**
    *
    *
@@ -497,7 +483,6 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EventHandler event_handlers = 10;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.EventHandler> getEventHandlersList();
-
   /**
    *
    *
@@ -509,7 +494,6 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EventHandler event_handlers = 10;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.EventHandler getEventHandlers(int index);
-
   /**
    *
    *
@@ -521,7 +505,6 @@ public interface PageOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.EventHandler event_handlers = 10;</code>
    */
   int getEventHandlersCount();
-
   /**
    *
    *
@@ -534,7 +517,6 @@ public interface PageOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.EventHandlerOrBuilder>
       getEventHandlersOrBuilderList();
-
   /**
    *
    *
@@ -560,7 +542,6 @@ public interface PageOrBuilder
    * @return Whether the advancedSettings field is set.
    */
   boolean hasAdvancedSettings();
-
   /**
    *
    *
@@ -574,7 +555,6 @@ public interface PageOrBuilder
    * @return The advancedSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
-
   /**
    *
    *
@@ -601,7 +581,6 @@ public interface PageOrBuilder
    * @return Whether the knowledgeConnectorSettings field is set.
    */
   boolean hasKnowledgeConnectorSettings();
-
   /**
    *
    *
@@ -616,7 +595,6 @@ public interface PageOrBuilder
    * @return The knowledgeConnectorSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettings getKnowledgeConnectorSettings();
-
   /**
    *
    *

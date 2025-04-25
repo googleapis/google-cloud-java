@@ -39,7 +39,6 @@ public interface SdpBasicConfigOrBuilder
    * @return The enum numeric value on the wire for filterEnforcement.
    */
   int getFilterEnforcementValue();
-
   /**
    *
    *

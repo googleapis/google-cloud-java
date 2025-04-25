@@ -33,7 +33,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Config)
     ConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Config.newBuilder() to construct.
   private Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> supportedVersions_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> getSupportedVersionsList() {
     return supportedVersions_;
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       getSupportedVersionsOrBuilderList() {
     return supportedVersions_;
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
   public int getSupportedVersionsCount() {
     return supportedVersions_.size();
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.deploy.v1.SkaffoldVersion getSupportedVersions(int index) {
     return supportedVersions_.get(index);
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object defaultSkaffoldVersion_ = "";
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -429,7 +419,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -687,7 +676,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -733,7 +720,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -755,7 +741,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return supportedVersionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return supportedVersionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -864,7 +846,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return supportedVersionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -888,7 +869,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +911,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +934,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +954,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +974,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1019,7 +994,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1039,7 +1013,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1032,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1073,7 +1045,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getSupportedVersionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1091,7 +1062,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return supportedVersionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1109,7 +1079,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(supportedVersions_);
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       return getSupportedVersionsFieldBuilder()
           .addBuilder(com.google.cloud.deploy.v1.SkaffoldVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1138,7 +1106,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       return getSupportedVersionsFieldBuilder()
           .addBuilder(index, com.google.cloud.deploy.v1.SkaffoldVersion.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1174,7 +1141,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object defaultSkaffoldVersion_ = "";
-
     /**
      *
      *
@@ -1198,7 +1164,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1222,7 +1187,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1245,7 +1209,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1227,6 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

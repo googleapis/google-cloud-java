@@ -40,7 +40,6 @@ public interface DeleteLbTrafficExtensionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface DeleteLbTrafficExtensionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

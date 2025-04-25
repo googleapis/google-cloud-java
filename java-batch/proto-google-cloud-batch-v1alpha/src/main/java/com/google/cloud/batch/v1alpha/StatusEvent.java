@@ -33,7 +33,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.StatusEvent)
     StatusEventOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StatusEvent.newBuilder() to construct.
   private StatusEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -175,7 +170,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EVENT_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp eventTime_;
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEventTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -207,7 +200,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEventTime() {
     return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
   }
-
   /**
    *
    *
@@ -224,7 +216,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_EXECUTION_FIELD_NUMBER = 4;
   private com.google.cloud.batch.v1alpha.TaskExecution taskExecution_;
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskExecution() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -262,7 +252,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1alpha.TaskExecution.getDefaultInstance()
         : taskExecution_;
   }
-
   /**
    *
    *
@@ -283,7 +272,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_STATE_FIELD_NUMBER = 5;
   private int taskState_ = 0;
-
   /**
    *
    *
@@ -300,7 +288,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
   public int getTaskStateValue() {
     return taskState_;
   }
-
   /**
    *
    *
@@ -527,7 +514,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -788,7 +774,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object type_ = "";
-
     /**
      *
      *
@@ -811,7 +796,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -834,7 +818,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -856,7 +839,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +880,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -922,7 +902,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -967,7 +945,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +962,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +991,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         eventTimeBuilder_;
-
     /**
      *
      *
@@ -1030,7 +1005,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEventTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1049,7 +1023,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1072,7 +1045,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1092,7 +1064,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1120,7 +1091,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1140,7 +1110,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1155,7 +1124,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEventTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1172,7 +1140,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return eventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : eventTime_;
       }
     }
-
     /**
      *
      *
@@ -1205,7 +1172,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.TaskExecution.Builder,
             com.google.cloud.batch.v1alpha.TaskExecutionOrBuilder>
         taskExecutionBuilder_;
-
     /**
      *
      *
@@ -1222,7 +1188,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskExecution() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1245,7 +1210,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
         return taskExecutionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1270,7 +1234,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1293,7 +1256,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1324,7 +1286,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1346,7 +1307,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1363,7 +1323,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaskExecutionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1384,7 +1343,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
             : taskExecution_;
       }
     }
-
     /**
      *
      *
@@ -1414,7 +1372,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int taskState_ = 0;
-
     /**
      *
      *
@@ -1431,7 +1388,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
     public int getTaskStateValue() {
       return taskState_;
     }
-
     /**
      *
      *
@@ -1451,7 +1407,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1470,7 +1425,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.batch.v1alpha.TaskStatus.State.forNumber(taskState_);
       return result == null ? com.google.cloud.batch.v1alpha.TaskStatus.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1493,7 +1447,6 @@ public final class StatusEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

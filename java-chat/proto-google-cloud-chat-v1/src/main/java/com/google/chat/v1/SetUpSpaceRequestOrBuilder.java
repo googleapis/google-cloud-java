@@ -58,7 +58,6 @@ public interface SetUpSpaceRequestOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
-
   /**
    *
    *
@@ -93,7 +92,6 @@ public interface SetUpSpaceRequestOrBuilder
    * @return The space.
    */
   com.google.chat.v1.Space getSpace();
-
   /**
    *
    *
@@ -144,7 +142,6 @@ public interface SetUpSpaceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -203,7 +200,6 @@ public interface SetUpSpaceRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.chat.v1.Membership> getMembershipsList();
-
   /**
    *
    *
@@ -244,7 +240,6 @@ public interface SetUpSpaceRequestOrBuilder
    * </code>
    */
   com.google.chat.v1.Membership getMemberships(int index);
-
   /**
    *
    *
@@ -285,7 +280,6 @@ public interface SetUpSpaceRequestOrBuilder
    * </code>
    */
   int getMembershipsCount();
-
   /**
    *
    *
@@ -326,7 +320,6 @@ public interface SetUpSpaceRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.chat.v1.MembershipOrBuilder> getMembershipsOrBuilderList();
-
   /**
    *
    *

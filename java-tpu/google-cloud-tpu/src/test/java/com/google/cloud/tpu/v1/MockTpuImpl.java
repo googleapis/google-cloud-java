@@ -215,8 +215,7 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListTensorFlowVersions, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListTensorFlowVersions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListTensorFlowVersionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -237,8 +236,7 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetTensorFlowVersion, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetTensorFlowVersion, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   TensorFlowVersion.class.getName(),
                   Exception.class.getName())));
@@ -260,8 +258,7 @@ public class MockTpuImpl extends TpuImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListAcceleratorTypes, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListAcceleratorTypes, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListAcceleratorTypesResponse.class.getName(),
                   Exception.class.getName())));

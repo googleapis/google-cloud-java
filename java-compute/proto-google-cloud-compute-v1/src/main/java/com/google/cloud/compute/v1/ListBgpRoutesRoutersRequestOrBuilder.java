@@ -37,7 +37,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the addressFamily field is set.
    */
   boolean hasAddressFamily();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The addressFamily.
    */
   java.lang.String getAddressFamily();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the destinationPrefix field is set.
    */
   boolean hasDestinationPrefix();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The destinationPrefix.
    */
   java.lang.String getDestinationPrefix();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
-
   /**
    *
    *
@@ -182,7 +175,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -260,7 +249,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the peer field is set.
    */
   boolean hasPeer();
-
   /**
    *
    *
@@ -273,7 +261,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The peer.
    */
   java.lang.String getPeer();
-
   /**
    *
    *
@@ -299,7 +286,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the policyApplied field is set.
    */
   boolean hasPolicyApplied();
-
   /**
    *
    *
@@ -325,7 +311,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -351,7 +336,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -377,7 +361,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
-
   /**
    *
    *
@@ -404,7 +387,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return Whether the routeType field is set.
    */
   boolean hasRouteType();
-
   /**
    *
    *
@@ -418,7 +400,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The routeType.
    */
   java.lang.String getRouteType();
-
   /**
    *
    *
@@ -445,7 +426,6 @@ public interface ListBgpRoutesRoutersRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
-
   /**
    *
    *

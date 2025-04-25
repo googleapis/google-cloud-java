@@ -34,7 +34,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse)
     StreamingTranslateSpeechResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingTranslateSpeechResponse.newBuilder() to construct.
   private StreamingTranslateSpeechResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -120,7 +119,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
      * <code>SPEECH_EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SPEECH_EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -230,7 +228,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 1;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -247,7 +244,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -264,7 +260,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -282,7 +277,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
 
   public static final int RESULT_FIELD_NUMBER = 2;
   private com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult result_;
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   public boolean hasResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -323,7 +316,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
             .getDefaultInstance()
         : result_;
   }
-
   /**
    *
    *
@@ -347,7 +339,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
 
   public static final int SPEECH_EVENT_TYPE_FIELD_NUMBER = 3;
   private int speechEventType_ = 0;
-
   /**
    *
    *
@@ -365,7 +356,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
   public int getSpeechEventTypeValue() {
     return speechEventType_;
   }
-
   /**
    *
    *
@@ -593,7 +583,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -839,7 +828,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -855,7 +843,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -875,7 +862,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -899,7 +885,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +905,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +933,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -970,7 +953,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -986,7 +968,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1004,7 +985,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1015,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
             com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResult.Builder,
             com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResultOrBuilder>
         resultBuilder_;
-
     /**
      *
      *
@@ -1053,7 +1032,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     public boolean hasResult() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1078,7 +1056,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
         return resultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1082,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1106,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1164,7 +1139,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       }
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1161,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1206,7 +1179,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1230,7 +1202,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
             : result_;
       }
     }
-
     /**
      *
      *
@@ -1261,7 +1232,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     }
 
     private int speechEventType_ = 0;
-
     /**
      *
      *
@@ -1279,7 +1249,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
     public int getSpeechEventTypeValue() {
       return speechEventType_;
     }
-
     /**
      *
      *
@@ -1300,7 +1269,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1327,7 +1295,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
               .SpeechEventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1353,7 +1320,6 @@ public final class StreamingTranslateSpeechResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

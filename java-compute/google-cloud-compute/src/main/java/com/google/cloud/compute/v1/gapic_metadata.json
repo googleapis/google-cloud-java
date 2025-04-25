@@ -1195,9 +1195,6 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
-            "SetLabels": {
-              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
-            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
@@ -2435,24 +2432,6 @@
         }
       }
     },
-    "ReservationBlocks": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "ReservationBlocksClient",
-          "rpcs": {
-            "Get": {
-              "methods": ["get", "get", "getCallable"]
-            },
-            "List": {
-              "methods": ["list", "list", "listPagedCallable", "listCallable"]
-            },
-            "PerformMaintenance": {
-              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
-            }
-          }
-        }
-      }
-    },
     "Reservations": {
       "clients": {
         "grpc": {
@@ -2475,9 +2454,6 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
-            },
-            "PerformMaintenance": {
-              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
             },
             "Resize": {
               "methods": ["resizeAsync", "resizeAsync", "resizeOperationCallable", "resizeCallable"]

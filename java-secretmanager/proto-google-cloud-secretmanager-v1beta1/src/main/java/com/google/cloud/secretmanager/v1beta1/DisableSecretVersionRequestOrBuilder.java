@@ -28,9 +28,8 @@ public interface DisableSecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to disable in
-   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to disable in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -40,14 +39,12 @@ public interface DisableSecretVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to disable in
-   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to disable in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>

@@ -40,7 +40,6 @@ public interface ImportMappingRulesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ImportMappingRulesRequestOrBuilder
    * @return The enum numeric value on the wire for rulesFormat.
    */
   int getRulesFormatValue();
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public interface ImportMappingRulesRequestOrBuilder
    */
   java.util.List<com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile>
       getRulesFilesList();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface ImportMappingRulesRequestOrBuilder
    * </code>
    */
   com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile getRulesFiles(int index);
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface ImportMappingRulesRequestOrBuilder
    * </code>
    */
   int getRulesFilesCount();
-
   /**
    *
    *
@@ -142,7 +137,6 @@ public interface ImportMappingRulesRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFileOrBuilder>
       getRulesFilesOrBuilderList();
-
   /**
    *
    *

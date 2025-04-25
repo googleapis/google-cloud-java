@@ -37,7 +37,6 @@ public interface EvaluationDatasetOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface EvaluationDatasetOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface EvaluationDatasetOrBuilder
    * @return Whether the bigquerySource field is set.
    */
   boolean hasBigquerySource();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface EvaluationDatasetOrBuilder
    * @return The bigquerySource.
    */
   com.google.cloud.aiplatform.v1beta1.BigQuerySource getBigquerySource();
-
   /**
    *
    *

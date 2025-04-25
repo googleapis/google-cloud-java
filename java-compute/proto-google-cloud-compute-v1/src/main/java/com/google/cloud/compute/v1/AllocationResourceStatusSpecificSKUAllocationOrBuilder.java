@@ -36,7 +36,6 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * @return Whether the sourceInstanceTemplateId field is set.
    */
   boolean hasSourceInstanceTemplateId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * @return The sourceInstanceTemplateId.
    */
   java.lang.String getSourceInstanceTemplateId();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
    */
   int getUtilizationsCount();
-
   /**
    *
    *
@@ -84,11 +81,9 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
    */
   boolean containsUtilizations(java.lang.String key);
-
   /** Use {@link #getUtilizationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Long> getUtilizations();
-
   /**
    *
    *
@@ -99,7 +94,6 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
    */
   java.util.Map<java.lang.String, java.lang.Long> getUtilizationsMap();
-
   /**
    *
    *
@@ -110,7 +104,6 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
    * <code>map&lt;string, int64&gt; utilizations = 402495121;</code>
    */
   long getUtilizationsOrDefault(java.lang.String key, long defaultValue);
-
   /**
    *
    *

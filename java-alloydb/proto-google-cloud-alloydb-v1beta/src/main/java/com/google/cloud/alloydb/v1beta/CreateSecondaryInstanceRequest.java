@@ -33,7 +33,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.CreateSecondaryInstanceRequest)
     CreateSecondaryInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSecondaryInstanceRequest.newBuilder() to construct.
   private CreateSecondaryInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
 
   public static final int INSTANCE_FIELD_NUMBER = 3;
   private com.google.cloud.alloydb.v1beta.Instance instance_;
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         ? com.google.cloud.alloydb.v1beta.Instance.getDefaultInstance()
         : instance_;
   }
-
   /**
    *
    *
@@ -243,7 +235,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       return s;
     }
   }
-
   /**
    *
    *
@@ -318,7 +308,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -538,7 +527,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -798,7 +786,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -824,7 +811,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -850,7 +836,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -875,7 +860,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -896,7 +880,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +907,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object instanceId_ = "";
-
     /**
      *
      *
@@ -947,7 +929,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -970,7 +951,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -992,7 +972,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1010,7 +989,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
             com.google.cloud.alloydb.v1beta.Instance.Builder,
             com.google.cloud.alloydb.v1beta.InstanceOrBuilder>
         instanceBuilder_;
-
     /**
      *
      *
@@ -1057,7 +1034,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1080,7 +1056,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return instanceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1080,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1127,7 +1101,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1130,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       }
       return this;
     }
-
     /**
      *
      *
@@ -1179,7 +1151,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1196,7 +1167,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1217,7 +1187,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
             : instance_;
       }
     }
-
     /**
      *
      *
@@ -1247,7 +1216,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1282,7 +1250,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1317,7 +1284,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1351,7 +1317,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1381,7 +1346,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1382,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1436,7 +1399,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1458,7 +1420,6 @@ public final class CreateSecondaryInstanceRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
-
     /**
      *
      *

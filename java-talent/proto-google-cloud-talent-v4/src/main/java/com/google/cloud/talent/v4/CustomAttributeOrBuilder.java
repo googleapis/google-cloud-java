@@ -48,7 +48,6 @@ public interface CustomAttributeOrBuilder
    * @return A list containing the stringValues.
    */
   java.util.List<java.lang.String> getStringValuesList();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CustomAttributeOrBuilder
    * @return The count of stringValues.
    */
   int getStringValuesCount();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface CustomAttributeOrBuilder
    * @return The stringValues at the given index.
    */
   java.lang.String getStringValues(int index);
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface CustomAttributeOrBuilder
    * @return A list containing the longValues.
    */
   java.util.List<java.lang.Long> getLongValuesList();
-
   /**
    *
    *
@@ -171,7 +167,6 @@ public interface CustomAttributeOrBuilder
    * @return The count of longValues.
    */
   int getLongValuesCount();
-
   /**
    *
    *

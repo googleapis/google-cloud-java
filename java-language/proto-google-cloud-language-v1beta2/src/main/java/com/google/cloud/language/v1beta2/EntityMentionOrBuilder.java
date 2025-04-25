@@ -36,7 +36,6 @@ public interface EntityMentionOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EntityMentionOrBuilder
    * @return The text.
    */
   com.google.cloud.language.v1beta2.TextSpan getText();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface EntityMentionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface EntityMentionOrBuilder
    * @return Whether the sentiment field is set.
    */
   boolean hasSentiment();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface EntityMentionOrBuilder
    * @return The sentiment.
    */
   com.google.cloud.language.v1beta2.Sentiment getSentiment();
-
   /**
    *
    *

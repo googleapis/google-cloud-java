@@ -35,7 +35,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RunReportJobResponse)
     RunReportJobResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RunReportJobResponse.newBuilder() to construct.
   private RunReportJobResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int REPORT_JOB_FIELD_NUMBER = 1;
   private com.google.cloud.channel.v1.ReportJob reportJob_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
   public boolean hasReportJob() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.channel.v1.ReportJob.getDefaultInstance()
         : reportJob_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
 
   public static final int REPORT_METADATA_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.ReportResultsMetadata reportMetadata_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
   public boolean hasReportMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.channel.v1.ReportResultsMetadata.getDefaultInstance()
         : reportMetadata_;
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -586,7 +578,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.channel.v1.ReportJob.Builder,
             com.google.cloud.channel.v1.ReportJobOrBuilder>
         reportJobBuilder_;
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     public boolean hasReportJob() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
         return reportJobBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -725,7 +711,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +727,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getReportJobFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -763,7 +747,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
             : reportJob_;
       }
     }
-
     /**
      *
      *
@@ -798,7 +781,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
             com.google.cloud.channel.v1.ReportResultsMetadata.Builder,
             com.google.cloud.channel.v1.ReportResultsMetadataOrBuilder>
         reportMetadataBuilder_;
-
     /**
      *
      *
@@ -815,7 +797,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
     public boolean hasReportMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -838,7 +819,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
         return reportMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +865,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +916,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +932,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getReportMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -977,7 +952,6 @@ public final class RunReportJobResponse extends com.google.protobuf.GeneratedMes
             : reportMetadata_;
       }
     }
-
     /**
      *
      *

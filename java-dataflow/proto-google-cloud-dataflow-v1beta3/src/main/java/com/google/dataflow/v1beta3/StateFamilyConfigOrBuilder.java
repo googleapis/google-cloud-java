@@ -36,7 +36,6 @@ public interface StateFamilyConfigOrBuilder
    * @return The stateFamily.
    */
   java.lang.String getStateFamily();
-
   /**
    *
    *

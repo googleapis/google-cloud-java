@@ -33,7 +33,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.IgnoreJobRequest)
     IgnoreJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IgnoreJobRequest.newBuilder() to construct.
   private IgnoreJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rollout_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -130,7 +127,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object phaseId_ = "";
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobId_ = "";
-
   /**
    *
    *
@@ -207,7 +201,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList overrideDeployPolicy_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getOverrideDeployPolicyList() {
     return overrideDeployPolicy_;
   }
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
   public int getOverrideDeployPolicyCount() {
     return overrideDeployPolicy_.size();
   }
-
   /**
    *
    *
@@ -292,7 +282,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
   public java.lang.String getOverrideDeployPolicy(int index) {
     return overrideDeployPolicy_.get(index);
   }
-
   /**
    *
    *
@@ -506,7 +495,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -742,7 +730,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object rollout_ = "";
-
     /**
      *
      *
@@ -768,7 +755,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -794,7 +780,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +824,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +851,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object phaseId_ = "";
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -936,7 +916,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -954,7 +933,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object jobId_ = "";
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1001,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1022,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1039,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1071,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       overrideDeployPolicy_.makeImmutable();
       return overrideDeployPolicy_;
     }
-
     /**
      *
      *
@@ -1135,7 +1106,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     public int getOverrideDeployPolicyCount() {
       return overrideDeployPolicy_.size();
     }
-
     /**
      *
      *
@@ -1154,7 +1124,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     public java.lang.String getOverrideDeployPolicy(int index) {
       return overrideDeployPolicy_.get(index);
     }
-
     /**
      *
      *
@@ -1173,7 +1142,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getOverrideDeployPolicyBytes(int index) {
       return overrideDeployPolicy_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1200,7 +1168,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1193,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1215,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1271,7 +1236,6 @@ public final class IgnoreJobRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

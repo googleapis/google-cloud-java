@@ -36,7 +36,6 @@ public interface TextAnnotationOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.TextSegment segments = 2;</code>
    */
   java.util.List<com.google.cloud.videointelligence.v1p3beta1.TextSegment> getSegmentsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.TextSegment segments = 2;</code>
    */
   com.google.cloud.videointelligence.v1p3beta1.TextSegment getSegments(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.videointelligence.v1p3beta1.TextSegment segments = 2;</code>
    */
   int getSegmentsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface TextAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p3beta1.TextSegmentOrBuilder>
       getSegmentsOrBuilderList();
-
   /**
    *
    *

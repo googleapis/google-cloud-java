@@ -33,7 +33,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.ErrorResource)
     ErrorResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ErrorResource.newBuilder() to construct.
   private ErrorResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourcePath_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceName_ = "";
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -177,7 +172,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resourceNamespace_ = "";
-
   /**
    *
    *
@@ -201,7 +195,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESOURCE_GVK_FIELD_NUMBER = 4;
   private com.google.cloud.gkehub.configmanagement.v1.GroupVersionKind resourceGvk_;
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResourceGvk() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -262,7 +253,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.gkehub.configmanagement.v1.GroupVersionKind.getDefaultInstance()
         : resourceGvk_;
   }
-
   /**
    *
    *
@@ -472,7 +462,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -717,7 +706,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object sourcePath_ = "";
-
     /**
      *
      *
@@ -740,7 +728,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +788,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceName_ = "";
-
     /**
      *
      *
@@ -851,7 +834,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -896,7 +877,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +918,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object resourceNamespace_ = "";
-
     /**
      *
      *
@@ -962,7 +940,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -985,7 +962,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1007,7 +983,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1029,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.gkehub.configmanagement.v1.GroupVersionKind.Builder,
             com.google.cloud.gkehub.configmanagement.v1.GroupVersionKindOrBuilder>
         resourceGvkBuilder_;
-
     /**
      *
      *
@@ -1070,7 +1043,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResourceGvk() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1091,7 +1063,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return resourceGvkBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1115,7 +1086,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1136,7 +1106,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1167,7 +1136,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1155,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1170,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getResourceGvkFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1223,7 +1189,6 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
             : resourceGvk_;
       }
     }
-
     /**
      *
      *

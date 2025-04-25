@@ -36,7 +36,6 @@ public interface WaypointOrBuilder
    * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface WaypointOrBuilder
    * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface WaypointOrBuilder
    * @return Whether the eta field is set.
    */
   boolean hasEta();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface WaypointOrBuilder
    * @return The eta.
    */
   com.google.protobuf.Timestamp getEta();
-
   /**
    *
    *

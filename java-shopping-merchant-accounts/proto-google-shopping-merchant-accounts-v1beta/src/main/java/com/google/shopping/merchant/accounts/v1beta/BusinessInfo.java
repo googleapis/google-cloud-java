@@ -33,7 +33,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.BusinessInfo)
     BusinessInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BusinessInfo.newBuilder() to construct.
   private BusinessInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ADDRESS_FIELD_NUMBER = 2;
   private com.google.type.PostalAddress address_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAddress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.PostalAddress getAddress() {
     return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
   }
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PHONE_FIELD_NUMBER = 3;
   private com.google.type.PhoneNumber phone_;
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhone() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -213,7 +205,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.PhoneNumber getPhone() {
     return phone_ == null ? com.google.type.PhoneNumber.getDefaultInstance() : phone_;
   }
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PHONE_VERIFICATION_STATE_FIELD_NUMBER = 4;
   private int phoneVerificationState_ = 0;
-
   /**
    *
    *
@@ -249,7 +239,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPhoneVerificationState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -267,7 +256,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public int getPhoneVerificationStateValue() {
     return phoneVerificationState_;
   }
-
   /**
    *
    *
@@ -294,7 +282,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOMER_SERVICE_FIELD_NUMBER = 5;
   private com.google.shopping.merchant.accounts.v1beta.CustomerService customerService_;
-
   /**
    *
    *
@@ -312,7 +299,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomerService() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -332,7 +318,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.merchant.accounts.v1beta.CustomerService.getDefaultInstance()
         : customerService_;
   }
-
   /**
    *
    *
@@ -356,7 +341,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object koreanBusinessRegistrationNumber_ = "";
-
   /**
    *
    *
@@ -376,7 +360,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKoreanBusinessRegistrationNumber() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -404,7 +387,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -668,7 +650,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -951,7 +932,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -999,7 +978,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1022,7 +1000,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1041,7 +1018,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1072,7 +1048,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.type.PostalAddress.Builder,
             com.google.type.PostalAddressOrBuilder>
         addressBuilder_;
-
     /**
      *
      *
@@ -1089,7 +1064,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAddress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1110,7 +1084,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return addressBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1135,7 +1108,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1129,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1158,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1179,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1195,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAddressFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1245,7 +1213,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1247,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.type.PhoneNumber.Builder,
             com.google.type.PhoneNumberOrBuilder>
         phoneBuilder_;
-
     /**
      *
      *
@@ -1297,7 +1263,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhone() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1318,7 +1283,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return phoneBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1343,7 +1307,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1328,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1357,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1417,7 +1378,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1434,7 +1394,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPhoneFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1453,7 +1412,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return phone_ == null ? com.google.type.PhoneNumber.getDefaultInstance() : phone_;
       }
     }
-
     /**
      *
      *
@@ -1483,7 +1441,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int phoneVerificationState_ = 0;
-
     /**
      *
      *
@@ -1501,7 +1458,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPhoneVerificationState() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1519,7 +1475,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     public int getPhoneVerificationStateValue() {
       return phoneVerificationState_;
     }
-
     /**
      *
      *
@@ -1540,7 +1495,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1518,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.PhoneVerificationState.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1589,7 +1542,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1616,7 +1568,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.CustomerService.Builder,
             com.google.shopping.merchant.accounts.v1beta.CustomerServiceOrBuilder>
         customerServiceBuilder_;
-
     /**
      *
      *
@@ -1633,7 +1584,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerService() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1656,7 +1606,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return customerServiceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1682,7 +1631,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1705,7 +1653,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1738,7 +1685,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1760,7 +1706,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1723,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomerServiceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1800,7 +1744,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
             : customerService_;
       }
     }
-
     /**
      *
      *
@@ -1830,7 +1773,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object koreanBusinessRegistrationNumber_ = "";
-
     /**
      *
      *
@@ -1849,7 +1791,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKoreanBusinessRegistrationNumber() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -1876,7 +1817,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1903,7 +1843,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1929,7 +1868,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1952,7 +1890,6 @@ public final class BusinessInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

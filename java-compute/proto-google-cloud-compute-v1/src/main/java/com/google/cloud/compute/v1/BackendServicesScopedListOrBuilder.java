@@ -34,7 +34,6 @@ public interface BackendServicesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   java.util.List<com.google.cloud.compute.v1.BackendService> getBackendServicesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface BackendServicesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   com.google.cloud.compute.v1.BackendService getBackendServices(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface BackendServicesScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.BackendService backend_services = 388522409;</code>
    */
   int getBackendServicesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface BackendServicesScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.BackendServiceOrBuilder>
       getBackendServicesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface BackendServicesScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface BackendServicesScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

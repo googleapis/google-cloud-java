@@ -30,14 +30,12 @@ public interface BindingOrBuilder
    * @return Whether the bindingId field is set.
    */
   boolean hasBindingId();
-
   /**
    * <code>optional string binding_id = 441088277;</code>
    *
    * @return The bindingId.
    */
   java.lang.String getBindingId();
-
   /**
    * <code>optional string binding_id = 441088277;</code>
    *
@@ -57,7 +55,6 @@ public interface BindingOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
-
   /**
    *
    *
@@ -70,7 +67,6 @@ public interface BindingOrBuilder
    * @return The condition.
    */
   com.google.cloud.compute.v1.Expr getCondition();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface BindingOrBuilder
    * @return A list containing the members.
    */
   java.util.List<java.lang.String> getMembersList();
-
   /**
    *
    *
@@ -107,7 +102,6 @@ public interface BindingOrBuilder
    * @return The count of members.
    */
   int getMembersCount();
-
   /**
    *
    *
@@ -121,7 +115,6 @@ public interface BindingOrBuilder
    * @return The members at the given index.
    */
   java.lang.String getMembers(int index);
-
   /**
    *
    *
@@ -148,7 +141,6 @@ public interface BindingOrBuilder
    * @return Whether the role field is set.
    */
   boolean hasRole();
-
   /**
    *
    *
@@ -161,7 +153,6 @@ public interface BindingOrBuilder
    * @return The role.
    */
   java.lang.String getRole();
-
   /**
    *
    *

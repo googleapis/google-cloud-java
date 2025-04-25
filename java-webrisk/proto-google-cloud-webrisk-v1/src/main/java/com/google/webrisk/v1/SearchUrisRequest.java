@@ -33,7 +33,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1.SearchUrisRequest)
     SearchUrisRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchUrisRequest.newBuilder() to construct.
   private SearchUrisRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
               return result == null ? com.google.webrisk.v1.ThreatType.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.webrisk.v1.ThreatType>(threatTypes_, threatTypes_converter_);
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
   public int getThreatTypesCount() {
     return threatTypes_.size();
   }
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
   public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
     return threatTypes_converter_.convert(threatTypes_.get(index));
   }
-
   /**
    *
    *
@@ -212,7 +205,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<java.lang.Integer> getThreatTypesValueList() {
     return threatTypes_;
   }
-
   /**
    *
    *
@@ -418,7 +410,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -642,7 +633,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -688,7 +677,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000002;
       }
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
           java.lang.Integer, com.google.webrisk.v1.ThreatType>(
           threatTypes_, threatTypes_converter_);
     }
-
     /**
      *
      *
@@ -798,7 +782,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     public int getThreatTypesCount() {
       return threatTypes_.size();
     }
-
     /**
      *
      *
@@ -817,7 +800,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     public com.google.webrisk.v1.ThreatType getThreatTypes(int index) {
       return threatTypes_converter_.convert(threatTypes_.get(index));
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +849,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +893,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +910,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getThreatTypesValueList() {
       return java.util.Collections.unmodifiableList(threatTypes_);
     }
-
     /**
      *
      *
@@ -951,7 +928,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
     public int getThreatTypesValue(int index) {
       return threatTypes_.get(index);
     }
-
     /**
      *
      *
@@ -974,7 +950,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -996,7 +971,6 @@ public final class SearchUrisRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

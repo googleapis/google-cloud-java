@@ -33,7 +33,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagersSuspendInstancesRequest)
     InstanceGroupManagersSuspendInstancesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceGroupManagersSuspendInstancesRequest.newBuilder() to construct.
   private InstanceGroupManagersSuspendInstancesRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,7 +67,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
   private int bitField0_;
   public static final int FORCE_SUSPEND_FIELD_NUMBER = 27637480;
   private boolean forceSuspend_ = false;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
   public boolean hasForceSuspend() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList instances_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
   public com.google.protobuf.ProtocolStringList getInstancesList() {
     return instances_;
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
   public int getInstancesCount() {
     return instances_.size();
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
   public java.lang.String getInstances(int index) {
     return instances_.get(index);
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +561,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     private int bitField0_;
 
     private boolean forceSuspend_;
-
     /**
      *
      *
@@ -585,7 +576,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     public boolean hasForceSuspend() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -601,7 +591,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     public boolean getForceSuspend() {
       return forceSuspend_;
     }
-
     /**
      *
      *
@@ -621,7 +610,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -649,7 +637,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -665,7 +652,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       instances_.makeImmutable();
       return instances_;
     }
-
     /**
      *
      *
@@ -680,7 +666,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     public int getInstancesCount() {
       return instances_.size();
     }
-
     /**
      *
      *
@@ -696,7 +681,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     public java.lang.String getInstances(int index) {
       return instances_.get(index);
     }
-
     /**
      *
      *
@@ -712,7 +696,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
     public com.google.protobuf.ByteString getInstancesBytes(int index) {
       return instances_.getByteString(index);
     }
-
     /**
      *
      *
@@ -736,7 +719,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +741,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +760,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +778,6 @@ public final class InstanceGroupManagersSuspendInstancesRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

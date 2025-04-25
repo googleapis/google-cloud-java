@@ -33,7 +33,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.PropertyArray)
     PropertyArrayOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PropertyArray.newBuilder() to construct.
   private PropertyArray(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Property> properties_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.contentwarehouse.v1.Property> getPropertiesList() {
     return properties_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       getPropertiesOrBuilderList() {
     return properties_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
   public int getPropertiesCount() {
     return properties_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.contentwarehouse.v1.Property getProperties(int index) {
     return properties_.get(index);
   }
-
   /**
    *
    *
@@ -301,7 +295,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +557,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
         return propertiesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -581,7 +573,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
         return propertiesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -598,7 +589,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
         return propertiesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +631,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -665,7 +653,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -688,7 +675,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -751,7 +735,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +754,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +773,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.contentwarehouse.v1.Property.Builder getPropertiesBuilder(int index) {
       return getPropertiesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -822,7 +802,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
         return propertiesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -840,7 +819,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(properties_);
       }
     }
-
     /**
      *
      *
@@ -854,7 +832,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       return getPropertiesFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.Property.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -868,7 +845,6 @@ public final class PropertyArray extends com.google.protobuf.GeneratedMessageV3
       return getPropertiesFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.Property.getDefaultInstance());
     }
-
     /**
      *
      *

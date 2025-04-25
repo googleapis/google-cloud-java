@@ -50,7 +50,6 @@ public interface SearchInfoOrBuilder
    * @return The searchQuery.
    */
   java.lang.String getSearchQuery();
-
   /**
    *
    *
@@ -100,7 +99,6 @@ public interface SearchInfoOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -146,7 +144,6 @@ public interface SearchInfoOrBuilder
    * @return Whether the offset field is set.
    */
   boolean hasOffset();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return Whether the analysis field is set.
    */
   boolean hasAnalysis();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateAnalysisRequestOrBuilder
    * @return The analysis.
    */
   com.google.cloud.contactcenterinsights.v1.Analysis getAnalysis();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.ConnectivityTest resources = 1;</code>
    */
   java.util.List<com.google.cloud.networkmanagement.v1.ConnectivityTest> getResourcesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.ConnectivityTest resources = 1;</code>
    */
   com.google.cloud.networkmanagement.v1.ConnectivityTest getResources(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.ConnectivityTest resources = 1;</code>
    */
   int getResourcesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkmanagement.v1.ConnectivityTestOrBuilder>
       getResourcesOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -118,7 +113,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -131,7 +125,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface ListConnectivityTestsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

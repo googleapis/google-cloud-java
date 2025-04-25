@@ -46,7 +46,6 @@ public interface GetRecommenderConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

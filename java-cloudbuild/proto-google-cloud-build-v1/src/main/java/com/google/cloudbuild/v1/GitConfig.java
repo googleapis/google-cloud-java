@@ -33,7 +33,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.GitConfig)
     GitConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GitConfig.newBuilder() to construct.
   private GitConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The proxySecretVersionName.
      */
     java.lang.String getProxySecretVersionName();
-
     /**
      *
      *
@@ -101,7 +99,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getProxySecretVersionNameBytes();
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.GitConfig.HttpConfig)
       HttpConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use HttpConfig.newBuilder() to construct.
     private HttpConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -151,7 +147,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object proxySecretVersionName_ = "";
-
     /**
      *
      *
@@ -179,7 +174,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -369,7 +363,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -557,7 +550,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object proxySecretVersionName_ = "";
-
       /**
        *
        *
@@ -585,7 +577,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -613,7 +604,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -640,7 +630,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -663,7 +652,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -759,7 +747,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int HTTP_FIELD_NUMBER = 1;
   private com.google.cloudbuild.v1.GitConfig.HttpConfig http_;
-
   /**
    *
    *
@@ -775,7 +762,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttp() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -793,7 +779,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloudbuild.v1.GitConfig.HttpConfig.getDefaultInstance()
         : http_;
   }
-
   /**
    *
    *
@@ -972,7 +957,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1174,7 +1158,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.GitConfig.HttpConfig.Builder,
             com.google.cloudbuild.v1.GitConfig.HttpConfigOrBuilder>
         httpBuilder_;
-
     /**
      *
      *
@@ -1189,7 +1172,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1210,7 +1192,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         return httpBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1233,7 +1214,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1253,7 +1233,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1281,7 +1260,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1301,7 +1279,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1316,7 +1293,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHttpFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1335,7 +1311,6 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
             : http_;
       }
     }
-
     /**
      *
      *

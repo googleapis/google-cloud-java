@@ -37,7 +37,6 @@ public interface PolicyControllerVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *

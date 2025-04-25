@@ -47,7 +47,6 @@ public interface BulkMuteFindingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -103,7 +102,6 @@ public interface BulkMuteFindingsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -152,7 +150,6 @@ public interface BulkMuteFindingsRequestOrBuilder
    * @return The enum numeric value on the wire for muteState.
    */
   int getMuteStateValue();
-
   /**
    *
    *

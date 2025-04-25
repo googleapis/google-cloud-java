@@ -35,7 +35,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TransitTable)
     TransitTableOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransitTable.newBuilder() to construct.
   private TransitTable(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                 .TransitTimeValue>
         getValuesList();
-
     /**
      *
      *
@@ -102,7 +100,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow.TransitTimeValue
         getValues(int index);
-
     /**
      *
      *
@@ -115,7 +112,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getValuesCount();
-
     /**
      *
      *
@@ -132,7 +128,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                     .TransitTimeValueOrBuilder>
         getValuesOrBuilderList();
-
     /**
      *
      *
@@ -148,7 +143,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
             .TransitTimeValueOrBuilder
         getValuesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -167,7 +161,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow)
       TransitTimeRowOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TransitTimeRow.newBuilder() to construct.
     private TransitTimeRow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -217,7 +210,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the minTransitDays field is set.
        */
       boolean hasMinTransitDays();
-
       /**
        *
        *
@@ -244,7 +236,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the maxTransitDays field is set.
        */
       boolean hasMaxTransitDays();
-
       /**
        *
        *
@@ -258,7 +249,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
        */
       int getMaxTransitDays();
     }
-
     /**
      *
      *
@@ -274,7 +264,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow.TransitTimeValue)
         TransitTimeValueOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use TransitTimeValue.newBuilder() to construct.
       private TransitTimeValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -308,7 +297,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
       public static final int MIN_TRANSIT_DAYS_FIELD_NUMBER = 1;
       private int minTransitDays_ = 0;
-
       /**
        *
        *
@@ -325,7 +313,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMinTransitDays() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -345,7 +332,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
 
       public static final int MAX_TRANSIT_DAYS_FIELD_NUMBER = 2;
       private int maxTransitDays_ = 0;
-
       /**
        *
        *
@@ -361,7 +347,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMaxTransitDays() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -585,7 +570,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -816,7 +800,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int minTransitDays_;
-
         /**
          *
          *
@@ -833,7 +816,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         public boolean hasMinTransitDays() {
           return ((bitField0_ & 0x00000001) != 0);
         }
-
         /**
          *
          *
@@ -850,7 +832,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         public int getMinTransitDays() {
           return minTransitDays_;
         }
-
         /**
          *
          *
@@ -871,7 +852,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -892,7 +872,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
 
         private int maxTransitDays_;
-
         /**
          *
          *
@@ -908,7 +887,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         public boolean hasMaxTransitDays() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -924,7 +902,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         public int getMaxTransitDays() {
           return maxTransitDays_;
         }
-
         /**
          *
          *
@@ -944,7 +921,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1042,7 +1018,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                 .TransitTimeValue>
         values_;
-
     /**
      *
      *
@@ -1061,7 +1036,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         getValuesList() {
       return values_;
     }
-
     /**
      *
      *
@@ -1081,7 +1055,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         getValuesOrBuilderList() {
       return values_;
     }
-
     /**
      *
      *
@@ -1097,7 +1070,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -1114,7 +1086,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -1303,7 +1274,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1600,7 +1570,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1619,7 +1588,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1640,7 +1608,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1668,7 +1635,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1694,7 +1660,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1721,7 +1686,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1749,7 +1713,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1774,7 +1737,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1800,7 +1762,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1827,7 +1788,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1849,7 +1809,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1871,7 +1830,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1888,7 +1846,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           getValuesBuilder(int index) {
         return getValuesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -1909,7 +1866,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           return valuesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -1932,7 +1888,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(values_);
         }
       }
-
       /**
        *
        *
@@ -1952,7 +1907,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                     .TransitTimeValue.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -1973,7 +1927,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
                 com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                     .TransitTimeValue.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2088,7 +2041,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList postalCodeGroupNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2109,7 +2061,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getPostalCodeGroupNamesList() {
     return postalCodeGroupNames_;
   }
-
   /**
    *
    *
@@ -2130,7 +2081,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public int getPostalCodeGroupNamesCount() {
     return postalCodeGroupNames_.size();
   }
-
   /**
    *
    *
@@ -2152,7 +2102,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getPostalCodeGroupNames(int index) {
     return postalCodeGroupNames_.get(index);
   }
-
   /**
    *
    *
@@ -2180,7 +2129,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList transitTimeLabels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2197,7 +2145,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getTransitTimeLabelsList() {
     return transitTimeLabels_;
   }
-
   /**
    *
    *
@@ -2214,7 +2161,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public int getTransitTimeLabelsCount() {
     return transitTimeLabels_.size();
   }
-
   /**
    *
    *
@@ -2232,7 +2178,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getTransitTimeLabels(int index) {
     return transitTimeLabels_.get(index);
   }
-
   /**
    *
    *
@@ -2256,7 +2201,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow>
       rows_;
-
   /**
    *
    *
@@ -2277,7 +2221,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       getRowsList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -2300,7 +2243,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       getRowsOrBuilderList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -2320,7 +2262,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
   public int getRowsCount() {
     return rows_.size();
   }
-
   /**
    *
    *
@@ -2341,7 +2282,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return rows_.get(index);
   }
-
   /**
    *
    *
@@ -2558,7 +2498,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2845,7 +2784,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -2867,7 +2805,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       postalCodeGroupNames_.makeImmutable();
       return postalCodeGroupNames_;
     }
-
     /**
      *
      *
@@ -2888,7 +2825,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public int getPostalCodeGroupNamesCount() {
       return postalCodeGroupNames_.size();
     }
-
     /**
      *
      *
@@ -2910,7 +2846,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getPostalCodeGroupNames(int index) {
       return postalCodeGroupNames_.get(index);
     }
-
     /**
      *
      *
@@ -2932,7 +2867,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPostalCodeGroupNamesBytes(int index) {
       return postalCodeGroupNames_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2962,7 +2896,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2991,7 +2924,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3017,7 +2949,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3042,7 +2973,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3082,7 +3012,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -3101,7 +3030,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       transitTimeLabels_.makeImmutable();
       return transitTimeLabels_;
     }
-
     /**
      *
      *
@@ -3119,7 +3047,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public int getTransitTimeLabelsCount() {
       return transitTimeLabels_.size();
     }
-
     /**
      *
      *
@@ -3138,7 +3065,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getTransitTimeLabels(int index) {
       return transitTimeLabels_.get(index);
     }
-
     /**
      *
      *
@@ -3157,7 +3083,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTransitTimeLabelsBytes(int index) {
       return transitTimeLabels_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3184,7 +3109,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3210,7 +3134,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3233,7 +3156,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3255,7 +3177,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3324,7 +3245,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3347,7 +3267,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3371,7 +3290,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3401,7 +3319,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3430,7 +3347,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3460,7 +3376,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3490,7 +3405,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3518,7 +3432,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3547,7 +3460,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3576,7 +3488,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3602,7 +3513,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3628,7 +3538,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3648,7 +3557,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3672,7 +3580,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3698,7 +3605,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-
     /**
      *
      *
@@ -3721,7 +3627,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3745,7 +3650,6 @@ public final class TransitTable extends com.google.protobuf.GeneratedMessageV3
               com.google.shopping.merchant.accounts.v1beta.TransitTable.TransitTimeRow
                   .getDefaultInstance());
     }
-
     /**
      *
      *

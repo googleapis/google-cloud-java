@@ -42,7 +42,6 @@ public interface TenantOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -77,7 +76,6 @@ public interface TenantOrBuilder
    * @return The externalId.
    */
   java.lang.String getExternalId();
-
   /**
    *
    *
@@ -111,7 +109,6 @@ public interface TenantOrBuilder
    * @return The enum numeric value on the wire for usageType.
    */
   int getUsageTypeValue();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface TenantOrBuilder
    * @return A list containing the keywordSearchableProfileCustomAttributes.
    */
   java.util.List<java.lang.String> getKeywordSearchableProfileCustomAttributesList();
-
   /**
    *
    *
@@ -167,7 +163,6 @@ public interface TenantOrBuilder
    * @return The count of keywordSearchableProfileCustomAttributes.
    */
   int getKeywordSearchableProfileCustomAttributesCount();
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public interface TenantOrBuilder
    * @return The keywordSearchableProfileCustomAttributes at the given index.
    */
   java.lang.String getKeywordSearchableProfileCustomAttributes(int index);
-
   /**
    *
    *

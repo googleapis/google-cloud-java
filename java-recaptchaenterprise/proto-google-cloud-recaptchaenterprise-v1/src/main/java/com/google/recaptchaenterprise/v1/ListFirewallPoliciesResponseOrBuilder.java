@@ -35,7 +35,6 @@ public interface ListFirewallPoliciesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.recaptchaenterprise.v1.FirewallPolicy> getFirewallPoliciesList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListFirewallPoliciesResponseOrBuilder
    * </code>
    */
   com.google.recaptchaenterprise.v1.FirewallPolicy getFirewallPolicies(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListFirewallPoliciesResponseOrBuilder
    * </code>
    */
   int getFirewallPoliciesCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListFirewallPoliciesResponseOrBuilder
    */
   java.util.List<? extends com.google.recaptchaenterprise.v1.FirewallPolicyOrBuilder>
       getFirewallPoliciesOrBuilderList();
-
   /**
    *
    *
@@ -98,7 +94,6 @@ public interface ListFirewallPoliciesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

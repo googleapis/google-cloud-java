@@ -35,7 +35,6 @@ public interface ListSecretsResponseOrBuilder
    * <code>repeated .google.cloud.secretmanager.v1beta2.Secret secrets = 1;</code>
    */
   java.util.List<com.google.cloud.secretmanager.v1beta2.Secret> getSecretsList();
-
   /**
    *
    *
@@ -47,7 +46,6 @@ public interface ListSecretsResponseOrBuilder
    * <code>repeated .google.cloud.secretmanager.v1beta2.Secret secrets = 1;</code>
    */
   com.google.cloud.secretmanager.v1beta2.Secret getSecrets(int index);
-
   /**
    *
    *
@@ -59,7 +57,6 @@ public interface ListSecretsResponseOrBuilder
    * <code>repeated .google.cloud.secretmanager.v1beta2.Secret secrets = 1;</code>
    */
   int getSecretsCount();
-
   /**
    *
    *
@@ -72,7 +69,6 @@ public interface ListSecretsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.secretmanager.v1beta2.SecretOrBuilder>
       getSecretsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListSecretsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

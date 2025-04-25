@@ -40,7 +40,6 @@ public interface CreateFeatureMonitorRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateFeatureMonitorRequestOrBuilder
    * @return Whether the featureMonitor field is set.
    */
   boolean hasFeatureMonitor();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateFeatureMonitorRequestOrBuilder
    * @return The featureMonitor.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureMonitor getFeatureMonitor();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateFeatureMonitorRequestOrBuilder
    * @return The featureMonitorId.
    */
   java.lang.String getFeatureMonitorId();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UpsertExamplesRequestOrBuilder
    * @return The exampleStore.
    */
   java.lang.String getExampleStore();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface UpsertExamplesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Example> getExamplesList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface UpsertExamplesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Example getExamples(int index);
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UpsertExamplesRequestOrBuilder
    * </code>
    */
   int getExamplesCount();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface UpsertExamplesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ExampleOrBuilder>
       getExamplesOrBuilderList();
-
   /**
    *
    *

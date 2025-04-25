@@ -36,7 +36,6 @@ public interface AccessDeniedPageSettingsOrBuilder
    * @return Whether the accessDeniedPageUri field is set.
    */
   boolean hasAccessDeniedPageUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AccessDeniedPageSettingsOrBuilder
    * @return The accessDeniedPageUri.
    */
   com.google.protobuf.StringValue getAccessDeniedPageUri();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface AccessDeniedPageSettingsOrBuilder
    * @return Whether the generateTroubleshootingUri field is set.
    */
   boolean hasGenerateTroubleshootingUri();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface AccessDeniedPageSettingsOrBuilder
    * @return The generateTroubleshootingUri.
    */
   com.google.protobuf.BoolValue getGenerateTroubleshootingUri();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface AccessDeniedPageSettingsOrBuilder
    * @return Whether the remediationTokenGenerationEnabled field is set.
    */
   boolean hasRemediationTokenGenerationEnabled();
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public interface AccessDeniedPageSettingsOrBuilder
    * @return The remediationTokenGenerationEnabled.
    */
   com.google.protobuf.BoolValue getRemediationTokenGenerationEnabled();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface CreateWorkerPoolRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateWorkerPoolRequestOrBuilder
    * @return Whether the workerPool field is set.
    */
   boolean hasWorkerPool();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateWorkerPoolRequestOrBuilder
    * @return The workerPool.
    */
   com.google.cloudbuild.v1.WorkerPool getWorkerPool();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateWorkerPoolRequestOrBuilder
    * @return The workerPoolId.
    */
   java.lang.String getWorkerPoolId();
-
   /**
    *
    *

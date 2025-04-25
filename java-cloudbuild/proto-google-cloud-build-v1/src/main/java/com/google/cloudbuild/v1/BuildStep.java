@@ -33,7 +33,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.BuildStep)
     BuildStepOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BuildStep.newBuilder() to construct.
   private BuildStep(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -166,7 +163,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList env_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -184,7 +180,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getEnvList() {
     return env_;
   }
-
   /**
    *
    *
@@ -202,7 +197,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getEnvCount() {
     return env_.size();
   }
-
   /**
    *
    *
@@ -221,7 +215,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getEnv(int index) {
     return env_.get(index);
   }
-
   /**
    *
    *
@@ -246,7 +239,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList args_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -266,7 +258,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
   }
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getArgsCount() {
     return args_.size();
   }
-
   /**
    *
    *
@@ -307,7 +297,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getArgs(int index) {
     return args_.get(index);
   }
-
   /**
    *
    *
@@ -333,7 +322,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dir_ = "";
-
   /**
    *
    *
@@ -366,7 +354,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -404,7 +391,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -429,7 +415,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -460,7 +445,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList waitFor_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -479,7 +463,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getWaitForList() {
     return waitFor_;
   }
-
   /**
    *
    *
@@ -498,7 +481,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getWaitForCount() {
     return waitFor_.size();
   }
-
   /**
    *
    *
@@ -518,7 +500,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getWaitFor(int index) {
     return waitFor_.get(index);
   }
-
   /**
    *
    *
@@ -543,7 +524,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entrypoint_ = "";
-
   /**
    *
    *
@@ -568,7 +548,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -599,7 +578,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList secretEnv_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -616,7 +594,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getSecretEnvList() {
     return secretEnv_;
   }
-
   /**
    *
    *
@@ -633,7 +610,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getSecretEnvCount() {
     return secretEnv_.size();
   }
-
   /**
    *
    *
@@ -651,7 +627,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getSecretEnv(int index) {
     return secretEnv_.get(index);
   }
-
   /**
    *
    *
@@ -674,7 +649,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.Volume> volumes_;
-
   /**
    *
    *
@@ -695,7 +669,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloudbuild.v1.Volume> getVolumesList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -717,7 +690,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       getVolumesOrBuilderList() {
     return volumes_;
   }
-
   /**
    *
    *
@@ -738,7 +710,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getVolumesCount() {
     return volumes_.size();
   }
-
   /**
    *
    *
@@ -759,7 +730,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.Volume getVolumes(int index) {
     return volumes_.get(index);
   }
-
   /**
    *
    *
@@ -783,7 +753,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMING_FIELD_NUMBER = 10;
   private com.google.cloudbuild.v1.TimeSpan timing_;
-
   /**
    *
    *
@@ -801,7 +770,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTiming() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -819,7 +787,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.TimeSpan getTiming() {
     return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
   }
-
   /**
    *
    *
@@ -838,7 +805,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PULL_TIMING_FIELD_NUMBER = 13;
   private com.google.cloudbuild.v1.TimeSpan pullTiming_;
-
   /**
    *
    *
@@ -857,7 +823,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPullTiming() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -878,7 +843,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance()
         : pullTiming_;
   }
-
   /**
    *
    *
@@ -900,7 +864,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMEOUT_FIELD_NUMBER = 11;
   private com.google.protobuf.Duration timeout_;
-
   /**
    *
    *
@@ -918,7 +881,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimeout() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -936,7 +898,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getTimeout() {
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
-
   /**
    *
    *
@@ -955,7 +916,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 12;
   private int status_ = 0;
-
   /**
    *
    *
@@ -975,7 +935,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getStatusValue() {
     return status_;
   }
-
   /**
    *
    *
@@ -1000,7 +959,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ALLOW_FAILURE_FIELD_NUMBER = 14;
   private boolean allowFailure_ = false;
-
   /**
    *
    *
@@ -1023,7 +981,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXIT_CODE_FIELD_NUMBER = 16;
   private int exitCode_ = 0;
-
   /**
    *
    *
@@ -1044,7 +1001,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList allowExitCodes_ = emptyIntList();
-
   /**
    *
    *
@@ -1062,7 +1018,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAllowExitCodesList() {
     return allowExitCodes_;
   }
-
   /**
    *
    *
@@ -1079,7 +1034,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public int getAllowExitCodesCount() {
     return allowExitCodes_.size();
   }
-
   /**
    *
    *
@@ -1104,7 +1058,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object script_ = "";
-
   /**
    *
    *
@@ -1130,7 +1083,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1159,7 +1111,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AUTOMAP_SUBSTITUTIONS_FIELD_NUMBER = 20;
   private boolean automapSubstitutions_ = false;
-
   /**
    *
    *
@@ -1177,7 +1128,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomapSubstitutions() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -1573,7 +1523,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2118,7 +2067,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2157,7 +2105,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2196,7 +2143,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2234,7 +2180,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2268,7 +2213,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2317,7 +2261,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -2336,7 +2279,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       env_.makeImmutable();
       return env_;
     }
-
     /**
      *
      *
@@ -2354,7 +2296,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getEnvCount() {
       return env_.size();
     }
-
     /**
      *
      *
@@ -2373,7 +2314,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getEnv(int index) {
       return env_.get(index);
     }
-
     /**
      *
      *
@@ -2392,7 +2332,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getEnvBytes(int index) {
       return env_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2419,7 +2358,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2445,7 +2383,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2468,7 +2405,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2490,7 +2426,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2527,7 +2462,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2548,7 +2482,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       args_.makeImmutable();
       return args_;
     }
-
     /**
      *
      *
@@ -2568,7 +2501,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getArgsCount() {
       return args_.size();
     }
-
     /**
      *
      *
@@ -2589,7 +2521,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getArgs(int index) {
       return args_.get(index);
     }
-
     /**
      *
      *
@@ -2610,7 +2541,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2639,7 +2569,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2667,7 +2596,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2692,7 +2620,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2716,7 +2643,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2747,7 +2673,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dir_ = "";
-
     /**
      *
      *
@@ -2779,7 +2704,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2811,7 +2735,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2842,7 +2765,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2869,7 +2791,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2903,7 +2824,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -2927,7 +2847,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2951,7 +2870,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2974,7 +2892,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2993,7 +2910,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3027,7 +2943,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -3047,7 +2962,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       waitFor_.makeImmutable();
       return waitFor_;
     }
-
     /**
      *
      *
@@ -3066,7 +2980,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getWaitForCount() {
       return waitFor_.size();
     }
-
     /**
      *
      *
@@ -3086,7 +2999,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getWaitFor(int index) {
       return waitFor_.get(index);
     }
-
     /**
      *
      *
@@ -3106,7 +3018,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getWaitForBytes(int index) {
       return waitFor_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3134,7 +3045,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3161,7 +3071,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3185,7 +3094,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3208,7 +3116,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3238,7 +3145,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object entrypoint_ = "";
-
     /**
      *
      *
@@ -3262,7 +3168,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3286,7 +3191,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3309,7 +3213,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3328,7 +3231,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3362,7 +3264,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -3380,7 +3281,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       secretEnv_.makeImmutable();
       return secretEnv_;
     }
-
     /**
      *
      *
@@ -3397,7 +3297,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getSecretEnvCount() {
       return secretEnv_.size();
     }
-
     /**
      *
      *
@@ -3415,7 +3314,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSecretEnv(int index) {
       return secretEnv_.get(index);
     }
-
     /**
      *
      *
@@ -3433,7 +3331,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSecretEnvBytes(int index) {
       return secretEnv_.getByteString(index);
     }
-
     /**
      *
      *
@@ -3459,7 +3356,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3484,7 +3380,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3506,7 +3401,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3527,7 +3421,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3593,7 +3486,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3617,7 +3509,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3641,7 +3532,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3671,7 +3561,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3698,7 +3587,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3728,7 +3616,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3758,7 +3645,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3785,7 +3671,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3812,7 +3697,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3840,7 +3724,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3867,7 +3750,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3894,7 +3776,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3914,7 +3795,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.Volume.Builder getVolumesBuilder(int index) {
       return getVolumesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3938,7 +3818,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return volumesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3963,7 +3842,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(volumes_);
       }
     }
-
     /**
      *
      *
@@ -3984,7 +3862,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(com.google.cloudbuild.v1.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4005,7 +3882,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       return getVolumesFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v1.Volume.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4049,7 +3925,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.TimeSpan.Builder,
             com.google.cloudbuild.v1.TimeSpanOrBuilder>
         timingBuilder_;
-
     /**
      *
      *
@@ -4066,7 +3941,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTiming() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -4087,7 +3961,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return timingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4112,7 +3985,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4134,7 +4006,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4164,7 +4035,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4186,7 +4056,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4203,7 +4072,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4222,7 +4090,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return timing_ == null ? com.google.cloudbuild.v1.TimeSpan.getDefaultInstance() : timing_;
       }
     }
-
     /**
      *
      *
@@ -4257,7 +4124,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             com.google.cloudbuild.v1.TimeSpan.Builder,
             com.google.cloudbuild.v1.TimeSpanOrBuilder>
         pullTimingBuilder_;
-
     /**
      *
      *
@@ -4275,7 +4141,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPullTiming() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -4299,7 +4164,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return pullTimingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4325,7 +4189,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4348,7 +4211,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4379,7 +4241,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4402,7 +4263,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4420,7 +4280,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPullTimingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4442,7 +4301,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             : pullTiming_;
       }
     }
-
     /**
      *
      *
@@ -4478,7 +4336,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeoutBuilder_;
-
     /**
      *
      *
@@ -4495,7 +4352,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeout() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -4516,7 +4372,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return timeoutBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4541,7 +4396,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4563,7 +4417,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4593,7 +4446,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4615,7 +4467,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4632,7 +4483,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4651,7 +4501,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
-
     /**
      *
      *
@@ -4681,7 +4530,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int status_ = 0;
-
     /**
      *
      *
@@ -4701,7 +4549,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getStatusValue() {
       return status_;
     }
-
     /**
      *
      *
@@ -4724,7 +4571,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4746,7 +4592,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
           com.google.cloudbuild.v1.Build.Status.forNumber(status_);
       return result == null ? com.google.cloudbuild.v1.Build.Status.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -4772,7 +4617,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4796,7 +4640,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean allowFailure_;
-
     /**
      *
      *
@@ -4816,7 +4659,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public boolean getAllowFailure() {
       return allowFailure_;
     }
-
     /**
      *
      *
@@ -4840,7 +4682,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4864,7 +4705,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int exitCode_;
-
     /**
      *
      *
@@ -4880,7 +4720,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getExitCode() {
       return exitCode_;
     }
-
     /**
      *
      *
@@ -4900,7 +4739,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4927,7 +4765,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00008000;
     }
-
     /**
      *
      *
@@ -4945,7 +4782,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       allowExitCodes_.makeImmutable();
       return allowExitCodes_;
     }
-
     /**
      *
      *
@@ -4962,7 +4798,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getAllowExitCodesCount() {
       return allowExitCodes_.size();
     }
-
     /**
      *
      *
@@ -4980,7 +4815,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public int getAllowExitCodes(int index) {
       return allowExitCodes_.getInt(index);
     }
-
     /**
      *
      *
@@ -5004,7 +4838,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5027,7 +4860,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5049,7 +4881,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5071,7 +4902,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object script_ = "";
-
     /**
      *
      *
@@ -5096,7 +4926,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5121,7 +4950,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5145,7 +4973,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5165,7 +4992,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5192,7 +5018,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean automapSubstitutions_;
-
     /**
      *
      *
@@ -5210,7 +5035,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomapSubstitutions() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -5228,7 +5052,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
     public boolean getAutomapSubstitutions() {
       return automapSubstitutions_;
     }
-
     /**
      *
      *
@@ -5250,7 +5073,6 @@ public final class BuildStep extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

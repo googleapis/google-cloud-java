@@ -36,7 +36,6 @@ public interface ModelEvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ModelEvaluationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface ModelEvaluationOrBuilder
    * @return The metricsSchemaUri.
    */
   java.lang.String getMetricsSchemaUri();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the metrics field is set.
    */
   boolean hasMetrics();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface ModelEvaluationOrBuilder
    * @return The metrics.
    */
   com.google.protobuf.Value getMetrics();
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface ModelEvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public interface ModelEvaluationOrBuilder
    * @return A list containing the sliceDimensions.
    */
   java.util.List<java.lang.String> getSliceDimensionsList();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface ModelEvaluationOrBuilder
    * @return The count of sliceDimensions.
    */
   int getSliceDimensionsCount();
-
   /**
    *
    *
@@ -239,7 +230,6 @@ public interface ModelEvaluationOrBuilder
    * @return The sliceDimensions at the given index.
    */
   java.lang.String getSliceDimensions(int index);
-
   /**
    *
    *
@@ -272,7 +262,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the modelExplanation field is set.
    */
   boolean hasModelExplanation();
-
   /**
    *
    *
@@ -287,7 +276,6 @@ public interface ModelEvaluationOrBuilder
    * @return The modelExplanation.
    */
   com.google.cloud.aiplatform.v1beta1.ModelExplanation getModelExplanation();
-
   /**
    *
    *
@@ -316,7 +304,6 @@ public interface ModelEvaluationOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec>
       getExplanationSpecsList();
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluation.ModelEvaluationExplanationSpec
       getExplanationSpecs(int index);
-
   /**
    *
    *
@@ -347,7 +333,6 @@ public interface ModelEvaluationOrBuilder
    * </code>
    */
   int getExplanationSpecsCount();
-
   /**
    *
    *
@@ -366,7 +351,6 @@ public interface ModelEvaluationOrBuilder
               com.google.cloud.aiplatform.v1beta1.ModelEvaluation
                   .ModelEvaluationExplanationSpecOrBuilder>
       getExplanationSpecsOrBuilderList();
-
   /**
    *
    *
@@ -398,7 +382,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -414,7 +397,6 @@ public interface ModelEvaluationOrBuilder
    * @return The metadata.
    */
   com.google.protobuf.Value getMetadata();
-
   /**
    *
    *
@@ -441,7 +423,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the biasConfigs field is set.
    */
   boolean hasBiasConfigs();
-
   /**
    *
    *
@@ -454,7 +435,6 @@ public interface ModelEvaluationOrBuilder
    * @return The biasConfigs.
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluation.BiasConfig getBiasConfigs();
-
   /**
    *
    *

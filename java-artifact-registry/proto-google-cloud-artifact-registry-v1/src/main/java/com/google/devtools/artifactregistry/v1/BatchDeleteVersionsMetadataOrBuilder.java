@@ -36,7 +36,6 @@ public interface BatchDeleteVersionsMetadataOrBuilder
    * @return A list containing the failedVersions.
    */
   java.util.List<java.lang.String> getFailedVersionsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface BatchDeleteVersionsMetadataOrBuilder
    * @return The count of failedVersions.
    */
   int getFailedVersionsCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface BatchDeleteVersionsMetadataOrBuilder
    * @return The failedVersions at the given index.
    */
   java.lang.String getFailedVersions(int index);
-
   /**
    *
    *

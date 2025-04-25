@@ -39,7 +39,6 @@ public interface CreatePersistentResourceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreatePersistentResourceRequestOrBuilder
    * @return Whether the persistentResource field is set.
    */
   boolean hasPersistentResource();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreatePersistentResourceRequestOrBuilder
    * @return The persistentResource.
    */
   com.google.cloud.aiplatform.v1.PersistentResource getPersistentResource();
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public interface CreatePersistentResourceRequestOrBuilder
    * @return The persistentResourceId.
    */
   java.lang.String getPersistentResourceId();
-
   /**
    *
    *

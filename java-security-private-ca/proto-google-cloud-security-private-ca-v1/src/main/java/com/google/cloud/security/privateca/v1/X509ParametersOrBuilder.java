@@ -39,7 +39,6 @@ public interface X509ParametersOrBuilder
    * @return Whether the keyUsage field is set.
    */
   boolean hasKeyUsage();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface X509ParametersOrBuilder
    * @return The keyUsage.
    */
   com.google.cloud.security.privateca.v1.KeyUsage getKeyUsage();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface X509ParametersOrBuilder
    * @return Whether the caOptions field is set.
    */
   boolean hasCaOptions();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface X509ParametersOrBuilder
    * @return The caOptions.
    */
   com.google.cloud.security.privateca.v1.X509Parameters.CaOptions getCaOptions();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface X509ParametersOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.security.privateca.v1.ObjectId> getPolicyIdsList();
-
   /**
    *
    *
@@ -146,7 +141,6 @@ public interface X509ParametersOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1.ObjectId getPolicyIds(int index);
-
   /**
    *
    *
@@ -160,7 +154,6 @@ public interface X509ParametersOrBuilder
    * </code>
    */
   int getPolicyIdsCount();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface X509ParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1.ObjectIdOrBuilder>
       getPolicyIdsOrBuilderList();
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public interface X509ParametersOrBuilder
    * @return A list containing the aiaOcspServers.
    */
   java.util.List<java.lang.String> getAiaOcspServersList();
-
   /**
    *
    *
@@ -219,7 +210,6 @@ public interface X509ParametersOrBuilder
    * @return The count of aiaOcspServers.
    */
   int getAiaOcspServersCount();
-
   /**
    *
    *
@@ -235,7 +225,6 @@ public interface X509ParametersOrBuilder
    * @return The aiaOcspServers at the given index.
    */
   java.lang.String getAiaOcspServers(int index);
-
   /**
    *
    *
@@ -266,7 +255,6 @@ public interface X509ParametersOrBuilder
    * @return Whether the nameConstraints field is set.
    */
   boolean hasNameConstraints();
-
   /**
    *
    *
@@ -281,7 +269,6 @@ public interface X509ParametersOrBuilder
    * @return The nameConstraints.
    */
   com.google.cloud.security.privateca.v1.X509Parameters.NameConstraints getNameConstraints();
-
   /**
    *
    *
@@ -309,7 +296,6 @@ public interface X509ParametersOrBuilder
    */
   java.util.List<com.google.cloud.security.privateca.v1.X509Extension>
       getAdditionalExtensionsList();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface X509ParametersOrBuilder
    * </code>
    */
   com.google.cloud.security.privateca.v1.X509Extension getAdditionalExtensions(int index);
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public interface X509ParametersOrBuilder
    * </code>
    */
   int getAdditionalExtensionsCount();
-
   /**
    *
    *
@@ -349,7 +333,6 @@ public interface X509ParametersOrBuilder
    */
   java.util.List<? extends com.google.cloud.security.privateca.v1.X509ExtensionOrBuilder>
       getAdditionalExtensionsOrBuilderList();
-
   /**
    *
    *

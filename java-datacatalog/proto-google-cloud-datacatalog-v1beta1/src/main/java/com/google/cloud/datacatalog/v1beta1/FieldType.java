@@ -25,7 +25,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.FieldType)
     FieldTypeOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FieldType.newBuilder() to construct.
   private FieldType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIMITIVE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PRIMITIVE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>DOUBLE = 1;</code>
      */
     public static final int DOUBLE_VALUE = 1;
-
     /**
      *
      *
@@ -141,7 +138,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>STRING = 2;</code>
      */
     public static final int STRING_VALUE = 2;
-
     /**
      *
      *
@@ -152,7 +148,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      * <code>BOOL = 3;</code>
      */
     public static final int BOOL_VALUE = 3;
-
     /**
      *
      *
@@ -263,21 +258,18 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue>
         getAllowedValuesList();
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
     com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue getAllowedValues(int index);
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
      * </code>
      */
     int getAllowedValuesCount();
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -286,7 +278,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     java.util.List<
             ? extends com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValueOrBuilder>
         getAllowedValuesOrBuilderList();
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -295,14 +286,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValueOrBuilder
         getAllowedValuesOrBuilder(int index);
   }
-
   /** Protobuf type {@code google.cloud.datacatalog.v1beta1.FieldType.EnumType} */
   public static final class EnumType extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.FieldType.EnumType)
       EnumTypeOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EnumType.newBuilder() to construct.
     private EnumType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -351,7 +340,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        * @return The displayName.
        */
       java.lang.String getDisplayName();
-
       /**
        *
        *
@@ -366,14 +354,12 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getDisplayNameBytes();
     }
-
     /** Protobuf type {@code google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue} */
     public static final class EnumValue extends com.google.protobuf.GeneratedMessageV3
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue)
         EnumValueOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use EnumValue.newBuilder() to construct.
       private EnumValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -408,7 +394,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object displayName_ = "";
-
       /**
        *
        *
@@ -433,7 +418,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -622,7 +606,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /** Protobuf type {@code google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue} */
       public static final class Builder
           extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -809,7 +792,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object displayName_ = "";
-
         /**
          *
          *
@@ -833,7 +815,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -857,7 +838,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -880,7 +860,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -899,7 +878,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -996,7 +974,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue>
         allowedValues_;
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1007,7 +984,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         getAllowedValuesList() {
       return allowedValues_;
     }
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1019,7 +995,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         getAllowedValuesOrBuilderList() {
       return allowedValues_;
     }
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1029,7 +1004,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedValuesCount() {
       return allowedValues_.size();
     }
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1040,7 +1014,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return allowedValues_.get(index);
     }
-
     /**
      * <code>
      * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1215,7 +1188,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /** Protobuf type {@code google.cloud.datacatalog.v1beta1.FieldType.EnumType} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -1474,7 +1446,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           return allowedValuesBuilder_.getMessageList();
         }
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1487,7 +1458,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           return allowedValuesBuilder_.getCount();
         }
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1501,7 +1471,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           return allowedValuesBuilder_.getMessage(index);
         }
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1521,7 +1490,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1540,7 +1508,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1560,7 +1527,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1580,7 +1546,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1598,7 +1563,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1617,7 +1581,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1636,7 +1599,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1652,7 +1614,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1668,7 +1629,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1678,7 +1638,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           getAllowedValuesBuilder(int index) {
         return getAllowedValuesFieldBuilder().getBuilder(index);
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1692,7 +1651,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           return allowedValuesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1707,7 +1665,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(allowedValues_);
         }
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1720,7 +1677,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue
                     .getDefaultInstance());
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1734,7 +1690,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue
                     .getDefaultInstance());
       }
-
       /**
        * <code>
        * repeated .google.cloud.datacatalog.v1beta1.FieldType.EnumType.EnumValue allowed_values = 1;
@@ -1847,7 +1802,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     private TypeDeclCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1881,7 +1835,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIMITIVE_TYPE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -1896,7 +1849,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrimitiveType() {
     return typeDeclCase_ == 1;
   }
-
   /**
    *
    *
@@ -1914,7 +1866,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
-
   /**
    *
    *
@@ -1939,7 +1890,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENUM_TYPE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1955,7 +1905,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnumType() {
     return typeDeclCase_ == 2;
   }
-
   /**
    *
    *
@@ -1974,7 +1923,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2180,7 +2128,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code google.cloud.datacatalog.v1beta1.FieldType} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -2412,7 +2359,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrimitiveType() {
       return typeDeclCase_ == 1;
     }
-
     /**
      *
      *
@@ -2431,7 +2377,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
-
     /**
      *
      *
@@ -2450,7 +2395,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2475,7 +2419,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.datacatalog.v1beta1.FieldType.PrimitiveType
           .PRIMITIVE_TYPE_UNSPECIFIED;
     }
-
     /**
      *
      *
@@ -2498,7 +2441,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2524,7 +2466,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.Builder,
             com.google.cloud.datacatalog.v1beta1.FieldType.EnumTypeOrBuilder>
         enumTypeBuilder_;
-
     /**
      *
      *
@@ -2540,7 +2481,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnumType() {
       return typeDeclCase_ == 2;
     }
-
     /**
      *
      *
@@ -2566,7 +2506,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2589,7 +2528,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       typeDeclCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2610,7 +2548,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       typeDeclCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2644,7 +2581,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       typeDeclCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2670,7 +2606,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2683,7 +2618,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.Builder getEnumTypeBuilder() {
       return getEnumTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2704,7 +2638,6 @@ public final class FieldType extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.datacatalog.v1beta1.FieldType.EnumType.getDefaultInstance();
       }
     }
-
     /**
      *
      *

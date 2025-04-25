@@ -36,7 +36,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return Whether the healthCheckResource field is set.
    */
   boolean hasHealthCheckResource();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return The healthCheckResource.
    */
   com.google.cloud.compute.v1.HealthCheck getHealthCheckResource();
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

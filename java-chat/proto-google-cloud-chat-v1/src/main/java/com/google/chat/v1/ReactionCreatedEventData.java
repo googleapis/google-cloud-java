@@ -35,7 +35,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.chat.v1.ReactionCreatedEventData)
     ReactionCreatedEventDataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReactionCreatedEventData.newBuilder() to construct.
   private ReactionCreatedEventData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int REACTION_FIELD_NUMBER = 1;
   private com.google.chat.v1.Reaction reaction_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
   public boolean hasReaction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
   public com.google.chat.v1.Reaction getReaction() {
     return reaction_ == null ? com.google.chat.v1.Reaction.getDefaultInstance() : reaction_;
   }
-
   /**
    *
    *
@@ -278,7 +274,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -483,7 +478,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
             com.google.chat.v1.Reaction.Builder,
             com.google.chat.v1.ReactionOrBuilder>
         reactionBuilder_;
-
     /**
      *
      *
@@ -498,7 +492,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
     public boolean hasReaction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -517,7 +510,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
         return reactionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -540,7 +532,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -560,7 +551,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -588,7 +578,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -608,7 +597,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +611,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
       onChanged();
       return getReactionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -640,7 +627,6 @@ public final class ReactionCreatedEventData extends com.google.protobuf.Generate
         return reaction_ == null ? com.google.chat.v1.Reaction.getDefaultInstance() : reaction_;
       }
     }
-
     /**
      *
      *

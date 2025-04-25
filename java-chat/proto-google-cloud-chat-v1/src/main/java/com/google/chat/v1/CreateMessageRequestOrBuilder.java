@@ -40,7 +40,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateMessageRequestOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The message.
    */
   com.google.chat.v1.Message getMessage();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateMessageRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getThreadKey();
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -192,7 +187,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The enum numeric value on the wire for messageReplyOption.
    */
   int getMessageReplyOptionValue();
-
   /**
    *
    *
@@ -241,7 +235,6 @@ public interface CreateMessageRequestOrBuilder
    * @return The messageId.
    */
   java.lang.String getMessageId();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface InstanceGroupsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroup> getInstanceGroupsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface InstanceGroupsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
    */
   com.google.cloud.compute.v1.InstanceGroup getInstanceGroups(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface InstanceGroupsScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
    */
   int getInstanceGroupsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface InstanceGroupsScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupOrBuilder>
       getInstanceGroupsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface InstanceGroupsScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -105,7 +100,6 @@ public interface InstanceGroupsScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

@@ -43,7 +43,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Dimension> getDimensionsList();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   com.google.analytics.data.v1beta.Dimension getDimensions(int index);
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   int getDimensionsCount();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface RunPivotReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionOrBuilder>
       getDimensionsOrBuilderList();
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Metric> getMetricsList();
-
   /**
    *
    *
@@ -150,7 +144,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   com.google.analytics.data.v1beta.Metric getMetrics(int index);
-
   /**
    *
    *
@@ -163,7 +156,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   int getMetricsCount();
-
   /**
    *
    *
@@ -177,7 +169,6 @@ public interface RunPivotReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricOrBuilder>
       getMetricsOrBuilderList();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DateRange date_ranges = 4;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.DateRange> getDateRangesList();
-
   /**
    *
    *
@@ -220,7 +210,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DateRange date_ranges = 4;</code>
    */
   com.google.analytics.data.v1beta.DateRange getDateRanges(int index);
-
   /**
    *
    *
@@ -235,7 +224,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.DateRange date_ranges = 4;</code>
    */
   int getDateRangesCount();
-
   /**
    *
    *
@@ -251,7 +239,6 @@ public interface RunPivotReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DateRangeOrBuilder>
       getDateRangesOrBuilderList();
-
   /**
    *
    *
@@ -280,7 +267,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Pivot pivots = 5;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Pivot> getPivotsList();
-
   /**
    *
    *
@@ -294,7 +280,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Pivot pivots = 5;</code>
    */
   com.google.analytics.data.v1beta.Pivot getPivots(int index);
-
   /**
    *
    *
@@ -308,7 +293,6 @@ public interface RunPivotReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Pivot pivots = 5;</code>
    */
   int getPivotsCount();
-
   /**
    *
    *
@@ -323,7 +307,6 @@ public interface RunPivotReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.PivotOrBuilder>
       getPivotsOrBuilderList();
-
   /**
    *
    *
@@ -351,7 +334,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
-
   /**
    *
    *
@@ -365,7 +347,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getDimensionFilter();
-
   /**
    *
    *
@@ -392,7 +373,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return Whether the metricFilter field is set.
    */
   boolean hasMetricFilter();
-
   /**
    *
    *
@@ -407,7 +387,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return The metricFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getMetricFilter();
-
   /**
    *
    *
@@ -434,7 +413,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return The currencyCode.
    */
   java.lang.String getCurrencyCode();
-
   /**
    *
    *
@@ -462,7 +440,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return Whether the cohortSpec field is set.
    */
   boolean hasCohortSpec();
-
   /**
    *
    *
@@ -476,7 +453,6 @@ public interface RunPivotReportRequestOrBuilder
    * @return The cohortSpec.
    */
   com.google.analytics.data.v1beta.CohortSpec getCohortSpec();
-
   /**
    *
    *
@@ -539,7 +515,6 @@ public interface RunPivotReportRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1beta.Comparison> getComparisonsList();
-
   /**
    *
    *
@@ -554,7 +529,6 @@ public interface RunPivotReportRequestOrBuilder
    * </code>
    */
   com.google.analytics.data.v1beta.Comparison getComparisons(int index);
-
   /**
    *
    *
@@ -569,7 +543,6 @@ public interface RunPivotReportRequestOrBuilder
    * </code>
    */
   int getComparisonsCount();
-
   /**
    *
    *
@@ -585,7 +558,6 @@ public interface RunPivotReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.ComparisonOrBuilder>
       getComparisonsOrBuilderList();
-
   /**
    *
    *

@@ -39,7 +39,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return Whether the snapshotExport field is set.
    */
   boolean hasSnapshotExport();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return The snapshotExport.
    */
   com.google.cloud.aiplatform.v1.ExportFeatureValuesRequest.SnapshotExport getSnapshotExport();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return Whether the fullExport field is set.
    */
   boolean hasFullExport();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return The fullExport.
    */
   com.google.cloud.aiplatform.v1.ExportFeatureValuesRequest.FullExport getFullExport();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return The entityType.
    */
   java.lang.String getEntityType();
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
-
   /**
    *
    *
@@ -175,7 +169,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return The destination.
    */
   com.google.cloud.aiplatform.v1.FeatureValueDestination getDestination();
-
   /**
    *
    *
@@ -203,7 +196,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return Whether the featureSelector field is set.
    */
   boolean hasFeatureSelector();
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * @return The featureSelector.
    */
   com.google.cloud.aiplatform.v1.FeatureSelector getFeatureSelector();
-
   /**
    *
    *
@@ -242,7 +233,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DestinationFeatureSetting settings = 6;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.DestinationFeatureSetting> getSettingsList();
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DestinationFeatureSetting settings = 6;</code>
    */
   com.google.cloud.aiplatform.v1.DestinationFeatureSetting getSettings(int index);
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.DestinationFeatureSetting settings = 6;</code>
    */
   int getSettingsCount();
-
   /**
    *
    *
@@ -276,7 +264,6 @@ public interface ExportFeatureValuesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.DestinationFeatureSettingOrBuilder>
       getSettingsOrBuilderList();
-
   /**
    *
    *

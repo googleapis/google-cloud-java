@@ -33,7 +33,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest)
     ListTransferConfigsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListTransferConfigsRequest.newBuilder() to construct.
   private ListTransferConfigsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dataSourceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getDataSourceIdsList() {
     return dataSourceIds_;
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
   public int getDataSourceIdsCount() {
     return dataSourceIds_.size();
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
   public java.lang.String getDataSourceIds(int index) {
     return dataSourceIds_.get(index);
   }
-
   /**
    *
    *
@@ -199,7 +192,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -227,7 +219,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -470,7 +460,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -712,7 +701,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -739,7 +727,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -766,7 +753,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +835,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       dataSourceIds_.makeImmutable();
       return dataSourceIds_;
     }
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     public int getDataSourceIdsCount() {
       return dataSourceIds_.size();
     }
-
     /**
      *
      *
@@ -898,7 +879,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     public java.lang.String getDataSourceIds(int index) {
       return dataSourceIds_.get(index);
     }
-
     /**
      *
      *
@@ -914,7 +894,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getDataSourceIdsBytes(int index) {
       return dataSourceIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -938,7 +917,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +939,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -981,7 +958,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1001,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1053,7 +1027,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1053,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1078,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1099,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1157,7 +1127,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1173,7 +1142,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1193,7 +1161,6 @@ public final class ListTransferConfigsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface UsageResourceAllowanceSpecOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface UsageResourceAllowanceSpecOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface UsageResourceAllowanceSpecOrBuilder
    * @return The limit.
    */
   com.google.cloud.batch.v1alpha.UsageResourceAllowanceSpec.Limit getLimit();
-
   /**
    *
    *

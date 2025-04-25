@@ -49,7 +49,6 @@ public interface DataProfileResultOrBuilder
    * @return Whether the profile field is set.
    */
   boolean hasProfile();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DataProfileResultOrBuilder
    * @return The profile.
    */
   com.google.cloud.dataplex.v1.DataProfileResult.Profile getProfile();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface DataProfileResultOrBuilder
    * @return Whether the scannedData field is set.
    */
   boolean hasScannedData();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface DataProfileResultOrBuilder
    * @return The scannedData.
    */
   com.google.cloud.dataplex.v1.ScannedData getScannedData();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface DataProfileResultOrBuilder
    * @return Whether the postScanActionsResult field is set.
    */
   boolean hasPostScanActionsResult();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface DataProfileResultOrBuilder
    * @return The postScanActionsResult.
    */
   com.google.cloud.dataplex.v1.DataProfileResult.PostScanActionsResult getPostScanActionsResult();
-
   /**
    *
    *

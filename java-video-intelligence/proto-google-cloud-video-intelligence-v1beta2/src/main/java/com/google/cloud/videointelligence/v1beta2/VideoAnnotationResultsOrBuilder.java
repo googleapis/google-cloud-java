@@ -37,7 +37,6 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.LabelAnnotation>
       getSegmentLabelAnnotationsList();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1beta2.LabelAnnotation getSegmentLabelAnnotations(int index);
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getSegmentLabelAnnotationsCount();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1beta2.LabelAnnotationOrBuilder>
       getSegmentLabelAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.LabelAnnotation>
       getShotLabelAnnotationsList();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1beta2.LabelAnnotation getShotLabelAnnotations(int index);
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getShotLabelAnnotationsCount();
-
   /**
    *
    *
@@ -182,7 +174,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1beta2.LabelAnnotationOrBuilder>
       getShotLabelAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.LabelAnnotation>
       getFrameLabelAnnotationsList();
-
   /**
    *
    *
@@ -226,7 +216,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1beta2.LabelAnnotation getFrameLabelAnnotations(int index);
-
   /**
    *
    *
@@ -240,7 +229,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getFrameLabelAnnotationsCount();
-
   /**
    *
    *
@@ -255,7 +243,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1beta2.LabelAnnotationOrBuilder>
       getFrameLabelAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -283,7 +270,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.FaceAnnotation>
       getFaceAnnotationsList();
-
   /**
    *
    *
@@ -295,7 +281,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1beta2.FaceAnnotation getFaceAnnotations(int index);
-
   /**
    *
    *
@@ -307,7 +292,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getFaceAnnotationsCount();
-
   /**
    *
    *
@@ -320,7 +304,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1beta2.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -345,7 +328,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.videointelligence.v1beta2.VideoSegment> getShotAnnotationsList();
-
   /**
    *
    *
@@ -357,7 +339,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getShotAnnotations(int index);
-
   /**
    *
    *
@@ -369,7 +350,6 @@ public interface VideoAnnotationResultsOrBuilder
    * </code>
    */
   int getShotAnnotationsCount();
-
   /**
    *
    *
@@ -382,7 +362,6 @@ public interface VideoAnnotationResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder>
       getShotAnnotationsOrBuilderList();
-
   /**
    *
    *
@@ -410,7 +389,6 @@ public interface VideoAnnotationResultsOrBuilder
    * @return Whether the explicitAnnotation field is set.
    */
   boolean hasExplicitAnnotation();
-
   /**
    *
    *
@@ -425,7 +403,6 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The explicitAnnotation.
    */
   com.google.cloud.videointelligence.v1beta2.ExplicitContentAnnotation getExplicitAnnotation();
-
   /**
    *
    *
@@ -453,7 +430,6 @@ public interface VideoAnnotationResultsOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
-
   /**
    *
    *
@@ -467,7 +443,6 @@ public interface VideoAnnotationResultsOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
-
   /**
    *
    *

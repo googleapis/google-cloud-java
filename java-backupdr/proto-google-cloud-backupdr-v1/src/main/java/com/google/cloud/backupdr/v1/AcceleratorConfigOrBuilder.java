@@ -37,7 +37,6 @@ public interface AcceleratorConfigOrBuilder
    * @return Whether the acceleratorType field is set.
    */
   boolean hasAcceleratorType();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AcceleratorConfigOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface AcceleratorConfigOrBuilder
    * @return Whether the acceleratorCount field is set.
    */
   boolean hasAcceleratorCount();
-
   /**
    *
    *

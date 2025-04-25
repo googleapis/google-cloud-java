@@ -36,7 +36,6 @@ public interface PerInstanceConfigOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PerInstanceConfigOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PerInstanceConfigOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PerInstanceConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface PerInstanceConfigOrBuilder
    * @return Whether the preservedState field is set.
    */
   boolean hasPreservedState();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface PerInstanceConfigOrBuilder
    * @return The preservedState.
    */
   com.google.cloud.compute.v1.PreservedState getPreservedState();
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public interface PerInstanceConfigOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface PerInstanceConfigOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *

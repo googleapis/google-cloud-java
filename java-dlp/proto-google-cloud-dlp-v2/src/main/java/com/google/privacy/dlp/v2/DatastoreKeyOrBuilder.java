@@ -36,7 +36,6 @@ public interface DatastoreKeyOrBuilder
    * @return Whether the entityKey field is set.
    */
   boolean hasEntityKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DatastoreKeyOrBuilder
    * @return The entityKey.
    */
   com.google.privacy.dlp.v2.Key getEntityKey();
-
   /**
    *
    *

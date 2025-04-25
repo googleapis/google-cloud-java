@@ -34,7 +34,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SearchExamplesRequest)
     SearchExamplesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchExamplesRequest.newBuilder() to construct.
   private SearchExamplesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     private ParametersCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STORED_CONTENTS_EXAMPLE_PARAMETERS_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
   public boolean hasStoredContentsExampleParameters() {
     return parametersCase_ == 6;
   }
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -178,7 +173,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exampleStore_ = "";
-
   /**
    *
    *
@@ -206,7 +200,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
 
   public static final int TOP_K_FIELD_NUMBER = 2;
   private long topK_ = 0L;
-
   /**
    *
    *
@@ -449,7 +441,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -700,7 +691,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParameters.Builder,
             com.google.cloud.aiplatform.v1beta1.StoredContentsExampleParametersOrBuilder>
         storedContentsExampleParametersBuilder_;
-
     /**
      *
      *
@@ -718,7 +708,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     public boolean hasStoredContentsExampleParameters() {
       return parametersCase_ == 6;
     }
-
     /**
      *
      *
@@ -749,7 +738,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -775,7 +763,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       parametersCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -799,7 +786,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       parametersCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +824,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       parametersCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -866,7 +851,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +866,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
         getStoredContentsExampleParametersBuilder() {
       return getStoredContentsExampleParametersFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -946,7 +928,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object exampleStore_ = "";
-
     /**
      *
      *
@@ -973,7 +954,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +980,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1026,7 +1005,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1048,7 +1026,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1054,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     }
 
     private long topK_;
-
     /**
      *
      *
@@ -1093,7 +1069,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
     public long getTopK() {
       return topK_;
     }
-
     /**
      *
      *
@@ -1113,7 +1088,6 @@ public final class SearchExamplesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface MacSignResponseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -91,7 +90,6 @@ public interface MacSignResponseOrBuilder
    * @return Whether the macCrc32c field is set.
    */
   boolean hasMacCrc32C();
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public interface MacSignResponseOrBuilder
    * @return The macCrc32c.
    */
   com.google.protobuf.Int64Value getMacCrc32C();
-
   /**
    *
    *
@@ -179,7 +176,6 @@ public interface MacSignResponseOrBuilder
    * @return The enum numeric value on the wire for protectionLevel.
    */
   int getProtectionLevelValue();
-
   /**
    *
    *

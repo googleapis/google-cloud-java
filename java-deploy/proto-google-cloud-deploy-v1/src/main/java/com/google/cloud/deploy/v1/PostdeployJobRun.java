@@ -33,7 +33,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.PostdeployJobRun)
     PostdeployJobRunOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostdeployJobRun.newBuilder() to construct.
   private PostdeployJobRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,7 +142,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
      * <code>FAILURE_CAUSE_UNSPECIFIED = 0;</code>
      */
     public static final int FAILURE_CAUSE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -156,7 +154,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
      */
     public static final int CLOUD_BUILD_UNAVAILABLE_VALUE = 1;
-
     /**
      *
      *
@@ -168,7 +165,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
      * <code>EXECUTION_FAILED = 2;</code>
      */
     public static final int EXECUTION_FAILED_VALUE = 2;
-
     /**
      *
      *
@@ -179,7 +175,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
      * <code>DEADLINE_EXCEEDED = 3;</code>
      */
     public static final int DEADLINE_EXCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -283,7 +278,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object build_ = "";
-
   /**
    *
    *
@@ -311,7 +305,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -342,7 +335,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
 
   public static final int FAILURE_CAUSE_FIELD_NUMBER = 2;
   private int failureCause_ = 0;
-
   /**
    *
    *
@@ -361,7 +353,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
   public int getFailureCauseValue() {
     return failureCause_;
   }
-
   /**
    *
    *
@@ -389,7 +380,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object failureMessage_ = "";
-
   /**
    *
    *
@@ -414,7 +404,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -621,7 +610,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -833,7 +821,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object build_ = "";
-
     /**
      *
      *
@@ -860,7 +847,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -887,7 +873,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -913,7 +898,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +919,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -964,7 +947,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
     }
 
     private int failureCause_ = 0;
-
     /**
      *
      *
@@ -983,7 +965,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
     public int getFailureCauseValue() {
       return failureCause_;
     }
-
     /**
      *
      *
@@ -1005,7 +986,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1028,7 +1008,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.deploy.v1.PostdeployJobRun.FailureCause.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1053,7 +1032,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1076,7 +1054,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object failureMessage_ = "";
-
     /**
      *
      *
@@ -1100,7 +1077,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1124,7 +1100,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1147,7 +1122,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1166,7 +1140,6 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

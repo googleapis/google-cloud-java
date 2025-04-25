@@ -40,7 +40,6 @@ public interface NodeConfigOrBuilder
    * @return The machineType.
    */
   java.lang.String getMachineType();
-
   /**
    *
    *
@@ -100,7 +99,6 @@ public interface NodeConfigOrBuilder
    * @return A list containing the oauthScopes.
    */
   java.util.List<java.lang.String> getOauthScopesList();
-
   /**
    *
    *
@@ -127,7 +125,6 @@ public interface NodeConfigOrBuilder
    * @return The count of oauthScopes.
    */
   int getOauthScopesCount();
-
   /**
    *
    *
@@ -155,7 +152,6 @@ public interface NodeConfigOrBuilder
    * @return The oauthScopes at the given index.
    */
   java.lang.String getOauthScopes(int index);
-
   /**
    *
    *
@@ -198,7 +194,6 @@ public interface NodeConfigOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
-
   /**
    *
    *
@@ -255,7 +250,6 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -297,11 +291,9 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -343,7 +335,6 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; metadata = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -389,7 +380,6 @@ public interface NodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -447,7 +437,6 @@ public interface NodeConfigOrBuilder
    * @return The imageType.
    */
   java.lang.String getImageType();
-
   /**
    *
    *
@@ -481,7 +470,6 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
-
   /**
    *
    *
@@ -499,11 +487,9 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-
   /**
    *
    *
@@ -521,7 +507,6 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-
   /**
    *
    *
@@ -543,7 +528,6 @@ public interface NodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -595,7 +579,6 @@ public interface NodeConfigOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
-
   /**
    *
    *
@@ -611,7 +594,6 @@ public interface NodeConfigOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -628,7 +610,6 @@ public interface NodeConfigOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
-
   /**
    *
    *
@@ -673,7 +654,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
    */
   java.util.List<com.google.container.v1beta1.AcceleratorConfig> getAcceleratorsList();
-
   /**
    *
    *
@@ -686,7 +666,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
    */
   com.google.container.v1beta1.AcceleratorConfig getAccelerators(int index);
-
   /**
    *
    *
@@ -699,7 +678,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.AcceleratorConfig accelerators = 11;</code>
    */
   int getAcceleratorsCount();
-
   /**
    *
    *
@@ -713,7 +691,6 @@ public interface NodeConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
-
   /**
    *
    *
@@ -739,7 +716,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the sandboxConfig field is set.
    */
   boolean hasSandboxConfig();
-
   /**
    *
    *
@@ -752,7 +728,6 @@ public interface NodeConfigOrBuilder
    * @return The sandboxConfig.
    */
   com.google.container.v1beta1.SandboxConfig getSandboxConfig();
-
   /**
    *
    *
@@ -779,7 +754,6 @@ public interface NodeConfigOrBuilder
    * @return The nodeGroup.
    */
   java.lang.String getNodeGroup();
-
   /**
    *
    *
@@ -811,7 +785,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the reservationAffinity field is set.
    */
   boolean hasReservationAffinity();
-
   /**
    *
    *
@@ -827,7 +800,6 @@ public interface NodeConfigOrBuilder
    * @return The reservationAffinity.
    */
   com.google.container.v1beta1.ReservationAffinity getReservationAffinity();
-
   /**
    *
    *
@@ -857,7 +829,6 @@ public interface NodeConfigOrBuilder
    * @return The diskType.
    */
   java.lang.String getDiskType();
-
   /**
    *
    *
@@ -892,7 +863,6 @@ public interface NodeConfigOrBuilder
    * @return The minCpuPlatform.
    */
   java.lang.String getMinCpuPlatform();
-
   /**
    *
    *
@@ -924,7 +894,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the workloadMetadataConfig field is set.
    */
   boolean hasWorkloadMetadataConfig();
-
   /**
    *
    *
@@ -937,7 +906,6 @@ public interface NodeConfigOrBuilder
    * @return The workloadMetadataConfig.
    */
   com.google.container.v1beta1.WorkloadMetadataConfig getWorkloadMetadataConfig();
-
   /**
    *
    *
@@ -962,7 +930,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.NodeTaint taints = 15;</code>
    */
   java.util.List<com.google.container.v1beta1.NodeTaint> getTaintsList();
-
   /**
    *
    *
@@ -976,7 +943,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.NodeTaint taints = 15;</code>
    */
   com.google.container.v1beta1.NodeTaint getTaints(int index);
-
   /**
    *
    *
@@ -990,7 +956,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.NodeTaint taints = 15;</code>
    */
   int getTaintsCount();
-
   /**
    *
    *
@@ -1005,7 +970,6 @@ public interface NodeConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.NodeTaintOrBuilder>
       getTaintsOrBuilderList();
-
   /**
    *
    *
@@ -1038,7 +1002,6 @@ public interface NodeConfigOrBuilder
    * @return The bootDiskKmsKey.
    */
   java.lang.String getBootDiskKmsKey();
-
   /**
    *
    *
@@ -1070,7 +1033,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
-
   /**
    *
    *
@@ -1083,7 +1045,6 @@ public interface NodeConfigOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.container.v1beta1.ShieldedInstanceConfig getShieldedInstanceConfig();
-
   /**
    *
    *
@@ -1107,7 +1068,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the linuxNodeConfig field is set.
    */
   boolean hasLinuxNodeConfig();
-
   /**
    *
    *
@@ -1120,7 +1080,6 @@ public interface NodeConfigOrBuilder
    * @return The linuxNodeConfig.
    */
   com.google.container.v1beta1.LinuxNodeConfig getLinuxNodeConfig();
-
   /**
    *
    *
@@ -1144,7 +1103,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the kubeletConfig field is set.
    */
   boolean hasKubeletConfig();
-
   /**
    *
    *
@@ -1157,7 +1115,6 @@ public interface NodeConfigOrBuilder
    * @return The kubeletConfig.
    */
   com.google.container.v1beta1.NodeKubeletConfig getKubeletConfig();
-
   /**
    *
    *
@@ -1182,7 +1139,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the ephemeralStorageConfig field is set.
    */
   boolean hasEphemeralStorageConfig();
-
   /**
    *
    *
@@ -1196,7 +1152,6 @@ public interface NodeConfigOrBuilder
    * @return The ephemeralStorageConfig.
    */
   com.google.container.v1beta1.EphemeralStorageConfig getEphemeralStorageConfig();
-
   /**
    *
    *
@@ -1221,7 +1176,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the gcfsConfig field is set.
    */
   boolean hasGcfsConfig();
-
   /**
    *
    *
@@ -1234,7 +1188,6 @@ public interface NodeConfigOrBuilder
    * @return The gcfsConfig.
    */
   com.google.container.v1beta1.GcfsConfig getGcfsConfig();
-
   /**
    *
    *
@@ -1258,7 +1211,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the advancedMachineFeatures field is set.
    */
   boolean hasAdvancedMachineFeatures();
-
   /**
    *
    *
@@ -1271,7 +1223,6 @@ public interface NodeConfigOrBuilder
    * @return The advancedMachineFeatures.
    */
   com.google.container.v1beta1.AdvancedMachineFeatures getAdvancedMachineFeatures();
-
   /**
    *
    *
@@ -1296,7 +1247,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the gvnic field is set.
    */
   boolean hasGvnic();
-
   /**
    *
    *
@@ -1309,7 +1259,6 @@ public interface NodeConfigOrBuilder
    * @return The gvnic.
    */
   com.google.container.v1beta1.VirtualNIC getGvnic();
-
   /**
    *
    *
@@ -1348,7 +1297,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the confidentialNodes field is set.
    */
   boolean hasConfidentialNodes();
-
   /**
    *
    *
@@ -1362,7 +1310,6 @@ public interface NodeConfigOrBuilder
    * @return The confidentialNodes.
    */
   com.google.container.v1beta1.ConfidentialNodes getConfidentialNodes();
-
   /**
    *
    *
@@ -1387,7 +1334,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the fastSocket field is set.
    */
   boolean hasFastSocket();
-
   /**
    *
    *
@@ -1400,7 +1346,6 @@ public interface NodeConfigOrBuilder
    * @return The fastSocket.
    */
   com.google.container.v1beta1.FastSocket getFastSocket();
-
   /**
    *
    *
@@ -1423,7 +1368,6 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 37;</code>
    */
   int getResourceLabelsCount();
-
   /**
    *
    *
@@ -1435,11 +1379,9 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 37;</code>
    */
   boolean containsResourceLabels(java.lang.String key);
-
   /** Use {@link #getResourceLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceLabels();
-
   /**
    *
    *
@@ -1451,7 +1393,6 @@ public interface NodeConfigOrBuilder
    * <code>map&lt;string, string&gt; resource_labels = 37;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsMap();
-
   /**
    *
    *
@@ -1467,7 +1408,6 @@ public interface NodeConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -1492,7 +1432,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -1505,7 +1444,6 @@ public interface NodeConfigOrBuilder
    * @return The loggingConfig.
    */
   com.google.container.v1beta1.NodePoolLoggingConfig getLoggingConfig();
-
   /**
    *
    *
@@ -1529,7 +1467,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the windowsNodeConfig field is set.
    */
   boolean hasWindowsNodeConfig();
-
   /**
    *
    *
@@ -1542,7 +1479,6 @@ public interface NodeConfigOrBuilder
    * @return The windowsNodeConfig.
    */
   com.google.container.v1beta1.WindowsNodeConfig getWindowsNodeConfig();
-
   /**
    *
    *
@@ -1567,7 +1503,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the localNvmeSsdBlockConfig field is set.
    */
   boolean hasLocalNvmeSsdBlockConfig();
-
   /**
    *
    *
@@ -1581,7 +1516,6 @@ public interface NodeConfigOrBuilder
    * @return The localNvmeSsdBlockConfig.
    */
   com.google.container.v1beta1.LocalNvmeSsdBlockConfig getLocalNvmeSsdBlockConfig();
-
   /**
    *
    *
@@ -1611,7 +1545,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the ephemeralStorageLocalSsdConfig field is set.
    */
   boolean hasEphemeralStorageLocalSsdConfig();
-
   /**
    *
    *
@@ -1628,7 +1561,6 @@ public interface NodeConfigOrBuilder
    * @return The ephemeralStorageLocalSsdConfig.
    */
   com.google.container.v1beta1.EphemeralStorageLocalSsdConfig getEphemeralStorageLocalSsdConfig();
-
   /**
    *
    *
@@ -1657,7 +1589,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the soleTenantConfig field is set.
    */
   boolean hasSoleTenantConfig();
-
   /**
    *
    *
@@ -1670,7 +1601,6 @@ public interface NodeConfigOrBuilder
    * @return The soleTenantConfig.
    */
   com.google.container.v1beta1.SoleTenantConfig getSoleTenantConfig();
-
   /**
    *
    *
@@ -1694,7 +1624,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the containerdConfig field is set.
    */
   boolean hasContainerdConfig();
-
   /**
    *
    *
@@ -1707,7 +1636,6 @@ public interface NodeConfigOrBuilder
    * @return The containerdConfig.
    */
   com.google.container.v1beta1.ContainerdConfig getContainerdConfig();
-
   /**
    *
    *
@@ -1732,7 +1660,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the hostMaintenancePolicy field is set.
    */
   boolean hasHostMaintenancePolicy();
-
   /**
    *
    *
@@ -1746,7 +1673,6 @@ public interface NodeConfigOrBuilder
    * @return The hostMaintenancePolicy.
    */
   com.google.container.v1beta1.HostMaintenancePolicy getHostMaintenancePolicy();
-
   /**
    *
    *
@@ -1771,7 +1697,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the resourceManagerTags field is set.
    */
   boolean hasResourceManagerTags();
-
   /**
    *
    *
@@ -1784,7 +1709,6 @@ public interface NodeConfigOrBuilder
    * @return The resourceManagerTags.
    */
   com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags();
-
   /**
    *
    *
@@ -1819,7 +1743,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
    */
   java.util.List<com.google.container.v1beta1.SecondaryBootDisk> getSecondaryBootDisksList();
-
   /**
    *
    *
@@ -1830,7 +1753,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
    */
   com.google.container.v1beta1.SecondaryBootDisk getSecondaryBootDisks(int index);
-
   /**
    *
    *
@@ -1841,7 +1763,6 @@ public interface NodeConfigOrBuilder
    * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
    */
   int getSecondaryBootDisksCount();
-
   /**
    *
    *
@@ -1853,7 +1774,6 @@ public interface NodeConfigOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.SecondaryBootDiskOrBuilder>
       getSecondaryBootDisksOrBuilderList();
-
   /**
    *
    *
@@ -1879,7 +1799,6 @@ public interface NodeConfigOrBuilder
    * @return Whether the secondaryBootDiskUpdateStrategy field is set.
    */
   boolean hasSecondaryBootDiskUpdateStrategy();
-
   /**
    *
    *
@@ -1894,7 +1813,6 @@ public interface NodeConfigOrBuilder
    * @return The secondaryBootDiskUpdateStrategy.
    */
   com.google.container.v1beta1.SecondaryBootDiskUpdateStrategy getSecondaryBootDiskUpdateStrategy();
-
   /**
    *
    *

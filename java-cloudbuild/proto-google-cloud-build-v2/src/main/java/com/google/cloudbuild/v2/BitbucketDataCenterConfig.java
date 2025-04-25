@@ -33,7 +33,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.BitbucketDataCenterConfig)
     BitbucketDataCenterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BitbucketDataCenterConfig.newBuilder() to construct.
   private BitbucketDataCenterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostUri_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webhookSecretSecretVersion_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   public static final int READ_AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 3;
   private com.google.cloudbuild.v2.UserCredential readAuthorizerCredential_;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
   public boolean hasReadAuthorizerCredential() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         ? com.google.cloudbuild.v2.UserCredential.getDefaultInstance()
         : readAuthorizerCredential_;
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   public static final int AUTHORIZER_CREDENTIAL_FIELD_NUMBER = 4;
   private com.google.cloudbuild.v2.UserCredential authorizerCredential_;
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
   public boolean hasAuthorizerCredential() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +273,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         ? com.google.cloudbuild.v2.UserCredential.getDefaultInstance()
         : authorizerCredential_;
   }
-
   /**
    *
    *
@@ -304,7 +293,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   public static final int SERVICE_DIRECTORY_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloudbuild.v2.ServiceDirectoryConfig serviceDirectoryConfig_;
-
   /**
    *
    *
@@ -326,7 +314,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
   public boolean hasServiceDirectoryConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -350,7 +337,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         ? com.google.cloudbuild.v2.ServiceDirectoryConfig.getDefaultInstance()
         : serviceDirectoryConfig_;
   }
-
   /**
    *
    *
@@ -378,7 +364,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sslCa_ = "";
-
   /**
    *
    *
@@ -402,7 +387,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -431,7 +415,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serverVersion_ = "";
-
   /**
    *
    *
@@ -456,7 +439,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -716,7 +698,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1025,7 +1006,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object hostUri_ = "";
-
     /**
      *
      *
@@ -1049,7 +1029,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1073,7 +1052,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1074,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1115,7 +1092,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1141,7 +1117,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     }
 
     private java.lang.Object webhookSecretSecretVersion_ = "";
-
     /**
      *
      *
@@ -1168,7 +1143,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1169,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1221,7 +1194,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1215,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1277,7 +1248,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
             com.google.cloudbuild.v2.UserCredential.Builder,
             com.google.cloudbuild.v2.UserCredentialOrBuilder>
         readAuthorizerCredentialBuilder_;
-
     /**
      *
      *
@@ -1294,7 +1264,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     public boolean hasReadAuthorizerCredential() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1317,7 +1286,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return readAuthorizerCredentialBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1310,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1365,7 +1332,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1396,7 +1362,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1418,7 +1383,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1399,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return getReadAuthorizerCredentialFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1456,7 +1419,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
             : readAuthorizerCredential_;
       }
     }
-
     /**
      *
      *
@@ -1491,7 +1453,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
             com.google.cloudbuild.v2.UserCredential.Builder,
             com.google.cloudbuild.v2.UserCredentialOrBuilder>
         authorizerCredentialBuilder_;
-
     /**
      *
      *
@@ -1508,7 +1469,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     public boolean hasAuthorizerCredential() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1531,7 +1491,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return authorizerCredentialBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1556,7 +1515,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1579,7 +1537,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1610,7 +1567,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1632,7 +1588,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1604,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return getAuthorizerCredentialFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1670,7 +1624,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
             : authorizerCredential_;
       }
     }
-
     /**
      *
      *
@@ -1705,7 +1658,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
             com.google.cloudbuild.v2.ServiceDirectoryConfig.Builder,
             com.google.cloudbuild.v2.ServiceDirectoryConfigOrBuilder>
         serviceDirectoryConfigBuilder_;
-
     /**
      *
      *
@@ -1726,7 +1678,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     public boolean hasServiceDirectoryConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1753,7 +1704,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return serviceDirectoryConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1783,7 +1733,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1810,7 +1759,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1846,7 +1794,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1872,7 +1819,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1840,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return getServiceDirectoryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1920,7 +1865,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
             : serviceDirectoryConfig_;
       }
     }
-
     /**
      *
      *
@@ -1954,7 +1898,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     }
 
     private java.lang.Object sslCa_ = "";
-
     /**
      *
      *
@@ -1977,7 +1920,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2000,7 +1942,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2022,7 +1963,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2040,7 +1980,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2065,7 +2004,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
     }
 
     private java.lang.Object serverVersion_ = "";
-
     /**
      *
      *
@@ -2089,7 +2027,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2113,7 +2050,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2136,7 +2072,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2155,7 +2090,6 @@ public final class BitbucketDataCenterConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

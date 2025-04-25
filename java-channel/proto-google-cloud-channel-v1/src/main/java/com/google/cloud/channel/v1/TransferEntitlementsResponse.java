@@ -35,7 +35,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.TransferEntitlementsResponse)
     TransferEntitlementsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TransferEntitlementsResponse.newBuilder() to construct.
   private TransferEntitlementsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.channel.v1.Entitlement> entitlements_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
   public java.util.List<com.google.cloud.channel.v1.Entitlement> getEntitlementsList() {
     return entitlements_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       getEntitlementsOrBuilderList() {
     return entitlements_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
   public int getEntitlementsCount() {
     return entitlements_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
   public com.google.cloud.channel.v1.Entitlement getEntitlements(int index) {
     return entitlements_.get(index);
   }
-
   /**
    *
    *
@@ -304,7 +298,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -569,7 +562,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         return entitlementsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -586,7 +578,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         return entitlementsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -603,7 +594,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         return entitlementsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -626,7 +616,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +636,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -670,7 +658,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -735,7 +720,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -756,7 +740,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -776,7 +759,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +778,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       }
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +790,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
     public com.google.cloud.channel.v1.Entitlement.Builder getEntitlementsBuilder(int index) {
       return getEntitlementsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -826,7 +806,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         return entitlementsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -844,7 +823,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
         return java.util.Collections.unmodifiableList(entitlements_);
       }
     }
-
     /**
      *
      *
@@ -858,7 +836,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       return getEntitlementsFieldBuilder()
           .addBuilder(com.google.cloud.channel.v1.Entitlement.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -872,7 +849,6 @@ public final class TransferEntitlementsResponse extends com.google.protobuf.Gene
       return getEntitlementsFieldBuilder()
           .addBuilder(index, com.google.cloud.channel.v1.Entitlement.getDefaultInstance());
     }
-
     /**
      *
      *

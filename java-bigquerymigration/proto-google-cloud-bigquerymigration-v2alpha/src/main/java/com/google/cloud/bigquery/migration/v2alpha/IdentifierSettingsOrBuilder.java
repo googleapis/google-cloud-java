@@ -38,7 +38,6 @@ public interface IdentifierSettingsOrBuilder
    * @return The enum numeric value on the wire for outputIdentifierCase.
    */
   int getOutputIdentifierCaseValue();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface IdentifierSettingsOrBuilder
    * @return The enum numeric value on the wire for identifierRewriteMode.
    */
   int getIdentifierRewriteModeValue();
-
   /**
    *
    *

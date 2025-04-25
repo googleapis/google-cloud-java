@@ -36,7 +36,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.networkservices.v1.LbTrafficExtension)
     LbTrafficExtensionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LbTrafficExtension.newBuilder() to construct.
   private LbTrafficExtension(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -88,7 +87,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -164,7 +160,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -199,7 +193,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -233,7 +225,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -253,7 +244,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -328,7 +317,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -349,14 +337,12 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -374,7 +360,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -399,7 +384,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -430,7 +414,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList forwardingRules_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -447,7 +430,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getForwardingRulesList() {
     return forwardingRules_;
   }
-
   /**
    *
    *
@@ -464,7 +446,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public int getForwardingRulesCount() {
     return forwardingRules_.size();
   }
-
   /**
    *
    *
@@ -482,7 +463,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public java.lang.String getForwardingRules(int index) {
     return forwardingRules_.get(index);
   }
-
   /**
    *
    *
@@ -505,7 +485,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkservices.v1.ExtensionChain> extensionChains_;
-
   /**
    *
    *
@@ -527,7 +506,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       getExtensionChainsList() {
     return extensionChains_;
   }
-
   /**
    *
    *
@@ -549,7 +527,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       getExtensionChainsOrBuilderList() {
     return extensionChains_;
   }
-
   /**
    *
    *
@@ -570,7 +547,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public int getExtensionChainsCount() {
     return extensionChains_.size();
   }
-
   /**
    *
    *
@@ -591,7 +567,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.networkservices.v1.ExtensionChain getExtensionChains(int index) {
     return extensionChains_.get(index);
   }
-
   /**
    *
    *
@@ -616,7 +591,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 8;
   private int loadBalancingScheme_ = 0;
-
   /**
    *
    *
@@ -638,7 +612,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public int getLoadBalancingSchemeValue() {
     return loadBalancingScheme_;
   }
-
   /**
    *
    *
@@ -667,7 +640,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
 
   public static final int METADATA_FIELD_NUMBER = 10;
   private com.google.protobuf.Struct metadata_;
-
   /**
    *
    *
@@ -690,7 +662,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -713,7 +684,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Struct getMetadata() {
     return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
   }
-
   /**
    *
    *
@@ -1003,7 +973,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1412,7 +1381,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1439,7 +1407,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1466,7 +1433,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1492,7 +1458,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1514,7 +1479,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1548,7 +1512,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -1565,7 +1528,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1588,7 +1550,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1613,7 +1574,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1635,7 +1595,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1624,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1687,7 +1645,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1704,7 +1661,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1725,7 +1681,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -1760,7 +1715,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -1777,7 +1731,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1800,7 +1753,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1825,7 +1777,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1847,7 +1798,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1877,7 +1827,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1899,7 +1848,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1916,7 +1864,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1937,7 +1884,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -1967,7 +1913,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -1990,7 +1935,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2013,7 +1957,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2035,7 +1978,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2053,7 +1995,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2102,7 +2043,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2123,14 +2063,12 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -2148,7 +2086,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -2173,7 +2110,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2204,7 +2140,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2225,14 +2160,12 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2257,7 +2190,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -2286,7 +2218,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000020;
     }
-
     /**
      *
      *
@@ -2304,7 +2235,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       forwardingRules_.makeImmutable();
       return forwardingRules_;
     }
-
     /**
      *
      *
@@ -2321,7 +2251,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public int getForwardingRulesCount() {
       return forwardingRules_.size();
     }
-
     /**
      *
      *
@@ -2339,7 +2268,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public java.lang.String getForwardingRules(int index) {
       return forwardingRules_.get(index);
     }
-
     /**
      *
      *
@@ -2357,7 +2285,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getForwardingRulesBytes(int index) {
       return forwardingRules_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2383,7 +2310,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2408,7 +2334,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2430,7 +2355,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2451,7 +2375,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2520,7 +2443,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return extensionChainsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2544,7 +2466,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return extensionChainsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2568,7 +2489,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return extensionChainsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2599,7 +2519,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2627,7 +2546,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2657,7 +2575,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2688,7 +2605,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2716,7 +2632,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2744,7 +2659,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2772,7 +2686,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2799,7 +2712,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2826,7 +2738,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -2847,7 +2758,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         int index) {
       return getExtensionChainsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2872,7 +2782,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return extensionChainsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2897,7 +2806,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(extensionChains_);
       }
     }
-
     /**
      *
      *
@@ -2918,7 +2826,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       return getExtensionChainsFieldBuilder()
           .addBuilder(com.google.cloud.networkservices.v1.ExtensionChain.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2941,7 +2848,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.networkservices.v1.ExtensionChain.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2984,7 +2890,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     }
 
     private int loadBalancingScheme_ = 0;
-
     /**
      *
      *
@@ -3006,7 +2911,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public int getLoadBalancingSchemeValue() {
       return loadBalancingScheme_;
     }
-
     /**
      *
      *
@@ -3031,7 +2935,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3057,7 +2960,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
           ? com.google.cloud.networkservices.v1.LoadBalancingScheme.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3086,7 +2988,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3117,7 +3018,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -3139,7 +3039,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -3165,7 +3064,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3195,7 +3093,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3222,7 +3119,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3257,7 +3153,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -3284,7 +3179,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3306,7 +3200,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3330,7 +3223,6 @@ public final class LbTrafficExtension extends com.google.protobuf.GeneratedMessa
         return metadata_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadata_;
       }
     }
-
     /**
      *
      *

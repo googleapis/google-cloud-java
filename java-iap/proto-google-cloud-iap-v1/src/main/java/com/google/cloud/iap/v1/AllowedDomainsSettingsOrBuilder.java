@@ -36,7 +36,6 @@ public interface AllowedDomainsSettingsOrBuilder
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AllowedDomainsSettingsOrBuilder
    * @return A list containing the domains.
    */
   java.util.List<java.lang.String> getDomainsList();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface AllowedDomainsSettingsOrBuilder
    * @return The count of domains.
    */
   int getDomainsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface AllowedDomainsSettingsOrBuilder
    * @return The domains at the given index.
    */
   java.lang.String getDomains(int index);
-
   /**
    *
    *

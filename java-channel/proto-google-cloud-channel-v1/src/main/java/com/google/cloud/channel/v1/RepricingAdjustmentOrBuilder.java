@@ -36,7 +36,6 @@ public interface RepricingAdjustmentOrBuilder
    * @return Whether the percentageAdjustment field is set.
    */
   boolean hasPercentageAdjustment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface RepricingAdjustmentOrBuilder
    * @return The percentageAdjustment.
    */
   com.google.cloud.channel.v1.PercentageAdjustment getPercentageAdjustment();
-
   /**
    *
    *

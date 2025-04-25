@@ -39,7 +39,6 @@ public interface LabelFrequencyCapOrBuilder
    * @return The label.
    */
   java.lang.String getLabel();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface LabelFrequencyCapOrBuilder
    * @return Whether the frequencyCap field is set.
    */
   boolean hasFrequencyCap();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface LabelFrequencyCapOrBuilder
    * @return The frequencyCap.
    */
   com.google.ads.admanager.v1.FrequencyCap getFrequencyCap();
-
   /**
    *
    *

@@ -37,7 +37,6 @@ public interface DynamicTemplateLaunchParamsOrBuilder
    * @return The gcsPath.
    */
   java.lang.String getGcsPath();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface DynamicTemplateLaunchParamsOrBuilder
    * @return The stagingLocation.
    */
   java.lang.String getStagingLocation();
-
   /**
    *
    *

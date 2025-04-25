@@ -178,8 +178,7 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateGitRepositoryLink, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CreateGitRepositoryLink, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -200,8 +199,7 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteGitRepositoryLink, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method DeleteGitRepositoryLink, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -223,8 +221,7 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListGitRepositoryLinks, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListGitRepositoryLinks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGitRepositoryLinksResponse.class.getName(),
                   Exception.class.getName())));
@@ -245,8 +242,7 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetGitRepositoryLink, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method GetGitRepositoryLink, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GitRepositoryLink.class.getName(),
                   Exception.class.getName())));
@@ -311,8 +307,7 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchLinkableGitRepositories, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method FetchLinkableGitRepositories, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchLinkableGitRepositoriesResponse.class.getName(),
                   Exception.class.getName())));
@@ -334,8 +329,7 @@ public class MockDeveloperConnectImpl extends DeveloperConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchGitHubInstallations, expected %s"
-                      + " or %s",
+                  "Unrecognized response type %s for method FetchGitHubInstallations, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchGitHubInstallationsResponse.class.getName(),
                   Exception.class.getName())));

@@ -36,7 +36,6 @@ public interface DatastoreIODetailsOrBuilder
    * @return The namespace.
    */
   java.lang.String getNamespace();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DatastoreIODetailsOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2.Node nodes = 1;</code>
    */
   java.util.List<com.google.cloud.tpu.v2.Node> getNodesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2.Node nodes = 1;</code>
    */
   com.google.cloud.tpu.v2.Node getNodes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2.Node nodes = 1;</code>
    */
   int getNodesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListNodesResponseOrBuilder
    * <code>repeated .google.cloud.tpu.v2.Node nodes = 1;</code>
    */
   java.util.List<? extends com.google.cloud.tpu.v2.NodeOrBuilder> getNodesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface ListNodesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface ListNodesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -130,7 +124,6 @@ public interface ListNodesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -144,7 +137,6 @@ public interface ListNodesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

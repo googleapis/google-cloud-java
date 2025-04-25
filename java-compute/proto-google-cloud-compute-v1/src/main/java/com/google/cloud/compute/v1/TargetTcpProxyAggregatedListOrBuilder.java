@@ -36,7 +36,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -86,12 +83,10 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetTcpProxiesScopedList>
       getItems();
-
   /**
    *
    *
@@ -104,7 +99,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.TargetTcpProxiesScopedList>
       getItemsMap();
-
   /**
    *
    *
@@ -120,7 +114,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.TargetTcpProxiesScopedList defaultValue);
-
   /**
    *
    *
@@ -145,7 +138,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -158,7 +150,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -184,7 +175,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -197,7 +187,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -223,7 +212,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -236,7 +224,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -262,7 +249,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -275,7 +261,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -289,7 +274,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -316,7 +300,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -329,7 +312,6 @@ public interface TargetTcpProxyAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

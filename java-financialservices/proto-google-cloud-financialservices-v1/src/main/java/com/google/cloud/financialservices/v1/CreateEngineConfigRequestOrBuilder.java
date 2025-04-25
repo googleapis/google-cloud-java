@@ -38,7 +38,6 @@ public interface CreateEngineConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateEngineConfigRequestOrBuilder
    * @return The engineConfigId.
    */
   java.lang.String getEngineConfigId();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateEngineConfigRequestOrBuilder
    * @return Whether the engineConfig field is set.
    */
   boolean hasEngineConfig();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface CreateEngineConfigRequestOrBuilder
    * @return The engineConfig.
    */
   com.google.cloud.financialservices.v1.EngineConfig getEngineConfig();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateEngineConfigRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

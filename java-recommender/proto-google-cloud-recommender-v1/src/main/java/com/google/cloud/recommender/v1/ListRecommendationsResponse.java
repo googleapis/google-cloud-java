@@ -33,7 +33,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.recommender.v1.ListRecommendationsResponse)
     ListRecommendationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRecommendationsResponse.newBuilder() to construct.
   private ListRecommendationsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommender.v1.Recommendation> recommendations_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
   public java.util.List<com.google.cloud.recommender.v1.Recommendation> getRecommendationsList() {
     return recommendations_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       getRecommendationsOrBuilderList() {
     return recommendations_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
   public int getRecommendationsCount() {
     return recommendations_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
   public com.google.cloud.recommender.v1.Recommendation getRecommendations(int index) {
     return recommendations_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -171,7 +164,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -368,7 +360,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -647,7 +638,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return recommendationsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -664,7 +654,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return recommendationsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return recommendationsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -705,7 +693,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +713,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +778,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +798,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +837,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +856,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +869,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         int index) {
       return getRecommendationsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -908,7 +886,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return recommendationsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(recommendations_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +916,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       return getRecommendationsFieldBuilder()
           .addBuilder(com.google.cloud.recommender.v1.Recommendation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -955,7 +930,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       return getRecommendationsFieldBuilder()
           .addBuilder(index, com.google.cloud.recommender.v1.Recommendation.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1015,7 +988,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1039,7 +1011,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1033,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1081,7 +1051,6 @@ public final class ListRecommendationsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

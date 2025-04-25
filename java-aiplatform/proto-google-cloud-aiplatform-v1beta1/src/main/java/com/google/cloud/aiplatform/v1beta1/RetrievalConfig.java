@@ -33,7 +33,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RetrievalConfig)
     RetrievalConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RetrievalConfig.newBuilder() to construct.
   private RetrievalConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int LAT_LNG_FIELD_NUMBER = 1;
   private com.google.type.LatLng latLng_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasLatLng() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasLanguageCode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +571,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         latLngBuilder_;
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasLatLng() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -613,7 +603,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
         return latLngBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -636,7 +625,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +644,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +671,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +704,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -736,7 +720,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
         return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
       }
     }
-
     /**
      *
      *
@@ -761,7 +744,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -776,7 +758,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasLanguageCode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -799,7 +780,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -822,7 +802,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -844,7 +823,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +840,6 @@ public final class RetrievalConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

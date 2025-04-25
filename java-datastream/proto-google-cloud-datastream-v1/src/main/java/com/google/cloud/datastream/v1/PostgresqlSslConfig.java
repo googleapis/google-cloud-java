@@ -33,7 +33,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlSslConfig)
     PostgresqlSslConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PostgresqlSslConfig.newBuilder() to construct.
   private PostgresqlSslConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      * @return The caCertificate.
      */
     java.lang.String getCaCertificate();
-
     /**
      *
      *
@@ -97,7 +95,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getCaCertificateBytes();
   }
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlSslConfig.ServerVerification)
       ServerVerificationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ServerVerification.newBuilder() to construct.
     private ServerVerification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -149,7 +145,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object caCertificate_ = "";
-
     /**
      *
      *
@@ -175,7 +170,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -364,7 +358,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -564,7 +557,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object caCertificate_ = "";
-
       /**
        *
        *
@@ -589,7 +581,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -614,7 +605,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -638,7 +628,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -658,7 +647,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -776,7 +764,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      * @return The clientCertificate.
      */
     java.lang.String getClientCertificate();
-
     /**
      *
      *
@@ -814,7 +801,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      * @return The clientKey.
      */
     java.lang.String getClientKey();
-
     /**
      *
      *
@@ -847,7 +833,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      * @return The caCertificate.
      */
     java.lang.String getCaCertificate();
-
     /**
      *
      *
@@ -863,7 +848,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getCaCertificateBytes();
   }
-
   /**
    *
    *
@@ -883,7 +867,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.PostgresqlSslConfig.ServerAndClientVerification)
       ServerAndClientVerificationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ServerAndClientVerification.newBuilder() to construct.
     private ServerAndClientVerification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -921,7 +904,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clientCertificate_ = "";
-
     /**
      *
      *
@@ -952,7 +934,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -988,7 +969,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clientKey_ = "";
-
     /**
      *
      *
@@ -1017,7 +997,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1030,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object caCertificate_ = "";
-
     /**
      *
      *
@@ -1077,7 +1055,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
-
     /**
      *
      *
@@ -1291,7 +1268,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1529,7 +1505,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object clientCertificate_ = "";
-
       /**
        *
        *
@@ -1559,7 +1534,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1589,7 +1563,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1618,7 +1591,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1643,7 +1615,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1675,7 +1646,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object clientKey_ = "";
-
       /**
        *
        *
@@ -1703,7 +1673,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1731,7 +1700,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1758,7 +1726,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1781,7 +1748,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1811,7 +1777,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object caCertificate_ = "";
-
       /**
        *
        *
@@ -1836,7 +1801,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1861,7 +1825,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1885,7 +1848,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1905,7 +1867,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2017,7 +1978,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     private EncryptionSettingCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2051,7 +2011,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SERVER_VERIFICATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -2070,7 +2029,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
   public boolean hasServerVerification() {
     return encryptionSettingCase_ == 1;
   }
-
   /**
    *
    *
@@ -2095,7 +2053,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerVerification
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2120,7 +2077,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SERVER_AND_CLIENT_VERIFICATION_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -2140,7 +2096,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
   public boolean hasServerAndClientVerification() {
     return encryptionSettingCase_ == 2;
   }
-
   /**
    *
    *
@@ -2166,7 +2121,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     return com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerAndClientVerification
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -2391,7 +2345,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2629,7 +2582,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerVerification.Builder,
             com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerVerificationOrBuilder>
         serverVerificationBuilder_;
-
     /**
      *
      *
@@ -2648,7 +2600,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     public boolean hasServerVerification() {
       return encryptionSettingCase_ == 1;
     }
-
     /**
      *
      *
@@ -2681,7 +2632,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2708,7 +2658,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       encryptionSettingCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2733,7 +2682,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       encryptionSettingCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2773,7 +2721,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       encryptionSettingCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2802,7 +2749,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2819,7 +2765,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         getServerVerificationBuilder() {
       return getServerVerificationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2846,7 +2791,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2891,7 +2835,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerAndClientVerification.Builder,
             com.google.cloud.datastream.v1.PostgresqlSslConfig.ServerAndClientVerificationOrBuilder>
         serverAndClientVerificationBuilder_;
-
     /**
      *
      *
@@ -2911,7 +2854,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
     public boolean hasServerAndClientVerification() {
       return encryptionSettingCase_ == 2;
     }
-
     /**
      *
      *
@@ -2945,7 +2887,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2973,7 +2914,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       encryptionSettingCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2999,7 +2939,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       encryptionSettingCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3042,7 +2981,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       encryptionSettingCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -3072,7 +3010,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -3090,7 +3027,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
         getServerAndClientVerificationBuilder() {
       return getServerAndClientVerificationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3118,7 +3054,6 @@ public final class PostgresqlSslConfig extends com.google.protobuf.GeneratedMess
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

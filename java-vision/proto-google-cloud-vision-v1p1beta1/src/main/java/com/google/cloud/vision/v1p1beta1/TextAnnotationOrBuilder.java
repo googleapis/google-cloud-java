@@ -34,7 +34,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Page pages = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p1beta1.Page> getPagesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Page pages = 1;</code>
    */
   com.google.cloud.vision.v1p1beta1.Page getPages(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Page pages = 1;</code>
    */
   int getPagesCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface TextAnnotationOrBuilder
    * <code>repeated .google.cloud.vision.v1p1beta1.Page pages = 1;</code>
    */
   java.util.List<? extends com.google.cloud.vision.v1p1beta1.PageOrBuilder> getPagesOrBuilderList();
-
   /**
    *
    *
@@ -91,7 +87,6 @@ public interface TextAnnotationOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *

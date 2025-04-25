@@ -36,7 +36,6 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the audio field is set.
    */
   boolean hasAudio();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PreprocessingConfigOrBuilder
    * @return The audio.
    */
   com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio getAudio();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the crop field is set.
    */
   boolean hasCrop();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface PreprocessingConfigOrBuilder
    * @return The crop.
    */
   com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop getCrop();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the pad field is set.
    */
   boolean hasPad();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface PreprocessingConfigOrBuilder
    * @return The pad.
    */
   com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad getPad();
-
   /**
    *
    *

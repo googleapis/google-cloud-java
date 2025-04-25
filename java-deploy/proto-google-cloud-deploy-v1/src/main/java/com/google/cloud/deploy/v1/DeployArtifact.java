@@ -33,7 +33,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.DeployArtifact)
     DeployArtifactOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeployArtifact.newBuilder() to construct.
   private DeployArtifact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object artifactUri_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList manifestPaths_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getManifestPathsList() {
     return manifestPaths_;
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
   public int getManifestPathsCount() {
     return manifestPaths_.size();
   }
-
   /**
    *
    *
@@ -174,7 +168,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getManifestPaths(int index) {
     return manifestPaths_.get(index);
   }
-
   /**
    *
    *
@@ -367,7 +360,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -573,7 +565,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object artifactUri_ = "";
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -644,7 +633,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -663,7 +651,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -697,7 +684,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       manifestPaths_.makeImmutable();
       return manifestPaths_;
     }
-
     /**
      *
      *
@@ -730,7 +715,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     public int getManifestPathsCount() {
       return manifestPaths_.size();
     }
-
     /**
      *
      *
@@ -747,7 +731,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getManifestPaths(int index) {
       return manifestPaths_.get(index);
     }
-
     /**
      *
      *
@@ -764,7 +747,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getManifestPathsBytes(int index) {
       return manifestPaths_.getByteString(index);
     }
-
     /**
      *
      *
@@ -789,7 +771,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -813,7 +794,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -834,7 +814,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -854,7 +833,6 @@ public final class DeployArtifact extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

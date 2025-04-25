@@ -36,7 +36,6 @@ public interface PacketIntervalsOrBuilder
    * @return Whether the avgMs field is set.
    */
   boolean hasAvgMs();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface PacketIntervalsOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PacketIntervalsOrBuilder
    * @return The duration.
    */
   java.lang.String getDuration();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface PacketIntervalsOrBuilder
    * @return Whether the maxMs field is set.
    */
   boolean hasMaxMs();
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public interface PacketIntervalsOrBuilder
    * @return Whether the minMs field is set.
    */
   boolean hasMinMs();
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public interface PacketIntervalsOrBuilder
    * @return Whether the numIntervals field is set.
    */
   boolean hasNumIntervals();
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public interface PacketIntervalsOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
-
   /**
    *
    *
@@ -197,7 +190,6 @@ public interface PacketIntervalsOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *

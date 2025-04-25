@@ -53,7 +53,6 @@ public interface ServiceScalingOrBuilder
    * @return The enum numeric value on the wire for scalingMode.
    */
   int getScalingModeValue();
-
   /**
    *
    *
@@ -84,7 +83,6 @@ public interface ServiceScalingOrBuilder
    * @return Whether the manualInstanceCount field is set.
    */
   boolean hasManualInstanceCount();
-
   /**
    *
    *

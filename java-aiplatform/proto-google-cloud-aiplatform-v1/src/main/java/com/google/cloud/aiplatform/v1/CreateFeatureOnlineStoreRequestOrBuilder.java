@@ -40,7 +40,6 @@ public interface CreateFeatureOnlineStoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface CreateFeatureOnlineStoreRequestOrBuilder
    * @return Whether the featureOnlineStore field is set.
    */
   boolean hasFeatureOnlineStore();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface CreateFeatureOnlineStoreRequestOrBuilder
    * @return The featureOnlineStore.
    */
   com.google.cloud.aiplatform.v1.FeatureOnlineStore getFeatureOnlineStore();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateFeatureOnlineStoreRequestOrBuilder
    * @return The featureOnlineStoreId.
    */
   java.lang.String getFeatureOnlineStoreId();
-
   /**
    *
    *

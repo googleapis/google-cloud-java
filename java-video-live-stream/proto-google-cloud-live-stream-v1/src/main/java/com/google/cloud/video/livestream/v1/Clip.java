@@ -35,7 +35,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Clip)
     ClipOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Clip.newBuilder() to construct.
   private Clip(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -158,7 +157,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -169,7 +167,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
-
     /**
      *
      *
@@ -181,7 +178,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
-
     /**
      *
      *
@@ -193,7 +189,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
-
     /**
      *
      *
@@ -310,7 +305,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the markinTime field is set.
      */
     boolean hasMarkinTime();
-
     /**
      *
      *
@@ -323,7 +317,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return The markinTime.
      */
     com.google.protobuf.Timestamp getMarkinTime();
-
     /**
      *
      *
@@ -347,7 +340,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the markoutTime field is set.
      */
     boolean hasMarkoutTime();
-
     /**
      *
      *
@@ -360,7 +352,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return The markoutTime.
      */
     com.google.protobuf.Timestamp getMarkoutTime();
-
     /**
      *
      *
@@ -372,7 +363,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getMarkoutTimeOrBuilder();
   }
-
   /**
    *
    *
@@ -388,7 +378,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Clip.TimeSlice)
       TimeSliceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TimeSlice.newBuilder() to construct.
     private TimeSlice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -420,7 +409,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int MARKIN_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp markinTime_;
-
     /**
      *
      *
@@ -436,7 +424,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMarkinTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -452,7 +439,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getMarkinTime() {
       return markinTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : markinTime_;
     }
-
     /**
      *
      *
@@ -469,7 +455,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
     public static final int MARKOUT_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp markoutTime_;
-
     /**
      *
      *
@@ -485,7 +470,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMarkoutTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -503,7 +487,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : markoutTime_;
     }
-
     /**
      *
      *
@@ -700,7 +683,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -929,7 +911,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           markinTimeBuilder_;
-
       /**
        *
        *
@@ -944,7 +925,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMarkinTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -965,7 +945,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return markinTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -988,7 +967,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1008,7 +986,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1036,7 +1013,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1056,7 +1032,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1071,7 +1046,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMarkinTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1090,7 +1064,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
               : markinTime_;
         }
       }
-
       /**
        *
        *
@@ -1123,7 +1096,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           markoutTimeBuilder_;
-
       /**
        *
        *
@@ -1138,7 +1110,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMarkoutTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -1159,7 +1130,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return markoutTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -1182,7 +1152,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1202,7 +1171,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1230,7 +1198,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1250,7 +1217,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1265,7 +1231,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getMarkoutTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1284,7 +1249,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
               : markoutTime_;
         }
       }
-
       /**
        *
        *
@@ -1392,7 +1356,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeSlice field is set.
      */
     boolean hasTimeSlice();
-
     /**
      *
      *
@@ -1405,7 +1368,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return The timeSlice.
      */
     com.google.cloud.video.livestream.v1.Clip.TimeSlice getTimeSlice();
-
     /**
      *
      *
@@ -1419,7 +1381,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.video.livestream.v1.Clip.Slice.KindCase getKindCase();
   }
-
   /**
    *
    *
@@ -1434,7 +1395,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Clip.Slice)
       SliceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Slice.newBuilder() to construct.
     private Slice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1479,7 +1439,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       private KindCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1511,7 +1470,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TIME_SLICE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1527,7 +1485,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimeSlice() {
       return kindCase_ == 1;
     }
-
     /**
      *
      *
@@ -1546,7 +1503,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.cloud.video.livestream.v1.Clip.TimeSlice.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1739,7 +1695,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1961,7 +1916,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.video.livestream.v1.Clip.TimeSlice.Builder,
               com.google.cloud.video.livestream.v1.Clip.TimeSliceOrBuilder>
           timeSliceBuilder_;
-
       /**
        *
        *
@@ -1977,7 +1931,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       public boolean hasTimeSlice() {
         return kindCase_ == 1;
       }
-
       /**
        *
        *
@@ -2003,7 +1956,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.livestream.v1.Clip.TimeSlice.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2026,7 +1978,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2047,7 +1998,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2081,7 +2031,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         kindCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2107,7 +2056,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2120,7 +2068,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.video.livestream.v1.Clip.TimeSlice.Builder getTimeSliceBuilder() {
         return getTimeSliceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2141,7 +2088,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return com.google.cloud.video.livestream.v1.Clip.TimeSlice.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2258,7 +2204,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return The manifestKey.
      */
     java.lang.String getManifestKey();
-
     /**
      *
      *
@@ -2291,7 +2236,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      * @return The outputUri.
      */
     java.lang.String getOutputUri();
-
     /**
      *
      *
@@ -2310,7 +2254,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getOutputUriBytes();
   }
-
   /**
    *
    *
@@ -2325,7 +2268,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Clip.ClipManifest)
       ClipManifestOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ClipManifest.newBuilder() to construct.
     private ClipManifest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2361,7 +2303,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object manifestKey_ = "";
-
     /**
      *
      *
@@ -2387,7 +2328,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2418,7 +2358,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputUri_ = "";
-
     /**
      *
      *
@@ -2447,7 +2386,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2647,7 +2585,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2850,7 +2787,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object manifestKey_ = "";
-
       /**
        *
        *
@@ -2875,7 +2811,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2900,7 +2835,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2924,7 +2858,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2944,7 +2877,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2971,7 +2903,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object outputUri_ = "";
-
       /**
        *
        *
@@ -2999,7 +2930,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3027,7 +2957,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3054,7 +2983,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3077,7 +3005,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3175,7 +3102,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -3205,7 +3131,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3238,7 +3163,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -3255,7 +3179,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3272,7 +3195,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -3290,7 +3212,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
-
   /**
    *
    *
@@ -3307,7 +3228,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3324,7 +3244,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
-
   /**
    *
    *
@@ -3342,7 +3261,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -3359,7 +3277,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3376,7 +3293,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -3418,7 +3334,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -3435,14 +3350,12 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -3456,7 +3369,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -3477,7 +3389,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -3501,7 +3412,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
-
   /**
    *
    *
@@ -3519,7 +3429,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -3544,7 +3453,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputUri_ = "";
-
   /**
    *
    *
@@ -3575,7 +3483,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3609,7 +3516,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -3626,7 +3532,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public boolean hasError() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3643,7 +3548,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -3663,7 +3567,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Clip.Slice> slices_;
-
   /**
    *
    *
@@ -3677,7 +3580,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.video.livestream.v1.Clip.Slice> getSlicesList() {
     return slices_;
   }
-
   /**
    *
    *
@@ -3692,7 +3594,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       getSlicesOrBuilderList() {
     return slices_;
   }
-
   /**
    *
    *
@@ -3706,7 +3607,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public int getSlicesCount() {
     return slices_.size();
   }
-
   /**
    *
    *
@@ -3720,7 +3620,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.Clip.Slice getSlices(int index) {
     return slices_.get(index);
   }
-
   /**
    *
    *
@@ -3739,7 +3638,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.video.livestream.v1.Clip.ClipManifest> clipManifests_;
-
   /**
    *
    *
@@ -3757,7 +3655,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       getClipManifestsList() {
     return clipManifests_;
   }
-
   /**
    *
    *
@@ -3775,7 +3672,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       getClipManifestsOrBuilderList() {
     return clipManifests_;
   }
-
   /**
    *
    *
@@ -3792,7 +3688,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public int getClipManifestsCount() {
     return clipManifests_.size();
   }
-
   /**
    *
    *
@@ -3809,7 +3704,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.video.livestream.v1.Clip.ClipManifest getClipManifests(int index) {
     return clipManifests_.get(index);
   }
-
   /**
    *
    *
@@ -4100,7 +3994,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4561,7 +4454,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4590,7 +4482,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4619,7 +4510,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4647,7 +4537,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4671,7 +4560,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4707,7 +4595,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -4724,7 +4611,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4747,7 +4633,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4772,7 +4657,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4794,7 +4678,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4824,7 +4707,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -4846,7 +4728,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4863,7 +4744,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4884,7 +4764,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -4919,7 +4798,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
-
     /**
      *
      *
@@ -4935,7 +4813,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4955,7 +4832,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4979,7 +4855,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5000,7 +4875,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5029,7 +4903,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5050,7 +4923,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5066,7 +4938,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5084,7 +4955,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
-
     /**
      *
      *
@@ -5118,7 +4988,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -5135,7 +5004,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -5158,7 +5026,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5183,7 +5050,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5205,7 +5071,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5235,7 +5100,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5257,7 +5121,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5274,7 +5137,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5295,7 +5157,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -5349,7 +5210,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -5366,14 +5226,12 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -5387,7 +5245,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -5408,7 +5265,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -5435,7 +5291,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -5452,14 +5307,12 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -5480,7 +5333,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -5497,7 +5349,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -5515,7 +5366,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -5536,7 +5386,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5556,7 +5405,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.video.livestream.v1.Clip.State.forNumber(state_);
       return result == null ? com.google.cloud.video.livestream.v1.Clip.State.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -5580,7 +5428,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5602,7 +5449,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object outputUri_ = "";
-
     /**
      *
      *
@@ -5632,7 +5478,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5662,7 +5507,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5691,7 +5535,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5716,7 +5559,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5751,7 +5593,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -5767,7 +5608,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public boolean hasError() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5787,7 +5627,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5811,7 +5650,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5832,7 +5670,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5861,7 +5698,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5882,7 +5718,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5898,7 +5733,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5916,7 +5750,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -5973,7 +5806,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return slicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -5990,7 +5822,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return slicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6007,7 +5838,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return slicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6030,7 +5860,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6051,7 +5880,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6074,7 +5902,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6097,7 +5924,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6118,7 +5944,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6139,7 +5964,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6160,7 +5984,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6180,7 +6003,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6200,7 +6022,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6213,7 +6034,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.Clip.Slice.Builder getSlicesBuilder(int index) {
       return getSlicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6230,7 +6050,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return slicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6248,7 +6067,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(slices_);
       }
     }
-
     /**
      *
      *
@@ -6262,7 +6080,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       return getSlicesFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.Clip.Slice.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6276,7 +6093,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       return getSlicesFieldBuilder()
           .addBuilder(index, com.google.cloud.video.livestream.v1.Clip.Slice.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6346,7 +6162,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return clipManifestsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6366,7 +6181,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return clipManifestsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6386,7 +6200,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return clipManifestsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6413,7 +6226,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6437,7 +6249,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6463,7 +6274,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6490,7 +6300,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6514,7 +6323,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6538,7 +6346,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6563,7 +6370,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6586,7 +6392,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6609,7 +6414,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6626,7 +6430,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getClipManifestsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -6647,7 +6450,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return clipManifestsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -6668,7 +6470,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(clipManifests_);
       }
     }
-
     /**
      *
      *
@@ -6686,7 +6487,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
       return getClipManifestsFieldBuilder()
           .addBuilder(com.google.cloud.video.livestream.v1.Clip.ClipManifest.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -6705,7 +6505,6 @@ public final class Clip extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.video.livestream.v1.Clip.ClipManifest.getDefaultInstance());
     }
-
     /**
      *
      *

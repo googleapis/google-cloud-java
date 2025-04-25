@@ -33,7 +33,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.PromoteClusterStatus)
     PromoteClusterStatusOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PromoteClusterStatus.newBuilder() to construct.
   private PromoteClusterStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,7 +129,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -141,7 +139,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
      * <code>PROMOTE_CLUSTER_AVAILABLE_FOR_READ = 1;</code>
      */
     public static final int PROMOTE_CLUSTER_AVAILABLE_FOR_READ_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
      * <code>PROMOTE_CLUSTER_AVAILABLE_FOR_WRITE = 2;</code>
      */
     public static final int PROMOTE_CLUSTER_AVAILABLE_FOR_WRITE_VALUE = 2;
-
     /**
      *
      *
@@ -255,7 +251,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
-
   /**
    *
    *
@@ -281,7 +276,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -475,7 +469,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -658,7 +651,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -684,7 +676,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -713,7 +704,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +733,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.alloydb.v1beta.PromoteClusterStatus.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -775,7 +764,6 @@ public final class PromoteClusterStatus extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

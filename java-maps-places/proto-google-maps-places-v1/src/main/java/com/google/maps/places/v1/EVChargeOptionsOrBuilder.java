@@ -54,7 +54,6 @@ public interface EVChargeOptionsOrBuilder
    */
   java.util.List<com.google.maps.places.v1.EVChargeOptions.ConnectorAggregation>
       getConnectorAggregationList();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface EVChargeOptionsOrBuilder
    * </code>
    */
   com.google.maps.places.v1.EVChargeOptions.ConnectorAggregation getConnectorAggregation(int index);
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface EVChargeOptionsOrBuilder
    * </code>
    */
   int getConnectorAggregationCount();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface EVChargeOptionsOrBuilder
    */
   java.util.List<? extends com.google.maps.places.v1.EVChargeOptions.ConnectorAggregationOrBuilder>
       getConnectorAggregationOrBuilderList();
-
   /**
    *
    *

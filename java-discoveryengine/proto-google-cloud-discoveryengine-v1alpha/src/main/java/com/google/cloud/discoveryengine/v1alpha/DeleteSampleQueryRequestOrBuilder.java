@@ -47,7 +47,6 @@ public interface DeleteSampleQueryRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

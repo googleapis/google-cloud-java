@@ -33,7 +33,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DiskInstantiationConfig)
     DiskInstantiationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DiskInstantiationConfig.newBuilder() to construct.
   private DiskInstantiationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -169,7 +168,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>UNDEFINED_INSTANTIATE_FROM = 0;</code>
      */
     public static final int UNDEFINED_INSTANTIATE_FROM_VALUE = 0;
-
     /**
      *
      *
@@ -180,7 +178,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>ATTACH_READ_ONLY = 513775419;</code>
      */
     public static final int ATTACH_READ_ONLY_VALUE = 513775419;
-
     /**
      *
      *
@@ -191,7 +188,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>BLANK = 63281460;</code>
      */
     public static final int BLANK_VALUE = 63281460;
-
     /**
      *
      *
@@ -202,7 +198,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>CUSTOM_IMAGE = 196311789;</code>
      */
     public static final int CUSTOM_IMAGE_VALUE = 196311789;
-
     /**
      *
      *
@@ -213,7 +208,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>DEFAULT = 115302945;</code>
      */
     public static final int DEFAULT_VALUE = 115302945;
-
     /**
      *
      *
@@ -224,7 +218,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>DO_NOT_INCLUDE = 104218952;</code>
      */
     public static final int DO_NOT_INCLUDE_VALUE = 104218952;
-
     /**
      *
      *
@@ -235,7 +228,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>SOURCE_IMAGE = 62631959;</code>
      */
     public static final int SOURCE_IMAGE_VALUE = 62631959;
-
     /**
      *
      *
@@ -347,7 +339,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
   private boolean autoDelete_ = false;
-
   /**
    *
    *
@@ -363,7 +354,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -384,7 +374,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customImage_ = "";
-
   /**
    *
    *
@@ -400,7 +389,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   public boolean hasCustomImage() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -424,7 +412,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -453,7 +440,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceName_ = "";
-
   /**
    *
    *
@@ -469,7 +455,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   public boolean hasDeviceName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -493,7 +478,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -522,7 +506,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instantiateFrom_ = "";
-
   /**
    *
    *
@@ -539,7 +522,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
   public boolean hasInstantiateFrom() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -564,7 +546,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -796,7 +777,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1030,7 +1010,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     private int bitField0_;
 
     private boolean autoDelete_;
-
     /**
      *
      *
@@ -1046,7 +1025,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1062,7 +1040,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public boolean getAutoDelete() {
       return autoDelete_;
     }
-
     /**
      *
      *
@@ -1082,7 +1059,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1102,7 +1078,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     }
 
     private java.lang.Object customImage_ = "";
-
     /**
      *
      *
@@ -1117,7 +1092,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public boolean hasCustomImage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1140,7 +1114,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1136,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1185,7 +1157,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1203,7 +1174,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     }
 
     private java.lang.Object deviceName_ = "";
-
     /**
      *
      *
@@ -1243,7 +1212,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public boolean hasDeviceName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1266,7 +1234,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1289,7 +1256,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1311,7 +1277,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1329,7 +1294,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1354,7 +1318,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     }
 
     private java.lang.Object instantiateFrom_ = "";
-
     /**
      *
      *
@@ -1370,7 +1333,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     public boolean hasInstantiateFrom() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1394,7 +1356,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1418,7 +1379,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1441,7 +1401,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1460,7 +1419,6 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

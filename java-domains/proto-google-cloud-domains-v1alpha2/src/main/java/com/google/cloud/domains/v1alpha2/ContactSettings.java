@@ -37,7 +37,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.ContactSettings)
     ContactSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ContactSettings.newBuilder() to construct.
   private ContactSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return Whether the postalAddress field is set.
      */
     boolean hasPostalAddress();
-
     /**
      *
      *
@@ -102,7 +100,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return The postalAddress.
      */
     com.google.type.PostalAddress getPostalAddress();
-
     /**
      *
      *
@@ -128,7 +125,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return The email.
      */
     java.lang.String getEmail();
-
     /**
      *
      *
@@ -155,7 +151,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return The phoneNumber.
      */
     java.lang.String getPhoneNumber();
-
     /**
      *
      *
@@ -183,7 +178,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      * @return The faxNumber.
      */
     java.lang.String getFaxNumber();
-
     /**
      *
      *
@@ -198,7 +192,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getFaxNumberBytes();
   }
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.domains.v1alpha2.ContactSettings.Contact)
       ContactOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Contact.newBuilder() to construct.
     private Contact(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -249,7 +241,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int POSTAL_ADDRESS_FIELD_NUMBER = 1;
     private com.google.type.PostalAddress postalAddress_;
-
     /**
      *
      *
@@ -267,7 +258,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasPostalAddress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -287,7 +277,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           ? com.google.type.PostalAddress.getDefaultInstance()
           : postalAddress_;
     }
-
     /**
      *
      *
@@ -310,7 +299,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object email_ = "";
-
     /**
      *
      *
@@ -334,7 +322,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -363,7 +350,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object phoneNumber_ = "";
-
     /**
      *
      *
@@ -388,7 +374,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -418,7 +403,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object faxNumber_ = "";
-
     /**
      *
      *
@@ -443,7 +427,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
-
     /**
      *
      *
@@ -662,7 +645,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -915,7 +897,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
               com.google.type.PostalAddress.Builder,
               com.google.type.PostalAddressOrBuilder>
           postalAddressBuilder_;
-
       /**
        *
        *
@@ -932,7 +913,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       public boolean hasPostalAddress() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -955,7 +935,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return postalAddressBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -980,7 +959,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1002,7 +980,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1032,7 +1009,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
-
       /**
        *
        *
@@ -1054,7 +1030,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1071,7 +1046,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getPostalAddressFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1092,7 +1066,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
               : postalAddress_;
         }
       }
-
       /**
        *
        *
@@ -1122,7 +1095,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object email_ = "";
-
       /**
        *
        *
@@ -1145,7 +1117,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1168,7 +1139,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1190,7 +1160,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1208,7 +1177,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1233,7 +1201,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object phoneNumber_ = "";
-
       /**
        *
        *
@@ -1257,7 +1224,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1281,7 +1247,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1304,7 +1269,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1323,7 +1287,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1349,7 +1312,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object faxNumber_ = "";
-
       /**
        *
        *
@@ -1373,7 +1335,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1397,7 +1358,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1420,7 +1380,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1439,7 +1398,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1531,7 +1489,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int PRIVACY_FIELD_NUMBER = 1;
   private int privacy_ = 0;
-
   /**
    *
    *
@@ -1549,7 +1506,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   public int getPrivacyValue() {
     return privacy_;
   }
-
   /**
    *
    *
@@ -1572,7 +1528,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
 
   public static final int REGISTRANT_CONTACT_FIELD_NUMBER = 2;
   private com.google.cloud.domains.v1alpha2.ContactSettings.Contact registrantContact_;
-
   /**
    *
    *
@@ -1597,7 +1552,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasRegistrantContact() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1624,7 +1578,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.domains.v1alpha2.ContactSettings.Contact.getDefaultInstance()
         : registrantContact_;
   }
-
   /**
    *
    *
@@ -1653,7 +1606,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
 
   public static final int ADMIN_CONTACT_FIELD_NUMBER = 3;
   private com.google.cloud.domains.v1alpha2.ContactSettings.Contact adminContact_;
-
   /**
    *
    *
@@ -1671,7 +1623,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasAdminContact() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1691,7 +1642,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.domains.v1alpha2.ContactSettings.Contact.getDefaultInstance()
         : adminContact_;
   }
-
   /**
    *
    *
@@ -1713,7 +1663,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
 
   public static final int TECHNICAL_CONTACT_FIELD_NUMBER = 4;
   private com.google.cloud.domains.v1alpha2.ContactSettings.Contact technicalContact_;
-
   /**
    *
    *
@@ -1731,7 +1680,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasTechnicalContact() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -1751,7 +1699,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.domains.v1alpha2.ContactSettings.Contact.getDefaultInstance()
         : technicalContact_;
   }
-
   /**
    *
    *
@@ -1976,7 +1923,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2237,7 +2183,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int privacy_ = 0;
-
     /**
      *
      *
@@ -2255,7 +2200,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public int getPrivacyValue() {
       return privacy_;
     }
-
     /**
      *
      *
@@ -2276,7 +2220,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2298,7 +2241,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.domains.v1alpha2.ContactPrivacy.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2322,7 +2264,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2349,7 +2290,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.domains.v1alpha2.ContactSettings.Contact.Builder,
             com.google.cloud.domains.v1alpha2.ContactSettings.ContactOrBuilder>
         registrantContactBuilder_;
-
     /**
      *
      *
@@ -2373,7 +2313,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasRegistrantContact() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2403,7 +2342,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         return registrantContactBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2436,7 +2374,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2466,7 +2403,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2505,7 +2441,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2534,7 +2469,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2493,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRegistrantContactFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2588,7 +2521,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             : registrantContact_;
       }
     }
-
     /**
      *
      *
@@ -2630,7 +2562,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.domains.v1alpha2.ContactSettings.Contact.Builder,
             com.google.cloud.domains.v1alpha2.ContactSettings.ContactOrBuilder>
         adminContactBuilder_;
-
     /**
      *
      *
@@ -2647,7 +2578,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasAdminContact() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2670,7 +2600,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         return adminContactBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2696,7 +2625,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2719,7 +2647,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2751,7 +2678,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2773,7 +2699,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2791,7 +2716,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getAdminContactFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2813,7 +2737,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             : adminContact_;
       }
     }
-
     /**
      *
      *
@@ -2848,7 +2771,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.domains.v1alpha2.ContactSettings.Contact.Builder,
             com.google.cloud.domains.v1alpha2.ContactSettings.ContactOrBuilder>
         technicalContactBuilder_;
-
     /**
      *
      *
@@ -2865,7 +2787,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasTechnicalContact() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -2888,7 +2809,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
         return technicalContactBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2914,7 +2834,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2937,7 +2856,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2969,7 +2887,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -2991,7 +2908,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3009,7 +2925,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getTechnicalContactFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3031,7 +2946,6 @@ public final class ContactSettings extends com.google.protobuf.GeneratedMessageV
             : technicalContact_;
       }
     }
-
     /**
      *
      *

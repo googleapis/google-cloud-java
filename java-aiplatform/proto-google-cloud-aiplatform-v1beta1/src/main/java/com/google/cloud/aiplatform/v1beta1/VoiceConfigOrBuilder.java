@@ -36,7 +36,6 @@ public interface VoiceConfigOrBuilder
    * @return Whether the prebuiltVoiceConfig field is set.
    */
   boolean hasPrebuiltVoiceConfig();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VoiceConfigOrBuilder
    * @return The prebuiltVoiceConfig.
    */
   com.google.cloud.aiplatform.v1beta1.PrebuiltVoiceConfig getPrebuiltVoiceConfig();
-
   /**
    *
    *

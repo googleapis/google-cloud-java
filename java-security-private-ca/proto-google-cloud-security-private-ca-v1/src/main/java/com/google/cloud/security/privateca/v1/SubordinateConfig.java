@@ -36,7 +36,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.SubordinateConfig)
     SubordinateConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SubordinateConfig.newBuilder() to construct.
   private SubordinateConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      * @return A list containing the pemCertificates.
      */
     java.util.List<java.lang.String> getPemCertificatesList();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      * @return The count of pemCertificates.
      */
     int getPemCertificatesCount();
-
     /**
      *
      *
@@ -109,7 +106,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      * @return The pemCertificates at the given index.
      */
     java.lang.String getPemCertificates(int index);
-
     /**
      *
      *
@@ -124,7 +120,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
      */
     com.google.protobuf.ByteString getPemCertificatesBytes(int index);
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain)
       SubordinateConfigChainOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SubordinateConfigChain.newBuilder() to construct.
     private SubordinateConfigChain(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -178,7 +172,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList pemCertificates_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -193,7 +186,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ProtocolStringList getPemCertificatesList() {
       return pemCertificates_;
     }
-
     /**
      *
      *
@@ -208,7 +200,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public int getPemCertificatesCount() {
       return pemCertificates_.size();
     }
-
     /**
      *
      *
@@ -224,7 +215,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public java.lang.String getPemCertificates(int index) {
       return pemCertificates_.get(index);
     }
-
     /**
      *
      *
@@ -417,7 +407,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -638,7 +627,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -655,7 +643,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         pemCertificates_.makeImmutable();
         return pemCertificates_;
       }
-
       /**
        *
        *
@@ -671,7 +658,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       public int getPemCertificatesCount() {
         return pemCertificates_.size();
       }
-
       /**
        *
        *
@@ -688,7 +674,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       public java.lang.String getPemCertificates(int index) {
         return pemCertificates_.get(index);
       }
-
       /**
        *
        *
@@ -705,7 +690,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       public com.google.protobuf.ByteString getPemCertificatesBytes(int index) {
         return pemCertificates_.getByteString(index);
       }
-
       /**
        *
        *
@@ -730,7 +714,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -754,7 +737,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -775,7 +757,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -795,7 +776,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -907,7 +887,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     private SubordinateConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -941,7 +920,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CERTIFICATE_AUTHORITY_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -964,7 +942,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasCertificateAuthority() {
     return subordinateConfigCase_ == 1;
   }
-
   /**
    *
    *
@@ -1000,7 +977,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -1038,7 +1014,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PEM_ISSUER_CHAIN_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1058,7 +1033,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
   public boolean hasPemIssuerChain() {
     return subordinateConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -1084,7 +1058,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.security.privateca.v1.SubordinateConfig.SubordinateConfigChain
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1302,7 +1275,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1557,7 +1529,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasCertificateAuthority() {
       return subordinateConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -1594,7 +1565,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1631,7 +1601,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1661,7 +1630,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1657,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1727,7 +1694,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.security.privateca.v1.SubordinateConfig
                 .SubordinateConfigChainOrBuilder>
         pemIssuerChainBuilder_;
-
     /**
      *
      *
@@ -1747,7 +1713,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
     public boolean hasPemIssuerChain() {
       return subordinateConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -1781,7 +1746,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1809,7 +1773,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       subordinateConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1835,7 +1798,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       subordinateConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1878,7 +1840,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       subordinateConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1869,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1926,7 +1886,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
         getPemIssuerChainBuilder() {
       return getPemIssuerChainFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1954,7 +1913,6 @@ public final class SubordinateConfig extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *

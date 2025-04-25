@@ -35,7 +35,6 @@ public final class GetChannelPartnerRepricingConfigRequest
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest)
     GetChannelPartnerRepricingConfigRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetChannelPartnerRepricingConfigRequest.newBuilder() to construct.
   private GetChannelPartnerRepricingConfigRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GetChannelPartnerRepricingConfigRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class GetChannelPartnerRepricingConfigRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -289,7 +286,6 @@ public final class GetChannelPartnerRepricingConfigRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -482,7 +478,6 @@ public final class GetChannelPartnerRepricingConfigRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -509,7 +504,6 @@ public final class GetChannelPartnerRepricingConfigRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -536,7 +530,6 @@ public final class GetChannelPartnerRepricingConfigRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -562,7 +555,6 @@ public final class GetChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -584,7 +576,6 @@ public final class GetChannelPartnerRepricingConfigRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

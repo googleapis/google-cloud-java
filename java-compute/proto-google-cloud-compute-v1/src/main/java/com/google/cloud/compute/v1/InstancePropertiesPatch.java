@@ -33,7 +33,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancePropertiesPatch)
     InstancePropertiesPatchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstancePropertiesPatch.newBuilder() to construct.
   private InstancePropertiesPatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,7 +101,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -119,14 +117,12 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
   public int getMetadataCount() {
     return internalGetMetadata().getMap().size();
   }
-
   /**
    *
    *
@@ -226,14 +219,12 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     }
     return internalGetMetadata().getMap().containsKey(key);
   }
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
-
   /**
    *
    *
@@ -268,7 +258,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -474,7 +463,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -732,7 +720,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -749,14 +736,12 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -770,7 +755,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -791,7 +775,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -818,7 +801,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -835,14 +817,12 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000001;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -863,7 +843,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +884,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     public int getMetadataCount() {
       return internalGetMetadata().getMap().size();
     }
-
     /**
      *
      *
@@ -922,14 +900,12 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       }
       return internalGetMetadata().getMap().containsKey(key);
     }
-
     /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
-
     /**
      *
      *
@@ -943,7 +919,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
-
     /**
      *
      *
@@ -964,7 +939,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -991,7 +965,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1008,14 +981,12 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       bitField0_ |= 0x00000002;
       return internalGetMutableMetadata().getMutableMap();
     }
-
     /**
      *
      *
@@ -1036,7 +1007,6 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       bitField0_ |= 0x00000002;
       return this;
     }
-
     /**
      *
      *

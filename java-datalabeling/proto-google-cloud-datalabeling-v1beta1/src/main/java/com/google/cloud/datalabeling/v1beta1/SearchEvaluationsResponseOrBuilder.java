@@ -34,7 +34,6 @@ public interface SearchEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.Evaluation> getEvaluationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
   com.google.cloud.datalabeling.v1beta1.Evaluation getEvaluations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.datalabeling.v1beta1.Evaluation evaluations = 1;</code>
    */
   int getEvaluationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchEvaluationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.EvaluationOrBuilder>
       getEvaluationsOrBuilderList();
-
   /**
    *
    *
@@ -92,7 +88,6 @@ public interface SearchEvaluationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

@@ -35,7 +35,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.Position)
     PositionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Position.newBuilder() to construct.
   private Position(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
 
   public static final int X_FIELD_NUMBER = 1;
   private float x_ = 0F;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
 
   public static final int Y_FIELD_NUMBER = 2;
   private float y_ = 0F;
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
 
   public static final int Z_FIELD_NUMBER = 3;
   private float z_ = 0F;
-
   /**
    *
    *
@@ -301,7 +297,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -511,7 +506,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float x_;
-
     /**
      *
      *
@@ -527,7 +521,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public float getX() {
       return x_;
     }
-
     /**
      *
      *
@@ -547,7 +540,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +559,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float y_;
-
     /**
      *
      *
@@ -583,7 +574,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public float getY() {
       return y_;
     }
-
     /**
      *
      *
@@ -603,7 +593,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -623,7 +612,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     }
 
     private float z_;
-
     /**
      *
      *
@@ -639,7 +627,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
     public float getZ() {
       return z_;
     }
-
     /**
      *
      *
@@ -659,7 +646,6 @@ public final class Position extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.CreateJobTemplateRequest)
     CreateJobTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateJobTemplateRequest.newBuilder() to construct.
   private CreateJobTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
 
   public static final int JOB_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.cloud.video.transcoder.v1.JobTemplate jobTemplate_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
   public boolean hasJobTemplate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         ? com.google.cloud.video.transcoder.v1.JobTemplate.getDefaultInstance()
         : jobTemplate_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object jobTemplateId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -428,7 +420,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -661,7 +652,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -687,7 +677,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -713,7 +702,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -738,7 +726,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +746,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +778,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
             com.google.cloud.video.transcoder.v1.JobTemplate.Builder,
             com.google.cloud.video.transcoder.v1.JobTemplateOrBuilder>
         jobTemplateBuilder_;
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     public boolean hasJobTemplate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -832,7 +816,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         return jobTemplateBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -857,7 +840,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -880,7 +862,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +892,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +913,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +929,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return getJobTemplateFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -971,7 +949,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
             : jobTemplate_;
       }
     }
-
     /**
      *
      *
@@ -1001,7 +978,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object jobTemplateId_ = "";
-
     /**
      *
      *
@@ -1028,7 +1004,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1030,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1055,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1103,7 +1076,6 @@ public final class CreateJobTemplateRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

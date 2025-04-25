@@ -29,7 +29,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata)
     AutoMlImageSegmentationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlImageSegmentationMetadata.newBuilder() to construct.
   private AutoMlImageSegmentationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -114,7 +113,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
      * <code>SUCCESSFUL_STOP_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int SUCCESSFUL_STOP_REASON_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -125,7 +123,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
      * <code>BUDGET_REACHED = 1;</code>
      */
     public static final int BUDGET_REACHED_VALUE = 1;
-
     /**
      *
      *
@@ -229,7 +226,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
 
   public static final int COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
   private long costMilliNodeHours_ = 0L;
-
   /**
    *
    *
@@ -250,7 +246,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
 
   public static final int SUCCESSFUL_STOP_REASON_FIELD_NUMBER = 2;
   private int successfulStopReason_ = 0;
-
   /**
    *
    *
@@ -269,7 +264,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
   public int getSuccessfulStopReasonValue() {
     return successfulStopReason_;
   }
-
   /**
    *
    *
@@ -502,7 +496,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata}
@@ -725,7 +718,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
     private int bitField0_;
 
     private long costMilliNodeHours_;
-
     /**
      *
      *
@@ -743,7 +735,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
     public long getCostMilliNodeHours() {
       return costMilliNodeHours_;
     }
-
     /**
      *
      *
@@ -765,7 +756,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +777,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
     }
 
     private int successfulStopReason_ = 0;
-
     /**
      *
      *
@@ -806,7 +795,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
     public int getSuccessfulStopReasonValue() {
       return successfulStopReason_;
     }
-
     /**
      *
      *
@@ -828,7 +816,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +845,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
               .AutoMlImageSegmentationMetadata.SuccessfulStopReason.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -886,7 +872,6 @@ public final class AutoMlImageSegmentationMetadata extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

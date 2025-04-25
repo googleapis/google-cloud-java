@@ -36,7 +36,6 @@ public interface FrequencyOptionsOrBuilder
    * @return The enum numeric value on the wire for frequency.
    */
   int getFrequencyValue();
-
   /**
    *
    *
@@ -63,7 +62,6 @@ public interface FrequencyOptionsOrBuilder
    * @return Whether the startDate field is set.
    */
   boolean hasStartDate();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface FrequencyOptionsOrBuilder
    * @return The startDate.
    */
   com.google.type.Date getStartDate();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface FrequencyOptionsOrBuilder
    * @return Whether the endDate field is set.
    */
   boolean hasEndDate();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface FrequencyOptionsOrBuilder
    * @return The endDate.
    */
   com.google.type.Date getEndDate();
-
   /**
    *
    *

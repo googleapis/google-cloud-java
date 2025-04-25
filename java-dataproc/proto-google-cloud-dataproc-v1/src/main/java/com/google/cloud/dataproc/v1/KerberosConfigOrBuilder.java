@@ -51,7 +51,6 @@ public interface KerberosConfigOrBuilder
    * @return The rootPrincipalPasswordUri.
    */
   java.lang.String getRootPrincipalPasswordUri();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface KerberosConfigOrBuilder
    * @return The kmsKeyUri.
    */
   java.lang.String getKmsKeyUri();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface KerberosConfigOrBuilder
    * @return The keystoreUri.
    */
   java.lang.String getKeystoreUri();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface KerberosConfigOrBuilder
    * @return The truststoreUri.
    */
   java.lang.String getTruststoreUri();
-
   /**
    *
    *
@@ -168,7 +164,6 @@ public interface KerberosConfigOrBuilder
    * @return The keystorePasswordUri.
    */
   java.lang.String getKeystorePasswordUri();
-
   /**
    *
    *
@@ -198,7 +193,6 @@ public interface KerberosConfigOrBuilder
    * @return The keyPasswordUri.
    */
   java.lang.String getKeyPasswordUri();
-
   /**
    *
    *
@@ -228,7 +222,6 @@ public interface KerberosConfigOrBuilder
    * @return The truststorePasswordUri.
    */
   java.lang.String getTruststorePasswordUri();
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public interface KerberosConfigOrBuilder
    * @return The crossRealmTrustRealm.
    */
   java.lang.String getCrossRealmTrustRealm();
-
   /**
    *
    *
@@ -285,7 +277,6 @@ public interface KerberosConfigOrBuilder
    * @return The crossRealmTrustKdc.
    */
   java.lang.String getCrossRealmTrustKdc();
-
   /**
    *
    *
@@ -314,7 +305,6 @@ public interface KerberosConfigOrBuilder
    * @return The crossRealmTrustAdminServer.
    */
   java.lang.String getCrossRealmTrustAdminServer();
-
   /**
    *
    *
@@ -346,7 +336,6 @@ public interface KerberosConfigOrBuilder
    * @return The crossRealmTrustSharedPasswordUri.
    */
   java.lang.String getCrossRealmTrustSharedPasswordUri();
-
   /**
    *
    *
@@ -377,7 +366,6 @@ public interface KerberosConfigOrBuilder
    * @return The kdcDbKeyUri.
    */
   java.lang.String getKdcDbKeyUri();
-
   /**
    *
    *
@@ -420,7 +408,6 @@ public interface KerberosConfigOrBuilder
    * @return The realm.
    */
   java.lang.String getRealm();
-
   /**
    *
    *

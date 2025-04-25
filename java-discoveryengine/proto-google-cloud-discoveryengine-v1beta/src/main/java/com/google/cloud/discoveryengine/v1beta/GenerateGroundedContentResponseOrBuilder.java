@@ -37,7 +37,6 @@ public interface GenerateGroundedContentResponseOrBuilder
    */
   java.util.List<com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentResponse.Candidate>
       getCandidatesList();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface GenerateGroundedContentResponseOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentResponse.Candidate getCandidates(
       int index);
-
   /**
    *
    *
@@ -64,7 +62,6 @@ public interface GenerateGroundedContentResponseOrBuilder
    * </code>
    */
   int getCandidatesCount();
-
   /**
    *
    *
@@ -81,7 +78,6 @@ public interface GenerateGroundedContentResponseOrBuilder
               com.google.cloud.discoveryengine.v1beta.GenerateGroundedContentResponse
                   .CandidateOrBuilder>
       getCandidatesOrBuilderList();
-
   /**
    *
    *

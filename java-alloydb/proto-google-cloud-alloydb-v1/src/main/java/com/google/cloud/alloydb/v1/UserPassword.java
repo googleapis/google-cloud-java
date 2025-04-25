@@ -34,7 +34,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.UserPassword)
     UserPasswordOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserPassword.newBuilder() to construct.
   private UserPassword(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object user_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -339,7 +334,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -539,7 +533,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object user_ = "";
-
     /**
      *
      *
@@ -562,7 +555,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -585,7 +577,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -625,7 +615,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -673,7 +661,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -718,7 +704,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +721,6 @@ public final class UserPassword extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

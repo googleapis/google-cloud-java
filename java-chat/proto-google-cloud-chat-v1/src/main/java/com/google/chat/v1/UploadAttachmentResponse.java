@@ -33,7 +33,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.chat.v1.UploadAttachmentResponse)
     UploadAttachmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadAttachmentResponse.newBuilder() to construct.
   private UploadAttachmentResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ATTACHMENT_DATA_REF_FIELD_NUMBER = 1;
   private com.google.chat.v1.AttachmentDataRef attachmentDataRef_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
   public boolean hasAttachmentDataRef() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
         ? com.google.chat.v1.AttachmentDataRef.getDefaultInstance()
         : attachmentDataRef_;
   }
-
   /**
    *
    *
@@ -280,7 +276,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -487,7 +482,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
             com.google.chat.v1.AttachmentDataRef.Builder,
             com.google.chat.v1.AttachmentDataRefOrBuilder>
         attachmentDataRefBuilder_;
-
     /**
      *
      *
@@ -502,7 +496,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
     public boolean hasAttachmentDataRef() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -523,7 +516,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
         return attachmentDataRefBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -546,7 +538,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -567,7 +558,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -595,7 +585,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +604,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +618,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
       onChanged();
       return getAttachmentDataRefFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -649,7 +636,6 @@ public final class UploadAttachmentResponse extends com.google.protobuf.Generate
             : attachmentDataRef_;
       }
     }
-
     /**
      *
      *

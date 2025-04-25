@@ -37,7 +37,6 @@ public interface WorkspaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface WorkspaceOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface WorkspaceOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Table tables = 3;</code>
    */
   java.util.List<com.google.area120.tables.v1alpha1.Table> getTablesList();
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public interface WorkspaceOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Table tables = 3;</code>
    */
   com.google.area120.tables.v1alpha1.Table getTables(int index);
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface WorkspaceOrBuilder
    * <code>repeated .google.area120.tables.v1alpha1.Table tables = 3;</code>
    */
   int getTablesCount();
-
   /**
    *
    *
@@ -122,7 +117,6 @@ public interface WorkspaceOrBuilder
    */
   java.util.List<? extends com.google.area120.tables.v1alpha1.TableOrBuilder>
       getTablesOrBuilderList();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ImportProductsRequest)
     ImportProductsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportProductsRequest.newBuilder() to construct.
   private ImportProductsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int RECONCILIATION_MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>INCREMENTAL = 1;</code>
      */
     public static final int INCREMENTAL_VALUE = 1;
-
     /**
      *
      *
@@ -239,7 +236,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -269,7 +265,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -304,7 +299,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -331,7 +325,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -361,7 +354,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2beta.ProductInputConfig inputConfig_;
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -399,7 +390,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.retail.v2beta.ProductInputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -420,7 +410,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ERRORS_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.retail.v2beta.ImportErrorsConfig errorsConfig_;
-
   /**
    *
    *
@@ -436,7 +425,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasErrorsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -454,7 +442,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.retail.v2beta.ImportErrorsConfig.getDefaultInstance()
         : errorsConfig_;
   }
-
   /**
    *
    *
@@ -473,7 +460,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -491,7 +477,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -509,7 +494,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -528,7 +512,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   public static final int RECONCILIATION_MODE_FIELD_NUMBER = 5;
   private int reconciliationMode_ = 0;
-
   /**
    *
    *
@@ -548,7 +531,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
   public int getReconciliationModeValue() {
     return reconciliationMode_;
   }
-
   /**
    *
    *
@@ -579,7 +561,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object notificationPubsubTopic_ = "";
-
   /**
    *
    *
@@ -618,7 +599,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
-
   /**
    *
    *
@@ -892,7 +872,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1189,7 +1168,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -1218,7 +1196,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1247,7 +1224,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1251,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1274,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1304,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1356,7 +1329,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1382,7 +1354,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1378,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1398,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1430,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.retail.v2beta.ProductInputConfig.Builder,
             com.google.cloud.retail.v2beta.ProductInputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -1478,7 +1446,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1501,7 +1468,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1526,7 +1492,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1514,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1544,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1602,7 +1565,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1619,7 +1581,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1640,7 +1601,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             : inputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1675,7 +1635,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.retail.v2beta.ImportErrorsConfig.Builder,
             com.google.cloud.retail.v2beta.ImportErrorsConfigOrBuilder>
         errorsConfigBuilder_;
-
     /**
      *
      *
@@ -1690,7 +1649,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasErrorsConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1711,7 +1669,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return errorsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1734,7 +1691,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1755,7 +1711,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1739,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1804,7 +1758,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1819,7 +1772,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1838,7 +1790,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             : errorsConfig_;
       }
     }
-
     /**
      *
      *
@@ -1871,7 +1822,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -1888,7 +1838,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1911,7 +1860,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1936,7 +1884,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1958,7 +1905,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1988,7 +1934,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -2010,7 +1955,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2027,7 +1971,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2048,7 +1991,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
             : updateMask_;
       }
     }
-
     /**
      *
      *
@@ -2078,7 +2020,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int reconciliationMode_ = 0;
-
     /**
      *
      *
@@ -2098,7 +2039,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     public int getReconciliationModeValue() {
       return reconciliationMode_;
     }
-
     /**
      *
      *
@@ -2121,7 +2061,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2147,7 +2086,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2174,7 +2112,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2198,7 +2135,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object notificationPubsubTopic_ = "";
-
     /**
      *
      *
@@ -2236,7 +2172,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2274,7 +2209,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2311,7 +2245,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2344,7 +2277,6 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *

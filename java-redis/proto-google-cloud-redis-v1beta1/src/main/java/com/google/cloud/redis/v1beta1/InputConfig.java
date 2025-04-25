@@ -33,7 +33,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.InputConfig)
     InputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InputConfig.newBuilder() to construct.
   private InputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCS_SOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcsSource() {
     return sourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.redis.v1beta1.GcsSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -555,7 +549,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.redis.v1beta1.GcsSource.Builder,
             com.google.cloud.redis.v1beta1.GcsSourceOrBuilder>
         gcsSourceBuilder_;
-
     /**
      *
      *
@@ -571,7 +564,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcsSource() {
       return sourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -597,7 +589,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.redis.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -640,7 +630,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       sourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +699,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.redis.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
       return getGcsSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -733,7 +719,6 @@ public final class InputConfig extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.redis.v1beta1.GcsSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *

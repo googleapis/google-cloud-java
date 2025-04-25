@@ -33,7 +33,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.PublicKeyCertificate)
     PublicKeyCertificateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublicKeyCertificate.newBuilder() to construct.
   private PublicKeyCertificate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int FORMAT_FIELD_NUMBER = 1;
   private int format_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object certificate_ = "";
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
 
   public static final int X509_DETAILS_FIELD_NUMBER = 3;
   private com.google.cloud.iot.v1.X509CertificateDetails x509Details_;
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
   public boolean hasX509Details() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -194,7 +187,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.iot.v1.X509CertificateDetails.getDefaultInstance()
         : x509Details_;
   }
-
   /**
    *
    *
@@ -399,7 +391,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -626,7 +617,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -642,7 +632,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +669,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.iot.v1.PublicKeyCertificateFormat.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -703,7 +690,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +709,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object certificate_ = "";
-
     /**
      *
      *
@@ -746,7 +731,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +791,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
             com.google.cloud.iot.v1.X509CertificateDetails.Builder,
             com.google.cloud.iot.v1.X509CertificateDetailsOrBuilder>
         x509DetailsBuilder_;
-
     /**
      *
      *
@@ -854,7 +834,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     public boolean hasX509Details() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -875,7 +854,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
         return x509DetailsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -898,7 +876,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -919,7 +896,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +924,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +943,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -983,7 +957,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
       onChanged();
       return getX509DetailsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1002,7 +975,6 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
             : x509Details_;
       }
     }
-
     /**
      *
      *

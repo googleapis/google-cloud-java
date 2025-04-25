@@ -40,7 +40,6 @@ public interface UpdateGroupRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateGroupRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public interface UpdateGroupRequestOrBuilder
    * @return Whether the group field is set.
    */
   boolean hasGroup();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface UpdateGroupRequestOrBuilder
    * @return The group.
    */
   com.google.cloud.vmmigration.v1.Group getGroup();
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public interface UpdateGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

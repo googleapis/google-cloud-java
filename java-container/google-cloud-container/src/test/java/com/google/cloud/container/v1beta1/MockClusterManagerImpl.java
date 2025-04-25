@@ -223,8 +223,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetNodePoolAutoscaling, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SetNodePoolAutoscaling, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -266,8 +265,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetMonitoringService, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SetMonitoringService, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -581,8 +579,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CompleteNodePoolUpgrade, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method CompleteNodePoolUpgrade, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -603,8 +600,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RollbackNodePoolUpgrade, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method RollbackNodePoolUpgrade, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -625,8 +621,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetNodePoolManagement, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SetNodePoolManagement, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -772,8 +767,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SetMaintenancePolicy, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method SetMaintenancePolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -795,8 +789,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListUsableSubnetworks, expected %s or"
-                      + " %s",
+                  "Unrecognized response type %s for method ListUsableSubnetworks, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListUsableSubnetworksResponse.class.getName(),
                   Exception.class.getName())));
@@ -818,8 +811,7 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CheckAutopilotCompatibility, expected"
-                      + " %s or %s",
+                  "Unrecognized response type %s for method CheckAutopilotCompatibility, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CheckAutopilotCompatibilityResponse.class.getName(),
                   Exception.class.getName())));

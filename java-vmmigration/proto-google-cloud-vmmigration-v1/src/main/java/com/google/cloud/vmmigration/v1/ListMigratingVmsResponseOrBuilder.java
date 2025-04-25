@@ -36,7 +36,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vmmigration.v1.MigratingVm> getMigratingVmsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.MigratingVm getMigratingVms(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * </code>
    */
   int getMigratingVmsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListMigratingVmsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vmmigration.v1.MigratingVmOrBuilder>
       getMigratingVmsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface ListMigratingVmsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

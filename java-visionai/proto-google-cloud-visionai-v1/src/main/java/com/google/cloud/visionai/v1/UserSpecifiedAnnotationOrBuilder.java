@@ -37,7 +37,6 @@ public interface UserSpecifiedAnnotationOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface UserSpecifiedAnnotationOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UserSpecifiedAnnotationOrBuilder
    * @return The value.
    */
   com.google.cloud.visionai.v1.AnnotationValue getValue();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface UserSpecifiedAnnotationOrBuilder
    * @return Whether the partition field is set.
    */
   boolean hasPartition();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface UserSpecifiedAnnotationOrBuilder
    * @return The partition.
    */
   com.google.cloud.visionai.v1.Partition getPartition();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface DeleteSubscriptionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -101,7 +100,6 @@ public interface DeleteSubscriptionRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

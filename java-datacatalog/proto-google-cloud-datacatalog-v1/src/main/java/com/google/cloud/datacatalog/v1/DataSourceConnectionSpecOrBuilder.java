@@ -36,7 +36,6 @@ public interface DataSourceConnectionSpecOrBuilder
    * @return Whether the bigqueryConnectionSpec field is set.
    */
   boolean hasBigqueryConnectionSpec();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataSourceConnectionSpecOrBuilder
    * @return The bigqueryConnectionSpec.
    */
   com.google.cloud.datacatalog.v1.BigQueryConnectionSpec getBigqueryConnectionSpec();
-
   /**
    *
    *

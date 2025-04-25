@@ -33,7 +33,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.SegmentSettings)
     SegmentSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SegmentSettings.newBuilder() to construct.
   private SegmentSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SEGMENT_DURATION_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration segmentDuration_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
   public boolean hasSegmentDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -115,7 +112,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Duration.getDefaultInstance()
         : segmentDuration_;
   }
-
   /**
    *
    *
@@ -304,7 +300,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -509,7 +504,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         segmentDurationBuilder_;
-
     /**
      *
      *
@@ -532,7 +526,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
     public boolean hasSegmentDuration() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -561,7 +554,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
         return segmentDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -592,7 +584,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -684,7 +673,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -707,7 +695,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSegmentDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class SegmentSettings extends com.google.protobuf.GeneratedMessageV
             : segmentDuration_;
       }
     }
-
     /**
      *
      *

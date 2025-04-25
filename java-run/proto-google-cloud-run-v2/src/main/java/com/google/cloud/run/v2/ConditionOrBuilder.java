@@ -40,7 +40,6 @@ public interface ConditionOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ConditionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface ConditionOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface ConditionOrBuilder
    * @return Whether the lastTransitionTime field is set.
    */
   boolean hasLastTransitionTime();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface ConditionOrBuilder
    * @return The lastTransitionTime.
    */
   com.google.protobuf.Timestamp getLastTransitionTime();
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public interface ConditionOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface ConditionOrBuilder
    * @return Whether the reason field is set.
    */
   boolean hasReason();
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public interface ConditionOrBuilder
    * @return The enum numeric value on the wire for reason.
    */
   int getReasonValue();
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public interface ConditionOrBuilder
    * @return Whether the revisionReason field is set.
    */
   boolean hasRevisionReason();
-
   /**
    *
    *
@@ -247,7 +238,6 @@ public interface ConditionOrBuilder
    * @return The enum numeric value on the wire for revisionReason.
    */
   int getRevisionReasonValue();
-
   /**
    *
    *
@@ -277,7 +267,6 @@ public interface ConditionOrBuilder
    * @return Whether the executionReason field is set.
    */
   boolean hasExecutionReason();
-
   /**
    *
    *
@@ -292,7 +281,6 @@ public interface ConditionOrBuilder
    * @return The enum numeric value on the wire for executionReason.
    */
   int getExecutionReasonValue();
-
   /**
    *
    *

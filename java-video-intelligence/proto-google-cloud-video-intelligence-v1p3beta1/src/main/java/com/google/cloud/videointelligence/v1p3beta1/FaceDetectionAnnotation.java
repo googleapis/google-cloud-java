@@ -33,7 +33,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p3beta1.FaceDetectionAnnotation)
     FaceDetectionAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FaceDetectionAnnotation.newBuilder() to construct.
   private FaceDetectionAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.videointelligence.v1p3beta1.Track> tracks_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.videointelligence.v1p3beta1.Track> getTracksList() {
     return tracks_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       getTracksOrBuilderList() {
     return tracks_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
   public int getTracksCount() {
     return tracks_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
   public com.google.cloud.videointelligence.v1p3beta1.Track getTracks(int index) {
     return tracks_.get(index);
   }
-
   /**
    *
    *
@@ -143,7 +137,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
 
   public static final int THUMBNAIL_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -332,7 +325,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -616,7 +608,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
         return tracksBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -633,7 +624,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
         return tracksBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
         return tracksBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -673,7 +662,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -761,7 +746,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -782,7 +766,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +786,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +824,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +836,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     public com.google.cloud.videointelligence.v1p3beta1.Track.Builder getTracksBuilder(int index) {
       return getTracksFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -874,7 +853,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
         return tracksBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -892,7 +870,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(tracks_);
       }
     }
-
     /**
      *
      *
@@ -906,7 +883,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       return getTracksFieldBuilder()
           .addBuilder(com.google.cloud.videointelligence.v1p3beta1.Track.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -921,7 +897,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.videointelligence.v1p3beta1.Track.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -954,7 +929,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     }
 
     private com.google.protobuf.ByteString thumbnail_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -970,7 +944,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getThumbnail() {
       return thumbnail_;
     }
-
     /**
      *
      *
@@ -992,7 +965,6 @@ public final class FaceDetectionAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

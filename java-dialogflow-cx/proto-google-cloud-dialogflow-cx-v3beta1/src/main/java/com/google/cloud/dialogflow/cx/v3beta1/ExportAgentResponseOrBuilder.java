@@ -38,7 +38,6 @@ public interface ExportAgentResponseOrBuilder
    * @return Whether the agentUri field is set.
    */
   boolean hasAgentUri();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ExportAgentResponseOrBuilder
    * @return The agentUri.
    */
   java.lang.String getAgentUri();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ExportAgentResponseOrBuilder
    * @return Whether the agentContent field is set.
    */
   boolean hasAgentContent();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface ExportAgentResponseOrBuilder
    * @return Whether the commitSha field is set.
    */
   boolean hasCommitSha();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ExportAgentResponseOrBuilder
    * @return The commitSha.
    */
   java.lang.String getCommitSha();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface ListMembershipsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.chat.v1.Membership> getMembershipsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListMembershipsResponseOrBuilder
    * </code>
    */
   com.google.chat.v1.Membership getMemberships(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListMembershipsResponseOrBuilder
    * </code>
    */
   int getMembershipsCount();
-
   /**
    *
    *
@@ -75,7 +72,6 @@ public interface ListMembershipsResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.chat.v1.MembershipOrBuilder> getMembershipsOrBuilderList();
-
   /**
    *
    *
@@ -102,7 +98,6 @@ public interface ListMembershipsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

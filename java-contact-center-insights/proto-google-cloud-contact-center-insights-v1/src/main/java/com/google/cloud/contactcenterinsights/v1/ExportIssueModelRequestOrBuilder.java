@@ -38,7 +38,6 @@ public interface ExportIssueModelRequestOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface ExportIssueModelRequestOrBuilder
    */
   com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest.GcsDestination
       getGcsDestination();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface ExportIssueModelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

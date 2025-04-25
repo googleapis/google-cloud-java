@@ -33,7 +33,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.api.serviceusage.v1beta1.ConsumerQuotaMetric)
     ConsumerQuotaMetricOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ConsumerQuotaMetric.newBuilder() to construct.
   private ConsumerQuotaMetric(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metric_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -197,7 +192,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -224,7 +218,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -257,7 +250,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
       consumerQuotaLimits_;
-
   /**
    *
    *
@@ -273,7 +265,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       getConsumerQuotaLimitsList() {
     return consumerQuotaLimits_;
   }
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       getConsumerQuotaLimitsOrBuilderList() {
     return consumerQuotaLimits_;
   }
-
   /**
    *
    *
@@ -304,7 +294,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   public int getConsumerQuotaLimitsCount() {
     return consumerQuotaLimits_.size();
   }
-
   /**
    *
    *
@@ -319,7 +308,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   public com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit getConsumerQuotaLimits(int index) {
     return consumerQuotaLimits_.get(index);
   }
-
   /**
    *
    *
@@ -341,7 +329,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
       descendantConsumerQuotaLimits_;
-
   /**
    *
    *
@@ -366,7 +353,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       getDescendantConsumerQuotaLimitsList() {
     return descendantConsumerQuotaLimits_;
   }
-
   /**
    *
    *
@@ -391,7 +377,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       getDescendantConsumerQuotaLimitsOrBuilderList() {
     return descendantConsumerQuotaLimits_;
   }
-
   /**
    *
    *
@@ -415,7 +400,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
   public int getDescendantConsumerQuotaLimitsCount() {
     return descendantConsumerQuotaLimits_.size();
   }
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       int index) {
     return descendantConsumerQuotaLimits_.get(index);
   }
-
   /**
    *
    *
@@ -470,7 +453,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unit_ = "";
-
   /**
    *
    *
@@ -494,7 +476,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -732,7 +713,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1083,7 +1063,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1112,7 +1091,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1119,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1169,7 +1146,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1169,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1224,7 +1199,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object metric_ = "";
-
     /**
      *
      *
@@ -1250,7 +1224,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1276,7 +1249,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1301,7 +1273,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1322,7 +1293,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1350,7 +1320,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -1376,7 +1345,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1402,7 +1370,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1427,7 +1394,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1414,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1511,7 +1476,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return consumerQuotaLimitsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1529,7 +1493,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return consumerQuotaLimitsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1548,7 +1511,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return consumerQuotaLimitsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1573,7 +1535,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1595,7 +1556,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1580,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1604,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1625,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1646,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1712,7 +1668,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1733,7 +1688,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1708,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1769,7 +1722,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         getConsumerQuotaLimitsBuilder(int index) {
       return getConsumerQuotaLimitsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1788,7 +1740,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return consumerQuotaLimitsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1807,7 +1758,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(consumerQuotaLimits_);
       }
     }
-
     /**
      *
      *
@@ -1823,7 +1773,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       return getConsumerQuotaLimitsFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1840,7 +1789,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1921,7 +1869,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return descendantConsumerQuotaLimitsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1948,7 +1895,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return descendantConsumerQuotaLimitsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1976,7 +1922,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return descendantConsumerQuotaLimitsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2010,7 +1955,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2041,7 +1985,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2075,7 +2018,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2109,7 +2051,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2140,7 +2081,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2171,7 +2111,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2204,7 +2143,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2234,7 +2172,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2264,7 +2201,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -2288,7 +2224,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         getDescendantConsumerQuotaLimitsBuilder(int index) {
       return getDescendantConsumerQuotaLimitsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2316,7 +2251,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return descendantConsumerQuotaLimitsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2344,7 +2278,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(descendantConsumerQuotaLimits_);
       }
     }
-
     /**
      *
      *
@@ -2369,7 +2302,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       return getDescendantConsumerQuotaLimitsFieldBuilder()
           .addBuilder(com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2395,7 +2327,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
           .addBuilder(
               index, com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2441,7 +2372,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object unit_ = "";
-
     /**
      *
      *
@@ -2464,7 +2394,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2487,7 +2416,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2509,7 +2437,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2527,7 +2454,6 @@ public final class ConsumerQuotaMetric extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

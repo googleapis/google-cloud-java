@@ -41,7 +41,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:grafeas.v1.AttestationOccurrence)
     AttestationOccurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AttestationOccurrence.newBuilder() to construct.
   private AttestationOccurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,7 +74,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
   public static final int SERIALIZED_PAYLOAD_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Signature> signatures_;
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public java.util.List<io.grafeas.v1.Signature> getSignaturesList() {
     return signatures_;
   }
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public java.util.List<? extends io.grafeas.v1.SignatureOrBuilder> getSignaturesOrBuilderList() {
     return signatures_;
   }
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public int getSignaturesCount() {
     return signatures_.size();
   }
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public io.grafeas.v1.Signature getSignatures(int index) {
     return signatures_.get(index);
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Jwt> jwts_;
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public java.util.List<io.grafeas.v1.Jwt> getJwtsList() {
     return jwts_;
   }
-
   /**
    *
    *
@@ -231,7 +222,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public java.util.List<? extends io.grafeas.v1.JwtOrBuilder> getJwtsOrBuilderList() {
     return jwts_;
   }
-
   /**
    *
    *
@@ -253,7 +243,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public int getJwtsCount() {
     return jwts_.size();
   }
-
   /**
    *
    *
@@ -275,7 +264,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   public io.grafeas.v1.Jwt getJwts(int index) {
     return jwts_.get(index);
   }
-
   /**
    *
    *
@@ -477,7 +465,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -778,7 +765,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.ByteString serializedPayload_ =
         com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getSerializedPayload() {
       return serializedPayload_;
     }
-
     /**
      *
      *
@@ -818,7 +803,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +856,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return signaturesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -892,7 +875,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return signaturesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -912,7 +894,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return signaturesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -938,7 +919,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -961,7 +941,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +966,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1013,7 +991,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1013,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1035,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1057,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1079,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1101,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1116,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public io.grafeas.v1.Signature.Builder getSignaturesBuilder(int index) {
       return getSignaturesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1164,7 +1135,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return signaturesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1184,7 +1154,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(signatures_);
       }
     }
-
     /**
      *
      *
@@ -1200,7 +1169,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public io.grafeas.v1.Signature.Builder addSignaturesBuilder() {
       return getSignaturesFieldBuilder().addBuilder(io.grafeas.v1.Signature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1217,7 +1185,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       return getSignaturesFieldBuilder()
           .addBuilder(index, io.grafeas.v1.Signature.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1288,7 +1255,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return jwtsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1313,7 +1279,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return jwtsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1338,7 +1303,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return jwtsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1369,7 +1333,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1360,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1390,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1459,7 +1420,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1447,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1515,7 +1474,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1543,7 +1501,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1571,7 +1528,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1555,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -1620,7 +1575,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public io.grafeas.v1.Jwt.Builder getJwtsBuilder(int index) {
       return getJwtsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1645,7 +1599,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return jwtsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1670,7 +1623,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(jwts_);
       }
     }
-
     /**
      *
      *
@@ -1691,7 +1643,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public io.grafeas.v1.Jwt.Builder addJwtsBuilder() {
       return getJwtsFieldBuilder().addBuilder(io.grafeas.v1.Jwt.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1712,7 +1663,6 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public io.grafeas.v1.Jwt.Builder addJwtsBuilder(int index) {
       return getJwtsFieldBuilder().addBuilder(index, io.grafeas.v1.Jwt.getDefaultInstance());
     }
-
     /**
      *
      *

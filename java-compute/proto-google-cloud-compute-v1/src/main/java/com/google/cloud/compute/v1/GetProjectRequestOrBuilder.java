@@ -36,7 +36,6 @@ public interface GetProjectRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *

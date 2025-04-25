@@ -39,7 +39,6 @@ public interface TraceOrBuilder
    * @return Whether the endpointInfo field is set.
    */
   boolean hasEndpointInfo();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface TraceOrBuilder
    * @return The endpointInfo.
    */
   com.google.cloud.networkmanagement.v1beta1.EndpointInfo getEndpointInfo();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface TraceOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1beta1.Step steps = 2;</code>
    */
   java.util.List<com.google.cloud.networkmanagement.v1beta1.Step> getStepsList();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface TraceOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1beta1.Step steps = 2;</code>
    */
   com.google.cloud.networkmanagement.v1beta1.Step getSteps(int index);
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface TraceOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1beta1.Step steps = 2;</code>
    */
   int getStepsCount();
-
   /**
    *
    *
@@ -134,7 +129,6 @@ public interface TraceOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkmanagement.v1beta1.StepOrBuilder>
       getStepsOrBuilderList();
-
   /**
    *
    *

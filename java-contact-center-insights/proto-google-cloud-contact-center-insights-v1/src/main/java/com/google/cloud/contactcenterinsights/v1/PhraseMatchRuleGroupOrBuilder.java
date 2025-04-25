@@ -38,7 +38,6 @@ public interface PhraseMatchRuleGroupOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PhraseMatchRuleGroupOrBuilder
    */
   java.util.List<com.google.cloud.contactcenterinsights.v1.PhraseMatchRule>
       getPhraseMatchRulesList();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface PhraseMatchRuleGroupOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatchRule getPhraseMatchRules(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface PhraseMatchRuleGroupOrBuilder
    * </code>
    */
   int getPhraseMatchRulesCount();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface PhraseMatchRuleGroupOrBuilder
    */
   java.util.List<? extends com.google.cloud.contactcenterinsights.v1.PhraseMatchRuleOrBuilder>
       getPhraseMatchRulesOrBuilderList();
-
   /**
    *
    *

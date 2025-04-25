@@ -38,7 +38,6 @@ public interface PairwiseMetricResultOrBuilder
    * @return The enum numeric value on the wire for pairwiseChoice.
    */
   int getPairwiseChoiceValue();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface PairwiseMetricResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface PairwiseMetricResultOrBuilder
    * @return Whether the customOutput field is set.
    */
   boolean hasCustomOutput();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface PairwiseMetricResultOrBuilder
    * @return The customOutput.
    */
   com.google.cloud.aiplatform.v1beta1.CustomOutput getCustomOutput();
-
   /**
    *
    *

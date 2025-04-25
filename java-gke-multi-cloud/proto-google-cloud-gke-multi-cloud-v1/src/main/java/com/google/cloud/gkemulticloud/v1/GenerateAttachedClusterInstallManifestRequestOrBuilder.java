@@ -45,7 +45,6 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -94,7 +93,6 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * @return The attachedClusterId.
    */
   java.lang.String getAttachedClusterId();
-
   /**
    *
    *
@@ -138,7 +136,6 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * @return The platformVersion.
    */
   java.lang.String getPlatformVersion();
-
   /**
    *
    *
@@ -170,7 +167,6 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * @return Whether the proxyConfig field is set.
    */
   boolean hasProxyConfig();
-
   /**
    *
    *
@@ -185,7 +181,6 @@ public interface GenerateAttachedClusterInstallManifestRequestOrBuilder
    * @return The proxyConfig.
    */
   com.google.cloud.gkemulticloud.v1.AttachedProxyConfig getProxyConfig();
-
   /**
    *
    *

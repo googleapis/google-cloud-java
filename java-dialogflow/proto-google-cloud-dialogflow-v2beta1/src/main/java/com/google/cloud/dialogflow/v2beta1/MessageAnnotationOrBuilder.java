@@ -36,7 +36,6 @@ public interface MessageAnnotationOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.AnnotatedMessagePart parts = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.AnnotatedMessagePart> getPartsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MessageAnnotationOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.AnnotatedMessagePart parts = 1;</code>
    */
   com.google.cloud.dialogflow.v2beta1.AnnotatedMessagePart getParts(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface MessageAnnotationOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.AnnotatedMessagePart parts = 1;</code>
    */
   int getPartsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface MessageAnnotationOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.AnnotatedMessagePartOrBuilder>
       getPartsOrBuilderList();
-
   /**
    *
    *

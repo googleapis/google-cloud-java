@@ -30,14 +30,12 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return Whether the etag field is set.
    */
   boolean hasEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    * <code>optional string etag = 3123477;</code>
    *
@@ -57,7 +55,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -70,7 +67,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -96,7 +92,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * </code>
    */
   int getItemsCount();
-
   /**
    *
    *
@@ -109,12 +104,10 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * </code>
    */
   boolean containsItems(java.lang.String key);
-
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.NetworkEdgeSecurityServicesScopedList>
       getItems();
-
   /**
    *
    *
@@ -128,7 +121,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.compute.v1.NetworkEdgeSecurityServicesScopedList>
       getItemsMap();
-
   /**
    *
    *
@@ -145,7 +137,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.compute.v1.NetworkEdgeSecurityServicesScopedList defaultValue);
-
   /**
    *
    *
@@ -172,7 +163,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -185,7 +175,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -211,7 +200,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
-
   /**
    *
    *
@@ -224,7 +212,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -250,7 +237,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -263,7 +249,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -289,7 +274,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return A list containing the unreachables.
    */
   java.util.List<java.lang.String> getUnreachablesList();
-
   /**
    *
    *
@@ -302,7 +286,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The count of unreachables.
    */
   int getUnreachablesCount();
-
   /**
    *
    *
@@ -316,7 +299,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The unreachables at the given index.
    */
   java.lang.String getUnreachables(int index);
-
   /**
    *
    *
@@ -343,7 +325,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
-
   /**
    *
    *
@@ -356,7 +337,6 @@ public interface NetworkEdgeSecurityServiceAggregatedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
-
   /**
    *
    *

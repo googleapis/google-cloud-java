@@ -36,7 +36,6 @@ public interface ListAdaptiveMtFilesResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.translate.v3.AdaptiveMtFile> getAdaptiveMtFilesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListAdaptiveMtFilesResponseOrBuilder
    * </code>
    */
   com.google.cloud.translate.v3.AdaptiveMtFile getAdaptiveMtFiles(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListAdaptiveMtFilesResponseOrBuilder
    * </code>
    */
   int getAdaptiveMtFilesCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListAdaptiveMtFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.translate.v3.AdaptiveMtFileOrBuilder>
       getAdaptiveMtFilesOrBuilderList();
-
   /**
    *
    *
@@ -104,7 +100,6 @@ public interface ListAdaptiveMtFilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

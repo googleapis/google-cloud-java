@@ -33,7 +33,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.Price)
     PriceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Price.newBuilder() to construct.
   private Price(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int BASE_PRICE_FIELD_NUMBER = 1;
   private com.google.type.Money basePrice_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBasePrice() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Money getBasePrice() {
     return basePrice_ == null ? com.google.type.Money.getDefaultInstance() : basePrice_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISCOUNT_FIELD_NUMBER = 2;
   private double discount_ = 0D;
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EFFECTIVE_PRICE_FIELD_NUMBER = 3;
   private com.google.type.Money effectivePrice_;
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEffectivePrice() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -168,7 +161,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Money getEffectivePrice() {
     return effectivePrice_ == null ? com.google.type.Money.getDefaultInstance() : effectivePrice_;
   }
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object externalPriceUri_ = "";
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -434,7 +424,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -682,7 +671,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         basePriceBuilder_;
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBasePrice() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -716,7 +703,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         return basePriceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +744,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +790,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +804,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBasePriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -839,7 +820,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         return basePrice_ == null ? com.google.type.Money.getDefaultInstance() : basePrice_;
       }
     }
-
     /**
      *
      *
@@ -864,7 +844,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double discount_;
-
     /**
      *
      *
@@ -881,7 +860,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     public double getDiscount() {
       return discount_;
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +903,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         effectivePriceBuilder_;
-
     /**
      *
      *
@@ -941,7 +917,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEffectivePrice() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -962,7 +937,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         return effectivePriceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -985,7 +959,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1033,7 +1005,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1024,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1068,7 +1038,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEffectivePriceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1087,7 +1056,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
             : effectivePrice_;
       }
     }
-
     /**
      *
      *
@@ -1113,7 +1081,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object externalPriceUri_ = "";
-
     /**
      *
      *
@@ -1136,7 +1103,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1125,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1181,7 +1146,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1199,7 +1163,6 @@ public final class Price extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

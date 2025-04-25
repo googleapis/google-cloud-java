@@ -33,7 +33,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.PeeringRoute)
     PeeringRouteOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PeeringRoute.newBuilder() to construct.
   private PeeringRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -142,7 +140,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>DYNAMIC_PEERING_ROUTE = 1;</code>
      */
     public static final int DYNAMIC_PEERING_ROUTE_VALUE = 1;
-
     /**
      *
      *
@@ -153,7 +150,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>STATIC_PEERING_ROUTE = 2;</code>
      */
     public static final int STATIC_PEERING_ROUTE_VALUE = 2;
-
     /**
      *
      *
@@ -304,7 +300,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
      */
     public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -315,7 +310,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>INCOMING = 1;</code>
      */
     public static final int INCOMING_VALUE = 1;
-
     /**
      *
      *
@@ -414,7 +408,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destRange_ = "";
-
   /**
    *
    *
@@ -438,7 +431,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -465,7 +457,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -483,7 +474,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -510,7 +500,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextHopRegion_ = "";
-
   /**
    *
    *
@@ -535,7 +524,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -563,7 +551,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIORITY_FIELD_NUMBER = 4;
   private long priority_ = 0L;
-
   /**
    *
    *
@@ -582,7 +569,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORTED_FIELD_NUMBER = 5;
   private boolean imported_ = false;
-
   /**
    *
    *
@@ -605,7 +591,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECTION_FIELD_NUMBER = 6;
   private int direction_ = 0;
-
   /**
    *
    *
@@ -628,7 +613,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
   public int getDirectionValue() {
     return direction_;
   }
-
   /**
    *
    *
@@ -864,7 +848,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1115,7 +1098,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object destRange_ = "";
-
     /**
      *
      *
@@ -1138,7 +1120,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1142,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1183,7 +1163,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1201,7 +1180,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1226,7 +1204,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -1244,7 +1221,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -1265,7 +1241,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1262,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.PeeringRoute.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1311,7 +1285,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1333,7 +1306,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object nextHopRegion_ = "";
-
     /**
      *
      *
@@ -1357,7 +1329,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1381,7 +1352,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1404,7 +1374,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1423,7 +1392,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1449,7 +1417,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long priority_;
-
     /**
      *
      *
@@ -1465,7 +1432,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     public long getPriority() {
       return priority_;
     }
-
     /**
      *
      *
@@ -1485,7 +1451,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1505,7 +1470,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean imported_;
-
     /**
      *
      *
@@ -1525,7 +1489,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     public boolean getImported() {
       return imported_;
     }
-
     /**
      *
      *
@@ -1549,7 +1512,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1535,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int direction_ = 0;
-
     /**
      *
      *
@@ -1596,7 +1557,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
     public int getDirectionValue() {
       return direction_;
     }
-
     /**
      *
      *
@@ -1622,7 +1582,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1649,7 +1608,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.PeeringRoute.Direction.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1678,7 +1636,6 @@ public final class PeeringRoute extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

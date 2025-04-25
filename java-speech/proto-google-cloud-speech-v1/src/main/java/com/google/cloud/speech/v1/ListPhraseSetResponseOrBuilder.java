@@ -34,7 +34,6 @@ public interface ListPhraseSetResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1.PhraseSet phrase_sets = 1;</code>
    */
   java.util.List<com.google.cloud.speech.v1.PhraseSet> getPhraseSetsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListPhraseSetResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1.PhraseSet phrase_sets = 1;</code>
    */
   com.google.cloud.speech.v1.PhraseSet getPhraseSets(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListPhraseSetResponseOrBuilder
    * <code>repeated .google.cloud.speech.v1.PhraseSet phrase_sets = 1;</code>
    */
   int getPhraseSetsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListPhraseSetResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1.PhraseSetOrBuilder>
       getPhraseSetsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListPhraseSetResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

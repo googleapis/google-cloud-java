@@ -36,7 +36,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the authorizationPolicy field is set.
    */
   boolean hasAuthorizationPolicy();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The authorizationPolicy.
    */
   java.lang.String getAuthorizationPolicy();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the certificateMap field is set.
    */
   boolean hasCertificateMap();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The certificateMap.
    */
   java.lang.String getCertificateMap();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -192,7 +184,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -205,7 +196,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -231,7 +221,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the httpKeepAliveTimeoutSec field is set.
    */
   boolean hasHttpKeepAliveTimeoutSec();
-
   /**
    *
    *
@@ -257,7 +246,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -283,7 +271,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -296,7 +283,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -322,7 +308,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -335,7 +320,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -361,7 +345,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the proxyBind field is set.
    */
   boolean hasProxyBind();
-
   /**
    *
    *
@@ -388,7 +371,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the quicOverride field is set.
    */
   boolean hasQuicOverride();
-
   /**
    *
    *
@@ -402,7 +384,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The quicOverride.
    */
   java.lang.String getQuicOverride();
-
   /**
    *
    *
@@ -429,7 +410,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -442,7 +422,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -468,7 +447,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -481,7 +459,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -507,7 +484,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the serverTlsPolicy field is set.
    */
   boolean hasServerTlsPolicy();
-
   /**
    *
    *
@@ -520,7 +496,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The serverTlsPolicy.
    */
   java.lang.String getServerTlsPolicy();
-
   /**
    *
    *
@@ -546,7 +521,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return A list containing the sslCertificates.
    */
   java.util.List<java.lang.String> getSslCertificatesList();
-
   /**
    *
    *
@@ -559,7 +533,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The count of sslCertificates.
    */
   int getSslCertificatesCount();
-
   /**
    *
    *
@@ -573,7 +546,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The sslCertificates at the given index.
    */
   java.lang.String getSslCertificates(int index);
-
   /**
    *
    *
@@ -600,7 +572,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the sslPolicy field is set.
    */
   boolean hasSslPolicy();
-
   /**
    *
    *
@@ -613,7 +584,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
-
   /**
    *
    *
@@ -640,7 +610,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the tlsEarlyData field is set.
    */
   boolean hasTlsEarlyData();
-
   /**
    *
    *
@@ -654,7 +623,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The tlsEarlyData.
    */
   java.lang.String getTlsEarlyData();
-
   /**
    *
    *
@@ -681,7 +649,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return Whether the urlMap field is set.
    */
   boolean hasUrlMap();
-
   /**
    *
    *
@@ -694,7 +661,6 @@ public interface TargetHttpsProxyOrBuilder
    * @return The urlMap.
    */
   java.lang.String getUrlMap();
-
   /**
    *
    *

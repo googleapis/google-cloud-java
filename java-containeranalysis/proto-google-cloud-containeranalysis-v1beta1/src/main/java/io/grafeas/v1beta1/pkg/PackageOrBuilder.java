@@ -36,7 +36,6 @@ public interface PackageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface PackageOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
   java.util.List<io.grafeas.v1beta1.pkg.Distribution> getDistributionList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface PackageOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
   io.grafeas.v1beta1.pkg.Distribution getDistribution(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface PackageOrBuilder
    * <code>repeated .grafeas.v1beta1.package.Distribution distribution = 10;</code>
    */
   int getDistributionCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface PackageOrBuilder
    */
   java.util.List<? extends io.grafeas.v1beta1.pkg.DistributionOrBuilder>
       getDistributionOrBuilderList();
-
   /**
    *
    *

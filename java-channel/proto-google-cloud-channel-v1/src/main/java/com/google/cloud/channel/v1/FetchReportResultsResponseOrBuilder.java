@@ -38,7 +38,6 @@ public interface FetchReportResultsResponseOrBuilder
    * @return Whether the reportMetadata field is set.
    */
   boolean hasReportMetadata();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface FetchReportResultsResponseOrBuilder
    * @return The reportMetadata.
    */
   com.google.cloud.channel.v1.ReportResultsMetadata getReportMetadata();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface FetchReportResultsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Row rows = 2;</code>
    */
   java.util.List<com.google.cloud.channel.v1.Row> getRowsList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface FetchReportResultsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Row rows = 2;</code>
    */
   com.google.cloud.channel.v1.Row getRows(int index);
-
   /**
    *
    *
@@ -100,7 +96,6 @@ public interface FetchReportResultsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Row rows = 2;</code>
    */
   int getRowsCount();
-
   /**
    *
    *
@@ -112,7 +107,6 @@ public interface FetchReportResultsResponseOrBuilder
    * <code>repeated .google.cloud.channel.v1.Row rows = 2;</code>
    */
   java.util.List<? extends com.google.cloud.channel.v1.RowOrBuilder> getRowsOrBuilderList();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface FetchReportResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

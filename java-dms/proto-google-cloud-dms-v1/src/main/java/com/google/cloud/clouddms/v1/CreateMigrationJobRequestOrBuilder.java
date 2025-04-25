@@ -38,7 +38,6 @@ public interface CreateMigrationJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateMigrationJobRequestOrBuilder
    * @return The migrationJobId.
    */
   java.lang.String getMigrationJobId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateMigrationJobRequestOrBuilder
    * @return Whether the migrationJob field is set.
    */
   boolean hasMigrationJob();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateMigrationJobRequestOrBuilder
    * @return The migrationJob.
    */
   com.google.cloud.clouddms.v1.MigrationJob getMigrationJob();
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public interface CreateMigrationJobRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public interface ListTaxonomyCategoriesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.TaxonomyCategory taxonomy_categories = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.TaxonomyCategory> getTaxonomyCategoriesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTaxonomyCategoriesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.TaxonomyCategory taxonomy_categories = 1;</code>
    */
   com.google.ads.admanager.v1.TaxonomyCategory getTaxonomyCategories(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTaxonomyCategoriesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.TaxonomyCategory taxonomy_categories = 1;</code>
    */
   int getTaxonomyCategoriesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTaxonomyCategoriesResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.TaxonomyCategoryOrBuilder>
       getTaxonomyCategoriesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTaxonomyCategoriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

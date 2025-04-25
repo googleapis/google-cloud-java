@@ -34,7 +34,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.LeaseTasksRequest)
     LeaseTasksRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LeaseTasksRequest.newBuilder() to construct.
   private LeaseTasksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int MAX_TASKS_FIELD_NUMBER = 2;
   private int maxTasks_ = 0;
-
   /**
    *
    *
@@ -158,7 +154,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int LEASE_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration leaseDuration_;
-
   /**
    *
    *
@@ -196,7 +191,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasLeaseDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -236,7 +230,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.protobuf.Duration.getDefaultInstance()
         : leaseDuration_;
   }
-
   /**
    *
    *
@@ -277,7 +270,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 4;
   private int responseView_ = 0;
-
   /**
    *
    *
@@ -305,7 +297,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
   public int getResponseViewValue() {
     return responseView_;
   }
-
   /**
    *
    *
@@ -340,7 +331,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -394,7 +384,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -649,7 +638,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -906,7 +894,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -932,7 +919,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -958,7 +944,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -983,7 +968,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +988,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1032,7 +1015,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int maxTasks_;
-
     /**
      *
      *
@@ -1058,7 +1040,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     public int getMaxTasks() {
       return maxTasks_;
     }
-
     /**
      *
      *
@@ -1088,7 +1069,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1103,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         leaseDurationBuilder_;
-
     /**
      *
      *
@@ -1160,7 +1139,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasLeaseDuration() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1203,7 +1181,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         return leaseDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1248,7 +1225,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1290,7 +1266,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1340,7 +1315,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1382,7 +1356,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1419,7 +1392,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLeaseDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1460,7 +1432,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
             : leaseDuration_;
       }
     }
-
     /**
      *
      *
@@ -1510,7 +1481,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int responseView_ = 0;
-
     /**
      *
      *
@@ -1538,7 +1508,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     public int getResponseViewValue() {
       return responseView_;
     }
-
     /**
      *
      *
@@ -1569,7 +1538,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1567,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
           com.google.cloud.tasks.v2beta2.Task.View.forNumber(responseView_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1633,7 +1600,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1631,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1718,7 +1683,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1771,7 +1735,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1823,7 +1786,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1833,6 @@ public final class LeaseTasksRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

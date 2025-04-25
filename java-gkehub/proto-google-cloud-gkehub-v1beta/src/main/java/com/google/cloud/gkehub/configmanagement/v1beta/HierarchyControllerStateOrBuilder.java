@@ -37,7 +37,6 @@ public interface HierarchyControllerStateOrBuilder
    * @return Whether the version field is set.
    */
   boolean hasVersion();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface HierarchyControllerStateOrBuilder
    * @return The version.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerVersion getVersion();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface HierarchyControllerStateOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface HierarchyControllerStateOrBuilder
    * @return The state.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerDeploymentState getState();
-
   /**
    *
    *

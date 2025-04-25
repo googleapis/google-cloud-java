@@ -34,7 +34,6 @@ public interface ListEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Evaluation evaluations = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.Evaluation> getEvaluationsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Evaluation evaluations = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.Evaluation getEvaluations(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListEvaluationsResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.Evaluation evaluations = 1;</code>
    */
   int getEvaluationsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListEvaluationsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.EvaluationOrBuilder>
       getEvaluationsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListEvaluationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

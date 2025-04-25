@@ -33,7 +33,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.InstanceAuthString)
     InstanceAuthStringOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use InstanceAuthString.newBuilder() to construct.
   private InstanceAuthString(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object authString_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
-
   /**
    *
    *
@@ -276,7 +273,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -461,7 +457,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object authString_ = "";
-
     /**
      *
      *
@@ -484,7 +479,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -507,7 +501,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -529,7 +522,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -547,7 +539,6 @@ public final class InstanceAuthString extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface CreateExpandedDataSetRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateExpandedDataSetRequestOrBuilder
    * @return Whether the expandedDataSet field is set.
    */
   boolean hasExpandedDataSet();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface CreateExpandedDataSetRequestOrBuilder
    * @return The expandedDataSet.
    */
   com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface CreateEncryptionConfigRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface CreateEncryptionConfigRequestOrBuilder
    * @return The encryptionConfigId.
    */
   java.lang.String getEncryptionConfigId();
-
   /**
    *
    *
@@ -104,7 +102,6 @@ public interface CreateEncryptionConfigRequestOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateEncryptionConfigRequestOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.dataplex.v1.EncryptionConfig getEncryptionConfig();
-
   /**
    *
    *

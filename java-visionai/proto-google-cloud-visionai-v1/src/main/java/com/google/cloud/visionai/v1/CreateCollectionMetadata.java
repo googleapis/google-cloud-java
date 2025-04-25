@@ -33,7 +33,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CreateCollectionMetadata)
     CreateCollectionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateCollectionMetadata.newBuilder() to construct.
   private CreateCollectionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int OPERATION_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.OperationMetadata operationMetadata_;
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
   public boolean hasOperationMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
         ? com.google.cloud.visionai.v1.OperationMetadata.getDefaultInstance()
         : operationMetadata_;
   }
-
   /**
    *
    *
@@ -281,7 +277,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -489,7 +484,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
             com.google.cloud.visionai.v1.OperationMetadata.Builder,
             com.google.cloud.visionai.v1.OperationMetadataOrBuilder>
         operationMetadataBuilder_;
-
     /**
      *
      *
@@ -504,7 +498,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
     public boolean hasOperationMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -525,7 +518,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
         return operationMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -548,7 +540,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -569,7 +560,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +588,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +607,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -633,7 +621,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
       onChanged();
       return getOperationMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -652,7 +639,6 @@ public final class CreateCollectionMetadata extends com.google.protobuf.Generate
             : operationMetadata_;
       }
     }
-
     /**
      *
      *

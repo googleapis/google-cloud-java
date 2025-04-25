@@ -37,7 +37,6 @@ public interface ServiceContextFilterOrBuilder
    * @return The service.
    */
   java.lang.String getService();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface ServiceContextFilterOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public interface ServiceContextFilterOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
-
   /**
    *
    *

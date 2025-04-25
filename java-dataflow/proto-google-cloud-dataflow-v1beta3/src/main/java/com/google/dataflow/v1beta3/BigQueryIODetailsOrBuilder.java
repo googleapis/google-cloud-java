@@ -36,7 +36,6 @@ public interface BigQueryIODetailsOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface BigQueryIODetailsOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface BigQueryIODetailsOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface BigQueryIODetailsOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
-
   /**
    *
    *

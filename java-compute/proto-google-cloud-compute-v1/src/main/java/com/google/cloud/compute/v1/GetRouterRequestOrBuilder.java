@@ -36,7 +36,6 @@ public interface GetRouterRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GetRouterRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GetRouterRequestOrBuilder
    * @return The router.
    */
   java.lang.String getRouter();
-
   /**
    *
    *

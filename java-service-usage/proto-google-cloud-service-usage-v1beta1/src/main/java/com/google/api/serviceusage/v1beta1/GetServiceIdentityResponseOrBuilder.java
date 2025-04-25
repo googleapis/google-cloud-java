@@ -38,7 +38,6 @@ public interface GetServiceIdentityResponseOrBuilder
    * @return Whether the identity field is set.
    */
   boolean hasIdentity();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface GetServiceIdentityResponseOrBuilder
    * @return The identity.
    */
   com.google.api.serviceusage.v1beta1.ServiceIdentity getIdentity();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface GetServiceIdentityResponseOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.DeleteBackupRequest)
     DeleteBackupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteBackupRequest.newBuilder() to construct.
   private DeleteBackupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +199,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -226,7 +220,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -252,7 +245,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -465,7 +457,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -693,7 +684,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -719,7 +709,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -745,7 +734,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -770,7 +758,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +778,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -819,7 +805,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -854,7 +839,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -889,7 +873,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -923,7 +906,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +935,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +971,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1007,7 +987,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1028,7 +1007,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1049,7 +1027,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -1074,7 +1051,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1099,7 +1075,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1123,7 +1098,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1143,7 +1117,6 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

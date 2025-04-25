@@ -38,7 +38,6 @@ public interface PrivilegedAccessOrBuilder
    * @return Whether the gcpIamAccess field is set.
    */
   boolean hasGcpIamAccess();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface PrivilegedAccessOrBuilder
    * @return The gcpIamAccess.
    */
   com.google.cloud.privilegedaccessmanager.v1.PrivilegedAccess.GcpIamAccess getGcpIamAccess();
-
   /**
    *
    *

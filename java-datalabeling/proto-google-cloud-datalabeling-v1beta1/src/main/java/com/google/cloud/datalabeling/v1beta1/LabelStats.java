@@ -33,7 +33,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelStats)
     LabelStatsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelStats.newBuilder() to construct.
   private LabelStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -101,7 +100,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
   public int getExampleCountCount() {
     return internalGetExampleCount().getMap().size();
   }
-
   /**
    *
    *
@@ -122,14 +120,12 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetExampleCount().getMap().containsKey(key);
   }
-
   /** Use {@link #getExampleCountMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Long> getExampleCount() {
     return getExampleCountMap();
   }
-
   /**
    *
    *
@@ -147,7 +143,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Long> getExampleCountMap() {
     return internalGetExampleCount().getMap();
   }
-
   /**
    *
    *
@@ -169,7 +164,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Long> map = internalGetExampleCount().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -362,7 +356,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -600,7 +593,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     public int getExampleCountCount() {
       return internalGetExampleCount().getMap().size();
     }
-
     /**
      *
      *
@@ -621,14 +613,12 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetExampleCount().getMap().containsKey(key);
     }
-
     /** Use {@link #getExampleCountMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getExampleCount() {
       return getExampleCountMap();
     }
-
     /**
      *
      *
@@ -646,7 +636,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Long> getExampleCountMap() {
       return internalGetExampleCount().getMap();
     }
-
     /**
      *
      *
@@ -668,7 +657,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Long> map = internalGetExampleCount().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExampleCount().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -720,14 +707,12 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableExampleCount().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableExampleCount() {
       bitField0_ |= 0x00000001;
       return internalGetMutableExampleCount().getMutableMap();
     }
-
     /**
      *
      *
@@ -750,7 +735,6 @@ public final class LabelStats extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
-
     /**
      *
      *

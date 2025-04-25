@@ -39,7 +39,6 @@ public interface GetUserWorkloadsConfigMapRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

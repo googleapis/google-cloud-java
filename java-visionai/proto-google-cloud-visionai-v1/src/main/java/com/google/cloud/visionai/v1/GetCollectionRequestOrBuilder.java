@@ -39,7 +39,6 @@ public interface GetCollectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

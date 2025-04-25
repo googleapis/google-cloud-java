@@ -34,7 +34,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SearchKnowledgeResponse)
     SearchKnowledgeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SearchKnowledgeResponse.newBuilder() to construct.
   private SearchKnowledgeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer> answers_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer> getAnswersList() {
     return answers_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       getAnswersOrBuilderList() {
     return answers_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
   public int getAnswersCount() {
     return answers_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
   public com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer getAnswers(int index) {
     return answers_.get(index);
   }
-
   /**
    *
    *
@@ -152,7 +146,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rewrittenQuery_ = "";
-
   /**
    *
    *
@@ -176,7 +169,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -372,7 +364,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -653,7 +644,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return answersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -671,7 +661,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return answersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -689,7 +678,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return answersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -736,7 +723,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -760,7 +746,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +770,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -807,7 +791,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +812,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +853,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +873,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -908,7 +887,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         int index) {
       return getAnswersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -927,7 +905,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return answersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -946,7 +923,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(answers_);
       }
     }
-
     /**
      *
      *
@@ -961,7 +937,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       return getAnswersFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.cloud.dialogflow.v2.SearchKnowledgeAnswer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1012,7 +986,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object rewrittenQuery_ = "";
-
     /**
      *
      *
@@ -1035,7 +1008,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1058,7 +1030,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1080,7 +1051,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1068,6 @@ public final class SearchKnowledgeResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

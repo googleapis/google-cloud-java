@@ -40,7 +40,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The workloadId.
    */
   java.lang.String getWorkloadId();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return Whether the workload field is set.
    */
   boolean hasWorkload();
-
   /**
    *
    *
@@ -117,7 +114,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The workload.
    */
   com.google.cloud.apphub.v1.Workload getWorkload();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface CreateWorkloadRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

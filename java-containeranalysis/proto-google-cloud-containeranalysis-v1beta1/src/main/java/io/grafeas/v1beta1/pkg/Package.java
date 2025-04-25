@@ -35,7 +35,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.package.Package)
     PackageOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Package.newBuilder() to construct.
   private Package(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1beta1.pkg.Distribution> distribution_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<io.grafeas.v1beta1.pkg.Distribution> getDistributionList() {
     return distribution_;
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       getDistributionOrBuilderList() {
     return distribution_;
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
   public int getDistributionCount() {
     return distribution_.size();
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
   public io.grafeas.v1beta1.pkg.Distribution getDistribution(int index) {
     return distribution_.get(index);
   }
-
   /**
    *
    *
@@ -363,7 +355,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -607,7 +598,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -653,7 +642,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -693,7 +680,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -749,7 +735,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return distributionBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -766,7 +751,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return distributionBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -783,7 +767,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return distributionBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -850,7 +831,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +892,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +912,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +931,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -975,7 +950,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +962,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
     public io.grafeas.v1beta1.pkg.Distribution.Builder getDistributionBuilder(int index) {
       return getDistributionFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return distributionBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1023,7 +995,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(distribution_);
       }
     }
-
     /**
      *
      *
@@ -1037,7 +1008,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return getDistributionFieldBuilder()
           .addBuilder(io.grafeas.v1beta1.pkg.Distribution.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1051,7 +1021,6 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
       return getDistributionFieldBuilder()
           .addBuilder(index, io.grafeas.v1beta1.pkg.Distribution.getDefaultInstance());
     }
-
     /**
      *
      *

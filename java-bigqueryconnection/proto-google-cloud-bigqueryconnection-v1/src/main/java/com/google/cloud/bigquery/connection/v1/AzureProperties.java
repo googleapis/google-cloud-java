@@ -33,7 +33,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.connection.v1.AzureProperties)
     AzurePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AzureProperties.newBuilder() to construct.
   private AzureProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object application_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientId_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object objectId_ = "";
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -233,7 +226,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object customerTenantId_ = "";
-
   /**
    *
    *
@@ -257,7 +249,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -286,7 +277,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object redirectUri_ = "";
-
   /**
    *
    *
@@ -311,7 +301,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -341,7 +330,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object federatedApplicationClientId_ = "";
-
   /**
    *
    *
@@ -366,7 +354,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -396,7 +383,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object identity_ = "";
-
   /**
    *
    *
@@ -422,7 +408,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -666,7 +651,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -941,7 +925,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object application_ = "";
-
     /**
      *
      *
@@ -964,7 +947,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -987,7 +969,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1009,7 +990,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1027,7 +1007,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1052,7 +1031,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object clientId_ = "";
-
     /**
      *
      *
@@ -1075,7 +1053,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1098,7 +1075,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1120,7 +1096,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1113,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1137,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object objectId_ = "";
-
     /**
      *
      *
@@ -1186,7 +1159,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1209,7 +1181,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1231,7 +1202,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1249,7 +1219,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1243,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object customerTenantId_ = "";
-
     /**
      *
      *
@@ -1297,7 +1265,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1320,7 +1287,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1342,7 +1308,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1360,7 +1325,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1385,7 +1349,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object redirectUri_ = "";
-
     /**
      *
      *
@@ -1409,7 +1372,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1433,7 +1395,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1456,7 +1417,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1475,7 +1435,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1501,7 +1460,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object federatedApplicationClientId_ = "";
-
     /**
      *
      *
@@ -1525,7 +1483,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1549,7 +1506,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1572,7 +1528,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1591,7 +1546,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1571,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object identity_ = "";
-
     /**
      *
      *
@@ -1642,7 +1595,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1667,7 +1619,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1691,7 +1642,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1711,7 +1661,6 @@ public final class AzureProperties extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

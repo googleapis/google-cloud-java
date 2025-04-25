@@ -42,7 +42,6 @@ public interface BatchPredictResultOrBuilder
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
   int getMetadataCount();
-
   /**
    *
    *
@@ -61,11 +60,9 @@ public interface BatchPredictResultOrBuilder
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
   boolean containsMetadata(java.lang.String key);
-
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
-
   /**
    *
    *
@@ -84,7 +81,6 @@ public interface BatchPredictResultOrBuilder
    * <code>map&lt;string, string&gt; metadata = 1;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
-
   /**
    *
    *
@@ -107,7 +103,6 @@ public interface BatchPredictResultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

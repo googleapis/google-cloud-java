@@ -41,7 +41,6 @@ public interface GetDataRedactionSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

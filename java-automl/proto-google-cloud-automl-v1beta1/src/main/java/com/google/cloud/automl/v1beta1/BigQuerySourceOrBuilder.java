@@ -38,7 +38,6 @@ public interface BigQuerySourceOrBuilder
    * @return The inputUri.
    */
   java.lang.String getInputUri();
-
   /**
    *
    *

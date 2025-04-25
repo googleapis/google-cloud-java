@@ -38,7 +38,6 @@ public interface CreateWorkerPoolOperationMetadataOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface CreateWorkerPoolOperationMetadataOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface CreateWorkerPoolOperationMetadataOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface CreateWorkerPoolOperationMetadataOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface CreateWorkerPoolOperationMetadataOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
-
   /**
    *
    *

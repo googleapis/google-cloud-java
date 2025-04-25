@@ -36,7 +36,6 @@ public interface DetailsOrBuilder
    * @return Whether the deployment field is set.
    */
   boolean hasDeployment();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DetailsOrBuilder
    * @return The deployment.
    */
   io.grafeas.v1beta1.deployment.Deployment getDeployment();
-
   /**
    *
    *

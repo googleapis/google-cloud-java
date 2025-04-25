@@ -34,7 +34,6 @@ public interface ListFunctionsResponseOrBuilder
    * <code>repeated .google.cloud.functions.v1.CloudFunction functions = 1;</code>
    */
   java.util.List<com.google.cloud.functions.v1.CloudFunction> getFunctionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListFunctionsResponseOrBuilder
    * <code>repeated .google.cloud.functions.v1.CloudFunction functions = 1;</code>
    */
   com.google.cloud.functions.v1.CloudFunction getFunctions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListFunctionsResponseOrBuilder
    * <code>repeated .google.cloud.functions.v1.CloudFunction functions = 1;</code>
    */
   int getFunctionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListFunctionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.functions.v1.CloudFunctionOrBuilder>
       getFunctionsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListFunctionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public interface ListFunctionsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -139,7 +133,6 @@ public interface ListFunctionsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -154,7 +147,6 @@ public interface ListFunctionsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

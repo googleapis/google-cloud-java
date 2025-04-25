@@ -33,7 +33,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Trigger)
     TriggerOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Trigger.newBuilder() to construct.
   private Trigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Trigger.OnDemand)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Trigger.OnDemand)
       OnDemandOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use OnDemand.newBuilder() to construct.
     private OnDemand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -261,7 +258,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -515,7 +511,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      * @return The cron.
      */
     java.lang.String getCron();
-
     /**
      *
      *
@@ -540,7 +535,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getCronBytes();
   }
-
   /**
    *
    *
@@ -555,7 +549,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Trigger.Schedule)
       ScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Schedule.newBuilder() to construct.
     private Schedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -590,7 +583,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object cron_ = "";
-
     /**
      *
      *
@@ -625,7 +617,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -821,7 +812,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1009,7 +999,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object cron_ = "";
-
       /**
        *
        *
@@ -1043,7 +1032,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1077,7 +1065,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1110,7 +1097,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1139,7 +1125,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1255,7 +1240,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     private ModeCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1289,7 +1273,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ON_DEMAND_FIELD_NUMBER = 100;
-
   /**
    *
    *
@@ -1305,7 +1288,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOnDemand() {
     return modeCase_ == 100;
   }
-
   /**
    *
    *
@@ -1324,7 +1306,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Trigger.OnDemand.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1343,7 +1324,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SCHEDULE_FIELD_NUMBER = 101;
-
   /**
    *
    *
@@ -1359,7 +1339,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSchedule() {
     return modeCase_ == 101;
   }
-
   /**
    *
    *
@@ -1378,7 +1357,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Trigger.Schedule.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1583,7 +1561,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1817,7 +1794,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Trigger.OnDemand.Builder,
             com.google.cloud.dataplex.v1.Trigger.OnDemandOrBuilder>
         onDemandBuilder_;
-
     /**
      *
      *
@@ -1833,7 +1809,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOnDemand() {
       return modeCase_ == 100;
     }
-
     /**
      *
      *
@@ -1859,7 +1834,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Trigger.OnDemand.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1882,7 +1856,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1903,7 +1876,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1936,7 +1908,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 100;
       return this;
     }
-
     /**
      *
      *
@@ -1962,7 +1933,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1975,7 +1945,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.Trigger.OnDemand.Builder getOnDemandBuilder() {
       return getOnDemandFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1996,7 +1965,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Trigger.OnDemand.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2035,7 +2003,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Trigger.Schedule.Builder,
             com.google.cloud.dataplex.v1.Trigger.ScheduleOrBuilder>
         scheduleBuilder_;
-
     /**
      *
      *
@@ -2051,7 +2018,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSchedule() {
       return modeCase_ == 101;
     }
-
     /**
      *
      *
@@ -2077,7 +2043,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Trigger.Schedule.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2100,7 +2065,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2121,7 +2085,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2154,7 +2117,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       modeCase_ = 101;
       return this;
     }
-
     /**
      *
      *
@@ -2180,7 +2142,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2193,7 +2154,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.Trigger.Schedule.Builder getScheduleBuilder() {
       return getScheduleFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2214,7 +2174,6 @@ public final class Trigger extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Trigger.Schedule.getDefaultInstance();
       }
     }
-
     /**
      *
      *

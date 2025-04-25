@@ -33,7 +33,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleAsmConfig)
     OracleAsmConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OracleAsmConfig.newBuilder() to construct.
   private OracleAsmConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,7 +84,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostname_ = "";
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int PORT_FIELD_NUMBER = 2;
   private int port_ = 0;
-
   /**
    *
    *
@@ -157,7 +153,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
-
   /**
    *
    *
@@ -181,7 +176,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object password_ = "";
-
   /**
    *
    *
@@ -235,7 +228,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -265,7 +257,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asmService_ = "";
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -342,7 +332,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
   public int getConnectionAttributesCount() {
     return internalGetConnectionAttributes().getMap().size();
   }
-
   /**
    *
    *
@@ -361,14 +350,12 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetConnectionAttributes().getMap().containsKey(key);
   }
-
   /** Use {@link #getConnectionAttributesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributes() {
     return getConnectionAttributesMap();
   }
-
   /**
    *
    *
@@ -384,7 +371,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributesMap() {
     return internalGetConnectionAttributes().getMap();
   }
-
   /**
    *
    *
@@ -408,7 +394,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         internalGetConnectionAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -435,7 +420,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int ORACLE_SSL_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.datastream.v1.OracleSslConfig oracleSslConfig_;
-
   /**
    *
    *
@@ -453,7 +437,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
   public boolean hasOracleSslConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -473,7 +456,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.datastream.v1.OracleSslConfig.getDefaultInstance()
         : oracleSslConfig_;
   }
-
   /**
    *
    *
@@ -496,7 +478,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object secretManagerStoredPassword_ = "";
-
   /**
    *
    *
@@ -522,7 +503,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -790,7 +770,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1119,7 +1098,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object hostname_ = "";
-
     /**
      *
      *
@@ -1142,7 +1120,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1165,7 +1142,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1187,7 +1163,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1205,7 +1180,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1230,7 +1204,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int port_;
-
     /**
      *
      *
@@ -1246,7 +1219,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     public int getPort() {
       return port_;
     }
-
     /**
      *
      *
@@ -1266,7 +1238,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1286,7 +1257,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -1309,7 +1279,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1332,7 +1301,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1354,7 +1322,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1339,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1397,7 +1363,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object password_ = "";
-
     /**
      *
      *
@@ -1421,7 +1386,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1445,7 +1409,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1468,7 +1431,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1449,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1513,7 +1474,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object asmService_ = "";
-
     /**
      *
      *
@@ -1536,7 +1496,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1559,7 +1518,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1581,7 +1539,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1556,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1652,7 +1608,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     public int getConnectionAttributesCount() {
       return internalGetConnectionAttributes().getMap().size();
     }
-
     /**
      *
      *
@@ -1671,14 +1626,12 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetConnectionAttributes().getMap().containsKey(key);
     }
-
     /** Use {@link #getConnectionAttributesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributes() {
       return getConnectionAttributesMap();
     }
-
     /**
      *
      *
@@ -1694,7 +1647,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getConnectionAttributesMap() {
       return internalGetConnectionAttributes().getMap();
     }
-
     /**
      *
      *
@@ -1718,7 +1670,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
           internalGetConnectionAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -1748,7 +1699,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableConnectionAttributes().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1767,14 +1717,12 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       internalGetMutableConnectionAttributes().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableConnectionAttributes() {
       bitField0_ |= 0x00000020;
       return internalGetMutableConnectionAttributes().getMutableMap();
     }
-
     /**
      *
      *
@@ -1797,7 +1745,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000020;
       return this;
     }
-
     /**
      *
      *
@@ -1822,7 +1769,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datastream.v1.OracleSslConfig.Builder,
             com.google.cloud.datastream.v1.OracleSslConfigOrBuilder>
         oracleSslConfigBuilder_;
-
     /**
      *
      *
@@ -1839,7 +1785,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     public boolean hasOracleSslConfig() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -1862,7 +1807,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return oracleSslConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1887,7 +1831,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1910,7 +1853,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1941,7 +1883,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -1963,7 +1904,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1980,7 +1920,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getOracleSslConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2001,7 +1940,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
             : oracleSslConfig_;
       }
     }
-
     /**
      *
      *
@@ -2031,7 +1969,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object secretManagerStoredPassword_ = "";
-
     /**
      *
      *
@@ -2056,7 +1993,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2081,7 +2017,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2105,7 +2040,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2125,7 +2059,6 @@ public final class OracleAsmConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -39,7 +39,6 @@ public interface DeleteMeshRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

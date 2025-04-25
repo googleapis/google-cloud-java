@@ -39,7 +39,6 @@ public interface CreateCaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateCaseRequestOrBuilder
    * @return Whether the case field is set.
    */
   boolean hasCase();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface CreateCaseRequestOrBuilder
    * @return The case.
    */
   com.google.cloud.support.v2.Case getCase();
-
   /**
    *
    *

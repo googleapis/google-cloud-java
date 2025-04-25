@@ -36,7 +36,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the interruptionData field is set.
    */
   boolean hasInterruptionData();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CallAnnotationOrBuilder
    * @return The interruptionData.
    */
   com.google.cloud.contactcenterinsights.v1.InterruptionData getInterruptionData();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the sentimentData field is set.
    */
   boolean hasSentimentData();
-
   /**
    *
    *
@@ -87,7 +84,6 @@ public interface CallAnnotationOrBuilder
    * @return The sentimentData.
    */
   com.google.cloud.contactcenterinsights.v1.SentimentData getSentimentData();
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the silenceData field is set.
    */
   boolean hasSilenceData();
-
   /**
    *
    *
@@ -124,7 +119,6 @@ public interface CallAnnotationOrBuilder
    * @return The silenceData.
    */
   com.google.cloud.contactcenterinsights.v1.SilenceData getSilenceData();
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the holdData field is set.
    */
   boolean hasHoldData();
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface CallAnnotationOrBuilder
    * @return The holdData.
    */
   com.google.cloud.contactcenterinsights.v1.HoldData getHoldData();
-
   /**
    *
    *
@@ -185,7 +177,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the entityMentionData field is set.
    */
   boolean hasEntityMentionData();
-
   /**
    *
    *
@@ -198,7 +189,6 @@ public interface CallAnnotationOrBuilder
    * @return The entityMentionData.
    */
   com.google.cloud.contactcenterinsights.v1.EntityMentionData getEntityMentionData();
-
   /**
    *
    *
@@ -223,7 +213,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the intentMatchData field is set.
    */
   boolean hasIntentMatchData();
-
   /**
    *
    *
@@ -236,7 +225,6 @@ public interface CallAnnotationOrBuilder
    * @return The intentMatchData.
    */
   com.google.cloud.contactcenterinsights.v1.IntentMatchData getIntentMatchData();
-
   /**
    *
    *
@@ -260,7 +248,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the phraseMatchData field is set.
    */
   boolean hasPhraseMatchData();
-
   /**
    *
    *
@@ -273,7 +260,6 @@ public interface CallAnnotationOrBuilder
    * @return The phraseMatchData.
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatchData getPhraseMatchData();
-
   /**
    *
    *
@@ -297,7 +283,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the issueMatchData field is set.
    */
   boolean hasIssueMatchData();
-
   /**
    *
    *
@@ -310,7 +295,6 @@ public interface CallAnnotationOrBuilder
    * @return The issueMatchData.
    */
   com.google.cloud.contactcenterinsights.v1.IssueMatchData getIssueMatchData();
-
   /**
    *
    *
@@ -349,7 +333,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the annotationStartBoundary field is set.
    */
   boolean hasAnnotationStartBoundary();
-
   /**
    *
    *
@@ -363,7 +346,6 @@ public interface CallAnnotationOrBuilder
    * @return The annotationStartBoundary.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotationBoundary getAnnotationStartBoundary();
-
   /**
    *
    *
@@ -390,7 +372,6 @@ public interface CallAnnotationOrBuilder
    * @return Whether the annotationEndBoundary field is set.
    */
   boolean hasAnnotationEndBoundary();
-
   /**
    *
    *
@@ -404,7 +385,6 @@ public interface CallAnnotationOrBuilder
    * @return The annotationEndBoundary.
    */
   com.google.cloud.contactcenterinsights.v1.AnnotationBoundary getAnnotationEndBoundary();
-
   /**
    *
    *

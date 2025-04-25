@@ -38,7 +38,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return The serviceAttachment.
    */
   java.lang.String getServiceAttachment();
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return Whether the serviceAttachmentResource field is set.
    */
   boolean hasServiceAttachmentResource();
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public interface PatchServiceAttachmentRequestOrBuilder
    * @return The serviceAttachmentResource.
    */
   com.google.cloud.compute.v1.ServiceAttachment getServiceAttachmentResource();
-
   /**
    *
    *

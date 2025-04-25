@@ -33,7 +33,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.FileValidationReport)
     FileValidationReportOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileValidationReport.newBuilder() to construct.
   private FileValidationReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileName_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.ImportRowError> rowErrors_;
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.migrationcenter.v1.ImportRowError> getRowErrorsList() {
     return rowErrors_;
   }
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       getRowErrorsOrBuilderList() {
     return rowErrors_;
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
   public int getRowErrorsCount() {
     return rowErrors_.size();
   }
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
   public com.google.cloud.migrationcenter.v1.ImportRowError getRowErrors(int index) {
     return rowErrors_.get(index);
   }
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
 
   public static final int PARTIAL_REPORT_FIELD_NUMBER = 3;
   private boolean partialReport_ = false;
-
   /**
    *
    *
@@ -220,7 +211,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.migrationcenter.v1.ImportError> fileErrors_;
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.migrationcenter.v1.ImportError> getFileErrorsList() {
     return fileErrors_;
   }
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       getFileErrorsOrBuilderList() {
     return fileErrors_;
   }
-
   /**
    *
    *
@@ -263,7 +251,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
   public int getFileErrorsCount() {
     return fileErrors_.size();
   }
-
   /**
    *
    *
@@ -277,7 +264,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
   public com.google.cloud.migrationcenter.v1.ImportError getFileErrors(int index) {
     return fileErrors_.get(index);
   }
-
   /**
    *
    *
@@ -484,7 +470,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -801,7 +786,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object fileName_ = "";
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -869,7 +851,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -887,7 +868,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return rowErrorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -961,7 +940,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return rowErrorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -978,7 +956,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return rowErrorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1002,7 +979,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1046,7 +1021,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1070,7 +1044,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1091,7 +1064,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1112,7 +1084,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1133,7 +1104,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1153,7 +1123,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1173,7 +1142,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1187,7 +1155,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         int index) {
       return getRowErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1205,7 +1172,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return rowErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1223,7 +1189,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(rowErrors_);
       }
     }
-
     /**
      *
      *
@@ -1237,7 +1202,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       return getRowErrorsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.ImportRowError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1253,7 +1217,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
           .addBuilder(
               index, com.google.cloud.migrationcenter.v1.ImportRowError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1286,7 +1249,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
     }
 
     private boolean partialReport_;
-
     /**
      *
      *
@@ -1303,7 +1265,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
     public boolean getPartialReport() {
       return partialReport_;
     }
-
     /**
      *
      *
@@ -1324,7 +1285,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1377,7 +1337,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return fileErrorsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1394,7 +1353,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return fileErrorsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1411,7 +1369,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return fileErrorsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1391,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1455,7 +1411,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1478,7 +1433,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1501,7 +1455,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1522,7 +1475,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1543,7 +1495,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1564,7 +1515,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1584,7 +1534,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1604,7 +1553,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1617,7 +1565,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
     public com.google.cloud.migrationcenter.v1.ImportError.Builder getFileErrorsBuilder(int index) {
       return getFileErrorsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1635,7 +1582,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return fileErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1653,7 +1599,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(fileErrors_);
       }
     }
-
     /**
      *
      *
@@ -1667,7 +1612,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       return getFileErrorsFieldBuilder()
           .addBuilder(com.google.cloud.migrationcenter.v1.ImportError.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1681,7 +1625,6 @@ public final class FileValidationReport extends com.google.protobuf.GeneratedMes
       return getFileErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.migrationcenter.v1.ImportError.getDefaultInstance());
     }
-
     /**
      *
      *

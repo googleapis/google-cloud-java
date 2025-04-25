@@ -36,7 +36,6 @@ public interface EventOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface EventOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface EventOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface EventOrBuilder
    * @return Whether the delayed field is set.
    */
   boolean hasDelayed();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface EventOrBuilder
    * @return The delayed.
    */
   com.google.cloud.lifesciences.v2beta.DelayedEvent getDelayed();
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public interface EventOrBuilder
    * @return Whether the workerAssigned field is set.
    */
   boolean hasWorkerAssigned();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface EventOrBuilder
    * @return The workerAssigned.
    */
   com.google.cloud.lifesciences.v2beta.WorkerAssignedEvent getWorkerAssigned();
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface EventOrBuilder
    * @return Whether the workerReleased field is set.
    */
   boolean hasWorkerReleased();
-
   /**
    *
    *
@@ -198,7 +190,6 @@ public interface EventOrBuilder
    * @return The workerReleased.
    */
   com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent getWorkerReleased();
-
   /**
    *
    *
@@ -224,7 +215,6 @@ public interface EventOrBuilder
    * @return Whether the pullStarted field is set.
    */
   boolean hasPullStarted();
-
   /**
    *
    *
@@ -238,7 +228,6 @@ public interface EventOrBuilder
    * @return The pullStarted.
    */
   com.google.cloud.lifesciences.v2beta.PullStartedEvent getPullStarted();
-
   /**
    *
    *
@@ -264,7 +253,6 @@ public interface EventOrBuilder
    * @return Whether the pullStopped field is set.
    */
   boolean hasPullStopped();
-
   /**
    *
    *
@@ -278,7 +266,6 @@ public interface EventOrBuilder
    * @return The pullStopped.
    */
   com.google.cloud.lifesciences.v2beta.PullStoppedEvent getPullStopped();
-
   /**
    *
    *
@@ -304,7 +291,6 @@ public interface EventOrBuilder
    * @return Whether the containerStarted field is set.
    */
   boolean hasContainerStarted();
-
   /**
    *
    *
@@ -318,7 +304,6 @@ public interface EventOrBuilder
    * @return The containerStarted.
    */
   com.google.cloud.lifesciences.v2beta.ContainerStartedEvent getContainerStarted();
-
   /**
    *
    *
@@ -345,7 +330,6 @@ public interface EventOrBuilder
    * @return Whether the containerStopped field is set.
    */
   boolean hasContainerStopped();
-
   /**
    *
    *
@@ -359,7 +343,6 @@ public interface EventOrBuilder
    * @return The containerStopped.
    */
   com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent getContainerStopped();
-
   /**
    *
    *
@@ -386,7 +369,6 @@ public interface EventOrBuilder
    * @return Whether the containerKilled field is set.
    */
   boolean hasContainerKilled();
-
   /**
    *
    *
@@ -400,7 +382,6 @@ public interface EventOrBuilder
    * @return The containerKilled.
    */
   com.google.cloud.lifesciences.v2beta.ContainerKilledEvent getContainerKilled();
-
   /**
    *
    *
@@ -427,7 +408,6 @@ public interface EventOrBuilder
    * @return Whether the unexpectedExitStatus field is set.
    */
   boolean hasUnexpectedExitStatus();
-
   /**
    *
    *
@@ -442,7 +422,6 @@ public interface EventOrBuilder
    * @return The unexpectedExitStatus.
    */
   com.google.cloud.lifesciences.v2beta.UnexpectedExitStatusEvent getUnexpectedExitStatus();
-
   /**
    *
    *
@@ -470,7 +449,6 @@ public interface EventOrBuilder
    * @return Whether the failed field is set.
    */
   boolean hasFailed();
-
   /**
    *
    *
@@ -484,7 +462,6 @@ public interface EventOrBuilder
    * @return The failed.
    */
   com.google.cloud.lifesciences.v2beta.FailedEvent getFailed();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.CreateSubscriptionRequest)
     CreateSubscriptionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateSubscriptionRequest.newBuilder() to construct.
   private CreateSubscriptionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private com.google.apps.events.subscriptions.v1.Subscription subscription_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
   public boolean hasSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
         ? com.google.apps.events.subscriptions.v1.Subscription.getDefaultInstance()
         : subscription_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -318,7 +313,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -542,7 +536,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
             com.google.apps.events.subscriptions.v1.Subscription.Builder,
             com.google.apps.events.subscriptions.v1.SubscriptionOrBuilder>
         subscriptionBuilder_;
-
     /**
      *
      *
@@ -559,7 +552,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
     public boolean hasSubscription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -582,7 +574,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
         return subscriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -630,7 +620,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -661,7 +650,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -683,7 +671,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -700,7 +687,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
       onChanged();
       return getSubscriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
             : subscription_;
       }
     }
-
     /**
      *
      *
@@ -752,7 +737,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -769,7 +753,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -790,7 +773,6 @@ public final class CreateSubscriptionRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

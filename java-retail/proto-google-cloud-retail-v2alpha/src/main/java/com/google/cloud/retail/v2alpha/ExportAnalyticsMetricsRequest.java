@@ -33,7 +33,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.ExportAnalyticsMetricsRequest)
     ExportAnalyticsMetricsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportAnalyticsMetricsRequest.newBuilder() to construct.
   private ExportAnalyticsMetricsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object catalog_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -123,7 +120,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
 
   public static final int OUTPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2alpha.OutputConfig outputConfig_;
-
   /**
    *
    *
@@ -141,7 +137,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
   public boolean hasOutputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
         ? com.google.cloud.retail.v2alpha.OutputConfig.getDefaultInstance()
         : outputConfig_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -448,7 +440,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +672,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object catalog_ = "";
-
     /**
      *
      *
@@ -705,7 +695,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -729,7 +718,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -752,7 +740,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +788,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
             com.google.cloud.retail.v2alpha.OutputConfig.Builder,
             com.google.cloud.retail.v2alpha.OutputConfigOrBuilder>
         outputConfigBuilder_;
-
     /**
      *
      *
@@ -819,7 +804,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
     public boolean hasOutputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -842,7 +826,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
         return outputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -867,7 +850,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -890,7 +872,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -920,7 +901,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -942,7 +922,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -959,7 +938,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -980,7 +958,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
             : outputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1010,7 +987,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1049,7 +1025,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1088,7 +1063,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1160,7 +1133,6 @@ public final class ExportAnalyticsMetricsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

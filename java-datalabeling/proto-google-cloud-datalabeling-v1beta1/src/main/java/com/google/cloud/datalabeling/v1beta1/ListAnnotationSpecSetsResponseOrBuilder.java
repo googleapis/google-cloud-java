@@ -36,7 +36,6 @@ public interface ListAnnotationSpecSetsResponseOrBuilder
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>
       getAnnotationSpecSetsList();
-
   /**
    *
    *
@@ -48,7 +47,6 @@ public interface ListAnnotationSpecSetsResponseOrBuilder
    * </code>
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSets(int index);
-
   /**
    *
    *
@@ -60,7 +58,6 @@ public interface ListAnnotationSpecSetsResponseOrBuilder
    * </code>
    */
   int getAnnotationSpecSetsCount();
-
   /**
    *
    *
@@ -73,7 +70,6 @@ public interface ListAnnotationSpecSetsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datalabeling.v1beta1.AnnotationSpecSetOrBuilder>
       getAnnotationSpecSetsOrBuilderList();
-
   /**
    *
    *
@@ -99,7 +95,6 @@ public interface ListAnnotationSpecSetsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

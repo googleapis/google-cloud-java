@@ -36,7 +36,6 @@ public interface TablesDatasetMetadataOrBuilder
    * @return The primaryTableSpecId.
    */
   java.lang.String getPrimaryTableSpecId();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface TablesDatasetMetadataOrBuilder
    * @return The targetColumnSpecId.
    */
   java.lang.String getTargetColumnSpecId();
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public interface TablesDatasetMetadataOrBuilder
    * @return The weightColumnSpecId.
    */
   java.lang.String getWeightColumnSpecId();
-
   /**
    *
    *
@@ -168,7 +165,6 @@ public interface TablesDatasetMetadataOrBuilder
    * @return The mlUseColumnSpecId.
    */
   java.lang.String getMlUseColumnSpecId();
-
   /**
    *
    *
@@ -215,7 +211,6 @@ public interface TablesDatasetMetadataOrBuilder
    * </code>
    */
   int getTargetColumnCorrelationsCount();
-
   /**
    *
    *
@@ -237,12 +232,10 @@ public interface TablesDatasetMetadataOrBuilder
    * </code>
    */
   boolean containsTargetColumnCorrelations(java.lang.String key);
-
   /** Use {@link #getTargetColumnCorrelationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
       getTargetColumnCorrelations();
-
   /**
    *
    *
@@ -265,7 +258,6 @@ public interface TablesDatasetMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.automl.v1beta1.CorrelationStats>
       getTargetColumnCorrelationsMap();
-
   /**
    *
    *
@@ -291,7 +283,6 @@ public interface TablesDatasetMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.automl.v1beta1.CorrelationStats defaultValue);
-
   /**
    *
    *
@@ -332,7 +323,6 @@ public interface TablesDatasetMetadataOrBuilder
    * @return Whether the statsUpdateTime field is set.
    */
   boolean hasStatsUpdateTime();
-
   /**
    *
    *
@@ -350,7 +340,6 @@ public interface TablesDatasetMetadataOrBuilder
    * @return The statsUpdateTime.
    */
   com.google.protobuf.Timestamp getStatsUpdateTime();
-
   /**
    *
    *

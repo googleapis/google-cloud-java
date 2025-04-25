@@ -47,7 +47,6 @@ public interface PurgeCompletionSuggestionsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 2;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
-
   /**
    *
    *
@@ -58,7 +57,6 @@ public interface PurgeCompletionSuggestionsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 2;</code>
    */
   com.google.rpc.Status getErrorSamples(int index);
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface PurgeCompletionSuggestionsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 2;</code>
    */
   int getErrorSamplesCount();
-
   /**
    *
    *
@@ -80,7 +77,6 @@ public interface PurgeCompletionSuggestionsResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 2;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
-
   /**
    *
    *

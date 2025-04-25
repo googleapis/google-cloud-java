@@ -40,7 +40,6 @@ public interface ExportFlowRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -79,7 +78,6 @@ public interface ExportFlowRequestOrBuilder
    * @return The flowUri.
    */
   java.lang.String getFlowUri();
-
   /**
    *
    *

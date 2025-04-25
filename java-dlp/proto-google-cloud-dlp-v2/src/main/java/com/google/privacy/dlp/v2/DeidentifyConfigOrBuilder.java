@@ -37,7 +37,6 @@ public interface DeidentifyConfigOrBuilder
    * @return Whether the infoTypeTransformations field is set.
    */
   boolean hasInfoTypeTransformations();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeidentifyConfigOrBuilder
    * @return The infoTypeTransformations.
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface DeidentifyConfigOrBuilder
    * @return Whether the recordTransformations field is set.
    */
   boolean hasRecordTransformations();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface DeidentifyConfigOrBuilder
    * @return The recordTransformations.
    */
   com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations();
-
   /**
    *
    *
@@ -119,7 +115,6 @@ public interface DeidentifyConfigOrBuilder
    * @return Whether the imageTransformations field is set.
    */
   boolean hasImageTransformations();
-
   /**
    *
    *
@@ -132,7 +127,6 @@ public interface DeidentifyConfigOrBuilder
    * @return The imageTransformations.
    */
   com.google.privacy.dlp.v2.ImageTransformations getImageTransformations();
-
   /**
    *
    *
@@ -158,7 +152,6 @@ public interface DeidentifyConfigOrBuilder
    * @return Whether the transformationErrorHandling field is set.
    */
   boolean hasTransformationErrorHandling();
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public interface DeidentifyConfigOrBuilder
    * @return The transformationErrorHandling.
    */
   com.google.privacy.dlp.v2.TransformationErrorHandling getTransformationErrorHandling();
-
   /**
    *
    *

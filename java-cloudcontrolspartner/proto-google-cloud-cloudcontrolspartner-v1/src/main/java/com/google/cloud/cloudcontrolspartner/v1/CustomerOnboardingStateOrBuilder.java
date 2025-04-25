@@ -37,7 +37,6 @@ public interface CustomerOnboardingStateOrBuilder
    */
   java.util.List<com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStep>
       getOnboardingStepsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface CustomerOnboardingStateOrBuilder
    * </code>
    */
   com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStep getOnboardingSteps(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface CustomerOnboardingStateOrBuilder
    * </code>
    */
   int getOnboardingStepsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface CustomerOnboardingStateOrBuilder
    */
   java.util.List<? extends com.google.cloud.cloudcontrolspartner.v1.CustomerOnboardingStepOrBuilder>
       getOnboardingStepsOrBuilderList();
-
   /**
    *
    *

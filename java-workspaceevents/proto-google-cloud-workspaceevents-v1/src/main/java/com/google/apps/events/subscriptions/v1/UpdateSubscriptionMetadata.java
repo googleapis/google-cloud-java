@@ -33,7 +33,6 @@ public final class UpdateSubscriptionMetadata extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.apps.events.subscriptions.v1.UpdateSubscriptionMetadata)
     UpdateSubscriptionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateSubscriptionMetadata.newBuilder() to construct.
   private UpdateSubscriptionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class UpdateSubscriptionMetadata extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

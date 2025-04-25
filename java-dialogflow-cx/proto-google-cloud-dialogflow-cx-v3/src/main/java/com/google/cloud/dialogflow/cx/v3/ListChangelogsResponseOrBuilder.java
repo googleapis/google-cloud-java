@@ -36,7 +36,6 @@ public interface ListChangelogsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Changelog changelogs = 1;</code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3.Changelog> getChangelogsList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListChangelogsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Changelog changelogs = 1;</code>
    */
   com.google.cloud.dialogflow.cx.v3.Changelog getChangelogs(int index);
-
   /**
    *
    *
@@ -62,7 +60,6 @@ public interface ListChangelogsResponseOrBuilder
    * <code>repeated .google.cloud.dialogflow.cx.v3.Changelog changelogs = 1;</code>
    */
   int getChangelogsCount();
-
   /**
    *
    *
@@ -76,7 +73,6 @@ public interface ListChangelogsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3.ChangelogOrBuilder>
       getChangelogsOrBuilderList();
-
   /**
    *
    *
@@ -103,7 +99,6 @@ public interface ListChangelogsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

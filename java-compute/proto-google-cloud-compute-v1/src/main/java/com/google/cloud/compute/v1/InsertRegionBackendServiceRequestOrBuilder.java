@@ -38,7 +38,6 @@ public interface InsertRegionBackendServiceRequestOrBuilder
    * @return Whether the backendServiceResource field is set.
    */
   boolean hasBackendServiceResource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface InsertRegionBackendServiceRequestOrBuilder
    * @return The backendServiceResource.
    */
   com.google.cloud.compute.v1.BackendService getBackendServiceResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface InsertRegionBackendServiceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface InsertRegionBackendServiceRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface InsertRegionBackendServiceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface InsertRegionBackendServiceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

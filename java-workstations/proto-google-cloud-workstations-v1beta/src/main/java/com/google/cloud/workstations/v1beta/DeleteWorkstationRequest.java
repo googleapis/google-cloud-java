@@ -33,7 +33,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1beta.DeleteWorkstationRequest)
     DeleteWorkstationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteWorkstationRequest.newBuilder() to construct.
   private DeleteWorkstationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +369,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -591,7 +584,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -616,7 +608,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +632,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -665,7 +655,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -712,7 +700,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -729,7 +716,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -771,7 +756,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object etag_ = "";
-
     /**
      *
      *
@@ -795,7 +779,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -819,7 +802,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -842,7 +824,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +842,6 @@ public final class DeleteWorkstationRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

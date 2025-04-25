@@ -33,7 +33,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SdpBasicConfig)
     SdpBasicConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SdpBasicConfig.newBuilder() to construct.
   private SdpBasicConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SDP_BASIC_CONFIG_ENFORCEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int SDP_BASIC_CONFIG_ENFORCEMENT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
-
     /**
      *
      *
@@ -229,7 +226,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FILTER_ENFORCEMENT_FIELD_NUMBER = 3;
   private int filterEnforcement_ = 0;
-
   /**
    *
    *
@@ -248,7 +244,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
   public int getFilterEnforcementValue() {
     return filterEnforcement_;
   }
-
   /**
    *
    *
@@ -439,7 +434,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +615,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int filterEnforcement_ = 0;
-
     /**
      *
      *
@@ -640,7 +633,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
     public int getFilterEnforcementValue() {
       return filterEnforcement_;
     }
-
     /**
      *
      *
@@ -662,7 +654,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +678,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.modelarmor.v1.SdpBasicConfig.SdpBasicConfigEnforcement.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -713,7 +703,6 @@ public final class SdpBasicConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

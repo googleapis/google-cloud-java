@@ -41,7 +41,6 @@ public interface ExcludeInfoTypesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ExcludeInfoTypesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface ExcludeInfoTypesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   int getInfoTypesCount();
-
   /**
    *
    *
@@ -95,7 +92,6 @@ public interface ExcludeInfoTypesOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> getInfoTypesOrBuilderList();
-
   /**
    *
    *

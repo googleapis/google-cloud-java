@@ -34,7 +34,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FetchExamplesRequest)
     FetchExamplesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FetchExamplesRequest.newBuilder() to construct.
   private FetchExamplesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     private MetadataFilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,7 +113,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STORED_CONTENTS_EXAMPLE_FILTER_FIELD_NUMBER = 8;
-
   /**
    *
    *
@@ -133,7 +130,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
   public boolean hasStoredContentsExampleFilter() {
     return metadataFilterCase_ == 8;
   }
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -180,7 +175,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exampleStore_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -239,7 +232,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
-
   /**
    *
    *
@@ -262,7 +254,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -289,7 +280,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -322,7 +312,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList exampleIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -338,7 +327,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getExampleIdsList() {
     return exampleIds_;
   }
-
   /**
    *
    *
@@ -354,7 +342,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
   public int getExampleIdsCount() {
     return exampleIds_.size();
   }
-
   /**
    *
    *
@@ -371,7 +358,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
   public java.lang.String getExampleIds(int index) {
     return exampleIds_.get(index);
   }
-
   /**
    *
    *
@@ -609,7 +595,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -896,7 +881,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter.Builder,
             com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilterOrBuilder>
         storedContentsExampleFilterBuilder_;
-
     /**
      *
      *
@@ -914,7 +898,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     public boolean hasStoredContentsExampleFilter() {
       return metadataFilterCase_ == 8;
     }
-
     /**
      *
      *
@@ -943,7 +926,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -969,7 +951,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       metadataFilterCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -992,7 +973,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       metadataFilterCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1011,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       metadataFilterCase_ = 8;
       return this;
     }
-
     /**
      *
      *
@@ -1059,7 +1038,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1053,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         getStoredContentsExampleFilterBuilder() {
       return getStoredContentsExampleFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1099,7 +1076,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1beta1.StoredContentsExampleFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1137,7 +1113,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object exampleStore_ = "";
-
     /**
      *
      *
@@ -1164,7 +1139,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1191,7 +1165,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1217,7 +1190,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1239,7 +1211,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1268,7 +1239,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int pageSize_;
-
     /**
      *
      *
@@ -1286,7 +1256,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     public int getPageSize() {
       return pageSize_;
     }
-
     /**
      *
      *
@@ -1308,7 +1277,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1298,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1356,7 +1323,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1382,7 +1348,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1372,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1428,7 +1392,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1427,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -1481,7 +1443,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       exampleIds_.makeImmutable();
       return exampleIds_;
     }
-
     /**
      *
      *
@@ -1497,7 +1458,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     public int getExampleIdsCount() {
       return exampleIds_.size();
     }
-
     /**
      *
      *
@@ -1514,7 +1474,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getExampleIds(int index) {
       return exampleIds_.get(index);
     }
-
     /**
      *
      *
@@ -1531,7 +1490,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getExampleIdsBytes(int index) {
       return exampleIds_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1556,7 +1514,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1580,7 +1537,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1601,7 +1557,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1621,7 +1576,6 @@ public final class FetchExamplesRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

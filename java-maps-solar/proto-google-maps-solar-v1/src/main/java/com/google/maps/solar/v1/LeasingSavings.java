@@ -34,7 +34,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.LeasingSavings)
     LeasingSavingsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LeasingSavings.newBuilder() to construct.
   private LeasingSavings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int LEASES_ALLOWED_FIELD_NUMBER = 1;
   private boolean leasesAllowed_ = false;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LEASES_SUPPORTED_FIELD_NUMBER = 2;
   private boolean leasesSupported_ = false;
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANNUAL_LEASING_COST_FIELD_NUMBER = 3;
   private com.google.type.Money annualLeasingCost_;
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAnnualLeasingCost() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Money.getDefaultInstance()
         : annualLeasingCost_;
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SAVINGS_FIELD_NUMBER = 4;
   private com.google.maps.solar.v1.SavingsOverTime savings_;
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSavings() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -197,7 +189,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.solar.v1.SavingsOverTime.getDefaultInstance()
         : savings_;
   }
-
   /**
    *
    *
@@ -409,7 +400,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +647,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean leasesAllowed_;
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     public boolean getLeasesAllowed() {
       return leasesAllowed_;
     }
-
     /**
      *
      *
@@ -697,7 +685,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -719,7 +706,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean leasesSupported_;
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     public boolean getLeasesSupported() {
       return leasesSupported_;
     }
-
     /**
      *
      *
@@ -763,7 +748,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         annualLeasingCostBuilder_;
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAnnualLeasingCost() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -826,7 +808,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
         return annualLeasingCostBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +876,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +895,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +909,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAnnualLeasingCostFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -951,7 +927,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
             : annualLeasingCost_;
       }
     }
-
     /**
      *
      *
@@ -982,7 +957,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.solar.v1.SavingsOverTime.Builder,
             com.google.maps.solar.v1.SavingsOverTimeOrBuilder>
         savingsBuilder_;
-
     /**
      *
      *
@@ -997,7 +971,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSavings() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1018,7 +991,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
         return savingsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1041,7 +1013,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1061,7 +1032,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1089,7 +1059,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1109,7 +1078,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1092,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSavingsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1143,7 +1110,6 @@ public final class LeasingSavings extends com.google.protobuf.GeneratedMessageV3
             : savings_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface DeleteOperationMetadataOrBuilder
    * @return Whether the commonMetadata field is set.
    */
   boolean hasCommonMetadata();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface DeleteOperationMetadataOrBuilder
    * @return The commonMetadata.
    */
   com.google.cloud.enterpriseknowledgegraph.v1.CommonOperationMetadata getCommonMetadata();
-
   /**
    *
    *

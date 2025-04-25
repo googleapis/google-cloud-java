@@ -34,7 +34,6 @@ public interface ListAdUnitSizesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.AdUnitSize ad_unit_sizes = 1;</code>
    */
   java.util.List<com.google.ads.admanager.v1.AdUnitSize> getAdUnitSizesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListAdUnitSizesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.AdUnitSize ad_unit_sizes = 1;</code>
    */
   com.google.ads.admanager.v1.AdUnitSize getAdUnitSizes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListAdUnitSizesResponseOrBuilder
    * <code>repeated .google.ads.admanager.v1.AdUnitSize ad_unit_sizes = 1;</code>
    */
   int getAdUnitSizesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListAdUnitSizesResponseOrBuilder
    */
   java.util.List<? extends com.google.ads.admanager.v1.AdUnitSizeOrBuilder>
       getAdUnitSizesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListAdUnitSizesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

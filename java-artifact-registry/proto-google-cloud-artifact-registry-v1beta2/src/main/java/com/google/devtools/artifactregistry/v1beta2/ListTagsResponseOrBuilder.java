@@ -34,7 +34,6 @@ public interface ListTagsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Tag tags = 1;</code>
    */
   java.util.List<com.google.devtools.artifactregistry.v1beta2.Tag> getTagsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTagsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Tag tags = 1;</code>
    */
   com.google.devtools.artifactregistry.v1beta2.Tag getTags(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTagsResponseOrBuilder
    * <code>repeated .google.devtools.artifactregistry.v1beta2.Tag tags = 1;</code>
    */
   int getTagsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTagsResponseOrBuilder
    */
   java.util.List<? extends com.google.devtools.artifactregistry.v1beta2.TagOrBuilder>
       getTagsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListTagsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

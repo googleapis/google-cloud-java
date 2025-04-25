@@ -38,7 +38,6 @@ public interface AnswerFeedbackOrBuilder
    * @return The enum numeric value on the wire for correctnessLevel.
    */
   int getCorrectnessLevelValue();
-
   /**
    *
    *

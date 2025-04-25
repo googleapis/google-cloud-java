@@ -39,7 +39,6 @@ public interface RestoreAutonomousDatabaseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface RestoreAutonomousDatabaseRequestOrBuilder
    * @return Whether the restoreTime field is set.
    */
   boolean hasRestoreTime();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface RestoreAutonomousDatabaseRequestOrBuilder
    * @return The restoreTime.
    */
   com.google.protobuf.Timestamp getRestoreTime();
-
   /**
    *
    *

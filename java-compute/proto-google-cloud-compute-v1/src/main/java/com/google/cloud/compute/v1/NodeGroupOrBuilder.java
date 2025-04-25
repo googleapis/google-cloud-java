@@ -38,7 +38,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the autoscalingPolicy field is set.
    */
   boolean hasAutoscalingPolicy();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface NodeGroupOrBuilder
    * @return The autoscalingPolicy.
    */
   com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy getAutoscalingPolicy();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface NodeGroupOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public interface NodeGroupOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -151,14 +145,12 @@ public interface NodeGroupOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    * <code>optional string fingerprint = 234678500;</code>
    *
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    * <code>optional string fingerprint = 234678500;</code>
    *
@@ -178,7 +170,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -204,7 +195,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -217,7 +207,6 @@ public interface NodeGroupOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -243,7 +232,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the locationHint field is set.
    */
   boolean hasLocationHint();
-
   /**
    *
    *
@@ -256,7 +244,6 @@ public interface NodeGroupOrBuilder
    * @return The locationHint.
    */
   java.lang.String getLocationHint();
-
   /**
    *
    *
@@ -283,7 +270,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the maintenanceInterval field is set.
    */
   boolean hasMaintenanceInterval();
-
   /**
    *
    *
@@ -297,7 +283,6 @@ public interface NodeGroupOrBuilder
    * @return The maintenanceInterval.
    */
   java.lang.String getMaintenanceInterval();
-
   /**
    *
    *
@@ -325,7 +310,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
-
   /**
    *
    *
@@ -339,7 +323,6 @@ public interface NodeGroupOrBuilder
    * @return The maintenancePolicy.
    */
   java.lang.String getMaintenancePolicy();
-
   /**
    *
    *
@@ -362,7 +345,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the maintenanceWindow field is set.
    */
   boolean hasMaintenanceWindow();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
@@ -371,7 +353,6 @@ public interface NodeGroupOrBuilder
    * @return The maintenanceWindow.
    */
   com.google.cloud.compute.v1.NodeGroupMaintenanceWindow getMaintenanceWindow();
-
   /**
    * <code>
    * optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
@@ -391,7 +372,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -404,7 +384,6 @@ public interface NodeGroupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -430,7 +409,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the nodeTemplate field is set.
    */
   boolean hasNodeTemplate();
-
   /**
    *
    *
@@ -443,7 +421,6 @@ public interface NodeGroupOrBuilder
    * @return The nodeTemplate.
    */
   java.lang.String getNodeTemplate();
-
   /**
    *
    *
@@ -469,7 +446,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -482,7 +458,6 @@ public interface NodeGroupOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -508,7 +483,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the shareSettings field is set.
    */
   boolean hasShareSettings();
-
   /**
    *
    *
@@ -521,7 +495,6 @@ public interface NodeGroupOrBuilder
    * @return The shareSettings.
    */
   com.google.cloud.compute.v1.ShareSettings getShareSettings();
-
   /**
    *
    *
@@ -545,7 +518,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the size field is set.
    */
   boolean hasSize();
-
   /**
    *
    *
@@ -572,7 +544,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
-
   /**
    *
    *
@@ -586,7 +557,6 @@ public interface NodeGroupOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
-
   /**
    *
    *
@@ -613,7 +583,6 @@ public interface NodeGroupOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
-
   /**
    *
    *
@@ -626,7 +595,6 @@ public interface NodeGroupOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
-
   /**
    *
    *

@@ -45,7 +45,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.Task)
     TaskOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Task.newBuilder() to construct.
   private Task(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -165,7 +164,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -178,7 +176,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>PICKUP = 1;</code>
      */
     public static final int PICKUP_VALUE = 1;
-
     /**
      *
      *
@@ -191,7 +188,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>DELIVERY = 2;</code>
      */
     public static final int DELIVERY_VALUE = 2;
-
     /**
      *
      *
@@ -205,7 +201,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEDULED_STOP = 3;</code>
      */
     public static final int SCHEDULED_STOP_VALUE = 3;
-
     /**
      *
      *
@@ -360,7 +355,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -372,7 +366,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>OPEN = 1;</code>
      */
     public static final int OPEN_VALUE = 1;
-
     /**
      *
      *
@@ -521,7 +514,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>TASK_OUTCOME_UNSPECIFIED = 0;</code>
      */
     public static final int TASK_OUTCOME_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -532,7 +524,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 1;</code>
      */
     public static final int SUCCEEDED_VALUE = 1;
-
     /**
      *
      *
@@ -681,7 +672,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>TASK_OUTCOME_LOCATION_SOURCE_UNSPECIFIED = 0;</code>
      */
     public static final int TASK_OUTCOME_LOCATION_SOURCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -692,7 +682,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVIDER = 2;</code>
      */
     public static final int PROVIDER_VALUE = 2;
-
     /**
      *
      *
@@ -824,7 +813,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment>
         getRemainingVehicleJourneySegmentsList();
-
     /**
      *
      *
@@ -853,7 +841,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment
         getRemainingVehicleJourneySegments(int index);
-
     /**
      *
      *
@@ -881,7 +868,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getRemainingVehicleJourneySegmentsCount();
-
     /**
      *
      *
@@ -910,7 +896,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.maps.fleetengine.delivery.v1.VehicleJourneySegmentOrBuilder>
         getRemainingVehicleJourneySegmentsOrBuilderList();
-
     /**
      *
      *
@@ -952,7 +937,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastLocation field is set.
      */
     boolean hasLastLocation();
-
     /**
      *
      *
@@ -965,7 +949,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      * @return The lastLocation.
      */
     com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation getLastLocation();
-
     /**
      *
      *
@@ -994,7 +977,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getLastLocationSnappable();
   }
-
   /**
    *
    *
@@ -1009,7 +991,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:maps.fleetengine.delivery.v1.Task.JourneySharingInfo)
       JourneySharingInfoOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use JourneySharingInfo.newBuilder() to construct.
     private JourneySharingInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1046,7 +1027,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment>
         remainingVehicleJourneySegments_;
-
     /**
      *
      *
@@ -1078,7 +1058,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         getRemainingVehicleJourneySegmentsList() {
       return remainingVehicleJourneySegments_;
     }
-
     /**
      *
      *
@@ -1111,7 +1090,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         getRemainingVehicleJourneySegmentsOrBuilderList() {
       return remainingVehicleJourneySegments_;
     }
-
     /**
      *
      *
@@ -1142,7 +1120,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public int getRemainingVehicleJourneySegmentsCount() {
       return remainingVehicleJourneySegments_.size();
     }
-
     /**
      *
      *
@@ -1174,7 +1151,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         getRemainingVehicleJourneySegments(int index) {
       return remainingVehicleJourneySegments_.get(index);
     }
-
     /**
      *
      *
@@ -1209,7 +1185,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_LOCATION_FIELD_NUMBER = 2;
     private com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation lastLocation_;
-
     /**
      *
      *
@@ -1225,7 +1200,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastLocation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1243,7 +1217,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.getDefaultInstance()
           : lastLocation_;
     }
-
     /**
      *
      *
@@ -1263,7 +1236,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_LOCATION_SNAPPABLE_FIELD_NUMBER = 3;
     private boolean lastLocationSnappable_ = false;
-
     /**
      *
      *
@@ -1473,7 +1445,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1811,7 +1782,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return remainingVehicleJourneySegmentsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -1845,7 +1815,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return remainingVehicleJourneySegmentsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -1880,7 +1849,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return remainingVehicleJourneySegmentsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -1921,7 +1889,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -1960,7 +1927,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2001,7 +1967,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2042,7 +2007,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2080,7 +2044,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2119,7 +2082,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2160,7 +2122,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2197,7 +2158,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2234,7 +2194,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2265,7 +2224,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           getRemainingVehicleJourneySegmentsBuilder(int index) {
         return getRemainingVehicleJourneySegmentsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2300,7 +2258,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return remainingVehicleJourneySegmentsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2336,7 +2293,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(remainingVehicleJourneySegments_);
         }
       }
-
       /**
        *
        *
@@ -2369,7 +2325,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             .addBuilder(
                 com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2403,7 +2358,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 index,
                 com.google.maps.fleetengine.delivery.v1.VehicleJourneySegment.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2461,7 +2415,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocation.Builder,
               com.google.maps.fleetengine.delivery.v1.DeliveryVehicleLocationOrBuilder>
           lastLocationBuilder_;
-
       /**
        *
        *
@@ -2476,7 +2429,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLastLocation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2497,7 +2449,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return lastLocationBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2521,7 +2472,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2542,7 +2492,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2573,7 +2522,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2593,7 +2541,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2609,7 +2556,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLastLocationFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2629,7 +2575,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
               : lastLocation_;
         }
       }
-
       /**
        *
        *
@@ -2657,7 +2602,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean lastLocationSnappable_;
-
       /**
        *
        *
@@ -2676,7 +2620,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       public boolean getLastLocationSnappable() {
         return lastLocationSnappable_;
       }
-
       /**
        *
        *
@@ -2699,7 +2642,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2793,7 +2735,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -2817,7 +2758,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2844,7 +2784,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -2863,7 +2802,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -2887,7 +2825,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
-
   /**
    *
    *
@@ -2905,7 +2842,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -2930,7 +2866,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_OUTCOME_FIELD_NUMBER = 9;
   private int taskOutcome_ = 0;
-
   /**
    *
    *
@@ -2946,7 +2881,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public int getTaskOutcomeValue() {
     return taskOutcome_;
   }
-
   /**
    *
    *
@@ -2969,7 +2903,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_OUTCOME_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp taskOutcomeTime_;
-
   /**
    *
    *
@@ -2986,7 +2919,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskOutcomeTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -3005,7 +2937,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : taskOutcomeTime_;
   }
-
   /**
    *
    *
@@ -3025,7 +2956,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_OUTCOME_LOCATION_FIELD_NUMBER = 11;
   private com.google.maps.fleetengine.delivery.v1.LocationInfo taskOutcomeLocation_;
-
   /**
    *
    *
@@ -3044,7 +2974,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskOutcomeLocation() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -3065,7 +2994,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.delivery.v1.LocationInfo.getDefaultInstance()
         : taskOutcomeLocation_;
   }
-
   /**
    *
    *
@@ -3088,7 +3016,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_OUTCOME_LOCATION_SOURCE_FIELD_NUMBER = 12;
   private int taskOutcomeLocationSource_ = 0;
-
   /**
    *
    *
@@ -3106,7 +3033,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public int getTaskOutcomeLocationSourceValue() {
     return taskOutcomeLocationSource_;
   }
-
   /**
    *
    *
@@ -3135,7 +3061,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trackingId_ = "";
-
   /**
    *
    *
@@ -3169,7 +3094,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3208,7 +3132,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deliveryVehicleId_ = "";
-
   /**
    *
    *
@@ -3240,7 +3163,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -3275,7 +3197,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PLANNED_LOCATION_FIELD_NUMBER = 6;
   private com.google.maps.fleetengine.delivery.v1.LocationInfo plannedLocation_;
-
   /**
    *
    *
@@ -3294,7 +3215,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPlannedLocation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3315,7 +3235,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.delivery.v1.LocationInfo.getDefaultInstance()
         : plannedLocation_;
   }
-
   /**
    *
    *
@@ -3338,7 +3257,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_DURATION_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration taskDuration_;
-
   /**
    *
    *
@@ -3356,7 +3274,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskDuration() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -3376,7 +3293,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : taskDuration_;
   }
-
   /**
    *
    *
@@ -3397,7 +3313,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_TIME_WINDOW_FIELD_NUMBER = 14;
   private com.google.maps.fleetengine.delivery.v1.TimeWindow targetTimeWindow_;
-
   /**
    *
    *
@@ -3413,7 +3328,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTargetTimeWindow() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -3431,7 +3345,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.delivery.v1.TimeWindow.getDefaultInstance()
         : targetTimeWindow_;
   }
-
   /**
    *
    *
@@ -3451,7 +3364,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int JOURNEY_SHARING_INFO_FIELD_NUMBER = 8;
   private com.google.maps.fleetengine.delivery.v1.Task.JourneySharingInfo journeySharingInfo_;
-
   /**
    *
    *
@@ -3470,7 +3382,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasJourneySharingInfo() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -3491,7 +3402,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.delivery.v1.Task.JourneySharingInfo.getDefaultInstance()
         : journeySharingInfo_;
   }
-
   /**
    *
    *
@@ -3514,7 +3424,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TASK_TRACKING_VIEW_CONFIG_FIELD_NUMBER = 13;
   private com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig taskTrackingViewConfig_;
-
   /**
    *
    *
@@ -3532,7 +3441,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTaskTrackingViewConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -3553,7 +3461,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         ? com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.getDefaultInstance()
         : taskTrackingViewConfig_;
   }
-
   /**
    *
    *
@@ -3577,7 +3484,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.maps.fleetengine.delivery.v1.TaskAttribute> attributes_;
-
   /**
    *
    *
@@ -3591,7 +3497,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.maps.fleetengine.delivery.v1.TaskAttribute> getAttributesList() {
     return attributes_;
   }
-
   /**
    *
    *
@@ -3606,7 +3511,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       getAttributesOrBuilderList() {
     return attributes_;
   }
-
   /**
    *
    *
@@ -3620,7 +3524,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public int getAttributesCount() {
     return attributes_.size();
   }
-
   /**
    *
    *
@@ -3634,7 +3537,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
   public com.google.maps.fleetengine.delivery.v1.TaskAttribute getAttributes(int index) {
     return attributes_.get(index);
   }
-
   /**
    *
    *
@@ -3986,7 +3888,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -4486,7 +4387,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -4509,7 +4409,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -4532,7 +4431,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -4554,7 +4452,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4572,7 +4469,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4597,7 +4493,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -4616,7 +4511,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -4638,7 +4532,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4661,7 +4554,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.delivery.v1.Task.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4686,7 +4578,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4709,7 +4600,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -4727,7 +4617,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -4748,7 +4637,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4770,7 +4658,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.delivery.v1.Task.State.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4794,7 +4681,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4816,7 +4702,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int taskOutcome_ = 0;
-
     /**
      *
      *
@@ -4832,7 +4717,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public int getTaskOutcomeValue() {
       return taskOutcome_;
     }
-
     /**
      *
      *
@@ -4851,7 +4735,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4871,7 +4754,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.delivery.v1.Task.TaskOutcome.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -4893,7 +4775,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4918,7 +4799,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         taskOutcomeTimeBuilder_;
-
     /**
      *
      *
@@ -4934,7 +4814,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskOutcomeTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -4956,7 +4835,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return taskOutcomeTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4980,7 +4858,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5001,7 +4878,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5030,7 +4906,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5051,7 +4926,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5067,7 +4941,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaskOutcomeTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5087,7 +4960,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : taskOutcomeTime_;
       }
     }
-
     /**
      *
      *
@@ -5121,7 +4993,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.delivery.v1.LocationInfo.Builder,
             com.google.maps.fleetengine.delivery.v1.LocationInfoOrBuilder>
         taskOutcomeLocationBuilder_;
-
     /**
      *
      *
@@ -5139,7 +5010,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskOutcomeLocation() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -5163,7 +5033,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return taskOutcomeLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5190,7 +5059,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5214,7 +5082,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5247,7 +5114,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5270,7 +5136,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5289,7 +5154,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaskOutcomeLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5312,7 +5176,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : taskOutcomeLocation_;
       }
     }
-
     /**
      *
      *
@@ -5343,7 +5206,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int taskOutcomeLocationSource_ = 0;
-
     /**
      *
      *
@@ -5361,7 +5223,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public int getTaskOutcomeLocationSourceValue() {
       return taskOutcomeLocationSource_;
     }
-
     /**
      *
      *
@@ -5382,7 +5243,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5406,7 +5266,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           ? com.google.maps.fleetengine.delivery.v1.Task.TaskOutcomeLocationSource.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -5431,7 +5290,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5453,7 +5311,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object trackingId_ = "";
-
     /**
      *
      *
@@ -5486,7 +5343,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5519,7 +5375,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5551,7 +5406,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5579,7 +5433,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5614,7 +5467,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object deliveryVehicleId_ = "";
-
     /**
      *
      *
@@ -5645,7 +5497,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5676,7 +5527,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5706,7 +5556,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5732,7 +5581,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5770,7 +5618,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.delivery.v1.LocationInfo.Builder,
             com.google.maps.fleetengine.delivery.v1.LocationInfoOrBuilder>
         plannedLocationBuilder_;
-
     /**
      *
      *
@@ -5788,7 +5635,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPlannedLocation() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -5812,7 +5658,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return plannedLocationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5838,7 +5683,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5862,7 +5706,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5895,7 +5738,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -5918,7 +5760,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5937,7 +5778,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPlannedLocationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5960,7 +5800,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : plannedLocation_;
       }
     }
-
     /**
      *
      *
@@ -5996,7 +5835,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         taskDurationBuilder_;
-
     /**
      *
      *
@@ -6013,7 +5851,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskDuration() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -6036,7 +5873,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return taskDurationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6061,7 +5897,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6083,7 +5918,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6113,7 +5947,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6135,7 +5968,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6152,7 +5984,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaskDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6173,7 +6004,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : taskDuration_;
       }
     }
-
     /**
      *
      *
@@ -6208,7 +6038,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.delivery.v1.TimeWindow.Builder,
             com.google.maps.fleetengine.delivery.v1.TimeWindowOrBuilder>
         targetTimeWindowBuilder_;
-
     /**
      *
      *
@@ -6223,7 +6052,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTargetTimeWindow() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -6244,7 +6072,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return targetTimeWindowBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6267,7 +6094,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6288,7 +6114,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6317,7 +6142,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6337,7 +6161,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6352,7 +6175,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTargetTimeWindowFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6372,7 +6194,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : targetTimeWindow_;
       }
     }
-
     /**
      *
      *
@@ -6405,7 +6226,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.delivery.v1.Task.JourneySharingInfo.Builder,
             com.google.maps.fleetengine.delivery.v1.Task.JourneySharingInfoOrBuilder>
         journeySharingInfoBuilder_;
-
     /**
      *
      *
@@ -6423,7 +6243,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasJourneySharingInfo() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -6447,7 +6266,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return journeySharingInfoBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6474,7 +6292,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6498,7 +6315,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6532,7 +6348,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6555,7 +6370,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6574,7 +6388,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getJourneySharingInfoFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6597,7 +6410,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : journeySharingInfo_;
       }
     }
-
     /**
      *
      *
@@ -6633,7 +6445,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfig.Builder,
             com.google.maps.fleetengine.delivery.v1.TaskTrackingViewConfigOrBuilder>
         taskTrackingViewConfigBuilder_;
-
     /**
      *
      *
@@ -6650,7 +6461,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTaskTrackingViewConfig() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -6674,7 +6484,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return taskTrackingViewConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -6700,7 +6509,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6723,7 +6531,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6756,7 +6563,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6778,7 +6584,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -6796,7 +6601,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTaskTrackingViewConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6818,7 +6622,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
             : taskTrackingViewConfig_;
       }
     }
-
     /**
      *
      *
@@ -6882,7 +6685,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -6899,7 +6701,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -6916,7 +6717,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -6940,7 +6740,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6961,7 +6760,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6984,7 +6782,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7008,7 +6805,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7029,7 +6825,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7050,7 +6845,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7072,7 +6866,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7092,7 +6885,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7112,7 +6904,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7126,7 +6917,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getAttributesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -7144,7 +6934,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return attributesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -7162,7 +6951,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(attributes_);
       }
     }
-
     /**
      *
      *
@@ -7176,7 +6964,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return getAttributesFieldBuilder()
           .addBuilder(com.google.maps.fleetengine.delivery.v1.TaskAttribute.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -7192,7 +6979,6 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.maps.fleetengine.delivery.v1.TaskAttribute.getDefaultInstance());
     }
-
     /**
      *
      *

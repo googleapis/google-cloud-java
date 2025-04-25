@@ -33,7 +33,6 @@ public final class OracleScnPosition extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.OracleScnPosition)
     OracleScnPositionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OracleScnPosition.newBuilder() to construct.
   private OracleScnPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class OracleScnPosition extends com.google.protobuf.GeneratedMessag
 
   public static final int SCN_FIELD_NUMBER = 1;
   private long scn_ = 0L;
-
   /**
    *
    *
@@ -240,7 +238,6 @@ public final class OracleScnPosition extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -423,7 +420,6 @@ public final class OracleScnPosition extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private long scn_;
-
     /**
      *
      *
@@ -439,7 +435,6 @@ public final class OracleScnPosition extends com.google.protobuf.GeneratedMessag
     public long getScn() {
       return scn_;
     }
-
     /**
      *
      *
@@ -459,7 +454,6 @@ public final class OracleScnPosition extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

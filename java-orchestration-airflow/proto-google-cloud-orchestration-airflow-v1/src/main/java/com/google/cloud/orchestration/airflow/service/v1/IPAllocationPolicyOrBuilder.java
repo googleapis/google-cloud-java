@@ -58,7 +58,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return Whether the clusterSecondaryRangeName field is set.
    */
   boolean hasClusterSecondaryRangeName();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The clusterSecondaryRangeName.
    */
   java.lang.String getClusterSecondaryRangeName();
-
   /**
    *
    *
@@ -120,7 +118,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return Whether the clusterIpv4CidrBlock field is set.
    */
   boolean hasClusterIpv4CidrBlock();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The clusterIpv4CidrBlock.
    */
   java.lang.String getClusterIpv4CidrBlock();
-
   /**
    *
    *
@@ -194,7 +190,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return Whether the servicesSecondaryRangeName field is set.
    */
   boolean hasServicesSecondaryRangeName();
-
   /**
    *
    *
@@ -212,7 +207,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesSecondaryRangeName.
    */
   java.lang.String getServicesSecondaryRangeName();
-
   /**
    *
    *
@@ -258,7 +252,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return Whether the servicesIpv4CidrBlock field is set.
    */
   boolean hasServicesIpv4CidrBlock();
-
   /**
    *
    *
@@ -286,7 +279,6 @@ public interface IPAllocationPolicyOrBuilder
    * @return The servicesIpv4CidrBlock.
    */
   java.lang.String getServicesIpv4CidrBlock();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateTimeSeriesError)
     CreateTimeSeriesErrorOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateTimeSeriesError.newBuilder() to construct.
   private CreateTimeSeriesError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int TIME_SERIES_FIELD_NUMBER = 1;
   private com.google.monitoring.v3.TimeSeries timeSeries_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
   public boolean hasTimeSeries() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
         ? com.google.monitoring.v3.TimeSeries.getDefaultInstance()
         : timeSeries_;
   }
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
 
   public static final int STATUS_FIELD_NUMBER = 2;
   private com.google.rpc.Status status_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
-
   /**
    *
    *
@@ -357,7 +350,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -579,7 +571,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
             com.google.monitoring.v3.TimeSeries.Builder,
             com.google.monitoring.v3.TimeSeriesOrBuilder>
         timeSeriesBuilder_;
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
     public boolean hasTimeSeries() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -621,7 +611,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
         return timeSeriesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -645,7 +634,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -666,7 +654,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -695,7 +682,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -716,7 +702,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -732,7 +717,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return getTimeSeriesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -752,7 +736,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
             : timeSeries_;
       }
     }
-
     /**
      *
      *
@@ -783,7 +766,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
-
     /**
      *
      *
@@ -801,7 +783,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -823,7 +804,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
         return statusBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -847,7 +827,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +847,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +875,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
-
     /**
      *
      *
@@ -918,7 +895,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -952,7 +927,6 @@ public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMe
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
-
     /**
      *
      *

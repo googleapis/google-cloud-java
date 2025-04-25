@@ -38,7 +38,6 @@ public interface UserEventInputConfigOrBuilder
    * @return Whether the userEventInlineSource field is set.
    */
   boolean hasUserEventInlineSource();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UserEventInputConfigOrBuilder
    * @return The userEventInlineSource.
    */
   com.google.cloud.retail.v2.UserEventInlineSource getUserEventInlineSource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface UserEventInputConfigOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -96,7 +93,6 @@ public interface UserEventInputConfigOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.retail.v2.GcsSource getGcsSource();
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public interface UserEventInputConfigOrBuilder
    * @return Whether the bigQuerySource field is set.
    */
   boolean hasBigQuerySource();
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public interface UserEventInputConfigOrBuilder
    * @return The bigQuerySource.
    */
   com.google.cloud.retail.v2.BigQuerySource getBigQuerySource();
-
   /**
    *
    *

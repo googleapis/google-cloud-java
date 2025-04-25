@@ -44,7 +44,6 @@ public interface CustomConstraintOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -71,7 +70,7 @@ public interface CustomConstraintOrBuilder
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -81,13 +80,12 @@ public interface CustomConstraintOrBuilder
    * @return A list containing the resourceTypes.
    */
   java.util.List<java.lang.String> getResourceTypesList();
-
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -97,13 +95,12 @@ public interface CustomConstraintOrBuilder
    * @return The count of resourceTypes.
    */
   int getResourceTypesCount();
-
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -114,13 +111,12 @@ public interface CustomConstraintOrBuilder
    * @return The resourceTypes at the given index.
    */
   java.lang.String getResourceTypes(int index);
-
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -144,7 +140,6 @@ public interface CustomConstraintOrBuilder
    * @return A list containing the methodTypes.
    */
   java.util.List<com.google.cloud.orgpolicy.v2.CustomConstraint.MethodType> getMethodTypesList();
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public interface CustomConstraintOrBuilder
    * @return The count of methodTypes.
    */
   int getMethodTypesCount();
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public interface CustomConstraintOrBuilder
    * @return The methodTypes at the given index.
    */
   com.google.cloud.orgpolicy.v2.CustomConstraint.MethodType getMethodTypes(int index);
-
   /**
    *
    *
@@ -184,7 +177,6 @@ public interface CustomConstraintOrBuilder
    * @return A list containing the enum numeric values on the wire for methodTypes.
    */
   java.util.List<java.lang.Integer> getMethodTypesValueList();
-
   /**
    *
    *
@@ -203,8 +195,7 @@ public interface CustomConstraintOrBuilder
    *
    *
    * <pre>
-   * A Common Expression Language (CEL) condition which is used in the
-   * evaluation of the constraint. For example:
+   * Org policy condition/expression. For example:
    * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
    * `resource.management.auto_upgrade == true`
    *
@@ -216,13 +207,11 @@ public interface CustomConstraintOrBuilder
    * @return The condition.
    */
   java.lang.String getCondition();
-
   /**
    *
    *
    * <pre>
-   * A Common Expression Language (CEL) condition which is used in the
-   * evaluation of the constraint. For example:
+   * Org policy condition/expression. For example:
    * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
    * `resource.management.auto_upgrade == true`
    *
@@ -247,7 +236,6 @@ public interface CustomConstraintOrBuilder
    * @return The enum numeric value on the wire for actionType.
    */
   int getActionTypeValue();
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface CustomConstraintOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -302,7 +289,6 @@ public interface CustomConstraintOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -323,7 +309,7 @@ public interface CustomConstraintOrBuilder
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` methods were called.
+   * `UpdateCustomConstraint` RPC was called
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -332,14 +318,13 @@ public interface CustomConstraintOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` methods were called.
+   * `UpdateCustomConstraint` RPC was called
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -348,14 +333,13 @@ public interface CustomConstraintOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` methods were called.
+   * `UpdateCustomConstraint` RPC was called
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];

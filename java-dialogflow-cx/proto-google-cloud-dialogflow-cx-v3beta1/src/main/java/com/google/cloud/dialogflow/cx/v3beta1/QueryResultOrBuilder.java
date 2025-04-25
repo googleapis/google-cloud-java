@@ -37,7 +37,6 @@ public interface QueryResultOrBuilder
    * @return Whether the text field is set.
    */
   boolean hasText();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface QueryResultOrBuilder
    * @return The text.
    */
   java.lang.String getText();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface QueryResultOrBuilder
    * @return Whether the triggerIntent field is set.
    */
   boolean hasTriggerIntent();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface QueryResultOrBuilder
    * @return The triggerIntent.
    */
   java.lang.String getTriggerIntent();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface QueryResultOrBuilder
    * @return Whether the transcript field is set.
    */
   boolean hasTranscript();
-
   /**
    *
    *
@@ -143,7 +138,6 @@ public interface QueryResultOrBuilder
    * @return The transcript.
    */
   java.lang.String getTranscript();
-
   /**
    *
    *
@@ -172,7 +166,6 @@ public interface QueryResultOrBuilder
    * @return Whether the triggerEvent field is set.
    */
   boolean hasTriggerEvent();
-
   /**
    *
    *
@@ -186,7 +179,6 @@ public interface QueryResultOrBuilder
    * @return The triggerEvent.
    */
   java.lang.String getTriggerEvent();
-
   /**
    *
    *
@@ -215,7 +207,6 @@ public interface QueryResultOrBuilder
    * @return Whether the dtmf field is set.
    */
   boolean hasDtmf();
-
   /**
    *
    *
@@ -230,7 +221,6 @@ public interface QueryResultOrBuilder
    * @return The dtmf.
    */
   com.google.cloud.dialogflow.cx.v3beta1.DtmfInput getDtmf();
-
   /**
    *
    *
@@ -259,7 +249,6 @@ public interface QueryResultOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *
@@ -302,7 +291,6 @@ public interface QueryResultOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -329,7 +317,6 @@ public interface QueryResultOrBuilder
    * @return The parameters.
    */
   com.google.protobuf.Struct getParameters();
-
   /**
    *
    *
@@ -368,7 +355,6 @@ public interface QueryResultOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage> getResponseMessagesList();
-
   /**
    *
    *
@@ -382,7 +368,6 @@ public interface QueryResultOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage getResponseMessages(int index);
-
   /**
    *
    *
@@ -396,7 +381,6 @@ public interface QueryResultOrBuilder
    * </code>
    */
   int getResponseMessagesCount();
-
   /**
    *
    *
@@ -411,7 +395,6 @@ public interface QueryResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageOrBuilder>
       getResponseMessagesOrBuilderList();
-
   /**
    *
    *
@@ -439,7 +422,6 @@ public interface QueryResultOrBuilder
    * @return A list containing the webhookIds.
    */
   java.util.List<java.lang.String> getWebhookIdsList();
-
   /**
    *
    *
@@ -452,7 +434,6 @@ public interface QueryResultOrBuilder
    * @return The count of webhookIds.
    */
   int getWebhookIdsCount();
-
   /**
    *
    *
@@ -466,7 +447,6 @@ public interface QueryResultOrBuilder
    * @return The webhookIds at the given index.
    */
   java.lang.String getWebhookIds(int index);
-
   /**
    *
    *
@@ -493,7 +473,6 @@ public interface QueryResultOrBuilder
    * @return A list containing the webhookDisplayNames.
    */
   java.util.List<java.lang.String> getWebhookDisplayNamesList();
-
   /**
    *
    *
@@ -506,7 +485,6 @@ public interface QueryResultOrBuilder
    * @return The count of webhookDisplayNames.
    */
   int getWebhookDisplayNamesCount();
-
   /**
    *
    *
@@ -520,7 +498,6 @@ public interface QueryResultOrBuilder
    * @return The webhookDisplayNames at the given index.
    */
   java.lang.String getWebhookDisplayNames(int index);
-
   /**
    *
    *
@@ -545,7 +522,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
    */
   java.util.List<com.google.protobuf.Duration> getWebhookLatenciesList();
-
   /**
    *
    *
@@ -556,7 +532,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
    */
   com.google.protobuf.Duration getWebhookLatencies(int index);
-
   /**
    *
    *
@@ -567,7 +542,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Duration webhook_latencies = 27;</code>
    */
   int getWebhookLatenciesCount();
-
   /**
    *
    *
@@ -579,7 +553,6 @@ public interface QueryResultOrBuilder
    */
   java.util.List<? extends com.google.protobuf.DurationOrBuilder>
       getWebhookLatenciesOrBuilderList();
-
   /**
    *
    *
@@ -603,7 +576,6 @@ public interface QueryResultOrBuilder
    * @return A list containing the webhookTags.
    */
   java.util.List<java.lang.String> getWebhookTagsList();
-
   /**
    *
    *
@@ -616,7 +588,6 @@ public interface QueryResultOrBuilder
    * @return The count of webhookTags.
    */
   int getWebhookTagsCount();
-
   /**
    *
    *
@@ -630,7 +601,6 @@ public interface QueryResultOrBuilder
    * @return The webhookTags at the given index.
    */
   java.lang.String getWebhookTags(int index);
-
   /**
    *
    *
@@ -655,7 +625,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.rpc.Status webhook_statuses = 13;</code>
    */
   java.util.List<com.google.rpc.Status> getWebhookStatusesList();
-
   /**
    *
    *
@@ -666,7 +635,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.rpc.Status webhook_statuses = 13;</code>
    */
   com.google.rpc.Status getWebhookStatuses(int index);
-
   /**
    *
    *
@@ -677,7 +645,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.rpc.Status webhook_statuses = 13;</code>
    */
   int getWebhookStatusesCount();
-
   /**
    *
    *
@@ -688,7 +655,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.rpc.Status webhook_statuses = 13;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getWebhookStatusesOrBuilderList();
-
   /**
    *
    *
@@ -713,7 +679,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
    */
   java.util.List<com.google.protobuf.Struct> getWebhookPayloadsList();
-
   /**
    *
    *
@@ -727,7 +692,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
    */
   com.google.protobuf.Struct getWebhookPayloads(int index);
-
   /**
    *
    *
@@ -741,7 +705,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
    */
   int getWebhookPayloadsCount();
-
   /**
    *
    *
@@ -755,7 +718,6 @@ public interface QueryResultOrBuilder
    * <code>repeated .google.protobuf.Struct webhook_payloads = 6;</code>
    */
   java.util.List<? extends com.google.protobuf.StructOrBuilder> getWebhookPayloadsOrBuilderList();
-
   /**
    *
    *
@@ -784,7 +746,6 @@ public interface QueryResultOrBuilder
    * @return Whether the currentPage field is set.
    */
   boolean hasCurrentPage();
-
   /**
    *
    *
@@ -799,7 +760,6 @@ public interface QueryResultOrBuilder
    * @return The currentPage.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Page getCurrentPage();
-
   /**
    *
    *
@@ -827,7 +787,6 @@ public interface QueryResultOrBuilder
    * @return Whether the currentFlow field is set.
    */
   boolean hasCurrentFlow();
-
   /**
    *
    *
@@ -842,7 +801,6 @@ public interface QueryResultOrBuilder
    * @return The currentFlow.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Flow getCurrentFlow();
-
   /**
    *
    *
@@ -876,7 +834,6 @@ public interface QueryResultOrBuilder
    */
   @java.lang.Deprecated
   boolean hasIntent();
-
   /**
    *
    *
@@ -897,7 +854,6 @@ public interface QueryResultOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.dialogflow.cx.v3beta1.Intent getIntent();
-
   /**
    *
    *
@@ -951,7 +907,6 @@ public interface QueryResultOrBuilder
    * @return Whether the match field is set.
    */
   boolean hasMatch();
-
   /**
    *
    *
@@ -964,7 +919,6 @@ public interface QueryResultOrBuilder
    * @return The match.
    */
   com.google.cloud.dialogflow.cx.v3beta1.Match getMatch();
-
   /**
    *
    *
@@ -1004,7 +958,6 @@ public interface QueryResultOrBuilder
    * @return Whether the diagnosticInfo field is set.
    */
   boolean hasDiagnosticInfo();
-
   /**
    *
    *
@@ -1033,7 +986,6 @@ public interface QueryResultOrBuilder
    * @return The diagnosticInfo.
    */
   com.google.protobuf.Struct getDiagnosticInfo();
-
   /**
    *
    *
@@ -1073,7 +1025,6 @@ public interface QueryResultOrBuilder
    * @return Whether the generativeInfo field is set.
    */
   boolean hasGenerativeInfo();
-
   /**
    *
    *
@@ -1086,7 +1037,6 @@ public interface QueryResultOrBuilder
    * @return The generativeInfo.
    */
   com.google.cloud.dialogflow.cx.v3beta1.GenerativeInfo getGenerativeInfo();
-
   /**
    *
    *
@@ -1115,7 +1065,6 @@ public interface QueryResultOrBuilder
    * @return Whether the sentimentAnalysisResult field is set.
    */
   boolean hasSentimentAnalysisResult();
-
   /**
    *
    *
@@ -1133,7 +1082,6 @@ public interface QueryResultOrBuilder
    * @return The sentimentAnalysisResult.
    */
   com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResult getSentimentAnalysisResult();
-
   /**
    *
    *
@@ -1167,7 +1115,6 @@ public interface QueryResultOrBuilder
    * @return Whether the advancedSettings field is set.
    */
   boolean hasAdvancedSettings();
-
   /**
    *
    *
@@ -1184,7 +1131,6 @@ public interface QueryResultOrBuilder
    * @return The advancedSettings.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
-
   /**
    *
    *
@@ -1229,7 +1175,6 @@ public interface QueryResultOrBuilder
    * @return Whether the dataStoreConnectionSignals field is set.
    */
   boolean hasDataStoreConnectionSignals();
-
   /**
    *
    *
@@ -1245,7 +1190,6 @@ public interface QueryResultOrBuilder
    * @return The dataStoreConnectionSignals.
    */
   com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals getDataStoreConnectionSignals();
-
   /**
    *
    *

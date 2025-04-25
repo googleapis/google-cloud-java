@@ -36,7 +36,6 @@ public interface AnalyzeCorpusMetadataOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AnalyzeCorpusMetadataOrBuilder
    * @return The metadata.
    */
   com.google.cloud.visionai.v1.OperationMetadata getMetadata();
-
   /**
    *
    *

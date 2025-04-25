@@ -38,7 +38,6 @@ public interface TableFieldSchemaOrBuilder
    * @return The field.
    */
   java.lang.String getField();
-
   /**
    *
    *
@@ -80,7 +79,6 @@ public interface TableFieldSchemaOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface TableFieldSchemaOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
-
   /**
    *
    *
@@ -147,7 +144,6 @@ public interface TableFieldSchemaOrBuilder
    * <code>repeated .google.cloud.asset.v1.TableFieldSchema fields = 4;</code>
    */
   java.util.List<com.google.cloud.asset.v1.TableFieldSchema> getFieldsList();
-
   /**
    *
    *
@@ -159,7 +155,6 @@ public interface TableFieldSchemaOrBuilder
    * <code>repeated .google.cloud.asset.v1.TableFieldSchema fields = 4;</code>
    */
   com.google.cloud.asset.v1.TableFieldSchema getFields(int index);
-
   /**
    *
    *
@@ -171,7 +166,6 @@ public interface TableFieldSchemaOrBuilder
    * <code>repeated .google.cloud.asset.v1.TableFieldSchema fields = 4;</code>
    */
   int getFieldsCount();
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public interface TableFieldSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.asset.v1.TableFieldSchemaOrBuilder>
       getFieldsOrBuilderList();
-
   /**
    *
    *

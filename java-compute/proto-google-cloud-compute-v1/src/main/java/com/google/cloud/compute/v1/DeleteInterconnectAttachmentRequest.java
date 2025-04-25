@@ -34,7 +34,6 @@ public final class DeleteInterconnectAttachmentRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteInterconnectAttachmentRequest)
     DeleteInterconnectAttachmentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DeleteInterconnectAttachmentRequest.newBuilder() to construct.
   private DeleteInterconnectAttachmentRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class DeleteInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object interconnectAttachment_ = "";
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public final class DeleteInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class DeleteInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class DeleteInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -186,7 +181,6 @@ public final class DeleteInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -212,7 +206,6 @@ public final class DeleteInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -243,7 +236,6 @@ public final class DeleteInterconnectAttachmentRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -259,7 +251,6 @@ public final class DeleteInterconnectAttachmentRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -283,7 +274,6 @@ public final class DeleteInterconnectAttachmentRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -503,7 +493,6 @@ public final class DeleteInterconnectAttachmentRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -740,7 +729,6 @@ public final class DeleteInterconnectAttachmentRequest
     private int bitField0_;
 
     private java.lang.Object interconnectAttachment_ = "";
-
     /**
      *
      *
@@ -764,7 +752,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +815,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +840,6 @@ public final class DeleteInterconnectAttachmentRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -881,7 +864,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -906,7 +888,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -930,7 +911,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +930,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class DeleteInterconnectAttachmentRequest
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1002,7 +980,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1027,7 +1004,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1051,7 +1027,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1046,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1072,6 @@ public final class DeleteInterconnectAttachmentRequest
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1113,7 +1086,6 @@ public final class DeleteInterconnectAttachmentRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1136,7 +1108,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1159,7 +1130,6 @@ public final class DeleteInterconnectAttachmentRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1181,7 +1151,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1199,7 +1168,6 @@ public final class DeleteInterconnectAttachmentRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

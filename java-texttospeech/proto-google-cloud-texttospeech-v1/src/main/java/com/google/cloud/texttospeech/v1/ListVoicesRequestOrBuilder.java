@@ -43,7 +43,6 @@ public interface ListVoicesRequestOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
-
   /**
    *
    *

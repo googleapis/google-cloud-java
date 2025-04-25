@@ -39,7 +39,6 @@ public interface CreateGrpcRouteRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface CreateGrpcRouteRequestOrBuilder
    * @return The grpcRouteId.
    */
   java.lang.String getGrpcRouteId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreateGrpcRouteRequestOrBuilder
    * @return Whether the grpcRoute field is set.
    */
   boolean hasGrpcRoute();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreateGrpcRouteRequestOrBuilder
    * @return The grpcRoute.
    */
   com.google.cloud.networkservices.v1.GrpcRoute getGrpcRoute();
-
   /**
    *
    *

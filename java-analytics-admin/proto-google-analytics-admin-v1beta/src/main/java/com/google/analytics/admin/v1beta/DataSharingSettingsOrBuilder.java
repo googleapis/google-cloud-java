@@ -38,7 +38,6 @@ public interface DataSharingSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

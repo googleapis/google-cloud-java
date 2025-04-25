@@ -33,7 +33,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetNatMappingInfoRoutersRequest)
     GetNatMappingInfoRoutersRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetNatMappingInfoRoutersRequest.newBuilder() to construct.
   private GetNatMappingInfoRoutersRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -76,7 +75,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   public static final int MAX_RESULTS_FIELD_NUMBER = 54715419;
   private int maxResults_ = 0;
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   public boolean hasMaxResults() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object natName_ = "";
-
   /**
    *
    *
@@ -196,7 +189,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   public boolean hasNatName() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +212,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -249,7 +240,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   public boolean hasOrderBy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -289,7 +278,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -318,7 +306,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
-
   /**
    *
    *
@@ -334,7 +321,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   public boolean hasPageToken() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -358,7 +344,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +372,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -411,7 +395,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -440,7 +423,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -464,7 +446,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -491,7 +472,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
   private boolean returnPartialSuccess_ = false;
-
   /**
    *
    *
@@ -507,7 +487,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
   public boolean hasReturnPartialSuccess() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -528,7 +507,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object router_ = "";
-
   /**
    *
    *
@@ -552,7 +530,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -840,7 +817,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1149,7 +1125,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object filter_ = "";
-
     /**
      *
      *
@@ -1164,7 +1139,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1187,7 +1161,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1210,7 +1183,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1232,7 +1204,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1250,7 +1221,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1275,7 +1245,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private int maxResults_;
-
     /**
      *
      *
@@ -1291,7 +1260,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean hasMaxResults() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1307,7 +1275,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public int getMaxResults() {
       return maxResults_;
     }
-
     /**
      *
      *
@@ -1327,7 +1294,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1347,7 +1313,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object natName_ = "";
-
     /**
      *
      *
@@ -1362,7 +1327,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean hasNatName() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1385,7 +1349,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1408,7 +1371,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1430,7 +1392,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1448,7 +1409,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1473,7 +1433,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object orderBy_ = "";
-
     /**
      *
      *
@@ -1488,7 +1447,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean hasOrderBy() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1511,7 +1469,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1534,7 +1491,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1556,7 +1512,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1574,7 +1529,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1599,7 +1553,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object pageToken_ = "";
-
     /**
      *
      *
@@ -1614,7 +1567,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean hasPageToken() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1637,7 +1589,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1660,7 +1611,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1682,7 +1632,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1700,7 +1649,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1725,7 +1673,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1748,7 +1695,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1771,7 +1717,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1793,7 +1738,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1811,7 +1755,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1836,7 +1779,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1859,7 +1801,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1882,7 +1823,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1904,7 +1844,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1922,7 +1861,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1947,7 +1885,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private boolean returnPartialSuccess_;
-
     /**
      *
      *
@@ -1963,7 +1900,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean hasReturnPartialSuccess() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -1979,7 +1915,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     public boolean getReturnPartialSuccess() {
       return returnPartialSuccess_;
     }
-
     /**
      *
      *
@@ -1999,7 +1934,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2019,7 +1953,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object router_ = "";
-
     /**
      *
      *
@@ -2042,7 +1975,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2065,7 +1997,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2087,7 +2018,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2105,7 +2035,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

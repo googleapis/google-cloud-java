@@ -36,7 +36,6 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, .google.appengine.v1.FileInfo&gt; files = 1;</code>
    */
   int getFilesCount();
-
   /**
    *
    *
@@ -49,11 +48,9 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, .google.appengine.v1.FileInfo&gt; files = 1;</code>
    */
   boolean containsFiles(java.lang.String key);
-
   /** Use {@link #getFilesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.appengine.v1.FileInfo> getFiles();
-
   /**
    *
    *
@@ -66,7 +63,6 @@ public interface DeploymentOrBuilder
    * <code>map&lt;string, .google.appengine.v1.FileInfo&gt; files = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.appengine.v1.FileInfo> getFilesMap();
-
   /**
    *
    *
@@ -83,7 +79,6 @@ public interface DeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.appengine.v1.FileInfo defaultValue);
-
   /**
    *
    *
@@ -110,7 +105,6 @@ public interface DeploymentOrBuilder
    * @return Whether the container field is set.
    */
   boolean hasContainer();
-
   /**
    *
    *
@@ -124,7 +118,6 @@ public interface DeploymentOrBuilder
    * @return The container.
    */
   com.google.appengine.v1.ContainerInfo getContainer();
-
   /**
    *
    *
@@ -149,7 +142,6 @@ public interface DeploymentOrBuilder
    * @return Whether the zip field is set.
    */
   boolean hasZip();
-
   /**
    *
    *
@@ -162,7 +154,6 @@ public interface DeploymentOrBuilder
    * @return The zip.
    */
   com.google.appengine.v1.ZipInfo getZip();
-
   /**
    *
    *
@@ -190,7 +181,6 @@ public interface DeploymentOrBuilder
    * @return Whether the cloudBuildOptions field is set.
    */
   boolean hasCloudBuildOptions();
-
   /**
    *
    *
@@ -207,7 +197,6 @@ public interface DeploymentOrBuilder
    * @return The cloudBuildOptions.
    */
   com.google.appengine.v1.CloudBuildOptions getCloudBuildOptions();
-
   /**
    *
    *

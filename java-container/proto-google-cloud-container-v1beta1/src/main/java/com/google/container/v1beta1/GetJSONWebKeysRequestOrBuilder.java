@@ -37,7 +37,6 @@ public interface GetJSONWebKeysRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

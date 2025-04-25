@@ -33,7 +33,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ListColumnSpecsResponse)
     ListColumnSpecsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListColumnSpecsResponse.newBuilder() to construct.
   private ListColumnSpecsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec> columnSpecs_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec> getColumnSpecsList() {
     return columnSpecs_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       getColumnSpecsOrBuilderList() {
     return columnSpecs_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
   public int getColumnSpecsCount() {
     return columnSpecs_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
   public com.google.cloud.automl.v1beta1.ColumnSpec getColumnSpecs(int index) {
     return columnSpecs_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +359,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return columnSpecsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return columnSpecsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -679,7 +668,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return columnSpecsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -702,7 +690,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +710,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -746,7 +732,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -769,7 +754,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +794,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -832,7 +814,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -872,7 +852,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +864,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1beta1.ColumnSpec.Builder getColumnSpecsBuilder(int index) {
       return getColumnSpecsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -902,7 +880,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return columnSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -920,7 +897,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(columnSpecs_);
       }
     }
-
     /**
      *
      *
@@ -934,7 +910,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       return getColumnSpecsFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.ColumnSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -948,7 +923,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       return getColumnSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.automl.v1beta1.ColumnSpec.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -981,7 +955,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1005,7 +978,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1029,7 +1001,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1023,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1041,6 @@ public final class ListColumnSpecsResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

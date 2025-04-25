@@ -40,7 +40,6 @@ public interface AccessDimensionOrBuilder
    * @return The dimensionName.
    */
   java.lang.String getDimensionName();
-
   /**
    *
    *

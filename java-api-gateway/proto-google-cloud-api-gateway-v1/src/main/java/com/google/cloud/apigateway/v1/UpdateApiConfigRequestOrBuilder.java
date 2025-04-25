@@ -40,7 +40,6 @@ public interface UpdateApiConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface UpdateApiConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public interface UpdateApiConfigRequestOrBuilder
    * @return Whether the apiConfig field is set.
    */
   boolean hasApiConfig();
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public interface UpdateApiConfigRequestOrBuilder
    * @return The apiConfig.
    */
   com.google.cloud.apigateway.v1.ApiConfig getApiConfig();
-
   /**
    *
    *

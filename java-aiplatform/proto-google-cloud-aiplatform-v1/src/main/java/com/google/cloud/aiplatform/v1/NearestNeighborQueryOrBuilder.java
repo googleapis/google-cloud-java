@@ -38,7 +38,6 @@ public interface NearestNeighborQueryOrBuilder
    * @return Whether the entityId field is set.
    */
   boolean hasEntityId();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface NearestNeighborQueryOrBuilder
    * @return The entityId.
    */
   java.lang.String getEntityId();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface NearestNeighborQueryOrBuilder
    * @return Whether the embedding field is set.
    */
   boolean hasEmbedding();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface NearestNeighborQueryOrBuilder
    * @return The embedding.
    */
   com.google.cloud.aiplatform.v1.NearestNeighborQuery.Embedding getEmbedding();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface NearestNeighborQueryOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilter>
       getStringFiltersList();
-
   /**
    *
    *
@@ -152,7 +147,6 @@ public interface NearestNeighborQueryOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilter getStringFilters(int index);
-
   /**
    *
    *
@@ -165,7 +159,6 @@ public interface NearestNeighborQueryOrBuilder
    * </code>
    */
   int getStringFiltersCount();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface NearestNeighborQueryOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1.NearestNeighborQuery.StringFilterOrBuilder>
       getStringFiltersOrBuilderList();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface NearestNeighborQueryOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter>
       getNumericFiltersList();
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public interface NearestNeighborQueryOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilter getNumericFilters(int index);
-
   /**
    *
    *
@@ -234,7 +224,6 @@ public interface NearestNeighborQueryOrBuilder
    * </code>
    */
   int getNumericFiltersCount();
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface NearestNeighborQueryOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1.NearestNeighborQuery.NumericFilterOrBuilder>
       getNumericFiltersOrBuilderList();
-
   /**
    *
    *
@@ -296,7 +284,6 @@ public interface NearestNeighborQueryOrBuilder
    * @return Whether the parameters field is set.
    */
   boolean hasParameters();
-
   /**
    *
    *
@@ -311,7 +298,6 @@ public interface NearestNeighborQueryOrBuilder
    * @return The parameters.
    */
   com.google.cloud.aiplatform.v1.NearestNeighborQuery.Parameters getParameters();
-
   /**
    *
    *

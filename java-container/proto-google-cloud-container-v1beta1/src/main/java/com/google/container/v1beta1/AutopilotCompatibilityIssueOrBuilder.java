@@ -36,7 +36,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return Whether the lastObservation field is set.
    */
   boolean hasLastObservation();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The lastObservation.
    */
   com.google.protobuf.Timestamp getLastObservation();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The constraintType.
    */
   java.lang.String getConstraintType();
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The enum numeric value on the wire for incompatibilityType.
    */
   int getIncompatibilityTypeValue();
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return A list containing the subjects.
    */
   java.util.List<java.lang.String> getSubjectsList();
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The count of subjects.
    */
   int getSubjectsCount();
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The subjects at the given index.
    */
   java.lang.String getSubjects(int index);
-
   /**
    *
    *
@@ -181,7 +174,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The documentationUrl.
    */
   java.lang.String getDocumentationUrl();
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public interface AutopilotCompatibilityIssueOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

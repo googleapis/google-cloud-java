@@ -33,7 +33,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.ReconConfig)
     ReconConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ReconConfig.newBuilder() to construct.
   private ReconConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getEnableGeocodingSeparation();
   }
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options)
       OptionsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Options.newBuilder() to construct.
     private Options(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -132,7 +129,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_GEOCODING_SEPARATION_FIELD_NUMBER = 100;
     private boolean enableGeocodingSeparation_ = false;
-
     /**
      *
      *
@@ -318,7 +314,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -511,7 +506,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean enableGeocodingSeparation_;
-
       /**
        *
        *
@@ -533,7 +527,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableGeocodingSeparation() {
         return enableGeocodingSeparation_;
       }
-
       /**
        *
        *
@@ -559,7 +552,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -669,7 +661,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The modelName.
      */
     java.lang.String getModelName();
-
     /**
      *
      *
@@ -697,7 +688,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The versionTag.
      */
     java.lang.String getVersionTag();
-
     /**
      *
      *
@@ -712,7 +702,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getVersionTagBytes();
   }
-
   /**
    *
    *
@@ -727,7 +716,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig)
       ModelConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use ModelConfig.newBuilder() to construct.
     private ModelConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -763,7 +751,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelName_ = "";
-
     /**
      *
      *
@@ -788,7 +775,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object versionTag_ = "";
-
     /**
      *
      *
@@ -843,7 +828,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1040,7 +1024,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1251,7 +1234,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object modelName_ = "";
-
       /**
        *
        *
@@ -1275,7 +1257,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1299,7 +1280,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1322,7 +1302,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1341,7 +1320,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1367,7 +1345,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object versionTag_ = "";
-
       /**
        *
        *
@@ -1391,7 +1368,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1415,7 +1391,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1438,7 +1413,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1457,7 +1431,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1567,7 +1540,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     private ClusteringConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1601,7 +1573,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONNECTED_COMPONENTS_CONFIG_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -1619,7 +1590,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasConnectedComponentsConfig() {
     return clusteringConfigCase_ == 1;
   }
-
   /**
    *
    *
@@ -1643,7 +1613,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1667,7 +1636,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AFFINITY_CLUSTERING_CONFIG_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -1685,7 +1653,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAffinityClusteringConfig() {
     return clusteringConfigCase_ == 2;
   }
-
   /**
    *
    *
@@ -1709,7 +1676,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.enterpriseknowledgegraph.v1.AffinityClusteringConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -1734,7 +1700,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OPTIONS_FIELD_NUMBER = 3;
   private com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options options_;
-
   /**
    *
    *
@@ -1750,7 +1715,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1768,7 +1732,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options.getDefaultInstance()
         : options_;
   }
-
   /**
    *
    *
@@ -1788,7 +1751,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODEL_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig modelConfig_;
-
   /**
    *
    *
@@ -1805,7 +1767,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasModelConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1824,7 +1785,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig.getDefaultInstance()
         : modelConfig_;
   }
-
   /**
    *
    *
@@ -2073,7 +2033,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2361,7 +2320,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfig.Builder,
             com.google.cloud.enterpriseknowledgegraph.v1.ConnectedComponentsConfigOrBuilder>
         connectedComponentsConfigBuilder_;
-
     /**
      *
      *
@@ -2379,7 +2337,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasConnectedComponentsConfig() {
       return clusteringConfigCase_ == 1;
     }
-
     /**
      *
      *
@@ -2411,7 +2368,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2437,7 +2393,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       clusteringConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2461,7 +2416,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       clusteringConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2500,7 +2454,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       clusteringConfigCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -2528,7 +2481,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2544,7 +2496,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         getConnectedComponentsConfigBuilder() {
       return getConnectedComponentsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2570,7 +2521,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2614,7 +2564,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.enterpriseknowledgegraph.v1.AffinityClusteringConfig.Builder,
             com.google.cloud.enterpriseknowledgegraph.v1.AffinityClusteringConfigOrBuilder>
         affinityClusteringConfigBuilder_;
-
     /**
      *
      *
@@ -2632,7 +2581,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAffinityClusteringConfig() {
       return clusteringConfigCase_ == 2;
     }
-
     /**
      *
      *
@@ -2664,7 +2612,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2690,7 +2637,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       clusteringConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2714,7 +2660,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       clusteringConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2753,7 +2698,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       clusteringConfigCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -2781,7 +2725,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2797,7 +2740,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         getAffinityClusteringConfigBuilder() {
       return getAffinityClusteringConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2823,7 +2765,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2868,7 +2809,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.Options.Builder,
             com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.OptionsOrBuilder>
         optionsBuilder_;
-
     /**
      *
      *
@@ -2883,7 +2823,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOptions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2904,7 +2843,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         return optionsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2928,7 +2866,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2949,7 +2886,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2980,7 +2916,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3000,7 +2935,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3016,7 +2950,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getOptionsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3036,7 +2969,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             : options_;
       }
     }
-
     /**
      *
      *
@@ -3069,7 +3001,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfig.Builder,
             com.google.cloud.enterpriseknowledgegraph.v1.ReconConfig.ModelConfigOrBuilder>
         modelConfigBuilder_;
-
     /**
      *
      *
@@ -3085,7 +3016,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasModelConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -3108,7 +3038,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
         return modelConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3133,7 +3062,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3156,7 +3084,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3188,7 +3115,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3209,7 +3135,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3226,7 +3151,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getModelConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3248,7 +3172,6 @@ public final class ReconConfig extends com.google.protobuf.GeneratedMessageV3
             : modelConfig_;
       }
     }
-
     /**
      *
      *

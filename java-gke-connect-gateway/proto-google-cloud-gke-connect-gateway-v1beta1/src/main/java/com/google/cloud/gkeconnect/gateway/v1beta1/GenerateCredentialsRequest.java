@@ -33,7 +33,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.gkeconnect.gateway.v1beta1.GenerateCredentialsRequest)
     GenerateCredentialsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GenerateCredentialsRequest.newBuilder() to construct.
   private GenerateCredentialsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -114,7 +113,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
      * <code>OPERATING_SYSTEM_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATING_SYSTEM_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -216,7 +214,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -240,7 +237,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -267,7 +263,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
 
   public static final int FORCE_USE_AGENT_FIELD_NUMBER = 2;
   private boolean forceUseAgent_ = false;
-
   /**
    *
    *
@@ -293,7 +288,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
-
   /**
    *
    *
@@ -320,7 +314,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -352,7 +345,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kubernetesNamespace_ = "";
-
   /**
    *
    *
@@ -379,7 +371,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -409,7 +400,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
 
   public static final int OPERATING_SYSTEM_FIELD_NUMBER = 5;
   private int operatingSystem_ = 0;
-
   /**
    *
    *
@@ -427,7 +417,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
   public int getOperatingSystemValue() {
     return operatingSystem_;
   }
-
   /**
    *
    *
@@ -656,7 +645,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -905,7 +893,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -928,7 +915,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -951,7 +937,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -973,7 +958,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -991,7 +975,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +999,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     }
 
     private boolean forceUseAgent_;
-
     /**
      *
      *
@@ -1037,7 +1019,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     public boolean getForceUseAgent() {
       return forceUseAgent_;
     }
-
     /**
      *
      *
@@ -1062,7 +1043,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1087,7 +1067,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -1113,7 +1092,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1139,7 +1117,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1164,7 +1141,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1185,7 +1161,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1213,7 +1188,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object kubernetesNamespace_ = "";
-
     /**
      *
      *
@@ -1239,7 +1213,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1265,7 +1238,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1290,7 +1262,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1311,7 +1282,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1339,7 +1309,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     }
 
     private int operatingSystem_ = 0;
-
     /**
      *
      *
@@ -1357,7 +1326,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
     public int getOperatingSystemValue() {
       return operatingSystem_;
     }
-
     /**
      *
      *
@@ -1378,7 +1346,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1404,7 +1371,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1430,7 +1396,6 @@ public final class GenerateCredentialsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

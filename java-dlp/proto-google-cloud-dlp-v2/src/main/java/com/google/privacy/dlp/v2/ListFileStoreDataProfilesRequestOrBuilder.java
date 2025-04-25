@@ -40,7 +40,6 @@ public interface ListFileStoreDataProfilesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface ListFileStoreDataProfilesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *
@@ -131,7 +129,6 @@ public interface ListFileStoreDataProfilesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
-
   /**
    *
    *
@@ -208,7 +205,6 @@ public interface ListFileStoreDataProfilesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *

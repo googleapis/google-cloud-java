@@ -38,7 +38,6 @@ public interface CreateServiceRequestOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateServiceRequestOrBuilder
    * @return The service.
    */
   com.google.api.servicemanagement.v1.ManagedService getService();
-
   /**
    *
    *

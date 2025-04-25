@@ -34,7 +34,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse)
     ListCapacityCommitmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListCapacityCommitmentsResponse.newBuilder() to construct.
   private ListCapacityCommitmentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,7 +71,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
       capacityCommitments_;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       getCapacityCommitmentsList() {
     return capacityCommitments_;
   }
-
   /**
    *
    *
@@ -107,7 +104,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       getCapacityCommitmentsOrBuilderList() {
     return capacityCommitments_;
   }
-
   /**
    *
    *
@@ -123,7 +119,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
   public int getCapacityCommitmentsCount() {
     return capacityCommitments_.size();
   }
-
   /**
    *
    *
@@ -140,7 +135,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       int index) {
     return capacityCommitments_.get(index);
   }
-
   /**
    *
    *
@@ -162,7 +156,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -387,7 +379,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -681,7 +672,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return capacityCommitmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -700,7 +690,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return capacityCommitmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -720,7 +709,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return capacityCommitmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -746,7 +734,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +757,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -796,7 +782,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +807,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +829,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +875,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -915,7 +896,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -937,7 +917,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       }
       return this;
     }
-
     /**
      *
      *
@@ -953,7 +932,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         getCapacityCommitmentsBuilder(int index) {
       return getCapacityCommitmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -973,7 +951,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return capacityCommitmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -994,7 +971,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(capacityCommitments_);
       }
     }
-
     /**
      *
      *
@@ -1012,7 +988,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
           .addBuilder(
               com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1031,7 +1006,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
               index,
               com.google.cloud.bigquery.reservation.v1.CapacityCommitment.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1069,7 +1043,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1093,7 +1066,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1089,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1140,7 +1111,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1159,7 +1129,6 @@ public final class ListCapacityCommitmentsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

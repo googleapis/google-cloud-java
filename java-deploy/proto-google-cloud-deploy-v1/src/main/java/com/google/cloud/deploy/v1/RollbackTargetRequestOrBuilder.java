@@ -40,7 +40,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The rolloutId.
    */
   java.lang.String getRolloutId();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The releaseId.
    */
   java.lang.String getReleaseId();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The rolloutToRollBack.
    */
   java.lang.String getRolloutToRollBack();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return Whether the rollbackConfig field is set.
    */
   boolean hasRollbackConfig();
-
   /**
    *
    *
@@ -197,7 +191,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The rollbackConfig.
    */
   com.google.cloud.deploy.v1.RollbackTargetConfig getRollbackConfig();
-
   /**
    *
    *
@@ -240,7 +233,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return A list containing the overrideDeployPolicy.
    */
   java.util.List<java.lang.String> getOverrideDeployPolicyList();
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The count of overrideDeployPolicy.
    */
   int getOverrideDeployPolicyCount();
-
   /**
    *
    *
@@ -273,7 +264,6 @@ public interface RollbackTargetRequestOrBuilder
    * @return The overrideDeployPolicy at the given index.
    */
   java.lang.String getOverrideDeployPolicy(int index);
-
   /**
    *
    *

@@ -95,7 +95,6 @@ public enum AccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACCESS_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int ACCESS_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -106,7 +105,6 @@ public enum AccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GRANTED = 1;</code>
    */
   public static final int GRANTED_VALUE = 1;
-
   /**
    *
    *
@@ -117,7 +115,6 @@ public enum AccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NOT_GRANTED = 2;</code>
    */
   public static final int NOT_GRANTED_VALUE = 2;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public enum AccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UNKNOWN_CONDITIONAL = 3;</code>
    */
   public static final int UNKNOWN_CONDITIONAL_VALUE = 3;
-
   /**
    *
    *

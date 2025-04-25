@@ -37,7 +37,6 @@ public interface ResourceTerraformInfoOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ResourceTerraformInfoOrBuilder
    * @return The type.
    */
   java.lang.String getType();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ResourceTerraformInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *

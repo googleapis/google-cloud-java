@@ -33,7 +33,6 @@ public final class IntegerTypeOptions extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.IntegerTypeOptions)
     IntegerTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use IntegerTypeOptions.newBuilder() to construct.
   private IntegerTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class IntegerTypeOptions extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

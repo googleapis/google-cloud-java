@@ -34,7 +34,6 @@ public final class CreateIdentityAwareProxyClientRequest
     // @@protoc_insertion_point(message_implements:google.cloud.iap.v1.CreateIdentityAwareProxyClientRequest)
     CreateIdentityAwareProxyClientRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateIdentityAwareProxyClientRequest.newBuilder() to construct.
   private CreateIdentityAwareProxyClientRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class CreateIdentityAwareProxyClientRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateIdentityAwareProxyClientRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public final class CreateIdentityAwareProxyClientRequest
 
   public static final int IDENTITY_AWARE_PROXY_CLIENT_FIELD_NUMBER = 2;
   private com.google.cloud.iap.v1.IdentityAwareProxyClient identityAwareProxyClient_;
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class CreateIdentityAwareProxyClientRequest
   public boolean hasIdentityAwareProxyClient() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public final class CreateIdentityAwareProxyClientRequest
         ? com.google.cloud.iap.v1.IdentityAwareProxyClient.getDefaultInstance()
         : identityAwareProxyClient_;
   }
-
   /**
    *
    *
@@ -362,7 +356,6 @@ public final class CreateIdentityAwareProxyClientRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +576,6 @@ public final class CreateIdentityAwareProxyClientRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -609,7 +601,6 @@ public final class CreateIdentityAwareProxyClientRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class CreateIdentityAwareProxyClientRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class CreateIdentityAwareProxyClientRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -681,7 +670,6 @@ public final class CreateIdentityAwareProxyClientRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class CreateIdentityAwareProxyClientRequest
             com.google.cloud.iap.v1.IdentityAwareProxyClient.Builder,
             com.google.cloud.iap.v1.IdentityAwareProxyClientOrBuilder>
         identityAwareProxyClientBuilder_;
-
     /**
      *
      *
@@ -731,7 +718,6 @@ public final class CreateIdentityAwareProxyClientRequest
     public boolean hasIdentityAwareProxyClient() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class CreateIdentityAwareProxyClientRequest
         return identityAwareProxyClientBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -780,7 +765,6 @@ public final class CreateIdentityAwareProxyClientRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class CreateIdentityAwareProxyClientRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class CreateIdentityAwareProxyClientRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +839,6 @@ public final class CreateIdentityAwareProxyClientRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class CreateIdentityAwareProxyClientRequest
       onChanged();
       return getIdentityAwareProxyClientFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class CreateIdentityAwareProxyClientRequest
             : identityAwareProxyClient_;
       }
     }
-
     /**
      *
      *

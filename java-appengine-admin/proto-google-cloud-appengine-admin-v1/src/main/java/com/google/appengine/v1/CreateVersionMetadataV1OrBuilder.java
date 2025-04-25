@@ -37,7 +37,6 @@ public interface CreateVersionMetadataV1OrBuilder
    * @return The cloudBuildId.
    */
   java.lang.String getCloudBuildId();
-
   /**
    *
    *

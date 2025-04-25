@@ -33,7 +33,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.NetworkConfig)
     NetworkConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NetworkConfig.newBuilder() to construct.
   private NetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,7 +124,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -136,7 +134,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>CLIENT = 1;</code>
      */
     public static final int CLIENT_VALUE = 1;
-
     /**
      *
      *
@@ -306,7 +303,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>BANDWIDTH_UNSPECIFIED = 0;</code>
      */
     public static final int BANDWIDTH_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -317,7 +313,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>BW_1_GBPS = 1;</code>
      */
     public static final int BW_1_GBPS_VALUE = 1;
-
     /**
      *
      *
@@ -328,7 +323,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>BW_2_GBPS = 2;</code>
      */
     public static final int BW_2_GBPS_VALUE = 2;
-
     /**
      *
      *
@@ -339,7 +333,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>BW_5_GBPS = 3;</code>
      */
     public static final int BW_5_GBPS_VALUE = 3;
-
     /**
      *
      *
@@ -513,7 +506,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_CIDR_UNSPECIFIED = 0;</code>
      */
     public static final int SERVICE_CIDR_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -524,7 +516,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
-
     /**
      *
      *
@@ -535,7 +526,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH_26 = 2;</code>
      */
     public static final int HIGH_26_VALUE = 2;
-
     /**
      *
      *
@@ -546,7 +536,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH_27 = 3;</code>
      */
     public static final int HIGH_27_VALUE = 3;
-
     /**
      *
      *
@@ -664,7 +653,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The id.
      */
     java.lang.String getId();
-
     /**
      *
      *
@@ -690,7 +678,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return The pairingKey.
      */
     java.lang.String getPairingKey();
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getPairingKeyBytes();
   }
-
   /**
    *
    *
@@ -719,7 +705,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachment)
       IntakeVlanAttachmentOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IntakeVlanAttachment.newBuilder() to construct.
     private IntakeVlanAttachment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -756,7 +741,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -809,7 +792,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pairingKey_ = "";
-
     /**
      *
      *
@@ -833,7 +815,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1035,7 +1016,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1249,7 +1229,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object id_ = "";
-
       /**
        *
        *
@@ -1272,7 +1251,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1295,7 +1273,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1317,7 +1294,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1335,7 +1311,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1360,7 +1335,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object pairingKey_ = "";
-
       /**
        *
        *
@@ -1383,7 +1357,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1406,7 +1379,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1428,7 +1400,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1446,7 +1417,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1542,7 +1512,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -1566,7 +1535,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1595,7 +1563,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
-
   /**
    *
    *
@@ -1620,7 +1587,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1648,7 +1614,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 3;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1664,7 +1629,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1687,7 +1651,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BANDWIDTH_FIELD_NUMBER = 4;
   private int bandwidth_ = 0;
-
   /**
    *
    *
@@ -1703,7 +1666,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   public int getBandwidthValue() {
     return bandwidth_;
   }
-
   /**
    *
    *
@@ -1729,7 +1691,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachment>
       vlanAttachments_;
-
   /**
    *
    *
@@ -1747,7 +1708,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       getVlanAttachmentsList() {
     return vlanAttachments_;
   }
-
   /**
    *
    *
@@ -1767,7 +1727,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       getVlanAttachmentsOrBuilderList() {
     return vlanAttachments_;
   }
-
   /**
    *
    *
@@ -1784,7 +1743,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   public int getVlanAttachmentsCount() {
     return vlanAttachments_.size();
   }
-
   /**
    *
    *
@@ -1802,7 +1760,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       getVlanAttachments(int index) {
     return vlanAttachments_.get(index);
   }
-
   /**
    *
    *
@@ -1825,7 +1782,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cidr_ = "";
-
   /**
    *
    *
@@ -1849,7 +1805,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1876,7 +1831,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVICE_CIDR_FIELD_NUMBER = 7;
   private int serviceCidr_ = 0;
-
   /**
    *
    *
@@ -1892,7 +1846,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
   public int getServiceCidrValue() {
     return serviceCidr_;
   }
-
   /**
    *
    *
@@ -1917,7 +1870,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userNote_ = "";
-
   /**
    *
    *
@@ -1942,7 +1894,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -1972,7 +1923,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object gcpService_ = "";
-
   /**
    *
    *
@@ -1997,7 +1947,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -2025,7 +1974,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VLAN_SAME_PROJECT_FIELD_NUMBER = 10;
   private boolean vlanSameProject_ = false;
-
   /**
    *
    *
@@ -2044,7 +1992,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int JUMBO_FRAMES_ENABLED_FIELD_NUMBER = 11;
   private boolean jumboFramesEnabled_ = false;
-
   /**
    *
    *
@@ -2322,7 +2269,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2695,7 +2641,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2718,7 +2663,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2741,7 +2685,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2763,7 +2706,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2781,7 +2723,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2806,7 +2747,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object id_ = "";
-
     /**
      *
      *
@@ -2830,7 +2770,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2854,7 +2793,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2877,7 +2815,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2896,7 +2833,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2922,7 +2858,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -2938,7 +2873,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2957,7 +2891,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2977,7 +2910,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.baremetalsolution.v2.NetworkConfig.Type.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2999,7 +2931,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3019,7 +2950,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bandwidth_ = 0;
-
     /**
      *
      *
@@ -3035,7 +2965,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public int getBandwidthValue() {
       return bandwidth_;
     }
-
     /**
      *
      *
@@ -3054,7 +2983,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3074,7 +3002,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.baremetalsolution.v2.NetworkConfig.Bandwidth.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3097,7 +3024,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3155,7 +3081,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3175,7 +3100,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3196,7 +3120,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3223,7 +3146,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3249,7 +3171,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3276,7 +3197,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3303,7 +3223,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3328,7 +3247,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3354,7 +3272,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3380,7 +3297,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3403,7 +3319,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3426,7 +3341,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3443,7 +3357,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         getVlanAttachmentsBuilder(int index) {
       return getVlanAttachmentsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3464,7 +3377,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return vlanAttachmentsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3487,7 +3399,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(vlanAttachments_);
       }
     }
-
     /**
      *
      *
@@ -3507,7 +3418,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachment
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3528,7 +3438,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.baremetalsolution.v2.NetworkConfig.IntakeVlanAttachment
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3568,7 +3477,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object cidr_ = "";
-
     /**
      *
      *
@@ -3591,7 +3499,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3614,7 +3521,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3636,7 +3542,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3654,7 +3559,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3679,7 +3583,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int serviceCidr_ = 0;
-
     /**
      *
      *
@@ -3695,7 +3598,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public int getServiceCidrValue() {
       return serviceCidr_;
     }
-
     /**
      *
      *
@@ -3714,7 +3616,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3734,7 +3635,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.baremetalsolution.v2.NetworkConfig.ServiceCidr.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -3757,7 +3657,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3777,7 +3676,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object userNote_ = "";
-
     /**
      *
      *
@@ -3801,7 +3699,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3825,7 +3722,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3848,7 +3744,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3867,7 +3762,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3893,7 +3787,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object gcpService_ = "";
-
     /**
      *
      *
@@ -3917,7 +3810,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3941,7 +3833,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3964,7 +3855,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3983,7 +3873,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4009,7 +3898,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean vlanSameProject_;
-
     /**
      *
      *
@@ -4025,7 +3913,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getVlanSameProject() {
       return vlanSameProject_;
     }
-
     /**
      *
      *
@@ -4045,7 +3932,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4065,7 +3951,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean jumboFramesEnabled_;
-
     /**
      *
      *
@@ -4081,7 +3966,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getJumboFramesEnabled() {
       return jumboFramesEnabled_;
     }
-
     /**
      *
      *
@@ -4101,7 +3985,6 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

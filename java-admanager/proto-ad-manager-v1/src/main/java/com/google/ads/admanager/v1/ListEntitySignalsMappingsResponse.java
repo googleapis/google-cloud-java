@@ -34,7 +34,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.ListEntitySignalsMappingsResponse)
     ListEntitySignalsMappingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEntitySignalsMappingsResponse.newBuilder() to construct.
   private ListEntitySignalsMappingsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.ads.admanager.v1.EntitySignalsMapping> entitySignalsMappings_;
-
   /**
    *
    *
@@ -87,7 +85,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       getEntitySignalsMappingsList() {
     return entitySignalsMappings_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       getEntitySignalsMappingsOrBuilderList() {
     return entitySignalsMappings_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
   public int getEntitySignalsMappingsCount() {
     return entitySignalsMappings_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
   public com.google.ads.admanager.v1.EntitySignalsMapping getEntitySignalsMappings(int index) {
     return entitySignalsMappings_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -207,7 +199,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -416,7 +407,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -715,7 +705,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return entitySignalsMappingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -733,7 +722,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return entitySignalsMappingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -751,7 +739,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return entitySignalsMappingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -776,7 +763,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -798,7 +784,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +832,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +853,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +874,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -914,7 +895,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -935,7 +915,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +949,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         int index) {
       return getEntitySignalsMappingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -990,7 +967,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return entitySignalsMappingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1009,7 +985,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return java.util.Collections.unmodifiableList(entitySignalsMappings_);
       }
     }
-
     /**
      *
      *
@@ -1025,7 +1000,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       return getEntitySignalsMappingsFieldBuilder()
           .addBuilder(com.google.ads.admanager.v1.EntitySignalsMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1041,7 +1015,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       return getEntitySignalsMappingsFieldBuilder()
           .addBuilder(index, com.google.ads.admanager.v1.EntitySignalsMapping.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1078,7 +1051,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1102,7 +1074,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1126,7 +1097,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1149,7 +1119,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1168,7 +1137,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1194,7 +1162,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1220,7 +1187,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1250,7 +1216,6 @@ public final class ListEntitySignalsMappingsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

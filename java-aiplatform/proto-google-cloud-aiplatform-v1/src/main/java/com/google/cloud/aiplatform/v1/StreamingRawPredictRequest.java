@@ -45,7 +45,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StreamingRawPredictRequest)
     StreamingRawPredictRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StreamingRawPredictRequest.newBuilder() to construct.
   private StreamingRawPredictRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object endpoint_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object methodName_ = "";
-
   /**
    *
    *
@@ -173,7 +169,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -206,7 +201,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
 
   public static final int INPUT_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString input_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -401,7 +395,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -626,7 +619,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -653,7 +645,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -680,7 +671,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -706,7 +696,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -728,7 +717,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +745,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object methodName_ = "";
-
     /**
      *
      *
@@ -786,7 +773,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -843,7 +828,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -867,7 +851,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -898,7 +881,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
     }
 
     private com.google.protobuf.ByteString input_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -914,7 +896,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getInput() {
       return input_;
     }
-
     /**
      *
      *
@@ -936,7 +917,6 @@ public final class StreamingRawPredictRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

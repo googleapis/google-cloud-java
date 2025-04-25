@@ -38,7 +38,6 @@ public interface CsvDestinationOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CsvDestinationOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getGcsDestination();
-
   /**
    *
    *

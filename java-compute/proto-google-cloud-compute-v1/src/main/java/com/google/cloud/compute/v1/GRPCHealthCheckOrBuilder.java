@@ -36,7 +36,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return Whether the grpcServiceName field is set.
    */
   boolean hasGrpcServiceName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return The grpcServiceName.
    */
   java.lang.String getGrpcServiceName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return Whether the port field is set.
    */
   boolean hasPort();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return Whether the portName field is set.
    */
   boolean hasPortName();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return The portName.
    */
   java.lang.String getPortName();
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return Whether the portSpecification field is set.
    */
   boolean hasPortSpecification();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface GRPCHealthCheckOrBuilder
    * @return The portSpecification.
    */
   java.lang.String getPortSpecification();
-
   /**
    *
    *

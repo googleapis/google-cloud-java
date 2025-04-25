@@ -35,7 +35,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse)
     BatchGetEffectiveIamPoliciesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BatchGetEffectiveIamPoliciesResponse.newBuilder() to construct.
   private BatchGetEffectiveIamPoliciesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -90,7 +89,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * @return The fullResourceName.
      */
     java.lang.String getFullResourceName();
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                 .PolicyInfo>
         getPoliciesList();
-
     /**
      *
      *
@@ -177,7 +174,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
      */
     com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo
         getPolicies(int index);
-
     /**
      *
      *
@@ -209,7 +205,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
      * </code>
      */
     int getPoliciesCount();
-
     /**
      *
      *
@@ -245,7 +240,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
                 com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                     .PolicyInfoOrBuilder>
         getPoliciesOrBuilderList();
-
     /**
      *
      *
@@ -280,7 +274,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             .PolicyInfoOrBuilder
         getPoliciesOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -296,7 +289,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy)
       EffectiveIamPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use EffectiveIamPolicy.newBuilder() to construct.
     private EffectiveIamPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -349,7 +341,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * @return The attachedResource.
        */
       java.lang.String getAttachedResource();
-
       /**
        *
        *
@@ -378,7 +369,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * @return Whether the policy field is set.
        */
       boolean hasPolicy();
-
       /**
        *
        *
@@ -392,7 +382,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
        * @return The policy.
        */
       com.google.iam.v1.Policy getPolicy();
-
       /**
        *
        *
@@ -405,7 +394,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
        */
       com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder();
     }
-
     /**
      *
      *
@@ -421,7 +409,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy.PolicyInfo)
         PolicyInfoOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use PolicyInfo.newBuilder() to construct.
       private PolicyInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -459,7 +446,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object attachedResource_ = "";
-
       /**
        *
        *
@@ -485,7 +471,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return s;
         }
       }
-
       /**
        *
        *
@@ -514,7 +499,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
 
       public static final int POLICY_FIELD_NUMBER = 2;
       private com.google.iam.v1.Policy policy_;
-
       /**
        *
        *
@@ -531,7 +515,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       public boolean hasPolicy() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -548,7 +531,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       public com.google.iam.v1.Policy getPolicy() {
         return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
       }
-
       /**
        *
        *
@@ -767,7 +749,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -1014,7 +995,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         private int bitField0_;
 
         private java.lang.Object attachedResource_ = "";
-
         /**
          *
          *
@@ -1039,7 +1019,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1064,7 +1043,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1088,7 +1066,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1108,7 +1085,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1140,7 +1116,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
                 com.google.iam.v1.Policy.Builder,
                 com.google.iam.v1.PolicyOrBuilder>
             policyBuilder_;
-
         /**
          *
          *
@@ -1156,7 +1131,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         public boolean hasPolicy() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -1176,7 +1150,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             return policyBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -1200,7 +1173,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1221,7 +1193,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1250,7 +1221,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           }
           return this;
         }
-
         /**
          *
          *
@@ -1271,7 +1241,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1287,7 +1256,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           onChanged();
           return getPolicyFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1305,7 +1273,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
           }
         }
-
         /**
          *
          *
@@ -1409,7 +1376,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fullResourceName_ = "";
-
     /**
      *
      *
@@ -1439,7 +1405,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         return s;
       }
     }
-
     /**
      *
      *
@@ -1477,7 +1442,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
             com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                 .PolicyInfo>
         policies_;
-
     /**
      *
      *
@@ -1515,7 +1479,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         getPoliciesList() {
       return policies_;
     }
-
     /**
      *
      *
@@ -1554,7 +1517,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         getPoliciesOrBuilderList() {
       return policies_;
     }
-
     /**
      *
      *
@@ -1589,7 +1551,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
     public int getPoliciesCount() {
       return policies_.size();
     }
-
     /**
      *
      *
@@ -1626,7 +1587,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         getPolicies(int index) {
       return policies_.get(index);
     }
-
     /**
      *
      *
@@ -1845,7 +1805,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2117,7 +2076,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       private int bitField0_;
 
       private java.lang.Object fullResourceName_ = "";
-
       /**
        *
        *
@@ -2146,7 +2104,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2175,7 +2132,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2203,7 +2159,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2227,7 +2182,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2321,7 +2275,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return policiesBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2359,7 +2312,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return policiesBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2399,7 +2351,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return policiesBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2447,7 +2398,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2492,7 +2442,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2539,7 +2488,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2587,7 +2535,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2631,7 +2578,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2676,7 +2622,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2722,7 +2667,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2763,7 +2707,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2804,7 +2747,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         }
         return this;
       }
-
       /**
        *
        *
@@ -2840,7 +2782,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           getPoliciesBuilder(int index) {
         return getPoliciesFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2880,7 +2821,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return policiesBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2922,7 +2862,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
           return java.util.Collections.unmodifiableList(policies_);
         }
       }
-
       /**
        *
        *
@@ -2961,7 +2900,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
                 com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                     .PolicyInfo.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3001,7 +2939,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
                 com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                     .PolicyInfo.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -3137,7 +3074,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
   private java.util.List<
           com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy>
       policyResults_;
-
   /**
    *
    *
@@ -3160,7 +3096,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       getPolicyResultsList() {
     return policyResults_;
   }
-
   /**
    *
    *
@@ -3185,7 +3120,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       getPolicyResultsOrBuilderList() {
     return policyResults_;
   }
-
   /**
    *
    *
@@ -3206,7 +3140,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
   public int getPolicyResultsCount() {
     return policyResults_.size();
   }
-
   /**
    *
    *
@@ -3228,7 +3161,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       getPolicyResults(int index) {
     return policyResults_.get(index);
   }
-
   /**
    *
    *
@@ -3413,7 +3345,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3697,7 +3628,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         return policyResultsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3721,7 +3651,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         return policyResultsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3746,7 +3675,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         return policyResultsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3778,7 +3706,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3808,7 +3735,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3839,7 +3765,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3871,7 +3796,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3900,7 +3824,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3930,7 +3853,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3962,7 +3884,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -3989,7 +3910,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -4016,7 +3936,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -4037,7 +3956,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         getPolicyResultsBuilder(int index) {
       return getPolicyResultsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -4063,7 +3981,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         return policyResultsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -4091,7 +4008,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
         return java.util.Collections.unmodifiableList(policyResults_);
       }
     }
-
     /**
      *
      *
@@ -4115,7 +4031,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
               com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -4140,7 +4055,6 @@ public final class BatchGetEffectiveIamPoliciesResponse
               com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse.EffectiveIamPolicy
                   .getDefaultInstance());
     }
-
     /**
      *
      *

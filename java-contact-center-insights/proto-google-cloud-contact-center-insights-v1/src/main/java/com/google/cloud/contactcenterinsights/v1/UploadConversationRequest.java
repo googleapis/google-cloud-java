@@ -33,7 +33,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.UploadConversationRequest)
     UploadConversationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UploadConversationRequest.newBuilder() to construct.
   private UploadConversationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
 
   public static final int CONVERSATION_FIELD_NUMBER = 2;
   private com.google.cloud.contactcenterinsights.v1.Conversation conversation_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
   public boolean hasConversation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         ? com.google.cloud.contactcenterinsights.v1.Conversation.getDefaultInstance()
         : conversation_;
   }
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object conversationId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -248,7 +240,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
 
   public static final int REDACTION_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.contactcenterinsights.v1.RedactionConfig redactionConfig_;
-
   /**
    *
    *
@@ -267,7 +258,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
   public boolean hasRedactionConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -288,7 +278,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         ? com.google.cloud.contactcenterinsights.v1.RedactionConfig.getDefaultInstance()
         : redactionConfig_;
   }
-
   /**
    *
    *
@@ -311,7 +300,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
 
   public static final int SPEECH_CONFIG_FIELD_NUMBER = 11;
   private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
-
   /**
    *
    *
@@ -330,7 +318,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
   public boolean hasSpeechConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -351,7 +338,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
         : speechConfig_;
   }
-
   /**
    *
    *
@@ -584,7 +570,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -861,7 +846,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -886,7 +870,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -911,7 +894,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -935,7 +917,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +936,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
             com.google.cloud.contactcenterinsights.v1.Conversation.Builder,
             com.google.cloud.contactcenterinsights.v1.ConversationOrBuilder>
         conversationBuilder_;
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     public boolean hasConversation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1027,7 +1005,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return conversationBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1029,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1075,7 +1051,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1106,7 +1081,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1128,7 +1102,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return getConversationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1167,7 +1139,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
             : conversation_;
       }
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object conversationId_ = "";
-
     /**
      *
      *
@@ -1225,7 +1195,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1253,7 +1222,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1280,7 +1248,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1303,7 +1270,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1338,7 +1304,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
             com.google.cloud.contactcenterinsights.v1.RedactionConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder>
         redactionConfigBuilder_;
-
     /**
      *
      *
@@ -1356,7 +1321,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     public boolean hasRedactionConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1380,7 +1344,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return redactionConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1407,7 +1370,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1431,7 +1393,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1464,7 +1425,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1487,7 +1447,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1506,7 +1465,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return getRedactionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1529,7 +1487,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
             : redactionConfig_;
       }
     }
-
     /**
      *
      *
@@ -1565,7 +1522,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
             com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
             com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
         speechConfigBuilder_;
-
     /**
      *
      *
@@ -1583,7 +1539,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
     public boolean hasSpeechConfig() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1607,7 +1562,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
         return speechConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1633,7 +1587,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1657,7 +1610,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1689,7 +1641,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1712,7 +1663,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1730,7 +1680,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
       onChanged();
       return getSpeechConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1753,7 +1702,6 @@ public final class UploadConversationRequest extends com.google.protobuf.Generat
             : speechConfig_;
       }
     }
-
     /**
      *
      *

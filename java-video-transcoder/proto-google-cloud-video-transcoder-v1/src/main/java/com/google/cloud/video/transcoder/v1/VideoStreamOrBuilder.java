@@ -36,7 +36,6 @@ public interface VideoStreamOrBuilder
    * @return Whether the h264 field is set.
    */
   boolean hasH264();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface VideoStreamOrBuilder
    * @return The h264.
    */
   com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings getH264();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface VideoStreamOrBuilder
    * @return Whether the h265 field is set.
    */
   boolean hasH265();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface VideoStreamOrBuilder
    * @return The h265.
    */
   com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings getH265();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface VideoStreamOrBuilder
    * @return Whether the vp9 field is set.
    */
   boolean hasVp9();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface VideoStreamOrBuilder
    * @return The vp9.
    */
   com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings getVp9();
-
   /**
    *
    *

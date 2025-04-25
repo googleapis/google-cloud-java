@@ -33,7 +33,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.ComputeInsightsRequest)
     ComputeInsightsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ComputeInsightsRequest.newBuilder() to construct.
   private ComputeInsightsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
               return result == null ? com.google.maps.areainsights.v1.Insight.UNRECOGNIZED : result;
             }
           };
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     return new com.google.protobuf.Internal.ListAdapter<
         java.lang.Integer, com.google.maps.areainsights.v1.Insight>(insights_, insights_converter_);
   }
-
   /**
    *
    *
@@ -120,7 +117,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
   public int getInsightsCount() {
     return insights_.size();
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
   public com.google.maps.areainsights.v1.Insight getInsights(int index) {
     return insights_converter_.convert(insights_.get(index));
   }
-
   /**
    *
    *
@@ -159,7 +154,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
   public java.util.List<java.lang.Integer> getInsightsValueList() {
     return insights_;
   }
-
   /**
    *
    *
@@ -184,7 +178,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
 
   public static final int FILTER_FIELD_NUMBER = 5;
   private com.google.maps.areainsights.v1.Filter filter_;
-
   /**
    *
    *
@@ -201,7 +194,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
   public boolean hasFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -218,7 +210,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
   public com.google.maps.areainsights.v1.Filter getFilter() {
     return filter_ == null ? com.google.maps.areainsights.v1.Filter.getDefaultInstance() : filter_;
   }
-
   /**
    *
    *
@@ -424,7 +415,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -671,7 +661,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000001;
       }
     }
-
     /**
      *
      *
@@ -691,7 +680,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
           java.lang.Integer, com.google.maps.areainsights.v1.Insight>(
           insights_, insights_converter_);
     }
-
     /**
      *
      *
@@ -709,7 +697,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     public int getInsightsCount() {
       return insights_.size();
     }
-
     /**
      *
      *
@@ -728,7 +715,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     public com.google.maps.areainsights.v1.Insight getInsights(int index) {
       return insights_converter_.convert(insights_.get(index));
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -779,7 +764,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +788,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -825,7 +808,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +825,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     public java.util.List<java.lang.Integer> getInsightsValueList() {
       return java.util.Collections.unmodifiableList(insights_);
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     public int getInsightsValue(int index) {
       return insights_.get(index);
     }
-
     /**
      *
      *
@@ -885,7 +865,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -938,7 +916,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
             com.google.maps.areainsights.v1.Filter.Builder,
             com.google.maps.areainsights.v1.FilterOrBuilder>
         filterBuilder_;
-
     /**
      *
      *
@@ -955,7 +932,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
     public boolean hasFilter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -978,7 +954,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
         return filterBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1003,7 +978,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +999,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1055,7 +1028,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1077,7 +1049,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1094,7 +1065,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1115,7 +1085,6 @@ public final class ComputeInsightsRequest extends com.google.protobuf.GeneratedM
             : filter_;
       }
     }
-
     /**
      *
      *

@@ -37,7 +37,6 @@ public interface ValidateEventThreatDetectionCustomModuleResponseOrBuilder
    * @return Whether the errors field is set.
    */
   boolean hasErrors();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface ValidateEventThreatDetectionCustomModuleResponseOrBuilder
    * @return The errors.
    */
   com.google.cloud.securitycenter.v1.CustomModuleValidationErrors getErrors();
-
   /**
    *
    *

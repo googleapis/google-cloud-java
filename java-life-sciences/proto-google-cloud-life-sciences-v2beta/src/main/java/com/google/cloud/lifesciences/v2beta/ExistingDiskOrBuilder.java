@@ -45,7 +45,6 @@ public interface ExistingDiskOrBuilder
    * @return The disk.
    */
   java.lang.String getDisk();
-
   /**
    *
    *

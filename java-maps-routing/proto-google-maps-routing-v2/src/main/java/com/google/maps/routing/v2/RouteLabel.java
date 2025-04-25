@@ -97,7 +97,6 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUTE_LABEL_UNSPECIFIED = 0;</code>
    */
   public static final int ROUTE_LABEL_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -108,7 +107,6 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEFAULT_ROUTE = 1;</code>
    */
   public static final int DEFAULT_ROUTE_VALUE = 1;
-
   /**
    *
    *
@@ -122,7 +120,6 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEFAULT_ROUTE_ALTERNATE = 2;</code>
    */
   public static final int DEFAULT_ROUTE_ALTERNATE_VALUE = 2;
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FUEL_EFFICIENT = 3;</code>
    */
   public static final int FUEL_EFFICIENT_VALUE = 3;
-
   /**
    *
    *

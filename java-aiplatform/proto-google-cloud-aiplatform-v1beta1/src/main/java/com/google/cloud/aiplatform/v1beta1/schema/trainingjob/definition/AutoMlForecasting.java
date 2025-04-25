@@ -35,7 +35,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecasting)
     AutoMlForecastingOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutoMlForecasting.newBuilder() to construct.
   private AutoMlForecasting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
   public static final int INPUTS_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
       inputs_;
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance()
         : inputs_;
   }
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
   private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingMetadata
       metadata_;
-
   /**
    *
    *
@@ -154,7 +149,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -176,7 +170,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
             .AutoMlForecastingMetadata.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -386,7 +379,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -635,7 +627,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingInputsOrBuilder>
         inputsBuilder_;
-
     /**
      *
      *
@@ -652,7 +643,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -677,7 +667,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
         return inputsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +750,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +771,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +789,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
             : inputs_;
       }
     }
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingMetadataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -917,7 +898,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -969,7 +948,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1025,7 +1002,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1020,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1068,7 +1043,6 @@ public final class AutoMlForecasting extends com.google.protobuf.GeneratedMessag
             : metadata_;
       }
     }
-
     /**
      *
      *

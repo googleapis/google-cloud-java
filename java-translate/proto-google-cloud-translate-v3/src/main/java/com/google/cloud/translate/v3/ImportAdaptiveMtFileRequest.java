@@ -33,7 +33,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.ImportAdaptiveMtFileRequest)
     ImportAdaptiveMtFileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportAdaptiveMtFileRequest.newBuilder() to construct.
   private ImportAdaptiveMtFileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     private SourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,7 +116,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -145,7 +142,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -174,7 +170,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
   }
 
   public static final int FILE_INPUT_SOURCE_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -190,7 +185,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
   public boolean hasFileInputSource() {
     return sourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -209,7 +203,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     }
     return com.google.cloud.translate.v3.FileInputSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -228,7 +221,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
   }
 
   public static final int GCS_INPUT_SOURCE_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -244,7 +236,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
   public boolean hasGcsInputSource() {
     return sourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -263,7 +254,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     }
     return com.google.cloud.translate.v3.GcsInputSource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -480,7 +470,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -728,7 +717,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -754,7 +742,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +811,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -858,7 +842,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
             com.google.cloud.translate.v3.FileInputSource.Builder,
             com.google.cloud.translate.v3.FileInputSourceOrBuilder>
         fileInputSourceBuilder_;
-
     /**
      *
      *
@@ -874,7 +857,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     public boolean hasFileInputSource() {
       return sourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -900,7 +882,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
         return com.google.cloud.translate.v3.FileInputSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -923,7 +904,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +924,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +956,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +981,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1016,7 +993,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     public com.google.cloud.translate.v3.FileInputSource.Builder getFileInputSourceBuilder() {
       return getFileInputSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1037,7 +1013,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
         return com.google.cloud.translate.v3.FileInputSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1051,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
             com.google.cloud.translate.v3.GcsInputSource.Builder,
             com.google.cloud.translate.v3.GcsInputSourceOrBuilder>
         gcsInputSourceBuilder_;
-
     /**
      *
      *
@@ -1092,7 +1066,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     public boolean hasGcsInputSource() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -1118,7 +1091,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
         return com.google.cloud.translate.v3.GcsInputSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1113,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1162,7 +1133,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1195,7 +1165,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -1221,7 +1190,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -1234,7 +1202,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
     public com.google.cloud.translate.v3.GcsInputSource.Builder getGcsInputSourceBuilder() {
       return getGcsInputSourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1255,7 +1222,6 @@ public final class ImportAdaptiveMtFileRequest extends com.google.protobuf.Gener
         return com.google.cloud.translate.v3.GcsInputSource.getDefaultInstance();
       }
     }
-
     /**
      *
      *

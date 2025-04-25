@@ -36,7 +36,6 @@ public interface LoginProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -60,7 +59,6 @@ public interface LoginProfileOrBuilder
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
   java.util.List<com.google.cloud.oslogin.common.OsLoginProto.PosixAccount> getPosixAccountsList();
-
   /**
    *
    *
@@ -71,7 +69,6 @@ public interface LoginProfileOrBuilder
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
   com.google.cloud.oslogin.common.OsLoginProto.PosixAccount getPosixAccounts(int index);
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface LoginProfileOrBuilder
    * <code>repeated .google.cloud.oslogin.common.PosixAccount posix_accounts = 2;</code>
    */
   int getPosixAccountsCount();
-
   /**
    *
    *
@@ -94,7 +90,6 @@ public interface LoginProfileOrBuilder
    */
   java.util.List<? extends com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder>
       getPosixAccountsOrBuilderList();
-
   /**
    *
    *
@@ -117,7 +112,6 @@ public interface LoginProfileOrBuilder
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
   int getSshPublicKeysCount();
-
   /**
    *
    *
@@ -128,12 +122,10 @@ public interface LoginProfileOrBuilder
    * <code>map&lt;string, .google.cloud.oslogin.common.SshPublicKey&gt; ssh_public_keys = 3;</code>
    */
   boolean containsSshPublicKeys(java.lang.String key);
-
   /** Use {@link #getSshPublicKeysMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getSshPublicKeys();
-
   /**
    *
    *
@@ -145,7 +137,6 @@ public interface LoginProfileOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
       getSshPublicKeysMap();
-
   /**
    *
    *
@@ -160,7 +151,6 @@ public interface LoginProfileOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey defaultValue);
-
   /**
    *
    *

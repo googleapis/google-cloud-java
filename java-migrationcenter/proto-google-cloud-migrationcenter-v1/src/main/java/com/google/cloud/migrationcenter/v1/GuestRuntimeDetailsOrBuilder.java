@@ -36,7 +36,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return Whether the services field is set.
    */
   boolean hasServices();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The services.
    */
   com.google.cloud.migrationcenter.v1.RunningServiceList getServices();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return Whether the processes field is set.
    */
   boolean hasProcesses();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The processes.
    */
   com.google.cloud.migrationcenter.v1.RunningProcessList getProcesses();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The network.
    */
   com.google.cloud.migrationcenter.v1.RuntimeNetworkInfo getNetwork();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return Whether the lastBootTime field is set.
    */
   boolean hasLastBootTime();
-
   /**
    *
    *
@@ -160,7 +153,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The lastBootTime.
    */
   com.google.protobuf.Timestamp getLastBootTime();
-
   /**
    *
    *
@@ -184,7 +176,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The domain.
    */
   java.lang.String getDomain();
-
   /**
    *
    *
@@ -210,7 +201,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The machineName.
    */
   java.lang.String getMachineName();
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return Whether the installedApps field is set.
    */
   boolean hasInstalledApps();
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The installedApps.
    */
   com.google.cloud.migrationcenter.v1.GuestInstalledApplicationList getInstalledApps();
-
   /**
    *
    *
@@ -274,7 +262,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return Whether the openFileList field is set.
    */
   boolean hasOpenFileList();
-
   /**
    *
    *
@@ -287,7 +274,6 @@ public interface GuestRuntimeDetailsOrBuilder
    * @return The openFileList.
    */
   com.google.cloud.migrationcenter.v1.OpenFileList getOpenFileList();
-
   /**
    *
    *

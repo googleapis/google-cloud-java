@@ -38,7 +38,6 @@ public interface CreatePostureRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface CreatePostureRequestOrBuilder
    * @return The postureId.
    */
   java.lang.String getPostureId();
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public interface CreatePostureRequestOrBuilder
    * @return Whether the posture field is set.
    */
   boolean hasPosture();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface CreatePostureRequestOrBuilder
    * @return The posture.
    */
   com.google.cloud.securityposture.v1.Posture getPosture();
-
   /**
    *
    *

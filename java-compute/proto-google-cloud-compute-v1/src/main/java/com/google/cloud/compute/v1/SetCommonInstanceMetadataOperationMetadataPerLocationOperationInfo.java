@@ -34,7 +34,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo)
     SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo.newBuilder() to
   // construct.
   private SetCommonInstanceMetadataOperationMetadataPerLocationOperationInfo(
@@ -155,7 +154,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-
     /**
      *
      *
@@ -166,7 +164,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
      * <code>ABANDONED = 81797556;</code>
      */
     public static final int ABANDONED_VALUE = 81797556;
-
     /**
      *
      *
@@ -177,7 +174,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
      * <code>DONE = 2104194;</code>
      */
     public static final int DONE_VALUE = 2104194;
-
     /**
      *
      *
@@ -188,7 +184,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
      * <code>FAILED = 455706685;</code>
      */
     public static final int FAILED_VALUE = 455706685;
-
     /**
      *
      *
@@ -199,7 +194,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
      * <code>PROPAGATED = 507550299;</code>
      */
     public static final int PROPAGATED_VALUE = 507550299;
-
     /**
      *
      *
@@ -210,7 +204,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
      * <code>PROPAGATING = 164807046;</code>
      */
     public static final int PROPAGATING_VALUE = 164807046;
-
     /** <code>UNSPECIFIED = 526786327;</code> */
     public static final int UNSPECIFIED_VALUE = 526786327;
 
@@ -311,7 +304,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 96784904;
   private com.google.cloud.compute.v1.Status error_;
-
   /**
    *
    *
@@ -327,7 +319,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -343,7 +334,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
   public com.google.cloud.compute.v1.Status getError() {
     return error_ == null ? com.google.cloud.compute.v1.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -362,7 +352,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
-
   /**
    *
    *
@@ -379,7 +368,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
   public boolean hasState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -404,7 +392,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       return s;
     }
   }
-
   /**
    *
    *
@@ -634,7 +621,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -883,7 +869,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
             com.google.cloud.compute.v1.Status.Builder,
             com.google.cloud.compute.v1.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -898,7 +883,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -917,7 +901,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -940,7 +923,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -960,7 +942,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +969,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       }
       return this;
     }
-
     /**
      *
      *
@@ -1008,7 +988,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1023,7 +1002,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1040,7 +1018,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
         return error_ == null ? com.google.cloud.compute.v1.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -1068,7 +1045,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
     }
 
     private java.lang.Object state_ = "";
-
     /**
      *
      *
@@ -1084,7 +1060,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
     public boolean hasState() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1132,7 +1106,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1155,7 +1128,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1174,7 +1146,6 @@ public final class SetCommonInstanceMetadataOperationMetadataPerLocationOperatio
       onChanged();
       return this;
     }
-
     /**
      *
      *

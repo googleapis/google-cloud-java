@@ -37,7 +37,6 @@ public interface LiveSessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface LiveSessionOrBuilder
    * @return The playUri.
    */
   java.lang.String getPlayUri();
-
   /**
    *
    *
@@ -100,7 +98,6 @@ public interface LiveSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macros = 6;</code>
    */
   int getAdTagMacrosCount();
-
   /**
    *
    *
@@ -123,11 +120,9 @@ public interface LiveSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macros = 6;</code>
    */
   boolean containsAdTagMacros(java.lang.String key);
-
   /** Use {@link #getAdTagMacrosMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAdTagMacros();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface LiveSessionOrBuilder
    * <code>map&lt;string, string&gt; ad_tag_macros = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAdTagMacrosMap();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface LiveSessionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -213,7 +206,6 @@ public interface LiveSessionOrBuilder
    * @return Whether the manifestOptions field is set.
    */
   boolean hasManifestOptions();
-
   /**
    *
    *
@@ -226,7 +218,6 @@ public interface LiveSessionOrBuilder
    * @return The manifestOptions.
    */
   com.google.cloud.video.stitcher.v1.ManifestOptions getManifestOptions();
-
   /**
    *
    *
@@ -251,7 +242,6 @@ public interface LiveSessionOrBuilder
    * @return Whether the gamSettings field is set.
    */
   boolean hasGamSettings();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface LiveSessionOrBuilder
    * @return The gamSettings.
    */
   com.google.cloud.video.stitcher.v1.LiveSession.GamSettings getGamSettings();
-
   /**
    *
    *
@@ -293,7 +282,6 @@ public interface LiveSessionOrBuilder
    * @return The liveConfig.
    */
   java.lang.String getLiveConfig();
-
   /**
    *
    *
@@ -323,7 +311,6 @@ public interface LiveSessionOrBuilder
    * @return The enum numeric value on the wire for adTracking.
    */
   int getAdTrackingValue();
-
   /**
    *
    *

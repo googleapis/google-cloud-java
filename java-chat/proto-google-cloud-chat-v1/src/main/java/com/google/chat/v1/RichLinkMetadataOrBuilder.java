@@ -36,7 +36,6 @@ public interface RichLinkMetadataOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface RichLinkMetadataOrBuilder
    * @return The enum numeric value on the wire for richLinkType.
    */
   int getRichLinkTypeValue();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface RichLinkMetadataOrBuilder
    * @return Whether the driveLinkData field is set.
    */
   boolean hasDriveLinkData();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface RichLinkMetadataOrBuilder
    * @return The driveLinkData.
    */
   com.google.chat.v1.DriveLinkData getDriveLinkData();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface RichLinkMetadataOrBuilder
    * @return Whether the chatSpaceLinkData field is set.
    */
   boolean hasChatSpaceLinkData();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface RichLinkMetadataOrBuilder
    * @return The chatSpaceLinkData.
    */
   com.google.chat.v1.ChatSpaceLinkData getChatSpaceLinkData();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface TextPayloadOrBuilder
    * @return The textContent.
    */
   java.lang.String getTextContent();
-
   /**
    *
    *

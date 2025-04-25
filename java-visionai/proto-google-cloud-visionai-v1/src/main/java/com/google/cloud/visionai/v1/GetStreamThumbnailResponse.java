@@ -34,7 +34,6 @@ public final class GetStreamThumbnailResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GetStreamThumbnailResponse)
     GetStreamThumbnailResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetStreamThumbnailResponse.newBuilder() to construct.
   private GetStreamThumbnailResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -214,7 +213,6 @@ public final class GetStreamThumbnailResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

@@ -30,7 +30,6 @@ public interface GenerateAwsClusterAgentTokenResponseOrBuilder
    * @return The accessToken.
    */
   java.lang.String getAccessToken();
-
   /**
    * <code>string access_token = 1;</code>
    *
@@ -51,7 +50,6 @@ public interface GenerateAwsClusterAgentTokenResponseOrBuilder
    * @return The tokenType.
    */
   java.lang.String getTokenType();
-
   /**
    * <code>string token_type = 3;</code>
    *

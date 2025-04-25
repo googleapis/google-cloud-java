@@ -34,7 +34,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SetAgentRequest)
     SetAgentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetAgentRequest.newBuilder() to construct.
   private SetAgentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int AGENT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.Agent agent_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasAgent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -102,7 +99,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.dialogflow.v2beta1.Agent getAgent() {
     return agent_ == null ? com.google.cloud.dialogflow.v2beta1.Agent.getDefaultInstance() : agent_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -137,7 +132,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -346,7 +339,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -570,7 +562,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2beta1.Agent.Builder,
             com.google.cloud.dialogflow.v2beta1.AgentOrBuilder>
         agentBuilder_;
-
     /**
      *
      *
@@ -587,7 +578,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasAgent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -610,7 +600,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
         return agentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -657,7 +645,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +674,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -709,7 +695,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -726,7 +711,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getAgentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -747,7 +731,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
             : agent_;
       }
     }
-
     /**
      *
      *
@@ -782,7 +765,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -797,7 +779,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -841,7 +821,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +840,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -889,7 +867,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +886,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +900,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -943,7 +918,6 @@ public final class SetAgentRequest extends com.google.protobuf.GeneratedMessageV
             : updateMask_;
       }
     }
-
     /**
      *
      *

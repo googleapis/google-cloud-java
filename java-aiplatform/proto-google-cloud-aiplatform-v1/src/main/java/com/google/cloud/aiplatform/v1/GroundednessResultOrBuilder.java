@@ -36,7 +36,6 @@ public interface GroundednessResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GroundednessResultOrBuilder
    * @return The explanation.
    */
   java.lang.String getExplanation();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface GroundednessResultOrBuilder
    * @return Whether the confidence field is set.
    */
   boolean hasConfidence();
-
   /**
    *
    *

@@ -38,7 +38,6 @@ public interface LocationPolicyLocationOrBuilder
    * @return Whether the constraints field is set.
    */
   boolean hasConstraints();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface LocationPolicyLocationOrBuilder
    * @return The constraints.
    */
   com.google.cloud.compute.v1.LocationPolicyLocationConstraints getConstraints();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface LocationPolicyLocationOrBuilder
    * @return Whether the preference field is set.
    */
   boolean hasPreference();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface LocationPolicyLocationOrBuilder
    * @return The preference.
    */
   java.lang.String getPreference();
-
   /**
    *
    *

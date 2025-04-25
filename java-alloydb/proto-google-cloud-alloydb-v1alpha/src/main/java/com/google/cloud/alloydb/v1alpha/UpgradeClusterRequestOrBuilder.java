@@ -38,7 +38,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The enum numeric value on the wire for version.
    */
   int getVersionValue();
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *
@@ -167,7 +164,6 @@ public interface UpgradeClusterRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
-
   /**
    *
    *

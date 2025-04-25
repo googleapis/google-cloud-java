@@ -33,7 +33,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.VideoFormat)
     VideoFormatOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use VideoFormat.newBuilder() to construct.
   private VideoFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object codec_ = "";
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WIDTH_PIXELS_FIELD_NUMBER = 2;
   private int widthPixels_ = 0;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HEIGHT_PIXELS_FIELD_NUMBER = 3;
   private int heightPixels_ = 0;
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FRAME_RATE_FIELD_NUMBER = 4;
   private double frameRate_ = 0D;
-
   /**
    *
    *
@@ -364,7 +358,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +581,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object codec_ = "";
-
     /**
      *
      *
@@ -611,7 +603,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -634,7 +625,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -656,7 +646,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -699,7 +687,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int widthPixels_;
-
     /**
      *
      *
@@ -715,7 +702,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public int getWidthPixels() {
       return widthPixels_;
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int heightPixels_;
-
     /**
      *
      *
@@ -771,7 +755,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public int getHeightPixels() {
       return heightPixels_;
     }
-
     /**
      *
      *
@@ -791,7 +774,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double frameRate_;
-
     /**
      *
      *
@@ -827,7 +808,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
     public double getFrameRate() {
       return frameRate_;
     }
-
     /**
      *
      *
@@ -847,7 +827,6 @@ public final class VideoFormat extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

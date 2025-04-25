@@ -76,7 +76,6 @@ public enum DiscoveryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DISCOVERY_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DISCOVERY_TYPE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -88,7 +87,6 @@ public enum DiscoveryType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DISCOVERY_TYPE_PRIVATE = 1;</code>
    */
   public static final int DISCOVERY_TYPE_PRIVATE_VALUE = 1;
-
   /**
    *
    *

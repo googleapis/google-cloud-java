@@ -33,7 +33,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action)
     ActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Action.newBuilder() to construct.
   private Action(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -133,7 +132,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>CATEGORY_UNSPECIFIED = 0;</code>
      */
     public static final int CATEGORY_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -144,7 +142,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_MANAGEMENT = 1;</code>
      */
     public static final int RESOURCE_MANAGEMENT_VALUE = 1;
-
     /**
      *
      *
@@ -155,7 +152,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * <code>SECURITY_POLICY = 2;</code>
      */
     public static final int SECURITY_POLICY_VALUE = 2;
-
     /**
      *
      *
@@ -256,7 +252,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Action.MissingResource)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -271,7 +266,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.MissingResource)
       MissingResourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MissingResource.newBuilder() to construct.
     private MissingResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -452,7 +446,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -682,7 +675,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Action.UnauthorizedResource)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -699,7 +691,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.UnauthorizedResource)
       UnauthorizedResourceOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use UnauthorizedResource.newBuilder() to construct.
     private UnauthorizedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -880,7 +871,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1126,7 +1116,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The asset.
      */
     java.lang.String getAsset();
-
     /**
      *
      *
@@ -1141,7 +1130,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getAssetBytes();
   }
-
   /**
    *
    *
@@ -1159,7 +1147,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply)
       FailedSecurityPolicyApplyOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use FailedSecurityPolicyApply.newBuilder() to construct.
     private FailedSecurityPolicyApply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1194,7 +1181,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object asset_ = "";
-
     /**
      *
      *
@@ -1219,7 +1205,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -1406,7 +1391,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1601,7 +1585,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object asset_ = "";
-
       /**
        *
        *
@@ -1625,7 +1608,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1649,7 +1631,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1672,7 +1653,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1691,7 +1671,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1801,7 +1780,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sampledDataLocations.
      */
     java.util.List<java.lang.String> getSampledDataLocationsList();
-
     /**
      *
      *
@@ -1815,7 +1793,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The count of sampledDataLocations.
      */
     int getSampledDataLocationsCount();
-
     /**
      *
      *
@@ -1830,7 +1807,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The sampledDataLocations at the given index.
      */
     java.lang.String getSampledDataLocations(int index);
-
     /**
      *
      *
@@ -1858,7 +1834,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The expectedFormat.
      */
     java.lang.String getExpectedFormat();
-
     /**
      *
      *
@@ -1884,7 +1859,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The newFormat.
      */
     java.lang.String getNewFormat();
-
     /**
      *
      *
@@ -1898,7 +1872,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getNewFormatBytes();
   }
-
   /**
    *
    *
@@ -1913,7 +1886,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.InvalidDataFormat)
       InvalidDataFormatOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InvalidDataFormat.newBuilder() to construct.
     private InvalidDataFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1951,7 +1923,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -1967,7 +1938,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
       return sampledDataLocations_;
     }
-
     /**
      *
      *
@@ -1983,7 +1953,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getSampledDataLocationsCount() {
       return sampledDataLocations_.size();
     }
-
     /**
      *
      *
@@ -2000,7 +1969,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSampledDataLocations(int index) {
       return sampledDataLocations_.get(index);
     }
-
     /**
      *
      *
@@ -2022,7 +1990,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object expectedFormat_ = "";
-
     /**
      *
      *
@@ -2046,7 +2013,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2075,7 +2041,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object newFormat_ = "";
-
     /**
      *
      *
@@ -2099,7 +2064,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -2311,7 +2275,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2545,7 +2508,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
-
       /**
        *
        *
@@ -2562,7 +2524,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         sampledDataLocations_.makeImmutable();
         return sampledDataLocations_;
       }
-
       /**
        *
        *
@@ -2578,7 +2539,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public int getSampledDataLocationsCount() {
         return sampledDataLocations_.size();
       }
-
       /**
        *
        *
@@ -2595,7 +2555,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSampledDataLocations(int index) {
         return sampledDataLocations_.get(index);
       }
-
       /**
        *
        *
@@ -2612,7 +2571,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSampledDataLocationsBytes(int index) {
         return sampledDataLocations_.getByteString(index);
       }
-
       /**
        *
        *
@@ -2637,7 +2595,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2661,7 +2618,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2682,7 +2638,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2702,7 +2657,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2729,7 +2683,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object expectedFormat_ = "";
-
       /**
        *
        *
@@ -2752,7 +2705,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2775,7 +2727,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2797,7 +2748,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2815,7 +2765,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2840,7 +2789,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object newFormat_ = "";
-
       /**
        *
        *
@@ -2863,7 +2811,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2886,7 +2833,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2908,7 +2854,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2926,7 +2871,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3031,7 +2975,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The table.
      */
     java.lang.String getTable();
-
     /**
      *
      *
@@ -3058,7 +3001,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The existingSchema.
      */
     java.lang.String getExistingSchema();
-
     /**
      *
      *
@@ -3086,7 +3028,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The newSchema.
      */
     java.lang.String getNewSchema();
-
     /**
      *
      *
@@ -3114,7 +3055,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the sampledDataLocations.
      */
     java.util.List<java.lang.String> getSampledDataLocationsList();
-
     /**
      *
      *
@@ -3128,7 +3068,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The count of sampledDataLocations.
      */
     int getSampledDataLocationsCount();
-
     /**
      *
      *
@@ -3143,7 +3082,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The sampledDataLocations at the given index.
      */
     java.lang.String getSampledDataLocations(int index);
-
     /**
      *
      *
@@ -3172,7 +3110,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for schemaChange.
      */
     int getSchemaChangeValue();
-
     /**
      *
      *
@@ -3187,7 +3124,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange getSchemaChange();
   }
-
   /**
    *
    *
@@ -3202,7 +3138,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.IncompatibleDataSchema)
       IncompatibleDataSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use IncompatibleDataSchema.newBuilder() to construct.
     private IncompatibleDataSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3291,7 +3226,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>SCHEMA_CHANGE_UNSPECIFIED = 0;</code>
        */
       public static final int SCHEMA_CHANGE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -3302,7 +3236,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>INCOMPATIBLE = 1;</code>
        */
       public static final int INCOMPATIBLE_VALUE = 1;
-
       /**
        *
        *
@@ -3404,7 +3337,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
-
     /**
      *
      *
@@ -3428,7 +3360,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3457,7 +3388,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object existingSchema_ = "";
-
     /**
      *
      *
@@ -3482,7 +3412,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3512,7 +3441,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object newSchema_ = "";
-
     /**
      *
      *
@@ -3537,7 +3465,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3568,7 +3495,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList sampledDataLocations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-
     /**
      *
      *
@@ -3584,7 +3510,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSampledDataLocationsList() {
       return sampledDataLocations_;
     }
-
     /**
      *
      *
@@ -3600,7 +3525,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getSampledDataLocationsCount() {
       return sampledDataLocations_.size();
     }
-
     /**
      *
      *
@@ -3617,7 +3541,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSampledDataLocations(int index) {
       return sampledDataLocations_.get(index);
     }
-
     /**
      *
      *
@@ -3637,7 +3560,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     public static final int SCHEMA_CHANGE_FIELD_NUMBER = 5;
     private int schemaChange_ = 0;
-
     /**
      *
      *
@@ -3654,7 +3576,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getSchemaChangeValue() {
       return schemaChange_;
     }
-
     /**
      *
      *
@@ -3889,7 +3810,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4145,7 +4065,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object table_ = "";
-
       /**
        *
        *
@@ -4168,7 +4087,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4191,7 +4109,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4213,7 +4130,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4231,7 +4147,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4256,7 +4171,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object existingSchema_ = "";
-
       /**
        *
        *
@@ -4280,7 +4194,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4304,7 +4217,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4327,7 +4239,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4346,7 +4257,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4372,7 +4282,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object newSchema_ = "";
-
       /**
        *
        *
@@ -4396,7 +4305,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4420,7 +4328,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4443,7 +4350,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4462,7 +4368,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4497,7 +4402,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000008;
       }
-
       /**
        *
        *
@@ -4514,7 +4418,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         sampledDataLocations_.makeImmutable();
         return sampledDataLocations_;
       }
-
       /**
        *
        *
@@ -4530,7 +4433,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public int getSampledDataLocationsCount() {
         return sampledDataLocations_.size();
       }
-
       /**
        *
        *
@@ -4547,7 +4449,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSampledDataLocations(int index) {
         return sampledDataLocations_.get(index);
       }
-
       /**
        *
        *
@@ -4564,7 +4465,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSampledDataLocationsBytes(int index) {
         return sampledDataLocations_.getByteString(index);
       }
-
       /**
        *
        *
@@ -4589,7 +4489,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4613,7 +4512,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4634,7 +4532,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4654,7 +4551,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4681,7 +4577,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int schemaChange_ = 0;
-
       /**
        *
        *
@@ -4699,7 +4594,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public int getSchemaChangeValue() {
         return schemaChange_;
       }
-
       /**
        *
        *
@@ -4720,7 +4614,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4744,7 +4637,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             ? com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.SchemaChange.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -4769,7 +4661,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4874,7 +4765,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for expectedStructure.
      */
     int getExpectedStructureValue();
-
     /**
      *
      *
@@ -4891,7 +4781,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dataplex.v1.Action.InvalidDataPartition.PartitionStructure
         getExpectedStructure();
   }
-
   /**
    *
    *
@@ -4906,7 +4795,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.InvalidDataPartition)
       InvalidDataPartitionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InvalidDataPartition.newBuilder() to construct.
     private InvalidDataPartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4990,7 +4878,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>PARTITION_STRUCTURE_UNSPECIFIED = 0;</code>
        */
       public static final int PARTITION_STRUCTURE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -5001,7 +4888,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        * <code>CONSISTENT_KEYS = 1;</code>
        */
       public static final int CONSISTENT_KEYS_VALUE = 1;
-
       /**
        *
        *
@@ -5103,7 +4989,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
     public static final int EXPECTED_STRUCTURE_FIELD_NUMBER = 1;
     private int expectedStructure_ = 0;
-
     /**
      *
      *
@@ -5121,7 +5006,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getExpectedStructureValue() {
       return expectedStructure_;
     }
-
     /**
      *
      *
@@ -5313,7 +5197,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -5499,7 +5382,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int expectedStructure_ = 0;
-
       /**
        *
        *
@@ -5517,7 +5399,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       public int getExpectedStructureValue() {
         return expectedStructure_;
       }
-
       /**
        *
        *
@@ -5538,7 +5419,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5563,7 +5443,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -5588,7 +5467,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -5677,7 +5555,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Action.MissingData)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -5692,7 +5569,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.MissingData)
       MissingDataOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MissingData.newBuilder() to construct.
     private MissingData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5872,7 +5748,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6102,7 +5977,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.Action.InvalidDataOrganization)
       com.google.protobuf.MessageOrBuilder {}
-
   /**
    *
    *
@@ -6117,7 +5991,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Action.InvalidDataOrganization)
       InvalidDataOrganizationOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InvalidDataOrganization.newBuilder() to construct.
     private InvalidDataOrganization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6298,7 +6171,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -6551,7 +6423,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private DetailsCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -6598,7 +6469,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CATEGORY_FIELD_NUMBER = 1;
   private int category_ = 0;
-
   /**
    *
    *
@@ -6614,7 +6484,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public int getCategoryValue() {
     return category_;
   }
-
   /**
    *
    *
@@ -6637,7 +6506,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object issue_ = "";
-
   /**
    *
    *
@@ -6661,7 +6529,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6688,7 +6555,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DETECT_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp detectTime_;
-
   /**
    *
    *
@@ -6704,7 +6570,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDetectTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -6720,7 +6585,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDetectTime() {
     return detectTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : detectTime_;
   }
-
   /**
    *
    *
@@ -6739,7 +6603,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -6768,7 +6631,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6802,7 +6664,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object lake_ = "";
-
   /**
    *
    *
@@ -6829,7 +6690,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6861,7 +6721,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -6888,7 +6747,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6920,7 +6778,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object asset_ = "";
-
   /**
    *
    *
@@ -6947,7 +6804,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -6980,7 +6836,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dataLocations_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -6999,7 +6854,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getDataLocationsList() {
     return dataLocations_;
   }
-
   /**
    *
    *
@@ -7018,7 +6872,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public int getDataLocationsCount() {
     return dataLocations_.size();
   }
-
   /**
    *
    *
@@ -7038,7 +6891,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getDataLocations(int index) {
     return dataLocations_.get(index);
   }
-
   /**
    *
    *
@@ -7060,7 +6912,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVALID_DATA_FORMAT_FIELD_NUMBER = 10;
-
   /**
    *
    *
@@ -7076,7 +6927,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInvalidDataFormat() {
     return detailsCase_ == 10;
   }
-
   /**
    *
    *
@@ -7095,7 +6945,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.InvalidDataFormat.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7115,7 +6964,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCOMPATIBLE_DATA_SCHEMA_FIELD_NUMBER = 11;
-
   /**
    *
    *
@@ -7132,7 +6980,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIncompatibleDataSchema() {
     return detailsCase_ == 11;
   }
-
   /**
    *
    *
@@ -7152,7 +6999,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7173,7 +7019,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVALID_DATA_PARTITION_FIELD_NUMBER = 12;
-
   /**
    *
    *
@@ -7190,7 +7035,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInvalidDataPartition() {
     return detailsCase_ == 12;
   }
-
   /**
    *
    *
@@ -7210,7 +7054,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.InvalidDataPartition.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7231,7 +7074,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MISSING_DATA_FIELD_NUMBER = 13;
-
   /**
    *
    *
@@ -7247,7 +7089,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMissingData() {
     return detailsCase_ == 13;
   }
-
   /**
    *
    *
@@ -7266,7 +7107,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.MissingData.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7285,7 +7125,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MISSING_RESOURCE_FIELD_NUMBER = 14;
-
   /**
    *
    *
@@ -7301,7 +7140,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMissingResource() {
     return detailsCase_ == 14;
   }
-
   /**
    *
    *
@@ -7320,7 +7158,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.MissingResource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7340,7 +7177,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNAUTHORIZED_RESOURCE_FIELD_NUMBER = 15;
-
   /**
    *
    *
@@ -7357,7 +7193,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnauthorizedResource() {
     return detailsCase_ == 15;
   }
-
   /**
    *
    *
@@ -7377,7 +7212,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.UnauthorizedResource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7398,7 +7232,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FAILED_SECURITY_POLICY_APPLY_FIELD_NUMBER = 21;
-
   /**
    *
    *
@@ -7416,7 +7249,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFailedSecurityPolicyApply() {
     return detailsCase_ == 21;
   }
-
   /**
    *
    *
@@ -7438,7 +7270,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7460,7 +7291,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVALID_DATA_ORGANIZATION_FIELD_NUMBER = 22;
-
   /**
    *
    *
@@ -7477,7 +7307,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInvalidDataOrganization() {
     return detailsCase_ == 22;
   }
-
   /**
    *
    *
@@ -7497,7 +7326,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.dataplex.v1.Action.InvalidDataOrganization.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -7884,7 +7712,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -8361,7 +8188,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int category_ = 0;
-
     /**
      *
      *
@@ -8377,7 +8203,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getCategoryValue() {
       return category_;
     }
-
     /**
      *
      *
@@ -8396,7 +8221,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8414,7 +8238,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dataplex.v1.Action.Category.forNumber(category_);
       return result == null ? com.google.cloud.dataplex.v1.Action.Category.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -8436,7 +8259,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8456,7 +8278,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object issue_ = "";
-
     /**
      *
      *
@@ -8479,7 +8300,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8502,7 +8322,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8524,7 +8343,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8542,7 +8360,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8572,7 +8389,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         detectTimeBuilder_;
-
     /**
      *
      *
@@ -8587,7 +8403,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDetectTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -8608,7 +8423,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return detectTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8631,7 +8445,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8651,7 +8464,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8679,7 +8491,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8699,7 +8510,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8714,7 +8524,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDetectTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8733,7 +8542,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             : detectTime_;
       }
     }
-
     /**
      *
      *
@@ -8761,7 +8569,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -8789,7 +8596,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8817,7 +8623,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8844,7 +8649,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8867,7 +8671,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8897,7 +8700,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object lake_ = "";
-
     /**
      *
      *
@@ -8923,7 +8725,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8949,7 +8750,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8974,7 +8774,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8995,7 +8794,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9023,7 +8821,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -9049,7 +8846,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9075,7 +8871,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9100,7 +8895,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9121,7 +8915,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9149,7 +8942,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object asset_ = "";
-
     /**
      *
      *
@@ -9175,7 +8967,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9201,7 +8992,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9226,7 +9016,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9247,7 +9036,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9283,7 +9071,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000080;
     }
-
     /**
      *
      *
@@ -9303,7 +9090,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       dataLocations_.makeImmutable();
       return dataLocations_;
     }
-
     /**
      *
      *
@@ -9322,7 +9108,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public int getDataLocationsCount() {
       return dataLocations_.size();
     }
-
     /**
      *
      *
@@ -9342,7 +9127,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDataLocations(int index) {
       return dataLocations_.get(index);
     }
-
     /**
      *
      *
@@ -9362,7 +9146,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getDataLocationsBytes(int index) {
       return dataLocations_.getByteString(index);
     }
-
     /**
      *
      *
@@ -9390,7 +9173,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9417,7 +9199,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9441,7 +9222,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9464,7 +9244,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9498,7 +9277,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.InvalidDataFormat.Builder,
             com.google.cloud.dataplex.v1.Action.InvalidDataFormatOrBuilder>
         invalidDataFormatBuilder_;
-
     /**
      *
      *
@@ -9514,7 +9292,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInvalidDataFormat() {
       return detailsCase_ == 10;
     }
-
     /**
      *
      *
@@ -9540,7 +9317,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.InvalidDataFormat.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9564,7 +9340,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -9585,7 +9360,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -9620,7 +9394,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 10;
       return this;
     }
-
     /**
      *
      *
@@ -9646,7 +9419,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9660,7 +9432,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getInvalidDataFormatBuilder() {
       return getInvalidDataFormatFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9682,7 +9453,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.InvalidDataFormat.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9721,7 +9491,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.Builder,
             com.google.cloud.dataplex.v1.Action.IncompatibleDataSchemaOrBuilder>
         incompatibleDataSchemaBuilder_;
-
     /**
      *
      *
@@ -9738,7 +9507,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIncompatibleDataSchema() {
       return detailsCase_ == 11;
     }
-
     /**
      *
      *
@@ -9765,7 +9533,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9790,7 +9557,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -9812,7 +9578,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -9849,7 +9614,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 11;
       return this;
     }
-
     /**
      *
      *
@@ -9876,7 +9640,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9891,7 +9654,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getIncompatibleDataSchemaBuilder() {
       return getIncompatibleDataSchemaFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9914,7 +9676,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.IncompatibleDataSchema.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -9955,7 +9716,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.InvalidDataPartition.Builder,
             com.google.cloud.dataplex.v1.Action.InvalidDataPartitionOrBuilder>
         invalidDataPartitionBuilder_;
-
     /**
      *
      *
@@ -9973,7 +9733,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInvalidDataPartition() {
       return detailsCase_ == 12;
     }
-
     /**
      *
      *
@@ -10001,7 +9760,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.InvalidDataPartition.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10027,7 +9785,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -10050,7 +9807,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -10087,7 +9843,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 12;
       return this;
     }
-
     /**
      *
      *
@@ -10115,7 +9870,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10131,7 +9885,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getInvalidDataPartitionBuilder() {
       return getInvalidDataPartitionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10155,7 +9908,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.InvalidDataPartition.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10196,7 +9948,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.MissingData.Builder,
             com.google.cloud.dataplex.v1.Action.MissingDataOrBuilder>
         missingDataBuilder_;
-
     /**
      *
      *
@@ -10212,7 +9963,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMissingData() {
       return detailsCase_ == 13;
     }
-
     /**
      *
      *
@@ -10238,7 +9988,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.MissingData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10261,7 +10010,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -10282,7 +10030,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -10315,7 +10062,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 13;
       return this;
     }
-
     /**
      *
      *
@@ -10341,7 +10087,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10354,7 +10099,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.Action.MissingData.Builder getMissingDataBuilder() {
       return getMissingDataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10375,7 +10119,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.MissingData.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10414,7 +10157,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.MissingResource.Builder,
             com.google.cloud.dataplex.v1.Action.MissingResourceOrBuilder>
         missingResourceBuilder_;
-
     /**
      *
      *
@@ -10430,7 +10172,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMissingResource() {
       return detailsCase_ == 14;
     }
-
     /**
      *
      *
@@ -10456,7 +10197,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.MissingResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10479,7 +10219,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -10500,7 +10239,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -10534,7 +10272,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -10560,7 +10297,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10573,7 +10309,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataplex.v1.Action.MissingResource.Builder getMissingResourceBuilder() {
       return getMissingResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10595,7 +10330,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.MissingResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10634,7 +10368,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.UnauthorizedResource.Builder,
             com.google.cloud.dataplex.v1.Action.UnauthorizedResourceOrBuilder>
         unauthorizedResourceBuilder_;
-
     /**
      *
      *
@@ -10652,7 +10385,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnauthorizedResource() {
       return detailsCase_ == 15;
     }
-
     /**
      *
      *
@@ -10680,7 +10412,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.UnauthorizedResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10706,7 +10437,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -10729,7 +10459,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -10766,7 +10495,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -10794,7 +10522,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -10810,7 +10537,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getUnauthorizedResourceBuilder() {
       return getUnauthorizedResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -10834,7 +10560,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.UnauthorizedResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10875,7 +10600,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply.Builder,
             com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApplyOrBuilder>
         failedSecurityPolicyApplyBuilder_;
-
     /**
      *
      *
@@ -10893,7 +10617,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFailedSecurityPolicyApply() {
       return detailsCase_ == 21;
     }
-
     /**
      *
      *
@@ -10922,7 +10645,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -10948,7 +10670,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -10971,7 +10692,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -11009,7 +10729,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 21;
       return this;
     }
-
     /**
      *
      *
@@ -11037,7 +10756,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11053,7 +10771,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getFailedSecurityPolicyApplyBuilder() {
       return getFailedSecurityPolicyApplyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11077,7 +10794,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.FailedSecurityPolicyApply.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -11119,7 +10835,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.Action.InvalidDataOrganization.Builder,
             com.google.cloud.dataplex.v1.Action.InvalidDataOrganizationOrBuilder>
         invalidDataOrganizationBuilder_;
-
     /**
      *
      *
@@ -11137,7 +10852,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInvalidDataOrganization() {
       return detailsCase_ == 22;
     }
-
     /**
      *
      *
@@ -11166,7 +10880,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.InvalidDataOrganization.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -11192,7 +10905,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -11215,7 +10927,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -11253,7 +10964,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       detailsCase_ = 22;
       return this;
     }
-
     /**
      *
      *
@@ -11281,7 +10991,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -11297,7 +11006,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         getInvalidDataOrganizationBuilder() {
       return getInvalidDataOrganizationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -11321,7 +11029,6 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.dataplex.v1.Action.InvalidDataOrganization.getDefaultInstance();
       }
     }
-
     /**
      *
      *

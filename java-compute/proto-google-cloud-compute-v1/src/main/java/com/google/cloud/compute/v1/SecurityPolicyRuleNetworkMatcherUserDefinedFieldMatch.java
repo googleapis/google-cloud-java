@@ -34,7 +34,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch)
     SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch.newBuilder() to construct.
   private SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
   public int getValuesCount() {
     return values_.size();
   }
-
   /**
    *
    *
@@ -189,7 +182,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
-
   /**
    *
    *
@@ -395,7 +387,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -621,7 +612,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -636,7 +626,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -659,7 +648,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -682,7 +670,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -704,7 +691,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +708,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +740,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -771,7 +755,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       values_.makeImmutable();
       return values_;
     }
-
     /**
      *
      *
@@ -786,7 +769,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     public int getValuesCount() {
       return values_.size();
     }
-
     /**
      *
      *
@@ -802,7 +784,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
-
     /**
      *
      *
@@ -842,7 +822,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -865,7 +844,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +863,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -904,7 +881,6 @@ public final class SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatch
       onChanged();
       return this;
     }
-
     /**
      *
      *

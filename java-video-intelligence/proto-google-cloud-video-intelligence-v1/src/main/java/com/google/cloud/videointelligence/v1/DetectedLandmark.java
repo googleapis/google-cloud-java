@@ -34,7 +34,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.DetectedLandmark)
     DetectedLandmarkOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DetectedLandmark.newBuilder() to construct.
   private DetectedLandmark(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
 
   public static final int POINT_FIELD_NUMBER = 2;
   private com.google.cloud.videointelligence.v1.NormalizedVertex point_;
-
   /**
    *
    *
@@ -138,7 +134,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
   public boolean hasPoint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -157,7 +152,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.videointelligence.v1.NormalizedVertex.getDefaultInstance()
         : point_;
   }
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
 
   public static final int CONFIDENCE_FIELD_NUMBER = 3;
   private float confidence_ = 0F;
-
   /**
    *
    *
@@ -378,7 +371,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -606,7 +598,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -652,7 +642,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -674,7 +663,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -692,7 +680,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -722,7 +709,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
             com.google.cloud.videointelligence.v1.NormalizedVertex.Builder,
             com.google.cloud.videointelligence.v1.NormalizedVertexOrBuilder>
         pointBuilder_;
-
     /**
      *
      *
@@ -738,7 +724,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     public boolean hasPoint() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -760,7 +745,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
         return pointBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -784,7 +768,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -806,7 +789,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +818,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -857,7 +838,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -873,7 +853,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPointFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -893,7 +872,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
             : point_;
       }
     }
-
     /**
      *
      *
@@ -922,7 +900,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     }
 
     private float confidence_;
-
     /**
      *
      *
@@ -938,7 +915,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
     public float getConfidence() {
       return confidence_;
     }
-
     /**
      *
      *
@@ -958,7 +934,6 @@ public final class DetectedLandmark extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

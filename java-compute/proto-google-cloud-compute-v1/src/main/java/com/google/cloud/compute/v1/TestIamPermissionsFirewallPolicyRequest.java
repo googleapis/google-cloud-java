@@ -34,7 +34,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.TestIamPermissionsFirewallPolicyRequest)
     TestIamPermissionsFirewallPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TestIamPermissionsFirewallPolicyRequest.newBuilder() to construct.
   private TestIamPermissionsFirewallPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
 
   public static final int TEST_PERMISSIONS_REQUEST_RESOURCE_FIELD_NUMBER = 439214758;
   private com.google.cloud.compute.v1.TestPermissionsRequest testPermissionsRequestResource_;
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
   public boolean hasTestPermissionsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -160,7 +155,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
         ? com.google.cloud.compute.v1.TestPermissionsRequest.getDefaultInstance()
         : testPermissionsRequestResource_;
   }
-
   /**
    *
    *
@@ -359,7 +353,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -585,7 +578,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
     private int bitField0_;
 
     private java.lang.Object resource_ = "";
-
     /**
      *
      *
@@ -608,7 +600,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -631,7 +622,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -653,7 +643,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
             com.google.cloud.compute.v1.TestPermissionsRequest.Builder,
             com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder>
         testPermissionsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -718,7 +705,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
     public boolean hasTestPermissionsRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -741,7 +727,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
         return testPermissionsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +774,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -844,7 +826,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -862,7 +843,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
       onChanged();
       return getTestPermissionsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -884,7 +864,6 @@ public final class TestIamPermissionsFirewallPolicyRequest
             : testPermissionsRequestResource_;
       }
     }
-
     /**
      *
      *

@@ -33,7 +33,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.ListChildAccountsResponse)
     ListChildAccountsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListChildAccountsResponse.newBuilder() to construct.
   private ListChildAccountsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.css.v1.Account> accounts_;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.shopping.css.v1.Account> getAccountsList() {
     return accounts_;
   }
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       getAccountsOrBuilderList() {
     return accounts_;
   }
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
   public int getAccountsCount() {
     return accounts_.size();
   }
-
   /**
    *
    *
@@ -126,7 +121,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
   public com.google.shopping.css.v1.Account getAccounts(int index) {
     return accounts_.get(index);
   }
-
   /**
    *
    *
@@ -145,7 +139,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -366,7 +358,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -643,7 +634,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return accountsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -660,7 +650,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return accountsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -677,7 +666,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return accountsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -700,7 +688,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -721,7 +708,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -744,7 +730,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +752,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -808,7 +791,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -829,7 +811,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -849,7 +830,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -869,7 +849,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +861,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
     public com.google.shopping.css.v1.Account.Builder getAccountsBuilder(int index) {
       return getAccountsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +877,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return accountsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -917,7 +894,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(accounts_);
       }
     }
-
     /**
      *
      *
@@ -931,7 +907,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       return getAccountsFieldBuilder()
           .addBuilder(com.google.shopping.css.v1.Account.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -945,7 +920,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       return getAccountsFieldBuilder()
           .addBuilder(index, com.google.shopping.css.v1.Account.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -977,7 +951,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1001,7 +974,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1025,7 +997,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1048,7 +1019,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1067,7 +1037,6 @@ public final class ListChildAccountsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public final class StaticIpConnectivity extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.StaticIpConnectivity)
     StaticIpConnectivityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StaticIpConnectivity.newBuilder() to construct.
   private StaticIpConnectivity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -215,7 +214,6 @@ public final class StaticIpConnectivity extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

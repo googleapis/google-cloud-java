@@ -36,7 +36,6 @@ public interface ProvisionSubpropertyResponseOrBuilder
    * @return Whether the subproperty field is set.
    */
   boolean hasSubproperty();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ProvisionSubpropertyResponseOrBuilder
    * @return The subproperty.
    */
   com.google.analytics.admin.v1alpha.Property getSubproperty();
-
   /**
    *
    *
@@ -74,7 +72,6 @@ public interface ProvisionSubpropertyResponseOrBuilder
    * @return Whether the subpropertyEventFilter field is set.
    */
   boolean hasSubpropertyEventFilter();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ProvisionSubpropertyResponseOrBuilder
    * @return The subpropertyEventFilter.
    */
   com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter();
-
   /**
    *
    *

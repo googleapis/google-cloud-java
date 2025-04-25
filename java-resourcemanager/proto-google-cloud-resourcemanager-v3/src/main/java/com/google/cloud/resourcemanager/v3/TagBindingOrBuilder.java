@@ -38,7 +38,6 @@ public interface TagBindingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -67,7 +66,6 @@ public interface TagBindingOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface TagBindingOrBuilder
    * @return The tagValue.
    */
   java.lang.String getTagValue();
-
   /**
    *
    *
@@ -128,7 +125,6 @@ public interface TagBindingOrBuilder
    * @return The tagValueNamespacedName.
    */
   java.lang.String getTagValueNamespacedName();
-
   /**
    *
    *

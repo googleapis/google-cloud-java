@@ -33,7 +33,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository)
     RepositoryOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Repository.newBuilder() to construct.
   private Repository(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -206,7 +205,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -217,7 +215,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>DOCKER = 1;</code>
      */
     public static final int DOCKER_VALUE = 1;
-
     /**
      *
      *
@@ -228,7 +225,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>MAVEN = 2;</code>
      */
     public static final int MAVEN_VALUE = 2;
-
     /**
      *
      *
@@ -239,7 +235,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>NPM = 3;</code>
      */
     public static final int NPM_VALUE = 3;
-
     /**
      *
      *
@@ -250,7 +245,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>APT = 5;</code>
      */
     public static final int APT_VALUE = 5;
-
     /**
      *
      *
@@ -261,7 +255,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>YUM = 6;</code>
      */
     public static final int YUM_VALUE = 6;
-
     /**
      *
      *
@@ -272,7 +265,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>PYTHON = 8;</code>
      */
     public static final int PYTHON_VALUE = 8;
-
     /**
      *
      *
@@ -283,7 +275,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>KFP = 9;</code>
      */
     public static final int KFP_VALUE = 9;
-
     /**
      *
      *
@@ -294,7 +285,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>GO = 10;</code>
      */
     public static final int GO_VALUE = 10;
-
     /**
      *
      *
@@ -469,7 +459,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>MODE_UNSPECIFIED = 0;</code>
      */
     public static final int MODE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -480,7 +469,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD_REPOSITORY = 1;</code>
      */
     public static final int STANDARD_REPOSITORY_VALUE = 1;
-
     /**
      *
      *
@@ -491,7 +479,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * <code>VIRTUAL_REPOSITORY = 2;</code>
      */
     public static final int VIRTUAL_REPOSITORY_VALUE = 2;
-
     /**
      *
      *
@@ -623,7 +610,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for versionPolicy.
      */
     int getVersionPolicyValue();
-
     /**
      *
      *
@@ -640,7 +626,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.VersionPolicy
         getVersionPolicy();
   }
-
   /**
    *
    *
@@ -657,7 +642,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig)
       MavenRepositoryConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MavenRepositoryConfig.newBuilder() to construct.
     private MavenRepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -747,7 +731,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>VERSION_POLICY_UNSPECIFIED = 0;</code>
        */
       public static final int VERSION_POLICY_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -758,7 +741,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>RELEASE = 1;</code>
        */
       public static final int RELEASE_VALUE = 1;
-
       /**
        *
        *
@@ -860,7 +842,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOW_SNAPSHOT_OVERWRITES_FIELD_NUMBER = 1;
     private boolean allowSnapshotOverwrites_ = false;
-
     /**
      *
      *
@@ -880,7 +861,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VERSION_POLICY_FIELD_NUMBER = 2;
     private int versionPolicy_ = 0;
-
     /**
      *
      *
@@ -898,7 +878,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getVersionPolicyValue() {
       return versionPolicy_;
     }
-
     /**
      *
      *
@@ -1108,7 +1087,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1320,7 +1298,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean allowSnapshotOverwrites_;
-
       /**
        *
        *
@@ -1337,7 +1314,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public boolean getAllowSnapshotOverwrites() {
         return allowSnapshotOverwrites_;
       }
-
       /**
        *
        *
@@ -1358,7 +1334,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1379,7 +1354,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int versionPolicy_ = 0;
-
       /**
        *
        *
@@ -1397,7 +1371,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public int getVersionPolicyValue() {
         return versionPolicy_;
       }
-
       /**
        *
        *
@@ -1418,7 +1391,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1444,7 +1416,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1470,7 +1441,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1579,7 +1549,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getImmutableTags();
   }
-
   /**
    *
    *
@@ -1596,7 +1565,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig)
       DockerRepositoryConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DockerRepositoryConfig.newBuilder() to construct.
     private DockerRepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1628,7 +1596,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     public static final int IMMUTABLE_TAGS_FIELD_NUMBER = 1;
     private boolean immutableTags_ = false;
-
     /**
      *
      *
@@ -1815,7 +1782,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2014,7 +1980,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean immutableTags_;
-
       /**
        *
        *
@@ -2032,7 +1997,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public boolean getImmutableTags() {
         return immutableTags_;
       }
-
       /**
        *
        *
@@ -2054,7 +2018,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2163,7 +2126,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for enablementConfig.
      */
     int getEnablementConfigValue();
-
     /**
      *
      *
@@ -2195,7 +2157,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastEnableTime field is set.
      */
     boolean hasLastEnableTime();
-
     /**
      *
      *
@@ -2210,7 +2171,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The lastEnableTime.
      */
     com.google.protobuf.Timestamp getLastEnableTime();
-
     /**
      *
      *
@@ -2239,7 +2199,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for enablementState.
      */
     int getEnablementStateValue();
-
     /**
      *
      *
@@ -2269,7 +2228,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      * @return The enablementStateReason.
      */
     java.lang.String getEnablementStateReason();
-
     /**
      *
      *
@@ -2283,7 +2241,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getEnablementStateReasonBytes();
   }
-
   /**
    *
    *
@@ -2301,7 +2258,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig)
       VulnerabilityScanningConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use VulnerabilityScanningConfig.newBuilder() to construct.
     private VulnerabilityScanningConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2390,7 +2346,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>ENABLEMENT_CONFIG_UNSPECIFIED = 0;</code>
        */
       public static final int ENABLEMENT_CONFIG_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2401,7 +2356,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>INHERITED = 1;</code>
        */
       public static final int INHERITED_VALUE = 1;
-
       /**
        *
        *
@@ -2568,7 +2522,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
        */
       public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -2579,7 +2532,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>SCANNING_UNSUPPORTED = 1;</code>
        */
       public static final int SCANNING_UNSUPPORTED_VALUE = 1;
-
       /**
        *
        *
@@ -2590,7 +2542,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
        * <code>SCANNING_DISABLED = 2;</code>
        */
       public static final int SCANNING_DISABLED_VALUE = 2;
-
       /**
        *
        *
@@ -2696,7 +2647,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ENABLEMENT_CONFIG_FIELD_NUMBER = 1;
     private int enablementConfig_ = 0;
-
     /**
      *
      *
@@ -2715,7 +2665,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getEnablementConfigValue() {
       return enablementConfig_;
     }
-
     /**
      *
      *
@@ -2747,7 +2696,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     public static final int LAST_ENABLE_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp lastEnableTime_;
-
     /**
      *
      *
@@ -2765,7 +2713,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLastEnableTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -2785,7 +2732,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : lastEnableTime_;
     }
-
     /**
      *
      *
@@ -2806,7 +2752,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLEMENT_STATE_FIELD_NUMBER = 3;
     private int enablementState_ = 0;
-
     /**
      *
      *
@@ -2825,7 +2770,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getEnablementStateValue() {
       return enablementState_;
     }
-
     /**
      *
      *
@@ -2858,7 +2802,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object enablementStateReason_ = "";
-
     /**
      *
      *
@@ -2882,7 +2825,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -3120,7 +3062,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -3383,7 +3324,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int enablementConfig_ = 0;
-
       /**
        *
        *
@@ -3402,7 +3342,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public int getEnablementConfigValue() {
         return enablementConfig_;
       }
-
       /**
        *
        *
@@ -3424,7 +3363,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3453,7 +3391,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 .EnablementConfig.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3481,7 +3418,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3509,7 +3445,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           lastEnableTimeBuilder_;
-
       /**
        *
        *
@@ -3526,7 +3461,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public boolean hasLastEnableTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -3549,7 +3483,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return lastEnableTimeBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -3574,7 +3507,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3596,7 +3528,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3626,7 +3557,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -3648,7 +3578,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3665,7 +3594,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getLastEnableTimeFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -3686,7 +3614,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
               : lastEnableTime_;
         }
       }
-
       /**
        *
        *
@@ -3716,7 +3643,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int enablementState_ = 0;
-
       /**
        *
        *
@@ -3735,7 +3661,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       public int getEnablementStateValue() {
         return enablementState_;
       }
-
       /**
        *
        *
@@ -3757,7 +3682,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3786,7 +3710,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
                 .EnablementState.UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -3814,7 +3737,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3837,7 +3759,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object enablementStateReason_ = "";
-
       /**
        *
        *
@@ -3861,7 +3782,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -3885,7 +3805,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -3908,7 +3827,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -3927,7 +3845,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4039,7 +3956,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     private FormatConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4089,7 +4005,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     private ModeConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4123,7 +4038,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAVEN_CONFIG_FIELD_NUMBER = 9;
-
   /**
    *
    *
@@ -4141,7 +4055,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMavenConfig() {
     return formatConfigCase_ == 9;
   }
-
   /**
    *
    *
@@ -4164,7 +4077,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     return com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4188,7 +4100,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCKER_CONFIG_FIELD_NUMBER = 17;
-
   /**
    *
    *
@@ -4207,7 +4118,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDockerConfig() {
     return formatConfigCase_ == 17;
   }
-
   /**
    *
    *
@@ -4232,7 +4142,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     return com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4257,7 +4166,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VIRTUAL_REPOSITORY_CONFIG_FIELD_NUMBER = 14;
-
   /**
    *
    *
@@ -4275,7 +4183,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVirtualRepositoryConfig() {
     return modeConfigCase_ == 14;
   }
-
   /**
    *
    *
@@ -4297,7 +4204,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4319,7 +4225,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOTE_REPOSITORY_CONFIG_FIELD_NUMBER = 15;
-
   /**
    *
    *
@@ -4337,7 +4242,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemoteRepositoryConfig() {
     return modeConfigCase_ == 15;
   }
-
   /**
    *
    *
@@ -4359,7 +4263,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -4384,7 +4287,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -4410,7 +4312,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4439,7 +4340,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FORMAT_FIELD_NUMBER = 2;
   private int format_ = 0;
-
   /**
    *
    *
@@ -4457,7 +4357,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public int getFormatValue() {
     return format_;
   }
-
   /**
    *
    *
@@ -4484,7 +4383,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
-
   /**
    *
    *
@@ -4508,7 +4406,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4559,7 +4456,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -4580,14 +4476,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -4605,7 +4499,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -4630,7 +4523,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -4658,7 +4550,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -4675,7 +4566,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -4692,7 +4582,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -4710,7 +4599,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -4727,7 +4615,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -4744,7 +4631,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -4764,7 +4650,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kmsKeyName_ = "";
-
   /**
    *
    *
@@ -4791,7 +4676,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -4821,7 +4705,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MODE_FIELD_NUMBER = 10;
   private int mode_ = 0;
-
   /**
    *
    *
@@ -4839,7 +4722,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public int getModeValue() {
     return mode_;
   }
-
   /**
    *
    *
@@ -4897,7 +4779,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public int getCleanupPoliciesCount() {
     return internalGetCleanupPolicies().getMap().size();
   }
-
   /**
    *
    *
@@ -4919,7 +4800,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetCleanupPolicies().getMap().containsKey(key);
   }
-
   /** Use {@link #getCleanupPoliciesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -4927,7 +4807,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       getCleanupPolicies() {
     return getCleanupPoliciesMap();
   }
-
   /**
    *
    *
@@ -4947,7 +4826,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       getCleanupPoliciesMap() {
     return internalGetCleanupPolicies().getMap();
   }
-
   /**
    *
    *
@@ -4975,7 +4853,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         internalGetCleanupPolicies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -5006,7 +4883,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 13;
   private long sizeBytes_ = 0L;
-
   /**
    *
    *
@@ -5027,7 +4903,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 16;
   private boolean satisfiesPzs_ = false;
-
   /**
    *
    *
@@ -5046,7 +4921,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLEANUP_POLICY_DRY_RUN_FIELD_NUMBER = 18;
   private boolean cleanupPolicyDryRun_ = false;
-
   /**
    *
    *
@@ -5067,7 +4941,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public static final int VULNERABILITY_SCANNING_CONFIG_FIELD_NUMBER = 19;
   private com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig
       vulnerabilityScanningConfig_;
-
   /**
    *
    *
@@ -5086,7 +4959,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVulnerabilityScanningConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -5109,7 +4981,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : vulnerabilityScanningConfig_;
   }
-
   /**
    *
    *
@@ -5133,7 +5004,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISALLOW_UNSPECIFIED_MODE_FIELD_NUMBER = 21;
   private boolean disallowUnspecifiedMode_ = false;
-
   /**
    *
    *
@@ -5153,7 +5023,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 22;
   private boolean satisfiesPzi_ = false;
-
   /**
    *
    *
@@ -5174,7 +5043,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object registryUri_ = "";
-
   /**
    *
    *
@@ -5199,7 +5067,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -5651,7 +5518,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6235,7 +6101,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfig.Builder,
             com.google.devtools.artifactregistry.v1.Repository.MavenRepositoryConfigOrBuilder>
         mavenConfigBuilder_;
-
     /**
      *
      *
@@ -6253,7 +6118,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMavenConfig() {
       return formatConfigCase_ == 9;
     }
-
     /**
      *
      *
@@ -6285,7 +6149,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6311,7 +6174,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       formatConfigCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -6335,7 +6197,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       formatConfigCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -6374,7 +6235,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       formatConfigCase_ = 9;
       return this;
     }
-
     /**
      *
      *
@@ -6402,7 +6262,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6418,7 +6277,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         getMavenConfigBuilder() {
       return getMavenConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6444,7 +6302,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6488,7 +6345,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfig.Builder,
             com.google.devtools.artifactregistry.v1.Repository.DockerRepositoryConfigOrBuilder>
         dockerConfigBuilder_;
-
     /**
      *
      *
@@ -6507,7 +6363,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDockerConfig() {
       return formatConfigCase_ == 17;
     }
-
     /**
      *
      *
@@ -6540,7 +6395,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6567,7 +6421,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       formatConfigCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -6592,7 +6445,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       formatConfigCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -6632,7 +6484,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       formatConfigCase_ = 17;
       return this;
     }
-
     /**
      *
      *
@@ -6661,7 +6512,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6678,7 +6528,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         getDockerConfigBuilder() {
       return getDockerConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6705,7 +6554,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6750,7 +6598,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.Builder,
             com.google.devtools.artifactregistry.v1.VirtualRepositoryConfigOrBuilder>
         virtualRepositoryConfigBuilder_;
-
     /**
      *
      *
@@ -6768,7 +6615,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVirtualRepositoryConfig() {
       return modeConfigCase_ == 14;
     }
-
     /**
      *
      *
@@ -6797,7 +6643,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6823,7 +6668,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       modeConfigCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -6846,7 +6690,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       modeConfigCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -6884,7 +6727,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       modeConfigCase_ = 14;
       return this;
     }
-
     /**
      *
      *
@@ -6912,7 +6754,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -6928,7 +6769,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         getVirtualRepositoryConfigBuilder() {
       return getVirtualRepositoryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6952,7 +6792,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.artifactregistry.v1.VirtualRepositoryConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6994,7 +6833,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.Builder,
             com.google.devtools.artifactregistry.v1.RemoteRepositoryConfigOrBuilder>
         remoteRepositoryConfigBuilder_;
-
     /**
      *
      *
@@ -7012,7 +6850,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemoteRepositoryConfig() {
       return modeConfigCase_ == 15;
     }
-
     /**
      *
      *
@@ -7041,7 +6878,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7067,7 +6903,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       modeConfigCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -7090,7 +6925,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       modeConfigCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -7128,7 +6962,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       modeConfigCase_ = 15;
       return this;
     }
-
     /**
      *
      *
@@ -7156,7 +6989,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7172,7 +7004,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         getRemoteRepositoryConfigBuilder() {
       return getRemoteRepositoryConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7196,7 +7027,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return com.google.devtools.artifactregistry.v1.RemoteRepositoryConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7234,7 +7064,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -7259,7 +7088,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7284,7 +7112,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7308,7 +7135,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7328,7 +7154,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7355,7 +7180,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int format_ = 0;
-
     /**
      *
      *
@@ -7373,7 +7197,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getFormatValue() {
       return format_;
     }
-
     /**
      *
      *
@@ -7394,7 +7217,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7416,7 +7238,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.artifactregistry.v1.Repository.Format.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -7440,7 +7261,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7462,7 +7282,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
-
     /**
      *
      *
@@ -7485,7 +7304,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -7508,7 +7326,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -7530,7 +7347,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7548,7 +7364,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7597,7 +7412,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -7618,14 +7432,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -7643,7 +7455,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -7668,7 +7479,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -7699,7 +7509,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -7720,14 +7529,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -7752,7 +7559,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000080;
       return this;
     }
-
     /**
      *
      *
@@ -7778,7 +7584,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -7795,7 +7600,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -7818,7 +7622,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7843,7 +7646,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7865,7 +7667,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7895,7 +7696,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -7917,7 +7717,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7934,7 +7733,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7955,7 +7753,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -7990,7 +7787,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -8007,7 +7803,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -8030,7 +7825,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8055,7 +7849,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8077,7 +7870,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8107,7 +7899,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -8129,7 +7920,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8146,7 +7936,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -8167,7 +7956,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -8197,7 +7985,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object kmsKeyName_ = "";
-
     /**
      *
      *
@@ -8223,7 +8010,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -8249,7 +8035,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -8274,7 +8059,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8295,7 +8079,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8323,7 +8106,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int mode_ = 0;
-
     /**
      *
      *
@@ -8341,7 +8123,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getModeValue() {
       return mode_;
     }
-
     /**
      *
      *
@@ -8362,7 +8143,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8384,7 +8164,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.artifactregistry.v1.Repository.Mode.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -8408,7 +8187,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8449,8 +8227,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return CleanupPoliciesDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final CleanupPoliciesConverter cleanupPoliciesConverter =
         new CleanupPoliciesConverter();
@@ -8491,7 +8268,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public int getCleanupPoliciesCount() {
       return internalGetCleanupPolicies().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -8513,7 +8289,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetCleanupPolicies().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getCleanupPoliciesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -8521,7 +8296,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         getCleanupPolicies() {
       return getCleanupPoliciesMap();
     }
-
     /**
      *
      *
@@ -8541,7 +8315,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         getCleanupPoliciesMap() {
       return internalGetCleanupPolicies().getImmutableMap();
     }
-
     /**
      *
      *
@@ -8570,7 +8343,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableCleanupPolicies().ensureBuilderMap();
       return map.containsKey(key) ? cleanupPoliciesConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -8605,7 +8377,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCleanupPolicies().clear();
       return this;
     }
-
     /**
      *
      *
@@ -8627,7 +8398,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableCleanupPolicies().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.devtools.artifactregistry.v1.CleanupPolicy>
@@ -8635,7 +8405,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       return internalGetMutableCleanupPolicies().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -8662,7 +8431,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       return this;
     }
-
     /**
      *
      *
@@ -8691,7 +8459,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00001000;
       return this;
     }
-
     /**
      *
      *
@@ -8724,7 +8491,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long sizeBytes_;
-
     /**
      *
      *
@@ -8742,7 +8508,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public long getSizeBytes() {
       return sizeBytes_;
     }
-
     /**
      *
      *
@@ -8764,7 +8529,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8786,7 +8550,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzs_;
-
     /**
      *
      *
@@ -8802,7 +8565,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
-
     /**
      *
      *
@@ -8822,7 +8584,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8842,7 +8603,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean cleanupPolicyDryRun_;
-
     /**
      *
      *
@@ -8859,7 +8619,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean getCleanupPolicyDryRun() {
       return cleanupPolicyDryRun_;
     }
-
     /**
      *
      *
@@ -8880,7 +8639,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -8907,7 +8665,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfig.Builder,
             com.google.devtools.artifactregistry.v1.Repository.VulnerabilityScanningConfigOrBuilder>
         vulnerabilityScanningConfigBuilder_;
-
     /**
      *
      *
@@ -8925,7 +8682,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVulnerabilityScanningConfig() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -8951,7 +8707,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return vulnerabilityScanningConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -8978,7 +8733,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9003,7 +8757,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9037,7 +8790,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -9060,7 +8812,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9079,7 +8830,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVulnerabilityScanningConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -9103,7 +8853,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
             : vulnerabilityScanningConfig_;
       }
     }
-
     /**
      *
      *
@@ -9136,7 +8885,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disallowUnspecifiedMode_;
-
     /**
      *
      *
@@ -9153,7 +8901,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisallowUnspecifiedMode() {
       return disallowUnspecifiedMode_;
     }
-
     /**
      *
      *
@@ -9174,7 +8921,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9195,7 +8941,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean satisfiesPzi_;
-
     /**
      *
      *
@@ -9211,7 +8956,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
-
     /**
      *
      *
@@ -9231,7 +8975,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9251,7 +8994,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object registryUri_ = "";
-
     /**
      *
      *
@@ -9275,7 +9017,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -9299,7 +9040,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -9322,7 +9062,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -9341,7 +9080,6 @@ public final class Repository extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

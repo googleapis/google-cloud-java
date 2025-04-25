@@ -33,7 +33,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SourceTextFilter)
     SourceTextFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SourceTextFilter.newBuilder() to construct.
   private SourceTextFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,7 +63,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
 
   public static final int SOURCE_MIN_LENGTH_FILTER_FIELD_NUMBER = 1;
   private long sourceMinLengthFilter_ = 0L;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
 
   public static final int SOURCE_MAX_LENGTH_FILTER_FIELD_NUMBER = 2;
   private long sourceMaxLengthFilter_ = 0L;
-
   /**
    *
    *
@@ -270,7 +267,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -465,7 +461,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private long sourceMinLengthFilter_;
-
     /**
      *
      *
@@ -482,7 +477,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
     public long getSourceMinLengthFilter() {
       return sourceMinLengthFilter_;
     }
-
     /**
      *
      *
@@ -503,7 +497,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -524,7 +517,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
     }
 
     private long sourceMaxLengthFilter_;
-
     /**
      *
      *
@@ -541,7 +533,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
     public long getSourceMaxLengthFilter() {
       return sourceMaxLengthFilter_;
     }
-
     /**
      *
      *
@@ -562,7 +553,6 @@ public final class SourceTextFilter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

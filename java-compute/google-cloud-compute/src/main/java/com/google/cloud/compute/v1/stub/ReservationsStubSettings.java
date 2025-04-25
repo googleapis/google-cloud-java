@@ -52,7 +52,6 @@ import com.google.cloud.compute.v1.GetReservationRequest;
 import com.google.cloud.compute.v1.InsertReservationRequest;
 import com.google.cloud.compute.v1.ListReservationsRequest;
 import com.google.cloud.compute.v1.Operation;
-import com.google.cloud.compute.v1.PerformMaintenanceReservationRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reservation;
 import com.google.cloud.compute.v1.ReservationAggregatedList;
@@ -171,10 +170,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       insertOperationSettings;
   private final PagedCallSettings<ListReservationsRequest, ReservationList, ListPagedResponse>
       listSettings;
-  private final UnaryCallSettings<PerformMaintenanceReservationRequest, Operation>
-      performMaintenanceSettings;
-  private final OperationCallSettings<PerformMaintenanceReservationRequest, Operation, Operation>
-      performMaintenanceOperationSettings;
   private final UnaryCallSettings<ResizeReservationRequest, Operation> resizeSettings;
   private final OperationCallSettings<ResizeReservationRequest, Operation, Operation>
       resizeOperationSettings;
@@ -354,18 +349,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     return listSettings;
   }
 
-  /** Returns the object with the settings used for calls to performMaintenance. */
-  public UnaryCallSettings<PerformMaintenanceReservationRequest, Operation>
-      performMaintenanceSettings() {
-    return performMaintenanceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to performMaintenance. */
-  public OperationCallSettings<PerformMaintenanceReservationRequest, Operation, Operation>
-      performMaintenanceOperationSettings() {
-    return performMaintenanceOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to resize. */
   public UnaryCallSettings<ResizeReservationRequest, Operation> resizeSettings() {
     return resizeSettings;
@@ -489,9 +472,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
-    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
-    performMaintenanceOperationSettings =
-        settingsBuilder.performMaintenanceOperationSettings().build();
     resizeSettings = settingsBuilder.resizeSettings().build();
     resizeOperationSettings = settingsBuilder.resizeOperationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -520,11 +500,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     private final PagedCallSettings.Builder<
             ListReservationsRequest, ReservationList, ListPagedResponse>
         listSettings;
-    private final UnaryCallSettings.Builder<PerformMaintenanceReservationRequest, Operation>
-        performMaintenanceSettings;
-    private final OperationCallSettings.Builder<
-            PerformMaintenanceReservationRequest, Operation, Operation>
-        performMaintenanceOperationSettings;
     private final UnaryCallSettings.Builder<ResizeReservationRequest, Operation> resizeSettings;
     private final OperationCallSettings.Builder<ResizeReservationRequest, Operation, Operation>
         resizeOperationSettings;
@@ -594,8 +569,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
-      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       resizeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resizeOperationSettings = OperationCallSettings.newBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -611,7 +584,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               getIamPolicySettings,
               insertSettings,
               listSettings,
-              performMaintenanceSettings,
               resizeSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
@@ -630,9 +602,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
-      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
-      performMaintenanceOperationSettings =
-          settings.performMaintenanceOperationSettings.toBuilder();
       resizeSettings = settings.resizeSettings.toBuilder();
       resizeOperationSettings = settings.resizeOperationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -648,7 +617,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
               getIamPolicySettings,
               insertSettings,
               listSettings,
-              performMaintenanceSettings,
               resizeSettings,
               setIamPolicySettings,
               testIamPermissionsSettings,
@@ -699,11 +667,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
-          .performMaintenanceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
           .resizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -752,31 +715,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InsertReservationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
-                      .setInitialRpcTimeoutDuration(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeoutDuration(Duration.ZERO)
-                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
-                      .build()));
-
-      builder
-          .performMaintenanceOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<PerformMaintenanceReservationRequest, OperationSnapshot>
-                      newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -908,18 +846,6 @@ public class ReservationsStubSettings extends StubSettings<ReservationsStubSetti
     public PagedCallSettings.Builder<ListReservationsRequest, ReservationList, ListPagedResponse>
         listSettings() {
       return listSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to performMaintenance. */
-    public UnaryCallSettings.Builder<PerformMaintenanceReservationRequest, Operation>
-        performMaintenanceSettings() {
-      return performMaintenanceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to performMaintenance. */
-    public OperationCallSettings.Builder<PerformMaintenanceReservationRequest, Operation, Operation>
-        performMaintenanceOperationSettings() {
-      return performMaintenanceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to resize. */

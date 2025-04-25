@@ -36,7 +36,6 @@ public interface NodeGroupsSimulateMaintenanceEventRequestOrBuilder
    * @return A list containing the nodes.
    */
   java.util.List<java.lang.String> getNodesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface NodeGroupsSimulateMaintenanceEventRequestOrBuilder
    * @return The count of nodes.
    */
   int getNodesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface NodeGroupsSimulateMaintenanceEventRequestOrBuilder
    * @return The nodes at the given index.
    */
   java.lang.String getNodes(int index);
-
   /**
    *
    *

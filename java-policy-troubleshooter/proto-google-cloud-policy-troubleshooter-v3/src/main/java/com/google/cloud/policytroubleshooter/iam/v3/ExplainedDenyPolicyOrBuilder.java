@@ -45,7 +45,6 @@ public interface ExplainedDenyPolicyOrBuilder
    * @return The enum numeric value on the wire for denyAccessState.
    */
   int getDenyAccessStateValue();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface ExplainedDenyPolicyOrBuilder
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
-
   /**
    *
    *
@@ -99,7 +97,6 @@ public interface ExplainedDenyPolicyOrBuilder
    * @return The policy.
    */
   com.google.iam.v2.Policy getPolicy();
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public interface ExplainedDenyPolicyOrBuilder
    */
   java.util.List<com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation>
       getRuleExplanationsList();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface ExplainedDenyPolicyOrBuilder
    * </code>
    */
   com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanation getRuleExplanations(int index);
-
   /**
    *
    *
@@ -168,7 +163,6 @@ public interface ExplainedDenyPolicyOrBuilder
    * </code>
    */
   int getRuleExplanationsCount();
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public interface ExplainedDenyPolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.policytroubleshooter.iam.v3.DenyRuleExplanationOrBuilder>
       getRuleExplanationsOrBuilderList();
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public interface ExplainedDenyPolicyOrBuilder
    * @return The enum numeric value on the wire for relevance.
    */
   int getRelevanceValue();
-
   /**
    *
    *

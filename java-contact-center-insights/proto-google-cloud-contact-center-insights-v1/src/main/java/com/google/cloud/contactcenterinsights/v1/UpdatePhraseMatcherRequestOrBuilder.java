@@ -38,7 +38,6 @@ public interface UpdatePhraseMatcherRequestOrBuilder
    * @return Whether the phraseMatcher field is set.
    */
   boolean hasPhraseMatcher();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface UpdatePhraseMatcherRequestOrBuilder
    * @return The phraseMatcher.
    */
   com.google.cloud.contactcenterinsights.v1.PhraseMatcher getPhraseMatcher();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface UpdatePhraseMatcherRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -92,7 +89,6 @@ public interface UpdatePhraseMatcherRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

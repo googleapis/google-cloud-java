@@ -36,7 +36,6 @@ public interface DataSourceReferenceOrBuilder
    * @return Whether the self field is set.
    */
   boolean hasSelf();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface DataSourceReferenceOrBuilder
    * @return Whether the primaryDataSourceName field is set.
    */
   boolean hasPrimaryDataSourceName();
-
   /**
    *
    *
@@ -79,7 +77,6 @@ public interface DataSourceReferenceOrBuilder
    * @return The primaryDataSourceName.
    */
   java.lang.String getPrimaryDataSourceName();
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public interface DataSourceReferenceOrBuilder
    * @return Whether the supplementalDataSourceName field is set.
    */
   boolean hasSupplementalDataSourceName();
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public interface DataSourceReferenceOrBuilder
    * @return The supplementalDataSourceName.
    */
   java.lang.String getSupplementalDataSourceName();
-
   /**
    *
    *

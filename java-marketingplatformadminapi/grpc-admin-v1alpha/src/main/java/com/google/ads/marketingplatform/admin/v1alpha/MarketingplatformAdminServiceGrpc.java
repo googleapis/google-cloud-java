@@ -322,20 +322,6 @@ public final class MarketingplatformAdminServiceGrpc {
     return MarketingplatformAdminServiceStub.newStub(factory, channel);
   }
 
-  /** Creates a new blocking-style stub that supports all types of calls on the service */
-  public static MarketingplatformAdminServiceBlockingV2Stub newBlockingV2Stub(
-      io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<MarketingplatformAdminServiceBlockingV2Stub> factory =
-        new io.grpc.stub.AbstractStub.StubFactory<MarketingplatformAdminServiceBlockingV2Stub>() {
-          @java.lang.Override
-          public MarketingplatformAdminServiceBlockingV2Stub newStub(
-              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-            return new MarketingplatformAdminServiceBlockingV2Stub(channel, callOptions);
-          }
-        };
-    return MarketingplatformAdminServiceBlockingV2Stub.newStub(factory, channel);
-  }
-
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -593,106 +579,6 @@ public final class MarketingplatformAdminServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MarketingplatformAdminService.
-   *
-   * <pre>
-   * Service Interface for the Google Marketing Platform Admin API.
-   * </pre>
-   */
-  public static final class MarketingplatformAdminServiceBlockingV2Stub
-      extends io.grpc.stub.AbstractBlockingStub<MarketingplatformAdminServiceBlockingV2Stub> {
-    private MarketingplatformAdminServiceBlockingV2Stub(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      super(channel, callOptions);
-    }
-
-    @java.lang.Override
-    protected MarketingplatformAdminServiceBlockingV2Stub build(
-        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new MarketingplatformAdminServiceBlockingV2Stub(channel, callOptions);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lookup for a single organization.
-     * </pre>
-     */
-    public com.google.ads.marketingplatform.admin.v1alpha.Organization getOrganization(
-        com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getGetOrganizationMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the Google Analytics accounts link to the specified Google Marketing
-     * Platform organization.
-     * </pre>
-     */
-    public com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse
-        listAnalyticsAccountLinks(
-            com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListAnalyticsAccountLinksMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates the link between the Analytics account and the Google Marketing
-     * Platform organization.
-     * User needs to be an org user, and admin on the Analytics account to create
-     * the link. If the account is already linked to an organization, user needs
-     * to unlink the account from the current organization, then try link again.
-     * </pre>
-     */
-    public com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink
-        createAnalyticsAccountLink(
-            com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateAnalyticsAccountLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the AnalyticsAccountLink, which detaches the Analytics account from
-     * the Google Marketing Platform organization.
-     * User needs to be an org user, and admin on the Analytics account in order
-     * to delete the link.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteAnalyticsAccountLink(
-        com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteAnalyticsAccountLinkMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Updates the service level for an Analytics property.
-     * </pre>
-     */
-    public com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse
-        setPropertyServiceLevel(
-            com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetPropertyServiceLevelMethod(), getCallOptions(), request);
-    }
-  }
-
-  /**
-   * A stub to allow clients to do limited synchronous rpc calls to service
-   * MarketingplatformAdminService.
    *
    * <pre>
    * Service Interface for the Google Marketing Platform Admin API.

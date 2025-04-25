@@ -37,7 +37,6 @@ public interface TextExtractionAnnotationOrBuilder
    * @return Whether the textSegment field is set.
    */
   boolean hasTextSegment();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TextExtractionAnnotationOrBuilder
    * @return The textSegment.
    */
   com.google.cloud.automl.v1.TextSegment getTextSegment();
-
   /**
    *
    *

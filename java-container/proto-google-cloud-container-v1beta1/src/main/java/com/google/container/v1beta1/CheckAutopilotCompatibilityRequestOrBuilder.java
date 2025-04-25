@@ -37,7 +37,6 @@ public interface CheckAutopilotCompatibilityRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

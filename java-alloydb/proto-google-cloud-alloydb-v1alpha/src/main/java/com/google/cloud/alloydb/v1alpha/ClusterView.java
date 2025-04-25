@@ -77,7 +77,6 @@ public enum ClusterView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLUSTER_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int CLUSTER_VIEW_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public enum ClusterView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CLUSTER_VIEW_BASIC = 1;</code>
    */
   public static final int CLUSTER_VIEW_BASIC_VALUE = 1;
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.FileStoreCollection)
     FileStoreCollectionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FileStoreCollection.newBuilder() to construct.
   private FileStoreCollection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     private PatternCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INCLUDE_REGEXES_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
   public boolean hasIncludeRegexes() {
     return patternCase_ == 1;
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     }
     return com.google.privacy.dlp.v2.FileStoreRegexes.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -346,7 +341,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -564,7 +558,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
             com.google.privacy.dlp.v2.FileStoreRegexes.Builder,
             com.google.privacy.dlp.v2.FileStoreRegexesOrBuilder>
         includeRegexesBuilder_;
-
     /**
      *
      *
@@ -583,7 +576,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     public boolean hasIncludeRegexes() {
       return patternCase_ == 1;
     }
-
     /**
      *
      *
@@ -612,7 +604,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.FileStoreRegexes.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -638,7 +629,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +687,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       patternCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +715,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -743,7 +730,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
     public com.google.privacy.dlp.v2.FileStoreRegexes.Builder getIncludeRegexesBuilder() {
       return getIncludeRegexesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -767,7 +753,6 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
         return com.google.privacy.dlp.v2.FileStoreRegexes.getDefaultInstance();
       }
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionO
    * @return A list containing the machineTypes.
    */
   java.util.List<java.lang.String> getMachineTypesList();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionO
    * @return The count of machineTypes.
    */
   int getMachineTypesCount();
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionO
    * @return The machineTypes at the given index.
    */
   java.lang.String getMachineTypes(int index);
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectionO
    * @return Whether the rank field is set.
    */
   boolean hasRank();
-
   /**
    *
    *

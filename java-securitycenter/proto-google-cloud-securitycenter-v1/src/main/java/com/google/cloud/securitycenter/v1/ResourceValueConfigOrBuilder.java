@@ -36,7 +36,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The enum numeric value on the wire for resourceValue.
    */
   int getResourceValueValue();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface ResourceValueConfigOrBuilder
    * @return A list containing the tagValues.
    */
   java.util.List<java.lang.String> getTagValuesList();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The count of tagValues.
    */
   int getTagValuesCount();
-
   /**
    *
    *
@@ -128,7 +124,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The tagValues at the given index.
    */
   java.lang.String getTagValues(int index);
-
   /**
    *
    *
@@ -161,7 +156,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The resourceType.
    */
   java.lang.String getResourceType();
-
   /**
    *
    *
@@ -193,7 +187,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
-
   /**
    *
    *
@@ -224,7 +217,6 @@ public interface ResourceValueConfigOrBuilder
    * <code>map&lt;string, string&gt; resource_labels_selector = 6;</code>
    */
   int getResourceLabelsSelectorCount();
-
   /**
    *
    *
@@ -239,11 +231,9 @@ public interface ResourceValueConfigOrBuilder
    * <code>map&lt;string, string&gt; resource_labels_selector = 6;</code>
    */
   boolean containsResourceLabelsSelector(java.lang.String key);
-
   /** Use {@link #getResourceLabelsSelectorMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsSelector();
-
   /**
    *
    *
@@ -258,7 +248,6 @@ public interface ResourceValueConfigOrBuilder
    * <code>map&lt;string, string&gt; resource_labels_selector = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getResourceLabelsSelectorMap();
-
   /**
    *
    *
@@ -277,7 +266,6 @@ public interface ResourceValueConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -305,7 +293,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -332,7 +319,6 @@ public interface ResourceValueConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -346,7 +332,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -372,7 +357,6 @@ public interface ResourceValueConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
-
   /**
    *
    *
@@ -386,7 +370,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
-
   /**
    *
    *
@@ -411,7 +394,6 @@ public interface ResourceValueConfigOrBuilder
    * @return The enum numeric value on the wire for cloudProvider.
    */
   int getCloudProviderValue();
-
   /**
    *
    *
@@ -442,7 +424,6 @@ public interface ResourceValueConfigOrBuilder
    * @return Whether the sensitiveDataProtectionMapping field is set.
    */
   boolean hasSensitiveDataProtectionMapping();
-
   /**
    *
    *
@@ -461,7 +442,6 @@ public interface ResourceValueConfigOrBuilder
    */
   com.google.cloud.securitycenter.v1.ResourceValueConfig.SensitiveDataProtectionMapping
       getSensitiveDataProtectionMapping();
-
   /**
    *
    *

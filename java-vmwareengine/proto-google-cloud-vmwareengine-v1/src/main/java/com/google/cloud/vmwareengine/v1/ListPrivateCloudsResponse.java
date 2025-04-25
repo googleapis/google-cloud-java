@@ -34,7 +34,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.ListPrivateCloudsResponse)
     ListPrivateCloudsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListPrivateCloudsResponse.newBuilder() to construct.
   private ListPrivateCloudsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,7 +70,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmwareengine.v1.PrivateCloud> privateClouds_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.vmwareengine.v1.PrivateCloud> getPrivateCloudsList() {
     return privateClouds_;
   }
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       getPrivateCloudsOrBuilderList() {
     return privateClouds_;
   }
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   public int getPrivateCloudsCount() {
     return privateClouds_.size();
   }
-
   /**
    *
    *
@@ -128,7 +123,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   public com.google.cloud.vmwareengine.v1.PrivateCloud getPrivateClouds(int index) {
     return privateClouds_.get(index);
   }
-
   /**
    *
    *
@@ -148,7 +142,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -220,7 +211,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -236,7 +226,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -253,7 +242,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -458,7 +446,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -759,7 +746,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return privateCloudsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -776,7 +762,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return privateCloudsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return privateCloudsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -885,7 +866,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +886,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -948,7 +926,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -968,7 +945,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -988,7 +964,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +977,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         int index) {
       return getPrivateCloudsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1020,7 +994,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return privateCloudsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1038,7 +1011,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(privateClouds_);
       }
     }
-
     /**
      *
      *
@@ -1052,7 +1024,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       return getPrivateCloudsFieldBuilder()
           .addBuilder(com.google.cloud.vmwareengine.v1.PrivateCloud.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1067,7 +1038,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       return getPrivateCloudsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmwareengine.v1.PrivateCloud.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1127,7 +1096,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1151,7 +1119,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1174,7 +1141,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1193,7 +1159,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1227,7 +1192,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1244,7 +1208,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1260,7 +1223,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1277,7 +1239,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1294,7 +1255,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1319,7 +1279,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1343,7 +1302,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1364,7 +1322,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1384,7 +1341,6 @@ public final class ListPrivateCloudsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -26,7 +26,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:grafeas.v1.EnvelopeSignature)
     EnvelopeSignatureOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnvelopeSignature.newBuilder() to construct.
   private EnvelopeSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -57,7 +56,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
 
   public static final int SIG_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString sig_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    * <code>bytes sig = 1;</code>
    *
@@ -72,7 +70,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyid_ = "";
-
   /**
    * <code>string keyid = 2;</code>
    *
@@ -90,7 +87,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    * <code>string keyid = 2;</code>
    *
@@ -275,7 +271,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /** Protobuf type {@code grafeas.v1.EnvelopeSignature} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -459,7 +454,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private com.google.protobuf.ByteString sig_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      * <code>bytes sig = 1;</code>
      *
@@ -469,7 +463,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getSig() {
       return sig_;
     }
-
     /**
      * <code>bytes sig = 1;</code>
      *
@@ -485,7 +478,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      * <code>bytes sig = 1;</code>
      *
@@ -499,7 +491,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object keyid_ = "";
-
     /**
      * <code>string keyid = 2;</code>
      *
@@ -516,7 +507,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      * <code>string keyid = 2;</code>
      *
@@ -533,7 +523,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      * <code>string keyid = 2;</code>
      *
@@ -549,7 +538,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      * <code>string keyid = 2;</code>
      *
@@ -561,7 +549,6 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      * <code>string keyid = 2;</code>
      *

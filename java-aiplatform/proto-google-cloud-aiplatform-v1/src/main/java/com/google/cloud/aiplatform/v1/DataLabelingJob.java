@@ -34,7 +34,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.DataLabelingJob)
     DataLabelingJobOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DataLabelingJob.newBuilder() to construct.
   private DataLabelingJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -90,7 +89,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -143,7 +140,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -203,7 +198,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList datasets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -222,7 +216,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getDatasetsList() {
     return datasets_;
   }
-
   /**
    *
    *
@@ -241,7 +234,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public int getDatasetsCount() {
     return datasets_.size();
   }
-
   /**
    *
    *
@@ -261,7 +253,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getDatasets(int index) {
     return datasets_.get(index);
   }
-
   /**
    *
    *
@@ -310,7 +301,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public int getAnnotationLabelsCount() {
     return internalGetAnnotationLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -334,14 +324,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetAnnotationLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getAnnotationLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels() {
     return getAnnotationLabelsMap();
   }
-
   /**
    *
    *
@@ -362,7 +350,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap() {
     return internalGetAnnotationLabels().getMap();
   }
-
   /**
    *
    *
@@ -390,7 +377,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotationLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -421,7 +407,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int LABELER_COUNT_FIELD_NUMBER = 4;
   private int labelerCount_ = 0;
-
   /**
    *
    *
@@ -442,7 +427,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instructionUri_ = "";
-
   /**
    *
    *
@@ -468,7 +452,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -499,7 +482,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputsSchemaUri_ = "";
-
   /**
    *
    *
@@ -527,7 +509,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
-
   /**
    *
    *
@@ -558,7 +539,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int INPUTS_FIELD_NUMBER = 7;
   private com.google.protobuf.Value inputs_;
-
   /**
    *
    *
@@ -574,7 +554,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasInputs() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -590,7 +569,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Value getInputs() {
     return inputs_ == null ? com.google.protobuf.Value.getDefaultInstance() : inputs_;
   }
-
   /**
    *
    *
@@ -607,7 +585,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 8;
   private int state_ = 0;
-
   /**
    *
    *
@@ -625,7 +602,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
-
   /**
    *
    *
@@ -648,7 +624,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int LABELING_PROGRESS_FIELD_NUMBER = 13;
   private int labelingProgress_ = 0;
-
   /**
    *
    *
@@ -668,7 +643,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int CURRENT_SPEND_FIELD_NUMBER = 14;
   private com.google.type.Money currentSpend_;
-
   /**
    *
    *
@@ -686,7 +660,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasCurrentSpend() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -704,7 +677,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.type.Money getCurrentSpend() {
     return currentSpend_ == null ? com.google.type.Money.getDefaultInstance() : currentSpend_;
   }
-
   /**
    *
    *
@@ -723,7 +695,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
-
   /**
    *
    *
@@ -740,7 +711,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -757,7 +727,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
-
   /**
    *
    *
@@ -775,7 +744,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
-
   /**
    *
    *
@@ -792,7 +760,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -809,7 +776,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
-
   /**
    *
    *
@@ -827,7 +793,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int ERROR_FIELD_NUMBER = 22;
   private com.google.rpc.Status error_;
-
   /**
    *
    *
@@ -844,7 +809,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasError() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -861,7 +825,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
-
   /**
    *
    *
@@ -903,7 +866,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
-
   /**
    *
    *
@@ -932,14 +894,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetLabels().getMap().containsKey(key);
   }
-
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
-
   /**
    *
    *
@@ -965,7 +925,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
-
   /**
    *
    *
@@ -998,7 +957,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -1037,7 +995,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList specialistPools_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -1052,7 +1009,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getSpecialistPoolsList() {
     return specialistPools_;
   }
-
   /**
    *
    *
@@ -1067,7 +1023,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public int getSpecialistPoolsCount() {
     return specialistPools_.size();
   }
-
   /**
    *
    *
@@ -1083,7 +1038,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getSpecialistPools(int index) {
     return specialistPools_.get(index);
   }
-
   /**
    *
    *
@@ -1102,7 +1056,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 20;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
-
   /**
    *
    *
@@ -1122,7 +1075,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000020) != 0);
   }
-
   /**
    *
    *
@@ -1144,7 +1096,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
-
   /**
    *
    *
@@ -1167,7 +1118,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
 
   public static final int ACTIVE_LEARNING_CONFIG_FIELD_NUMBER = 21;
   private com.google.cloud.aiplatform.v1.ActiveLearningConfig activeLearningConfig_;
-
   /**
    *
    *
@@ -1185,7 +1135,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
   public boolean hasActiveLearningConfig() {
     return ((bitField0_ & 0x00000040) != 0);
   }
-
   /**
    *
    *
@@ -1205,7 +1154,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1.ActiveLearningConfig.getDefaultInstance()
         : activeLearningConfig_;
   }
-
   /**
    *
    *
@@ -1603,7 +1551,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2130,7 +2077,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -2153,7 +2099,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2176,7 +2121,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2198,7 +2142,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2216,7 +2159,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2241,7 +2183,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
-
     /**
      *
      *
@@ -2267,7 +2208,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2293,7 +2233,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2318,7 +2257,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2339,7 +2277,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2375,7 +2312,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -2395,7 +2331,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       datasets_.makeImmutable();
       return datasets_;
     }
-
     /**
      *
      *
@@ -2414,7 +2349,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getDatasetsCount() {
       return datasets_.size();
     }
-
     /**
      *
      *
@@ -2434,7 +2368,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getDatasets(int index) {
       return datasets_.get(index);
     }
-
     /**
      *
      *
@@ -2454,7 +2387,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getDatasetsBytes(int index) {
       return datasets_.getByteString(index);
     }
-
     /**
      *
      *
@@ -2482,7 +2414,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2509,7 +2440,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2533,7 +2463,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2556,7 +2485,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2614,7 +2542,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getAnnotationLabelsCount() {
       return internalGetAnnotationLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -2638,14 +2565,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetAnnotationLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getAnnotationLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabels() {
       return getAnnotationLabelsMap();
     }
-
     /**
      *
      *
@@ -2666,7 +2591,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationLabelsMap() {
       return internalGetAnnotationLabels().getMap();
     }
-
     /**
      *
      *
@@ -2695,7 +2619,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
           internalGetAnnotationLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -2730,7 +2653,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAnnotationLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -2754,14 +2676,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAnnotationLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotationLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableAnnotationLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -2789,7 +2709,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000008;
       return this;
     }
-
     /**
      *
      *
@@ -2814,7 +2733,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
 
     private int labelerCount_;
-
     /**
      *
      *
@@ -2830,7 +2748,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getLabelerCount() {
       return labelerCount_;
     }
-
     /**
      *
      *
@@ -2850,7 +2767,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2870,7 +2786,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object instructionUri_ = "";
-
     /**
      *
      *
@@ -2895,7 +2810,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2920,7 +2834,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2944,7 +2857,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2964,7 +2876,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2991,7 +2902,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object inputsSchemaUri_ = "";
-
     /**
      *
      *
@@ -3018,7 +2928,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3045,7 +2954,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3071,7 +2979,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3093,7 +3000,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3127,7 +3033,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         inputsBuilder_;
-
     /**
      *
      *
@@ -3142,7 +3047,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasInputs() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3161,7 +3065,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return inputsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3184,7 +3087,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3204,7 +3106,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3232,7 +3133,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3252,7 +3152,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3267,7 +3166,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getInputsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3284,7 +3182,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return inputs_ == null ? com.google.protobuf.Value.getDefaultInstance() : inputs_;
       }
     }
-
     /**
      *
      *
@@ -3311,7 +3208,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
-
     /**
      *
      *
@@ -3329,7 +3225,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
-
     /**
      *
      *
@@ -3350,7 +3245,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3370,7 +3264,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
           com.google.cloud.aiplatform.v1.JobState.forNumber(state_);
       return result == null ? com.google.cloud.aiplatform.v1.JobState.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -3394,7 +3287,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3416,7 +3308,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     }
 
     private int labelingProgress_;
-
     /**
      *
      *
@@ -3433,7 +3324,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getLabelingProgress() {
       return labelingProgress_;
     }
-
     /**
      *
      *
@@ -3454,7 +3344,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3478,7 +3367,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
         currentSpendBuilder_;
-
     /**
      *
      *
@@ -3495,7 +3383,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasCurrentSpend() {
       return ((bitField0_ & 0x00000400) != 0);
     }
-
     /**
      *
      *
@@ -3516,7 +3403,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return currentSpendBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3541,7 +3427,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3563,7 +3448,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3593,7 +3477,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3615,7 +3498,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3632,7 +3514,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCurrentSpendFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3651,7 +3532,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return currentSpend_ == null ? com.google.type.Money.getDefaultInstance() : currentSpend_;
       }
     }
-
     /**
      *
      *
@@ -3684,7 +3564,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
-
     /**
      *
      *
@@ -3701,7 +3580,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
-
     /**
      *
      *
@@ -3724,7 +3602,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3749,7 +3626,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3771,7 +3647,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3801,7 +3676,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -3823,7 +3697,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3840,7 +3713,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3861,7 +3733,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
-
     /**
      *
      *
@@ -3896,7 +3767,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
-
     /**
      *
      *
@@ -3913,7 +3783,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00001000) != 0);
     }
-
     /**
      *
      *
@@ -3936,7 +3805,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3961,7 +3829,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3983,7 +3850,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4013,7 +3879,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4035,7 +3900,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4052,7 +3916,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4073,7 +3936,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
-
     /**
      *
      *
@@ -4106,7 +3968,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
-
     /**
      *
      *
@@ -4122,7 +3983,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasError() {
       return ((bitField0_ & 0x00002000) != 0);
     }
-
     /**
      *
      *
@@ -4142,7 +4002,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return errorBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4166,7 +4025,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4187,7 +4045,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4216,7 +4073,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4237,7 +4093,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4253,7 +4108,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4271,7 +4125,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
-
     /**
      *
      *
@@ -4321,7 +4174,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
-
     /**
      *
      *
@@ -4350,14 +4202,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
-
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
-
     /**
      *
      *
@@ -4383,7 +4233,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
-
     /**
      *
      *
@@ -4416,7 +4265,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-
     /**
      *
      *
@@ -4455,7 +4303,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
-
     /**
      *
      *
@@ -4484,14 +4331,12 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00004000;
       return internalGetMutableLabels().getMutableMap();
     }
-
     /**
      *
      *
@@ -4524,7 +4369,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00004000;
       return this;
     }
-
     /**
      *
      *
@@ -4561,7 +4405,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00008000;
     }
-
     /**
      *
      *
@@ -4577,7 +4420,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       specialistPools_.makeImmutable();
       return specialistPools_;
     }
-
     /**
      *
      *
@@ -4592,7 +4434,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public int getSpecialistPoolsCount() {
       return specialistPools_.size();
     }
-
     /**
      *
      *
@@ -4608,7 +4449,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getSpecialistPools(int index) {
       return specialistPools_.get(index);
     }
-
     /**
      *
      *
@@ -4624,7 +4464,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getSpecialistPoolsBytes(int index) {
       return specialistPools_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4648,7 +4487,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4671,7 +4509,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4691,7 +4528,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4710,7 +4546,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4741,7 +4576,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
-
     /**
      *
      *
@@ -4760,7 +4594,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x00010000) != 0);
     }
-
     /**
      *
      *
@@ -4785,7 +4618,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return encryptionSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4812,7 +4644,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4837,7 +4668,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4870,7 +4700,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -4894,7 +4723,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4913,7 +4741,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4936,7 +4763,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             : encryptionSpec_;
       }
     }
-
     /**
      *
      *
@@ -4973,7 +4799,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1.ActiveLearningConfig.Builder,
             com.google.cloud.aiplatform.v1.ActiveLearningConfigOrBuilder>
         activeLearningConfigBuilder_;
-
     /**
      *
      *
@@ -4990,7 +4815,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
     public boolean hasActiveLearningConfig() {
       return ((bitField0_ & 0x00020000) != 0);
     }
-
     /**
      *
      *
@@ -5013,7 +4837,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
         return activeLearningConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5039,7 +4862,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5062,7 +4884,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5094,7 +4915,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -5116,7 +4936,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5134,7 +4953,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getActiveLearningConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5156,7 +4974,6 @@ public final class DataLabelingJob extends com.google.protobuf.GeneratedMessageV
             : activeLearningConfig_;
       }
     }
-
     /**
      *
      *

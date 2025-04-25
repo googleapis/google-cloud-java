@@ -34,7 +34,6 @@ public final class GetEffectiveFirewallsInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest)
     GetEffectiveFirewallsInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetEffectiveFirewallsInstanceRequest.newBuilder() to construct.
   private GetEffectiveFirewallsInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class GetEffectiveFirewallsInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class GetEffectiveFirewallsInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkInterface_ = "";
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -179,7 +174,6 @@ public final class GetEffectiveFirewallsInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -203,7 +197,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -232,7 +225,6 @@ public final class GetEffectiveFirewallsInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -256,7 +248,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -469,7 +460,6 @@ public final class GetEffectiveFirewallsInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -703,7 +693,6 @@ public final class GetEffectiveFirewallsInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
-
     /**
      *
      *
@@ -726,7 +715,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -749,7 +737,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -771,7 +758,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -789,7 +775,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +799,6 @@ public final class GetEffectiveFirewallsInstanceRequest
     }
 
     private java.lang.Object networkInterface_ = "";
-
     /**
      *
      *
@@ -837,7 +821,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -860,7 +843,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -882,7 +864,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -900,7 +881,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +905,6 @@ public final class GetEffectiveFirewallsInstanceRequest
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -948,7 +927,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -971,7 +949,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -993,7 +970,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1011,7 +987,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1036,7 +1011,6 @@ public final class GetEffectiveFirewallsInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1059,7 +1033,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1082,7 +1055,6 @@ public final class GetEffectiveFirewallsInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1104,7 +1076,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1122,7 +1093,6 @@ public final class GetEffectiveFirewallsInstanceRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *

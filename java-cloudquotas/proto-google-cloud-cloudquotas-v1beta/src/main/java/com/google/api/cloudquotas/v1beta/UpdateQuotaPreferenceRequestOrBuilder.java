@@ -41,7 +41,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return Whether the quotaPreference field is set.
    */
   boolean hasQuotaPreference();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return The quotaPreference.
    */
   com.google.api.cloudquotas.v1beta.QuotaPreference getQuotaPreference();
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return A list containing the ignoreSafetyChecks.
    */
   java.util.List<com.google.api.cloudquotas.v1beta.QuotaSafetyCheck> getIgnoreSafetyChecksList();
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return The count of ignoreSafetyChecks.
    */
   int getIgnoreSafetyChecksCount();
-
   /**
    *
    *
@@ -187,7 +181,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return The ignoreSafetyChecks at the given index.
    */
   com.google.api.cloudquotas.v1beta.QuotaSafetyCheck getIgnoreSafetyChecks(int index);
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public interface UpdateQuotaPreferenceRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for ignoreSafetyChecks.
    */
   java.util.List<java.lang.Integer> getIgnoreSafetyChecksValueList();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface MutationRecordOrBuilder
    * @return Whether the mutateTime field is set.
    */
   boolean hasMutateTime();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface MutationRecordOrBuilder
    * @return The mutateTime.
    */
   com.google.protobuf.Timestamp getMutateTime();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface MutationRecordOrBuilder
    * @return The mutatedBy.
    */
   java.lang.String getMutatedBy();
-
   /**
    *
    *

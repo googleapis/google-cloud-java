@@ -36,7 +36,6 @@ public interface EffectiveTagOrBuilder
    * @return The tagValue.
    */
   java.lang.String getTagValue();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface EffectiveTagOrBuilder
    * @return The namespacedTagValue.
    */
   java.lang.String getNamespacedTagValue();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface EffectiveTagOrBuilder
    * @return The tagKey.
    */
   java.lang.String getTagKey();
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public interface EffectiveTagOrBuilder
    * @return The namespacedTagKey.
    */
   java.lang.String getNamespacedTagKey();
-
   /**
    *
    *
@@ -156,7 +152,6 @@ public interface EffectiveTagOrBuilder
    * @return The tagKeyParentName.
    */
   java.lang.String getTagKeyParentName();
-
   /**
    *
    *

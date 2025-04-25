@@ -33,7 +33,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.CreateBackupPolicyRequest)
     CreateBackupPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateBackupPolicyRequest.newBuilder() to construct.
   private CreateBackupPolicyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
 
   public static final int BACKUP_POLICY_FIELD_NUMBER = 2;
   private com.google.cloud.netapp.v1.BackupPolicy backupPolicy_;
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
   public boolean hasBackupPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -165,7 +160,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
         ? com.google.cloud.netapp.v1.BackupPolicy.getDefaultInstance()
         : backupPolicy_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupPolicyId_ = "";
-
   /**
    *
    *
@@ -216,7 +209,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -427,7 +419,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -657,7 +648,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -683,7 +673,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -709,7 +698,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +722,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -755,7 +742,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +774,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
             com.google.cloud.netapp.v1.BackupPolicy.Builder,
             com.google.cloud.netapp.v1.BackupPolicyOrBuilder>
         backupPolicyBuilder_;
-
     /**
      *
      *
@@ -805,7 +790,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
     public boolean hasBackupPolicy() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -828,7 +812,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
         return backupPolicyBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -853,7 +836,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -876,7 +858,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +908,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +924,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return getBackupPolicyFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -966,7 +944,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
             : backupPolicy_;
       }
     }
-
     /**
      *
      *
@@ -996,7 +973,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object backupPolicyId_ = "";
-
     /**
      *
      *
@@ -1023,7 +999,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1050,7 +1025,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1076,7 +1050,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1098,7 +1071,6 @@ public final class CreateBackupPolicyRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

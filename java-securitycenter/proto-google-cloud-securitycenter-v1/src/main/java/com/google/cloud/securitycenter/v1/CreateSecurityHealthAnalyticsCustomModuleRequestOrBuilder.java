@@ -41,7 +41,6 @@ public interface CreateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface CreateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    * @return Whether the securityHealthAnalyticsCustomModule field is set.
    */
   boolean hasSecurityHealthAnalyticsCustomModule();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface CreateSecurityHealthAnalyticsCustomModuleRequestOrBuilder
    */
   com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
       getSecurityHealthAnalyticsCustomModule();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface UndeployIndexRequestOrBuilder
    * @return The indexEndpoint.
    */
   java.lang.String getIndexEndpoint();
-
   /**
    *
    *
@@ -71,7 +70,6 @@ public interface UndeployIndexRequestOrBuilder
    * @return The deployedIndexId.
    */
   java.lang.String getDeployedIndexId();
-
   /**
    *
    *

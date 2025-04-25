@@ -36,7 +36,6 @@ public interface DirectVpcEgressConnectionInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface DirectVpcEgressConnectionInfoOrBuilder
    * @return The subnetworkUri.
    */
   java.lang.String getSubnetworkUri();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface DirectVpcEgressConnectionInfoOrBuilder
    * @return The selectedIpRange.
    */
   java.lang.String getSelectedIpRange();
-
   /**
    *
    *
@@ -114,7 +111,6 @@ public interface DirectVpcEgressConnectionInfoOrBuilder
    * @return The selectedIpAddress.
    */
   java.lang.String getSelectedIpAddress();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public interface DirectVpcEgressConnectionInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *

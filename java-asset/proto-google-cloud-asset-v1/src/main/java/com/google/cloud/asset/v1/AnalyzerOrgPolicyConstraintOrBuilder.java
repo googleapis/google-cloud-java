@@ -38,7 +38,6 @@ public interface AnalyzerOrgPolicyConstraintOrBuilder
    * @return Whether the googleDefinedConstraint field is set.
    */
   boolean hasGoogleDefinedConstraint();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface AnalyzerOrgPolicyConstraintOrBuilder
    * @return The googleDefinedConstraint.
    */
   com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint getGoogleDefinedConstraint();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface AnalyzerOrgPolicyConstraintOrBuilder
    * @return Whether the customConstraint field is set.
    */
   boolean hasCustomConstraint();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface AnalyzerOrgPolicyConstraintOrBuilder
    * @return The customConstraint.
    */
   com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint getCustomConstraint();
-
   /**
    *
    *

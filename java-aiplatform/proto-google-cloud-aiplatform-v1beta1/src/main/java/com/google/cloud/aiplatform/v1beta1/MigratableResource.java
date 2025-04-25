@@ -34,7 +34,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigratableResource)
     MigratableResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MigratableResource.newBuilder() to construct.
   private MigratableResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,7 +86,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The endpoint.
      */
     java.lang.String getEndpoint();
-
     /**
      *
      *
@@ -121,7 +119,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The version.
      */
     java.lang.String getVersion();
-
     /**
      *
      *
@@ -136,7 +133,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getVersionBytes();
   }
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion)
       MlEngineModelVersionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use MlEngineModelVersion.newBuilder() to construct.
     private MlEngineModelVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -188,7 +183,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object endpoint_ = "";
-
     /**
      *
      *
@@ -219,7 +213,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -255,7 +248,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object version_ = "";
-
     /**
      *
      *
@@ -280,7 +272,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -483,7 +474,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -698,7 +688,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object endpoint_ = "";
-
       /**
        *
        *
@@ -728,7 +717,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -758,7 +746,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -787,7 +774,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -812,7 +798,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -844,7 +829,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object version_ = "";
-
       /**
        *
        *
@@ -868,7 +852,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -892,7 +875,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -915,7 +897,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -934,7 +915,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1046,7 +1026,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The model.
      */
     java.lang.String getModel();
-
     /**
      *
      *
@@ -1074,7 +1053,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The modelDisplayName.
      */
     java.lang.String getModelDisplayName();
-
     /**
      *
      *
@@ -1088,7 +1066,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getModelDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -1103,7 +1080,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel)
       AutomlModelOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AutomlModel.newBuilder() to construct.
     private AutomlModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1139,7 +1115,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
-
     /**
      *
      *
@@ -1165,7 +1140,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1196,7 +1170,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelDisplayName_ = "";
-
     /**
      *
      *
@@ -1220,7 +1193,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -1416,7 +1388,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1626,7 +1597,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object model_ = "";
-
       /**
        *
        *
@@ -1651,7 +1621,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1676,7 +1645,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1700,7 +1668,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1720,7 +1687,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1747,7 +1713,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object modelDisplayName_ = "";
-
       /**
        *
        *
@@ -1770,7 +1735,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1793,7 +1757,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1815,7 +1778,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1833,7 +1795,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1943,7 +1904,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The dataset.
      */
     java.lang.String getDataset();
-
     /**
      *
      *
@@ -1971,7 +1931,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The datasetDisplayName.
      */
     java.lang.String getDatasetDisplayName();
-
     /**
      *
      *
@@ -1985,7 +1944,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getDatasetDisplayNameBytes();
   }
-
   /**
    *
    *
@@ -2000,7 +1958,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset)
       AutomlDatasetOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use AutomlDataset.newBuilder() to construct.
     private AutomlDataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2036,7 +1993,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -2062,7 +2018,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -2093,7 +2048,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetDisplayName_ = "";
-
     /**
      *
      *
@@ -2117,7 +2071,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -2313,7 +2266,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2524,7 +2476,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
-
       /**
        *
        *
@@ -2549,7 +2500,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2574,7 +2524,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2598,7 +2547,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2618,7 +2566,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2645,7 +2592,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object datasetDisplayName_ = "";
-
       /**
        *
        *
@@ -2668,7 +2614,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -2691,7 +2636,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -2713,7 +2657,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2731,7 +2674,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2841,7 +2783,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The dataset.
      */
     java.lang.String getDataset();
-
     /**
      *
      *
@@ -2869,7 +2810,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * @return The datasetDisplayName.
      */
     java.lang.String getDatasetDisplayName();
-
     /**
      *
      *
@@ -2899,7 +2839,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
                 .DataLabelingAnnotatedDataset>
         getDataLabelingAnnotatedDatasetsList();
-
     /**
      *
      *
@@ -2915,7 +2854,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
             .DataLabelingAnnotatedDataset
         getDataLabelingAnnotatedDatasets(int index);
-
     /**
      *
      *
@@ -2929,7 +2867,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     int getDataLabelingAnnotatedDatasetsCount();
-
     /**
      *
      *
@@ -2947,7 +2884,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
                     .DataLabelingAnnotatedDatasetOrBuilder>
         getDataLabelingAnnotatedDatasetsOrBuilderList();
-
     /**
      *
      *
@@ -2964,7 +2900,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .DataLabelingAnnotatedDatasetOrBuilder
         getDataLabelingAnnotatedDatasetsOrBuilder(int index);
   }
-
   /**
    *
    *
@@ -2979,7 +2914,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset)
       DataLabelingDatasetOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DataLabelingDataset.newBuilder() to construct.
     private DataLabelingDataset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3032,7 +2966,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return The annotatedDataset.
        */
       java.lang.String getAnnotatedDataset();
-
       /**
        *
        *
@@ -3060,7 +2993,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        * @return The annotatedDatasetDisplayName.
        */
       java.lang.String getAnnotatedDatasetDisplayName();
-
       /**
        *
        *
@@ -3074,7 +3006,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
        */
       com.google.protobuf.ByteString getAnnotatedDatasetDisplayNameBytes();
     }
-
     /**
      *
      *
@@ -3091,7 +3022,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset.DataLabelingAnnotatedDataset)
         DataLabelingAnnotatedDatasetOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use DataLabelingAnnotatedDataset.newBuilder() to construct.
       private DataLabelingAnnotatedDataset(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -3130,7 +3060,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object annotatedDataset_ = "";
-
       /**
        *
        *
@@ -3156,7 +3085,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -3187,7 +3115,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object annotatedDatasetDisplayName_ = "";
-
       /**
        *
        *
@@ -3211,7 +3138,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return s;
         }
       }
-
       /**
        *
        *
@@ -3439,7 +3365,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -3672,7 +3597,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         private int bitField0_;
 
         private java.lang.Object annotatedDataset_ = "";
-
         /**
          *
          *
@@ -3697,7 +3621,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3722,7 +3645,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3746,7 +3668,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3766,7 +3687,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3793,7 +3713,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
 
         private java.lang.Object annotatedDatasetDisplayName_ = "";
-
         /**
          *
          *
@@ -3816,7 +3735,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -3839,7 +3757,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -3861,7 +3778,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3879,7 +3795,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -3979,7 +3894,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
-
     /**
      *
      *
@@ -4005,7 +3919,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -4036,7 +3949,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetDisplayName_ = "";
-
     /**
      *
      *
@@ -4060,7 +3972,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -4092,7 +4003,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
                 .DataLabelingAnnotatedDataset>
         dataLabelingAnnotatedDatasets_;
-
     /**
      *
      *
@@ -4112,7 +4022,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getDataLabelingAnnotatedDatasetsList() {
       return dataLabelingAnnotatedDatasets_;
     }
-
     /**
      *
      *
@@ -4133,7 +4042,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getDataLabelingAnnotatedDatasetsOrBuilderList() {
       return dataLabelingAnnotatedDatasets_;
     }
-
     /**
      *
      *
@@ -4150,7 +4058,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public int getDataLabelingAnnotatedDatasetsCount() {
       return dataLabelingAnnotatedDatasets_.size();
     }
-
     /**
      *
      *
@@ -4169,7 +4076,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getDataLabelingAnnotatedDatasets(int index) {
       return dataLabelingAnnotatedDatasets_.get(index);
     }
-
     /**
      *
      *
@@ -4380,7 +4286,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -4661,7 +4566,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
-
       /**
        *
        *
@@ -4686,7 +4590,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4711,7 +4614,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4735,7 +4637,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4755,7 +4656,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4782,7 +4682,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
 
       private java.lang.Object datasetDisplayName_ = "";
-
       /**
        *
        *
@@ -4805,7 +4704,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -4828,7 +4726,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -4850,7 +4747,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4868,7 +4764,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -4938,7 +4833,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return dataLabelingAnnotatedDatasetsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -4958,7 +4852,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return dataLabelingAnnotatedDatasetsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -4980,7 +4873,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return dataLabelingAnnotatedDatasetsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -5010,7 +4902,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5037,7 +4928,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5066,7 +4956,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5096,7 +4985,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5122,7 +5010,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5149,7 +5036,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5178,7 +5064,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5201,7 +5086,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5224,7 +5108,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -5242,7 +5125,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           getDataLabelingAnnotatedDatasetsBuilder(int index) {
         return getDataLabelingAnnotatedDatasetsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -5264,7 +5146,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return dataLabelingAnnotatedDatasetsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -5288,7 +5169,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
           return java.util.Collections.unmodifiableList(dataLabelingAnnotatedDatasets_);
         }
       }
-
       /**
        *
        *
@@ -5309,7 +5189,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
                     .DataLabelingAnnotatedDataset.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5331,7 +5210,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
                     .DataLabelingAnnotatedDataset.getDefaultInstance());
       }
-
       /**
        *
        *
@@ -5465,7 +5343,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     private ResourceCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -5503,7 +5380,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ML_ENGINE_MODEL_VERSION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -5521,7 +5397,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   public boolean hasMlEngineModelVersion() {
     return resourceCase_ == 1;
   }
-
   /**
    *
    *
@@ -5545,7 +5420,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5569,7 +5443,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AUTOML_MODEL_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -5587,7 +5460,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   public boolean hasAutomlModel() {
     return resourceCase_ == 2;
   }
-
   /**
    *
    *
@@ -5608,7 +5480,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     }
     return com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5630,7 +5501,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int AUTOML_DATASET_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -5648,7 +5518,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   public boolean hasAutomlDataset() {
     return resourceCase_ == 3;
   }
-
   /**
    *
    *
@@ -5670,7 +5539,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5693,7 +5561,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DATA_LABELING_DATASET_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -5711,7 +5578,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   public boolean hasDataLabelingDataset() {
     return resourceCase_ == 4;
   }
-
   /**
    *
    *
@@ -5734,7 +5600,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset
         .getDefaultInstance();
   }
-
   /**
    *
    *
@@ -5758,7 +5623,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
   public static final int LAST_MIGRATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp lastMigrateTime_;
-
   /**
    *
    *
@@ -5778,7 +5642,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   public boolean hasLastMigrateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -5800,7 +5663,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastMigrateTime_;
   }
-
   /**
    *
    *
@@ -5823,7 +5685,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
 
   public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp lastUpdateTime_;
-
   /**
    *
    *
@@ -5841,7 +5702,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
   public boolean hasLastUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -5861,7 +5721,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : lastUpdateTime_;
   }
-
   /**
    *
    *
@@ -6138,7 +5997,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -6461,7 +6319,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersion.Builder,
             com.google.cloud.aiplatform.v1beta1.MigratableResource.MlEngineModelVersionOrBuilder>
         mlEngineModelVersionBuilder_;
-
     /**
      *
      *
@@ -6479,7 +6336,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public boolean hasMlEngineModelVersion() {
       return resourceCase_ == 1;
     }
-
     /**
      *
      *
@@ -6511,7 +6367,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6537,7 +6392,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -6561,7 +6415,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -6601,7 +6454,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -6629,7 +6481,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -6645,7 +6496,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getMlEngineModelVersionBuilder() {
       return getMlEngineModelVersionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6671,7 +6521,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6716,7 +6565,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModel.Builder,
             com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlModelOrBuilder>
         automlModelBuilder_;
-
     /**
      *
      *
@@ -6734,7 +6582,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public boolean hasAutomlModel() {
       return resourceCase_ == 2;
     }
-
     /**
      *
      *
@@ -6764,7 +6611,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6790,7 +6636,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6814,7 +6659,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6853,7 +6697,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -6881,7 +6724,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -6897,7 +6739,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getAutomlModelBuilder() {
       return getAutomlModelFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -6922,7 +6763,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -6965,7 +6805,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDataset.Builder,
             com.google.cloud.aiplatform.v1beta1.MigratableResource.AutomlDatasetOrBuilder>
         automlDatasetBuilder_;
-
     /**
      *
      *
@@ -6983,7 +6822,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public boolean hasAutomlDataset() {
       return resourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -7013,7 +6851,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7039,7 +6876,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -7063,7 +6899,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -7102,7 +6937,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 3;
       return this;
     }
-
     /**
      *
      *
@@ -7130,7 +6964,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -7146,7 +6979,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getAutomlDatasetBuilder() {
       return getAutomlDatasetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7171,7 +7003,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7214,7 +7045,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDataset.Builder,
             com.google.cloud.aiplatform.v1beta1.MigratableResource.DataLabelingDatasetOrBuilder>
         dataLabelingDatasetBuilder_;
-
     /**
      *
      *
@@ -7232,7 +7062,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public boolean hasDataLabelingDataset() {
       return resourceCase_ == 4;
     }
-
     /**
      *
      *
@@ -7264,7 +7093,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7290,7 +7118,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -7314,7 +7141,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -7353,7 +7179,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       resourceCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -7381,7 +7206,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -7397,7 +7221,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         getDataLabelingDatasetBuilder() {
       return getDataLabelingDatasetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7423,7 +7246,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -7469,7 +7291,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastMigrateTimeBuilder_;
-
     /**
      *
      *
@@ -7488,7 +7309,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public boolean hasLastMigrateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -7513,7 +7333,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return lastMigrateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7540,7 +7359,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7564,7 +7382,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7596,7 +7413,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -7620,7 +7436,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7639,7 +7454,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getLastMigrateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7662,7 +7476,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             : lastMigrateTime_;
       }
     }
-
     /**
      *
      *
@@ -7699,7 +7512,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         lastUpdateTimeBuilder_;
-
     /**
      *
      *
@@ -7716,7 +7528,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
     public boolean hasLastUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -7739,7 +7550,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
         return lastUpdateTimeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -7764,7 +7574,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7786,7 +7595,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7816,7 +7624,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -7838,7 +7645,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -7855,7 +7661,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getLastUpdateTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -7876,7 +7681,6 @@ public final class MigratableResource extends com.google.protobuf.GeneratedMessa
             : lastUpdateTime_;
       }
     }
-
     /**
      *
      *

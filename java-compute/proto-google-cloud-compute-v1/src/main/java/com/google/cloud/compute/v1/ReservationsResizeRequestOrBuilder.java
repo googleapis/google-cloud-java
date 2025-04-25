@@ -36,7 +36,6 @@ public interface ReservationsResizeRequestOrBuilder
    * @return Whether the specificSkuCount field is set.
    */
   boolean hasSpecificSkuCount();
-
   /**
    *
    *

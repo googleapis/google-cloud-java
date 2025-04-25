@@ -42,7 +42,6 @@ public interface SpecDetailsOrBuilder
    * @return Whether the openApiSpecDetails field is set.
    */
   boolean hasOpenApiSpecDetails();
-
   /**
    *
    *
@@ -61,7 +60,6 @@ public interface SpecDetailsOrBuilder
    * @return The openApiSpecDetails.
    */
   com.google.cloud.apihub.v1.OpenApiSpecDetails getOpenApiSpecDetails();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface SpecDetailsOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

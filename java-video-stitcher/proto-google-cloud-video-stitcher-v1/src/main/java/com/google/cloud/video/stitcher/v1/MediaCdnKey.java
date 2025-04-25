@@ -33,7 +33,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.MediaCdnKey)
     MediaCdnKeyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use MediaCdnKey.newBuilder() to construct.
   private MediaCdnKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -89,7 +88,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
      * @return The queryParameter.
      */
     java.lang.String getQueryParameter();
-
     /**
      *
      *
@@ -110,7 +108,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getQueryParameterBytes();
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig)
       TokenConfigOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use TokenConfig.newBuilder() to construct.
     private TokenConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -160,7 +156,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object queryParameter_ = "";
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
-
     /**
      *
      *
@@ -384,7 +378,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -575,7 +568,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object queryParameter_ = "";
-
       /**
        *
        *
@@ -605,7 +597,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -635,7 +626,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -664,7 +654,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -689,7 +678,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -788,7 +776,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PRIVATE_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString privateKey_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -809,7 +796,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyName_ = "";
-
   /**
    *
    *
@@ -833,7 +819,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -860,7 +845,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOKEN_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig tokenConfig_;
-
   /**
    *
    *
@@ -879,7 +863,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTokenConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -900,7 +883,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.getDefaultInstance()
         : tokenConfig_;
   }
-
   /**
    *
    *
@@ -1103,7 +1085,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1330,7 +1311,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString privateKey_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1346,7 +1326,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPrivateKey() {
       return privateKey_;
     }
-
     /**
      *
      *
@@ -1368,7 +1347,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1388,7 +1366,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyName_ = "";
-
     /**
      *
      *
@@ -1411,7 +1388,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1434,7 +1410,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1456,7 +1431,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1474,7 +1448,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1504,7 +1477,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfig.Builder,
             com.google.cloud.video.stitcher.v1.MediaCdnKey.TokenConfigOrBuilder>
         tokenConfigBuilder_;
-
     /**
      *
      *
@@ -1522,7 +1494,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTokenConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1546,7 +1517,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
         return tokenConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1573,7 +1543,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1597,7 +1566,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1599,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1654,7 +1621,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1673,7 +1639,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTokenConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1696,7 +1661,6 @@ public final class MediaCdnKey extends com.google.protobuf.GeneratedMessageV3
             : tokenConfig_;
       }
     }
-
     /**
      *
      *

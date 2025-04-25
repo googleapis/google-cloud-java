@@ -37,7 +37,6 @@ public interface ServiceLockInfoOrBuilder
    * @return The operation.
    */
   java.lang.String getOperation();
-
   /**
    *
    *

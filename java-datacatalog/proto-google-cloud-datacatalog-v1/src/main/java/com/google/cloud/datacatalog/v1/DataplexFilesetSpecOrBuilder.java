@@ -36,7 +36,6 @@ public interface DataplexFilesetSpecOrBuilder
    * @return Whether the dataplexSpec field is set.
    */
   boolean hasDataplexSpec();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface DataplexFilesetSpecOrBuilder
    * @return The dataplexSpec.
    */
   com.google.cloud.datacatalog.v1.DataplexSpec getDataplexSpec();
-
   /**
    *
    *

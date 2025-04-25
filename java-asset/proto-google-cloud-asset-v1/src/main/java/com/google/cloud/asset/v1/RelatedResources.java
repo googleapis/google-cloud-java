@@ -33,7 +33,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.RelatedResources)
     RelatedResourcesOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use RelatedResources.newBuilder() to construct.
   private RelatedResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.RelatedResource> relatedResources_;
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.asset.v1.RelatedResource> getRelatedResourcesList() {
     return relatedResources_;
   }
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       getRelatedResourcesOrBuilderList() {
     return relatedResources_;
   }
-
   /**
    *
    *
@@ -111,7 +107,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
   public int getRelatedResourcesCount() {
     return relatedResources_.size();
   }
-
   /**
    *
    *
@@ -125,7 +120,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.asset.v1.RelatedResource getRelatedResources(int index) {
     return relatedResources_.get(index);
   }
-
   /**
    *
    *
@@ -302,7 +296,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
         return relatedResourcesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -580,7 +572,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
         return relatedResourcesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -597,7 +588,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
         return relatedResourcesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -620,7 +610,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -664,7 +652,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +674,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -708,7 +694,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +714,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +734,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +753,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -803,7 +784,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.asset.v1.RelatedResource.Builder getRelatedResourcesBuilder(int index) {
       return getRelatedResourcesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -821,7 +801,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
         return relatedResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -839,7 +818,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(relatedResources_);
       }
     }
-
     /**
      *
      *
@@ -853,7 +831,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       return getRelatedResourcesFieldBuilder()
           .addBuilder(com.google.cloud.asset.v1.RelatedResource.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -867,7 +844,6 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       return getRelatedResourcesFieldBuilder()
           .addBuilder(index, com.google.cloud.asset.v1.RelatedResource.getDefaultInstance());
     }
-
     /**
      *
      *

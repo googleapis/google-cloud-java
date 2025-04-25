@@ -33,7 +33,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.identity.accesscontextmanager.v1.OsConstraint)
     OsConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use OsConstraint.newBuilder() to construct.
   private OsConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OS_TYPE_FIELD_NUMBER = 1;
   private int osType_ = 0;
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
   public int getOsTypeValue() {
     return osType_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minimumVersion_ = "";
-
   /**
    *
    *
@@ -134,7 +130,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -163,7 +158,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUIRE_VERIFIED_CHROME_OS_FIELD_NUMBER = 3;
   private boolean requireVerifiedChromeOs_ = false;
-
   /**
    *
    *
@@ -363,7 +357,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -574,7 +567,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int osType_ = 0;
-
     /**
      *
      *
@@ -590,7 +582,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     public int getOsTypeValue() {
       return osType_;
     }
-
     /**
      *
      *
@@ -609,7 +600,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
           ? com.google.identity.accesscontextmanager.type.OsType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -651,7 +640,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +659,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object minimumVersion_ = "";
-
     /**
      *
      *
@@ -696,7 +683,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -721,7 +707,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -745,7 +730,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +749,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -792,7 +775,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean requireVerifiedChromeOs_;
-
     /**
      *
      *
@@ -811,7 +793,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     public boolean getRequireVerifiedChromeOs() {
       return requireVerifiedChromeOs_;
     }
-
     /**
      *
      *
@@ -834,7 +815,6 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

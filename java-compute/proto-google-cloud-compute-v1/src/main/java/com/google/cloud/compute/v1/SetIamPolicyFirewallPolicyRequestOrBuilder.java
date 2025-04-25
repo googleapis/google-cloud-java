@@ -38,7 +38,6 @@ public interface SetIamPolicyFirewallPolicyRequestOrBuilder
    * @return Whether the globalOrganizationSetPolicyRequestResource field is set.
    */
   boolean hasGlobalOrganizationSetPolicyRequestResource();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface SetIamPolicyFirewallPolicyRequestOrBuilder
    */
   com.google.cloud.compute.v1.GlobalOrganizationSetPolicyRequest
       getGlobalOrganizationSetPolicyRequestResource();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface SetIamPolicyFirewallPolicyRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
-
   /**
    *
    *

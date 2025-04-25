@@ -36,7 +36,6 @@ public interface ShareSettingsProjectConfigOrBuilder
    * @return Whether the projectId field is set.
    */
   boolean hasProjectId();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ShareSettingsProjectConfigOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
-
   /**
    *
    *

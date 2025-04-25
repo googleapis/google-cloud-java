@@ -41,7 +41,6 @@ public interface ClusterOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ClusterOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.redis.cluster.v1.Cluster.GcsBackupSource getGcsSource();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ClusterOrBuilder
    * @return Whether the managedBackupSource field is set.
    */
   boolean hasManagedBackupSource();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface ClusterOrBuilder
    * @return The managedBackupSource.
    */
   com.google.cloud.redis.cluster.v1.Cluster.ManagedBackupSource getManagedBackupSource();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public interface ClusterOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -181,7 +175,6 @@ public interface ClusterOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *
@@ -209,7 +202,6 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
-
   /**
    *
    *
@@ -238,7 +230,6 @@ public interface ClusterOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
-
   /**
    *
    *
@@ -264,7 +255,6 @@ public interface ClusterOrBuilder
    * @return Whether the replicaCount field is set.
    */
   boolean hasReplicaCount();
-
   /**
    *
    *
@@ -293,7 +283,6 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for authorizationMode.
    */
   int getAuthorizationModeValue();
-
   /**
    *
    *
@@ -325,7 +314,6 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for transitEncryptionMode.
    */
   int getTransitEncryptionModeValue();
-
   /**
    *
    *
@@ -355,7 +343,6 @@ public interface ClusterOrBuilder
    * @return Whether the sizeGb field is set.
    */
   boolean hasSizeGb();
-
   /**
    *
    *
@@ -382,7 +369,6 @@ public interface ClusterOrBuilder
    * @return Whether the shardCount field is set.
    */
   boolean hasShardCount();
-
   /**
    *
    *
@@ -410,7 +396,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.PscConfig> getPscConfigsList();
-
   /**
    *
    *
@@ -425,7 +410,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.PscConfig getPscConfigs(int index);
-
   /**
    *
    *
@@ -440,7 +424,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getPscConfigsCount();
-
   /**
    *
    *
@@ -456,7 +439,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.PscConfigOrBuilder>
       getPscConfigsOrBuilderList();
-
   /**
    *
    *
@@ -485,7 +467,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.DiscoveryEndpoint> getDiscoveryEndpointsList();
-
   /**
    *
    *
@@ -499,7 +480,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.DiscoveryEndpoint getDiscoveryEndpoints(int index);
-
   /**
    *
    *
@@ -513,7 +493,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getDiscoveryEndpointsCount();
-
   /**
    *
    *
@@ -528,7 +507,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.DiscoveryEndpointOrBuilder>
       getDiscoveryEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -557,7 +535,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.PscConnection> getPscConnectionsList();
-
   /**
    *
    *
@@ -571,7 +548,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.PscConnection getPscConnections(int index);
-
   /**
    *
    *
@@ -585,7 +561,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getPscConnectionsCount();
-
   /**
    *
    *
@@ -600,7 +575,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.PscConnectionOrBuilder>
       getPscConnectionsOrBuilderList();
-
   /**
    *
    *
@@ -629,7 +603,6 @@ public interface ClusterOrBuilder
    * @return Whether the stateInfo field is set.
    */
   boolean hasStateInfo();
-
   /**
    *
    *
@@ -644,7 +617,6 @@ public interface ClusterOrBuilder
    * @return The stateInfo.
    */
   com.google.cloud.redis.cluster.v1.Cluster.StateInfo getStateInfo();
-
   /**
    *
    *
@@ -673,7 +645,6 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for nodeType.
    */
   int getNodeTypeValue();
-
   /**
    *
    *
@@ -704,7 +675,6 @@ public interface ClusterOrBuilder
    * @return Whether the persistenceConfig field is set.
    */
   boolean hasPersistenceConfig();
-
   /**
    *
    *
@@ -719,7 +689,6 @@ public interface ClusterOrBuilder
    * @return The persistenceConfig.
    */
   com.google.cloud.redis.cluster.v1.ClusterPersistenceConfig getPersistenceConfig();
-
   /**
    *
    *
@@ -745,7 +714,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getRedisConfigsCount();
-
   /**
    *
    *
@@ -757,11 +725,9 @@ public interface ClusterOrBuilder
    * </code>
    */
   boolean containsRedisConfigs(java.lang.String key);
-
   /** Use {@link #getRedisConfigsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigs();
-
   /**
    *
    *
@@ -773,7 +739,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap();
-
   /**
    *
    *
@@ -789,7 +754,6 @@ public interface ClusterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -815,7 +779,6 @@ public interface ClusterOrBuilder
    * @return Whether the preciseSizeGb field is set.
    */
   boolean hasPreciseSizeGb();
-
   /**
    *
    *
@@ -845,7 +808,6 @@ public interface ClusterOrBuilder
    * @return Whether the zoneDistributionConfig field is set.
    */
   boolean hasZoneDistributionConfig();
-
   /**
    *
    *
@@ -861,7 +823,6 @@ public interface ClusterOrBuilder
    * @return The zoneDistributionConfig.
    */
   com.google.cloud.redis.cluster.v1.ZoneDistributionConfig getZoneDistributionConfig();
-
   /**
    *
    *
@@ -891,7 +852,6 @@ public interface ClusterOrBuilder
    * @return Whether the crossClusterReplicationConfig field is set.
    */
   boolean hasCrossClusterReplicationConfig();
-
   /**
    *
    *
@@ -907,7 +867,6 @@ public interface ClusterOrBuilder
    */
   com.google.cloud.redis.cluster.v1.CrossClusterReplicationConfig
       getCrossClusterReplicationConfig();
-
   /**
    *
    *
@@ -935,7 +894,6 @@ public interface ClusterOrBuilder
    * @return Whether the deletionProtectionEnabled field is set.
    */
   boolean hasDeletionProtectionEnabled();
-
   /**
    *
    *
@@ -965,7 +923,6 @@ public interface ClusterOrBuilder
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
-
   /**
    *
    *
@@ -981,7 +938,6 @@ public interface ClusterOrBuilder
    * @return The maintenancePolicy.
    */
   com.google.cloud.redis.cluster.v1.ClusterMaintenancePolicy getMaintenancePolicy();
-
   /**
    *
    *
@@ -1012,7 +968,6 @@ public interface ClusterOrBuilder
    * @return Whether the maintenanceSchedule field is set.
    */
   boolean hasMaintenanceSchedule();
-
   /**
    *
    *
@@ -1028,7 +983,6 @@ public interface ClusterOrBuilder
    * @return The maintenanceSchedule.
    */
   com.google.cloud.redis.cluster.v1.ClusterMaintenanceSchedule getMaintenanceSchedule();
-
   /**
    *
    *
@@ -1057,7 +1011,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<com.google.cloud.redis.cluster.v1.PscServiceAttachment>
       getPscServiceAttachmentsList();
-
   /**
    *
    *
@@ -1070,7 +1023,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.PscServiceAttachment getPscServiceAttachments(int index);
-
   /**
    *
    *
@@ -1083,7 +1035,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getPscServiceAttachmentsCount();
-
   /**
    *
    *
@@ -1097,7 +1048,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.PscServiceAttachmentOrBuilder>
       getPscServiceAttachmentsOrBuilderList();
-
   /**
    *
    *
@@ -1124,7 +1074,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.redis.cluster.v1.ClusterEndpoint> getClusterEndpointsList();
-
   /**
    *
    *
@@ -1137,7 +1086,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   com.google.cloud.redis.cluster.v1.ClusterEndpoint getClusterEndpoints(int index);
-
   /**
    *
    *
@@ -1150,7 +1098,6 @@ public interface ClusterOrBuilder
    * </code>
    */
   int getClusterEndpointsCount();
-
   /**
    *
    *
@@ -1164,7 +1111,6 @@ public interface ClusterOrBuilder
    */
   java.util.List<? extends com.google.cloud.redis.cluster.v1.ClusterEndpointOrBuilder>
       getClusterEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -1194,7 +1140,6 @@ public interface ClusterOrBuilder
    * @return Whether the backupCollection field is set.
    */
   boolean hasBackupCollection();
-
   /**
    *
    *
@@ -1210,7 +1155,6 @@ public interface ClusterOrBuilder
    * @return The backupCollection.
    */
   java.lang.String getBackupCollection();
-
   /**
    *
    *
@@ -1241,7 +1185,6 @@ public interface ClusterOrBuilder
    * @return Whether the kmsKey field is set.
    */
   boolean hasKmsKey();
-
   /**
    *
    *
@@ -1256,7 +1199,6 @@ public interface ClusterOrBuilder
    * @return The kmsKey.
    */
   java.lang.String getKmsKey();
-
   /**
    *
    *
@@ -1286,7 +1228,6 @@ public interface ClusterOrBuilder
    * @return Whether the automatedBackupConfig field is set.
    */
   boolean hasAutomatedBackupConfig();
-
   /**
    *
    *
@@ -1301,7 +1242,6 @@ public interface ClusterOrBuilder
    * @return The automatedBackupConfig.
    */
   com.google.cloud.redis.cluster.v1.AutomatedBackupConfig getAutomatedBackupConfig();
-
   /**
    *
    *
@@ -1330,7 +1270,6 @@ public interface ClusterOrBuilder
    * @return Whether the encryptionInfo field is set.
    */
   boolean hasEncryptionInfo();
-
   /**
    *
    *
@@ -1345,7 +1284,6 @@ public interface ClusterOrBuilder
    * @return The encryptionInfo.
    */
   com.google.cloud.redis.cluster.v1.EncryptionInfo getEncryptionInfo();
-
   /**
    *
    *

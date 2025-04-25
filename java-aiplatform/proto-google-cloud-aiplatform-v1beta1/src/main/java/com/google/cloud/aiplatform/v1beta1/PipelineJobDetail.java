@@ -33,7 +33,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PipelineJobDetail)
     PipelineJobDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PipelineJobDetail.newBuilder() to construct.
   private PipelineJobDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int PIPELINE_CONTEXT_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Context pipelineContext_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
   public boolean hasPipelineContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()
         : pipelineContext_;
   }
-
   /**
    *
    *
@@ -126,7 +122,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
 
   public static final int PIPELINE_RUN_CONTEXT_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Context pipelineRunContext_;
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
   public boolean hasPipelineRunContext() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.aiplatform.v1beta1.Context.getDefaultInstance()
         : pipelineRunContext_;
   }
-
   /**
    *
    *
@@ -187,7 +180,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail> taskDetails_;
-
   /**
    *
    *
@@ -204,7 +196,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       getTaskDetailsList() {
     return taskDetails_;
   }
-
   /**
    *
    *
@@ -221,7 +212,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       getTaskDetailsOrBuilderList() {
     return taskDetails_;
   }
-
   /**
    *
    *
@@ -237,7 +227,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
   public int getTaskDetailsCount() {
     return taskDetails_.size();
   }
-
   /**
    *
    *
@@ -253,7 +242,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
   public com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail getTaskDetails(int index) {
     return taskDetails_.get(index);
   }
-
   /**
    *
    *
@@ -461,7 +449,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -752,7 +739,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.Context.Builder,
             com.google.cloud.aiplatform.v1beta1.ContextOrBuilder>
         pipelineContextBuilder_;
-
     /**
      *
      *
@@ -769,7 +755,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     public boolean hasPipelineContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return pipelineContextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -817,7 +801,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -840,7 +823,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -893,7 +874,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPipelineContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -931,7 +910,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
             : pipelineContext_;
       }
     }
-
     /**
      *
      *
@@ -966,7 +944,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
             com.google.cloud.aiplatform.v1beta1.Context.Builder,
             com.google.cloud.aiplatform.v1beta1.ContextOrBuilder>
         pipelineRunContextBuilder_;
-
     /**
      *
      *
@@ -983,7 +960,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
     public boolean hasPipelineRunContext() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1006,7 +982,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return pipelineRunContextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1006,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1054,7 +1028,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1085,7 +1058,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1107,7 +1079,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1095,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getPipelineRunContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1145,7 +1115,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
             : pipelineRunContext_;
       }
     }
-
     /**
      *
      *
@@ -1211,7 +1180,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return taskDetailsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1230,7 +1198,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return taskDetailsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1249,7 +1216,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return taskDetailsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1275,7 +1241,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1298,7 +1263,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1323,7 +1287,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1349,7 +1312,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1372,7 +1334,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1356,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1419,7 +1379,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1441,7 +1400,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1463,7 +1421,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1479,7 +1436,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         int index) {
       return getTaskDetailsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1499,7 +1455,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return taskDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1519,7 +1474,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(taskDetails_);
       }
     }
-
     /**
      *
      *
@@ -1535,7 +1489,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
       return getTaskDetailsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1553,7 +1506,6 @@ public final class PipelineJobDetail extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.PipelineTaskDetail.getDefaultInstance());
     }
-
     /**
      *
      *

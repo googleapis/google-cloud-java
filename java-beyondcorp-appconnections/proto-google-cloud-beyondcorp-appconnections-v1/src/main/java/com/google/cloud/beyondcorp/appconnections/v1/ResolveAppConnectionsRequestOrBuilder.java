@@ -39,7 +39,6 @@ public interface ResolveAppConnectionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -72,7 +71,6 @@ public interface ResolveAppConnectionsRequestOrBuilder
    * @return The appConnectorId.
    */
   java.lang.String getAppConnectorId();
-
   /**
    *
    *
@@ -121,7 +119,6 @@ public interface ResolveAppConnectionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
-
   /**
    *
    *

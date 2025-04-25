@@ -33,7 +33,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ExecutionReport)
     ExecutionReportOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExecutionReport.newBuilder() to construct.
   private ExecutionReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,7 +64,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int FRAMES_REPORTED_FIELD_NUMBER = 1;
   private int framesReported_ = 0;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
 
   public static final int EXECUTION_ERRORS_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.ValidationReport executionErrors_;
-
   /**
    *
    *
@@ -100,7 +97,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
   public boolean hasExecutionErrors() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.migrationcenter.v1.ValidationReport.getDefaultInstance()
         : executionErrors_;
   }
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
 
   public static final int TOTAL_ROWS_COUNT_FIELD_NUMBER = 3;
   private int totalRowsCount_ = 0;
-
   /**
    *
    *
@@ -337,7 +331,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -563,7 +556,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int framesReported_;
-
     /**
      *
      *
@@ -579,7 +571,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     public int getFramesReported() {
       return framesReported_;
     }
-
     /**
      *
      *
@@ -599,7 +590,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -624,7 +614,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.migrationcenter.v1.ValidationReport.Builder,
             com.google.cloud.migrationcenter.v1.ValidationReportOrBuilder>
         executionErrorsBuilder_;
-
     /**
      *
      *
@@ -639,7 +628,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     public boolean hasExecutionErrors() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
         return executionErrorsBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -683,7 +670,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -704,7 +690,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +738,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -770,7 +753,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getExecutionErrorsFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -790,7 +772,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
             : executionErrors_;
       }
     }
-
     /**
      *
      *
@@ -818,7 +799,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     }
 
     private int totalRowsCount_;
-
     /**
      *
      *
@@ -834,7 +814,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
     public int getTotalRowsCount() {
       return totalRowsCount_;
     }
-
     /**
      *
      *
@@ -854,7 +833,6 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
-
     /**
      *
      *

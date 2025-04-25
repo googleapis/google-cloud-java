@@ -93,7 +93,6 @@ public enum ChannelPartnerLinkState implements com.google.protobuf.ProtocolMessa
    * <code>CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int CHANNEL_PARTNER_LINK_STATE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -105,7 +104,6 @@ public enum ChannelPartnerLinkState implements com.google.protobuf.ProtocolMessa
    * <code>INVITED = 1;</code>
    */
   public static final int INVITED_VALUE = 1;
-
   /**
    *
    *
@@ -116,7 +114,6 @@ public enum ChannelPartnerLinkState implements com.google.protobuf.ProtocolMessa
    * <code>ACTIVE = 2;</code>
    */
   public static final int ACTIVE_VALUE = 2;
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public enum ChannelPartnerLinkState implements com.google.protobuf.ProtocolMessa
    * <code>REVOKED = 3;</code>
    */
   public static final int REVOKED_VALUE = 3;
-
   /**
    *
    *

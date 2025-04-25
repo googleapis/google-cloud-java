@@ -36,7 +36,6 @@ public interface NumericFilterOrBuilder
    * @return The enum numeric value on the wire for operation.
    */
   int getOperationValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NumericFilterOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface NumericFilterOrBuilder
    * @return The value.
    */
   com.google.analytics.data.v1alpha.NumericValue getValue();
-
   /**
    *
    *

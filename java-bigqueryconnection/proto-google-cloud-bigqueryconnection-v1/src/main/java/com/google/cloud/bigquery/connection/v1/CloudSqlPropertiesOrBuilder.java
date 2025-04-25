@@ -36,7 +36,6 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
-
   /**
    *
    *
@@ -88,7 +86,6 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -116,7 +113,6 @@ public interface CloudSqlPropertiesOrBuilder
    * @return Whether the credential field is set.
    */
   boolean hasCredential();
-
   /**
    *
    *
@@ -131,7 +127,6 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The credential.
    */
   com.google.cloud.bigquery.connection.v1.CloudSqlCredential getCredential();
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public interface CloudSqlPropertiesOrBuilder
    * @return The serviceAccountId.
    */
   java.lang.String getServiceAccountId();
-
   /**
    *
    *

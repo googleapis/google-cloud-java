@@ -39,7 +39,6 @@ public interface CreateInputRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -70,7 +69,6 @@ public interface CreateInputRequestOrBuilder
    * @return Whether the input field is set.
    */
   boolean hasInput();
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public interface CreateInputRequestOrBuilder
    * @return The input.
    */
   com.google.cloud.video.livestream.v1.Input getInput();
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public interface CreateInputRequestOrBuilder
    * @return The inputId.
    */
   java.lang.String getInputId();
-
   /**
    *
    *
@@ -153,7 +149,6 @@ public interface CreateInputRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

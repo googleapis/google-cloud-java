@@ -38,7 +38,6 @@ public interface CreateRollupPropertyRequestOrBuilder
    * @return Whether the rollupProperty field is set.
    */
   boolean hasRollupProperty();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface CreateRollupPropertyRequestOrBuilder
    * @return The rollupProperty.
    */
   com.google.analytics.admin.v1alpha.Property getRollupProperty();
-
   /**
    *
    *
@@ -80,7 +78,6 @@ public interface CreateRollupPropertyRequestOrBuilder
    * @return A list containing the sourceProperties.
    */
   java.util.List<java.lang.String> getSourcePropertiesList();
-
   /**
    *
    *
@@ -94,7 +91,6 @@ public interface CreateRollupPropertyRequestOrBuilder
    * @return The count of sourceProperties.
    */
   int getSourcePropertiesCount();
-
   /**
    *
    *
@@ -109,7 +105,6 @@ public interface CreateRollupPropertyRequestOrBuilder
    * @return The sourceProperties at the given index.
    */
   java.lang.String getSourceProperties(int index);
-
   /**
    *
    *

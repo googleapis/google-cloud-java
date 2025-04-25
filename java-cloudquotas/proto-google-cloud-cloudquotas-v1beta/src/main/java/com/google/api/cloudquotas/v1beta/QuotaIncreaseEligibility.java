@@ -33,7 +33,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1beta.QuotaIncreaseEligibility)
     QuotaIncreaseEligibilityOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QuotaIncreaseEligibility.newBuilder() to construct.
   private QuotaIncreaseEligibility(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -139,7 +138,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * <code>INELIGIBILITY_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int INELIGIBILITY_REASON_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -150,7 +148,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * <code>NO_VALID_BILLING_ACCOUNT = 1;</code>
      */
     public static final int NO_VALID_BILLING_ACCOUNT_VALUE = 1;
-
     /**
      *
      *
@@ -161,7 +158,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * <code>NOT_SUPPORTED = 3;</code>
      */
     public static final int NOT_SUPPORTED_VALUE = 3;
-
     /**
      *
      *
@@ -172,7 +168,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
      * <code>NOT_ENOUGH_USAGE_HISTORY = 4;</code>
      */
     public static final int NOT_ENOUGH_USAGE_HISTORY_VALUE = 4;
-
     /**
      *
      *
@@ -278,7 +273,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
 
   public static final int IS_ELIGIBLE_FIELD_NUMBER = 1;
   private boolean isEligible_ = false;
-
   /**
    *
    *
@@ -297,7 +291,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
 
   public static final int INELIGIBILITY_REASON_FIELD_NUMBER = 2;
   private int ineligibilityReason_ = 0;
-
   /**
    *
    *
@@ -317,7 +310,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
   public int getIneligibilityReasonValue() {
     return ineligibilityReason_;
   }
-
   /**
    *
    *
@@ -520,7 +512,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -716,7 +707,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean isEligible_;
-
     /**
      *
      *
@@ -732,7 +722,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
     public boolean getIsEligible() {
       return isEligible_;
     }
-
     /**
      *
      *
@@ -752,7 +741,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -772,7 +760,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
     }
 
     private int ineligibilityReason_ = 0;
-
     /**
      *
      *
@@ -792,7 +779,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
     public int getIneligibilityReasonValue() {
       return ineligibilityReason_;
     }
-
     /**
      *
      *
@@ -815,7 +801,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -842,7 +827,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
               .UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -869,7 +853,6 @@ public final class QuotaIncreaseEligibility extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

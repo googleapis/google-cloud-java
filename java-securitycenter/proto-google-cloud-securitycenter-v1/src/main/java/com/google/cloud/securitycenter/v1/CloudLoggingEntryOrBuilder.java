@@ -36,7 +36,6 @@ public interface CloudLoggingEntryOrBuilder
    * @return The insertId.
    */
   java.lang.String getInsertId();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface CloudLoggingEntryOrBuilder
    * @return The logId.
    */
   java.lang.String getLogId();
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public interface CloudLoggingEntryOrBuilder
    * @return The resourceContainer.
    */
   java.lang.String getResourceContainer();
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public interface CloudLoggingEntryOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
-
   /**
    *
    *
@@ -135,7 +131,6 @@ public interface CloudLoggingEntryOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
-
   /**
    *
    *

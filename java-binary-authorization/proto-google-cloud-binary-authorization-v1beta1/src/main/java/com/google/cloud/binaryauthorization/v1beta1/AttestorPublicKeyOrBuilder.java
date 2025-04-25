@@ -36,7 +36,6 @@ public interface AttestorPublicKeyOrBuilder
    * @return The comment.
    */
   java.lang.String getComment();
-
   /**
    *
    *
@@ -68,7 +67,6 @@ public interface AttestorPublicKeyOrBuilder
    * @return The id.
    */
   java.lang.String getId();
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public interface AttestorPublicKeyOrBuilder
    * @return Whether the asciiArmoredPgpPublicKey field is set.
    */
   boolean hasAsciiArmoredPgpPublicKey();
-
   /**
    *
    *
@@ -127,7 +124,6 @@ public interface AttestorPublicKeyOrBuilder
    * @return The asciiArmoredPgpPublicKey.
    */
   java.lang.String getAsciiArmoredPgpPublicKey();
-
   /**
    *
    *
@@ -165,7 +161,6 @@ public interface AttestorPublicKeyOrBuilder
    * @return Whether the pkixPublicKey field is set.
    */
   boolean hasPkixPublicKey();
-
   /**
    *
    *
@@ -183,7 +178,6 @@ public interface AttestorPublicKeyOrBuilder
    * @return The pkixPublicKey.
    */
   com.google.cloud.binaryauthorization.v1beta1.PkixPublicKey getPkixPublicKey();
-
   /**
    *
    *

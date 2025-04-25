@@ -33,7 +33,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.NextHopVPNTunnel)
     NextHopVPNTunnelOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NextHopVPNTunnel.newBuilder() to construct.
   private NextHopVPNTunnel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
-
   /**
    *
    *
@@ -93,7 +91,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -122,7 +119,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vpcNetwork_ = "";
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -173,7 +168,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
 
   public static final int SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER = 3;
   private boolean siteToSiteDataTransfer_ = false;
-
   /**
    *
    *
@@ -370,7 +364,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -583,7 +576,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
-
     /**
      *
      *
@@ -606,7 +598,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -651,7 +641,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -669,7 +658,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object vpcNetwork_ = "";
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -740,7 +726,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -762,7 +747,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -780,7 +764,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +788,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean siteToSiteDataTransfer_;
-
     /**
      *
      *
@@ -823,7 +805,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
     public boolean getSiteToSiteDataTransfer() {
       return siteToSiteDataTransfer_;
     }
-
     /**
      *
      *
@@ -845,7 +826,6 @@ public final class NextHopVPNTunnel extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -38,7 +38,6 @@ public interface SchedulingOrBuilder
    * @return Whether the onHostMaintenance field is set.
    */
   boolean hasOnHostMaintenance();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface SchedulingOrBuilder
    * @return The enum numeric value on the wire for onHostMaintenance.
    */
   int getOnHostMaintenanceValue();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface SchedulingOrBuilder
    * @return Whether the automaticRestart field is set.
    */
   boolean hasAutomaticRestart();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface SchedulingOrBuilder
    * @return Whether the preemptible field is set.
    */
   boolean hasPreemptible();
-
   /**
    *
    *
@@ -136,7 +132,6 @@ public interface SchedulingOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.backupdr.v1.Scheduling.NodeAffinity> getNodeAffinitiesList();
-
   /**
    *
    *
@@ -150,7 +145,6 @@ public interface SchedulingOrBuilder
    * </code>
    */
   com.google.cloud.backupdr.v1.Scheduling.NodeAffinity getNodeAffinities(int index);
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface SchedulingOrBuilder
    * </code>
    */
   int getNodeAffinitiesCount();
-
   /**
    *
    *
@@ -179,7 +172,6 @@ public interface SchedulingOrBuilder
    */
   java.util.List<? extends com.google.cloud.backupdr.v1.Scheduling.NodeAffinityOrBuilder>
       getNodeAffinitiesOrBuilderList();
-
   /**
    *
    *
@@ -208,7 +200,6 @@ public interface SchedulingOrBuilder
    * @return Whether the minNodeCpus field is set.
    */
   boolean hasMinNodeCpus();
-
   /**
    *
    *
@@ -237,7 +228,6 @@ public interface SchedulingOrBuilder
    * @return Whether the provisioningModel field is set.
    */
   boolean hasProvisioningModel();
-
   /**
    *
    *
@@ -252,7 +242,6 @@ public interface SchedulingOrBuilder
    * @return The enum numeric value on the wire for provisioningModel.
    */
   int getProvisioningModelValue();
-
   /**
    *
    *
@@ -282,7 +271,6 @@ public interface SchedulingOrBuilder
    * @return Whether the instanceTerminationAction field is set.
    */
   boolean hasInstanceTerminationAction();
-
   /**
    *
    *
@@ -297,7 +285,6 @@ public interface SchedulingOrBuilder
    * @return The enum numeric value on the wire for instanceTerminationAction.
    */
   int getInstanceTerminationActionValue();
-
   /**
    *
    *
@@ -330,7 +317,6 @@ public interface SchedulingOrBuilder
    * @return Whether the localSsdRecoveryTimeout field is set.
    */
   boolean hasLocalSsdRecoveryTimeout();
-
   /**
    *
    *
@@ -348,7 +334,6 @@ public interface SchedulingOrBuilder
    * @return The localSsdRecoveryTimeout.
    */
   com.google.cloud.backupdr.v1.SchedulingDuration getLocalSsdRecoveryTimeout();
-
   /**
    *
    *

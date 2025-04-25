@@ -36,7 +36,6 @@ public interface WorkloadIdentityConfigOrBuilder
    * @return The workloadPool.
    */
   java.lang.String getWorkloadPool();
-
   /**
    *
    *

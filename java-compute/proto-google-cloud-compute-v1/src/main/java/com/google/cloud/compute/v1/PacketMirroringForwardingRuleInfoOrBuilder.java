@@ -36,7 +36,6 @@ public interface PacketMirroringForwardingRuleInfoOrBuilder
    * @return Whether the canonicalUrl field is set.
    */
   boolean hasCanonicalUrl();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface PacketMirroringForwardingRuleInfoOrBuilder
    * @return The canonicalUrl.
    */
   java.lang.String getCanonicalUrl();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface PacketMirroringForwardingRuleInfoOrBuilder
    * @return Whether the url field is set.
    */
   boolean hasUrl();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface PacketMirroringForwardingRuleInfoOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
-
   /**
    *
    *

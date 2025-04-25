@@ -33,7 +33,6 @@ public final class GeneralObjectDetectionConfig extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.GeneralObjectDetectionConfig)
     GeneralObjectDetectionConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GeneralObjectDetectionConfig.newBuilder() to construct.
   private GeneralObjectDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class GeneralObjectDetectionConfig extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

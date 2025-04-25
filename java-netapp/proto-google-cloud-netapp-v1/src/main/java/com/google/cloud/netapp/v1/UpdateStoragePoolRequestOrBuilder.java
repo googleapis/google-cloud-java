@@ -41,7 +41,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return Whether the storagePool field is set.
    */
   boolean hasStoragePool();
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public interface UpdateStoragePoolRequestOrBuilder
    * @return The storagePool.
    */
   com.google.cloud.netapp.v1.StoragePool getStoragePool();
-
   /**
    *
    *

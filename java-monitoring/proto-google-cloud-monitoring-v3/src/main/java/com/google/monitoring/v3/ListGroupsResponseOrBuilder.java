@@ -34,7 +34,6 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
   java.util.List<com.google.monitoring.v3.Group> getGroupList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
   com.google.monitoring.v3.Group getGroup(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
   int getGroupCount();
-
   /**
    *
    *
@@ -67,7 +64,6 @@ public interface ListGroupsResponseOrBuilder
    * <code>repeated .google.monitoring.v3.Group group = 1;</code>
    */
   java.util.List<? extends com.google.monitoring.v3.GroupOrBuilder> getGroupOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListGroupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

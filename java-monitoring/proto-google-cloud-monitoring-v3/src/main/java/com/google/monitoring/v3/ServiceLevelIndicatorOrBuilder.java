@@ -36,7 +36,6 @@ public interface ServiceLevelIndicatorOrBuilder
    * @return Whether the basicSli field is set.
    */
   boolean hasBasicSli();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ServiceLevelIndicatorOrBuilder
    * @return The basicSli.
    */
   com.google.monitoring.v3.BasicSli getBasicSli();
-
   /**
    *
    *
@@ -73,7 +71,6 @@ public interface ServiceLevelIndicatorOrBuilder
    * @return Whether the requestBased field is set.
    */
   boolean hasRequestBased();
-
   /**
    *
    *
@@ -86,7 +83,6 @@ public interface ServiceLevelIndicatorOrBuilder
    * @return The requestBased.
    */
   com.google.monitoring.v3.RequestBasedSli getRequestBased();
-
   /**
    *
    *
@@ -110,7 +106,6 @@ public interface ServiceLevelIndicatorOrBuilder
    * @return Whether the windowsBased field is set.
    */
   boolean hasWindowsBased();
-
   /**
    *
    *
@@ -123,7 +118,6 @@ public interface ServiceLevelIndicatorOrBuilder
    * @return The windowsBased.
    */
   com.google.monitoring.v3.WindowsBasedSli getWindowsBased();
-
   /**
    *
    *

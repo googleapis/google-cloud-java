@@ -33,7 +33,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SlackSource)
     SlackSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SlackSource.newBuilder() to construct.
   private SlackSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannel>
         getChannelsList();
-
     /**
      *
      *
@@ -95,7 +93,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannel getChannels(int index);
-
     /**
      *
      *
@@ -108,7 +105,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getChannelsCount();
-
     /**
      *
      *
@@ -124,7 +120,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
             ? extends
                 com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannelOrBuilder>
         getChannelsOrBuilderList();
-
     /**
      *
      *
@@ -156,7 +151,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the apiKeyConfig field is set.
      */
     boolean hasApiKeyConfig();
-
     /**
      *
      *
@@ -174,7 +168,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
      * @return The apiKeyConfig.
      */
     com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig getApiKeyConfig();
-
     /**
      *
      *
@@ -191,7 +184,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfigOrBuilder getApiKeyConfigOrBuilder();
   }
-
   /**
    *
    *
@@ -206,7 +198,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SlackSource.SlackChannels)
       SlackChannelsOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use SlackChannels.newBuilder() to construct.
     private SlackChannels(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -254,7 +245,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
        * @return The channelId.
        */
       java.lang.String getChannelId();
-
       /**
        *
        *
@@ -281,7 +271,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the startTime field is set.
        */
       boolean hasStartTime();
-
       /**
        *
        *
@@ -295,7 +284,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
        * @return The startTime.
        */
       com.google.protobuf.Timestamp getStartTime();
-
       /**
        *
        *
@@ -321,7 +309,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the endTime field is set.
        */
       boolean hasEndTime();
-
       /**
        *
        *
@@ -335,7 +322,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
        * @return The endTime.
        */
       com.google.protobuf.Timestamp getEndTime();
-
       /**
        *
        *
@@ -348,7 +334,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
     }
-
     /**
      *
      *
@@ -363,7 +348,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannel)
         SlackChannelOrBuilder {
       private static final long serialVersionUID = 0L;
-
       // Use SlackChannel.newBuilder() to construct.
       private SlackChannel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -400,7 +384,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object channelId_ = "";
-
       /**
        *
        *
@@ -424,7 +407,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
-
       /**
        *
        *
@@ -451,7 +433,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
 
       public static final int START_TIME_FIELD_NUMBER = 2;
       private com.google.protobuf.Timestamp startTime_;
-
       /**
        *
        *
@@ -468,7 +449,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
-
       /**
        *
        *
@@ -485,7 +465,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Timestamp getStartTime() {
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
-
       /**
        *
        *
@@ -503,7 +482,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
 
       public static final int END_TIME_FIELD_NUMBER = 3;
       private com.google.protobuf.Timestamp endTime_;
-
       /**
        *
        *
@@ -520,7 +498,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -537,7 +514,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Timestamp getEndTime() {
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
-
       /**
        *
        *
@@ -745,7 +721,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
-
       /**
        *
        *
@@ -992,7 +967,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object channelId_ = "";
-
         /**
          *
          *
@@ -1015,7 +989,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
-
         /**
          *
          *
@@ -1038,7 +1011,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
-
         /**
          *
          *
@@ -1060,7 +1032,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1078,7 +1049,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1108,7 +1078,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             startTimeBuilder_;
-
         /**
          *
          *
@@ -1125,7 +1094,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         public boolean hasStartTime() {
           return ((bitField0_ & 0x00000002) != 0);
         }
-
         /**
          *
          *
@@ -1148,7 +1116,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
             return startTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -1173,7 +1140,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1195,7 +1161,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1225,7 +1190,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1247,7 +1211,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1264,7 +1227,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getStartTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1285,7 +1247,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
                 : startTime_;
           }
         }
-
         /**
          *
          *
@@ -1320,7 +1281,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>
             endTimeBuilder_;
-
         /**
          *
          *
@@ -1336,7 +1296,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         public boolean hasEndTime() {
           return ((bitField0_ & 0x00000004) != 0);
         }
-
         /**
          *
          *
@@ -1356,7 +1315,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
             return endTimeBuilder_.getMessage();
           }
         }
-
         /**
          *
          *
@@ -1380,7 +1338,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1401,7 +1358,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1430,7 +1386,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
-
         /**
          *
          *
@@ -1451,7 +1406,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
-
         /**
          *
          *
@@ -1467,7 +1421,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getEndTimeFieldBuilder().getBuilder();
         }
-
         /**
          *
          *
@@ -1485,7 +1438,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
             return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
           }
         }
-
         /**
          *
          *
@@ -1587,7 +1539,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannel>
         channels_;
-
     /**
      *
      *
@@ -1604,7 +1555,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         getChannelsList() {
       return channels_;
     }
-
     /**
      *
      *
@@ -1623,7 +1573,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         getChannelsOrBuilderList() {
       return channels_;
     }
-
     /**
      *
      *
@@ -1639,7 +1588,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
     public int getChannelsCount() {
       return channels_.size();
     }
-
     /**
      *
      *
@@ -1656,7 +1604,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return channels_.get(index);
     }
-
     /**
      *
      *
@@ -1676,7 +1623,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
 
     public static final int API_KEY_CONFIG_FIELD_NUMBER = 3;
     private com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig apiKeyConfig_;
-
     /**
      *
      *
@@ -1697,7 +1643,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasApiKeyConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -1720,7 +1665,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.getDefaultInstance()
           : apiKeyConfig_;
     }
-
     /**
      *
      *
@@ -1919,7 +1863,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2222,7 +2165,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return channelsBuilder_.getMessageList();
         }
       }
-
       /**
        *
        *
@@ -2241,7 +2183,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return channelsBuilder_.getCount();
         }
       }
-
       /**
        *
        *
@@ -2261,7 +2202,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return channelsBuilder_.getMessage(index);
         }
       }
-
       /**
        *
        *
@@ -2287,7 +2227,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2312,7 +2251,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2338,7 +2276,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2364,7 +2301,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2388,7 +2324,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2413,7 +2348,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2438,7 +2372,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2460,7 +2393,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2482,7 +2414,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2498,7 +2429,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           getChannelsBuilder(int index) {
         return getChannelsFieldBuilder().getBuilder(index);
       }
-
       /**
        *
        *
@@ -2518,7 +2448,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return channelsBuilder_.getMessageOrBuilder(index);
         }
       }
-
       /**
        *
        *
@@ -2540,7 +2469,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(channels_);
         }
       }
-
       /**
        *
        *
@@ -2559,7 +2487,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannel
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2579,7 +2506,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.SlackChannel
                     .getDefaultInstance());
       }
-
       /**
        *
        *
@@ -2620,7 +2546,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfig.Builder,
               com.google.cloud.aiplatform.v1.ApiAuth.ApiKeyConfigOrBuilder>
           apiKeyConfigBuilder_;
-
       /**
        *
        *
@@ -2640,7 +2565,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       public boolean hasApiKeyConfig() {
         return ((bitField0_ & 0x00000002) != 0);
       }
-
       /**
        *
        *
@@ -2666,7 +2590,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           return apiKeyConfigBuilder_.getMessage();
         }
       }
-
       /**
        *
        *
@@ -2694,7 +2617,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2720,7 +2642,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2754,7 +2675,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
-
       /**
        *
        *
@@ -2779,7 +2699,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -2799,7 +2718,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getApiKeyConfigFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2824,7 +2742,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
               : apiKeyConfig_;
         }
       }
-
       /**
        *
        *
@@ -2924,7 +2841,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.SlackSource.SlackChannels> channels_;
-
   /**
    *
    *
@@ -2941,7 +2857,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       getChannelsList() {
     return channels_;
   }
-
   /**
    *
    *
@@ -2958,7 +2873,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       getChannelsOrBuilderList() {
     return channels_;
   }
-
   /**
    *
    *
@@ -2974,7 +2888,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
   public int getChannelsCount() {
     return channels_.size();
   }
-
   /**
    *
    *
@@ -2990,7 +2903,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.SlackSource.SlackChannels getChannels(int index) {
     return channels_.get(index);
   }
-
   /**
    *
    *
@@ -3169,7 +3081,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3435,7 +3346,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         return channelsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3454,7 +3364,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         return channelsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3473,7 +3382,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         return channelsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3499,7 +3407,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3523,7 +3430,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3548,7 +3454,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3574,7 +3479,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3597,7 +3501,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3621,7 +3524,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3645,7 +3547,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3667,7 +3568,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3689,7 +3589,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3705,7 +3604,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getChannelsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3725,7 +3623,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         return channelsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3746,7 +3643,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(channels_);
       }
     }
-
     /**
      *
      *
@@ -3763,7 +3659,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3781,7 +3676,6 @@ public final class SlackSource extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.SlackSource.SlackChannels.getDefaultInstance());
     }
-
     /**
      *
      *

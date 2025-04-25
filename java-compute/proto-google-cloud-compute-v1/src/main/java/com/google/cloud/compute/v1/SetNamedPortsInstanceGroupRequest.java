@@ -33,7 +33,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetNamedPortsInstanceGroupRequest)
     SetNamedPortsInstanceGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SetNamedPortsInstanceGroupRequest.newBuilder() to construct.
   private SetNamedPortsInstanceGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroup_ = "";
-
   /**
    *
    *
@@ -97,7 +95,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
   public static final int INSTANCE_GROUPS_SET_NAMED_PORTS_REQUEST_RESOURCE_FIELD_NUMBER = 385151535;
   private com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest
       instanceGroupsSetNamedPortsRequestResource_;
-
   /**
    *
    *
@@ -143,7 +139,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
   public boolean hasInstanceGroupsSetNamedPortsRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest.getDefaultInstance()
         : instanceGroupsSetNamedPortsRequestResource_;
   }
-
   /**
    *
    *
@@ -188,7 +182,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -214,7 +207,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -261,7 +252,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -285,7 +275,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -314,7 +303,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return s;
     }
   }
-
   /**
    *
    *
@@ -577,7 +564,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -846,7 +832,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object instanceGroup_ = "";
-
     /**
      *
      *
@@ -869,7 +854,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -892,7 +876,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -914,7 +897,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -932,7 +914,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -963,7 +944,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequestOrBuilder>
         instanceGroupsSetNamedPortsRequestResourceBuilder_;
-
     /**
      *
      *
@@ -980,7 +960,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     public boolean hasInstanceGroupsSetNamedPortsRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1004,7 +983,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return instanceGroupsSetNamedPortsRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1030,7 +1008,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1053,7 +1030,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1086,7 +1062,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       }
       return this;
     }
-
     /**
      *
      *
@@ -1108,7 +1083,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1126,7 +1100,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return getInstanceGroupsSetNamedPortsRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1148,7 +1121,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
             : instanceGroupsSetNamedPortsRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1178,7 +1150,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -1203,7 +1174,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1198,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1252,7 +1221,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1240,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1299,7 +1266,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1314,7 +1280,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1337,7 +1302,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1360,7 +1324,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1382,7 +1345,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1400,7 +1362,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1425,7 +1386,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     }
 
     private java.lang.Object zone_ = "";
-
     /**
      *
      *
@@ -1450,7 +1410,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1475,7 +1434,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1499,7 +1457,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1519,7 +1476,6 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       onChanged();
       return this;
     }
-
     /**
      *
      *

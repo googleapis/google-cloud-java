@@ -39,7 +39,6 @@ public interface BatchVerifyTargetSitesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *

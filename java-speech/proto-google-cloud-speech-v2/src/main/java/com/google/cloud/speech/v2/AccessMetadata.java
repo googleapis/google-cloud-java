@@ -34,7 +34,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.AccessMetadata)
     AccessMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AccessMetadata.newBuilder() to construct.
   private AccessMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,7 +108,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
      * <code>CONSTRAINT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int CONSTRAINT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -204,7 +202,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONSTRAINT_TYPE_FIELD_NUMBER = 1;
   private int constraintType_ = 0;
-
   /**
    *
    *
@@ -220,7 +217,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getConstraintTypeValue() {
     return constraintType_;
   }
-
   /**
    *
    *
@@ -404,7 +400,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -587,7 +582,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int constraintType_ = 0;
-
     /**
      *
      *
@@ -603,7 +597,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getConstraintTypeValue() {
       return constraintType_;
     }
-
     /**
      *
      *
@@ -622,7 +615,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -642,7 +634,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.speech.v2.AccessMetadata.ConstraintType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -665,7 +656,6 @@ public final class AccessMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

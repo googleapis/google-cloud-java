@@ -33,7 +33,6 @@ public final class FloatTypeOptions extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.FloatTypeOptions)
     FloatTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FloatTypeOptions.newBuilder() to construct.
   private FloatTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class FloatTypeOptions extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

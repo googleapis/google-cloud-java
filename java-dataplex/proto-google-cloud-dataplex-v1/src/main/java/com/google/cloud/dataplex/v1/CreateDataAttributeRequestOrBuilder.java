@@ -39,7 +39,6 @@ public interface CreateDataAttributeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -73,7 +72,6 @@ public interface CreateDataAttributeRequestOrBuilder
    * @return The dataAttributeId.
    */
   java.lang.String getDataAttributeId();
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public interface CreateDataAttributeRequestOrBuilder
    * @return Whether the dataAttribute field is set.
    */
   boolean hasDataAttribute();
-
   /**
    *
    *
@@ -121,7 +118,6 @@ public interface CreateDataAttributeRequestOrBuilder
    * @return The dataAttribute.
    */
   com.google.cloud.dataplex.v1.DataAttribute getDataAttribute();
-
   /**
    *
    *

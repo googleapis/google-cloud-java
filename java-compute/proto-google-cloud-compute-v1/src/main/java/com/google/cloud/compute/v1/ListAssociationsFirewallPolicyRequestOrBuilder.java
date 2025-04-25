@@ -36,7 +36,6 @@ public interface ListAssociationsFirewallPolicyRequestOrBuilder
    * @return Whether the targetResource field is set.
    */
   boolean hasTargetResource();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ListAssociationsFirewallPolicyRequestOrBuilder
    * @return The targetResource.
    */
   java.lang.String getTargetResource();
-
   /**
    *
    *

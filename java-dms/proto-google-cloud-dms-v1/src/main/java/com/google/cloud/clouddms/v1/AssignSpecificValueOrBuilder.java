@@ -36,7 +36,6 @@ public interface AssignSpecificValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
-
   /**
    *
    *

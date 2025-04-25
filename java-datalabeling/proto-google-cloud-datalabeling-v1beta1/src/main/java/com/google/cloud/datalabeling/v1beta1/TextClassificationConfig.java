@@ -33,7 +33,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.TextClassificationConfig)
     TextClassificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TextClassificationConfig.newBuilder() to construct.
   private TextClassificationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int ALLOW_MULTI_LABEL_FIELD_NUMBER = 1;
   private boolean allowMultiLabel_ = false;
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object annotationSpecSet_ = "";
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
 
   public static final int SENTIMENT_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.datalabeling.v1beta1.SentimentConfig sentimentConfig_;
-
   /**
    *
    *
@@ -158,7 +153,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
   public boolean hasSentimentConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -178,7 +172,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
         ? com.google.cloud.datalabeling.v1beta1.SentimentConfig.getDefaultInstance()
         : sentimentConfig_;
   }
-
   /**
    *
    *
@@ -381,7 +374,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -612,7 +604,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean allowMultiLabel_;
-
     /**
      *
      *
@@ -629,7 +620,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     public boolean getAllowMultiLabel() {
       return allowMultiLabel_;
     }
-
     /**
      *
      *
@@ -650,7 +640,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -671,7 +660,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     }
 
     private java.lang.Object annotationSpecSet_ = "";
-
     /**
      *
      *
@@ -694,7 +682,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -717,7 +704,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -739,7 +725,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +742,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -787,7 +771,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
             com.google.cloud.datalabeling.v1beta1.SentimentConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.SentimentConfigOrBuilder>
         sentimentConfigBuilder_;
-
     /**
      *
      *
@@ -804,7 +787,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
     public boolean hasSentimentConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -827,7 +809,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
         return sentimentConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -852,7 +833,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -907,7 +886,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -929,7 +907,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
       onChanged();
       return getSentimentConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -969,7 +945,6 @@ public final class TextClassificationConfig extends com.google.protobuf.Generate
             : sentimentConfig_;
       }
     }
-
     /**
      *
      *

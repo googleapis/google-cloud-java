@@ -33,7 +33,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.StudyTimeConstraint)
     StudyTimeConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use StudyTimeConstraint.newBuilder() to construct.
   private StudyTimeConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,7 +78,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     private ConstraintCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,7 +111,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MAX_DURATION_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
   public boolean hasMaxDuration() {
     return constraintCase_ == 1;
   }
-
   /**
    *
    *
@@ -148,7 +144,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -167,7 +162,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
   }
 
   public static final int END_TIME_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
   public boolean hasEndTime() {
     return constraintCase_ == 2;
   }
-
   /**
    *
    *
@@ -202,7 +195,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -409,7 +401,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -645,7 +636,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         maxDurationBuilder_;
-
     /**
      *
      *
@@ -661,7 +651,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     public boolean hasMaxDuration() {
       return constraintCase_ == 1;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       constraintCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -730,7 +717,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       constraintCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -762,7 +748,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       constraintCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -801,7 +785,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Duration.Builder getMaxDurationBuilder() {
       return getMaxDurationFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -822,7 +805,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Duration.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
-
     /**
      *
      *
@@ -875,7 +856,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     public boolean hasEndTime() {
       return constraintCase_ == 2;
     }
-
     /**
      *
      *
@@ -901,7 +881,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       constraintCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       constraintCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -976,7 +953,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       constraintCase_ = 2;
       return this;
     }
-
     /**
      *
      *
@@ -1002,7 +978,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +990,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
       return getEndTimeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1036,7 +1010,6 @@ public final class StudyTimeConstraint extends com.google.protobuf.GeneratedMess
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
-
     /**
      *
      *

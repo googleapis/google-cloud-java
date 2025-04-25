@@ -37,7 +37,6 @@ public interface ServiceAttachmentOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint>
       getConnectedEndpointsList();
-
   /**
    *
    *
@@ -50,7 +49,6 @@ public interface ServiceAttachmentOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint getConnectedEndpoints(int index);
-
   /**
    *
    *
@@ -63,7 +61,6 @@ public interface ServiceAttachmentOrBuilder
    * </code>
    */
   int getConnectedEndpointsCount();
-
   /**
    *
    *
@@ -77,7 +74,6 @@ public interface ServiceAttachmentOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpointOrBuilder>
       getConnectedEndpointsOrBuilderList();
-
   /**
    *
    *
@@ -105,7 +101,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the connectionPreference field is set.
    */
   boolean hasConnectionPreference();
-
   /**
    *
    *
@@ -119,7 +114,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The connectionPreference.
    */
   java.lang.String getConnectionPreference();
-
   /**
    *
    *
@@ -147,7 +141,6 @@ public interface ServiceAttachmentOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAttachmentConsumerProjectLimit>
       getConsumerAcceptListsList();
-
   /**
    *
    *
@@ -161,7 +154,6 @@ public interface ServiceAttachmentOrBuilder
    */
   com.google.cloud.compute.v1.ServiceAttachmentConsumerProjectLimit getConsumerAcceptLists(
       int index);
-
   /**
    *
    *
@@ -174,7 +166,6 @@ public interface ServiceAttachmentOrBuilder
    * </code>
    */
   int getConsumerAcceptListsCount();
-
   /**
    *
    *
@@ -189,7 +180,6 @@ public interface ServiceAttachmentOrBuilder
   java.util.List<
           ? extends com.google.cloud.compute.v1.ServiceAttachmentConsumerProjectLimitOrBuilder>
       getConsumerAcceptListsOrBuilderList();
-
   /**
    *
    *
@@ -216,7 +206,6 @@ public interface ServiceAttachmentOrBuilder
    * @return A list containing the consumerRejectLists.
    */
   java.util.List<java.lang.String> getConsumerRejectListsList();
-
   /**
    *
    *
@@ -229,7 +218,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The count of consumerRejectLists.
    */
   int getConsumerRejectListsCount();
-
   /**
    *
    *
@@ -243,7 +231,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The consumerRejectLists at the given index.
    */
   java.lang.String getConsumerRejectLists(int index);
-
   /**
    *
    *
@@ -270,7 +257,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
-
   /**
    *
    *
@@ -283,7 +269,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
-
   /**
    *
    *
@@ -309,7 +294,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -322,7 +306,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -348,7 +331,6 @@ public interface ServiceAttachmentOrBuilder
    * @return A list containing the domainNames.
    */
   java.util.List<java.lang.String> getDomainNamesList();
-
   /**
    *
    *
@@ -361,7 +343,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The count of domainNames.
    */
   int getDomainNamesCount();
-
   /**
    *
    *
@@ -375,7 +356,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The domainNames at the given index.
    */
   java.lang.String getDomainNames(int index);
-
   /**
    *
    *
@@ -402,7 +382,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the enableProxyProtocol field is set.
    */
   boolean hasEnableProxyProtocol();
-
   /**
    *
    *
@@ -428,7 +407,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
-
   /**
    *
    *
@@ -441,7 +419,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
-
   /**
    *
    *
@@ -467,7 +444,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
-
   /**
    *
    *
@@ -493,7 +469,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
-
   /**
    *
    *
@@ -506,7 +481,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
-
   /**
    *
    *
@@ -532,7 +506,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -545,7 +518,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -571,7 +543,6 @@ public interface ServiceAttachmentOrBuilder
    * @return A list containing the natSubnets.
    */
   java.util.List<java.lang.String> getNatSubnetsList();
-
   /**
    *
    *
@@ -584,7 +555,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The count of natSubnets.
    */
   int getNatSubnetsCount();
-
   /**
    *
    *
@@ -598,7 +568,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The natSubnets at the given index.
    */
   java.lang.String getNatSubnets(int index);
-
   /**
    *
    *
@@ -625,7 +594,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the producerForwardingRule field is set.
    */
   boolean hasProducerForwardingRule();
-
   /**
    *
    *
@@ -638,7 +606,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The producerForwardingRule.
    */
   java.lang.String getProducerForwardingRule();
-
   /**
    *
    *
@@ -664,7 +631,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the propagatedConnectionLimit field is set.
    */
   boolean hasPropagatedConnectionLimit();
-
   /**
    *
    *
@@ -690,7 +656,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the pscServiceAttachmentId field is set.
    */
   boolean hasPscServiceAttachmentId();
-
   /**
    *
    *
@@ -703,7 +668,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The pscServiceAttachmentId.
    */
   com.google.cloud.compute.v1.Uint128 getPscServiceAttachmentId();
-
   /**
    *
    *
@@ -727,7 +691,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the reconcileConnections field is set.
    */
   boolean hasReconcileConnections();
-
   /**
    *
    *
@@ -753,7 +716,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the region field is set.
    */
   boolean hasRegion();
-
   /**
    *
    *
@@ -766,7 +728,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -792,7 +753,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
-
   /**
    *
    *
@@ -805,7 +765,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
-
   /**
    *
    *
@@ -831,7 +790,6 @@ public interface ServiceAttachmentOrBuilder
    * @return Whether the targetService field is set.
    */
   boolean hasTargetService();
-
   /**
    *
    *
@@ -844,7 +802,6 @@ public interface ServiceAttachmentOrBuilder
    * @return The targetService.
    */
   java.lang.String getTargetService();
-
   /**
    *
    *

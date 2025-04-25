@@ -33,7 +33,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.chat.v1.UserMentionMetadata)
     UserMentionMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UserMentionMetadata.newBuilder() to construct.
   private UserMentionMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,7 +108,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -120,7 +118,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
      * <code>ADD = 1;</code>
      */
     public static final int ADD_VALUE = 1;
-
     /**
      *
      *
@@ -218,7 +215,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int USER_FIELD_NUMBER = 1;
   private com.google.chat.v1.User user_;
-
   /**
    *
    *
@@ -234,7 +230,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
   public boolean hasUser() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -250,7 +245,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
   public com.google.chat.v1.User getUser() {
     return user_ == null ? com.google.chat.v1.User.getDefaultInstance() : user_;
   }
-
   /**
    *
    *
@@ -267,7 +261,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
-
   /**
    *
    *
@@ -283,7 +276,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -474,7 +466,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -690,7 +681,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
             com.google.chat.v1.User.Builder,
             com.google.chat.v1.UserOrBuilder>
         userBuilder_;
-
     /**
      *
      *
@@ -705,7 +695,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
     public boolean hasUser() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -724,7 +713,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
         return userBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -747,7 +735,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -795,7 +781,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +800,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -830,7 +814,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
         return user_ == null ? com.google.chat.v1.User.getDefaultInstance() : user_;
       }
     }
-
     /**
      *
      *
@@ -874,7 +856,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
     }
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -890,7 +871,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -909,7 +889,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
           com.google.chat.v1.UserMentionMetadata.Type.forNumber(type_);
       return result == null ? com.google.chat.v1.UserMentionMetadata.Type.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -949,7 +927,6 @@ public final class UserMentionMetadata extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

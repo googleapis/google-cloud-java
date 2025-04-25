@@ -33,7 +33,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.TargetResource)
     TargetResourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TargetResource.newBuilder() to construct.
   private TargetResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,7 +77,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
     private TargetResourceInfoCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -110,7 +108,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCP_RESOURCE_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcpResource() {
     return targetResourceInfoCase_ == 1;
   }
-
   /**
    *
    *
@@ -145,7 +141,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.backupdr.v1.GcpResource.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -337,7 +332,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -555,7 +549,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.backupdr.v1.GcpResource.Builder,
             com.google.cloud.backupdr.v1.GcpResourceOrBuilder>
         gcpResourceBuilder_;
-
     /**
      *
      *
@@ -571,7 +564,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcpResource() {
       return targetResourceInfoCase_ == 1;
     }
-
     /**
      *
      *
@@ -597,7 +589,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.GcpResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -620,7 +611,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
       targetResourceInfoCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -641,7 +631,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
       targetResourceInfoCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -675,7 +664,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
       targetResourceInfoCase_ = 1;
       return this;
     }
-
     /**
      *
      *
@@ -701,7 +689,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +701,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.backupdr.v1.GcpResource.Builder getGcpResourceBuilder() {
       return getGcpResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -735,7 +721,6 @@ public final class TargetResource extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.backupdr.v1.GcpResource.getDefaultInstance();
       }
     }
-
     /**
      *
      *

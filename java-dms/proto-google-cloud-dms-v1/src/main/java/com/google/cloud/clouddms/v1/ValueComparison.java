@@ -93,7 +93,6 @@ public enum ValueComparison implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VALUE_COMPARISON_UNSPECIFIED = 0;</code>
    */
   public static final int VALUE_COMPARISON_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *
@@ -104,7 +103,6 @@ public enum ValueComparison implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VALUE_COMPARISON_IF_VALUE_SMALLER_THAN = 1;</code>
    */
   public static final int VALUE_COMPARISON_IF_VALUE_SMALLER_THAN_VALUE = 1;
-
   /**
    *
    *
@@ -115,7 +113,6 @@ public enum ValueComparison implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN = 2;</code>
    */
   public static final int VALUE_COMPARISON_IF_VALUE_SMALLER_EQUAL_THAN_VALUE = 2;
-
   /**
    *
    *
@@ -126,7 +123,6 @@ public enum ValueComparison implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VALUE_COMPARISON_IF_VALUE_LARGER_THAN = 3;</code>
    */
   public static final int VALUE_COMPARISON_IF_VALUE_LARGER_THAN_VALUE = 3;
-
   /**
    *
    *

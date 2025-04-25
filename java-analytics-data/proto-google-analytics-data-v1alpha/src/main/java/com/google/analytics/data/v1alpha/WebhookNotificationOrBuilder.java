@@ -69,7 +69,6 @@ public interface WebhookNotificationOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
-
   /**
    *
    *
@@ -115,7 +114,6 @@ public interface WebhookNotificationOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -180,7 +178,6 @@ public interface WebhookNotificationOrBuilder
    * @return Whether the channelToken field is set.
    */
   boolean hasChannelToken();
-
   /**
    *
    *
@@ -199,7 +196,6 @@ public interface WebhookNotificationOrBuilder
    * @return The channelToken.
    */
   java.lang.String getChannelToken();
-
   /**
    *
    *

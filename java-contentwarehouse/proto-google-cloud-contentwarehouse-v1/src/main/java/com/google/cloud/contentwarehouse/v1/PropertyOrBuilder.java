@@ -37,7 +37,6 @@ public interface PropertyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface PropertyOrBuilder
    * @return Whether the integerValues field is set.
    */
   boolean hasIntegerValues();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface PropertyOrBuilder
    * @return The integerValues.
    */
   com.google.cloud.contentwarehouse.v1.IntegerArray getIntegerValues();
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public interface PropertyOrBuilder
    * @return Whether the floatValues field is set.
    */
   boolean hasFloatValues();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface PropertyOrBuilder
    * @return The floatValues.
    */
   com.google.cloud.contentwarehouse.v1.FloatArray getFloatValues();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface PropertyOrBuilder
    * @return Whether the textValues field is set.
    */
   boolean hasTextValues();
-
   /**
    *
    *
@@ -151,7 +145,6 @@ public interface PropertyOrBuilder
    * @return The textValues.
    */
   com.google.cloud.contentwarehouse.v1.TextArray getTextValues();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface PropertyOrBuilder
    * @return Whether the enumValues field is set.
    */
   boolean hasEnumValues();
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public interface PropertyOrBuilder
    * @return The enumValues.
    */
   com.google.cloud.contentwarehouse.v1.EnumArray getEnumValues();
-
   /**
    *
    *
@@ -212,7 +203,6 @@ public interface PropertyOrBuilder
    * @return Whether the propertyValues field is set.
    */
   boolean hasPropertyValues();
-
   /**
    *
    *
@@ -225,7 +215,6 @@ public interface PropertyOrBuilder
    * @return The propertyValues.
    */
   com.google.cloud.contentwarehouse.v1.PropertyArray getPropertyValues();
-
   /**
    *
    *
@@ -250,7 +239,6 @@ public interface PropertyOrBuilder
    * @return Whether the dateTimeValues field is set.
    */
   boolean hasDateTimeValues();
-
   /**
    *
    *
@@ -264,7 +252,6 @@ public interface PropertyOrBuilder
    * @return The dateTimeValues.
    */
   com.google.cloud.contentwarehouse.v1.DateTimeArray getDateTimeValues();
-
   /**
    *
    *
@@ -289,7 +276,6 @@ public interface PropertyOrBuilder
    * @return Whether the mapProperty field is set.
    */
   boolean hasMapProperty();
-
   /**
    *
    *
@@ -302,7 +288,6 @@ public interface PropertyOrBuilder
    * @return The mapProperty.
    */
   com.google.cloud.contentwarehouse.v1.MapProperty getMapProperty();
-
   /**
    *
    *
@@ -327,7 +312,6 @@ public interface PropertyOrBuilder
    * @return Whether the timestampValues field is set.
    */
   boolean hasTimestampValues();
-
   /**
    *
    *
@@ -341,7 +325,6 @@ public interface PropertyOrBuilder
    * @return The timestampValues.
    */
   com.google.cloud.contentwarehouse.v1.TimestampArray getTimestampValues();
-
   /**
    *
    *

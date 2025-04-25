@@ -33,7 +33,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SchemaKeySortingStrategy)
     SchemaKeySortingStrategyOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SchemaKeySortingStrategy.newBuilder() to construct.
   private SchemaKeySortingStrategy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,7 +80,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
      * @return The dataSchemaKey.
      */
     java.lang.String getDataSchemaKey();
-
     /**
      *
      *
@@ -123,7 +121,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
      * @return Whether the aggregateMethod field is set.
      */
     boolean hasAggregateMethod();
-
     /**
      *
      *
@@ -138,7 +135,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
      * @return The enum numeric value on the wire for aggregateMethod.
      */
     int getAggregateMethodValue();
-
     /**
      *
      *
@@ -155,7 +151,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
     com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option.AggregateMethod
         getAggregateMethod();
   }
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.SchemaKeySortingStrategy.Option)
       OptionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use Option.newBuilder() to construct.
     private Option(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -262,7 +256,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
        * <code>AGGREGATE_METHOD_UNSPECIFIED = 0;</code>
        */
       public static final int AGGREGATE_METHOD_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -273,7 +266,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
        * <code>AGGREGATE_METHOD_LARGEST = 1;</code>
        */
       public static final int AGGREGATE_METHOD_LARGEST_VALUE = 1;
-
       /**
        *
        *
@@ -378,7 +370,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataSchemaKey_ = "";
-
     /**
      *
      *
@@ -402,7 +393,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         return s;
       }
     }
-
     /**
      *
      *
@@ -429,7 +419,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
 
     public static final int SORT_DECREASING_FIELD_NUMBER = 2;
     private boolean sortDecreasing_ = false;
-
     /**
      *
      *
@@ -449,7 +438,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
 
     public static final int AGGREGATE_METHOD_FIELD_NUMBER = 3;
     private int aggregateMethod_ = 0;
-
     /**
      *
      *
@@ -467,7 +455,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
     public boolean hasAggregateMethod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -485,7 +472,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
     public int getAggregateMethodValue() {
       return aggregateMethod_;
     }
-
     /**
      *
      *
@@ -695,7 +681,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -915,7 +900,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       private int bitField0_;
 
       private java.lang.Object dataSchemaKey_ = "";
-
       /**
        *
        *
@@ -938,7 +922,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -961,7 +944,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -983,7 +965,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1001,7 +982,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1026,7 +1006,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
 
       private boolean sortDecreasing_;
-
       /**
        *
        *
@@ -1043,7 +1022,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       public boolean getSortDecreasing() {
         return sortDecreasing_;
       }
-
       /**
        *
        *
@@ -1064,7 +1042,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1085,7 +1062,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
 
       private int aggregateMethod_ = 0;
-
       /**
        *
        *
@@ -1103,7 +1079,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       public boolean hasAggregateMethod() {
         return ((bitField0_ & 0x00000004) != 0);
       }
-
       /**
        *
        *
@@ -1121,7 +1096,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       public int getAggregateMethodValue() {
         return aggregateMethod_;
       }
-
       /**
        *
        *
@@ -1142,7 +1116,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1167,7 +1140,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1192,7 +1164,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1284,7 +1255,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option> options_;
-
   /**
    *
    *
@@ -1299,7 +1269,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       getOptionsList() {
     return options_;
   }
-
   /**
    *
    *
@@ -1315,7 +1284,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       getOptionsOrBuilderList() {
     return options_;
   }
-
   /**
    *
    *
@@ -1329,7 +1297,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
   public int getOptionsCount() {
     return options_.size();
   }
-
   /**
    *
    *
@@ -1343,7 +1310,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
   public com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option getOptions(int index) {
     return options_.get(index);
   }
-
   /**
    *
    *
@@ -1521,7 +1487,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1787,7 +1752,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         return optionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1804,7 +1768,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         return optionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1821,7 +1784,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         return optionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1845,7 +1807,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1867,7 +1828,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1890,7 +1850,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1914,7 +1873,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1935,7 +1893,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1957,7 +1914,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1979,7 +1935,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1999,7 +1954,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2019,7 +1973,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -2033,7 +1986,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         int index) {
       return getOptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2051,7 +2003,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         return optionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2070,7 +2021,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(options_);
       }
     }
-
     /**
      *
      *
@@ -2086,7 +2036,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
           .addBuilder(
               com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2103,7 +2052,6 @@ public final class SchemaKeySortingStrategy extends com.google.protobuf.Generate
               index,
               com.google.cloud.visionai.v1.SchemaKeySortingStrategy.Option.getDefaultInstance());
     }
-
     /**
      *
      *

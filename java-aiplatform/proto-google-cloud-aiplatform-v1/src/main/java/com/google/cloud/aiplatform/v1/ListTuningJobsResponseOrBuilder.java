@@ -34,7 +34,6 @@ public interface ListTuningJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TuningJob tuning_jobs = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.TuningJob> getTuningJobsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListTuningJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TuningJob tuning_jobs = 1;</code>
    */
   com.google.cloud.aiplatform.v1.TuningJob getTuningJobs(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListTuningJobsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1.TuningJob tuning_jobs = 1;</code>
    */
   int getTuningJobsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListTuningJobsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TuningJobOrBuilder>
       getTuningJobsOrBuilderList();
-
   /**
    *
    *
@@ -95,7 +91,6 @@ public interface ListTuningJobsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

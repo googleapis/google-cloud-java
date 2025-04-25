@@ -34,7 +34,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DatabaseTableSpec)
     DatabaseTableSpecOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatabaseTableSpec.newBuilder() to construct.
   private DatabaseTableSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,7 +117,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>TABLE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TABLE_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -129,7 +127,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * <code>NATIVE = 1;</code>
      */
     public static final int NATIVE_VALUE = 1;
-
     /**
      *
      *
@@ -244,7 +241,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for viewType.
      */
     int getViewTypeValue();
-
     /**
      *
      *
@@ -271,7 +267,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return Whether the baseTable field is set.
      */
     boolean hasBaseTable();
-
     /**
      *
      *
@@ -284,7 +279,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return The baseTable.
      */
     java.lang.String getBaseTable();
-
     /**
      *
      *
@@ -310,7 +304,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return Whether the sqlQuery field is set.
      */
     boolean hasSqlQuery();
-
     /**
      *
      *
@@ -323,7 +316,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
      * @return The sqlQuery.
      */
     java.lang.String getSqlQuery();
-
     /**
      *
      *
@@ -340,7 +332,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.SourceDefinitionCase
         getSourceDefinitionCase();
   }
-
   /**
    *
    *
@@ -355,7 +346,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec)
       DatabaseViewSpecOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use DatabaseViewSpec.newBuilder() to construct.
     private DatabaseViewSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -439,7 +429,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
        * <code>VIEW_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int VIEW_TYPE_UNSPECIFIED_VALUE = 0;
-
       /**
        *
        *
@@ -450,7 +439,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
        * <code>STANDARD_VIEW = 1;</code>
        */
       public static final int STANDARD_VIEW_VALUE = 1;
-
       /**
        *
        *
@@ -564,7 +552,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       private SourceDefinitionCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -599,7 +586,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
 
     public static final int VIEW_TYPE_FIELD_NUMBER = 1;
     private int viewType_ = 0;
-
     /**
      *
      *
@@ -616,7 +602,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public int getViewTypeValue() {
       return viewType_;
     }
-
     /**
      *
      *
@@ -641,7 +626,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int BASE_TABLE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -656,7 +640,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasBaseTable() {
       return sourceDefinitionCase_ == 2;
     }
-
     /**
      *
      *
@@ -684,7 +667,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -714,7 +696,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int SQL_QUERY_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -729,7 +710,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasSqlQuery() {
       return sourceDefinitionCase_ == 3;
     }
-
     /**
      *
      *
@@ -757,7 +737,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -989,7 +968,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -1239,7 +1217,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private int viewType_ = 0;
-
       /**
        *
        *
@@ -1257,7 +1234,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       public int getViewTypeValue() {
         return viewType_;
       }
-
       /**
        *
        *
@@ -1278,7 +1254,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1303,7 +1278,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
-
       /**
        *
        *
@@ -1328,7 +1302,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1364,7 +1337,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       public boolean hasBaseTable() {
         return sourceDefinitionCase_ == 2;
       }
-
       /**
        *
        *
@@ -1393,7 +1365,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1422,7 +1393,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1444,7 +1414,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1464,7 +1433,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1503,7 +1471,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       public boolean hasSqlQuery() {
         return sourceDefinitionCase_ == 3;
       }
-
       /**
        *
        *
@@ -1532,7 +1499,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -1561,7 +1527,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -1583,7 +1548,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -1603,7 +1567,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
-
       /**
        *
        *
@@ -1697,7 +1660,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
-
   /**
    *
    *
@@ -1713,7 +1675,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
   public int getTypeValue() {
     return type_;
   }
-
   /**
    *
    *
@@ -1736,7 +1697,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int DATAPLEX_TABLE_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1.DataplexTableSpec dataplexTable_;
-
   /**
    *
    *
@@ -1755,7 +1715,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasDataplexTable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -1776,7 +1735,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datacatalog.v1.DataplexTableSpec.getDefaultInstance()
         : dataplexTable_;
   }
-
   /**
    *
    *
@@ -1798,7 +1756,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
 
   public static final int DATABASE_VIEW_SPEC_FIELD_NUMBER = 3;
   private com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec databaseViewSpec_;
-
   /**
    *
    *
@@ -1816,7 +1773,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
   public boolean hasDatabaseViewSpec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -1836,7 +1792,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.getDefaultInstance()
         : databaseViewSpec_;
   }
-
   /**
    *
    *
@@ -2047,7 +2002,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -2282,7 +2236,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int type_ = 0;
-
     /**
      *
      *
@@ -2298,7 +2251,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public int getTypeValue() {
       return type_;
     }
-
     /**
      *
      *
@@ -2317,7 +2269,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2337,7 +2288,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.datacatalog.v1.DatabaseTableSpec.TableType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2359,7 +2309,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2384,7 +2333,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datacatalog.v1.DataplexTableSpec.Builder,
             com.google.cloud.datacatalog.v1.DataplexTableSpecOrBuilder>
         dataplexTableBuilder_;
-
     /**
      *
      *
@@ -2402,7 +2350,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasDataplexTable() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -2426,7 +2373,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         return dataplexTableBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2452,7 +2398,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2476,7 +2421,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2508,7 +2452,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2531,7 +2474,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2549,7 +2491,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDataplexTableFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2571,7 +2512,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
             : dataplexTable_;
       }
     }
-
     /**
      *
      *
@@ -2607,7 +2547,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpec.Builder,
             com.google.cloud.datacatalog.v1.DatabaseTableSpec.DatabaseViewSpecOrBuilder>
         databaseViewSpecBuilder_;
-
     /**
      *
      *
@@ -2624,7 +2563,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
     public boolean hasDatabaseViewSpec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -2649,7 +2587,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
         return databaseViewSpecBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2675,7 +2612,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2635,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2732,7 +2667,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2754,7 +2688,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2772,7 +2705,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getDatabaseViewSpecFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2795,7 +2727,6 @@ public final class DatabaseTableSpec extends com.google.protobuf.GeneratedMessag
             : databaseViewSpec_;
       }
     }
-
     /**
      *
      *

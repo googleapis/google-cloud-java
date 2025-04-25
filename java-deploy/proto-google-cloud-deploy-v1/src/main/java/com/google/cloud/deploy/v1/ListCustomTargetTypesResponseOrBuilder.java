@@ -34,7 +34,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.CustomTargetType custom_target_types = 1;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.CustomTargetType> getCustomTargetTypesList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.CustomTargetType custom_target_types = 1;</code>
    */
   com.google.cloud.deploy.v1.CustomTargetType getCustomTargetTypes(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * <code>repeated .google.cloud.deploy.v1.CustomTargetType custom_target_types = 1;</code>
    */
   int getCustomTargetTypesCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.CustomTargetTypeOrBuilder>
       getCustomTargetTypesOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -120,7 +115,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -133,7 +127,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -147,7 +140,6 @@ public interface ListCustomTargetTypesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *

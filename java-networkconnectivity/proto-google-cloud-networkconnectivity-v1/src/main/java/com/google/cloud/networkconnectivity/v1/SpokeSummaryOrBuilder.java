@@ -38,7 +38,6 @@ public interface SpokeSummaryOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCount>
       getSpokeTypeCountsList();
-
   /**
    *
    *
@@ -52,7 +51,6 @@ public interface SpokeSummaryOrBuilder
    * </code>
    */
   com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCount getSpokeTypeCounts(int index);
-
   /**
    *
    *
@@ -66,7 +64,6 @@ public interface SpokeSummaryOrBuilder
    * </code>
    */
   int getSpokeTypeCountsCount();
-
   /**
    *
    *
@@ -82,7 +79,6 @@ public interface SpokeSummaryOrBuilder
   java.util.List<
           ? extends com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeTypeCountOrBuilder>
       getSpokeTypeCountsOrBuilderList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SpokeSummaryOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCount>
       getSpokeStateCountsList();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface SpokeSummaryOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCount getSpokeStateCounts(
       int index);
-
   /**
    *
    *
@@ -141,7 +135,6 @@ public interface SpokeSummaryOrBuilder
    * </code>
    */
   int getSpokeStateCountsCount();
-
   /**
    *
    *
@@ -157,7 +150,6 @@ public interface SpokeSummaryOrBuilder
   java.util.List<
           ? extends com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateCountOrBuilder>
       getSpokeStateCountsOrBuilderList();
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public interface SpokeSummaryOrBuilder
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCount>
       getSpokeStateReasonCountsList();
-
   /**
    *
    *
@@ -202,7 +193,6 @@ public interface SpokeSummaryOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCount
       getSpokeStateReasonCounts(int index);
-
   /**
    *
    *
@@ -216,7 +206,6 @@ public interface SpokeSummaryOrBuilder
    * </code>
    */
   int getSpokeStateReasonCountsCount();
-
   /**
    *
    *
@@ -233,7 +222,6 @@ public interface SpokeSummaryOrBuilder
           ? extends
               com.google.cloud.networkconnectivity.v1.SpokeSummary.SpokeStateReasonCountOrBuilder>
       getSpokeStateReasonCountsOrBuilderList();
-
   /**
    *
    *

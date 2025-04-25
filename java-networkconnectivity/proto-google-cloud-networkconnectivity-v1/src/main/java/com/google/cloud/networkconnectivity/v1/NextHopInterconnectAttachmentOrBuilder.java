@@ -36,7 +36,6 @@ public interface NextHopInterconnectAttachmentOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface NextHopInterconnectAttachmentOrBuilder
    * @return The vpcNetwork.
    */
   java.lang.String getVpcNetwork();
-
   /**
    *
    *

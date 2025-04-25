@@ -34,7 +34,6 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.executions.v1.Execution executions = 1;</code>
    */
   java.util.List<com.google.cloud.workflows.executions.v1.Execution> getExecutionsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.executions.v1.Execution executions = 1;</code>
    */
   com.google.cloud.workflows.executions.v1.Execution getExecutions(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface ListExecutionsResponseOrBuilder
    * <code>repeated .google.cloud.workflows.executions.v1.Execution executions = 1;</code>
    */
   int getExecutionsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface ListExecutionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.workflows.executions.v1.ExecutionOrBuilder>
       getExecutionsOrBuilderList();
-
   /**
    *
    *
@@ -93,7 +89,6 @@ public interface ListExecutionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *

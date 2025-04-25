@@ -39,7 +39,6 @@ public interface UpdateAwsNodePoolRequestOrBuilder
    * @return Whether the awsNodePool field is set.
    */
   boolean hasAwsNodePool();
-
   /**
    *
    *
@@ -55,7 +54,6 @@ public interface UpdateAwsNodePoolRequestOrBuilder
    * @return The awsNodePool.
    */
   com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool();
-
   /**
    *
    *
@@ -129,7 +127,6 @@ public interface UpdateAwsNodePoolRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -176,7 +173,6 @@ public interface UpdateAwsNodePoolRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

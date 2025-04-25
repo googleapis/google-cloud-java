@@ -33,7 +33,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.stitcher.v1.AdStitchDetail)
     AdStitchDetailOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AdStitchDetail.newBuilder() to construct.
   private AdStitchDetail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,7 +82,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adBreakId_ = "";
-
   /**
    *
    *
@@ -107,7 +105,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -136,7 +133,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object adId_ = "";
-
   /**
    *
    *
@@ -160,7 +156,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -187,7 +182,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AD_TIME_OFFSET_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration adTimeOffset_;
-
   /**
    *
    *
@@ -204,7 +198,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAdTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -223,7 +216,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : adTimeOffset_;
   }
-
   /**
    *
    *
@@ -245,7 +237,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object skipReason_ = "";
-
   /**
    *
    *
@@ -269,7 +260,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -323,7 +313,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   public int getMediaCount() {
     return internalGetMedia().getMap().size();
   }
-
   /**
    *
    *
@@ -342,14 +331,12 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetMedia().getMap().containsKey(key);
   }
-
   /** Use {@link #getMediaMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getMedia() {
     return getMediaMap();
   }
-
   /**
    *
    *
@@ -365,7 +352,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getMediaMap() {
     return internalGetMedia().getMap();
   }
-
   /**
    *
    *
@@ -388,7 +374,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, com.google.protobuf.Value> map = internalGetMedia().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-
   /**
    *
    *
@@ -620,7 +605,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -904,7 +888,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object adBreakId_ = "";
-
     /**
      *
      *
@@ -927,7 +910,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -950,7 +932,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -972,7 +953,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -990,7 +970,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1015,7 +994,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object adId_ = "";
-
     /**
      *
      *
@@ -1038,7 +1016,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1038,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1083,7 +1059,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1101,7 +1076,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1131,7 +1105,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         adTimeOffsetBuilder_;
-
     /**
      *
      *
@@ -1147,7 +1120,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAdTimeOffset() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1169,7 +1141,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return adTimeOffsetBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1193,7 +1164,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1243,7 +1212,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1264,7 +1232,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1280,7 +1247,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getAdTimeOffsetFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1300,7 +1266,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
             : adTimeOffset_;
       }
     }
-
     /**
      *
      *
@@ -1329,7 +1294,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object skipReason_ = "";
-
     /**
      *
      *
@@ -1352,7 +1316,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1375,7 +1338,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1397,7 +1359,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1415,7 +1376,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1455,8 +1415,7 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return MediaDefaultEntryHolder.defaultEntry;
       }
-    }
-    ;
+    };
 
     private static final MediaConverter mediaConverter = new MediaConverter();
 
@@ -1496,7 +1455,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     public int getMediaCount() {
       return internalGetMedia().ensureBuilderMap().size();
     }
-
     /**
      *
      *
@@ -1515,14 +1473,12 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetMedia().ensureBuilderMap().containsKey(key);
     }
-
     /** Use {@link #getMediaMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMedia() {
       return getMediaMap();
     }
-
     /**
      *
      *
@@ -1538,7 +1494,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMediaMap() {
       return internalGetMedia().getImmutableMap();
     }
-
     /**
      *
      *
@@ -1562,7 +1517,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableMedia().ensureBuilderMap();
       return map.containsKey(key) ? mediaConverter.build(map.get(key)) : defaultValue;
     }
-
     /**
      *
      *
@@ -1592,7 +1546,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMedia().clear();
       return this;
     }
-
     /**
      *
      *
@@ -1611,14 +1564,12 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableMedia().ensureBuilderMap().remove(key);
       return this;
     }
-
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getMutableMedia() {
       bitField0_ |= 0x00000010;
       return internalGetMutableMedia().ensureMessageMap();
     }
-
     /**
      *
      *
@@ -1641,7 +1592,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *
@@ -1663,7 +1613,6 @@ public final class AdStitchDetail extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
-
     /**
      *
      *

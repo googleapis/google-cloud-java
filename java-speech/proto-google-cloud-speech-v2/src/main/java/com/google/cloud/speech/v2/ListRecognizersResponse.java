@@ -34,7 +34,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.ListRecognizersResponse)
     ListRecognizersResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListRecognizersResponse.newBuilder() to construct.
   private ListRecognizersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.speech.v2.Recognizer> recognizers_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.cloud.speech.v2.Recognizer> getRecognizersList() {
     return recognizers_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       getRecognizersOrBuilderList() {
     return recognizers_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
   public int getRecognizersCount() {
     return recognizers_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
   public com.google.cloud.speech.v2.Recognizer getRecognizers(int index) {
     return recognizers_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -173,7 +166,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -371,7 +363,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -649,7 +640,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return recognizersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -666,7 +656,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return recognizersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -683,7 +672,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return recognizersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -706,7 +694,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -727,7 +714,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -750,7 +736,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +758,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -793,7 +777,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +797,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +817,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +836,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -875,7 +855,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +867,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
     public com.google.cloud.speech.v2.Recognizer.Builder getRecognizersBuilder(int index) {
       return getRecognizersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -905,7 +883,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return recognizersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -923,7 +900,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(recognizers_);
       }
     }
-
     /**
      *
      *
@@ -937,7 +913,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       return getRecognizersFieldBuilder()
           .addBuilder(com.google.cloud.speech.v2.Recognizer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -951,7 +926,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       return getRecognizersFieldBuilder()
           .addBuilder(index, com.google.cloud.speech.v2.Recognizer.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -984,7 +958,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1010,7 +983,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1036,7 +1008,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1061,7 +1032,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1082,7 +1052,6 @@ public final class ListRecognizersResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

@@ -40,7 +40,6 @@ public interface LocationIdSetOrBuilder
    * @return A list containing the locationIds.
    */
   java.util.List<java.lang.String> getLocationIdsList();
-
   /**
    *
    *
@@ -57,7 +56,6 @@ public interface LocationIdSetOrBuilder
    * @return The count of locationIds.
    */
   int getLocationIdsCount();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface LocationIdSetOrBuilder
    * @return The locationIds at the given index.
    */
   java.lang.String getLocationIds(int index);
-
   /**
    *
    *

@@ -41,7 +41,6 @@ public interface UpdateMeshRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface UpdateMeshRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface UpdateMeshRequestOrBuilder
    * @return Whether the mesh field is set.
    */
   boolean hasMesh();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface UpdateMeshRequestOrBuilder
    * @return The mesh.
    */
   com.google.cloud.networkservices.v1.Mesh getMesh();
-
   /**
    *
    *

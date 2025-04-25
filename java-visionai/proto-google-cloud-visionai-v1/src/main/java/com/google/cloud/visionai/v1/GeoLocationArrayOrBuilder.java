@@ -34,7 +34,6 @@ public interface GeoLocationArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.CircleArea circle_areas = 1;</code>
    */
   java.util.List<com.google.cloud.visionai.v1.CircleArea> getCircleAreasList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface GeoLocationArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.CircleArea circle_areas = 1;</code>
    */
   com.google.cloud.visionai.v1.CircleArea getCircleAreas(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface GeoLocationArrayOrBuilder
    * <code>repeated .google.cloud.visionai.v1.CircleArea circle_areas = 1;</code>
    */
   int getCircleAreasCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface GeoLocationArrayOrBuilder
    */
   java.util.List<? extends com.google.cloud.visionai.v1.CircleAreaOrBuilder>
       getCircleAreasOrBuilderList();
-
   /**
    *
    *

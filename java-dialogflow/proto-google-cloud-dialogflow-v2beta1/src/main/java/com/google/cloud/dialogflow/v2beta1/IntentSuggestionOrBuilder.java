@@ -36,7 +36,6 @@ public interface IntentSuggestionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -65,7 +64,6 @@ public interface IntentSuggestionOrBuilder
    * @return Whether the intentV2 field is set.
    */
   boolean hasIntentV2();
-
   /**
    *
    *
@@ -81,7 +79,6 @@ public interface IntentSuggestionOrBuilder
    * @return The intentV2.
    */
   java.lang.String getIntentV2();
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public interface IntentSuggestionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *

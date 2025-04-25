@@ -33,7 +33,6 @@ public final class DateTimeTypeOptions extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.DateTimeTypeOptions)
     DateTimeTypeOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DateTimeTypeOptions.newBuilder() to construct.
   private DateTimeTypeOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class DateTimeTypeOptions extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

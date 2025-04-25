@@ -33,7 +33,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DatasetInputConfig)
     DatasetInputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use DatasetInputConfig.newBuilder() to construct.
   private DatasetInputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,7 +81,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
      * @return The usage.
      */
     java.lang.String getUsage();
-
     /**
      *
      *
@@ -109,7 +107,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
      * @return Whether the gcsSource field is set.
      */
     boolean hasGcsSource();
-
     /**
      *
      *
@@ -122,7 +119,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
      * @return The gcsSource.
      */
     com.google.cloud.translate.v3.GcsInputSource getGcsSource();
-
     /**
      *
      *
@@ -136,7 +132,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
 
     com.google.cloud.translate.v3.DatasetInputConfig.InputFile.SourceCase getSourceCase();
   }
-
   /**
    *
    *
@@ -151,7 +146,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.translation.v3.DatasetInputConfig.InputFile)
       InputFileOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use InputFile.newBuilder() to construct.
     private InputFile(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -198,7 +192,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       private SourceCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -233,7 +226,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object usage_ = "";
-
     /**
      *
      *
@@ -258,7 +250,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         return s;
       }
     }
-
     /**
      *
      *
@@ -285,7 +276,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int GCS_SOURCE_FIELD_NUMBER = 3;
-
     /**
      *
      *
@@ -301,7 +291,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasGcsSource() {
       return sourceCase_ == 3;
     }
-
     /**
      *
      *
@@ -320,7 +309,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return com.google.cloud.translate.v3.GcsInputSource.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -523,7 +511,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -760,7 +747,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private java.lang.Object usage_ = "";
-
       /**
        *
        *
@@ -784,7 +770,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -808,7 +793,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -831,7 +815,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -850,7 +833,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -880,7 +862,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
               com.google.cloud.translate.v3.GcsInputSource.Builder,
               com.google.cloud.translate.v3.GcsInputSourceOrBuilder>
           gcsSourceBuilder_;
-
       /**
        *
        *
@@ -896,7 +877,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       public boolean hasGcsSource() {
         return sourceCase_ == 3;
       }
-
       /**
        *
        *
@@ -922,7 +902,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.translate.v3.GcsInputSource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -945,7 +924,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -966,7 +944,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -999,7 +976,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         sourceCase_ = 3;
         return this;
       }
-
       /**
        *
        *
@@ -1025,7 +1001,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
-
       /**
        *
        *
@@ -1038,7 +1013,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.translate.v3.GcsInputSource.Builder getGcsSourceBuilder() {
         return getGcsSourceFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1059,7 +1033,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
           return com.google.cloud.translate.v3.GcsInputSource.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1162,7 +1135,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.translate.v3.DatasetInputConfig.InputFile> inputFiles_;
-
   /**
    *
    *
@@ -1178,7 +1150,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       getInputFilesList() {
     return inputFiles_;
   }
-
   /**
    *
    *
@@ -1195,7 +1166,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       getInputFilesOrBuilderList() {
     return inputFiles_;
   }
-
   /**
    *
    *
@@ -1210,7 +1180,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
   public int getInputFilesCount() {
     return inputFiles_.size();
   }
-
   /**
    *
    *
@@ -1225,7 +1194,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.translate.v3.DatasetInputConfig.InputFile getInputFiles(int index) {
     return inputFiles_.get(index);
   }
-
   /**
    *
    *
@@ -1403,7 +1371,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1670,7 +1637,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         return inputFilesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1688,7 +1654,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         return inputFilesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1706,7 +1671,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         return inputFilesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1731,7 +1695,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1754,7 +1717,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1778,7 +1740,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1803,7 +1764,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1825,7 +1785,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1848,7 +1807,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1871,7 +1829,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1892,7 +1849,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1913,7 +1869,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
-
     /**
      *
      *
@@ -1928,7 +1883,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         int index) {
       return getInputFilesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1947,7 +1901,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         return inputFilesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1967,7 +1920,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(inputFiles_);
       }
     }
-
     /**
      *
      *
@@ -1984,7 +1936,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               com.google.cloud.translate.v3.DatasetInputConfig.InputFile.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2002,7 +1953,6 @@ public final class DatasetInputConfig extends com.google.protobuf.GeneratedMessa
               index,
               com.google.cloud.translate.v3.DatasetInputConfig.InputFile.getDefaultInstance());
     }
-
     /**
      *
      *

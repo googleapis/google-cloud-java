@@ -33,7 +33,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Attack)
     AttackOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Attack.newBuilder() to construct.
   private Attack(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,7 +65,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VOLUME_PPS_FIELD_NUMBER = 1;
   private int volumePps_ = 0;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VOLUME_BPS_FIELD_NUMBER = 2;
   private int volumeBps_ = 0;
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object classification_ = "";
-
   /**
    *
    *
@@ -130,7 +126,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -332,7 +327,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -542,7 +536,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int volumePps_;
-
     /**
      *
      *
@@ -558,7 +551,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     public int getVolumePps() {
       return volumePps_;
     }
-
     /**
      *
      *
@@ -578,7 +570,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -598,7 +589,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int volumeBps_;
-
     /**
      *
      *
@@ -614,7 +604,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     public int getVolumeBps() {
       return volumeBps_;
     }
-
     /**
      *
      *
@@ -634,7 +623,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -654,7 +642,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object classification_ = "";
-
     /**
      *
      *
@@ -677,7 +664,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -700,7 +686,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -722,7 +707,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -740,7 +724,6 @@ public final class Attack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

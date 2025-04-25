@@ -36,7 +36,6 @@ public interface ContactInfoOrBuilder
    * @return The firstName.
    */
   java.lang.String getFirstName();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface ContactInfoOrBuilder
    * @return The lastName.
    */
   java.lang.String getLastName();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface ContactInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -118,7 +115,6 @@ public interface ContactInfoOrBuilder
    * @return The email.
    */
   java.lang.String getEmail();
-
   /**
    *
    *
@@ -146,7 +142,6 @@ public interface ContactInfoOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public interface ContactInfoOrBuilder
    * @return The phone.
    */
   java.lang.String getPhone();
-
   /**
    *
    *

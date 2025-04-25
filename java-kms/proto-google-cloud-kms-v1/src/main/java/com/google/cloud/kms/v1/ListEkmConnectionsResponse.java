@@ -34,7 +34,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.ListEkmConnectionsResponse)
     ListEkmConnectionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListEkmConnectionsResponse.newBuilder() to construct.
   private ListEkmConnectionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.kms.v1.EkmConnection> ekmConnections_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.kms.v1.EkmConnection> getEkmConnectionsList() {
     return ekmConnections_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       getEkmConnectionsOrBuilderList() {
     return ekmConnections_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
   public int getEkmConnectionsCount() {
     return ekmConnections_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
   public com.google.cloud.kms.v1.EkmConnection getEkmConnections(int index) {
     return ekmConnections_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
-
   /**
    *
    *
@@ -201,7 +193,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_ = 0;
-
   /**
    *
    *
@@ -398,7 +389,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -690,7 +680,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return ekmConnectionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -707,7 +696,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return ekmConnectionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -724,7 +712,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return ekmConnectionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -747,7 +734,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -768,7 +754,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -791,7 +776,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -835,7 +818,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -856,7 +838,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -877,7 +858,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -897,7 +877,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +896,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
-
     /**
      *
      *
@@ -930,7 +908,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
     public com.google.cloud.kms.v1.EkmConnection.Builder getEkmConnectionsBuilder(int index) {
       return getEkmConnectionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -947,7 +924,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return ekmConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -965,7 +941,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(ekmConnections_);
       }
     }
-
     /**
      *
      *
@@ -979,7 +954,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       return getEkmConnectionsFieldBuilder()
           .addBuilder(com.google.cloud.kms.v1.EkmConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -993,7 +967,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       return getEkmConnectionsFieldBuilder()
           .addBuilder(index, com.google.cloud.kms.v1.EkmConnection.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1029,7 +1002,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1054,7 +1026,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1079,7 +1050,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1103,7 +1073,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1123,7 +1092,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1150,7 +1118,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
     }
 
     private int totalSize_;
-
     /**
      *
      *
@@ -1167,7 +1134,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
     public int getTotalSize() {
       return totalSize_;
     }
-
     /**
      *
      *
@@ -1188,7 +1154,6 @@ public final class ListEkmConnectionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
-
     /**
      *
      *

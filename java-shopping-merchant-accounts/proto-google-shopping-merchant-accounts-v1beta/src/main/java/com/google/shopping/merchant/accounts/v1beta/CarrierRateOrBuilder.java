@@ -36,7 +36,6 @@ public interface CarrierRateOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface CarrierRateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface CarrierRateOrBuilder
    * @return Whether the carrier field is set.
    */
   boolean hasCarrier();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface CarrierRateOrBuilder
    * @return The carrier.
    */
   java.lang.String getCarrier();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface CarrierRateOrBuilder
    * @return Whether the carrierService field is set.
    */
   boolean hasCarrierService();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface CarrierRateOrBuilder
    * @return The carrierService.
    */
   java.lang.String getCarrierService();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface CarrierRateOrBuilder
    * @return Whether the originPostalCode field is set.
    */
   boolean hasOriginPostalCode();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface CarrierRateOrBuilder
    * @return The originPostalCode.
    */
   java.lang.String getOriginPostalCode();
-
   /**
    *
    *
@@ -195,7 +187,6 @@ public interface CarrierRateOrBuilder
    * @return Whether the percentageAdjustment field is set.
    */
   boolean hasPercentageAdjustment();
-
   /**
    *
    *
@@ -211,7 +202,6 @@ public interface CarrierRateOrBuilder
    * @return The percentageAdjustment.
    */
   java.lang.String getPercentageAdjustment();
-
   /**
    *
    *
@@ -245,7 +235,6 @@ public interface CarrierRateOrBuilder
    * @return Whether the flatAdjustment field is set.
    */
   boolean hasFlatAdjustment();
-
   /**
    *
    *
@@ -263,7 +252,6 @@ public interface CarrierRateOrBuilder
    * @return The flatAdjustment.
    */
   com.google.shopping.type.Price getFlatAdjustment();
-
   /**
    *
    *

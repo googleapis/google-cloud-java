@@ -33,7 +33,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ResizeRegionDiskRequest)
     ResizeRegionDiskRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ResizeRegionDiskRequest.newBuilder() to construct.
   private ResizeRegionDiskRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disk_ = "";
-
   /**
    *
    *
@@ -96,7 +94,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
-
   /**
    *
    *
@@ -151,7 +147,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
-
   /**
    *
    *
@@ -208,7 +202,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
 
   public static final int REGION_DISKS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 446633237;
   private com.google.cloud.compute.v1.RegionDisksResizeRequest regionDisksResizeRequestResource_;
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
   public boolean hasRegionDisksResizeRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -276,7 +267,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.RegionDisksResizeRequest.getDefaultInstance()
         : regionDisksResizeRequestResource_;
   }
-
   /**
    *
    *
@@ -300,7 +290,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
-
   /**
    *
    *
@@ -316,7 +305,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -340,7 +328,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -574,7 +561,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -839,7 +825,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object disk_ = "";
-
     /**
      *
      *
@@ -862,7 +847,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -885,7 +869,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -907,7 +890,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -925,7 +907,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -950,7 +931,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object project_ = "";
-
     /**
      *
      *
@@ -975,7 +955,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +979,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1024,7 +1002,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1044,7 +1021,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1071,7 +1047,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object region_ = "";
-
     /**
      *
      *
@@ -1096,7 +1071,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1121,7 +1095,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1145,7 +1118,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1165,7 +1137,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1197,7 +1168,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.RegionDisksResizeRequest.Builder,
             com.google.cloud.compute.v1.RegionDisksResizeRequestOrBuilder>
         regionDisksResizeRequestResourceBuilder_;
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     public boolean hasRegionDisksResizeRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1238,7 +1207,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return regionDisksResizeRequestResourceBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1264,7 +1232,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1287,7 +1254,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1319,7 +1285,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1341,7 +1306,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1359,7 +1323,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return getRegionDisksResizeRequestResourceFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1381,7 +1344,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
             : regionDisksResizeRequestResource_;
       }
     }
-
     /**
      *
      *
@@ -1411,7 +1373,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object requestId_ = "";
-
     /**
      *
      *
@@ -1426,7 +1387,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1449,7 +1409,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1431,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1494,7 +1452,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1512,7 +1469,6 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *

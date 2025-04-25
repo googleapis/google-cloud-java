@@ -42,7 +42,6 @@ public interface DeleteExternalAccessRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -87,7 +86,6 @@ public interface DeleteExternalAccessRuleRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

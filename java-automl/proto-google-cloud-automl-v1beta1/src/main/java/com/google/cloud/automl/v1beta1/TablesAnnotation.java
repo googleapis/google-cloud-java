@@ -33,7 +33,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TablesAnnotation)
     TablesAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TablesAnnotation.newBuilder() to construct.
   private TablesAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
 
   public static final int PREDICTION_INTERVAL_FIELD_NUMBER = 4;
   private com.google.cloud.automl.v1beta1.DoubleRange predictionInterval_;
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   public boolean hasPredictionInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.automl.v1beta1.DoubleRange.getDefaultInstance()
         : predictionInterval_;
   }
-
   /**
    *
    *
@@ -156,7 +151,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.Value value_;
-
   /**
    *
    *
@@ -180,7 +174,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   public boolean hasValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Value getValue() {
     return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
   }
-
   /**
    *
    *
@@ -232,7 +224,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.TablesModelColumnInfo>
       tablesModelColumnInfo_;
-
   /**
    *
    *
@@ -258,7 +249,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       getTablesModelColumnInfoList() {
     return tablesModelColumnInfo_;
   }
-
   /**
    *
    *
@@ -284,7 +274,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       getTablesModelColumnInfoOrBuilderList() {
     return tablesModelColumnInfo_;
   }
-
   /**
    *
    *
@@ -309,7 +298,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   public int getTablesModelColumnInfoCount() {
     return tablesModelColumnInfo_.size();
   }
-
   /**
    *
    *
@@ -334,7 +322,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.automl.v1beta1.TablesModelColumnInfo getTablesModelColumnInfo(int index) {
     return tablesModelColumnInfo_.get(index);
   }
-
   /**
    *
    *
@@ -363,7 +350,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
 
   public static final int BASELINE_SCORE_FIELD_NUMBER = 5;
   private float baselineScore_ = 0F;
-
   /**
    *
    *
@@ -597,7 +583,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -908,7 +893,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private float score_;
-
     /**
      *
      *
@@ -929,7 +913,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     public float getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -954,7 +937,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -984,7 +966,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             com.google.cloud.automl.v1beta1.DoubleRange.Builder,
             com.google.cloud.automl.v1beta1.DoubleRangeOrBuilder>
         predictionIntervalBuilder_;
-
     /**
      *
      *
@@ -1003,7 +984,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     public boolean hasPredictionInterval() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1028,7 +1008,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return predictionIntervalBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1055,7 +1034,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1080,7 +1058,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1113,7 +1090,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1137,7 +1113,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1156,7 +1131,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPredictionIntervalFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1179,7 +1153,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             : predictionInterval_;
       }
     }
-
     /**
      *
      *
@@ -1216,7 +1189,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         valueBuilder_;
-
     /**
      *
      *
@@ -1239,7 +1211,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     public boolean hasValue() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1266,7 +1237,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return valueBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1297,7 +1267,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1325,7 +1294,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1361,7 +1329,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1389,7 +1356,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1412,7 +1378,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1437,7 +1402,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
       }
     }
-
     /**
      *
      *
@@ -1518,7 +1482,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return tablesModelColumnInfoBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1547,7 +1510,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return tablesModelColumnInfoBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1577,7 +1539,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return tablesModelColumnInfoBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1613,7 +1574,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1646,7 +1606,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1682,7 +1641,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1676,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1751,7 +1708,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1784,7 +1740,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1818,7 +1773,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1850,7 +1804,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1882,7 +1835,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -1908,7 +1860,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         getTablesModelColumnInfoBuilder(int index) {
       return getTablesModelColumnInfoFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1938,7 +1889,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return tablesModelColumnInfoBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1968,7 +1918,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(tablesModelColumnInfo_);
       }
     }
-
     /**
      *
      *
@@ -1995,7 +1944,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       return getTablesModelColumnInfoFieldBuilder()
           .addBuilder(com.google.cloud.automl.v1beta1.TablesModelColumnInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2023,7 +1971,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.automl.v1beta1.TablesModelColumnInfo.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2071,7 +2018,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     }
 
     private float baselineScore_;
-
     /**
      *
      *
@@ -2093,7 +2039,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
     public float getBaselineScore() {
       return baselineScore_;
     }
-
     /**
      *
      *
@@ -2119,7 +2064,6 @@ public final class TablesAnnotation extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

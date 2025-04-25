@@ -34,7 +34,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.ExportToCdwPipeline)
     ExportToCdwPipelineOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportToCdwPipeline.newBuilder() to construct.
   private ExportToCdwPipeline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,7 +71,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList documents_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getDocumentsList() {
     return documents_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
   public int getDocumentsCount() {
     return documents_.size();
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
   public java.lang.String getDocuments(int index) {
     return documents_.get(index);
   }
-
   /**
    *
    *
@@ -147,7 +142,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object exportFolderPath_ = "";
-
   /**
    *
    *
@@ -173,7 +167,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -204,7 +197,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object docAiDataset_ = "";
-
   /**
    *
    *
@@ -230,7 +222,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
-
   /**
    *
    *
@@ -259,7 +250,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
 
   public static final int TRAINING_SPLIT_RATIO_FIELD_NUMBER = 4;
   private float trainingSplitRatio_ = 0F;
-
   /**
    *
    *
@@ -473,7 +463,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -717,7 +706,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000001;
     }
-
     /**
      *
      *
@@ -735,7 +723,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       documents_.makeImmutable();
       return documents_;
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     public int getDocumentsCount() {
       return documents_.size();
     }
-
     /**
      *
      *
@@ -770,7 +756,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     public java.lang.String getDocuments(int index) {
       return documents_.get(index);
     }
-
     /**
      *
      *
@@ -788,7 +773,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getDocumentsBytes(int index) {
       return documents_.getByteString(index);
     }
-
     /**
      *
      *
@@ -814,7 +798,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -839,7 +822,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +890,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object exportFolderPath_ = "";
-
     /**
      *
      *
@@ -935,7 +914,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -960,7 +938,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -984,7 +961,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +980,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1031,7 +1006,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object docAiDataset_ = "";
-
     /**
      *
      *
@@ -1056,7 +1030,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1081,7 +1054,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1105,7 +1077,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1125,7 +1096,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1152,7 +1122,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     }
 
     private float trainingSplitRatio_;
-
     /**
      *
      *
@@ -1170,7 +1139,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
     public float getTrainingSplitRatio() {
       return trainingSplitRatio_;
     }
-
     /**
      *
      *
@@ -1192,7 +1160,6 @@ public final class ExportToCdwPipeline extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
-
     /**
      *
      *

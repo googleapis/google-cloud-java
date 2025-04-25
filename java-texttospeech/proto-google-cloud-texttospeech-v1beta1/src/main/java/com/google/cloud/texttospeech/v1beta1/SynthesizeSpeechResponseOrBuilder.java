@@ -52,7 +52,6 @@ public interface SynthesizeSpeechResponseOrBuilder
    * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
    */
   java.util.List<com.google.cloud.texttospeech.v1beta1.Timepoint> getTimepointsList();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface SynthesizeSpeechResponseOrBuilder
    * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
    */
   com.google.cloud.texttospeech.v1beta1.Timepoint getTimepoints(int index);
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SynthesizeSpeechResponseOrBuilder
    * <code>repeated .google.cloud.texttospeech.v1beta1.Timepoint timepoints = 2;</code>
    */
   int getTimepointsCount();
-
   /**
    *
    *
@@ -89,7 +86,6 @@ public interface SynthesizeSpeechResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.texttospeech.v1beta1.TimepointOrBuilder>
       getTimepointsOrBuilderList();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface SynthesizeSpeechResponseOrBuilder
    * @return Whether the audioConfig field is set.
    */
   boolean hasAudioConfig();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface SynthesizeSpeechResponseOrBuilder
    * @return The audioConfig.
    */
   com.google.cloud.texttospeech.v1beta1.AudioConfig getAudioConfig();
-
   /**
    *
    *

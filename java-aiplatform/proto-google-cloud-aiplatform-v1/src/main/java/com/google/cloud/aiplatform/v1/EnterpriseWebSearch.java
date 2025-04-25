@@ -34,7 +34,6 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.EnterpriseWebSearch)
     EnterpriseWebSearchOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use EnterpriseWebSearch.newBuilder() to construct.
   private EnterpriseWebSearch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,7 +212,6 @@ public final class EnterpriseWebSearch extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

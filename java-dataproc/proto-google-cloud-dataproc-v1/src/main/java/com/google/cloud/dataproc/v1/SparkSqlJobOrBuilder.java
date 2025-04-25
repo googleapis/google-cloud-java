@@ -36,7 +36,6 @@ public interface SparkSqlJobOrBuilder
    * @return Whether the queryFileUri field is set.
    */
   boolean hasQueryFileUri();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SparkSqlJobOrBuilder
    * @return The queryFileUri.
    */
   java.lang.String getQueryFileUri();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface SparkSqlJobOrBuilder
    * @return Whether the queryList field is set.
    */
   boolean hasQueryList();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface SparkSqlJobOrBuilder
    * @return The queryList.
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
-
   /**
    *
    *
@@ -112,7 +108,6 @@ public interface SparkSqlJobOrBuilder
    * </code>
    */
   int getScriptVariablesCount();
-
   /**
    *
    *
@@ -125,11 +120,9 @@ public interface SparkSqlJobOrBuilder
    * </code>
    */
   boolean containsScriptVariables(java.lang.String key);
-
   /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getScriptVariables();
-
   /**
    *
    *
@@ -142,7 +135,6 @@ public interface SparkSqlJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
-
   /**
    *
    *
@@ -159,7 +151,6 @@ public interface SparkSqlJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -186,7 +177,6 @@ public interface SparkSqlJobOrBuilder
    * </code>
    */
   int getPropertiesCount();
-
   /**
    *
    *
@@ -200,11 +190,9 @@ public interface SparkSqlJobOrBuilder
    * </code>
    */
   boolean containsProperties(java.lang.String key);
-
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getProperties();
-
   /**
    *
    *
@@ -218,7 +206,6 @@ public interface SparkSqlJobOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
-
   /**
    *
    *
@@ -236,7 +223,6 @@ public interface SparkSqlJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *
@@ -263,7 +249,6 @@ public interface SparkSqlJobOrBuilder
    * @return A list containing the jarFileUris.
    */
   java.util.List<java.lang.String> getJarFileUrisList();
-
   /**
    *
    *
@@ -276,7 +261,6 @@ public interface SparkSqlJobOrBuilder
    * @return The count of jarFileUris.
    */
   int getJarFileUrisCount();
-
   /**
    *
    *
@@ -290,7 +274,6 @@ public interface SparkSqlJobOrBuilder
    * @return The jarFileUris at the given index.
    */
   java.lang.String getJarFileUris(int index);
-
   /**
    *
    *
@@ -319,7 +302,6 @@ public interface SparkSqlJobOrBuilder
    * @return Whether the loggingConfig field is set.
    */
   boolean hasLoggingConfig();
-
   /**
    *
    *
@@ -334,7 +316,6 @@ public interface SparkSqlJobOrBuilder
    * @return The loggingConfig.
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
-
   /**
    *
    *

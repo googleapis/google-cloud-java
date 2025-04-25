@@ -37,7 +37,6 @@ public interface AllocationReservationSharingPolicyOrBuilder
    * @return Whether the serviceShareType field is set.
    */
   boolean hasServiceShareType();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface AllocationReservationSharingPolicyOrBuilder
    * @return The serviceShareType.
    */
   java.lang.String getServiceShareType();
-
   /**
    *
    *

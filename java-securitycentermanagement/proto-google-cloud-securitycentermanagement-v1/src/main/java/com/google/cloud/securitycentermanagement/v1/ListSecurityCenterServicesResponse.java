@@ -34,7 +34,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.ListSecurityCenterServicesResponse)
     ListSecurityCenterServicesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSecurityCenterServicesResponse.newBuilder() to construct.
   private ListSecurityCenterServicesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,7 +72,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycentermanagement.v1.SecurityCenterService>
       securityCenterServices_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       getSecurityCenterServicesList() {
     return securityCenterServices_;
   }
-
   /**
    *
    *
@@ -108,7 +105,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       getSecurityCenterServicesOrBuilderList() {
     return securityCenterServices_;
   }
-
   /**
    *
    *
@@ -124,7 +120,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
   public int getSecurityCenterServicesCount() {
     return securityCenterServices_.size();
   }
-
   /**
    *
    *
@@ -141,7 +136,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       getSecurityCenterServices(int index) {
     return securityCenterServices_.get(index);
   }
-
   /**
    *
    *
@@ -163,7 +157,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -188,7 +181,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       return s;
     }
   }
-
   /**
    *
    *
@@ -396,7 +388,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -695,7 +686,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return securityCenterServicesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -714,7 +704,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return securityCenterServicesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -734,7 +723,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return securityCenterServicesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -760,7 +748,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -785,7 +772,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -811,7 +797,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -837,7 +822,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +845,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -886,7 +869,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -911,7 +893,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -933,7 +914,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -955,7 +935,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       }
       return this;
     }
-
     /**
      *
      *
@@ -971,7 +950,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         getSecurityCenterServicesBuilder(int index) {
       return getSecurityCenterServicesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -991,7 +969,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return securityCenterServicesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1012,7 +989,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return java.util.Collections.unmodifiableList(securityCenterServices_);
       }
     }
-
     /**
      *
      *
@@ -1031,7 +1007,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
               com.google.cloud.securitycentermanagement.v1.SecurityCenterService
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1051,7 +1026,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
               com.google.cloud.securitycentermanagement.v1.SecurityCenterService
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1090,7 +1064,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1114,7 +1087,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1138,7 +1110,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1161,7 +1132,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1180,7 +1150,6 @@ public final class ListSecurityCenterServicesResponse extends com.google.protobu
       onChanged();
       return this;
     }
-
     /**
      *
      *

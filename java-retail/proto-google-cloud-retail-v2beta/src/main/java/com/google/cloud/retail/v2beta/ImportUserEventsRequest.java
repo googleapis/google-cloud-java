@@ -33,7 +33,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.retail.v2beta.ImportUserEventsRequest)
     ImportUserEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ImportUserEventsRequest.newBuilder() to construct.
   private ImportUserEventsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -95,7 +93,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       return s;
     }
   }
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.retail.v2beta.UserEventInputConfig inputConfig_;
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -162,7 +157,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         ? com.google.cloud.retail.v2beta.UserEventInputConfig.getDefaultInstance()
         : inputConfig_;
   }
-
   /**
    *
    *
@@ -183,7 +177,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
 
   public static final int ERRORS_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.retail.v2beta.ImportErrorsConfig errorsConfig_;
-
   /**
    *
    *
@@ -200,7 +193,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
   public boolean hasErrorsConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -219,7 +211,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         ? com.google.cloud.retail.v2beta.ImportErrorsConfig.getDefaultInstance()
         : errorsConfig_;
   }
-
   /**
    *
    *
@@ -425,7 +416,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -660,7 +650,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -685,7 +674,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -710,7 +698,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -734,7 +721,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -754,7 +740,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -786,7 +771,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
             com.google.cloud.retail.v2beta.UserEventInputConfig.Builder,
             com.google.cloud.retail.v2beta.UserEventInputConfigOrBuilder>
         inputConfigBuilder_;
-
     /**
      *
      *
@@ -803,7 +787,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         return inputConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -851,7 +833,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -874,7 +855,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -905,7 +885,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -944,7 +922,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
             : inputConfig_;
       }
     }
-
     /**
      *
      *
@@ -1000,7 +976,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
             com.google.cloud.retail.v2beta.ImportErrorsConfig.Builder,
             com.google.cloud.retail.v2beta.ImportErrorsConfigOrBuilder>
         errorsConfigBuilder_;
-
     /**
      *
      *
@@ -1016,7 +991,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
     public boolean hasErrorsConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
         return errorsConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1062,7 +1035,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1114,7 +1085,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1135,7 +1105,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1151,7 +1120,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
       onChanged();
       return getErrorsConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1171,7 +1139,6 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
             : errorsConfig_;
       }
     }
-
     /**
      *
      *

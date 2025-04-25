@@ -34,7 +34,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.webrisk.v1beta1.ThreatEntryAdditions)
     ThreatEntryAdditionsOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ThreatEntryAdditions.newBuilder() to construct.
   private ThreatEntryAdditions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.webrisk.v1beta1.RawHashes> rawHashes_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.webrisk.v1beta1.RawHashes> getRawHashesList() {
     return rawHashes_;
   }
-
   /**
    *
    *
@@ -101,7 +98,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       getRawHashesOrBuilderList() {
     return rawHashes_;
   }
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
   public int getRawHashesCount() {
     return rawHashes_.size();
   }
-
   /**
    *
    *
@@ -131,7 +126,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
   public com.google.webrisk.v1beta1.RawHashes getRawHashes(int index) {
     return rawHashes_.get(index);
   }
-
   /**
    *
    *
@@ -149,7 +143,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
 
   public static final int RICE_HASHES_FIELD_NUMBER = 2;
   private com.google.webrisk.v1beta1.RiceDeltaEncoding riceHashes_;
-
   /**
    *
    *
@@ -167,7 +160,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
   public boolean hasRiceHashes() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -187,7 +179,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         ? com.google.webrisk.v1beta1.RiceDeltaEncoding.getDefaultInstance()
         : riceHashes_;
   }
-
   /**
    *
    *
@@ -381,7 +372,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -675,7 +665,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         return rawHashesBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -693,7 +682,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         return rawHashesBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -711,7 +699,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         return rawHashesBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -735,7 +722,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -757,7 +743,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -781,7 +766,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -805,7 +789,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -826,7 +809,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +830,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +851,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +871,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +891,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -926,7 +904,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
     public com.google.webrisk.v1beta1.RawHashes.Builder getRawHashesBuilder(int index) {
       return getRawHashesFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -944,7 +921,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         return rawHashesBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -963,7 +939,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(rawHashes_);
       }
     }
-
     /**
      *
      *
@@ -978,7 +953,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       return getRawHashesFieldBuilder()
           .addBuilder(com.google.webrisk.v1beta1.RawHashes.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -993,7 +967,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       return getRawHashesFieldBuilder()
           .addBuilder(index, com.google.webrisk.v1beta1.RawHashes.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1031,7 +1004,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
             com.google.webrisk.v1beta1.RiceDeltaEncoding.Builder,
             com.google.webrisk.v1beta1.RiceDeltaEncodingOrBuilder>
         riceHashesBuilder_;
-
     /**
      *
      *
@@ -1048,7 +1020,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
     public boolean hasRiceHashes() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1071,7 +1042,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
         return riceHashesBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1096,7 +1066,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1119,7 +1088,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1149,7 +1117,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1171,7 +1138,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1188,7 +1154,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRiceHashesFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1209,7 +1174,6 @@ public final class ThreatEntryAdditions extends com.google.protobuf.GeneratedMes
             : riceHashes_;
       }
     }
-
     /**
      *
      *

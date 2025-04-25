@@ -41,7 +41,6 @@ public interface CreateDocumentLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
-
   /**
    *
    *
@@ -75,7 +74,6 @@ public interface CreateDocumentLinkRequestOrBuilder
    * @return Whether the documentLink field is set.
    */
   boolean hasDocumentLink();
-
   /**
    *
    *
@@ -91,7 +89,6 @@ public interface CreateDocumentLinkRequestOrBuilder
    * @return The documentLink.
    */
   com.google.cloud.contentwarehouse.v1.DocumentLink getDocumentLink();
-
   /**
    *
    *
@@ -119,7 +116,6 @@ public interface CreateDocumentLinkRequestOrBuilder
    * @return Whether the requestMetadata field is set.
    */
   boolean hasRequestMetadata();
-
   /**
    *
    *
@@ -133,7 +129,6 @@ public interface CreateDocumentLinkRequestOrBuilder
    * @return The requestMetadata.
    */
   com.google.cloud.contentwarehouse.v1.RequestMetadata getRequestMetadata();
-
   /**
    *
    *

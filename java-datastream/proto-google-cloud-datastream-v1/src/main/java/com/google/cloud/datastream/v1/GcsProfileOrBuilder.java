@@ -36,7 +36,6 @@ public interface GcsProfileOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface GcsProfileOrBuilder
    * @return The rootPath.
    */
   java.lang.String getRootPath();
-
   /**
    *
    *

@@ -40,7 +40,6 @@ public interface GetBranchRuleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

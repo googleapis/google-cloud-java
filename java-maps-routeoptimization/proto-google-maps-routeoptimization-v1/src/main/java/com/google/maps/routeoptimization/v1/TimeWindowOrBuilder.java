@@ -37,7 +37,6 @@ public interface TimeWindowOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface TimeWindowOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
-
   /**
    *
    *
@@ -77,7 +75,6 @@ public interface TimeWindowOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
-
   /**
    *
    *
@@ -91,7 +88,6 @@ public interface TimeWindowOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface TimeWindowOrBuilder
    * @return Whether the softStartTime field is set.
    */
   boolean hasSoftStartTime();
-
   /**
    *
    *
@@ -129,7 +124,6 @@ public interface TimeWindowOrBuilder
    * @return The softStartTime.
    */
   com.google.protobuf.Timestamp getSoftStartTime();
-
   /**
    *
    *
@@ -153,7 +147,6 @@ public interface TimeWindowOrBuilder
    * @return Whether the softEndTime field is set.
    */
   boolean hasSoftEndTime();
-
   /**
    *
    *
@@ -166,7 +159,6 @@ public interface TimeWindowOrBuilder
    * @return The softEndTime.
    */
   com.google.protobuf.Timestamp getSoftEndTime();
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public interface TimeWindowOrBuilder
    * @return Whether the costPerHourBeforeSoftStartTime field is set.
    */
   boolean hasCostPerHourBeforeSoftStartTime();
-
   /**
    *
    *
@@ -246,7 +237,6 @@ public interface TimeWindowOrBuilder
    * @return Whether the costPerHourAfterSoftEndTime field is set.
    */
   boolean hasCostPerHourAfterSoftEndTime();
-
   /**
    *
    *

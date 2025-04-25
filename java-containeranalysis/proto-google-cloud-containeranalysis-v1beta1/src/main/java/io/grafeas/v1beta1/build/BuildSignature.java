@@ -33,7 +33,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.build.BuildSignature)
     BuildSignatureOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use BuildSignature.newBuilder() to construct.
   private BuildSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -120,7 +119,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * <code>KEY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int KEY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -131,7 +129,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
      * <code>PGP_ASCII_ARMORED = 1;</code>
      */
     public static final int PGP_ASCII_ARMORED_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicKey_ = "";
-
   /**
    *
    *
@@ -266,7 +262,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -305,7 +300,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIGNATURE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -327,7 +321,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyId_ = "";
-
   /**
    *
    *
@@ -354,7 +347,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -384,7 +376,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
 
   public static final int KEY_TYPE_FIELD_NUMBER = 4;
   private int keyType_ = 0;
-
   /**
    *
    *
@@ -401,7 +392,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
   public int getKeyTypeValue() {
     return keyType_;
   }
-
   /**
    *
    *
@@ -608,7 +598,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -833,7 +822,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object publicKey_ = "";
-
     /**
      *
      *
@@ -868,7 +856,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -903,7 +890,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -937,7 +923,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -967,7 +952,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1004,7 +988,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1021,7 +1004,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSignature() {
       return signature_;
     }
-
     /**
      *
      *
@@ -1044,7 +1026,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1065,7 +1046,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyId_ = "";
-
     /**
      *
      *
@@ -1091,7 +1071,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1117,7 +1096,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1142,7 +1120,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1163,7 +1140,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1191,7 +1167,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int keyType_ = 0;
-
     /**
      *
      *
@@ -1208,7 +1183,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
     public int getKeyTypeValue() {
       return keyType_;
     }
-
     /**
      *
      *
@@ -1228,7 +1202,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1247,7 +1220,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
           io.grafeas.v1beta1.build.BuildSignature.KeyType.forNumber(keyType_);
       return result == null ? io.grafeas.v1beta1.build.BuildSignature.KeyType.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -1270,7 +1242,6 @@ public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

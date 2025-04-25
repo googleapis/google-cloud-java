@@ -33,7 +33,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.CreateEntryTypeRequest)
     CreateEntryTypeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateEntryTypeRequest.newBuilder() to construct.
   private CreateEntryTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -131,7 +128,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entryTypeId_ = "";
-
   /**
    *
    *
@@ -155,7 +151,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
 
   public static final int ENTRY_TYPE_FIELD_NUMBER = 3;
   private com.google.cloud.dataplex.v1.EntryType entryType_;
-
   /**
    *
    *
@@ -200,7 +194,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
   public boolean hasEntryType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -220,7 +213,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.dataplex.v1.EntryType.getDefaultInstance()
         : entryType_;
   }
-
   /**
    *
    *
@@ -241,7 +233,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
   private boolean validateOnly_ = false;
-
   /**
    *
    *
@@ -450,7 +441,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -692,7 +682,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -719,7 +708,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -746,7 +734,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -772,7 +759,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -794,7 +780,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -823,7 +808,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object entryTypeId_ = "";
-
     /**
      *
      *
@@ -846,7 +830,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -869,7 +852,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -891,7 +873,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -909,7 +890,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -939,7 +919,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.dataplex.v1.EntryType.Builder,
             com.google.cloud.dataplex.v1.EntryTypeOrBuilder>
         entryTypeBuilder_;
-
     /**
      *
      *
@@ -956,7 +935,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     public boolean hasEntryType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -979,7 +957,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
         return entryTypeBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1004,7 +981,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1026,7 +1002,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1056,7 +1031,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1078,7 +1052,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1095,7 +1068,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getEntryTypeFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1116,7 +1088,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
             : entryType_;
       }
     }
-
     /**
      *
      *
@@ -1146,7 +1117,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean validateOnly_;
-
     /**
      *
      *
@@ -1163,7 +1133,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
     public boolean getValidateOnly() {
       return validateOnly_;
     }
-
     /**
      *
      *
@@ -1184,7 +1153,6 @@ public final class CreateEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *

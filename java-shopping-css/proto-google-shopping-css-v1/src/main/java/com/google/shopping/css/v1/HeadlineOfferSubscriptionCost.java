@@ -33,7 +33,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.HeadlineOfferSubscriptionCost)
     HeadlineOfferSubscriptionCostOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use HeadlineOfferSubscriptionCost.newBuilder() to construct.
   private HeadlineOfferSubscriptionCost(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,7 +66,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int PERIOD_FIELD_NUMBER = 1;
   private int period_ = 0;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
   public int getPeriodValue() {
     return period_;
   }
-
   /**
    *
    *
@@ -110,7 +107,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
 
   public static final int PERIOD_LENGTH_FIELD_NUMBER = 2;
   private long periodLength_ = 0L;
-
   /**
    *
    *
@@ -129,7 +125,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
 
   public static final int AMOUNT_FIELD_NUMBER = 3;
   private com.google.shopping.type.Price amount_;
-
   /**
    *
    *
@@ -145,7 +140,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
   public boolean hasAmount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -161,7 +155,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
   public com.google.shopping.type.Price getAmount() {
     return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
   }
-
   /**
    *
    *
@@ -363,7 +356,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -588,7 +580,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     private int bitField0_;
 
     private int period_ = 0;
-
     /**
      *
      *
@@ -607,7 +598,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     public int getPeriodValue() {
       return period_;
     }
-
     /**
      *
      *
@@ -629,7 +619,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -650,7 +639,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
           com.google.shopping.css.v1.SubscriptionPeriod.forNumber(period_);
       return result == null ? com.google.shopping.css.v1.SubscriptionPeriod.UNRECOGNIZED : result;
     }
-
     /**
      *
      *
@@ -675,7 +663,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -698,7 +685,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     }
 
     private long periodLength_;
-
     /**
      *
      *
@@ -714,7 +700,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     public long getPeriodLength() {
       return periodLength_;
     }
-
     /**
      *
      *
@@ -734,7 +719,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -759,7 +743,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         amountBuilder_;
-
     /**
      *
      *
@@ -774,7 +757,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
     public boolean hasAmount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -793,7 +775,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
         return amountBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -816,7 +797,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +816,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -864,7 +843,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       }
       return this;
     }
-
     /**
      *
      *
@@ -884,7 +862,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -899,7 +876,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
       onChanged();
       return getAmountFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -916,7 +892,6 @@ public final class HeadlineOfferSubscriptionCost extends com.google.protobuf.Gen
         return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
       }
     }
-
     /**
      *
      *

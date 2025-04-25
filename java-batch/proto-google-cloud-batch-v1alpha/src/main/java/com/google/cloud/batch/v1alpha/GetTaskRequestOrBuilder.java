@@ -38,7 +38,6 @@ public interface GetTaskRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

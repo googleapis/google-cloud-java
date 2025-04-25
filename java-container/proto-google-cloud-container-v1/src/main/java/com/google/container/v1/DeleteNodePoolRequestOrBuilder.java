@@ -41,7 +41,6 @@ public interface DeleteNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getProjectId();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface DeleteNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
-
   /**
    *
    *
@@ -114,7 +112,6 @@ public interface DeleteNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getClusterId();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface DeleteNodePoolRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getNodePoolId();
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public interface DeleteNodePoolRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

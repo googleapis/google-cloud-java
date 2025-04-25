@@ -34,7 +34,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.GetSecurityCenterServiceRequest)
     GetSecurityCenterServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use GetSecurityCenterServiceRequest.newBuilder() to construct.
   private GetSecurityCenterServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -110,7 +108,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
       return s;
     }
   }
-
   /**
    *
    *
@@ -152,7 +149,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
 
   public static final int SHOW_ELIGIBLE_MODULES_ONLY_FIELD_NUMBER = 2;
   private boolean showEligibleModulesOnly_ = false;
-
   /**
    *
    *
@@ -346,7 +342,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -556,7 +551,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -594,7 +588,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -632,7 +625,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -669,7 +661,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -702,7 +693,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -742,7 +732,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
     }
 
     private boolean showEligibleModulesOnly_;
-
     /**
      *
      *
@@ -759,7 +748,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
     public boolean getShowEligibleModulesOnly() {
       return showEligibleModulesOnly_;
     }
-
     /**
      *
      *
@@ -780,7 +768,6 @@ public final class GetSecurityCenterServiceRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
-
     /**
      *
      *

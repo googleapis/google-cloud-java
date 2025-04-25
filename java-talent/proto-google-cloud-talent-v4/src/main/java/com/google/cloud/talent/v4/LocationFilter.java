@@ -33,7 +33,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.talent.v4.LocationFilter)
     LocationFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LocationFilter.newBuilder() to construct.
   private LocationFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -131,7 +130,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>TELECOMMUTE_PREFERENCE_UNSPECIFIED = 0;</code>
      */
     public static final int TELECOMMUTE_PREFERENCE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -143,7 +141,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>TELECOMMUTE_EXCLUDED = 1 [deprecated = true];</code>
      */
     @java.lang.Deprecated public static final int TELECOMMUTE_EXCLUDED_VALUE = 1;
-
     /**
      *
      *
@@ -154,7 +151,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>TELECOMMUTE_ALLOWED = 2;</code>
      */
     public static final int TELECOMMUTE_ALLOWED_VALUE = 2;
-
     /**
      *
      *
@@ -259,7 +255,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
-
   /**
    *
    *
@@ -283,7 +278,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -312,7 +306,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -350,7 +343,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -391,7 +383,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAT_LNG_FIELD_NUMBER = 3;
   private com.google.type.LatLng latLng_;
-
   /**
    *
    *
@@ -408,7 +399,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLatLng() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -425,7 +415,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.LatLng getLatLng() {
     return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
   }
-
   /**
    *
    *
@@ -443,7 +432,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISTANCE_IN_MILES_FIELD_NUMBER = 4;
   private double distanceInMiles_ = 0D;
-
   /**
    *
    *
@@ -464,7 +452,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TELECOMMUTE_PREFERENCE_FIELD_NUMBER = 5;
   private int telecommutePreference_ = 0;
-
   /**
    *
    *
@@ -506,7 +493,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
   public int getTelecommutePreferenceValue() {
     return telecommutePreference_;
   }
-
   /**
    *
    *
@@ -765,7 +751,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1019,7 +1004,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object address_ = "";
-
     /**
      *
      *
@@ -1042,7 +1026,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1065,7 +1048,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1087,7 +1069,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1105,7 +1086,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1130,7 +1110,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -1167,7 +1146,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1182,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1240,7 +1217,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1272,7 +1248,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1314,7 +1289,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         latLngBuilder_;
-
     /**
      *
      *
@@ -1330,7 +1304,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLatLng() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -1350,7 +1323,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return latLngBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1374,7 +1346,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1395,7 +1366,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1424,7 +1394,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1445,7 +1414,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1461,7 +1429,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLatLngFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1479,7 +1446,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
         return latLng_ == null ? com.google.type.LatLng.getDefaultInstance() : latLng_;
       }
     }
-
     /**
      *
      *
@@ -1505,7 +1471,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double distanceInMiles_;
-
     /**
      *
      *
@@ -1523,7 +1488,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public double getDistanceInMiles() {
       return distanceInMiles_;
     }
-
     /**
      *
      *
@@ -1545,7 +1509,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1567,7 +1530,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int telecommutePreference_ = 0;
-
     /**
      *
      *
@@ -1610,7 +1572,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
     public int getTelecommutePreferenceValue() {
       return telecommutePreference_;
     }
-
     /**
      *
      *
@@ -1656,7 +1617,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1705,7 +1665,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.talent.v4.LocationFilter.TelecommutePreference.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1755,7 +1714,6 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

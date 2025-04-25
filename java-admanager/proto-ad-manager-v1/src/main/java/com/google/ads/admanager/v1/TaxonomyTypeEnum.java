@@ -34,7 +34,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.ads.admanager.v1.TaxonomyTypeEnum)
     TaxonomyTypeEnumOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use TaxonomyTypeEnum.newBuilder() to construct.
   private TaxonomyTypeEnum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -147,7 +146,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>TAXONOMY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TAXONOMY_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -158,7 +156,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>TAXONOMY_IAB_AUDIENCE_1_1 = 3;</code>
      */
     public static final int TAXONOMY_IAB_AUDIENCE_1_1_VALUE = 3;
-
     /**
      *
      *
@@ -169,7 +166,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>TAXONOMY_IAB_CONTENT_2_1 = 4;</code>
      */
     public static final int TAXONOMY_IAB_CONTENT_2_1_VALUE = 4;
-
     /**
      *
      *
@@ -180,7 +176,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>TAXONOMY_IAB_CONTENT_2_2 = 6;</code>
      */
     public static final int TAXONOMY_IAB_CONTENT_2_2_VALUE = 6;
-
     /**
      *
      *
@@ -191,7 +186,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>TAXONOMY_IAB_CONTENT_3_0 = 5;</code>
      */
     public static final int TAXONOMY_IAB_CONTENT_3_0_VALUE = 5;
-
     /**
      *
      *
@@ -442,7 +436,6 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *

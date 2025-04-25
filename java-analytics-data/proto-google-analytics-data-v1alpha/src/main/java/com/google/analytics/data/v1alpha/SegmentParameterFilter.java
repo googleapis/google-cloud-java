@@ -33,7 +33,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.SegmentParameterFilter)
     SegmentParameterFilterOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use SegmentParameterFilter.newBuilder() to construct.
   private SegmentParameterFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,7 +79,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     private OneParameterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -132,7 +130,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     private OneFilterCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -170,7 +167,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int EVENT_PARAMETER_NAME_FIELD_NUMBER = 1;
-
   /**
    *
    *
@@ -191,7 +187,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasEventParameterName() {
     return oneParameterCase_ == 1;
   }
-
   /**
    *
    *
@@ -225,7 +220,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -261,7 +255,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int ITEM_PARAMETER_NAME_FIELD_NUMBER = 2;
-
   /**
    *
    *
@@ -287,7 +280,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasItemParameterName() {
     return oneParameterCase_ == 2;
   }
-
   /**
    *
    *
@@ -326,7 +318,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       return s;
     }
   }
-
   /**
    *
    *
@@ -367,7 +358,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int STRING_FILTER_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -383,7 +373,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasStringFilter() {
     return oneFilterCase_ == 4;
   }
-
   /**
    *
    *
@@ -402,7 +391,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     }
     return com.google.analytics.data.v1alpha.StringFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -421,7 +409,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int IN_LIST_FILTER_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -437,7 +424,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasInListFilter() {
     return oneFilterCase_ == 5;
   }
-
   /**
    *
    *
@@ -456,7 +442,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     }
     return com.google.analytics.data.v1alpha.InListFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -475,7 +460,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int NUMERIC_FILTER_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -491,7 +475,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasNumericFilter() {
     return oneFilterCase_ == 6;
   }
-
   /**
    *
    *
@@ -510,7 +493,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     }
     return com.google.analytics.data.v1alpha.NumericFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -529,7 +511,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int BETWEEN_FILTER_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -545,7 +526,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasBetweenFilter() {
     return oneFilterCase_ == 7;
   }
-
   /**
    *
    *
@@ -564,7 +544,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     }
     return com.google.analytics.data.v1alpha.BetweenFilter.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -584,7 +563,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
 
   public static final int FILTER_SCOPING_FIELD_NUMBER = 8;
   private com.google.analytics.data.v1alpha.SegmentParameterFilterScoping filterScoping_;
-
   /**
    *
    *
@@ -600,7 +578,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
   public boolean hasFilterScoping() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -618,7 +595,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         ? com.google.analytics.data.v1alpha.SegmentParameterFilterScoping.getDefaultInstance()
         : filterScoping_;
   }
-
   /**
    *
    *
@@ -905,7 +881,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1274,7 +1249,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasEventParameterName() {
       return oneParameterCase_ == 1;
     }
-
     /**
      *
      *
@@ -1309,7 +1283,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1344,7 +1317,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1372,7 +1344,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1398,7 +1369,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1454,7 +1424,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasItemParameterName() {
       return oneParameterCase_ == 2;
     }
-
     /**
      *
      *
@@ -1494,7 +1463,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1534,7 +1502,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1567,7 +1534,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1564,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1638,7 +1603,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.StringFilter.Builder,
             com.google.analytics.data.v1alpha.StringFilterOrBuilder>
         stringFilterBuilder_;
-
     /**
      *
      *
@@ -1654,7 +1618,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasStringFilter() {
       return oneFilterCase_ == 4;
     }
-
     /**
      *
      *
@@ -1680,7 +1643,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.StringFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1703,7 +1665,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1724,7 +1685,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1757,7 +1717,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1783,7 +1742,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1754,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1alpha.StringFilter.Builder getStringFilterBuilder() {
       return getStringFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1817,7 +1774,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.StringFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1856,7 +1812,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.InListFilter.Builder,
             com.google.analytics.data.v1alpha.InListFilterOrBuilder>
         inListFilterBuilder_;
-
     /**
      *
      *
@@ -1872,7 +1827,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasInListFilter() {
       return oneFilterCase_ == 5;
     }
-
     /**
      *
      *
@@ -1898,7 +1852,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.InListFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1921,7 +1874,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1942,7 +1894,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1975,7 +1926,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -2001,7 +1951,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2014,7 +1963,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1alpha.InListFilter.Builder getInListFilterBuilder() {
       return getInListFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2035,7 +1983,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.InListFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2074,7 +2021,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.NumericFilter.Builder,
             com.google.analytics.data.v1alpha.NumericFilterOrBuilder>
         numericFilterBuilder_;
-
     /**
      *
      *
@@ -2090,7 +2036,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasNumericFilter() {
       return oneFilterCase_ == 6;
     }
-
     /**
      *
      *
@@ -2116,7 +2061,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.NumericFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2139,7 +2083,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2160,7 +2103,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2193,7 +2135,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2219,7 +2160,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2232,7 +2172,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1alpha.NumericFilter.Builder getNumericFilterBuilder() {
       return getNumericFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2253,7 +2192,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.NumericFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2292,7 +2230,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.BetweenFilter.Builder,
             com.google.analytics.data.v1alpha.BetweenFilterOrBuilder>
         betweenFilterBuilder_;
-
     /**
      *
      *
@@ -2308,7 +2245,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasBetweenFilter() {
       return oneFilterCase_ == 7;
     }
-
     /**
      *
      *
@@ -2334,7 +2270,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.BetweenFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2357,7 +2292,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2378,7 +2312,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2411,7 +2344,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       oneFilterCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2437,7 +2369,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2450,7 +2381,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1alpha.BetweenFilter.Builder getBetweenFilterBuilder() {
       return getBetweenFilterFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2471,7 +2401,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return com.google.analytics.data.v1alpha.BetweenFilter.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2511,7 +2440,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
             com.google.analytics.data.v1alpha.SegmentParameterFilterScoping.Builder,
             com.google.analytics.data.v1alpha.SegmentParameterFilterScopingOrBuilder>
         filterScopingBuilder_;
-
     /**
      *
      *
@@ -2526,7 +2454,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
     public boolean hasFilterScoping() {
       return ((bitField0_ & 0x00000040) != 0);
     }
-
     /**
      *
      *
@@ -2547,7 +2474,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
         return filterScopingBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2571,7 +2497,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2592,7 +2517,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2623,7 +2547,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       }
       return this;
     }
-
     /**
      *
      *
@@ -2643,7 +2566,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2659,7 +2581,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
       onChanged();
       return getFilterScopingFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2679,7 +2600,6 @@ public final class SegmentParameterFilter extends com.google.protobuf.GeneratedM
             : filterScoping_;
       }
     }
-
     /**
      *
      *

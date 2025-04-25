@@ -33,7 +33,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.reviews.v1beta.ListMerchantReviewsResponse)
     ListMerchantReviewsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListMerchantReviewsResponse.newBuilder() to construct.
   private ListMerchantReviewsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.reviews.v1beta.MerchantReview>
       merchantReviews_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       getMerchantReviewsList() {
     return merchantReviews_;
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       getMerchantReviewsOrBuilderList() {
     return merchantReviews_;
   }
-
   /**
    *
    *
@@ -118,7 +114,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
   public int getMerchantReviewsCount() {
     return merchantReviews_.size();
   }
-
   /**
    *
    *
@@ -133,7 +128,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
   public com.google.shopping.merchant.reviews.v1beta.MerchantReview getMerchantReviews(int index) {
     return merchantReviews_.get(index);
   }
-
   /**
    *
    *
@@ -154,7 +148,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -178,7 +171,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
-
   /**
    *
    *
@@ -375,7 +367,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -667,7 +658,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return merchantReviewsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -685,7 +675,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return merchantReviewsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -704,7 +693,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return merchantReviewsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -729,7 +717,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -752,7 +739,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -777,7 +763,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -802,7 +787,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +808,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -847,7 +830,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -870,7 +852,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -891,7 +872,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -912,7 +892,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
-
     /**
      *
      *
@@ -927,7 +906,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         getMerchantReviewsBuilder(int index) {
       return getMerchantReviewsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -946,7 +924,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return merchantReviewsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -966,7 +943,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(merchantReviews_);
       }
     }
-
     /**
      *
      *
@@ -983,7 +959,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
           .addBuilder(
               com.google.shopping.merchant.reviews.v1beta.MerchantReview.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1001,7 +976,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
               index,
               com.google.shopping.merchant.reviews.v1beta.MerchantReview.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1038,7 +1012,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1061,7 +1034,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1084,7 +1056,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1106,7 +1077,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1124,7 +1094,6 @@ public final class ListMerchantReviewsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
-
     /**
      *
      *

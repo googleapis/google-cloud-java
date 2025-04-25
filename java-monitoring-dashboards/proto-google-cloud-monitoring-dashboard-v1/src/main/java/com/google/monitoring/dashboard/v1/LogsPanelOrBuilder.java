@@ -39,7 +39,6 @@ public interface LogsPanelOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
-
   /**
    *
    *
@@ -69,7 +68,6 @@ public interface LogsPanelOrBuilder
    * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String> getResourceNamesList();
-
   /**
    *
    *
@@ -83,7 +81,6 @@ public interface LogsPanelOrBuilder
    * @return The count of resourceNames.
    */
   int getResourceNamesCount();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface LogsPanelOrBuilder
    * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
-
   /**
    *
    *

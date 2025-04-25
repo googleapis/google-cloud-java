@@ -36,7 +36,6 @@ public interface MoveAddressRequestOrBuilder
    * @return The address.
    */
   java.lang.String getAddress();
-
   /**
    *
    *
@@ -64,7 +63,6 @@ public interface MoveAddressRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface MoveAddressRequestOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
-
   /**
    *
    *
@@ -124,7 +121,6 @@ public interface MoveAddressRequestOrBuilder
    * @return Whether the regionAddressesMoveRequestResource field is set.
    */
   boolean hasRegionAddressesMoveRequestResource();
-
   /**
    *
    *
@@ -139,7 +135,6 @@ public interface MoveAddressRequestOrBuilder
    * @return The regionAddressesMoveRequestResource.
    */
   com.google.cloud.compute.v1.RegionAddressesMoveRequest getRegionAddressesMoveRequestResource();
-
   /**
    *
    *
@@ -166,7 +161,6 @@ public interface MoveAddressRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
-
   /**
    *
    *
@@ -179,7 +173,6 @@ public interface MoveAddressRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
-
   /**
    *
    *

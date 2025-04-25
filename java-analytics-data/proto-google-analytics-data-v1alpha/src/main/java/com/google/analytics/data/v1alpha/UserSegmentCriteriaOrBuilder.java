@@ -39,7 +39,6 @@ public interface UserSegmentCriteriaOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.UserSegmentConditionGroup>
       getAndConditionGroupsList();
-
   /**
    *
    *
@@ -54,7 +53,6 @@ public interface UserSegmentCriteriaOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.UserSegmentConditionGroup getAndConditionGroups(int index);
-
   /**
    *
    *
@@ -69,7 +67,6 @@ public interface UserSegmentCriteriaOrBuilder
    * </code>
    */
   int getAndConditionGroupsCount();
-
   /**
    *
    *
@@ -85,7 +82,6 @@ public interface UserSegmentCriteriaOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.UserSegmentConditionGroupOrBuilder>
       getAndConditionGroupsOrBuilderList();
-
   /**
    *
    *
@@ -116,7 +112,6 @@ public interface UserSegmentCriteriaOrBuilder
    */
   java.util.List<com.google.analytics.data.v1alpha.UserSegmentSequenceGroup>
       getAndSequenceGroupsList();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface UserSegmentCriteriaOrBuilder
    * </code>
    */
   com.google.analytics.data.v1alpha.UserSegmentSequenceGroup getAndSequenceGroups(int index);
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface UserSegmentCriteriaOrBuilder
    * </code>
    */
   int getAndSequenceGroupsCount();
-
   /**
    *
    *
@@ -159,7 +152,6 @@ public interface UserSegmentCriteriaOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.UserSegmentSequenceGroupOrBuilder>
       getAndSequenceGroupsOrBuilderList();
-
   /**
    *
    *

@@ -34,7 +34,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.config.v1.ExportDeploymentStatefileRequest)
     ExportDeploymentStatefileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ExportDeploymentStatefileRequest.newBuilder() to construct.
   private ExportDeploymentStatefileRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,7 +69,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -98,7 +96,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
       return s;
     }
   }
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
 
   public static final int DRAFT_FIELD_NUMBER = 3;
   private boolean draft_ = false;
-
   /**
    *
    *
@@ -317,7 +313,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -516,7 +511,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -543,7 +537,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -570,7 +563,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -596,7 +588,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -618,7 +609,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -647,7 +637,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
     }
 
     private boolean draft_;
-
     /**
      *
      *
@@ -665,7 +654,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
     public boolean getDraft() {
       return draft_;
     }
-
     /**
      *
      *
@@ -687,7 +675,6 @@ public final class ExportDeploymentStatefileRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
-
     /**
      *
      *

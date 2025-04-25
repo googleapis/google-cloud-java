@@ -33,7 +33,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.maps.places.v1.AutocompletePlacesRequest)
     AutocompletePlacesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AutocompletePlacesRequest.newBuilder() to construct.
   private AutocompletePlacesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return Whether the rectangle field is set.
      */
     boolean hasRectangle();
-
     /**
      *
      *
@@ -99,7 +97,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return The rectangle.
      */
     com.google.geo.type.Viewport getRectangle();
-
     /**
      *
      *
@@ -123,7 +120,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return Whether the circle field is set.
      */
     boolean hasCircle();
-
     /**
      *
      *
@@ -136,7 +132,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return The circle.
      */
     com.google.maps.places.v1.Circle getCircle();
-
     /**
      *
      *
@@ -150,7 +145,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
     com.google.maps.places.v1.AutocompletePlacesRequest.LocationBias.TypeCase getTypeCase();
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.AutocompletePlacesRequest.LocationBias)
       LocationBiasOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LocationBias.newBuilder() to construct.
     private LocationBias(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -212,7 +205,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       private TypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -246,7 +238,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     public static final int RECTANGLE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -262,7 +253,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasRectangle() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -281,7 +271,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return com.google.geo.type.Viewport.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -300,7 +289,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     public static final int CIRCLE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -316,7 +304,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasCircle() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -335,7 +322,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return com.google.maps.places.v1.Circle.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -545,7 +531,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -793,7 +778,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
               com.google.geo.type.Viewport.Builder,
               com.google.geo.type.ViewportOrBuilder>
           rectangleBuilder_;
-
       /**
        *
        *
@@ -809,7 +793,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public boolean hasRectangle() {
         return typeCase_ == 1;
       }
-
       /**
        *
        *
@@ -835,7 +818,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -858,7 +840,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -878,7 +859,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -909,7 +889,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -935,7 +914,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -948,7 +926,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public com.google.geo.type.Viewport.Builder getRectangleBuilder() {
         return getRectangleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -969,7 +946,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1006,7 +982,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
               com.google.maps.places.v1.Circle.Builder,
               com.google.maps.places.v1.CircleOrBuilder>
           circleBuilder_;
-
       /**
        *
        *
@@ -1022,7 +997,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public boolean hasCircle() {
         return typeCase_ == 2;
       }
-
       /**
        *
        *
@@ -1048,7 +1022,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1071,7 +1044,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1091,7 +1063,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1123,7 +1094,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -1149,7 +1119,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -1162,7 +1131,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public com.google.maps.places.v1.Circle.Builder getCircleBuilder() {
         return getCircleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -1183,7 +1151,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -1299,7 +1266,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return Whether the rectangle field is set.
      */
     boolean hasRectangle();
-
     /**
      *
      *
@@ -1312,7 +1278,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return The rectangle.
      */
     com.google.geo.type.Viewport getRectangle();
-
     /**
      *
      *
@@ -1336,7 +1301,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return Whether the circle field is set.
      */
     boolean hasCircle();
-
     /**
      *
      *
@@ -1349,7 +1313,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
      * @return The circle.
      */
     com.google.maps.places.v1.Circle getCircle();
-
     /**
      *
      *
@@ -1363,7 +1326,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
     com.google.maps.places.v1.AutocompletePlacesRequest.LocationRestriction.TypeCase getTypeCase();
   }
-
   /**
    *
    *
@@ -1379,7 +1341,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.maps.places.v1.AutocompletePlacesRequest.LocationRestriction)
       LocationRestrictionOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use LocationRestriction.newBuilder() to construct.
     private LocationRestriction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1426,7 +1387,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       private TypeCase(int value) {
         this.value = value;
       }
-
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1460,7 +1420,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     public static final int RECTANGLE_FIELD_NUMBER = 1;
-
     /**
      *
      *
@@ -1476,7 +1435,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasRectangle() {
       return typeCase_ == 1;
     }
-
     /**
      *
      *
@@ -1495,7 +1453,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return com.google.geo.type.Viewport.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1514,7 +1471,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     public static final int CIRCLE_FIELD_NUMBER = 2;
-
     /**
      *
      *
@@ -1530,7 +1486,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasCircle() {
       return typeCase_ == 2;
     }
-
     /**
      *
      *
@@ -1549,7 +1504,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return com.google.maps.places.v1.Circle.getDefaultInstance();
     }
-
     /**
      *
      *
@@ -1760,7 +1714,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -2012,7 +1965,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
               com.google.geo.type.Viewport.Builder,
               com.google.geo.type.ViewportOrBuilder>
           rectangleBuilder_;
-
       /**
        *
        *
@@ -2028,7 +1980,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public boolean hasRectangle() {
         return typeCase_ == 1;
       }
-
       /**
        *
        *
@@ -2054,7 +2005,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2077,7 +2027,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2097,7 +2046,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2128,7 +2076,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 1;
         return this;
       }
-
       /**
        *
        *
@@ -2154,7 +2101,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -2167,7 +2113,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public com.google.geo.type.Viewport.Builder getRectangleBuilder() {
         return getRectangleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2188,7 +2133,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.geo.type.Viewport.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2225,7 +2169,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
               com.google.maps.places.v1.Circle.Builder,
               com.google.maps.places.v1.CircleOrBuilder>
           circleBuilder_;
-
       /**
        *
        *
@@ -2241,7 +2184,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public boolean hasCircle() {
         return typeCase_ == 2;
       }
-
       /**
        *
        *
@@ -2267,7 +2209,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2290,7 +2231,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2310,7 +2250,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2342,7 +2281,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         typeCase_ = 2;
         return this;
       }
-
       /**
        *
        *
@@ -2368,7 +2306,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         }
         return this;
       }
-
       /**
        *
        *
@@ -2381,7 +2318,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       public com.google.maps.places.v1.Circle.Builder getCircleBuilder() {
         return getCircleFieldBuilder().getBuilder();
       }
-
       /**
        *
        *
@@ -2402,7 +2338,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
           return com.google.maps.places.v1.Circle.getDefaultInstance();
         }
       }
-
       /**
        *
        *
@@ -2507,7 +2442,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object input_ = "";
-
   /**
    *
    *
@@ -2531,7 +2465,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -2558,7 +2491,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   public static final int LOCATION_BIAS_FIELD_NUMBER = 2;
   private com.google.maps.places.v1.AutocompletePlacesRequest.LocationBias locationBias_;
-
   /**
    *
    *
@@ -2581,7 +2513,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public boolean hasLocationBias() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -2606,7 +2537,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         ? com.google.maps.places.v1.AutocompletePlacesRequest.LocationBias.getDefaultInstance()
         : locationBias_;
   }
-
   /**
    *
    *
@@ -2634,7 +2564,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public static final int LOCATION_RESTRICTION_FIELD_NUMBER = 3;
   private com.google.maps.places.v1.AutocompletePlacesRequest.LocationRestriction
       locationRestriction_;
-
   /**
    *
    *
@@ -2657,7 +2586,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public boolean hasLocationRestriction() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -2684,7 +2612,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
             .getDefaultInstance()
         : locationRestriction_;
   }
-
   /**
    *
    *
@@ -2715,7 +2642,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedPrimaryTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2736,7 +2662,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getIncludedPrimaryTypesList() {
     return includedPrimaryTypes_;
   }
-
   /**
    *
    *
@@ -2757,7 +2682,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public int getIncludedPrimaryTypesCount() {
     return includedPrimaryTypes_.size();
   }
-
   /**
    *
    *
@@ -2779,7 +2703,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public java.lang.String getIncludedPrimaryTypes(int index) {
     return includedPrimaryTypes_.get(index);
   }
-
   /**
    *
    *
@@ -2807,7 +2730,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includedRegionCodes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -2826,7 +2748,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getIncludedRegionCodesList() {
     return includedRegionCodes_;
   }
-
   /**
    *
    *
@@ -2845,7 +2766,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public int getIncludedRegionCodesCount() {
     return includedRegionCodes_.size();
   }
-
   /**
    *
    *
@@ -2865,7 +2785,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public java.lang.String getIncludedRegionCodes(int index) {
     return includedRegionCodes_.get(index);
   }
-
   /**
    *
    *
@@ -2890,7 +2809,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object languageCode_ = "";
-
   /**
    *
    *
@@ -2917,7 +2835,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -2949,7 +2866,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
-
   /**
    *
    *
@@ -2976,7 +2892,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -3006,7 +2921,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   public static final int ORIGIN_FIELD_NUMBER = 8;
   private com.google.type.LatLng origin_;
-
   /**
    *
    *
@@ -3024,7 +2938,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public boolean hasOrigin() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -3042,7 +2955,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
   public com.google.type.LatLng getOrigin() {
     return origin_ == null ? com.google.type.LatLng.getDefaultInstance() : origin_;
   }
-
   /**
    *
    *
@@ -3061,7 +2973,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   public static final int INPUT_OFFSET_FIELD_NUMBER = 9;
   private int inputOffset_ = 0;
-
   /**
    *
    *
@@ -3084,7 +2995,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   public static final int INCLUDE_QUERY_PREDICTIONS_FIELD_NUMBER = 10;
   private boolean includeQueryPredictions_ = false;
-
   /**
    *
    *
@@ -3106,7 +3016,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sessionToken_ = "";
-
   /**
    *
    *
@@ -3155,7 +3064,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       return s;
     }
   }
-
   /**
    *
    *
@@ -3207,7 +3115,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
 
   public static final int INCLUDE_PURE_SERVICE_AREA_BUSINESSES_FIELD_NUMBER = 12;
   private boolean includePureServiceAreaBusinesses_ = false;
-
   /**
    *
    *
@@ -3524,7 +3431,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -3909,7 +3815,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object input_ = "";
-
     /**
      *
      *
@@ -3932,7 +3837,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -3955,7 +3859,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -3977,7 +3880,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3995,7 +3897,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4025,7 +3926,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
             com.google.maps.places.v1.AutocompletePlacesRequest.LocationBias.Builder,
             com.google.maps.places.v1.AutocompletePlacesRequest.LocationBiasOrBuilder>
         locationBiasBuilder_;
-
     /**
      *
      *
@@ -4047,7 +3947,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasLocationBias() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -4075,7 +3974,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return locationBiasBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4106,7 +4004,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4134,7 +4031,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4172,7 +4068,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4199,7 +4094,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4222,7 +4116,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return getLocationBiasFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4249,7 +4142,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
             : locationBias_;
       }
     }
-
     /**
      *
      *
@@ -4290,7 +4182,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
             com.google.maps.places.v1.AutocompletePlacesRequest.LocationRestriction.Builder,
             com.google.maps.places.v1.AutocompletePlacesRequest.LocationRestrictionOrBuilder>
         locationRestrictionBuilder_;
-
     /**
      *
      *
@@ -4312,7 +4203,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasLocationRestriction() {
       return ((bitField0_ & 0x00000004) != 0);
     }
-
     /**
      *
      *
@@ -4342,7 +4232,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return locationRestrictionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -4373,7 +4262,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4402,7 +4290,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4440,7 +4327,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -4467,7 +4353,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4490,7 +4375,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return getLocationRestrictionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -4518,7 +4402,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
             : locationRestriction_;
       }
     }
-
     /**
      *
      *
@@ -4561,7 +4444,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000008;
     }
-
     /**
      *
      *
@@ -4583,7 +4465,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       includedPrimaryTypes_.makeImmutable();
       return includedPrimaryTypes_;
     }
-
     /**
      *
      *
@@ -4604,7 +4485,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public int getIncludedPrimaryTypesCount() {
       return includedPrimaryTypes_.size();
     }
-
     /**
      *
      *
@@ -4626,7 +4506,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public java.lang.String getIncludedPrimaryTypes(int index) {
       return includedPrimaryTypes_.get(index);
     }
-
     /**
      *
      *
@@ -4648,7 +4527,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getIncludedPrimaryTypesBytes(int index) {
       return includedPrimaryTypes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4678,7 +4556,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4707,7 +4584,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4733,7 +4609,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4758,7 +4633,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4798,7 +4672,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000010;
     }
-
     /**
      *
      *
@@ -4818,7 +4691,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       includedRegionCodes_.makeImmutable();
       return includedRegionCodes_;
     }
-
     /**
      *
      *
@@ -4837,7 +4709,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public int getIncludedRegionCodesCount() {
       return includedRegionCodes_.size();
     }
-
     /**
      *
      *
@@ -4857,7 +4728,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public java.lang.String getIncludedRegionCodes(int index) {
       return includedRegionCodes_.get(index);
     }
-
     /**
      *
      *
@@ -4877,7 +4747,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getIncludedRegionCodesBytes(int index) {
       return includedRegionCodes_.getByteString(index);
     }
-
     /**
      *
      *
@@ -4905,7 +4774,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4932,7 +4800,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4956,7 +4823,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -4979,7 +4845,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5009,7 +4874,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object languageCode_ = "";
-
     /**
      *
      *
@@ -5035,7 +4899,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5061,7 +4924,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5086,7 +4948,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5107,7 +4968,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5135,7 +4995,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object regionCode_ = "";
-
     /**
      *
      *
@@ -5161,7 +5020,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5187,7 +5045,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5212,7 +5069,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5233,7 +5089,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5264,7 +5119,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         originBuilder_;
-
     /**
      *
      *
@@ -5281,7 +5135,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean hasOrigin() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -5302,7 +5155,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return originBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -5327,7 +5179,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5349,7 +5200,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5379,7 +5229,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       }
       return this;
     }
-
     /**
      *
      *
@@ -5401,7 +5250,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5418,7 +5266,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return getOriginFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -5437,7 +5284,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return origin_ == null ? com.google.type.LatLng.getDefaultInstance() : origin_;
       }
     }
-
     /**
      *
      *
@@ -5464,7 +5310,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     private int inputOffset_;
-
     /**
      *
      *
@@ -5484,7 +5329,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public int getInputOffset() {
       return inputOffset_;
     }
-
     /**
      *
      *
@@ -5508,7 +5352,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5532,7 +5375,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     private boolean includeQueryPredictions_;
-
     /**
      *
      *
@@ -5549,7 +5391,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean getIncludeQueryPredictions() {
       return includeQueryPredictions_;
     }
-
     /**
      *
      *
@@ -5570,7 +5411,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5591,7 +5431,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     private java.lang.Object sessionToken_ = "";
-
     /**
      *
      *
@@ -5639,7 +5478,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -5687,7 +5525,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -5734,7 +5571,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5777,7 +5613,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -5827,7 +5662,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     }
 
     private boolean includePureServiceAreaBusinesses_;
-
     /**
      *
      *
@@ -5851,7 +5685,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
     public boolean getIncludePureServiceAreaBusinesses() {
       return includePureServiceAreaBusinesses_;
     }
-
     /**
      *
      *
@@ -5879,7 +5712,6 @@ public final class AutocompletePlacesRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
-
     /**
      *
      *

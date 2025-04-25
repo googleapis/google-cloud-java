@@ -46,7 +46,6 @@ public interface RollbackAwsNodePoolUpdateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

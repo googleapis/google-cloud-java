@@ -43,7 +43,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
-
   /**
    *
    *
@@ -78,7 +77,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
-
   /**
    *
    *
@@ -108,7 +106,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return The endpointDisplayName.
    */
   java.lang.String getEndpointDisplayName();
-
   /**
    *
    *
@@ -138,7 +135,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return Whether the dedicatedResources field is set.
    */
   boolean hasDedicatedResources();
-
   /**
    *
    *
@@ -154,7 +150,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return The dedicatedResources.
    */
   com.google.cloud.aiplatform.v1beta1.DedicatedResources getDedicatedResources();
-
   /**
    *
    *
@@ -182,7 +177,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return The modelDisplayName.
    */
   java.lang.String getModelDisplayName();
-
   /**
    *
    *
@@ -210,7 +204,6 @@ public interface DeployPublisherModelRequestOrBuilder
    * @return The huggingFaceAccessToken.
    */
   java.lang.String getHuggingFaceAccessToken();
-
   /**
    *
    *

@@ -33,7 +33,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.recommendationengine.v1beta1.CatalogInlineSource)
     CatalogInlineSourceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CatalogInlineSource.newBuilder() to construct.
   private CatalogInlineSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,7 +67,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.recommendationengine.v1beta1.CatalogItem> catalogItems_;
-
   /**
    *
    *
@@ -86,7 +84,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       getCatalogItemsList() {
     return catalogItems_;
   }
-
   /**
    *
    *
@@ -105,7 +102,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       getCatalogItemsOrBuilderList() {
     return catalogItems_;
   }
-
   /**
    *
    *
@@ -122,7 +118,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
   public int getCatalogItemsCount() {
     return catalogItems_.size();
   }
-
   /**
    *
    *
@@ -139,7 +134,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
   public com.google.cloud.recommendationengine.v1beta1.CatalogItem getCatalogItems(int index) {
     return catalogItems_.get(index);
   }
-
   /**
    *
    *
@@ -321,7 +315,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -595,7 +588,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
         return catalogItemsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -615,7 +607,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
         return catalogItemsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -635,7 +626,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
         return catalogItemsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -662,7 +652,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -687,7 +676,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -714,7 +702,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -741,7 +728,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -765,7 +751,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +775,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -838,7 +821,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -861,7 +843,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
-
     /**
      *
      *
@@ -878,7 +859,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
         int index) {
       return getCatalogItemsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -899,7 +879,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
         return catalogItemsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -921,7 +900,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(catalogItems_);
       }
     }
-
     /**
      *
      *
@@ -940,7 +918,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
           .addBuilder(
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -960,7 +937,6 @@ public final class CatalogInlineSource extends com.google.protobuf.GeneratedMess
               index,
               com.google.cloud.recommendationengine.v1beta1.CatalogItem.getDefaultInstance());
     }
-
     /**
      *
      *

@@ -36,7 +36,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The key.
    */
   java.lang.String getKey();
-
   /**
    *
    *
@@ -76,7 +74,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return Whether the operator field is set.
    */
   boolean hasOperator();
-
   /**
    *
    *
@@ -90,7 +87,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The operator.
    */
   java.lang.String getOperator();
-
   /**
    *
    *
@@ -117,7 +113,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
-
   /**
    *
    *
@@ -130,7 +125,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
-
   /**
    *
    *
@@ -144,7 +138,6 @@ public interface SchedulingNodeAffinityOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
-
   /**
    *
    *

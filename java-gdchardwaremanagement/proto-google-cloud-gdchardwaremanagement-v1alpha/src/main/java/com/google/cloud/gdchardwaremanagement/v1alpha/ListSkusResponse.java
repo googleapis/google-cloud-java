@@ -33,7 +33,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.ListSkusResponse)
     ListSkusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListSkusResponse.newBuilder() to construct.
   private ListSkusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku> skus_;
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   public java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku> getSkusList() {
     return skus_;
   }
-
   /**
    *
    *
@@ -99,7 +96,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       getSkusOrBuilderList() {
     return skus_;
   }
-
   /**
    *
    *
@@ -113,7 +109,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   public int getSkusCount() {
     return skus_.size();
   }
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.gdchardwaremanagement.v1alpha.Sku getSkus(int index) {
     return skus_.get(index);
   }
-
   /**
    *
    *
@@ -146,7 +140,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
-
   /**
    *
    *
@@ -200,7 +192,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -216,7 +207,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
-
   /**
    *
    *
@@ -232,7 +222,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   public int getUnreachableCount() {
     return unreachable_.size();
   }
-
   /**
    *
    *
@@ -249,7 +238,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
-
   /**
    *
    *
@@ -454,7 +442,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -758,7 +745,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return skusBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -775,7 +761,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return skusBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -792,7 +777,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return skusBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -815,7 +799,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -836,7 +819,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -859,7 +841,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -882,7 +863,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -903,7 +883,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -924,7 +903,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -945,7 +923,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +942,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -985,7 +961,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
-
     /**
      *
      *
@@ -998,7 +973,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Builder getSkusBuilder(int index) {
       return getSkusFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1015,7 +989,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return skusBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1033,7 +1006,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return java.util.Collections.unmodifiableList(skus_);
       }
     }
-
     /**
      *
      *
@@ -1047,7 +1019,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       return getSkusFieldBuilder()
           .addBuilder(com.google.cloud.gdchardwaremanagement.v1alpha.Sku.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1062,7 +1033,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
           .addBuilder(
               index, com.google.cloud.gdchardwaremanagement.v1alpha.Sku.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1095,7 +1065,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1118,7 +1087,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1141,7 +1109,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1163,7 +1130,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1181,7 +1147,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1179,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000004;
     }
-
     /**
      *
      *
@@ -1231,7 +1195,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       unreachable_.makeImmutable();
       return unreachable_;
     }
-
     /**
      *
      *
@@ -1247,7 +1210,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     public int getUnreachableCount() {
       return unreachable_.size();
     }
-
     /**
      *
      *
@@ -1264,7 +1226,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
-
     /**
      *
      *
@@ -1281,7 +1242,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
-
     /**
      *
      *
@@ -1306,7 +1266,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1330,7 +1289,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1351,7 +1309,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1371,7 +1328,6 @@ public final class ListSkusResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
-
     /**
      *
      *

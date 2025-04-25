@@ -33,7 +33,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.PublishAction)
     PublishActionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use PublishAction.newBuilder() to construct.
   private PublishAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,7 +68,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topicId_ = "";
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -125,7 +122,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList messages_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
-
   /**
    *
    *
@@ -140,7 +136,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getMessagesList() {
     return messages_;
   }
-
   /**
    *
    *
@@ -155,7 +150,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
   public int getMessagesCount() {
     return messages_.size();
   }
-
   /**
    *
    *
@@ -171,7 +165,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getMessages(int index) {
     return messages_.get(index);
   }
-
   /**
    *
    *
@@ -363,7 +356,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -570,7 +562,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object topicId_ = "";
-
     /**
      *
      *
@@ -594,7 +585,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -618,7 +608,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -641,7 +630,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -660,7 +648,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -694,7 +681,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
-
     /**
      *
      *
@@ -710,7 +696,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       messages_.makeImmutable();
       return messages_;
     }
-
     /**
      *
      *
@@ -725,7 +710,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     public int getMessagesCount() {
       return messages_.size();
     }
-
     /**
      *
      *
@@ -741,7 +725,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getMessages(int index) {
       return messages_.get(index);
     }
-
     /**
      *
      *
@@ -757,7 +740,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMessagesBytes(int index) {
       return messages_.getByteString(index);
     }
-
     /**
      *
      *
@@ -781,7 +763,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -804,7 +785,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -824,7 +804,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -843,7 +822,6 @@ public final class PublishAction extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

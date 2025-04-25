@@ -41,7 +41,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the classificationEvaluationMetrics field is set.
    */
   boolean hasClassificationEvaluationMetrics();
-
   /**
    *
    *
@@ -59,7 +58,6 @@ public interface ModelEvaluationOrBuilder
    * @return The classificationEvaluationMetrics.
    */
   com.google.cloud.automl.v1.ClassificationEvaluationMetrics getClassificationEvaluationMetrics();
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the translationEvaluationMetrics field is set.
    */
   boolean hasTranslationEvaluationMetrics();
-
   /**
    *
    *
@@ -104,7 +101,6 @@ public interface ModelEvaluationOrBuilder
    * @return The translationEvaluationMetrics.
    */
   com.google.cloud.automl.v1.TranslationEvaluationMetrics getTranslationEvaluationMetrics();
-
   /**
    *
    *
@@ -132,7 +128,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the imageObjectDetectionEvaluationMetrics field is set.
    */
   boolean hasImageObjectDetectionEvaluationMetrics();
-
   /**
    *
    *
@@ -148,7 +143,6 @@ public interface ModelEvaluationOrBuilder
    */
   com.google.cloud.automl.v1.ImageObjectDetectionEvaluationMetrics
       getImageObjectDetectionEvaluationMetrics();
-
   /**
    *
    *
@@ -177,7 +171,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the textSentimentEvaluationMetrics field is set.
    */
   boolean hasTextSentimentEvaluationMetrics();
-
   /**
    *
    *
@@ -192,7 +185,6 @@ public interface ModelEvaluationOrBuilder
    * @return The textSentimentEvaluationMetrics.
    */
   com.google.cloud.automl.v1.TextSentimentEvaluationMetrics getTextSentimentEvaluationMetrics();
-
   /**
    *
    *
@@ -221,7 +213,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the textExtractionEvaluationMetrics field is set.
    */
   boolean hasTextExtractionEvaluationMetrics();
-
   /**
    *
    *
@@ -236,7 +227,6 @@ public interface ModelEvaluationOrBuilder
    * @return The textExtractionEvaluationMetrics.
    */
   com.google.cloud.automl.v1.TextExtractionEvaluationMetrics getTextExtractionEvaluationMetrics();
-
   /**
    *
    *
@@ -265,7 +255,6 @@ public interface ModelEvaluationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -300,7 +289,6 @@ public interface ModelEvaluationOrBuilder
    * @return The annotationSpecId.
    */
   java.lang.String getAnnotationSpecId();
-
   /**
    *
    *
@@ -342,7 +330,6 @@ public interface ModelEvaluationOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -377,7 +364,6 @@ public interface ModelEvaluationOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
-
   /**
    *
    *
@@ -390,7 +376,6 @@ public interface ModelEvaluationOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
-
   /**
    *
    *

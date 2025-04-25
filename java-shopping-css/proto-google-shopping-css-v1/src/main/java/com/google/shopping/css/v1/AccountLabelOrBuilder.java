@@ -37,7 +37,6 @@ public interface AccountLabelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -90,7 +89,6 @@ public interface AccountLabelOrBuilder
    * @return Whether the displayName field is set.
    */
   boolean hasDisplayName();
-
   /**
    *
    *
@@ -103,7 +101,6 @@ public interface AccountLabelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -129,7 +126,6 @@ public interface AccountLabelOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
-
   /**
    *
    *
@@ -142,7 +138,6 @@ public interface AccountLabelOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
-
   /**
    *
    *
@@ -170,7 +165,6 @@ public interface AccountLabelOrBuilder
    * @return The enum numeric value on the wire for labelType.
    */
   int getLabelTypeValue();
-
   /**
    *
    *

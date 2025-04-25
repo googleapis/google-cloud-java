@@ -38,7 +38,6 @@ public interface ReportRowOrBuilder
    * @return Whether the productPerformanceView field is set.
    */
   boolean hasProductPerformanceView();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface ReportRowOrBuilder
    * @return The productPerformanceView.
    */
   com.google.shopping.merchant.reports.v1beta.ProductPerformanceView getProductPerformanceView();
-
   /**
    *
    *
@@ -82,7 +80,6 @@ public interface ReportRowOrBuilder
    * @return Whether the nonProductPerformanceView field is set.
    */
   boolean hasNonProductPerformanceView();
-
   /**
    *
    *
@@ -98,7 +95,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.NonProductPerformanceView
       getNonProductPerformanceView();
-
   /**
    *
    *
@@ -125,7 +121,6 @@ public interface ReportRowOrBuilder
    * @return Whether the productView field is set.
    */
   boolean hasProductView();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface ReportRowOrBuilder
    * @return The productView.
    */
   com.google.shopping.merchant.reports.v1beta.ProductView getProductView();
-
   /**
    *
    *
@@ -164,7 +158,6 @@ public interface ReportRowOrBuilder
    * @return Whether the priceCompetitivenessProductView field is set.
    */
   boolean hasPriceCompetitivenessProductView();
-
   /**
    *
    *
@@ -180,7 +173,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.PriceCompetitivenessProductView
       getPriceCompetitivenessProductView();
-
   /**
    *
    *
@@ -209,7 +201,6 @@ public interface ReportRowOrBuilder
    * @return Whether the priceInsightsProductView field is set.
    */
   boolean hasPriceInsightsProductView();
-
   /**
    *
    *
@@ -225,7 +216,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.PriceInsightsProductView
       getPriceInsightsProductView();
-
   /**
    *
    *
@@ -254,7 +244,6 @@ public interface ReportRowOrBuilder
    * @return Whether the bestSellersProductClusterView field is set.
    */
   boolean hasBestSellersProductClusterView();
-
   /**
    *
    *
@@ -270,7 +259,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.BestSellersProductClusterView
       getBestSellersProductClusterView();
-
   /**
    *
    *
@@ -299,7 +287,6 @@ public interface ReportRowOrBuilder
    * @return Whether the bestSellersBrandView field is set.
    */
   boolean hasBestSellersBrandView();
-
   /**
    *
    *
@@ -314,7 +301,6 @@ public interface ReportRowOrBuilder
    * @return The bestSellersBrandView.
    */
   com.google.shopping.merchant.reports.v1beta.BestSellersBrandView getBestSellersBrandView();
-
   /**
    *
    *
@@ -344,7 +330,6 @@ public interface ReportRowOrBuilder
    * @return Whether the competitiveVisibilityCompetitorView field is set.
    */
   boolean hasCompetitiveVisibilityCompetitorView();
-
   /**
    *
    *
@@ -361,7 +346,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityCompetitorView
       getCompetitiveVisibilityCompetitorView();
-
   /**
    *
    *
@@ -392,7 +376,6 @@ public interface ReportRowOrBuilder
    * @return Whether the competitiveVisibilityTopMerchantView field is set.
    */
   boolean hasCompetitiveVisibilityTopMerchantView();
-
   /**
    *
    *
@@ -409,7 +392,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityTopMerchantView
       getCompetitiveVisibilityTopMerchantView();
-
   /**
    *
    *
@@ -440,7 +422,6 @@ public interface ReportRowOrBuilder
    * @return Whether the competitiveVisibilityBenchmarkView field is set.
    */
   boolean hasCompetitiveVisibilityBenchmarkView();
-
   /**
    *
    *
@@ -457,7 +438,6 @@ public interface ReportRowOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.CompetitiveVisibilityBenchmarkView
       getCompetitiveVisibilityBenchmarkView();
-
   /**
    *
    *

@@ -36,7 +36,6 @@ public interface AppliedLicenseOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
-
   /**
    *
    *
@@ -62,7 +61,6 @@ public interface AppliedLicenseOrBuilder
    * @return The osLicense.
    */
   java.lang.String getOsLicense();
-
   /**
    *
    *

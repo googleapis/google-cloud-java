@@ -36,7 +36,6 @@ public final class LookupRuntimeProjectAttachmentResponse
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.LookupRuntimeProjectAttachmentResponse)
     LookupRuntimeProjectAttachmentResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LookupRuntimeProjectAttachmentResponse.newBuilder() to construct.
   private LookupRuntimeProjectAttachmentResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,7 +68,6 @@ public final class LookupRuntimeProjectAttachmentResponse
   private int bitField0_;
   public static final int RUNTIME_PROJECT_ATTACHMENT_FIELD_NUMBER = 1;
   private com.google.cloud.apihub.v1.RuntimeProjectAttachment runtimeProjectAttachment_;
-
   /**
    *
    *
@@ -85,7 +83,6 @@ public final class LookupRuntimeProjectAttachmentResponse
   public boolean hasRuntimeProjectAttachment() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public final class LookupRuntimeProjectAttachmentResponse
         ? com.google.cloud.apihub.v1.RuntimeProjectAttachment.getDefaultInstance()
         : runtimeProjectAttachment_;
   }
-
   /**
    *
    *
@@ -289,7 +285,6 @@ public final class LookupRuntimeProjectAttachmentResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -504,7 +499,6 @@ public final class LookupRuntimeProjectAttachmentResponse
             com.google.cloud.apihub.v1.RuntimeProjectAttachment.Builder,
             com.google.cloud.apihub.v1.RuntimeProjectAttachmentOrBuilder>
         runtimeProjectAttachmentBuilder_;
-
     /**
      *
      *
@@ -519,7 +513,6 @@ public final class LookupRuntimeProjectAttachmentResponse
     public boolean hasRuntimeProjectAttachment() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -540,7 +533,6 @@ public final class LookupRuntimeProjectAttachmentResponse
         return runtimeProjectAttachmentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -564,7 +556,6 @@ public final class LookupRuntimeProjectAttachmentResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -585,7 +576,6 @@ public final class LookupRuntimeProjectAttachmentResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -615,7 +605,6 @@ public final class LookupRuntimeProjectAttachmentResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -635,7 +624,6 @@ public final class LookupRuntimeProjectAttachmentResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -651,7 +639,6 @@ public final class LookupRuntimeProjectAttachmentResponse
       onChanged();
       return getRuntimeProjectAttachmentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -671,7 +658,6 @@ public final class LookupRuntimeProjectAttachmentResponse
             : runtimeProjectAttachment_;
       }
     }
-
     /**
      *
      *

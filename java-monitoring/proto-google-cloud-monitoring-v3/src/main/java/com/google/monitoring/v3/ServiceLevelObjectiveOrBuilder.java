@@ -38,7 +38,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *
@@ -66,7 +65,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
-
   /**
    *
    *
@@ -94,7 +92,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return Whether the serviceLevelIndicator field is set.
    */
   boolean hasServiceLevelIndicator();
-
   /**
    *
    *
@@ -109,7 +106,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return The serviceLevelIndicator.
    */
   com.google.monitoring.v3.ServiceLevelIndicator getServiceLevelIndicator();
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return Whether the rollingPeriod field is set.
    */
   boolean hasRollingPeriod();
-
   /**
    *
    *
@@ -164,7 +159,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return The rollingPeriod.
    */
   com.google.protobuf.Duration getRollingPeriod();
-
   /**
    *
    *
@@ -191,7 +185,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return Whether the calendarPeriod field is set.
    */
   boolean hasCalendarPeriod();
-
   /**
    *
    *
@@ -206,7 +199,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * @return The enum numeric value on the wire for calendarPeriod.
    */
   int getCalendarPeriodValue();
-
   /**
    *
    *
@@ -237,7 +229,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 12;</code>
    */
   int getUserLabelsCount();
-
   /**
    *
    *
@@ -253,11 +244,9 @@ public interface ServiceLevelObjectiveOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 12;</code>
    */
   boolean containsUserLabels(java.lang.String key);
-
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
-
   /**
    *
    *
@@ -273,7 +262,6 @@ public interface ServiceLevelObjectiveOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 12;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
-
   /**
    *
    *
@@ -293,7 +281,6 @@ public interface ServiceLevelObjectiveOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-
   /**
    *
    *

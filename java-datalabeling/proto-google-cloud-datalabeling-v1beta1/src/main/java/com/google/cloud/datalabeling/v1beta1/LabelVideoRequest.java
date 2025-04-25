@@ -33,7 +33,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.LabelVideoRequest)
     LabelVideoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use LabelVideoRequest.newBuilder() to construct.
   private LabelVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -122,7 +121,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
 
     /** <code>FEATURE_UNSPECIFIED = 0;</code> */
     public static final int FEATURE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -133,7 +131,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * <code>CLASSIFICATION = 1;</code>
      */
     public static final int CLASSIFICATION_VALUE = 1;
-
     /**
      *
      *
@@ -144,7 +141,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * <code>OBJECT_DETECTION = 2;</code>
      */
     public static final int OBJECT_DETECTION_VALUE = 2;
-
     /**
      *
      *
@@ -155,7 +151,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
      * <code>OBJECT_TRACKING = 3;</code>
      */
     public static final int OBJECT_TRACKING_VALUE = 3;
-
     /**
      *
      *
@@ -276,7 +271,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     private RequestConfigCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -314,7 +308,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VIDEO_CLASSIFICATION_CONFIG_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -334,7 +327,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasVideoClassificationConfig() {
     return requestConfigCase_ == 4;
   }
-
   /**
    *
    *
@@ -358,7 +350,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -382,7 +373,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OBJECT_DETECTION_CONFIG_FIELD_NUMBER = 5;
-
   /**
    *
    *
@@ -401,7 +391,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasObjectDetectionConfig() {
     return requestConfigCase_ == 5;
   }
-
   /**
    *
    *
@@ -423,7 +412,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -446,7 +434,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int OBJECT_TRACKING_CONFIG_FIELD_NUMBER = 6;
-
   /**
    *
    *
@@ -465,7 +452,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasObjectTrackingConfig() {
     return requestConfigCase_ == 6;
   }
-
   /**
    *
    *
@@ -487,7 +473,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -510,7 +495,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int EVENT_CONFIG_FIELD_NUMBER = 7;
-
   /**
    *
    *
@@ -528,7 +512,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasEventConfig() {
     return requestConfigCase_ == 7;
   }
-
   /**
    *
    *
@@ -549,7 +532,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     }
     return com.google.cloud.datalabeling.v1beta1.EventConfig.getDefaultInstance();
   }
-
   /**
    *
    *
@@ -573,7 +555,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -600,7 +581,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
-
   /**
    *
    *
@@ -630,7 +610,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int BASIC_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig basicConfig_;
-
   /**
    *
    *
@@ -648,7 +627,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasBasicConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -668,7 +646,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.getDefaultInstance()
         : basicConfig_;
   }
-
   /**
    *
    *
@@ -690,7 +667,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int FEATURE_FIELD_NUMBER = 3;
   private int feature_ = 0;
-
   /**
    *
    *
@@ -708,7 +684,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
   public int getFeatureValue() {
     return feature_;
   }
-
   /**
    *
    *
@@ -991,7 +966,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1323,7 +1297,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.VideoClassificationConfigOrBuilder>
         videoClassificationConfigBuilder_;
-
     /**
      *
      *
@@ -1343,7 +1316,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasVideoClassificationConfig() {
       return requestConfigCase_ == 4;
     }
-
     /**
      *
      *
@@ -1374,7 +1346,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1402,7 +1373,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1427,7 +1397,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1468,7 +1437,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 4;
       return this;
     }
-
     /**
      *
      *
@@ -1498,7 +1466,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1516,7 +1483,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         getVideoClassificationConfigBuilder() {
       return getVideoClassificationConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1542,7 +1508,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1586,7 +1551,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfigOrBuilder>
         objectDetectionConfigBuilder_;
-
     /**
      *
      *
@@ -1605,7 +1569,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasObjectDetectionConfig() {
       return requestConfigCase_ == 5;
     }
-
     /**
      *
      *
@@ -1634,7 +1597,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1661,7 +1623,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1685,7 +1646,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1724,7 +1684,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 5;
       return this;
     }
-
     /**
      *
      *
@@ -1753,7 +1712,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1728,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         getObjectDetectionConfigBuilder() {
       return getObjectDetectionConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1795,7 +1752,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ObjectDetectionConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1838,7 +1794,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfigOrBuilder>
         objectTrackingConfigBuilder_;
-
     /**
      *
      *
@@ -1857,7 +1812,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasObjectTrackingConfig() {
       return requestConfigCase_ == 6;
     }
-
     /**
      *
      *
@@ -1886,7 +1840,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -1913,7 +1866,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1937,7 +1889,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -1976,7 +1927,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 6;
       return this;
     }
-
     /**
      *
      *
@@ -2005,7 +1955,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2022,7 +1971,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         getObjectTrackingConfigBuilder() {
       return getObjectTrackingConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2047,7 +1995,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.ObjectTrackingConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2090,7 +2037,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.EventConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.EventConfigOrBuilder>
         eventConfigBuilder_;
-
     /**
      *
      *
@@ -2108,7 +2054,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasEventConfig() {
       return requestConfigCase_ == 7;
     }
-
     /**
      *
      *
@@ -2136,7 +2081,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.EventConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2161,7 +2105,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2184,7 +2127,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2220,7 +2162,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       requestConfigCase_ = 7;
       return this;
     }
-
     /**
      *
      *
@@ -2248,7 +2189,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2263,7 +2203,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.datalabeling.v1beta1.EventConfig.Builder getEventConfigBuilder() {
       return getEventConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2286,7 +2225,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return com.google.cloud.datalabeling.v1beta1.EventConfig.getDefaultInstance();
       }
     }
-
     /**
      *
      *
@@ -2323,7 +2261,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -2349,7 +2286,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2375,7 +2311,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2400,7 +2335,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2421,7 +2355,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2454,7 +2387,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig.Builder,
             com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfigOrBuilder>
         basicConfigBuilder_;
-
     /**
      *
      *
@@ -2471,7 +2403,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasBasicConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
-
     /**
      *
      *
@@ -2494,7 +2425,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
         return basicConfigBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2520,7 +2450,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2543,7 +2472,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2576,7 +2504,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -2598,7 +2525,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2616,7 +2542,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getBasicConfigFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2638,7 +2563,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
             : basicConfig_;
       }
     }
-
     /**
      *
      *
@@ -2668,7 +2592,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private int feature_ = 0;
-
     /**
      *
      *
@@ -2686,7 +2609,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
     public int getFeatureValue() {
       return feature_;
     }
-
     /**
      *
      *
@@ -2707,7 +2629,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2729,7 +2650,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.datalabeling.v1beta1.LabelVideoRequest.Feature.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2754,7 +2674,6 @@ public final class LabelVideoRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
-
     /**
      *
      *

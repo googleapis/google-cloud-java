@@ -34,7 +34,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest)
     ShowVcenterCredentialsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ShowVcenterCredentialsRequest.newBuilder() to construct.
   private ShowVcenterCredentialsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,7 +69,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateCloud_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -137,7 +134,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object username_ = "";
-
   /**
    *
    *
@@ -170,7 +166,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       return s;
     }
   }
-
   /**
    *
    *
@@ -373,7 +368,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -577,7 +571,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object privateCloud_ = "";
-
     /**
      *
      *
@@ -607,7 +600,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -637,7 +629,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -666,7 +657,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -691,7 +681,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -723,7 +712,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
     }
 
     private java.lang.Object username_ = "";
-
     /**
      *
      *
@@ -755,7 +743,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -787,7 +774,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -818,7 +804,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -845,7 +830,6 @@ public final class ShowVcenterCredentialsRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
-
     /**
      *
      *

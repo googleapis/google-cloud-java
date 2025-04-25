@@ -37,7 +37,6 @@ public interface SlidesAddOnManifestOrBuilder
    * @return Whether the homepageTrigger field is set.
    */
   boolean hasHomepageTrigger();
-
   /**
    *
    *
@@ -51,7 +50,6 @@ public interface SlidesAddOnManifestOrBuilder
    * @return The homepageTrigger.
    */
   com.google.apps.script.type.HomepageExtensionPoint getHomepageTrigger();
-
   /**
    *
    *
@@ -78,7 +76,6 @@ public interface SlidesAddOnManifestOrBuilder
    * @return Whether the onFileScopeGrantedTrigger field is set.
    */
   boolean hasOnFileScopeGrantedTrigger();
-
   /**
    *
    *
@@ -93,7 +90,6 @@ public interface SlidesAddOnManifestOrBuilder
    * @return The onFileScopeGrantedTrigger.
    */
   com.google.apps.script.type.slides.SlidesExtensionPoint getOnFileScopeGrantedTrigger();
-
   /**
    *
    *

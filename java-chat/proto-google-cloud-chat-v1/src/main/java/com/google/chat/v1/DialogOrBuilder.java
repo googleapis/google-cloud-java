@@ -38,7 +38,6 @@ public interface DialogOrBuilder
    * @return Whether the body field is set.
    */
   boolean hasBody();
-
   /**
    *
    *
@@ -53,7 +52,6 @@ public interface DialogOrBuilder
    * @return The body.
    */
   com.google.apps.card.v1.Card getBody();
-
   /**
    *
    *

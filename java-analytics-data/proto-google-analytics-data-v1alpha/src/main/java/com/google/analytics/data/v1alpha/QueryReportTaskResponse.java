@@ -33,7 +33,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.data.v1alpha.QueryReportTaskResponse)
     QueryReportTaskResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use QueryReportTaskResponse.newBuilder() to construct.
   private QueryReportTaskResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,7 +73,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> dimensionHeaders_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getDimensionHeadersList() {
     return dimensionHeaders_;
   }
-
   /**
    *
    *
@@ -106,7 +103,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getDimensionHeadersOrBuilderList() {
     return dimensionHeaders_;
   }
-
   /**
    *
    *
@@ -121,7 +117,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public int getDimensionHeadersCount() {
     return dimensionHeaders_.size();
   }
-
   /**
    *
    *
@@ -136,7 +131,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.DimensionHeader getDimensionHeaders(int index) {
     return dimensionHeaders_.get(index);
   }
-
   /**
    *
    *
@@ -157,7 +151,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.MetricHeader> metricHeaders_;
-
   /**
    *
    *
@@ -172,7 +165,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1alpha.MetricHeader> getMetricHeadersList() {
     return metricHeaders_;
   }
-
   /**
    *
    *
@@ -188,7 +180,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getMetricHeadersOrBuilderList() {
     return metricHeaders_;
   }
-
   /**
    *
    *
@@ -203,7 +194,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public int getMetricHeadersCount() {
     return metricHeaders_.size();
   }
-
   /**
    *
    *
@@ -218,7 +208,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.MetricHeader getMetricHeaders(int index) {
     return metricHeaders_.get(index);
   }
-
   /**
    *
    *
@@ -239,7 +228,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.Row> rows_;
-
   /**
    *
    *
@@ -253,7 +241,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1alpha.Row> getRowsList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -268,7 +255,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getRowsOrBuilderList() {
     return rows_;
   }
-
   /**
    *
    *
@@ -282,7 +268,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public int getRowsCount() {
     return rows_.size();
   }
-
   /**
    *
    *
@@ -296,7 +281,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.Row getRows(int index) {
     return rows_.get(index);
   }
-
   /**
    *
    *
@@ -315,7 +299,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.Row> totals_;
-
   /**
    *
    *
@@ -329,7 +312,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1alpha.Row> getTotalsList() {
     return totals_;
   }
-
   /**
    *
    *
@@ -344,7 +326,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getTotalsOrBuilderList() {
     return totals_;
   }
-
   /**
    *
    *
@@ -358,7 +339,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public int getTotalsCount() {
     return totals_.size();
   }
-
   /**
    *
    *
@@ -372,7 +352,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.Row getTotals(int index) {
     return totals_.get(index);
   }
-
   /**
    *
    *
@@ -391,7 +370,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.Row> maximums_;
-
   /**
    *
    *
@@ -405,7 +383,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1alpha.Row> getMaximumsList() {
     return maximums_;
   }
-
   /**
    *
    *
@@ -420,7 +397,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getMaximumsOrBuilderList() {
     return maximums_;
   }
-
   /**
    *
    *
@@ -434,7 +410,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public int getMaximumsCount() {
     return maximums_.size();
   }
-
   /**
    *
    *
@@ -448,7 +423,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.Row getMaximums(int index) {
     return maximums_.get(index);
   }
-
   /**
    *
    *
@@ -467,7 +441,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.Row> minimums_;
-
   /**
    *
    *
@@ -481,7 +454,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public java.util.List<com.google.analytics.data.v1alpha.Row> getMinimumsList() {
     return minimums_;
   }
-
   /**
    *
    *
@@ -496,7 +468,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       getMinimumsOrBuilderList() {
     return minimums_;
   }
-
   /**
    *
    *
@@ -510,7 +481,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public int getMinimumsCount() {
     return minimums_.size();
   }
-
   /**
    *
    *
@@ -524,7 +494,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public com.google.analytics.data.v1alpha.Row getMinimums(int index) {
     return minimums_.get(index);
   }
-
   /**
    *
    *
@@ -541,7 +510,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   public static final int ROW_COUNT_FIELD_NUMBER = 7;
   private int rowCount_ = 0;
-
   /**
    *
    *
@@ -560,7 +528,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
 
   public static final int METADATA_FIELD_NUMBER = 8;
   private com.google.analytics.data.v1alpha.ResponseMetaData metadata_;
-
   /**
    *
    *
@@ -576,7 +543,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -594,7 +560,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         ? com.google.analytics.data.v1alpha.ResponseMetaData.getDefaultInstance()
         : metadata_;
   }
-
   /**
    *
    *
@@ -851,7 +816,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1446,7 +1410,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return dimensionHeadersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1464,7 +1427,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return dimensionHeadersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1482,7 +1444,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return dimensionHeadersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1507,7 +1468,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1529,7 +1489,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1553,7 +1512,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1578,7 +1536,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1600,7 +1557,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1622,7 +1578,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1644,7 +1599,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1665,7 +1619,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1686,7 +1639,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1701,7 +1653,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         int index) {
       return getDimensionHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1720,7 +1671,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return dimensionHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1739,7 +1689,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(dimensionHeaders_);
       }
     }
-
     /**
      *
      *
@@ -1754,7 +1703,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getDimensionHeadersFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.DimensionHeader.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1771,7 +1719,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.analytics.data.v1alpha.DimensionHeader.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1841,7 +1788,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return metricHeadersBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1859,7 +1805,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return metricHeadersBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1877,7 +1822,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return metricHeadersBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1902,7 +1846,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1924,7 +1867,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1948,7 +1890,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1973,7 +1914,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -1995,7 +1935,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2017,7 +1956,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2039,7 +1977,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2060,7 +1997,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2081,7 +2017,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2031,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         int index) {
       return getMetricHeadersFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2115,7 +2049,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return metricHeadersBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2134,7 +2067,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(metricHeaders_);
       }
     }
-
     /**
      *
      *
@@ -2149,7 +2081,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getMetricHeadersFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.MetricHeader.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2165,7 +2096,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getMetricHeadersFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1alpha.MetricHeader.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2233,7 +2163,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2250,7 +2179,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2267,7 +2195,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2290,7 +2217,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2311,7 +2237,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2334,7 +2259,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2357,7 +2281,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2377,7 +2300,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2398,7 +2320,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2419,7 +2340,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2439,7 +2359,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2459,7 +2378,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2472,7 +2390,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1alpha.Row.Builder getRowsBuilder(int index) {
       return getRowsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2489,7 +2406,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return rowsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2507,7 +2423,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(rows_);
       }
     }
-
     /**
      *
      *
@@ -2521,7 +2436,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getRowsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2535,7 +2449,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getRowsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2598,7 +2511,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return totalsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2615,7 +2527,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return totalsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2632,7 +2543,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return totalsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2655,7 +2565,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2676,7 +2585,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2699,7 +2607,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2722,7 +2629,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2742,7 +2648,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2763,7 +2668,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2784,7 +2688,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2804,7 +2707,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2824,7 +2726,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -2837,7 +2738,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1alpha.Row.Builder getTotalsBuilder(int index) {
       return getTotalsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2854,7 +2754,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return totalsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2872,7 +2771,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(totals_);
       }
     }
-
     /**
      *
      *
@@ -2886,7 +2784,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getTotalsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2900,7 +2797,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getTotalsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2963,7 +2859,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return maximumsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2980,7 +2875,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return maximumsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2997,7 +2891,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return maximumsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3020,7 +2913,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3041,7 +2933,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3064,7 +2955,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3087,7 +2977,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3107,7 +2996,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3128,7 +3016,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3149,7 +3036,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3169,7 +3055,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3189,7 +3074,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3202,7 +3086,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1alpha.Row.Builder getMaximumsBuilder(int index) {
       return getMaximumsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3219,7 +3102,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return maximumsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3237,7 +3119,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(maximums_);
       }
     }
-
     /**
      *
      *
@@ -3251,7 +3132,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getMaximumsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3265,7 +3145,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getMaximumsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3328,7 +3207,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return minimumsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -3345,7 +3223,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return minimumsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -3362,7 +3239,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return minimumsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -3385,7 +3261,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3406,7 +3281,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3429,7 +3303,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3452,7 +3325,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3472,7 +3344,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3493,7 +3364,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3514,7 +3384,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3534,7 +3403,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3554,7 +3422,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3567,7 +3434,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     public com.google.analytics.data.v1alpha.Row.Builder getMinimumsBuilder(int index) {
       return getMinimumsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -3584,7 +3450,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return minimumsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -3602,7 +3467,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(minimums_);
       }
     }
-
     /**
      *
      *
@@ -3616,7 +3480,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getMinimumsFieldBuilder()
           .addBuilder(com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3630,7 +3493,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       return getMinimumsFieldBuilder()
           .addBuilder(index, com.google.analytics.data.v1alpha.Row.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -3662,7 +3524,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     }
 
     private int rowCount_;
-
     /**
      *
      *
@@ -3678,7 +3539,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     public int getRowCount() {
       return rowCount_;
     }
-
     /**
      *
      *
@@ -3698,7 +3558,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3723,7 +3582,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
             com.google.analytics.data.v1alpha.ResponseMetaData.Builder,
             com.google.analytics.data.v1alpha.ResponseMetaDataOrBuilder>
         metadataBuilder_;
-
     /**
      *
      *
@@ -3738,7 +3596,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -3759,7 +3616,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
         return metadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3782,7 +3638,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3803,7 +3658,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3832,7 +3686,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       }
       return this;
     }
-
     /**
      *
      *
@@ -3852,7 +3705,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3867,7 +3719,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3886,7 +3737,6 @@ public final class QueryReportTaskResponse extends com.google.protobuf.Generated
             : metadata_;
       }
     }
-
     /**
      *
      *

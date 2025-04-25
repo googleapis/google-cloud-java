@@ -34,7 +34,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.accounts.v1beta.Distance)
     DistanceOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Distance.newBuilder() to construct.
   private Distance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,7 +118,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
      * <code>UNIT_UNSPECIFIED = 0;</code>
      */
     public static final int UNIT_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -130,7 +128,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
      * <code>MILES = 1;</code>
      */
     public static final int MILES_VALUE = 1;
-
     /**
      *
      *
@@ -230,7 +227,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int VALUE_FIELD_NUMBER = 1;
   private long value_ = 0L;
-
   /**
    *
    *
@@ -246,7 +242,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValue() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -265,7 +260,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UNIT_FIELD_NUMBER = 2;
   private int unit_ = 0;
-
   /**
    *
    *
@@ -282,7 +276,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnit() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -299,7 +292,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
   public int getUnitValue() {
     return unit_;
   }
-
   /**
    *
    *
@@ -500,7 +492,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -701,7 +692,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long value_;
-
     /**
      *
      *
@@ -717,7 +707,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValue() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -733,7 +722,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     public long getValue() {
       return value_;
     }
-
     /**
      *
      *
@@ -753,7 +741,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -773,7 +760,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int unit_ = 0;
-
     /**
      *
      *
@@ -790,7 +776,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnit() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -807,7 +792,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
     public int getUnitValue() {
       return unit_;
     }
-
     /**
      *
      *
@@ -827,7 +811,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -848,7 +831,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
           ? com.google.shopping.merchant.accounts.v1beta.Distance.Unit.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -871,7 +853,6 @@ public final class Distance extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *

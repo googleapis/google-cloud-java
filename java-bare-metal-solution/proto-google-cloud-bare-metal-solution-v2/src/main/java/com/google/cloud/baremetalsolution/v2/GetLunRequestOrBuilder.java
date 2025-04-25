@@ -38,7 +38,6 @@ public interface GetLunRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
-
   /**
    *
    *

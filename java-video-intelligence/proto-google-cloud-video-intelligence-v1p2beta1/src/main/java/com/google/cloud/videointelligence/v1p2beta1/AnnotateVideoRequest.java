@@ -33,7 +33,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p2beta1.AnnotateVideoRequest)
     AnnotateVideoRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use AnnotateVideoRequest.newBuilder() to construct.
   private AnnotateVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,7 +72,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputUri_ = "";
-
   /**
    *
    *
@@ -106,7 +104,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -142,7 +139,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
   public static final int INPUT_CONTENT_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString inputContent_ = com.google.protobuf.ByteString.EMPTY;
-
   /**
    *
    *
@@ -180,7 +176,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
                   : result;
             }
           };
-
   /**
    *
    *
@@ -200,7 +195,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         java.lang.Integer, com.google.cloud.videointelligence.v1p2beta1.Feature>(
         features_, features_converter_);
   }
-
   /**
    *
    *
@@ -218,7 +212,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   public int getFeaturesCount() {
     return features_.size();
   }
-
   /**
    *
    *
@@ -237,7 +230,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.videointelligence.v1p2beta1.Feature getFeatures(int index) {
     return features_converter_.convert(features_.get(index));
   }
-
   /**
    *
    *
@@ -255,7 +247,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<java.lang.Integer> getFeaturesValueList() {
     return features_;
   }
-
   /**
    *
    *
@@ -279,7 +270,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
   public static final int VIDEO_CONTEXT_FIELD_NUMBER = 3;
   private com.google.cloud.videointelligence.v1p2beta1.VideoContext videoContext_;
-
   /**
    *
    *
@@ -295,7 +285,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
   public boolean hasVideoContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -313,7 +302,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.videointelligence.v1p2beta1.VideoContext.getDefaultInstance()
         : videoContext_;
   }
-
   /**
    *
    *
@@ -335,7 +323,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputUri_ = "";
-
   /**
    *
    *
@@ -364,7 +351,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -398,7 +384,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
-
   /**
    *
    *
@@ -424,7 +409,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
-
   /**
    *
    *
@@ -678,7 +662,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -982,7 +965,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object inputUri_ = "";
-
     /**
      *
      *
@@ -1014,7 +996,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1046,7 +1027,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1077,7 +1057,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1104,7 +1083,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1138,7 +1116,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.ByteString inputContent_ = com.google.protobuf.ByteString.EMPTY;
-
     /**
      *
      *
@@ -1156,7 +1133,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getInputContent() {
       return inputContent_;
     }
-
     /**
      *
      *
@@ -1180,7 +1156,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1209,7 +1184,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000004;
       }
     }
-
     /**
      *
      *
@@ -1228,7 +1202,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
           java.lang.Integer, com.google.cloud.videointelligence.v1p2beta1.Feature>(
           features_, features_converter_);
     }
-
     /**
      *
      *
@@ -1245,7 +1218,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public int getFeaturesCount() {
       return features_.size();
     }
-
     /**
      *
      *
@@ -1263,7 +1235,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.videointelligence.v1p2beta1.Feature getFeatures(int index) {
       return features_converter_.convert(features_.get(index));
     }
-
     /**
      *
      *
@@ -1289,7 +1260,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1313,7 +1283,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1337,7 +1306,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1357,7 +1325,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1374,7 +1341,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public java.util.List<java.lang.Integer> getFeaturesValueList() {
       return java.util.Collections.unmodifiableList(features_);
     }
-
     /**
      *
      *
@@ -1392,7 +1358,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public int getFeaturesValue(int index) {
       return features_.get(index);
     }
-
     /**
      *
      *
@@ -1414,7 +1379,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1435,7 +1399,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1465,7 +1428,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.videointelligence.v1p2beta1.VideoContext.Builder,
             com.google.cloud.videointelligence.v1p2beta1.VideoContextOrBuilder>
         videoContextBuilder_;
-
     /**
      *
      *
@@ -1480,7 +1442,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     public boolean hasVideoContext() {
       return ((bitField0_ & 0x00000008) != 0);
     }
-
     /**
      *
      *
@@ -1501,7 +1462,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return videoContextBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1525,7 +1485,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1546,7 +1505,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1576,7 +1534,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
-
     /**
      *
      *
@@ -1596,7 +1553,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1612,7 +1568,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getVideoContextFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1632,7 +1587,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
             : videoContext_;
       }
     }
-
     /**
      *
      *
@@ -1660,7 +1614,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object outputUri_ = "";
-
     /**
      *
      *
@@ -1688,7 +1641,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1716,7 +1668,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1694,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1766,7 +1716,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1796,7 +1745,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object locationId_ = "";
-
     /**
      *
      *
@@ -1821,7 +1769,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1846,7 +1793,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1870,7 +1816,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1890,7 +1835,6 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
-
     /**
      *
      *

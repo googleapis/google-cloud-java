@@ -34,7 +34,6 @@ public interface SearchCatalogResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.SearchCatalogResult results = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.SearchCatalogResult> getResultsList();
-
   /**
    *
    *
@@ -45,7 +44,6 @@ public interface SearchCatalogResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.SearchCatalogResult results = 1;</code>
    */
   com.google.cloud.datacatalog.v1.SearchCatalogResult getResults(int index);
-
   /**
    *
    *
@@ -56,7 +54,6 @@ public interface SearchCatalogResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.v1.SearchCatalogResult results = 1;</code>
    */
   int getResultsCount();
-
   /**
    *
    *
@@ -68,7 +65,6 @@ public interface SearchCatalogResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.SearchCatalogResultOrBuilder>
       getResultsOrBuilderList();
-
   /**
    *
    *
@@ -106,7 +102,6 @@ public interface SearchCatalogResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
-
   /**
    *
    *
@@ -138,7 +133,6 @@ public interface SearchCatalogResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
-
   /**
    *
    *
@@ -156,7 +150,6 @@ public interface SearchCatalogResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
-
   /**
    *
    *
@@ -175,7 +168,6 @@ public interface SearchCatalogResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
-
   /**
    *
    *
